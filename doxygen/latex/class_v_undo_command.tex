@@ -1,0 +1,187 @@
+\hypertarget{class_v_undo_command}{}\doxysection{VUndo\+Command Class Reference}
+\label{class_v_undo_command}\index{VUndoCommand@{VUndoCommand}}
+
+
+{\ttfamily \#include $<$vundocommand.\+h$>$}
+
+Inheritance diagram for VUndo\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_v_undo_command}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}\label{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}} 
+\index{VUndoCommand@{VUndoCommand}!VUndoCommand@{VUndoCommand}}
+\index{VUndoCommand@{VUndoCommand}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{VUndoCommand()}{VUndoCommand()}}
+{\footnotesize\ttfamily VUndo\+Command\+::\+VUndo\+Command (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{xml,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}\label{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}} 
+\index{VUndoCommand@{VUndoCommand}!````~VUndoCommand@{$\sim$VUndoCommand}}
+\index{````~VUndoCommand@{$\sim$VUndoCommand}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{$\sim$VUndoCommand()}{~VUndoCommand()}}
+{\footnotesize\ttfamily virtual VUndo\+Command\+::$\sim$\+VUndo\+Command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_undo_command_a2299d32271db3d52292a1925286d24af}\label{class_v_undo_command_a2299d32271db3d52292a1925286d24af}} 
+\index{VUndoCommand@{VUndoCommand}!ClearScene@{ClearScene}}
+\index{ClearScene@{ClearScene}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{ClearScene}{ClearScene}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Clear\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}\label{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}} 
+\index{VUndoCommand@{VUndoCommand}!DecrementReferences@{DecrementReferences}}
+\index{DecrementReferences@{DecrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{DecrementReferences()}{DecrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Decrement\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}\label{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}} 
+\index{VUndoCommand@{VUndoCommand}!DecrementReferences@{DecrementReferences}}
+\index{DecrementReferences@{DecrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{DecrementReferences()}{DecrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Decrement\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}\label{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}} 
+\index{VUndoCommand@{VUndoCommand}!DecrementReferences@{DecrementReferences}}
+\index{DecrementReferences@{DecrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{DecrementReferences()}{DecrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Decrement\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}\label{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}} 
+\index{VUndoCommand@{VUndoCommand}!getDestinationObject@{getDestinationObject}}
+\index{getDestinationObject@{getDestinationObject}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{getDestinationObject()}{getDestinationObject()}}
+{\footnotesize\ttfamily QDom\+Element VUndo\+Command\+::get\+Destination\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}\label{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}} 
+\index{VUndoCommand@{VUndoCommand}!IncrementReferences@{IncrementReferences}}
+\index{IncrementReferences@{IncrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{IncrementReferences()}{IncrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Increment\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}\label{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}} 
+\index{VUndoCommand@{VUndoCommand}!IncrementReferences@{IncrementReferences}}
+\index{IncrementReferences@{IncrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{IncrementReferences()}{IncrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Increment\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}\label{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}} 
+\index{VUndoCommand@{VUndoCommand}!IncrementReferences@{IncrementReferences}}
+\index{IncrementReferences@{IncrementReferences}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{IncrementReferences()}{IncrementReferences()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Increment\+References (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{nodes }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a094c62c977f31edfaa0c349967868674}\label{class_v_undo_command_a094c62c977f31edfaa0c349967868674}} 
+\index{VUndoCommand@{VUndoCommand}!NeedFullParsing@{NeedFullParsing}}
+\index{NeedFullParsing@{NeedFullParsing}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{NeedFullParsing}{NeedFullParsing}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Need\+Full\+Parsing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}\label{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}} 
+\index{VUndoCommand@{VUndoCommand}!NeedLiteParsing@{NeedLiteParsing}}
+\index{NeedLiteParsing@{NeedLiteParsing}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{NeedLiteParsing}{NeedLiteParsing}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Need\+Lite\+Parsing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}\label{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}} 
+\index{VUndoCommand@{VUndoCommand}!RedoFullParsing@{RedoFullParsing}}
+\index{RedoFullParsing@{RedoFullParsing}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{RedoFullParsing()}{RedoFullParsing()}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Redo\+Full\+Parsing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_add_to_calc_abdf08c1d91051bdf20cb526eeb23be53}{Add\+To\+Calc}}.
+
+\mbox{\Hypertarget{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}\label{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}} 
+\index{VUndoCommand@{VUndoCommand}!UndoDeleteAfterSibling@{UndoDeleteAfterSibling}}
+\index{UndoDeleteAfterSibling@{UndoDeleteAfterSibling}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{UndoDeleteAfterSibling()}{UndoDeleteAfterSibling()}}
+{\footnotesize\ttfamily void VUndo\+Command\+::\+Undo\+Delete\+After\+Sibling (\begin{DoxyParamCaption}\item[{QDom\+Node \&}]{parent\+Node,  }\item[{const quint32 \&}]{sibling\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}\label{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}} 
+\index{VUndoCommand@{VUndoCommand}!doc@{doc}}
+\index{doc@{doc}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}}$\ast$ VUndo\+Command\+::doc\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}\label{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}} 
+\index{VUndoCommand@{VUndoCommand}!nodeId@{nodeId}}
+\index{nodeId@{nodeId}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{nodeId}{nodeId}}
+{\footnotesize\ttfamily quint32 VUndo\+Command\+::node\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}\label{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}} 
+\index{VUndoCommand@{VUndoCommand}!redoFlag@{redoFlag}}
+\index{redoFlag@{redoFlag}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{redoFlag}{redoFlag}}
+{\footnotesize\ttfamily bool VUndo\+Command\+::redo\+Flag\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}\label{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}} 
+\index{VUndoCommand@{VUndoCommand}!xml@{xml}}
+\index{xml@{xml}!VUndoCommand@{VUndoCommand}}
+\doxysubsubsection{\texorpdfstring{xml}{xml}}
+{\footnotesize\ttfamily QDom\+Element VUndo\+Command\+::xml\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{vundocommand_8h}{vundocommand.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{vundocommand_8cpp}{vundocommand.\+cpp}}\end{DoxyCompactItemize}

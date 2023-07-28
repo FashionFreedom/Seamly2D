@@ -1,0 +1,300 @@
+\hypertarget{vtooloptionspropertybrowser_8h_source}{}\doxysection{vtooloptionspropertybrowser.\+h}
+\label{vtooloptionspropertybrowser_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/core/vtooloptionspropertybrowser.h@{D:/Github/Seamly2D/src/app/seamly2d/core/vtooloptionspropertybrowser.h}}
+\mbox{\hyperlink{vtooloptionspropertybrowser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ @file\ \ \ vtooloptionspropertybrowser.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ @date\ \ \ 30\ Apr,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @file\ \ \ vtooloptionspropertybrowser.h}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @date\ \ \ 22\ 8,\ 2014}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ VTOOLOPTIONSPROPERTYBROWSER\_H}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ VTOOLOPTIONSPROPERTYBROWSER\_H}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vgeometrydef.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}../vpropertyexplorer/vproperty.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}../vpropertyexplorer/vpropertymodel.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}../vpropertyexplorer/vpropertyformview.h"{}}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }QDockWidget;}
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }QGraphicsItem;}
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }QScrollArea;}
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_formula}{VFormula}};}
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_options_property_browser}{VToolOptionsPropertyBrowser}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_tool_options_property_browser}{VToolOptionsPropertyBrowser}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ QDockWidget\ *parent);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1252e0dc9be615256173d2e7a8bffce3}{clearPropertyBrowser}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a46a6c4c50b63fd6af4a084eafcddc88e}{itemClicked}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa9e320cdbecb8f3d83f0d5e15ab4df07}{updateOptions}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a94c90523992454d29d27d94644f3d3ab}{refreshOptions}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a0b5e0b32b3cbe63e641bd7402bb3b95a}{userChangedData}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE::VProperty}}\ *property);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00089\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_tool_options_property_browser}{VToolOptionsPropertyBrowser}})}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ const\ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_tool_options_property_browser_a0334240f4eedf63363de9ff1173a13a1}{m\_data}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{namespace_v_p_e}{VPE}}::VPropertyModel\ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_tool_options_property_browser_a7e8b17e73cdb2fe5ebb550aacd13ec19}{propertyModel}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{namespace_v_p_e}{VPE}}::VPropertyFormView\ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_tool_options_property_browser_ac20fec4aadfe22eb99a4063198d4215f}{formView}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ QGraphicsItem\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_tool_options_property_browser_ade8802baa568f80b1152cc033dd2970d}{currentItem}};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *,\ QString>\ \ \mbox{\hyperlink{class_v_tool_options_property_browser_ae046c3a9fef63573e7bbb234915e9e64}{propertyToId}};}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *>\ \ \mbox{\hyperlink{class_v_tool_options_property_browser_a6e849d07b655c5fd840c248d3ff23be9}{idToProperty}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ private:}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a446ba6076873087a68ccf6b26f9c4cab}{addProperty}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property,\ const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1c0a13b923f4e02d744ca26b42ca3fa1}{showItemOptions}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ quint32>\ \mbox{\hyperlink{class_v_tool_options_property_browser_a9448775f465b170ba62795f178b00ceb}{getObjectList}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ objType);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a8b86804c850ed77babd16e09ecb9dfbf}{setPointName}}(const\ QString\ \&name);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a80b88d5e56db275a5276fb32c447bcc0}{setPointName1}}(const\ QString\ \&name);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a0991983c703f95cd2c8cfefafa05af5b}{setPointName2}}(const\ QString\ \&name);}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a93b18dc580a7eab026064e76e7e66cb9}{setOperationSuffix}}(const\ QString\ \&suffix);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ template<class\ Type>}
+\DoxyCodeLine{00119\ \ \ \ \ Type\ \mbox{\hyperlink{class_v_tool_options_property_browser_a687ed2d5a8c8ca8dfbc052317a098c7b}{getCrossPoint}}(const\ QVariant\ \&value);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a350179ba97aa86569ddb8e1a97ac1c1d}{setCirclesCrossPoint}}(const\ QVariant\ \&value);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1d434f4206097e076fea3863caa868b5}{setCurveVCrossPoint}}(const\ QVariant\ \&value);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a29489b728e6b53f82f8387d877da71ce}{setCurveHCrossPoint}}(const\ QVariant\ \&value);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a9563e1ea6b13b1413740e090516ee9ef}{setAxisType}}(const\ QVariant\ \&value);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a4b5ccb5d2892482e5e0f96a7e08bc2f2}{addPropertyObjectName}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName,\ \textcolor{keywordtype}{bool}\ readOnly\ =\ false);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a66668a222fd3b39f66431d891b55a64f}{addPropertyPointName1}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af06224634856eb01d2a0b434c5164269}{addPropertyPointName2}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a17e62dcdd7045f74eb01b645c143738b}{addPropertyOperationSuffix}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName,\ \textcolor{keywordtype}{bool}\ readOnly\ =\ false);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a40d4a92137c1e94a6455523bfd8b0858}{addPropertyLineName}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName,\ \textcolor{keywordtype}{bool}\ readOnly\ =\ false);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a2cb6df54cbfb86aca3adb1eb2ae0ef14}{addPropertyCurveName}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName,\ const\ QString\ \&prefix,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&firstPoint,\ const\ QString\ \&secondPoint,\ \textcolor{keywordtype}{bool}\ readOnly\ =\ false);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a3a2e79f4f4b3f0736b2365334225c46a}{addPropertyCrossPoint}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab4bc716e7657deda96e5dfe99db86aea}{addPropertyVCrossPoint}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a93916662ec70e17bd9a5a0670579e5bd}{addPropertyHCrossPoint}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a6b009ff70f8d9bc66dbe198c2cb5d440}{addPropertyAxisType}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a26a5bf462c493109d1ce068fc65325ae}{addPropertyLineType}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a8b7ee3d9ada5ba304d0a00bf2df40807}{addPropertyCurveLineType}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_adde3b8c7d4787ce87c26c2c5bfc06ea2}{addPropertyLineWeight}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7a9653475c13f7c282c6e44d74bd4140}{addPropertyLineColor}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&propertyName,\ \ const\ QString\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ template<class\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a05d63f18be26bdbcb1896447756879d3}{addObjectProperty}}(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ *tool,\ const\ QString\ \&pointName,\ const\ QString\ \&propertyName,}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&\textcolor{keywordtype}{id},\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ objType);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_abdaeef46d0e5e4c1ad393bf473f418e3}{addPropertyFormula}}(const\ QString\ \&propertyName,\ const\ \mbox{\hyperlink{class_v_formula}{VFormula}}\ \&formula,\ const\ QString\ \&attrName);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a811439f804f2016104e8551846cbbe80}{addPropertyParentPointName}}(const\ QString\ \&pointName,\ const\ QString\ \&propertyName,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&propertyAttribute);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a9eabec9402ec6bb4342db65452428fc8}{addPropertyLabel}}(const\ QString\ \&propertyName,\ const\ QString\ \&propertyAttribute);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_v_tool_options_property_browser_a51f0cfbba1e4f7e42110e5247ee41173}{propertiesList}}()\ const;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af9d26690fe2df9b1c4cb2782e8c563c2}{changeDataToolSinglePoint}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a02fcd9b05902addeff1e9f4e881a7f61}{changeDataToolEndLine}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1d7679ee0520c19cb79528dafb1fb04e}{changeDataToolAlongLine}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ac7385995d69081d1b678c3791a79bdcf}{changeDataToolArc}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa112fc50fc9440bd2d1dad137ddd2399}{changeDataToolArcWithLength}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7c16332f5d5d994d5ffb29ed21282253}{changeDataToolBisector}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a0c04f7ef24847584ac5f292487ac01a9}{changeDataToolTrueDarts}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa58859eadf3e661c60548366e170c096}{changeDataToolCutArc}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aebc54e15d9b368f1a654b58a127feff9}{changeDataToolCutSpline}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_abe335a4978e4937f0c518e5828a25610}{changeDataToolCutSplinePath}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a6377ded6342e577b82246367b45d1e47}{changeDataToolHeight}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ae0700fc0b458d31bc27bd2defb4dbbf4}{changeDataToolLine}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab820b40fd941fc2f265edecb907e2c9b}{changeDataToolLineIntersect}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a38226c56300ac72fb3fff0869ace84e2}{changeDataToolNormal}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7d0f52c1a3040525d3d98fe5c95d42dc}{changeDataToolPointOfContact}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab7070e50c9dae8332dbcd547b1623e21}{changeDataToolPointOfIntersection}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab4212a64b5119d1035e58d01fb0e59d3}{changeDataToolPointOfIntersectionArcs}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a8544d1525233c9e60abcc131123300e9}{changeDataToolPointOfIntersectionCircles}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a4b4ea75f2a346a6811a88efca7e624e0}{changeDataToolPointOfIntersectionCurves}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a523185904185e406b7a018aa7b62e7b4}{changeDataToolPointFromCircleAndTangent}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af535c719af950cf07c4476f9c7dd667d}{changeDataToolPointFromArcAndTangent}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af864b078675fd28ff9cc512e65609237}{changeDataToolShoulderPoint}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa5f28585af642b883a4299a454f2188f}{changeDataToolSpline}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a6b3a6bab338ed7fd80fc000a6c6087d7}{changeDataToolCubicBezier}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ae6204c8a24b246586668e83be11b0f3e}{changeDataToolSplinePath}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a3acab36af9155fbdb326a543a1b4f038}{changeDataToolCubicBezierPath}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa5362527ebf6e814ab8971dc67ad75f2}{changeDataToolTriangle}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a86b7822f96683ff646dde1c5afbed9ee}{changeDataToolLineIntersectAxis}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aefb393ed8da6af409914706e6ef86ca0}{changeDataToolCurveIntersectAxis}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_afc9509de5e1beff0a67713befb4ab0ee}{changeDataToolRotation}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a580599b60cbf259626ed468007da3cbb}{changeDataToolMove}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ac768296d97efebe686a4974b97bf9367}{changeDataToolMirrorByLine}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a9ba14b08ad6ccffd8d3000b313a24aca}{changeDataToolMirrorByAxis}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a74fbac355dfef8662dc0a71659d1a8ff}{changeDataToolEllipticalArc}}(\mbox{\hyperlink{namespace_v_p_e}{VPE}}::VProperty\ *property);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a01b75c8d0f343bc092633e2012c5b9e4}{showOptionsToolSinglePoint}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a06d98de5840cb67c97b2659268eb1911}{showOptionsToolEndLine}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a82a6d9b6e84d438f97feb4f029aaab85}{showOptionsToolAlongLine}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7663913ca9708156038b9dacc9be7029}{showOptionsToolArc}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ad5d90dc67624d596b3ad3f40d13cd400}{showOptionsToolArcWithLength}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aea84debb0347832f1abcaf49f52bb7c0}{showOptionsToolBisector}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a97808010e6799993ebdb04b34e5ee772}{showOptionsToolTrueDarts}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a4fb9a984b70d09979bb077394bc6336b}{showOptionsToolCutArc}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ae352c6dd0963ec9cc82b32d2197039f8}{showOptionsToolCutSpline}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1e97d7cc981e5d04f83a9deaa20398c7}{showOptionsToolCutSplinePath}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ae0cfcf231a870e793b0052e9e427ce4c}{showOptionsToolHeight}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ac1e066c10001875839a92e3f65e3b842}{showOptionsToolLine}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a01f3526a59622c47952b34419b11f97e}{showOptionsToolLineIntersect}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab3a33c4cdf6baeb935ec28454c2adb6c}{showOptionsToolNormal}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ace6e5771336f04845c0fa6349f78c1ee}{showOptionsToolPointOfContact}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7988a8706196213dee44e71861bd0462}{showOptionsToolPointOfIntersection}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa7376c0dd3c6ce561b69b2c2146fa6d0}{showOptionsToolPointOfIntersectionArcs}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a56e2c60150334aba9544a573a127a252}{showOptionsToolPointOfIntersectionCircles}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_acbb81546874c24baaff9861d0023fdc6}{showOptionsToolPointOfIntersectionCurves}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7dcafef7da8432907525ef7a508609d0}{showOptionsToolPointFromCircleAndTangent}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af59df774013b16cdad207862682efdc4}{showOptionsToolPointFromArcAndTangent}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a9cb6b942d765f3f583012a557c9e9e17}{showOptionsToolShoulderPoint}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a164798cb37eabaaeb62de4272d4bb105}{showOptionsToolSpline}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ab2f2974045c396fcd6e2f1747dd5113b}{showOptionsToolCubicBezier}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a67e0a673774e12e9abdecb9d2ffa6291}{showOptionsToolSplinePath}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a94babe793f95bd89fbfd4bd7e25dfce0}{showOptionsToolCubicBezierPath}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af230b970e74ece166b8ca89ff1a9362b}{showOptionsToolTriangle}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a22ec2ca0274791a3aa0304785e6148bf}{showOptionsToolLineIntersectAxis}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a58017d84f40eb1bea11ee9464f125d17}{showOptionsToolCurveIntersectAxis}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a2da57cbe141e4d55e67bfd938f459348}{showOptionsToolRotation}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aec0f825360e7e2200d834f58094663a8}{showOptionsToolMove}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af469b9d853e468be5f5086143e1b4de0}{showOptionsToolMirrorByLine}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a26560bdedf6bd392b04270a9e64e9233}{showOptionsToolMirrorByAxis}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00256\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a29b12b77741cc409d08a9dc347f3eb0f}{showOptionsToolEllipticalArc}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a114c0953f8cf53b6e0516f30836b1e4f}{updateOptionsToolSinglePoint}}();}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a5a3c8a2b75879b95664c92dfc4651ef1}{updateOptionsToolEndLine}}();}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a892a8c915210adf1da9c8412634097b5}{updateOptionsToolAlongLine}}();}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a16a2224cbb8c5a7b89e6c88d3c4ade0a}{updateOptionsToolArc}}();}
+\DoxyCodeLine{00262\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a95253c66f820c9437a6f907fa2919ffb}{updateOptionsToolArcWithLength}}();}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a6b34d34283a992f09cde587a00dd9f5c}{updateOptionsToolBisector}}();}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a7cca22222edb978b34e2f80082e6d89e}{updateOptionsToolTrueDarts}}();}
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_afd0f27e43a251938afeb9dc43ccef867}{updateOptionsToolCutArc}}();}
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a538e4a7206eb9907d9c847b02827179b}{updateOptionsToolCutSpline}}();}
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a0ca0cce1041fc25b85572294be17a145}{updateOptionsToolCutSplinePath}}();}
+\DoxyCodeLine{00268\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a1a4e6496e27a163a05d9c22a01e49255}{updateOptionsToolHeight}}();}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a06283097160424fcd2d577d53612319d}{updateOptionsToolLine}}();}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa804fff20f0796175ca09f45c335823d}{updateOptionsToolLineIntersect}}();}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a25668228241fb2bab377b429235c3fd5}{updateOptionsToolNormal}}();}
+\DoxyCodeLine{00272\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_adf557342869e8b5460bc9aa1364ea4f5}{updateOptionsToolPointOfContact}}();}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_af56c57105265b6f9a9e1d5c64c5ea362}{updateOptionsToolPointOfIntersection}}();}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ac723f1c9ccc784bbdd2990d4cb7e5c4f}{updateOptionsToolPointOfIntersectionArcs}}();}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a907f7c130f7d26d15a4d0fee69e801d1}{updateOptionsToolPointOfIntersectionCircles}}();}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a96ed4ff1cc698c2010c86cb0adaa7759}{updateOptionsToolPointOfIntersectionCurves}}();}
+\DoxyCodeLine{00277\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ac1b060dd60b880d37b07f83e83272670}{updateOptionsToolPointFromCircleAndTangent}}();}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a440e819f74651bffc5138c38c00bbfdd}{updateOptionsToolPointFromArcAndTangent}}();}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a260fc95e6f3e209940b7cca96072c393}{updateOptionsToolShoulderPoint}}();}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a82955507489881c2ec7dde1b3accb630}{updateOptionsToolSpline}}();}
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a240abed6a441dcadbee64f488a9d8e50}{updateOptionsToolCubicBezier}}();}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aafb33df793d7639bdbd74d9bb7d37259}{updateOptionsToolSplinePath}}();}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a67602e12cd2e9cc11415175852199676}{updateOptionsToolCubicBezierPath}}();}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a51685122ac3119f8cd34667f51f5ddd0}{updateOptionsToolTriangle}}();}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa374619854487a043d6122439f1db78d}{updateOptionsToolLineIntersectAxis}}();}
+\DoxyCodeLine{00286\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a21405471862e1f7ee0575b734eae95e3}{updateOptionsToolCurveIntersectAxis}}();}
+\DoxyCodeLine{00287\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a49f0a994818d0a7f153659bdbe10014a}{updateOptionsToolRotation}}();}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_a018217ba661a04ac8879f7aaef8531e0}{updateOptionsToolMove}}();}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_ae088f7157d7edfc1c24b38dbd2c37640}{updateOptionsToolMirrorByLine}}();}
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_aa763d947e22f801f6af973afe96ed773}{updateOptionsToolMirrorByAxis}}();}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_options_property_browser_acdf0d2e044a5891e7be4c32c62efc967}{updateOptionsToolEllipticalArc}}();}
+\DoxyCodeLine{00292\ \};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTOOLOPTIONSPROPERTYBROWSER\_H}}
+
+\end{DoxyCode}

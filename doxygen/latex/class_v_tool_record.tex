@@ -1,0 +1,232 @@
+\hypertarget{class_v_tool_record}{}\doxysection{VTool\+Record Class Reference}
+\label{class_v_tool_record}\index{VToolRecord@{VToolRecord}}
+
+
+The \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} class record about tool in history.  
+
+
+
+
+{\ttfamily \#include $<$vtoolrecord.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}{VTool\+Record}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_tool_record_a7d9e9dd0e91fdcf1200ae377b43aea8d}{VTool\+Record}} (const quint32 \&\mbox{\hyperlink{class_v_tool_record_af488e8aaf812801531f68cdd30844ec6}{id}}, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&\mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{type\+Tool}}, const QString \&\mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{name\+Draw}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_tool_record_a1a06eca4c83766a79bc5b296d0981f32}{operator==}} (const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&record) const
+\item 
+\mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \& \mbox{\hyperlink{class_v_tool_record_a2280f59d430123fbdd834a9bce2bfcf7}{operator=}} (const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&record)
+\item 
+\mbox{\hyperlink{class_v_tool_record_ad1fcd4430265513b2bbb0addd996444f}{VTool\+Record}} (const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&record)
+\item 
+quint32 \mbox{\hyperlink{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return tool id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_tool_record_a145f5653e30d51763e937453f5e2367d}{set\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Id set tool id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \mbox{\hyperlink{class_v_tool_record_a422d90158375df7ba7a08e3c4ada9571}{get\+Type\+Tool}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type\+Tool return tool type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_tool_record_a870e7aec8cf443b2e4cf72f756df407f}{set\+Type\+Tool}} (const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Type\+Tool set tool type. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_tool_record_afcb350cfb92dcf5a2ca38b4e84c6bf06}{get\+Draft\+Block\+Name}} () const
+\begin{DoxyCompactList}\small\item\em get\+Draft\+Block\+Name return pattern peace name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_tool_record_afa40f1bd17d1ee23f981213d926c39a9}{set\+Name\+Draw}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Name\+Draw set pattern peace name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_tool_record_a4eef2cf3518dd45adcdd0d5e16436f17}{$\sim$\+VTool\+Record}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_v_tool_record_af488e8aaf812801531f68cdd30844ec6}{id}}
+\begin{DoxyCompactList}\small\item\em id tool id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{type\+Tool}}
+\begin{DoxyCompactList}\small\item\em type\+Tool tool type. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{name\+Draw}}
+\begin{DoxyCompactList}\small\item\em name\+Draw pattern peace name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} class record about tool in history. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}\label{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}} 
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{VToolRecord()}{VToolRecord()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VTool\+Record\+::\+VTool\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} default constructor. 
+
+\mbox{\Hypertarget{class_v_tool_record_a7d9e9dd0e91fdcf1200ae377b43aea8d}\label{class_v_tool_record_a7d9e9dd0e91fdcf1200ae377b43aea8d}} 
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{VToolRecord()}{VToolRecord()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VTool\+Record\+::\+VTool\+Record (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id,  }\item[{const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&}]{type\+Tool,  }\item[{const QString \&}]{name\+Draw }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & tool id. \\
+\hline
+{\em type\+Tool} & tool type. \\
+\hline
+{\em name\+Draw} & pattern peace name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_record_ad1fcd4430265513b2bbb0addd996444f}\label{class_v_tool_record_ad1fcd4430265513b2bbb0addd996444f}} 
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\index{VToolRecord@{VToolRecord}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{VToolRecord()}{VToolRecord()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VTool\+Record\+::\+VTool\+Record (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&}]{record }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_tool_record_a4eef2cf3518dd45adcdd0d5e16436f17}\label{class_v_tool_record_a4eef2cf3518dd45adcdd0d5e16436f17}} 
+\index{VToolRecord@{VToolRecord}!````~VToolRecord@{$\sim$VToolRecord}}
+\index{````~VToolRecord@{$\sim$VToolRecord}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolRecord()}{~VToolRecord()}}
+{\footnotesize\ttfamily VTool\+Record\+::$\sim$\+VTool\+Record (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_tool_record_afcb350cfb92dcf5a2ca38b4e84c6bf06}\label{class_v_tool_record_afcb350cfb92dcf5a2ca38b4e84c6bf06}} 
+\index{VToolRecord@{VToolRecord}!getDraftBlockName@{getDraftBlockName}}
+\index{getDraftBlockName@{getDraftBlockName}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{getDraftBlockName()}{getDraftBlockName()}}
+{\footnotesize\ttfamily QString VTool\+Record\+::get\+Draft\+Block\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Draft\+Block\+Name return pattern peace name. 
+
+\begin{DoxyReturn}{Returns}
+pattern peace name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}\label{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}} 
+\index{VToolRecord@{VToolRecord}!getId@{getId}}
+\index{getId@{getId}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily quint32 VTool\+Record\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Id return tool id. 
+
+\begin{DoxyReturn}{Returns}
+id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_tool_record_a422d90158375df7ba7a08e3c4ada9571}\label{class_v_tool_record_a422d90158375df7ba7a08e3c4ada9571}} 
+\index{VToolRecord@{VToolRecord}!getTypeTool@{getTypeTool}}
+\index{getTypeTool@{getTypeTool}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{getTypeTool()}{getTypeTool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} VTool\+Record\+::get\+Type\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Type\+Tool return tool type. 
+
+\begin{DoxyReturn}{Returns}
+tool type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_tool_record_a2280f59d430123fbdd834a9bce2bfcf7}\label{class_v_tool_record_a2280f59d430123fbdd834a9bce2bfcf7}} 
+\index{VToolRecord@{VToolRecord}!operator=@{operator=}}
+\index{operator=@{operator=}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \& VTool\+Record\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&}]{record }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_tool_record_a1a06eca4c83766a79bc5b296d0981f32}\label{class_v_tool_record_a1a06eca4c83766a79bc5b296d0981f32}} 
+\index{VToolRecord@{VToolRecord}!operator==@{operator==}}
+\index{operator==@{operator==}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool VTool\+Record\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_tool_record}{VTool\+Record}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_tool_record_a145f5653e30d51763e937453f5e2367d}\label{class_v_tool_record_a145f5653e30d51763e937453f5e2367d}} 
+\index{VToolRecord@{VToolRecord}!setId@{setId}}
+\index{setId@{setId}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void VTool\+Record\+::set\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Id set tool id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_record_afa40f1bd17d1ee23f981213d926c39a9}\label{class_v_tool_record_afa40f1bd17d1ee23f981213d926c39a9}} 
+\index{VToolRecord@{VToolRecord}!setNameDraw@{setNameDraw}}
+\index{setNameDraw@{setNameDraw}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{setNameDraw()}{setNameDraw()}}
+{\footnotesize\ttfamily void VTool\+Record\+::set\+Name\+Draw (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Name\+Draw set pattern peace name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & pattern peace name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_record_a870e7aec8cf443b2e4cf72f756df407f}\label{class_v_tool_record_a870e7aec8cf443b2e4cf72f756df407f}} 
+\index{VToolRecord@{VToolRecord}!setTypeTool@{setTypeTool}}
+\index{setTypeTool@{setTypeTool}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{setTypeTool()}{setTypeTool()}}
+{\footnotesize\ttfamily void VTool\+Record\+::set\+Type\+Tool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Type\+Tool set tool type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & tool type. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_tool_record_af488e8aaf812801531f68cdd30844ec6}\label{class_v_tool_record_af488e8aaf812801531f68cdd30844ec6}} 
+\index{VToolRecord@{VToolRecord}!id@{id}}
+\index{id@{id}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily quint32 VTool\+Record\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+id tool id. 
+
+\mbox{\Hypertarget{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}\label{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}} 
+\index{VToolRecord@{VToolRecord}!nameDraw@{nameDraw}}
+\index{nameDraw@{nameDraw}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{nameDraw}{nameDraw}}
+{\footnotesize\ttfamily QString VTool\+Record\+::name\+Draw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+name\+Draw pattern peace name. 
+
+\mbox{\Hypertarget{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}\label{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}} 
+\index{VToolRecord@{VToolRecord}!typeTool@{typeTool}}
+\index{typeTool@{typeTool}!VToolRecord@{VToolRecord}}
+\doxysubsubsection{\texorpdfstring{typeTool}{typeTool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} VTool\+Record\+::type\+Tool\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+type\+Tool tool type. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/xml/\mbox{\hyperlink{vtoolrecord_8h}{vtoolrecord.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/xml/\mbox{\hyperlink{vtoolrecord_8cpp}{vtoolrecord.\+cpp}}\end{DoxyCompactItemize}

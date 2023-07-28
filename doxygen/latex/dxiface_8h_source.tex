@@ -1,0 +1,147 @@
+\hypertarget{dxiface_8h_source}{}\doxysection{dxiface.\+h}
+\label{dxiface_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/dxiface.h@{D:/Github/Seamly2D/src/libs/vdxf/dxiface.h}}
+\mbox{\hyperlink{dxiface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ DX\_IFACE\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ DX\_IFACE\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__interface_8h}{libdxfrw/drw\_interface.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{libdxfrw_8h}{libdxfrw/libdxfrw.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dxfdef_8h}{dxfdef.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }QFont;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{comment}{//class\ to\ store\ image\ data\ and\ path\ from\ DRW\_ImageDef}}
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__iface_img}{dx\_ifaceImg}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_r_w___image}{DRW\_Image}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classdx__iface_img_a0d50903e3cec740b77023b39e2d36714}{dx\_ifaceImg}}()}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdx__iface_img_a2f8ad650e8874949f82d681785b5fe66}{path}}()}
+\DoxyCodeLine{00026\ \ \ \ \ \{\}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdx__iface_img_aae2c1e83fb9e44807cdf3adfa48defa3}{dx\_ifaceImg}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_r_w___image}{DRW\_Image}}\&\ p)}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_d_r_w___image}{DRW\_Image}}(p),}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__iface_img_a2f8ad650e8874949f82d681785b5fe66}{path}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \{\}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdx__iface_img_afccc5dd99b35c6e2cb97b47cd6118b30}{\string~dx\_ifaceImg}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ \ \ \ \ std::string\ \mbox{\hyperlink{classdx__iface_img_a2f8ad650e8874949f82d681785b5fe66}{path}};\ \textcolor{comment}{//stores\ the\ image\ path}}
+\DoxyCodeLine{00035\ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//container\ class\ to\ store\ entites.}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_r_w___block}{DRW\_Block}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{classdx__iface_block_ac59a8abaa891409ddd4cec23acd75187}{dx\_ifaceBlock}}()}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdx__iface_block_ab56fee5975ea6d5b52470c30c38b88e8}{ent}}()}
+\DoxyCodeLine{00042\ \ \ \ \ \{\}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdx__iface_block_af5a38899b82901f43d6db5b98f74ba9b}{dx\_ifaceBlock}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_d_r_w___block}{DRW\_Block}}\&\ p)}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_d_r_w___block}{DRW\_Block}}(p),}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__iface_block_ab56fee5975ea6d5b52470c30c38b88e8}{ent}}()}
+\DoxyCodeLine{00047\ \ \ \ \ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdx__iface_block_a081e8dadf993efca3a11305eb287867d}{\string~dx\_ifaceBlock}}()\{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::list<DRW\_Entity*>::const\_iterator\ it=\mbox{\hyperlink{classdx__iface_block_ab56fee5975ea6d5b52470c30c38b88e8}{ent}}.begin();\ it!=\mbox{\hyperlink{classdx__iface_block_ab56fee5975ea6d5b52470c30c38b88e8}{ent}}.end();\ ++it)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ *it;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ std::list<DRW\_Entity*>\mbox{\hyperlink{classdx__iface_block_ab56fee5975ea6d5b52470c30c38b88e8}{ent}};\ \textcolor{comment}{//stores\ the\ entities\ list}}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//container\ class\ to\ store\ full\ dxf\ data.}}
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__data}{dx\_data}}\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classdx__data_aa60a19495d37839d83a55e6f8eb4dc60}{dx\_data}}()}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdx__data_a73acf0d4a8cfffb3b20a7db42476f5f3}{headerC}}(),}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_ad639096c163895dbfb7eadfada03d4ee}{lineTypes}}(),}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_aea649cf0f242d9dbda0737b10f6d6687}{layers}}(),}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_aa551808099ff2ad774db941986bfccbe}{dimStyles}}(),}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_abd3fa28d7dd094b14a8f96b86078e271}{VPorts}}(),}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_af80f849ac0172fedb1a6cff5eb453718}{textStyles}}(),}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_a7dd03aedd1c745b3729a1f9dc10707b7}{appIds}}(),}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_ad14ed9bb5f71e910da3343be1c9bf8f6}{blocks}}(),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_a4cd6448cd4b6509f816b1496a2b60ed3}{images}}(),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdx__data_a3dde24a036c58b5433f4f3d65550cea8}{mBlock}}(new\ \mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}())}
+\DoxyCodeLine{00071\ \ \ \ \ \{\}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{classdx__data_aa7775d4b6ba490c69f3cf8beb2177ce9}{\string~dx\_data}}()\{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{comment}{//cleanup,}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (std::list<dx\_ifaceBlock*>::const\_iterator\ it=\mbox{\hyperlink{classdx__data_ad14ed9bb5f71e910da3343be1c9bf8f6}{blocks}}.begin();\ it!=\mbox{\hyperlink{classdx__data_ad14ed9bb5f71e910da3343be1c9bf8f6}{blocks}}.end();\ ++it)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ *it;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{classdx__data_a3dde24a036c58b5433f4f3d65550cea8}{mBlock}};}
+\DoxyCodeLine{00078\ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___header}{DRW\_Header}}\ \mbox{\hyperlink{classdx__data_a73acf0d4a8cfffb3b20a7db42476f5f3}{headerC}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ the\ header\ vars}}
+\DoxyCodeLine{00081\ \ \ \ \ std::list<DRW\_LType>\mbox{\hyperlink{classdx__data_ad639096c163895dbfb7eadfada03d4ee}{lineTypes}};\ \ \ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ line\ types}}
+\DoxyCodeLine{00082\ \ \ \ \ std::list<DRW\_Layer>\mbox{\hyperlink{classdx__data_aea649cf0f242d9dbda0737b10f6d6687}{layers}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ layers}}
+\DoxyCodeLine{00083\ \ \ \ \ std::list<DRW\_Dimstyle>\mbox{\hyperlink{classdx__data_aa551808099ff2ad774db941986bfccbe}{dimStyles}};\ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ dimension\ styles}}
+\DoxyCodeLine{00084\ \ \ \ \ std::list<DRW\_Vport>\mbox{\hyperlink{classdx__data_abd3fa28d7dd094b14a8f96b86078e271}{VPorts}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ vports}}
+\DoxyCodeLine{00085\ \ \ \ \ std::list<DRW\_Textstyle>\mbox{\hyperlink{classdx__data_af80f849ac0172fedb1a6cff5eb453718}{textStyles}};\ \textcolor{comment}{//stores\ a\ copy\ of\ all\ text\ styles}}
+\DoxyCodeLine{00086\ \ \ \ \ std::list<DRW\_AppId>\mbox{\hyperlink{classdx__data_a7dd03aedd1c745b3729a1f9dc10707b7}{appIds}};\ \ \ \ \ \ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ line\ types}}
+\DoxyCodeLine{00087\ \ \ \ \ std::list<dx\_ifaceBlock*>\mbox{\hyperlink{classdx__data_ad14ed9bb5f71e910da3343be1c9bf8f6}{blocks}};\ \ \ \ \textcolor{comment}{//stores\ a\ copy\ of\ all\ blocks\ and\ the\ entities\ in\ it}}
+\DoxyCodeLine{00088\ \ \ \ \ std::list<dx\_ifaceImg*>\mbox{\hyperlink{classdx__data_a4cd6448cd4b6509f816b1496a2b60ed3}{images}};\ \ \ \ \ \ \textcolor{comment}{//temporary\ list\ to\ find\ images\ for\ link\ with\ DRW\_ImageDef.\ Do\ not\ delete\ it!!}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}*\ \mbox{\hyperlink{classdx__data_a3dde24a036c58b5433f4f3d65550cea8}{mBlock}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//container\ to\ store\ model\ entities}}
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classdx__data}{dx\_data}})}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__iface}{dx\_iface}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_d_r_w___interface}{DRW\_Interface}}}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{classdx__iface}{dx\_iface}}(\textcolor{keyword}{const}\ std::string\&\ file,\ \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ v,\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ varMeasurement,\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ varInsunits);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdx__iface_adfa4eca88ca52b4932e41b17598f8189}{\string~dx\_iface}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdx__iface_aaaa95a5336b8fa149984192018f9f76e}{fileExport}}(\textcolor{keywordtype}{bool}\ binary);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_abe8d8b51f81a2ef461462e4af434859f}{writeEntity}}(\mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}*\ e);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//reimplement\ virtual\ DRW\_Interface\ functions}}
+\DoxyCodeLine{00105\ \textcolor{comment}{//writer\ part,\ send\ all\ in\ class\ dx\_data\ to\ writer}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a8e10a45367b00cb49ba4e094d57c5152}{writeHeader}}(\mbox{\hyperlink{class_d_r_w___header}{DRW\_Header}}\&\ data);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_af068a4cb9a5c1e3022e1ed93a3c33141}{writeBlocks}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//only\ send\ the\ name,\ needed\ by\ the\ reader\ to\ prepare\ handles\ of\ blocks\ \&\ blockRecords}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_ae6caacacc471215206723ae72480e434}{writeBlockRecords}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//write\ entities\ of\ model\ space\ and\ first\ paper\_space}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a7f1bf1212351b263bdb51243769cf083}{writeEntities}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a7ff81808f71c727aafa6c573ceabff51}{writeLTypes}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_aa330d25140d54ead7795d1f5cd64b5a0}{writeLayers}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_af4fc28ddd12ba1554f747e0a78463f84}{writeTextstyles}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a5062fc90dc97c5172e0fe8945eaa970b}{writeVports}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a5c5c098f475be255af01c0844e0c3433}{writeDimstyles}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a1b731ad982e0e73bc536e59751912df9}{writeAppId}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a717ea28ab64a19a2063587135c62ce4c}{AddEntity}}(\mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}*\ e);}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8STRING}}\ \mbox{\hyperlink{classdx__iface_ac4e3aa1c54d3cdabe4c2a99f66eaed93}{AddFont}}(\textcolor{keyword}{const}\ QFont\ \&f);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a2a4cb5cb793d07fbcdea0ad8888969d3}{AddBlock}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}*\ block);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a4bc695489404db4c875575ef5b2e15e6}{AddQtLTypes}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a761b6dec69345355efc0f9d851e91f22}{AddDefLayers}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_ad4602ea8e7beeb95f0e6e8b9b497c2e5}{AddAAMALayers}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_af0d8cebd48a52fae2f589fd66d64e447}{AddAAMAHeaderData}}();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classdx__iface}{dx\_iface}})}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{classdxf_r_w}{dxfRW}}*\ \mbox{\hyperlink{classdx__iface_a7ebf29986a6d7b30aed28431811698fa}{dxfW}};\ \textcolor{comment}{//pointer\ to\ writer,\ needed\ to\ send\ data}}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{classdx__data}{dx\_data}}\ \mbox{\hyperlink{classdx__iface_a6009a5005a177c8d3b18f360b67eecd4}{cData}};\ \textcolor{comment}{//\ class\ to\ store\ or\ read\ data}}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{namespace_d_r_w}{DRW}}::Version\ \mbox{\hyperlink{classdx__iface_a0a1b632d266e4559d9387ad529f33559}{version}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_ae8490149564c2012f1b95164d4e6aa4e}{InitHeader}}(\mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ varMeasurement,\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ varInsunits);}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a3d37759f87850fa3eeaef1ce7c6ab278}{InitTextstyles}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdx__iface_a4a90e04f197174961a230d540763e0ca}{InitAppId}}();}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ static\ std::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{classdx__iface_afc21c1b1735cf598bb2537ac3347a4d1}{LocaleToISO}}();}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DX\_IFACE\_H}}
+
+\end{DoxyCode}

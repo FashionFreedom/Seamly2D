@@ -1,0 +1,58 @@
+\hypertarget{drw__classes_8h_source}{}\doxysection{drw\+\_\+classes.\+h}
+\label{drw__classes_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/drw\_classes.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/drw\_classes.h}}
+\mbox{\hyperlink{drw__classes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ libDXFrw\ -\/\ Library\ to\ read/write\ DXF\ files\ (ascii\ \&\ binary)\ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2011-\/2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DRW\_CLASSES\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DRW\_CLASSES\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__base_8h}{drw\_base.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_reader}{dxfReader}};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_writer}{dxfWriter}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_r_w___class}{DRW\_Class}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_a18bae8d39b3fb6a2437a57a4161e66e9}{DRW\_Class}}()}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_d_r_w___class_af705b2543ee2e1c20719c9bc8f4bf955}{recName}}(),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_acde079b8bf4ff8e12ddbb592d492a22f}{className}}(),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_a15b27bae29a5245c739f3de255e65760}{appName}}(),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_a093a40e69719110340d4954cdcfde582}{proxyFlag}}(),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_a7be5b440cb53a09aafb4bfbb09fc51f0}{instanceCount}}(),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_ae17a049d7a64255f1c413d8f06bf788a}{wasaProxyFlag}}(),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_ab6d13ec9b7720e2b04533d0adbb6b1f6}{entityFlag}}()}
+\DoxyCodeLine{00038\ \ \ \ \ \{\}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___class_a623357be703a2c4980e6b5feec2e1cc9}{\string~DRW\_Class}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___class_a4887d5067ef7255de380859974fd095b}{parseCode}}(\textcolor{keywordtype}{int}\ code,\ \mbox{\hyperlink{classdxf_reader}{dxfReader}}\ *reader);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___class_aadd5178efe1304d35045b1d19582c01d}{write}}(\mbox{\hyperlink{classdxf_writer}{dxfWriter}}\ *writer,\ \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ ver);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8STRING}}\ \mbox{\hyperlink{class_d_r_w___class_af705b2543ee2e1c20719c9bc8f4bf955}{recName}};\ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8STRING}}\ \mbox{\hyperlink{class_d_r_w___class_acde079b8bf4ff8e12ddbb592d492a22f}{className}};\ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8STRING}}\ \mbox{\hyperlink{class_d_r_w___class_a15b27bae29a5245c739f3de255e65760}{appName}};\ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_r_w___class_a093a40e69719110340d4954cdcfde582}{proxyFlag}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_r_w___class_a7be5b440cb53a09aafb4bfbb09fc51f0}{instanceCount}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_r_w___class_ae17a049d7a64255f1c413d8f06bf788a}{wasaProxyFlag}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_r_w___class_ab6d13ec9b7720e2b04533d0adbb6b1f6}{entityFlag}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ EOF}}
+
+\end{DoxyCode}

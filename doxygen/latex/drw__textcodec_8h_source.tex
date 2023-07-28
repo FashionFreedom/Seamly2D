@@ -1,0 +1,38 @@
+\hypertarget{drw__textcodec_8h_source}{}\doxysection{drw\+\_\+textcodec.\+h}
+\label{drw__textcodec_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/drw\_textcodec.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/drw\_textcodec.h}}
+\mbox{\hyperlink{drw__textcodec_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DRW\_TEXTCODEC\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DRW\_TEXTCODEC\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }QTextCodec;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_r_w___text_codec}{DRW\_TextCodec}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___text_codec_a4b282b68e0c198d9e4130d2b4222c98b}{DRW\_TextCodec}}();}
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_r_w___text_codec_abba7567a1e4ac13328ac58ac6fc2f809}{fromUtf8}}(\textcolor{keyword}{const}\ std::string\ \&s);}
+\DoxyCodeLine{00014\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}{toUtf8}}(\textcolor{keyword}{const}\ std::string\ \&s);}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_d_r_w___text_codec_a268cb7f2caf0f9820d177c935ea8010d}{getVersion}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_d_r_w___text_codec_a19e5deb2aa7fd1c15400f0e4045d2dbf}{version}};\}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}{setVersion}}(std::string\ *v,\ \textcolor{keywordtype}{bool}\ dxfFormat);}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}{setVersion}}(\textcolor{keywordtype}{int}\ v,\ \textcolor{keywordtype}{bool}\ dxfFormat);}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}{setCodePage}}(\textcolor{keyword}{const}\ std::string\ *c,\ \textcolor{keywordtype}{bool}\ dxfFormat);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w___text_codec_a53a9aa4c3faa66a172213e58270bbbd8}{setCodePage}}(\textcolor{keyword}{const}\ std::string\ \&c,\ \textcolor{keywordtype}{bool}\ dxfFormat)\{\mbox{\hyperlink{class_d_r_w___text_codec_a53a9aa4c3faa66a172213e58270bbbd8}{setCodePage}}(\&c,\ dxfFormat);\}}
+\DoxyCodeLine{00020\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}{getCodePage}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_d_r_w___text_codec_a1e82fb98ff086151393eb6e80b12b173}{cp}};\}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ \mbox{\hyperlink{class_d_r_w___text_codec_a8358262a1931afd697a142c5aed52b0e}{correctCodePage}}(\textcolor{keyword}{const}\ std::string\&\ s);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_d_r_w___text_codec}{DRW\_TextCodec}})}
+\DoxyCodeLine{00027\ \ \ \ \ int\ \mbox{\hyperlink{class_d_r_w___text_codec_a19e5deb2aa7fd1c15400f0e4045d2dbf}{version}};}
+\DoxyCodeLine{00028\ \ \ \ \ std::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_d_r_w___text_codec_a1e82fb98ff086151393eb6e80b12b173}{cp}};}
+\DoxyCodeLine{00029\ \ \ \ \ QTextCodec\ *\mbox{\hyperlink{class_d_r_w___text_codec_a263acfc2f6d694a69b614834d6efafe7}{conv}};}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRW\_TEXTCODEC\_H}}
+
+\end{DoxyCode}

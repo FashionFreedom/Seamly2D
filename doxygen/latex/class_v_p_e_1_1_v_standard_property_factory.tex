@@ -1,0 +1,82 @@
+\hypertarget{class_v_p_e_1_1_v_standard_property_factory}{}\doxysection{VPE\+::VStandard\+Property\+Factory Class Reference}
+\label{class_v_p_e_1_1_v_standard_property_factory}\index{VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}}
+
+
+{\ttfamily \#include $<$vstandardpropertyfactory.\+h$>$}
+
+Inheritance diagram for VPE\+::VStandard\+Property\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_p_e_1_1_v_standard_property_factory}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_standard_property_factory_afc48c5d94a43199fc91371e3fe3ddd7f}{VStandard\+Property\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_standard_property_factory_a86ea56aae783b3aa7a76ac835ce974a9}{VStandard\+Property\+Factory}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VProperty\+Factory\+Manager}} $\ast$manager)
+\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_standard_property_factory_a6b2636b6af4a1d2df408cfd080b0cbdf}{create\+Property}} (const QString \&type, const QString \&name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VPE\+::\+VAbstract\+Property\+Factory}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory_a08f185741993de9b143cfe10fb1bf064}{$\sim$\+VAbstract\+Property\+Factory}} ()
+\begin{DoxyCompactList}\small\item\em Empty virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory_a42814501c6e58e328284e37d574e08cf}{create\+Property}} (const QString \&type, const QString \&name)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The standard property factory is able to create all the properties that are included in VProperty\+Explorer by default. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_standard_property_factory_afc48c5d94a43199fc91371e3fe3ddd7f}\label{class_v_p_e_1_1_v_standard_property_factory_afc48c5d94a43199fc91371e3fe3ddd7f}} 
+\index{VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}!VStandardPropertyFactory@{VStandardPropertyFactory}}
+\index{VStandardPropertyFactory@{VStandardPropertyFactory}!VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}}
+\doxysubsubsection{\texorpdfstring{VStandardPropertyFactory()}{VStandardPropertyFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPE\+::\+VStandard\+Property\+Factory\+::\+VStandard\+Property\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_standard_property_factory_a86ea56aae783b3aa7a76ac835ce974a9}\label{class_v_p_e_1_1_v_standard_property_factory_a86ea56aae783b3aa7a76ac835ce974a9}} 
+\index{VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}!VStandardPropertyFactory@{VStandardPropertyFactory}}
+\index{VStandardPropertyFactory@{VStandardPropertyFactory}!VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}}
+\doxysubsubsection{\texorpdfstring{VStandardPropertyFactory()}{VStandardPropertyFactory()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPE\+::\+VStandard\+Property\+Factory\+::\+VStandard\+Property\+Factory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VProperty\+Factory\+Manager}} $\ast$}]{manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor 
+\begin{DoxyParams}{Parameters}
+{\em manager} & Registers this factory at the manager for all it\textquotesingle{}s types \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_standard_property_factory_a6b2636b6af4a1d2df408cfd080b0cbdf}\label{class_v_p_e_1_1_v_standard_property_factory_a6b2636b6af4a1d2df408cfd080b0cbdf}} 
+\index{VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}!createProperty@{createProperty}}
+\index{createProperty@{createProperty}!VPE::VStandardPropertyFactory@{VPE::VStandardPropertyFactory}}
+\doxysubsubsection{\texorpdfstring{createProperty()}{createProperty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+VStandard\+Property\+Factory\+::create\+Property (\begin{DoxyParamCaption}\item[{const QString \&}]{type,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Creates a new property of a certain type and assigns a name and description (otionally) 
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of the property as string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the created property or NULL if it couldn\textquotesingle{}t be be created 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory_a42814501c6e58e328284e37d574e08cf}{VPE\+::\+VAbstract\+Property\+Factory}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vstandardpropertyfactory_8h}{vstandardpropertyfactory.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vstandardpropertyfactory_8cpp}{vstandardpropertyfactory.\+cpp}}\end{DoxyCompactItemize}

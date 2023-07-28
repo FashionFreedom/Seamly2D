@@ -1,0 +1,85 @@
+\hypertarget{vgrainlinedata__p_8h_source}{}\doxysection{vgrainlinedata\+\_\+p.\+h}
+\label{vgrainlinedata__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vgrainlinedata\_p.h@{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vgrainlinedata\_p.h}}
+\mbox{\hyperlink{vgrainlinedata__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 23\ 2,\ 2017}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ -\/\ 2022\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VGRAINLINEDATA\_P\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VGRAINLINEDATA\_P\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{floatitemdef_8h}{floatitemdef.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00040\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00041\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ class\ \mbox{\hyperlink{class_v_grainline_data_private}{VGrainlineDataPrivate}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_private_a8da6327adb111b36117fe1b6f53388b7}{VGrainlineDataPrivate}}()}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ :\ m\_qsLength()}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ ,\ m\_dRotation()}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ ,\ m\_eArrowType(\mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}::\mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566a6aa519516113adec1b8eb4da918c9a1b}{atBoth}})}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ,\ m\_centerAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ,\ m\_topAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ,\ m\_bottomAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00053\ \ \ \ \ \{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_private_a1880504de86dc539c601680420c72aa8}{VGrainlineDataPrivate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_grainline_data_private}{VGrainlineDataPrivate}}\ \&data)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ :\ QSharedData(data)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ,\ m\_qsLength(data.m\_qsLength)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ,\ m\_dRotation(data.m\_dRotation)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ ,\ m\_eArrowType(data.m\_eArrowType)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ ,\ m\_centerAnchorPoint(data.m\_centerAnchorPoint)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ ,\ m\_topAnchorPoint(data.m\_topAnchorPoint)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ ,\ m\_bottomAnchorPoint(data.m\_bottomAnchorPoint)}
+\DoxyCodeLine{00063\ \ \ \ \ \{\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_private_ac70798d053bd795d13c711dee4b98e22}{\string~VGrainlineDataPrivate}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ QString\ \ \ m\_qsLength;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \ \ QString\ \ \ m\_dRotation;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}\ m\_eArrowType;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ quint32\ \ \ m\_centerAnchorPoint;\ }
+\DoxyCodeLine{00071\ \ \ \ \ quint32\ \ \ m\_topAnchorPoint;\ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ quint32\ \ \ m\_bottomAnchorPoint;\ }
+\DoxyCodeLine{00074\ private:}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_private}{VGrainlineDataPrivate}}\ \&operator=(const\ \mbox{\hyperlink{class_v_grainline_data_private}{VGrainlineDataPrivate}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VGRAINLINEDATA\_P\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+var class_history_dialog =
+[
+    [ "HistoryDialog", "class_history_dialog.html#ac3e217b51508cb35e942d9133b8f2a1d", null ],
+    [ "~HistoryDialog", "class_history_dialog.html#a75b48e33e0a7116df806f91b82a4f812", null ],
+    [ "attrUInt", "class_history_dialog.html#a982877d6f95b130a7fc60259a5a2e3a7", null ],
+    [ "cellClicked", "class_history_dialog.html#a94f298d1b6719c55f9b6d90a60d2e604", null ],
+    [ "changedCursor", "class_history_dialog.html#a30dfbcf74878290ebe83482207231019", null ],
+    [ "changeEvent", "class_history_dialog.html#a7999dc24fc8be2378189077f6db80cd4", null ],
+    [ "closeEvent", "class_history_dialog.html#ac8d0ae7d5c5e33b970ced33bd3ff98c9", null ],
+    [ "copyToClipboard", "class_history_dialog.html#adf70d197c8be0e3ec11aaa93ba943d54", null ],
+    [ "cursorRow", "class_history_dialog.html#aa5f00566eff226515c1c918bfb280190", null ],
+    [ "DialogAccepted", "class_history_dialog.html#a5ab4a230b0c02cc3a4eb94e1ec3f80f7", null ],
+    [ "DialogApply", "class_history_dialog.html#ae61fccaed8f633844fd11b78ebf95a6d", null ],
+    [ "eventFilter", "class_history_dialog.html#a9077aabd78d9a9cd48d8a76282ba3f2b", null ],
+    [ "fillTable", "class_history_dialog.html#ad4f16fecea094cd9b6e3d21e6cc50cdc", null ],
+    [ "findText", "class_history_dialog.html#a32ea69eadcc6ea91b849f09259e6f4be", null ],
+    [ "getPointName", "class_history_dialog.html#a3b49e9cb74d1b82927bd74078ddd5fbe", null ],
+    [ "initializeTable", "class_history_dialog.html#a8a4f2727bb6c01f8d33629dfa7e5388e", null ],
+    [ "record", "class_history_dialog.html#ab371f99d6b839f6872eb945ccc278b5d", null ],
+    [ "retranslateUi", "class_history_dialog.html#a14d52b6c7f0a84a8e9ef48d188e06692", null ],
+    [ "showHistoryTool", "class_history_dialog.html#acc153d967abdc662e17c31f9f24b5cf6", null ],
+    [ "showTool", "class_history_dialog.html#a2784ba399bccaced32339f8d7cfb4a27", null ],
+    [ "updateHistory", "class_history_dialog.html#a060d0c636c6f5e959d6ab21f3589b8c2", null ],
+    [ "m_cursorRow", "class_history_dialog.html#a372a66e7419fb91fd53772ac012f7ff2", null ],
+    [ "m_cursorToolRecordRow", "class_history_dialog.html#a47d2bdcebc6039c1398907c0a201f739", null ],
+    [ "m_doc", "class_history_dialog.html#a02013ea6d329e60b953dc306a08afb58", null ],
+    [ "ui", "class_history_dialog.html#a65882bcb15afc5a159ccc21927cf9356", null ]
+];

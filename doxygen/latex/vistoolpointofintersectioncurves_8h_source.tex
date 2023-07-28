@@ -1,0 +1,98 @@
+\hypertarget{vistoolpointofintersectioncurves_8h_source}{}\doxysection{vistoolpointofintersectioncurves.\+h}
+\label{vistoolpointofintersectioncurves_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolpointofintersectioncurves.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolpointofintersectioncurves.h}}
+\mbox{\hyperlink{vistoolpointofintersectioncurves_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vistoolpointofintersectioncurves.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 24\ 1,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VISTOOLPOINTOFINTERSECTIONCURVES\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VISTOOLPOINTOFINTERSECTIONCURVES\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vispath_8h}{vispath.h}}"{}}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vis_tool_point_of_intersection_curves}{VisToolPointOfIntersectionCurves}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_path}{VisPath}}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves}{VisToolPointOfIntersectionCurves}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_ab150cb4be5611f3e2d132abbd08aa60b}{\string~VisToolPointOfIntersectionCurves}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a8ecd3450ddd34ec17f0011c9c896dae8}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_ab381a3d0305d18fc4c9ef1ec40a2e2b0}{VisualMode}}(const\ quint32\ \&\textcolor{keywordtype}{id})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a6949a82d41494f08ca2896a8dcc2196a}{setObject2Id}}(const\ quint32\ \&value);}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_aa4e502a32883dbf52018b4a6ee78bce5}{setVCrossPoint}}(const\ \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCrossCurvesPoint}}\ \&value);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a99260c138f5cb2b6f88769b4aa3e015a}{setHCrossPoint}}(const\ \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCrossCurvesPoint}}\ \&value);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a8da7da91f76b6851cfd30ab68e31e8eb}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a45b574129f37b7e9489e513fb0516f55ab083aaacc591a120455233dc53b0fcf6}{Type}};\}}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a45b574129f37b7e9489e513fb0516f55ab083aaacc591a120455233dc53b0fcf6}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ToolPointOfIntersectionCurves)\};}
+\DoxyCodeLine{00082\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_vis_tool_point_of_intersection_curves}{VisToolPointOfIntersectionCurves}})}
+\DoxyCodeLine{00084\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a222c453e18be4384f0309d465c8c5fb1}{object2Id}};}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCrossCurvesPoint}}\ \ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a07732b2490f9aeed461355e5b43b3054}{vCrossPoint}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCrossCurvesPoint}}\ \ \mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_a22be500b8a91bee7dc98da9e4e99fdfa}{hCrossPoint}};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ \ \ \ *\mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_ac8e08423521401bcb8604b0beb480280}{point}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_v_curve_path_item}{VCurvePathItem}}\ \ \ \ *\mbox{\hyperlink{class_vis_tool_point_of_intersection_curves_ab0a23e4df9eec3cbcbbe0cc7a3d16bcc}{visCurve2}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VISTOOLPOINTOFINTERSECTIONCURVES\_H}}
+
+\end{DoxyCode}

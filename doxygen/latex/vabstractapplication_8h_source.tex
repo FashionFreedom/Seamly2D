@@ -1,0 +1,198 @@
+\hypertarget{vabstractapplication_8h_source}{}\doxysection{vabstractapplication.\+h}
+\label{vabstractapplication_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/vabstractapplication.h@{D:/Github/Seamly2D/src/libs/vmisc/vabstractapplication.h}}
+\mbox{\hyperlink{vabstractapplication_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractapplication.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 18\ 6,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTAPPLICATION\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VABSTRACTAPPLICATION\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QApplication>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QGraphicsScene>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QLocale>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vcontainer.h"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vtranslatevars.h"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{def_8h}{def.h}}"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vcommonsettings_8h}{vcommonsettings.h}}"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vlockguard_8h}{vlockguard.h}}"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vsettings_8h}{vsettings.h}}"{}}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }QUndoStack;}
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}};\textcolor{comment}{//\ use\ in\ define}}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00078\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#if\ defined(qApp)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#undef\ qApp}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ qApp\ (static\_cast<VAbstractApplication*>(QCoreApplication::instance()))}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}}\ :\ \textcolor{keyword}{public}\ QApplication}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}}(\textcolor{keywordtype}{int}\ \&argc,\ \textcolor{keywordtype}{char}\ **\ argv);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_abstract_application_a3323dd8b7f70a78e93587e5c441b05b5}{\string~VAbstractApplication}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *\mbox{\hyperlink{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}{TrVars}}()=0;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a7f8f1033b717fb83f76d40aea526db87}{translationsPath}}(\textcolor{keyword}{const}\ QString\ \&locale\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a92886d256c5e9be89659da9dcc191107}{loadTranslations}}(\textcolor{keyword}{const}\ QString\ \&locale);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{patternUnit}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a12b9545d6469461f81797e73dd65aae8}{patternUnitP}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a2d5a5eb9c0102caf4176fd5542c2bba7}{setPatternUnit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \&\mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{patternUnit}});}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{MeasurementsType}}\ \mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{patternType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ab6ab93b0a13844b1d56d9050834e9de2}{setPatternType}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{MeasurementsType}}\ \&\mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{patternType}});}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}{OpenSettings}}()=0;}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_v_common_settings}{VCommonSettings}}\ *\mbox{\hyperlink{class_v_abstract_application_aaf7f1160ef591e625cb67d208c6eb6c8}{Settings}}();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00109\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}{LocaleToString}}(\textcolor{keyword}{const}\ T\ \&value);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ QGraphicsScene\ \ *\mbox{\hyperlink{class_v_abstract_application_af0feb90ee902a084bfc7abe2afb5a744}{getCurrentScene}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a2f8427be7b244fd1d1f16ede1bd1dd0a}{setCurrentScene}}(QGraphicsScene\ **value);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}}\ *\mbox{\hyperlink{class_v_abstract_application_adad4a5d898ccf03d503fdf9896845eda}{getSceneView}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ae268ff4b92ec50ceeb624ede966ad2a6}{setSceneView}}(\mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}}\ *value);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a82a68e4e4625193cb2cb439325ab8699}{toPixel}}(\textcolor{keywordtype}{double}\ val)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a50d149897aa4a87d01a071420d86c6c5}{fromPixel}}(\textcolor{keywordtype}{double}\ pix)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a0dfd5d5f8049b62a35c870ea3521b616}{setCurrentDocument}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}{doc}});}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_application_ae1b899800e84b0875383c64d76ad3e64}{getCurrentDocument}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_aebdbce178306c330a0e33b3a1107c1fb}{setCurrentData}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}{data}});}
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a66802fa332e70eed60f483f1a725bef1}{getCurrentData}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a55128bf836ebd9f9875ad787cb022292}{getOpeningPattern}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a311fbafead9e7563ac189b123b1513ba}{setOpeningPattern}}();}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ QWidget\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a442b5d6addd10367c87f86eebba2ced2}{getMainWindow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a10d1e05f0f266507a37c5fc497d1203b}{setMainWindow}}(QWidget\ *value);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ QUndoStack\ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a5ee7ed495fc2df2bd6cc924767c82cc8}{getUndoStack}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}{IsAppInGUIMode}}()\textcolor{keyword}{const}\ =0;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}{getFilePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}{setFilePath}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00140\ \ \ \ \ QUndoStack\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_aa76510ae070b475c90495d3606ecf1c6}{undoStack}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00146\ \ \ \ \ QWidget\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a09295c357a27ac2abbc72bceb293d8f4}{mainWindow}};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{class_v_common_settings}{VCommonSettings}}\ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a50de82036e454190206354a81bd24589}{settings}};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_v_abstract_application_a788c21e17e61da37d8640b8b528c144d}{qtTranslator}};}
+\DoxyCodeLine{00154\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_v_abstract_application_a8284d973270795306e00c450aaca6700}{qtxmlTranslator}};}
+\DoxyCodeLine{00155\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_v_abstract_application_a0eba654b3a36e19541d71b5bf8f79856}{qtBaseTranslator}};}
+\DoxyCodeLine{00156\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_v_abstract_application_a6f59fff51e1dd866f7366475dedfb449}{appTranslator}};}
+\DoxyCodeLine{00157\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_v_abstract_application_a57da31630cdb4ed4ba90f46275dc21fc}{pmsTranslator}};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}{InitTrVars}}()=0;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00162\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}})}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a0c3f2f86e53faf19f81c5748127fc6be}{\_patternUnit}};}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{MeasurementsType}}\ \ \ \mbox{\hyperlink{class_v_abstract_application_a2e09cc95b39f6b8d057dc9c15b57f64a}{\_patternType}};}
+\DoxyCodeLine{00165\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}{patternFilePath}};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ QGraphicsScene\ \ \ \ \ **\mbox{\hyperlink{class_v_abstract_application_a52285ac28a06f9adb5420456333fbdf1}{currentScene}};}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}}\ \ *\mbox{\hyperlink{class_v_abstract_application_a21845de2391914691b5978a4f3a3cf35}{sceneView}};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ \ \ *\mbox{\hyperlink{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}{doc}};}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}{data}};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_a0d83297b63dae585ae44f452a4752ef4}{openingPattern}};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_abstract_application_a62efee28a6929615e17eb77f79d57caa}{ClearTranslation}}();}
+\DoxyCodeLine{00180\ \};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00183\ inline\ QString\ \mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}}::\mbox{\hyperlink{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}{getFilePath}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00184\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}{patternFilePath}};}
+\DoxyCodeLine{00186\ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00189\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}{VAbstractApplication::setFilePath}}(\textcolor{keyword}{const}\ QString\ \&value)}
+\DoxyCodeLine{00190\ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}{patternFilePath}}\ =\ value;}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00195\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00196\ \textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}{VAbstractApplication::LocaleToString}}(\textcolor{keyword}{const}\ T\ \&value)}
+\DoxyCodeLine{00197\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ QLocale\ loc;}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{vabstractapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>GetOsSeparator()\ ?\ loc\ =\ QLocale()\ :\ loc\ =\ QLocale::c();}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{return}\ loc.toString(value);}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTAPPLICATION\_H}}
+
+\end{DoxyCode}

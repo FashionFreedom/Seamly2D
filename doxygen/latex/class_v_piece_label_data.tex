@@ -1,0 +1,303 @@
+\hypertarget{class_v_piece_label_data}{}\doxysection{VPiece\+Label\+Data Class Reference}
+\label{class_v_piece_label_data}\index{VPieceLabelData@{VPieceLabelData}}
+
+
+The \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} class holds some information about a single piece like letter, name, material type, cut number and placement.  
+
+
+
+
+{\ttfamily \#include $<$vpiecelabeldata.\+h$>$}
+
+Inheritance diagram for VPiece\+Label\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_piece_label_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_label_data_aa696b7399c7f653e36430064db0cb9d0}{VPiece\+Label\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_piece_label_data_acb8536b6feec19d91a89ac378d7c5122}{VPiece\+Label\+Data}} (const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&data)
+\item 
+virtual \mbox{\hyperlink{class_v_piece_label_data_a19745f076396856eb6aa1394f34c2de0}{$\sim$\+VPiece\+Label\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& \mbox{\hyperlink{class_v_piece_label_data_a143bed234ab0f0b74e264d856d3fcfad}{operator=}} (const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&data)
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a752704e0a02ed9b45b0711c1f74ed5e0}{Swap}} (\mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&data) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a89b35b672b8ae4477e05c688674966f0}{Clear}} ()
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_af6a4fd19d1adf87e4d67860f9387b6b5}{Get\+Letter}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_aae9c4f2bc5d0e447bd2d397bcd1ca907}{Set\+Letter}} (const QString \&qs\+Letter)
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_abd80bec0f02815c9bd32fe968779890a}{Get\+Annotation}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a02e6d04d5279cc4ba7106df32a0fe0da}{Set\+Annotation}} (const QString \&val)
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_a229fdba7798fcbe16e1208b32a31b85d}{Get\+Orientation}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a8e915292e01281b51139aeb91e845b3a}{Set\+Orientation}} (const QString \&val)
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_a8ad449f982182bab1f91d2dcd78f33f7}{Get\+Rotation\+Way}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a391ed7ffd3dcf1253dd17b1b347ee885}{Set\+Rotation\+Way}} (const QString \&val)
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_af4554860110d64941c1304ffee636a7f}{Get\+Tilt}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a33759105ae16cddbc305ddcb6687b9b1}{Set\+Tilt}} (const QString \&val)
+\item 
+QString \mbox{\hyperlink{class_v_piece_label_data_af8de81756bfeb485e0a86008109786e0}{Get\+Fold\+Position}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a4aa7cbd7b6b879042b62122e17c889c8}{Set\+Fold\+Position}} (const QString \&val)
+\item 
+int \mbox{\hyperlink{class_v_piece_label_data_a591e37c7aa3fff6c0be39de51b724fe3}{Get\+Quantity}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a52b77d639d64cc517211a889b2b02fc1}{Set\+Quantity}} (int val)
+\item 
+bool \mbox{\hyperlink{class_v_piece_label_data_a53bb168e6bc12f7215b16590a89347bc}{Is\+On\+Fold}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a0e15f5b967a8726c7780c0fabba1c909}{Set\+On\+Fold}} (bool on\+Fold)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{class_v_piece_label_data_a5157a34465d924aa31dfbd214a5267d0}{Get\+Label\+Template}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_label_data_a12de53622c5f97c769131afaa1b38631}{Set\+Label\+Template}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ \&lines)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_pattern_label_data_a02481ee18fba569a56998323ebd70911}{VPattern\+Label\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_pattern_label_data_a388546b734ac0116eadbad5ccf7218ac}{VPattern\+Label\+Data}} (const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \&data)
+\item 
+virtual \mbox{\hyperlink{class_v_pattern_label_data_ab32c4e486f686b9bd1a3fa779f654b9e}{$\sim$\+VPattern\+Label\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \& \mbox{\hyperlink{class_v_pattern_label_data_a291f56c6b50d1f5b65a1f6209f603be6}{operator=}} (const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \&data)
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a0ee8a27259ec11b454df6ba36f484042}{Swap}} (\mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \&data) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+QString \mbox{\hyperlink{class_v_pattern_label_data_ac539f7183a0dcbb05ca7c27e0bc63a99}{Get\+Label\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_ad00e6b782e2db0bc3b25431eeaab84d4}{Set\+Label\+Width}} (const QString \&d\+LabelW)
+\item 
+QString \mbox{\hyperlink{class_v_pattern_label_data_afe1ebc460ab76800f7c2899c1f183bc2}{Get\+Label\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a36ce50c4279803449ff3d688113026d0}{Set\+Label\+Height}} (const QString \&d\+LabelH)
+\item 
+int \mbox{\hyperlink{class_v_pattern_label_data_a7bb9405354b53b986a5fe39283d4a4a2}{get\+Font\+Size}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a3deee7e5f6d72150fd33e30922b7f741}{Set\+Font\+Size}} (int i\+Size)
+\item 
+QString \mbox{\hyperlink{class_v_pattern_label_data_ad8545fc83ba86b2a4ee0ba6b4c6c795d}{Get\+Rotation}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a89fbd49ec9499135609779fa0ca20f6e}{Set\+Rotation}} (const QString \&d\+Rot)
+\item 
+quint32 \mbox{\hyperlink{class_v_pattern_label_data_a4ede3be45351688447665d7724ff2ccf}{center\+Anchor\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a0f6be5fb903dbf023ffa752d01c9ba5f}{set\+Center\+Anchor\+Point}} (const quint32 \&\mbox{\hyperlink{class_v_pattern_label_data_a4ede3be45351688447665d7724ff2ccf}{center\+Anchor\+Point}})
+\item 
+quint32 \mbox{\hyperlink{class_v_pattern_label_data_ab40bb30622d3bc848d580f9b9cd19d60}{top\+Left\+Anchor\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_ae6fa320f54bf670225b5a89a5bafe049}{set\+Top\+Left\+Anchor\+Point}} (const quint32 \&\mbox{\hyperlink{class_v_pattern_label_data_ab40bb30622d3bc848d580f9b9cd19d60}{top\+Left\+Anchor\+Point}})
+\item 
+quint32 \mbox{\hyperlink{class_v_pattern_label_data_af4eff3cdc1bb778a5c6465707954723f}{bottom\+Right\+Anchor\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_pattern_label_data_a00ed7f0c7e58df93b856b6ab1539fcc0}{set\+Bottom\+Right\+Anchor\+Point}} (const quint32 \&\mbox{\hyperlink{class_v_pattern_label_data_af4eff3cdc1bb778a5c6465707954723f}{bottom\+Right\+Anchor\+Point}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstract\+Float\+Item\+Data}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_float_item_data_a3d35bef72f0d40283baf5bc89a5724b5}{VAbstract\+Float\+Item\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_abstract_float_item_data_a8ee7ac915d25bec5ef6981504f88b1a5}{VAbstract\+Float\+Item\+Data}} (const \mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstract\+Float\+Item\+Data}} \&data)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_float_item_data_ac22522a705278b671bbe7435ddc24d77}{$\sim$\+VAbstract\+Float\+Item\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstract\+Float\+Item\+Data}} \& \mbox{\hyperlink{class_v_abstract_float_item_data_a9d58f63c202cd09f5b231129829964a5}{operator=}} (const \mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstract\+Float\+Item\+Data}} \&data)
+\item 
+void \mbox{\hyperlink{class_v_abstract_float_item_data_a7298a27bcf357910d981201cf2774067}{Swap}} (\mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstract\+Float\+Item\+Data}} \&data) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+QPointF \mbox{\hyperlink{class_v_abstract_float_item_data_ac85bd522798d768e30d57dd377275711}{Get\+Pos}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_float_item_data_af3490e5d93c69417347be4d6b233d4dc}{Set\+Pos}} (const QPointF \&pt\+Pos)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_float_item_data_a3923620cfc94cbeb8584e1944ca343de}{Is\+Visible}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_float_item_data_a1060019c4f6a2e8cfe1cc98a60171f2d}{Set\+Visible}} (bool b\+Visible)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_piece_label_data_private}{VPiece\+Label\+Data\+Private}} $>$ \mbox{\hyperlink{class_v_piece_label_data_a00b2fb936ea53efbb3eb9abcde26656d}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} class holds some information about a single piece like letter, name, material type, cut number and placement. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_piece_label_data_aa696b7399c7f653e36430064db0cb9d0}\label{class_v_piece_label_data_aa696b7399c7f653e36430064db0cb9d0}} 
+\index{VPieceLabelData@{VPieceLabelData}!VPieceLabelData@{VPieceLabelData}}
+\index{VPieceLabelData@{VPieceLabelData}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{VPieceLabelData()}{VPieceLabelData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPiece\+Label\+Data\+::\+VPiece\+Label\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_acb8536b6feec19d91a89ac378d7c5122}\label{class_v_piece_label_data_acb8536b6feec19d91a89ac378d7c5122}} 
+\index{VPieceLabelData@{VPieceLabelData}!VPieceLabelData@{VPieceLabelData}}
+\index{VPieceLabelData@{VPieceLabelData}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{VPieceLabelData()}{VPieceLabelData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPiece\+Label\+Data\+::\+VPiece\+Label\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a19745f076396856eb6aa1394f34c2de0}\label{class_v_piece_label_data_a19745f076396856eb6aa1394f34c2de0}} 
+\index{VPieceLabelData@{VPieceLabelData}!````~VPieceLabelData@{$\sim$VPieceLabelData}}
+\index{````~VPieceLabelData@{$\sim$VPieceLabelData}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPieceLabelData()}{~VPieceLabelData()}}
+{\footnotesize\ttfamily VPiece\+Label\+Data\+::$\sim$\+VPiece\+Label\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_piece_label_data_a89b35b672b8ae4477e05c688674966f0}\label{class_v_piece_label_data_a89b35b672b8ae4477e05c688674966f0}} 
+\index{VPieceLabelData@{VPieceLabelData}!Clear@{Clear}}
+\index{Clear@{Clear}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_abd80bec0f02815c9bd32fe968779890a}\label{class_v_piece_label_data_abd80bec0f02815c9bd32fe968779890a}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetAnnotation@{GetAnnotation}}
+\index{GetAnnotation@{GetAnnotation}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetAnnotation()}{GetAnnotation()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Annotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_af8de81756bfeb485e0a86008109786e0}\label{class_v_piece_label_data_af8de81756bfeb485e0a86008109786e0}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetFoldPosition@{GetFoldPosition}}
+\index{GetFoldPosition@{GetFoldPosition}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetFoldPosition()}{GetFoldPosition()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Fold\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a5157a34465d924aa31dfbd214a5267d0}\label{class_v_piece_label_data_a5157a34465d924aa31dfbd214a5267d0}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetLabelTemplate@{GetLabelTemplate}}
+\index{GetLabelTemplate@{GetLabelTemplate}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetLabelTemplate()}{GetLabelTemplate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ VPiece\+Label\+Data\+::\+Get\+Label\+Template (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_af6a4fd19d1adf87e4d67860f9387b6b5}\label{class_v_piece_label_data_af6a4fd19d1adf87e4d67860f9387b6b5}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetLetter@{GetLetter}}
+\index{GetLetter@{GetLetter}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetLetter()}{GetLetter()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Letter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a229fdba7798fcbe16e1208b32a31b85d}\label{class_v_piece_label_data_a229fdba7798fcbe16e1208b32a31b85d}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetOrientation@{GetOrientation}}
+\index{GetOrientation@{GetOrientation}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetOrientation()}{GetOrientation()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a591e37c7aa3fff6c0be39de51b724fe3}\label{class_v_piece_label_data_a591e37c7aa3fff6c0be39de51b724fe3}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetQuantity@{GetQuantity}}
+\index{GetQuantity@{GetQuantity}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetQuantity()}{GetQuantity()}}
+{\footnotesize\ttfamily int VPiece\+Label\+Data\+::\+Get\+Quantity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a8ad449f982182bab1f91d2dcd78f33f7}\label{class_v_piece_label_data_a8ad449f982182bab1f91d2dcd78f33f7}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetRotationWay@{GetRotationWay}}
+\index{GetRotationWay@{GetRotationWay}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetRotationWay()}{GetRotationWay()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Rotation\+Way (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_af4554860110d64941c1304ffee636a7f}\label{class_v_piece_label_data_af4554860110d64941c1304ffee636a7f}} 
+\index{VPieceLabelData@{VPieceLabelData}!GetTilt@{GetTilt}}
+\index{GetTilt@{GetTilt}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{GetTilt()}{GetTilt()}}
+{\footnotesize\ttfamily QString VPiece\+Label\+Data\+::\+Get\+Tilt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a53bb168e6bc12f7215b16590a89347bc}\label{class_v_piece_label_data_a53bb168e6bc12f7215b16590a89347bc}} 
+\index{VPieceLabelData@{VPieceLabelData}!IsOnFold@{IsOnFold}}
+\index{IsOnFold@{IsOnFold}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{IsOnFold()}{IsOnFold()}}
+{\footnotesize\ttfamily bool VPiece\+Label\+Data\+::\+Is\+On\+Fold (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a143bed234ab0f0b74e264d856d3fcfad}\label{class_v_piece_label_data_a143bed234ab0f0b74e264d856d3fcfad}} 
+\index{VPieceLabelData@{VPieceLabelData}!operator=@{operator=}}
+\index{operator=@{operator=}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& VPiece\+Label\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a02e6d04d5279cc4ba7106df32a0fe0da}\label{class_v_piece_label_data_a02e6d04d5279cc4ba7106df32a0fe0da}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetAnnotation@{SetAnnotation}}
+\index{SetAnnotation@{SetAnnotation}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetAnnotation()}{SetAnnotation()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Annotation (\begin{DoxyParamCaption}\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a4aa7cbd7b6b879042b62122e17c889c8}\label{class_v_piece_label_data_a4aa7cbd7b6b879042b62122e17c889c8}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetFoldPosition@{SetFoldPosition}}
+\index{SetFoldPosition@{SetFoldPosition}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetFoldPosition()}{SetFoldPosition()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Fold\+Position (\begin{DoxyParamCaption}\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a12de53622c5f97c769131afaa1b38631}\label{class_v_piece_label_data_a12de53622c5f97c769131afaa1b38631}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetLabelTemplate@{SetLabelTemplate}}
+\index{SetLabelTemplate@{SetLabelTemplate}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetLabelTemplate()}{SetLabelTemplate()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Label\+Template (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ \&}]{lines }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_aae9c4f2bc5d0e447bd2d397bcd1ca907}\label{class_v_piece_label_data_aae9c4f2bc5d0e447bd2d397bcd1ca907}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetLetter@{SetLetter}}
+\index{SetLetter@{SetLetter}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetLetter()}{SetLetter()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Letter (\begin{DoxyParamCaption}\item[{const QString \&}]{qs\+Letter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a0e15f5b967a8726c7780c0fabba1c909}\label{class_v_piece_label_data_a0e15f5b967a8726c7780c0fabba1c909}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetOnFold@{SetOnFold}}
+\index{SetOnFold@{SetOnFold}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetOnFold()}{SetOnFold()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+On\+Fold (\begin{DoxyParamCaption}\item[{bool}]{on\+Fold }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a8e915292e01281b51139aeb91e845b3a}\label{class_v_piece_label_data_a8e915292e01281b51139aeb91e845b3a}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetOrientation@{SetOrientation}}
+\index{SetOrientation@{SetOrientation}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetOrientation()}{SetOrientation()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Orientation (\begin{DoxyParamCaption}\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a52b77d639d64cc517211a889b2b02fc1}\label{class_v_piece_label_data_a52b77d639d64cc517211a889b2b02fc1}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetQuantity@{SetQuantity}}
+\index{SetQuantity@{SetQuantity}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetQuantity()}{SetQuantity()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Quantity (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a391ed7ffd3dcf1253dd17b1b347ee885}\label{class_v_piece_label_data_a391ed7ffd3dcf1253dd17b1b347ee885}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetRotationWay@{SetRotationWay}}
+\index{SetRotationWay@{SetRotationWay}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetRotationWay()}{SetRotationWay()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Rotation\+Way (\begin{DoxyParamCaption}\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a33759105ae16cddbc305ddcb6687b9b1}\label{class_v_piece_label_data_a33759105ae16cddbc305ddcb6687b9b1}} 
+\index{VPieceLabelData@{VPieceLabelData}!SetTilt@{SetTilt}}
+\index{SetTilt@{SetTilt}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{SetTilt()}{SetTilt()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Set\+Tilt (\begin{DoxyParamCaption}\item[{const QString \&}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_label_data_a752704e0a02ed9b45b0711c1f74ed5e0}\label{class_v_piece_label_data_a752704e0a02ed9b45b0711c1f74ed5e0}} 
+\index{VPieceLabelData@{VPieceLabelData}!Swap@{Swap}}
+\index{Swap@{Swap}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VPiece\+Label\+Data\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_piece_label_data_a00b2fb936ea53efbb3eb9abcde26656d}\label{class_v_piece_label_data_a00b2fb936ea53efbb3eb9abcde26656d}} 
+\index{VPieceLabelData@{VPieceLabelData}!d@{d}}
+\index{d@{d}!VPieceLabelData@{VPieceLabelData}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_piece_label_data_private}{VPiece\+Label\+Data\+Private}}$>$ VPiece\+Label\+Data\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/float\+Item\+Data/\mbox{\hyperlink{vpiecelabeldata_8h}{vpiecelabeldata.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/float\+Item\+Data/\mbox{\hyperlink{vpiecelabeldata_8cpp}{vpiecelabeldata.\+cpp}}\end{DoxyCompactItemize}

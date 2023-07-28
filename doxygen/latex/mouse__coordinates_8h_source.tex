@@ -1,0 +1,64 @@
+\hypertarget{mouse__coordinates_8h_source}{}\doxysection{mouse\+\_\+coordinates.\+h}
+\label{mouse__coordinates_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/mouse\_coordinates.h@{D:/Github/Seamly2D/src/libs/vwidgets/mouse\_coordinates.h}}
+\mbox{\hyperlink{mouse__coordinates_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ mouse\_coordinates.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Nov\ 6,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#ifndef\ MOUSE\_COORDINATES\_H}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ MOUSE\_COORDINATES\_H}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mouse_coordinates}{MouseCoordinates}};}
+\DoxyCodeLine{00034\ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00037\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00038\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ class\ \mbox{\hyperlink{class_mouse_coordinates}{MouseCoordinates}}:\ public\ QWidget}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mouse_coordinates}{MouseCoordinates}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \&units,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mouse_coordinates_adae5ae219484caf96008f94890d1b28c}{\string~MouseCoordinates}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mouse_coordinates_a8ce4250b9b58c41b1e72146ca996a0f8}{updateCoordinates}}(\textcolor{keyword}{const}\ QPointF\ \&scenePos);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ Ui::MouseCoordinates\ *\mbox{\hyperlink{class_mouse_coordinates_a7fa5e986201bd2e1ce05754019f03063}{ui}};}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_mouse_coordinates_a8c08f23569a21a6530b5548e7f6914ba}{m\_units}};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

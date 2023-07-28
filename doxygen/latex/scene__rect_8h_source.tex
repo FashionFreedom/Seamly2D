@@ -1,0 +1,76 @@
+\hypertarget{scene__rect_8h_source}{}\doxysection{scene\+\_\+rect.\+h}
+\label{scene__rect_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/scene\_rect.h@{D:/Github/Seamly2D/src/libs/vwidgets/scene\_rect.h}}
+\mbox{\hyperlink{scene__rect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ @file\ \ \ scene\_rect.cpp\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ @author\ DSCaskey\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ @date\ \ \ 3.30.2021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifndef\ SCENE\_RECT\_H}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ SCENE\_RECT\_H}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QGraphicsRectItem>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_point_f}{VPointF}};}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_scaled_line}{VScaledLine}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_scene_rect}{SceneRect}}:\ \textcolor{keyword}{public}\ QGraphicsRectItem}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect}{SceneRect}}(\textcolor{keyword}{const}\ QColor\ \&lineColor,\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a89834fc76165fd7d4e169c8c1caedd95}{\string~SceneRect}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a8b96d4e5e355cd1073f88a142a6577ad}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_scene_rect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}{Type}};\}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_scene_rect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ScenePoint)\};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a43036c626d002e8cb5c1b183cb501ea4}{paint}}(QPainter\ *painter,\ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem\ *option,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QWidget\ *widget\ =\ \textcolor{keyword}{nullptr})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00048\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_ac47a2379e49e4b0d6c80c82900c68741}{refreshPointGeometry}}(const\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ protected:}
+\DoxyCodeLine{00051\ \ \ \ \ QColor\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a91e46b85ce194104b384c302bfc31c53}{m\_rectColor}};\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_aba7730d776853c33a9e62431de1eb52d}{m\_onlyPoint}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a9cc239b109d776f8692900d0827ff549}{m\_isHovered}};}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_ad1f09a15d11d234cf8c2fe7c6cf49a5b}{m\_showPointName}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a6fc0de5f66f244b08bcb08420dc0c1a4}{hoverEnterEvent}}(QGraphicsSceneHoverEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00057\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a7632ef38d888a3805c76d4fd86f46218}{hoverLeaveEvent}}(QGraphicsSceneHoverEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a6f3b1c3eaa782f9f2c4c230b3d668f29}{setOnlyPoint}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_afdfb2396e7ca893c76ec0d8710f6dfca}{isOnlyPoint}}()\ const;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_a93d9ebb517a2bf5cdcfb044460c096eb}{setPointColor}}(const\ QString\ \&value);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ private:}
+\DoxyCodeLine{00065\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_scene_rect}{SceneRect}})}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_scene_rect_abea41f2f6ea73c51c6d8b4157021cb93}{setRectPen}}(qreal\ scale);}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SCENE\_RECT\_H}}
+
+\end{DoxyCode}

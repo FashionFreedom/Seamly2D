@@ -1,0 +1,95 @@
+\hypertarget{vtextmanager_8h_source}{}\doxysection{vtextmanager.\+h}
+\label{vtextmanager_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vtextmanager.h@{D:/Github/Seamly2D/src/libs/vlayout/vtextmanager.h}}
+\mbox{\hyperlink{vtextmanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpatternpiecedata.cpp}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Bojan\ Kverh}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ July\ 19,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VTEXTMANAGER\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VTEXTMANAGER\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QFont>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}};}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ MIN\_FONT\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ MAX\_FONT\_SIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 128}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_text_line}{TextLine}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_text_line_a03540d4b1e818cf865118e5b8e71af2e}{m\_text}};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_text_line_a7cacd9aa955be1be1c9ba2749179fa24}{m\_iFontSize}};\ \ \textcolor{comment}{//\ 0\ means\ default}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_text_line_a28172f88f798ff49df7e7d4226e43f1e}{bold}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_text_line_afae08ff5c2a0a51a9a5ed36d93e3b802}{italic}};}
+\DoxyCodeLine{00056\ \ \ \ \ Qt::Alignment\ \ \ \ \ \ \ \mbox{\hyperlink{struct_text_line_a9e9a6e9df24d6ab26e25072c3a6cdf7a}{m\_eAlign}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{struct_text_line_a2064b92f5b5238a495896234ba2e7c04}{TextLine}}();}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_text_manager}{VTextManager}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_text_manager}{VTextManager}})}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_a394ef2e8e4c7769f634da976db928e3e}{VTextManager}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_text_manager_aa6cc15de88dfb86f3a56d004fc47bbf9}{\string~VTextManager}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_a394ef2e8e4c7769f634da976db928e3e}{VTextManager}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_text_manager}{VTextManager}}\ \&text);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_v_text_manager}{VTextManager}}\ \&\mbox{\hyperlink{class_v_text_manager_a029ffed61db48b11ad7b4142e23bf6f3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_text_manager}{VTextManager}}\ \&text);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_text_manager_a2fae4b4a83bf5b35101ceb6d4b579e5f}{GetSpacing}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_abd13c96f3b6633f91312e58c4f3ee3ef}{setFont}}(\textcolor{keyword}{const}\ QFont\&\ font);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ QFont\&\ \mbox{\hyperlink{class_v_text_manager_a7f64e46d190ec246b4f30b14593b1a24}{GetFont}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_ae830ff36112ca0560f36249a8921c7d7}{SetFontSize}}(\textcolor{keywordtype}{int}\ iFS);}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_ac90c9ff728ab3c3a3633b700c81c7327}{FitFontSize}}(qreal\ fW,\ qreal\ fH);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList<TextLine>}}\ \mbox{\hyperlink{class_v_text_manager_a8e6fcdc09b1acbd9d3b922b8b80cabe5}{GetAllSourceLines}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_a26f52aff711a1edac5192f79c3b7ba89}{GetSourceLinesCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_text_line}{TextLine}}\&\ \mbox{\hyperlink{class_v_text_manager_a88620b46e6e2d46e84918ba6d28430bd}{GetSourceLine}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_text_manager_a8edd1778c1d3d18aaba40ab82a35ae4e}{Update}}(\textcolor{keyword}{const}\ QString\&\ qsName,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}}\&\ data);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_text_manager_a8edd1778c1d3d18aaba40ab82a35ae4e}{Update}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}*\ pDoc);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ QFont\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_text_manager_ad3ba1c564f6c8d5edeae8aeb7bc46848}{m\_font}};}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList<TextLine>}}\ \mbox{\hyperlink{class_v_text_manager_aa7ccba6971a1c031ec5df6d5eb93f2e2}{m\_liLines}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_q_list}{QList<TextLine>}}\ \mbox{\hyperlink{class_v_text_manager_aaf6a2a6467134ff2774c35880941683c}{m\_patternLabelLines}};}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTEXTMANAGER\_H}}
+
+\end{DoxyCode}

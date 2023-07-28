@@ -1,0 +1,1330 @@
+\hypertarget{class_dialog_tool}{}\doxysection{Dialog\+Tool Class Reference}
+\label{class_dialog_tool}\index{DialogTool@{DialogTool}}
+
+
+The \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} class parent for all dialog of tools.  
+
+
+
+
+{\ttfamily \#include $<$dialogtool.\+h$>$}
+
+Inheritance diagram for Dialog\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_dialog_tool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a230903cc2885e3126cc71f175cba6b52}{Chosen\+Object}} (quint32 id, const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&type)
+\begin{DoxyCompactList}\small\item\em Chosen\+Object gets id and type of selected object. Save right data and ignore wrong. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_aed1e44149aa815113d986a9bc124681b}{Selected\+Object}} (bool selected, quint32 object, quint32 tool)
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a2a6070cab102675260601eb6fdaf61a2}{Name\+Point\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em Name\+Point\+Changed check name of point. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a7c0456ea20eb5f1e21a56af2e98a506b}{Dialog\+Accepted}} ()
+\begin{DoxyCompactList}\small\item\em Dialog\+Accepted save data and emit signal about closed dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_acbd2be3e1ce1652e3fa6177793b22001}{Dialog\+Apply}} ()
+\begin{DoxyCompactList}\small\item\em Dialog\+Apply save data and emit signal Dialog\+Applied. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a03b5e1c41a10e70de19c8800e1dbfe7c}{Dialog\+Rejected}} ()
+\begin{DoxyCompactList}\small\item\em Dialog\+Rejected emit signal dialog rejected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a397da3002c5c83a84d784c6b466ec8a8}{Formula\+Changed}} ()
+\begin{DoxyCompactList}\small\item\em formula check formula \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_af00983bcf09aa5eeed7aefec44c61ba6}{Formula\+Changed\+Plain\+Text}} ()
+\begin{DoxyCompactList}\small\item\em Formula\+Changed\+Plain\+Text check formula (plain text editor editor) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a2ed974d6b2bb05b329d6732da9ddf772}{Arrow\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Up set angle value 90 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a02478f50983ed4280041b57abf22d305}{Arrow\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Down set angle value 270 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a1ece1f4ebba4c9e2e2654e1b0dd44f5f}{Arrow\+Left}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Left set angle value 180 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a3d554a0670c223fe2189dfe2efd105a7}{Arrow\+Right}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Right set angle value 0 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a0cac370d042a2303a53fbd4fe18522d1}{Arrow\+Left\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Left\+Up set angle value 135 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_ab7008c4410ba66f31a706b17f9727011}{Arrow\+Left\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Left\+Down set angle value 225 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a7c0a8dbcea95d198bf3e07ac10827ff0}{Arrow\+Right\+Up}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Right\+Up set angle value 45 degree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a298b9ca0770a58aaa31acc24ef7ad82f}{Arrow\+Right\+Down}} ()
+\begin{DoxyCompactList}\small\item\em Arrow\+Right\+Down set angle value 315 degree. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_ad9d6d2baa969f338436cd53d0f33e24f}{Eval\+Formula}} ()
+\begin{DoxyCompactList}\small\item\em Eval\+Formula evaluate formula. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_ad0735fb82a3aa73ec2eb8efdd7276084}{Point\+Name\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a2393a727a5d951da5daf2a5950b726af}{Dialog\+Closed}} (int result)
+\begin{DoxyCompactList}\small\item\em Dialog\+Closed signal dialog closed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_ac326a802f9ee83296e1ff3d5bc95b6e5}{Dialog\+Applied}} ()
+\begin{DoxyCompactList}\small\item\em Dialog\+Applied emit signal dialog apply changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a1320c278e99ba783af0a5c289375bf9a}{Tool\+Tip}} (const QString \&tool\+Tip)
+\begin{DoxyCompactList}\small\item\em Tool\+Tip emit tooltipe for tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_dialog_tool_af22322ef9635afe7edd04ecb5a99d606}{Dialog\+Tool}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}, const quint32 \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} create dialog. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_dialog_tool_ae3c1cbf86b6e304c999cd7dcce757545}{$\sim$\+Dialog\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} $\ast$ \mbox{\hyperlink{class_dialog_tool_a224b095efb6bf4df93b3048c7ffbc625}{Get\+Associated\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a51759a1e557e81b0fea372b51719b32f}{Set\+Associated\+Tool}} (\mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} $\ast$tool)
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a6da67387057958c9a8de664a86c14efb}{Show\+Dialog}} (bool click)
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_ab3d6e3c597c29a71a517e2432a5a979e}{Build}} (const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&type)
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_ae8a522bc8cd5063cf17cb29d2c14e453}{Set\+Pieces\+List}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&list)
+\item 
+quint32 \mbox{\hyperlink{class_dialog_tool_af9467b65f15e412b823d5097141437f6}{Get\+Tool\+Id}} () const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_aa41431027e66aac4474c163fcb8460a6}{Set\+Tool\+Id}} (const quint32 \&value)
+\item 
+QString \mbox{\hyperlink{class_dialog_tool_a83443b31adec5f8e62f475ec558040ab}{get\+Point\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_dialog_tool_a8117559f39a9b9068f94f21f25a4b4ad}{move\+List\+Row\+Top}} (QList\+Widget $\ast$list)
+\item 
+static void \mbox{\hyperlink{class_dialog_tool_aed689641215eb4d3af8e11e81df8a1d1}{move\+List\+Row\+Up}} (QList\+Widget $\ast$list)
+\item 
+static void \mbox{\hyperlink{class_dialog_tool_a5672621ca3d899af2173bc1444a6dea8}{move\+List\+Row\+Down}} (QList\+Widget $\ast$list)
+\item 
+static void \mbox{\hyperlink{class_dialog_tool_a4902afcca8125302cdde635be455f83e}{move\+List\+Row\+Bottom}} (QList\+Widget $\ast$list)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_aa719545191dd63fba3deee7346dbc4a0}{key\+Press\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a7351661dd7dfb8231ffdd4b92ddcc11b}{close\+Event}} (QClose\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em close\+Event handle when dialog cloded \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a60bf040b63da264b842ebe9b7ef76564}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em show\+Event handle when window show \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_aee0fad677c762a4570cc2bc75c781723}{Fill\+Combo\+Box\+Pieces\+List}} (QCombo\+Box $\ast$box, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&list)
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a1dde56c8348fe3d0f6de9b3c8883e4e5}{Fill\+Combo\+Box\+Points}} (QCombo\+Box $\ast$box, \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}} rule=Fill\+Combo\+Box\+::\+Whole, const quint32 \&ch1=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const quint32 \&ch2=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) const
+\begin{DoxyCompactList}\small\item\em Fill\+Combo\+Box\+Points fill combo\+Box list of points. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a8829145090f7ae6629274efe045808c8}{Fill\+Combo\+Box\+Arcs}} (QCombo\+Box $\ast$box, \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}} rule=Fill\+Combo\+Box\+::\+Whole, const quint32 \&ch1=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const quint32 \&ch2=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a8171b02d23b8f1b68fcf8046cd5f3b73}{Fill\+Combo\+Box\+Splines}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a6630707aad32ef268dbaad5e59528c99}{Fill\+Combo\+Box\+Splines\+Path}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a8a67989df6bc57ce966be64b8144c464}{Fill\+Combo\+Box\+Curves}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_af10d637cab7eea9a92019f0ba63eedf8}{Fill\+Combo\+Box\+Type\+Line}} (QCombo\+Box $\ast$box, const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QIcon $>$ \&styles\+Pics) const
+\begin{DoxyCompactList}\small\item\em Fill\+Combo\+Box\+Type\+Line fill combo\+Box list of type lines. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a7cef0dbb035fbd6c4bc96c3a2bb5564a}{Fill\+Combo\+Box\+Line\+Colors}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a33aa732acd7827a8bb95000570eb5730}{Fill\+Combo\+Box\+Cross\+Circles\+Points}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a93fa9411022d5f4a62e5a7a8844939eb}{Fill\+Combo\+Box\+VCross\+Curves\+Point}} (QCombo\+Box $\ast$box) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_ae5549ef0e9efca43b6ef5e47de4caae4}{Fill\+Combo\+Box\+HCross\+Curves\+Point}} (QCombo\+Box $\ast$box) const
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a1dde216466b3f09ff51f8538bb279457}{Check\+State}} ()
+\begin{DoxyCompactList}\small\item\em Check\+State enable, when all is correct, or disable, when something wrong, button ok. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_dialog_tool_a9cb6fec9007d2c41cafbefddfbc029ce}{Get\+Combo\+Box\+Current\+Data}} (const QCombo\+Box $\ast$box, const QString \&def) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a0185e281fed2b396c9297363b5950fa9}{Change\+Current\+Data}} (QCombo\+Box $\ast$box, const QVariant \&value) const
+\begin{DoxyCompactList}\small\item\em Change\+Current\+Data select item in combobox by id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a741d3d48764376f0141fed30732dc929}{Val\+Formula\+Changed}} (bool \&flag, QLine\+Edit $\ast$edit, QTimer $\ast$timer, const QString \&postfix=QString())
+\begin{DoxyCompactList}\small\item\em Val\+Formula\+Changed handle change formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a6d804ec08cd47457aefb8bfdf3d06053}{Val\+Formula\+Changed}} (bool \&flag, QPlain\+Text\+Edit $\ast$edit, QTimer $\ast$timer, const QString \&postfix=QString())
+\item 
+qreal \mbox{\hyperlink{class_dialog_tool_a4b5df9919f56e6e1b12a4c2941470108}{Eval}} (const QString \&text, bool \&flag, QLabel $\ast$label, const QString \&postfix, bool check\+Zero=true, bool check\+Less\+Than\+Zero=false)
+\begin{DoxyCompactList}\small\item\em Eval evaluate formula and show result. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_dialog_tool_a0eab9de855cc29e63f22aa5e087a25f3}{normalize}} (const qreal value, const qreal start, const qreal end)
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a016b1091fc5d9a147a02701e69f3ae31}{set\+Current\+Point\+Id}} (QCombo\+Box $\ast$box, const quint32 \&value, \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}} rule=Fill\+Combo\+Box\+::\+No\+Children, const quint32 \&ch1=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const quint32 \&ch2=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a3e775b55743322dd5bed09c46d15cb0c}{set\+Current\+Spline\+Id}} (QCombo\+Box $\ast$box, const quint32 \&value) const
+\begin{DoxyCompactList}\small\item\em set\+Current\+Spline\+Id set current spline id in combobox \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a0ecf83868bfccb70cc591b1b34fd771c}{set\+Current\+Arc\+Id}} (QCombo\+Box $\ast$box, const quint32 \&value, \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}} rule=Fill\+Combo\+Box\+::\+No\+Children, const quint32 \&ch1=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const quint32 \&ch2=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) const
+\begin{DoxyCompactList}\small\item\em set\+Current\+Arc\+Id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a9492af06a71defebbb5162b68eec4e31}{set\+Current\+Spline\+Path\+Id}} (QCombo\+Box $\ast$box, const quint32 \&value) const
+\begin{DoxyCompactList}\small\item\em set\+Current\+Spline\+Path\+Id set current spline\+Path id in combobox \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_ae6eff8c971708961729f688140cab7b3}{set\+Current\+Curve\+Id}} (QCombo\+Box $\ast$box, const quint32 \&value) const
+\item 
+quint32 \mbox{\hyperlink{class_dialog_tool_afa53df30e6ef6b3fb2bae2884a2fd49f}{get\+Current\+Object\+Id}} (QCombo\+Box $\ast$box) const
+\begin{DoxyCompactList}\small\item\em get\+Current\+Point\+Id return current point id stored in combobox \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{class_dialog_tool_af503e383e8d38ee0c3a257097ce07050}{get\+Current\+Cross\+Point}} (QCombo\+Box $\ast$box) const
+\item 
+bool \mbox{\hyperlink{class_dialog_tool_a7a40d87b6501f1123c624e1a71d6b22b}{Set\+Object}} (const quint32 \&id, QCombo\+Box $\ast$box, const QString \&tool\+Tip)
+\item 
+void \mbox{\hyperlink{class_dialog_tool_af877cbf87f21cb27e263b2cacfab245c}{Deploy\+Formula}} (QPlain\+Text\+Edit $\ast$formula, QPush\+Button $\ast$button\+Grow\+Length, int formula\+Base\+Height)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_dialog_tool_a901630e1afd5b1f74c829b3ec701ac52}{initialize\+Ok\+Cancel\+Apply}} (T $\ast$ui)
+\begin{DoxyCompactList}\small\item\em initialize\+Ok\+Cancel\+Apply initialize OK / Cancel and Apply buttons \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}{initialize\+Ok\+Cancel}} (T $\ast$ui)
+\begin{DoxyCompactList}\small\item\em initialize\+Ok\+Cancel initialize OK and Cancel buttons \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_dialog_tool_acf79dba7d4eb08e97b7f31a8c1b384f3}{initialize\+Formula\+Ui}} (T $\ast$ui)
+\begin{DoxyCompactList}\small\item\em initialize\+Formula\+Ui initialize ui object for the formula field \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_dialog_tool_a7b73bc6fd8437d4367508610fc8e339c}{Add\+Visualization}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \mbox{\hyperlink{class_dialog_tool_ae701ca9f14235946065b508fe2389d45}{Get\+List\+Internals}} (const QList\+Widget $\ast$list) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_af5329ca717794e40fe429d8535bda252}{Change\+Color}} (QWidget $\ast$widget, const QColor \&color)
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_a27c61eab1bc3d32f6917983612ab8594}{Show\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_dialog_tool_aa197a256d8d19a03878816f138e4e248}{Save\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Save\+Data Put dialog data in local variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_dialog_tool_a36321c7aa19366c412c876622c944941}{Move\+Cursor\+To\+End}} (QPlain\+Text\+Edit $\ast$plain\+Text\+Edit) const
+\item 
+virtual bool \mbox{\hyperlink{class_dialog_tool_acfc81e416e8719ca8c2d78f54ded9ce3}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_dialog_tool_a019114875b8df91da6678dbc581ea3dc}{DNumber}} (const QString \&base\+Name) const
+\item 
+\mbox{\hyperlink{struct_node_info}{Node\+Info}} \mbox{\hyperlink{class_dialog_tool_a5eef349e9569db795e529aa76781ef8c}{get\+Node\+Info}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, bool show\+Notch=false) const
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a720450bced2cbb0fbff11d2f638d2078}{new\+Node\+Item}} (QList\+Widget $\ast$list\+Widget, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, bool node\+Excluded=true, bool is\+Duplicate=false)
+\item 
+void \mbox{\hyperlink{class_dialog_tool_ac9178fdeab3fb37fc6ca434aefea6b3e}{initialize\+Node\+Angles}} (QCombo\+Box $\ast$box)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_dialog_tool_a8f60df422aa5ea1ecc624cf43022ba2d}{Find\+Not\+Excluded\+Node\+Down}} (QList\+Widget $\ast$list\+Widget, int candidate)
+\item 
+static int \mbox{\hyperlink{class_dialog_tool_a2982410c0fd57467d34bca670eb5a1b9}{Find\+Not\+Excluded\+Node\+Up}} (QList\+Widget $\ast$list\+Widget, int candidate)
+\item 
+static bool \mbox{\hyperlink{class_dialog_tool_a11954ff102b5b3ab8dfdb9412fd91de4}{is\+First\+Point\+Same\+As\+Last}} (QList\+Widget $\ast$list\+Widget)
+\item 
+static bool \mbox{\hyperlink{class_dialog_tool_a4156f1949ecd5d512063d66dbd00b760}{double\+Points\+Exist}} (QList\+Widget $\ast$list\+Widget)
+\item 
+static bool \mbox{\hyperlink{class_dialog_tool_ab13e9c3720e404f3c9eb7b08f6655c86}{is\+Each\+Point\+Name\+Unique}} (QList\+Widget $\ast$list\+Widget)
+\item 
+static QString \mbox{\hyperlink{class_dialog_tool_ae1015f240bf8db960be4c55cb4e06af8}{Dialog\+Warning\+Icon}} ()
+\item 
+static QFont \mbox{\hyperlink{class_dialog_tool_a85e03f7e768ff5534af1888c09d3704a}{Node\+Font}} (bool node\+Excluded)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dialog_tool_a7e9f7c34ba709ce74ed865ee990bb9f0}{is\+Initialized}}
+\begin{DoxyCompactList}\small\item\em is\+Initialized true if window is initialized \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}{flag\+Name}}
+\begin{DoxyCompactList}\small\item\em flag\+Name true if name is correct \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dialog_tool_a3e515cda2fda84c61765eb64eeea7d34}{flag\+Formula}}
+\begin{DoxyCompactList}\small\item\em flag\+Formula true if formula correct \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_dialog_tool_a9581294606516971fdf492161d59fff9}{flag\+Error}}
+\begin{DoxyCompactList}\small\item\em flag\+Error use this flag if for you do not enought \end{DoxyCompactList}\item 
+QTimer $\ast$ \mbox{\hyperlink{class_dialog_tool_accfd3d6d420e77a482145f715a915dfe}{timer\+Formula}}
+\begin{DoxyCompactList}\small\item\em timer\+Formula timer for check formula \end{DoxyCompactList}\item 
+QPush\+Button $\ast$ \mbox{\hyperlink{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}{ok\+\_\+\+Button}}
+\begin{DoxyCompactList}\small\item\em ok\+\_\+\+Button button ok \end{DoxyCompactList}\item 
+QPush\+Button $\ast$ \mbox{\hyperlink{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}{apply\+\_\+\+Button}}
+\begin{DoxyCompactList}\small\item\em apply\+\_\+\+Button button apply \end{DoxyCompactList}\item 
+QDouble\+Spin\+Box $\ast$ \mbox{\hyperlink{class_dialog_tool_a0a118fe7df26258a50f0bb05c5d1c2cf}{spin\+Box\+Angle}}
+\begin{DoxyCompactList}\small\item\em spin\+Box\+Angle spinbox for angle \end{DoxyCompactList}\item 
+QPlain\+Text\+Edit $\ast$ \mbox{\hyperlink{class_dialog_tool_a9bd2db37902c5cdc80815322a4d039b1}{plain\+Text\+Edit\+Formula}}
+\begin{DoxyCompactList}\small\item\em plain\+Text\+Edit\+Formula formula \end{DoxyCompactList}\item 
+QLabel $\ast$ \mbox{\hyperlink{class_dialog_tool_ab4865848cb3cb7af4a539c8794503c2e}{label\+Result\+Calculation}}
+\begin{DoxyCompactList}\small\item\em label\+Result\+Calculation label with result of calculation \end{DoxyCompactList}\item 
+QLabel $\ast$ \mbox{\hyperlink{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}{label\+Edit\+Name\+Point}}
+\begin{DoxyCompactList}\small\item\em label\+Edit\+Name\+Point label used when need show wrong name of point \end{DoxyCompactList}\item 
+QLabel $\ast$ \mbox{\hyperlink{class_dialog_tool_a8842d70341f4aa1f27b6787ce83f433a}{label\+Edit\+Formula}}
+\begin{DoxyCompactList}\small\item\em label\+Edit\+Formula label used when need show wrong formula \end{DoxyCompactList}\item 
+const QColor \mbox{\hyperlink{class_dialog_tool_a080d3a4a41e6b70099d201fd2bb8a963}{ok\+Color}}
+\item 
+const QColor \mbox{\hyperlink{class_dialog_tool_a6a353f3802c04a2ece105e0283d6052e}{error\+Color}}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} $\ast$ \mbox{\hyperlink{class_dialog_tool_aad9a35a39c3034577c209f304f4457d7}{associated\+Tool}}
+\begin{DoxyCompactList}\small\item\em associated\+Tool vdrawtool associated with opened dialog. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{tool\+Id}}
+\item 
+bool \mbox{\hyperlink{class_dialog_tool_a9ccfbc64fabcbc33167437af63980278}{prepare}}
+\begin{DoxyCompactList}\small\item\em prepare show if we prepare. Show dialog after finish working with visual part of tool \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_dialog_tool_a400ae6a47a2596e2ccec2bc892171d77}{point\+Name}}
+\begin{DoxyCompactList}\small\item\em point\+Name name of point \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{class_dialog_tool_a6f583a6003585697d9b06234fd1ace14}{number}}
+\begin{DoxyCompactList}\small\item\em number number of handled objects \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_dialog_tool_aef05247e05fbecb1b99ebcf486972ee6}{vis}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_dialog_tool_a75a5c4949c44282eddb9ab3df2c1fa57}{Fill\+List}} (QCombo\+Box $\ast$box, const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \&list) const
+\begin{DoxyCompactList}\small\item\em Fill\+List fill combobox list. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_dialog_tool_a60b9a53cf72829a083fec2c3bdbb7214}{Prepare\+List}} (\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \&list, quint32 id) const
+\item 
+bool \mbox{\hyperlink{class_dialog_tool_a706841d17b43aa0407e847f52e9b00b7}{Is\+Spline}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj) const
+\item 
+bool \mbox{\hyperlink{class_dialog_tool_afa5b038b1b7df8c71b214cc8f7f4ec7e}{Is\+Spline\+Path}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj) const
+\item 
+{\footnotesize template$<$typename GObject $>$ }\\void \mbox{\hyperlink{class_dialog_tool_a8ffc4bee8d0c15fce56bf6eeb0b5ee9c}{Fill\+Combo}} (QCombo\+Box $\ast$box, \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} g\+Type, \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}} rule=Fill\+Combo\+Box\+::\+Whole, const quint32 \&ch1=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const quint32 \&ch2=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} class parent for all dialog of tools. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_dialog_tool_af22322ef9635afe7edd04ecb5a99d606}\label{class_dialog_tool_af22322ef9635afe7edd04ecb5a99d606}} 
+\index{DialogTool@{DialogTool}!DialogTool@{DialogTool}}
+\index{DialogTool@{DialogTool}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogTool()}{DialogTool()}}
+{\footnotesize\ttfamily Dialog\+Tool\+::\+Dialog\+Tool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{const quint32 \&}]{tool\+Id,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} create dialog. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with data \\
+\hline
+{\em parent} & parent widget \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_ae3c1cbf86b6e304c999cd7dcce757545}\label{class_dialog_tool_ae3c1cbf86b6e304c999cd7dcce757545}} 
+\index{DialogTool@{DialogTool}!````~DialogTool@{$\sim$DialogTool}}
+\index{````~DialogTool@{$\sim$DialogTool}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{$\sim$DialogTool()}{~DialogTool()}}
+{\footnotesize\ttfamily Dialog\+Tool\+::$\sim$\+Dialog\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_dialog_tool_a7b73bc6fd8437d4367508610fc8e339c}\label{class_dialog_tool_a7b73bc6fd8437d4367508610fc8e339c}} 
+\index{DialogTool@{DialogTool}!AddVisualization@{AddVisualization}}
+\index{AddVisualization@{AddVisualization}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{AddVisualization()}{AddVisualization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Dialog\+Tool\+::\+Add\+Visualization\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a02478f50983ed4280041b57abf22d305}\label{class_dialog_tool_a02478f50983ed4280041b57abf22d305}} 
+\index{DialogTool@{DialogTool}!ArrowDown@{ArrowDown}}
+\index{ArrowDown@{ArrowDown}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowDown}{ArrowDown}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Down set angle value 270 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a1ece1f4ebba4c9e2e2654e1b0dd44f5f}\label{class_dialog_tool_a1ece1f4ebba4c9e2e2654e1b0dd44f5f}} 
+\index{DialogTool@{DialogTool}!ArrowLeft@{ArrowLeft}}
+\index{ArrowLeft@{ArrowLeft}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowLeft}{ArrowLeft}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Left set angle value 180 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_ab7008c4410ba66f31a706b17f9727011}\label{class_dialog_tool_ab7008c4410ba66f31a706b17f9727011}} 
+\index{DialogTool@{DialogTool}!ArrowLeftDown@{ArrowLeftDown}}
+\index{ArrowLeftDown@{ArrowLeftDown}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowLeftDown}{ArrowLeftDown}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Left\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Left\+Down set angle value 225 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a0cac370d042a2303a53fbd4fe18522d1}\label{class_dialog_tool_a0cac370d042a2303a53fbd4fe18522d1}} 
+\index{DialogTool@{DialogTool}!ArrowLeftUp@{ArrowLeftUp}}
+\index{ArrowLeftUp@{ArrowLeftUp}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowLeftUp}{ArrowLeftUp}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Left\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Left\+Up set angle value 135 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a3d554a0670c223fe2189dfe2efd105a7}\label{class_dialog_tool_a3d554a0670c223fe2189dfe2efd105a7}} 
+\index{DialogTool@{DialogTool}!ArrowRight@{ArrowRight}}
+\index{ArrowRight@{ArrowRight}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowRight}{ArrowRight}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Right set angle value 0 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a298b9ca0770a58aaa31acc24ef7ad82f}\label{class_dialog_tool_a298b9ca0770a58aaa31acc24ef7ad82f}} 
+\index{DialogTool@{DialogTool}!ArrowRightDown@{ArrowRightDown}}
+\index{ArrowRightDown@{ArrowRightDown}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowRightDown}{ArrowRightDown}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Right\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Right\+Down set angle value 315 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a7c0a8dbcea95d198bf3e07ac10827ff0}\label{class_dialog_tool_a7c0a8dbcea95d198bf3e07ac10827ff0}} 
+\index{DialogTool@{DialogTool}!ArrowRightUp@{ArrowRightUp}}
+\index{ArrowRightUp@{ArrowRightUp}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowRightUp}{ArrowRightUp}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Right\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Right\+Up set angle value 45 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_a2ed974d6b2bb05b329d6732da9ddf772}\label{class_dialog_tool_a2ed974d6b2bb05b329d6732da9ddf772}} 
+\index{DialogTool@{DialogTool}!ArrowUp@{ArrowUp}}
+\index{ArrowUp@{ArrowUp}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ArrowUp}{ArrowUp}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Arrow\+Up (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Arrow\+Up set angle value 90 degree. 
+
+\mbox{\Hypertarget{class_dialog_tool_ab3d6e3c597c29a71a517e2432a5a979e}\label{class_dialog_tool_ab3d6e3c597c29a71a517e2432a5a979e}} 
+\index{DialogTool@{DialogTool}!Build@{Build}}
+\index{Build@{Build}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{Build()}{Build()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Build (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_dialog_along_line_a6495ab201fdb41a2d2c639de06b6d4ac}{Dialog\+Along\+Line}}.
+
+\mbox{\Hypertarget{class_dialog_tool_af5329ca717794e40fe429d8535bda252}\label{class_dialog_tool_af5329ca717794e40fe429d8535bda252}} 
+\index{DialogTool@{DialogTool}!ChangeColor@{ChangeColor}}
+\index{ChangeColor@{ChangeColor}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ChangeColor()}{ChangeColor()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Change\+Color (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{widget,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a0185e281fed2b396c9297363b5950fa9}\label{class_dialog_tool_a0185e281fed2b396c9297363b5950fa9}} 
+\index{DialogTool@{DialogTool}!ChangeCurrentData@{ChangeCurrentData}}
+\index{ChangeCurrentData@{ChangeCurrentData}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ChangeCurrentData()}{ChangeCurrentData()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Change\+Current\+Data (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Change\+Current\+Data select item in combobox by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combobox \\
+\hline
+{\em value} & id of item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a1dde216466b3f09ff51f8538bb279457}\label{class_dialog_tool_a1dde216466b3f09ff51f8538bb279457}} 
+\index{DialogTool@{DialogTool}!CheckState@{CheckState}}
+\index{CheckState@{CheckState}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{CheckState()}{CheckState()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Check\+State enable, when all is correct, or disable, when something wrong, button ok. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_edit_formula_dialog_aab8863b0b9841c83d922e68897b641ed}{Edit\+Formula\+Dialog}}, \mbox{\hyperlink{class_anchor_point_dialog_a5c1e4678811f9b07bfa07fd205ccdffc}{Anchor\+Point\+Dialog}}, \mbox{\hyperlink{class_dialog_arc_ad5921e4254d08a6df7db404daec569ff}{Dialog\+Arc}}, \mbox{\hyperlink{class_dialog_arc_with_length_a37c51dc10f8e19676218cb53182428c0}{Dialog\+Arc\+With\+Length}}, \mbox{\hyperlink{class_dialog_elliptical_arc_a351815593c5401c14d770ce58d018eeb}{Dialog\+Elliptical\+Arc}}, \mbox{\hyperlink{class_dialog_line_intersect_ab32c1469a6c1ea5deed1d26981c2b0f8}{Dialog\+Line\+Intersect}}, \mbox{\hyperlink{class_dialog_mirror_by_axis_a87108d2061f16e669a58c9487c2e751f}{Dialog\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_line_ac9922e43086418b1c42e5c95a23f3c75}{Dialog\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_dialog_move_a9c91368d8428312c506adaed5df90986}{Dialog\+Move}}, \mbox{\hyperlink{class_dialog_point_of_intersection_curves_a9b4ec41a59a610e9e441ac888fe872a0}{Dialog\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_dialog_rotation_a16961c146fcea4c8c9cb51909c435075}{Dialog\+Rotation}}, \mbox{\hyperlink{class_dialog_spline_a4b4fe743daedffacd53be734204152e1}{Dialog\+Spline}}, \mbox{\hyperlink{class_dialog_spline_path_a46db7ce8ff1ead50df13558a850d790a}{Dialog\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_true_darts_af94a5536051d33ccbdd74be5dbbc42aa}{Dialog\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_dialog_acccf114184a890f6627e6f2eeb0fc70d}{Intersect\+Circles\+Dialog}}, \mbox{\hyperlink{class_intersect_circle_tangent_dialog_ae65c86ff4b6c13023ad7cd1315aae518}{Intersect\+Circle\+Tangent\+Dialog}}, \mbox{\hyperlink{class_dialog_internal_path_a0e88d4458efc81e940c0fae432289316}{Dialog\+Internal\+Path}}, and \mbox{\hyperlink{class_pattern_piece_dialog_a09f926983075de232999b990e48a4df8}{Pattern\+Piece\+Dialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_a230903cc2885e3126cc71f175cba6b52}\label{class_dialog_tool_a230903cc2885e3126cc71f175cba6b52}} 
+\index{DialogTool@{DialogTool}!ChosenObject@{ChosenObject}}
+\index{ChosenObject@{ChosenObject}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ChosenObject}{ChosenObject}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Chosen\+Object (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Chosen\+Object gets id and type of selected object. Save right data and ignore wrong. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point or detail \\
+\hline
+{\em type} & type of object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a7351661dd7dfb8231ffdd4b92ddcc11b}\label{class_dialog_tool_a7351661dd7dfb8231ffdd4b92ddcc11b}} 
+\index{DialogTool@{DialogTool}!closeEvent@{closeEvent}}
+\index{closeEvent@{closeEvent}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{closeEvent()}{closeEvent()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::close\+Event (\begin{DoxyParamCaption}\item[{QClose\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+close\+Event handle when dialog cloded 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_dialog_variables_a33d9a602203e0d5d84afe4bcd25f8bdc}{Dialog\+Variables}}, \mbox{\hyperlink{class_history_dialog_ac8d0ae7d5c5e33b970ced33bd3ff98c9}{History\+Dialog}}, \mbox{\hyperlink{class_edit_formula_dialog_ab9bc737eef698e49973d834d0811af3c}{Edit\+Formula\+Dialog}}, \mbox{\hyperlink{class_dialog_along_line_aec5618899efe61791eef8e48538ec426}{Dialog\+Along\+Line}}, \mbox{\hyperlink{class_dialog_arc_a605644ff88a0b209ab95874a7791ad38}{Dialog\+Arc}}, \mbox{\hyperlink{class_dialog_arc_with_length_ae452996440ae3124ff0d8d7367cdc25e}{Dialog\+Arc\+With\+Length}}, \mbox{\hyperlink{class_dialog_bisector_a0294df0fe5578a5378d8fb6189154409}{Dialog\+Bisector}}, \mbox{\hyperlink{class_dialog_curve_intersect_axis_a16899054bd5536f0ac5a8d9bf5127b0e}{Dialog\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_cut_arc_a0c9b5bf6dda0bfa36775f1f32cbee446}{Dialog\+Cut\+Arc}}, \mbox{\hyperlink{class_dialog_cut_spline_aaac30f026bba750fa59ebe320bde212d}{Dialog\+Cut\+Spline}}, \mbox{\hyperlink{class_dialog_cut_spline_path_a94f7338e137a5fd9238a9d43864ccd3e}{Dialog\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_elliptical_arc_a460e128d64c0b33871df446c594d0e79}{Dialog\+Elliptical\+Arc}}, \mbox{\hyperlink{class_dialog_end_line_a04b461217349e90c43090b479105ef12}{Dialog\+End\+Line}}, \mbox{\hyperlink{class_dialog_line_intersect_axis_a61ce04c4a194956785ee6e33e25c6207}{Dialog\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_move_a283781484252b98c273bafac6cc2eed8}{Dialog\+Move}}, \mbox{\hyperlink{class_dialog_normal_a2dadab7d4d5e8cd5909b21b3425c8e79}{Dialog\+Normal}}, \mbox{\hyperlink{class_dialog_point_of_contact_ac9e314f39d75ead66a236a6c8c2ad077}{Dialog\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_dialog_rotation_a2ea85b88713d3e70c180139b57a39e37}{Dialog\+Rotation}}, \mbox{\hyperlink{class_dialog_shoulder_point_aefc1c65a71833b27fbe11500784715c7}{Dialog\+Shoulder\+Point}}, \mbox{\hyperlink{class_dialog_spline_a1ba6fc2d0c2b9679ed3e22c13b19b07d}{Dialog\+Spline}}, \mbox{\hyperlink{class_dialog_spline_path_a56f50afc933aaa8a0a6d5ec78ce311f2}{Dialog\+Spline\+Path}}, \mbox{\hyperlink{class_intersect_circles_dialog_a2f39c11160fcdd716bb5ea9f398bdba2}{Intersect\+Circles\+Dialog}}, \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a50751a914017bb04f926a50cd36005a3}{Intersect\+Circle\+Tangent\+Dialog}}, \mbox{\hyperlink{class_dialog_internal_path_a760c267e9d4e87167521ad9c90515fff}{Dialog\+Internal\+Path}}, and \mbox{\hyperlink{class_pattern_piece_dialog_a0c9c06f8293aefe4176fd65c4301da4e}{Pattern\+Piece\+Dialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_af877cbf87f21cb27e263b2cacfab245c}\label{class_dialog_tool_af877cbf87f21cb27e263b2cacfab245c}} 
+\index{DialogTool@{DialogTool}!DeployFormula@{DeployFormula}}
+\index{DeployFormula@{DeployFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DeployFormula()}{DeployFormula()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Deploy\+Formula (\begin{DoxyParamCaption}\item[{QPlain\+Text\+Edit $\ast$}]{formula,  }\item[{QPush\+Button $\ast$}]{button\+Grow\+Length,  }\item[{int}]{formula\+Base\+Height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a7c0456ea20eb5f1e21a56af2e98a506b}\label{class_dialog_tool_a7c0456ea20eb5f1e21a56af2e98a506b}} 
+\index{DialogTool@{DialogTool}!DialogAccepted@{DialogAccepted}}
+\index{DialogAccepted@{DialogAccepted}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogAccepted}{DialogAccepted}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Dialog\+Accepted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Dialog\+Accepted save data and emit signal about closed dialog. 
+
+\mbox{\Hypertarget{class_dialog_tool_ac326a802f9ee83296e1ff3d5bc95b6e5}\label{class_dialog_tool_ac326a802f9ee83296e1ff3d5bc95b6e5}} 
+\index{DialogTool@{DialogTool}!DialogApplied@{DialogApplied}}
+\index{DialogApplied@{DialogApplied}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogApplied}{DialogApplied}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Dialog\+Applied (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Dialog\+Applied emit signal dialog apply changes. 
+
+\mbox{\Hypertarget{class_dialog_tool_acbd2be3e1ce1652e3fa6177793b22001}\label{class_dialog_tool_acbd2be3e1ce1652e3fa6177793b22001}} 
+\index{DialogTool@{DialogTool}!DialogApply@{DialogApply}}
+\index{DialogApply@{DialogApply}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogApply}{DialogApply}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Dialog\+Apply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Dialog\+Apply save data and emit signal Dialog\+Applied. 
+
+\mbox{\Hypertarget{class_dialog_tool_a2393a727a5d951da5daf2a5950b726af}\label{class_dialog_tool_a2393a727a5d951da5daf2a5950b726af}} 
+\index{DialogTool@{DialogTool}!DialogClosed@{DialogClosed}}
+\index{DialogClosed@{DialogClosed}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogClosed}{DialogClosed}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Dialog\+Closed (\begin{DoxyParamCaption}\item[{int}]{result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Dialog\+Closed signal dialog closed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & keep result \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a03b5e1c41a10e70de19c8800e1dbfe7c}\label{class_dialog_tool_a03b5e1c41a10e70de19c8800e1dbfe7c}} 
+\index{DialogTool@{DialogTool}!DialogRejected@{DialogRejected}}
+\index{DialogRejected@{DialogRejected}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogRejected}{DialogRejected}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Dialog\+Rejected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Dialog\+Rejected emit signal dialog rejected. 
+
+\mbox{\Hypertarget{class_dialog_tool_ae1015f240bf8db960be4c55cb4e06af8}\label{class_dialog_tool_ae1015f240bf8db960be4c55cb4e06af8}} 
+\index{DialogTool@{DialogTool}!DialogWarningIcon@{DialogWarningIcon}}
+\index{DialogWarningIcon@{DialogWarningIcon}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DialogWarningIcon()}{DialogWarningIcon()}}
+{\footnotesize\ttfamily QString Dialog\+Tool\+::\+Dialog\+Warning\+Icon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a019114875b8df91da6678dbc581ea3dc}\label{class_dialog_tool_a019114875b8df91da6678dbc581ea3dc}} 
+\index{DialogTool@{DialogTool}!DNumber@{DNumber}}
+\index{DNumber@{DNumber}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{DNumber()}{DNumber()}}
+{\footnotesize\ttfamily quint32 Dialog\+Tool\+::\+DNumber (\begin{DoxyParamCaption}\item[{const QString \&}]{base\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a4156f1949ecd5d512063d66dbd00b760}\label{class_dialog_tool_a4156f1949ecd5d512063d66dbd00b760}} 
+\index{DialogTool@{DialogTool}!doublePointsExist@{doublePointsExist}}
+\index{doublePointsExist@{doublePointsExist}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{doublePointsExist()}{doublePointsExist()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::double\+Points\+Exist (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a4b5df9919f56e6e1b12a4c2941470108}\label{class_dialog_tool_a4b5df9919f56e6e1b12a4c2941470108}} 
+\index{DialogTool@{DialogTool}!Eval@{Eval}}
+\index{Eval@{Eval}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{Eval()}{Eval()}}
+{\footnotesize\ttfamily qreal Dialog\+Tool\+::\+Eval (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{bool \&}]{flag,  }\item[{QLabel $\ast$}]{label,  }\item[{const QString \&}]{postfix,  }\item[{bool}]{check\+Zero = {\ttfamily true},  }\item[{bool}]{check\+Less\+Than\+Zero = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Eval evaluate formula and show result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & expresion that we parse \\
+\hline
+{\em flag} & flag state of eval formula \\
+\hline
+{\em label} & label for signal error \\
+\hline
+{\em postfix} & unit name \\
+\hline
+{\em check\+Zero} & true -\/ if formula can\textquotesingle{}t be equal zero \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_ad9d6d2baa969f338436cd53d0f33e24f}\label{class_dialog_tool_ad9d6d2baa969f338436cd53d0f33e24f}} 
+\index{DialogTool@{DialogTool}!EvalFormula@{EvalFormula}}
+\index{EvalFormula@{EvalFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{EvalFormula}{EvalFormula}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Eval\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Eval\+Formula evaluate formula. 
+
+\mbox{\Hypertarget{class_dialog_tool_acfc81e416e8719ca8c2d78f54ded9ce3}\label{class_dialog_tool_acfc81e416e8719ca8c2d78f54ded9ce3}} 
+\index{DialogTool@{DialogTool}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{object,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_dialog_variables_acc6801eaaaa0fee80cb60a4d58fe4d94}{Dialog\+Variables}}, \mbox{\hyperlink{class_history_dialog_a9077aabd78d9a9cd48d8a76282ba3f2b}{History\+Dialog}}, \mbox{\hyperlink{class_insert_nodes_dialog_a7c277255cc48bb9e19d6d51f70039842}{Insert\+Nodes\+Dialog}}, and \mbox{\hyperlink{class_pattern_piece_dialog_a38a6020e9a5d5576a01e2d5dadae5727}{Pattern\+Piece\+Dialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_a8ffc4bee8d0c15fce56bf6eeb0b5ee9c}\label{class_dialog_tool_a8ffc4bee8d0c15fce56bf6eeb0b5ee9c}} 
+\index{DialogTool@{DialogTool}!FillCombo@{FillCombo}}
+\index{FillCombo@{FillCombo}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillCombo()}{FillCombo()}}
+{\footnotesize\ttfamily template$<$typename GObject $>$ \\
+void Dialog\+Tool\+::\+Fill\+Combo (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}}]{g\+Type,  }\item[{\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}}}]{rule = {\ttfamily FillComboBox\+:\+:Whole},  }\item[{const quint32 \&}]{ch1 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const quint32 \&}]{ch2 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a8829145090f7ae6629274efe045808c8}\label{class_dialog_tool_a8829145090f7ae6629274efe045808c8}} 
+\index{DialogTool@{DialogTool}!FillComboBoxArcs@{FillComboBoxArcs}}
+\index{FillComboBoxArcs@{FillComboBoxArcs}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxArcs()}{FillComboBoxArcs()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Arcs (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}}}]{rule = {\ttfamily FillComboBox\+:\+:Whole},  }\item[{const quint32 \&}]{ch1 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const quint32 \&}]{ch2 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a33aa732acd7827a8bb95000570eb5730}\label{class_dialog_tool_a33aa732acd7827a8bb95000570eb5730}} 
+\index{DialogTool@{DialogTool}!FillComboBoxCrossCirclesPoints@{FillComboBoxCrossCirclesPoints}}
+\index{FillComboBoxCrossCirclesPoints@{FillComboBoxCrossCirclesPoints}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxCrossCirclesPoints()}{FillComboBoxCrossCirclesPoints()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Cross\+Circles\+Points (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a8a67989df6bc57ce966be64b8144c464}\label{class_dialog_tool_a8a67989df6bc57ce966be64b8144c464}} 
+\index{DialogTool@{DialogTool}!FillComboBoxCurves@{FillComboBoxCurves}}
+\index{FillComboBoxCurves@{FillComboBoxCurves}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxCurves()}{FillComboBoxCurves()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Curves (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_ae5549ef0e9efca43b6ef5e47de4caae4}\label{class_dialog_tool_ae5549ef0e9efca43b6ef5e47de4caae4}} 
+\index{DialogTool@{DialogTool}!FillComboBoxHCrossCurvesPoint@{FillComboBoxHCrossCurvesPoint}}
+\index{FillComboBoxHCrossCurvesPoint@{FillComboBoxHCrossCurvesPoint}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxHCrossCurvesPoint()}{FillComboBoxHCrossCurvesPoint()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+HCross\+Curves\+Point (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a7cef0dbb035fbd6c4bc96c3a2bb5564a}\label{class_dialog_tool_a7cef0dbb035fbd6c4bc96c3a2bb5564a}} 
+\index{DialogTool@{DialogTool}!FillComboBoxLineColors@{FillComboBoxLineColors}}
+\index{FillComboBoxLineColors@{FillComboBoxLineColors}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxLineColors()}{FillComboBoxLineColors()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Line\+Colors (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_aee0fad677c762a4570cc2bc75c781723}\label{class_dialog_tool_aee0fad677c762a4570cc2bc75c781723}} 
+\index{DialogTool@{DialogTool}!FillComboBoxPiecesList@{FillComboBoxPiecesList}}
+\index{FillComboBoxPiecesList@{FillComboBoxPiecesList}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxPiecesList()}{FillComboBoxPiecesList()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Pieces\+List (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a1dde56c8348fe3d0f6de9b3c8883e4e5}\label{class_dialog_tool_a1dde56c8348fe3d0f6de9b3c8883e4e5}} 
+\index{DialogTool@{DialogTool}!FillComboBoxPoints@{FillComboBoxPoints}}
+\index{FillComboBoxPoints@{FillComboBoxPoints}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxPoints()}{FillComboBoxPoints()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Points (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}}}]{rule = {\ttfamily FillComboBox\+:\+:Whole},  }\item[{const quint32 \&}]{ch1 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const quint32 \&}]{ch2 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Fill\+Combo\+Box\+Points fill combo\+Box list of points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combo\+Box \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a8171b02d23b8f1b68fcf8046cd5f3b73}\label{class_dialog_tool_a8171b02d23b8f1b68fcf8046cd5f3b73}} 
+\index{DialogTool@{DialogTool}!FillComboBoxSplines@{FillComboBoxSplines}}
+\index{FillComboBoxSplines@{FillComboBoxSplines}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxSplines()}{FillComboBoxSplines()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Splines (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a6630707aad32ef268dbaad5e59528c99}\label{class_dialog_tool_a6630707aad32ef268dbaad5e59528c99}} 
+\index{DialogTool@{DialogTool}!FillComboBoxSplinesPath@{FillComboBoxSplinesPath}}
+\index{FillComboBoxSplinesPath@{FillComboBoxSplinesPath}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxSplinesPath()}{FillComboBoxSplinesPath()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Splines\+Path (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_af10d637cab7eea9a92019f0ba63eedf8}\label{class_dialog_tool_af10d637cab7eea9a92019f0ba63eedf8}} 
+\index{DialogTool@{DialogTool}!FillComboBoxTypeLine@{FillComboBoxTypeLine}}
+\index{FillComboBoxTypeLine@{FillComboBoxTypeLine}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxTypeLine()}{FillComboBoxTypeLine()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+Type\+Line (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QIcon $>$ \&}]{styles\+Pics }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Fill\+Combo\+Box\+Type\+Line fill combo\+Box list of type lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combo\+Box \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a93fa9411022d5f4a62e5a7a8844939eb}\label{class_dialog_tool_a93fa9411022d5f4a62e5a7a8844939eb}} 
+\index{DialogTool@{DialogTool}!FillComboBoxVCrossCurvesPoint@{FillComboBoxVCrossCurvesPoint}}
+\index{FillComboBoxVCrossCurvesPoint@{FillComboBoxVCrossCurvesPoint}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillComboBoxVCrossCurvesPoint()}{FillComboBoxVCrossCurvesPoint()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+Combo\+Box\+VCross\+Curves\+Point (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a75a5c4949c44282eddb9ab3df2c1fa57}\label{class_dialog_tool_a75a5c4949c44282eddb9ab3df2c1fa57}} 
+\index{DialogTool@{DialogTool}!FillList@{FillList}}
+\index{FillList@{FillList}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FillList()}{FillList()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Fill\+List (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \&}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Fill\+List fill combobox list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combobox \\
+\hline
+{\em list} & list with ids and names \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a8f60df422aa5ea1ecc624cf43022ba2d}\label{class_dialog_tool_a8f60df422aa5ea1ecc624cf43022ba2d}} 
+\index{DialogTool@{DialogTool}!FindNotExcludedNodeDown@{FindNotExcludedNodeDown}}
+\index{FindNotExcludedNodeDown@{FindNotExcludedNodeDown}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FindNotExcludedNodeDown()}{FindNotExcludedNodeDown()}}
+{\footnotesize\ttfamily int Dialog\+Tool\+::\+Find\+Not\+Excluded\+Node\+Down (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget,  }\item[{int}]{candidate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a2982410c0fd57467d34bca670eb5a1b9}\label{class_dialog_tool_a2982410c0fd57467d34bca670eb5a1b9}} 
+\index{DialogTool@{DialogTool}!FindNotExcludedNodeUp@{FindNotExcludedNodeUp}}
+\index{FindNotExcludedNodeUp@{FindNotExcludedNodeUp}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FindNotExcludedNodeUp()}{FindNotExcludedNodeUp()}}
+{\footnotesize\ttfamily int Dialog\+Tool\+::\+Find\+Not\+Excluded\+Node\+Up (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget,  }\item[{int}]{candidate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a397da3002c5c83a84d784c6b466ec8a8}\label{class_dialog_tool_a397da3002c5c83a84d784c6b466ec8a8}} 
+\index{DialogTool@{DialogTool}!FormulaChanged@{FormulaChanged}}
+\index{FormulaChanged@{FormulaChanged}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FormulaChanged}{FormulaChanged}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Formula\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+formula check formula 
+
+\mbox{\Hypertarget{class_dialog_tool_af00983bcf09aa5eeed7aefec44c61ba6}\label{class_dialog_tool_af00983bcf09aa5eeed7aefec44c61ba6}} 
+\index{DialogTool@{DialogTool}!FormulaChangedPlainText@{FormulaChangedPlainText}}
+\index{FormulaChangedPlainText@{FormulaChangedPlainText}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{FormulaChangedPlainText}{FormulaChangedPlainText}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Formula\+Changed\+Plain\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Formula\+Changed\+Plain\+Text check formula (plain text editor editor) 
+
+\mbox{\Hypertarget{class_dialog_tool_a224b095efb6bf4df93b3048c7ffbc625}\label{class_dialog_tool_a224b095efb6bf4df93b3048c7ffbc625}} 
+\index{DialogTool@{DialogTool}!GetAssociatedTool@{GetAssociatedTool}}
+\index{GetAssociatedTool@{GetAssociatedTool}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{GetAssociatedTool()}{GetAssociatedTool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} $\ast$ Dialog\+Tool\+::\+Get\+Associated\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a9cb6fec9007d2c41cafbefddfbc029ce}\label{class_dialog_tool_a9cb6fec9007d2c41cafbefddfbc029ce}} 
+\index{DialogTool@{DialogTool}!GetComboBoxCurrentData@{GetComboBoxCurrentData}}
+\index{GetComboBoxCurrentData@{GetComboBoxCurrentData}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{GetComboBoxCurrentData()}{GetComboBoxCurrentData()}}
+{\footnotesize\ttfamily QString Dialog\+Tool\+::\+Get\+Combo\+Box\+Current\+Data (\begin{DoxyParamCaption}\item[{const QCombo\+Box $\ast$}]{box,  }\item[{const QString \&}]{def }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_af503e383e8d38ee0c3a257097ce07050}\label{class_dialog_tool_af503e383e8d38ee0c3a257097ce07050}} 
+\index{DialogTool@{DialogTool}!getCurrentCrossPoint@{getCurrentCrossPoint}}
+\index{getCurrentCrossPoint@{getCurrentCrossPoint}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{getCurrentCrossPoint()}{getCurrentCrossPoint()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Dialog\+Tool\+::get\+Current\+Cross\+Point (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_afa53df30e6ef6b3fb2bae2884a2fd49f}\label{class_dialog_tool_afa53df30e6ef6b3fb2bae2884a2fd49f}} 
+\index{DialogTool@{DialogTool}!getCurrentObjectId@{getCurrentObjectId}}
+\index{getCurrentObjectId@{getCurrentObjectId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{getCurrentObjectId()}{getCurrentObjectId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Tool\+::get\+Current\+Object\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get\+Current\+Point\+Id return current point id stored in combobox 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combobox \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id or 0 if combobox is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_dialog_tool_ae701ca9f14235946065b508fe2389d45}\label{class_dialog_tool_ae701ca9f14235946065b508fe2389d45}} 
+\index{DialogTool@{DialogTool}!GetListInternals@{GetListInternals}}
+\index{GetListInternals@{GetListInternals}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{GetListInternals()}{GetListInternals()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ Dialog\+Tool\+::\+Get\+List\+Internals (\begin{DoxyParamCaption}\item[{const QList\+Widget $\ast$}]{list }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a5eef349e9569db795e529aa76781ef8c}\label{class_dialog_tool_a5eef349e9569db795e529aa76781ef8c}} 
+\index{DialogTool@{DialogTool}!getNodeInfo@{getNodeInfo}}
+\index{getNodeInfo@{getNodeInfo}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{getNodeInfo()}{getNodeInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node_info}{Node\+Info}} Dialog\+Tool\+::get\+Node\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&}]{node,  }\item[{bool}]{show\+Notch = {\ttfamily false} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a83443b31adec5f8e62f475ec558040ab}\label{class_dialog_tool_a83443b31adec5f8e62f475ec558040ab}} 
+\index{DialogTool@{DialogTool}!getPointName@{getPointName}}
+\index{getPointName@{getPointName}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{getPointName()}{getPointName()}}
+{\footnotesize\ttfamily QString Dialog\+Tool\+::get\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dialog_tool_af9467b65f15e412b823d5097141437f6}\label{class_dialog_tool_af9467b65f15e412b823d5097141437f6}} 
+\index{DialogTool@{DialogTool}!GetToolId@{GetToolId}}
+\index{GetToolId@{GetToolId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{GetToolId()}{GetToolId()}}
+{\footnotesize\ttfamily quint32 Dialog\+Tool\+::\+Get\+Tool\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_dialog_tool_acf79dba7d4eb08e97b7f31a8c1b384f3}\label{class_dialog_tool_acf79dba7d4eb08e97b7f31a8c1b384f3}} 
+\index{DialogTool@{DialogTool}!initializeFormulaUi@{initializeFormulaUi}}
+\index{initializeFormulaUi@{initializeFormulaUi}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{initializeFormulaUi()}{initializeFormulaUi()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Dialog\+Tool\+::initialize\+Formula\+Ui (\begin{DoxyParamCaption}\item[{T $\ast$}]{ui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+initialize\+Formula\+Ui initialize ui object for the formula field 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui} & Dialog container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_ac9178fdeab3fb37fc6ca434aefea6b3e}\label{class_dialog_tool_ac9178fdeab3fb37fc6ca434aefea6b3e}} 
+\index{DialogTool@{DialogTool}!initializeNodeAngles@{initializeNodeAngles}}
+\index{initializeNodeAngles@{initializeNodeAngles}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{initializeNodeAngles()}{initializeNodeAngles()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::initialize\+Node\+Angles (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}\label{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}} 
+\index{DialogTool@{DialogTool}!initializeOkCancel@{initializeOkCancel}}
+\index{initializeOkCancel@{initializeOkCancel}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{initializeOkCancel()}{initializeOkCancel()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Dialog\+Tool\+::initialize\+Ok\+Cancel (\begin{DoxyParamCaption}\item[{T $\ast$}]{ui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+initialize\+Ok\+Cancel initialize OK and Cancel buttons 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui} & Dialog container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a901630e1afd5b1f74c829b3ec701ac52}\label{class_dialog_tool_a901630e1afd5b1f74c829b3ec701ac52}} 
+\index{DialogTool@{DialogTool}!initializeOkCancelApply@{initializeOkCancelApply}}
+\index{initializeOkCancelApply@{initializeOkCancelApply}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{initializeOkCancelApply()}{initializeOkCancelApply()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Dialog\+Tool\+::initialize\+Ok\+Cancel\+Apply (\begin{DoxyParamCaption}\item[{T $\ast$}]{ui }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+initialize\+Ok\+Cancel\+Apply initialize OK / Cancel and Apply buttons 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ui} & Dialog container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_ab13e9c3720e404f3c9eb7b08f6655c86}\label{class_dialog_tool_ab13e9c3720e404f3c9eb7b08f6655c86}} 
+\index{DialogTool@{DialogTool}!isEachPointNameUnique@{isEachPointNameUnique}}
+\index{isEachPointNameUnique@{isEachPointNameUnique}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{isEachPointNameUnique()}{isEachPointNameUnique()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::is\+Each\+Point\+Name\+Unique (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a11954ff102b5b3ab8dfdb9412fd91de4}\label{class_dialog_tool_a11954ff102b5b3ab8dfdb9412fd91de4}} 
+\index{DialogTool@{DialogTool}!isFirstPointSameAsLast@{isFirstPointSameAsLast}}
+\index{isFirstPointSameAsLast@{isFirstPointSameAsLast}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{isFirstPointSameAsLast()}{isFirstPointSameAsLast()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::is\+First\+Point\+Same\+As\+Last (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a706841d17b43aa0407e847f52e9b00b7}\label{class_dialog_tool_a706841d17b43aa0407e847f52e9b00b7}} 
+\index{DialogTool@{DialogTool}!IsSpline@{IsSpline}}
+\index{IsSpline@{IsSpline}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{IsSpline()}{IsSpline()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::\+Is\+Spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_dialog_tool_afa5b038b1b7df8c71b214cc8f7f4ec7e}\label{class_dialog_tool_afa5b038b1b7df8c71b214cc8f7f4ec7e}} 
+\index{DialogTool@{DialogTool}!IsSplinePath@{IsSplinePath}}
+\index{IsSplinePath@{IsSplinePath}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{IsSplinePath()}{IsSplinePath()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::\+Is\+Spline\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_dialog_tool_aa719545191dd63fba3deee7346dbc4a0}\label{class_dialog_tool_aa719545191dd63fba3deee7346dbc4a0}} 
+\index{DialogTool@{DialogTool}!keyPressEvent@{keyPressEvent}}
+\index{keyPressEvent@{keyPressEvent}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{keyPressEvent()}{keyPressEvent()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::key\+Press\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a36321c7aa19366c412c876622c944941}\label{class_dialog_tool_a36321c7aa19366c412c876622c944941}} 
+\index{DialogTool@{DialogTool}!MoveCursorToEnd@{MoveCursorToEnd}}
+\index{MoveCursorToEnd@{MoveCursorToEnd}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{MoveCursorToEnd()}{MoveCursorToEnd()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Move\+Cursor\+To\+End (\begin{DoxyParamCaption}\item[{QPlain\+Text\+Edit $\ast$}]{plain\+Text\+Edit }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a4902afcca8125302cdde635be455f83e}\label{class_dialog_tool_a4902afcca8125302cdde635be455f83e}} 
+\index{DialogTool@{DialogTool}!moveListRowBottom@{moveListRowBottom}}
+\index{moveListRowBottom@{moveListRowBottom}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{moveListRowBottom()}{moveListRowBottom()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::move\+List\+Row\+Bottom (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a5672621ca3d899af2173bc1444a6dea8}\label{class_dialog_tool_a5672621ca3d899af2173bc1444a6dea8}} 
+\index{DialogTool@{DialogTool}!moveListRowDown@{moveListRowDown}}
+\index{moveListRowDown@{moveListRowDown}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{moveListRowDown()}{moveListRowDown()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::move\+List\+Row\+Down (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a8117559f39a9b9068f94f21f25a4b4ad}\label{class_dialog_tool_a8117559f39a9b9068f94f21f25a4b4ad}} 
+\index{DialogTool@{DialogTool}!moveListRowTop@{moveListRowTop}}
+\index{moveListRowTop@{moveListRowTop}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{moveListRowTop()}{moveListRowTop()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::move\+List\+Row\+Top (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dialog_tool_aed689641215eb4d3af8e11e81df8a1d1}\label{class_dialog_tool_aed689641215eb4d3af8e11e81df8a1d1}} 
+\index{DialogTool@{DialogTool}!moveListRowUp@{moveListRowUp}}
+\index{moveListRowUp@{moveListRowUp}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{moveListRowUp()}{moveListRowUp()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::move\+List\+Row\+Up (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a2a6070cab102675260601eb6fdaf61a2}\label{class_dialog_tool_a2a6070cab102675260601eb6fdaf61a2}} 
+\index{DialogTool@{DialogTool}!NamePointChanged@{NamePointChanged}}
+\index{NamePointChanged@{NamePointChanged}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{NamePointChanged}{NamePointChanged}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Name\+Point\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Name\+Point\+Changed check name of point. 
+
+\mbox{\Hypertarget{class_dialog_tool_a720450bced2cbb0fbff11d2f638d2078}\label{class_dialog_tool_a720450bced2cbb0fbff11d2f638d2078}} 
+\index{DialogTool@{DialogTool}!newNodeItem@{newNodeItem}}
+\index{newNodeItem@{newNodeItem}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{newNodeItem()}{newNodeItem()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::new\+Node\+Item (\begin{DoxyParamCaption}\item[{QList\+Widget $\ast$}]{list\+Widget,  }\item[{const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&}]{node,  }\item[{bool}]{node\+Excluded = {\ttfamily true},  }\item[{bool}]{is\+Duplicate = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a85e03f7e768ff5534af1888c09d3704a}\label{class_dialog_tool_a85e03f7e768ff5534af1888c09d3704a}} 
+\index{DialogTool@{DialogTool}!NodeFont@{NodeFont}}
+\index{NodeFont@{NodeFont}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{NodeFont()}{NodeFont()}}
+{\footnotesize\ttfamily QFont Dialog\+Tool\+::\+Node\+Font (\begin{DoxyParamCaption}\item[{bool}]{node\+Excluded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a0eab9de855cc29e63f22aa5e087a25f3}\label{class_dialog_tool_a0eab9de855cc29e63f22aa5e087a25f3}} 
+\index{DialogTool@{DialogTool}!normalize@{normalize}}
+\index{normalize@{normalize}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily qreal Dialog\+Tool\+::normalize (\begin{DoxyParamCaption}\item[{const qreal}]{value,  }\item[{const qreal}]{start,  }\item[{const qreal}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_ad0735fb82a3aa73ec2eb8efdd7276084}\label{class_dialog_tool_ad0735fb82a3aa73ec2eb8efdd7276084}} 
+\index{DialogTool@{DialogTool}!PointNameChanged@{PointNameChanged}}
+\index{PointNameChanged@{PointNameChanged}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{PointNameChanged}{PointNameChanged}}
+{\footnotesize\ttfamily virtual void Dialog\+Tool\+::\+Point\+Name\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a60b9a53cf72829a083fec2c3bdbb7214}\label{class_dialog_tool_a60b9a53cf72829a083fec2c3bdbb7214}} 
+\index{DialogTool@{DialogTool}!PrepareList@{PrepareList}}
+\index{PrepareList@{PrepareList}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{PrepareList()}{PrepareList()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Dialog\+Tool\+::\+Prepare\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \&}]{list,  }\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_dialog_tool_aa197a256d8d19a03878816f138e4e248}\label{class_dialog_tool_aa197a256d8d19a03878816f138e4e248}} 
+\index{DialogTool@{DialogTool}!SaveData@{SaveData}}
+\index{SaveData@{SaveData}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SaveData()}{SaveData()}}
+{\footnotesize\ttfamily virtual void Dialog\+Tool\+::\+Save\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Save\+Data Put dialog data in local variables. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_dialog_along_line_aaab6b63b31f163729a5ebc0dbeb3d201}{Dialog\+Along\+Line}}, \mbox{\hyperlink{class_dialog_arc_a619e85cf0e97e67ab9eedfacd253458b}{Dialog\+Arc}}, \mbox{\hyperlink{class_dialog_arc_with_length_ab4411ed38538453c9161f30b73e5e501}{Dialog\+Arc\+With\+Length}}, \mbox{\hyperlink{class_dialog_bisector_aadebdce539df872e5141232a818d1a06}{Dialog\+Bisector}}, \mbox{\hyperlink{class_dialog_cubic_bezier_a6011faa4ef03716bf15145a468f290ee}{Dialog\+Cubic\+Bezier}}, \mbox{\hyperlink{class_dialog_cubic_bezier_path_a40990ada1a72ae49fb3394029592fe6f}{Dialog\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_dialog_curve_intersect_axis_a5c96e46e6a64a7e058275670bb396b59}{Dialog\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_cut_arc_aa343005003af37a7b3dedf3c56c2ddf4}{Dialog\+Cut\+Arc}}, \mbox{\hyperlink{class_dialog_cut_spline_a58705dfbbbeaf7d8cf2ab3cd737d4d0b}{Dialog\+Cut\+Spline}}, \mbox{\hyperlink{class_dialog_cut_spline_path_a966087640fd591ba36631a7f60f174b8}{Dialog\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_elliptical_arc_ad2c2dbe66e78bc42a2ed66be1acaa85a}{Dialog\+Elliptical\+Arc}}, \mbox{\hyperlink{class_dialog_end_line_a59f35e5dbab776297080f6316fc5be06}{Dialog\+End\+Line}}, \mbox{\hyperlink{class_dialog_height_a187ab30d509902e374e5074475f0920a}{Dialog\+Height}}, \mbox{\hyperlink{class_dialog_line_a20a46b448a09161cc7842a7aff129c6d}{Dialog\+Line}}, \mbox{\hyperlink{class_dialog_line_intersect_aa4afe69ecd5047bd2adb7491ea0b9b71}{Dialog\+Line\+Intersect}}, \mbox{\hyperlink{class_dialog_line_intersect_axis_a04d6522178aaeaa727c103e559996c91}{Dialog\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_axis_ad7f19d4d60d8abbc75719dc2d327649c}{Dialog\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_line_a1ae3ef4394d6058d41fd90dbbc83f8a6}{Dialog\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_dialog_move_a4029c03df9c114ba6cec4869eb6ce72c}{Dialog\+Move}}, \mbox{\hyperlink{class_dialog_normal_aafd741373e878793935aefa3b9f46ff1}{Dialog\+Normal}}, \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_ab484ae13a9dfbc117e9f565de93e9112}{Dialog\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_dialog_point_of_contact_aea8f2c69407b653a8244a9c49009b51e}{Dialog\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_dialog_point_of_intersection_arcs_a1a398bda716e7ab92f9f7ae48c0d93f5}{Dialog\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_dialog_point_of_intersection_curves_aadc474f14b448964305059ecb941827c}{Dialog\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_dialog_rotation_a8967be49576ed5209673d2845d34438d}{Dialog\+Rotation}}, \mbox{\hyperlink{class_dialog_shoulder_point_a426d328cde03714475a06c6c0a54b166}{Dialog\+Shoulder\+Point}}, \mbox{\hyperlink{class_dialog_single_point_a6d7ec96a47d486ec6ff05e85a005bb1b}{Dialog\+Single\+Point}}, \mbox{\hyperlink{class_dialog_spline_ac8cba4f1dd99a10d26f6f8475fa9779a}{Dialog\+Spline}}, \mbox{\hyperlink{class_dialog_spline_path_a3c073e753898e1a29148d8ea6432925c}{Dialog\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_triangle_ac177d24b3549afa7b0d79d20e2fbd767}{Dialog\+Triangle}}, \mbox{\hyperlink{class_dialog_true_darts_aa76e7d409c327e2b5a8c755313512962}{Dialog\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_dialog_a606f168ce3b0b78cc68820b93f2c9329}{Intersect\+Circles\+Dialog}}, \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a9f3bf63539e7eb47b066d34f85768e60}{Intersect\+Circle\+Tangent\+Dialog}}, \mbox{\hyperlink{class_pattern_piece_dialog_a5b61fd0480c0bb8d55d4a13ff99dee47}{Pattern\+Piece\+Dialog}}, and \mbox{\hyperlink{class_point_intersect_x_y_dialog_a5a414932886bcebeb512f32d81b2a8fa}{Point\+Intersect\+XYDialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_aed1e44149aa815113d986a9bc124681b}\label{class_dialog_tool_aed1e44149aa815113d986a9bc124681b}} 
+\index{DialogTool@{DialogTool}!SelectedObject@{SelectedObject}}
+\index{SelectedObject@{SelectedObject}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SelectedObject}{SelectedObject}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Selected\+Object (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{object,  }\item[{quint32}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a51759a1e557e81b0fea372b51719b32f}\label{class_dialog_tool_a51759a1e557e81b0fea372b51719b32f}} 
+\index{DialogTool@{DialogTool}!SetAssociatedTool@{SetAssociatedTool}}
+\index{SetAssociatedTool@{SetAssociatedTool}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SetAssociatedTool()}{SetAssociatedTool()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Set\+Associated\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} $\ast$}]{tool }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dialog_tool_a0ecf83868bfccb70cc591b1b34fd771c}\label{class_dialog_tool_a0ecf83868bfccb70cc591b1b34fd771c}} 
+\index{DialogTool@{DialogTool}!setCurrentArcId@{setCurrentArcId}}
+\index{setCurrentArcId@{setCurrentArcId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{setCurrentArcId()}{setCurrentArcId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::set\+Current\+Arc\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const quint32 \&}]{value,  }\item[{\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}}}]{rule = {\ttfamily FillComboBox\+:\+:NoChildren},  }\item[{const quint32 \&}]{ch1 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const quint32 \&}]{ch2 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set\+Current\+Arc\+Id 
+
+\mbox{\Hypertarget{class_dialog_tool_ae6eff8c971708961729f688140cab7b3}\label{class_dialog_tool_ae6eff8c971708961729f688140cab7b3}} 
+\index{DialogTool@{DialogTool}!setCurrentCurveId@{setCurrentCurveId}}
+\index{setCurrentCurveId@{setCurrentCurveId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{setCurrentCurveId()}{setCurrentCurveId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::set\+Current\+Curve\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const quint32 \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a016b1091fc5d9a147a02701e69f3ae31}\label{class_dialog_tool_a016b1091fc5d9a147a02701e69f3ae31}} 
+\index{DialogTool@{DialogTool}!setCurrentPointId@{setCurrentPointId}}
+\index{setCurrentPointId@{setCurrentPointId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{setCurrentPointId()}{setCurrentPointId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::set\+Current\+Point\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const quint32 \&}]{value,  }\item[{\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{Fill\+Combo\+Box}}}]{rule = {\ttfamily FillComboBox\+:\+:NoChildren},  }\item[{const quint32 \&}]{ch1 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const quint32 \&}]{ch2 = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a3e775b55743322dd5bed09c46d15cb0c}\label{class_dialog_tool_a3e775b55743322dd5bed09c46d15cb0c}} 
+\index{DialogTool@{DialogTool}!setCurrentSplineId@{setCurrentSplineId}}
+\index{setCurrentSplineId@{setCurrentSplineId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{setCurrentSplineId()}{setCurrentSplineId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::set\+Current\+Spline\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const quint32 \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set\+Current\+Spline\+Id set current spline id in combobox 
+
+\mbox{\Hypertarget{class_dialog_tool_a9492af06a71defebbb5162b68eec4e31}\label{class_dialog_tool_a9492af06a71defebbb5162b68eec4e31}} 
+\index{DialogTool@{DialogTool}!setCurrentSplinePathId@{setCurrentSplinePathId}}
+\index{setCurrentSplinePathId@{setCurrentSplinePathId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{setCurrentSplinePathId()}{setCurrentSplinePathId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::set\+Current\+Spline\+Path\+Id (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{box,  }\item[{const quint32 \&}]{value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+set\+Current\+Spline\+Path\+Id set current spline\+Path id in combobox 
+
+
+\begin{DoxyParams}{Parameters}
+{\em box} & combobox \\
+\hline
+{\em value} & spline\+Path id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a7a40d87b6501f1123c624e1a71d6b22b}\label{class_dialog_tool_a7a40d87b6501f1123c624e1a71d6b22b}} 
+\index{DialogTool@{DialogTool}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id,  }\item[{QCombo\+Box $\ast$}]{box,  }\item[{const QString \&}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_ae8a522bc8cd5063cf17cb29d2c14e453}\label{class_dialog_tool_ae8a522bc8cd5063cf17cb29d2c14e453}} 
+\index{DialogTool@{DialogTool}!SetPiecesList@{SetPiecesList}}
+\index{SetPiecesList@{SetPiecesList}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SetPiecesList()}{SetPiecesList()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Set\+Pieces\+List (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_anchor_point_dialog_a86e2d79c7f0d33ef17995d07c041e2a1}{Anchor\+Point\+Dialog}}, \mbox{\hyperlink{class_insert_nodes_dialog_a8c30e7b2689ce9cf97707a60e6196d58}{Insert\+Nodes\+Dialog}}, and \mbox{\hyperlink{class_dialog_internal_path_afc1ab0a65ee6f4bd6690890942d36c03}{Dialog\+Internal\+Path}}.
+
+\mbox{\Hypertarget{class_dialog_tool_aa41431027e66aac4474c163fcb8460a6}\label{class_dialog_tool_aa41431027e66aac4474c163fcb8460a6}} 
+\index{DialogTool@{DialogTool}!SetToolId@{SetToolId}}
+\index{SetToolId@{SetToolId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{SetToolId()}{SetToolId()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Set\+Tool\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_dialog_tool_a6da67387057958c9a8de664a86c14efb}\label{class_dialog_tool_a6da67387057958c9a8de664a86c14efb}} 
+\index{DialogTool@{DialogTool}!ShowDialog@{ShowDialog}}
+\index{ShowDialog@{ShowDialog}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ShowDialog()}{ShowDialog()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Show\+Dialog (\begin{DoxyParamCaption}\item[{bool}]{click }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_add_to_group_dialog_a47720c76f22bdc9cb8107067bfee6cfc}{Add\+To\+Group\+Dialog}}, \mbox{\hyperlink{class_dialog_curve_intersect_axis_a2af75909a181cb0c5afaff534ede501f}{Dialog\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_end_line_acd90279aaecbb431166e7d2e4210a80a}{Dialog\+End\+Line}}, \mbox{\hyperlink{class_edit_group_dialog_adbc0bf8c6c609ec2396a640f0c5f1d90}{Edit\+Group\+Dialog}}, \mbox{\hyperlink{class_dialog_line_intersect_axis_a36651ef205e1188eb87164da129fad39}{Dialog\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_axis_a97ba05689be2049f2a975baa1fc1fd34}{Dialog\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_line_af5ac1085c1948763852b0bee0bb9d35b}{Dialog\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_dialog_move_aa2ac42a218ca0837abf91493594e2ce3}{Dialog\+Move}}, \mbox{\hyperlink{class_dialog_rotation_a553b3ffdbefd53586f3b2723092bc30f}{Dialog\+Rotation}}, \mbox{\hyperlink{class_edit_group_dialog_a15fbc5449f218bd0c1b79808f15898ed}{Edit\+Group\+Dialog}}, and \mbox{\hyperlink{class_insert_nodes_dialog_a7f26a9ea6b8130eef05917bdad78dee8}{Insert\+Nodes\+Dialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_a60bf040b63da264b842ebe9b7ef76564}\label{class_dialog_tool_a60bf040b63da264b842ebe9b7ef76564}} 
+\index{DialogTool@{DialogTool}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+show\+Event handle when window show 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & event \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_dialog_variables_af3d3dc7fcf94aa5607f1b7287e473c43}{Dialog\+Variables}}, \mbox{\hyperlink{class_edit_formula_dialog_aedb06a6ddda0154ad24ad75c98be65ad}{Edit\+Formula\+Dialog}}, and \mbox{\hyperlink{class_pattern_piece_dialog_abd6963706325033527135e575d754506}{Pattern\+Piece\+Dialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_a27c61eab1bc3d32f6917983612ab8594}\label{class_dialog_tool_a27c61eab1bc3d32f6917983612ab8594}} 
+\index{DialogTool@{DialogTool}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily virtual void Dialog\+Tool\+::\+Show\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_anchor_point_dialog_af0b9a7fabc1202048fba570cbd2af05f}{Anchor\+Point\+Dialog}}, \mbox{\hyperlink{class_dialog_along_line_a362351ba83c358f2468f9ed1e5b06f0a}{Dialog\+Along\+Line}}, \mbox{\hyperlink{class_dialog_arc_aabe00326bf082baedee03417df94f59c}{Dialog\+Arc}}, \mbox{\hyperlink{class_dialog_arc_with_length_a115ef6a240034c04bfeb0695495e86de}{Dialog\+Arc\+With\+Length}}, \mbox{\hyperlink{class_dialog_bisector_a27cf19e9a4b1758c712d466aaedc381d}{Dialog\+Bisector}}, \mbox{\hyperlink{class_dialog_cubic_bezier_a04afe665ac2b877cbafbf1dd765f7828}{Dialog\+Cubic\+Bezier}}, \mbox{\hyperlink{class_dialog_cubic_bezier_path_a3379ef59299af4d97c203ce21a0cf426}{Dialog\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_dialog_curve_intersect_axis_a546104926c24c6970361db184a22e409}{Dialog\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_cut_arc_a430f33dfe52841e1894f58c5f04dde4c}{Dialog\+Cut\+Arc}}, \mbox{\hyperlink{class_dialog_cut_spline_abb3e50749fb43f0fddef408b5415621e}{Dialog\+Cut\+Spline}}, \mbox{\hyperlink{class_dialog_cut_spline_path_a8ca021a07b04bc573579262e38951847}{Dialog\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_elliptical_arc_aa89294a6daf6d12735895ff1ffe1a67f}{Dialog\+Elliptical\+Arc}}, \mbox{\hyperlink{class_dialog_end_line_a8d3fbdb04aa32e7c46a6011c2e71d748}{Dialog\+End\+Line}}, \mbox{\hyperlink{class_dialog_height_a0f2703123b38a63d2e00205743669c64}{Dialog\+Height}}, \mbox{\hyperlink{class_dialog_line_a0a94d8be1f4fc9bc8f77b0ead337d129}{Dialog\+Line}}, \mbox{\hyperlink{class_dialog_line_intersect_a3c1e072f77ca639d30fb9dcb23953c38}{Dialog\+Line\+Intersect}}, \mbox{\hyperlink{class_dialog_line_intersect_axis_ac21153318d65941e67dfdbf782b8976c}{Dialog\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_axis_ad98655f75443a6b8f09595c52fcf40ab}{Dialog\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_dialog_mirror_by_line_a948de455332b8863b961ec893d11d80d}{Dialog\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_dialog_move_afabad1ca989babb31df612a0b1a831d1}{Dialog\+Move}}, \mbox{\hyperlink{class_dialog_normal_a880b7c40da64413f8386bac2392dc398}{Dialog\+Normal}}, \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a7793dcc46f28108c497d4142b7d245cd}{Dialog\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_dialog_point_of_contact_ada6d0e8460711d31b73539fc4e8c5c21}{Dialog\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_dialog_point_of_intersection_arcs_a9a913139225cf504d46f71ee644c71ab}{Dialog\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_dialog_point_of_intersection_curves_affd8130434afe55c97455a9d48f1ca58}{Dialog\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_dialog_rotation_a1b2cf83817c8ca83017dad8371612bf0}{Dialog\+Rotation}}, \mbox{\hyperlink{class_dialog_shoulder_point_addf0ce83ce0f7cef990a18c37351c5d6}{Dialog\+Shoulder\+Point}}, \mbox{\hyperlink{class_dialog_spline_a0d8b3c7b8f3ae6232c7ccf56ce9aee62}{Dialog\+Spline}}, \mbox{\hyperlink{class_dialog_spline_path_aad64c951ec66796f6943a3e1c17b309f}{Dialog\+Spline\+Path}}, \mbox{\hyperlink{class_dialog_triangle_a5e8067f868ee0845e2c2ec9c14e03f14}{Dialog\+Triangle}}, \mbox{\hyperlink{class_dialog_true_darts_a628ccf2077e78bc42f48c4199b904178}{Dialog\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_dialog_a5bac9858a5edb55987e2523043307993}{Intersect\+Circles\+Dialog}}, \mbox{\hyperlink{class_intersect_circle_tangent_dialog_ac3364e7fe7b478be947e0ef49313b018}{Intersect\+Circle\+Tangent\+Dialog}}, \mbox{\hyperlink{class_dialog_internal_path_a8cadbff0e7d5daba4d7b6486a84e20d9}{Dialog\+Internal\+Path}}, and \mbox{\hyperlink{class_point_intersect_x_y_dialog_a0f070ea45e42c0f386dfaf226208fc28}{Point\+Intersect\+XYDialog}}.
+
+\mbox{\Hypertarget{class_dialog_tool_a1320c278e99ba783af0a5c289375bf9a}\label{class_dialog_tool_a1320c278e99ba783af0a5c289375bf9a}} 
+\index{DialogTool@{DialogTool}!ToolTip@{ToolTip}}
+\index{ToolTip@{ToolTip}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ToolTip}{ToolTip}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Tool\+Tip (\begin{DoxyParamCaption}\item[{const QString \&}]{tool\+Tip }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Tool\+Tip emit tooltipe for tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tool\+Tip} & text tooltipe \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a741d3d48764376f0141fed30732dc929}\label{class_dialog_tool_a741d3d48764376f0141fed30732dc929}} 
+\index{DialogTool@{DialogTool}!ValFormulaChanged@{ValFormulaChanged}}
+\index{ValFormulaChanged@{ValFormulaChanged}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ValFormulaChanged()}{ValFormulaChanged()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Val\+Formula\+Changed (\begin{DoxyParamCaption}\item[{bool \&}]{flag,  }\item[{QLine\+Edit $\ast$}]{edit,  }\item[{QTimer $\ast$}]{timer,  }\item[{const QString \&}]{postfix = {\ttfamily QString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Val\+Formula\+Changed handle change formula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & flag state of formula \\
+\hline
+{\em edit} & Line\+Edit \\
+\hline
+{\em timer} & timer of formula \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_dialog_tool_a6d804ec08cd47457aefb8bfdf3d06053}\label{class_dialog_tool_a6d804ec08cd47457aefb8bfdf3d06053}} 
+\index{DialogTool@{DialogTool}!ValFormulaChanged@{ValFormulaChanged}}
+\index{ValFormulaChanged@{ValFormulaChanged}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ValFormulaChanged()}{ValFormulaChanged()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Dialog\+Tool\+::\+Val\+Formula\+Changed (\begin{DoxyParamCaption}\item[{bool \&}]{flag,  }\item[{QPlain\+Text\+Edit $\ast$}]{edit,  }\item[{QTimer $\ast$}]{timer,  }\item[{const QString \&}]{postfix = {\ttfamily QString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}\label{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}} 
+\index{DialogTool@{DialogTool}!apply\_Button@{apply\_Button}}
+\index{apply\_Button@{apply\_Button}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{apply\_Button}{apply\_Button}}
+{\footnotesize\ttfamily QPush\+Button$\ast$ Dialog\+Tool\+::apply\+\_\+\+Button\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+apply\+\_\+\+Button button apply 
+
+\mbox{\Hypertarget{class_dialog_tool_aad9a35a39c3034577c209f304f4457d7}\label{class_dialog_tool_aad9a35a39c3034577c209f304f4457d7}} 
+\index{DialogTool@{DialogTool}!associatedTool@{associatedTool}}
+\index{associatedTool@{associatedTool}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{associatedTool}{associatedTool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}$\ast$ Dialog\+Tool\+::associated\+Tool\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+associated\+Tool vdrawtool associated with opened dialog. 
+
+\mbox{\Hypertarget{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}\label{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}} 
+\index{DialogTool@{DialogTool}!data@{data}}
+\index{data@{data}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_container}{VContainer}}$\ast$ Dialog\+Tool\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+data container with data 
+
+\mbox{\Hypertarget{class_dialog_tool_a6a353f3802c04a2ece105e0283d6052e}\label{class_dialog_tool_a6a353f3802c04a2ece105e0283d6052e}} 
+\index{DialogTool@{DialogTool}!errorColor@{errorColor}}
+\index{errorColor@{errorColor}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{errorColor}{errorColor}}
+{\footnotesize\ttfamily const QColor Dialog\+Tool\+::error\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a9581294606516971fdf492161d59fff9}\label{class_dialog_tool_a9581294606516971fdf492161d59fff9}} 
+\index{DialogTool@{DialogTool}!flagError@{flagError}}
+\index{flagError@{flagError}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{flagError}{flagError}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::flag\+Error\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag\+Error use this flag if for you do not enought 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}{flag\+Name}} and 
+
+\mbox{\hyperlink{class_dialog_tool_a3e515cda2fda84c61765eb64eeea7d34}{flag\+Formula}}.
+\end{DoxySeeAlso}
+In many cases you will need more flags fore checking if all data are valid. By default this flag is true. \mbox{\Hypertarget{class_dialog_tool_a3e515cda2fda84c61765eb64eeea7d34}\label{class_dialog_tool_a3e515cda2fda84c61765eb64eeea7d34}} 
+\index{DialogTool@{DialogTool}!flagFormula@{flagFormula}}
+\index{flagFormula@{flagFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{flagFormula}{flagFormula}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::flag\+Formula\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag\+Formula true if formula correct 
+
+\mbox{\Hypertarget{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}\label{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}} 
+\index{DialogTool@{DialogTool}!flagName@{flagName}}
+\index{flagName@{flagName}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{flagName}{flagName}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::flag\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+flag\+Name true if name is correct 
+
+\mbox{\Hypertarget{class_dialog_tool_a7e9f7c34ba709ce74ed865ee990bb9f0}\label{class_dialog_tool_a7e9f7c34ba709ce74ed865ee990bb9f0}} 
+\index{DialogTool@{DialogTool}!isInitialized@{isInitialized}}
+\index{isInitialized@{isInitialized}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{isInitialized}{isInitialized}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::is\+Initialized\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+is\+Initialized true if window is initialized 
+
+\mbox{\Hypertarget{class_dialog_tool_a8842d70341f4aa1f27b6787ce83f433a}\label{class_dialog_tool_a8842d70341f4aa1f27b6787ce83f433a}} 
+\index{DialogTool@{DialogTool}!labelEditFormula@{labelEditFormula}}
+\index{labelEditFormula@{labelEditFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{labelEditFormula}{labelEditFormula}}
+{\footnotesize\ttfamily QLabel$\ast$ Dialog\+Tool\+::label\+Edit\+Formula\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+label\+Edit\+Formula label used when need show wrong formula 
+
+\mbox{\Hypertarget{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}\label{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}} 
+\index{DialogTool@{DialogTool}!labelEditNamePoint@{labelEditNamePoint}}
+\index{labelEditNamePoint@{labelEditNamePoint}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{labelEditNamePoint}{labelEditNamePoint}}
+{\footnotesize\ttfamily QLabel$\ast$ Dialog\+Tool\+::label\+Edit\+Name\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+label\+Edit\+Name\+Point label used when need show wrong name of point 
+
+\mbox{\Hypertarget{class_dialog_tool_ab4865848cb3cb7af4a539c8794503c2e}\label{class_dialog_tool_ab4865848cb3cb7af4a539c8794503c2e}} 
+\index{DialogTool@{DialogTool}!labelResultCalculation@{labelResultCalculation}}
+\index{labelResultCalculation@{labelResultCalculation}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{labelResultCalculation}{labelResultCalculation}}
+{\footnotesize\ttfamily QLabel$\ast$ Dialog\+Tool\+::label\+Result\+Calculation\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+label\+Result\+Calculation label with result of calculation 
+
+\mbox{\Hypertarget{class_dialog_tool_a6f583a6003585697d9b06234fd1ace14}\label{class_dialog_tool_a6f583a6003585697d9b06234fd1ace14}} 
+\index{DialogTool@{DialogTool}!number@{number}}
+\index{number@{number}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{number}{number}}
+{\footnotesize\ttfamily qint32 Dialog\+Tool\+::number\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+number number of handled objects 
+
+\mbox{\Hypertarget{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}\label{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}} 
+\index{DialogTool@{DialogTool}!ok\_Button@{ok\_Button}}
+\index{ok\_Button@{ok\_Button}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{ok\_Button}{ok\_Button}}
+{\footnotesize\ttfamily QPush\+Button$\ast$ Dialog\+Tool\+::ok\+\_\+\+Button\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ok\+\_\+\+Button button ok 
+
+\mbox{\Hypertarget{class_dialog_tool_a080d3a4a41e6b70099d201fd2bb8a963}\label{class_dialog_tool_a080d3a4a41e6b70099d201fd2bb8a963}} 
+\index{DialogTool@{DialogTool}!okColor@{okColor}}
+\index{okColor@{okColor}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{okColor}{okColor}}
+{\footnotesize\ttfamily const QColor Dialog\+Tool\+::ok\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_a9bd2db37902c5cdc80815322a4d039b1}\label{class_dialog_tool_a9bd2db37902c5cdc80815322a4d039b1}} 
+\index{DialogTool@{DialogTool}!plainTextEditFormula@{plainTextEditFormula}}
+\index{plainTextEditFormula@{plainTextEditFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{plainTextEditFormula}{plainTextEditFormula}}
+{\footnotesize\ttfamily QPlain\+Text\+Edit$\ast$ Dialog\+Tool\+::plain\+Text\+Edit\+Formula\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+plain\+Text\+Edit\+Formula formula 
+
+\mbox{\Hypertarget{class_dialog_tool_a400ae6a47a2596e2ccec2bc892171d77}\label{class_dialog_tool_a400ae6a47a2596e2ccec2bc892171d77}} 
+\index{DialogTool@{DialogTool}!pointName@{pointName}}
+\index{pointName@{pointName}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{pointName}{pointName}}
+{\footnotesize\ttfamily QString Dialog\+Tool\+::point\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+point\+Name name of point 
+
+\mbox{\Hypertarget{class_dialog_tool_a9ccfbc64fabcbc33167437af63980278}\label{class_dialog_tool_a9ccfbc64fabcbc33167437af63980278}} 
+\index{DialogTool@{DialogTool}!prepare@{prepare}}
+\index{prepare@{prepare}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{prepare}{prepare}}
+{\footnotesize\ttfamily bool Dialog\+Tool\+::prepare\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+prepare show if we prepare. Show dialog after finish working with visual part of tool 
+
+\mbox{\Hypertarget{class_dialog_tool_a0a118fe7df26258a50f0bb05c5d1c2cf}\label{class_dialog_tool_a0a118fe7df26258a50f0bb05c5d1c2cf}} 
+\index{DialogTool@{DialogTool}!spinBoxAngle@{spinBoxAngle}}
+\index{spinBoxAngle@{spinBoxAngle}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{spinBoxAngle}{spinBoxAngle}}
+{\footnotesize\ttfamily QDouble\+Spin\+Box$\ast$ Dialog\+Tool\+::spin\+Box\+Angle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+spin\+Box\+Angle spinbox for angle 
+
+\mbox{\Hypertarget{class_dialog_tool_accfd3d6d420e77a482145f715a915dfe}\label{class_dialog_tool_accfd3d6d420e77a482145f715a915dfe}} 
+\index{DialogTool@{DialogTool}!timerFormula@{timerFormula}}
+\index{timerFormula@{timerFormula}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{timerFormula}{timerFormula}}
+{\footnotesize\ttfamily QTimer$\ast$ Dialog\+Tool\+::timer\+Formula\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+timer\+Formula timer for check formula 
+
+\mbox{\Hypertarget{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}\label{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}} 
+\index{DialogTool@{DialogTool}!toolId@{toolId}}
+\index{toolId@{toolId}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{toolId}{toolId}}
+{\footnotesize\ttfamily quint32 Dialog\+Tool\+::tool\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_dialog_tool_aef05247e05fbecb1b99ebcf486972ee6}\label{class_dialog_tool_aef05247e05fbecb1b99ebcf486972ee6}} 
+\index{DialogTool@{DialogTool}!vis@{vis}}
+\index{vis@{vis}!DialogTool@{DialogTool}}
+\doxysubsubsection{\texorpdfstring{vis}{vis}}
+{\footnotesize\ttfamily QPointer$<$\mbox{\hyperlink{class_visualization}{Visualization}}$>$ Dialog\+Tool\+::vis\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogtool_8h}{dialogtool.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/dialogs/tools/\mbox{\hyperlink{dialogtool_8cpp}{dialogtool.\+cpp}}\end{DoxyCompactItemize}

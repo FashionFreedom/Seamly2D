@@ -1,0 +1,85 @@
+\hypertarget{vdxfpaintdevice_8h_source}{}\doxysection{vdxfpaintdevice.\+h}
+\label{vdxfpaintdevice_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/vdxfpaintdevice.h@{D:/Github/Seamly2D/src/libs/vdxf/vdxfpaintdevice.h}}
+\mbox{\hyperlink{vdxfpaintdevice_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vdxfpaintdevice.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Valentina\ Zhuravska\ <zhuravska19(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 812,\ 2015}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VDXFPAINTDEVICE\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VDXFPAINTDEVICE\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QPaintDevice>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dxfdef_8h}{dxfdef.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__base_8h}{libdxfrw/drw\_base.h}}"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_dxf_engine}{VDxfEngine}};}
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_dxf_paint_device}{VDxfPaintDevice}}\ :\ \textcolor{keyword}{public}\ QPaintDevice}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_v_dxf_paint_device_a6089c3fa69f2ca2350079b4ebbafa03a}{VDxfPaintDevice}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_dxf_paint_device_a321cb8ce82b476d9e0446035dd46fbe8}{\string~VDxfPaintDevice}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ QPaintEngine\ *\mbox{\hyperlink{class_v_dxf_paint_device_a3b358c3a0024bec45afd6206a51ccabb}{paintEngine}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_dxf_paint_device_a8c225f3ff614f8635cdbbe18508a5c85}{getFileName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_paint_device_a726bc1b44892eed695062a8a6aa9d6b3}{setFileName}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ QSize\ \mbox{\hyperlink{class_v_dxf_paint_device_a855ac3d08d09dd972c4b0d8b2c132ee9}{getSize}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_paint_device_aefb4b62638827786e4b74eea23126014}{setSize}}(\textcolor{keyword}{const}\ QSize\ \&size);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_dxf_paint_device_afa6f3d1b65d34eecd2e3289d962d20f5}{getResolution}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_dxf_paint_device_a9b1b6b710536f3c95b2b937ec4b4853e}{setResolution}}(\textcolor{keywordtype}{double}\ dpi);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ \mbox{\hyperlink{class_v_dxf_paint_device_aa73ba51c9da3639eddbbfe05024cc7ee}{GetVersion}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_paint_device_acb34895712b956f08ec8092af9360af7}{SetVersion}}(\mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ version);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_paint_device_a8a196029cf54e0ae2f996ea8f98c0f73}{SetBinaryFormat}}(\textcolor{keywordtype}{bool}\ binary);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_paint_device_acb30209a8316d3724fba507c09bbea3a}{IsBinaryFormat}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_paint_device_ad2db47830068128819e21d783712e1c1}{setMeasurement}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ \&var);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_paint_device_a202b0841da36242a84b46d4af118ef9f}{setInsunits}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ \&var);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_paint_device_a655e8e09a7da888f633be417cebc86d4}{ExportToAAMA}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VLayoutPiece>}}\ \&details)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_dxf_paint_device_a82cc93dd629fbb8bebc6c9e68c39e407}{metric}}(PaintDeviceMetric\ \mbox{\hyperlink{class_v_dxf_paint_device_a82cc93dd629fbb8bebc6c9e68c39e407}{metric}})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_dxf_paint_device}{VDxfPaintDevice}})}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine}{VDxfEngine}}\ *\mbox{\hyperlink{class_v_dxf_paint_device_a7079291bad3c0041c37c0f02bae5c136}{engine}};}
+\DoxyCodeLine{00076\ \ \ \ \ QString\ \ \ \ \ \mbox{\hyperlink{class_v_dxf_paint_device_afd14327f7a978f5a3337df94c03ad0f1}{fileName}};}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VDXFPAINTDEVICE\_H}}
+
+\end{DoxyCode}

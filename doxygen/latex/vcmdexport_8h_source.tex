@@ -1,0 +1,135 @@
+\hypertarget{vcmdexport_8h_source}{}\doxysection{vcmdexport.\+h}
+\label{vcmdexport_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/core/vcmdexport.h@{D:/Github/Seamly2D/src/app/seamly2d/core/vcmdexport.h}}
+\mbox{\hyperlink{vcmdexport_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vcmdexport.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Alex\ Zaharov\ <alexzkhr@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 25\ 8,\ 2015}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VCMDEXPORT\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VCMDEXPORT\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QCommandLineParser>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}../dialogs/dialoglayoutsettings.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vsysexits.h"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_command_line}{VCommandLine}};}
+\DoxyCodeLine{00042\ \textcolor{keyword}{typedef}\ std::shared\_ptr<VCommandLine>\ \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommandLinePtr}};}
+\DoxyCodeLine{00043\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_q_list}{QList<QCommandLineOption\ *>}}\ \mbox{\hyperlink{vcmdexport_8h_ae120138e297c1ee2e21134edd10e53f0}{VCommandLineOptions}};}
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ std::shared\_ptr<VLayoutGenerator>\ \mbox{\hyperlink{vcmdexport_8h_a2a5de723f4f2e702d26026cb3471b1ea}{VLayoutGeneratorPtr}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//@brief:\ class\ used\ to\ install\ export\ command\ line\ options\ and\ parse\ their\ values}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//QCommandLineParser*\ object\ must\ exists\ until\ this\ object\ alive}}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_command_line}{VCommandLine}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_command_line_ad503fbc8dd0ee22648cb1e979313b33a}{\string~VCommandLine}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{comment}{//@brief\ creates\ object\ and\ applies\ export\ related\ options\ to\ parser}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//@brief\ tests\ if\ user\ enabled\ test\ mode\ from\ cmd,\ throws\ exception\ if\ not\ exactly\ 1\ input\ VAL\ file\ supplied\ in}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{comment}{//case\ test\ mode\ enabled}}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_a1c1e829f0ae5cd638c17766d9b2667e6}{IsTestModeEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_a8d3cce9fe8102719fc2a597e174d9111}{IsNoScalingEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//@brief\ tests\ if\ user\ enabled\ export\ from\ cmd,\ throws\ exception\ if\ not\ exactly\ 1\ input\ VAL\ file\ supplied\ in\ case}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{//export\ enabled}}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_a706457e068420b4d4fab477113bd0f5b}{IsExportEnabled}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ path\ to\ custom\ measure\ file\ or\ empty\ string}}
+\DoxyCodeLine{00066\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_command_line_a87abfdb29ffb704172bff3b27647ed93}{OptMeasurePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ the\ base\ name\ of\ layout\ files\ or\ empty\ string\ if\ not\ set}}
+\DoxyCodeLine{00069\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_command_line_a6c973fe004418eb62f7015a6ca9081dc}{OptBaseName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ the\ absolute\ path\ to\ output\ destination\ directory\ or\ path\ to\ application's\ current\ directory\ if}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{comment}{//not\ set}}
+\DoxyCodeLine{00073\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_command_line_a074b6f87e6ef085c0d649bfe02190826}{OptDestinationPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ export\ type\ set,\ defaults\ 0\ -\/\ svg}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_command_line_aff33c109c48cbbff27aa5a16b59c0ccd}{OptExportType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_command_line_a726e083c6a52d77fb79bf4aa8a7c5f4e}{IsBinaryDXF}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_command_line_a80c5a70e0f4aa77675b5a1a63192f490}{isTextAsPaths}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_command_line_a6612a9d7665df267486ba7782974fcff}{exportOnlyPieces}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{comment}{//generator\ creation\ is\ moved\ here\ ...\ because\ most\ options\ are\ for\ it\ only,\ so\ no\ need\ to\ create\ extra\ getters...}}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{comment}{//@brief\ creates\ VLayoutGenerator}}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{vcmdexport_8h_a2a5de723f4f2e702d26026cb3471b1ea}{VLayoutGeneratorPtr}}\ \mbox{\hyperlink{class_v_command_line_ab6633ae9e7716e7b69d9f2c2063a98fd}{DefaultGenerator}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//@brief\ gets\ filenames\ which\ should\ be\ loaded}}
+\DoxyCodeLine{00087\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_v_command_line_a382ce878ff87c04f1cb78a50702e79e1}{OptInputFileNames}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_ae56e17de2eb6926e72c8617b2c79b298}{IsGuiEnabled}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_af6fad6ad5512d4987d84f919abda02b7}{IsSetGradationSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_add2cbe8d5202f1fd283363bca5e22190}{IsSetGradationHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_command_line_ae9ad6d8619fb7d02f335df04eb305107}{OptGradationSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_command_line_a3720867519ba7a1a9cf9a4b04d847d2b}{OptGradationHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \mbox{\hyperlink{class_v_command_line_a6632dbd14b714bd9e40e950edb98390a}{VCommandLine}}();}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ DialogLayoutSettings::PaperSizeTemplate}}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3}{DialogLayoutSettings::PaperSizeTemplate}}\ \ \mbox{\hyperlink{class_v_command_line_a7397887d24fe424be8ee68d327cc5e72}{OptPaperSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{comment}{//@brief\ returns\ rotation\ in\ degrees\ or\ 0\ if\ not\ set}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_command_line_a145f6e89c7ee1b51946d50f58d08b16b}{OptRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ \mbox{\hyperlink{class_v_command_line_a37707851589ee4a26a5dcacec1c52f44}{OptGroup}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//@brief:\ called\ in\ destructor\ of\ application,\ so\ instance\ destroyed\ and\ new\ maybe\ created\ (never\ happen\ scenario\ though)}}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_command_line_a3a2b8e0d6286a6d9f806f3b0756d23a4}{Reset}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//@brief\ called\ to\ create\ single\ object,\ by\ VApplication\ only}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommandLinePtr}}\ \mbox{\hyperlink{class_v_command_line_a9758b8b982c50c953cf2f95b6d53d4e9}{Get}}(\textcolor{keyword}{const}\ QCoreApplication\&\ app);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_command_line}{VCommandLine}})}
+\DoxyCodeLine{00116\ \ \ \ \ static\ \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommandLinePtr}}\ \mbox{\hyperlink{class_v_command_line_a4a357d0d1371aa548d5c716196b05066}{instance}};}
+\DoxyCodeLine{00117\ \ \ \ \ QCommandLineParser\ \mbox{\hyperlink{class_v_command_line_a58d314b95b46c89a3284654289366ced}{parser}};}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{class_q_list}{VCommandLineOptions}}\ \mbox{\hyperlink{class_v_command_line_a029b6fb4ed6697d7b7e414e55ffe63c4}{optionsUsed}};}
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \textcolor{keywordtype}{int}>\ \mbox{\hyperlink{class_v_command_line_af81799ac36c307795352e9591799e1a2}{optionsIndex}};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_command_line_a384ad7063d35874f4ef39f898c429064}{isGuiEnabled}};}
+\DoxyCodeLine{00121\ \ \ \ \ friend\ class\ \mbox{\hyperlink{class_v_application}{VApplication}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ static\ qreal\ \mbox{\hyperlink{class_v_command_line_abf39c734ffdc03366993bb66272f467c}{Lo2Px}}(const\ QString\&\ src,\ const\ \mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}}\&\ converter);}
+\DoxyCodeLine{00124\ \ \ \ \ static\ qreal\ \mbox{\hyperlink{class_v_command_line_ae6e8e1817bbb36afa24e1568b4a714ee}{Pg2Px}}(const\ QString\&\ src,\ const\ \mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}}\&\ converter);}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_command_line_a34868dd737f107850fab35d0fd0f1d37}{InitOptions}}(\mbox{\hyperlink{class_q_list}{VCommandLineOptions}}\ \&options,\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \textcolor{keywordtype}{int}>\ \&\mbox{\hyperlink{class_v_command_line_af81799ac36c307795352e9591799e1a2}{optionsIndex}});}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VCMDEXPORT\_H}}
+
+\end{DoxyCode}

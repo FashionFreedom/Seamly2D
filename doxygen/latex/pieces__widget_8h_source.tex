@@ -1,0 +1,106 @@
+\hypertarget{pieces__widget_8h_source}{}\doxysection{pieces\+\_\+widget.\+h}
+\label{pieces__widget_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/pieces\_widget.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/pieces\_widget.h}}
+\mbox{\hyperlink{pieces__widget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ pieces\_widget.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 3,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ if\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vwidgetdetails.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 25\ 6,\ 2016}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ PIECES\_WIDGET\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ PIECES\_WIDGET\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QTableWidgetItem>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}};}
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece}{VPiece}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pieces_widget}{PiecesWidget}};}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pieces_widget}{PiecesWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget}{PiecesWidget}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *doc,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_ab4096645e716572633572dbb8c97ed1a}{\string~PiecesWidget}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ signals:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a7b9c38b1dd4bed3600a80ea0f001cfba}{Highlight}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a78cc6bd8e469ce3645b6ac155fe9a584}{togglePiece}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a9a502204686ed38078abf6f3e64bc839}{updateList}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a87d3d05e8cdd2a87ed321c772755a150}{selectPiece}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a116cf928e4eb5e270e251f5634f60d0c}{cellClicked}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_ab5054a1f0a0433e85e89eea1fda34d1a}{cellDoubleClicked}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a51dfb37180f45c8f78db5705a749288b}{showContextMenu}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_pieces_widget}{PiecesWidget}})}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_pieces_widget}{PiecesWidget}}\ \ *\mbox{\hyperlink{class_pieces_widget_ad613899bfff5bef6d873f5bc675ac01b}{ui}};}
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ \ *\mbox{\hyperlink{class_pieces_widget_aafa4255cebd84f4e86a0af2904635a94}{m\_doc}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_pieces_widget_ac6bb78b6db34fdc506dee3fcbae60b40}{m\_data}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a044aa63471f847d4a7bf20cee16dca4f}{fillTable}}(const\ \mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_piece}{VPiece}}>\ *details);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_aa0f1aae79966af1605650c5df6cce521}{toggleInLayoutPieces}}(\textcolor{keywordtype}{bool}\ inLayout);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pieces_widget_a54841cd64e97a2601c7b4c35cc0bbf4c}{toggleLockedPieces}}(\textcolor{keywordtype}{bool}\ lock);}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PIECES\_WIDGET\_H}}
+
+\end{DoxyCode}

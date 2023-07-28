@@ -1,0 +1,72 @@
+\hypertarget{vpropertydelegate_8h_source}{}\doxysection{vpropertydelegate.\+h}
+\label{vpropertydelegate_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertydelegate.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertydelegate.h}}
+\mbox{\hyperlink{vpropertydelegate_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertydelegate.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYDELEGATE\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYDELEGATE\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QStyleOptionViewItem>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QStyledItemDelegate>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate}{VPropertyDelegate}}\ :\ \textcolor{keyword}{public}\ QStyledItemDelegate}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate}{VPropertyDelegate}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2a1d251b25b4d97bf18aa3e93af22bdc}{\string~VPropertyDelegate}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ QWidget*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_afd40dbc025bb9c06220ab63335203561}{createEditor}}\ (QWidget*\ parent,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\&\ option,}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QModelIndex\&\ index)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a3b5a2fc1b3446e4a7f0a8ccd0a06f39b}{setEditorData}}\ (QWidget\ *\ editor,\ \textcolor{keyword}{const}\ QModelIndex\ \&\ index)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_aa5ddcc07e61cf45ab5000cfbaeb54f88}{setModelData}}\ (QWidget\ *\ editor,\ QAbstractItemModel\ *\ model,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QModelIndex\ \&\ index)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ QSize\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_ad29a5be39f15e8b9c94bb11b232f001f}{sizeHint}}\ (\textcolor{keyword}{const}\ QStyleOptionViewItem\&\ option,\ \textcolor{keyword}{const}\ QModelIndex\&\ index)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2b0be47a79b41c698822f5dd019190bd}{setRowHeight}}(\textcolor{keywordtype}{int}\ height\ =\ 0,\ \textcolor{keywordtype}{bool}\ add\_to\_standard\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_ad5675c0df717b899427a81701c79a0fe}{paint}}\ (QPainter*\ painter,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\&\ option,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QModelIndex\&\ index\ )\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a37ecba35ae69ca6ef89d1b5f5942a8f5}{RowHeight}};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2ad77ae411f4eef7bc71aca2866ec927}{AddRowHeight}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYDELEGATE\_H}}
+
+\end{DoxyCode}

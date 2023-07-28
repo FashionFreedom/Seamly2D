@@ -1,0 +1,225 @@
+\hypertarget{vpatternconverter_8h_source}{}\doxysection{vpatternconverter.\+h}
+\label{vpatternconverter_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/xml/vpatternconverter.h@{D:/Github/Seamly2D/src/libs/ifc/xml/vpatternconverter.h}}
+\mbox{\hyperlink{vpatternconverter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vpatternconverter.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vpatternconverter.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 11\ 12,\ 2014}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2014\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VPATTERNCONVERTER\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VPATTERNCONVERTER\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractconverter_8h}{vabstractconverter.h}}"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }QDomElement;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_converter}{VAbstractConverter}}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}})}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}}(\textcolor{keyword}{const}\ QString\ \&fileName);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_pattern_converter_a3b6e574a015bb79b2509dbd8d0cd3b10}{\string~VPatternConverter}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a3864d17988224b9a79f058456de8b99c}{PatternMaxVerStr}};}
+\DoxyCodeLine{00078\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a007507fc592c953033b5abb868f6a6d0}{CurrentSchema}};}
+\DoxyCodeLine{00079\ \ \ \ \ static\ Q\_DECL\_CONSTEXPR\ const\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_pattern_converter_ac8ba8b56a2be05751a15f056bea9b6cc}{PatternMinVer}}\ =\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(0,\ 1,\ 0);}
+\DoxyCodeLine{00080\ \ \ \ \ static\ Q\_DECL\_CONSTEXPR\ const\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_pattern_converter_ac941310b80899dfaa534730d557ecf82}{PatternMaxVer}}\ =\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(0,\ 6,\ 8);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ protected:}
+\DoxyCodeLine{00083\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ad76be34e9f337aeca0967fd17ad53447}{MinVer}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a0255baa550c3fbfd0a96d53d8de7a57d}{MaxVer}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a12281c8ae50d1c11f9c4fd69e6608125}{MinVerStr}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00087\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a6548c4943e1d13315d1f86036a21126c}{MaxVerStr}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_pattern_converter_ac7885870742769a64169366edeb6e022}{XSDSchema}}(\textcolor{keywordtype}{int}\ ver)\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aa28a183465192f112a7a1214e127909e}{ApplyPatches}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a81dd57426d65be4fc7968dbcbff37d53}{DowngradeToCurrentMaxVersion}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_add45d71dd1267c1c93e1bbc21ebde4dd}{IsReadOnly}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ private:}
+\DoxyCodeLine{00096\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}})}
+\DoxyCodeLine{00097\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a0959b32742723013f21b2d44d2325c68}{PatternMinVerStr}};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a7e7706ccbcc1f7e33018bee610e8c9d3}{toVersion0\_1\_1}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_abcfac3cf18219baac2d58cafe2434440}{toVersion0\_1\_2}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a76dc216082ec6ba6069fe5f20561b96d}{toVersion0\_1\_3}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a5ab3b2449349571f1368dcbc0f3e1411}{toVersion0\_1\_4}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aae63c770eb97c5c9efdd6b9342bfea91}{toVersion0\_2\_0}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ad25db1df5c89fece6e6fca440f45ebad}{toVersion0\_2\_1}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ac61cf34fd5b5e21a0834a39b84f4924a}{toVersion0\_2\_2}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aa4c0e65c03808d34d0db1027b4776ef4}{toVersion0\_2\_3}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a113c672a98e19c121ccbede69e8ca1f8}{toVersion0\_2\_4}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a61914686ad1cf8cff9df48d574cb462e}{toVersion0\_2\_5}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_adc23be678b51ad65c166982ad017f9a8}{toVersion0\_2\_6}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ad6fae16776e08b40834697068bc95ea9}{toVersion0\_2\_7}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a505c9fffb27b26f2459fbb9894ef8e19}{toVersion0\_3\_0}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a30a9baac2485df7514c648f52eec2b43}{toVersion0\_3\_1}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a13ea3c1f12afda699af0c2c5de882504}{toVersion0\_3\_2}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ae1640e84b57092192a8680f2153a0bd8}{toVersion0\_3\_3}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a9687e7ac6674dd79d13d4e8f7095512a}{toVersion0\_3\_4}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a9ecaef0b430a17211ab331a9a6d2da36}{toVersion0\_3\_5}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a16194b1e9e60814b60fc92f478b25de1}{toVersion0\_3\_6}}();}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a3fcc2172232f763fe9a0f6fa36d7f295}{toVersion0\_3\_7}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a118f998907b0d542094a3184c055f77c}{toVersion0\_3\_8}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_afc027e1dd1ee29e8eb70e4da9a90692a}{toVersion0\_3\_9}}();}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ae0db54245a7019da0fbcae30046a2681}{toVersion0\_4\_0}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ad51ace5b3533fb57ffaf90ea7db70b85}{toVersion0\_4\_1}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a1a69f0ebac0b6e074c798a332796df9d}{toVersion0\_4\_2}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a14f81aa1da6539fc9efa268d507ac632}{toVersion0\_4\_3}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a8444a987892fe787ba9003c56d75fcb4}{toVersion0\_4\_4}}();}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a8ac4610fd14425ecda355eb1ec822031}{toVersion0\_4\_5}}();}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a424b51f5c2e32512220ba63b2bc18bf7}{toVersion0\_4\_6}}();}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_abf742ade69b3c7c87e60da3a1102d329}{toVersion0\_4\_7}}();}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a5261adbdabd3f6c2674e84d2ea5a0819}{toVersion0\_4\_8}}();}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aa5341b06be05668eb006ddb1d7e84275}{toVersion0\_5\_0}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a535fa9e6a4aedcbc808e9fe790bf5cb0}{toVersion0\_5\_1}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a2f36142333aee80c083d1fdf0a867a94}{toVersion0\_6\_0}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a5888d1a3f2726b3506bb5f8e20426751}{toVersion0\_6\_1}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a5cd6aff78a069e0e3fd3026d7ca6f023}{toVersion0\_6\_2}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ab37e55c6cb8f9beb7364615849c9a058}{toVersion0\_6\_3}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a241420a515ee65efb1ddc01f38584676}{toVersion0\_6\_4}}();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a55ec736a5a130d25a005fc5470fa3f6c}{toVersion0\_6\_5}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a78e291b004bab89b7b4b298db5da7dc1}{toVersion0\_6\_6}}();}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a12be3d350c583938c8ede31356d4ee49}{toVersion0\_6\_7}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aa0f3ba55de081f3dfb47037811e42199}{toVersion0\_6\_8}}();}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a52a5c4e7dc8d600857b2b864a47a8956}{TagUnitToV0\_2\_0}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_af9a8936cefca59fe790f362290602cf0}{TagIncrementToV0\_2\_0}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a67a9bff04b9608e674adebe27b349445}{ConvertMeasurementsToV0\_2\_0}}();}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a12a4e1723ab6c3f087d4f0c2e791e97e}{TagMeasurementsToV0\_2\_0}}();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a0df9436d291bb27b974ae41be4287db4}{ConvertMeasurementsToV0\_2\_1}}();}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a5ff19bcae2fb45c04e78ecffd0d68b96}{RemoveColorToolCutV0\_3\_1}}();}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ QSet<QString>\ \mbox{\hyperlink{class_v_pattern_converter_a9a86a418c59714eca87812208351f1a2}{FixIncrementsToV0\_2\_0}}();}
+\DoxyCodeLine{00152\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_acf2d9ba152756f37289d4bc983b5ceed}{FixIncrementInFormulaToV0\_2\_0}}(const\ QString\ \&formula,\ const\ QSet<QString>\ \&names);}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_aca24eaa183c0c516023fa8d05e8949d3}{FixPointExpressionsToV0\_2\_0}}(const\ QSet<QString>\ \&names);}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a441350b473a9052850bc89f8986c2159}{FixArcExpressionsToV0\_2\_0}}(const\ QSet<QString>\ \&names);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ac562c708c2e42bd6486f04f25d9c077c}{FixPathPointExpressionsToV0\_2\_0}}(const\ QSet<QString>\ \&names);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a53a970836e452ca0c9e9480bf699b439}{ConvertPointExpressionsToV0\_2\_0}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \&names);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a0f3f6ed09b5ff6561b6f9c83d9dcea29}{ConvertArcExpressionsToV0\_2\_0}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \&names);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ade077117c1bb837796a025373d8915e8}{ConvertPathPointExpressionsToV0\_2\_0}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \&names);}
+\DoxyCodeLine{00160\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a89715544d4ab483e768d0c87e44eb809}{FixMeasurementInFormulaToV0\_2\_0}}(const\ QString\ \&formula,\ const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \&names);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ab06df614a9f8475ee8fb9139600da3ce}{MUnitV0\_1\_4}}()\ const;}
+\DoxyCodeLine{00163\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_v_pattern_converter_a8ac8cc06bf2e5faedb7afe7281076248}{TagMeasurementsV0\_1\_4}}()\ const;}
+\DoxyCodeLine{00164\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_v_pattern_converter_affc3700db421befca14513ff95f17851}{TagIncrementsV0\_1\_4}}()\ const;}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a7e74e28823c37a3c5c801dc079608312}{FixToolUnionToV0\_2\_4}}();}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_adda00469710e22ba5c00773856bd0ede}{ParseModelingToV0\_2\_4}}(const\ QDomElement\ \&modeling);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a7490817b36c63c0123f54b88203b1a16}{SaveChildrenToolUnionToV0\_2\_4}}(quint32\ \textcolor{keywordtype}{id},\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \&children);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ static\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \mbox{\hyperlink{class_v_pattern_converter_aa1cfa069d32bf06a074c7c3155a1ab24}{OldNamesToNewNames\_InV0\_2\_0}}();}
+\DoxyCodeLine{00171\ \ \ \ \ static\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \mbox{\hyperlink{class_v_pattern_converter_ab7c0b6163d9bcc85f2370e12b3649965}{OldNamesToNewNames\_InV0\_2\_1}}();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ae1d16c8130e6a346d539e3d22f9c1ed7}{FixCutPoint}}();}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a26586bd71cb0dfb45b639db0bb0e2df2}{FixSubPaths}}(\textcolor{keywordtype}{int}\ i,\ quint32\ \textcolor{keywordtype}{id},\ quint32\ baseCurve);}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a214a87096f25be89f2ee91dd66f3b85e}{TagRemoveAttributeTypeObjectInV0\_4\_0}}();}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a9c0607e6002e5822eaf4c2647a60a0fe}{TagDetailToV0\_4\_0}}();}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_abcd3decaa2f843cca2547598854fee1e}{TagUnionDetailsToV0\_4\_0}}();}
+\DoxyCodeLine{00179\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_v_pattern_converter_a2630bbc1dd13372a0f4055fb0c218b53}{GetUnionDetailNodesV0\_4\_0}}(const\ QDomElement\ \&detail);}
+\DoxyCodeLine{00180\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_v_pattern_converter_a24641da50cc3e65ebd2f0abb944c4d21}{GetUnionChildrenNodesV0\_4\_0}}(const\ QDomElement\ \&detail);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a501e0a45743ca6d9136aeca5e598e3d1}{LabelTagToV0\_4\_4}}(const\ QString\ \&tagName);}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_v_pattern_converter_a1fd971c95470f0ae30956d6750232f19}{AddTagPatternLabelV0\_5\_1}}();}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a96a860ad8d4f1b5df477c9145eae874c}{PortPatternLabeltoV0\_6\_0}}(QDomElement\ \&label);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_ad19e3078d103d04ea4827c176be9f708}{AddLabelTemplateLineV0\_6\_0}}(QDomElement\ \&label,\ const\ QString\ \&text,\ \textcolor{keywordtype}{bool}\ bold,}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ italic,\ \textcolor{keywordtype}{int}\ alignment,\ \textcolor{keywordtype}{int}\ fontSizeIncrement);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a938342c68e3dec1c869f385ec654b4a2}{PortPieceLabelstoV0\_6\_0}}();}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a9e07319a3c4296b894361305fe44f326}{RemoveUnusedTagsV0\_6\_0}}();}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a1509f20c62f4c1758b86b5c7d7a49750}{RemoveUniqueTagV0\_6\_0}}(const\ QString\ \&tag);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_converter_a9f5a1663c10f2e9227286937f7076f32}{renameAttribute}}(QDomElement\ \&element,\ const\ QString\ \&oldName,}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&newName,\ const\ QString\ \&value)\ const;}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00196\ inline\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}}::\mbox{\hyperlink{class_v_pattern_converter_ad76be34e9f337aeca0967fd17ad53447}{MinVer}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00197\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_pattern_converter_ac8ba8b56a2be05751a15f056bea9b6cc}{PatternMinVer}};}
+\DoxyCodeLine{00199\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00202\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_pattern_converter_a0255baa550c3fbfd0a96d53d8de7a57d}{VPatternConverter::MaxVer}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00203\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_pattern_converter_ac941310b80899dfaa534730d557ecf82}{PatternMaxVer}};}
+\DoxyCodeLine{00205\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00208\ \textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a12281c8ae50d1c11f9c4fd69e6608125}{VPatternConverter::MinVerStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00209\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_pattern_converter_a0959b32742723013f21b2d44d2325c68}{PatternMinVerStr}};}
+\DoxyCodeLine{00211\ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00214\ \textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_pattern_converter_a6548c4943e1d13315d1f86036a21126c}{VPatternConverter::MaxVerStr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00215\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_pattern_converter_a3864d17988224b9a79f058456de8b99c}{PatternMaxVerStr}};}
+\DoxyCodeLine{00217\ \}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPATTERNCONVERTER\_H}}
+
+\end{DoxyCode}

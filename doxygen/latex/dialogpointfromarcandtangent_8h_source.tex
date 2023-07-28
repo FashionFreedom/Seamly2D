@@ -1,0 +1,109 @@
+\hypertarget{dialogpointfromarcandtangent_8h_source}{}\doxysection{dialogpointfromarcandtangent.\+h}
+\label{dialogpointfromarcandtangent_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogpointfromarcandtangent.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogpointfromarcandtangent.h}}
+\mbox{\hyperlink{dialogpointfromarcandtangent_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogpointfromarcandtangent.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 5\ 6,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGPOINTFROMARCANDTANGENT\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGPOINTFROMARCANDTANGENT\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_point_from_arc_and_tangent}{DialogPointFromArcAndTangent}};}
+\DoxyCodeLine{00068\ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_point_from_arc_and_tangent}{DialogPointFromArcAndTangent}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent}{DialogPointFromArcAndTangent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a412f9dd97eacfef904d0e8ab9d012607}{\string~DialogPointFromArcAndTangent}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_ac22fe26b8c75b82c7739512042e4ece4}{SetPointName}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_abb9684a08e12da83645f927fc2681a4c}{GetArcId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_aed72ce0ec36e1b94fa0adb2f1da38a76}{SetArcId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_af0bdbcc1ab6c76120271f1b9d5996edb}{GetTangentPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_ae0117b28b28912303d7e2733ed84fdf6}{SetTangentPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a947e9f868c11a95f941c2ca16b15932a}{GetCrossCirclesPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a84dcadaa296bf4f56f2419664ac36718}{setCirclesCrossPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \&p);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a28e4e1b73e1c244099fba32116e84196}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_a7793dcc46f28108c497d4142b7d245cd}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_ab484ae13a9dfbc117e9f565de93e9112}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_point_from_arc_and_tangent}{DialogPointFromArcAndTangent}})}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_point_from_arc_and_tangent}{DialogPointFromArcAndTangent}}\ *\mbox{\hyperlink{class_dialog_point_from_arc_and_tangent_ad47ab211c19e3cb5da7ceb2998c41f2f}{ui}};}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGPOINTFROMARCANDTANGENT\_H}}
+
+\end{DoxyCode}

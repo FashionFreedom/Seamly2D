@@ -1,0 +1,67 @@
+\hypertarget{vpropertymodel__p_8h_source}{}\doxysection{vpropertymodel\+\_\+p.\+h}
+\label{vpropertymodel__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertymodel\_p.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertymodel\_p.h}}
+\mbox{\hyperlink{vpropertymodel__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertymodel\_p.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYMODEL\_P\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYMODEL\_P\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ ONLY\ INCLUDE\ THIS\ IN\ .CPP\ FILES}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }VProperty;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }VPropertySet;}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private}{VPropertyModelPrivate}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VPropertySet}}\ *\mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a2462794e3c6ec7ce2d56d929149f7e26}{Properties}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00043\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6657ce55b65fae970ce2b37f68dbf08a}{HeadlineProperty}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6b36c73f2c6047fcc9d7cfacc9a3d0ba}{HeadlineValue}};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a1218609e0790e235f20724219e97d633}{VPropertyModelPrivate}}()}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a2462794e3c6ec7ce2d56d929149f7e26}{Properties}}(nullptr),\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6657ce55b65fae970ce2b37f68dbf08a}{HeadlineProperty}}(QString()),\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6b36c73f2c6047fcc9d7cfacc9a3d0ba}{HeadlineValue}}(QString())}
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{comment}{//:\ The\ text\ that\ appears\ in\ the\ first\ column\ header}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6657ce55b65fae970ce2b37f68dbf08a}{HeadlineProperty}}\ =\ QObject::tr(\textcolor{stringliteral}{"{}Property"{}});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//:\ The\ text\ that\ appears\ in\ the\ second\ column\ header}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private_a6b36c73f2c6047fcc9d7cfacc9a3d0ba}{HeadlineValue}}\ =\ QObject::tr(\textcolor{stringliteral}{"{}Value"{}});}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_property_model_private}{VPropertyModelPrivate}})}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYMODEL\_P\_H}}
+
+\end{DoxyCode}

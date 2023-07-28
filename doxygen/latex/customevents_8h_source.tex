@@ -1,0 +1,91 @@
+\hypertarget{customevents_8h_source}{}\doxysection{customevents.\+h}
+\label{customevents_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/customevents.h@{D:/Github/Seamly2D/src/libs/vmisc/customevents.h}}
+\mbox{\hyperlink{customevents_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ customevents.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 23\ 6,\ 2014}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ CUSTOMEVENTS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ CUSTOMEVENTS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QEvent>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340}{CustomEventType}}\ \{\ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}{UndoEventType}}\ =\ 1,\ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}{LiteParseEventType}}\ =\ 2\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ Define\ undo\ event\ identifier}}
+\DoxyCodeLine{00061\ \textcolor{keyword}{const}\ QEvent::Type\ \mbox{\hyperlink{customevents_8h_acde01a1eaf59046aeccf6e0ef2d00d29}{UNDO\_EVENT}}\ =\ \textcolor{keyword}{static\_cast<}QEvent::Type\textcolor{keyword}{>}(QEvent::User\ +\ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}{CustomEventType::UndoEventType}});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_undo_event}{UndoEvent}}\ :\ \textcolor{keyword}{public}\ QEvent}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_undo_event_abd5e73208d71c6b3972e3f4f79295a9d}{UndoEvent}}()}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ :\ QEvent(\mbox{\hyperlink{customevents_8h_acde01a1eaf59046aeccf6e0ef2d00d29}{UNDO\_EVENT}})}
+\DoxyCodeLine{00068\ \ \ \ \ \{\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_undo_event_a2fb9f927f8cdc58b00a9702673bb5f5e}{\string~UndoEvent}}()\ =\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{const}\ QEvent::Type\ \mbox{\hyperlink{customevents_8h_a27af7c6f18ff684f8d88b155b8c88663}{LITE\_PARSE\_EVENT}}\ =\ \textcolor{keyword}{static\_cast<}QEvent::Type\textcolor{keyword}{>}(QEvent::User\ +\ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}{CustomEventType::LiteParseEventType}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_lite_parse_event}{LiteParseEvent}}\ :\ \textcolor{keyword}{public}\ QEvent}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_lite_parse_event_a863941a00e627c3c4cf0f2395462099e}{LiteParseEvent}}()}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ :\ QEvent(\mbox{\hyperlink{customevents_8h_a27af7c6f18ff684f8d88b155b8c88663}{LITE\_PARSE\_EVENT}})}
+\DoxyCodeLine{00080\ \ \ \ \ \{\}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_lite_parse_event_aaf2d240c868c8b79d88cc6af638c0f9f}{\string~LiteParseEvent}}()\ =\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CUSTOMEVENTS\_H}}
+
+\end{DoxyCode}

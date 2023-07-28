@@ -1,0 +1,107 @@
+\hypertarget{vformulapropertyeditor_8h_source}{}\doxysection{vformulapropertyeditor.\+h}
+\label{vformulapropertyeditor_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/core/vformulapropertyeditor.h@{D:/Github/Seamly2D/src/app/seamly2d/core/vformulapropertyeditor.h}}
+\mbox{\hyperlink{vformulapropertyeditor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ vformulapropertyeditor.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Feb\ 18,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @file\ \ \ vformulapropertyeditor.h}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ @date\ \ \ 28\ 8,\ 2014}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2014\ Valentina\ project}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00055\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifndef\ VFORMULAPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ VFORMULAPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QSpacerItem>}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vformula.h"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_formula_property_editor}{VFormulaPropertyEditor}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor}{VFormulaPropertyEditor}}(QWidget\ *parent);}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_ac6c4092d01c2e1f7671cdf68542b6c87}{\string~VFormulaPropertyEditor}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_v_formula}{VFormula}}\ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_ac7815ca75efffed36b2b35f2722d4c6f}{GetFormula}}()\ const;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{class_v_formula_property_editor_a5dd1a0b84a4659516c71db866199b72d}{eventFilter}}(QObject\ *obj,\ QEvent\ *ev)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ signals:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_a51fc0dd85c1ef82ed420d99bf5fbe7a0}{dataChangedByUser}}(const\ \mbox{\hyperlink{class_v_formula}{VFormula}}\ \&\mbox{\hyperlink{class_v_formula_property_editor_ac7815ca75efffed36b2b35f2722d4c6f}{GetFormula}},\ \mbox{\hyperlink{class_v_formula_property_editor}{VFormulaPropertyEditor}}*\ editor);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_a13b3ae6da745f2b7fba9d1e8df552f5d}{dataChanged}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ public\ slots:}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_a1c1417889591feca1db7205cff223197}{SetFormula}}(const\ \mbox{\hyperlink{class_v_formula}{VFormula}}\ \&\mbox{\hyperlink{class_v_formula_property_editor_ae171599db97ef1c9c1d25b1ff37022ed}{formula}});}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ private\ slots:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_a5664fe51ceed9eeffa748eb9eb07c005}{onToolButtonClicked}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ private:}
+\DoxyCodeLine{00099\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_formula_property_editor}{VFormulaPropertyEditor}})}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_v_formula}{VFormula}}\ \ \ \ \ \ \mbox{\hyperlink{class_v_formula_property_editor_ae171599db97ef1c9c1d25b1ff37022ed}{formula}};}
+\DoxyCodeLine{00101\ \ \ \ \ QToolButton\ \ *\mbox{\hyperlink{class_v_formula_property_editor_a319dfe52781bcf5fdd50813a5b85aeb2}{toolButton}};}
+\DoxyCodeLine{00102\ \ \ \ \ QLabel\ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_formula_property_editor_aea64a89fc3c83ab26d7706ce33b1623d}{textLabel}};}
+\DoxyCodeLine{00103\ \ \ \ \ QSpacerItem\ \ *\mbox{\hyperlink{class_v_formula_property_editor_aaf46cd8de8eebab5b8277c3a10c0867b}{spacer}};}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VFORMULAPROPERTYEDITOR\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,105 @@
+\hypertarget{intersect__circletangent__dialog_8h_source}{}\doxysection{intersect\+\_\+circletangent\+\_\+dialog.\+h}
+\label{intersect__circletangent__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/intersect\_circletangent\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/intersect\_circletangent\_dialog.h}}
+\mbox{\hyperlink{intersect__circletangent__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ intersect\_circletangent\_dialog.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 3\ 6,\ 2015}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S.\ Caskey}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @date\ \ \ 7.16.2022}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2022\ Seamly2D\ project.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ by\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ or\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ INTERSECT\_CIRCLETANGENT\_DIALOG\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ INTERSECT\_CIRCLETANGENT\_DIALOG\_H}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_intersect_circle_tangent_dialog}{IntersectCircleTangentDialog}};}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_intersect_circle_tangent_dialog}{IntersectCircleTangentDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00051\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog}{IntersectCircleTangentDialog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a30e851cda7160d94de7294c5341075a0}{\string~IntersectCircleTangentDialog}}();}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a744ca550696346a5a034fa5aca348449}{SetPointName}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a35df5d66fb30441a66a4745f3a57130a}{GetCircleCenterId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a17fde6f4d21cbcdadaa11ed91b644c0d}{SetCircleCenterId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_acb1364793c3decf494b8e932f051aa99}{GetCircleRadius}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a5d68e62024109f1f2a2feea548e8360f}{SetCircleRadius}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a57b95579db16fdcad211d7ae95286eaf}{GetTangentPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a81aaaf256c4b2ed73722ef0b7602d33c}{SetTangentPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a98c31a47fb3dc0a64fcd79dc75b96367}{GetCrossCirclesPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_aea3b3e037f8bfdd6bf2c1acf5c233224}{setCirclesCrossPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \&p);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_aa3e743aa49aec8eabaa85c701c282cff}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a6c139b98e962070c1d03d2a6e16e1b77}{PointChanged}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a66d01bc729dd03f606aafd7e2b256f3b}{DeployCircleRadiusTextEdit}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a829c178dfff902555b8625fb9d630d6b}{CircleRadiusChanged}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a3a0d6ca684b87c8ab89e75b87af3495d}{FXCircleRadius}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a95fc045c423dbbb375aacf9f5c364eb5}{EvalCircleRadius}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_ac3364e7fe7b478be947e0ef49313b018}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a9f3bf63539e7eb47b066d34f85768e60}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a50751a914017bb04f926a50cd36005a3}{closeEvent}}(QCloseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_ae65c86ff4b6c13023ad7cd1315aae518}{CheckState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_intersect_circle_tangent_dialog}{IntersectCircleTangentDialog}})}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_intersect_circle_tangent_dialog}{IntersectCircleTangentDialog}}\ *\mbox{\hyperlink{class_intersect_circle_tangent_dialog_ad189bed486551866dbbd1e132c8cef36}{ui}};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a0ada0e5e124cc87ab84d5b86c9f4b2d9}{flagCircleRadius}};}
+\DoxyCodeLine{00097\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_intersect_circle_tangent_dialog_aa4a96beb7a232c49d50698d90e2cfe10}{timerCircleRadius}};}
+\DoxyCodeLine{00098\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a80ba50f6209287ce289d35cd3ed919c5}{circleRadius}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circle_tangent_dialog_a7a603a4e9bc707aeaedd1f975e5bb2de}{formulaBaseHeightCircleRadius}};}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INTERSECT\_CIRCLETANGENT\_DIALOG\_H}}
+
+\end{DoxyCode}

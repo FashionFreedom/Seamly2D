@@ -1,0 +1,463 @@
+\hypertarget{class_v_v_s_t_converter}{}\doxysection{VVSTConverter Class Reference}
+\label{class_v_v_s_t_converter}\index{VVSTConverter@{VVSTConverter}}
+
+
+{\ttfamily \#include $<$vvstconverter.\+h$>$}
+
+Inheritance diagram for VVSTConverter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_v_v_s_t_converter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_v_s_t_converter_a98555d59bb78dc399a34f64e3ee1cbe0}{VVSTConverter}} (const QString \&file\+Name)
+\item 
+virtual \mbox{\hyperlink{class_v_v_s_t_converter_a61106e6128697cbd28c859294ce7d94e}{$\sim$\+VVSTConverter}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_m_converter}{VAbstract\+MConverter}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_m_converter_a98ece84af36bdd2ea73cd55554456d6f}{VAbstract\+MConverter}} (const QString \&file\+Name)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_m_converter_a56fdd7326ccb0bca75f5638fac6d0a6f}{$\sim$\+VAbstract\+MConverter}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_converter}{VAbstract\+Converter}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_converter_ac3d3813fa37c8318cb8cbdce1338bcd6}{VAbstract\+Converter}} (const QString \&file\+Name)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_converter_a01bcdda71d95757723470aad69c90259}{$\sim$\+VAbstract\+Converter}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QString \mbox{\hyperlink{class_v_abstract_converter_a493e411fb2c42d9c9d8986a115db98f5}{Convert}} ()
+\item 
+int \mbox{\hyperlink{class_v_abstract_converter_a556c0cbe8b6830bb5f3a524919d95371}{Get\+Current\+Format\+Varsion}} () const
+\item 
+QString \mbox{\hyperlink{class_v_abstract_converter_aab39aa2f7ece866f41458b1bc8188b59}{Get\+Version\+Str}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_dom_document}{VDom\+Document}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_dom_document_aa8b4fdcb86054c08ab19b798f66e6a7e}{VDom\+Document}} ()
+\item 
+virtual \mbox{\hyperlink{class_v_dom_document_ac58c6137f03f55806d8a7b3e31c331bb}{$\sim$\+VDom\+Document}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_dom_document_a035e4a009f8f79f3f8e04e8aa43d56dc}{element\+By\+Id}} (quint32 id, const QString \&tag\+Name=QString())
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_dom_document_abfb7369f8b0ebd8da3625a8c347cc2bc}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const T \&value) const
+\begin{DoxyCompactList}\small\item\em Set\+Attribute set attribute in pattern file. Replace \char`\"{},\char`\"{} by \char`\"{}.\char`\"{}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{class_v_dom_document_a3f82692162034f217189501368370f65}{MUnit}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_dom_document_ad316cde19d3383a783936544c822b750}{set\+XMLContent}} (const QString \&file\+Name)
+\item 
+virtual bool \mbox{\hyperlink{class_v_dom_document_aeaf681ea2c0d1efb06557f18e00f49c6}{Save\+Document}} (const QString \&file\+Name, QString \&error)
+\item 
+QString \mbox{\hyperlink{class_v_dom_document_a278a792a3d216ccd935a4fd163d0d0a8}{Major}} () const
+\item 
+QString \mbox{\hyperlink{class_v_dom_document_a595506656459aaf6825c1cab2c9b7238}{Minor}} () const
+\item 
+QString \mbox{\hyperlink{class_v_dom_document_aae68e283291deaac9ea862c0ada06c06}{Patch}} () const
+\item 
+QDom\+Node \mbox{\hyperlink{class_v_dom_document_ac01614ab160d642abb95fdf1dc90f978}{Parent\+Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_dom_document_a6b5a395b56c42f809d7803f61777cead}{Clone\+Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_dom_document_ab41f21975c59bfa7ca249cb3fd95e367}{Node\+By\+Id}} (const quint32 \&node\+Id)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ \mbox{\hyperlink{class_v_dom_document_af3e96f8b2c46248b00e5fb4a2775a4e9}{Get\+Label\+Template}} (const QDom\+Element \&element) const
+\item 
+void \mbox{\hyperlink{class_v_dom_document_a0adad76775f408c27ded217805c2b6a2}{Set\+Label\+Template}} (QDom\+Element \&element, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_v_label_template_line}{VLabel\+Template\+Line}} $>$ \&lines)
+\item 
+template$<$$>$ void \mbox{\hyperlink{class_v_dom_document_afa0a692b1eae58a9488712f1d6004b59}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const QString \&value) const
+\item 
+template$<$$>$ void \mbox{\hyperlink{class_v_dom_document_a843909d075d1c079ee63e7e7c7b61d94}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const bool \&value) const
+\item 
+template$<$$>$ void \mbox{\hyperlink{class_v_dom_document_a9317baedd26a41080b009402eeb30ae5}{Set\+Attribute}} (QDom\+Element \&dom\+Element, const QString \&name, const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&value) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_v_v_s_t_converter_a0e706e38d9fca62f6ff5fea5a6ee1fc8}{Measurement\+Max\+Ver\+Str}} = QString\+Literal(\char`\"{}0.\+4.\+4\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_v_s_t_converter_a69fc8591d146f50a16dd7be8b5d3a22d}{Current\+Schema}} = QString\+Literal(\char`\"{}\+://schema/standard\+\_\+measurements/v0.\+4.\+4.\+xsd\char`\"{})
+\item 
+static Q\+\_\+\+DECL\+\_\+\+CONSTEXPR const int \mbox{\hyperlink{class_v_v_s_t_converter_a56893dc28781fd2ae75790a16ff8682a}{Measurement\+Min\+Ver}} = \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 3, 0)
+\item 
+static Q\+\_\+\+DECL\+\_\+\+CONSTEXPR const int \mbox{\hyperlink{class_v_v_s_t_converter_a28a0d40b30c91fe288bd26663cdc8445}{Measurement\+Max\+Ver}} = \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 4, 4)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_dom_document}{VDom\+Document}}}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_ad06b8e03afd3169050953c4b4cfa758e}{Attr\+Id}} = QString\+Literal(\char`\"{}id\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_ad9015d6f1665acce0a77172006150120}{Attr\+Text}} = QString\+Literal(\char`\"{}text\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_a0c5421eaa5675ae09a895f78d87026eb}{Attr\+Bold}} = QString\+Literal(\char`\"{}bold\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_a027f643caba00844bf80a64d352efb8f}{Attr\+Italic}} = QString\+Literal(\char`\"{}italic\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_a3190cc38f15720c8204d00716fad8469}{Attr\+Alignment}} = QString\+Literal(\char`\"{}alignment\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_af7c022eef84545253b696838417963e2}{Attr\+FSIncrement}} = QString\+Literal(\char`\"{}sf\+Increment\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_ab8e9f3f325f6e16787f1729059fd3f14}{Tag\+Version}} = QString\+Literal(\char`\"{}version\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_abcef727e02159612a30a9363a04158e4}{Tag\+Unit}} = QString\+Literal(\char`\"{}unit\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_v_dom_document_ad4777ec1d5af22e6fe90565e29e73872}{Tag\+Line}} = QString\+Literal(\char`\"{}line\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_v_v_s_t_converter_a2c5a41f5d1cd60e62a852ea2f5b20f9e}{Min\+Ver}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_v_v_s_t_converter_a8bb6a71e078f5cda2b9c0349dccf1251}{Max\+Ver}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_v_s_t_converter_a2449d9f50aa449d2ed59afb58e7ce981}{Min\+Ver\+Str}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_v_s_t_converter_a3d44110228248263c9b603a00a0c51b8}{Max\+Ver\+Str}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_v_s_t_converter_afb48c5c6a73db338f6a20ffb391a961f}{XSDSchema}} (int ver) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_v_s_t_converter_aea94d31c1d7bb69087aaa0f3685babeb}{Apply\+Patches}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_v_s_t_converter_a53e3e976bcc378bd38aaed4d6bf708a3}{Downgrade\+To\+Current\+Max\+Version}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_v_v_s_t_converter_a611238ea9883d301c80e9a9b4a35217f}{Is\+Read\+Only}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_m_converter}{VAbstract\+MConverter}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_m_converter_aa38420732dabd7463b9c43bc05316543}{Add\+Root\+Comment}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_converter}{VAbstract\+Converter}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_converter_aa9bb1ef0ced9213b9edb7f57f11a89df}{Validate\+Input\+File}} (const QString \&current\+Schema) const
+\item 
+Q\+\_\+\+NORETURN void \mbox{\hyperlink{class_v_abstract_converter_a668bef779f47938b2435c0ca592445e8}{Invalid\+Version}} (int ver) const
+\item 
+void \mbox{\hyperlink{class_v_abstract_converter_a828b502d62876f9c4c2572baf6d25f07}{Save}} ()
+\item 
+void \mbox{\hyperlink{class_v_abstract_converter_a25df5d21a491a8005db0f8e30f7dfe14}{Set\+Version}} (const QString \&version)
+\item 
+virtual int \mbox{\hyperlink{class_v_abstract_converter_aa19fd0110422f48c38e321bce5ff7061}{Min\+Ver}} () const =0
+\item 
+virtual int \mbox{\hyperlink{class_v_abstract_converter_a7ba0322bf55f57c65b94ac330923b6d2}{Max\+Ver}} () const =0
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_converter_acbd0459d9b4198d2357513cc15a3320c}{Min\+Ver\+Str}} () const =0
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_converter_a53c85557ad7fb333da0cfb6b11a2f188}{Max\+Ver\+Str}} () const =0
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_converter_a75aabd195bb498cfe25b7e122b1701d8}{XSDSchema}} (int ver) const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_converter_ae04ccf4d6d1675286c58c4ec319c9ef9}{Apply\+Patches}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_converter_a0f46c3e6317e94d2d453de3bc4186fe3}{Downgrade\+To\+Current\+Max\+Version}} ()=0
+\item 
+virtual bool \mbox{\hyperlink{class_v_abstract_converter_a1cade5805a3311ad15d9b5751e0794c4}{Is\+Read\+Only}} () const =0
+\item 
+void \mbox{\hyperlink{class_v_abstract_converter_a4a9fe798f769c6441cba22cad35d7f51}{Replace}} (QString \&formula, const QString \&new\+Name, int position, const QString \&token, int \&bias) const
+\item 
+void \mbox{\hyperlink{class_v_abstract_converter_aa154603e35eba9a31c58456ab482dda7}{Corrections\+Positions}} (int position, int bias, \mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \&tokens) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_dom_document}{VDom\+Document}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_v_dom_document_a988591c04a3fcf92472ad456a82c1e63}{set\+Tag\+Text}} (const QString \&tag, const QString \&text)
+\item 
+bool \mbox{\hyperlink{class_v_dom_document_a553f050145886b403697c0a2b43b0f05}{set\+Tag\+Text}} (const QDom\+Element \&dom\+Element, const QString \&text)
+\item 
+QString \mbox{\hyperlink{class_v_dom_document_abd6e5a84e0b9db4e16e1e49062565cc5}{Unique\+Tag\+Text}} (const QString \&tag\+Name, const QString \&def\+Val=QString()) const
+\item 
+void \mbox{\hyperlink{class_v_dom_document_a8dd4b44bf243c35092c40916985f894f}{Test\+Unique\+Id}} () const
+\begin{DoxyCompactList}\small\item\em Test\+Unique\+Id test exist unique id in pattern file. Each id must be unique. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_dom_document_a7281671f7a4a0bb0465d62b150cd00a2}{Collect\+Id}} (const QDom\+Element \&node, \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&vector) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_abc2baa5829f4b2972655ba9b86029f5b}{Add\+New\+Tags\+For\+V0\+\_\+4\+\_\+0}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_abbff33642662e9fe5d6fd00b56054483}{Remove\+Tags\+For\+V0\+\_\+4\+\_\+0}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_aa28f1cb8220e960f54cbcdd73c806110}{Convert\+Measurements\+To\+V0\+\_\+4\+\_\+0}} ()
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_v_s_t_converter_a838bc94594a79b0e82cae1ad83e57de5}{Add\+MV0\+\_\+4\+\_\+0}} (const QString \&name, qreal value, qreal size\+Increase, qreal height\+Increase)
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_a699854362bd94cf27169969d040e1728}{PM\+\_\+\+System\+V0\+\_\+4\+\_\+1}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_ae85f241c34172190498198ff7961bae9}{Convert\+Measurements\+To\+V0\+\_\+4\+\_\+2}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_a9b0c49ddbc3bc0186222869d23ae5197}{To\+V0\+\_\+4\+\_\+0}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_ac4f2421484326a25e9a41dae0a546def}{To\+V0\+\_\+4\+\_\+1}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_a351a074438dbb40a8ca6214ab1b04328}{To\+V0\+\_\+4\+\_\+2}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_af04eb9140ee8aa51a7556624a5c3450f}{To\+V0\+\_\+4\+\_\+3}} ()
+\item 
+void \mbox{\hyperlink{class_v_v_s_t_converter_a74fbc5e98194d0e5a37113dc43417d6e}{To\+V0\+\_\+4\+\_\+4}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_v_v_s_t_converter_afa09067f792ce273564f431f22c7787b}{Measurement\+Min\+Ver\+Str}} = QString\+Literal(\char`\"{}0.\+3.\+0\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_converter}{VAbstract\+Converter}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_converter_a04af3b2a1ba2a7025007c74c6c95835c}{Get\+Version}} (const QString \&version)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_dom_document}{VDom\+Document}}}
+\begin{DoxyCompactItemize}
+\item 
+static quint32 \mbox{\hyperlink{class_v_dom_document_a14e129a4d0d66b87adb48c38e46c0f37}{Get\+Parametr\+UInt}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\begin{DoxyCompactList}\small\item\em Returns the long long value of the given attribute. RENAME\+: Get\+Parameter\+Long\+Long? \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_dom_document_a882aaf932772cc4357a29822a0bb36dc}{get\+Parameter\+Bool}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\item 
+static \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \mbox{\hyperlink{class_v_dom_document_aeb472b427a54a831c69cb9dd3ffb3d87}{Get\+Parametr\+Usage}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\item 
+static void \mbox{\hyperlink{class_v_dom_document_aabb51f8c078c47bcc31a75a98d5f0fa4}{Set\+Parametr\+Usage}} (QDom\+Element \&dom\+Element, const QString \&name, const \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \&value)
+\item 
+static QString \mbox{\hyperlink{class_v_dom_document_a0529f100ec3ca1152a296f9cc59ef7f3}{Get\+Parametr\+String}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value=QString())
+\begin{DoxyCompactList}\small\item\em Returns the string value of the given attribute. RENAME\+: see above. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_v_dom_document_a2267524a506a06da9664911c0f0760ea}{Get\+Parametr\+Empty\+String}} (const QDom\+Element \&dom\+Element, const QString \&name)
+\item 
+static qreal \mbox{\hyperlink{class_v_dom_document_ab2491ade24937b5eb6d11244f1dda895}{Get\+Parametr\+Double}} (const QDom\+Element \&dom\+Element, const QString \&name, const QString \&def\+Value)
+\begin{DoxyCompactList}\small\item\em Returns the double value of the given attribute. \end{DoxyCompactList}\item 
+static quint32 \mbox{\hyperlink{class_v_dom_document_af5620d4ba0735e6ccf747d5dc85e377a}{get\+Parameter\+Id}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em get\+Parameter\+Id return value id attribute. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_dom_document_a49eb5f686268f8ecab6faab3ee4ae1f0}{Validate\+XML}} (const QString \&schema, const QString \&file\+Name)
+\begin{DoxyCompactList}\small\item\em Validate\+XML validate xml file by xsd schema. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{class_v_dom_document_a6012d50aa31b2aafbf513a89c1320daf}{Units\+Help\+String}} ()
+\item 
+static void \mbox{\hyperlink{class_v_dom_document_ae93f9e4a2d9b64ad6433886358b105d9}{Remove\+All\+Children}} (QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em Remove\+All\+Children remove all children from file. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_dom_document_ab7e2c541d5f3b0a74e88de301223f4cd}{Safe\+Copy}} (const QString \&source, const QString \&destination, QString \&error)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_m_converter}{VAbstract\+MConverter}}}
+\begin{DoxyCompactItemize}
+\item 
+static QMulti\+Map$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_m_converter_a617577ba81e8328ae6f09730ef5f9e1e}{Old\+Names\+To\+New\+Names\+\_\+\+In\+V0\+\_\+3\+\_\+0}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_m_converter_a3e811e82c3f75a01cfc0eeb39fb248fe}{Old\+Names\+To\+New\+Names\+\_\+\+In\+V0\+\_\+3\+\_\+3}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_converter}{VAbstract\+Converter}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_v_abstract_converter_a5f7be87cb04e0ca5dbfdf2c5d9fae52c}{Bias\+Tokens}} (int position, int bias, \mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \&tokens)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_converter}{VAbstract\+Converter}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_v_abstract_converter_ac7802ae1c36c2bf136bfc94d65a3bea9}{m\+\_\+ver}}
+\item 
+QString \mbox{\hyperlink{class_v_abstract_converter_ad8b075a504b0375d8b4b07a437c13446}{m\+\_\+converted\+File\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_v_s_t_converter_a98555d59bb78dc399a34f64e3ee1cbe0}\label{class_v_v_s_t_converter_a98555d59bb78dc399a34f64e3ee1cbe0}} 
+\index{VVSTConverter@{VVSTConverter}!VVSTConverter@{VVSTConverter}}
+\index{VVSTConverter@{VVSTConverter}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{VVSTConverter()}{VVSTConverter()}}
+{\footnotesize\ttfamily VVSTConverter\+::\+VVSTConverter (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a61106e6128697cbd28c859294ce7d94e}\label{class_v_v_s_t_converter_a61106e6128697cbd28c859294ce7d94e}} 
+\index{VVSTConverter@{VVSTConverter}!````~VVSTConverter@{$\sim$VVSTConverter}}
+\index{````~VVSTConverter@{$\sim$VVSTConverter}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{$\sim$VVSTConverter()}{~VVSTConverter()}}
+{\footnotesize\ttfamily virtual VVSTConverter\+::$\sim$\+VVSTConverter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_v_s_t_converter_a838bc94594a79b0e82cae1ad83e57de5}\label{class_v_v_s_t_converter_a838bc94594a79b0e82cae1ad83e57de5}} 
+\index{VVSTConverter@{VVSTConverter}!AddMV0\_4\_0@{AddMV0\_4\_0}}
+\index{AddMV0\_4\_0@{AddMV0\_4\_0}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{AddMV0\_4\_0()}{AddMV0\_4\_0()}}
+{\footnotesize\ttfamily QDom\+Element VVSTConverter\+::\+Add\+MV0\+\_\+4\+\_\+0 (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{qreal}]{value,  }\item[{qreal}]{size\+Increase,  }\item[{qreal}]{height\+Increase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_abc2baa5829f4b2972655ba9b86029f5b}\label{class_v_v_s_t_converter_abc2baa5829f4b2972655ba9b86029f5b}} 
+\index{VVSTConverter@{VVSTConverter}!AddNewTagsForV0\_4\_0@{AddNewTagsForV0\_4\_0}}
+\index{AddNewTagsForV0\_4\_0@{AddNewTagsForV0\_4\_0}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{AddNewTagsForV0\_4\_0()}{AddNewTagsForV0\_4\_0()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Add\+New\+Tags\+For\+V0\+\_\+4\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_aea94d31c1d7bb69087aaa0f3685babeb}\label{class_v_v_s_t_converter_aea94d31c1d7bb69087aaa0f3685babeb}} 
+\index{VVSTConverter@{VVSTConverter}!ApplyPatches@{ApplyPatches}}
+\index{ApplyPatches@{ApplyPatches}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ApplyPatches()}{ApplyPatches()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Apply\+Patches (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_ae04ccf4d6d1675286c58c4ec319c9ef9}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_aa28f1cb8220e960f54cbcdd73c806110}\label{class_v_v_s_t_converter_aa28f1cb8220e960f54cbcdd73c806110}} 
+\index{VVSTConverter@{VVSTConverter}!ConvertMeasurementsToV0\_4\_0@{ConvertMeasurementsToV0\_4\_0}}
+\index{ConvertMeasurementsToV0\_4\_0@{ConvertMeasurementsToV0\_4\_0}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ConvertMeasurementsToV0\_4\_0()}{ConvertMeasurementsToV0\_4\_0()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Convert\+Measurements\+To\+V0\+\_\+4\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_ae85f241c34172190498198ff7961bae9}\label{class_v_v_s_t_converter_ae85f241c34172190498198ff7961bae9}} 
+\index{VVSTConverter@{VVSTConverter}!ConvertMeasurementsToV0\_4\_2@{ConvertMeasurementsToV0\_4\_2}}
+\index{ConvertMeasurementsToV0\_4\_2@{ConvertMeasurementsToV0\_4\_2}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ConvertMeasurementsToV0\_4\_2()}{ConvertMeasurementsToV0\_4\_2()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Convert\+Measurements\+To\+V0\+\_\+4\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a53e3e976bcc378bd38aaed4d6bf708a3}\label{class_v_v_s_t_converter_a53e3e976bcc378bd38aaed4d6bf708a3}} 
+\index{VVSTConverter@{VVSTConverter}!DowngradeToCurrentMaxVersion@{DowngradeToCurrentMaxVersion}}
+\index{DowngradeToCurrentMaxVersion@{DowngradeToCurrentMaxVersion}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{DowngradeToCurrentMaxVersion()}{DowngradeToCurrentMaxVersion()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Downgrade\+To\+Current\+Max\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_a0f46c3e6317e94d2d453de3bc4186fe3}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a611238ea9883d301c80e9a9b4a35217f}\label{class_v_v_s_t_converter_a611238ea9883d301c80e9a9b4a35217f}} 
+\index{VVSTConverter@{VVSTConverter}!IsReadOnly@{IsReadOnly}}
+\index{IsReadOnly@{IsReadOnly}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{IsReadOnly()}{IsReadOnly()}}
+{\footnotesize\ttfamily bool VVSTConverter\+::\+Is\+Read\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_a1cade5805a3311ad15d9b5751e0794c4}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a8bb6a71e078f5cda2b9c0349dccf1251}\label{class_v_v_s_t_converter_a8bb6a71e078f5cda2b9c0349dccf1251}} 
+\index{VVSTConverter@{VVSTConverter}!MaxVer@{MaxVer}}
+\index{MaxVer@{MaxVer}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MaxVer()}{MaxVer()}}
+{\footnotesize\ttfamily int VVSTConverter\+::\+Max\+Ver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_a7ba0322bf55f57c65b94ac330923b6d2}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a3d44110228248263c9b603a00a0c51b8}\label{class_v_v_s_t_converter_a3d44110228248263c9b603a00a0c51b8}} 
+\index{VVSTConverter@{VVSTConverter}!MaxVerStr@{MaxVerStr}}
+\index{MaxVerStr@{MaxVerStr}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MaxVerStr()}{MaxVerStr()}}
+{\footnotesize\ttfamily QString VVSTConverter\+::\+Max\+Ver\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_a53c85557ad7fb333da0cfb6b11a2f188}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a2c5a41f5d1cd60e62a852ea2f5b20f9e}\label{class_v_v_s_t_converter_a2c5a41f5d1cd60e62a852ea2f5b20f9e}} 
+\index{VVSTConverter@{VVSTConverter}!MinVer@{MinVer}}
+\index{MinVer@{MinVer}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MinVer()}{MinVer()}}
+{\footnotesize\ttfamily int VVSTConverter\+::\+Min\+Ver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_aa19fd0110422f48c38e321bce5ff7061}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a2449d9f50aa449d2ed59afb58e7ce981}\label{class_v_v_s_t_converter_a2449d9f50aa449d2ed59afb58e7ce981}} 
+\index{VVSTConverter@{VVSTConverter}!MinVerStr@{MinVerStr}}
+\index{MinVerStr@{MinVerStr}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MinVerStr()}{MinVerStr()}}
+{\footnotesize\ttfamily QString VVSTConverter\+::\+Min\+Ver\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_acbd0459d9b4198d2357513cc15a3320c}{VAbstract\+Converter}}.
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a699854362bd94cf27169969d040e1728}\label{class_v_v_s_t_converter_a699854362bd94cf27169969d040e1728}} 
+\index{VVSTConverter@{VVSTConverter}!PM\_SystemV0\_4\_1@{PM\_SystemV0\_4\_1}}
+\index{PM\_SystemV0\_4\_1@{PM\_SystemV0\_4\_1}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{PM\_SystemV0\_4\_1()}{PM\_SystemV0\_4\_1()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+PM\+\_\+\+System\+V0\+\_\+4\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_abbff33642662e9fe5d6fd00b56054483}\label{class_v_v_s_t_converter_abbff33642662e9fe5d6fd00b56054483}} 
+\index{VVSTConverter@{VVSTConverter}!RemoveTagsForV0\_4\_0@{RemoveTagsForV0\_4\_0}}
+\index{RemoveTagsForV0\_4\_0@{RemoveTagsForV0\_4\_0}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{RemoveTagsForV0\_4\_0()}{RemoveTagsForV0\_4\_0()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+Remove\+Tags\+For\+V0\+\_\+4\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a9b0c49ddbc3bc0186222869d23ae5197}\label{class_v_v_s_t_converter_a9b0c49ddbc3bc0186222869d23ae5197}} 
+\index{VVSTConverter@{VVSTConverter}!ToV0\_4\_0@{ToV0\_4\_0}}
+\index{ToV0\_4\_0@{ToV0\_4\_0}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ToV0\_4\_0()}{ToV0\_4\_0()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+To\+V0\+\_\+4\+\_\+0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_ac4f2421484326a25e9a41dae0a546def}\label{class_v_v_s_t_converter_ac4f2421484326a25e9a41dae0a546def}} 
+\index{VVSTConverter@{VVSTConverter}!ToV0\_4\_1@{ToV0\_4\_1}}
+\index{ToV0\_4\_1@{ToV0\_4\_1}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ToV0\_4\_1()}{ToV0\_4\_1()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+To\+V0\+\_\+4\+\_\+1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a351a074438dbb40a8ca6214ab1b04328}\label{class_v_v_s_t_converter_a351a074438dbb40a8ca6214ab1b04328}} 
+\index{VVSTConverter@{VVSTConverter}!ToV0\_4\_2@{ToV0\_4\_2}}
+\index{ToV0\_4\_2@{ToV0\_4\_2}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ToV0\_4\_2()}{ToV0\_4\_2()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+To\+V0\+\_\+4\+\_\+2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_af04eb9140ee8aa51a7556624a5c3450f}\label{class_v_v_s_t_converter_af04eb9140ee8aa51a7556624a5c3450f}} 
+\index{VVSTConverter@{VVSTConverter}!ToV0\_4\_3@{ToV0\_4\_3}}
+\index{ToV0\_4\_3@{ToV0\_4\_3}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ToV0\_4\_3()}{ToV0\_4\_3()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+To\+V0\+\_\+4\+\_\+3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a74fbc5e98194d0e5a37113dc43417d6e}\label{class_v_v_s_t_converter_a74fbc5e98194d0e5a37113dc43417d6e}} 
+\index{VVSTConverter@{VVSTConverter}!ToV0\_4\_4@{ToV0\_4\_4}}
+\index{ToV0\_4\_4@{ToV0\_4\_4}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{ToV0\_4\_4()}{ToV0\_4\_4()}}
+{\footnotesize\ttfamily void VVSTConverter\+::\+To\+V0\+\_\+4\+\_\+4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_afb48c5c6a73db338f6a20ffb391a961f}\label{class_v_v_s_t_converter_afb48c5c6a73db338f6a20ffb391a961f}} 
+\index{VVSTConverter@{VVSTConverter}!XSDSchema@{XSDSchema}}
+\index{XSDSchema@{XSDSchema}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{XSDSchema()}{XSDSchema()}}
+{\footnotesize\ttfamily QString VVSTConverter\+::\+XSDSchema (\begin{DoxyParamCaption}\item[{int}]{ver }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_converter_a75aabd195bb498cfe25b7e122b1701d8}{VAbstract\+Converter}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_v_s_t_converter_a69fc8591d146f50a16dd7be8b5d3a22d}\label{class_v_v_s_t_converter_a69fc8591d146f50a16dd7be8b5d3a22d}} 
+\index{VVSTConverter@{VVSTConverter}!CurrentSchema@{CurrentSchema}}
+\index{CurrentSchema@{CurrentSchema}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{CurrentSchema}{CurrentSchema}}
+{\footnotesize\ttfamily const QString VVSTConverter\+::\+Current\+Schema = QString\+Literal(\char`\"{}\+://schema/standard\+\_\+measurements/v0.\+4.\+4.\+xsd\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a28a0d40b30c91fe288bd26663cdc8445}\label{class_v_v_s_t_converter_a28a0d40b30c91fe288bd26663cdc8445}} 
+\index{VVSTConverter@{VVSTConverter}!MeasurementMaxVer@{MeasurementMaxVer}}
+\index{MeasurementMaxVer@{MeasurementMaxVer}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MeasurementMaxVer}{MeasurementMaxVer}}
+{\footnotesize\ttfamily Q\+\_\+\+DECL\+\_\+\+CONSTEXPR const int VVSTConverter\+::\+Measurement\+Max\+Ver = \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 4, 4)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a0e706e38d9fca62f6ff5fea5a6ee1fc8}\label{class_v_v_s_t_converter_a0e706e38d9fca62f6ff5fea5a6ee1fc8}} 
+\index{VVSTConverter@{VVSTConverter}!MeasurementMaxVerStr@{MeasurementMaxVerStr}}
+\index{MeasurementMaxVerStr@{MeasurementMaxVerStr}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MeasurementMaxVerStr}{MeasurementMaxVerStr}}
+{\footnotesize\ttfamily const QString VVSTConverter\+::\+Measurement\+Max\+Ver\+Str = QString\+Literal(\char`\"{}0.\+4.\+4\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_a56893dc28781fd2ae75790a16ff8682a}\label{class_v_v_s_t_converter_a56893dc28781fd2ae75790a16ff8682a}} 
+\index{VVSTConverter@{VVSTConverter}!MeasurementMinVer@{MeasurementMinVer}}
+\index{MeasurementMinVer@{MeasurementMinVer}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MeasurementMinVer}{MeasurementMinVer}}
+{\footnotesize\ttfamily Q\+\_\+\+DECL\+\_\+\+CONSTEXPR const int VVSTConverter\+::\+Measurement\+Min\+Ver = \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\+\_\+\+VERSION\+\_\+\+CHECK}}(0, 3, 0)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_v_s_t_converter_afa09067f792ce273564f431f22c7787b}\label{class_v_v_s_t_converter_afa09067f792ce273564f431f22c7787b}} 
+\index{VVSTConverter@{VVSTConverter}!MeasurementMinVerStr@{MeasurementMinVerStr}}
+\index{MeasurementMinVerStr@{MeasurementMinVerStr}!VVSTConverter@{VVSTConverter}}
+\doxysubsubsection{\texorpdfstring{MeasurementMinVerStr}{MeasurementMinVerStr}}
+{\footnotesize\ttfamily const QString VVSTConverter\+::\+Measurement\+Min\+Ver\+Str = QString\+Literal(\char`\"{}0.\+3.\+0\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/xml/\mbox{\hyperlink{vvstconverter_8h}{vvstconverter.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/xml/\mbox{\hyperlink{vvstconverter_8cpp}{vvstconverter.\+cpp}}\end{DoxyCompactItemize}

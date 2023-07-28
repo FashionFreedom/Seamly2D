@@ -1,0 +1,120 @@
+\hypertarget{vtranslatemeasurements_8h_source}{}\doxysection{vtranslatemeasurements.\+h}
+\label{vtranslatemeasurements_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/vtranslatemeasurements.h@{D:/Github/Seamly2D/src/libs/vpatterndb/vtranslatemeasurements.h}}
+\mbox{\hyperlink{vtranslatemeasurements_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ @file\ \ \ vtranslatemeasurements.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ @author\ DSCaskey\ <dscaskey@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ @date\ \ 5\ Jun,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @file\ \ \ vtranslatemeasurements.h}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @date\ \ \ 2\ 8,\ 2015}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Valentina\ project}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#ifndef\ VTRANSLATEMEASUREMENTS\_H}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ VTRANSLATEMEASUREMENTS\_H}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../qmuparser/qmutranslation.h"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_translate_measurements}{VTranslateMeasurements}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_v_translate_measurements_ac47e7bcdc243572e944b229e98be129a}{VTranslateMeasurements}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_translate_measurements_a09b5c73fd5bed1498291c64c993d2680}{\string~VTranslateMeasurements}}();}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_translate_measurements_a5fa8d33be1f6f772f5652b40010448f8}{MeasurementsFromUser}}(QString\ \&newFormula,\ \textcolor{keywordtype}{int}\ position,\ \textcolor{keyword}{const}\ QString\ \&token,\ \textcolor{keywordtype}{int}\ \&bias)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_translate_measurements_a6899a298a04c9ebab402a17cb0e56e3c}{MToUser}}(\textcolor{keyword}{const}\ QString\ \&measurement)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_translate_measurements_a2b929a773736df937c13d15e60e1f1c2}{MNumber}}(\textcolor{keyword}{const}\ QString\ \&measurement)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_translate_measurements_aadd78503938040ba4d1642a4ca8465ef}{MFormula}}(\textcolor{keyword}{const}\ QString\ \&measurement)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_translate_measurements_a02bc7f9da53d70a7fb3c312255b05ea7}{guiText}}(\textcolor{keyword}{const}\ QString\ \&measurement)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_translate_measurements_aa4388a0e3ed7d035453fc401e86d7b96}{Description}}(\textcolor{keyword}{const}\ QString\ \&measurement)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ae7bf030040acffd904f21ffa270cdeb2}{Retranslate}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap<QString,\ qmu::QmuTranslation>}}\ \mbox{\hyperlink{class_v_translate_measurements_a9de93c047a10d035fe7fcfd89ad4ed3b}{m\_measurements}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_translate_measurements}{VTranslateMeasurements}})}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \mbox{\hyperlink{namespaceqmu}{qmu}}::QmuTranslation>\ \mbox{\hyperlink{class_v_translate_measurements_a9681097a905bf1e1a71c7d8bff091a31}{m\_guiTexts}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \mbox{\hyperlink{namespaceqmu}{qmu}}::QmuTranslation>\ \mbox{\hyperlink{class_v_translate_measurements_a6e9eba6c4d8803f9327e6cb72e097338}{m\_descriptions}};}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_translate_measurements_af59f0c6573283b1b6758b95f5e624ec5}{m\_numbers}};}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QString>\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_translate_measurements_a02aa424b60bd99216b0cd4e13defef51}{m\_formulas}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a7f0c4de047b8e1803991c93ffe7b8d58}{InitGroupA}}();\ \textcolor{comment}{//\ Direct\ Height}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a59351e607472a138f4633a628d89ed6b}{InitGroupB}}();\ \textcolor{comment}{//\ Direct\ Width}}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a696af927347740ed62dc28b1811149ee}{InitGroupC}}();\ \textcolor{comment}{//\ Indentation}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a8a73133f2ce95c3687d3bbbaf3d0d1e0}{InitGroupD}}();\ \textcolor{comment}{//\ Circumference\ and\ Arc}}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a4e9cebbc5dc9149edc268f063c041c35}{InitGroupE}}();\ \textcolor{comment}{//\ Vertical}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a67bf388f30f231039f41d85cc4a9fde7}{InitGroupF}}();\ \textcolor{comment}{//\ Horizontal}}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_af4ab46d237f7dff73cba7b8e547828b3}{InitGroupG}}();\ \textcolor{comment}{//\ Bust}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ac81f6cd30759a332096fa3e0bf57a64d}{InitGroupH}}();\ \textcolor{comment}{//\ Balance}}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ac4e8b53c8ed3fe6cb4a47a26b8f673d1}{InitGroupI}}();\ \textcolor{comment}{//\ Arm}}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a9b0cbe4a1060782a7ef73f824f1c1aa0}{InitGroupJ}}();\ \textcolor{comment}{//\ Leg}}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a1c7ce092eda85ae3c172112528242c2e}{InitGroupK}}();\ \textcolor{comment}{//\ Crotch\ and\ Rise}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a1461c47dc64fb77aa03abb2d08fb3df8}{InitGroupL}}();\ \textcolor{comment}{//\ Hand}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ad2a42058a6f3f4c3247e37e3d6b47f78}{InitGroupM}}();\ \textcolor{comment}{//\ Foot}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a2023636ac72736dcb9337303b0805416}{InitGroupN}}();\ \textcolor{comment}{//\ Head}}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a5b382d74c42de2a92da904d054eaa5bd}{InitGroupO}}();\ \textcolor{comment}{//\ Men\ \&\ Tailoring}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ac70b09ab4a0ad62f55624cada908aeae}{InitGroupP}}();\ \textcolor{comment}{//\ Historical\ \&\ Specialty}}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a7a7abe3d93c413085c8e6b0ed0c8065b}{InitGroupQ}}();\ \textcolor{comment}{//\ Patternmaking\ measurements}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_ac7f210a1bcbdab5625e09ce368479820}{InitMeasurements}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_translate_measurements_a1532d532aff03c56e1aa6383d2bcffd5}{InitMeasurement}}(const\ QString\ \&name,\ const\ \mbox{\hyperlink{namespaceqmu}{qmu}}::QmuTranslation\ \&m,\ const\ \mbox{\hyperlink{namespaceqmu}{qmu}}::QmuTranslation\ \&g,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{namespaceqmu}{qmu}}::QmuTranslation\ \&d,\ const\ QString\ \&number,\ const\ QString\ \&formula\ =\ QString());}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTRANSLATEMEASUREMENTS\_H}}
+
+\end{DoxyCode}

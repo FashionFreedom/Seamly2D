@@ -1,0 +1,181 @@
+\hypertarget{class_rename_draft_block}{}\doxysection{Rename\+Draft\+Block Class Reference}
+\label{class_rename_draft_block}\index{RenameDraftBlock@{RenameDraftBlock}}
+
+
+{\ttfamily \#include $<$rename\+\_\+draftblock.\+h$>$}
+
+Inheritance diagram for Rename\+Draft\+Block\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_rename_draft_block}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_rename_draft_block_a3739953455c5a815011e612544e55d9e}{Rename\+Draft\+Block}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const QString \&new\+Block\+Name, QCombo\+Box $\ast$combo, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_rename_draft_block_a6818cc0b583caabd2c23d1539f4e685c}{$\sim$\+Rename\+Draft\+Block}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_rename_draft_block_abbd3618b5fcc64ed91056e997e787df7}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_rename_draft_block_aec7bfbeb4ca2f40e40879a00c5f48cc2}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_rename_draft_block_ab9a30a0bf04c984dfb1b8239dc7c5ded}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_rename_draft_block_a52b987386b46e4bb114906293b602abc}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_rename_draft_block_a96f44bd7d41866aeb9e49d73ed6e0fd9}{get\+New\+Name}} () const
+\item 
+QString \mbox{\hyperlink{class_rename_draft_block_af84949bd3fcdc9345ae1bff9059c0e56}{get\+Old\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_rename_draft_block_a67781e44cd737e16a6440a2d4239da94}{change\+Name}} (const QString \&old\+Name, const QString \&new\+Name)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QCombo\+Box $\ast$ \mbox{\hyperlink{class_rename_draft_block_adedd3bc1a0bebc4827cbe957b42b5e7e}{m\+\_\+combo}}
+\item 
+QString \mbox{\hyperlink{class_rename_draft_block_a890c45dc034699f848cb42ce68b5f530}{m\+\_\+new\+Block\+Name}}
+\item 
+QString \mbox{\hyperlink{class_rename_draft_block_acf0ce202158e5886497d8dbe0bdacfd4}{m\+\_\+old\+Block\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_rename_draft_block_a3739953455c5a815011e612544e55d9e}\label{class_rename_draft_block_a3739953455c5a815011e612544e55d9e}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!RenameDraftBlock@{RenameDraftBlock}}
+\index{RenameDraftBlock@{RenameDraftBlock}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{RenameDraftBlock()}{RenameDraftBlock()}}
+{\footnotesize\ttfamily Rename\+Draft\+Block\+::\+Rename\+Draft\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const QString \&}]{new\+Block\+Name,  }\item[{QCombo\+Box $\ast$}]{combo,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_rename_draft_block_a6818cc0b583caabd2c23d1539f4e685c}\label{class_rename_draft_block_a6818cc0b583caabd2c23d1539f4e685c}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!````~RenameDraftBlock@{$\sim$RenameDraftBlock}}
+\index{````~RenameDraftBlock@{$\sim$RenameDraftBlock}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{$\sim$RenameDraftBlock()}{~RenameDraftBlock()}}
+{\footnotesize\ttfamily Rename\+Draft\+Block\+::$\sim$\+Rename\+Draft\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_rename_draft_block_a67781e44cd737e16a6440a2d4239da94}\label{class_rename_draft_block_a67781e44cd737e16a6440a2d4239da94}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!changeName@{changeName}}
+\index{changeName@{changeName}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{changeName()}{changeName()}}
+{\footnotesize\ttfamily void Rename\+Draft\+Block\+::change\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{old\+Name,  }\item[{const QString \&}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_a96f44bd7d41866aeb9e49d73ed6e0fd9}\label{class_rename_draft_block_a96f44bd7d41866aeb9e49d73ed6e0fd9}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!getNewName@{getNewName}}
+\index{getNewName@{getNewName}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{getNewName()}{getNewName()}}
+{\footnotesize\ttfamily QString Rename\+Draft\+Block\+::get\+New\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_af84949bd3fcdc9345ae1bff9059c0e56}\label{class_rename_draft_block_af84949bd3fcdc9345ae1bff9059c0e56}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!getOldName@{getOldName}}
+\index{getOldName@{getOldName}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{getOldName()}{getOldName()}}
+{\footnotesize\ttfamily QString Rename\+Draft\+Block\+::get\+Old\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_a52b987386b46e4bb114906293b602abc}\label{class_rename_draft_block_a52b987386b46e4bb114906293b602abc}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!id@{id}}
+\index{id@{id}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Rename\+Draft\+Block\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_ab9a30a0bf04c984dfb1b8239dc7c5ded}\label{class_rename_draft_block_ab9a30a0bf04c984dfb1b8239dc7c5ded}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Rename\+Draft\+Block\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_aec7bfbeb4ca2f40e40879a00c5f48cc2}\label{class_rename_draft_block_aec7bfbeb4ca2f40e40879a00c5f48cc2}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!redo@{redo}}
+\index{redo@{redo}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Rename\+Draft\+Block\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_abbd3618b5fcc64ed91056e997e787df7}\label{class_rename_draft_block_abbd3618b5fcc64ed91056e997e787df7}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!undo@{undo}}
+\index{undo@{undo}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Rename\+Draft\+Block\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_rename_draft_block_adedd3bc1a0bebc4827cbe957b42b5e7e}\label{class_rename_draft_block_adedd3bc1a0bebc4827cbe957b42b5e7e}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!m\_combo@{m\_combo}}
+\index{m\_combo@{m\_combo}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{m\_combo}{m\_combo}}
+{\footnotesize\ttfamily QCombo\+Box$\ast$ Rename\+Draft\+Block\+::m\+\_\+combo\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_a890c45dc034699f848cb42ce68b5f530}\label{class_rename_draft_block_a890c45dc034699f848cb42ce68b5f530}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!m\_newBlockName@{m\_newBlockName}}
+\index{m\_newBlockName@{m\_newBlockName}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{m\_newBlockName}{m\_newBlockName}}
+{\footnotesize\ttfamily QString Rename\+Draft\+Block\+::m\+\_\+new\+Block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_rename_draft_block_acf0ce202158e5886497d8dbe0bdacfd4}\label{class_rename_draft_block_acf0ce202158e5886497d8dbe0bdacfd4}} 
+\index{RenameDraftBlock@{RenameDraftBlock}!m\_oldBlockName@{m\_oldBlockName}}
+\index{m\_oldBlockName@{m\_oldBlockName}!RenameDraftBlock@{RenameDraftBlock}}
+\doxysubsubsection{\texorpdfstring{m\_oldBlockName}{m\_oldBlockName}}
+{\footnotesize\ttfamily QString Rename\+Draft\+Block\+::m\+\_\+old\+Block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{rename__draftblock_8h}{rename\+\_\+draftblock.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{rename__draftblock_8cpp}{rename\+\_\+draftblock.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\hypertarget{vistoolarcwithlength_8h_source}{}\doxysection{vistoolarcwithlength.\+h}
+\label{vistoolarcwithlength_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolarcwithlength.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolarcwithlength.h}}
+\mbox{\hyperlink{vistoolarcwithlength_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vistoolarcwithlength.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 9\ 6,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VISTOOLARCWITHLENGTH\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VISTOOLARCWITHLENGTH\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vispath_8h}{vispath.h}}"{}}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vis_tool_arc_with_length}{VisToolArcWithLength}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_path}{VisPath}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_vis_tool_arc_with_length}{VisToolArcWithLength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_vis_tool_arc_with_length_a0d5a29ed8be6c6fb549530fb2b3f4f12}{\string~VisToolArcWithLength}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_arc_with_length_a0d9511ff42e52d91d3b31325b9cfe0e1}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_a9de6d543825340d5a1b75a1029115311}{setRadius}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_a4defdc6282510a0fbb550ead17f634fa}{setF1}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_a65ae8a1038be40fa7c51af47125208f7}{setLength}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_a71a6e293588934eece86728cb9829fd9}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vis_tool_arc_with_length_a39c0b07cc761024b16200379ec9cc215a3e634f6e8b8050f328691876eb573256}{Type}};\}}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_vis_tool_arc_with_length_a39c0b07cc761024b16200379ec9cc215a3e634f6e8b8050f328691876eb573256}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ToolArcWithLength)\};}
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_vis_tool_arc_with_length}{VisToolArcWithLength}})}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ *\mbox{\hyperlink{class_vis_tool_arc_with_length_a42b3427ed2473deebb401f9ad87f6f41}{arcCenter}};}
+\DoxyCodeLine{00081\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_addf7edc2bd12f11067bc64109d55fef1}{radius}};}
+\DoxyCodeLine{00082\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_ab1361af5bff0b6af9a46347439c5aa59}{f1}};}
+\DoxyCodeLine{00083\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_arc_with_length_aa73054af30c72e1fd8f08e1a9996ee14}{length}};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VISTOOLARCWITHLENGTH\_H}}
+
+\end{DoxyCode}

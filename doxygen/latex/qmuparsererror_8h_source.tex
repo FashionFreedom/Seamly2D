@@ -1,0 +1,199 @@
+\hypertarget{qmuparsererror_8h_source}{}\doxysection{qmuparsererror.\+h}
+\label{qmuparsererror_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsererror.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsererror.h}}
+\mbox{\hyperlink{qmuparsererror_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPARSERERROR\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPARSERERROR\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QException>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparserdef_8h}{qmuparserdef.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmutranslation_8h}{qmutranslation.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Formula\ syntax\ errors}}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee}{ecUNEXPECTED\_OPERATOR}}\ \ \ \ =\ 0,\ \ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794}{ecUNASSIGNABLE\_TOKEN}}\ \ \ \ \ =\ 1,\ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1}{ecUNEXPECTED\_EOF}}\ \ \ \ \ \ \ \ \ =\ 2,\ \ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c8fdb374f8c031a17cc041cb1db1b44}{ecUNEXPECTED\_ARG\_SEP}}\ \ \ \ \ =\ 3,\ \ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9b65abb5eca21f59be7e59e2a8a8d0cc}{ecUNEXPECTED\_ARG}}\ \ \ \ \ \ \ \ \ =\ 4,\ \ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad679dfa31262d0d9ad99fe0e4f95db9c}{ecUNEXPECTED\_VAL}}\ \ \ \ \ \ \ \ \ =\ 5,\ \ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad430edd7ca97fff68971649ec8f57f57}{ecUNEXPECTED\_VAR}}\ \ \ \ \ \ \ \ \ =\ 6,\ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ac666593b660f72f5c1d416f0bdccb5ab}{ecUNEXPECTED\_PARENS}}\ \ \ \ \ \ =\ 7,\ \ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a68544c2f71f449bc78c02e127abc6da7}{ecUNEXPECTED\_STR}}\ \ \ \ \ \ \ \ \ =\ 8,\ \ }
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652}{ecSTRING\_EXPECTED}}\ \ \ \ \ \ \ \ =\ 9,\ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}{ecVAL\_EXPECTED}}\ \ \ \ \ \ \ \ \ \ \ =\ 10,\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a324ba20c1bbdc353348126f4249d49b0}{ecMISSING\_PARENS}}\ \ \ \ \ \ \ \ \ =\ 11,\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8b1d1113d0289b0a16118f7c7279a25e}{ecUNEXPECTED\_FUN}}\ \ \ \ \ \ \ \ \ =\ 12,\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ae9c3119a29913fe79760f988d4bb0304}{ecUNTERMINATED\_STRING}}\ \ \ \ =\ 13,\ }
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab261c4a8c03763f3d7f3c78b0c6b7b51}{ecTOO\_MANY\_PARAMS}}\ \ \ \ \ \ \ \ =\ 14,\ }
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2b981b97792a8f3481583f736c41f5c6}{ecTOO\_FEW\_PARAMS}}\ \ \ \ \ \ \ \ \ =\ 15,\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a41236d0a7ee64937f77eab322cea78cf}{ecOPRT\_TYPE\_CONFLICT}}\ \ \ \ \ =\ 16,\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9fb56a155841aa4f5060f2ec72c5a7e0}{ecSTR\_RESULT}}\ \ \ \ \ \ \ \ \ \ \ \ \ =\ 17,\ }
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//\ Invalid\ Parser\ input\ Parameters}}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a486683e3a93bf9bdde7ff7b21423c5ca}{ecINVALID\_NAME}}\ \ \ \ \ \ \ \ \ \ \ =\ 18,\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad28b986862287dc5016dcb93f116edfe}{ecINVALID\_BINOP\_IDENT}}\ \ \ \ =\ 19,\ }
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a2826d81c0ead9d8e6c0cf2865805dc}{ecINVALID\_INFIX\_IDENT}}\ \ \ \ =\ 20,\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aac6608764ab31a8eba0027c7395c2bae}{ecINVALID\_POSTFIX\_IDENT}}\ \ =\ 21,\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a}{ecBUILTIN\_OVERLOAD}}\ \ \ \ \ \ \ =\ 22,\ }
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1}{ecINVALID\_FUN\_PTR}}\ \ \ \ \ \ \ \ =\ 23,\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad8e712064ad91707afadeda05b632e13}{ecINVALID\_VAR\_PTR}}\ \ \ \ \ \ \ \ =\ 24,\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aaa7a0a0f5a849e15df140c6f9e76bdfd}{ecEMPTY\_EXPRESSION}}\ \ \ \ \ \ \ =\ 25,\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e}{ecNAME\_CONFLICT}}\ \ \ \ \ \ \ \ \ \ =\ 26,\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab62e0fd43daf51a87476b910ef3855e1}{ecOPT\_PRI}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 27,\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//}}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a1f908341a6c6baad4f886cf897c5a9a8}{ecDOMAIN\_ERROR}}\ \ \ \ \ \ \ \ \ \ \ =\ 28,\ }
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af8c2e506d9713f8aff37f6e5562cf7a1}{ecDIV\_BY\_ZERO}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 29,\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6470195ead89dfbe323bdad3cda6e7c4}{ecGENERIC}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 30,\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a4c55b714057e0f2c1aeb1c14aa5d34b7}{ecLOCALE}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 31,\ }
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad4db650a7bb1fb5fd6f6f8de3060dad1}{ecUNEXPECTED\_CONDITIONAL}}\ =\ 32,}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c158c1d93d2152030b8d2239fff5cc3}{ecMISSING\_ELSE\_CLAUSE}}\ \ \ \ =\ 33,}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af915de306b6530f93f3a92a1377f6206}{ecMISPLACED\_COLON}}\ \ \ \ \ \ \ \ =\ 34,}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{comment}{//\ internal\ errors}}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ \ \ \ \ \ \ \ \ =\ 35,\ }
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ The\ last\ two\ are\ special\ entries}}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7afcb30a1f424d206fea7aedd3a3985c58}{ecCOUNT}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2369b91ec2436b7e1ff32d12a2c868b0}{ecUNDEFINED}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ -\/1\ \ }
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00100\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_a05c0e83794e38797d0739941ade0582e}{self\_type}};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_a77cb9b70e9c17bdb76a2b84ab6cf4c0c}{QmuParserErrorMsg}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_aac4325aaa36193d981de1c1f488d70f3}{\string~QmuParserErrorMsg}}();}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_a8696c3213efc80cf19e7dd656138266b}{Instance}}();}
+\DoxyCodeLine{00109\ \ \ \ \ QString\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_acc2cf217112ad55e95eb82cdca1a579a}{operator[]\ }}(\ \textcolor{keywordtype}{int}\ a\_iIdx\ )\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00112\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}})}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<\textcolor{keywordtype}{int},\ \mbox{\hyperlink{classqmu_1_1_qmu_translation}{QmuTranslation}}>\ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_ad020335d7644bfb0ddc9554df4e2c62f}{m\_vErrMsg}};\ \ }
+\DoxyCodeLine{00114\ \ \ \ \ static\ const\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{self\_type}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_ae3b78ace17acd94e7d274c0504ee7acf}{m\_Instance}};\ \ \ \ }
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00118\ \textcolor{comment}{//\ cppcheck-\/suppress\ unusedFunction}}
+\DoxyCodeLine{00119\ inline\ const\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}::\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_a8696c3213efc80cf19e7dd656138266b}{Instance}}()}
+\DoxyCodeLine{00120\ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_ae3b78ace17acd94e7d274c0504ee7acf}{m\_Instance}};}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00125\ \textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_acc2cf217112ad55e95eb82cdca1a579a}{QmuParserErrorMsg::operator[]\ }}(\ \textcolor{keywordtype}{int}\ a\_iIdx\ )\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00126\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg_ad020335d7644bfb0ddc9554df4e2c62f}{m\_vErrMsg}}.value(a\_iIdx).translate();}
+\DoxyCodeLine{00128\ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00136\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ :\ \textcolor{keyword}{public}\ QException}
+\DoxyCodeLine{00137\ \{}
+\DoxyCodeLine{00138\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ a\_iErrc\ );}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{keyword}{const}\ QString\ \&sMsg\ );}
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ a\_iErrc,\ \textcolor{keyword}{const}\ QString\ \&sTok,\ \textcolor{keyword}{const}\ QString\ \&sFormula\ =\ QString(),\ \textcolor{keywordtype}{int}\ a\_iPos\ =\ -\/1\ );}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ a\_iErrc,\ \textcolor{keywordtype}{int}\ a\_iPos,\ \textcolor{keyword}{const}\ QString\ \&sTok\ );}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{keyword}{const}\ QString\ \&szMsg,\ \textcolor{keywordtype}{int}\ iPos,\ \textcolor{keyword}{const}\ QString\ \&sTok\ =\ QString()\ );}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ \&a\_Obj\ );}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\&\ operator=\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ \&a\_Obj\ );}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_aef810f8f21f6a9642f3f83320dc1e0d3}{\string~QmuParserError}}()\ \mbox{\hyperlink{qmuparserdef_8h_a0b363e781bc37fed726a07b0e173f704}{QMUP\_NOEXCEPT\_EXPR}}\ (true)\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ SetFormula\ (\ \textcolor{keyword}{const}\ QString\ \&a\_strFormula\ );}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ GetExpr()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ GetMsg()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ GetPos()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ GetToken()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ \ \ \ GetCode()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ \ \ \ \ Q\_NORETURN\ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ raise()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00156\ \ \ \ \ Q\_REQUIRED\_RESULT\ virtual\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ *clone()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00157\ private:}
+\DoxyCodeLine{00158\ \ \ \ \ QString\ m\_sMsg;\ \ \ \ \ \ }
+\DoxyCodeLine{00159\ \ \ \ \ QString\ m\_sExpr;\ \ \ \ \ }
+\DoxyCodeLine{00160\ \ \ \ \ QString\ m\_sTok;\ \ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ m\_iPos;\ \ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ m\_iErrc;\ }
+\DoxyCodeLine{00163\ \ \ \ \ const\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{QmuParserErrorMsg}}\ \&m\_ErrMsg;}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ Reset();}
+\DoxyCodeLine{00165\ \};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00171\ \textcolor{comment}{}inline\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}::SetFormula\ (\ const\ QString\ \&a\_strFormula\ )}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ m\_sExpr\ =\ a\_strFormula;}
+\DoxyCodeLine{00174\ \}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00180\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ QString\&\ QmuParserError::GetExpr()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00181\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_sExpr;}
+\DoxyCodeLine{00183\ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00189\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ QString\&\ QmuParserError::GetMsg()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00190\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_sMsg;}
+\DoxyCodeLine{00192\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00200\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ QmuParserError::GetPos()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00201\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_iPos;}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00209\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ QString\&\ QmuParserError::GetToken()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00210\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_sTok;}
+\DoxyCodeLine{00212\ \}}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00218\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EErrorCodes}}\ QmuParserError::GetCode()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00219\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_iErrc;}
+\DoxyCodeLine{00221\ \}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \}\ \textcolor{comment}{//\ namespace\ qmu}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

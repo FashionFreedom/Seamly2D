@@ -1,0 +1,95 @@
+\hypertarget{vellipticalarc__p_8h_source}{}\doxysection{vellipticalarc\+\_\+p.\+h}
+\label{vellipticalarc__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vellipticalarc\_p.h@{D:/Github/Seamly2D/src/libs/vgeometry/vellipticalarc\_p.h}}
+\mbox{\hyperlink{vellipticalarc__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VELLIPTICALARC\_P}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VELLIPTICALARC\_P}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpointf_8h}{vpointf.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00010\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00011\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ class\ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ ();}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ (qreal\ radius1,\ qreal\ radius2,\ \textcolor{keyword}{const}\ QString\ \&formulaRadius1,\ \textcolor{keyword}{const}\ QString\ \&formulaRadius2,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ rotationAngle,\ \textcolor{keyword}{const}\ QString\ \&formulaRotationAngle);}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}(qreal\ radius1,\ qreal\ radius2,\ qreal\ rotationAngle);}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ \&arc);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_elliptical_arc_data}{\string~VEllipticalArcData}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data_ab031c088e4c8dd7f3f7c2f76d5520a53}{radius1}};}
+\DoxyCodeLine{00027\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data_a8920db639e981f0217fe4ee1e4dbca73}{radius2}};}
+\DoxyCodeLine{00029\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_elliptical_arc_data_ae3e0b16da4ae898d1e98b80cfc4d36a9}{formulaRadius1}};}
+\DoxyCodeLine{00031\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_elliptical_arc_data_a2e18fbbb4b7f3af5e9bafd4bf64abef5}{formulaRadius2}};}
+\DoxyCodeLine{00033\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data_adee40e76cb6119cd0691e0e78bfb0496}{rotationAngle}};}
+\DoxyCodeLine{00035\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_elliptical_arc_data_a1f61207ee767ea3fd5443031819e06de}{formulaRotationAngle}};}
+\DoxyCodeLine{00037\ \ \ \ \ QTransform\ \mbox{\hyperlink{class_v_elliptical_arc_data_a4ea02864ba1a468aaa2525713fb047d4}{m\_transform}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ \&\mbox{\hyperlink{class_v_elliptical_arc_data_a12f06fb0624fa277378135ae3a0ef513}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00044\ \mbox{\hyperlink{class_v_elliptical_arc_data_af628caa67dfb2853ed836fe3e37e1c36}{VEllipticalArcData::VEllipticalArcData}}()}
+\DoxyCodeLine{00045\ \ \ \ \ :\ radius1(0)}
+\DoxyCodeLine{00046\ \ \ \ \ ,\ radius2(0)}
+\DoxyCodeLine{00047\ \ \ \ \ ,\ formulaRadius1()}
+\DoxyCodeLine{00048\ \ \ \ \ ,\ formulaRadius2()}
+\DoxyCodeLine{00049\ \ \ \ \ ,\ rotationAngle(0)}
+\DoxyCodeLine{00050\ \ \ \ \ ,\ formulaRotationAngle()}
+\DoxyCodeLine{00051\ \ \ \ \ ,\ m\_transform()}
+\DoxyCodeLine{00052\ \{\}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00055\ \mbox{\hyperlink{class_v_elliptical_arc_data_af628caa67dfb2853ed836fe3e37e1c36}{VEllipticalArcData::VEllipticalArcData}}(qreal\ radius1,\ qreal\ radius2,\ \textcolor{keyword}{const}\ QString\ \&formulaRadius1,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaRadius2,\ qreal\ rotationAngle,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaRotationAngle)}
+\DoxyCodeLine{00058\ \ \ \ \ :\ radius1(radius1)}
+\DoxyCodeLine{00059\ \ \ \ \ ,\ radius2(radius2)}
+\DoxyCodeLine{00060\ \ \ \ \ ,\ formulaRadius1(formulaRadius1)}
+\DoxyCodeLine{00061\ \ \ \ \ ,\ formulaRadius2(formulaRadius2)}
+\DoxyCodeLine{00062\ \ \ \ \ ,\ rotationAngle(rotationAngle)}
+\DoxyCodeLine{00063\ \ \ \ \ ,\ formulaRotationAngle(formulaRotationAngle)}
+\DoxyCodeLine{00064\ \ \ \ \ ,\ m\_transform()}
+\DoxyCodeLine{00065\ \{\}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00068\ \mbox{\hyperlink{class_v_elliptical_arc_data_af628caa67dfb2853ed836fe3e37e1c36}{VEllipticalArcData::VEllipticalArcData}}(qreal\ radius1,\ qreal\ radius2,\ qreal\ rotationAngle)}
+\DoxyCodeLine{00069\ \ \ \ \ :\ radius1(radius1)}
+\DoxyCodeLine{00070\ \ \ \ \ ,\ radius2(radius2)}
+\DoxyCodeLine{00071\ \ \ \ \ ,\ formulaRadius1(QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(radius1)))}
+\DoxyCodeLine{00072\ \ \ \ \ ,\ formulaRadius2(QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(radius2)))}
+\DoxyCodeLine{00073\ \ \ \ \ ,\ rotationAngle(rotationAngle)}
+\DoxyCodeLine{00074\ \ \ \ \ ,\ formulaRotationAngle(QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(rotationAngle)))}
+\DoxyCodeLine{00075\ \ \ \ \ ,\ m\_transform()}
+\DoxyCodeLine{00076\ \{\}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00079\ \mbox{\hyperlink{class_v_elliptical_arc_data_af628caa67dfb2853ed836fe3e37e1c36}{VEllipticalArcData::VEllipticalArcData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}}\ \&arc)}
+\DoxyCodeLine{00080\ \ \ \ \ :\ QSharedData(arc)}
+\DoxyCodeLine{00081\ \ \ \ \ ,\ radius1(arc.radius1)}
+\DoxyCodeLine{00082\ \ \ \ \ ,\ radius2(arc.radius2)}
+\DoxyCodeLine{00083\ \ \ \ \ ,\ formulaRadius1(arc.formulaRadius1)}
+\DoxyCodeLine{00084\ \ \ \ \ ,\ formulaRadius2(arc.formulaRadius2)}
+\DoxyCodeLine{00085\ \ \ \ \ ,\ rotationAngle(arc.rotationAngle)}
+\DoxyCodeLine{00086\ \ \ \ \ ,\ formulaRotationAngle(arc.formulaRotationAngle)}
+\DoxyCodeLine{00087\ \ \ \ \ ,\ m\_transform(arc.m\_transform)}
+\DoxyCodeLine{00088\ \{\}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00091\ \mbox{\hyperlink{class_v_elliptical_arc_data_af409b8b24fcac0af64ac6708bbbd8bb5}{VEllipticalArcData::\string~VEllipticalArcData}}()}
+\DoxyCodeLine{00092\ \{\}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VELLIPTICALARC\_P}}
+
+\end{DoxyCode}

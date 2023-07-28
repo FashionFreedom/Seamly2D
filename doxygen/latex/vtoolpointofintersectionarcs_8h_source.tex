@@ -1,0 +1,139 @@
+\hypertarget{vtoolpointofintersectionarcs_8h_source}{}\doxysection{vtoolpointofintersectionarcs.\+h}
+\label{vtoolpointofintersectionarcs_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/vtoolpointofintersectionarcs.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/vtoolpointofintersectionarcs.h}}
+\mbox{\hyperlink{vtoolpointofintersectionarcs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ @file\ \ \ vtoolpointofintersectionarcs.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ @date\ \ \ 30\ Apr,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @file\ \ \ vtoolpointofintersectionarcs.h}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @date\ \ \ 25\ 5,\ 2015}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ VTOOLPOINTOFINTERSECTIONARCS\_H}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ VTOOLPOINTOFINTERSECTIONARCS\_H}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolsinglepoint_8h}{vtoolsinglepoint.h}}"{}}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs}{VToolPointOfIntersectionArcs}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_tool_single_point}{VToolSinglePoint}}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_aab88861f52e1e1e240bbe12cd2e65f57}{setDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs}{VToolPointOfIntersectionArcs}}\ *\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a020862778f486f8cb06eea167e05a0b5}{Create}}(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<DialogTool>}}\ dialog,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ \ *scene,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs}{VToolPointOfIntersectionArcs}}\ *\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a020862778f486f8cb06eea167e05a0b5}{Create}}(\textcolor{keyword}{const}\ quint32\ \_id,\ \textcolor{keyword}{const}\ QString\ \&pointName,\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ad3a4fa986504d621164b140e6d8bf4b5}{firstArcId}},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ac6238c132941479d41c3e7fb810bbe0a}{secondArcId}},\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ pType,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ mx,\ qreal\ my,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \&typeCreation);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ QPointF\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_aae057a03a30bc96ee57a06940877c263}{FindPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_arc}{VArc}}\ *arc1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_arc}{VArc}}\ *arc2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ pType);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a1c9714a8e3c270a0736c69b4e156b36b}{ToolType}};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_af9f07ed3229b3eac4ec226244259a3d1}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a2be338bfa04d03fc3a6ecf7e77150f62a0c847d04dab5fde8be12ab3ab40cfd43}{Type}};\}}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a2be338bfa04d03fc3a6ecf7e77150f62a0c847d04dab5fde8be12ab3ab40cfd43}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Tool::PointOfIntersectionArcs)\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_aab7258aa2482f743087afa920c9dd383}{FirstArcName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_aaaa456057f03c63769b347a23b50eb1b}{SecondArcName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a1bcbca29a699f2855a3b26892a5735ec}{GetFirstArcId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a99b39ea549cb8c708575eff5f598aeb7}{SetFirstArcId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_abb4ca598e1d725e10eb9fded4151e508}{GetSecondArcId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_abf70b3462b758e7c5e399f16c48b776d}{SetSecondArcId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_aed4df03c0f9a27d8dee72f39c03ebfe8}{GetCrossCirclesPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a51b653d8d253b79ab5a1395038fb7b8b}{setCirclesCrossPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \&value);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a4722c92776a3adc525f8501a2f49d403}{ShowVisualization}}(\textcolor{keywordtype}{bool}\ show)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{protected}\ slots:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a9b9f0bda401dabadf65feecd53de154f}{showContextMenu}}(QGraphicsSceneContextMenuEvent\ *event,\ quint32\ \textcolor{keywordtype}{id}=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ab2e1a70810d77fc4e9d63076676cff4d}{RemoveReferens}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00114\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ad37dd1e5211f4a62eff77da07367139f}{SaveDialog}}(QDomElement\ \&domElement)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00115\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_adc3c944d893fc3e308a8dd75a00ee06b}{SaveOptions}}(QDomElement\ \&tag,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00116\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ac3f5560e237bdfa75a98826209ba1a98}{ReadToolAttributes}}(const\ QDomElement\ \&domElement)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00117\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_abce32805823b072008d016fe7f73edde}{SetVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ private:}
+\DoxyCodeLine{00120\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs}{VToolPointOfIntersectionArcs}})}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ad3a4fa986504d621164b140e6d8bf4b5}{firstArcId}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ac6238c132941479d41c3e7fb810bbe0a}{secondArcId}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_a11ab54d9e754f1fb79cc9dd2a3bb266c}{crossPoint}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs}{VToolPointOfIntersectionArcs}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ const\ quint32\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ quint32\ \&\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ad3a4fa986504d621164b140e6d8bf4b5}{firstArcId}},\ const\ quint32\ \&\mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ac6238c132941479d41c3e7fb810bbe0a}{secondArcId}},}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ pType,\ const\ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \&typeCreation,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QGraphicsItem\ *\ parent\ =\ \textcolor{keywordtype}{nullptr});\};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTOOLPOINTOFINTERSECTIONARCS\_H}}
+
+\end{DoxyCode}

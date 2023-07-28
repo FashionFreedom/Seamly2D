@@ -1,0 +1,175 @@
+\hypertarget{class_test_v_application}{}\doxysection{Test\+VApplication Class Reference}
+\label{class_test_v_application}\index{TestVApplication@{TestVApplication}}
+Inheritance diagram for Test\+VApplication\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_test_v_application}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_test_v_application_acdb79fe7d136aa0be57d2a7b7467c7cf}{Test\+VApplication}} (int \&argc, char $\ast$$\ast$argv)
+\item 
+virtual \mbox{\hyperlink{class_test_v_application_adae26da5618cf724298a70ef43b8f317}{$\sim$\+Test\+VApplication}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ \mbox{\hyperlink{class_test_v_application_ae803f45dede532ee8da2960432f8db2a}{Tr\+Vars}} ()
+\item 
+virtual void \mbox{\hyperlink{class_test_v_application_a3c27e9e7c084e7aa5459c5ee392792d5}{Open\+Settings}} ()
+\item 
+virtual bool \mbox{\hyperlink{class_test_v_application_ad7b17e91dcf3d018f04f6d1ec175e626}{Is\+App\+In\+GUIMode}} () const
+\item 
+virtual void \mbox{\hyperlink{class_test_v_application_a7308ed4069ef19f0233cf836ee7d89e9}{Init\+Tr\+Vars}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_application}{VAbstract\+Application}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_application_af7726df174e0447e9922c0cb8f3455fd}{VAbstract\+Application}} (int \&argc, char $\ast$$\ast$argv)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_application_a3323dd8b7f70a78e93587e5c441b05b5}{$\sim$\+VAbstract\+Application}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}{Tr\+Vars}} ()=0
+\item 
+QString \mbox{\hyperlink{class_v_abstract_application_a7f8f1033b717fb83f76d40aea526db87}{translations\+Path}} (const QString \&locale=QString()) const
+\begin{DoxyCompactList}\small\item\em translations\+Path return path to the root directory that contains QM files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_application_a92886d256c5e9be89659da9dcc191107}{load\+Translations}} (const QString \&locale)
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{pattern\+Unit}} () const
+\item 
+const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a12b9545d6469461f81797e73dd65aae8}{pattern\+UnitP}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a2d5a5eb9c0102caf4176fd5542c2bba7}{set\+Pattern\+Unit}} (const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&\mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{pattern\+Unit}})
+\item 
+\mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{pattern\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ab6ab93b0a13844b1d56d9050834e9de2}{set\+Pattern\+Type}} (const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&\mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{pattern\+Type}})
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}{Open\+Settings}} ()=0
+\item 
+\mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_aaf7f1160ef591e625cb67d208c6eb6c8}{Settings}} ()
+\begin{DoxyCompactList}\small\item\em get\+Settings hide settings constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\QString \mbox{\hyperlink{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}{Locale\+To\+String}} (const T \&value)
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_v_abstract_application_af0feb90ee902a084bfc7abe2afb5a744}{get\+Current\+Scene}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a2f8427be7b244fd1d1f16ede1bd1dd0a}{set\+Current\+Scene}} (QGraphics\+Scene $\ast$$\ast$value)
+\item 
+\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_adad4a5d898ccf03d503fdf9896845eda}{get\+Scene\+View}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ae268ff4b92ec50ceeb624ede966ad2a6}{set\+Scene\+View}} (\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$value)
+\item 
+double \mbox{\hyperlink{class_v_abstract_application_a82a68e4e4625193cb2cb439325ab8699}{to\+Pixel}} (double val) const
+\item 
+double \mbox{\hyperlink{class_v_abstract_application_a50d149897aa4a87d01a071420d86c6c5}{from\+Pixel}} (double pix) const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a0dfd5d5f8049b62a35c870ea3521b616}{set\+Current\+Document}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}{doc}})
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_ae1b899800e84b0875383c64d76ad3e64}{get\+Current\+Document}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_aebdbce178306c330a0e33b3a1107c1fb}{set\+Current\+Data}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}{data}})
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a66802fa332e70eed60f483f1a725bef1}{get\+Current\+Data}} () const
+\item 
+bool \mbox{\hyperlink{class_v_abstract_application_a55128bf836ebd9f9875ad787cb022292}{get\+Opening\+Pattern}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a311fbafead9e7563ac189b123b1513ba}{set\+Opening\+Pattern}} ()
+\item 
+QWidget $\ast$ \mbox{\hyperlink{class_v_abstract_application_a442b5d6addd10367c87f86eebba2ced2}{get\+Main\+Window}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a10d1e05f0f266507a37c5fc497d1203b}{set\+Main\+Window}} (QWidget $\ast$value)
+\item 
+QUndo\+Stack $\ast$ \mbox{\hyperlink{class_v_abstract_application_a5ee7ed495fc2df2bd6cc924767c82cc8}{get\+Undo\+Stack}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}{Is\+App\+In\+GUIMode}} () const =0
+\item 
+QString \mbox{\hyperlink{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}{get\+File\+Path}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}{set\+File\+Path}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}{Init\+Tr\+Vars}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_application}{VAbstract\+Application}}}
+\begin{DoxyCompactItemize}
+\item 
+QUndo\+Stack $\ast$ \mbox{\hyperlink{class_v_abstract_application_aa76510ae070b475c90495d3606ecf1c6}{undo\+Stack}}
+\item 
+QWidget $\ast$ \mbox{\hyperlink{class_v_abstract_application_a09295c357a27ac2abbc72bceb293d8f4}{main\+Window}}
+\begin{DoxyCompactList}\small\item\em main\+Window pointer to main window. Usefull if need create modal dialog. Without pointer to main window modality doesn\textquotesingle{}t work. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a50de82036e454190206354a81bd24589}{settings}}
+\begin{DoxyCompactList}\small\item\em settings pointer to settings. Help hide constructor creation settings. Make make code more readable. \end{DoxyCompactList}\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a788c21e17e61da37d8640b8b528c144d}{qt\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a8284d973270795306e00c450aaca6700}{qtxml\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a0eba654b3a36e19541d71b5bf8f79856}{qt\+Base\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a6f59fff51e1dd866f7366475dedfb449}{app\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a57da31630cdb4ed4ba90f46275dc21fc}{pms\+Translator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_test_v_application_acdb79fe7d136aa0be57d2a7b7467c7cf}\label{class_test_v_application_acdb79fe7d136aa0be57d2a7b7467c7cf}} 
+\index{TestVApplication@{TestVApplication}!TestVApplication@{TestVApplication}}
+\index{TestVApplication@{TestVApplication}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{TestVApplication()}{TestVApplication()}}
+{\footnotesize\ttfamily Test\+VApplication\+::\+Test\+VApplication (\begin{DoxyParamCaption}\item[{int \&}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_test_v_application_adae26da5618cf724298a70ef43b8f317}\label{class_test_v_application_adae26da5618cf724298a70ef43b8f317}} 
+\index{TestVApplication@{TestVApplication}!````~TestVApplication@{$\sim$TestVApplication}}
+\index{````~TestVApplication@{$\sim$TestVApplication}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{$\sim$TestVApplication()}{~TestVApplication()}}
+{\footnotesize\ttfamily virtual Test\+VApplication\+::$\sim$\+Test\+VApplication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_v_application_a7308ed4069ef19f0233cf836ee7d89e9}\label{class_test_v_application_a7308ed4069ef19f0233cf836ee7d89e9}} 
+\index{TestVApplication@{TestVApplication}!InitTrVars@{InitTrVars}}
+\index{InitTrVars@{InitTrVars}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{InitTrVars()}{InitTrVars()}}
+{\footnotesize\ttfamily void Test\+VApplication\+::\+Init\+Tr\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}{VAbstract\+Application}}.
+
+\mbox{\Hypertarget{class_test_v_application_ad7b17e91dcf3d018f04f6d1ec175e626}\label{class_test_v_application_ad7b17e91dcf3d018f04f6d1ec175e626}} 
+\index{TestVApplication@{TestVApplication}!IsAppInGUIMode@{IsAppInGUIMode}}
+\index{IsAppInGUIMode@{IsAppInGUIMode}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{IsAppInGUIMode()}{IsAppInGUIMode()}}
+{\footnotesize\ttfamily bool Test\+VApplication\+::\+Is\+App\+In\+GUIMode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}{VAbstract\+Application}}.
+
+\mbox{\Hypertarget{class_test_v_application_a3c27e9e7c084e7aa5459c5ee392792d5}\label{class_test_v_application_a3c27e9e7c084e7aa5459c5ee392792d5}} 
+\index{TestVApplication@{TestVApplication}!OpenSettings@{OpenSettings}}
+\index{OpenSettings@{OpenSettings}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{OpenSettings()}{OpenSettings()}}
+{\footnotesize\ttfamily void Test\+VApplication\+::\+Open\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}{VAbstract\+Application}}.
+
+\mbox{\Hypertarget{class_test_v_application_ae803f45dede532ee8da2960432f8db2a}\label{class_test_v_application_ae803f45dede532ee8da2960432f8db2a}} 
+\index{TestVApplication@{TestVApplication}!TrVars@{TrVars}}
+\index{TrVars@{TrVars}!TestVApplication@{TestVApplication}}
+\doxysubsubsection{\texorpdfstring{TrVars()}{TrVars()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ Test\+VApplication\+::\+Tr\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}{VAbstract\+Application}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/test/\+Seamly2\+DTest/\mbox{\hyperlink{_seamly2_d_test_2qttestmainlambda_8cpp}{qttestmainlambda.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,570 @@
+\hypertarget{class_union_tool}{}\doxysection{Union\+Tool Class Reference}
+\label{class_union_tool}\index{UnionTool@{UnionTool}}
+
+
+The \mbox{\hyperlink{class_union_tool}{Union\+Tool}} class tool union details.  
+
+
+
+
+{\ttfamily \#include $<$union\+\_\+tool.\+h$>$}
+
+Inheritance diagram for Union\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_union_tool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_union_tool_a28a89a7098e192b808cbca98a2eec7ce}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_union_tool_a87b2326ae81e7716780a2d5ae46ce4b8}{Allow\+Hover}} (bool) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_union_tool_ae2d3f94af6ac7f691ecce63d757ddad3}{Allow\+Selecting}} (bool) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2c046b690ce16eb362a17c99b8dda223}{Full\+Update\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a7b15b7bc134aa340d45083017c29b8a9}{Allow\+Hover}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a3122ee94213c72455fa293f4e37e42d2}{Allow\+Selecting}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae6776c165682947d2158bcad167fba89}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual QString \mbox{\hyperlink{class_union_tool_a4350345a242281056e1be92cb0b63df6}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_union_tool_a30254639af8a40138fde5f34708bce3a}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_union_tool_a2945710454ca0d66a408ef1e6d9e2090}{increment\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_union_tool_a2dc807b02c33b34615e3cfdc49fd0693}{decrement\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_union_tool_a8430b56d90d4253d9e93e0fa05c6d981}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool_a70b99e9c5f5de0524b2feddaa2e8f660}{VAbstract\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} container. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_tool_ad7b86091cf994df352cc6f2dc8ca7d6a}{$\sim$\+VAbstract\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return pointer to data container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{class_v_abstract_tool_abcd2a5c12d31e607ad69c3f97db87c41}{Points\+List}} () const
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{get\+Tag\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{Show\+Visualization}} (bool show)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_union_tool}{Union\+Tool}} $\ast$ \mbox{\hyperlink{class_union_tool_aa2ffc939ac1b61ecfa7b0c64b531094a}{Create}} (\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} $>$ dialog, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Create help create tool from GUI. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_union_tool}{Union\+Tool}} $\ast$ \mbox{\hyperlink{class_union_tool_a2eb9cc5e86fc8661e282c018d144e65f}{Create}} (const quint32 \+\_\+id, const \mbox{\hyperlink{struct_union_tool_init_data}{Union\+Tool\+Init\+Data}} \&init\+Data)
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_tool_ad0bfc359f78eb591511452ce58b33c66}{Check\+Formula}} (const quint32 \&tool\+Id, QString \&formula, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Check\+Formula check formula. \end{DoxyCompactList}\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_a92535ec97f566be641640d0aac73406b}{Colors}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aab1175fc0f86a9e52da9d145195b3b86}{Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aa881e27f598b21107b5a0e476d98b0a6}{support\+Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_afc244270d10e1bd14d3151d9fba3f893}{background\+Colors\+List}} ()
+\item 
+static QPixmap \mbox{\hyperlink{class_v_abstract_tool_ae07b095b26ee07e932e5db9976d75252}{create\+Color\+Icon}} (const int w, const int h, const QString \&color)
+\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_ab641d32d6545e0b24b45df643bff1a67}{fills}} ()
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_ab1112692b84f354bf0d2c60ed2056fa5}{Add\+Record}} (const quint32 id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tool\+Type, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\begin{DoxyCompactList}\small\item\em Add\+Record add record about tool in history. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a08c03ebfcbbcfbc4f7433de128a5a3d5}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_addcb4bd6032101ed1cd28c43e2f8bb8d}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static quint32 \mbox{\hyperlink{class_v_abstract_tool_a1771c54e6b0d1f94e9346650e8e1e1a9}{Create\+Node}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\begin{DoxyCompactList}\small\item\em Create\+Node create new node for detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a8e85500233f56be31639873deba5624f}{Tool\+Type}} = QString\+Literal(\char`\"{}union\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a8373f45cb0047218f7bbedb3deabfc02}{Tag\+Union\+Piece}} = QString\+Literal(\char`\"{}union\+Piece\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a3584079e320dec2433f08bd8c92cb7f6}{Tag\+Node}} = QString\+Literal(\char`\"{}node\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a95250857525438210b8e6aa8093e1821}{Tag\+Children}} = QString\+Literal(\char`\"{}children\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a6da8aa192e5741047976d74d6f192258}{Tag\+Child}} = QString\+Literal(\char`\"{}child\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_adeca176b6c8416f80eda3ae5546f79b1}{Attr\+Index\+D1}} = QString\+Literal(\char`\"{}index\+D1\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a173b25dbec77f41cffeed72b5e7dfa80}{Attr\+Index\+D2}} = QString\+Literal(\char`\"{}index\+D2\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_ab58bf790cff9ea601046701a869f7ec4}{Attr\+Id\+Object}} = QString\+Literal(\char`\"{}id\+Object\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_ae1c8d0894ad7461db745ec2ba895ff00}{Attr\+Node\+Type}} = QString\+Literal(\char`\"{}node\+Type\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_a51fc774bfd24de24df6012581879f5f4}{Node\+Type\+Contour}} = QString\+Literal(\char`\"{}Contour\char`\"{})
+\item 
+static const QString \mbox{\hyperlink{class_union_tool_aa6814c24495c19ebf6041eb051c47fa7}{Node\+Type\+Modeling}} = QString\+Literal(\char`\"{}Modeling\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\+\_\+suppress\+Context\+Menu}} = false
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_tool_a0c69b5e6f0c973457eebb1759b285e79}{Attr\+In\+Use}} = QString\+Literal(\char`\"{}in\+Use\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_union_tool_a5e69f419e726121700c97e523c21c09d}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_union_tool_aa01ae4d7363377c5351f0c6733372b40}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{Add\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_adb481734d9b7052cdcd3b5d112df18e0}{Refresh\+Data\+In\+File}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a78a11cab1da83de526158893aa5b212a}{Remove\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a4c7fb8ceeaefd964fa11577b688a7ec1}{delete\+Tool}} (bool ask=true)
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_tool_a29f253e0480640a6e6a423345132fc80}{Add\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{Set\+Visualization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a981e6bae05ffb564bfac034ccff918da}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_union_tool_a9c32cc4d39568c11da25cae1f79a9cea}{Union\+Tool}} (quint32 id, const \mbox{\hyperlink{struct_union_tool_init_data}{Union\+Tool\+Init\+Data}} \&init\+Data, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em piece2\+\_\+\+Index index edge in second detail. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_union_tool_a82b6aece3d89deaf625afa573ec67fb4}{add\+Piece}} (QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&d) const
+\begin{DoxyCompactList}\small\item\em add\+Piece add piece to xml file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_union_tool_a47a03975467f9ce1756b683555a47cfb}{Add\+To\+Modeling}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em Add\+To\+Modeling add tool to xml tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_union_tool_a26e1c89bc80ccc45a9d70f792978046c}{Get\+Reference\+Objects}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_union_tool_a98038767c625e6a5543f0cf1b3706a5f}{Reference\+Objects}} (const QDom\+Element \&root, const QString \&tag, const QString \&attribute) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_union_tool_a3b1a740869b5757f5684e03090c71ff2}{piece1\+\_\+\+Id}}
+\item 
+quint32 \mbox{\hyperlink{class_union_tool_acbde4b3a8fc7188ee18d02ee1ab7a90d}{piece2\+\_\+\+Id}}
+\begin{DoxyCompactList}\small\item\em d1 first detail id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_union_tool_aba3d371cfa28fc301ffdfe29c674f99b}{piece1\+\_\+\+Index}}
+\begin{DoxyCompactList}\small\item\em d2 second detail id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_union_tool_a31f70dddafadb0bb753dd815c27b501b}{piece2\+\_\+\+Index}}
+\begin{DoxyCompactList}\small\item\em piece1\+\_\+\+Index index edge in first detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a63a8130db67b2ecfca1dcac01e5a3b09}{tool\+Has\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em tool\+Has\+Changes emit if tool create change that need save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a92725224cd297bc5c878c3eea25f376b}{chosen\+Tool}} (quint32 id, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} type)
+\begin{DoxyCompactList}\small\item\em chosen\+Tool emit if object was clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_acd11c60a16d75bad927b93ae25f7bae9}{Lite\+Update\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+Tree emit if need reparse pattern file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a7727b48eed40340db6bd1688cafb4592}{Tool\+Tip}} (const QString \&tool\+Tip)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_tool_aa852f252dc5e5cd7aeefb08e57fb15ef}{Confirm\+Deletion}} ()
+\item 
+static QDom\+Element \mbox{\hyperlink{class_v_abstract_tool_a649bbf0925c735e77bf9fab29236c599}{Add\+SANode}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, const QString \&tag\+Name, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a821ab22da8243998dcc7b0ea051e2a6d}{Add\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a6364648b0ecc8434d91e8edda185e61a}{Prepare\+Nodes}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static quint32 \mbox{\hyperlink{class_v_abstract_tool_ad94d663a3861710c44e6ca293e0440cb}{Prepare\+Node}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+const quint32 \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_tool_aecd87c3d6c77ffa2a70d0377d0cca30b}{selection\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_union_tool}{Union\+Tool}} class tool union details. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_union_tool_a9c32cc4d39568c11da25cae1f79a9cea}\label{class_union_tool_a9c32cc4d39568c11da25cae1f79a9cea}} 
+\index{UnionTool@{UnionTool}!UnionTool@{UnionTool}}
+\index{UnionTool@{UnionTool}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{UnionTool()}{UnionTool()}}
+{\footnotesize\ttfamily Union\+Tool\+::\+Union\+Tool (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{struct_union_tool_init_data}{Union\+Tool\+Init\+Data}} \&}]{init\+Data,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+piece2\+\_\+\+Index index edge in second detail. 
+
+\mbox{\hyperlink{class_union_tool}{Union\+Tool}} costructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id in container. \\
+\hline
+{\em init\+Data} & global init data. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_union_tool_a82b6aece3d89deaf625afa573ec67fb4}\label{class_union_tool_a82b6aece3d89deaf625afa573ec67fb4}} 
+\index{UnionTool@{UnionTool}!addPiece@{addPiece}}
+\index{addPiece@{addPiece}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{addPiece()}{addPiece()}}
+{\footnotesize\ttfamily void Union\+Tool\+::add\+Piece (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+add\+Piece add piece to xml file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+{\em piece} & piece. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_union_tool_a5e69f419e726121700c97e523c21c09d}\label{class_union_tool_a5e69f419e726121700c97e523c21c09d}} 
+\index{UnionTool@{UnionTool}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void Union\+Tool\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a47a03975467f9ce1756b683555a47cfb}\label{class_union_tool_a47a03975467f9ce1756b683555a47cfb}} 
+\index{UnionTool@{UnionTool}!AddToModeling@{AddToModeling}}
+\index{AddToModeling@{AddToModeling}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AddToModeling()}{AddToModeling()}}
+{\footnotesize\ttfamily void Union\+Tool\+::\+Add\+To\+Modeling (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Add\+To\+Modeling add tool to xml tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_union_tool_a87b2326ae81e7716780a2d5ae46ce4b8}\label{class_union_tool_a87b2326ae81e7716780a2d5ae46ce4b8}} 
+\index{UnionTool@{UnionTool}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily virtual void Union\+Tool\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_union_tool_ae2d3f94af6ac7f691ecce63d757ddad3}\label{class_union_tool_ae2d3f94af6ac7f691ecce63d757ddad3}} 
+\index{UnionTool@{UnionTool}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily virtual void Union\+Tool\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_union_tool_a2eb9cc5e86fc8661e282c018d144e65f}\label{class_union_tool_a2eb9cc5e86fc8661e282c018d144e65f}} 
+\index{UnionTool@{UnionTool}!Create@{Create}}
+\index{Create@{Create}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_union_tool}{Union\+Tool}} $\ast$ Union\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{const quint32}]{\+\_\+id,  }\item[{const \mbox{\hyperlink{struct_union_tool_init_data}{Union\+Tool\+Init\+Data}} \&}]{init\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+id} & tool id, 0 if tool doesn\textquotesingle{}t exist yet. \\
+\hline
+{\em init\+Data} & contains all init data. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_union_tool_aa2ffc939ac1b61ecfa7b0c64b531094a}\label{class_union_tool_aa2ffc939ac1b61ecfa7b0c64b531094a}} 
+\index{UnionTool@{UnionTool}!Create@{Create}}
+\index{Create@{Create}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_union_tool}{Union\+Tool}} $\ast$ Union\+Tool\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} $>$}]{dialog,  }\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool from GUI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dialog} & dialog. \\
+\hline
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_union_tool_a2dc807b02c33b34615e3cfdc49fd0693}\label{class_union_tool_a2dc807b02c33b34615e3cfdc49fd0693}} 
+\index{UnionTool@{UnionTool}!decrementReferens@{decrementReferens}}
+\index{decrementReferens@{decrementReferens}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{decrementReferens()}{decrementReferens()}}
+{\footnotesize\ttfamily void Union\+Tool\+::decrement\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+decrement\+Referens decrement referens. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{VData\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a28a89a7098e192b808cbca98a2eec7ce}\label{class_union_tool_a28a89a7098e192b808cbca98a2eec7ce}} 
+\index{UnionTool@{UnionTool}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily virtual void Union\+Tool\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Full\+Update\+From\+File update tool data form file. 
+
+\mbox{\Hypertarget{class_union_tool_a26e1c89bc80ccc45a9d70f792978046c}\label{class_union_tool_a26e1c89bc80ccc45a9d70f792978046c}} 
+\index{UnionTool@{UnionTool}!GetReferenceObjects@{GetReferenceObjects}}
+\index{GetReferenceObjects@{GetReferenceObjects}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{GetReferenceObjects()}{GetReferenceObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ Union\+Tool\+::\+Get\+Reference\+Objects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_union_tool_a4350345a242281056e1be92cb0b63df6}\label{class_union_tool_a4350345a242281056e1be92cb0b63df6}} 
+\index{UnionTool@{UnionTool}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString Union\+Tool\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a8430b56d90d4253d9e93e0fa05c6d981}\label{class_union_tool_a8430b56d90d4253d9e93e0fa05c6d981}} 
+\index{UnionTool@{UnionTool}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void Union\+Tool\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a2945710454ca0d66a408ef1e6d9e2090}\label{class_union_tool_a2945710454ca0d66a408ef1e6d9e2090}} 
+\index{UnionTool@{UnionTool}!incrementReferens@{incrementReferens}}
+\index{incrementReferens@{incrementReferens}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{incrementReferens()}{incrementReferens()}}
+{\footnotesize\ttfamily void Union\+Tool\+::increment\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+increment\+Referens increment referens. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{VData\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a98038767c625e6a5543f0cf1b3706a5f}\label{class_union_tool_a98038767c625e6a5543f0cf1b3706a5f}} 
+\index{UnionTool@{UnionTool}!ReferenceObjects@{ReferenceObjects}}
+\index{ReferenceObjects@{ReferenceObjects}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{ReferenceObjects()}{ReferenceObjects()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ Union\+Tool\+::\+Reference\+Objects (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{root,  }\item[{const QString \&}]{tag,  }\item[{const QString \&}]{attribute }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_union_tool_aa01ae4d7363377c5351f0c6733372b40}\label{class_union_tool_aa01ae4d7363377c5351f0c6733372b40}} 
+\index{UnionTool@{UnionTool}!SetVisualization@{SetVisualization}}
+\index{SetVisualization@{SetVisualization}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{SetVisualization()}{SetVisualization()}}
+{\footnotesize\ttfamily virtual void Union\+Tool\+::\+Set\+Visualization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_union_tool_a30254639af8a40138fde5f34708bce3a}\label{class_union_tool_a30254639af8a40138fde5f34708bce3a}} 
+\index{UnionTool@{UnionTool}!ShowVisualization@{ShowVisualization}}
+\index{ShowVisualization@{ShowVisualization}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{ShowVisualization()}{ShowVisualization()}}
+{\footnotesize\ttfamily void Union\+Tool\+::\+Show\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{VAbstract\+Tool}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_union_tool_ab58bf790cff9ea601046701a869f7ec4}\label{class_union_tool_ab58bf790cff9ea601046701a869f7ec4}} 
+\index{UnionTool@{UnionTool}!AttrIdObject@{AttrIdObject}}
+\index{AttrIdObject@{AttrIdObject}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AttrIdObject}{AttrIdObject}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Attr\+Id\+Object = QString\+Literal(\char`\"{}id\+Object\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_adeca176b6c8416f80eda3ae5546f79b1}\label{class_union_tool_adeca176b6c8416f80eda3ae5546f79b1}} 
+\index{UnionTool@{UnionTool}!AttrIndexD1@{AttrIndexD1}}
+\index{AttrIndexD1@{AttrIndexD1}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AttrIndexD1}{AttrIndexD1}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Attr\+Index\+D1 = QString\+Literal(\char`\"{}index\+D1\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a173b25dbec77f41cffeed72b5e7dfa80}\label{class_union_tool_a173b25dbec77f41cffeed72b5e7dfa80}} 
+\index{UnionTool@{UnionTool}!AttrIndexD2@{AttrIndexD2}}
+\index{AttrIndexD2@{AttrIndexD2}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AttrIndexD2}{AttrIndexD2}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Attr\+Index\+D2 = QString\+Literal(\char`\"{}index\+D2\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_ae1c8d0894ad7461db745ec2ba895ff00}\label{class_union_tool_ae1c8d0894ad7461db745ec2ba895ff00}} 
+\index{UnionTool@{UnionTool}!AttrNodeType@{AttrNodeType}}
+\index{AttrNodeType@{AttrNodeType}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{AttrNodeType}{AttrNodeType}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Attr\+Node\+Type = QString\+Literal(\char`\"{}node\+Type\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a51fc774bfd24de24df6012581879f5f4}\label{class_union_tool_a51fc774bfd24de24df6012581879f5f4}} 
+\index{UnionTool@{UnionTool}!NodeTypeContour@{NodeTypeContour}}
+\index{NodeTypeContour@{NodeTypeContour}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{NodeTypeContour}{NodeTypeContour}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Node\+Type\+Contour = QString\+Literal(\char`\"{}Contour\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_aa6814c24495c19ebf6041eb051c47fa7}\label{class_union_tool_aa6814c24495c19ebf6041eb051c47fa7}} 
+\index{UnionTool@{UnionTool}!NodeTypeModeling@{NodeTypeModeling}}
+\index{NodeTypeModeling@{NodeTypeModeling}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{NodeTypeModeling}{NodeTypeModeling}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Node\+Type\+Modeling = QString\+Literal(\char`\"{}Modeling\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a3b1a740869b5757f5684e03090c71ff2}\label{class_union_tool_a3b1a740869b5757f5684e03090c71ff2}} 
+\index{UnionTool@{UnionTool}!piece1\_Id@{piece1\_Id}}
+\index{piece1\_Id@{piece1\_Id}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{piece1\_Id}{piece1\_Id}}
+{\footnotesize\ttfamily quint32 Union\+Tool\+::piece1\+\_\+\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_union_tool_aba3d371cfa28fc301ffdfe29c674f99b}\label{class_union_tool_aba3d371cfa28fc301ffdfe29c674f99b}} 
+\index{UnionTool@{UnionTool}!piece1\_Index@{piece1\_Index}}
+\index{piece1\_Index@{piece1\_Index}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{piece1\_Index}{piece1\_Index}}
+{\footnotesize\ttfamily quint32 Union\+Tool\+::piece1\+\_\+\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+d2 second detail id. 
+
+\mbox{\Hypertarget{class_union_tool_acbde4b3a8fc7188ee18d02ee1ab7a90d}\label{class_union_tool_acbde4b3a8fc7188ee18d02ee1ab7a90d}} 
+\index{UnionTool@{UnionTool}!piece2\_Id@{piece2\_Id}}
+\index{piece2\_Id@{piece2\_Id}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{piece2\_Id}{piece2\_Id}}
+{\footnotesize\ttfamily quint32 Union\+Tool\+::piece2\+\_\+\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+d1 first detail id. 
+
+\mbox{\Hypertarget{class_union_tool_a31f70dddafadb0bb753dd815c27b501b}\label{class_union_tool_a31f70dddafadb0bb753dd815c27b501b}} 
+\index{UnionTool@{UnionTool}!piece2\_Index@{piece2\_Index}}
+\index{piece2\_Index@{piece2\_Index}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{piece2\_Index}{piece2\_Index}}
+{\footnotesize\ttfamily quint32 Union\+Tool\+::piece2\+\_\+\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+piece1\+\_\+\+Index index edge in first detail. 
+
+\mbox{\Hypertarget{class_union_tool_a6da8aa192e5741047976d74d6f192258}\label{class_union_tool_a6da8aa192e5741047976d74d6f192258}} 
+\index{UnionTool@{UnionTool}!TagChild@{TagChild}}
+\index{TagChild@{TagChild}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{TagChild}{TagChild}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Tag\+Child = QString\+Literal(\char`\"{}child\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a95250857525438210b8e6aa8093e1821}\label{class_union_tool_a95250857525438210b8e6aa8093e1821}} 
+\index{UnionTool@{UnionTool}!TagChildren@{TagChildren}}
+\index{TagChildren@{TagChildren}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{TagChildren}{TagChildren}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Tag\+Children = QString\+Literal(\char`\"{}children\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a3584079e320dec2433f08bd8c92cb7f6}\label{class_union_tool_a3584079e320dec2433f08bd8c92cb7f6}} 
+\index{UnionTool@{UnionTool}!TagNode@{TagNode}}
+\index{TagNode@{TagNode}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{TagNode}{TagNode}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Tag\+Node = QString\+Literal(\char`\"{}node\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a8373f45cb0047218f7bbedb3deabfc02}\label{class_union_tool_a8373f45cb0047218f7bbedb3deabfc02}} 
+\index{UnionTool@{UnionTool}!TagUnionPiece@{TagUnionPiece}}
+\index{TagUnionPiece@{TagUnionPiece}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{TagUnionPiece}{TagUnionPiece}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Tag\+Union\+Piece = QString\+Literal(\char`\"{}union\+Piece\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_union_tool_a8e85500233f56be31639873deba5624f}\label{class_union_tool_a8e85500233f56be31639873deba5624f}} 
+\index{UnionTool@{UnionTool}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!UnionTool@{UnionTool}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString Union\+Tool\+::\+Tool\+Type = QString\+Literal(\char`\"{}union\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/\mbox{\hyperlink{union__tool_8h}{union\+\_\+tool.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/\mbox{\hyperlink{union__tool_8cpp}{union\+\_\+tool.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+\hypertarget{vmeasurement__p_8h_source}{}\doxysection{vmeasurement\+\_\+p.\+h}
+\label{vmeasurement__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vmeasurement\_p.h@{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vmeasurement\_p.h}}
+\mbox{\hyperlink{vmeasurement__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vmeasurement\_p.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 20\ 8,\ 2014}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VMEASUREMENT\_P\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VMEASUREMENT\_P\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vcontainer.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00061\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00062\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ class\ \mbox{\hyperlink{class_v_measurement_data}{VMeasurementData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_v_measurement_data_ab9ab186578a44803eb9d2a263a5eac91}{VMeasurementData}}(quint32\ index,\ \textcolor{keyword}{const}\ QString\ \&gui\_text,\ \textcolor{keyword}{const}\ QString\ \&tagName,\ qreal\ baseSize,\ qreal\ baseHeight,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ base,\ qreal\ ksize,\ qreal\ kheight\ )}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ :\ data(\mbox{\hyperlink{class_v_container}{VContainer}}(nullptr,\ nullptr)),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ index(index),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ formula(),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ gui\_text(gui\_text),}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \_tagName(tagName),}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ formulaOk(true),}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ currentSize(nullptr),}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ currentHeight(nullptr),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ currentUnit(nullptr),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ base(base),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ ksize(ksize),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ kheight(kheight),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ baseSize(baseSize),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ baseHeight(baseHeight)}
+\DoxyCodeLine{00084\ \ \ \ \ \{\}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_v_measurement_data_ae75c5e1b38081cce335c52922b507611}{VMeasurementData}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ quint32\ index,\ \textcolor{keyword}{const}\ QString\ \&formula,\ \textcolor{keywordtype}{bool}\ ok,\ \textcolor{keyword}{const}\ QString\ \&gui\_text,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&tagName,\ qreal\ base)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ :\ data(*data),}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ index(index),}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ formula(formula),}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ gui\_text(gui\_text),}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \_tagName(tagName),}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ formulaOk(ok),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ currentSize(nullptr),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ currentHeight(nullptr),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ currentUnit(nullptr),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ base(base),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ ksize(0),}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ kheight(0),}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ baseSize(0),}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ baseHeight(0)}
+\DoxyCodeLine{00102\ \ \ \ \ \{\}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_v_measurement_data_a52305cf5731221d5f09d4df136bc5cde}{VMeasurementData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_measurement_data}{VMeasurementData}}\ \&m)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ :\ QSharedData(m),}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ data(m.data),}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ index(m.index),}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ formula(m.formula),}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ gui\_text(m.gui\_text),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \_tagName(m.\_tagName),}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ formulaOk(m.formulaOk),}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ currentSize(m.currentSize),}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ currentHeight(m.currentHeight),}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ currentUnit(m.currentUnit),}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ base(m.base),}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ ksize(m.ksize),}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ kheight(m.kheight),}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ baseSize(m.baseSize),}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ baseHeight(m.baseHeight)}
+\DoxyCodeLine{00120\ \ \ \ \ \{\}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \mbox{\hyperlink{class_v_measurement_data}{\string~VMeasurementData}}();}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \mbox{\hyperlink{class_v_measurement_data_a88171039b16e49cc10bdfeaaa7b4b55e}{data}};}
+\DoxyCodeLine{00125\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_measurement_data_a99441407e6b884eebf7c9266ab371a68}{index}};}
+\DoxyCodeLine{00126\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_measurement_data_aad8d2ab29d43b5c99066fd455a5ec0d3}{formula}};}
+\DoxyCodeLine{00127\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_measurement_data_a4983c3d8b1b3fff5f093337758ff386d}{gui\_text}};}
+\DoxyCodeLine{00128\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_measurement_data_aca72f31b42d0422734d87db5727cd183}{\_tagName}};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_measurement_data_ad2bc417dec8776bf5d8ec4c010c494a1}{formulaOk}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ qreal\ *\mbox{\hyperlink{class_v_measurement_data_a470c8ff6ab53a623b0b5a6e1d010288d}{currentSize}};}
+\DoxyCodeLine{00132\ \ \ \ \ qreal\ *\mbox{\hyperlink{class_v_measurement_data_acb5c0a71881c5b35f23420142b634ab5}{currentHeight}};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ *\mbox{\hyperlink{class_v_measurement_data_afaed895713510e9543a63b326de40604}{currentUnit}};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_measurement_data_a26b0685e36c07d5548ab408a43c1dc16}{base}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_measurement_data_ad93ab0e85b5f486e75c51ac84f525bb3}{ksize}};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_measurement_data_ab3567038bfc45749b513630850e5ec47}{kheight}};}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_measurement_data_a878f3a8483f79a70709f64b45689a153}{baseSize}};}
+\DoxyCodeLine{00145\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_measurement_data_aaf216528b73d34664a6f73ce8a4628c3}{baseHeight}};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_v_measurement_data}{VMeasurementData}}\ \&\mbox{\hyperlink{class_v_measurement_data_ae2751da5d98b07f55b39394d5c302c2b}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_measurement_data}{VMeasurementData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \mbox{\hyperlink{class_v_measurement_data_ad5cf9d129a56bc300cb154dcc2f73523}{VMeasurementData::\string~VMeasurementData}}()}
+\DoxyCodeLine{00152\ \{\}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VMEASUREMENT\_P\_H}}
+
+\end{DoxyCode}

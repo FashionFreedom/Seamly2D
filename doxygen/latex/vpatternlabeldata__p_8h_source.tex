@@ -1,0 +1,87 @@
+\hypertarget{vpatternlabeldata__p_8h_source}{}\doxysection{vpatternlabeldata\+\_\+p.\+h}
+\label{vpatternlabeldata__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vpatternlabeldata\_p.h@{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vpatternlabeldata\_p.h}}
+\mbox{\hyperlink{vpatternlabeldata__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpatternlabeldata\_p.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 23\ 2,\ 2017}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ -\/\ 2022\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VPATTERNLABELDATA\_P\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VPATTERNLABELDATA\_P\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00039\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00040\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ class\ \mbox{\hyperlink{class_v_pattern_label_data_private}{VPatternLabelDataPrivate}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_label_data_private_a32b6998a14cfa19e6faf0dee3e5182d5}{VPatternLabelDataPrivate}}()}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ :\ m\_pieceLabelWidth()}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ ,\ m\_pieceLabelHeight()}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ ,\ m\_pieceLabelAngle()}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ ,\ m\_iFontSize(0)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ ,\ m\_centerAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ ,\ m\_topLeftAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ ,\ m\_bottomRightAnchorPoint(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00053\ \ \ \ \ \{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_label_data_private_a51d2f43c183e84e8ce82b355d0708ec5}{VPatternLabelDataPrivate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_pattern_label_data_private}{VPatternLabelDataPrivate}}\ \&data)}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ :\ QSharedData(data)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ ,\ m\_pieceLabelWidth(data.m\_pieceLabelWidth)}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ ,\ m\_pieceLabelHeight(data.m\_pieceLabelHeight)}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ ,\ m\_pieceLabelAngle(data.m\_pieceLabelAngle)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ ,\ m\_iFontSize(data.m\_iFontSize)}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ ,\ m\_centerAnchorPoint(data.m\_centerAnchorPoint)}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ ,\ m\_topLeftAnchorPoint(data.m\_topLeftAnchorPoint)}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ ,\ m\_bottomRightAnchorPoint(data.m\_bottomRightAnchorPoint)}
+\DoxyCodeLine{00064\ \ \ \ \ \{\}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_label_data_private_a9ea4303dca6bb36c020481155f05ec1a}{\string~VPatternLabelDataPrivate}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ QString\ m\_pieceLabelWidth;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \ \ QString\ m\_pieceLabelHeight;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ QString\ m\_pieceLabelAngle;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ m\_iFontSize;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ \ \ quint32\ m\_centerAnchorPoint;\ \ \ \ \ \ }
+\DoxyCodeLine{00073\ \ \ \ \ quint32\ m\_topLeftAnchorPoint;\ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \ \ quint32\ m\_bottomRightAnchorPoint;\ }
+\DoxyCodeLine{00076\ private:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_label_data_private}{VPatternLabelDataPrivate}}\ \&operator=(const\ \mbox{\hyperlink{class_v_pattern_label_data_private}{VPatternLabelDataPrivate}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPATTERNLABELDATA\_P\_H}}
+
+\end{DoxyCode}

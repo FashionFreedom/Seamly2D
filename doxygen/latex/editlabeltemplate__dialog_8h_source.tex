@@ -1,0 +1,121 @@
+\hypertarget{editlabeltemplate__dialog_8h_source}{}\doxysection{editlabeltemplate\+\_\+dialog.\+h}
+\label{editlabeltemplate__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/support/editlabeltemplate\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/support/editlabeltemplate\_dialog.h}}
+\mbox{\hyperlink{editlabeltemplate__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ editlabeltemplate\_dialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 26,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ if\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogeditlabel.h}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @date\ \ \ 11\ 8,\ 2017}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ Valentina\ project}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#ifndef\ EDITLABELTEMPLATE\_DIALOG\_H}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ EDITLABELTEMPLATE\_DIALOG\_H}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edit_label_template_dialog}{EditLabelTemplateDialog}};}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }QMenu;}
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}};}
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece}{VPiece}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edit_label_template_dialog}{EditLabelTemplateDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00072\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_edit_label_template_dialog}{EditLabelTemplateDialog}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *doc,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_edit_label_template_dialog_a61e5d22a5496c080c9210ae9731bec39}{\string~EditLabelTemplateDialog}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VLabelTemplateLine>}}\ \mbox{\hyperlink{class_edit_label_template_dialog_a10ab7161fcf8b0351b476e15ed413f73}{GetTemplate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a0a62b7a9366f0ffe3bfe403dcd6459e0}{SetTemplate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VLabelTemplateLine>}}\ \&lines);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a3989878508ca594d57e8e764188453ac}{SetPiece}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_ab95012e6e237fbc17e4720d240bc687f}{ShowLineDetails}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_ae913bc9e65218fca12216145b363b05c}{AddLine}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_ad9b7e6bbe61a39f6e1ef64a0a93b59be}{RemoveLine}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a86d5c7a3f72f666c44f540d22d99af9e}{SaveLineText}}(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a59ce5aee2c922bf07bd8784d7b5484f7}{SaveFontStyle}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a0391b073d6576cd3e37ac573a7c7b5b5}{SaveTextFormating}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_ae405a3f0591028ef9dc8cc0490799de2}{NewTemplate}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a184a7e405c0dfef5c558d9bad417cc5f}{ExportTemplate}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a8c0db77bec5611d4a5dd0bd5cb97d455}{ImportTemplate}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_aabcd5e283255566efc6e23fe28a42c37}{InsertPlaceholder}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a467532552dbe9b8a35d430f340f6e0ed}{TabChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_ad5b5fc236862a3b9acaad98a51776338}{SaveAdditionalFontSize}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_edit_label_template_dialog}{EditLabelTemplateDialog}})}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_edit_label_template_dialog}{EditLabelTemplateDialog}}\ *\mbox{\hyperlink{class_edit_label_template_dialog_a2d70945148bcb328293bf08221c06939}{ui}};}
+\DoxyCodeLine{00101\ \ \ \ \ QMenu\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_edit_label_template_dialog_a6ec63028f088239131c9f0e28e9c49e2}{m\_placeholdersMenu}};}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ \ \ \ *\mbox{\hyperlink{class_edit_label_template_dialog_af7cc0fa0ff15e5c70f846d76a7bf3cab}{m\_doc}};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QPair<QString,\ QString>>\ \mbox{\hyperlink{class_edit_label_template_dialog_a4899fde961c392e5bdbec05c83bac21d}{m\_placeholders}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_adf14086781aa51661899167817a587b5}{SetupControls}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a4a81c9a08afdec96df7aa89341b31fbf}{InitPlaceholdersMenu}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_afd91cd383b0b541c805df79a0f6b5de5}{InitPlaceholders}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ QString\ \mbox{\hyperlink{class_edit_label_template_dialog_a8c10a99053cbfe073f0c2665e3e4ab59}{ReplacePlaceholders}}(QString\ line)\ const;}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_label_template_dialog_a3cc69eb5519084e635c18521db737462}{InitPreviewLines}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ \&lines);}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EDITLABELTEMPLATE\_DIALOG\_H}}
+
+\end{DoxyCode}

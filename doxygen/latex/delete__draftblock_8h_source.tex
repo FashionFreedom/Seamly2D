@@ -1,0 +1,88 @@
+\hypertarget{delete__draftblock_8h_source}{}\doxysection{delete\+\_\+draftblock.\+h}
+\label{delete__draftblock_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/delete\_draftblock.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/delete\_draftblock.h}}
+\mbox{\hyperlink{delete__draftblock_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ delete\_draftblock.cpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ deletepatternpiece.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 14\ 6,\ 2014}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ DELETE\_DRAFTBLOCK\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DELETE\_DRAFTBLOCK\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vundocommand_8h}{vundocommand.h}}"{}}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_delete_draft_block}{DeleteDraftBlock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_delete_draft_block}{DeleteDraftBlock}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_delete_draft_block_a18d4b6c3b8fc00c7b1782997eadb5d60}{draftBlockName}},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \mbox{\hyperlink{class_delete_draft_block_abdd3a1acace02206516b7367c4492983}{\string~DeleteDraftBlock}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_delete_draft_block_ac3a1e8c709175c217d72d8850e3c49f3}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_delete_draft_block_af7f5c0203b2d544f328f3574d375fa13}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_delete_draft_block}{DeleteDraftBlock}})}
+\DoxyCodeLine{00077\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_delete_draft_block_a18d4b6c3b8fc00c7b1782997eadb5d60}{draftBlockName}};}
+\DoxyCodeLine{00078\ \ \ \ \ QDomElement\ \ \ \mbox{\hyperlink{class_delete_draft_block_a29d44bd2124a5df3fd1b74f8f65456e2}{draftBlock}};}
+\DoxyCodeLine{00079\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_delete_draft_block_a97863df0169922e692a879a77c475d4b}{previousDraftBlockName}};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DELETE\_DRAFTBLOCK\_H}}
+
+\end{DoxyCode}

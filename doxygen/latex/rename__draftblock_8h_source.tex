@@ -1,0 +1,103 @@
+\hypertarget{rename__draftblock_8h_source}{}\doxysection{rename\+\_\+draftblock.\+h}
+\label{rename__draftblock_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/rename\_draftblock.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/rename\_draftblock.h}}
+\mbox{\hyperlink{rename__draftblock_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ rename\_draftblock.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 1,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{\ /************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ renamepp.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 17\ 7,\ 2014}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2014\ Seamly2D\ Valentina}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ RENAME\_DRAFTBLOCK\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ RENAME\_DRAFTBLOCK\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vundocommand_8h}{vundocommand.h}}"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rename_draft_block}{RenameDraftBlock}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00067\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block}{RenameDraftBlock}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ \textcolor{keyword}{const}\ QString\ \&newBlockName,\ QComboBox\ *combo,\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_a6818cc0b583caabd2c23d1539f4e685c}{\string~RenameDraftBlock}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rename_draft_block_abbd3618b5fcc64ed91056e997e787df7}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_rename_draft_block_aec7bfbeb4ca2f40e40879a00c5f48cc2}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_rename_draft_block_ab9a30a0bf04c984dfb1b8239dc7c5ded}{mergeWith}}(\textcolor{keyword}{const}\ QUndoCommand\ *command)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_rename_draft_block_a52b987386b46e4bb114906293b602abc}{id}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_a96f44bd7d41866aeb9e49d73ed6e0fd9}{getNewName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_af84949bd3fcdc9345ae1bff9059c0e56}{getOldName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_rename_draft_block}{RenameDraftBlock}})}
+\DoxyCodeLine{00079\ \ \ \ \ QComboBox\ \ \ *\mbox{\hyperlink{class_rename_draft_block_adedd3bc1a0bebc4827cbe957b42b5e7e}{m\_combo}};}
+\DoxyCodeLine{00080\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_a890c45dc034699f848cb42ce68b5f530}{m\_newBlockName}};}
+\DoxyCodeLine{00081\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_acf0ce202158e5886497d8dbe0bdacfd4}{m\_oldBlockName}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_rename_draft_block_a67781e44cd737e16a6440a2d4239da94}{changeName}}(const\ QString\ \&oldName,\ const\ QString\ \&newName);}
+\DoxyCodeLine{00083\ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00086\ inline\ QString\ \mbox{\hyperlink{class_rename_draft_block}{RenameDraftBlock}}::\mbox{\hyperlink{class_rename_draft_block_a96f44bd7d41866aeb9e49d73ed6e0fd9}{getNewName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00087\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_rename_draft_block_a890c45dc034699f848cb42ce68b5f530}{m\_newBlockName}};}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_rename_draft_block_af84949bd3fcdc9345ae1bff9059c0e56}{RenameDraftBlock::getOldName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_rename_draft_block_acf0ce202158e5886497d8dbe0bdacfd4}{m\_oldBlockName}};}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ RENAME\_DRAFTBLOCK\_H}}
+
+\end{DoxyCode}

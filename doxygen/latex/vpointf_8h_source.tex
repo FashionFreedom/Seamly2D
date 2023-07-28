@@ -1,0 +1,127 @@
+\hypertarget{vpointf_8h_source}{}\doxysection{vpointf.\+h}
+\label{vpointf_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vpointf.h@{D:/Github/Seamly2D/src/libs/vgeometry/vpointf.h}}
+\mbox{\hyperlink{vpointf_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vpointf.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VPOINTF\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VPOINTF\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QMetaType>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgeometrydef_8h}{vgeometrydef.h}}"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgobject_8h}{vgobject.h}}"{}}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_point_f_data}{VPointFData}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00069\ QT\_WARNING\_DISABLE\_INTEL(2304)}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00074\ class\ \mbox{\hyperlink{class_v_point_f}{VPointF}}:public\ \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point\ );}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}(\textcolor{keyword}{const}\ QPointF\ \&point\ );}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}(qreal\ x,\ qreal\ y,\ \textcolor{keyword}{const}\ QString\ \&name,\ qreal\ mx,\ qreal\ my,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \&mode\ =\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1aa3ea4f796f31fb5785da38e1fc6369e93}{Draw::Calculation}});}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}(\textcolor{keyword}{const}\ QPointF\ \&point,\ \textcolor{keyword}{const}\ QString\ \&name,\ qreal\ mx,\ qreal\ my,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \&mode\ =\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1aa3ea4f796f31fb5785da38e1fc6369e93}{Draw::Calculation}});}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{\string~VPointF}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&\mbox{\hyperlink{class_v_point_f_data_a04bf0d38943fa337c41824c6e5ed6be9}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point);}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&\mbox{\hyperlink{class_v_point_f_data_a04bf0d38943fa337c41824c6e5ed6be9}{operator=}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&\&point)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ Swap(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ QPointF()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ Rotate(\textcolor{keyword}{const}\ QPointF\ \&originPoint,\ qreal\ degrees,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ Flip(\textcolor{keyword}{const}\ QLineF\ \&axis,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}{Move}}(qreal\ length,\ qreal\ angle,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ mx()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ my()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ setMx(qreal\ mx);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ setMy(qreal\ my);}
+\DoxyCodeLine{00101\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ toQPointF()\textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ x()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ setX(\textcolor{keyword}{const}\ qreal\ \&value);}
+\DoxyCodeLine{00104\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ y()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ setY(\textcolor{keyword}{const}\ qreal\ \&value);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ isShowPointName()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ setShowPointName(\textcolor{keywordtype}{bool}\ show);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ QPointF\ \ \ \ RotatePF(\textcolor{keyword}{const}\ QPointF\ \&originPoint,\ \textcolor{keyword}{const}\ QPointF\ \&point,\ qreal\ degrees);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static}\ QPointF\ \ \ \ FlipPF(\textcolor{keyword}{const}\ QLineF\ \&axis,\ \textcolor{keyword}{const}\ QPointF\ \&point);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ QPointF\ \ \ \ MovePF(\textcolor{keyword}{const}\ QPointF\ \&originPoint,\ qreal\ length,\ qreal\ angle);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00115\ \ \ \ \ QSharedDataPointer<VPointFData>\ \mbox{\hyperlink{class_v_point_f_a76212d1adabb53fcee6a49192f5ec19f}{d}};}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ Q\_DECLARE\_METATYPE(\mbox{\hyperlink{class_v_point_f}{VPointF}})}
+\DoxyCodeLine{00119\ \mbox{\hyperlink{vpointf_8h_a944e698a193f99de8ae16d2839e21b70}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_point_f}{VPointF}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPOINTF\_H}}
+
+\end{DoxyCode}

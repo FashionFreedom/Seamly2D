@@ -1,0 +1,205 @@
+\hypertarget{class_move_piece}{}\doxysection{Move\+Piece Class Reference}
+\label{class_move_piece}\index{MovePiece@{MovePiece}}
+
+
+{\ttfamily \#include $<$movepiece.\+h$>$}
+
+Inheritance diagram for Move\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_move_piece}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_piece_a5ca2a37e4375a2a5e836dfa2a862468d}{Move\+Piece}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const double \&x, const double \&y, const quint32 \&\mbox{\hyperlink{class_move_piece_a447d4ef80481bbf5e94343f9284a8c8f}{id}}, QGraphics\+Scene $\ast$scene, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_move_piece_aa7534d0d188716cf0667ff9fe4c05dce}{$\sim$\+Move\+Piece}} ()
+\item 
+virtual void \mbox{\hyperlink{class_move_piece_afffad088557cae9cb27f823c826be44c}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_piece_a3a5a4cd15eec034e7ca8f6478bdc6fd1}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_move_piece_afd5cc5752937e3c76ba810c3d5c61ebb}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_move_piece_a447d4ef80481bbf5e94343f9284a8c8f}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_move_piece_a38ad42bb026aaca2acf03e0a031aedc9}{get\+Piece\+Id}} () const
+\item 
+double \mbox{\hyperlink{class_move_piece_a93c7f24f1baf190b7c1f8cd31b550ce4}{get\+NewX}} () const
+\item 
+double \mbox{\hyperlink{class_move_piece_a3a163abf475e0723f5f60f8f8a1366aa}{get\+NewY}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_move_piece_ab4e25c28917a5b4a6a10f7cbf5712556}{Save\+Coordinates}} (QDom\+Element \&dom\+Element, double x, double y)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_move_piece_a1e85ddebc5a4e92430497dcea7599aeb}{m\+\_\+oldX}}
+\item 
+double \mbox{\hyperlink{class_move_piece_ab26d572a05bbb80db726a1caeab351ad}{m\+\_\+oldY}}
+\item 
+double \mbox{\hyperlink{class_move_piece_a1d361021acb9a72853f8b178a60df9ad}{m\+\_\+newX}}
+\item 
+double \mbox{\hyperlink{class_move_piece_a671ba8a8584825764a8fad82c08c274c}{m\+\_\+newY}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_move_piece_a5693f524b78c3464a2d2a80abff45ae1}{m\+\_\+scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_move_piece_a5ca2a37e4375a2a5e836dfa2a862468d}\label{class_move_piece_a5ca2a37e4375a2a5e836dfa2a862468d}} 
+\index{MovePiece@{MovePiece}!MovePiece@{MovePiece}}
+\index{MovePiece@{MovePiece}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{MovePiece()}{MovePiece()}}
+{\footnotesize\ttfamily Move\+Piece\+::\+Move\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const double \&}]{x,  }\item[{const double \&}]{y,  }\item[{const quint32 \&}]{id,  }\item[{QGraphics\+Scene $\ast$}]{scene,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_move_piece_aa7534d0d188716cf0667ff9fe4c05dce}\label{class_move_piece_aa7534d0d188716cf0667ff9fe4c05dce}} 
+\index{MovePiece@{MovePiece}!````~MovePiece@{$\sim$MovePiece}}
+\index{````~MovePiece@{$\sim$MovePiece}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{$\sim$MovePiece()}{~MovePiece()}}
+{\footnotesize\ttfamily Move\+Piece\+::$\sim$\+Move\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_move_piece_a93c7f24f1baf190b7c1f8cd31b550ce4}\label{class_move_piece_a93c7f24f1baf190b7c1f8cd31b550ce4}} 
+\index{MovePiece@{MovePiece}!getNewX@{getNewX}}
+\index{getNewX@{getNewX}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{getNewX()}{getNewX()}}
+{\footnotesize\ttfamily double Move\+Piece\+::get\+NewX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_piece_a3a163abf475e0723f5f60f8f8a1366aa}\label{class_move_piece_a3a163abf475e0723f5f60f8f8a1366aa}} 
+\index{MovePiece@{MovePiece}!getNewY@{getNewY}}
+\index{getNewY@{getNewY}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{getNewY()}{getNewY()}}
+{\footnotesize\ttfamily double Move\+Piece\+::get\+NewY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_piece_a38ad42bb026aaca2acf03e0a031aedc9}\label{class_move_piece_a38ad42bb026aaca2acf03e0a031aedc9}} 
+\index{MovePiece@{MovePiece}!getPieceId@{getPieceId}}
+\index{getPieceId@{getPieceId}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{getPieceId()}{getPieceId()}}
+{\footnotesize\ttfamily quint32 Move\+Piece\+::get\+Piece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_piece_a447d4ef80481bbf5e94343f9284a8c8f}\label{class_move_piece_a447d4ef80481bbf5e94343f9284a8c8f}} 
+\index{MovePiece@{MovePiece}!id@{id}}
+\index{id@{id}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Move\+Piece\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_piece_afd5cc5752937e3c76ba810c3d5c61ebb}\label{class_move_piece_afd5cc5752937e3c76ba810c3d5c61ebb}} 
+\index{MovePiece@{MovePiece}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Move\+Piece\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_piece_a3a5a4cd15eec034e7ca8f6478bdc6fd1}\label{class_move_piece_a3a5a4cd15eec034e7ca8f6478bdc6fd1}} 
+\index{MovePiece@{MovePiece}!redo@{redo}}
+\index{redo@{redo}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Move\+Piece\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_piece_ab4e25c28917a5b4a6a10f7cbf5712556}\label{class_move_piece_ab4e25c28917a5b4a6a10f7cbf5712556}} 
+\index{MovePiece@{MovePiece}!SaveCoordinates@{SaveCoordinates}}
+\index{SaveCoordinates@{SaveCoordinates}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{SaveCoordinates()}{SaveCoordinates()}}
+{\footnotesize\ttfamily void Move\+Piece\+::\+Save\+Coordinates (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element,  }\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_piece_afffad088557cae9cb27f823c826be44c}\label{class_move_piece_afffad088557cae9cb27f823c826be44c}} 
+\index{MovePiece@{MovePiece}!undo@{undo}}
+\index{undo@{undo}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Move\+Piece\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_move_piece_a1d361021acb9a72853f8b178a60df9ad}\label{class_move_piece_a1d361021acb9a72853f8b178a60df9ad}} 
+\index{MovePiece@{MovePiece}!m\_newX@{m\_newX}}
+\index{m\_newX@{m\_newX}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{m\_newX}{m\_newX}}
+{\footnotesize\ttfamily double Move\+Piece\+::m\+\_\+newX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_piece_a671ba8a8584825764a8fad82c08c274c}\label{class_move_piece_a671ba8a8584825764a8fad82c08c274c}} 
+\index{MovePiece@{MovePiece}!m\_newY@{m\_newY}}
+\index{m\_newY@{m\_newY}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{m\_newY}{m\_newY}}
+{\footnotesize\ttfamily double Move\+Piece\+::m\+\_\+newY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_piece_a1e85ddebc5a4e92430497dcea7599aeb}\label{class_move_piece_a1e85ddebc5a4e92430497dcea7599aeb}} 
+\index{MovePiece@{MovePiece}!m\_oldX@{m\_oldX}}
+\index{m\_oldX@{m\_oldX}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{m\_oldX}{m\_oldX}}
+{\footnotesize\ttfamily double Move\+Piece\+::m\+\_\+oldX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_piece_ab26d572a05bbb80db726a1caeab351ad}\label{class_move_piece_ab26d572a05bbb80db726a1caeab351ad}} 
+\index{MovePiece@{MovePiece}!m\_oldY@{m\_oldY}}
+\index{m\_oldY@{m\_oldY}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{m\_oldY}{m\_oldY}}
+{\footnotesize\ttfamily double Move\+Piece\+::m\+\_\+oldY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_piece_a5693f524b78c3464a2d2a80abff45ae1}\label{class_move_piece_a5693f524b78c3464a2d2a80abff45ae1}} 
+\index{MovePiece@{MovePiece}!m\_scene@{m\_scene}}
+\index{m\_scene@{m\_scene}!MovePiece@{MovePiece}}
+\doxysubsubsection{\texorpdfstring{m\_scene}{m\_scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Move\+Piece\+::m\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movepiece_8h}{movepiece.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movepiece_8cpp}{movepiece.\+cpp}}\end{DoxyCompactItemize}

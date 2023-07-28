@@ -1,0 +1,456 @@
+\hypertarget{mainwindow_8h_source}{}\doxysection{mainwindow.\+h}
+\label{mainwindow_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/mainwindow.h@{D:/Github/Seamly2D/src/app/seamly2d/mainwindow.h}}
+\mbox{\hyperlink{mainwindow_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ mainwindow.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 29\ Mar,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ @file\ \ \ mainwindow.h}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Valentina\ project}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ MAINWINDOW\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ MAINWINDOW\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{mainwindowsnogui_8h}{mainwindowsnogui.h}}"{}}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vcmdexport_8h}{core/vcmdexport.h}}"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vlockguard.h"{}}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}};}
+\DoxyCodeLine{00059\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_options_property_browser}{VToolOptionsPropertyBrowser}};}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_measurements}{VMeasurements}};}
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }QFileSystemWatcher;}
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_variables}{DialogVariables}};}
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_tool}{DialogTool}};}
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_history_dialog}{HistoryDialog}};}
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculator_dialog}{CalculatorDialog}};}
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_decimal_chart_dialog}{DecimalChartDialog}};}
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_show_info_dialog}{ShowInfoDialog}};}
+\DoxyCodeLine{00071\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_shortcuts_dialog}{ShortcutsDialog}};}
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_groups_widget}{GroupsWidget}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pieces_widget}{PiecesWidget}};}
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }DraftToolBox;}
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }PieceToolBox;}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }LayoutToolBox;}
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }QToolButton;}
+\DoxyCodeLine{00078\ \textcolor{keyword}{class\ }QDoubleSpinBox;}
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }QFontComboBox;}
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_mouse_coordinates}{MouseCoordinates}};}
+\DoxyCodeLine{00081\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_main_window}{MainWindow}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_main_windows_no_g_u_i}{MainWindowsNoGUI}}}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_main_window}{MainWindow}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_main_window_a81c7a140ebb09e7b28b6e811bba622b1}{\string~MainWindow}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_a9cf7face489a2dfaa52af5b09f64477e}{LoadPattern}}(\textcolor{keyword}{const}\ QString\ \&fileName,\ \textcolor{keyword}{const}\ QString\ \&customMeasureFile\ =\ QString());}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1794d671347a2cdad17e05da6ed05550}{ProcessCMD}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4975ee645ef62d0d6e7fd89ee46ec810}{penChanged}}(\mbox{\hyperlink{class_pen}{Pen}}\ pen);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a181f83586d63e1cd00b59c5a8d99f006}{ShowToolTip}}(\textcolor{keyword}{const}\ QString\ \&toolTip)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abab7f28e263e728d402e3cc3f6dd30a4}{updateGroups}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad3902fb6ebda29cc56774b864a3ee525}{zoomToSelected}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a404d9c40847df0ffff468bdfc233ddee}{showAllGroups}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a1b6fe8f5319d0e2617b0e9d70b10c2b7}{hideAllGroups}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a8a25699137d5f339d136f15d4aa0317a}{lockAllGroups}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aad06a96dea4786d15a914170a4d117e9}{unlockAllGroups}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a8e210781260e7da72b20863c921b22f9}{addGroupToList}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a77e4724842ae2bfd7a3190941f66fa97}{deleteGroupFromList}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae59ba0d0ef4f1dcac6a7bf41f9d6cd7e}{editGroup}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a26eee4207133f008fe86b4f2750c3efd}{addSelectedItemsToGroup}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ signals:}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa9a1e6c4bad557faef191df598898003}{RefreshHistory}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a50563c5334624e2c28f6b2f2b20246f6}{EnableItemMove}}(\textcolor{keywordtype}{bool}\ move);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8d3a7feadafa1f6772f8d31540bf861d}{ItemsSelection}}(\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{SelectionType}}\ type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a023d84d96f13aea8d7d02d7a1494806c}{EnableLabelSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a360c8e0d84a11393544c6626532e0ed0}{EnablePointSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a2dfa3897c5cf09ae63cd56ff9c9d9fe0}{EnableLineSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9be748dbac55763d9366d62c2a557eba}{EnableArcSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0287e7a81562e2b5e088793721c693a1}{EnableElArcSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7f202e6a467bcccb7ceb1ed749128a4e}{EnableSplineSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8f89b1f38125173d9e336a36e4ab6629}{EnableSplinePathSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa0d72151590b89eae70ab1defc1d21ce}{EnableNodeLabelSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_adba1f584285fa5cb8a4f2f8907dd3faa}{EnableNodePointSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a09f1fbd5619f27fb1c0f3dbb57eaeeeb}{enablePieceSelection}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af4cec082183778efccb04b0d8740899c}{EnableLabelHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4b7eab2a00b746396471fd11fcbe9034}{EnablePointHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a58f11b5f7f468fdd391418cfe8e8a1b6}{EnableLineHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad46599a9d5c2f7a364e43974ae28a1dd}{EnableArcHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0c37f81c0d42fa7f0cfc2d8c63403cc7}{EnableElArcHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab6f2cdddd54e15de688954ba273af3cd}{EnableSplineHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1e254009c7e2a606cb90a1787b79a5cd}{EnableSplinePathHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a12574eefb2ae5a765ab27a4e5fbf5271}{EnableNodeLabelHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af18d27ba19a6d0ebd18918c4bdc0744d}{EnableNodePointHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4c16bf157a9adce2d7e371312207fa8c}{enablePieceHover}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a17723cb378374bb4c891a3f2d6d6930a}{signalZoomToAreaActive}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab860aceb5e3481f2dd7b9f0442c88ba7}{signalZoomPanActive}}(\textcolor{keywordtype}{bool}\ enable)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a30c598e64873bd9ff9b39f5d01bb7f27}{keyPressEvent}}(QKeyEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a77af9bc9b6648ab6056b7b9948c96038}{keyReleaseEvent}}(QKeyEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7117e22b08a9d96bd90e07289615452d}{showEvent}}(QShowEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a54a1d97ed72014f988a3980f7388b692}{changeEvent}}(QEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a11e3895b953cf51549ff48414e226c24}{closeEvent}}(QCloseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a34c373ef8f3519bbe4ed16d1efb06f03}{customEvent}}(QEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a64dacb913e6191479c2f5bac98b19361}{CleanLayout}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00149\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af2fcfd9661358a7a6c472eccab4b2292}{PrepareSceneList}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00150\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8c6c524074a02ae71d91c3a7c776697c}{exportToCSVData}}(const\ QString\ \&fileName,\ const\ \mbox{\hyperlink{class_dialog_export_to_c_s_v}{DialogExportToCSV}}\ \&dialog)\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a0a0452233f91fdcd0cd379bfff74d5c1}{handleExportToCSV}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ private\ slots:}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0a150d6266fd0621755f227dc02d76fb}{zoomScaleChanged}}(qreal\ scale);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6e267d690ca87f34e757ae1e1f3cafd2}{MouseMove}}(const\ QPointF\ \&scenePos);}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ac2fb50f4412bd60fab16587c9c6bff5b}{Clear}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_afa949935f3e3b3defce7dd2ab4c85894}{patternChangesWereSaved}}(\textcolor{keywordtype}{bool}\ saved);}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab73a9a693ff7a79373cffa0e99c69945}{LastUsedTool}}();}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a3476c6743218f0cb4bd127e16e58fc01}{fullParseFile}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad8265e74d179ade0922f7894e243b747}{setGuiEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a24ddfbeebfafd5c47595c6ac95073b83}{changeDraftBlockGlobally}}(const\ QString\ \&patternPiece);}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7986c519509a58f8a4e756ce5c895744}{ToolBarStyles}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a76490c604a704b0e412a96c13b1a1397}{resetOrigins}}();}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab13069dc6f456d24fdf37ae387ddac9a}{showLayoutPages}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af9b0ef35ece8ac1289860566de721648}{Preferences}}();}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#if\ defined(Q\_OS\_MAC)}}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ CreateMeasurements();}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af5538b9f7cd0d52646d6e2072084c552}{exportLayoutAs}}();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a25e30566fadddbad2234b32f1d6b54e0}{exportPiecesAs}}();}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6e79103994b5acf3d9f1e7083709e12e}{exportDraftBlocksAs}}();}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7fbe9412d13401c34d78f44fcde92636}{handleArrowTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4625bd80d14ab5e608b22ff5eea53147}{handlePointAtDistanceAngleTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a05daff6f177dcbeb4c7f683ef2495cf9}{handleAlongLineTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aab2a4f58d63c058c02632b159955bbe6}{handleMidpointTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a30a92754af6f28d747dab7ffa08d9924}{handleShoulderPointTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7feec393501d7082e73967e17f6de094}{handleNormalTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a91a51d7fc352933d02fa7d8dc78f2cf3}{handleBisectorTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af46210a798e1407377d3d101a9aab55b}{handleHeightTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0f0e005f2d2599f6d833925f84dee652}{handleTriangleTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa0435786cf55dbe9ad436a331f21e8ae}{handleLineIntersectAxisTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aaa51ff19787d78b8d71164f4133c75b2}{handlePointOfContactTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_afa1df582084dea78ddd16dce0c60ba23}{handlePointIntersectXYTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9c7430ff0daecc64bdfeab7c5081fb24}{handleLineTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a64d6eb80608ad4afb66ab64d281b0416}{handleLineIntersectTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af997d1de1fe226eddd1e18d7b9bb79ad}{handleCurveTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6e32bd28c9b7b0740e37ab1a6c5708ff}{handleSplineTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6bc409385d670c1927b5585fee863d32}{handleCurveWithControlPointsTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a47af7d40b8736707ea1561c773039655}{handleSplineWithControlPointsTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abb60040a79adf3000924426117695751}{handlePointAlongCurveTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_acae1beb5e7af21cfbed2bee1cb7440c0}{handlePointAlongSplineTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a45c7f08fbf77da22a082f85b737c1d16}{handleCurveIntersectCurveTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae7f0566950c00e1f4694c7eae502b934}{handleCurveIntersectAxisTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8414c47e92fe0f5ab4ebd37f59b78725}{handleArcTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aae4ef6e7713be3dd976b1c13e7245b8e}{handlePointAlongArcTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a014cdb2004cc18f297d5b2340e9c83e4}{handlePointFromArcAndTangentTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1dac39047d349b76aa2fafe29cc93cdf}{handleArcWithLengthTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a867aa883fd2a55a3e14194e9de16bb7b}{handleArcIntersectAxisTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a01ccbd819619fa3117587705d760e554}{handlePointOfIntersectionArcsTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa6fbb62f5e23f62ee21b806b0660b428}{handlePointOfIntersectionCirclesTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aebef11c5ce600276c9cbeef4579934c8}{handlePointFromCircleAndTangentTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6d5b8a46dee50028125c61e533d904e1}{handleEllipticalArcTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a7e1568a62da1780f21ed6106723aeb79}{handleGroupTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a523fe1dfd26e06fe0257fafc7c710eed}{handleRotationTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a522eb9b1a439ea12c4df35af81712e70}{handleMirrorByLineTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aaa21a7087e3260fc55dc1dd5a65f5a54}{handleMirrorByAxisTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa3f7613fb99e8921ae1d9e1854a45943}{handleMoveTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a2dfcecef4f2f7223c4eedb4d09b8e870}{handleTrueDartTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a42c7cc9d8573976b50a7745509689793}{handleInternalPathTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_adff14423eb94a6e664b47fbb69224fdc}{handleAnchorPointTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_afd62b413b0af83ed123a89be1327a40f}{handleInsertNodesTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad0ebc61481af3846ecbce81711112e56}{handlePatternPieceTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1339d0408db0262fdefe964895427969}{handleUnionTool}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6822173c1ac0b0a04b49a65860825319}{handleNewLayout}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a1822d1c9343887a30eeb892f996a5e24}{showDraftMode}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abe1e97ac67d772a0af138bd7eb1eb089}{showPieceMode}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a76dce35c814835925f2e886d479aeaf2}{showLayoutMode}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4be50dd9285a277a49e92325112e39b7}{New}}();}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_a5fb546357ba30a5ec4a95a432ee101bb}{SaveAs}}();}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_main_window_a29aa2dc30d643263ac5df01ef9caefea}{Save}}();}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6e5a4e6a7aa3263b6cf734c01ade5e10}{Open}}();}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab64974dec722d7fc0e028c89e4315ec5}{closeUnionDialog}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a64fb5176031126ddda250c70c75914be}{ClosedEditGroupDialog}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a2bbebf0c09ed98d67f1dbcc4b4aafb93}{ClosedDialogInternalPath}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5d78eb5fbd3f119ec287b3d7cea29947}{ClosedDialogAnchorPoint}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5601d5e04e8160ceecdf2ec776979849}{ClosedInsertNodesDialog}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8189a2693a849a3a8dce57f1ae42ffa8}{zoomToPrevious}}();}
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a87c7a6c7a9c2f0aa47b24692e238ffd7}{zoomToArea}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a3f597eaf11b4f89a6d424d86fcde4f5e}{zoomPan}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a6ef53ce1b39891be5f2d11725ed9b297}{zoomToPoint}}(\textcolor{keyword}{const}\ QString\&\ pointName);}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a4c5999b878bb3431fa9337d4b2b217cb}{showZoomToPointDialog}}();}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad34f997070aefaf0a92aa377c1536992}{LoadIndividual}}();}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a179099637837e954cb0552d4ef35f9f2}{LoadMultisize}}();}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a25478eddd69562ea1f447a47470876a6}{UnloadMeasurements}}();}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ac9c50f2211daa4a475a2e1fdfc7dac8e}{ShowMeasurements}}();}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a8f603c4d0220e91696f1118d555d680c}{MeasurementsChanged}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ae64d2cd32fcbddd86df09bdcc885716f}{SyncMeasurements}}();}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#if\ defined(Q\_OS\_MAC)}}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ OpenAt(QAction\ *where);}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//defined(Q\_OS\_MAC)}}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9cab1a02c060f4ebe39037827f61f968}{ChangedSize}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a5758a6b8dc2a08a25c98fb7725ecb72a}{ChangedHeight}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00261\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_main_window}{MainWindow}})}
+\DoxyCodeLine{00263\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_main_window}{MainWindow}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a35466a70ed47252a0191168126a352a5}{ui}};}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ QFileSystemWatcher\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a89c700caaadb27c8fc7a9c5a7d1e6fae}{watcher}};}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00268\ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a9dc38773443f450879ac34cc82bbed76}{currentTool}};}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00271\ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a7503563a09755392b59af4f3378856e7}{lastUsedTool}};}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a42d4743ed8b5f5d3f568a5ffeae13683}{draftScene}};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00277\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a9e26973953f7c96f2b90ef7a12488b08}{pieceScene}};}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00280\ \ \ \ \ QPointer<\mbox{\hyperlink{class_mouse_coordinates}{MouseCoordinates}}>\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a0e20e28a86f4eb53e7a35f64effcc8ca}{mouseCoordinates}};}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ QPointer<QToolButton>\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae9c8f783c627f2d8e13053ba78186b9e}{infoToolButton}};}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00285\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a1f7714e70dd6bbaefabaeee09eb5d6da}{helpLabel}};}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a22c9a6a4e9bfbd1edd9e28e59250263e}{isInitialized}};}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ad120b538b59a2d222448bf298a5f28a5}{mChanges}};}
+\DoxyCodeLine{00292\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a3234d44cec66512715f8098bba64b7ce}{mChangesAsked}};}
+\DoxyCodeLine{00293\ }
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a231b5c0a606d38429efb4d7eab8cb039}{patternReadOnly}};}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ QPointer<\mbox{\hyperlink{class_dialog_variables}{DialogVariables}}>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a90651bff8bc41da0a633e2ce3f0d9a21}{dialogTable}};}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_dialog_tool}{DialogTool}}>\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af1c5b2019fa93aa6518bc48d88acc2ea}{dialogTool}};}
+\DoxyCodeLine{00298\ \ \ \ \ QPointer<\mbox{\hyperlink{class_history_dialog}{HistoryDialog}}>\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a136c33492f8465a7d71113ccfd6c0cf9}{historyDialog}};}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00300\ \ \ \ \ QFontComboBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a49559c32f55557b3d654d2aa113b12dd}{fontComboBox}};}
+\DoxyCodeLine{00301\ \ \ \ \ QComboBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a3bb120055d9323f072038bd927e2b604}{fontSizeComboBox}};}
+\DoxyCodeLine{00302\ \ \ \ \ QComboBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_aed2b0dcf1a965a5059bfd011bcb55f5c}{draftBlockComboBox}};\ \ }
+\DoxyCodeLine{00303\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_aede0b6b7c10d02d0c26334d1682038c0}{draftBlockLabel}};}
+\DoxyCodeLine{00304\ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a2fa5c7185ca4af6cfc0761095a55fbd2}{mode}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00305\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ac6f37954c0724d4014098f69072584d1}{currentBlockIndex}};\ \ \ }
+\DoxyCodeLine{00306\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ad1aa67ae9659bdc20386ab251bec2567}{currentToolBoxIndex}};\ }
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_afcb567212003372f444eb8178356255e}{isToolOptionsDockVisible}};}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae45ddb21cf6fef7bc68309586b71b595}{isGroupsDockVisible}};}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a62e645c52390e9e1224c0e4d73cd8c3e}{isLayoutsDockVisible}};}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a965a67302524ecef2e3ebb49a318601e}{isToolboxDockVisible}};}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a3fde0219d4b89da9abf73a4b6cfe43d9}{drawMode}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00313\ \ \ \ \ enum\ \{\ \mbox{\hyperlink{class_main_window_a0ee5fdf298d8f30b5e29418348ecaacfacffff941ca3da9119f465d531db6dc86}{MaxRecentFiles}}\ =\ 5\ \};}
+\DoxyCodeLine{00314\ \ \ \ \ QAction\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a406e08a715fb54c4e0057b1e0b364741}{recentFileActs}}[\mbox{\hyperlink{class_main_window_a0ee5fdf298d8f30b5e29418348ecaacfacffff941ca3da9119f465d531db6dc86}{MaxRecentFiles}}];}
+\DoxyCodeLine{00315\ \ \ \ \ QAction\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a4b0566cb13ebd17461c946cf3d74b594}{separatorAct}};}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a6b2dc232d137ada77253fb0522f97295}{leftGoToStage}};}
+\DoxyCodeLine{00318\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a0874432a674f3dad6f7e48ea53e1ffb8}{rightGoToStage}};}
+\DoxyCodeLine{00319\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a35bdc5cf298847b2a08596daaf89f0f0}{autoSaveTimer}};}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab97049ecffbf746214d8625329a0cc3b}{guiEnabled}};}
+\DoxyCodeLine{00321\ \ \ \ \ QPointer<QComboBox>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aabffe0eb09bcd8fcf20441df3a626cd9}{gradationHeights}};}
+\DoxyCodeLine{00322\ \ \ \ \ QPointer<QComboBox>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a0b2ba987f6b039b281afa0a8ccf5ce25}{gradationSizes}};}
+\DoxyCodeLine{00323\ \ \ \ \ QPointer<QLabel>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af64067a6f36c032b6d3b09a6ecc4ce5f}{gradationHeightsLabel}};}
+\DoxyCodeLine{00324\ \ \ \ \ QPointer<QLabel>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a4ee147c9ccf67177a7df618a7f277f38}{gradationSizesLabel}};}
+\DoxyCodeLine{00325\ \ \ \ \ \mbox{\hyperlink{class_v_tool_options_property_browser}{VToolOptionsPropertyBrowser}}\ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a612a2d12e1fa6d9c668d87f31f8edcaa}{toolProperties}};}
+\DoxyCodeLine{00326\ \ \ \ \ \mbox{\hyperlink{class_groups_widget}{GroupsWidget}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a7c35bf8e7a0125f54e1fd1f19e5931b9}{groupsWidget}};}
+\DoxyCodeLine{00327\ \ \ \ \ \mbox{\hyperlink{class_pieces_widget}{PiecesWidget}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a77c16b754d4f9ff72bf5d43c52d09a70}{patternPiecesWidget}};}
+\DoxyCodeLine{00328\ \ \ \ \ std::shared\_ptr<VLockGuard<char>>\ \mbox{\hyperlink{class_main_window_ac8cda8ec092b1db3792f45350922866b}{lock}};}
+\DoxyCodeLine{00329\ }
+\DoxyCodeLine{00330\ \ \ \ \ QDoubleSpinBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_abec4abf368a6fe3bc96d5f9e9f09b4f6}{zoomScaleSpinBox}};}
+\DoxyCodeLine{00331\ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a77643494265991ec1ec783285b2b86a7}{m\_penToolBar}};\ }
+\DoxyCodeLine{00332\ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a98e04c2354e77c45ca479817b9d53478}{m\_penReset}};}
+\DoxyCodeLine{00333\ \ \ \ \ QComboBox\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_a8d014931694bf46833dc9923bb9de9e2}{m\_zoomToPointComboBox}};}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab030a054c24b7477966f3d4b580379eb}{SetDefaultHeight}}();}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a0c3dc9e3d776065f63db598741735c58}{SetDefaultSize}}();}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab03270fd7d6947737a5e3d57684c8547}{initStatusBar}}();}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ad1239c86866f87fb31c3a01680ff1ed2}{initModesToolBar}}();}
+\DoxyCodeLine{00340\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab938ba9f73c0c6118d271c041254ae3b}{initDraftToolBar}}();}
+\DoxyCodeLine{00341\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af9327aa15b432d3fbc1425b8f12e9d36}{initPointNameToolBar}}();}
+\DoxyCodeLine{00342\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aacbcb4944f025ef8bb4682bc34eb67d8}{initToolsToolBar}}();}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a09c7cf05c0580cc719dfdd4e22761ac7}{initToolBarVisibility}}();}
+\DoxyCodeLine{00344\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a28073c1f398d66c97d0efa59e9cea599}{initPenToolBar}}();}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a023891f93e8aef21ea0a13bd6fe34b02}{updateToolBarVisibility}}();}
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a22ed580aa23385953fee987c97350535}{setToolBarVisibility}}(QToolBar\ *toolbar,\ \textcolor{keywordtype}{bool}\ visible);}
+\DoxyCodeLine{00347\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_acbaac027bce99f25818607421e892228}{InitToolButtons}}();}
+\DoxyCodeLine{00348\ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a06b0c6ebc7331c724755f002f4ebbe43}{handlePointsMenu}}();}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aa5c5f8da2325ab1603762f004a0c0b95}{handleLinesMenu}}();}
+\DoxyCodeLine{00351\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aff0d35f346a8aa55f4bce1e432c56dd4}{handleArcsMenu}}();}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ac5a80202ea5c09c9e6a11afb334f5982}{handleCurvesMenu}}();}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ac758e205ae74382444bc1b21aeb8264d}{handleCirclesMenu}}();}
+\DoxyCodeLine{00354\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae2cb84bec0f18189dde840fd167e0728}{handleOperationsMenu}}();}
+\DoxyCodeLine{00355\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ac0e5351f4152b87672d8e83010160ed8}{handlePatternPiecesMenu}}();}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a6144fe2de2f46a6ba796b45c7a789cb3}{handlePieceMenu}}();}
+\DoxyCodeLine{00357\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab1d1483cff220f159430734dc4e6b03d}{handleLayoutMenu}}();}
+\DoxyCodeLine{00358\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a04464b1ddc9f2b39ffea11a71667ef19}{handleImagesMenu}}();}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af4186b176bb2eb258a1945c623ad6174}{CancelTool}}();}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a3c563e193ea5a6d37e0441ca1482f790}{setWidgetsEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00363\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aeecdc829544c0a47787cdd3af0fd2ce5}{setToolsEnabled}}(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a70980af6af41301297255aab009040e6}{SetLayoutModeActions}}();}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aa1960a74cef38e11b9a0df969114e996}{SaveCurrentScene}}();}
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a7d80555e9ed57fefc73a6ab2c578cc5b}{RestoreCurrentScene}}();}
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aea64e5bb4bfce45578e1f3a13972df6e}{MinimumScrollBar}}();}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Dialog,\ \textcolor{keyword}{typename}\ Func>}
+\DoxyCodeLine{00371\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab48b1b7a05ff40dd35ce7755e0a89858}{SetToolButton}}(\textcolor{keywordtype}{bool}\ checked,\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ t,\ \textcolor{keyword}{const}\ QString\ \&cursor,\ \textcolor{keyword}{const}\ QString\ \&toolTip,}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Func\ closeDialogSlot);}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Dialog,\ \textcolor{keyword}{typename}\ Func,\ \textcolor{keyword}{typename}\ Func2>}
+\DoxyCodeLine{00374\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a37329f2185211a00368512de6ffb3e3a}{SetToolButtonWithApply}}(\textcolor{keywordtype}{bool}\ checked,\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ t,\ \textcolor{keyword}{const}\ QString\ \&cursor,\ \textcolor{keyword}{const}\ QString\ \&toolTip,}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Func\ closeDialogSlot,\ Func2\ applyDialogSlot);}
+\DoxyCodeLine{00376\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00377\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aeed91159cc75b3f639fb7cabb6a6a9be}{ClosedDialog}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00379\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00380\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a74cbbfd5122429508035746f220988a3}{ClosedDialogWithApply}}(\textcolor{keywordtype}{int}\ result,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene);}
+\DoxyCodeLine{00381\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00382\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ad5dcac61f0c98fdb28d6f1a206d5b472}{ApplyDialog}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene);}
+\DoxyCodeLine{00383\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a226045ca925d06e0f2a89ec0da87e990}{ClosedDrawDialogWithApply}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00385\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00386\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a452ea90c6aa9791aedc6d562b2701bd4}{ApplyDrawDialog}}();}
+\DoxyCodeLine{00387\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00388\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_af86d9769f4f54bb0a0979bc98e93eaf7}{ClosedPiecesDialogWithApply}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ DrawTool>}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aad592cbbdfa871c4349365ca0761bee0}{applyPiecesDialog}}();}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a35bd4569ec1ab76f5471bb94d13e45fa}{SavePattern}}(\textcolor{keyword}{const}\ QString\ \&fileName,\ QString\ \&error);}
+\DoxyCodeLine{00393\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a293a58a4544e951aadad3d68befcaea7}{AutoSavePattern}}();}
+\DoxyCodeLine{00394\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a3631bdedbef1d5d7e3ea87b62a80d94e}{setCurrentFile}}(\textcolor{keyword}{const}\ QString\ \&fileName);}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00396\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a4abba2c52f756524c0f388d0d3e6d6ec}{ReadSettings}}();}
+\DoxyCodeLine{00397\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a56a5e4d5e0a022e8c1ecf350d2916ade}{WriteSettings}}();}
+\DoxyCodeLine{00398\ }
+\DoxyCodeLine{00399\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ace6bf47476f95ccc4a541de646322059}{MaybeSave}}();}
+\DoxyCodeLine{00400\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae9a9900a62aa2e9e2934200e18cbe6e6}{UpdateRecentFileActions}}();}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a402de9e34822c628c396923203130207}{CreateMenus}}();}
+\DoxyCodeLine{00402\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ac196f381c4aad2f18848f1cf490eba35}{CreateActions}}();}
+\DoxyCodeLine{00403\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a28be3b3f7c5c329447f2010df7740ab3}{InitAutoSave}}();}
+\DoxyCodeLine{00404\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a5aa459f35f06e08729c3e41db396266b}{createDraftBlockName}}(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00405\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aa5d6a9b83afd1656363a9edc29c0a40c}{CheckPathToMeasurements}}(\textcolor{keyword}{const}\ QString\ \&patternPath,\ \textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00406\ \ \ \ \ QComboBox\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_main_window_ac331371b60268b83c61e972be13a334e}{SetGradationList}}(QLabel\ *label,\ \textcolor{keyword}{const}\ QStringList\ \&list);}
+\DoxyCodeLine{00407\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a16c79e11bdf80f3395db5c044c4ef53b}{changeDraftBlock}}(\textcolor{keywordtype}{int}\ index,\ \textcolor{keywordtype}{bool}\ zoomBestFit\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00411\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aaba1a59f4b5cb54552bd587bf0e61f4a}{EndVisualization}}(\textcolor{keywordtype}{bool}\ click\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00412\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a0a35b4d3e3ffb84473a02209e21166d5}{zoomFirstShow}}();}
+\DoxyCodeLine{00413\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a4a2cf37cb163eac27b8bae4df2c4b800}{UpdateHeightsList}}(\textcolor{keyword}{const}\ QStringList\ \&list);}
+\DoxyCodeLine{00414\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_acfc68de871932a4a87248f6cdcef6290}{UpdateSizesList}}(\textcolor{keyword}{const}\ QStringList\ \&list);}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a1f80f98c12910994f497219d41f7bd6a}{AddDocks}}();}
+\DoxyCodeLine{00417\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ae2fe4e227fb2e0606bd81c9b4d7a47c6}{InitDocksContain}}();}
+\DoxyCodeLine{00418\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a9810848bb66f46a3cbcce228799d47f0}{OpenNewSeamly2D}}(\textcolor{keyword}{const}\ QString\ \&fileName\ =\ QString())\textcolor{keyword}{const};}
+\DoxyCodeLine{00419\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a117b9afa1b61c0489bf17c4bab73c089}{FileClosedCorrect}}();}
+\DoxyCodeLine{00420\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_aac0fbf9c0116d6458281bd76e60ffcd6}{GetUnlokedRestoreFileList}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a3fa146e5219257978c4981a382c2d770}{addDraftBlock}}(\textcolor{keyword}{const}\ QString\ \&blockName);}
+\DoxyCodeLine{00423\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a23dfaf6132acfa6cbeb47b94a6bbe680}{draftBlockStartPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00425\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a942da39258c275fe2a15afebe3baed89}{InitScenes}}();}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VMeasurements>}}\ \mbox{\hyperlink{class_main_window_a0380f457948fd4be06ed64ca3c87021f}{OpenMeasurementFile}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00428\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a8d6990698d2283df49bb70340eb46035}{LoadMeasurements}}(\textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a17be64a5dfaa3bf575bb798670619729}{UpdateMeasurements}}(\textcolor{keyword}{const}\ QString\ \&path,\ \textcolor{keywordtype}{int}\ size,\ \textcolor{keywordtype}{int}\ height);}
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_afeda1aea46cb395e3784fa453a717b96}{CheckRequiredMeasurements}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_measurements}{VMeasurements}}\ *m);}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a02ea472cfbbd5559f6d462c7ae16126f}{ReopenFilesAfterCrash}}(QStringList\ \&args);}
+\DoxyCodeLine{00433\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af0652363df16366ac21f22bf2734c3f5}{DoExport}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vcmdexport_8h_a2c27b3e93739102ce70a1aaa534849e5}{VCommandLinePtr}}\&\ expParams);}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a91bdb7101680ff0d2ef21e0ab3c8e183}{SetSize}}(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00436\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a26cef439aeb50daceb8bba085d7cd226}{SetHeight}}(\textcolor{keyword}{const}\ QString\ \&\ text);}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_ab35b2596cf2a9f22293be29054838c08}{GetPatternFileName}}();}
+\DoxyCodeLine{00439\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_adc2403907930a09c2b2710d8ac3e95ea}{GetMeasurementFileName}}();}
+\DoxyCodeLine{00440\ }
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a2d98b11c57eb175247cd01ae73614602}{UpdateWindowTitle}}();}
+\DoxyCodeLine{00442\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af5267cc8e0bb2b95a8b399417b3996b7}{upDateScenes}}();}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_acc56b9a3e0c5847e603a7f151141e7c1}{updateViewToolbar}}();}
+\DoxyCodeLine{00444\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a5ae2e612c17cae50e17fd0a8e6fa4887}{resetPanShortcuts}}();}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_af9a15a5df11095dbb0f2e8d76d68a20f}{draftPointNamesList}}();}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a17e4845bda0f2cf644d71d63433425a6}{updateZoomToPointComboBox}}(QStringList\ namesList);}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_main_window_a9593955cf7ad87b04484465ce66519d1}{IgnoreLocking}}(\textcolor{keywordtype}{int}\ error,\ \textcolor{keyword}{const}\ QString\ \&path);}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a3acea18c4a60f2a8101f32ff3eb1112e}{ToolSelectPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_aa6b89e7686343cc6c85d82077cbe666b}{ToolSelectPointByPress}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9bd185b1719845fb78326601a852f7e0}{ToolSelectPointByRelease}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_accaa8558d170df2b454e19af765e20ef}{ToolSelectSpline}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a0572da55467df5e3801c25272e371294}{ToolSelectSplinePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_abb4224ec966f92faac389416a661a17a}{ToolSelectArc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a07dc0f5262207acb36887472b7e487b8}{ToolSelectPointArc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a44957ca7b501ccf9509aed579f4fd4b3}{ToolSelectCurve}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a9d359031b17a452feec421c3a8c87e33}{selectAllDraftObjectsTool}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a72696739dc54bb1489ea95c46419c3e8}{ToolSelectOperationObjects}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00462\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_ab0efcaf54da732a5a5c9a2badf4ec741}{ToolSelectGroupObjects}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00463\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_main_window_a020ab825965b36fd85be8581fc979b68}{selectPieceTool}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00464\ \};}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAINWINDOW\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,110 @@
+\hypertarget{vvector3dproperty_8h_source}{}\doxysection{vvector3dproperty.\+h}
+\label{vvector3dproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/Vector3d/vvector3dproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/Vector3d/vvector3dproperty.h}}
+\mbox{\hyperlink{vvector3dproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vvector3dproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VVECTOR3DPROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VVECTOR3DPROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}../../vproperty.h"{}}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\ \textcolor{comment}{//-\/V690}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a1b513adf35e27a771e45cf1863ce883b}{Vector3D}}()}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ :\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}}(0),\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}}(0),\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}}(0)}
+\DoxyCodeLine{00043\ \ \ \ \ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a175e485da44c1f419676f2124cefe407}{Vector3D}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\&\ other)}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ :\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}}(other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}}),\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}}(other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}}),\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}}(other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}})}
+\DoxyCodeLine{00047\ \ \ \ \ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\ \&\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a6ad19420bfe60d83b8daa926a5680d05}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\ \&other)}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \&other\ ==\ \textcolor{keyword}{this}\ )}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}}\ =\ other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}}\ =\ other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}}\ =\ other.\mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a9f09c5c7a51a1fffb800c3df7dd42bf2}{\string~Vector3D}}()\ \{\}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a2a6d9568378852c0553a387ee4931ad1}{X}},\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a17d490a8d2ad85a14673fc08193c809b}{Y}},\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d_a26c64e56d367dcdd328da301e3b587d0}{Z}};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\}}}
+\DoxyCodeLine{00067\ \textcolor{comment}{}}
+\DoxyCodeLine{00068\ \textcolor{comment}{Q\_DECLARE\_METATYPE(QPE::Vector3D)\ \ \ //\ todo}}
+\DoxyCodeLine{00069\ \textcolor{comment}{}}
+\DoxyCodeLine{00070\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property}{QVector3DProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property}{QVector3DProperty}}(\textcolor{keyword}{const}\ QString\&\ name);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a20fc144ce1c7e7dd4acf0a91f70fc77c}{\string~QVector3DProperty}}()\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ae7b34671fa30cbbd807500968a08859c}{data}}\ (\textcolor{keywordtype}{int}\ column\ =\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\_Name}},\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ Qt::ItemFlags\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a4487c0545230aafa146bbf670e8251df}{flags}}(\textcolor{keywordtype}{int}\ column\ =\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\_Name}})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a1c3311e68d41fed27a052f0aaa330fec}{getVector}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ac8185d94aee93a6a9eff9b1510cc803a}{setVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}}\&\ vect);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ac8185d94aee93a6a9eff9b1510cc803a}{setVector}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_adf63dd496007e2872314e559d1eec73e}{type}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ virtual\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ad23e04057e6732606564581d2226eec4}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ true,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ container\ =\ NULL)\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a47f490e4caa408edc80c16cd56748e29}{setValue}}(const\ QVariant\&\ value)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ virtual\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a78bbd4420843c2895594b1fecbb178a9}{getValue}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ private:}
+\DoxyCodeLine{00112\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property}{QVector3DProperty}})}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VVECTOR3DPROPERTY\_H}}
+
+\end{DoxyCode}

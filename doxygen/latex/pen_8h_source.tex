@@ -1,0 +1,105 @@
+\hypertarget{pen_8h_source}{}\doxysection{pen.\+h}
+\label{pen_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/pen.h@{D:/Github/Seamly2D/src/libs/vwidgets/pen.h}}
+\mbox{\hyperlink{pen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ pen.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 14,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ PEN\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ PEN\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pen}{Pen}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \mbox{\hyperlink{class_pen_a35bb787978cb795bd371c65ece6baa21}{Pen}}\ ()}
+\DoxyCodeLine{00044\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \mbox{\hyperlink{class_pen_a602dfef32d494f112f1b1644e17190e3}{setColor}}(QString(\textcolor{stringliteral}{"{}black"{}}));}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_pen_aee490957207303df16a3183984e2af21}{setLineWeight}}(0.00);}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_pen_a62099dd76a95a672603ccfd46717a701}{setLineType}}(QString(\textcolor{stringliteral}{"{}solidLine"{}}));}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \mbox{\hyperlink{class_pen_a2c269a4b7c71971946697f9173743176}{Pen}}\ (\textcolor{keyword}{const}\ QString\&\ \mbox{\hyperlink{class_pen_a1b81ceddf168867acbefd28d40fa2ab9}{color}},\ \textcolor{keyword}{const}\ qreal\ \&weight,\ \textcolor{keyword}{const}\ QString\ \&type)}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_pen_a602dfef32d494f112f1b1644e17190e3}{setColor}}(\mbox{\hyperlink{class_pen_a1b81ceddf168867acbefd28d40fa2ab9}{color}});}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_pen_aee490957207303df16a3183984e2af21}{setLineWeight}}(weight);}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_pen_a62099dd76a95a672603ccfd46717a701}{setLineType}}(type);}
+\DoxyCodeLine{00058\ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_pen_abfc9f0341296d606189ff282f3eeebe1}{\string~Pen}}\ ()\ \{\}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ QString\ \mbox{\hyperlink{class_pen_ad28c352c979d055bcb2550a50e104831}{getLineType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_pen_aab20c4a7725c21a37b69bc081045957b}{m\_lineType}};}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pen_a62099dd76a95a672603ccfd46717a701}{setLineType}}(\textcolor{keyword}{const}\ QString\ \&type)}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_pen_aab20c4a7725c21a37b69bc081045957b}{m\_lineType}}\ =\ type;}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ qreal\ \mbox{\hyperlink{class_pen_af6c952a80a83302c1af9a45c1e023ca0}{getLineWeight}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_pen_a3e2f28c016c2d6c71d4f633930005eba}{m\_lineWeight}};}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pen_aee490957207303df16a3183984e2af21}{setLineWeight}}(\textcolor{keyword}{const}\ qreal\ \&weight)}
+\DoxyCodeLine{00078\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_pen_a3e2f28c016c2d6c71d4f633930005eba}{m\_lineWeight}}\ =\ weight;}
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ QString\ \mbox{\hyperlink{class_pen_adcca887057f7a085d289b1a0a78fab2d}{getColor}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00083\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_pen_a465dfc78cf2887e2f9bba41d6e417a76}{m\_color}};}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_pen_a602dfef32d494f112f1b1644e17190e3}{setColor}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_pen_a1b81ceddf168867acbefd28d40fa2ab9}{color}})}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_pen_a465dfc78cf2887e2f9bba41d6e417a76}{m\_color}}\ =\ \mbox{\hyperlink{class_pen_a1b81ceddf168867acbefd28d40fa2ab9}{color}};}
+\DoxyCodeLine{00090\ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pen_a441a93bb15cd47ad3d767f228fff4c8f}{operator\ ==\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pen}{Pen}}\ \&pen)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{class_pen_aab20c4a7725c21a37b69bc081045957b}{m\_lineType}}==pen.\mbox{\hyperlink{class_pen_aab20c4a7725c21a37b69bc081045957b}{m\_lineType}}\ \&\&\ \mbox{\hyperlink{class_pen_a3e2f28c016c2d6c71d4f633930005eba}{m\_lineWeight}}==pen.\mbox{\hyperlink{class_pen_a3e2f28c016c2d6c71d4f633930005eba}{m\_lineWeight}}\ \&\&\ \mbox{\hyperlink{class_pen_a465dfc78cf2887e2f9bba41d6e417a76}{m\_color}}==pen.\mbox{\hyperlink{class_pen_a465dfc78cf2887e2f9bba41d6e417a76}{m\_color}});}
+\DoxyCodeLine{00095\ \}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_pen_ae2edbfae457ef9d5bd3df9e1494e8e28}{operator\ !=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_pen}{Pen}}\ \&pen)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ !(*\textcolor{keyword}{this}==pen);}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{class_pen_a77f1d83538608438267bbb3e4ae81a2b}{operator\ <<\ }}(std::ostream\ \&stream,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_pen}{Pen}}\ \&pen);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \ \ QString\ \mbox{\hyperlink{class_pen_a465dfc78cf2887e2f9bba41d6e417a76}{m\_color}};}
+\DoxyCodeLine{00106\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_pen_a3e2f28c016c2d6c71d4f633930005eba}{m\_lineWeight}};}
+\DoxyCodeLine{00107\ \ \ \ \ QString\ \mbox{\hyperlink{class_pen_aab20c4a7725c21a37b69bc081045957b}{m\_lineType}};}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

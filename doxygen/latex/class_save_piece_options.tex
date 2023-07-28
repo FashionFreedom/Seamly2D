@@ -1,0 +1,162 @@
+\hypertarget{class_save_piece_options}{}\doxysection{Save\+Piece\+Options Class Reference}
+\label{class_save_piece_options}\index{SavePieceOptions@{SavePieceOptions}}
+
+
+{\ttfamily \#include $<$savepieceoptions.\+h$>$}
+
+Inheritance diagram for Save\+Piece\+Options\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_save_piece_options}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_save_piece_options_a1c79ef54a4ed35463443fac276bc302d}{Save\+Piece\+Options}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&old\+Piece, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&new\+Piece, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, quint32 \mbox{\hyperlink{class_save_piece_options_ad0f1d29c70133c67573b796e9ddb510f}{id}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_save_piece_options_a21d6b21d1c00c0e1ecdea66e981b2815}{$\sim$\+Save\+Piece\+Options}} ()
+\item 
+virtual void \mbox{\hyperlink{class_save_piece_options_a3580e9c809631505a2464c212e6a2bda}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_save_piece_options_a532f269680b8618f7c16dbd85aec3edf}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_save_piece_options_a8bcfff7e251536682828a9729d5bbc95}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_save_piece_options_ad0f1d29c70133c67573b796e9ddb510f}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_save_piece_options_a7a7eb0b339a158e4ec513f93d6e2714f}{piece\+Id}} () const
+\item 
+\mbox{\hyperlink{class_v_piece}{VPiece}} \mbox{\hyperlink{class_save_piece_options_ae2d7c3281f2d1af2c2af34ee21c8f671}{get\+New\+Piece}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_v_piece}{VPiece}} \mbox{\hyperlink{class_save_piece_options_ace267a3d5ac5895dcf6d8a569e214d93}{m\+\_\+old\+Piece}}
+\item 
+\mbox{\hyperlink{class_v_piece}{VPiece}} \mbox{\hyperlink{class_save_piece_options_a2de9f1f9c905a601d900d8f8cbfb9649}{m\+\_\+new\+Piece}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_save_piece_options_a1c79ef54a4ed35463443fac276bc302d}\label{class_save_piece_options_a1c79ef54a4ed35463443fac276bc302d}} 
+\index{SavePieceOptions@{SavePieceOptions}!SavePieceOptions@{SavePieceOptions}}
+\index{SavePieceOptions@{SavePieceOptions}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{SavePieceOptions()}{SavePieceOptions()}}
+{\footnotesize\ttfamily Save\+Piece\+Options\+::\+Save\+Piece\+Options (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{old\+Piece,  }\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{new\+Piece,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{quint32}]{id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_save_piece_options_a21d6b21d1c00c0e1ecdea66e981b2815}\label{class_save_piece_options_a21d6b21d1c00c0e1ecdea66e981b2815}} 
+\index{SavePieceOptions@{SavePieceOptions}!````~SavePieceOptions@{$\sim$SavePieceOptions}}
+\index{````~SavePieceOptions@{$\sim$SavePieceOptions}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{$\sim$SavePieceOptions()}{~SavePieceOptions()}}
+{\footnotesize\ttfamily Save\+Piece\+Options\+::$\sim$\+Save\+Piece\+Options (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_save_piece_options_ae2d7c3281f2d1af2c2af34ee21c8f671}\label{class_save_piece_options_ae2d7c3281f2d1af2c2af34ee21c8f671}} 
+\index{SavePieceOptions@{SavePieceOptions}!getNewPiece@{getNewPiece}}
+\index{getNewPiece@{getNewPiece}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{getNewPiece()}{getNewPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece}{VPiece}} Save\+Piece\+Options\+::get\+New\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_save_piece_options_ad0f1d29c70133c67573b796e9ddb510f}\label{class_save_piece_options_ad0f1d29c70133c67573b796e9ddb510f}} 
+\index{SavePieceOptions@{SavePieceOptions}!id@{id}}
+\index{id@{id}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Save\+Piece\+Options\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_save_piece_options_a8bcfff7e251536682828a9729d5bbc95}\label{class_save_piece_options_a8bcfff7e251536682828a9729d5bbc95}} 
+\index{SavePieceOptions@{SavePieceOptions}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Save\+Piece\+Options\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_save_piece_options_a7a7eb0b339a158e4ec513f93d6e2714f}\label{class_save_piece_options_a7a7eb0b339a158e4ec513f93d6e2714f}} 
+\index{SavePieceOptions@{SavePieceOptions}!pieceId@{pieceId}}
+\index{pieceId@{pieceId}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{pieceId()}{pieceId()}}
+{\footnotesize\ttfamily quint32 Save\+Piece\+Options\+::piece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_save_piece_options_a532f269680b8618f7c16dbd85aec3edf}\label{class_save_piece_options_a532f269680b8618f7c16dbd85aec3edf}} 
+\index{SavePieceOptions@{SavePieceOptions}!redo@{redo}}
+\index{redo@{redo}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Save\+Piece\+Options\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_save_piece_options_a3580e9c809631505a2464c212e6a2bda}\label{class_save_piece_options_a3580e9c809631505a2464c212e6a2bda}} 
+\index{SavePieceOptions@{SavePieceOptions}!undo@{undo}}
+\index{undo@{undo}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Save\+Piece\+Options\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_save_piece_options_a2de9f1f9c905a601d900d8f8cbfb9649}\label{class_save_piece_options_a2de9f1f9c905a601d900d8f8cbfb9649}} 
+\index{SavePieceOptions@{SavePieceOptions}!m\_newPiece@{m\_newPiece}}
+\index{m\_newPiece@{m\_newPiece}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{m\_newPiece}{m\_newPiece}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece}{VPiece}} Save\+Piece\+Options\+::m\+\_\+new\+Piece\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_save_piece_options_ace267a3d5ac5895dcf6d8a569e214d93}\label{class_save_piece_options_ace267a3d5ac5895dcf6d8a569e214d93}} 
+\index{SavePieceOptions@{SavePieceOptions}!m\_oldPiece@{m\_oldPiece}}
+\index{m\_oldPiece@{m\_oldPiece}!SavePieceOptions@{SavePieceOptions}}
+\doxysubsubsection{\texorpdfstring{m\_oldPiece}{m\_oldPiece}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_piece}{VPiece}} Save\+Piece\+Options\+::m\+\_\+old\+Piece\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{savepieceoptions_8h}{savepieceoptions.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{savepieceoptions_8cpp}{savepieceoptions.\+cpp}}\end{DoxyCompactItemize}

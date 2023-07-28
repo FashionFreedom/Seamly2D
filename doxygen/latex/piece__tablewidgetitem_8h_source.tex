@@ -1,0 +1,49 @@
+\hypertarget{piece__tablewidgetitem_8h_source}{}\doxysection{piece\+\_\+tablewidgetitem.\+h}
+\label{piece__tablewidgetitem_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/piece\_tablewidgetitem.h@{D:/Github/Seamly2D/src/libs/vwidgets/piece\_tablewidgetitem.h}}
+\mbox{\hyperlink{piece__tablewidgetitem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ piece\_tablewidgetitem.c}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 7,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ PIECE\_TABLEWIDGETITEM\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ PIECE\_TABLEWIDGETITEM\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QTableWidgetItem>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_piece_table_widget_item}{PieceTableWidgetItem}}\ :\ \textcolor{keyword}{public}\ QTableWidgetItem}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \mbox{\hyperlink{class_piece_table_widget_item}{PieceTableWidgetItem}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *data);}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_piece_table_widget_item_ace68ed69c3714f3d199278040d354c90}{operator<}}(\textcolor{keyword}{const}\ QTableWidgetItem\ \&other)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ *\mbox{\hyperlink{class_piece_table_widget_item_adbf3f47456dc6d8b70097a917fefd7f4}{m\_data}};}
+\DoxyCodeLine{00041\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PIECE\_TABLEWIDGETITEM\_H}}
+
+\end{DoxyCode}

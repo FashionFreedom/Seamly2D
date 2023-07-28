@@ -1,0 +1,172 @@
+\hypertarget{vproperty_8h_source}{}\doxysection{vproperty.\+h}
+\label{vproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vproperty.h}}
+\mbox{\hyperlink{vproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QAbstractItemDelegate>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QEvent>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QStyleOptionViewItem>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_list}{QList}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}}\ :\ \textcolor{keywordtype}{char}\{\mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaa1fbb1e3943c2c6c560247ac8f9289780}{Simple}},\ \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaa10b4eb76294b70d7fd6df997ff06edb1}{Complex}},\ \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaab021df6aac4654c454f46c77646e745f}{Label}}\};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ MyCustomEventType\ =\ 1099;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_user_change_event}{UserChangeEvent}}\ :\ \textcolor{keyword}{public}\ QEvent}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_user_change_event_ad60aebaae1da816317de677be4d72d67}{UserChangeEvent}}()\ :\ QEvent(static\_cast<QEvent::Type>(MyCustomEventType))\ \{\}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_user_change_event_a4031a53e1f24c2a30ceb3f09a9cb4e57}{\string~UserChangeEvent}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00052\ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ class\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ class\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ :\ public\ QObject}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118}{DPC\_DisplayColumn}}}
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ DPC\_Name\ =\ 0,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ DPC\_Data}
+\DoxyCodeLine{00064\ \ \ \ \ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}(\textcolor{keyword}{const}\ QString\ \&name,\ QVariant::Type\ type\ =\ QVariant::String);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{\string~VProperty}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ virtual\ QString\ type()\ const;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ QVariant\ data\ (\textcolor{keywordtype}{int}\ column\ =\ DPC\_Name,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ const;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ setData\ (const\ QVariant\ \&data,\ \textcolor{keywordtype}{int}\ role\ =\ Qt::EditRole);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00087\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ paint(QPainter*,\ const\ QStyleOptionViewItem\&,\ const\ QModelIndex\&,\ const\ QAbstractItemDelegate*)\ const;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00094\ \ \ \ \ virtual\ QWidget\ *createEditor(QWidget\ *parent,\ const\ QStyleOptionViewItem\&,\ const\ QAbstractItemDelegate*);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ setEditorData(QWidget\ *editor);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ virtual\ QVariant\ getEditorData(const\ QWidget\ *editor)\ const;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00103\ \ \ \ \ virtual\ Qt::ItemFlags\ flags(\textcolor{keywordtype}{int}\ column\ =\ DPC\_Name)\ const;}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setValue(const\ QVariant\ \&value);}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ virtual\ QVariant\ getValue()\ const;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ virtual\ QString\ serialize()\ const;}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00115\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ deserialize(const\ QString\ \&value);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{comment}{//\ The\ following\ functions\ are\ experimental\ and\ not\ yet\ implemented.}}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{/*//!\ Returns\ a\ pointer\ to\ the\ data\ stored\ and\ handled\ by\ this\ property.\ In\ most\ cases\ this\ function\ shouldn't\ be}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ \ \ \ virtual\ void\ *getDataPointer();}}
+\DoxyCodeLine{00123\ \textcolor{comment}{}}
+\DoxyCodeLine{00127\ \textcolor{comment}{\ \ \ \ virtual\ bool\ setDataPointer(void\ *pointer);*/}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setName(const\ QString\ \&name);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \ \ \ \ virtual\ QString\ getName()\ const;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setDescription(const\ QString\ \&desc);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00139\ \ \ \ \ virtual\ QString\ getDescription()\ const;}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00142\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ addChild(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *child);}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00145\ \ \ \ \ virtual\ \mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*>\ \&getChildren();}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \ \ \ \ virtual\ const\ \mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*>\ \&getChildren()\ const;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00151\ \ \ \ \ virtual\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *getChild(\textcolor{keywordtype}{int}\ row)\ const;}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00154\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ getRowCount()\ const;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00157\ \ \ \ \ virtual\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *getParent()\ const;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00160\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setParent(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *parent);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00163\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ removeChild(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *child);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00166\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ getChildRow(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *child)\ const;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00169\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ getUpdateParent()\ const;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00172\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ getUpdateChildren()\ const;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00175\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setUpdateBehaviour(\textcolor{keywordtype}{bool}\ update\_parent,\ \textcolor{keywordtype}{bool}\ update\_children);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00179\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setSettings(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QVariant>\ \&settings);}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00182\ \ \ \ \ virtual\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QVariant>\ getSettings()\ const;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ setSetting(const\ QString\ \&key,\ const\ QVariant\ \&value);}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ virtual\ QVariant\ getSetting(const\ QString\ \&key)\ const;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ virtual\ QStringList\ getSettingKeys()\ const;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00198\ \ \ \ \ Q\_REQUIRED\_RESULT\ virtual\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *clone(\textcolor{keywordtype}{bool}\ include\_children\ =\ true,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *container\ =\ \textcolor{keywordtype}{nullptr})\ const;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}}\ propertyType()\ const;}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ setPropertyType(const\ \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}}\ \&type);}
+\DoxyCodeLine{00202\ }
+\DoxyCodeLine{00203\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ updateParent(const\ QVariant\ \&value);}
+\DoxyCodeLine{00204\ public\ slots:}
+\DoxyCodeLine{00205\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ childValueChanged(const\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ typeForParent);}
+\DoxyCodeLine{00206\ signals:}
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ childChanged(const\ QVariant\ \&value,\ \textcolor{keywordtype}{int}\ typeForParent);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ protected:}
+\DoxyCodeLine{00211\ \ \ \ \ explicit\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}}\ *d);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}}\ *d\_ptr;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ private:}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{comment}{//\ Provide\ access\ functions\ for\ the\ d\_ptr}}
+\DoxyCodeLine{00218\ \ \ \ \ Q\_DECLARE\_PRIVATE(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}})}
+\DoxyCodeLine{00219\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}})}
+\DoxyCodeLine{00220\ \};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \}}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTY\_H}}
+
+\end{DoxyCode}

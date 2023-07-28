@@ -1,0 +1,294 @@
+\hypertarget{class_v_p_e_1_1_v_property_form_view}{}\doxysection{VPE\+::VProperty\+Form\+View Class Reference}
+\label{class_v_p_e_1_1_v_property_form_view}\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+
+
+This class populates a form layout with the properties in a model.  
+
+
+
+
+{\ttfamily \#include $<$vpropertyformview.\+h$>$}
+
+Inheritance diagram for VPE\+::VProperty\+Form\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_p_e_1_1_v_property_form_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a82f2b48c99157b42ac60ac1f3023b4e9}{build}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Rebuilds the whole form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a453fb7974c458034b9207a547e3cc83a}{set\+Model}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_model}{VProperty\+Model}} $\ast$model)
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_acf29dbe181ee36d75065fb89c5e363ce}{set\+Property\+Set}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VProperty\+Set}} $\ast$property\+\_\+set)
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a5744bf971f86849c18fd31c79dfd52ce}{rows\+Removed}} (const QModel\+Index \&parent, int start, int end)
+\begin{DoxyCompactList}\small\item\em Called when a row gets removed in the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a0918d15ef828f48a86306ffbd0fb8c78}{rows\+Inserted}} (const QModel\+Index \&parent, int start, int end)
+\begin{DoxyCompactList}\small\item\em Called when a new row is being inserted into the model. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a88936ad9ceca5d62157ef8cbba4daca9}{model\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em Called when the model is being reset. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a45cffa681e72e4aeafbbf07a27d4aba4}{build}} ()
+\begin{DoxyCompactList}\small\item\em Rebuilds the whole form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a8c85969729790ffd139e8ab06227c99d}{build\+Editor}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$property, QForm\+Layout $\ast$form\+Layout, \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}} type=\mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaa1fbb1e3943c2c6c560247ac8f9289780}{Property\+::\+Simple}})
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_ad8406af707fd345d94a8a53e10c98f8a}{commit\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Reads the data from the editors and commits it to the properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a4d97599340d6cd555cf1376335b61115}{load\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Refills the editors with the propertie\textquotesingle{}s data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a4cf362097ae6bbaea54da301fe822ce5}{commit\+Data}} (int row)
+\begin{DoxyCompactList}\small\item\em Reads the data from row\textquotesingle{}th editor and commits it to the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_ae6a013277f90d6f02a8c4a57a63a0abb}{load\+Data}} (int row)
+\begin{DoxyCompactList}\small\item\em Reads the data from row\textquotesingle{}th property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a0bc422c3541313fa6813b4ae85117308}{set\+Commit\+Behaviour}} (bool auto\+\_\+commit=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a9eeddec2a861daaae9f7c7430f598ddb}{VProperty\+Form\+View}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a22aba96ea200d92281015f5c8d02e5c9}{VProperty\+Form\+View}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_model}{VProperty\+Model}} $\ast$model, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a82878a20664e6540bbba16f1d14689cd}{VProperty\+Form\+View}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VProperty\+Set}} $\ast$property\+\_\+set, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a09479898e7b749f2a145745e38910b61}{$\sim$\+VProperty\+Form\+View}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a273212d2595e89319276554873346b87}{VProperty\+Form\+Widget}} (const QString \&title, const QString \&description, const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ $>$ \&properties, QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a5e9862b8c3b58e881f80a9dc9e3d4e4c}{VProperty\+Form\+Widget}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$parent\+\_\+property, QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a69692735259b3867996bc32a26acbc10}{$\sim$\+VProperty\+Form\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VProperty\+Form\+Widget}} $\ast$ $>$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a20854849733f463d31013f8bc19636b9}{get\+Child\+Property\+Form\+Widgets}} () const
+\begin{DoxyCompactList}\small\item\em Returns a list of all child property form widgets (note that indirect children will not be in the list) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a1fe1f93d0e721d2de9a8311030ccf8f6}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_af24ea6de9fd618ec518daebad7d3efaf}{update\+Property\+List}} ()
+\begin{DoxyCompactList}\small\item\em Rebuilds the widegt only if it is visible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a755894f381c77fd9066e23695543a711}{remove\+Model\+And\+Set}} ()
+\begin{DoxyCompactList}\small\item\em Removes the model and property set if they were set. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a3b3dec9cfc8eabcd362ba33285bf71ab}{connect\+Property\+Form\+Widget}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VProperty\+Form\+Widget}} $\ast$widget)
+\begin{DoxyCompactList}\small\item\em Function to handle newly created VProperty\+Widgets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_adfc9a67bc5955abfb1e957b6ec32c759}{VProperty\+Form\+Widget}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}} $\ast$d\+\_\+pointer, QWidget $\ast$parent, const QString \&title=QString(), const QString \&description=QString())
+\begin{DoxyCompactList}\small\item\em Protected Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_af6886a0b3343d081d57353a610414575}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event)
+\begin{DoxyCompactList}\small\item\em Event filter for the editor widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_aaf7e93a48858ef2f610bb55fc3fc532d}{commit\+Data}} (const QWidget $\ast$editor)
+\begin{DoxyCompactList}\small\item\em Commits data of an editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a48d9df42c5daa66f38b39878ca548fb7}{model\+Destroyed}} ()
+\begin{DoxyCompactList}\small\item\em Called, when the model gets destroyed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a622dc52ba352855b838f85a12674d76f}{data\+Changed}} (const QModel\+Index \&top\+\_\+left, const QModel\+Index \&bottom\+\_\+right)
+\begin{DoxyCompactList}\small\item\em Called when data in the model gets changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_view_a2e0cbbb1bf1f00fa6bdd328b57c970cb}{data\+Submitted}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$property)
+\begin{DoxyCompactList}\small\item\em Updates the model when data was submitted by the view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a03e2b0d69cd404006dd866ad4c7277ef}{property\+Data\+Submitted}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$property)
+\begin{DoxyCompactList}\small\item\em Emitted whenever a property data changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a21bca61d5c00aed381943633562ebee9}{d\+\_\+ptr}}
+\begin{DoxyCompactList}\small\item\em The protected data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class populates a form layout with the properties in a model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a9eeddec2a861daaae9f7c7430f598ddb}\label{class_v_p_e_1_1_v_property_form_view_a9eeddec2a861daaae9f7c7430f598ddb}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!VPropertyFormView@{VPropertyFormView}}
+\index{VPropertyFormView@{VPropertyFormView}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormView()}{VPropertyFormView()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+View\+::\+VProperty\+Form\+View (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a22aba96ea200d92281015f5c8d02e5c9}\label{class_v_p_e_1_1_v_property_form_view_a22aba96ea200d92281015f5c8d02e5c9}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!VPropertyFormView@{VPropertyFormView}}
+\index{VPropertyFormView@{VPropertyFormView}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormView()}{VPropertyFormView()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+View\+::\+VProperty\+Form\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_model}{VProperty\+Model}} $\ast$}]{model,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a82878a20664e6540bbba16f1d14689cd}\label{class_v_p_e_1_1_v_property_form_view_a82878a20664e6540bbba16f1d14689cd}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!VPropertyFormView@{VPropertyFormView}}
+\index{VPropertyFormView@{VPropertyFormView}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormView()}{VPropertyFormView()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+View\+::\+VProperty\+Form\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VProperty\+Set}} $\ast$}]{property\+\_\+set,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a09479898e7b749f2a145745e38910b61}\label{class_v_p_e_1_1_v_property_form_view_a09479898e7b749f2a145745e38910b61}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!````~VPropertyFormView@{$\sim$VPropertyFormView}}
+\index{````~VPropertyFormView@{$\sim$VPropertyFormView}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPropertyFormView()}{~VPropertyFormView()}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+View\+::$\sim$\+VProperty\+Form\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a82f2b48c99157b42ac60ac1f3023b4e9}\label{class_v_p_e_1_1_v_property_form_view_a82f2b48c99157b42ac60ac1f3023b4e9}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!build@{build}}
+\index{build@{build}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{build}{build}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Rebuilds the whole form. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a3b3dec9cfc8eabcd362ba33285bf71ab}\label{class_v_p_e_1_1_v_property_form_view_a3b3dec9cfc8eabcd362ba33285bf71ab}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!connectPropertyFormWidget@{connectPropertyFormWidget}}
+\index{connectPropertyFormWidget@{connectPropertyFormWidget}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{connectPropertyFormWidget()}{connectPropertyFormWidget()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::connect\+Property\+Form\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VProperty\+Form\+Widget}} $\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Function to handle newly created VProperty\+Widgets. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a622dc52ba352855b838f85a12674d76f}\label{class_v_p_e_1_1_v_property_form_view_a622dc52ba352855b838f85a12674d76f}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!dataChanged@{dataChanged}}
+\index{dataChanged@{dataChanged}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{dataChanged}{dataChanged}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::data\+Changed (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{top\+\_\+left,  }\item[{const QModel\+Index \&}]{bottom\+\_\+right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Called when data in the model gets changed. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a2e0cbbb1bf1f00fa6bdd328b57c970cb}\label{class_v_p_e_1_1_v_property_form_view_a2e0cbbb1bf1f00fa6bdd328b57c970cb}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!dataSubmitted@{dataSubmitted}}
+\index{dataSubmitted@{dataSubmitted}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{dataSubmitted}{dataSubmitted}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::data\+Submitted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Updates the model when data was submitted by the view. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a48d9df42c5daa66f38b39878ca548fb7}\label{class_v_p_e_1_1_v_property_form_view_a48d9df42c5daa66f38b39878ca548fb7}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!modelDestroyed@{modelDestroyed}}
+\index{modelDestroyed@{modelDestroyed}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{modelDestroyed}{modelDestroyed}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::model\+Destroyed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+Called, when the model gets destroyed. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a88936ad9ceca5d62157ef8cbba4daca9}\label{class_v_p_e_1_1_v_property_form_view_a88936ad9ceca5d62157ef8cbba4daca9}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!modelReset@{modelReset}}
+\index{modelReset@{modelReset}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{modelReset}{modelReset}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::model\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Called when the model is being reset. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a755894f381c77fd9066e23695543a711}\label{class_v_p_e_1_1_v_property_form_view_a755894f381c77fd9066e23695543a711}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!removeModelAndSet@{removeModelAndSet}}
+\index{removeModelAndSet@{removeModelAndSet}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{removeModelAndSet()}{removeModelAndSet()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::remove\+Model\+And\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Removes the model and property set if they were set. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a0918d15ef828f48a86306ffbd0fb8c78}\label{class_v_p_e_1_1_v_property_form_view_a0918d15ef828f48a86306ffbd0fb8c78}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!rowsInserted@{rowsInserted}}
+\index{rowsInserted@{rowsInserted}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{rowsInserted}{rowsInserted}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::rows\+Inserted (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Called when a new row is being inserted into the model. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a5744bf971f86849c18fd31c79dfd52ce}\label{class_v_p_e_1_1_v_property_form_view_a5744bf971f86849c18fd31c79dfd52ce}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!rowsRemoved@{rowsRemoved}}
+\index{rowsRemoved@{rowsRemoved}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{rowsRemoved}{rowsRemoved}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::rows\+Removed (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Called when a row gets removed in the model. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a453fb7974c458034b9207a547e3cc83a}\label{class_v_p_e_1_1_v_property_form_view_a453fb7974c458034b9207a547e3cc83a}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!setModel@{setModel}}
+\index{setModel@{setModel}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{setModel}{setModel}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::set\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_model}{VProperty\+Model}} $\ast$}]{model }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set the source model. Leads to the rebuild of the form 
+\begin{DoxyParams}{Parameters}
+{\em model} & The model to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_acf29dbe181ee36d75065fb89c5e363ce}\label{class_v_p_e_1_1_v_property_form_view_acf29dbe181ee36d75065fb89c5e363ce}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!setPropertySet@{setPropertySet}}
+\index{setPropertySet@{setPropertySet}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{setPropertySet}{setPropertySet}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::set\+Property\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VProperty\+Set}} $\ast$}]{property\+\_\+set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Set the property set to use. Note that if using a property set directly, adding and removing properties to the property set leads to undifined behaviour for the property set misses notification signals. 
+\begin{DoxyParams}{Parameters}
+{\em property\+\_\+set} & The property set to use \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_a1fe1f93d0e721d2de9a8311030ccf8f6}\label{class_v_p_e_1_1_v_property_form_view_a1fe1f93d0e721d2de9a8311030ccf8f6}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_view_af24ea6de9fd618ec518daebad7d3efaf}\label{class_v_p_e_1_1_v_property_form_view_af24ea6de9fd618ec518daebad7d3efaf}} 
+\index{VPE::VPropertyFormView@{VPE::VPropertyFormView}!updatePropertyList@{updatePropertyList}}
+\index{updatePropertyList@{updatePropertyList}!VPE::VPropertyFormView@{VPE::VPropertyFormView}}
+\doxysubsubsection{\texorpdfstring{updatePropertyList()}{updatePropertyList()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+View\+::update\+Property\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Rebuilds the widegt only if it is visible. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertyformview_8h}{vpropertyformview.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertyformview_8cpp}{vpropertyformview.\+cpp}}\end{DoxyCompactItemize}

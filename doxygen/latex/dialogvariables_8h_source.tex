@@ -1,0 +1,159 @@
+\hypertarget{dialogvariables_8h_source}{}\doxysection{dialogvariables.\+h}
+\label{dialogvariables_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogvariables.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogvariables.h}}
+\mbox{\hyperlink{dialogvariables_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogvariables.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOG\_VARIABLES\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOG\_VARIABLES\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}../vtools/dialogs/tools/dialogtool.h"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../xml/vpattern.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vtablesearch.h"{}}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QPair>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }VIndividualMeasurements;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_variables}{DialogVariables}};}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_variables}{DialogVariables}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables}{DialogVariables}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_variables_aa975d4c8d9d8a5079f0b0aaba6f19fd1}{data}},\ \mbox{\hyperlink{class_v_pattern}{VPattern}}\ *\mbox{\hyperlink{class_dialog_variables_a3a31a3aa66f65d99ce8bfae8a6330156}{doc}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a7657d2b0b0d5716b498c18d69f7f6aab}{\string~DialogVariables}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ signals:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_af2f1e4de857b953d992986692342c5fc}{updateProperties}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a33d9a602203e0d5d84afe4bcd25f8bdc}{closeEvent}}\ (\ QCloseEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a3d8e83dedc884152e44611a8c974540b}{changeEvent}}\ (\ QEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_acc6801eaaaa0fee80cb60a4d58fe4d94}{eventFilter}}(QObject\ *\textcolor{keywordtype}{object},\ QEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_af3d3dc7fcf94aa5607f1b7287e473c43}{showEvent}}(\ QShowEvent\ *event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_aa695d609494cfbf4b602572ed1643e43}{resizeEvent}}(QResizeEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_ac6d0dc039c329fad6bc700bab1bf2756}{showCustomVariableDetails}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_ade58646965cfde93c8534d484c4dcdc9}{filterVariables}}(\textcolor{keyword}{const}\ QString\ \&filterString);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a157e2c5efa8ec9dc125db934ba9f333c}{addCustomVariable}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a7c42f251163cb27927b5a97c966126e6}{removeCustomVariable}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a7e05b66606150c4d9c5ad5d2d58d783d}{moveUp}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a133bfd8d874c1037f0ba12dfe5b0733e}{moveDown}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a10f612ecd76f22313237b9d0232708d3}{saveCustomVariableName}}(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a3b240e41ef3bfff7656e5802739bb702}{saveCustomVariableDescription}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a5225facf7c66ec63ee374b8db6334e66}{saveCustomVariableFormula}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a1a5748475ddaf8ea1331f11b0595b204}{Fx}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a91604cc428183614e6894b318ea7e5db}{FullUpdateFromFile}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_acdf4239a4ba07d9ff2bb3236a6844b54}{refreshPattern}}();}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00104\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_variables}{DialogVariables}})}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_variables}{DialogVariables}}\ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_variables_a894878f6cf9ad6d89f285822d150f192}{ui}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_variables_aa975d4c8d9d8a5079f0b0aaba6f19fd1}{data}};\ \textcolor{comment}{//\ need\ because\ we\ must\ change\ data\ //-\/V703}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_v_pattern}{VPattern}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_variables_a3a31a3aa66f65d99ce8bfae8a6330156}{doc}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a7251acefe1ab7e151b5348cd06ab7218}{formulaBaseHeight}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a250465c482d21edb403d292c497c51c6}{hasChanges}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<QPair<QString,\ QString>>\ \mbox{\hyperlink{class_dialog_variables_a775037198c18b3a7aa63bd15bf69691d}{renameList}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<QTableWidget>>\ \mbox{\hyperlink{class_dialog_variables_a1324058eed98ab9bd872606465516dfb}{tableList}};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_aa9375d99026c96d200e104d26183cf23}{isSorted}};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_af0a8d070aa9a9947480c890b0882d64e}{isFiltered}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a5e578a03bfb98adec86f1c993f2fe86b}{fillTable}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ T>\ \&varTable,\ QTableWidget\ *table);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a2e8b7bf08e8ba705c2b9359aba2288db}{fillCustomVariables}}(\textcolor{keywordtype}{bool}\ freshCall\ =\ false);}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a8235653b955ed78fafb6d29865903e69}{fillLineLengths}}();}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a7f282dbd16076b28d3f6a343f1545ddc}{fillLineAngles}}();}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_aab3fcbc9b08b4e636af604a485e3aa14}{fillCurveLengths}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a1aac4bd67049ed766366f74bf5be23e6}{fillControlPointLengths}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_ae6106d50aab21530253f5fef6365961a}{fillArcsRadiuses}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a484ad90fdd0f75a1613afc93c24b4ba3}{fillCurveAngles}}();}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_acbcd9bffca7884ed2afbf02933932ae9}{showUnits}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a6c8e4078ba28a1a44467b04b6db6f6a1}{showHeaderUnits}}(QTableWidget\ *table,\ \textcolor{keywordtype}{int}\ column,\ const\ QString\ \&unit);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_ad85154c22a72b66b6455477ec61c3bfa}{addCell}}(QTableWidget\ *table,\ const\ QString\ \&text,\ \textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column,}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ aligment,\ \textcolor{keywordtype}{bool}\ ok\ =\ true);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a28aa5b51eedfd5b4e839bcbc75f1b589}{getCustomVariableName}}()\ const;}
+\DoxyCodeLine{00144\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a16c2a3e4cdb0c89132c50cafc4cfaa7f}{clearCustomVariableName}}(const\ QString\ \&name)\ const;}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_aecc2282b126423278f8d4d95d3f06239}{evalVariableFormula}}(const\ QString\ \&formula,\ \textcolor{keywordtype}{bool}\ fromUser,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_variables_aa975d4c8d9d8a5079f0b0aaba6f19fd1}{data}},\ QLabel\ *label);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_aab8dc75bbeb6ead3a8a12a55312abe8e}{setMoveControls}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a3b49fb481e81aa7fe83d7a9f2d91006b}{enablePieces}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a5854e72c3a398a07f2899194ae3bccbb}{localUpdateTree}}();}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_ab84fe7766be3cb96a796b272a611c473}{variableUsed}}(const\ QString\ \&name)\ const;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_variables_a8a565b3ea81b1bf1d505114183c66138}{renameCache}}(const\ QString\ \&name,\ const\ QString\ \&newName);}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOG\_VARIABLES\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,108 @@
+\hypertarget{dialogdatetimeformats_8h_source}{}\doxysection{dialogdatetimeformats.\+h}
+\label{dialogdatetimeformats_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogdatetimeformats.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogdatetimeformats.h}}
+\mbox{\hyperlink{dialogdatetimeformats_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogdatetimeformats.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 19\ 8,\ 2017}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGDATETIMEFORMATS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGDATETIMEFORMATS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QDate>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QTime>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}};}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }QListWidgetItem;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}}(\textcolor{keyword}{const}\ QDate\ \&date,\ \textcolor{keyword}{const}\ QStringList\ \&predefinedFormats,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QStringList\ \&userDefinedFormats,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}}(\textcolor{keyword}{const}\ QTime\ \&time,\ \textcolor{keyword}{const}\ QStringList\ \&predefinedFormats,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QStringList\ \&userDefinedFormats,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dialog_date_time_formats_ad50b597c27353ceae0716b61d148cce9}{\string~DialogDateTimeFormats}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_dialog_date_time_formats_abf885514df1ad0cc027205fa02d7c9e7}{GetFormats}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_a1b4dea3f69278f8cb13434f422a88693}{AddLine}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_aeab739ed68c059cfae7cf89b01becc82}{RemoveLine}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_ad9cb605d75d5491c365d79ea9642551d}{SaveFormat}}(\textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_a190ff8c54d5bf246ddaa3f4df3e40d59}{ShowFormatDetails}}();}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}})}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_date_time_formats}{DialogDateTimeFormats}}\ *\mbox{\hyperlink{class_dialog_date_time_formats_a4e7cc2c9e508f04caa414bb60abda4db}{ui}};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{class_dialog_date_time_formats_ab6cc657d415cb8682a08168bcaf7b2aa}{m\_dateMode}};}
+\DoxyCodeLine{00089\ \ \ \ \ QDate\ \mbox{\hyperlink{class_dialog_date_time_formats_a28d287ace0456b7357b3ca8f35cbede2}{m\_date}};}
+\DoxyCodeLine{00090\ \ \ \ \ QTime\ \mbox{\hyperlink{class_dialog_date_time_formats_af30a83f2d4b6bb3e03d1b4f86fcdbaf1}{m\_time}};}
+\DoxyCodeLine{00091\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_dialog_date_time_formats_a84c27dd9219b8f8a3bb54e497d891ae2}{m\_predefined}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e}{Init}}(const\ QStringList\ \&predefined,\ const\ QStringList\ \&userDefined);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_a2833de63cc7b52f448650e352285d3e3}{SetFormatLines}}(const\ QStringList\ \&predefined,\ const\ QStringList\ \&userDefined);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_date_time_formats_af21accebe54693568421c663efb9b281}{SetupControls}}();}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_date_time_formats_a2d1d451f406df98f12495c995d61d26f}{IsPredefined}}()\ const;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ QListWidgetItem\ *\mbox{\hyperlink{class_dialog_date_time_formats_ab18b795ace9497d8d4edd94e60308de4}{AddListLine}}(const\ QString\ \&format);}
+\DoxyCodeLine{00100\ \};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGDATETIMEFORMATS\_H}}
+
+\end{DoxyCode}

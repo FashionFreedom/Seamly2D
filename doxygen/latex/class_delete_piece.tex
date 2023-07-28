@@ -1,0 +1,138 @@
+\hypertarget{class_delete_piece}{}\doxysection{Delete\+Piece Class Reference}
+\label{class_delete_piece}\index{DeletePiece@{DeletePiece}}
+
+
+{\ttfamily \#include $<$deletepiece.\+h$>$}
+
+Inheritance diagram for Delete\+Piece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_delete_piece}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_delete_piece_a7ec7d29a3c971eb852f4983e6e876743}{Delete\+Piece}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, quint32 id, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_delete_piece_a4f1c38adb50cb75fcc77b758afd8512c}{$\sim$\+Delete\+Piece}} ()
+\item 
+virtual void \mbox{\hyperlink{class_delete_piece_aff48d472b5f6ed357055d79e3c195a8f}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_delete_piece_a53355c23552c20d7c320b18cda1149ae}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Node \mbox{\hyperlink{class_delete_piece_a4015caf51248be0c942f2e239fe369d5}{m\+\_\+parent\+Node}}
+\item 
+quint32 \mbox{\hyperlink{class_delete_piece_a2323caf46a3b3646bff7614ca74f147f}{m\+\_\+sibling\+Id}}
+\item 
+\mbox{\hyperlink{class_v_piece}{VPiece}} \mbox{\hyperlink{class_delete_piece_a49c9dfd47b87a36bf862e97eb78a5ab5}{m\+\_\+piece}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_delete_piece_a7ec7d29a3c971eb852f4983e6e876743}\label{class_delete_piece_a7ec7d29a3c971eb852f4983e6e876743}} 
+\index{DeletePiece@{DeletePiece}!DeletePiece@{DeletePiece}}
+\index{DeletePiece@{DeletePiece}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{DeletePiece()}{DeletePiece()}}
+{\footnotesize\ttfamily Delete\+Piece\+::\+Delete\+Piece (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_delete_piece_a4f1c38adb50cb75fcc77b758afd8512c}\label{class_delete_piece_a4f1c38adb50cb75fcc77b758afd8512c}} 
+\index{DeletePiece@{DeletePiece}!````~DeletePiece@{$\sim$DeletePiece}}
+\index{````~DeletePiece@{$\sim$DeletePiece}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{$\sim$DeletePiece()}{~DeletePiece()}}
+{\footnotesize\ttfamily Delete\+Piece\+::$\sim$\+Delete\+Piece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_delete_piece_a53355c23552c20d7c320b18cda1149ae}\label{class_delete_piece_a53355c23552c20d7c320b18cda1149ae}} 
+\index{DeletePiece@{DeletePiece}!redo@{redo}}
+\index{redo@{redo}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Delete\+Piece\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_delete_piece_aff48d472b5f6ed357055d79e3c195a8f}\label{class_delete_piece_aff48d472b5f6ed357055d79e3c195a8f}} 
+\index{DeletePiece@{DeletePiece}!undo@{undo}}
+\index{undo@{undo}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Delete\+Piece\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_delete_piece_a4015caf51248be0c942f2e239fe369d5}\label{class_delete_piece_a4015caf51248be0c942f2e239fe369d5}} 
+\index{DeletePiece@{DeletePiece}!m\_parentNode@{m\_parentNode}}
+\index{m\_parentNode@{m\_parentNode}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{m\_parentNode}{m\_parentNode}}
+{\footnotesize\ttfamily QDom\+Node Delete\+Piece\+::m\+\_\+parent\+Node\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_delete_piece_a49c9dfd47b87a36bf862e97eb78a5ab5}\label{class_delete_piece_a49c9dfd47b87a36bf862e97eb78a5ab5}} 
+\index{DeletePiece@{DeletePiece}!m\_piece@{m\_piece}}
+\index{m\_piece@{m\_piece}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{m\_piece}{m\_piece}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece}{VPiece}} Delete\+Piece\+::m\+\_\+piece\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_delete_piece_a2323caf46a3b3646bff7614ca74f147f}\label{class_delete_piece_a2323caf46a3b3646bff7614ca74f147f}} 
+\index{DeletePiece@{DeletePiece}!m\_siblingId@{m\_siblingId}}
+\index{m\_siblingId@{m\_siblingId}!DeletePiece@{DeletePiece}}
+\doxysubsubsection{\texorpdfstring{m\_siblingId}{m\_siblingId}}
+{\footnotesize\ttfamily quint32 Delete\+Piece\+::m\+\_\+sibling\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{deletepiece_8h}{deletepiece.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{deletepiece_8cpp}{deletepiece.\+cpp}}\end{DoxyCompactItemize}

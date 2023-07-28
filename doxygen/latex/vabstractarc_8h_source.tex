@@ -1,0 +1,131 @@
+\hypertarget{vabstractarc_8h_source}{}\doxysection{vabstractarc.\+h}
+\label{vabstractarc_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vabstractarc.h@{D:/Github/Seamly2D/src/libs/vgeometry/vabstractarc.h}}
+\mbox{\hyperlink{vabstractarc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractarc.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 10\ 4,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTARC\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VABSTRACTARC\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractcurve_8h}{vabstractcurve.h}}"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgeometrydef_8h}{vgeometrydef.h}}"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_arc_data}{VAbstractArcData}};}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_point_f}{VPointF}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ quint32\ \&idObject\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \&mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ f1,\ \textcolor{keyword}{const}\ QString\ \&formulaF1,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ f2,\ \textcolor{keyword}{const}\ QString\ \&formulaF2,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ f1,\ qreal\ f2,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ QString\ \&formulaLength,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ f1,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaF1,\ quint32\ idObject\ =\ 0,\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ f1,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \&arc);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_ae930d749a318dac397bd6cdc01ee6ba2}{\string~VAbstractArc}}();}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \ \ \ \&\mbox{\hyperlink{class_v_abstract_arc_a674d67a55cec2d3a007d11f21fdc7ba7}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \&arc);}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \ \ \ \&\mbox{\hyperlink{class_v_abstract_arc_a674d67a55cec2d3a007d11f21fdc7ba7}{operator=}}(\mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \&\&arc)\ Q\_DECL\_NOTHROW\ ;}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a44db3860e3e434e7a9d11cacfcbf0cec}{Swap}}(\mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}\ \&arc)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a65b67ba76e336759486e42a74c910071}{GetFormulaF1}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_ae5dfd7b02c0f36bf9c7d7af9b0956606}{SetFormulaF1}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_acc753166626bcbf5048b5e2bc011f95d}{GetStartAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a8730c298e968a05f12f649b301ca0c48}{GetFormulaF2}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_abae946f3ed2a79ab51d557456324c7d0}{SetFormulaF2}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_ac6b7fc4629f7c510afa73a5f5b67ba4e}{GetEndAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \mbox{\hyperlink{class_v_abstract_arc_a5690addc078afdf9159cf716b311d702}{GetCenter}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a7559be900935ccaa12357076ce05b807}{SetCenter}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a752c9324a59f6b2ebb54d18ad04b1952}{GetFormulaLength}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_ac48e0d7dfc2eec62cf70c41c9efa234f}{SetFormulaLength}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a9aa2bba3798c4ca6c6b1ae7d43e6e13f}{setId}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \ \mbox{\hyperlink{class_v_abstract_arc_a59ed646c0211f12d8a090d431d9bf5bf}{NameForHistory}}(\textcolor{keyword}{const}\ QString\ \&toolName)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_afad394dead5f91806c20cbe84e00f31e}{IsFlipped}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a185fc118424032fc8df0dd36c5d6619a}{AngleArc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_afe862f50e5d74694f2232029a3b8b189}{SetFlipped}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_a81b9fecb937d24bc6ad768f0e078eba2}{FindF2}}(qreal\ length)=0;}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_arc_ac48e0d7dfc2eec62cf70c41c9efa234f}{SetFormulaLength}}(\textcolor{keyword}{const}\ QString\ \&formula);}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00122\ \ \ \ \ QSharedDataPointer<VAbstractArcData>\ \mbox{\hyperlink{class_v_abstract_arc_a2d914f3405e491e19700f71c0496e39e}{d}};}
+\DoxyCodeLine{00123\ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTARC\_H}}
+
+\end{DoxyCode}

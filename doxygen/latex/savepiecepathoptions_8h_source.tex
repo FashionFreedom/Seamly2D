@@ -1,0 +1,88 @@
+\hypertarget{savepiecepathoptions_8h_source}{}\doxysection{savepiecepathoptions.\+h}
+\label{savepiecepathoptions_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/savepiecepathoptions.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/savepiecepathoptions.h}}
+\mbox{\hyperlink{savepiecepathoptions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 26\ 11,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ SAVEPIECEPATHOPTIONS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ SAVEPIECEPATHOPTIONS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vpiecepath.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vundocommand_8h}{vundocommand.h}}"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save_piece_path_options}{SavePiecePathOptions}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{class_save_piece_path_options}{SavePiecePathOptions}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&oldPath,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&newPath,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ quint32\ \textcolor{keywordtype}{id},\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_save_piece_path_options_af847b540978a07a6f52a27459ec54d8b}{\string~SavePiecePathOptions}}();}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_piece_path_options_a41bf086faa7ab9dc93bd86158616f55e}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_piece_path_options_a1d116357404d31a6218ad3fbf6412c12}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_save_piece_path_options_a4aecf20ac7c3201c30ce2e72fde88c73}{mergeWith}}(\textcolor{keyword}{const}\ QUndoCommand\ *command)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_save_piece_path_options_a8a6f34f372106a15ee7a7a6a41e1973f}{id}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_save_piece_path_options_a75235b15378d41717d5ab7ff52498e32}{PathId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \mbox{\hyperlink{class_save_piece_path_options_aa8a7cc3748d44f89c511f73ce5f21e66}{NewPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_save_piece_path_options}{SavePiecePathOptions}})}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ const\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \mbox{\hyperlink{class_save_piece_path_options_a1f6f4b6ff06bbeddd9044c4c9bffa116}{m\_oldPath}};}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \mbox{\hyperlink{class_save_piece_path_options_ac58702d8ad8b7b393660857239bd46f7}{m\_newPath}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_save_piece_path_options_ac948aff489a71f05fd128b1dc916dda7}{m\_data}};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SAVEPIECEPATHOPTIONS\_H}}
+
+\end{DoxyCode}

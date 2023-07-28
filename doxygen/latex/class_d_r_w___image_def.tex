@@ -1,0 +1,176 @@
+\hypertarget{class_d_r_w___image_def}{}\doxysection{DRW\+\_\+\+Image\+Def Class Reference}
+\label{class_d_r_w___image_def}\index{DRW\_ImageDef@{DRW\_ImageDef}}
+
+
+Class to handle imagedef entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+objects.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Image\+Def\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_r_w___image_def}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___image_def_a145b198d094ea9eb973f7b02e7bc6469}{DRW\+\_\+\+Image\+Def}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___image_def_a54221b6ed84aeb2a647a1566f5d27b9a}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}{DRW\+\_\+\+Table\+Entry}} ()
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}{$\sim$\+DRW\+\_\+\+Table\+Entry}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}{DRW\+\_\+\+Table\+Entry}} (const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___image_def_a2cf47fc9229e6ed55dc72d443c531f12}{file\+Name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___image_def_a96b27edd5abbe7d585f217d3350309e2}{img\+Version}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___image_def_afe11ccfebf55c9ec07a92cda8f09d98c}{u}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___image_def_a25c16e07b7d0887cf71f4d276b58217c}{v}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___image_def_ad33a25f477e0448bae9a74fc902efafc}{up}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___image_def_a95e92947b72818845b6cd9fe0c9add8a}{vp}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___image_def_a2265a01592e1b25b1a4c6294423f76f6}{loaded}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___image_def_a4bc6163d679744d2f58c00cb5d6573b0}{resolution}}
+\item 
+std\+::map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{class_d_r_w___image_def_a1eb3fc88725115a6ca8f575895bbbb66}{reactors}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}} \mbox{\hyperlink{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}{t\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}{handle}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}{name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}{flags}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___image_def_a848d212c260acaf32bd2883292667e4a}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Base class for tables entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}{reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle imagedef entries. 
+
+Class to handle image definitions object entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___image_def_a145b198d094ea9eb973f7b02e7bc6469}\label{class_d_r_w___image_def_a145b198d094ea9eb973f7b02e7bc6469}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!DRW\_ImageDef@{DRW\_ImageDef}}
+\index{DRW\_ImageDef@{DRW\_ImageDef}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{DRW\_ImageDef()}{DRW\_ImageDef()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Image\+Def\+::\+DRW\+\_\+\+Image\+Def (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___image_def_a848d212c260acaf32bd2883292667e4a}\label{class_d_r_w___image_def_a848d212c260acaf32bd2883292667e4a}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Image\+Def\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_d_r_w___image_def_a54221b6ed84aeb2a647a1566f5d27b9a}\label{class_d_r_w___image_def_a54221b6ed84aeb2a647a1566f5d27b9a}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!reset@{reset}}
+\index{reset@{reset}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Image\+Def\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___image_def_a2cf47fc9229e6ed55dc72d443c531f12}\label{class_d_r_w___image_def_a2cf47fc9229e6ed55dc72d443c531f12}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!fileName@{fileName}}
+\index{fileName@{fileName}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Image\+Def\+::file\+Name}
+
+File name of image, code 1 \mbox{\Hypertarget{class_d_r_w___image_def_a96b27edd5abbe7d585f217d3350309e2}\label{class_d_r_w___image_def_a96b27edd5abbe7d585f217d3350309e2}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!imgVersion@{imgVersion}}
+\index{imgVersion@{imgVersion}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{imgVersion}{imgVersion}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Image\+Def\+::img\+Version}
+
+class version, code 90, 0=R14 version \mbox{\Hypertarget{class_d_r_w___image_def_a2265a01592e1b25b1a4c6294423f76f6}\label{class_d_r_w___image_def_a2265a01592e1b25b1a4c6294423f76f6}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!loaded@{loaded}}
+\index{loaded@{loaded}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{loaded}{loaded}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Image\+Def\+::loaded}
+
+image is loaded flag, code 280, 0=unloaded, 1=loaded \mbox{\Hypertarget{class_d_r_w___image_def_a1eb3fc88725115a6ca8f575895bbbb66}\label{class_d_r_w___image_def_a1eb3fc88725115a6ca8f575895bbbb66}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!reactors@{reactors}}
+\index{reactors@{reactors}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{reactors}{reactors}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string,std\+::string$>$ DRW\+\_\+\+Image\+Def\+::reactors}
+
+\mbox{\Hypertarget{class_d_r_w___image_def_a4bc6163d679744d2f58c00cb5d6573b0}\label{class_d_r_w___image_def_a4bc6163d679744d2f58c00cb5d6573b0}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!resolution@{resolution}}
+\index{resolution@{resolution}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{resolution}{resolution}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Image\+Def\+::resolution}
+
+resolution units, code 281, 0=no, 2=centimeters, 5=inch \mbox{\Hypertarget{class_d_r_w___image_def_afe11ccfebf55c9ec07a92cda8f09d98c}\label{class_d_r_w___image_def_afe11ccfebf55c9ec07a92cda8f09d98c}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!u@{u}}
+\index{u@{u}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{u}{u}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Image\+Def\+::u}
+
+image size in pixels U value, code 10 \mbox{\Hypertarget{class_d_r_w___image_def_ad33a25f477e0448bae9a74fc902efafc}\label{class_d_r_w___image_def_ad33a25f477e0448bae9a74fc902efafc}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!up@{up}}
+\index{up@{up}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Image\+Def\+::up}
+
+default size of one pixel U value, code 11 \mbox{\Hypertarget{class_d_r_w___image_def_a25c16e07b7d0887cf71f4d276b58217c}\label{class_d_r_w___image_def_a25c16e07b7d0887cf71f4d276b58217c}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!v@{v}}
+\index{v@{v}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{v}{v}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Image\+Def\+::v}
+
+image size in pixels V value, code 20 \mbox{\Hypertarget{class_d_r_w___image_def_a95e92947b72818845b6cd9fe0c9add8a}\label{class_d_r_w___image_def_a95e92947b72818845b6cd9fe0c9add8a}} 
+\index{DRW\_ImageDef@{DRW\_ImageDef}!vp@{vp}}
+\index{vp@{vp}!DRW\_ImageDef@{DRW\_ImageDef}}
+\doxysubsubsection{\texorpdfstring{vp}{vp}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Image\+Def\+::vp}
+
+default size of one pixel V value, code 12 really is 21 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8h}{drw\+\_\+objects.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8cpp}{drw\+\_\+objects.\+cpp}}\end{DoxyCompactItemize}

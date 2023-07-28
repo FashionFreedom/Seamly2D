@@ -1,0 +1,143 @@
+\hypertarget{vabstractcurve_8h_source}{}\doxysection{vabstractcurve.\+h}
+\label{vabstractcurve_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vabstractcurve.h@{D:/Github/Seamly2D/src/libs/vgeometry/vabstractcurve.h}}
+\mbox{\hyperlink{vabstractcurve_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ vabstractcurve.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 21\ Mar,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractcurve.h}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ @date\ \ \ 25\ 6,\ 2014}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTCURVE\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ VABSTRACTCURVE\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vmath.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgeometrydef_8h}{vgeometrydef.h}}"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgobject_8h}{vgobject.h}}"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ QPair<QLineF,\ QLineF>\ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{DirectionArrow}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }QPainterPath;}
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_curve_data}{VAbstractCurveData}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ \&type,\ \textcolor{keyword}{const}\ quint32\ \&idObject\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \&mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&curve);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_abstract_curve_a2b29c50a680b4ee96a7a69d6f297bc45}{\string~VAbstractCurve}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&\mbox{\hyperlink{class_v_abstract_curve_a62d07e31d603007ec98efb25a481a037}{operator\ =\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&curve);}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&\mbox{\hyperlink{class_v_abstract_curve_a62d07e31d603007ec98efb25a481a037}{operator\ =\ }}(\mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&\&curve)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_abbf277b50160aec019beacd3e5c8ae23}{Swap}}(\mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}}\ \&curve)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \mbox{\hyperlink{class_v_abstract_curve_a5c3d65541c4e36c16885d6f48df0e672}{getPoints}}()\ \textcolor{keyword}{const}\ =0;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \mbox{\hyperlink{class_v_abstract_curve_af9fe3eb5d8107c14439457e011f362f4}{GetSegmentPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points,\ \textcolor{keyword}{const}\ QPointF\ \&begin,\ \textcolor{keyword}{const}\ QPointF\ \&end,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ reverse\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_af9fe3eb5d8107c14439457e011f362f4}{GetSegmentPoints}}(\textcolor{keyword}{const}\ QPointF\ \&begin,\ \textcolor{keyword}{const}\ QPointF\ \&end,\ \textcolor{keywordtype}{bool}\ reverse\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ QPainterPath\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ac36e029e368e2c4dabb6f7ae61a4d725}{GetPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_aeaa28efd8cdaa6c8df14dea9e20caa84}{GetLength}}()\ \textcolor{keyword}{const}\ =0;}
+\DoxyCodeLine{00090\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ad189c63cf644865240b2c200c9450f19}{GetLengthByPoint}}(\textcolor{keyword}{const}\ QPointF\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \mbox{\hyperlink{class_v_abstract_curve_a2da2f37f84c53206194a8eef06932918}{IntersectLine}}(\textcolor{keyword}{const}\ QLineF\ \&line)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a9e2dad7ce0d3fa6f810df77220beea4c}{IsIntersectLine}}(\textcolor{keyword}{const}\ QLineF\ \&line)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ad85b584734fec457d814e1f393112281}{isPointOnCurve}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points,\ \textcolor{keyword}{const}\ QPointF\ \&p);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ad85b584734fec457d814e1f393112281}{isPointOnCurve}}(\textcolor{keyword}{const}\ QPointF\ \&p)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a6595c8b68d9439dc244d978b23d08ef0}{GetStartAngle}}\ ()\ \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a1256a0bd9fd6d262e5b62e5bf04dde63}{GetEndAngle}}\ ()\ \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_aa9a0a12abba8ba2fa6a58ed3748f94ae}{GetDuplicate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a20278c901fc52aad20ea2d5d7ff9c28b}{SetDuplicate}}(quint32\ number);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_acbd25f3ba15d540f70a484089b069c1f}{getLineColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a7a336e7a2d94774dbb6af5ee615d4590}{setLineColor}}(\textcolor{keyword}{const}\ QString\ \&color);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_aa5bb27460f8cebf1d322ea7ca6184512}{GetPenStyle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a3f206665041415e095cebf9548cfd187}{SetPenStyle}}(\textcolor{keyword}{const}\ QString\ \&penStyle);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a19b9bd53186d2cbd96aedb621b25cd56}{getLineWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_aa47205333a5e90bfe50aabe40044ef62}{setLineWeight}}(\textcolor{keyword}{const}\ QString\ \&lineWeight);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a3cef373a0a183221cae5045a9de40c15}{PathLength}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&path);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_af949cec394cf58849a3f4187ab107c02}{getFirstPoint}}();}
+\DoxyCodeLine{00115\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a1923048ce52373c7dd3e1d568d9a17d7}{getLastPoint}}();}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \mbox{\hyperlink{class_v_abstract_curve_add4dbdfb3f8927551ef426172dbfc9b5}{CurveIntersectLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points,\ \textcolor{keyword}{const}\ QLineF\ \&line);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a9e66a5ba91def402a81fbeb5e3535780}{NameForHistory}}(\textcolor{keyword}{const}\ QString\ \&toolName)\ \textcolor{keyword}{const}=0;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_q_vector}{QVector<DirectionArrow>}}\ \mbox{\hyperlink{class_v_abstract_curve_a26ccfec5b5a94a07205945a3e56e9d80}{DirectionArrows}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ QPainterPath\ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ae315ec3607fae6594d44d988b6045040}{ShowDirection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<DirectionArrow>}}\ \&arrows,\ qreal\ width);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qreal\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_ac778fbee0dbd3b765987d14508daa35f}{lengthCurveDirectionArrow}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_curve_a7a1530d69c09d90f28a5b76f3b0374b9}{CreateName}}()\ =0;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ QSharedDataPointer<VAbstractCurveData>\ \mbox{\hyperlink{class_v_abstract_curve_ac26e01a6c8adaf74624f7f052bca38ee}{d}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \mbox{\hyperlink{class_v_abstract_curve_ab09e3bbe0677749f82ecdbd0a83994dd}{FromBegin}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points,\ \textcolor{keyword}{const}\ QPointF\ \&begin,\ \textcolor{keywordtype}{bool}\ *ok\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \mbox{\hyperlink{class_v_abstract_curve_aa5ffaa21873a8a1a3d72a61c111fdf9a}{ToEnd}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points,\ \textcolor{keyword}{const}\ QPointF\ \&end,\ \textcolor{keywordtype}{bool}\ *ok\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \mbox{\hyperlink{vabstractcurve_8h_a658305b9d69890586bfdac0b73c79591}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_abstract_curve}{VAbstractCurve}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTCURVE\_H}}
+
+\end{DoxyCode}

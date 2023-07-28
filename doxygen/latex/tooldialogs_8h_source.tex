@@ -1,0 +1,107 @@
+\hypertarget{tooldialogs_8h_source}{}\doxysection{tooldialogs.\+h}
+\label{tooldialogs_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tooldialogs.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tooldialogs.h}}
+\mbox{\hyperlink{tooldialogs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogs.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogs.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 16\ 6,\ 2015}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ TOOLDIALOGS\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ TOOLDIALOGS\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogalongline_8h}{tools/dialogalongline.h}}"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogarc_8h}{tools/dialogarc.h}}"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogarcwithlength_8h}{tools/dialogarcwithlength.h}}"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogbisector_8h}{tools/dialogbisector.h}}"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pattern__piece__dialog_8h}{tools/piece/pattern\_piece\_dialog.h}}"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogendline_8h}{tools/dialogendline.h}}"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogline_8h}{tools/dialogline.h}}"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialoglineintersect_8h}{tools/dialoglineintersect.h}}"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialognormal_8h}{tools/dialognormal.h}}"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogpointofcontact_8h}{tools/dialogpointofcontact.h}}"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogshoulderpoint_8h}{tools/dialogshoulderpoint.h}}"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogsinglepoint_8h}{tools/dialogsinglepoint.h}}"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogspline_8h}{tools/dialogspline.h}}"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcubicbezier_8h}{tools/dialogcubicbezier.h}}"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogsplinepath_8h}{tools/dialogsplinepath.h}}"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcubicbezierpath_8h}{tools/dialogcubicbezierpath.h}}"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogheight_8h}{tools/dialogheight.h}}"{}}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcutarc_8h}{tools/dialogcutarc.h}}"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcutspline_8h}{tools/dialogcutspline.h}}"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcutsplinepath_8h}{tools/dialogcutsplinepath.h}}"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{union__dialog_8h}{tools/union\_dialog.h}}"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtriangle_8h}{tools/dialogtriangle.h}}"{}}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__intersectxy__dialog_8h}{tools/point\_intersectxy\_dialog.h}}"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialoglineintersectaxis_8h}{tools/dialoglineintersectaxis.h}}"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogcurveintersectaxis_8h}{tools/dialogcurveintersectaxis.h}}"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogpointofintersectionarcs_8h}{tools/dialogpointofintersectionarcs.h}}"{}}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intersect__circles__dialog_8h}{tools/intersect\_circles\_dialog.h}}"{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogpointofintersectioncurves_8h}{tools/dialogpointofintersectioncurves.h}}"{}}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intersect__circletangent__dialog_8h}{tools/intersect\_circletangent\_dialog.h}}"{}}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogpointfromarcandtangent_8h}{tools/dialogpointfromarcandtangent.h}}"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtruedarts_8h}{tools/dialogtruedarts.h}}"{}}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{editgroup__dialog_8h}{tools/editgroup\_dialog.h}}"{}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{addtogroup__dialog_8h}{tools/addtogroup\_dialog.h}}"{}}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogrotation_8h}{tools/dialogrotation.h}}"{}}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogmirrorbyline_8h}{tools/dialogmirrorbyline.h}}"{}}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogmirrorbyaxis_8h}{tools/dialogmirrorbyaxis.h}}"{}}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogmove_8h}{tools/dialogmove.h}}"{}}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogellipticalarc_8h}{tools/dialogellipticalarc.h}}"{}}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialoginternalpath_8h}{tools/piece/dialoginternalpath.h}}"{}}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{anchorpoint__dialog_8h}{tools/anchorpoint\_dialog.h}}"{}}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{insert__nodes__dialog_8h}{tools/insert\_nodes\_dialog.h}}"{}}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{edit__formula__dialog_8h}{support/edit\_formula\_dialog.h}}"{}}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogundo_8h}{support/dialogundo.h}}"{}}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOOLDIALOGS\_H}}
+
+\end{DoxyCode}

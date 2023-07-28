@@ -1,0 +1,100 @@
+\hypertarget{vincrement_8h_source}{}\doxysection{vincrement.\+h}
+\label{vincrement_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vincrement.h@{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vincrement.h}}
+\mbox{\hyperlink{vincrement_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vincrementtablerow.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VINCREMENTTABLEROW\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VINCREMENTTABLEROW\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vvariable_8h}{vvariable.h}}"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_increment_data}{VIncrementData}};}
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_increment}{VIncrement}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_variable}{VVariable}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_increment_af274de6b871031a0d6c960ff2c2a8a69}{VIncrement}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_v_increment_af274de6b871031a0d6c960ff2c2a8a69}{VIncrement}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \textcolor{keyword}{const}\ QString\ \&name,\ quint32\ index,\ qreal\ base,\ \textcolor{keyword}{const}\ QString\ \&formula,\ \textcolor{keywordtype}{bool}\ ok,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&description\ =\ QString());}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_increment_af274de6b871031a0d6c960ff2c2a8a69}{VIncrement}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&incr);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_increment_aaef3df1505d7a584207668254c4dded5}{\string~VIncrement}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&\mbox{\hyperlink{class_v_increment_a105de0d212dfb046336f8c67d7c098bf}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&incr);}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&\mbox{\hyperlink{class_v_increment_a105de0d212dfb046336f8c67d7c098bf}{operator=}}(\mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&\&incr)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_increment_a695122d948cffc4e982bc19501600001}{Swap}}(\mbox{\hyperlink{class_v_increment}{VIncrement}}\ \&incr)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ quint32\ \ \ \ \ \mbox{\hyperlink{class_v_increment_a1b8b64125219d69a58cc1b187b58247a}{getIndex}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \ \ \ \ QString\ \ \ \ \ \mbox{\hyperlink{class_v_increment_ae4a702745da68d3289b6bb5833de291b}{GetFormula}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_increment_abaafa514756d8f5280e7eed096c55bd4}{IsFormulaOk}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_increment_aae67153ff014368246bad1a6404e1354}{GetData}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ QSharedDataPointer<VIncrementData>\ \mbox{\hyperlink{class_v_increment_a0613ddd08ad79791af6a20e9c603b8d7}{d}};}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \mbox{\hyperlink{vincrement_8h_a623ea60df79b16ecd02bd2d39140b6fa}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_increment}{VIncrement}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VINCREMENTTABLEROW\_H}}
+
+\end{DoxyCode}

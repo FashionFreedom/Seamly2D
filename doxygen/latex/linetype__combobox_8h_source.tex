@@ -1,0 +1,69 @@
+\hypertarget{linetype__combobox_8h_source}{}\doxysection{linetype\+\_\+combobox.\+h}
+\label{linetype__combobox_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/linetype\_combobox.h@{D:/Github/Seamly2D/src/libs/vwidgets/linetype\_combobox.h}}
+\mbox{\hyperlink{linetype__combobox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ linetype\_combobox.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ April\ 6,\ 2021}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#ifndef\ LINETYPE\_COMBOBOX\_H}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ LINETYPE\_COMBOBOX\_H}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QPen>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QIcon>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }QIcon;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_type_combo_box}{LineTypeComboBox}}:\ \textcolor{keyword}{public}\ QComboBox}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box}{LineTypeComboBox}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box}{LineTypeComboBox}}(\textcolor{keywordtype}{int}\ \ width,\ \textcolor{keywordtype}{int}\ height,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr}\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_ad76a74bb11d33169e4abdd616404d6a4}{\string~LineTypeComboBox}}();}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a1753afe6d360b744e7114b77bc2bf8ec}{getLineType}}()\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_line_type_combo_box_ad698f7045c4c9d34ef57bd528a97019d}{m\_currentLineType}};\ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a037057e0bf7ef0cf540282bc219a88d5}{setLineType}}(\textcolor{keyword}{const}\ QString\ \&type);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a9ceae2dff6e0ae68bdcfec5dcd1b836f}{init}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a7758a0f860a9132c1fd4f249b8cba858}{updateLineType}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ signals:}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a36d49c79026dc2f5e5e4639c6be2c9de}{lineTypeChanged}}(\textcolor{keyword}{const}\ QString\ \&type);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00060\ \ \ \ \ QIcon\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a88894befa68a1ed96ad082195a0901a2}{createIcon}}(\textcolor{keyword}{const}\ QString\ \&type);}
+\DoxyCodeLine{00061\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_ad698f7045c4c9d34ef57bd528a97019d}{m\_currentLineType}};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a42dbf9d949ffa16c36938bfcf42dd21f}{m\_iconWidth}};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_type_combo_box_a0f60c59be8aa2fa6d5deb531904b2397}{m\_iconHeight}};}
+\DoxyCodeLine{00064\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

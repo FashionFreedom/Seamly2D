@@ -1,0 +1,149 @@
+\hypertarget{checkablemessagebox_8h_source}{}\doxysection{checkablemessagebox.\+h}
+\label{checkablemessagebox_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/checkablemessagebox.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/checkablemessagebox.h}}
+\mbox{\hyperlink{checkablemessagebox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Copyright\ (C)\ 2014\ Digia\ Plc\ and/or\ its\ subsidiary(-\/ies).}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Contact:\ http://www.qt-\/project.org/legal}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials\ are\ made}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License\ (LGPL)}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,\ but\ WITHOUT}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of\ MERCHANTABILITY\ or}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ for\ more\ details.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**}}
+\DoxyCodeLine{00016\ \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#ifndef\ CHECKABLEMESSAGEBOX\_H}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#define\ CHECKABLEMESSAGEBOX\_H}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <QDialogButtonBox>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <QFlags>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMessageBox>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }QSettings;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_utils}{Utils}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utils_1_1_checkable_message_box_private}{CheckableMessageBoxPrivate}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_utils_1_1_checkable_message_box}{CheckableMessageBox}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}\ READ\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}\ WRITE\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7d5fad3765d806b6f123092a981fd3d8}{setText}})}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{comment}{//Q\_PROPERTY(QPixmap\ iconPixmap\ READ\ iconPixmap\ WRITE\ setIconPixmap)}}
+\DoxyCodeLine{00044\ \ \ \ \ Q\_PROPERTY(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}{isChecked}}\ READ\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}{isChecked}}\ WRITE\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7e33fe6bbc0aada5a8cd676d3c45cb27}{setChecked}})}
+\DoxyCodeLine{00045\ \ \ \ \ Q\_PROPERTY(QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{checkBoxText}}\ READ\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{checkBoxText}}\ WRITE\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a61df735b4b31dbafba41a08706d3acb9}{setCheckBoxText}})}
+\DoxyCodeLine{00046\ \ \ \ \ Q\_PROPERTY(QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}\ READ\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_aa0fc50eb6dbd87473f18ae4a7a8dbb3d}{standardButtons}}\ WRITE\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3b0d5dff93907b3a77900b0754be2fbf}{setStandardButtons}})}
+\DoxyCodeLine{00047\ \ \ \ \ Q\_PROPERTY(QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ READ\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ WRITE\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ad5b6b948af48813620a34c67026bd0ab}{setDefaultButton}})}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box}{CheckableMessageBox}}(QWidget\ *parent);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2ee8d0c7bf748f157e52aeb5dfa35f18}{\string~CheckableMessageBox}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{static}\ QDialogButtonBox::StandardButton}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab06a80f3d8dab0a2c5f5957dfe2409fc}{question}}(QWidget\ *parent,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&title,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab06a80f3d8dab0a2c5f5957dfe2409fc}{question}},}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{checkBoxText}},}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ *checkBoxSetting,}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}\ =\ QDialogButtonBox::Yes|QDialogButtonBox::No,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ =\ QDialogButtonBox::No);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{static}\ QDialogButtonBox::StandardButton}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_af07a2d0561f13e57a7308a5a63cc813f}{information}}(QWidget\ *parent,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&title,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{checkBoxText}},}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ *checkBoxSetting,}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}\ =\ QDialogButtonBox::Ok,}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ =\ QDialogButtonBox::NoButton);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{static}\ QDialogButtonBox::StandardButton}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}{doNotAskAgainQuestion}}(QWidget\ *parent,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&title,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QSettings\ *settings,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&settingsSubKey,}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}\ =\ QDialogButtonBox::Yes|QDialogButtonBox::No,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ =\ QDialogButtonBox::No,}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ acceptButton\ =\ QDialogButtonBox::Yes);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{static}\ QDialogButtonBox::StandardButton}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a5861f131d692e2feac308d17b5e592b7}{doNotShowAgainInformation}}(QWidget\ *parent,}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&title,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QSettings\ *settings,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&settingsSubKey,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}\ =\ QDialogButtonBox::Ok,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}\ =\ QDialogButtonBox::NoButton);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7d5fad3765d806b6f123092a981fd3d8}{setText}}(\textcolor{keyword}{const}\ QString\ \&);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}{isChecked}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7e33fe6bbc0aada5a8cd676d3c45cb27}{setChecked}}(\textcolor{keywordtype}{bool}\ s);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{checkBoxText}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a61df735b4b31dbafba41a08706d3acb9}{setCheckBoxText}}(\textcolor{keyword}{const}\ QString\ \&);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a90bf592ae410af4e18ab0e62535fc5e1}{isCheckBoxVisible}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a8646da61cda7c5c001c425aac8a4f00f}{setCheckBoxVisible}}(\textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_aa0fc50eb6dbd87473f18ae4a7a8dbb3d}{standardButtons}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3b0d5dff93907b3a77900b0754be2fbf}{setStandardButtons}}(QDialogButtonBox::StandardButtons\ s);}
+\DoxyCodeLine{00104\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a167b133bb3f397e74774ad71030e56fd}{button}}(QDialogButtonBox::StandardButton\ b)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ QPushButton\ *\mbox{\hyperlink{class_utils_1_1_checkable_message_box_acb6c73c7d8b52d4e4a1facfa59530e8a}{addButton}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}},\ QDialogButtonBox::ButtonRole\ role);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ad5b6b948af48813620a34c67026bd0ab}{setDefaultButton}}(QDialogButtonBox::StandardButton\ s);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{//\ See\ static\ QMessageBox::standardPixmap()}}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{comment}{//QPixmap\ iconPixmap()\ const;}}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a93343c79b51e90e9fdc244687f693286}{setIconPixmap}}\ (\textcolor{keyword}{const}\ QPixmap\ \&p);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{//\ Query\ the\ result}}
+\DoxyCodeLine{00115\ \ \ \ \ QAbstractButton\ *\mbox{\hyperlink{class_utils_1_1_checkable_message_box_acc2c7e9ae07efb8361976ccab5bab9e2}{clickedButton}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a56e5c6b510a9b4b1914032336a7e98ae}{clickedStandardButton}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{comment}{//\ Conversion\ convenience}}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{static}\ QMessageBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a0bb1ba3ba531e124dfb8d1b129755c47}{dialogButtonBoxToMessageBoxButton}}(QDialogButtonBox::StandardButton);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a4c22796e151bd816f7dc803061417916}{resetAllDoNotAskAgainQuestions}}(QSettings\ *settings);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7a3c1115b571076c57b6d4d046c745e8}{hasSuppressedQuestions}}(QSettings\ *settings);}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a9f576b828427a97c9cfded6267f2f572}{msgDoNotAskAgain}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a0dd369e6bed1e766557d1a2ce39cc749}{msgDoNotShowAgain}}();}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3b30c0a23550d6876a886cd61e795745}{slotClicked}}(QAbstractButton\ *b);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_utils_1_1_checkable_message_box}{CheckableMessageBox}})}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_private}{CheckableMessageBoxPrivate}}\ *\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a10ef53918a28c68ba6ece6e76aaf4a66}{d}};}
+\DoxyCodeLine{00131\ \ \ \ \ enum\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{DoNotAskAgainType}}\{\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4ac9d8ebab17a85be5d019f60d75e63f04}{Question}},\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882}{Information}}\};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a890828ad9e67d7cb9719b09ea2ade8fb}{askAgain}}(QSettings\ *settings,\ \textcolor{keyword}{const}\ QString\ \&settingsSubKey);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a76a2635d6a92eefd6ee1a406c5b6d1c2}{initDoNotAskAgainMessageBox}}(\mbox{\hyperlink{class_utils_1_1_checkable_message_box}{CheckableMessageBox}}\ \&messageBox,\ \textcolor{keyword}{const}\ QString\ \&title,}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}},\ QDialogButtonBox::StandardButtons\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}},}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QDialogButtonBox::StandardButton\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{defaultButton}},}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{DoNotAskAgainType}}\ type);}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a43a769fd83f490b7f6ec48a4a2fee2c7}{doNotAskAgain}}(QSettings\ *settings,\ \textcolor{keyword}{const}\ QString\ \&settingsSubKey);}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \}\ \textcolor{comment}{//\ namespace\ Utils}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CHECKABLEMESSAGEBOX\_H}}
+
+\end{DoxyCode}

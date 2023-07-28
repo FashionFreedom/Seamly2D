@@ -1,0 +1,442 @@
+\hypertarget{class_v_main_graphics_view}{}\doxysection{VMain\+Graphics\+View Class Reference}
+\label{class_v_main_graphics_view}\index{VMainGraphicsView@{VMainGraphicsView}}
+
+
+The \mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} class main scene view.  
+
+
+
+
+{\ttfamily \#include $<$vmaingraphicsview.\+h$>$}
+
+Inheritance diagram for VMain\+Graphics\+View\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_main_graphics_view}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_abd4518824c724e82adc2cb8c549f4cf2}{zoom\+By\+Scale}} (qreal scale)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a7c5767f15f48b7e56643b5a8485a928a}{zoom\+In}} ()
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_af5549c4dfbff59136793eaf2c7d40cd4}{zoom\+Out}} ()
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a5084a24b563181434129476dfa17e417}{zoom100\+Percent}} ()
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a047c488365d0cca98e3e9d762a0a1f8d}{zoom\+To\+Fit}} ()
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a8aae204b4731085dd60f7ca060f7f89f}{zoom\+To\+Rect}} (const QRectF \&rect)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_aa81a176208dc9e704f03a7f9d1d56a5a}{update\+View}} (const QTransform \&transform)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a7c88f342a83b8f842753b46e3c019d5e}{reset\+Scroll\+Bars}} ()
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_adabe25fdbcd36379e2ea45b3db07c345}{reset\+Scroll\+Animations}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a92ac082f654c125138cd37850234167b}{mouse\+Release}} ()
+\begin{DoxyCompactList}\small\item\em mouse\+Release help catch mouse release event. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a144c8eaf58e89bb89fcb51f9d1204580}{item\+Clicked}} (QGraphics\+Item $\ast$item)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a1acab2c8d6d72e090b11b07bbb4d8fa2}{signal\+Zoom\+Scale\+Changed}} (qreal scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_main_graphics_view_a8c93d1540a5b595c0c8ca2a042f0c675}{VMain\+Graphics\+View}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_aaea1dcf83ca139effb2733f0cf68cc97}{set\+Show\+Tool\+Options}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_afead342f6e30ecec284aacb3b07276ec}{allow\+Rubber\+Band}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a7efc88eee3fb917868c980672548e097}{zoom\+Pan\+Enabled}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_ac7338ab4571838613491084c62235529}{zoom\+To\+Area\+Enabled}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_afd05cf5af47d9135244b83da87f94803}{set\+Rubber\+Band\+Color}} (QRubber\+Band $\ast$band, const QColor \&color)
+\item 
+void \mbox{\hyperlink{class_v_main_graphics_view_a59fc66f4fc8b5399da24025361cad68a}{init\+Scroll\+Bars}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_v_main_graphics_view_abfce57264fef6309f299a799b77fc61e}{New\+Scene\+Rect}} (QGraphics\+Scene $\ast$sc, QGraphics\+View $\ast$view, QGraphics\+Item $\ast$item=nullptr)
+\begin{DoxyCompactList}\small\item\em New\+Scene\+Rect calculate scene rect what contains all items and doesn\textquotesingle{}t less that size of scene view. \end{DoxyCompactList}\item 
+static QRectF \mbox{\hyperlink{class_v_main_graphics_view_a6fb9e4eb3bcb234b0228854d28f45e80}{Scene\+Visible\+Area}} (QGraphics\+View $\ast$view)
+\item 
+static qreal \mbox{\hyperlink{class_v_main_graphics_view_a23740285ac6c147e0a9328f84c681455}{Min\+Scale}} ()
+\item 
+static qreal \mbox{\hyperlink{class_v_main_graphics_view_ad943c932b3319178308162185fcb2232}{Max\+Scale}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_main_graphics_view_abe84fd6c6d361e18cb8916bfb480a857}{mouse\+Press\+Event}} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em mouse\+Press\+Event handle mouse press events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_main_graphics_view_a6738f4a2ff500ca45508183167c91355}{mouse\+Move\+Event}} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_main_graphics_view_a2b99dac31f68c2ed74674adc00d2e1a7}{mouse\+Release\+Event}} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em mouse\+Release\+Event handle mouse release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_main_graphics_view_a7cf78077f1b295517ae7c6e85a3755b1}{mouse\+Double\+Click\+Event}} (QMouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QCursor $>$ \mbox{\hyperlink{class_v_main_graphics_view_a6173641442850edbf7891dfd654b158b}{cur\+Magnifier}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_graphics_view_zoom}{Graphics\+View\+Zoom}} $\ast$ \mbox{\hyperlink{class_v_main_graphics_view_a994ab6c9f8222d368bfb86ee1dc0b74a}{zoom}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_aed986a8e7d6554df900b746c1b2b7ed8}{show\+Tool\+Properties}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_aea844b326733ca05fde939c65d26df00}{show\+Scroll\+Bars}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_a04fd7868d89457789c65c79c42f274ae}{isallow\+Rubber\+Band}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_ad480fb0fdf4d94a5b91a94a6774fdd95}{is\+Zoom\+To\+Area\+Active}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_ac12f25bbef0c61621b5aa137e7f9f5a7}{is\+Rubber\+Band\+Active}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_ad97e65b4fa73ea9664ec9309917dbc6a}{is\+Rubber\+Band\+Color\+Set}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_a13c84ebf01b000fd25530c75028a1e1c}{is\+Zoom\+Pan\+Active}}
+\item 
+bool \mbox{\hyperlink{class_v_main_graphics_view_a06ff4f39bb4cdc27b83a7ddab94da42f}{is\+Pan\+Drag\+Active}}
+\item 
+QRubber\+Band $\ast$ \mbox{\hyperlink{class_v_main_graphics_view_a3e851399dc8a40bb92445c13e0f11707}{rubber\+Band}}
+\item 
+QRect $\ast$ \mbox{\hyperlink{class_v_main_graphics_view_a28662f62231266b6999b8827335d9859}{rubber\+Band\+Rect}}
+\item 
+QPoint \mbox{\hyperlink{class_v_main_graphics_view_acf38020e479afdda41297fe18b9f0ed5}{start\+Point}}
+\item 
+QPoint \mbox{\hyperlink{class_v_main_graphics_view_afc98a2845c7d5a0b9cd9ee02e7d9a211}{end\+Point}}
+\item 
+QPoint \mbox{\hyperlink{class_v_main_graphics_view_a34ef2e7cfed8655063c0fd8e3a01c92d}{m\+\_\+pt\+Start\+Pos}}
+\item 
+QPoint \mbox{\hyperlink{class_v_main_graphics_view_a36ede84b9ee68108c9670ef48351eb82}{cursor\+Pos}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} class main scene view. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_main_graphics_view_a8c93d1540a5b595c0c8ca2a042f0c675}\label{class_v_main_graphics_view_a8c93d1540a5b595c0c8ca2a042f0c675}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!VMainGraphicsView@{VMainGraphicsView}}
+\index{VMainGraphicsView@{VMainGraphicsView}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{VMainGraphicsView()}{VMainGraphicsView()}}
+{\footnotesize\ttfamily VMain\+Graphics\+View\+::\+VMain\+Graphics\+View (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_main_graphics_view_afead342f6e30ecec284aacb3b07276ec}\label{class_v_main_graphics_view_afead342f6e30ecec284aacb3b07276ec}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!allowRubberBand@{allowRubberBand}}
+\index{allowRubberBand@{allowRubberBand}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{allowRubberBand()}{allowRubberBand()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::allow\+Rubber\+Band (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a59fc66f4fc8b5399da24025361cad68a}\label{class_v_main_graphics_view_a59fc66f4fc8b5399da24025361cad68a}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!initScrollBars@{initScrollBars}}
+\index{initScrollBars@{initScrollBars}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{initScrollBars()}{initScrollBars()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::init\+Scroll\+Bars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a144c8eaf58e89bb89fcb51f9d1204580}\label{class_v_main_graphics_view_a144c8eaf58e89bb89fcb51f9d1204580}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!itemClicked@{itemClicked}}
+\index{itemClicked@{itemClicked}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{itemClicked}{itemClicked}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::item\+Clicked (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_ad943c932b3319178308162185fcb2232}\label{class_v_main_graphics_view_ad943c932b3319178308162185fcb2232}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!MaxScale@{MaxScale}}
+\index{MaxScale@{MaxScale}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{MaxScale()}{MaxScale()}}
+{\footnotesize\ttfamily qreal VMain\+Graphics\+View\+::\+Max\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a23740285ac6c147e0a9328f84c681455}\label{class_v_main_graphics_view_a23740285ac6c147e0a9328f84c681455}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!MinScale@{MinScale}}
+\index{MinScale@{MinScale}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{MinScale()}{MinScale()}}
+{\footnotesize\ttfamily qreal VMain\+Graphics\+View\+::\+Min\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a7cf78077f1b295517ae7c6e85a3755b1}\label{class_v_main_graphics_view_a7cf78077f1b295517ae7c6e85a3755b1}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!mouseDoubleClickEvent@{mouseDoubleClickEvent}}
+\index{mouseDoubleClickEvent@{mouseDoubleClickEvent}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{mouseDoubleClickEvent()}{mouseDoubleClickEvent()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::mouse\+Double\+Click\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a6738f4a2ff500ca45508183167c91355}\label{class_v_main_graphics_view_a6738f4a2ff500ca45508183167c91355}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_abe84fd6c6d361e18cb8916bfb480a857}\label{class_v_main_graphics_view_abe84fd6c6d361e18cb8916bfb480a857}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+mouse\+Press\+Event handle mouse press events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & mouse press event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_main_graphics_view_a92ac082f654c125138cd37850234167b}\label{class_v_main_graphics_view_a92ac082f654c125138cd37850234167b}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!mouseRelease@{mouseRelease}}
+\index{mouseRelease@{mouseRelease}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{mouseRelease}{mouseRelease}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::mouse\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+mouse\+Release help catch mouse release event. 
+
+Usefull when you need show dialog after working with tool visualization. \mbox{\Hypertarget{class_v_main_graphics_view_a2b99dac31f68c2ed74674adc00d2e1a7}\label{class_v_main_graphics_view_a2b99dac31f68c2ed74674adc00d2e1a7}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QMouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+mouse\+Release\+Event handle mouse release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & mouse release event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_main_graphics_view_abfce57264fef6309f299a799b77fc61e}\label{class_v_main_graphics_view_abfce57264fef6309f299a799b77fc61e}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!NewSceneRect@{NewSceneRect}}
+\index{NewSceneRect@{NewSceneRect}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{NewSceneRect()}{NewSceneRect()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::\+New\+Scene\+Rect (\begin{DoxyParamCaption}\item[{QGraphics\+Scene $\ast$}]{sc,  }\item[{QGraphics\+View $\ast$}]{view,  }\item[{QGraphics\+Item $\ast$}]{item = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+New\+Scene\+Rect calculate scene rect what contains all items and doesn\textquotesingle{}t less that size of scene view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sc} & scene. \\
+\hline
+{\em view} & view. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_main_graphics_view_adabe25fdbcd36379e2ea45b3db07c345}\label{class_v_main_graphics_view_adabe25fdbcd36379e2ea45b3db07c345}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!resetScrollAnimations@{resetScrollAnimations}}
+\index{resetScrollAnimations@{resetScrollAnimations}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{resetScrollAnimations}{resetScrollAnimations}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::reset\+Scroll\+Animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a7c88f342a83b8f842753b46e3c019d5e}\label{class_v_main_graphics_view_a7c88f342a83b8f842753b46e3c019d5e}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!resetScrollBars@{resetScrollBars}}
+\index{resetScrollBars@{resetScrollBars}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{resetScrollBars}{resetScrollBars}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::reset\+Scroll\+Bars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a6fb9e4eb3bcb234b0228854d28f45e80}\label{class_v_main_graphics_view_a6fb9e4eb3bcb234b0228854d28f45e80}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!SceneVisibleArea@{SceneVisibleArea}}
+\index{SceneVisibleArea@{SceneVisibleArea}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{SceneVisibleArea()}{SceneVisibleArea()}}
+{\footnotesize\ttfamily QRectF VMain\+Graphics\+View\+::\+Scene\+Visible\+Area (\begin{DoxyParamCaption}\item[{QGraphics\+View $\ast$}]{view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_afd05cf5af47d9135244b83da87f94803}\label{class_v_main_graphics_view_afd05cf5af47d9135244b83da87f94803}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!setRubberBandColor@{setRubberBandColor}}
+\index{setRubberBandColor@{setRubberBandColor}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{setRubberBandColor()}{setRubberBandColor()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::set\+Rubber\+Band\+Color (\begin{DoxyParamCaption}\item[{QRubber\+Band $\ast$}]{band,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_aaea1dcf83ca139effb2733f0cf68cc97}\label{class_v_main_graphics_view_aaea1dcf83ca139effb2733f0cf68cc97}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!setShowToolOptions@{setShowToolOptions}}
+\index{setShowToolOptions@{setShowToolOptions}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{setShowToolOptions()}{setShowToolOptions()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::set\+Show\+Tool\+Options (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a1acab2c8d6d72e090b11b07bbb4d8fa2}\label{class_v_main_graphics_view_a1acab2c8d6d72e090b11b07bbb4d8fa2}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!signalZoomScaleChanged@{signalZoomScaleChanged}}
+\index{signalZoomScaleChanged@{signalZoomScaleChanged}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{signalZoomScaleChanged}{signalZoomScaleChanged}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::signal\+Zoom\+Scale\+Changed (\begin{DoxyParamCaption}\item[{qreal}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_aa81a176208dc9e704f03a7f9d1d56a5a}\label{class_v_main_graphics_view_aa81a176208dc9e704f03a7f9d1d56a5a}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!updateView@{updateView}}
+\index{updateView@{updateView}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{updateView}{updateView}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::update\+View (\begin{DoxyParamCaption}\item[{const QTransform \&}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a5084a24b563181434129476dfa17e417}\label{class_v_main_graphics_view_a5084a24b563181434129476dfa17e417}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoom100Percent@{zoom100Percent}}
+\index{zoom100Percent@{zoom100Percent}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoom100Percent}{zoom100Percent}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom100\+Percent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_abd4518824c724e82adc2cb8c549f4cf2}\label{class_v_main_graphics_view_abd4518824c724e82adc2cb8c549f4cf2}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomByScale@{zoomByScale}}
+\index{zoomByScale@{zoomByScale}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomByScale}{zoomByScale}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+By\+Scale (\begin{DoxyParamCaption}\item[{qreal}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a7c5767f15f48b7e56643b5a8485a928a}\label{class_v_main_graphics_view_a7c5767f15f48b7e56643b5a8485a928a}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomIn@{zoomIn}}
+\index{zoomIn@{zoomIn}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomIn}{zoomIn}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+In (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_af5549c4dfbff59136793eaf2c7d40cd4}\label{class_v_main_graphics_view_af5549c4dfbff59136793eaf2c7d40cd4}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomOut@{zoomOut}}
+\index{zoomOut@{zoomOut}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomOut}{zoomOut}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+Out (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a7efc88eee3fb917868c980672548e097}\label{class_v_main_graphics_view_a7efc88eee3fb917868c980672548e097}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomPanEnabled@{zoomPanEnabled}}
+\index{zoomPanEnabled@{zoomPanEnabled}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomPanEnabled()}{zoomPanEnabled()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+Pan\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_ac7338ab4571838613491084c62235529}\label{class_v_main_graphics_view_ac7338ab4571838613491084c62235529}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomToAreaEnabled@{zoomToAreaEnabled}}
+\index{zoomToAreaEnabled@{zoomToAreaEnabled}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomToAreaEnabled()}{zoomToAreaEnabled()}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+To\+Area\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a047c488365d0cca98e3e9d762a0a1f8d}\label{class_v_main_graphics_view_a047c488365d0cca98e3e9d762a0a1f8d}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomToFit@{zoomToFit}}
+\index{zoomToFit@{zoomToFit}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomToFit}{zoomToFit}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+To\+Fit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a8aae204b4731085dd60f7ca060f7f89f}\label{class_v_main_graphics_view_a8aae204b4731085dd60f7ca060f7f89f}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoomToRect@{zoomToRect}}
+\index{zoomToRect@{zoomToRect}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoomToRect}{zoomToRect}}
+{\footnotesize\ttfamily void VMain\+Graphics\+View\+::zoom\+To\+Rect (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_main_graphics_view_a6173641442850edbf7891dfd654b158b}\label{class_v_main_graphics_view_a6173641442850edbf7891dfd654b158b}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!curMagnifier@{curMagnifier}}
+\index{curMagnifier@{curMagnifier}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{curMagnifier}{curMagnifier}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$QCursor$>$ VMain\+Graphics\+View\+::cur\+Magnifier\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a36ede84b9ee68108c9670ef48351eb82}\label{class_v_main_graphics_view_a36ede84b9ee68108c9670ef48351eb82}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!cursorPos@{cursorPos}}
+\index{cursorPos@{cursorPos}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{cursorPos}{cursorPos}}
+{\footnotesize\ttfamily QPoint VMain\+Graphics\+View\+::cursor\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_afc98a2845c7d5a0b9cd9ee02e7d9a211}\label{class_v_main_graphics_view_afc98a2845c7d5a0b9cd9ee02e7d9a211}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!endPoint@{endPoint}}
+\index{endPoint@{endPoint}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{endPoint}{endPoint}}
+{\footnotesize\ttfamily QPoint VMain\+Graphics\+View\+::end\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a04fd7868d89457789c65c79c42f274ae}\label{class_v_main_graphics_view_a04fd7868d89457789c65c79c42f274ae}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isallowRubberBand@{isallowRubberBand}}
+\index{isallowRubberBand@{isallowRubberBand}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isallowRubberBand}{isallowRubberBand}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::isallow\+Rubber\+Band\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a06ff4f39bb4cdc27b83a7ddab94da42f}\label{class_v_main_graphics_view_a06ff4f39bb4cdc27b83a7ddab94da42f}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isPanDragActive@{isPanDragActive}}
+\index{isPanDragActive@{isPanDragActive}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isPanDragActive}{isPanDragActive}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::is\+Pan\+Drag\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_ac12f25bbef0c61621b5aa137e7f9f5a7}\label{class_v_main_graphics_view_ac12f25bbef0c61621b5aa137e7f9f5a7}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isRubberBandActive@{isRubberBandActive}}
+\index{isRubberBandActive@{isRubberBandActive}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isRubberBandActive}{isRubberBandActive}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::is\+Rubber\+Band\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_ad97e65b4fa73ea9664ec9309917dbc6a}\label{class_v_main_graphics_view_ad97e65b4fa73ea9664ec9309917dbc6a}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isRubberBandColorSet@{isRubberBandColorSet}}
+\index{isRubberBandColorSet@{isRubberBandColorSet}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isRubberBandColorSet}{isRubberBandColorSet}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::is\+Rubber\+Band\+Color\+Set\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a13c84ebf01b000fd25530c75028a1e1c}\label{class_v_main_graphics_view_a13c84ebf01b000fd25530c75028a1e1c}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isZoomPanActive@{isZoomPanActive}}
+\index{isZoomPanActive@{isZoomPanActive}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isZoomPanActive}{isZoomPanActive}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::is\+Zoom\+Pan\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_ad480fb0fdf4d94a5b91a94a6774fdd95}\label{class_v_main_graphics_view_ad480fb0fdf4d94a5b91a94a6774fdd95}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!isZoomToAreaActive@{isZoomToAreaActive}}
+\index{isZoomToAreaActive@{isZoomToAreaActive}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{isZoomToAreaActive}{isZoomToAreaActive}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::is\+Zoom\+To\+Area\+Active\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a34ef2e7cfed8655063c0fd8e3a01c92d}\label{class_v_main_graphics_view_a34ef2e7cfed8655063c0fd8e3a01c92d}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!m\_ptStartPos@{m\_ptStartPos}}
+\index{m\_ptStartPos@{m\_ptStartPos}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{m\_ptStartPos}{m\_ptStartPos}}
+{\footnotesize\ttfamily QPoint VMain\+Graphics\+View\+::m\+\_\+pt\+Start\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a3e851399dc8a40bb92445c13e0f11707}\label{class_v_main_graphics_view_a3e851399dc8a40bb92445c13e0f11707}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!rubberBand@{rubberBand}}
+\index{rubberBand@{rubberBand}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{rubberBand}{rubberBand}}
+{\footnotesize\ttfamily QRubber\+Band$\ast$ VMain\+Graphics\+View\+::rubber\+Band\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a28662f62231266b6999b8827335d9859}\label{class_v_main_graphics_view_a28662f62231266b6999b8827335d9859}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!rubberBandRect@{rubberBandRect}}
+\index{rubberBandRect@{rubberBandRect}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{rubberBandRect}{rubberBandRect}}
+{\footnotesize\ttfamily QRect$\ast$ VMain\+Graphics\+View\+::rubber\+Band\+Rect\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_aea844b326733ca05fde939c65d26df00}\label{class_v_main_graphics_view_aea844b326733ca05fde939c65d26df00}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!showScrollBars@{showScrollBars}}
+\index{showScrollBars@{showScrollBars}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{showScrollBars}{showScrollBars}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::show\+Scroll\+Bars\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_aed986a8e7d6554df900b746c1b2b7ed8}\label{class_v_main_graphics_view_aed986a8e7d6554df900b746c1b2b7ed8}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!showToolProperties@{showToolProperties}}
+\index{showToolProperties@{showToolProperties}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{showToolProperties}{showToolProperties}}
+{\footnotesize\ttfamily bool VMain\+Graphics\+View\+::show\+Tool\+Properties\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_acf38020e479afdda41297fe18b9f0ed5}\label{class_v_main_graphics_view_acf38020e479afdda41297fe18b9f0ed5}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!startPoint@{startPoint}}
+\index{startPoint@{startPoint}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{startPoint}{startPoint}}
+{\footnotesize\ttfamily QPoint VMain\+Graphics\+View\+::start\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_main_graphics_view_a994ab6c9f8222d368bfb86ee1dc0b74a}\label{class_v_main_graphics_view_a994ab6c9f8222d368bfb86ee1dc0b74a}} 
+\index{VMainGraphicsView@{VMainGraphicsView}!zoom@{zoom}}
+\index{zoom@{zoom}!VMainGraphicsView@{VMainGraphicsView}}
+\doxysubsubsection{\texorpdfstring{zoom}{zoom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_graphics_view_zoom}{Graphics\+View\+Zoom}}$\ast$ VMain\+Graphics\+View\+::zoom\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vmaingraphicsview_8h}{vmaingraphicsview.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vmaingraphicsview_8cpp}{vmaingraphicsview.\+cpp}}\end{DoxyCompactItemize}

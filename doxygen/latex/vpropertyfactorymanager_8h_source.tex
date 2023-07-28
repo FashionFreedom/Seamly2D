@@ -1,0 +1,77 @@
+\hypertarget{vpropertyfactorymanager_8h_source}{}\doxysection{vpropertyfactorymanager.\+h}
+\label{vpropertyfactorymanager_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyfactorymanager.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyfactorymanager.h}}
+\mbox{\hyperlink{vpropertyfactorymanager_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertyfactorymanager.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYFACTORYMANAGER\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYFACTORYMANAGER\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }VAbstractPropertyFactory;}
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }VProperty;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }VPropertyFactoryManagerPrivate;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VPropertyFactoryManager}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VPropertyFactoryManager}}(QObject*\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a38f914c185704fbe2ab897c177ef5575}{\string~VPropertyFactoryManager}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a71a22c173fbb45d6cc403b2338edf790}{registerFactory}}(\textcolor{keyword}{const}\ QString\&\ type,\ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VAbstractPropertyFactory}}*\ factory);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a60d014af713c0cabc8b09127ed52d5e8}{unregisterFactory}}(\mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VAbstractPropertyFactory}}*\ factory,\ \textcolor{keyword}{const}\ QString\&\ type\ =\ QString(),}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ delete\_if\_unused\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a651c8affc18efa6c61348ba526192692}{isRegistered}}(\mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VAbstractPropertyFactory}}*\ factory);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VAbstractPropertyFactory}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_ad96c3e183dd1a0c158ca1d65052f598c}{getFactory}}(\textcolor{keyword}{const}\ QString\&\ type);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_ad5af895f994349fb84987bbb8049c072}{createProperty}}(\textcolor{keyword}{const}\ QString\&\ type,\ \textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ QString\&\ description\ =\ QString(),}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\&\ default\_value\ =\ QString());}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{comment}{//static\ VPropertyFactoryManager*\ getDefaultManager();}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a9c4122b934d2b182094448eefc344aba}{getSupportedTypes}}();}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_private}{VPropertyFactoryManagerPrivate}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a3495ae050909abc9a9004b77164be9d6}{d\_ptr}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VPropertyFactoryManager}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager_a167c3e4ffd4a99032de3e41e5f6ff48c}{DefaultManager}};}
+\DoxyCodeLine{00089\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_property_factory_manager}{VPropertyFactoryManager}})}
+\DoxyCodeLine{00091\ \};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYFACTORYMANAGER\_H}}
+
+\end{DoxyCode}

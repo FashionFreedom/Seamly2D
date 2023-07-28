@@ -1,0 +1,169 @@
+\hypertarget{class_d_r_w___l_type}{}\doxysection{DRW\+\_\+\+LType Class Reference}
+\label{class_d_r_w___l_type}\index{DRW\_LType@{DRW\_LType}}
+
+
+Class to handle line type entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+objects.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+LType\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_r_w___l_type}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___l_type_a2284cfb0d69e0005d3167d5e7c097d27}{DRW\+\_\+\+LType}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___l_type_a04278a37e58c3ee13a1a4392cc675d28}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}{DRW\+\_\+\+Table\+Entry}} ()
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}{$\sim$\+DRW\+\_\+\+Table\+Entry}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}{DRW\+\_\+\+Table\+Entry}} (const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___l_type_ae6f6458c8c9ac100908259558c7e22d2}{desc}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___l_type_acb78cd0a105ac8b44e19313a4bf90f50}{size}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___l_type_a438510524566f0deaf77ea694f171762}{length}}
+\item 
+std\+::vector$<$ double $>$ \mbox{\hyperlink{class_d_r_w___l_type_afb0702d3edab2948fdba2fb861fd3a4b}{path}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}} \mbox{\hyperlink{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}{t\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}{handle}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}{name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}{flags}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___l_type_a7c1bcdc02c5aa43262221ad55dfac6ff}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Class to handle line type entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___l_type_a9cebdfa5d1ae14720c4fcd50f45dab5a}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update line type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Base class for tables entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_d_r_w___l_type_a86ca28af8124ca042098b03e0ac537af}{path\+Idx}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle line type entries. 
+
+Class to handle line type symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___l_type_a2284cfb0d69e0005d3167d5e7c097d27}\label{class_d_r_w___l_type_a2284cfb0d69e0005d3167d5e7c097d27}} 
+\index{DRW\_LType@{DRW\_LType}!DRW\_LType@{DRW\_LType}}
+\index{DRW\_LType@{DRW\_LType}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{DRW\_LType()}{DRW\_LType()}}
+{\footnotesize\ttfamily DRW\+\_\+\+LType\+::\+DRW\+\_\+\+LType (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___l_type_a7c1bcdc02c5aa43262221ad55dfac6ff}\label{class_d_r_w___l_type_a7c1bcdc02c5aa43262221ad55dfac6ff}} 
+\index{DRW\_LType@{DRW\_LType}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Class to handle line type entries. 
+
+Class to handle line type symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_d_r_w___l_type_a04278a37e58c3ee13a1a4392cc675d28}\label{class_d_r_w___l_type_a04278a37e58c3ee13a1a4392cc675d28}} 
+\index{DRW\_LType@{DRW\_LType}!reset@{reset}}
+\index{reset@{reset}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___l_type_a9cebdfa5d1ae14720c4fcd50f45dab5a}\label{class_d_r_w___l_type_a9cebdfa5d1ae14720c4fcd50f45dab5a}} 
+\index{DRW\_LType@{DRW\_LType}!update@{update}}
+\index{update@{update}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+LType\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Update line type. 
+
+Update the size and length of line type acording to the path \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___l_type_ae6f6458c8c9ac100908259558c7e22d2}\label{class_d_r_w___l_type_ae6f6458c8c9ac100908259558c7e22d2}} 
+\index{DRW\_LType@{DRW\_LType}!desc@{desc}}
+\index{desc@{desc}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{desc}{desc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+LType\+::desc}
+
+descriptive string, code 3 \mbox{\Hypertarget{class_d_r_w___l_type_a438510524566f0deaf77ea694f171762}\label{class_d_r_w___l_type_a438510524566f0deaf77ea694f171762}} 
+\index{DRW\_LType@{DRW\_LType}!length@{length}}
+\index{length@{length}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily double DRW\+\_\+\+LType\+::length}
+
+total length of pattern, code 40 \mbox{\Hypertarget{class_d_r_w___l_type_afb0702d3edab2948fdba2fb861fd3a4b}\label{class_d_r_w___l_type_afb0702d3edab2948fdba2fb861fd3a4b}} 
+\index{DRW\_LType@{DRW\_LType}!path@{path}}
+\index{path@{path}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::vector$<$double$>$ DRW\+\_\+\+LType\+::path}
+
+trace, point or space length sequence, code 49 \mbox{\Hypertarget{class_d_r_w___l_type_a86ca28af8124ca042098b03e0ac537af}\label{class_d_r_w___l_type_a86ca28af8124ca042098b03e0ac537af}} 
+\index{DRW\_LType@{DRW\_LType}!pathIdx@{pathIdx}}
+\index{pathIdx@{pathIdx}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{pathIdx}{pathIdx}}
+{\footnotesize\ttfamily int DRW\+\_\+\+LType\+::path\+Idx\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___l_type_acb78cd0a105ac8b44e19313a4bf90f50}\label{class_d_r_w___l_type_acb78cd0a105ac8b44e19313a4bf90f50}} 
+\index{DRW\_LType@{DRW\_LType}!size@{size}}
+\index{size@{size}!DRW\_LType@{DRW\_LType}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily int DRW\+\_\+\+LType\+::size}
+
+element number, code 73 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8h}{drw\+\_\+objects.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8cpp}{drw\+\_\+objects.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,151 @@
+\hypertarget{edit__formula__dialog_8h_source}{}\doxysection{edit\+\_\+formula\+\_\+dialog.\+h}
+\label{edit__formula__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/support/edit\_formula\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/support/edit\_formula\_dialog.h}}
+\mbox{\hyperlink{edit__formula__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ @file\ \ \ edit\_formula\_dialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ @author\ DSCaskey\ <dscaskey@gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ @date\ \ \ 10\ Jun,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogeditwrongformula.h}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @date\ \ \ 29\ 5,\ 2014}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ EDIT\_FORMULA\_DIALOG\_H}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ EDIT\_FORMULA\_DIALOG\_H}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QTableWidgetItem>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}../tools/dialogtool.h"{}}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928}{VariableTab}}\ \{\mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5}{Measurements}}=0,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a26b367bcdd210f7345b551b921c5551f}{Custom}}=1,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928ac146f02bc0f24f00569bee85acf64e01}{LineLengths}}=\ 2,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a2e5cd1909aca5f4ffecfa3f76eef2cdc}{LineAngles}}=3,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a5a1f8f739e47ec5f58742baab1a1bea1}{CurveLengths}}=4,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a666f37a76ab77b57519b43e4025ab44e}{CurveAngles}}=5,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a8dd1824ee7f27091802e776437458112}{CPLengths}}=6,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a428cc153e56aedf726c7071488c2bc28}{ArcRadii}}=7,\ \mbox{\hyperlink{edit__formula__dialog_8h_a81e56be3c50376239982abe0269ec928a60fe6c4c525893f09d49fb65b21e81a8}{Functions}}=8\};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_measurement}{VMeasurement}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edit_formula_dialog}{EditFormulaDialog}};}
+\DoxyCodeLine{00078\ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edit_formula_dialog}{EditFormulaDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00089\ \{}
+\DoxyCodeLine{00090\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00091\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog}{EditFormulaDialog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a80531d6b3c0f570c34808659dfc870fb}{\string~EditFormulaDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a128746769678276b4cd36d9e1bf42c90}{GetFormula}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a12d55a01172c71337afb2e346a39b843}{SetFormula}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a5500c2b336fb70700c064cedae01497e}{setCheckZero}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a86501b4dcf7df7dcf4195a53869c17af}{setCheckLessThanZero}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_ad1aea8c58778ba445c27fecba1f1fd20}{setPostfix}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_a72238f494a258b98e3805c76115ba447}{DialogAccepted}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_abab24ec9e9684e3df4131568f0a189fa}{DialogRejected}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_a4d8c4c40b0cb5d16aa92ebb2087b6af4}{EvalFormula}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a9d983a0b10464f7655c855d6e0ce9a74}{valueChanged}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_aa743c053e5cc2859bfec46ba36590a69}{tabChanged}}(\textcolor{keywordtype}{int}\ row);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a2e2ef88f76830061285ffd0205a193e9}{insertVariable}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a5c1061e2f62ee5ced1cc74a4e974b317}{insertValue}}(QTableWidgetItem\ *\ item);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a60ca5b2c465c4551d332f945a983cfee}{measurements}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_aa523de908a96bb2c6c9c97023518f7a5}{lineLengths}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_aa72dd32486c3832cbb28cb282d26b2f4}{arcRadii}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a903a0b463aa108a947ae1d3306b99dce}{curveAngles}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a3d2a5ce33862177e517cb2eb32529946}{curveLengths}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a84b333549be510d10e1c4705b9e4678f}{controlPointLengths}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a8f97b1a36035a64567d933526217e47d}{lineAngles}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a2eccdbeaeda0d4a8ff5b3e38f80c3ba9}{customVariables}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_ab16908ba748f2804e23cd328d5091eaa}{functions}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_aab8863b0b9841c83d922e68897b641ed}{CheckState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_ab9bc737eef698e49973d834d0811af3c}{closeEvent}}(QCloseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_aedb06a6ddda0154ad24ad75c98be65ad}{showEvent}}(\ QShowEvent\ *event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_edit_formula_dialog_ac38f716de79f26e0d99570d81d902a35}{resizeEvent}}(QResizeEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a4811ca77afb38d1c2f098fd0dfca74db}{filterVariables}}(\textcolor{keyword}{const}\ QString\ \&filter);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00129\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_edit_formula_dialog}{EditFormulaDialog}})}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_edit_formula_dialog}{EditFormulaDialog}}\ *\mbox{\hyperlink{class_edit_formula_dialog_acdbbf0fe6f67e253b2bb9f5d82356507}{ui}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a77c8769dff87afd45a289438ef977625}{m\_formula}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00133\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a9cd0a0e7dec6f51ce9f873d9e107eb5f}{m\_undoFormula}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a671bfceec2935d31b8e61b748ab9faee}{m\_checkZero}};}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a992f6d3df4e5b389161a84f080a05bd4}{m\_checkLessThanZero}};}
+\DoxyCodeLine{00136\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a00a0ff8ed19ea884156de118f7522c8f}{m\_postfix}};}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_ac1a00125a492fc3a56dfe389ac518470}{m\_restoreCursor}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_af706214586802d7e1a8e2da377195312}{initializeVariables}}();}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ template\ <class\ key,\ class\ val>}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_abe38a6ecf3165bb67ca6531929e9b9d7}{showVariable}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<key,\ val>\ \&var);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_acddf850fd883ed51af24dde066f80963}{showMeasurements}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_measurement}{VMeasurement}}>\ >\ \&var);}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_aa4bc382d202b07ba90fb20e0f0d6478c}{showFunctions}}();}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_afd8baea0a09ee020cfe1e538965c7a8d}{setDescription}}(const\ QString\ \&name,\ qreal\ value,\ const\ QString\ \&unit,}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&type,\ const\ QString\ \&description);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a2934d462e81f8f75feb042cca2f096d5}{clearFormula}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_edit_formula_dialog_a97b37c30e2015ea7492320b8ba6a1270}{undoFormula}}();}
+\DoxyCodeLine{00150\ \};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ EDIT\_FORMULA\_DIALOG\_H}}
+
+\end{DoxyCode}

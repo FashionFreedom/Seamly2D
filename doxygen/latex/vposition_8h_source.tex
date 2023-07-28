@@ -1,0 +1,148 @@
+\hypertarget{vposition_8h_source}{}\doxysection{vposition.\+h}
+\label{vposition_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vposition.h@{D:/Github/Seamly2D/src/libs/vlayout/vposition.h}}
+\mbox{\hyperlink{vposition_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vposition.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ if\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vposition.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 20\ 1,\ 2015}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VPOSITION\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VPOSITION\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QRunnable>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <atomic>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vbestsquare_8h}{vbestsquare.h}}"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vcontour_8h}{vcontour.h}}"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vlayoutdef_8h}{vlayoutdef.h}}"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vlayoutpiece_8h}{vlayoutpiece.h}}"{}}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_position}{VPosition}}\ :\ \textcolor{keyword}{public}\ QRunnable}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_position}{VPosition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_contour}{VContour}}\ \&\mbox{\hyperlink{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}{gContour}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}{i}},\ std::atomic\_bool\ *\mbox{\hyperlink{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}{stop}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_position_a4647280c58adbcd7eed174ee825a1f25}{rotate}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}{rotationIncrease}},\ \textcolor{keywordtype}{bool}\ saveLength);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_position_aba1a2cef3f1a3c399d6cb343f2cc51b7}{\string~VPosition}}()\ Q\_DECL\_OVERRIDE\{\}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_a3556714db4723880369ade5136f2f21f}{getPaperIndex}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_aacc3244379ed04fa3a04395bfbec577d}{setPaperIndex}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_ab618737a804c3efd280a967a9e75ee58}{getFrame}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a87c88d6dc509d400f35a058db661091f}{setFrame}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_abfe449dd446104adf41eb58d8f37ca8f}{getPieceCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_ade623355694b7415849ddaec643929d1}{setPieceCount}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a61fda7c8b52bd6d12b43bc1eca205f5e}{setPieces}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VLayoutPiece>}}\ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}});}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_v_best_square}{VBestSquare}}\ \mbox{\hyperlink{class_v_position_a339dee5152a2e1944ce662e76167efe4}{getBestResult}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a40667971787e2df19f05235c9aa8e13f}{DrawDebug}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_contour}{VContour}}\ \&contour,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_a0f9889501aa66e9073f72e693363d1f7}{frame}},\ quint32\ \mbox{\hyperlink{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}{paperIndex}},}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}{piecesCount}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VLayoutPiece>}}\ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}}\ =\ \mbox{\hyperlink{class_q_vector}{QVector<VLayoutPiece>}}());}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_a0e6eeb71ad80c20f3a66e015198fb19c}{Bias}}(\textcolor{keywordtype}{int}\ length,\ \textcolor{keywordtype}{int}\ maxLength);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_position}{VPosition}})}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_v_best_square}{VBestSquare}}\ \mbox{\hyperlink{class_v_position_a03474c28aad62727da8690e57641fae6}{bestResult}};}
+\DoxyCodeLine{00095\ \ \ \ \ const\ \mbox{\hyperlink{class_v_contour}{VContour}}\ \mbox{\hyperlink{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}{gContour}};}
+\DoxyCodeLine{00096\ \ \ \ \ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}{i}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}};}
+\DoxyCodeLine{00099\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}{paperIndex}};}
+\DoxyCodeLine{00100\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_a0f9889501aa66e9073f72e693363d1f7}{frame}};}
+\DoxyCodeLine{00101\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}{piecesCount}};}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}>\ \mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}};}
+\DoxyCodeLine{00103\ \ \ \ \ std::atomic\_bool\ *\mbox{\hyperlink{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}{stop}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_position_a4647280c58adbcd7eed174ee825a1f25}{rotate}};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}{rotationIncrease}};}
+\DoxyCodeLine{00109\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_position_a0bb52e74f94b7d9c75543484a60b569f}{angle\_between}};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ enum\ class\ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{CrossingType}}\ :\ \textcolor{keywordtype}{char}}
+\DoxyCodeLine{00112\ \ \ \ \ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa81313ddfa184bc1ecb63b5feae91e45}{NoIntersection}}\ =\ 0,}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa06d31c2ee920b4d53e8c9c06d90ba24}{Intersection}}\ =\ 1,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa9ee830e9296511bc8dcd5ba9fee3ca3}{EdgeError}}\ =\ 2}
+\DoxyCodeLine{00116\ \ \ \ \ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6}{InsideType}}\ :\ \textcolor{keywordtype}{char}}
+\DoxyCodeLine{00119\ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a76fbf0ccd7fcd64879c2ff2119dc15a4}{Outside}}\ =\ 0,}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a9b6d3000134648fc9f1e71094ae0847d}{Inside}}\ =\ 1,}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa9ee830e9296511bc8dcd5ba9fee3ca3}{EdgeError}}\ =\ 2}
+\DoxyCodeLine{00123\ \ \ \ \ \};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a57b3acc10553c3d0f88a45c7d2140510}{run}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_af6a86ce46919965e58cf791981884118}{SaveCandidate}}(\mbox{\hyperlink{class_v_best_square}{VBestSquare}}\ \&\mbox{\hyperlink{class_v_position_a03474c28aad62727da8690e57641fae6}{bestResult}},\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ \textcolor{keywordtype}{int}\ globalI,\ \textcolor{keywordtype}{int}\ detJ,\ \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{BestFrom}}\ type);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_position_a9ba944109d6f068cf22cffed1c32967f}{CheckCombineEdges}}(\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}},\ \textcolor{keywordtype}{int}\ \&dEdge);}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_position_a328905fe0346c1140b3a1787065907d3}{CheckRotationEdges}}(\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}},\ \textcolor{keywordtype}{int}\ dEdge,\ \textcolor{keywordtype}{int}\ angle)\ const;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{CrossingType}}\ \mbox{\hyperlink{class_v_position_a0c061c00ed3c9ce74a7e6618b12020a2}{Crossing}}(const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}})\ const;}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_position_aabbb722461716aea7acc2302c5282699}{SheetContains}}(const\ QRectF\ \&rect)\ const;}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a35efb2449b767ff7a13c05959816b654}{CombineEdges}}(\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ const\ QLineF\ \&globalEdge,\ const\ \textcolor{keywordtype}{int}\ \&dEdge);}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a7ad73775e05e76b020d28ff2c5a2067b}{RotateEdges}}(\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}},\ const\ QLineF\ \&globalEdge,\ \textcolor{keywordtype}{int}\ dEdge,\ \textcolor{keywordtype}{int}\ angle)\ const;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ static\ QPainterPath\ \mbox{\hyperlink{class_v_position_a2ac9426bd746b420c80249a7727d5ffc}{ShowDirection}}(const\ QLineF\ \&edge);}
+\DoxyCodeLine{00139\ \ \ \ \ static\ QPainterPath\ \mbox{\hyperlink{class_v_position_a71279746287f3f49ce38116855fb1609}{DrawContour}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<QPointF>\ \&points);}
+\DoxyCodeLine{00140\ \ \ \ \ static\ QPainterPath\ \mbox{\hyperlink{class_v_position_a5cfdb5daf69f4c4613ff32d063f01dc5}{drawPieces}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}>\ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}});}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_position_a2c3d14ff2f695a176fed250f83b166dd}{Rotate}}(\textcolor{keywordtype}{int}\ increase);}
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPOSITION\_H}}
+
+\end{DoxyCode}

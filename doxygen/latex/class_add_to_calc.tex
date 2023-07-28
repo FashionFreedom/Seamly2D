@@ -1,0 +1,145 @@
+\hypertarget{class_add_to_calc}{}\doxysection{Add\+To\+Calc Class Reference}
+\label{class_add_to_calc}\index{AddToCalc@{AddToCalc}}
+
+
+{\ttfamily \#include $<$addtocalc.\+h$>$}
+
+Inheritance diagram for Add\+To\+Calc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_add_to_calc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_add_to_calc_a8589f15dacf20bd86c13f4cfb7c3f2ce}{Add\+To\+Calc}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_add_to_calc_af132010eddab62a027ea9398c9dd2d63}{$\sim$\+Add\+To\+Calc}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_add_to_calc_a59db993ab9efd3840f89f862fb2e8894}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_add_to_calc_aa1efe50a51c1a9c2fe92cabd1c1fa3a5}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_add_to_calc_abdf08c1d91051bdf20cb526eeb23be53}{Redo\+Full\+Parsing}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const QString \mbox{\hyperlink{class_add_to_calc_acc2d1c8550a0ba5552b356c3327d5f84}{active\+Block\+Name}}
+\item 
+quint32 \mbox{\hyperlink{class_add_to_calc_a5cd523dadf31f0c8acd2a9d299a18edc}{cursor}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_add_to_calc_a8589f15dacf20bd86c13f4cfb7c3f2ce}\label{class_add_to_calc_a8589f15dacf20bd86c13f4cfb7c3f2ce}} 
+\index{AddToCalc@{AddToCalc}!AddToCalc@{AddToCalc}}
+\index{AddToCalc@{AddToCalc}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{AddToCalc()}{AddToCalc()}}
+{\footnotesize\ttfamily Add\+To\+Calc\+::\+Add\+To\+Calc (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{xml,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_add_to_calc_af132010eddab62a027ea9398c9dd2d63}\label{class_add_to_calc_af132010eddab62a027ea9398c9dd2d63}} 
+\index{AddToCalc@{AddToCalc}!````~AddToCalc@{$\sim$AddToCalc}}
+\index{````~AddToCalc@{$\sim$AddToCalc}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{$\sim$AddToCalc()}{~AddToCalc()}}
+{\footnotesize\ttfamily virtual Add\+To\+Calc\+::$\sim$\+Add\+To\+Calc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_add_to_calc_aa1efe50a51c1a9c2fe92cabd1c1fa3a5}\label{class_add_to_calc_aa1efe50a51c1a9c2fe92cabd1c1fa3a5}} 
+\index{AddToCalc@{AddToCalc}!redo@{redo}}
+\index{redo@{redo}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Add\+To\+Calc\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_add_to_calc_abdf08c1d91051bdf20cb526eeb23be53}\label{class_add_to_calc_abdf08c1d91051bdf20cb526eeb23be53}} 
+\index{AddToCalc@{AddToCalc}!RedoFullParsing@{RedoFullParsing}}
+\index{RedoFullParsing@{RedoFullParsing}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{RedoFullParsing()}{RedoFullParsing()}}
+{\footnotesize\ttfamily void Add\+To\+Calc\+::\+Redo\+Full\+Parsing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{VUndo\+Command}}.
+
+\mbox{\Hypertarget{class_add_to_calc_a59db993ab9efd3840f89f862fb2e8894}\label{class_add_to_calc_a59db993ab9efd3840f89f862fb2e8894}} 
+\index{AddToCalc@{AddToCalc}!undo@{undo}}
+\index{undo@{undo}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Add\+To\+Calc\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_add_to_calc_acc2d1c8550a0ba5552b356c3327d5f84}\label{class_add_to_calc_acc2d1c8550a0ba5552b356c3327d5f84}} 
+\index{AddToCalc@{AddToCalc}!activeBlockName@{activeBlockName}}
+\index{activeBlockName@{activeBlockName}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{activeBlockName}{activeBlockName}}
+{\footnotesize\ttfamily const QString Add\+To\+Calc\+::active\+Block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_add_to_calc_a5cd523dadf31f0c8acd2a9d299a18edc}\label{class_add_to_calc_a5cd523dadf31f0c8acd2a9d299a18edc}} 
+\index{AddToCalc@{AddToCalc}!cursor@{cursor}}
+\index{cursor@{cursor}!AddToCalc@{AddToCalc}}
+\doxysubsubsection{\texorpdfstring{cursor}{cursor}}
+{\footnotesize\ttfamily quint32 Add\+To\+Calc\+::cursor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{addtocalc_8h}{addtocalc.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{addtocalc_8cpp}{addtocalc.\+cpp}}\end{DoxyCompactItemize}

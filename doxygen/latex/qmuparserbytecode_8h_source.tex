@@ -1,0 +1,135 @@
+\hypertarget{qmuparserbytecode_8h_source}{}\doxysection{qmuparserbytecode.\+h}
+\label{qmuparserbytecode_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserbytecode.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserbytecode.h}}
+\mbox{\hyperlink{qmuparserbytecode_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPARSERBYTECODE\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPARSERBYTECODE\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmudef_8h}{qmudef.h}}"{}}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparserdef_8h}{qmuparserdef.h}}"{}}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparsertoken_8h}{qmuparsertoken.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00038\ QT\_WARNING\_DISABLE\_CLANG(\textcolor{stringliteral}{"{}-\/Wnested-\/anon-\/types"{}})}
+\DoxyCodeLine{00039\ namespace\ \mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structqmu_1_1_s_token}{SToken}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ \mbox{\hyperlink{structqmu_1_1_s_token_acb6dd662a1f98dbd25e51de4d17d6a7d}{Cmd}};}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structqmu_1_1_s_token_a19eeea353120bfc7941153bfe572629a}{StackPos}};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{union\ }\textcolor{comment}{//}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{comment}{//SValData}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ *\mbox{\hyperlink{structqmu_1_1_s_token_aa27bd4656de6798dcfbd1990b826f620}{ptr}};}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ \ \mbox{\hyperlink{structqmu_1_1_s_token_a29f2debc58d12330239f7a25faa4678a}{data}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ \ \mbox{\hyperlink{structqmu_1_1_s_token_a67687c4bafd938874587dd2863a6018a}{data2}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \}\ Val;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{comment}{//SFunData}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ generic\_fun\_type\ is\ merely\ a\ placeholder.\ The\ real\ type\ could\ be}}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ anything\ between\ gun\_type1\ and\ fun\_type9.\ I\ can't\ use\ a\ void}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ pointer\ due\ to\ constraints\ in\ the\ ANSI\ standard\ which\ allows}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ data\ pointers\ and\ function\ pointers\ to\ differ\ in\ size.}}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ \mbox{\hyperlink{structqmu_1_1_s_token_aee548315d72f1c307155b6220189c456}{ptr}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \mbox{\hyperlink{structqmu_1_1_s_token_ad7103e79c83886bb2b94cc44f5d4dca5}{argc}};}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \mbox{\hyperlink{structqmu_1_1_s_token_a219724568fac5fe68b4324c876493620}{idx}};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \}\ Fun;}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\textcolor{comment}{//SOprtData}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ *ptr;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structqmu_1_1_s_token_a4881e086262737088ac95951f09e16fd}{offset}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}\ Oprt;}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00089\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}\ \&a\_ByteCode);}
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}\&\ operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}\ \&a\_ByteCode);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ Assign(\textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{QmuParserByteCode}}\ \&a\_ByteCode);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddVar(qreal\ *a\_pVar);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddVal(qreal\ a\_fVal);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddOp(\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ a\_Oprt);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddIfElse(\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ a\_Oprt);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddAssignOp(qreal\ *a\_pVar);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddFun(\mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ a\_pFun,\ \textcolor{keywordtype}{int}\ a\_iArgc);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddBulkFun(\mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ a\_pFun,\ \textcolor{keywordtype}{int}\ a\_iArgc);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AddStrFun(\mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ a\_pFun,\ \textcolor{keywordtype}{int}\ a\_iArgc,\ \textcolor{keywordtype}{int}\ a\_iIdx);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ EnableOptimizer(\textcolor{keywordtype}{bool}\ bStat);}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ Finalize();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ clear();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ GetMaxStackSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ GetSize()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structqmu_1_1_s_token}{SToken}}*\ GetBase()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ AsciiDump();}
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken<qreal,\ string\_type>}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_afaf8f3c52d68f4a25dc0f49d6bf7d97a}{token\_type}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{class_q_vector}{QVector<SToken>}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_ae5669a573df2c5802f48154147a2f421}{rpn\_type}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_a778f8c045e688bca0854df3028cb6889}{m\_iStackPos}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_a6aaa90639d0d24983ee9dbbc99e7c16b}{m\_iMaxStackSize}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{rpn\_type}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_ab46e18ec6a2fd90cc115006cc7e3419e}{m\_vRPN}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code_ab759e5ab64701720c9b2ace1f00a5a05}{m\_bEnableOptimizer}};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ ConstantFolding(\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ a\_Oprt);}
+\DoxyCodeLine{00127\ \};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ QmuParserByteCode::EnableOptimizer(\textcolor{keywordtype}{bool}\ bStat)}
+\DoxyCodeLine{00131\ \{}
+\DoxyCodeLine{00132\ \ \ \ \ m\_bEnableOptimizer\ =\ bStat;}
+\DoxyCodeLine{00133\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00136\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ QmuParserByteCode::GetMaxStackSize()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00137\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(m\_iMaxStackSize+1);}
+\DoxyCodeLine{00139\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00145\ \textcolor{comment}{}\textcolor{comment}{//\ cppcheck-\/suppress\ unusedFunction}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ QmuParserByteCode::GetSize()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ m\_vRPN.size();}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \}\ \textcolor{comment}{//\ namespace\ qmu}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

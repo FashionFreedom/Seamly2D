@@ -1,0 +1,103 @@
+\hypertarget{tst__measurementregexp_8h_source}{}\doxysection{tst\+\_\+measurementregexp.\+h}
+\label{tst__measurementregexp_8h_source}\index{D:/Github/Seamly2D/src/test/TranslationsTest/tst\_measurementregexp.h@{D:/Github/Seamly2D/src/test/TranslationsTest/tst\_measurementregexp.h}}
+\mbox{\hyperlink{tst__measurementregexp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ tst\_measurementregexp.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 16\ 9,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ TST\_MEASUREMENTREGEXP\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TST\_MEASUREMENTREGEXP\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tst__abstractregexp_8h}{tst\_abstractregexp.h}}"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }QTranslator;}
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_s_t___measurement_reg_exp}{TST\_MeasurementRegExp}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_t_s_t___abstract_reg_exp}{TST\_AbstractRegExp}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp}{TST\_MeasurementRegExp}}(quint32\ systemCode,\ \textcolor{keyword}{const}\ QString\ \&locale,\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a8deab77c2658f8769e8932001da90a30}{\string~TST\_MeasurementRegExp}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ quint32\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_afd93b84ac6dd6fdca0ac6ee8f8ff4746}{systemCounts}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a2c3a07c748665ade4340c34e01b262fd}{PrepareData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \ \ \ \ virtual\ QStringList\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_ae08d4d0f18b01c611979a601c37b32b2}{AllNames}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ private\ slots:}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_aa65cf101d145cc99c84d44f78726df6a}{initTestCase}}();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_ade178e1496b5b1760d0b55115e974844}{TestCheckNoEndLine\_data}}();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a7df9eee88d0c207193634f3b69410a21}{TestCheckNoEndLine}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a9dd5b20e317f5a403ccd7c59bb44e6e0}{TestCheckRegExpNames\_data}}();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a28efbfd15ef072f8cbbda90fe4a38f16}{TestCheckRegExpNames}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a522613af303e77d99acb2f0403a48bc1}{TestCheckIsNamesUnique\_data}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a4056f30d3f58859ffe810875775579d1}{TestCheckIsNamesUnique}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a0e54db5c502efe52efcc50dc1abc4bcf}{TestCheckNoOriginalNamesInTranslation\_data}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_aa6cae46eb5c2e1f68d47828a207382a1}{TestCheckNoOriginalNamesInTranslation}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_adf763a4c24af68627cec8bb8acd4b6d1}{cleanupTestCase}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ private:}
+\DoxyCodeLine{00088\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_t_s_t___measurement_reg_exp}{TST\_MeasurementRegExp}})}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_abf273d98bd4cd943ef28608c0b11e384}{m\_systemCode}};}
+\DoxyCodeLine{00091\ \ \ \ \ QPointer<QTranslator>\ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_a9df0ed209bac0a14329ef148034ce567}{m\_pmsTranslator}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_aeb68c32720b9215949a39ff799054916}{LoadMeasurements}}(const\ QString\ \&checkedLocale);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_t_s_t___measurement_reg_exp_aa0f599a249c7a554fc1989df5263ec28}{RemoveTrMeasurements}}(const\ QString\ \&checkedLocale);}
+\DoxyCodeLine{00095\ \};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TST\_MEASUREMENTREGEXP\_H}}
+
+\end{DoxyCode}

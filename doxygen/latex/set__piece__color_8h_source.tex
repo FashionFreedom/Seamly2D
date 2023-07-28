@@ -1,0 +1,68 @@
+\hypertarget{set__piece__color_8h_source}{}\doxysection{set\+\_\+piece\+\_\+color.\+h}
+\label{set__piece__color_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/set\_piece\_color.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/set\_piece\_color.h}}
+\mbox{\hyperlink{set__piece__color_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ set\_piece\_color.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 1,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ SET\_PIECE\_COLOR\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ SET\_PIECE\_COLOR\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vundocommand_8h}{vundocommand.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_set_piece_color}{SetPieceColor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color}{SetPieceColor}}(quint32\ \textcolor{keywordtype}{id},\ QString\ color,\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_a99608abb0c2c5c177cdcf5edee5e628a}{\string~SetPieceColor}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_set_piece_color_a5f165ea6b5ec5ab0455c3cf8f03a7a80}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_set_piece_color_ab5793000d261bdcaa701c0c42e6b7c18}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_set_piece_color_a1dab5917533c7454e4d2fe37df1ecba8}{id}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00046\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_aa335bd09b1933f70674ff43d3395c1ce}{getpieceId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_a8d233a17e629698017f8dd679c344475}{getColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ signals:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_a34bf9b4c8cd5148abfdfedd8a05d3b80}{updateList}}(quint32\ \mbox{\hyperlink{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}{m\_id}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_set_piece_color}{SetPieceColor}})}
+\DoxyCodeLine{00054\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}{m\_id}};}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ *\mbox{\hyperlink{class_set_piece_color_a72f2c9fe2ba3dd2deb7426e18c776e05}{m\_data}};}
+\DoxyCodeLine{00056\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_a01a1797bab5a768cc5d366a25336fb02}{m\_oldColor}};}
+\DoxyCodeLine{00057\ \ \ \ \ QString\ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_a666cbb12f0ab9146b93c5f9409df1e38}{m\_newColor}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color_ae4c4e60d23a6a9df784002c63e3b31f5}{doCmd}}(QString\ color);}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SET\_PIECE\_COLOR\_H}}
+
+\end{DoxyCode}

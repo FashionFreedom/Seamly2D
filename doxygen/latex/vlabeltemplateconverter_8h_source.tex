@@ -1,0 +1,92 @@
+\hypertarget{vlabeltemplateconverter_8h_source}{}\doxysection{vlabeltemplateconverter.\+h}
+\label{vlabeltemplateconverter_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/xml/vlabeltemplateconverter.h@{D:/Github/Seamly2D/src/libs/ifc/xml/vlabeltemplateconverter.h}}
+\mbox{\hyperlink{vlabeltemplateconverter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 10\ 8,\ 2017}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VLABELTEMPLATECONVERTER\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VLABELTEMPLATECONVERTER\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractconverter_8h}{vabstractconverter.h}}"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_label_template_converter}{VLabelTemplateConverter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_converter}{VAbstractConverter}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_label_template_converter}{VLabelTemplateConverter}}(\textcolor{keyword}{const}\ QString\ \&fileName);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_label_template_converter_aba969978385d62e57bb169aed798b403}{\string~VLabelTemplateConverter}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_label_template_converter_a285d5d6a9eca622f081d148b6d1d64fd}{LabelTemplateMaxVerStr}};}
+\DoxyCodeLine{00064\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_label_template_converter_aba07aa10f9cd9df17b0a2d52862d39cf}{CurrentSchema}};}
+\DoxyCodeLine{00065\ \ \ \ \ static\ Q\_DECL\_CONSTEXPR\ const\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_label_template_converter_a4cfdb685dc1462cd71d3b6bafea669c9}{LabelTemplateMinVer}}\ =\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(1,\ 0,\ 0);}
+\DoxyCodeLine{00066\ \ \ \ \ static\ Q\_DECL\_CONSTEXPR\ const\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_label_template_converter_a56af71fea4b6da43a07f05c5a11da9f6}{LabelTemplateMaxVer}}\ =\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(1,\ 0,\ 0);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ protected:}
+\DoxyCodeLine{00069\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_v_label_template_converter_ab3ea789d8f78e6ed4b5782d489cabcfb}{MinVer}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00070\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_v_label_template_converter_a05ae4dd4f960554ceee98189ddee42f3}{MaxVer}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_label_template_converter_a55b844272a573f5baefced483e362496}{MinVerStr}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_label_template_converter_a0f2fcd6c6ca8b22c58b90baed4842891}{MaxVerStr}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_label_template_converter_afba518c2d7f010b45eda85494a212a8e}{XSDSchema}}(\textcolor{keywordtype}{int}\ ver)\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_label_template_converter_a5775a872ffebd476caba9de3780f09cc}{ApplyPatches}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00077\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_label_template_converter_ae278b45ddc1ad253cb9d91fd9774d6b1}{DowngradeToCurrentMaxVersion}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_label_template_converter_aebb18600d6faaae5ba26b13ba38c1e50}{IsReadOnly}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \textcolor{keyword}{false};\}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_label_template_converter}{VLabelTemplateConverter}})}
+\DoxyCodeLine{00083\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_label_template_converter_a45daf66de25620518ea3e7a178f01681}{LabelTemplateMinVerStr}};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VLABELTEMPLATECONVERTER\_H}}
+
+\end{DoxyCode}

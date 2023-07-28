@@ -1,0 +1,99 @@
+\hypertarget{vlinelength_8h_source}{}\doxysection{vlinelength.\+h}
+\label{vlinelength_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vlinelength.h@{D:/Github/Seamly2D/src/libs/vpatterndb/variables/vlinelength.h}}
+\mbox{\hyperlink{vlinelength_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vlinelength.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 28\ 7,\ 2014}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VLINELENGTH\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VLINELENGTH\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vinternalvariable_8h}{vinternalvariable.h}}"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_length_line_data}{VLengthLineData}};}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_point_f}{VPointF}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ :\textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_internal_variable}{VInternalVariable}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_length_line_a2184e2b65190b7b4701dce2cb2f96545}{VLengthLine}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_length_line_a2184e2b65190b7b4701dce2cb2f96545}{VLengthLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ *p1,\ \textcolor{keyword}{const}\ quint32\ \&p1Id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ *p2,\ \textcolor{keyword}{const}\ quint32\ \&p2Id,\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ patternUnit);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_length_line_a2184e2b65190b7b4701dce2cb2f96545}{VLengthLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&var);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_length_line_ad552063d8a71f20a554e01f95eefc5f0}{\string~VLengthLine}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&\mbox{\hyperlink{class_v_length_line_ae0487689c5b2b21c7b39bd758701d8e4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&var);}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&\mbox{\hyperlink{class_v_length_line_ae0487689c5b2b21c7b39bd758701d8e4}{operator=}}(\mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&\&var)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_length_line_aeefb7ec0d2aa1ba02cef93d0be7ac358}{Swap}}(\mbox{\hyperlink{class_v_length_line}{VLengthLine}}\ \&var)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_length_line_a964b6afb9032a6de6eb6399f4a9c6fa4}{Filter}}(quint32\ \textcolor{keywordtype}{id})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_length_line_aa800720b3328100fac655f1a6885bf31}{SetValue}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ *p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ *p2);}
+\DoxyCodeLine{00085\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_v_length_line_addb9e76fc6d05997ed74d5608a27ad8e}{GetP1Id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_v_length_line_afd8451f29b601475bd5b330a5ed7ecdf}{GetP2Id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ QSharedDataPointer<VLengthLineData>\ \mbox{\hyperlink{class_v_length_line_a66e53ed89e4f53c2bbb52d185b2dca38}{d}};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \mbox{\hyperlink{vlinelength_8h_a0aad904f01c33ae8ad5786e6229c71f2}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_length_line}{VLengthLine}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VLINELENGTH\_H}}
+
+\end{DoxyCode}

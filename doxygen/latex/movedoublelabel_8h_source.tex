@@ -1,0 +1,108 @@
+\hypertarget{movedoublelabel_8h_source}{}\doxysection{movedoublelabel.\+h}
+\label{movedoublelabel_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/label/movedoublelabel.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/label/movedoublelabel.h}}
+\mbox{\hyperlink{movedoublelabel_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ movedoublelabel.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 24\ 6,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ MOVEDOUBLELABEL\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MOVEDOUBLELABEL\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{moveabstractlabel_8h}{moveabstractlabel.h}}"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{MoveDoublePoint}}:\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fda7f96422659759463a6faa5a17b7a5554}{FirstPoint}},\ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fdac8dcbd757e675381f3f7b5d2c75de2e8}{SecondPoint}}\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_move_double_label}{MoveDoubleLabel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_move_abstract_label}{MoveAbstractLabel}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_move_double_label}{MoveDoubleLabel}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ \textcolor{keyword}{const}\ QPointF\ \&pos,\ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{MoveDoublePoint}}\ type,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quint32\ toolId,\ quint32\ pointId,\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_move_double_label_a58d7de2d743b6ca52822241da0f59367}{\string~MoveDoubleLabel}}()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{class_move_double_label_a8d5b54f74d2d3a158b5d3c0d9546cfd2}{mergeWith}}(\textcolor{keyword}{const}\ QUndoCommand\ *command)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_move_double_label_ae9e46ed4668a98fef70dc55185cfdf94}{id}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_move_double_label_a31ae3e4090c9500ae6ae3d83782731c2}{GetToolId}}()\ const;}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{MoveDoublePoint}}\ \mbox{\hyperlink{class_move_double_label_a83efb81c279384b1acc0825e7daa049c}{GetPointType}}()\ const;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ protected:}
+\DoxyCodeLine{00080\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_move_double_label_a6b3be9f6a06caf2025fc0c41c38db0fa}{Do}}(const\ QPointF\ \&pos)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ private:}
+\DoxyCodeLine{00083\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_move_double_label}{MoveDoubleLabel}})}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{MoveDoublePoint}}\ \mbox{\hyperlink{class_move_double_label_ace689b2719bae1a923da1af890fe1b5f}{m\_type}};}
+\DoxyCodeLine{00085\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_move_double_label_a2fd3efdd07a0b377ccf06bdb8aef1db5}{m\_idTool}};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{comment}{//Need\ for\ resizing\ scene\ rect}}
+\DoxyCodeLine{00087\ \ \ \ \ QGraphicsScene\ *\mbox{\hyperlink{class_move_double_label_ace6fea654eeac2ff1ef35aed6f607093}{m\_scene}};}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00091\ inline\ \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{MoveDoublePoint}}\ \mbox{\hyperlink{class_move_double_label}{MoveDoubleLabel}}::\mbox{\hyperlink{class_move_double_label_a83efb81c279384b1acc0825e7daa049c}{GetPointType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00092\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_move_double_label_ace689b2719bae1a923da1af890fe1b5f}{m\_type}};}
+\DoxyCodeLine{00094\ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00097\ \textcolor{keyword}{inline}\ quint32\ \mbox{\hyperlink{class_move_double_label_a31ae3e4090c9500ae6ae3d83782731c2}{MoveDoubleLabel::GetToolId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00098\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_move_double_label_a2fd3efdd07a0b377ccf06bdb8aef1db5}{m\_idTool}};}
+\DoxyCodeLine{00100\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MOVEDOUBLELABEL\_H}}
+
+\end{DoxyCode}

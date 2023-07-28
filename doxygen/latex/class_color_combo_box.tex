@@ -1,0 +1,157 @@
+\hypertarget{class_color_combo_box}{}\doxysection{Color\+Combo\+Box Class Reference}
+\label{class_color_combo_box}\index{ColorComboBox@{ColorComboBox}}
+
+
+{\ttfamily \#include $<$color\+\_\+combobox.\+h$>$}
+
+Inheritance diagram for Color\+Combo\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_color_combo_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_color_combo_box_a3a3ad3fa09c938920de113f6e18226e2}{color\+Changed\+Signal}} (const QString \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_color_combo_box_a6f5f9ee2c091828b98a6629694eb7d7f}{Color\+Combo\+Box}} (QWidget $\ast$parent=nullptr, const char $\ast$name=nullptr)
+\item 
+\mbox{\hyperlink{class_color_combo_box_ae88caa0dca3b1055137238e2744afeaf}{Color\+Combo\+Box}} (int width, int height, QWidget $\ast$parent=nullptr, const char $\ast$name=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_color_combo_box_a422be7364d16e790d521daa1537bcd18}{$\sim$\+Color\+Combo\+Box}} ()
+\item 
+QString \mbox{\hyperlink{class_color_combo_box_a89fce706b9bc28b2bd388aad98ed4d6b}{get\+Color}} () const
+\item 
+void \mbox{\hyperlink{class_color_combo_box_a33b1fe996cde97d08d5f9b16e6b9f91c}{set\+Color}} (const QString \&color)
+\item 
+void \mbox{\hyperlink{class_color_combo_box_ab1a21c7b8bfe3ff4e9858b64d410654d}{set\+Items}} (\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ map)
+\item 
+int \mbox{\hyperlink{class_color_combo_box_afc62bb3b6e2915b2931359fa82a2f46e}{get\+Icon\+Width}} ()
+\item 
+int \mbox{\hyperlink{class_color_combo_box_ad46d58e9ae6443855ef357e286b8d1b4}{get\+Icon\+Height}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_color_combo_box_a51ecd4d67cb2d1c46ae64777089c523b}{color\+Changed}} (int index)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_color_combo_box_a0057db2160209e97f661aea8ae939122}{init}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_color_combo_box_ad7d8f60f2f2c8ef8916e6c63562151c8}{m\+\_\+current\+Color}}
+\item 
+int \mbox{\hyperlink{class_color_combo_box_a623592fb517726418889c974bf64ca30}{m\+\_\+icon\+Width}}
+\item 
+int \mbox{\hyperlink{class_color_combo_box_a0a4ef93a05b0989d81ef8f1405b3b41e}{m\+\_\+icon\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A combo\+Box for choosing a color. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_color_combo_box_a6f5f9ee2c091828b98a6629694eb7d7f}\label{class_color_combo_box_a6f5f9ee2c091828b98a6629694eb7d7f}} 
+\index{ColorComboBox@{ColorComboBox}!ColorComboBox@{ColorComboBox}}
+\index{ColorComboBox@{ColorComboBox}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{ColorComboBox()}{ColorComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Color\+Combo\+Box\+::\+Color\+Combo\+Box (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{const char $\ast$}]{name = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_color_combo_box_ae88caa0dca3b1055137238e2744afeaf}\label{class_color_combo_box_ae88caa0dca3b1055137238e2744afeaf}} 
+\index{ColorComboBox@{ColorComboBox}!ColorComboBox@{ColorComboBox}}
+\index{ColorComboBox@{ColorComboBox}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{ColorComboBox()}{ColorComboBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Color\+Combo\+Box\+::\+Color\+Combo\+Box (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr},  }\item[{const char $\ast$}]{name = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_color_combo_box_a422be7364d16e790d521daa1537bcd18}\label{class_color_combo_box_a422be7364d16e790d521daa1537bcd18}} 
+\index{ColorComboBox@{ColorComboBox}!````~ColorComboBox@{$\sim$ColorComboBox}}
+\index{````~ColorComboBox@{$\sim$ColorComboBox}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{$\sim$ColorComboBox()}{~ColorComboBox()}}
+{\footnotesize\ttfamily Color\+Combo\+Box\+::$\sim$\+Color\+Combo\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_color_combo_box_a51ecd4d67cb2d1c46ae64777089c523b}\label{class_color_combo_box_a51ecd4d67cb2d1c46ae64777089c523b}} 
+\index{ColorComboBox@{ColorComboBox}!colorChanged@{colorChanged}}
+\index{colorChanged@{colorChanged}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{colorChanged}{colorChanged}}
+{\footnotesize\ttfamily void Color\+Combo\+Box\+::color\+Changed (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_color_combo_box_a3a3ad3fa09c938920de113f6e18226e2}\label{class_color_combo_box_a3a3ad3fa09c938920de113f6e18226e2}} 
+\index{ColorComboBox@{ColorComboBox}!colorChangedSignal@{colorChangedSignal}}
+\index{colorChangedSignal@{colorChangedSignal}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{colorChangedSignal}{colorChangedSignal}}
+{\footnotesize\ttfamily void Color\+Combo\+Box\+::color\+Changed\+Signal (\begin{DoxyParamCaption}\item[{const QString \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_color_combo_box_a89fce706b9bc28b2bd388aad98ed4d6b}\label{class_color_combo_box_a89fce706b9bc28b2bd388aad98ed4d6b}} 
+\index{ColorComboBox@{ColorComboBox}!getColor@{getColor}}
+\index{getColor@{getColor}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily QString Color\+Combo\+Box\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_color_combo_box_ad46d58e9ae6443855ef357e286b8d1b4}\label{class_color_combo_box_ad46d58e9ae6443855ef357e286b8d1b4}} 
+\index{ColorComboBox@{ColorComboBox}!getIconHeight@{getIconHeight}}
+\index{getIconHeight@{getIconHeight}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{getIconHeight()}{getIconHeight()}}
+{\footnotesize\ttfamily int Color\+Combo\+Box\+::get\+Icon\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_color_combo_box_afc62bb3b6e2915b2931359fa82a2f46e}\label{class_color_combo_box_afc62bb3b6e2915b2931359fa82a2f46e}} 
+\index{ColorComboBox@{ColorComboBox}!getIconWidth@{getIconWidth}}
+\index{getIconWidth@{getIconWidth}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{getIconWidth()}{getIconWidth()}}
+{\footnotesize\ttfamily int Color\+Combo\+Box\+::get\+Icon\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_color_combo_box_a0057db2160209e97f661aea8ae939122}\label{class_color_combo_box_a0057db2160209e97f661aea8ae939122}} 
+\index{ColorComboBox@{ColorComboBox}!init@{init}}
+\index{init@{init}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Color\+Combo\+Box\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_color_combo_box_a33b1fe996cde97d08d5f9b16e6b9f91c}\label{class_color_combo_box_a33b1fe996cde97d08d5f9b16e6b9f91c}} 
+\index{ColorComboBox@{ColorComboBox}!setColor@{setColor}}
+\index{setColor@{setColor}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Color\+Combo\+Box\+::set\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_color_combo_box_ab1a21c7b8bfe3ff4e9858b64d410654d}\label{class_color_combo_box_ab1a21c7b8bfe3ff4e9858b64d410654d}} 
+\index{ColorComboBox@{ColorComboBox}!setItems@{setItems}}
+\index{setItems@{setItems}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{setItems()}{setItems()}}
+{\footnotesize\ttfamily void Color\+Combo\+Box\+::set\+Items (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$}]{map }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_color_combo_box_ad7d8f60f2f2c8ef8916e6c63562151c8}\label{class_color_combo_box_ad7d8f60f2f2c8ef8916e6c63562151c8}} 
+\index{ColorComboBox@{ColorComboBox}!m\_currentColor@{m\_currentColor}}
+\index{m\_currentColor@{m\_currentColor}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_currentColor}{m\_currentColor}}
+{\footnotesize\ttfamily QString Color\+Combo\+Box\+::m\+\_\+current\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_color_combo_box_a0a4ef93a05b0989d81ef8f1405b3b41e}\label{class_color_combo_box_a0a4ef93a05b0989d81ef8f1405b3b41e}} 
+\index{ColorComboBox@{ColorComboBox}!m\_iconHeight@{m\_iconHeight}}
+\index{m\_iconHeight@{m\_iconHeight}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_iconHeight}{m\_iconHeight}}
+{\footnotesize\ttfamily int Color\+Combo\+Box\+::m\+\_\+icon\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_color_combo_box_a623592fb517726418889c974bf64ca30}\label{class_color_combo_box_a623592fb517726418889c974bf64ca30}} 
+\index{ColorComboBox@{ColorComboBox}!m\_iconWidth@{m\_iconWidth}}
+\index{m\_iconWidth@{m\_iconWidth}!ColorComboBox@{ColorComboBox}}
+\doxysubsubsection{\texorpdfstring{m\_iconWidth}{m\_iconWidth}}
+{\footnotesize\ttfamily int Color\+Combo\+Box\+::m\+\_\+icon\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{color__combobox_8h}{color\+\_\+combobox.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{color__combobox_8cpp}{color\+\_\+combobox.\+cpp}}\end{DoxyCompactItemize}

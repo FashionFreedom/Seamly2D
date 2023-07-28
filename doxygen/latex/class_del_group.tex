@@ -1,0 +1,133 @@
+\hypertarget{class_del_group}{}\doxysection{Del\+Group Class Reference}
+\label{class_del_group}\index{DelGroup@{DelGroup}}
+
+
+{\ttfamily \#include $<$delgroup.\+h$>$}
+
+Inheritance diagram for Del\+Group\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_del_group}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_del_group_a4899c164e83ef8c68e697edc3e44dd53}{update\+Groups}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_del_group_a0f52edfc9d593e8b0f6cb31ca295d3e8}{Del\+Group}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, quint32 id, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_del_group_a6f4eaba89cc4978d985f9e8c24fe84a7}{$\sim$\+Del\+Group}} ()
+\item 
+virtual void \mbox{\hyperlink{class_del_group_a0f622fb70999f2a9e157468259421cab}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_del_group_a1c9270cab3e9e40fc50df3a83ef0abd9}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const QString \mbox{\hyperlink{class_del_group_ac4bfcee00ce1823ea655b9acc1d8bdeb}{active\+Block\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_del_group_a0f52edfc9d593e8b0f6cb31ca295d3e8}\label{class_del_group_a0f52edfc9d593e8b0f6cb31ca295d3e8}} 
+\index{DelGroup@{DelGroup}!DelGroup@{DelGroup}}
+\index{DelGroup@{DelGroup}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{DelGroup()}{DelGroup()}}
+{\footnotesize\ttfamily Del\+Group\+::\+Del\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{quint32}]{id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_del_group_a6f4eaba89cc4978d985f9e8c24fe84a7}\label{class_del_group_a6f4eaba89cc4978d985f9e8c24fe84a7}} 
+\index{DelGroup@{DelGroup}!````~DelGroup@{$\sim$DelGroup}}
+\index{````~DelGroup@{$\sim$DelGroup}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{$\sim$DelGroup()}{~DelGroup()}}
+{\footnotesize\ttfamily Del\+Group\+::$\sim$\+Del\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_del_group_a1c9270cab3e9e40fc50df3a83ef0abd9}\label{class_del_group_a1c9270cab3e9e40fc50df3a83ef0abd9}} 
+\index{DelGroup@{DelGroup}!redo@{redo}}
+\index{redo@{redo}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Del\+Group\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_del_group_a0f622fb70999f2a9e157468259421cab}\label{class_del_group_a0f622fb70999f2a9e157468259421cab}} 
+\index{DelGroup@{DelGroup}!undo@{undo}}
+\index{undo@{undo}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Del\+Group\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_del_group_a4899c164e83ef8c68e697edc3e44dd53}\label{class_del_group_a4899c164e83ef8c68e697edc3e44dd53}} 
+\index{DelGroup@{DelGroup}!updateGroups@{updateGroups}}
+\index{updateGroups@{updateGroups}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{updateGroups}{updateGroups}}
+{\footnotesize\ttfamily void Del\+Group\+::update\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_del_group_ac4bfcee00ce1823ea655b9acc1d8bdeb}\label{class_del_group_ac4bfcee00ce1823ea655b9acc1d8bdeb}} 
+\index{DelGroup@{DelGroup}!activeBlockName@{activeBlockName}}
+\index{activeBlockName@{activeBlockName}!DelGroup@{DelGroup}}
+\doxysubsubsection{\texorpdfstring{activeBlockName}{activeBlockName}}
+{\footnotesize\ttfamily const QString Del\+Group\+::active\+Block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{delgroup_8h}{delgroup.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{delgroup_8cpp}{delgroup.\+cpp}}\end{DoxyCompactItemize}

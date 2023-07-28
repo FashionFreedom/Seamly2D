@@ -1,0 +1,147 @@
+\hypertarget{libdxfrw_8h_source}{}\doxysection{libdxfrw.\+h}
+\label{libdxfrw_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/libdxfrw.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/libdxfrw.h}}
+\mbox{\hyperlink{libdxfrw_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ libDXFrw\ -\/\ Library\ to\ read/write\ DXF\ files\ (ascii\ \&\ binary)\ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2011-\/2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ LIBDXFRW\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ LIBDXFRW\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__entities_8h}{drw\_entities.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__objects_8h}{drw\_objects.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__header_8h}{drw\_header.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__interface_8h}{drw\_interface.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifdef\ Q\_CC\_MSVC}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ciso646>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Q\_CC\_MSVC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_reader}{dxfReader}};}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_writer}{dxfWriter}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_r_w}{dxfRW}}\ \{}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_r_w}{dxfRW}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classdxf_r_w_ac6948ec6a6ac49678916f796308bdbb3}{\string~dxfRW}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_r_w_a64b55a59356050f5913a066d99ffcd39}{setDebug}}(\mbox{\hyperlink{namespace_d_r_w_af2c04f6a6f2a4aacc1620bc2a52786a8}{DRW::DBG\_LEVEL}}\ lvl);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab3262753c90b34d8911691cdddaf7bfa}{read}}(\mbox{\hyperlink{class_d_r_w___interface}{DRW\_Interface}}\ *interface\_,\ \textcolor{keywordtype}{bool}\ ext);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_r_w_abdecb9e807497cfa0d00fb1a1555ad86}{setBinary}}(\textcolor{keywordtype}{bool}\ b)\ \{\mbox{\hyperlink{classdxf_r_w_a1caed3ba63dfe2d621313a8b80cf7f69}{binFile}}\ =\ b;\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ad219bc09abae739de563462f7b2eba2f}{write}}(\mbox{\hyperlink{class_d_r_w___interface}{DRW\_Interface}}\ *interface\_,\ \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ ver,\ \textcolor{keywordtype}{bool}\ bin);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a82e6ca75949bf3042ea9cde6dd7f4491}{writeLineType}}(\mbox{\hyperlink{class_d_r_w___l_type}{DRW\_LType}}\ *ent);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af33446d9955ac9eb8e87bdfe9d0ffbed}{writeLayer}}(\mbox{\hyperlink{class_d_r_w___layer}{DRW\_Layer}}\ *ent);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab28d35c7f9143d4b62a0495694ae25ab}{writeDimstyle}}(\mbox{\hyperlink{class_d_r_w___dimstyle}{DRW\_Dimstyle}}\ *ent);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a4031ffed38fbaee96cab5b525c2d5df3}{writeTextstyle}}(\mbox{\hyperlink{class_d_r_w___textstyle}{DRW\_Textstyle}}\ *ent);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a3b8ac8bd3e5eb521c56a6b81503472cc}{writeVport}}(\mbox{\hyperlink{class_d_r_w___vport}{DRW\_Vport}}\ *ent);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a483945c324ad1fadb06ae4733036b0f5}{writeAppId}}(\mbox{\hyperlink{class_d_r_w___app_id}{DRW\_AppId}}\ *ent);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab0ebc1deff9fdf6f2bc87f3f32854e1f}{writePoint}}(\mbox{\hyperlink{class_d_r_w___point}{DRW\_Point}}\ *ent);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a20c91611222b73dba05b063021403455}{writeLine}}(\mbox{\hyperlink{class_d_r_w___line}{DRW\_Line}}\ *ent);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a991399b5a67236ba95688f9f5f30c876}{writeRay}}(\mbox{\hyperlink{class_d_r_w___ray}{DRW\_Ray}}\ *ent);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a70b9e2610199f154f8c4ee30a6524417}{writeXline}}(\mbox{\hyperlink{class_d_r_w___xline}{DRW\_Xline}}\ *ent);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a032103766d08563da7e18f68b4134b50}{writeCircle}}(\mbox{\hyperlink{class_d_r_w___circle}{DRW\_Circle}}\ *ent);}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_acddf3556107085ba65501f77609531b6}{writeArc}}(\mbox{\hyperlink{class_d_r_w___arc}{DRW\_Arc}}\ *ent);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a9bfc721ff31109bf2acd8ee529dfc369}{writeEllipse}}(\mbox{\hyperlink{class_d_r_w___ellipse}{DRW\_Ellipse}}\ *ent);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a6b3c9c69c2e2a52a0e7e76981b4453e7}{writeTrace}}(\mbox{\hyperlink{class_d_r_w___trace}{DRW\_Trace}}\ *ent);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a8442bca4e8de46f9b72cc91b92d8ae72}{writeSolid}}(\mbox{\hyperlink{class_d_r_w___solid}{DRW\_Solid}}\ *ent);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a8bbb73ad9eba364aea9f8725ac9a4a7b}{write3dface}}(\mbox{\hyperlink{class_d_r_w__3_dface}{DRW\_3Dface}}\ *ent);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a5bbb5e97e08dc70e84e1deab5e5d0df1}{writeLWPolyline}}(\mbox{\hyperlink{class_d_r_w___l_w_polyline}{DRW\_LWPolyline}}\ *ent);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_acb6a0166ab6a04c6de90bcec0e76629d}{writePolyline}}(\mbox{\hyperlink{class_d_r_w___polyline}{DRW\_Polyline}}\ *ent);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a36915a0c8583995677ebb935fe295f19}{writeSpline}}(\mbox{\hyperlink{class_d_r_w___spline}{DRW\_Spline}}\ *ent);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ae2e7942bd2a46ec1588940e593790a21}{writeBlockRecord}}(std::string\ name);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af61f60d70e953d56d75ea0d0a6945713}{writeBlock}}(\mbox{\hyperlink{class_d_r_w___block}{DRW\_Block}}\ *bk);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_acf817c40ca21404ec4bb1663b261702a}{writeInsert}}(\mbox{\hyperlink{class_d_r_w___insert}{DRW\_Insert}}\ *ent);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_aec4181f110c6b861606dd20c2e731509}{writeMText}}(\mbox{\hyperlink{class_d_r_w___m_text}{DRW\_MText}}\ *ent);}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab11b64070aa42d6911c4d8867b33dbc9}{writeText}}(\mbox{\hyperlink{class_d_r_w___text}{DRW\_Text}}\ *ent);}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a145b613da4851fa84d96cf8dd7df728d}{writeHatch}}(\mbox{\hyperlink{class_d_r_w___hatch}{DRW\_Hatch}}\ *ent);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a7314f208e814e08ebf06ccfdff8f177b}{writeViewport}}(\mbox{\hyperlink{class_d_r_w___viewport}{DRW\_Viewport}}\ *ent);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___image_def}{DRW\_ImageDef}}\ *\mbox{\hyperlink{classdxf_r_w_a151d9e77fbd12d1cbcb2cadc852ab97b}{writeImage}}(\mbox{\hyperlink{class_d_r_w___image}{DRW\_Image}}\ *ent,\ \textcolor{keyword}{const}\ std::string\ \&name);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a802ee499fcd0b61c0fdead789a86388b}{writeLeader}}(\mbox{\hyperlink{class_d_r_w___leader}{DRW\_Leader}}\ *ent);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a606117d14322e8b51494835e3330c7e1}{writeDimension}}(\mbox{\hyperlink{class_d_r_w___dimension}{DRW\_Dimension}}\ *ent);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_r_w_a6eb61de3ea383636bedc049d23d7e759}{setEllipseParts}}(\textcolor{keywordtype}{int}\ parts)\{\mbox{\hyperlink{classdxf_r_w_aee251f0e7de9a814aa04b3cc9f2fa7a8}{elParts}}\ =\ parts;\}\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classdxf_r_w}{dxfRW}})}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab0d6afb7e2d297a292fcf2fe8af742b8}{processDxf}}();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a2792dba881e450d182e9468857f91d28}{processHeader}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ae63ae180234b123e81ec33d3c3c0abea}{processTables}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af1763380752655ef27e0891040e5926b}{processBlocks}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_adc5c96053b93109a29860e19e452b271}{processBlock}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab8f2c312188ebf3fb3c4283150816cc2}{processEntities}}(\textcolor{keywordtype}{bool}\ isblock);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a28e090d372c6d0dbbefd979e1e5be2c2}{processObjects}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_add49c9a02a6436bf393b851963b2f259}{processLType}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_acac2effe08ebf1c5f83154f9c1cd3b52}{processLayer}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_abb019ad7e29666d24792f2cc3df888d9}{processDimStyle}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a77eace097319076c2f2a5d38943a4973}{processTextStyle}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a89e9d2db6caeaa12bf4757691467fbb1}{processVports}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a52c8054e880f63c9ce0d80dcc12570e3}{processAppId}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af5f4b94eac510e6625bb4cec00446a8e}{processPoint}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af1052f3ebd2baca74f7c36b0d3417973}{processLine}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a37c30403b219522e9fe4a19ab202c46e}{processRay}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ac8f25a4979bd18ee37010c0967ec57a9}{processXline}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a1dc5e25bdeedc891a3aec8fe85d48f6a}{processCircle}}();}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_adfacacc6b330f78735f580dec5caa051}{processArc}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a751647fbfd1fb2e9f5742c8fece29aa4}{processEllipse}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a0dd92d7154079119cf30b7c2c224f0c1}{processTrace}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a7820f4057f4f7f62455b0caff362f16d}{processSolid}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a85bdd8b23c8d511286406575ea25aa2c}{processInsert}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af0b8d51d8ef2a6ac562b20b821e3932c}{processLWPolyline}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ae72c2cf014b76027c78c0a59baa0be38}{processPolyline}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a3d82e7c1408b12b065759348949f5216}{processVertex}}(\mbox{\hyperlink{class_d_r_w___polyline}{DRW\_Polyline}}*\ pl);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a8ae16c2b4de9cb2a5e03111280e4fcd7}{processText}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a9c7af03b76c9783acb644fe018b8cfb4}{processMText}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_af1bc1ce4337dd4e35847863b7d262f1f}{processHatch}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a954ef86db78a68f187b1bfcd6f015a8b}{processSpline}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a8f9caba6791d6ff2a3cdb53d02a824c2}{process3dface}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a0447e22521c02302b14b4940c96ce791}{processViewport}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a559911da9907433fc4f501e4d78766f3}{processImage}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ad333c1899572aa2522574a36fd8d49a9}{processImageDef}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ab636cdfd7caa8a93d8d17b8360cbdaa2}{processDimension}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a23b5fec811ea447fffd5bf10a90ce948}{processLeader}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ \ \ \ bool\ writeHeader();}}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ac3a136a958f0b10e7013313bb3e0bceb}{writeEntity}}(\mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}\ *ent);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ad68b38bc4f47e08a40d8edd7e5654b17}{writeTables}}();}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a9a07d59ba3b38b2d0a569766a61c5219}{writeBlocks}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_ac6a834b2ea9a750d8c0fb5c755b2a45f}{writeObjects}}();}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a7af95dfd2b8a32f8e11c05c71a04515a}{writeExtData}}(\textcolor{keyword}{const}\ std::vector<DRW\_Variant*>\ \&ed);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ std::string\ \mbox{\hyperlink{classdxf_r_w_ac8c55be7454779ae2039aca405049860}{toHexStr}}(\textcolor{keywordtype}{int}\ n);\textcolor{comment}{//RLZ\ removeme}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW::Version}}\ \mbox{\hyperlink{classdxf_r_w_a2bb54a00fa1f8092c3ab3900fb044993}{version}};}
+\DoxyCodeLine{00129\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_r_w_acf8aa2cb9df65636e24a9c5bb3c7e93f}{fileName}};}
+\DoxyCodeLine{00130\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_r_w_a0a0eedb071669712ed6f5299aff14465}{codePage}};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a1caed3ba63dfe2d621313a8b80cf7f69}{binFile}};}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{classdxf_reader}{dxfReader}}\ *\mbox{\hyperlink{classdxf_r_w_a1b9b77c0aa45efd8ff55fa67f0d9dce4}{reader}};}
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{classdxf_writer}{dxfWriter}}\ *\mbox{\hyperlink{classdxf_r_w_a882531d548dc1df80d027844d9006768}{writer}};}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___interface}{DRW\_Interface}}\ *\mbox{\hyperlink{classdxf_r_w_ad8b8c0fd171a569a2cf9f8c8653bff0a}{iface}};}
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___header}{DRW\_Header}}\ \mbox{\hyperlink{classdxf_r_w_a1a3c9f0b21409ccc2e10caf432ec4c87}{header}};}
+\DoxyCodeLine{00136\ \textcolor{comment}{//\ \ \ \ int\ section;}}
+\DoxyCodeLine{00137\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_r_w_a26974ce36f473816f752d52c71600534}{nextentity}};}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_r_w_a240b87beef09202f4e192761a5d68a73}{entCount}};}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a866d0d49b0d3c6a763ddd3dcafac28c1}{wlayer0}};}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_a7a94d99fd081828749bac3556eff5ea1}{dimstyleStd}};}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_aa8dba92c12c2e6c51673715cbdcdd50c}{applyExt}};}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_r_w_aa9e47843da0e4c8c454863da2a96111e}{writingBlock}};}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_r_w_aee251f0e7de9a814aa04b3cc9f2fa7a8}{elParts}};\ \ }
+\DoxyCodeLine{00144\ \ \ \ \ std::map<std::string,int>\ \mbox{\hyperlink{classdxf_r_w_aab2a625d6bcf9efd780bab7822f30bdd}{blockMap}};}
+\DoxyCodeLine{00145\ \ \ \ \ std::vector<DRW\_ImageDef*>\ \mbox{\hyperlink{classdxf_r_w_ad90dd62fa6c58393eeb6baea1c777175}{imageDef}};\ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_r_w_a50bdb383a6209ff6005e7acccc5255f8}{currHandle}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LIBDXFRW\_H}}
+
+\end{DoxyCode}

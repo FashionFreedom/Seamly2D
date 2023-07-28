@@ -1,0 +1,46 @@
+\hypertarget{vlockguard_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/vlockguard.h File Reference}
+\label{vlockguard_8h}\index{D:/Github/Seamly2D/src/libs/vmisc/vlockguard.h@{D:/Github/Seamly2D/src/libs/vmisc/vlockguard.h}}
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include \char`\"{}../vmisc/diagnostic.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QFile\+Info$>$}\newline
+{\ttfamily \#include $<$QLock\+File$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard$<$ Guarded $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Guarded $>$ }\\QT\+\_\+\+WARNING\+\_\+\+PUSH void \mbox{\hyperlink{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}{Vlp\+Create\+Lock}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&r, const QString \&lock\+Name, int stale=0, int timeout=0)
+\item 
+{\footnotesize template$<$typename Guarded , typename Alloc $>$ }\\void \mbox{\hyperlink{vlockguard_8h_ace558b6e2ddc27b1821639c6a485d2f1}{Vlp\+Create\+Lock}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&r, const QString \&lock\+Name, Alloc a, int stale=0, int timeout=0)
+\item 
+{\footnotesize template$<$typename Guarded , typename Alloc , typename Del $>$ }\\void \mbox{\hyperlink{vlockguard_8h_ac94364cffdd8822522c42d31b704d7c7}{Vlp\+Create\+Lock}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&r, const QString \&lock\+Name, Alloc a, Del d, int stale=0, int timeout=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vlockguard_8h_ac94364cffdd8822522c42d31b704d7c7}\label{vlockguard_8h_ac94364cffdd8822522c42d31b704d7c7}} 
+\index{vlockguard.h@{vlockguard.h}!VlpCreateLock@{VlpCreateLock}}
+\index{VlpCreateLock@{VlpCreateLock}!vlockguard.h@{vlockguard.h}}
+\doxysubsubsection{\texorpdfstring{VlpCreateLock()}{VlpCreateLock()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded , typename Alloc , typename Del $>$ \\
+void Vlp\+Create\+Lock (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&}]{r,  }\item[{const QString \&}]{lock\+Name,  }\item[{Alloc}]{a,  }\item[{Del}]{d,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vlockguard_8h_ace558b6e2ddc27b1821639c6a485d2f1}\label{vlockguard_8h_ace558b6e2ddc27b1821639c6a485d2f1}} 
+\index{vlockguard.h@{vlockguard.h}!VlpCreateLock@{VlpCreateLock}}
+\index{VlpCreateLock@{VlpCreateLock}!vlockguard.h@{vlockguard.h}}
+\doxysubsubsection{\texorpdfstring{VlpCreateLock()}{VlpCreateLock()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded , typename Alloc $>$ \\
+void Vlp\+Create\+Lock (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&}]{r,  }\item[{const QString \&}]{lock\+Name,  }\item[{Alloc}]{a,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}\label{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}} 
+\index{vlockguard.h@{vlockguard.h}!VlpCreateLock@{VlpCreateLock}}
+\index{VlpCreateLock@{VlpCreateLock}!vlockguard.h@{vlockguard.h}}
+\doxysubsubsection{\texorpdfstring{VlpCreateLock()}{VlpCreateLock()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+QT\+\_\+\+WARNING\+\_\+\+PUSH void Vlp\+Create\+Lock (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$ $>$ \&}]{r,  }\item[{const QString \&}]{lock\+Name,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+

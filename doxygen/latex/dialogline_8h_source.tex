@@ -1,0 +1,109 @@
+\hypertarget{dialogline_8h_source}{}\doxysection{dialogline.\+h}
+\label{dialogline_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogline.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogline.h}}
+\mbox{\hyperlink{dialogline_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ dialogline.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 21\ Mar,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogline.h}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ DIALOGLINE\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DIALOGLINE\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_line}{DialogLine}};}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_line}{DialogLine}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_dialog_line}{DialogLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dialog_line_a19f88d97e18c788b631c50d2942c3bf8}{\string~DialogLine}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a6e72cea1138e1b35c6c57348cf2c9727}{getFirstPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a2caa7fe3657989d8a6bda69a784dff69}{setFirstPoint}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_af9b9d019876174e7d0e7b40eac3ec632}{getSecondPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_adc0bbf011940ea38326c15eaad1c7bf8}{setSecondPoint}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a83f04c147b00877e2b5b060729843568}{setLineName}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a838a159afb25ffa6e384bfaf80226f09}{getLineType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a9f094175e8918cd97c17d74a7a6c81fa}{setLineType}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a2576c8af9e0ebd0c3fed3961f407be5c}{getLineWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_aaa0360754a31a48c2707f1351526cf92}{setLineWeight}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_a59a8f5e59d32c65ea0b7b09bcbed7b81}{getLineColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_line_ac4e361d125928f3225aebfe92ec7beff}{setLineColor}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_line_a81eacb8a6db2886249eae243447489d3}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_line_a17214310559577bbcb1548b7e5697d24}{PointNameChanged}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_line_a0a94d8be1f4fc9bc8f77b0ead337d129}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_line_a20a46b448a09161cc7842a7aff129c6d}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_line}{DialogLine}})}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_line}{DialogLine}}\ *\mbox{\hyperlink{class_dialog_line_aa6267c9293197577e3daf1686f444477}{ui}};}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGLINE\_H}}
+
+\end{DoxyCode}

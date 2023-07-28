@@ -1,0 +1,53 @@
+\hypertarget{vabstractpropertyfactory_8h_source}{}\doxysection{vabstractpropertyfactory.\+h}
+\label{vabstractpropertyfactory_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vabstractpropertyfactory.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vabstractpropertyfactory.h}}
+\mbox{\hyperlink{vabstractpropertyfactory_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractpropertyfactory.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTPROPERTYFACTORY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VABSTRACTPROPERTYFACTORY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00028\ \{}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }VProperty;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00033\ QT\_WARNING\_DISABLE\_CLANG(\textcolor{stringliteral}{"{}-\/Wweak-\/vtables"{}})}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ class\ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory}{VAbstractPropertyFactory}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory_a08f185741993de9b143cfe10fb1bf064}{\string~VAbstractPropertyFactory}}()\ \{\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_abstract_property_factory_a42814501c6e58e328284e37d574e08cf}{createProperty}}(\textcolor{keyword}{const}\ QString\&\ type,\ \textcolor{keyword}{const}\ QString\ \&name)\ =\ 0;}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTPROPERTYFACTORY\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,238 @@
+\hypertarget{class_v_contour}{}\doxysection{VContour Class Reference}
+\label{class_v_contour}\index{VContour@{VContour}}
+
+
+{\ttfamily \#include $<$vcontour.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_contour_a9caa68ac44200cab01be3520786e70d2}{VContour}} ()
+\item 
+\mbox{\hyperlink{class_v_contour_a87fb72045d7f56bd3daf6e64c7dd5a8d}{VContour}} (int height, int width)
+\item 
+\mbox{\hyperlink{class_v_contour_a9a68f40d1ebdc7459a573bef2294df6f}{VContour}} (const \mbox{\hyperlink{class_v_contour}{VContour}} \&contour)
+\item 
+\mbox{\hyperlink{class_v_contour_a03f147945648b6372ca264b1fcff8277}{$\sim$\+VContour}} ()
+\item 
+\mbox{\hyperlink{class_v_contour}{VContour}} \& \mbox{\hyperlink{class_v_contour_a29a62fab7a2bca9ff381ed0a8fc54d88}{operator=}} (const \mbox{\hyperlink{class_v_contour}{VContour}} \&contour)
+\item 
+void \mbox{\hyperlink{class_v_contour_a99965137a6e434c51e4c880a85c4a5f9}{Swap}} (\mbox{\hyperlink{class_v_contour}{VContour}} \&contour) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+void \mbox{\hyperlink{class_v_contour_acf3cfdff65132a26088a8ac7c4ba2f5b}{Set\+Contour}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&contour)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_contour_a80a424b4c902567972f93b0189d6a5d0}{Get\+Contour}} () const
+\item 
+quint32 \mbox{\hyperlink{class_v_contour_aaa584eaa6123b4079415b70cfc0533ba}{Get\+Shift}} () const
+\item 
+void \mbox{\hyperlink{class_v_contour_a7fadcbea91f2b9204fe4c5e357fb9cb8}{Set\+Shift}} (quint32 shift)
+\item 
+int \mbox{\hyperlink{class_v_contour_a13a0a8142ecc7e75bb71ed7bbb39e82e}{Get\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_v_contour_a3f0cb48a7bee0549c17612ddd9cf900c}{Set\+Height}} (int height)
+\item 
+int \mbox{\hyperlink{class_v_contour_a7be75cc960f788ac65cc90d79cb4f7e4}{Get\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_contour_a6f1f168a3727cc8ff343d6ecaa95db15}{Set\+Width}} (int width)
+\item 
+QSizeF \mbox{\hyperlink{class_v_contour_aae0b169e0a0c62e20c130875a46256da}{Get\+Size}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_contour_adb8e770c22b08b2fa113cd68530b0bf7}{Unite\+With\+Contour}} (const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&detail, int globalI, int detJ, \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{Best\+From}} type) const
+\item 
+QLineF \mbox{\hyperlink{class_v_contour_acfd94c635f01798f03d76930e756f905}{Empty\+Sheet\+Edge}} () const
+\item 
+int \mbox{\hyperlink{class_v_contour_ad1b1aab850bc3e6ebb24a5bfc2ab0307}{Global\+Edges\+Count}} () const
+\item 
+QLineF \mbox{\hyperlink{class_v_contour_aa90c557236dc86253f3eca8030f17bfd}{Global\+Edge}} (int i) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_contour_ab5cb37bdc1ac3ff7ce84e7f34837ec64}{Cut\+Edge}} (const QLineF \&edge) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_contour_ad86861ea415ed85b2da890fc65c28469}{Cut\+Empty\+Sheet\+Edge}} () const
+\item 
+const QPointF \& \mbox{\hyperlink{class_v_contour_a72c81d27d969130042bdb4e80afe8a6b}{at}} (int i) const
+\item 
+QRectF \mbox{\hyperlink{class_v_contour_a6559045a99313dd7768b18f4993847d8}{Bounding\+Rect}} () const
+\item 
+QPainter\+Path \mbox{\hyperlink{class_v_contour_a394f069133531ad21fc2c3ba4973498d}{Contour\+Path}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_contour_a9c4bd93f4e1f557fb19c6609f164ff62}{Append\+Whole}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&contour, const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&detail, int detJ) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_contour_data}{VContour\+Data}} $>$ \mbox{\hyperlink{class_v_contour_a12839e2d28eea469a83fe577f7cf0118}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_contour_a9caa68ac44200cab01be3520786e70d2}\label{class_v_contour_a9caa68ac44200cab01be3520786e70d2}} 
+\index{VContour@{VContour}!VContour@{VContour}}
+\index{VContour@{VContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{VContour()}{VContour()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VContour\+::\+VContour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a87fb72045d7f56bd3daf6e64c7dd5a8d}\label{class_v_contour_a87fb72045d7f56bd3daf6e64c7dd5a8d}} 
+\index{VContour@{VContour}!VContour@{VContour}}
+\index{VContour@{VContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{VContour()}{VContour()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VContour\+::\+VContour (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a9a68f40d1ebdc7459a573bef2294df6f}\label{class_v_contour_a9a68f40d1ebdc7459a573bef2294df6f}} 
+\index{VContour@{VContour}!VContour@{VContour}}
+\index{VContour@{VContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{VContour()}{VContour()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VContour\+::\+VContour (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_contour}{VContour}} \&}]{contour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a03f147945648b6372ca264b1fcff8277}\label{class_v_contour_a03f147945648b6372ca264b1fcff8277}} 
+\index{VContour@{VContour}!````~VContour@{$\sim$VContour}}
+\index{````~VContour@{$\sim$VContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{$\sim$VContour()}{~VContour()}}
+{\footnotesize\ttfamily VContour\+::$\sim$\+VContour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_contour_a9c4bd93f4e1f557fb19c6609f164ff62}\label{class_v_contour_a9c4bd93f4e1f557fb19c6609f164ff62}} 
+\index{VContour@{VContour}!AppendWhole@{AppendWhole}}
+\index{AppendWhole@{AppendWhole}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{AppendWhole()}{AppendWhole()}}
+{\footnotesize\ttfamily void VContour\+::\+Append\+Whole (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{contour,  }\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{detail,  }\item[{int}]{detJ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_contour_a72c81d27d969130042bdb4e80afe8a6b}\label{class_v_contour_a72c81d27d969130042bdb4e80afe8a6b}} 
+\index{VContour@{VContour}!at@{at}}
+\index{at@{at}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily const QPointF \& VContour\+::at (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a6559045a99313dd7768b18f4993847d8}\label{class_v_contour_a6559045a99313dd7768b18f4993847d8}} 
+\index{VContour@{VContour}!BoundingRect@{BoundingRect}}
+\index{BoundingRect@{BoundingRect}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{BoundingRect()}{BoundingRect()}}
+{\footnotesize\ttfamily QRectF VContour\+::\+Bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a394f069133531ad21fc2c3ba4973498d}\label{class_v_contour_a394f069133531ad21fc2c3ba4973498d}} 
+\index{VContour@{VContour}!ContourPath@{ContourPath}}
+\index{ContourPath@{ContourPath}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{ContourPath()}{ContourPath()}}
+{\footnotesize\ttfamily QPainter\+Path VContour\+::\+Contour\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_ab5cb37bdc1ac3ff7ce84e7f34837ec64}\label{class_v_contour_ab5cb37bdc1ac3ff7ce84e7f34837ec64}} 
+\index{VContour@{VContour}!CutEdge@{CutEdge}}
+\index{CutEdge@{CutEdge}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{CutEdge()}{CutEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VContour\+::\+Cut\+Edge (\begin{DoxyParamCaption}\item[{const QLineF \&}]{edge }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_ad86861ea415ed85b2da890fc65c28469}\label{class_v_contour_ad86861ea415ed85b2da890fc65c28469}} 
+\index{VContour@{VContour}!CutEmptySheetEdge@{CutEmptySheetEdge}}
+\index{CutEmptySheetEdge@{CutEmptySheetEdge}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{CutEmptySheetEdge()}{CutEmptySheetEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VContour\+::\+Cut\+Empty\+Sheet\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_acfd94c635f01798f03d76930e756f905}\label{class_v_contour_acfd94c635f01798f03d76930e756f905}} 
+\index{VContour@{VContour}!EmptySheetEdge@{EmptySheetEdge}}
+\index{EmptySheetEdge@{EmptySheetEdge}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{EmptySheetEdge()}{EmptySheetEdge()}}
+{\footnotesize\ttfamily QLineF VContour\+::\+Empty\+Sheet\+Edge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a80a424b4c902567972f93b0189d6a5d0}\label{class_v_contour_a80a424b4c902567972f93b0189d6a5d0}} 
+\index{VContour@{VContour}!GetContour@{GetContour}}
+\index{GetContour@{GetContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GetContour()}{GetContour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VContour\+::\+Get\+Contour (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a13a0a8142ecc7e75bb71ed7bbb39e82e}\label{class_v_contour_a13a0a8142ecc7e75bb71ed7bbb39e82e}} 
+\index{VContour@{VContour}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int VContour\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_aaa584eaa6123b4079415b70cfc0533ba}\label{class_v_contour_aaa584eaa6123b4079415b70cfc0533ba}} 
+\index{VContour@{VContour}!GetShift@{GetShift}}
+\index{GetShift@{GetShift}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GetShift()}{GetShift()}}
+{\footnotesize\ttfamily quint32 VContour\+::\+Get\+Shift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_aae0b169e0a0c62e20c130875a46256da}\label{class_v_contour_aae0b169e0a0c62e20c130875a46256da}} 
+\index{VContour@{VContour}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily QSizeF VContour\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a7be75cc960f788ac65cc90d79cb4f7e4}\label{class_v_contour_a7be75cc960f788ac65cc90d79cb4f7e4}} 
+\index{VContour@{VContour}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int VContour\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_aa90c557236dc86253f3eca8030f17bfd}\label{class_v_contour_aa90c557236dc86253f3eca8030f17bfd}} 
+\index{VContour@{VContour}!GlobalEdge@{GlobalEdge}}
+\index{GlobalEdge@{GlobalEdge}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GlobalEdge()}{GlobalEdge()}}
+{\footnotesize\ttfamily QLineF VContour\+::\+Global\+Edge (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_ad1b1aab850bc3e6ebb24a5bfc2ab0307}\label{class_v_contour_ad1b1aab850bc3e6ebb24a5bfc2ab0307}} 
+\index{VContour@{VContour}!GlobalEdgesCount@{GlobalEdgesCount}}
+\index{GlobalEdgesCount@{GlobalEdgesCount}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{GlobalEdgesCount()}{GlobalEdgesCount()}}
+{\footnotesize\ttfamily int VContour\+::\+Global\+Edges\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_contour_a29a62fab7a2bca9ff381ed0a8fc54d88}\label{class_v_contour_a29a62fab7a2bca9ff381ed0a8fc54d88}} 
+\index{VContour@{VContour}!operator=@{operator=}}
+\index{operator=@{operator=}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_contour}{VContour}} \& VContour\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_contour}{VContour}} \&}]{contour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_acf3cfdff65132a26088a8ac7c4ba2f5b}\label{class_v_contour_acf3cfdff65132a26088a8ac7c4ba2f5b}} 
+\index{VContour@{VContour}!SetContour@{SetContour}}
+\index{SetContour@{SetContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{SetContour()}{SetContour()}}
+{\footnotesize\ttfamily void VContour\+::\+Set\+Contour (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{contour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a3f0cb48a7bee0549c17612ddd9cf900c}\label{class_v_contour_a3f0cb48a7bee0549c17612ddd9cf900c}} 
+\index{VContour@{VContour}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
+{\footnotesize\ttfamily void VContour\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a7fadcbea91f2b9204fe4c5e357fb9cb8}\label{class_v_contour_a7fadcbea91f2b9204fe4c5e357fb9cb8}} 
+\index{VContour@{VContour}!SetShift@{SetShift}}
+\index{SetShift@{SetShift}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{SetShift()}{SetShift()}}
+{\footnotesize\ttfamily void VContour\+::\+Set\+Shift (\begin{DoxyParamCaption}\item[{quint32}]{shift }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a6f1f168a3727cc8ff343d6ecaa95db15}\label{class_v_contour_a6f1f168a3727cc8ff343d6ecaa95db15}} 
+\index{VContour@{VContour}!SetWidth@{SetWidth}}
+\index{SetWidth@{SetWidth}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{SetWidth()}{SetWidth()}}
+{\footnotesize\ttfamily void VContour\+::\+Set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_a99965137a6e434c51e4c880a85c4a5f9}\label{class_v_contour_a99965137a6e434c51e4c880a85c4a5f9}} 
+\index{VContour@{VContour}!Swap@{Swap}}
+\index{Swap@{Swap}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VContour\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_contour}{VContour}} \&}]{contour }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_contour_adb8e770c22b08b2fa113cd68530b0bf7}\label{class_v_contour_adb8e770c22b08b2fa113cd68530b0bf7}} 
+\index{VContour@{VContour}!UniteWithContour@{UniteWithContour}}
+\index{UniteWithContour@{UniteWithContour}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{UniteWithContour()}{UniteWithContour()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VContour\+::\+Unite\+With\+Contour (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{detail,  }\item[{int}]{globalI,  }\item[{int}]{detJ,  }\item[{\mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{Best\+From}}}]{type }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_contour_a12839e2d28eea469a83fe577f7cf0118}\label{class_v_contour_a12839e2d28eea469a83fe577f7cf0118}} 
+\index{VContour@{VContour}!d@{d}}
+\index{d@{d}!VContour@{VContour}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_contour_data}{VContour\+Data}}$>$ VContour\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vcontour_8h}{vcontour.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vcontour_8cpp}{vcontour.\+cpp}}\end{DoxyCompactItemize}

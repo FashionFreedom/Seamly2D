@@ -1,0 +1,133 @@
+\hypertarget{vundocommand_8h_source}{}\doxysection{vundocommand.\+h}
+\label{vundocommand_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/vundocommand.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/vundocommand.h}}
+\mbox{\hyperlink{vundocommand_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vundocommand.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{\ /************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vundocommand.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 16\ 7,\ 2014}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VUNDOCOMMAND\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VUNDOCOMMAND\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QUndoCommand>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../vmisc/logging.h"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ Q\_DECLARE\_LOGGING\_CATEGORY(vUndo)}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ enum\ class\ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}{UndoCommand}}:\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48}{AddDraftBlock}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a6dc1ff82c45870cf9c88adcddc62eb91}{AddToCalc}},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ac3c54fe88bfb24394bac8d42ca73db55}{MoveSpline}},}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ada52c4835d5cda6736523f84934023c1}{MoveSplinePath}},}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a4ad9a4a52b30b30c6a8e9b5ed4d49437}{MoveSPoint}},}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a5eba4390d4c153fe97e65d831de3a8c3}{SaveToolOptions}},}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a184d86ac7612dd413631ea214d438b75}{SavePieceOptions}},}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aad1442a5664c0ff0eb63d3ea3846801e}{SavePiecePathOptions}},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a9a875336313e9e2a92b7d2f5e4ed2bad}{MovePiece}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ae68bc399bdb34d1d55d27faed16c52cb}{deleteTool}},}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a861ca4154699fc64fcd0ea220147bb31}{DeleteDraftBlock}},}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab3ac850020a8828e0c9408a37ee10ebe}{RenameDraftBlock}},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a102c66ce362e36345ff6ee05da5073a9}{MoveLabel}},}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93}{MoveDoubleLabel}},}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aafec0a707b911fa3d4a057b499b7856c}{RotationMoveLabel}},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc}{TogglePieceInLayout}},}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4}{TogglePieceLock}},}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_set_piece_color}{SetPieceColor}}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_pattern}{VPattern}};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ QUndoCommand}
+\DoxyCodeLine{00093\ \{}
+\DoxyCodeLine{00094\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00095\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}(\textcolor{keyword}{const}\ QDomElement\ \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}},\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{\string~VUndoCommand}}()\ =\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ signals:}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{ClearScene}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{NeedFullParsing}}();}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{NeedLiteParsing}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}};}
+\DoxyCodeLine{00107\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{nodeId}};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redoFlag}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{RedoFullParsing}}();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{UndoDeleteAfterSibling}}(QDomNode\ \&parentNode,\ \textcolor{keyword}{const}\ quint32\ \&siblingId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{IncrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{DecrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{IncrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{DecrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{IncrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{DecrementReferences}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&nodes)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{getDestinationObject}}(quint32\ idTool,\ quint32\ idPoint)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_undo_command}{VUndoCommand}})}
+\DoxyCodeLine{00125\ \};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VUNDOCOMMAND\_H}}
+
+\end{DoxyCode}

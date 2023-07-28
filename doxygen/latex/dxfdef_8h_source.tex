@@ -1,0 +1,92 @@
+\hypertarget{dxfdef_8h_source}{}\doxysection{dxfdef.\+h}
+\label{dxfdef_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/dxfdef.h@{D:/Github/Seamly2D/src/libs/vdxf/dxfdef.h}}
+\mbox{\hyperlink{dxfdef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dxfdef.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 31\ 8,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DXFDEF\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DXFDEF\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ Q\_CC\_MSVC}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ciso646>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Q\_CC\_MSVC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27a78463a384a5aa4fad5fa73e2f506ecfc}{English}}=0,\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27a216ab40cda5c7c00ff42a4efb1827d89}{Metric}}=1\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//Default\ drawing\ units\ for\ AutoCAD\ DesignCenter\ blocks:}}
+\DoxyCodeLine{00064\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ :\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8ad73325cdb1cb4f9a1ed11bdab879321d}{Inches}}=1,\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8a3be6521a73bcafce5b38459ec548bd11}{Millimeters}}=4,\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8a3040cc6624f5c309963dee141936b299}{Centimeters}}=5\ \};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ Helps\ mark\ end\ of\ string.\ See\ VDxfEngine::drawTextItem\ for\ more\ details}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{dxfdef_8h_a73fa4d3086af765e2c5d827f786a4631}{endStringPlaceholder}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ Q\_REQUIRED\_RESULT\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ DL\_FuzzyComparePossibleNulls(\textcolor{keywordtype}{double}\ p1,\ \textcolor{keywordtype}{double}\ p2);}
+\DoxyCodeLine{00070\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ DL\_FuzzyComparePossibleNulls(\textcolor{keywordtype}{double}\ p1,\ \textcolor{keywordtype}{double}\ p2)}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{if}(qFuzzyIsNull(p1))}
+\DoxyCodeLine{00073\ \ \ \ \ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ qFuzzyIsNull(p2);}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(qFuzzyIsNull(p2))}
+\DoxyCodeLine{00077\ \ \ \ \ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00079\ \ \ \ \ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00081\ \ \ \ \ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ qFuzzyCompare(p1,\ p2);}
+\DoxyCodeLine{00083\ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DXFDEF\_H}}
+
+\end{DoxyCode}

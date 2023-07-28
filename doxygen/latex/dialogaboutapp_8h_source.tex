@@ -1,0 +1,67 @@
+\hypertarget{dialogaboutapp_8h_source}{}\doxysection{dialogaboutapp.\+h}
+\label{dialogaboutapp_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogaboutapp.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialogaboutapp.h}}
+\mbox{\hyperlink{dialogaboutapp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogaboutapp.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Patrick\ Proy\ <patrick(at)proy.org>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 6\ 5,\ 2014}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ DIALOGABOUTAPP\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ DIALOGABOUTAPP\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_about_app}{DialogAboutApp}};}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_about_app}{DialogAboutApp}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_dialog_about_app}{DialogAboutApp}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dialog_about_app_a4b6ec212a494bd16c48042ed58fea22d}{\string~DialogAboutApp}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_about_app_a558e078de9aa4c48b9e2b4f148dec538}{showEvent}}(QShowEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_about_app_a6ab235d6af64588d9cd3f2c95a36c943}{setProgressValue}}(\textcolor{keywordtype}{int}\ val);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ Ui::DialogAboutApp\ *\mbox{\hyperlink{class_dialog_about_app_a616b1df661134471cd9f7dddefc0c5af}{ui}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_about_app_a416cd070c09d56b8743bce87f95bc3c0}{isInitialized}};}
+\DoxyCodeLine{00056\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_about_app}{DialogAboutApp}})}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_about_app_a6aa2cd74995d4af0d22c4335b1e82b23}{FontPointSize}}(QWidget\ *w,\ \textcolor{keywordtype}{int}\ pointSize);}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGABOUTAPP\_H}}
+
+\end{DoxyCode}

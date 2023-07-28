@@ -1,0 +1,348 @@
+\hypertarget{classqmu_1_1_qmu_formula_base}{}\doxysection{qmu\+::Qmu\+Formula\+Base Class Reference}
+\label{classqmu_1_1_qmu_formula_base}\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+
+
+{\ttfamily \#include $<$qmuformulabase.\+h$>$}
+
+Inheritance diagram for qmu\+::Qmu\+Formula\+Base\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classqmu_1_1_qmu_formula_base}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_formula_base_aa5b11c2949af3c642bef6de730f438de}{Qmu\+Formula\+Base}} ()
+\item 
+virtual \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_a547981dee704b30b003187f2d90593a9}{$\sim$\+Qmu\+Formula\+Base}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_a1e386679e18f12d74ec5ec6180b187b5}{Init\+Char\+Sets}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Init\+Char\+Sets init character set for parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser}{qmu\+::\+Qmu\+Parser}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_a5f7a5f34255477e7a7c280090766c3fa}{Qmu\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_ae6bed8b51928071ee9c368ea06d71d34}{Init\+Char\+Sets}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Define the character sets. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_a18bc60dcd0dcfc5f67e34cfe05d9531d}{Init\+Fun}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize the default functions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_a34ba9be2fce696c68d1c8da31e43fabf}{Init\+Const}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize constants. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_a0c98d05db96dfd1e2e67879a70b088fb}{Init\+Oprt}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Initialize operators. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_ac77c139b1d1adf5e795f2a828d729cc0}{On\+Detect\+Var}} (const QString \&p\+Expr, int \&n\+Start, int \&n\+End) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_ad7bcbeda861ad1331d41f3e0e6e7153e}{Diff}} (qreal $\ast$a\+\_\+\+Var, qreal a\+\_\+f\+Pos, qreal a\+\_\+f\+Epsilon=0) const
+\begin{DoxyCompactList}\small\item\em Numerically differentiate with regard to a variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{qmu\+::\+Qmu\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_base_adf2bc7abde4d14683839eec1f110a8a9}{Qmu\+Parser\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a8fe38df84c4de596d32ffa7435c85ab3}{Qmu\+Parser\+Base}} (const \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{Qmu\+Parser\+Base}} \&a\+\_\+\+Parser)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{Qmu\+Parser\+Base}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_af2c8a169de105bc0ade8349e1cfb8e87}{operator=}} (const \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{Qmu\+Parser\+Base}} \&a\+\_\+\+Parser)
+\begin{DoxyCompactList}\small\item\em Assignement operator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a1d96143925fa22d2e6fd15197a14c9f1}{$\sim$\+Qmu\+Parser\+Base}} ()
+\item 
+qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_adfac71028381fac98537e81d042967b5}{Eval}} () const
+\begin{DoxyCompactList}\small\item\em Calculate the result. \end{DoxyCompactList}\item 
+qreal $\ast$ \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a053068554b7f6ccd46e973f10fc66add}{Eval}} (int \&n\+Stack\+Size) const
+\begin{DoxyCompactList}\small\item\em Evaluate an expression containing comma seperated subexpressions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a09204a80dc5a63e79ee61df00de2a2ed}{Eval}} (qreal $\ast$results, int n\+Bulk\+Size) const
+\item 
+int \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_af8479da299aa18654477a3e28e585c41}{Get\+Num\+Results}} () const
+\begin{DoxyCompactList}\small\item\em Return the number of results on the calculation stack. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ab754fb37743a43d21247a369f1d448e8}{Set\+Expr}} (const QString \&a\+\_\+s\+Expr)
+\begin{DoxyCompactList}\small\item\em Set the formula. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ac1232553371858e235c694b91cdb3ff4}{Set\+Var\+Factory}} (\mbox{\hyperlink{namespaceqmu_a7045fd256c04b2e6e01be1f8f6d517a4}{facfun\+\_\+type}} a\+\_\+p\+Factory, void $\ast$p\+User\+Data=nullptr)
+\begin{DoxyCompactList}\small\item\em Set a function that can create variable pointer for unknown expression variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ac9c7713d6a8ba60215f52eea37b5a1b2}{Reset\+Locale}} ()
+\begin{DoxyCompactList}\small\item\em Resets the locale. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a3455d66a67297f20ea4153c1b7d90377}{Enable\+Optimizer}} (bool a\+\_\+b\+Is\+On=true)
+\begin{DoxyCompactList}\small\item\em Enable or disable the formula optimization feature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a7c2a4e5a0053c3d8a7bfeb579a5872b0}{Enable\+Built\+In\+Oprt}} (bool a\+\_\+b\+Is\+On=true)
+\begin{DoxyCompactList}\small\item\em Enable or disable the built in binary operators. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a9c72c259bce4f303eb98f1be3c74e49a}{Has\+Built\+In\+Oprt}} () const
+\begin{DoxyCompactList}\small\item\em Query status of built in variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ae4de3fe86d59a17426eaa1b8af5b6c9d}{Add\+Val\+Ident}} (\mbox{\hyperlink{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}{identfun\+\_\+type}} a\+\_\+p\+Callback)
+\begin{DoxyCompactList}\small\item\em Add a value parsing function. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a298114562be63e8241b9c201574c1160}{Define\+Oprt}} (const QString \&a\+\_\+s\+Name, \mbox{\hyperlink{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}{fun\+\_\+type2}} a\+\_\+p\+Fun, unsigned a\+\_\+i\+Prec=0, \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprt\+Associativity}} a\+\_\+e\+Associativity=\mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}{oa\+LEFT}}, bool a\+\_\+b\+Allow\+Opt=false)
+\begin{DoxyCompactList}\small\item\em Define a binary operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_af18951d7cf951f7decd9527b407b30ed}{Define\+Const}} (const QString \&a\+\_\+s\+Name, qreal a\+\_\+f\+Val)
+\begin{DoxyCompactList}\small\item\em Add a user defined constant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a279a79b0204649962b2ac6f662ef59d9}{Define\+Str\+Const}} (const QString \&a\+\_\+str\+Name, const QString \&a\+\_\+str\+Val)
+\begin{DoxyCompactList}\small\item\em Define a new string constant. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a5da8c0edda98ae13095104fb62c0f60f}{Define\+Var}} (const QString \&a\+\_\+s\+Name, qreal $\ast$a\+\_\+p\+Var)
+\begin{DoxyCompactList}\small\item\em Add a user defined variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_aaf2ce4521709f30421bfcc8a303d8fd4}{Define\+Postfix\+Oprt}} (const QString \&a\+\_\+s\+Fun, \mbox{\hyperlink{namespaceqmu_af1467daf91600a063fe199df73e49520}{fun\+\_\+type1}} a\+\_\+p\+Fun, bool a\+\_\+b\+Allow\+Opt=true)
+\begin{DoxyCompactList}\small\item\em Add a user defined operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_af494b7265e0a253842cb628f8ddedf87}{Define\+Infix\+Oprt}} (const QString \&a\+\_\+s\+Name, \mbox{\hyperlink{namespaceqmu_af1467daf91600a063fe199df73e49520}{fun\+\_\+type1}} a\+\_\+p\+Fun, int a\+\_\+i\+Prec=\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}{pr\+INFIX}}, bool a\+\_\+b\+Allow\+Opt=true)
+\begin{DoxyCompactList}\small\item\em Add a user defined operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a86b714fe0b1c4267237e24c3e53946e7}{Clear\+Var}} ()
+\begin{DoxyCompactList}\small\item\em Clear all user defined variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a7e128ee1257d8122e59b728842fae04d}{Clear\+Fun}} ()
+\begin{DoxyCompactList}\small\item\em Clear all functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a9b8f6905aebcc78dad0c8d3998f8c337}{Clear\+Const}} ()
+\begin{DoxyCompactList}\small\item\em Clear all user defined constants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_aef9d58b2b16eda46ec6ab12e6611f8d0}{Clear\+Infix\+Oprt}} ()
+\begin{DoxyCompactList}\small\item\em Clear the user defined Prefix operators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ac40491302662c3e3fdd5e789856f9be0}{Clear\+Postfix\+Oprt}} ()
+\begin{DoxyCompactList}\small\item\em Clear all user defined postfix operators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ae9636070f9bb9c60133a41baae358940}{Clear\+Oprt}} ()
+\begin{DoxyCompactList}\small\item\em Clear all user defined binary operators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a17e340a7f3caf0520e3c8697cdb0e4b0}{Remove\+Var}} (const QString \&a\+\_\+str\+Var\+Name)
+\begin{DoxyCompactList}\small\item\em Remove a variable from internal storage. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{varmap\+\_\+type}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ab50b7f3724eea5c6f6ca0f73b3eb4c15}{Get\+Used\+Var}} () const
+\begin{DoxyCompactList}\small\item\em Return a map containing the used variables only. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{varmap\+\_\+type}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_aa5652efdb5e61f6a5abb455a4eb53137}{Get\+Var}} () const
+\begin{DoxyCompactList}\small\item\em Return a map containing the used variables only. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}{valmap\+\_\+type}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a39144fe870667413f499b5364fb6a142}{Get\+Const}} () const
+\begin{DoxyCompactList}\small\item\em Return a map containing all parser constants. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a3f6fce1925285617a241a32292c7ed54}{Get\+Expr}} () const
+\begin{DoxyCompactList}\small\item\em Retrieve the formula. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{namespaceqmu_a11d7cc4b28fa2a91468a57a22ab1dcd3}{funmap\+\_\+type}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a3fa5161c013ed3f02adb146b69c9e870}{Get\+Fun\+Def}} () const
+\begin{DoxyCompactList}\small\item\em Return prototypes of all parser functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a433d6baeb80504ce413bb173e89a5d79}{Get\+Tokens}} () const
+\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ae56b406c0f3dad7b89d91fa9d99d41ed}{Get\+Numbers}} () const
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_afdd560e11c3f0de4bf42a6aac0aa7d4f}{Define\+Name\+Chars}} (const QString \&a\+\_\+sz\+Charset)
+\begin{DoxyCompactList}\small\item\em Define the set of valid characters to be used in names of functions, variables, constants. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a39ed6263353898809a57ec8f51de1b0c}{Define\+Oprt\+Chars}} (const QString \&a\+\_\+sz\+Charset)
+\begin{DoxyCompactList}\small\item\em Define the set of valid characters to be used in names of binary operators and postfix operators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a818ae77a8f1c9be23913de8bf2bd1ba7}{Define\+Infix\+Oprt\+Chars}} (const QString \&a\+\_\+sz\+Charset)
+\begin{DoxyCompactList}\small\item\em Define the set of valid characters to be used in names of infix operators. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a61d0c4e1053a28ba3ac775d67fb23cc5}{Valid\+Name\+Chars}} () const
+\begin{DoxyCompactList}\small\item\em Virtual function that defines the characters allowed in name identifiers. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ada0252242716132e434ff87cbb3f728d}{Valid\+Oprt\+Chars}} () const
+\begin{DoxyCompactList}\small\item\em Virtual function that defines the characters allowed in operator definitions. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ad5bf8e075341868f126c5c24f538ca7f}{Valid\+Infix\+Oprt\+Chars}} () const
+\begin{DoxyCompactList}\small\item\em Virtual function that defines the characters allowed in infix operator definitions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a165e08fdb43112d70180db007f1c076e}{Set\+Arg\+Sep}} (\mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}} c\+Arg\+Sep)
+\begin{DoxyCompactList}\small\item\em Set argument separator. \end{DoxyCompactList}\item 
+QChar \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a6ffa53fa088ed0e9275df0171e6c165f}{Get\+Arg\+Sep}} () const
+\begin{DoxyCompactList}\small\item\em Get the argument separator character. \end{DoxyCompactList}\item 
+void Q\+\_\+\+NORETURN \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a4891cb63fff2d64b4c94782dbaeb9f7c}{Error}} (\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} a\+\_\+i\+Errc, int a\+\_\+i\+Pos=-\/1, const QString \&a\+\_\+s\+Tok=QString()) const
+\begin{DoxyCompactList}\small\item\em Create an error containing the parse error position. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a55e84a7b5bc1b6d1ce27edddadda64bc}{Define\+Fun}} (const QString \&a\+\_\+str\+Name, T a\+\_\+p\+Fun, bool a\+\_\+b\+Allow\+Opt=true)
+\begin{DoxyCompactList}\small\item\em Define a parser function without arguments. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a35cf11e7d993c748636f86a1f4e9b47b}{set\+Allow\+Subexpressions}} (bool value)
+\item 
+QLocale \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a0f77a48d9efd4c824d1cf74dc8392fc4}{get\+Locale}} () const
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ac08e09ef06ab4ae803933a20922515f5}{set\+Locale}} (const QLocale \&value)
+\item 
+QChar \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a7bfc59d0faa9178e70421f456307cc07}{get\+Decimal\+Point}} () const
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a02cfec051574efec16f5126dedbccd31}{set\+Decimal\+Point}} (const QChar \&c)
+\item 
+QChar \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a952b3ce9eaef14ee156b97fe21353c7b}{get\+Thousands\+Separator}} () const
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_aabce42f4ca6e3efb6da67aba636f1889}{set\+Thousands\+Separator}} (const QChar \&c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_adc64036bb3f89e6e93d8641393ddb7b6}{Remove\+All}} (\mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \&map, const QString \&val)
+\begin{DoxyCompactList}\small\item\em Remove\+All remove token from token list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{qmu\+::\+Qmu\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a65a0bcb7f728bcca81b2aa0f037e8227}{Enable\+Debug\+Dump}} (bool b\+Dump\+Cmd, bool b\+Dump\+Stack)
+\begin{DoxyCompactList}\small\item\em Enable the dumping of bytecode amd stack content on the console. \end{DoxyCompactList}\item 
+static QString \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a252bd58e47c5541474aa945a60dbb947}{Get\+Version}} (\mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}{EParser\+Version\+Info}} e\+Info=\mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}{pvi\+FULL}})
+\begin{DoxyCompactList}\small\item\em Returns the version of muparser. \end{DoxyCompactList}\item 
+static const QString\+List \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a9f6a4401460427810c5a76edcf02f7bb}{Get\+Oprt\+Def}} ()
+\begin{DoxyCompactList}\small\item\em Get the default symbols used for the built in operators. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_ab4b56013bcac92d276bab421686214e6}{Set\+Sep\+For\+Tr}} (bool os\+Separator, bool from\+User)
+\begin{DoxyCompactList}\small\item\em Set\+Sep\+For\+Tr set separators for translation expression. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_ad0a8e5a957a193ccf7505481770e910a}{Set\+Sep\+For\+Eval}} ()
+\begin{DoxyCompactList}\small\item\em Set\+Sep\+For\+Eval set separators for eval. Each expression eval in internal (C) locale. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{qmu\+::\+Qmu\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a92fb99d87efd3d0680ba2eabf2536dcb}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize user defined functions. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ad7c076d140abd8b9394b7f62f0d9f442}{Init\+Char\+Sets}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ab56f539f9514e5570e60257d4eb442f1}{Init\+Fun}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a6035941ed809ac45aa0351695ebcf38b}{Init\+Const}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_af41fa956f7fa4405ee6a87dfb22e6531}{Init\+Oprt}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_acba1aa3824bb417a69d7e20036c9f47f}{On\+Detect\+Var}} (const QString \&p\+Expr, int \&n\+Start, int \&n\+End)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qreal $\ast$ \mbox{\hyperlink{classqmu_1_1_qmu_formula_base_ae90bc59e4c70f84fdb44c2839a3292d3}{Add\+Variable}} (const QString \&a\+\_\+sz\+Name, void $\ast$a\+\_\+p\+User\+Data)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser}{qmu\+::\+Qmu\+Parser}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classqmu_1_1_qmu_parser_a986d1b38db11d9126c4cb273704ef09e}{Is\+Val}} (const QString \&a\+\_\+sz\+Expr, int $\ast$a\+\_\+i\+Pos, qreal $\ast$a\+\_\+f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\begin{DoxyCompactList}\small\item\em Default value recognition callback. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a52432e9aad22fde1a28604ba987098b2}{Sinh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_aef225fb1932aa2c96cc9d9c8efc12f3e}{Cosh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a315c23033cfe1ffac90d9827310c8f7f}{Tanh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_aadcc795568eae9042a34bb6b0ceb7c8e}{ASinh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a3c8cedab6d5a3efa0838116c9e3f9fa9}{ACosh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a463e3e07fc37ab203d19184592520bc1}{ATanh}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a55b629a57d1c5174f0558a3294347a3a}{Degree\+To\+Radian}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a1b43c66ab5308dc96a792cdb43321e41}{Radian\+To\+Degree}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a9ac131876c0fb63c72cd17c50ec55bd1}{SinD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_ac95b361ae09ef46bbd2a1c976f76ab2c}{CosD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_ad646bdc0938d2edddb3ba35ccae704e5}{TanD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_adc34a118e6b957503cfc4686921b27dc}{ASinD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a21f9ecc52d3e26dc5219f755a265cceb}{ACosD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a6205e16135a0aab1920c7d80ccbc0799}{ATanD}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_adc0b82c9263337c536fabb37164c13f1}{Log2}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_af17ab3ea7969ffdce8fe274f63534f56}{Log10}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a786ce5f73534f306880fbb0f7b297ccc}{Abs}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a172ead4c742c2cc6e799fada706fe417}{Rint}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a2bb150872899788253f61c254b94000c}{Sign}} (qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a8820404580463becf996a90090de03db}{FMod}} (qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a286af87c388e426cae5e20813ff9682f}{Unary\+Minus}} (qreal v)
+\begin{DoxyCompactList}\small\item\em Callback for the unary minus operator. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a1c316760b747bd194c4ff3320937aeb0}{Sum}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for adding multiple values. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_abf427bce301624189e115a15517d83a2}{Avg}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for averaging multiple values. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_a0d726b5161ca0b6b4c5390416da473c7}{Min}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for determining the minimum value out of a vector. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_qmu_parser_ae80845b01f032e13df81ec1832fcf591}{Max}} (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback for determining the maximum value out of a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{qmu\+::\+Qmu\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+QLocale \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a882accabbcb00ef0bba7c4ff89a32f25}{m\+\_\+locale}}
+\begin{DoxyCompactList}\small\item\em The locale used by the parser. \end{DoxyCompactList}\item 
+QChar \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a29eb61e994cf96aaba12d9ec0cfcfdf7}{m\+\_\+decimal\+Point}}
+\item 
+QChar \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ac4fe0833f957e01415e03a31e06f4e11}{m\+\_\+thousands\+Separator}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{qmu\+::\+Qmu\+Parser\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+static const QString\+List \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_a3e3e98d74f4136050a73118efa6530fa}{c\+\_\+\+Default\+Oprt}}
+\begin{DoxyCompactList}\small\item\em Identifiers for built in binary operators. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_ae9a98623026e593a31853e066c78d157}{g\+\_\+\+Dbg\+Dump\+Cmd\+Code}} = false
+\item 
+static bool \mbox{\hyperlink{classqmu_1_1_qmu_parser_base_aa519b803d96b52852297157dfbb34a54}{g\+\_\+\+Dbg\+Dump\+Stack}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_aa5b11c2949af3c642bef6de730f438de}\label{classqmu_1_1_qmu_formula_base_aa5b11c2949af3c642bef6de730f438de}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!QmuFormulaBase@{QmuFormulaBase}}
+\index{QmuFormulaBase@{QmuFormulaBase}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{QmuFormulaBase()}{QmuFormulaBase()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Formula\+Base\+::\+Qmu\+Formula\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_a547981dee704b30b003187f2d90593a9}\label{classqmu_1_1_qmu_formula_base_a547981dee704b30b003187f2d90593a9}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!````~QmuFormulaBase@{$\sim$QmuFormulaBase}}
+\index{````~QmuFormulaBase@{$\sim$QmuFormulaBase}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$QmuFormulaBase()}{~QmuFormulaBase()}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Formula\+Base\+::$\sim$\+Qmu\+Formula\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_ae90bc59e4c70f84fdb44c2839a3292d3}\label{classqmu_1_1_qmu_formula_base_ae90bc59e4c70f84fdb44c2839a3292d3}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!AddVariable@{AddVariable}}
+\index{AddVariable@{AddVariable}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{AddVariable()}{AddVariable()}}
+{\footnotesize\ttfamily qreal $\ast$ qmu\+::\+Qmu\+Formula\+Base\+::\+Add\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+sz\+Name,  }\item[{void $\ast$}]{a\+\_\+p\+User\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_a1e386679e18f12d74ec5ec6180b187b5}\label{classqmu_1_1_qmu_formula_base_a1e386679e18f12d74ec5ec6180b187b5}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!InitCharSets@{InitCharSets}}
+\index{InitCharSets@{InitCharSets}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{InitCharSets()}{InitCharSets()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Init\+Char\+Sets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Init\+Char\+Sets init character set for parser. 
+
+QMu\+Parser require setting character set for legal characters. Because we try make our expresion language independent we set all posible unique characters from all alphabets. 
+
+Reimplemented from \mbox{\hyperlink{classqmu_1_1_qmu_parser_ae6bed8b51928071ee9c368ea06d71d34}{qmu\+::\+Qmu\+Parser}}.
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_adc64036bb3f89e6e93d8641393ddb7b6}\label{classqmu_1_1_qmu_formula_base_adc64036bb3f89e6e93d8641393ddb7b6}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!RemoveAll@{RemoveAll}}
+\index{RemoveAll@{RemoveAll}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{RemoveAll()}{RemoveAll()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Remove\+All (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_map}{QMap}}$<$ int, QString $>$ \&}]{map,  }\item[{const QString \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove\+All remove token from token list. 
+
+Standard Qt class \mbox{\hyperlink{class_q_map}{QMap}} doesn\textquotesingle{}t have method Remove\+All. Example\+: remove \char`\"{}-\/\char`\"{} from tokens list if exist. If don\textquotesingle{}t do that unary minus operation will broken.
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & map with tokens \\
+\hline
+{\em val} & token that need delete \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_ad0a8e5a957a193ccf7505481770e910a}\label{classqmu_1_1_qmu_formula_base_ad0a8e5a957a193ccf7505481770e910a}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!SetSepForEval@{SetSepForEval}}
+\index{SetSepForEval@{SetSepForEval}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{SetSepForEval()}{SetSepForEval()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Set\+Sep\+For\+Eval (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set\+Sep\+For\+Eval set separators for eval. Each expression eval in internal (C) locale. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_formula_base_ab4b56013bcac92d276bab421686214e6}\label{classqmu_1_1_qmu_formula_base_ab4b56013bcac92d276bab421686214e6}} 
+\index{qmu::QmuFormulaBase@{qmu::QmuFormulaBase}!SetSepForTr@{SetSepForTr}}
+\index{SetSepForTr@{SetSepForTr}!qmu::QmuFormulaBase@{qmu::QmuFormulaBase}}
+\doxysubsubsection{\texorpdfstring{SetSepForTr()}{SetSepForTr()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Formula\+Base\+::\+Set\+Sep\+For\+Tr (\begin{DoxyParamCaption}\item[{bool}]{os\+Separator,  }\item[{bool}]{from\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Set\+Sep\+For\+Tr set separators for translation expression. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em from\+User} & true if expression come from user (from dialog). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuformulabase_8h}{qmuformulabase.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuformulabase_8cpp}{qmuformulabase.\+cpp}}\end{DoxyCompactItemize}

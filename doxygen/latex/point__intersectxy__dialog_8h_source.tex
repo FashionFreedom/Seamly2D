@@ -1,0 +1,94 @@
+\hypertarget{point__intersectxy__dialog_8h_source}{}\doxysection{point\+\_\+intersectxy\+\_\+dialog.\+h}
+\label{point__intersectxy__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/point\_intersectxy\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/point\_intersectxy\_dialog.h}}
+\mbox{\hyperlink{point__intersectxy__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ point\_intersectxy\_dialog.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @date\ \ \ 7.21.2022}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2022\ Seamly2D\ project}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ POINT\_INTERSECTXY\_DIALOG\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ POINT\_INTERSECTXY\_DIALOG\_H}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_intersect_x_y_dialog}{PointIntersectXYDialog}};}
+\DoxyCodeLine{00047\ \}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_intersect_x_y_dialog}{PointIntersectXYDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00053\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog}{PointIntersectXYDialog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a102cd9228116d167198f88913a90dbfd}{\string~PointIntersectXYDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_aa3c6490e794da4f8f31006d6de6b7040}{setPointName}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a86af99f1e14355fd0e01330ac6510638}{getFirstPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a838837dba859f97602d62f64b99bfe89}{setFirstPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a39745384b1895ac8995c95a0fd058d69}{getSecondPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a609bc07aa5135a03db876484c09d3e45}{setSecondPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a799c3515e11709f6dfcc38a9e091b6a4}{getLineType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a1bb912546ed496a582da403a2aba5cab}{setLineType}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a94c58dc1d7db3ead35a30ec759ca7307}{getLineWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a74be9e6d3e9e55d9ac4f4e0878db9d7b}{setLineWeight}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a82c08570b27a3795f6580ea2ca7f7a12}{getLineColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a9942081089a4f994332c2f7691b702a9}{setLineColor}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a3d85d26fdb3f5f1b24d47e27bd11ec55}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a5d2ac1b7c486d0010257beca5c0aa40a}{pointChanged}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a0f070ea45e42c0f386dfaf226208fc28}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_point_intersect_x_y_dialog_a5a414932886bcebeb512f32d81b2a8fa}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_point_intersect_x_y_dialog}{PointIntersectXYDialog}})}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_point_intersect_x_y_dialog}{PointIntersectXYDialog}}\ *\mbox{\hyperlink{class_point_intersect_x_y_dialog_ab4905fd09133a7f323c41d22f24ed2c3}{ui}};\ }
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POINT\_INTERSECTXY\_DIALOG\_H}}
+
+\end{DoxyCode}

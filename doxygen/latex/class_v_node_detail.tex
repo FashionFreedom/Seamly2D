@@ -1,0 +1,320 @@
+\hypertarget{class_v_node_detail}{}\doxysection{VNode\+Detail Class Reference}
+\label{class_v_node_detail}\index{VNodeDetail@{VNodeDetail}}
+
+
+The \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} class keep information about detail node.  
+
+
+
+
+{\ttfamily \#include $<$vnodedetail.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_node_detail_abfa26168f573eb7a70b5e7e923df3720}{VNode\+Detail}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_node_detail_a234e78d2ec22c4b4660edcfa1d3c1f66}{VNode\+Detail}} (quint32 id, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} type\+Tool, \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} type\+Node, qreal mx=0, qreal my=0, bool reverse=false)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_node_detail_a6b0bc26fbfe180ce4732821a512c3ebf}{VNode\+Detail}} (const \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&node)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_node_detail_afbf45316aa9ec9d0a94c78cf59e1144e}{$\sim$\+VNode\+Detail}} ()
+\item 
+\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \& \mbox{\hyperlink{class_v_node_detail_a53bdda430781b491e78dcb8f6a016099}{operator=}} (const \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&node)
+\begin{DoxyCompactList}\small\item\em operator = assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_a74036e5d1eda9d22d370c903b8aef927}{Swap}} (\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&node) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+quint32 \mbox{\hyperlink{class_v_node_detail_a39ee98ead563112983e3c7678503e2c7}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_ab52e5ab457172006de34ce447772b2b0}{set\+Id}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Id set object id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \mbox{\hyperlink{class_v_node_detail_a25d8a860cb4835698d9d626b1449ec80}{get\+Type\+Tool}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type\+Tool return tool type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_aaeb20a7da7eb3dc87b54b957a7a158ec}{set\+Type\+Tool}} (const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Type\+Tool set tool type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} \mbox{\hyperlink{class_v_node_detail_a8e73430603484d28530a04a722a955c9}{get\+Type\+Node}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type\+Node return node type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_a6cd66d8e02eb449ce37b02852a818b72}{set\+Type\+Node}} (const \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Type\+Node set node type. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_node_detail_a4d96a2491ec7e5d123b835e377a70a7c}{get\+Mx}} () const
+\begin{DoxyCompactList}\small\item\em get\+Mx return object bias x axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_a561fb1364c5029663f73f2049e75084f}{set\+Mx}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em set\+Mx set object bias x axis. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_node_detail_ad69d771c38adc3750e13636285a94791}{get\+My}} () const
+\begin{DoxyCompactList}\small\item\em get\+My return object bias y axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_detail_a4a7a3f8cb45e0efe279314d8f97d697c}{set\+My}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em set\+My set object bias y axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_node_detail_a61d89605593446ad2608bde48e3e5cdd}{get\+Reverse}} () const
+\item 
+void \mbox{\hyperlink{class_v_node_detail_ae74246276eb83a606cf7345d027b0154}{set\+Reverse}} (bool reverse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_node_detail_a4b01cfb4816275f5ed32c3e746c9e6e1}{Convert}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} $>$ \&nodes, qreal width, bool closed)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_node_detail_data}{VNode\+Detail\+Data}} $>$ \mbox{\hyperlink{class_v_node_detail_af12de19c458d25023dd04e8d7afbb973}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} class keep information about detail node. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_node_detail_abfa26168f573eb7a70b5e7e923df3720}\label{class_v_node_detail_abfa26168f573eb7a70b5e7e923df3720}} 
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{VNodeDetail()}{VNodeDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VNode\+Detail\+::\+VNode\+Detail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} default constructor. 
+
+\mbox{\Hypertarget{class_v_node_detail_a234e78d2ec22c4b4660edcfa1d3c1f66}\label{class_v_node_detail_a234e78d2ec22c4b4660edcfa1d3c1f66}} 
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{VNodeDetail()}{VNodeDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VNode\+Detail\+::\+VNode\+Detail (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}}]{type\+Tool,  }\item[{\mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}}}]{type\+Node,  }\item[{qreal}]{mx = {\ttfamily 0},  }\item[{qreal}]{my = {\ttfamily 0},  }\item[{bool}]{reverse = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id \\
+\hline
+{\em type\+Tool} & type tool \\
+\hline
+{\em type\+Node} & type node \\
+\hline
+{\em mx} & object bias x axis \\
+\hline
+{\em my} & object bias y axis \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_a6b0bc26fbfe180ce4732821a512c3ebf}\label{class_v_node_detail_a6b0bc26fbfe180ce4732821a512c3ebf}} 
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\index{VNodeDetail@{VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{VNodeDetail()}{VNodeDetail()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VNode\+Detail\+::\+VNode\+Detail (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & node \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_afbf45316aa9ec9d0a94c78cf59e1144e}\label{class_v_node_detail_afbf45316aa9ec9d0a94c78cf59e1144e}} 
+\index{VNodeDetail@{VNodeDetail}!````~VNodeDetail@{$\sim$VNodeDetail}}
+\index{````~VNodeDetail@{$\sim$VNodeDetail}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{$\sim$VNodeDetail()}{~VNodeDetail()}}
+{\footnotesize\ttfamily VNode\+Detail\+::$\sim$\+VNode\+Detail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_node_detail_a4b01cfb4816275f5ed32c3e746c9e6e1}\label{class_v_node_detail_a4b01cfb4816275f5ed32c3e746c9e6e1}} 
+\index{VNodeDetail@{VNodeDetail}!Convert@{Convert}}
+\index{Convert@{Convert}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{Convert()}{Convert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ VNode\+Detail\+::\+Convert (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} $>$ \&}]{nodes,  }\item[{qreal}]{width,  }\item[{bool}]{closed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_node_detail_a39ee98ead563112983e3c7678503e2c7}\label{class_v_node_detail_a39ee98ead563112983e3c7678503e2c7}} 
+\index{VNodeDetail@{VNodeDetail}!getId@{getId}}
+\index{getId@{getId}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily quint32 VNode\+Detail\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Id return object id. 
+
+\begin{DoxyReturn}{Returns}
+id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_a4d96a2491ec7e5d123b835e377a70a7c}\label{class_v_node_detail_a4d96a2491ec7e5d123b835e377a70a7c}} 
+\index{VNodeDetail@{VNodeDetail}!getMx@{getMx}}
+\index{getMx@{getMx}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getMx()}{getMx()}}
+{\footnotesize\ttfamily qreal VNode\+Detail\+::get\+Mx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Mx return object bias x axis. 
+
+\begin{DoxyReturn}{Returns}
+bias x axis. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_ad69d771c38adc3750e13636285a94791}\label{class_v_node_detail_ad69d771c38adc3750e13636285a94791}} 
+\index{VNodeDetail@{VNodeDetail}!getMy@{getMy}}
+\index{getMy@{getMy}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getMy()}{getMy()}}
+{\footnotesize\ttfamily qreal VNode\+Detail\+::get\+My (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+My return object bias y axis. 
+
+\begin{DoxyReturn}{Returns}
+bias y axis. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_a61d89605593446ad2608bde48e3e5cdd}\label{class_v_node_detail_a61d89605593446ad2608bde48e3e5cdd}} 
+\index{VNodeDetail@{VNodeDetail}!getReverse@{getReverse}}
+\index{getReverse@{getReverse}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getReverse()}{getReverse()}}
+{\footnotesize\ttfamily bool VNode\+Detail\+::get\+Reverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_node_detail_a8e73430603484d28530a04a722a955c9}\label{class_v_node_detail_a8e73430603484d28530a04a722a955c9}} 
+\index{VNodeDetail@{VNodeDetail}!getTypeNode@{getTypeNode}}
+\index{getTypeNode@{getTypeNode}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getTypeNode()}{getTypeNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} VNode\+Detail\+::get\+Type\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Type\+Node return node type. 
+
+\begin{DoxyReturn}{Returns}
+node type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_a25d8a860cb4835698d9d626b1449ec80}\label{class_v_node_detail_a25d8a860cb4835698d9d626b1449ec80}} 
+\index{VNodeDetail@{VNodeDetail}!getTypeTool@{getTypeTool}}
+\index{getTypeTool@{getTypeTool}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{getTypeTool()}{getTypeTool()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} VNode\+Detail\+::get\+Type\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Type\+Tool return tool type. 
+
+\begin{DoxyReturn}{Returns}
+tool type. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_a53bdda430781b491e78dcb8f6a016099}\label{class_v_node_detail_a53bdda430781b491e78dcb8f6a016099}} 
+\index{VNodeDetail@{VNodeDetail}!operator=@{operator=}}
+\index{operator=@{operator=}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \& VNode\+Detail\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+operator = assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+node 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_node_detail_ab52e5ab457172006de34ce447772b2b0}\label{class_v_node_detail_ab52e5ab457172006de34ce447772b2b0}} 
+\index{VNodeDetail@{VNodeDetail}!setId@{setId}}
+\index{setId@{setId}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setId()}{setId()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Id set object id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & object id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_a561fb1364c5029663f73f2049e75084f}\label{class_v_node_detail_a561fb1364c5029663f73f2049e75084f}} 
+\index{VNodeDetail@{VNodeDetail}!setMx@{setMx}}
+\index{setMx@{setMx}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setMx()}{setMx()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+Mx (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Mx set object bias x axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & bias x axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_a4a7a3f8cb45e0efe279314d8f97d697c}\label{class_v_node_detail_a4a7a3f8cb45e0efe279314d8f97d697c}} 
+\index{VNodeDetail@{VNodeDetail}!setMy@{setMy}}
+\index{setMy@{setMy}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setMy()}{setMy()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+My (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+My set object bias y axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & bias y axis. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_ae74246276eb83a606cf7345d027b0154}\label{class_v_node_detail_ae74246276eb83a606cf7345d027b0154}} 
+\index{VNodeDetail@{VNodeDetail}!setReverse@{setReverse}}
+\index{setReverse@{setReverse}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setReverse()}{setReverse()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+Reverse (\begin{DoxyParamCaption}\item[{bool}]{reverse }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_node_detail_a6cd66d8e02eb449ce37b02852a818b72}\label{class_v_node_detail_a6cd66d8e02eb449ce37b02852a818b72}} 
+\index{VNodeDetail@{VNodeDetail}!setTypeNode@{setTypeNode}}
+\index{setTypeNode@{setTypeNode}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setTypeNode()}{setTypeNode()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+Type\+Node (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Type\+Node set node type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & node type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_aaeb20a7da7eb3dc87b54b957a7a158ec}\label{class_v_node_detail_aaeb20a7da7eb3dc87b54b957a7a158ec}} 
+\index{VNodeDetail@{VNodeDetail}!setTypeTool@{setTypeTool}}
+\index{setTypeTool@{setTypeTool}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{setTypeTool()}{setTypeTool()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::set\+Type\+Tool (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+set\+Type\+Tool set tool type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & tool type. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_detail_a74036e5d1eda9d22d370c903b8aef927}\label{class_v_node_detail_a74036e5d1eda9d22d370c903b8aef927}} 
+\index{VNodeDetail@{VNodeDetail}!Swap@{Swap}}
+\index{Swap@{Swap}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VNode\+Detail\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_node_detail}{VNode\+Detail}} \&}]{node }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_node_detail_af12de19c458d25023dd04e8d7afbb973}\label{class_v_node_detail_af12de19c458d25023dd04e8d7afbb973}} 
+\index{VNodeDetail@{VNodeDetail}!d@{d}}
+\index{d@{d}!VNodeDetail@{VNodeDetail}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_node_detail_data}{VNode\+Detail\+Data}}$>$ VNode\+Detail\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vnodedetail_8h}{vnodedetail.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vnodedetail_8cpp}{vnodedetail.\+cpp}}\end{DoxyCompactItemize}

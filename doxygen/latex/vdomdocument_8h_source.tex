@@ -1,0 +1,196 @@
+\hypertarget{vdomdocument_8h_source}{}\doxysection{vdomdocument.\+h}
+\label{vdomdocument_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/xml/vdomdocument.h@{D:/Github/Seamly2D/src/libs/ifc/xml/vdomdocument.h}}
+\mbox{\hyperlink{vdomdocument_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vdomdocument.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program\ that\ allows\ creating\ and\ modelling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VDOMDOCUMENT\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VDOMDOCUMENT\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QDomDocument>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QDomNode>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QLatin1String>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QStaticStringData>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QStringData>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QStringDataPtr>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <QLocale>}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}../vmisc/logging.h"{}}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }QDomElement;}
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }QDomNode;}
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_vector}{QVector}};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ Q\_DECLARE\_LOGGING\_CATEGORY(vXML)}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00080\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00081\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00104\ class\ \mbox{\hyperlink{class_v_dom_document}{VDomDocument}}\ :\ public\ QDomDocument}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_dom_document}{VDomDocument}})}
+\DoxyCodeLine{00107\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_ad06b8e03afd3169050953c4b4cfa758e}{AttrId}};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_ad9015d6f1665acce0a77172006150120}{AttrText}};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_a0c5421eaa5675ae09a895f78d87026eb}{AttrBold}};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_a027f643caba00844bf80a64d352efb8f}{AttrItalic}};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_a3190cc38f15720c8204d00716fad8469}{AttrAlignment}};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_af7c022eef84545253b696838417963e2}{AttrFSIncrement}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_ab8e9f3f325f6e16787f1729059fd3f14}{TagVersion}};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_abcef727e02159612a30a9363a04158e4}{TagUnit}};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_dom_document_ad4777ec1d5af22e6fe90565e29e73872}{TagLine}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{class_v_dom_document}{VDomDocument}}();}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_dom_document_ac58c6137f03f55806d8a7b3e31c331bb}{\string~VDomDocument}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00121\ \ \ \ \ QDomElement\ elementById(quint32\ \textcolor{keywordtype}{id},\ const\ QString\ \&tagName\ =\ QString());}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ SetAttribute(QDomElement\ \&domElement,\ const\ QString\ \&name,\ const\ T\ \&value)\ const;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ static\ quint32\ GetParametrUInt(const\ QDomElement\&\ domElement,\ const\ QString\ \&name,\ const\ QString\ \&defValue);}
+\DoxyCodeLine{00127\ \ \ \ \ static\ \textcolor{keywordtype}{bool}\ \ \ \ getParameterBool(const\ QDomElement\&\ domElement,\ const\ QString\ \&name,\ const\ QString\ \&defValue);}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ static\ \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{NodeUsage}}\ GetParametrUsage(const\ QDomElement\&\ domElement,\ const\ QString\ \&name);}
+\DoxyCodeLine{00130\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ SetParametrUsage(QDomElement\&\ domElement,\ const\ QString\ \&name,\ const\ \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{NodeUsage}}\ \&value);}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ static\ QString\ GetParametrString(const\ QDomElement\&\ domElement,\ const\ QString\ \&name,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&defValue\ =\ QString());}
+\DoxyCodeLine{00134\ \ \ \ \ static\ QString\ GetParametrEmptyString(const\ QDomElement\&\ domElement,\ const\ QString\ \&name);}
+\DoxyCodeLine{00135\ \ \ \ \ static\ qreal\ \ \ GetParametrDouble(const\ QDomElement\&\ domElement,\ const\ QString\ \&name,\ const\ QString\ \&defValue);}
+\DoxyCodeLine{00136\ \ \ \ \ static\ quint32\ getParameterId(const\ QDomElement\&\ domElement);}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \ \ \ \ \ \ \ \ \ \ MUnit()\ const;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ ValidateXML(const\ QString\ \&schema,\ const\ QString\ \&fileName);}
+\DoxyCodeLine{00141\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ setXMLContent(const\ QString\ \&fileName);}
+\DoxyCodeLine{00142\ \ \ \ \ static\ QString\ UnitsHelpString();}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \ \ SaveDocument(const\ QString\ \&fileName,\ QString\ \&error);}
+\DoxyCodeLine{00145\ \ \ \ \ QString\ \ \ \ \ \ \ \ Major()\ const;}
+\DoxyCodeLine{00146\ \ \ \ \ QString\ \ \ \ \ \ \ \ Minor()\ const;}
+\DoxyCodeLine{00147\ \ \ \ \ QString\ \ \ \ \ \ \ \ Patch()\ const;}
+\DoxyCodeLine{00148\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ RemoveAllChildren(QDomElement\ \&domElement);}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ QDomNode\ \ \ \ \ \ \ ParentNodeById(const\ quint32\ \&nodeId);}
+\DoxyCodeLine{00151\ \ \ \ \ QDomElement\ \ \ \ CloneNodeById(const\ quint32\ \&nodeId);}
+\DoxyCodeLine{00152\ \ \ \ \ QDomElement\ \ \ \ NodeById(const\ quint32\ \&nodeId);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ static\ \textcolor{keywordtype}{bool}\ \ \ \ SafeCopy(const\ QString\ \&source,\ const\ QString\ \&destination,\ QString\ \&error);}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ GetLabelTemplate(const\ QDomElement\ \&element)\ const;}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SetLabelTemplate(QDomElement\ \&element,\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ \&lines);}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ protected:}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ setTagText(const\ QString\ \&tag,\ const\ QString\ \&text);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ setTagText(const\ QDomElement\ \&domElement,\ const\ QString\ \&text);}
+\DoxyCodeLine{00162\ \ \ \ \ QString\ \ \ \ \ \ \ \ UniqueTagText(const\ QString\ \&tagName,\ const\ QString\ \&defVal\ =\ QString())\ const;}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ TestUniqueId()\ const;}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ CollectId(const\ QDomElement\ \&node,\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \&vector)const;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ private:}
+\DoxyCodeLine{00168\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_dom_document}{VDomDocument}})}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ QDomElement>\ map;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ find(const\ QDomElement\ \&node,\ quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{bool}\ SaveCanonicalXML(QIODevice\ *file,\ \textcolor{keywordtype}{int}\ indent,\ QString\ \&error)\ const;}
+\DoxyCodeLine{00175\ \};}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00178\ template\ <typename\ T>}
+\DoxyCodeLine{00185\ inline\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dom_document}{VDomDocument}}::SetAttribute(QDomElement\ \&domElement,\ const\ QString\ \&name,\ const\ T\ \&value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00186\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{comment}{//\ See\ specification\ for\ xs:decimal}}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{const}\ QLocale\ locale\ =\ QLocale::c();}
+\DoxyCodeLine{00189\ \ \ \ \ domElement.setAttribute(name,\ locale.toString(value).remove(locale.groupSeparator()));}
+\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00193\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00194\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ VDomDocument::SetAttribute<QString>(QDomElement\ \&domElement,\ \textcolor{keyword}{const}\ QString\ \&name,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00196\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00197\ \ \ \ \ domElement.setAttribute(name,\ value);}
+\DoxyCodeLine{00198\ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00201\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00202\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ VDomDocument::SetAttribute<bool>(QDomElement\ \&domElement,\ \textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ \&value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00203\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00204\ \ \ \ \ domElement.setAttribute(name,\ value\ ?\ \mbox{\hyperlink{def_8cpp_ad02992006af50f2843f23279d26ae939}{trueStr}}\ :\ \mbox{\hyperlink{def_8cpp_add2311fa670dce61b8bbdd6baf9841bb}{falseStr}});}
+\DoxyCodeLine{00205\ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00208\ \textcolor{keyword}{template}\ <>}
+\DoxyCodeLine{00209\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ VDomDocument::SetAttribute<MeasurementsType>(QDomElement\ \&domElement,\ \textcolor{keyword}{const}\ QString\ \&name,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{MeasurementsType}}\ \&value)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00211\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00212\ \ \ \ \ domElement.setAttribute(name,\ value\ ==\ MeasurementsType::Multisize\ ?\ QStringLiteral(\textcolor{stringliteral}{"{}multisize"{}})\ :}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QStringLiteral(\textcolor{stringliteral}{"{}individual"{}}));}
+\DoxyCodeLine{00214\ \}}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VDOMDOCUMENT\_H}}
+
+\end{DoxyCode}

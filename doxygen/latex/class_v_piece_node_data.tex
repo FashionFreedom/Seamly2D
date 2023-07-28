@@ -1,0 +1,257 @@
+\hypertarget{class_v_piece_node_data}{}\doxysection{VPiece\+Node\+Data Class Reference}
+\label{class_v_piece_node_data}\index{VPieceNodeData@{VPieceNodeData}}
+
+
+{\ttfamily \#include $<$vpiecenode\+\_\+p.\+h$>$}
+
+Inheritance diagram for VPiece\+Node\+Data\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_piece_node_data}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_node_data_a9c8bdb7b3ea9bd5894f7ee0ee7b6167e}{VPiece\+Node\+Data}} ()
+\item 
+\mbox{\hyperlink{class_v_piece_node_data_a8cb2333f0317761cf034caf42a2e9fb5}{VPiece\+Node\+Data}} (quint32 id, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} type\+Tool, bool reverse)
+\item 
+\mbox{\hyperlink{class_v_piece_node_data_a2a27e960ab101500409693a658ce056b}{VPiece\+Node\+Data}} (const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&node)
+\item 
+\mbox{\hyperlink{class_v_piece_node_data_adbab82fecc92bd0a9b45a348fe857870}{$\sim$\+VPiece\+Node\+Data}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_v_piece_node_data_a8b9d430363d5581510a7660ad17d7e71}{m\+\_\+id}}
+\item 
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \mbox{\hyperlink{class_v_piece_node_data_a8403717eeb584219259ab606968ef275}{m\+\_\+type\+Tool}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_afec71e3fdfad8dc77fbef2b44b79e500}{m\+\_\+reverse}}
+\begin{DoxyCompactList}\small\item\em type\+Tool type of tool \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_a8e7dfd8ff3c2beabe7b00e17e2041cca}{m\+\_\+excluded}}
+\begin{DoxyCompactList}\small\item\em reverse true if need reverse points list for node. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_a1a4e62247e6e58634e38997ca5a2c96a}{m\+\_\+is\+Notch}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+excluded true if item excluded from main path. Excluded item is not visible and also will not has affect on main path. Also include to exist path items automatically setted excluded. $\ast$/ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_a779add36b47ed6278a52d09e096438cb}{m\+\_\+is\+Main\+Path\+Node}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+is\+Notch has sense only for points. If true to seam allowance should a notch should be added. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_piece_node_data_a83abfead0955a974e14b9f237e973a2c}{m\+\_\+before\+Width\+Formula}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+is\+Main\+Path\+Node need fin know if allowed for this notch to be double. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_piece_node_data_a5185703bef8d41bd2989505bc2c80bdf}{m\+\_\+after\+Width\+Formula}}
+\item 
+\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{Piece\+Node\+Angle}} \mbox{\hyperlink{class_v_piece_node_data_a56f2e0e27b03bca03e945ea927b4b73f}{m\+\_\+angle\+Type}}
+\item 
+\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} \mbox{\hyperlink{class_v_piece_node_data_aa37c0205e6746e6c190143b6c1087213}{m\+\_\+notch\+Type}}
+\item 
+\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} \mbox{\hyperlink{class_v_piece_node_data_a6baac3dfbbc09a6545f3a4b98c4c1992}{m\+\_\+notch\+Sub\+Type}}
+\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_abd48a5bfc9f9b50de7941931d5496864}{m\+\_\+show\+Notch}}
+\item 
+bool \mbox{\hyperlink{class_v_piece_node_data_a2d4079210953112a90562187824a893b}{m\+\_\+show\+Seamline\+Notch}}
+\item 
+qreal \mbox{\hyperlink{class_v_piece_node_data_a13263b128600c8440111ff1f28fe983a}{m\+\_\+notch\+Length}}
+\item 
+qreal \mbox{\hyperlink{class_v_piece_node_data_adf13499da7c102bbda827badd5226564}{m\+\_\+notch\+Width}}
+\item 
+qreal \mbox{\hyperlink{class_v_piece_node_data_a850540f50a612f3968a0e00347941641}{m\+\_\+notch\+Angle}}
+\item 
+int \mbox{\hyperlink{class_v_piece_node_data_a8c946efb2ec5c648a9c19a2556de2094}{m\+\_\+notch\+Count}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \& \mbox{\hyperlink{class_v_piece_node_data_a3071bd7f6865d13af0b27b67d187008a}{operator=}} (const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+QData\+Stream \& \mbox{\hyperlink{class_v_piece_node_data_ab5384607743e6abcd74377e30b3fa149}{operator$<$$<$}} (QData\+Stream \&out, const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&p)
+\item 
+QData\+Stream \& \mbox{\hyperlink{class_v_piece_node_data_aa16b5469492769486b19ccdb6c561fd3}{operator$>$$>$}} (QData\+Stream \&in, \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&p)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_piece_node_data_a9c8bdb7b3ea9bd5894f7ee0ee7b6167e}\label{class_v_piece_node_data_a9c8bdb7b3ea9bd5894f7ee0ee7b6167e}} 
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{VPieceNodeData()}{VPieceNodeData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VPiece\+Node\+Data\+::\+VPiece\+Node\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a8cb2333f0317761cf034caf42a2e9fb5}\label{class_v_piece_node_data_a8cb2333f0317761cf034caf42a2e9fb5}} 
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{VPieceNodeData()}{VPieceNodeData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VPiece\+Node\+Data\+::\+VPiece\+Node\+Data (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}}]{type\+Tool,  }\item[{bool}]{reverse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a2a27e960ab101500409693a658ce056b}\label{class_v_piece_node_data_a2a27e960ab101500409693a658ce056b}} 
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\index{VPieceNodeData@{VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{VPieceNodeData()}{VPieceNodeData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VPiece\+Node\+Data\+::\+VPiece\+Node\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_piece_node_data_adbab82fecc92bd0a9b45a348fe857870}\label{class_v_piece_node_data_adbab82fecc92bd0a9b45a348fe857870}} 
+\index{VPieceNodeData@{VPieceNodeData}!````~VPieceNodeData@{$\sim$VPieceNodeData}}
+\index{````~VPieceNodeData@{$\sim$VPieceNodeData}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPieceNodeData()}{~VPieceNodeData()}}
+{\footnotesize\ttfamily VPiece\+Node\+Data\+::$\sim$\+VPiece\+Node\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_piece_node_data_a3071bd7f6865d13af0b27b67d187008a}\label{class_v_piece_node_data_a3071bd7f6865d13af0b27b67d187008a}} 
+\index{VPieceNodeData@{VPieceNodeData}!operator=@{operator=}}
+\index{operator=@{operator=}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \& VPiece\+Node\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_v_piece_node_data_ab5384607743e6abcd74377e30b3fa149}\label{class_v_piece_node_data_ab5384607743e6abcd74377e30b3fa149}} 
+\index{VPieceNodeData@{VPieceNodeData}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily QData\+Stream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{QData\+Stream \&}]{out,  }\item[{const \mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_v_piece_node_data_aa16b5469492769486b19ccdb6c561fd3}\label{class_v_piece_node_data_aa16b5469492769486b19ccdb6c561fd3}} 
+\index{VPieceNodeData@{VPieceNodeData}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily QData\+Stream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{QData\+Stream \&}]{in,  }\item[{\mbox{\hyperlink{class_v_piece_node_data}{VPiece\+Node\+Data}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_piece_node_data_a5185703bef8d41bd2989505bc2c80bdf}\label{class_v_piece_node_data_a5185703bef8d41bd2989505bc2c80bdf}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_afterWidthFormula@{m\_afterWidthFormula}}
+\index{m\_afterWidthFormula@{m\_afterWidthFormula}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_afterWidthFormula}{m\_afterWidthFormula}}
+{\footnotesize\ttfamily QString VPiece\+Node\+Data\+::m\+\_\+after\+Width\+Formula}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a56f2e0e27b03bca03e945ea927b4b73f}\label{class_v_piece_node_data_a56f2e0e27b03bca03e945ea927b4b73f}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_angleType@{m\_angleType}}
+\index{m\_angleType@{m\_angleType}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_angleType}{m\_angleType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{Piece\+Node\+Angle}} VPiece\+Node\+Data\+::m\+\_\+angle\+Type}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a83abfead0955a974e14b9f237e973a2c}\label{class_v_piece_node_data_a83abfead0955a974e14b9f237e973a2c}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_beforeWidthFormula@{m\_beforeWidthFormula}}
+\index{m\_beforeWidthFormula@{m\_beforeWidthFormula}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_beforeWidthFormula}{m\_beforeWidthFormula}}
+{\footnotesize\ttfamily QString VPiece\+Node\+Data\+::m\+\_\+before\+Width\+Formula}
+
+
+
+m\+\_\+is\+Main\+Path\+Node need fin know if allowed for this notch to be double. 
+
+\mbox{\Hypertarget{class_v_piece_node_data_a8e7dfd8ff3c2beabe7b00e17e2041cca}\label{class_v_piece_node_data_a8e7dfd8ff3c2beabe7b00e17e2041cca}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_excluded@{m\_excluded}}
+\index{m\_excluded@{m\_excluded}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_excluded}{m\_excluded}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+excluded}
+
+
+
+reverse true if need reverse points list for node. 
+
+\mbox{\Hypertarget{class_v_piece_node_data_a8b9d430363d5581510a7660ad17d7e71}\label{class_v_piece_node_data_a8b9d430363d5581510a7660ad17d7e71}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily quint32 VPiece\+Node\+Data\+::m\+\_\+id}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a779add36b47ed6278a52d09e096438cb}\label{class_v_piece_node_data_a779add36b47ed6278a52d09e096438cb}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_isMainPathNode@{m\_isMainPathNode}}
+\index{m\_isMainPathNode@{m\_isMainPathNode}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_isMainPathNode}{m\_isMainPathNode}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+is\+Main\+Path\+Node}
+
+
+
+m\+\_\+is\+Notch has sense only for points. If true to seam allowance should a notch should be added. 
+
+\mbox{\Hypertarget{class_v_piece_node_data_a1a4e62247e6e58634e38997ca5a2c96a}\label{class_v_piece_node_data_a1a4e62247e6e58634e38997ca5a2c96a}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_isNotch@{m\_isNotch}}
+\index{m\_isNotch@{m\_isNotch}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_isNotch}{m\_isNotch}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+is\+Notch}
+
+
+
+m\+\_\+excluded true if item excluded from main path. Excluded item is not visible and also will not has affect on main path. Also include to exist path items automatically setted excluded. $\ast$/ 
+
+\mbox{\Hypertarget{class_v_piece_node_data_a850540f50a612f3968a0e00347941641}\label{class_v_piece_node_data_a850540f50a612f3968a0e00347941641}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchAngle@{m\_notchAngle}}
+\index{m\_notchAngle@{m\_notchAngle}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchAngle}{m\_notchAngle}}
+{\footnotesize\ttfamily qreal VPiece\+Node\+Data\+::m\+\_\+notch\+Angle}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a8c946efb2ec5c648a9c19a2556de2094}\label{class_v_piece_node_data_a8c946efb2ec5c648a9c19a2556de2094}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchCount@{m\_notchCount}}
+\index{m\_notchCount@{m\_notchCount}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchCount}{m\_notchCount}}
+{\footnotesize\ttfamily int VPiece\+Node\+Data\+::m\+\_\+notch\+Count}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a13263b128600c8440111ff1f28fe983a}\label{class_v_piece_node_data_a13263b128600c8440111ff1f28fe983a}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchLength@{m\_notchLength}}
+\index{m\_notchLength@{m\_notchLength}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchLength}{m\_notchLength}}
+{\footnotesize\ttfamily qreal VPiece\+Node\+Data\+::m\+\_\+notch\+Length}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a6baac3dfbbc09a6545f3a4b98c4c1992}\label{class_v_piece_node_data_a6baac3dfbbc09a6545f3a4b98c4c1992}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchSubType@{m\_notchSubType}}
+\index{m\_notchSubType@{m\_notchSubType}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchSubType}{m\_notchSubType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} VPiece\+Node\+Data\+::m\+\_\+notch\+Sub\+Type}
+
+\mbox{\Hypertarget{class_v_piece_node_data_aa37c0205e6746e6c190143b6c1087213}\label{class_v_piece_node_data_aa37c0205e6746e6c190143b6c1087213}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchType@{m\_notchType}}
+\index{m\_notchType@{m\_notchType}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchType}{m\_notchType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} VPiece\+Node\+Data\+::m\+\_\+notch\+Type}
+
+\mbox{\Hypertarget{class_v_piece_node_data_adf13499da7c102bbda827badd5226564}\label{class_v_piece_node_data_adf13499da7c102bbda827badd5226564}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_notchWidth@{m\_notchWidth}}
+\index{m\_notchWidth@{m\_notchWidth}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_notchWidth}{m\_notchWidth}}
+{\footnotesize\ttfamily qreal VPiece\+Node\+Data\+::m\+\_\+notch\+Width}
+
+\mbox{\Hypertarget{class_v_piece_node_data_afec71e3fdfad8dc77fbef2b44b79e500}\label{class_v_piece_node_data_afec71e3fdfad8dc77fbef2b44b79e500}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_reverse@{m\_reverse}}
+\index{m\_reverse@{m\_reverse}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_reverse}{m\_reverse}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+reverse}
+
+
+
+type\+Tool type of tool 
+
+\mbox{\Hypertarget{class_v_piece_node_data_abd48a5bfc9f9b50de7941931d5496864}\label{class_v_piece_node_data_abd48a5bfc9f9b50de7941931d5496864}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_showNotch@{m\_showNotch}}
+\index{m\_showNotch@{m\_showNotch}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_showNotch}{m\_showNotch}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+show\+Notch}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a2d4079210953112a90562187824a893b}\label{class_v_piece_node_data_a2d4079210953112a90562187824a893b}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_showSeamlineNotch@{m\_showSeamlineNotch}}
+\index{m\_showSeamlineNotch@{m\_showSeamlineNotch}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_showSeamlineNotch}{m\_showSeamlineNotch}}
+{\footnotesize\ttfamily bool VPiece\+Node\+Data\+::m\+\_\+show\+Seamline\+Notch}
+
+\mbox{\Hypertarget{class_v_piece_node_data_a8403717eeb584219259ab606968ef275}\label{class_v_piece_node_data_a8403717eeb584219259ab606968ef275}} 
+\index{VPieceNodeData@{VPieceNodeData}!m\_typeTool@{m\_typeTool}}
+\index{m\_typeTool@{m\_typeTool}!VPieceNodeData@{VPieceNodeData}}
+\doxysubsubsection{\texorpdfstring{m\_typeTool}{m\_typeTool}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} VPiece\+Node\+Data\+::m\+\_\+type\+Tool}
+
+
+
+id object id. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vpiecenode__p_8h}{vpiecenode\+\_\+p.\+h}}\end{DoxyCompactItemize}

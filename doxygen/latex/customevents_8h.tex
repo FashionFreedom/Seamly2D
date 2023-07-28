@@ -1,0 +1,59 @@
+\hypertarget{customevents_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/customevents.h File Reference}
+\label{customevents_8h}\index{D:/Github/Seamly2D/src/libs/vmisc/customevents.h@{D:/Github/Seamly2D/src/libs/vmisc/customevents.h}}
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QEvent$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_undo_event}{Undo\+Event}}
+\item 
+class \mbox{\hyperlink{class_lite_parse_event}{Lite\+Parse\+Event}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340}{Custom\+Event\+Type}} \{ \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}{Undo\+Event\+Type}} = 1
+, \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}{Lite\+Parse\+Event\+Type}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const QEvent\+::\+Type \mbox{\hyperlink{customevents_8h_acde01a1eaf59046aeccf6e0ef2d00d29}{UNDO\+\_\+\+EVENT}} = static\+\_\+cast$<$QEvent\+::\+Type$>$(QEvent\+::\+User + \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}{Custom\+Event\+Type\+::\+Undo\+Event\+Type}})
+\item 
+const QEvent\+::\+Type \mbox{\hyperlink{customevents_8h_a27af7c6f18ff684f8d88b155b8c88663}{LITE\+\_\+\+PARSE\+\_\+\+EVENT}} = static\+\_\+cast$<$QEvent\+::\+Type$>$(QEvent\+::\+User + \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}{Custom\+Event\+Type\+::\+Lite\+Parse\+Event\+Type}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340}\label{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340}} 
+\index{customevents.h@{customevents.h}!CustomEventType@{CustomEventType}}
+\index{CustomEventType@{CustomEventType}!customevents.h@{customevents.h}}
+\doxysubsubsection{\texorpdfstring{CustomEventType}{CustomEventType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340}{Custom\+Event\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UndoEventType@{UndoEventType}!customevents.h@{customevents.h}}\index{customevents.h@{customevents.h}!UndoEventType@{UndoEventType}}}\mbox{\Hypertarget{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}\label{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}} 
+Undo\+Event\+Type&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LiteParseEventType@{LiteParseEventType}!customevents.h@{customevents.h}}\index{customevents.h@{customevents.h}!LiteParseEventType@{LiteParseEventType}}}\mbox{\Hypertarget{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}\label{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}} 
+Lite\+Parse\+Event\+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{customevents_8h_a27af7c6f18ff684f8d88b155b8c88663}\label{customevents_8h_a27af7c6f18ff684f8d88b155b8c88663}} 
+\index{customevents.h@{customevents.h}!LITE\_PARSE\_EVENT@{LITE\_PARSE\_EVENT}}
+\index{LITE\_PARSE\_EVENT@{LITE\_PARSE\_EVENT}!customevents.h@{customevents.h}}
+\doxysubsubsection{\texorpdfstring{LITE\_PARSE\_EVENT}{LITE\_PARSE\_EVENT}}
+{\footnotesize\ttfamily const QEvent\+::\+Type LITE\+\_\+\+PARSE\+\_\+\+EVENT = static\+\_\+cast$<$QEvent\+::\+Type$>$(QEvent\+::\+User + \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a02d4e09a01c97ad1f77c9077a1854f9d}{Custom\+Event\+Type\+::\+Lite\+Parse\+Event\+Type}})}
+
+\mbox{\Hypertarget{customevents_8h_acde01a1eaf59046aeccf6e0ef2d00d29}\label{customevents_8h_acde01a1eaf59046aeccf6e0ef2d00d29}} 
+\index{customevents.h@{customevents.h}!UNDO\_EVENT@{UNDO\_EVENT}}
+\index{UNDO\_EVENT@{UNDO\_EVENT}!customevents.h@{customevents.h}}
+\doxysubsubsection{\texorpdfstring{UNDO\_EVENT}{UNDO\_EVENT}}
+{\footnotesize\ttfamily const QEvent\+::\+Type UNDO\+\_\+\+EVENT = static\+\_\+cast$<$QEvent\+::\+Type$>$(QEvent\+::\+User + \mbox{\hyperlink{customevents_8h_ab5e39226fcfaeab4760404fdefa1d340a960de657e06fbbc9b6fb85db3b20b2e2}{Custom\+Event\+Type\+::\+Undo\+Event\+Type}})}
+

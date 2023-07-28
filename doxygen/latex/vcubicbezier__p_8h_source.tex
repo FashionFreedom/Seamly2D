@@ -1,0 +1,128 @@
+\hypertarget{vcubicbezier__p_8h_source}{}\doxysection{vcubicbezier\+\_\+p.\+h}
+\label{vcubicbezier__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vcubicbezier\_p.h@{D:/Github/Seamly2D/src/libs/vgeometry/vcubicbezier\_p.h}}
+\mbox{\hyperlink{vcubicbezier__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vcubicbezier\_p.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 8\ 3,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VCUBICBEZIER\_P\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VCUBICBEZIER\_P\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QLineF>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpointf_8h}{vpointf.h}}"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vmath.h"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00064\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00065\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ class\ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}\ \&curve);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p3,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p4);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_cubic_bezier_data}{\string~VCubicBezierData}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_cubic_bezier_data_ad350ee08cbf8b8ae56082d1f5bd18c95}{p1}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_cubic_bezier_data_a470c7dc2eb479f913b1621b5ebd3e851}{p2}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_cubic_bezier_data_a6b99446f7b080edbc7a0ab7b74cb1894}{p3}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_cubic_bezier_data_a28dc4b6ec02f7cd7df45693baed365e8}{p4}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}\ \&\mbox{\hyperlink{class_v_cubic_bezier_data_ae5e9f05aff853625a9ddc3356e630346}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00092\ \mbox{\hyperlink{class_v_cubic_bezier_data_ab18b481d366b3362f0c215ceb58e54b8}{VCubicBezierData::VCubicBezierData}}()}
+\DoxyCodeLine{00093\ \ \ \ \ :\ p1(),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ p2(),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ p3(),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ p4()}
+\DoxyCodeLine{00097\ \{}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00101\ \mbox{\hyperlink{class_v_cubic_bezier_data_ab18b481d366b3362f0c215ceb58e54b8}{VCubicBezierData::VCubicBezierData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_cubic_bezier_data}{VCubicBezierData}}\ \&curve)}
+\DoxyCodeLine{00102\ \ \ \ \ :\ QSharedData(curve),}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ p1(curve.p1),}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ p2(curve.p2),}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ p3(curve.p3),}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ p4(curve.p4)}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00111\ \mbox{\hyperlink{class_v_cubic_bezier_data_ab18b481d366b3362f0c215ceb58e54b8}{VCubicBezierData::VCubicBezierData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p1,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p2,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p3,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&p4)}
+\DoxyCodeLine{00112\ \ \ \ \ :\ p1(p1),}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ p2(p2),}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ p3(p3),}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ p4(p4)}
+\DoxyCodeLine{00116\ \{}
+\DoxyCodeLine{00117\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00120\ \mbox{\hyperlink{class_v_cubic_bezier_data_ad0f9f9afb6a6d37c2dbc4d6d5b898758}{VCubicBezierData::\string~VCubicBezierData}}()}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VCUBICBEZIER\_P\_H}}
+
+\end{DoxyCode}

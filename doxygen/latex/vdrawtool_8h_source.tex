@@ -1,0 +1,361 @@
+\hypertarget{vdrawtool_8h_source}{}\doxysection{vdrawtool.\+h}
+\label{vdrawtool_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/vdrawtool.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/vdrawtool.h}}
+\mbox{\hyperlink{vdrawtool_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vdrawtool.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @date\ \ \ 7.23.2022}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2022\ Seamly2D\ project}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ VDRAWTOOL\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ VDRAWTOOL\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../vinteractivetool.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../ifc/exception/vexceptionbadid.h"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}../vdatatool.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vpointf.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vabstractmainwindow.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vmaingraphicsscene.h"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vmaingraphicsview.h"{}}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}../vtools/undocommands/addgroup.h"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}../vtools/undocommands/add\_groupitem.h"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#include\ "{}../vtools/undocommands/remove\_groupitem.h"{}}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <QAction>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <QByteArray>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QGraphicsSceneContextMenuEvent>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QIcon>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QMenu>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_draw_tool}{VDrawTool}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_interactive_tool}{VInteractiveTool}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool}{VDrawTool}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ quint32\ \textcolor{keywordtype}{id},\ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}{\string~VDrawTool}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}{getLineType}}()\ const;}
+\DoxyCodeLine{00076\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}{setLineType}}(const\ QString\ \&value);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}{getLineWeight}}()\ const;}
+\DoxyCodeLine{00079\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}{setLineWeight}}(const\ QString\ \&value);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{isPointNameVisible}}(quint32\ \textcolor{keywordtype}{id})\ const;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ signals:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}{ChangedToolSelection}}(\textcolor{keywordtype}{bool}\ selected,\ quint32\ \textcolor{keywordtype}{object},\ quint32\ tool);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ public\ slots:}
+\DoxyCodeLine{00087\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ac690669e1b70895f191733e64497f354}{ShowTool}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00088\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}{activeBlockChanged}}(const\ QString\ \&newName);}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}{blockNameChanged}}(const\ QString\ \&oldName,\ const\ QString\ \&newName);}
+\DoxyCodeLine{00090\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}{EnableToolMove}}(\textcolor{keywordtype}{bool}\ move);}
+\DoxyCodeLine{00091\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}{Disable}}(\textcolor{keywordtype}{bool}\ disable,\ const\ QString\ \&draftBlockName)=0;}
+\DoxyCodeLine{00092\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}{piecesMode}}(\textcolor{keywordtype}{bool}\ mode);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ protected\ slots:}
+\DoxyCodeLine{00095\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}{showContextMenu}}(QGraphicsSceneContextMenuEvent\ *event,\ quint32\ \textcolor{keywordtype}{id}=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})=0;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ protected:}
+\DoxyCodeLine{00098\ \ \ \ \ enum\ class\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{RemoveOption}}\ :\ \textcolor{keywordtype}{bool}\ \{\mbox{\hyperlink{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}{Disable}}\ =\ \textcolor{keyword}{false},\ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Enable}}\ =\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}}\ :\ \textcolor{keywordtype}{bool}\ \{\mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Follow}}\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}{Ignore}}\ =\ \textcolor{keyword}{false}\};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}{activeBlockName}};\ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}{m\_lineType}};\ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}{m\_lineWeight}};\ \ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}{AddToCalculation}}(\textcolor{keyword}{const}\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}{addDependence}}(\mbox{\hyperlink{class_q_list}{QList<quint32>}}\ \&list,\ quint32\ objectId)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}{SaveDialog}}(QDomElement\ \&domElement)=0;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}{SaveDialogChange}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00112\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}{AddToFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}{SaveOption}}(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj);}
+\DoxyCodeLine{00114\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{SaveOptions}}(QDomElement\ \&tag,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj);}
+\DoxyCodeLine{00115\ \ \ \ \ virtual\ QString\ \ \mbox{\hyperlink{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}{makeToolTip}}()\ const;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}{CorrectDisable}}(\textcolor{keywordtype}{bool}\ disable,\ const\ QString\ \&draftBlockName)\ const;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}{ReadAttributes}}();}
+\DoxyCodeLine{00120\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}{ReadToolAttributes}}(const\ QDomElement\ \&domElement)=0;}
+\DoxyCodeLine{00121\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{updatePointNameVisibility}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ template\ <typename\ Dialog>}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}{ContextMenu}}(QGraphicsSceneContextMenuEvent\ *event,\ quint32\ itemId\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{RemoveOption}}\ \&showRemove\ =\ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{RemoveOption}}::\mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Enable}},}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}}\ \&ref\ =\ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}}::\mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Follow}});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ template\ <typename\ \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}}>}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}{ShowItem}}(\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}}\ *item,\ quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00132\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}{ObjectName}}(quint32\ \textcolor{keywordtype}{id})\ const;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00135\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{InitDrawToolConnections}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ T\ *tool);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ private:}
+\DoxyCodeLine{00138\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_draw_tool}{VDrawTool}})}
+\DoxyCodeLine{00139\ \};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00142\ template\ <typename\ Dialog>}
+\DoxyCodeLine{00150\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_draw_tool}{VDrawTool}}::\mbox{\hyperlink{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}{ContextMenu}}(QGraphicsSceneContextMenuEvent\ *event,\ quint32\ itemId,}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{RemoveOption}}\ \&showRemove,\ const\ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}}\ \&ref)}
+\DoxyCodeLine{00152\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(event\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\_suppressContextMenu}})}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ itemType\ =\ \ GOType::Unknown;}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}(itemId\ !=\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00162\ \ \ \ \ \{}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ itemType\ =\ \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}.\mbox{\hyperlink{class_v_container_a956a1e551804359b7aa46a389b4055da}{GetGObject}}(itemId)-\/>getType();}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}\ \&e)}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \{\ \textcolor{comment}{//\ Possible\ case.\ Parent\ was\ deleted,\ but\ the\ node\ object\ is\ still\ here.}}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \ \ \ \ qWarning()\ <<\ qUtf8Printable(e.\mbox{\hyperlink{class_v_exception_bad_id_abbfc04f0381b327fbbcd247776db2fe8}{ErrorMessage}}());}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \ \ \ \ \}}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Creating\ tool\ context\ menu."{}});}
+\DoxyCodeLine{00174\ \ \ \ \ QMenu\ menu;}
+\DoxyCodeLine{00175\ \ \ \ \ QAction\ *actionOption\ =\ menu.addAction(QIcon::fromTheme(\textcolor{stringliteral}{"{}preferences-\/other"{}}),\ tr(\textcolor{stringliteral}{"{}Properties"{}}));}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{comment}{//\ Show\ object\ name\ menu\ item}}
+\DoxyCodeLine{00178\ \ \ \ \ QAction\ *actionShowPointName\ =\ menu.addAction(QIcon(\textcolor{stringliteral}{"{}://icon/16x16/open\_eye.png"{}}),\ tr(\textcolor{stringliteral}{"{}Show\ Point\ Name"{}}));}
+\DoxyCodeLine{00179\ \ \ \ \ actionShowPointName-\/>setCheckable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordflow}{if}\ (itemType\ ==\ GOType::Point)}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ actionShowPointName-\/>setChecked(\mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{isPointNameVisible}}(itemId));}
+\DoxyCodeLine{00184\ \ \ \ \ \}}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ actionShowPointName-\/>setVisible(\textcolor{keyword}{false});}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ QAction\ *actionDelete\ =\ menu.addAction(QIcon::fromTheme(\textcolor{stringliteral}{"{}edit-\/delete"{}}),\ tr(\textcolor{stringliteral}{"{}Delete"{}}));}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordflow}{if}\ (showRemove\ ==\ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{RemoveOption::Enable}})}
+\DoxyCodeLine{00192\ \ \ \ \ \{}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ref\ ==\ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Referens::Follow}})}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\_referens}}\ >\ 1)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Delete\ disabled.\ Tool\ has\ children."{}});}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionDelete-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Delete\ enabled.\ Tool\ has\ no\ children."{}});}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ actionDelete-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Delete\ enabled.\ Ignore\ referens\ value."{}});}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ actionDelete-\/>setEnabled(\textcolor{keyword}{true});}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00213\ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Delete\ disabled."{}});}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ actionDelete-\/>setEnabled(\textcolor{keyword}{false});}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ Add\ Group\ Item\ menu\ item}}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap<quint32,QString>}}\ groupsNotContainingItem\ =\ \ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}-\/>\mbox{\hyperlink{class_v_abstract_pattern_ace1bb83ea9b3f89c55b68a0ba61967df}{getGroupsContainingItem}}(this-\/>\mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{getId}}(),\ itemId,\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00220\ \ \ \ \ QActionGroup*\ actionAddGroupMenu=\ \textcolor{keyword}{new}\ QActionGroup(\textcolor{keyword}{this});}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{if}(not\ groupsNotContainingItem.empty())}
+\DoxyCodeLine{00223\ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ QMenu\ *menuAddGroupItem\ =\ menu.addMenu(QIcon(\textcolor{stringliteral}{"{}://icon/32x32/add.png"{}}),\ tr(\textcolor{stringliteral}{"{}Add\ Group\ Object"{}}));}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ QStringList\ list\ =\ QStringList(groupsNotContainingItem.values());}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ list.sort(Qt::CaseInsensitive);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<list.count();\ ++i)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ QAction\ *actionAddGroupItem\ =\ menuAddGroupItem-\/>addAction(list[i]);}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ actionAddGroupMenu-\/>addAction(actionAddGroupItem);}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ quint32\ groupId\ =\ groupsNotContainingItem.key(list[i]);}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ actionAddGroupItem-\/>setData(groupId);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ groupsNotContainingItem.remove(groupId);\ \ \ \textcolor{comment}{//\ delete\ any\ duplicate\ groups}}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00236\ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{comment}{//\ Remove\ Group\ Item\ menu\ item}}
+\DoxyCodeLine{00239\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap<quint32,QString>}}\ groupsContainingItem\ =\ \ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}-\/>\mbox{\hyperlink{class_v_abstract_pattern_ace1bb83ea9b3f89c55b68a0ba61967df}{getGroupsContainingItem}}(this-\/>\mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{getId}}(),\ itemId,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00240\ \ \ \ \ QActionGroup*\ actionDeleteGroupMenu\ =\ \textcolor{keyword}{new}\ QActionGroup(\textcolor{keyword}{this});}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordflow}{if}(not\ groupsContainingItem.empty())}
+\DoxyCodeLine{00243\ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ QMenu\ *menuRemoveGroupItem\ =\ menu.addMenu(QIcon(\textcolor{stringliteral}{"{}://icon/32x32/remove.png"{}}),\ tr(\textcolor{stringliteral}{"{}Remove\ Group\ Object"{}}));}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ QStringList\ list\ =\ QStringList(groupsContainingItem.values());}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ list.sort(Qt::CaseInsensitive);}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<list.count();\ ++i)}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ QAction\ *actionRemoveGroupItem\ =\ menuRemoveGroupItem-\/>addAction(list[i]);}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ actionDeleteGroupMenu-\/>addAction(actionRemoveGroupItem);}
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ quint32\ groupId\ =\ groupsContainingItem.key(list[i]);}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ actionRemoveGroupItem-\/>setData(groupId);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ groupsContainingItem.remove(groupId);}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \}}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ QAction\ *selectedAction\ =\ menu.exec(event-\/>screenPos());}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordflow}{if}(selectedAction\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00261\ \ \ \ \ \{}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00263\ \ \ \ \ \}}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keywordflow}{if}\ (selectedAction\ ==\ actionOption)}
+\DoxyCodeLine{00265\ \ \ \ \ \{}
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Show\ options."{}});}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getSceneView()-\/>itemClicked(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\_dialog}}\ =\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<Dialog>}}(\textcolor{keyword}{new}\ Dialog(\mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{getData}}(),\ \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\_id}},\ \mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getMainWindow()));}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\_dialog}}-\/>setModal(\textcolor{keyword}{true});}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\_dialog}}.data(),\ \&\mbox{\hyperlink{class_dialog_tool_a2393a727a5d951da5daf2a5950b726af}{DialogTool::DialogClosed}},\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_v_interactive_tool_af9b3bf3bcbcfa2ed5a0f570e5c607627}{VDrawTool::FullUpdateFromGuiOk}});}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ connect(\mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\_dialog}}.data(),\ \&\mbox{\hyperlink{class_dialog_tool_ac326a802f9ee83296e1ff3d5bc95b6e5}{DialogTool::DialogApplied}},\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_v_interactive_tool_aae1bd5db994fa4e01b7f24944ae89416}{VDrawTool::FullUpdateFromGuiApply}});}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{class_v_interactive_tool_ad039d030b4cc44b00004133f138a61c2}{setDialog}}();}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\_dialog}}-\/>show();}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (selectedAction\ ==\ actionDelete)}
+\DoxyCodeLine{00279\ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Deleting\ Object."{}});}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ae68bc399bdb34d1d55d27faed16c52cb}{deleteTool}}();\ \textcolor{comment}{//\ do\ not\ catch\ exception\ here}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//Leave\ this\ method\ immediately\ after\ call!!!}}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (selectedAction\ ==\ actionShowPointName)}
+\DoxyCodeLine{00285\ \ \ \ \ \{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{updatePointNameVisibility}}(itemId,\ selectedAction-\/>isChecked());}
+\DoxyCodeLine{00287\ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (selectedAction-\/>actionGroup()\ ==\ actionAddGroupMenu)}
+\DoxyCodeLine{00289\ \ \ \ \ \{}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ quint32\ groupId\ =\ selectedAction-\/>data().toUInt();}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ QDomElement\ item\ =\ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}-\/>\mbox{\hyperlink{class_v_abstract_pattern_a7610fad3fe65cccc65641ea9ea652c84}{addGroupItem}}(this-\/>\mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{getId}}(),\ itemId,\ groupId);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene\ =\ qobject\_cast<VMainGraphicsScene\ *>(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getCurrentScene());}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(scene\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ scene-\/>clearSelection();}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_main_window}{VAbstractMainWindow}}\ *window\ =\ qobject\_cast<VAbstractMainWindow\ *>(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getMainWindow());}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(window\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_group_item}{AddGroupItem}}\ *command\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_add_group_item}{AddGroupItem}}(item,\ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ groupId);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \ \ \ \ connect(command,\ \&\mbox{\hyperlink{class_add_group_item_a6dc999cd20f3e34848691027c534c1b8}{AddGroupItem::updateGroups}},\ window,\ \&\mbox{\hyperlink{class_v_abstract_main_window_a5dd60672089cf580b4a244516a1eeaab}{VAbstractMainWindow::updateGroups}});}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getUndoStack()-\/>push(command);}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00304\ \ \ \ \ \}}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (selectedAction-\/>actionGroup()\ ==\ actionDeleteGroupMenu)}
+\DoxyCodeLine{00306\ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ quint32\ groupId\ =\ selectedAction-\/>data().toUInt();}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ QDomElement\ item\ =\ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}-\/>\mbox{\hyperlink{class_v_abstract_pattern_a2f4da766b7d4f7bcd48082e54f7d4581}{removeGroupItem}}(this-\/>\mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{getId}}(),\ itemId,\ groupId);}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene\ =\ qobject\_cast<VMainGraphicsScene\ *>(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getCurrentScene());}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(scene\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ scene-\/>clearSelection();}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_main_window}{VAbstractMainWindow}}\ *window\ =\ qobject\_cast<VAbstractMainWindow\ *>(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getMainWindow());}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(window\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_remove_group_item}{RemoveGroupItem}}\ *command\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_remove_group_item}{RemoveGroupItem}}(item,\ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ groupId);}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ connect(command,\ \&\mbox{\hyperlink{class_remove_group_item_acd1e2baf0c90ca03d6dd8366fdbf0e90}{RemoveGroupItem::updateGroups}},\ window,\ \&\mbox{\hyperlink{class_v_abstract_main_window_a5dd60672089cf580b4a244516a1eeaab}{VAbstractMainWindow::updateGroups}});}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getUndoStack()-\/>push(command);}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00321\ \ \ \ \ \}}
+\DoxyCodeLine{00322\ \}}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00325\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Item>}
+\DoxyCodeLine{00332\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}{VDrawTool::ShowItem}}(\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}}\ *item,\ quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00333\ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(item\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00335\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ ==\ item-\/>m\_id)}
+\DoxyCodeLine{00336\ \ \ \ \ \{}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{ShowVisualization}}(enable);}
+\DoxyCodeLine{00338\ \ \ \ \ \}}
+\DoxyCodeLine{00339\ \}}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00342\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00347\ QString\ \mbox{\hyperlink{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}{VDrawTool::ObjectName}}(quint32\ \textcolor{keywordtype}{id})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00348\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00350\ \ \ \ \ \{}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}.\mbox{\hyperlink{class_v_container_aa5ac2a3108612bcad2520613c558469c}{GeometricObject}}<T>(id)-\/>name();}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}\ \&e)}
+\DoxyCodeLine{00354\ \ \ \ \ \{}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ qCDebug(vTool,\ \textcolor{stringliteral}{"{}Error!\ Couldn't\ get\ object\ name\ by\ id\ =\ \%s.\ \%s\ \%s"{}},\ qUtf8Printable(QString().setNum(\textcolor{keywordtype}{id})),}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qUtf8Printable(e.\mbox{\hyperlink{class_v_exception_bad_id_abbfc04f0381b327fbbcd247776db2fe8}{ErrorMessage}}()),}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qUtf8Printable(e.\mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{DetailedInformation}}()));}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ QString(\textcolor{stringliteral}{"{}"{}});\textcolor{comment}{//\ Return\ empty\ string\ for\ property\ browser}}
+\DoxyCodeLine{00359\ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \}}
+\DoxyCodeLine{00361\ }
+\DoxyCodeLine{00362\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00363\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00364\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{VDrawTool::InitDrawToolConnections}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ T\ *tool)}
+\DoxyCodeLine{00365\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(scene\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00367\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(tool\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00368\ }
+\DoxyCodeLine{00369\ \ \ \ \ QObject::connect(tool,\ \&T::chosenTool,\ scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a0a56837cf2173ce8becd995fec5e8404}{VMainGraphicsScene::chosenItem}});}
+\DoxyCodeLine{00370\ \ \ \ \ QObject::connect(tool,\ \&T::ChangedToolSelection,\ scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_aa89ac1477b82274610253f62775a06da}{VMainGraphicsScene::SelectedItem}});}
+\DoxyCodeLine{00371\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a84fab767edd221394da5be91e6ccbf49}{VMainGraphicsScene::DisableItem}},\ tool,\ \&T::Disable);}
+\DoxyCodeLine{00372\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a71e9f77d3721c01c4c72827a76075ffb}{VMainGraphicsScene::EnableToolMove}},\ tool,\ \&T::EnableToolMove);}
+\DoxyCodeLine{00373\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a2ec92d814799bce05628b4b6e723af90}{VMainGraphicsScene::curvePiecesMode}},\ tool,\ \&T::piecesMode);}
+\DoxyCodeLine{00374\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a49a1330b5831af7d923ec0f402f29554}{VMainGraphicsScene::ItemSelection}},\ tool,\ \&T::ToolSelectionType);}
+\DoxyCodeLine{00375\ \}}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VDRAWTOOL\_H}}
+
+\end{DoxyCode}

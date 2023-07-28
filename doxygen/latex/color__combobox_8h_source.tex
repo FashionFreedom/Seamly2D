@@ -1,0 +1,47 @@
+\hypertarget{color__combobox_8h_source}{}\doxysection{color\+\_\+combobox.\+h}
+\label{color__combobox_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/color\_combobox.h@{D:/Github/Seamly2D/src/libs/vwidgets/color\_combobox.h}}
+\mbox{\hyperlink{color__combobox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ color\_combobox.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COLOR\_COMBOBOX\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COLOR\_COMBOBOX\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_combo_box}{ColorComboBox}}:\ \textcolor{keyword}{public}\ QComboBox}
+\DoxyCodeLine{00017\ \{}
+\DoxyCodeLine{00018\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box}{ColorComboBox}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr}\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box}{ColorComboBox}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr}\ ,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_color_combo_box_a422be7364d16e790d521daa1537bcd18}{\string~ColorComboBox}}();}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ QString\ \ \mbox{\hyperlink{class_color_combo_box_a89fce706b9bc28b2bd388aad98ed4d6b}{getColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a33b1fe996cde97d08d5f9b16e6b9f91c}{setColor}}(\textcolor{keyword}{const}\ QString\ \&color);}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_ab1a21c7b8bfe3ff4e9858b64d410654d}{setItems}}(\mbox{\hyperlink{class_q_map}{QMap<QString,\ QString>}}\ map);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_afc62bb3b6e2915b2931359fa82a2f46e}{getIconWidth}}();}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_ad46d58e9ae6443855ef357e286b8d1b4}{getIconHeight}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a51ecd4d67cb2d1c46ae64777089c523b}{colorChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ signals:}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a3a3ad3fa09c938920de113f6e18226e2}{colorChangedSignal}}(\textcolor{keyword}{const}\ QString\ \&color);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a0057db2160209e97f661aea8ae939122}{init}}();}
+\DoxyCodeLine{00039\ \ \ \ \ QString\ \ \mbox{\hyperlink{class_color_combo_box_ad7d8f60f2f2c8ef8916e6c63562151c8}{m\_currentColor}};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a623592fb517726418889c974bf64ca30}{m\_iconWidth}};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_color_combo_box_a0a4ef93a05b0989d81ef8f1405b3b41e}{m\_iconHeight}};}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

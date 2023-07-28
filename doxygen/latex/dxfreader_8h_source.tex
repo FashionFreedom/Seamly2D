@@ -1,0 +1,119 @@
+\hypertarget{dxfreader_8h_source}{}\doxysection{dxfreader.\+h}
+\label{dxfreader_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/dxfreader.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/dxfreader.h}}
+\mbox{\hyperlink{dxfreader_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ libDXFrw\ -\/\ Library\ to\ read/write\ DXF\ files\ (ascii\ \&\ binary)\ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2011-\/2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DXFREADER\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DXFREADER\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__textcodec_8h}{drw\_textcodec.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_reader}{dxfReader}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358}{TYPE}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358a56b72cb32494ee2a1f568fc6b7d3899d}{STRING}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358abaf8de937b69320ec56589cbdeb8628b}{INT32}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358af1e0f37db207618a2c4bbbc483e10ce8}{INT64}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358a44c854d9714be55472d9c2e542f453fe}{DOUBLE}},}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358a4423b9242cbcdecf475698be1a89c353}{BOOL}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358a6a0b49047d5f61c66de431ec1e4491e3}{INVALID}}}
+\DoxyCodeLine{00027\ \ \ \ \ \};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358}{TYPE}}\ \mbox{\hyperlink{classdxf_reader_afac6df400a8473368f35002b22d8c96b}{type}};}
+\DoxyCodeLine{00029\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_reader_a12ac6fe714798f897e8a0699b5180c0f}{dxfReader}}(std::istream\ *stream)}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdxf_reader_afac6df400a8473368f35002b22d8c96b}{type}}(\mbox{\hyperlink{classdxf_reader_af40399d71d93abe36f931684cbcc6358a6a0b49047d5f61c66de431ec1e4491e3}{INVALID}}),}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_a149e55b7803fa13721e4030fca579678}{filestr}}(stream),}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_ab06bfe2da193f7aaf8b8b75ed224167e}{strData}}(),}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_ac7783cdeb203ddf3e48c5d9dbe98418d}{doubleData}}(),}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_af428b2e1747b05b0701368cfff9b30ab}{intData}}(),}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_a868e866b18e256ba5cc0520f9df27054}{int64}}(),}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_a76e657f13de0a3946b9e7d778e67ae3d}{skip}}(),}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}()}
+\DoxyCodeLine{00039\ \ \ \ \ \{\}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_reader_ac267970431057e00482a5597a9629ead}{\string~dxfReader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_ad0cb2cb7e209b49cbe583cce0c4b90c3}{readRec}}(\textcolor{keywordtype}{int}\ *codeData);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_reader_aa5f9aeeb1754e2cdace93a29a4bd7093}{getString}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_ab06bfe2da193f7aaf8b8b75ed224167e}{strData}};\}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_a1c9e6b65d6c667e6b38f9fe3adcc211f}{getHandleString}}();\textcolor{comment}{//Convert\ hex\ string\ to\ int}}
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_reader_ab6365263914b646a302e958eb11eddd0}{toUtf8String}}(std::string\ t)\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}{toUtf8}}(t);\}}
+\DoxyCodeLine{00047\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_reader_a11509c1efc1a40201e41215ddf82ce46}{getUtf8String}}()\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}{toUtf8}}(\mbox{\hyperlink{classdxf_reader_ab06bfe2da193f7aaf8b8b75ed224167e}{strData}});\}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classdxf_reader_a7e4e6dbc72d1a5c798fa38067217654e}{getDouble}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_ac7783cdeb203ddf3e48c5d9dbe98418d}{doubleData}};\}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_a5b12a3f85389326954ae55a196d7f24c}{getInt32}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_af428b2e1747b05b0701368cfff9b30ab}{intData}};\}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_abf542b6bf56632f9f23f002dc37c1010}{getInt64}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_a868e866b18e256ba5cc0520f9df27054}{int64}};\}}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_aa8b7a482e7eed3972b336990c80ded42}{getBool}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{classdxf_reader_af428b2e1747b05b0701368cfff9b30ab}{intData}}==0)\ ?\ false\ :\ \textcolor{keyword}{true};\}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_aef56fb735b71603ca0cec73dc580f1da}{getVersion}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a268cb7f2caf0f9820d177c935ea8010d}{getVersion}}();\}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_reader_a13be2ca633fbffc71b4762d138898a89}{setVersion}}(std::string\ *v,\ \textcolor{keywordtype}{bool}\ dxfFormat)\{\mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}{setVersion}}(v,\ dxfFormat);\}}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_reader_a8544c4e9db6a077c1ebb04e3f347abb9}{setCodePage}}(std::string\ *c)\{\mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}{setCodePage}}(c,\ \textcolor{keyword}{true});\}}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_reader_a1e9eb327c12de37d4654a306bb7692c9}{getCodePage}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}{getCodePage}}();\}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_afeca6509bc2c9bd366642ed28fefc7c0}{readCode}}(\textcolor{keywordtype}{int}\ *code)\ =\ 0;\ \textcolor{comment}{//return\ true\ if\ sucesful\ (not\ EOF)}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_abc3a1aec30acb5188405bd398be954ce}{readString}}(std::string\ *text)\ =\ 0;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a41ffcc9dfb0fa09593f8216ba1e458a0}{readString}}()\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_aa73b81fd042779ef17d33094afd8634d}{readInt16}}()\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a37fcc22ce96d9d15199708fb565fdf57}{readInt32}}()\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a1d82b232678b65ee146d977f7eb0131e}{readInt64}}()\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a5f45136af9496e46c99961069d69c8ab}{readDouble}}()\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a30dc9ed2033e0001383e5f19ffbad971}{readBool}}()\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00068\ \ \ \ \ std::istream\ *\mbox{\hyperlink{classdxf_reader_a149e55b7803fa13721e4030fca579678}{filestr}};}
+\DoxyCodeLine{00069\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_reader_ab06bfe2da193f7aaf8b8b75ed224167e}{strData}};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classdxf_reader_ac7783cdeb203ddf3e48c5d9dbe98418d}{doubleData}};}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{signed}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_af428b2e1747b05b0701368cfff9b30ab}{intData}};\ \textcolor{comment}{//32\ bits\ integer}}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classdxf_reader_a868e866b18e256ba5cc0520f9df27054}{int64}};\ \textcolor{comment}{//64\ bits\ integer}}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a76e657f13de0a3946b9e7d778e67ae3d}{skip}};\ \textcolor{comment}{//set\ to\ true\ for\ ascii\ dxf,\ false\ for\ binary}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00075\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classdxf_reader}{dxfReader}})}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___text_codec}{DRW\_TextCodec}}\ \mbox{\hyperlink{classdxf_reader_a50df43953e5a3ed98403786e217f2626}{decoder}};}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ class\ \mbox{\hyperlink{classdxf_reader_binary}{dxfReaderBinary}}\ :\ public\ \mbox{\hyperlink{classdxf_reader}{dxfReader}}\ \{}
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_reader_binary_a91dd6aba6bd89072c4a3b48b9cf1680f}{dxfReaderBinary}}(std::istream\ *stream)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdxf_reader}{dxfReader}}(stream)}
+\DoxyCodeLine{00083\ \ \ \ \ \{\mbox{\hyperlink{classdxf_reader_a76e657f13de0a3946b9e7d778e67ae3d}{skip}}\ =\ \textcolor{keyword}{false};\ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_reader_binary_ad7ac879e459d9ec36c5e6ab8589a4656}{\string~dxfReaderBinary}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_afeca6509bc2c9bd366642ed28fefc7c0}{readCode}}(\textcolor{keywordtype}{int}\ *code);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a41ffcc9dfb0fa09593f8216ba1e458a0}{readString}}(std::string\ *text);}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a41ffcc9dfb0fa09593f8216ba1e458a0}{readString}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_aa73b81fd042779ef17d33094afd8634d}{readInt16}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a37fcc22ce96d9d15199708fb565fdf57}{readInt32}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a1d82b232678b65ee146d977f7eb0131e}{readInt64}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a5f45136af9496e46c99961069d69c8ab}{readDouble}}();}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_reader_a30dc9ed2033e0001383e5f19ffbad971}{readBool}}();}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_reader_ascii}{dxfReaderAscii}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdxf_reader}{dxfReader}}\ \{}
+\DoxyCodeLine{00097\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_reader_ascii_a49a92ca685a3dc0f5fa75139a521ac21}{dxfReaderAscii}}(std::istream\ *stream)}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdxf_reader}{dxfReader}}(stream)}
+\DoxyCodeLine{00100\ \ \ \ \ \{skip\ =\ \textcolor{keyword}{true};\ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_reader_ascii_ad5ae2df53ea74d1743fcfb4e6f3441de}{\string~dxfReaderAscii}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readCode(\textcolor{keywordtype}{int}\ *code);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readString(std::string\ *text);}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readString();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readInt16();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readDouble();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readInt32();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readInt64();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ readBool();}
+\DoxyCodeLine{00111\ \};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DXFREADER\_H}}
+
+\end{DoxyCode}

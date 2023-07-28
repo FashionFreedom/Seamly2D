@@ -1,0 +1,156 @@
+\hypertarget{class_v_obj_paint_device}{}\doxysection{VObj\+Paint\+Device Class Reference}
+\label{class_v_obj_paint_device}\index{VObjPaintDevice@{VObjPaintDevice}}
+
+
+{\ttfamily \#include $<$vobjpaintdevice.\+h$>$}
+
+Inheritance diagram for VObj\+Paint\+Device\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_obj_paint_device}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_obj_paint_device_a30921b664e17d29f409dca7f68dd290e}{VObj\+Paint\+Device}} ()
+\item 
+virtual \mbox{\hyperlink{class_v_obj_paint_device_a0c6ab088b7474794f02d79e242568e41}{$\sim$\+VObj\+Paint\+Device}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPaint\+Engine $\ast$ \mbox{\hyperlink{class_v_obj_paint_device_a63c5c54c668f00efbe1d046c678d91c9}{paint\+Engine}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_v_obj_paint_device_ab4bce3ed8317e7572fe2ed5264d463e7}{get\+File\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_v_obj_paint_device_ac9cca1e54b18ec610d083bbe32fd34a0}{set\+File\+Name}} (const QString \&value)
+\item 
+QSize \mbox{\hyperlink{class_v_obj_paint_device_ad977ce1cc9683989f045dac0be9e05e4}{get\+Size}} ()
+\item 
+void \mbox{\hyperlink{class_v_obj_paint_device_ac533c0787ef88fdf369b94d0296224e2}{set\+Size}} (const QSize \&size)
+\item 
+QIODevice $\ast$ \mbox{\hyperlink{class_v_obj_paint_device_a8548b0889174c76ae876194893178e54}{get\+Output\+Device}} ()
+\item 
+void \mbox{\hyperlink{class_v_obj_paint_device_af8b1181e2c6dfd114f2b763229aba762}{set\+Output\+Device}} (QIODevice $\ast$output\+Device)
+\item 
+int \mbox{\hyperlink{class_v_obj_paint_device_aff41de10b996f35a2d1b9be902e5a403}{get\+Resolution}} () const
+\item 
+void \mbox{\hyperlink{class_v_obj_paint_device_a89e4febd4ea03ca0bffc816e812f22c5}{set\+Resolution}} (int dpi)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_v_obj_paint_device_af64f6d456d70db292e8548e85fe4eb56}{metric}} (Paint\+Device\+Metric metric) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_obj_engine}{VObj\+Engine}} $>$ \mbox{\hyperlink{class_v_obj_paint_device_ac7ed1af217d118a2ef3f56e657b09069}{engine}}
+\item 
+QString \mbox{\hyperlink{class_v_obj_paint_device_a6c1d95baf1597927dc6399e3c6e6654a}{file\+Name}}
+\item 
+uint \mbox{\hyperlink{class_v_obj_paint_device_a8d8cc3c7801db38d06894637e223a9e2}{owns\+\_\+iodevice}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_obj_paint_device_a30921b664e17d29f409dca7f68dd290e}\label{class_v_obj_paint_device_a30921b664e17d29f409dca7f68dd290e}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!VObjPaintDevice@{VObjPaintDevice}}
+\index{VObjPaintDevice@{VObjPaintDevice}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{VObjPaintDevice()}{VObjPaintDevice()}}
+{\footnotesize\ttfamily VObj\+Paint\+Device\+::\+VObj\+Paint\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a0c6ab088b7474794f02d79e242568e41}\label{class_v_obj_paint_device_a0c6ab088b7474794f02d79e242568e41}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!````~VObjPaintDevice@{$\sim$VObjPaintDevice}}
+\index{````~VObjPaintDevice@{$\sim$VObjPaintDevice}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{$\sim$VObjPaintDevice()}{~VObjPaintDevice()}}
+{\footnotesize\ttfamily VObj\+Paint\+Device\+::$\sim$\+VObj\+Paint\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_obj_paint_device_ab4bce3ed8317e7572fe2ed5264d463e7}\label{class_v_obj_paint_device_ab4bce3ed8317e7572fe2ed5264d463e7}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!getFileName@{getFileName}}
+\index{getFileName@{getFileName}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getFileName()}{getFileName()}}
+{\footnotesize\ttfamily QString VObj\+Paint\+Device\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a8548b0889174c76ae876194893178e54}\label{class_v_obj_paint_device_a8548b0889174c76ae876194893178e54}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!getOutputDevice@{getOutputDevice}}
+\index{getOutputDevice@{getOutputDevice}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getOutputDevice()}{getOutputDevice()}}
+{\footnotesize\ttfamily QIODevice $\ast$ VObj\+Paint\+Device\+::get\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_aff41de10b996f35a2d1b9be902e5a403}\label{class_v_obj_paint_device_aff41de10b996f35a2d1b9be902e5a403}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!getResolution@{getResolution}}
+\index{getResolution@{getResolution}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getResolution()}{getResolution()}}
+{\footnotesize\ttfamily int VObj\+Paint\+Device\+::get\+Resolution (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_ad977ce1cc9683989f045dac0be9e05e4}\label{class_v_obj_paint_device_ad977ce1cc9683989f045dac0be9e05e4}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!getSize@{getSize}}
+\index{getSize@{getSize}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily QSize VObj\+Paint\+Device\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_af64f6d456d70db292e8548e85fe4eb56}\label{class_v_obj_paint_device_af64f6d456d70db292e8548e85fe4eb56}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!metric@{metric}}
+\index{metric@{metric}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{metric()}{metric()}}
+{\footnotesize\ttfamily int VObj\+Paint\+Device\+::metric (\begin{DoxyParamCaption}\item[{Paint\+Device\+Metric}]{metric }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a63c5c54c668f00efbe1d046c678d91c9}\label{class_v_obj_paint_device_a63c5c54c668f00efbe1d046c678d91c9}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!paintEngine@{paintEngine}}
+\index{paintEngine@{paintEngine}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{paintEngine()}{paintEngine()}}
+{\footnotesize\ttfamily QPaint\+Engine $\ast$ VObj\+Paint\+Device\+::paint\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_ac9cca1e54b18ec610d083bbe32fd34a0}\label{class_v_obj_paint_device_ac9cca1e54b18ec610d083bbe32fd34a0}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!setFileName@{setFileName}}
+\index{setFileName@{setFileName}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setFileName()}{setFileName()}}
+{\footnotesize\ttfamily void VObj\+Paint\+Device\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_af8b1181e2c6dfd114f2b763229aba762}\label{class_v_obj_paint_device_af8b1181e2c6dfd114f2b763229aba762}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!setOutputDevice@{setOutputDevice}}
+\index{setOutputDevice@{setOutputDevice}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setOutputDevice()}{setOutputDevice()}}
+{\footnotesize\ttfamily void VObj\+Paint\+Device\+::set\+Output\+Device (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{output\+Device }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a89e4febd4ea03ca0bffc816e812f22c5}\label{class_v_obj_paint_device_a89e4febd4ea03ca0bffc816e812f22c5}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!setResolution@{setResolution}}
+\index{setResolution@{setResolution}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setResolution()}{setResolution()}}
+{\footnotesize\ttfamily void VObj\+Paint\+Device\+::set\+Resolution (\begin{DoxyParamCaption}\item[{int}]{dpi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_ac533c0787ef88fdf369b94d0296224e2}\label{class_v_obj_paint_device_ac533c0787ef88fdf369b94d0296224e2}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!setSize@{setSize}}
+\index{setSize@{setSize}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void VObj\+Paint\+Device\+::set\+Size (\begin{DoxyParamCaption}\item[{const QSize \&}]{size }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_obj_paint_device_ac7ed1af217d118a2ef3f56e657b09069}\label{class_v_obj_paint_device_ac7ed1af217d118a2ef3f56e657b09069}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!engine@{engine}}
+\index{engine@{engine}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{engine}{engine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$\mbox{\hyperlink{class_v_obj_engine}{VObj\+Engine}}$>$ VObj\+Paint\+Device\+::engine\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a6c1d95baf1597927dc6399e3c6e6654a}\label{class_v_obj_paint_device_a6c1d95baf1597927dc6399e3c6e6654a}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!fileName@{fileName}}
+\index{fileName@{fileName}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{fileName}{fileName}}
+{\footnotesize\ttfamily QString VObj\+Paint\+Device\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_obj_paint_device_a8d8cc3c7801db38d06894637e223a9e2}\label{class_v_obj_paint_device_a8d8cc3c7801db38d06894637e223a9e2}} 
+\index{VObjPaintDevice@{VObjPaintDevice}!owns\_iodevice@{owns\_iodevice}}
+\index{owns\_iodevice@{owns\_iodevice}!VObjPaintDevice@{VObjPaintDevice}}
+\doxysubsubsection{\texorpdfstring{owns\_iodevice}{owns\_iodevice}}
+{\footnotesize\ttfamily uint VObj\+Paint\+Device\+::owns\+\_\+iodevice\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vobj/\mbox{\hyperlink{vobjpaintdevice_8h}{vobjpaintdevice.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vobj/\mbox{\hyperlink{vobjpaintdevice_8cpp}{vobjpaintdevice.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,299 @@
+\hypertarget{class_d_r_w___polyline}{}\doxysection{DRW\+\_\+\+Polyline Class Reference}
+\label{class_d_r_w___polyline}\index{DRW\_Polyline@{DRW\_Polyline}}
+
+
+Class to handle polyline entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Polyline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_d_r_w___polyline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___polyline_a9508ff5347ac0ce7f0d74ba5a1fde601}{DRW\+\_\+\+Polyline}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___polyline_acef3db808e6505aba0d7bcf571bd6fda}{DRW\+\_\+\+Polyline}} (const \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \&p)
+\item 
+\mbox{\hyperlink{class_d_r_w___polyline_a12cf238273463669caea9ebaf742b11d}{$\sim$\+DRW\+\_\+\+Polyline}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___polyline_a715deac5f10bcd549374604907cc945e}{add\+Vertex}} (\mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}} v)
+\item 
+void \mbox{\hyperlink{class_d_r_w___polyline_a89b02a88fcb04c8b228aeec0df0b76e4}{append\+Vertex}} (\mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}} $\ast$v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___point_a408ab5bebb57a972704bee95d84d0e5d}{DRW\+\_\+\+Point}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___point_a6922b7e506b81509fc4369e5e89301a4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}{DRW\+\_\+\+Entity}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}{DRW\+\_\+\+Entity}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}{$\sim$\+DRW\+\_\+\+Entity}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}{reset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}{apply\+Extrusion}} ()=0
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}{set\+Width\+Mm}} (double millimeters)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_a328f232ca859ae9f5561e78457833099}{flags}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___polyline_a47b35f26221533fdd0d7ef2d91925ca3}{defstawidth}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___polyline_a8818ce849a6704cb7d83ba7792f3db50}{defendwidth}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_ac4bec6f33dd2f8967548d7163525537e}{vertexcount}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_ae7e68c83478c4dad5550cfc44fa524bd}{facecount}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_aa244ad2243bc7312e01b39876da95edb}{smoothM}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_a35895911a129d179e1197efa9ca0ec34}{smoothN}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___polyline_a9cd44431960f6b199c218da6ca475fdb}{curvetype}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___polyline_ab001a6b7d6fec6298f52cc1f47df6c87}{vertlist}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_afaa15dc45c45d9057257e478c9746169}{base\+Point}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___point_a909f6f2623e3b5cf40393636f3119954}{thickness}}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_ab55e32170a648e8469844c886ff56fc7}{ext\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}} \mbox{\hyperlink{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}{e\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}{handle}}
+\item 
+std\+::list$<$ std\+::list$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $>$ $>$ \mbox{\hyperlink{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}{app\+Data}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}} \mbox{\hyperlink{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}{space}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}{layer}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}{line\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}{material}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}{color}}
+\item 
+enum \mbox{\hyperlink{class_d_r_w___l_w___conv_aed68cbc3d8bdf7e20003dd2d970279b3}{DRW\+\_\+\+LW\+\_\+\+Conv\+::line\+Width}} \mbox{\hyperlink{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}{l\+Weight}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}{ltype\+Scale}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}{visible}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}{num\+Proxy\+Graph}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}{proxy\+Graphics}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}{color24}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}{color\+Name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}{transparency}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}{plot\+Style}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}} \mbox{\hyperlink{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}{shadow}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}{have\+Extrusion}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___polyline_a33d5703f2c214a75fad50f8b7e39f16c}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___point_aafe53e3c2a9453d52652d849a7390c9f}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}{calculate\+Axis}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point)
+\begin{DoxyCompactList}\small\item\em Calculate arbitary axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}{extrude\+Point}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point, \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Extrude a point using arbitary axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}{parse\+Dxf\+Groups}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \& \mbox{\hyperlink{class_d_r_w___polyline_aff40fdd7d984f315cae22cf4c0135b9b}{operator=}} (const \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} $>$ \mbox{\hyperlink{class_d_r_w___polyline_a24df0b5e91ae4c48f2abe5055f456aa9}{hadles\+List}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___polyline_a963ea34f3f8c726e0914b3cc8f5877a2}{first\+EH}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___polyline_ab0c0f0d9536aa6630869fcc6d87077cc}{last\+EH}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle polyline entity. 
+
+Class to handle polyline entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___polyline_a9508ff5347ac0ce7f0d74ba5a1fde601}\label{class_d_r_w___polyline_a9508ff5347ac0ce7f0d74ba5a1fde601}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!DRW\_Polyline@{DRW\_Polyline}}
+\index{DRW\_Polyline@{DRW\_Polyline}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{DRW\_Polyline()}{DRW\_Polyline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Polyline\+::\+DRW\+\_\+\+Polyline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_acef3db808e6505aba0d7bcf571bd6fda}\label{class_d_r_w___polyline_acef3db808e6505aba0d7bcf571bd6fda}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!DRW\_Polyline@{DRW\_Polyline}}
+\index{DRW\_Polyline@{DRW\_Polyline}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{DRW\_Polyline()}{DRW\_Polyline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Polyline\+::\+DRW\+\_\+\+Polyline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_a12cf238273463669caea9ebaf742b11d}\label{class_d_r_w___polyline_a12cf238273463669caea9ebaf742b11d}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!````~DRW\_Polyline@{$\sim$DRW\_Polyline}}
+\index{````~DRW\_Polyline@{$\sim$DRW\_Polyline}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{$\sim$DRW\_Polyline()}{~DRW\_Polyline()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Polyline\+::$\sim$\+DRW\+\_\+\+Polyline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___polyline_a715deac5f10bcd549374604907cc945e}\label{class_d_r_w___polyline_a715deac5f10bcd549374604907cc945e}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!addVertex@{addVertex}}
+\index{addVertex@{addVertex}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{addVertex()}{addVertex()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Polyline\+::add\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_a89b02a88fcb04c8b228aeec0df0b76e4}\label{class_d_r_w___polyline_a89b02a88fcb04c8b228aeec0df0b76e4}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!appendVertex@{appendVertex}}
+\index{appendVertex@{appendVertex}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{appendVertex()}{appendVertex()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Polyline\+::append\+Vertex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}} $\ast$}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_aff40fdd7d984f315cae22cf4c0135b9b}\label{class_d_r_w___polyline_aff40fdd7d984f315cae22cf4c0135b9b}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!operator=@{operator=}}
+\index{operator=@{operator=}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \& DRW\+\_\+\+Polyline\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_a33d5703f2c214a75fad50f8b7e39f16c}\label{class_d_r_w___polyline_a33d5703f2c214a75fad50f8b7e39f16c}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Polyline\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___polyline_a9cd44431960f6b199c218da6ca475fdb}\label{class_d_r_w___polyline_a9cd44431960f6b199c218da6ca475fdb}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!curvetype@{curvetype}}
+\index{curvetype@{curvetype}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{curvetype}{curvetype}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::curvetype}
+
+curves \& smooth surface type, code 75, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_a8818ce849a6704cb7d83ba7792f3db50}\label{class_d_r_w___polyline_a8818ce849a6704cb7d83ba7792f3db50}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!defendwidth@{defendwidth}}
+\index{defendwidth@{defendwidth}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{defendwidth}{defendwidth}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Polyline\+::defendwidth}
+
+End width, code 41, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_a47b35f26221533fdd0d7ef2d91925ca3}\label{class_d_r_w___polyline_a47b35f26221533fdd0d7ef2d91925ca3}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!defstawidth@{defstawidth}}
+\index{defstawidth@{defstawidth}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{defstawidth}{defstawidth}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Polyline\+::defstawidth}
+
+Start width, code 40, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_ae7e68c83478c4dad5550cfc44fa524bd}\label{class_d_r_w___polyline_ae7e68c83478c4dad5550cfc44fa524bd}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!facecount@{facecount}}
+\index{facecount@{facecount}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{facecount}{facecount}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::facecount}
+
+polygon mesh N vertex or polyface face num, code 72, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_a963ea34f3f8c726e0914b3cc8f5877a2}\label{class_d_r_w___polyline_a963ea34f3f8c726e0914b3cc8f5877a2}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!firstEH@{firstEH}}
+\index{firstEH@{firstEH}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{firstEH}{firstEH}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Polyline\+::first\+EH\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_a328f232ca859ae9f5561e78457833099}\label{class_d_r_w___polyline_a328f232ca859ae9f5561e78457833099}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!flags@{flags}}
+\index{flags@{flags}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::flags}
+
+polyline flag, code 70, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_a24df0b5e91ae4c48f2abe5055f456aa9}\label{class_d_r_w___polyline_a24df0b5e91ae4c48f2abe5055f456aa9}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!hadlesList@{hadlesList}}
+\index{hadlesList@{hadlesList}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{hadlesList}{hadlesList}}
+{\footnotesize\ttfamily std\+::list$<$\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}}$>$ DRW\+\_\+\+Polyline\+::hadles\+List\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_ab0c0f0d9536aa6630869fcc6d87077cc}\label{class_d_r_w___polyline_ab0c0f0d9536aa6630869fcc6d87077cc}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!lastEH@{lastEH}}
+\index{lastEH@{lastEH}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{lastEH}{lastEH}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Polyline\+::last\+EH\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___polyline_aa244ad2243bc7312e01b39876da95edb}\label{class_d_r_w___polyline_aa244ad2243bc7312e01b39876da95edb}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!smoothM@{smoothM}}
+\index{smoothM@{smoothM}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{smoothM}{smoothM}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::smoothM}
+
+smooth surface M density, code 73, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_a35895911a129d179e1197efa9ca0ec34}\label{class_d_r_w___polyline_a35895911a129d179e1197efa9ca0ec34}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!smoothN@{smoothN}}
+\index{smoothN@{smoothN}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{smoothN}{smoothN}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::smoothN}
+
+smooth surface M density, code 74, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_ac4bec6f33dd2f8967548d7163525537e}\label{class_d_r_w___polyline_ac4bec6f33dd2f8967548d7163525537e}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!vertexcount@{vertexcount}}
+\index{vertexcount@{vertexcount}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{vertexcount}{vertexcount}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Polyline\+::vertexcount}
+
+polygon mesh M vertex or polyface vertex num, code 71, default 0 \mbox{\Hypertarget{class_d_r_w___polyline_ab001a6b7d6fec6298f52cc1f47df6c87}\label{class_d_r_w___polyline_ab001a6b7d6fec6298f52cc1f47df6c87}} 
+\index{DRW\_Polyline@{DRW\_Polyline}!vertlist@{vertlist}}
+\index{vertlist@{vertlist}!DRW\_Polyline@{DRW\_Polyline}}
+\doxysubsubsection{\texorpdfstring{vertlist}{vertlist}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_d_r_w___vertex}{DRW\+\_\+\+Vertex}} $\ast$$>$ DRW\+\_\+\+Polyline\+::vertlist}
+
+vertex list 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

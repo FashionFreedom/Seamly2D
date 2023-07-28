@@ -1,0 +1,72 @@
+\hypertarget{button_8h_source}{}\doxysection{button.\+h}
+\label{button_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/calculator/button.h@{D:/Github/Seamly2D/src/libs/vwidgets/calculator/button.h}}
+\mbox{\hyperlink{button_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Copyright\ (C)\ 2016\ The\ Qt\ Company\ Ltd.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Contact:\ https://www.qt.io/licensing/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ This\ file\ is\ part\ of\ the\ examples\ of\ the\ Qt\ Toolkit.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \$QT\_BEGIN\_LICENSE:BSD\$}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ Commercial\ License\ Usage}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ Licensees\ holding\ valid\ commercial\ Qt\ licenses\ may\ use\ this\ file\ in}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ accordance\ with\ the\ commercial\ license\ agreement\ provided\ with\ the}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**\ Software\ or,\ alternatively,\ in\ accordance\ with\ the\ terms\ contained\ in}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ a\ written\ agreement\ between\ you\ and\ The\ Qt\ Company.\ For\ licensing\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ and\ conditions\ see\ https://www.qt.io/terms-\/conditions.\ For\ further}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ information\ use\ the\ contact\ form\ at\ https://www.qt.io/contact-\/us.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**\ BSD\ License\ Usage}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ Alternatively,\ you\ may\ use\ this\ file\ under\ the\ terms\ of\ the\ BSD\ license}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ as\ follows:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ "{}Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ met:}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ \ *\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{**\ \ \ *\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{**\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**\ \ \ \ \ the\ documentation\ and/or\ other\ materials\ provided\ with\ the}}
+\DoxyCodeLine{00029\ \textcolor{comment}{**\ \ \ \ \ distribution.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{**\ \ \ *\ Neither\ the\ name\ of\ The\ Qt\ Company\ Ltd\ nor\ the\ names\ of\ its}}
+\DoxyCodeLine{00031\ \textcolor{comment}{**\ \ \ \ \ contributors\ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived}}
+\DoxyCodeLine{00032\ \textcolor{comment}{**\ \ \ \ \ from\ this\ software\ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{**}}
+\DoxyCodeLine{00034\ \textcolor{comment}{**}}
+\DoxyCodeLine{00035\ \textcolor{comment}{**\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{**\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00037\ \textcolor{comment}{**\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00038\ \textcolor{comment}{**\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00039\ \textcolor{comment}{**\ OWNER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00040\ \textcolor{comment}{**\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00041\ \textcolor{comment}{**\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00042\ \textcolor{comment}{**\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00043\ \textcolor{comment}{**\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00044\ \textcolor{comment}{**\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00045\ \textcolor{comment}{**\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE."{}}}
+\DoxyCodeLine{00046\ \textcolor{comment}{**}}
+\DoxyCodeLine{00047\ \textcolor{comment}{**\ \$QT\_END\_LICENSE\$}}
+\DoxyCodeLine{00048\ \textcolor{comment}{**}}
+\DoxyCodeLine{00049\ \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ BUTTON\_H}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ BUTTON\_H}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button}{Button}}\ :\ \textcolor{keyword}{public}\ QToolButton}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_button}{Button}}(\textcolor{keyword}{const}\ QString\ \&text,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ QSize\ \mbox{\hyperlink{class_button_ab0b8f2f7dc6d3e91cffb348f4d40de0c}{sizeHint}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

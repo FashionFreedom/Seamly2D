@@ -1,0 +1,28 @@
+var class_v_application =
+[
+    [ "VApplication", "class_v_application.html#ab511a3717ec4c75954de1e16e648d505", null ],
+    [ "~VApplication", "class_v_application.html#a82bf260ad89b6a2dd0b2e60981b95f00", null ],
+    [ "BeginLogging", "class_v_application.html#ab24f74e2eba762bc4044dd814c55d676", null ],
+    [ "ClearOldLogs", "class_v_application.html#a9b1ed0df80da9e7ec319c2aebcbba1f1", null ],
+    [ "CommandLine", "class_v_application.html#adc21977adf754f5bc2e4aa02f214b443", null ],
+    [ "CreateLogDir", "class_v_application.html#ad71d7524a7de0564229ae6db19bb047f", null ],
+    [ "event", "class_v_application.html#a9b08ef964bc7822f1bb7e4c288accf28", null ],
+    [ "getAutoSaveTimer", "class_v_application.html#a0605e721094a65535cb05333cea4bd72", null ],
+    [ "InitOptions", "class_v_application.html#a515392386c55d5c0b62b0411d610b785", null ],
+    [ "InitTrVars", "class_v_application.html#ad72c1a55b2b7b4a6e73f64cbebe88acd", null ],
+    [ "IsAppInGUIMode", "class_v_application.html#a91ca072c635fcbe3e39e7f3847006e6d", null ],
+    [ "LogDirPath", "class_v_application.html#a3c0c1c052086ac127f76ebb05e650fe4", null ],
+    [ "LogFile", "class_v_application.html#abaccdadd95dc0303cc4f051760624765", null ],
+    [ "LogPath", "class_v_application.html#ac956fb7380d14a5757a5c784d74b33eb", null ],
+    [ "notify", "class_v_application.html#a7df6a00c479fd90c1a519d61a9b4e7f5", null ],
+    [ "OpenSettings", "class_v_application.html#a160e8c7c94afa9edc747f6bbdca1e1f1", null ],
+    [ "Seamly2DSettings", "class_v_application.html#a4db747d403237017da94db5baa454e25", null ],
+    [ "SeamlyMeFilePath", "class_v_application.html#a0501028958d527bf761e02a6ea8cdec5", null ],
+    [ "setAutoSaveTimer", "class_v_application.html#aa17b3d154c59ddc72124aa0ab03f9281", null ],
+    [ "StartLogging", "class_v_application.html#abb3d564d0663a08f04aec34d0b3e9920", null ],
+    [ "TrVars", "class_v_application.html#afa8c7ccbb5d9679c22ae7efabe49f5f2", null ],
+    [ "autoSaveTimer", "class_v_application.html#a3137f2ecdbba2a39dfd2a6de37b89547", null ],
+    [ "lockLog", "class_v_application.html#a985391662cdc15af9935ab01a1353b3d", null ],
+    [ "out", "class_v_application.html#a3962abc150372b28bb268063fe865365", null ],
+    [ "trVars", "class_v_application.html#affb478d3f47ea29929116544e421c466", null ]
+];

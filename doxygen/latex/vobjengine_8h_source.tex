@@ -1,0 +1,117 @@
+\hypertarget{vobjengine_8h_source}{}\doxysection{vobjengine.\+h}
+\label{vobjengine_8h_source}\index{D:/Github/Seamly2D/src/libs/vobj/vobjengine.h@{D:/Github/Seamly2D/src/libs/vobj/vobjengine.h}}
+\mbox{\hyperlink{vobjengine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vobjengine.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 12,\ 2014}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VOBJENGINE\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VOBJENGINE\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QTransform>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QPaintEngine>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QPolygonF>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{delaunay_8h}{delaunay.h}}"{}}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }QTextStream;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ MAX\_POINTS\ \ \ \ \ \ 512}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_obj_engine}{VObjEngine}}\ :\ \textcolor{keyword}{public}\ QPaintEngine}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_a5d839c71006c012f9ba47d9c46367383}{VObjEngine}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_obj_engine_a5462b3908a3e18f65bcc854ecad4a758}{\string~VObjEngine}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_obj_engine_aa253ee97e255d81db9c8b64ba70f4760}{begin}}(QPaintDevice\ *pdev)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_obj_engine_a7179642247c343180bba56d5016c724b}{end}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_aa5a6fc451d00e954cb433c393459dfce}{updateState}}(\textcolor{keyword}{const}\ QPaintEngineState\ \&state)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_a0d694edae835c893ea32fb372f8daea0}{drawPath}}(\textcolor{keyword}{const}\ QPainterPath\ \&path)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ Type\ \mbox{\hyperlink{class_v_obj_engine_a7fc66e204472608cf8f1fc4225b0ecaf}{type}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_a445a76e643acf7ff70105c8a138984fb}{drawPoints}}(\textcolor{keyword}{const}\ QPointF\ *\mbox{\hyperlink{class_v_obj_engine_af5cbb9c8006a32ce733bd6ccaa154874}{points}},\ \textcolor{keywordtype}{int}\ pointCount)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_a445a76e643acf7ff70105c8a138984fb}{drawPoints}}(\textcolor{keyword}{const}\ QPoint\ *\mbox{\hyperlink{class_v_obj_engine_af5cbb9c8006a32ce733bd6ccaa154874}{points}},\ \textcolor{keywordtype}{int}\ pointCount)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_a776fe821f830add5f0bb841baf2fd079}{drawPixmap}}(\textcolor{keyword}{const}\ QRectF\ \&r,\ \textcolor{keyword}{const}\ QPixmap\ \&pm,\ \textcolor{keyword}{const}\ QRectF\ \&sr)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_acf1fe9fa4a92fd46185c57612a356ec6}{drawPolygon}}(\textcolor{keyword}{const}\ QPointF\ *\mbox{\hyperlink{class_v_obj_engine_af5cbb9c8006a32ce733bd6ccaa154874}{points}},\ \textcolor{keywordtype}{int}\ pointCount,\ PolygonDrawMode\ mode)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_aa2081918eb4415856a1eeb6a3258f0a9}{drawPolygon}}(\textcolor{keyword}{const}\ QPoint\ *\mbox{\hyperlink{class_v_obj_engine_af5cbb9c8006a32ce733bd6ccaa154874}{points}},\ \textcolor{keywordtype}{int}\ pointCount,\ PolygonDrawMode\ mode)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ QSize\ \mbox{\hyperlink{class_v_obj_engine_a930e06ac045dbc545228e7749df668f0}{getSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_ac7f7a41f5e4715e4a1425af7719a31fd}{setSize}}(\textcolor{keyword}{const}\ QSize\ \&value);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ QIODevice\ *\mbox{\hyperlink{class_v_obj_engine_ad6eccf89354d998e5e841f903680aa6a}{getOutputDevice}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_a356a4e1e1d1a66a74bdf55f408bd96b4}{setOutputDevice}}(QIODevice\ *value);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_obj_engine_a5292a2fc710e6f71943b331e1dca9c79}{getResolution}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_obj_engine_aeb7cf91e9aad08b4aa293d2fa0be9697}{setResolution}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_obj_engine}{VObjEngine}})}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<QTextStream>\ \mbox{\hyperlink{class_v_obj_engine_addf6d156640a8855f5db62cd8cb4d404}{stream}};}
+\DoxyCodeLine{00099\ \ \ \ \ quint32\ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_ad05e8d8f914e5f135a2e1e4ad00a15f2}{globalPointsCount}};}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<QIODevice>\ \mbox{\hyperlink{class_v_obj_engine_aaf061c06cda3145d37aa440b33cb338e}{outputDevice}};}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}\ \ \ \ \mbox{\hyperlink{class_v_obj_engine_af5cbb9c8006a32ce733bd6ccaa154874}{points}}[\mbox{\hyperlink{vobjengine_8h_a3b8cb7c2cda80c18f333c00601c6905b}{MAX\_POINTS}}];}
+\DoxyCodeLine{00102\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_a95324e3092abae34f89400212957683d}{planeCount}};}
+\DoxyCodeLine{00103\ \ \ \ \ QSize\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_ae8671fbd7c879fc717500f9a94623fbe}{size}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_a2f745d49f8b746836925ec023787fa74}{resolution}};}
+\DoxyCodeLine{00105\ \ \ \ \ QTransform\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_obj_engine_a5ef27cd107f264329a6f1bc241b33a90}{transform}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ QPolygonF\ \ \mbox{\hyperlink{class_v_obj_engine_a9a320af605085280b1908bf70c09904a}{MakePointsUnique}}(const\ QPolygonF\ \&polygon)const;}
+\DoxyCodeLine{00108\ \ \ \ \ qint64\ \ \ \ \ \mbox{\hyperlink{predicates_8cpp_a0cce77b99432ef29e32ed7481e470f10}{Square}}(const\ QPolygonF\ \&poly)const;}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VOBJENGINE\_H}}
+
+\end{DoxyCode}

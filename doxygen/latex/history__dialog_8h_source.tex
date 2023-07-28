@@ -1,0 +1,122 @@
+\hypertarget{history__dialog_8h_source}{}\doxysection{history\+\_\+dialog.\+h}
+\label{history__dialog_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/history\_dialog.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/history\_dialog.h}}
+\mbox{\hyperlink{history__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ historyDialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Mar\ 11,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{\ /************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ dialoghistory.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ HISTORY\_DIALOG\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ HISTORY\_DIALOG\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../vtools/dialogs/tools/dialogtool.h"{}}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_pattern}{VPattern}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_history_dialog}{HistoryDialog}};}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_row_data}{RowData}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ quint32\ \textcolor{keywordtype}{id}\{\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}\};}
+\DoxyCodeLine{00070\ \ \ \ \ \ QString\ \mbox{\hyperlink{struct_row_data_ad66b8bacd6af38d01128951a98da656a}{icon}}\{QString()\};}
+\DoxyCodeLine{00071\ \ \ \ \ \ QString\ \mbox{\hyperlink{struct_row_data_a267a4d5ec4a89547842f4fdcb29d1c25}{name}}\{QString()\};}
+\DoxyCodeLine{00072\ \ \ \ \ \ QString\ \mbox{\hyperlink{struct_row_data_a59506c281b39d7db23800231ed5895ac}{tool}}\{QString()\};}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_history_dialog}{HistoryDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00079\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00081\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog}{HistoryDialog}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \mbox{\hyperlink{class_v_pattern}{VPattern}}\ *doc,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a75b48e33e0a7116df806f91b82a4f812}{\string~HistoryDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a5ab4a230b0c02cc3a4eb94e1ec3f80f7}{DialogAccepted}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_ae61fccaed8f633844fd11b78ebf95a6d}{DialogApply}}()\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a94f298d1b6719c55f9b6d90a60d2e604}{cellClicked}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a30dfbcf74878290ebe83482207231019}{changedCursor}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a060d0c636c6f5e959d6ab21f3589b8c2}{updateHistory}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ signals:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_acc153d967abdc662e17c31f9f24b5cf6}{showHistoryTool}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_ac8d0ae7d5c5e33b970ced33bd3ff98c9}{closeEvent}}\ (\ QCloseEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a7999dc24fc8be2378189077f6db80cd4}{changeEvent}}(QEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a9077aabd78d9a9cd48d8a76282ba3f2b}{eventFilter}}(QObject\ *\textcolor{keywordtype}{object},\ QEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00109\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_history_dialog}{HistoryDialog}})}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_history_dialog}{HistoryDialog}}\ \ \ \ \ \ *\mbox{\hyperlink{class_history_dialog_a65882bcb15afc5a159ccc21927cf9356}{ui}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{class_v_pattern}{VPattern}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_history_dialog_a02013ea6d329e60b953dc306a08afb58}{m\_doc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a372a66e7419fb91fd53772ac012f7ff2}{m\_cursorRow}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00114\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a47d2bdcebc6039c1398907c0a201f739}{m\_cursorToolRecordRow}};\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_ad4f16fecea094cd9b6e3d21e6cc50cdc}{fillTable}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{struct_row_data}{RowData}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_ab371f99d6b839f6872eb945ccc278b5d}{record}}(const\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&tool);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a8a4f2727bb6c01f8d33629dfa7e5388e}{initializeTable}}();}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a2784ba399bccaced32339f8d7cfb4a27}{showTool}}();}
+\DoxyCodeLine{00120\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a83443b31adec5f8e62f475ec558040ab}{getPointName}}(quint32\ pointId);}
+\DoxyCodeLine{00121\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a982877d6f95b130a7fc60259a5a2e3a7}{attrUInt}}(const\ QDomElement\ \&domElement,\ const\ QString\ \&name);}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a14d52b6c7f0a84a8e9ef48d188e06692}{retranslateUi}}();}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_aa5f00566eff226515c1c918bfb280190}{cursorRow}}()\ const;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_a32ea69eadcc6ea91b849f09259e6f4be}{findText}}(const\ QString\ \&text);}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_history_dialog_adf70d197c8be0e3ec11aaa93ba943d54}{copyToClipboard}}();}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ HISTORY\_DIALOG\_H}}
+
+\end{DoxyCode}

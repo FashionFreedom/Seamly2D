@@ -1,0 +1,206 @@
+\hypertarget{class_d_r_w___trace}{}\doxysection{DRW\+\_\+\+Trace Class Reference}
+\label{class_d_r_w___trace}\index{DRW\_Trace@{DRW\_Trace}}
+
+
+Class to handle trace entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Trace\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_d_r_w___trace}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___trace_a018d11c0907d0cc9e91d600b955bef41}{DRW\+\_\+\+Trace}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___trace_ad5c6dedeebd12bc17a93e0d759914fb4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___line}{DRW\+\_\+\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___line_a9f377c7b274d1485d4962b04e489488d}{DRW\+\_\+\+Line}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___line_a6aab28594c628f6330bfcb030d1a20c4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___point_a408ab5bebb57a972704bee95d84d0e5d}{DRW\+\_\+\+Point}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___point_a6922b7e506b81509fc4369e5e89301a4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}{DRW\+\_\+\+Entity}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}{DRW\+\_\+\+Entity}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}{$\sim$\+DRW\+\_\+\+Entity}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}{reset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}{apply\+Extrusion}} ()=0
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}{set\+Width\+Mm}} (double millimeters)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___trace_adadabbf354ee19cfe3869c790e6de3ec}{third\+Point}}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___trace_a96d7a3b877a7f26f6a8b8cdbc9ced660}{four\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___line}{DRW\+\_\+\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___line_afba62212864227b610be3e2a4e7ac307}{sec\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_afaa15dc45c45d9057257e478c9746169}{base\+Point}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___point_a909f6f2623e3b5cf40393636f3119954}{thickness}}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_ab55e32170a648e8469844c886ff56fc7}{ext\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}} \mbox{\hyperlink{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}{e\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}{handle}}
+\item 
+std\+::list$<$ std\+::list$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $>$ $>$ \mbox{\hyperlink{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}{app\+Data}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}} \mbox{\hyperlink{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}{space}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}{layer}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}{line\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}{material}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}{color}}
+\item 
+enum \mbox{\hyperlink{class_d_r_w___l_w___conv_aed68cbc3d8bdf7e20003dd2d970279b3}{DRW\+\_\+\+LW\+\_\+\+Conv\+::line\+Width}} \mbox{\hyperlink{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}{l\+Weight}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}{ltype\+Scale}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}{visible}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}{num\+Proxy\+Graph}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}{proxy\+Graphics}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}{color24}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}{color\+Name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}{transparency}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}{plot\+Style}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}} \mbox{\hyperlink{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}{shadow}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}{have\+Extrusion}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___trace_ae335a16091db77f7a818c18202d82211}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___line}{DRW\+\_\+\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___line_a4f9ccc26eb9f6e4b7cd8cdb743fd681a}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___point_aafe53e3c2a9453d52652d849a7390c9f}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}{calculate\+Axis}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point)
+\begin{DoxyCompactList}\small\item\em Calculate arbitary axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}{extrude\+Point}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point, \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Extrude a point using arbitary axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}{parse\+Dxf\+Groups}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle trace entity. 
+
+Class to handle trace entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___trace_a018d11c0907d0cc9e91d600b955bef41}\label{class_d_r_w___trace_a018d11c0907d0cc9e91d600b955bef41}} 
+\index{DRW\_Trace@{DRW\_Trace}!DRW\_Trace@{DRW\_Trace}}
+\index{DRW\_Trace@{DRW\_Trace}!DRW\_Trace@{DRW\_Trace}}
+\doxysubsubsection{\texorpdfstring{DRW\_Trace()}{DRW\_Trace()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Trace\+::\+DRW\+\_\+\+Trace (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___trace_ad5c6dedeebd12bc17a93e0d759914fb4}\label{class_d_r_w___trace_ad5c6dedeebd12bc17a93e0d759914fb4}} 
+\index{DRW\_Trace@{DRW\_Trace}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Trace@{DRW\_Trace}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Trace\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___line_a6aab28594c628f6330bfcb030d1a20c4}{DRW\+\_\+\+Line}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_d_r_w__3_dface_ab1632466a8dc3dff5295e09b6a893229}{DRW\+\_\+3\+Dface}}.
+
+\mbox{\Hypertarget{class_d_r_w___trace_ae335a16091db77f7a818c18202d82211}\label{class_d_r_w___trace_ae335a16091db77f7a818c18202d82211}} 
+\index{DRW\_Trace@{DRW\_Trace}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Trace@{DRW\_Trace}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Trace\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___trace_a96d7a3b877a7f26f6a8b8cdbc9ced660}\label{class_d_r_w___trace_a96d7a3b877a7f26f6a8b8cdbc9ced660}} 
+\index{DRW\_Trace@{DRW\_Trace}!fourPoint@{fourPoint}}
+\index{fourPoint@{fourPoint}!DRW\_Trace@{DRW\_Trace}}
+\doxysubsubsection{\texorpdfstring{fourPoint}{fourPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Trace\+::four\+Point}
+
+four point, code 13, 23 \& 33 \mbox{\Hypertarget{class_d_r_w___trace_adadabbf354ee19cfe3869c790e6de3ec}\label{class_d_r_w___trace_adadabbf354ee19cfe3869c790e6de3ec}} 
+\index{DRW\_Trace@{DRW\_Trace}!thirdPoint@{thirdPoint}}
+\index{thirdPoint@{thirdPoint}!DRW\_Trace@{DRW\_Trace}}
+\doxysubsubsection{\texorpdfstring{thirdPoint}{thirdPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Trace\+::third\+Point}
+
+third point, code 12, 22 \& 32 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

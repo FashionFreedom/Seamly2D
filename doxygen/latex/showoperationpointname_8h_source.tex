@@ -1,0 +1,59 @@
+\hypertarget{showoperationpointname_8h_source}{}\doxysection{showoperationpointname.\+h}
+\label{showoperationpointname_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/label/showoperationpointname.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/label/showoperationpointname.h}}
+\mbox{\hyperlink{showoperationpointname_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ showoperationpointname.h\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \#ifndef\ SHOW\_OPERATION\_POINTNAME\_H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\ \#define\ SHOW\_OPERATION\_POINTNAME\_H}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\ \#include\ "{}../vundocommand.h"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \textcolor{keyword}{class\ }QGraphicsScene;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_show_operation_point_name}{ShowOperationPointName}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00034\ \ \{}
+\DoxyCodeLine{00035\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name}{ShowOperationPointName}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ quint32\ idTool,\ quint32\ idPoint,}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ visible,\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038\ \ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_a1c85d19fd2992ade543db7abe782be8b}{\string~ShowOperationPointName}}()=\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_ae1e81bf8ed3448555199a9794f1a0121}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00041\ \ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_ac1d7e0cc3467412ff75e31ae26f23e49}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ private:}
+\DoxyCodeLine{00044\ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_show_operation_point_name}{ShowOperationPointName}})}
+\DoxyCodeLine{00045\ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_ad08cc35276ddebe2b797cbccf77c5846}{m\_visible}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_af65a23426f4b3121d3f98af205012f84}{m\_oldVisible}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ QGraphicsScene\ *\mbox{\hyperlink{class_show_operation_point_name_a4dfdff467c11afc6d3148436e8f07340}{m\_scene}};\ \textcolor{comment}{//Need\ for\ resizing\ scene\ rect}}
+\DoxyCodeLine{00048\ \ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_a91fcfdd2f460c6db4ea67fef95335aa8}{m\_idTool}};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_show_operation_point_name_a8775a007622cbf7569bd0cde3bdc50b8}{Do}}(\textcolor{keywordtype}{bool}\ visible);}
+\DoxyCodeLine{00051\ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SHOW\_OPERATION\_POINTNAME\_H}}
+
+\end{DoxyCode}

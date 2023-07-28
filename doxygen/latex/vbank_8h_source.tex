@@ -1,0 +1,136 @@
+\hypertarget{vbank_8h_source}{}\doxysection{vbank.\+h}
+\label{vbank_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vbank.h@{D:/Github/Seamly2D/src/libs/vlayout/vbank.h}}
+\mbox{\hyperlink{vbank_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vbank.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vbank.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 11\ 1,\ 2015}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VBANK\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VBANK\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ An\ annoying\ char\ define,\ from\ the\ Windows\ team\ in\ <rpcndr.h>}}
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ \#define\ small\ char}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ http://stuartjames.info/Journal/c-\/-\/visual-\/studio-\/2012-\/vs2012-\/-\/win8-\/-\/converting-\/projects-\/up-\/some-\/conflicts-\/i-\/found.aspx}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#if\ defined\ (Q\_OS\_WIN)\ \&\&\ defined\ (Q\_CC\_MSVC)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#pragma\ push\_macro("{}small"{}})}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#undef\ small}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ :\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8ea534055aac9cb3ff8235df38e11937ccd}{CaseThreeGroup}}\ =\ 0,\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8ea8adde3ca3245f7a70449301a761102d8}{CaseTwoGroup}},\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8ea19e0206d9d0cbbc0a7678f15f91a0b5d}{CaseDesc}},\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8ea53c23869d4731909db445daec7f58bea}{UnknownCase}}\};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_bank}{VBank}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_bank_a425fc08853750853df87a74d37a98f39}{VBank}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_bank_a76b0977ee7e425becd5f57f239dbbde1}{GetLayoutWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a233e849d183fed5cb9c06eaed6423ed9}{SetLayoutWidth}}(\textcolor{keyword}{const}\ qreal\ \&value);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a61eceab82bb1d4cb45c8a073c3a5bb5f}{setPieces}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VLayoutPiece>}}\ \&\mbox{\hyperlink{class_v_bank_a20daf75400a95e9f702196b16f646a9a}{pieces}});}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_v_bank_a99b8a9a1216ea864ef69e919f3b3a31e}{GetTiket}}();}
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \mbox{\hyperlink{class_v_bank_a486d27fd2e5017043abd8b8ea15ff272}{getPiece}}(\textcolor{keywordtype}{int}\ i)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a9ac08dcef9d85fe934ddb1b03565409d}{Arranged}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_af89e71ded4a685ce67255d81fb44dc06}{NotArranged}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_bank_af7f64d6acacd4796950111cd359b4263}{Prepare}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_ab283f176f5458be7604810f4084edb79}{Reset}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a1d10e2574be062bdf3e803081ab765af}{SetCaseType}}(\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ \mbox{\hyperlink{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}{caseType}});}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_a33dae91b8bc99feab8cbccbc8a3c0611}{allPieceCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_a0d34a67a1bd4252af8f55df2efac2691}{LeftArrange}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_a30ae9127d046dc96382687eb568ee756}{ArrangedCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_bank_ad255d3eef3cdd7e514f03173c576d4bf}{GetBiggestDiagonal}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00099\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_bank}{VBank}})}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}>\ \mbox{\hyperlink{class_v_bank_a20daf75400a95e9f702196b16f646a9a}{pieces}};}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash}}<\textcolor{keywordtype}{int},\ qint64>\ \mbox{\hyperlink{class_v_bank_a79c53474ac5759d117ecb704e315aee5}{unsorted}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash}}<\textcolor{keywordtype}{int},\ qint64>\ \mbox{\hyperlink{class_v_bank_a660d7cea567e034752bb05d2b16b6fcf}{big}};}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash}}<\textcolor{keywordtype}{int},\ qint64>\ \mbox{\hyperlink{class_v_bank_a52b137cf7bfc04efe42f72e1a82bbbde}{middle}};}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash}}<\textcolor{keywordtype}{int},\ qint64>\ \mbox{\hyperlink{class_v_bank_ab4556f33091dcb1fe4db3ba6fa3c2d53}{small}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_bank_a7eb7e725afeb04c9a6dc963dad0608b1}{layoutWidth}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ \mbox{\hyperlink{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}{caseType}};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_bank_a097ab3759e90c4798be24182ed9dfd17}{prepare}};}
+\DoxyCodeLine{00111\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_bank_aa4cec4355ae3a7b63ed91c9354b36c85}{diagonal}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a7aa1fc1438a93807ea21644599f9c939}{PrepareGroup}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a07ecc43d9f073c589d9302c6dcd76d62}{PrepareThreeGroups}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_ac6cd8b1a8b09bc6371607f21a92b75fb}{PrepareTwoGroups}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_a86c858959b4bd6ee0f46723dc2e8cc22}{PrepareDescGroup}}();}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_a2e679eb731c12aada40a3a9b0eccdb69}{GetNextThreeGroups}}()\ const;}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_ad8271077836d31e4014bf4c6aec38bf6}{GetNextTwoGroups}}()\ const;}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_bank_adce914f2ba6a9e0e030e828eb84533f5}{GetNextDescGroup}}()\ const;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_bank_af9e3d34b3cdf1a446d70dd3f8a0382eb}{SqMaxMin}}(qint64\ \&sMax,\ qint64\ \&sMin)\ const;}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#if\ defined\ (Q\_OS\_WIN)\ \&\&\ defined\ (Q\_CC\_MSVC)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#pragma\ pop\_macro("{}small"{}})}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VBANK\_H}}
+
+\end{DoxyCode}

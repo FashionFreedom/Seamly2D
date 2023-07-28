@@ -1,0 +1,68 @@
+\hypertarget{fill__combobox_8h_source}{}\doxysection{fill\+\_\+combobox.\+h}
+\label{fill__combobox_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/fill\_combobox.h@{D:/Github/Seamly2D/src/libs/vwidgets/fill\_combobox.h}}
+\mbox{\hyperlink{fill__combobox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ fill\_combobox.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 28,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ FILL\_COMBOBOX\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ FILL\_COMBOBOX\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_piece_fill_combo_box}{PieceFillComboBox}}:\ \textcolor{keyword}{public}\ QComboBox}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box}{PieceFillComboBox}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box}{PieceFillComboBox}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \mbox{\hyperlink{class_piece_fill_combo_box_a3ebb57d941885fe895a7d935533e9875}{\string~PieceFillComboBox}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ QString\ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a1b95c268dd9cdcf422b8766acbc27e09}{getFill}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a3547d58c71ea393fd32f575f95e31eb5}{setFill}}(\textcolor{keyword}{const}\ QString\ \&fill);}
+\DoxyCodeLine{00048\ \ \ \ \ QPixmap\ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a57bb45016bb9143a0386bc76c592b6c7}{createFillIcon}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ h,\ Qt::BrushStyle\ style);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_abd18d7b47133950487054e6ccf759a18}{getIconWidth}}();}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_af05723f1b835501b4a42f0a412d2612c}{getIconHeight}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a4689a82ba362d2c29987569369b3894e}{fillChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ signals:}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a1b469cb1e7b553c03dcd838bac353b3f}{fillChangedSignal}}(\textcolor{keyword}{const}\ QString\ \&fill);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a2290174c118ec02793594cd4f2490ef3}{init}}();}
+\DoxyCodeLine{00060\ \ \ \ \ QString\ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a3637989318724eff80f82c1976d192d9}{m\_currentFill}};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_ace064437c80ddfe94d39658f71a6f83a}{m\_iconWidth}};}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_fill_combo_box_a9c4d757fd5ca762cba602489e03276dd}{m\_iconHeight}};}
+\DoxyCodeLine{00063\ \};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

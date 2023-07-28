@@ -1,0 +1,408 @@
+\hypertarget{class_v_control_point_spline}{}\doxysection{VControl\+Point\+Spline Class Reference}
+\label{class_v_control_point_spline}\index{VControlPointSpline@{VControlPointSpline}}
+
+
+The \mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} class control spline point.  
+
+
+
+
+{\ttfamily \#include $<$vcontrolpointspline.\+h$>$}
+
+Inheritance diagram for VControl\+Point\+Spline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_control_point_spline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_control_point_spline_ae94da048bd3689f2849961b40f2ac50da8fabbaeeb086101439168262b5c3dc5e}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Control\+Point\+Spline)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_scene_rect}{Scene\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_scene_rect_ae072eeb2bda11180dce595f2cc5eed0ca7d1fe139281727cd2df095907657cc18}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_control_point_spline_af8061c04c9bce3af6c52ce31b4318885}{refresh\+Ctrl\+Point}} (const qint32 \&\mbox{\hyperlink{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}{index\+Spline}}, \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} pos, const QPointF \&control\+Point, const QPointF \&spline\+Point, bool \mbox{\hyperlink{class_v_control_point_spline_a83d573a84063b576ed9810628496acb7}{free\+Angle}}=true, bool \mbox{\hyperlink{class_v_control_point_spline_a04d60a2ae37260629bbd735464afb086}{free\+Length}}=true)
+\begin{DoxyCompactList}\small\item\em refresh\+Ctrl\+Point refresh the control point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_control_point_spline_ac0d0e2d7437a1f00aee4dce6d41d77fa}{set\+Enabled\+Point}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set\+Enabled\+Point disable or enable control point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_control_point_spline_a960bde2e1ffe6a52e13e25fe7b0c2e4b}{Control\+Point\+Change\+Position}} (const qint32 \&\mbox{\hyperlink{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}{index\+Spline}}, \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \mbox{\hyperlink{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}{position}}, const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em Control\+Point\+Change\+Position emit when control point change position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_control_point_spline_a84e6656056a357238d07fe2bef9ba397}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em show\+Context\+Menu emit when need show tool\textquotesingle{}s context menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_control_point_spline_ae8f7b68ae35b4e917e4dd6d4b55295a2}{VControl\+Point\+Spline}} (const qint32 \&\mbox{\hyperlink{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}{index\+Spline}}, \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \mbox{\hyperlink{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}{position}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_v_control_point_spline_a4b7e47bc8ed3978fa8b0d4482032044a}{VControl\+Point\+Spline}} (const qint32 \&\mbox{\hyperlink{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}{index\+Spline}}, \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \mbox{\hyperlink{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}{position}}, const QPointF \&control\+Point, const QPointF \&spline\+Point, bool \mbox{\hyperlink{class_v_control_point_spline_a83d573a84063b576ed9810628496acb7}{free\+Angle}}, bool \mbox{\hyperlink{class_v_control_point_spline_a04d60a2ae37260629bbd735464afb086}{free\+Length}}, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_control_point_spline_ab2eeb98e9c71cc5191aa9c5e138a3885}{$\sim$\+VControl\+Point\+Spline}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_control_point_spline_ab8cc9041fdbe0ffdf5b6f4eebb127e46}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_ac376aa16ff0f3ee22df98af9cb6ebe2e}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_scene_rect}{Scene\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_rect_af8894584fc83ce3deaf143171f46a6a5}{Scene\+Rect}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_scene_rect_a89834fc76165fd7d4e169c8c1caedd95}{$\sim$\+Scene\+Rect}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_scene_rect_a8b96d4e5e355cd1073f88a142a6577ad}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_scene_rect_a43036c626d002e8cb5c1b183cb501ea4}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_scene_rect_ac47a2379e49e4b0d6c80c82900c68741}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_ab2a0907d0d99855085cac8ae1600052b}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em hover\+Enter\+Event handle hover enter events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_ae951a273cb147384857f02174e56dc40}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QVariant \mbox{\hyperlink{class_v_control_point_spline_a390c9c43cb9415320f0f1d59b49105d3}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em item\+Change handle item change. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_a638fa2d28a43ed2b6f63991cc2f0349a}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_ab1222c99c266cbe33cb737da330c0e4c}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_control_point_spline_a6883a0cb7d541e2288d3509f71c907ca}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_scene_rect}{Scene\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_scene_rect_a6fc0de5f66f244b08bcb08420dc0c1a4}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_scene_rect_a7632ef38d888a3805c76d4fd86f46218}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_scene_rect_a6f3b1c3eaa782f9f2c4c230b3d668f29}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_scene_rect_afdfb2396e7ca893c76ec0d8710f6dfca}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_scene_rect_a93d9ebb517a2bf5cdcfb044460c096eb}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_v_control_point_spline_ac64e07f2becb4ceeca83019fa8b681fb}{control\+Line}}
+\begin{DoxyCompactList}\small\item\em control\+Line pointer to line control point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_scene_rect}{Scene\+Rect}}}
+\begin{DoxyCompactItemize}
+\item 
+QColor \mbox{\hyperlink{class_scene_rect_a91e46b85ce194104b384c302bfc31c53}{m\+\_\+rect\+Color}}
+\item 
+bool \mbox{\hyperlink{class_scene_rect_aba7730d776853c33a9e62431de1eb52d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+rect\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_rect_a9cc239b109d776f8692900d0827ff549}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_scene_rect_ad1f09a15d11d234cf8c2fe7c6cf49a5b}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_control_point_spline_a0247fa28df6357dfff0372cac7c168ee}{init}} ()
+\item 
+void \mbox{\hyperlink{class_v_control_point_spline_ab741c668e694ae1cc8fb93477852a0fc}{set\+Ctrl\+Line}} (const QPointF \&control\+Point, const QPointF \&spline\+Point)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qint32 \mbox{\hyperlink{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}{index\+Spline}}
+\begin{DoxyCompactList}\small\item\em index\+Spline index spline in list.. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \mbox{\hyperlink{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}{position}}
+\begin{DoxyCompactList}\small\item\em position position point in spline. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_control_point_spline_a83d573a84063b576ed9810628496acb7}{free\+Angle}}
+\item 
+bool \mbox{\hyperlink{class_v_control_point_spline_a04d60a2ae37260629bbd735464afb086}{free\+Length}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} class control spline point. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_control_point_spline_ae94da048bd3689f2849961b40f2ac50d}\label{class_v_control_point_spline_ae94da048bd3689f2849961b40f2ac50d}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VControlPointSpline@{VControlPointSpline}}\index{VControlPointSpline@{VControlPointSpline}!Type@{Type}}}\mbox{\Hypertarget{class_v_control_point_spline_ae94da048bd3689f2849961b40f2ac50da8fabbaeeb086101439168262b5c3dc5e}\label{class_v_control_point_spline_ae94da048bd3689f2849961b40f2ac50da8fabbaeeb086101439168262b5c3dc5e}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_control_point_spline_ae8f7b68ae35b4e917e4dd6d4b55295a2}\label{class_v_control_point_spline_ae8f7b68ae35b4e917e4dd6d4b55295a2}} 
+\index{VControlPointSpline@{VControlPointSpline}!VControlPointSpline@{VControlPointSpline}}
+\index{VControlPointSpline@{VControlPointSpline}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{VControlPointSpline()}{VControlPointSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VControl\+Point\+Spline\+::\+VControl\+Point\+Spline (\begin{DoxyParamCaption}\item[{const qint32 \&}]{index\+Spline,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}}}]{position,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_control_point_spline_a4b7e47bc8ed3978fa8b0d4482032044a}\label{class_v_control_point_spline_a4b7e47bc8ed3978fa8b0d4482032044a}} 
+\index{VControlPointSpline@{VControlPointSpline}!VControlPointSpline@{VControlPointSpline}}
+\index{VControlPointSpline@{VControlPointSpline}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{VControlPointSpline()}{VControlPointSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VControl\+Point\+Spline\+::\+VControl\+Point\+Spline (\begin{DoxyParamCaption}\item[{const qint32 \&}]{index\+Spline,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}}}]{position,  }\item[{const QPointF \&}]{control\+Point,  }\item[{const QPointF \&}]{spline\+Point,  }\item[{bool}]{free\+Angle,  }\item[{bool}]{free\+Length,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Spline} & index spline in list. \\
+\hline
+{\em position} & position point in spline. \\
+\hline
+{\em control\+Point} & control point. \\
+\hline
+{\em spline\+Point} & spline point. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_control_point_spline_ab2eeb98e9c71cc5191aa9c5e138a3885}\label{class_v_control_point_spline_ab2eeb98e9c71cc5191aa9c5e138a3885}} 
+\index{VControlPointSpline@{VControlPointSpline}!````~VControlPointSpline@{$\sim$VControlPointSpline}}
+\index{````~VControlPointSpline@{$\sim$VControlPointSpline}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{$\sim$VControlPointSpline()}{~VControlPointSpline()}}
+{\footnotesize\ttfamily virtual VControl\+Point\+Spline\+::$\sim$\+VControl\+Point\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_control_point_spline_a6883a0cb7d541e2288d3509f71c907ca}\label{class_v_control_point_spline_a6883a0cb7d541e2288d3509f71c907ca}} 
+\index{VControlPointSpline@{VControlPointSpline}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_a960bde2e1ffe6a52e13e25fe7b0c2e4b}\label{class_v_control_point_spline_a960bde2e1ffe6a52e13e25fe7b0c2e4b}} 
+\index{VControlPointSpline@{VControlPointSpline}!ControlPointChangePosition@{ControlPointChangePosition}}
+\index{ControlPointChangePosition@{ControlPointChangePosition}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{ControlPointChangePosition}{ControlPointChangePosition}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::\+Control\+Point\+Change\+Position (\begin{DoxyParamCaption}\item[{const qint32 \&}]{index\+Spline,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}}}]{position,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Control\+Point\+Change\+Position emit when control point change position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Spline} & index spline in list. \\
+\hline
+{\em position} & position point in spline. \\
+\hline
+{\em pos} & new posotion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_control_point_spline_ab2a0907d0d99855085cac8ae1600052b}\label{class_v_control_point_spline_ab2a0907d0d99855085cac8ae1600052b}} 
+\index{VControlPointSpline@{VControlPointSpline}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+hover\+Enter\+Event handle hover enter events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & hover move event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_rect_a6fc0de5f66f244b08bcb08420dc0c1a4}{Scene\+Rect}}.
+
+\mbox{\Hypertarget{class_v_control_point_spline_ae951a273cb147384857f02174e56dc40}\label{class_v_control_point_spline_ae951a273cb147384857f02174e56dc40}} 
+\index{VControlPointSpline@{VControlPointSpline}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_rect_a7632ef38d888a3805c76d4fd86f46218}{Scene\+Rect}}.
+
+\mbox{\Hypertarget{class_v_control_point_spline_a0247fa28df6357dfff0372cac7c168ee}\label{class_v_control_point_spline_a0247fa28df6357dfff0372cac7c168ee}} 
+\index{VControlPointSpline@{VControlPointSpline}!init@{init}}
+\index{init@{init}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_a390c9c43cb9415320f0f1d59b49105d3}\label{class_v_control_point_spline_a390c9c43cb9415320f0f1d59b49105d3}} 
+\index{VControlPointSpline@{VControlPointSpline}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VControl\+Point\+Spline\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+item\+Change handle item change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & change. \\
+\hline
+{\em value} & value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_control_point_spline_a638fa2d28a43ed2b6f63991cc2f0349a}\label{class_v_control_point_spline_a638fa2d28a43ed2b6f63991cc2f0349a}} 
+\index{VControlPointSpline@{VControlPointSpline}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_ab1222c99c266cbe33cb737da330c0e4c}\label{class_v_control_point_spline_ab1222c99c266cbe33cb737da330c0e4c}} 
+\index{VControlPointSpline@{VControlPointSpline}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_ac376aa16ff0f3ee22df98af9cb6ebe2e}\label{class_v_control_point_spline_ac376aa16ff0f3ee22df98af9cb6ebe2e}} 
+\index{VControlPointSpline@{VControlPointSpline}!paint@{paint}}
+\index{paint@{paint}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_rect_a43036c626d002e8cb5c1b183cb501ea4}{Scene\+Rect}}.
+
+\mbox{\Hypertarget{class_v_control_point_spline_af8061c04c9bce3af6c52ce31b4318885}\label{class_v_control_point_spline_af8061c04c9bce3af6c52ce31b4318885}} 
+\index{VControlPointSpline@{VControlPointSpline}!refreshCtrlPoint@{refreshCtrlPoint}}
+\index{refreshCtrlPoint@{refreshCtrlPoint}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{refreshCtrlPoint}{refreshCtrlPoint}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::refresh\+Ctrl\+Point (\begin{DoxyParamCaption}\item[{const qint32 \&}]{index\+Spline,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}}}]{pos,  }\item[{const QPointF \&}]{control\+Point,  }\item[{const QPointF \&}]{spline\+Point,  }\item[{bool}]{free\+Angle = {\ttfamily true},  }\item[{bool}]{free\+Length = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+refresh\+Ctrl\+Point refresh the control point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+Spline} & index spline in list. \\
+\hline
+{\em pos} & position point in spline. \\
+\hline
+{\em control\+Point} & control point. \\
+\hline
+{\em spline\+Point} & spline point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_control_point_spline_ab741c668e694ae1cc8fb93477852a0fc}\label{class_v_control_point_spline_ab741c668e694ae1cc8fb93477852a0fc}} 
+\index{VControlPointSpline@{VControlPointSpline}!setCtrlLine@{setCtrlLine}}
+\index{setCtrlLine@{setCtrlLine}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{setCtrlLine()}{setCtrlLine()}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::set\+Ctrl\+Line (\begin{DoxyParamCaption}\item[{const QPointF \&}]{control\+Point,  }\item[{const QPointF \&}]{spline\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_ac0d0e2d7437a1f00aee4dce6d41d77fa}\label{class_v_control_point_spline_ac0d0e2d7437a1f00aee4dce6d41d77fa}} 
+\index{VControlPointSpline@{VControlPointSpline}!setEnabledPoint@{setEnabledPoint}}
+\index{setEnabledPoint@{setEnabledPoint}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{setEnabledPoint}{setEnabledPoint}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::set\+Enabled\+Point (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+set\+Enabled\+Point disable or enable control point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & true -\/ enable. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_control_point_spline_a84e6656056a357238d07fe2bef9ba397}\label{class_v_control_point_spline_a84e6656056a357238d07fe2bef9ba397}} 
+\index{VControlPointSpline@{VControlPointSpline}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VControl\+Point\+Spline\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+show\+Context\+Menu emit when need show tool\textquotesingle{}s context menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_control_point_spline_ab8cc9041fdbe0ffdf5b6f4eebb127e46}\label{class_v_control_point_spline_ab8cc9041fdbe0ffdf5b6f4eebb127e46}} 
+\index{VControlPointSpline@{VControlPointSpline}!type@{type}}
+\index{type@{type}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VControl\+Point\+Spline\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_scene_rect_a8b96d4e5e355cd1073f88a142a6577ad}{Scene\+Rect}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_control_point_spline_ac64e07f2becb4ceeca83019fa8b681fb}\label{class_v_control_point_spline_ac64e07f2becb4ceeca83019fa8b681fb}} 
+\index{VControlPointSpline@{VControlPointSpline}!controlLine@{controlLine}}
+\index{controlLine@{controlLine}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{controlLine}{controlLine}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}$\ast$ VControl\+Point\+Spline\+::control\+Line\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+control\+Line pointer to line control point. 
+
+\mbox{\Hypertarget{class_v_control_point_spline_a83d573a84063b576ed9810628496acb7}\label{class_v_control_point_spline_a83d573a84063b576ed9810628496acb7}} 
+\index{VControlPointSpline@{VControlPointSpline}!freeAngle@{freeAngle}}
+\index{freeAngle@{freeAngle}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{freeAngle}{freeAngle}}
+{\footnotesize\ttfamily bool VControl\+Point\+Spline\+::free\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_a04d60a2ae37260629bbd735464afb086}\label{class_v_control_point_spline_a04d60a2ae37260629bbd735464afb086}} 
+\index{VControlPointSpline@{VControlPointSpline}!freeLength@{freeLength}}
+\index{freeLength@{freeLength}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{freeLength}{freeLength}}
+{\footnotesize\ttfamily bool VControl\+Point\+Spline\+::free\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}\label{class_v_control_point_spline_a3763da52a53d7e54ac25675306576f52}} 
+\index{VControlPointSpline@{VControlPointSpline}!indexSpline@{indexSpline}}
+\index{indexSpline@{indexSpline}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{indexSpline}{indexSpline}}
+{\footnotesize\ttfamily qint32 VControl\+Point\+Spline\+::index\+Spline\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+index\+Spline index spline in list.. 
+
+\mbox{\Hypertarget{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}\label{class_v_control_point_spline_aa6bf0b4bd21092951836cb55c5e05c25}} 
+\index{VControlPointSpline@{VControlPointSpline}!position@{position}}
+\index{position@{position}!VControlPointSpline@{VControlPointSpline}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} VControl\+Point\+Spline\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+position position point in spline. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vcontrolpointspline_8h}{vcontrolpointspline.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vcontrolpointspline_8cpp}{vcontrolpointspline.\+cpp}}\end{DoxyCompactItemize}

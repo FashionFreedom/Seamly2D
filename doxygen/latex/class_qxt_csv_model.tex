@@ -1,0 +1,402 @@
+\hypertarget{class_qxt_csv_model}{}\doxysection{Qxt\+Csv\+Model Class Reference}
+\label{class_qxt_csv_model}\index{QxtCsvModel@{QxtCsvModel}}
+
+
+The \mbox{\hyperlink{class_qxt_csv_model}{Qxt\+Csv\+Model}} class provides a QAbstract\+Table\+Model for CSV Files.  
+
+
+
+
+{\ttfamily \#include $<$qxtcsvmodel.\+h$>$}
+
+Inheritance diagram for Qxt\+Csv\+Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_qxt_csv_model}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31}{Quote\+Option}} \{ \newline
+\mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31aaed6d8d6589357284d5c915276283efd}{No\+Quotes}} = 0
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a1f89b9da2466e278d7a79d0da8810200}{Single\+Quote}} = 1
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7ccf6bde2f4962c1e6ee0fb8cf07034b}{Double\+Quote}} = 2
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a59a0c0d62846b0919701fe89c8abfdbf}{Both\+Quotes}} = 3
+, \newline
+\mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7cdce47ce3fcb61516da26e663be1a39}{No\+Escape}} = 0
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a92e4380fa78301c39464d0fa365d4344}{Two\+Quote\+Escape}} = 4
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a18cc2ddfc57fb9d42bceaac1c013e2a4}{Backslash\+Escape}} = 8
+, \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a52f3f29506d7b07663a5006b1b3e95f7}{Always\+Quote\+Output}} = 16
+, \newline
+\mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31ab1f444597d730c5958d57d2fd5bea0e4}{Default\+Quote\+Mode}} = Both\+Quotes $\vert$ Backslash\+Escape $\vert$ Always\+Quote\+Output
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_qxt_csv_model_aed96f8e9773114a910d4dd5056246608}{Qxt\+Csv\+Model}} (QObject $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_qxt_csv_model_a02866f9318247a0e774f4c22073f2825}{Qxt\+Csv\+Model}} (QIODevice $\ast$file, QObject $\ast$parent=nullptr, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{})
+\item 
+\mbox{\hyperlink{class_qxt_csv_model_afd4be58a5e62d47a13c05c5002bdeeb2}{Qxt\+Csv\+Model}} (const QString \&filename, QObject $\ast$parent=nullptr, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{})
+\item 
+virtual \mbox{\hyperlink{class_qxt_csv_model_a7880c36098c93bd889448a70ad0651d8}{$\sim$\+Qxt\+Csv\+Model}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual int \mbox{\hyperlink{class_qxt_csv_model_ac79544d1cf6fd20061d5cbe097ab8e29}{row\+Count}} (const QModel\+Index \&parent=QModel\+Index()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_qxt_csv_model_a95cadde9916b20380163a92d09664a1e}{column\+Count}} (const QModel\+Index \&parent=QModel\+Index()) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_qxt_csv_model_ad931a2a258f6fe74bb3b0f0a201d7bff}{data}} (const QModel\+Index \&index, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_ab942431cac0f78de4f71d16d78fa76ea}{set\+Data}} (const QModel\+Index \&index, const QVariant \&\mbox{\hyperlink{class_qxt_csv_model_ad931a2a258f6fe74bb3b0f0a201d7bff}{data}}, int role=Qt\+::\+Edit\+Role) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_qxt_csv_model_a8a630c0b3e43aa9f08750a0042835bee}{header\+Data}} (int section, Qt\+::\+Orientation orientation, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_a66218f6a95bccd1f0a5351abcff28717}{set\+Header\+Data}} (int section, Qt\+::\+Orientation orientation, const QVariant \&value, int role=Qt\+::\+Display\+Role) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_a44c954b4350bf91769cde67920b4bf0c}{set\+Header\+Data}} (const QString\+List \&\mbox{\hyperlink{class_qxt_csv_model_ad931a2a258f6fe74bb3b0f0a201d7bff}{data}})
+\item 
+QString \mbox{\hyperlink{class_qxt_csv_model_ad7fb3682cf6cffea48ea06a1c4e8c34a}{text}} (int row, int column) const
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_a2fc5388031aaa2ca86323359d9b4a575}{set\+Text}} (int row, int column, const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_qxt_csv_model_a52992580fbaf747a1beb99ed0ecda4fe}{header\+Text}} (int column) const
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_a41b453871fb3b5e5aacc530c67a4f242}{set\+Header\+Text}} (int column, const QString \&value)
+\item 
+bool \mbox{\hyperlink{class_qxt_csv_model_a79d2eb0cc646860b273cb9107e1638bb}{insert\+Row}} (int row, const QModel\+Index \&parent=QModel\+Index())
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_a1886bac6d31e2b22d85081fbb42b6943}{insert\+Rows}} (int row, int count, const QModel\+Index \&parent=QModel\+Index()) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{class_qxt_csv_model_a702949bc62aef09a4489b69ae4c55f3d}{remove\+Row}} (int row, const QModel\+Index \&parent=QModel\+Index())
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_af3844c62a5ea8df3aab972eab71c28cf}{remove\+Rows}} (int row, int count, const QModel\+Index \&parent=QModel\+Index()) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{class_qxt_csv_model_a35f440fdc31a490d8c49fd0cd1327e70}{insert\+Column}} (int col, const QModel\+Index \&parent=QModel\+Index())
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_a5edcb98c005e13762e6e2f634656edbe}{insert\+Columns}} (int col, int count, const QModel\+Index \&parent=QModel\+Index()) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{class_qxt_csv_model_a585df5622551f1c43f6fad1d37ef671f}{remove\+Column}} (int col, const QModel\+Index \&parent=QModel\+Index())
+\item 
+virtual bool \mbox{\hyperlink{class_qxt_csv_model_a99b561334a16088b74ca642f81427eb5}{remove\+Columns}} (int col, int count, const QModel\+Index \&parent=QModel\+Index()) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_a6e8d0a1c64ef6cee622d3ba39fc12d47}{set\+Source}} (QIODevice $\ast$file, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{}, QText\+Codec $\ast$codec=nullptr)
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_aecee2eadd93d39dc8e8ee5083e07f544}{set\+Source}} (const QString \&filename, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{}, QText\+Codec $\ast$codec=nullptr)
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_ada0b7779f9d81a6ff2fa7b6040f20116}{to\+CSV}} (QIODevice $\ast$file, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{}, QText\+Codec $\ast$codec=nullptr) const
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_abdcd428f50feaaacd0b7bb839d9e2480}{to\+CSV}} (const QString \&filename, bool with\+Header=false, QChar separator=\textquotesingle{},\textquotesingle{}, QText\+Codec $\ast$codec=nullptr) const
+\item 
+Quote\+Mode \mbox{\hyperlink{class_qxt_csv_model_a76e20b10d250c78633daddaa5ead68e9}{quote\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_qxt_csv_model_a8d02348db441167aac885cea31a1d610}{set\+Quote\+Mode}} (Quote\+Mode mode)
+\item 
+virtual Qt\+::\+Item\+Flags \mbox{\hyperlink{class_qxt_csv_model_a77aa98db888e0561f60be5726cb01251}{flags}} (const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_qxt_csv_model}{Qxt\+Csv\+Model}} class provides a QAbstract\+Table\+Model for CSV Files. 
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31}} 
+\index{QxtCsvModel@{QxtCsvModel}!QuoteOption@{QuoteOption}}
+\index{QuoteOption@{QuoteOption}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{QuoteOption}{QuoteOption}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31}{Qxt\+Csv\+Model\+::\+Quote\+Option}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoQuotes@{NoQuotes}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!NoQuotes@{NoQuotes}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31aaed6d8d6589357284d5c915276283efd}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31aaed6d8d6589357284d5c915276283efd}} 
+No\+Quotes&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SingleQuote@{SingleQuote}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!SingleQuote@{SingleQuote}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a1f89b9da2466e278d7a79d0da8810200}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a1f89b9da2466e278d7a79d0da8810200}} 
+Single\+Quote&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DoubleQuote@{DoubleQuote}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!DoubleQuote@{DoubleQuote}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7ccf6bde2f4962c1e6ee0fb8cf07034b}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7ccf6bde2f4962c1e6ee0fb8cf07034b}} 
+Double\+Quote&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BothQuotes@{BothQuotes}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!BothQuotes@{BothQuotes}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a59a0c0d62846b0919701fe89c8abfdbf}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a59a0c0d62846b0919701fe89c8abfdbf}} 
+Both\+Quotes&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoEscape@{NoEscape}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!NoEscape@{NoEscape}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7cdce47ce3fcb61516da26e663be1a39}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a7cdce47ce3fcb61516da26e663be1a39}} 
+No\+Escape&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TwoQuoteEscape@{TwoQuoteEscape}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!TwoQuoteEscape@{TwoQuoteEscape}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a92e4380fa78301c39464d0fa365d4344}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a92e4380fa78301c39464d0fa365d4344}} 
+Two\+Quote\+Escape&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BackslashEscape@{BackslashEscape}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!BackslashEscape@{BackslashEscape}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a18cc2ddfc57fb9d42bceaac1c013e2a4}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a18cc2ddfc57fb9d42bceaac1c013e2a4}} 
+Backslash\+Escape&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlwaysQuoteOutput@{AlwaysQuoteOutput}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!AlwaysQuoteOutput@{AlwaysQuoteOutput}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a52f3f29506d7b07663a5006b1b3e95f7}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31a52f3f29506d7b07663a5006b1b3e95f7}} 
+Always\+Quote\+Output&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DefaultQuoteMode@{DefaultQuoteMode}!QxtCsvModel@{QxtCsvModel}}\index{QxtCsvModel@{QxtCsvModel}!DefaultQuoteMode@{DefaultQuoteMode}}}\mbox{\Hypertarget{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31ab1f444597d730c5958d57d2fd5bea0e4}\label{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31ab1f444597d730c5958d57d2fd5bea0e4}} 
+Default\+Quote\+Mode&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_qxt_csv_model_aed96f8e9773114a910d4dd5056246608}\label{class_qxt_csv_model_aed96f8e9773114a910d4dd5056246608}} 
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{QxtCsvModel()}{QxtCsvModel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH Qxt\+Csv\+Model\+::\+Qxt\+Csv\+Model (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates an empty \mbox{\hyperlink{class_qxt_csv_model}{Qxt\+Csv\+Model}} with parent {\itshape parent}. \mbox{\Hypertarget{class_qxt_csv_model_a02866f9318247a0e774f4c22073f2825}\label{class_qxt_csv_model_a02866f9318247a0e774f4c22073f2825}} 
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{QxtCsvModel()}{QxtCsvModel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Qxt\+Csv\+Model\+::\+Qxt\+Csv\+Model (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{file,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr},  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a \mbox{\hyperlink{class_qxt_csv_model}{Qxt\+Csv\+Model}} with the parent {\itshape parent} and content loaded from {\itshape file}.
+
+See {\itshape set\+Source} for information on the {\itshape with\+Header} and {\itshape separator} properties, or if you need control over the quoting method or codec used to parse the file.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a6e8d0a1c64ef6cee622d3ba39fc12d47}{set\+Source}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_afd4be58a5e62d47a13c05c5002bdeeb2}\label{class_qxt_csv_model_afd4be58a5e62d47a13c05c5002bdeeb2}} 
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\index{QxtCsvModel@{QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{QxtCsvModel()}{QxtCsvModel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Qxt\+Csv\+Model\+::\+Qxt\+Csv\+Model (\begin{DoxyParamCaption}\item[{const QString \&}]{filename,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr},  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Creates a \mbox{\hyperlink{class_qxt_csv_model}{Qxt\+Csv\+Model}} with the parent {\itshape parent} and content loaded from {\itshape file}.
+
+See {\itshape set\+Source} for information on the {\itshape with\+Header} and {\itshape separator} properties, or if you need control over the quoting method or codec used to parse the file.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a6e8d0a1c64ef6cee622d3ba39fc12d47}{set\+Source}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_a7880c36098c93bd889448a70ad0651d8}\label{class_qxt_csv_model_a7880c36098c93bd889448a70ad0651d8}} 
+\index{QxtCsvModel@{QxtCsvModel}!````~QxtCsvModel@{$\sim$QxtCsvModel}}
+\index{````~QxtCsvModel@{$\sim$QxtCsvModel}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$QxtCsvModel()}{~QxtCsvModel()}}
+{\footnotesize\ttfamily virtual Qxt\+Csv\+Model\+::$\sim$\+Qxt\+Csv\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_qxt_csv_model_a95cadde9916b20380163a92d09664a1e}\label{class_qxt_csv_model_a95cadde9916b20380163a92d09664a1e}} 
+\index{QxtCsvModel@{QxtCsvModel}!columnCount@{columnCount}}
+\index{columnCount@{columnCount}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{columnCount()}{columnCount()}}
+{\footnotesize\ttfamily int Qxt\+Csv\+Model\+::column\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_ad931a2a258f6fe74bb3b0f0a201d7bff}\label{class_qxt_csv_model_ad931a2a258f6fe74bb3b0f0a201d7bff}} 
+\index{QxtCsvModel@{QxtCsvModel}!data@{data}}
+\index{data@{data}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant Qxt\+Csv\+Model\+::data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a77aa98db888e0561f60be5726cb01251}\label{class_qxt_csv_model_a77aa98db888e0561f60be5726cb01251}} 
+\index{QxtCsvModel@{QxtCsvModel}!flags@{flags}}
+\index{flags@{flags}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags Qxt\+Csv\+Model\+::flags (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a8a630c0b3e43aa9f08750a0042835bee}\label{class_qxt_csv_model_a8a630c0b3e43aa9f08750a0042835bee}} 
+\index{QxtCsvModel@{QxtCsvModel}!headerData@{headerData}}
+\index{headerData@{headerData}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{headerData()}{headerData()}}
+{\footnotesize\ttfamily QVariant Qxt\+Csv\+Model\+::header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a52992580fbaf747a1beb99ed0ecda4fe}\label{class_qxt_csv_model_a52992580fbaf747a1beb99ed0ecda4fe}} 
+\index{QxtCsvModel@{QxtCsvModel}!headerText@{headerText}}
+\index{headerText@{headerText}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{headerText()}{headerText()}}
+{\footnotesize\ttfamily QString Qxt\+Csv\+Model\+::header\+Text (\begin{DoxyParamCaption}\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+Fetches the content of the cell at row {\itshape row} and column {\itshape column}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a2fc5388031aaa2ca86323359d9b4a575}{set\+Text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_a35f440fdc31a490d8c49fd0cd1327e70}\label{class_qxt_csv_model_a35f440fdc31a490d8c49fd0cd1327e70}} 
+\index{QxtCsvModel@{QxtCsvModel}!insertColumn@{insertColumn}}
+\index{insertColumn@{insertColumn}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{insertColumn()}{insertColumn()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::insert\+Column (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a5edcb98c005e13762e6e2f634656edbe}\label{class_qxt_csv_model_a5edcb98c005e13762e6e2f634656edbe}} 
+\index{QxtCsvModel@{QxtCsvModel}!insertColumns@{insertColumns}}
+\index{insertColumns@{insertColumns}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{insertColumns()}{insertColumns()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::insert\+Columns (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{count,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a79d2eb0cc646860b273cb9107e1638bb}\label{class_qxt_csv_model_a79d2eb0cc646860b273cb9107e1638bb}} 
+\index{QxtCsvModel@{QxtCsvModel}!insertRow@{insertRow}}
+\index{insertRow@{insertRow}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{insertRow()}{insertRow()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::insert\+Row (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a1886bac6d31e2b22d85081fbb42b6943}\label{class_qxt_csv_model_a1886bac6d31e2b22d85081fbb42b6943}} 
+\index{QxtCsvModel@{QxtCsvModel}!insertRows@{insertRows}}
+\index{insertRows@{insertRows}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{insertRows()}{insertRows()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::insert\+Rows (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{count,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a76e20b10d250c78633daddaa5ead68e9}\label{class_qxt_csv_model_a76e20b10d250c78633daddaa5ead68e9}} 
+\index{QxtCsvModel@{QxtCsvModel}!quoteMode@{quoteMode}}
+\index{quoteMode@{quoteMode}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{quoteMode()}{quoteMode()}}
+{\footnotesize\ttfamily Qxt\+Csv\+Model\+::\+Quote\+Mode Qxt\+Csv\+Model\+::quote\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the current quoting mode. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a8d02348db441167aac885cea31a1d610}{set\+Quote\+Mode}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_a585df5622551f1c43f6fad1d37ef671f}\label{class_qxt_csv_model_a585df5622551f1c43f6fad1d37ef671f}} 
+\index{QxtCsvModel@{QxtCsvModel}!removeColumn@{removeColumn}}
+\index{removeColumn@{removeColumn}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{removeColumn()}{removeColumn()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::remove\+Column (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a99b561334a16088b74ca642f81427eb5}\label{class_qxt_csv_model_a99b561334a16088b74ca642f81427eb5}} 
+\index{QxtCsvModel@{QxtCsvModel}!removeColumns@{removeColumns}}
+\index{removeColumns@{removeColumns}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{removeColumns()}{removeColumns()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::remove\+Columns (\begin{DoxyParamCaption}\item[{int}]{col,  }\item[{int}]{count,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a702949bc62aef09a4489b69ae4c55f3d}\label{class_qxt_csv_model_a702949bc62aef09a4489b69ae4c55f3d}} 
+\index{QxtCsvModel@{QxtCsvModel}!removeRow@{removeRow}}
+\index{removeRow@{removeRow}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{removeRow()}{removeRow()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::remove\+Row (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_af3844c62a5ea8df3aab972eab71c28cf}\label{class_qxt_csv_model_af3844c62a5ea8df3aab972eab71c28cf}} 
+\index{QxtCsvModel@{QxtCsvModel}!removeRows@{removeRows}}
+\index{removeRows@{removeRows}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{removeRows()}{removeRows()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::remove\+Rows (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{count,  }\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_ac79544d1cf6fd20061d5cbe097ab8e29}\label{class_qxt_csv_model_ac79544d1cf6fd20061d5cbe097ab8e29}} 
+\index{QxtCsvModel@{QxtCsvModel}!rowCount@{rowCount}}
+\index{rowCount@{rowCount}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{rowCount()}{rowCount()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP int Qxt\+Csv\+Model\+::row\+Count (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{parent = {\ttfamily QModelIndex()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_ab942431cac0f78de4f71d16d78fa76ea}\label{class_qxt_csv_model_ab942431cac0f78de4f71d16d78fa76ea}} 
+\index{QxtCsvModel@{QxtCsvModel}!setData@{setData}}
+\index{setData@{setData}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::set\+Data (\begin{DoxyParamCaption}\item[{const QModel\+Index \&}]{index,  }\item[{const QVariant \&}]{data,  }\item[{int}]{role = {\ttfamily Qt\+:\+:EditRole} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a44c954b4350bf91769cde67920b4bf0c}\label{class_qxt_csv_model_a44c954b4350bf91769cde67920b4bf0c}} 
+\index{QxtCsvModel@{QxtCsvModel}!setHeaderData@{setHeaderData}}
+\index{setHeaderData@{setHeaderData}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setHeaderData()}{setHeaderData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Header\+Data (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{data }\end{DoxyParamCaption})}
+
+Sets the horizontal headers of the model to the values provided in {\itshape data}. \mbox{\Hypertarget{class_qxt_csv_model_a66218f6a95bccd1f0a5351abcff28717}\label{class_qxt_csv_model_a66218f6a95bccd1f0a5351abcff28717}} 
+\index{QxtCsvModel@{QxtCsvModel}!setHeaderData@{setHeaderData}}
+\index{setHeaderData@{setHeaderData}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setHeaderData()}{setHeaderData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Qxt\+Csv\+Model\+::set\+Header\+Data (\begin{DoxyParamCaption}\item[{int}]{section,  }\item[{Qt\+::\+Orientation}]{orientation,  }\item[{const QVariant \&}]{value,  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\textbackslash{}reimp \mbox{\Hypertarget{class_qxt_csv_model_a41b453871fb3b5e5aacc530c67a4f242}\label{class_qxt_csv_model_a41b453871fb3b5e5aacc530c67a4f242}} 
+\index{QxtCsvModel@{QxtCsvModel}!setHeaderText@{setHeaderText}}
+\index{setHeaderText@{setHeaderText}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setHeaderText()}{setHeaderText()}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Header\+Text (\begin{DoxyParamCaption}\item[{int}]{column,  }\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+Sets the content of the header for column {\itshape column} to {\itshape value}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a52992580fbaf747a1beb99ed0ecda4fe}{header\+Text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_a8d02348db441167aac885cea31a1d610}\label{class_qxt_csv_model_a8d02348db441167aac885cea31a1d610}} 
+\index{QxtCsvModel@{QxtCsvModel}!setQuoteMode@{setQuoteMode}}
+\index{setQuoteMode@{setQuoteMode}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setQuoteMode()}{setQuoteMode()}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Quote\+Mode (\begin{DoxyParamCaption}\item[{Quote\+Mode}]{mode }\end{DoxyParamCaption})}
+
+Sets the current quoting mode. The default quoting mode is Both\+Quotes $\vert$ Backslash\+Escape.
+
+The quoting mode determines what kinds of quoting is used for reading and writing CSV files. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a76e20b10d250c78633daddaa5ead68e9}{quote\+Mode}} 
+
+\mbox{\hyperlink{class_qxt_csv_model_a81cf512c562674f89d187746052e6a31}{Quote\+Option}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_aecee2eadd93d39dc8e8ee5083e07f544}\label{class_qxt_csv_model_aecee2eadd93d39dc8e8ee5083e07f544}} 
+\index{QxtCsvModel@{QxtCsvModel}!setSource@{setSource}}
+\index{setSource@{setSource}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Source (\begin{DoxyParamCaption}\item[{const QString \&}]{filename,  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{QText\+Codec $\ast$}]{codec = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Reads in a CSV file from the provided {\itshape file} using {\itshape codec}. \mbox{\Hypertarget{class_qxt_csv_model_a6e8d0a1c64ef6cee622d3ba39fc12d47}\label{class_qxt_csv_model_a6e8d0a1c64ef6cee622d3ba39fc12d47}} 
+\index{QxtCsvModel@{QxtCsvModel}!setSource@{setSource}}
+\index{setSource@{setSource}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setSource()}{setSource()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Source (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{file,  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{QText\+Codec $\ast$}]{codec = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+Reads in a CSV file from the provided {\itshape file} using {\itshape codec}.
+
+The value of {\itshape separator} will be used to delimit fields, subject to the specified {\itshape quote\+Mode}. If {\itshape with\+Header} is set to true, the first line of the file will be used to populate the model\textquotesingle{}s horizontal header.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a76e20b10d250c78633daddaa5ead68e9}{quote\+Mode}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_a2fc5388031aaa2ca86323359d9b4a575}\label{class_qxt_csv_model_a2fc5388031aaa2ca86323359d9b4a575}} 
+\index{QxtCsvModel@{QxtCsvModel}!setText@{setText}}
+\index{setText@{setText}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::set\+Text (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column,  }\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+Sets the content of the cell at row {\itshape row} and column {\itshape column} to {\itshape value}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_ad7fb3682cf6cffea48ea06a1c4e8c34a}{text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_ad7fb3682cf6cffea48ea06a1c4e8c34a}\label{class_qxt_csv_model_ad7fb3682cf6cffea48ea06a1c4e8c34a}} 
+\index{QxtCsvModel@{QxtCsvModel}!text@{text}}
+\index{text@{text}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily QString Qxt\+Csv\+Model\+::text (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{column }\end{DoxyParamCaption}) const}
+
+Fetches the content of the cell at row {\itshape row} and column {\itshape column}.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_qxt_csv_model_a2fc5388031aaa2ca86323359d9b4a575}{set\+Text}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_qxt_csv_model_abdcd428f50feaaacd0b7bb839d9e2480}\label{class_qxt_csv_model_abdcd428f50feaaacd0b7bb839d9e2480}} 
+\index{QxtCsvModel@{QxtCsvModel}!toCSV@{toCSV}}
+\index{toCSV@{toCSV}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{toCSV()}{toCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::to\+CSV (\begin{DoxyParamCaption}\item[{const QString \&}]{filename,  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{QText\+Codec $\ast$}]{codec = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts.
+
+Outputs the content of the model as a CSV file to the file specified by {\itshape filename} using {\itshape codec}.
+
+Fields in the output file will be separated by {\itshape separator}. Set {\itshape with\+Header} to true to output a row of headers at the top of the file. \mbox{\Hypertarget{class_qxt_csv_model_ada0b7779f9d81a6ff2fa7b6040f20116}\label{class_qxt_csv_model_ada0b7779f9d81a6ff2fa7b6040f20116}} 
+\index{QxtCsvModel@{QxtCsvModel}!toCSV@{toCSV}}
+\index{toCSV@{toCSV}!QxtCsvModel@{QxtCsvModel}}
+\doxysubsubsection{\texorpdfstring{toCSV()}{toCSV()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Qxt\+Csv\+Model\+::to\+CSV (\begin{DoxyParamCaption}\item[{QIODevice $\ast$}]{dest,  }\item[{bool}]{with\+Header = {\ttfamily false},  }\item[{QChar}]{separator = {\ttfamily \textquotesingle{},\textquotesingle{}},  }\item[{QText\+Codec $\ast$}]{codec = {\ttfamily nullptr} }\end{DoxyParamCaption}) const}
+
+Outputs the content of the model as a CSV file to the device {\itshape dest} using {\itshape codec}.
+
+Fields in the output file will be separated by {\itshape separator}. Set {\itshape with\+Header} to true to output a row of headers at the top of the file. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/\mbox{\hyperlink{qxtcsvmodel_8h}{qxtcsvmodel.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/\mbox{\hyperlink{qxtcsvmodel_8cpp}{qxtcsvmodel.\+cpp}}\end{DoxyCompactItemize}

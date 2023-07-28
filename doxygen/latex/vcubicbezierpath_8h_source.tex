@@ -1,0 +1,125 @@
+\hypertarget{vcubicbezierpath_8h_source}{}\doxysection{vcubicbezierpath.\+h}
+\label{vcubicbezierpath_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vcubicbezierpath.h@{D:/Github/Seamly2D/src/libs/vgeometry/vcubicbezierpath.h}}
+\mbox{\hyperlink{vcubicbezierpath_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ vcubicbezierpath.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 21\ Mar,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ @file\ \ \ vcubicbezierpath.h}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ @date\ \ \ 16\ 3,\ 2016}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ VCUBICBEZIERPATH\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ VCUBICBEZIERPATH\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractcubicbezierpath_8h}{vabstractcubicbezierpath.h}}"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgeometrydef_8h}{vgeometrydef.h}}"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpointf_8h}{vpointf.h}}"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_cubic_bezier_path_data}{VCubicBezierPathData}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_cubic_bezier_path}{VAbstractCubicBezierPath}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}})}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}(quint32\ idObject\ =\ 0,\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \&curve);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPointF>}}\ \&points,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_af2cb34bd83316401b69c4219d2c4e887}{Rotate}}(\textcolor{keyword}{const}\ QPointF\ \&originPoint,\ qreal\ degrees,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a9558a3791f84fd458c13e0f7b32568c5}{Flip}}(\textcolor{keyword}{const}\ QLineF\ \&axis,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}{Move}}(qreal\ length,\ qreal\ angle,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a3b9e75e204d88715bbc723981ae3f29d}{\string~VCubicBezierPath}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_cubic_bezier_path_a446b2d3ab60deea6c0f18eeb06f7822e}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \&curve);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_cubic_bezier_path_a446b2d3ab60deea6c0f18eeb06f7822e}{operator=}}(\mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \&\&curve)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_ade38d7ddf7eb4095d9e562ebd799426c}{Swap}}(\mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}}\ \&curve)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_cubic_bezier_path_aff7192b7d7c3edb6cf3206b907b659c8}{operator[]}}(\textcolor{keywordtype}{int}\ indx);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_cubic_bezier_path_a793f710ef1e2c6fe754eac19dc7aa207}{at}}(\textcolor{keywordtype}{int}\ indx)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a18e474c77606e7710b52e271f27d86f9}{append}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&point);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a64645c36af0d62e08a60b4799eaecd9f}{CountSubSpl}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{virtual}\ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a3ca778264d68723aa2e95f8878c58a1f}{CountPoints}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_ae6118f2750893ba4bb7f462034f8fb3e}{Clear}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_spline}{VSpline}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_aa2d636d25555425d2d21f553a11066ba}{GetSpline}}(qint32\ index)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_aebf132f345d05326c14b00612999befa}{GetStartAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_aca35f377d69450035b67e5d7cd334daf}{GetEndAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a6b7ae558db2f0eb06f99c3a0cad31a32}{GetC1Length}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a474042775bf3d80ceb6f98d166efb20f}{GetC2Length}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_q_vector}{QVector<VSplinePoint>}}\ \mbox{\hyperlink{class_v_cubic_bezier_path_ab8e9b5df1bf71d92b030e790565c6114}{GetSplinePath}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VPointF>}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a37e4187b371da79f52d7887929e5aad3}{GetCubicPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{static}\ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a64645c36af0d62e08a60b4799eaecd9f}{CountSubSpl}}(qint32\ size);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{static}\ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_aef7e8b13d8cded5fc951e8d37a28eb44}{SubSplOffset}}(qint32\ subSplIndex);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a246059819512d41f697189be2a81727d}{SubSplPointsCount}}(qint32\ countSubSpl);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a13c1a925750d3c851b16401861e4073e}{FirstPoint}}()\ \textcolor{keyword}{const}\ \ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_cubic_bezier_path_a8e63372b9331254ca1e2d349d892d9ae}{LastPoint}}()\ \textcolor{keyword}{const}\ \ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00114\ \ \ \ \ QSharedDataPointer<VCubicBezierPathData>\ \mbox{\hyperlink{class_v_cubic_bezier_path_ac25916a0f6ecb25757e42b42957f6a65}{d}};}
+\DoxyCodeLine{00115\ \};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \mbox{\hyperlink{vcubicbezierpath_8h_a9f5db8159f12d6dba68b009485376713}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_cubic_bezier_path}{VCubicBezierPath}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VCUBICBEZIERPATH\_H}}
+
+\end{DoxyCode}

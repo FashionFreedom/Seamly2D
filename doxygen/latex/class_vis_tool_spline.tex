@@ -1,0 +1,439 @@
+\hypertarget{class_vis_tool_spline}{}\doxysection{Vis\+Tool\+Spline Class Reference}
+\label{class_vis_tool_spline}\index{VisToolSpline@{VisToolSpline}}
+
+
+{\ttfamily \#include $<$vistoolspline.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Spline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_vis_tool_spline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_tool_spline_ad605d48408d37f081c5f8cfc006ce799a592a8a373581253d93fbd64be44cbb42}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Tool\+Spline)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_vis_path}{Vis\+Path}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_path_a6a0dea7cd2ceea512808d9197690c80ca00c529ac0c374b3d8aeaef380ada4ee8}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Path)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_curve_path_item_a2546429d17ae2f6b3f2953dee90fb4d4a127d4223228fe4d3a175f6044122b1ef}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Curve\+Path\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_ac3d21d2e793d10ad90d1fbd360fdf74b}{Mouse\+Left\+Pressed}} ()
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a3dcb0a8564df45b5e7368bb5f9e400a3}{Mouse\+Left\+Released}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a0ce122004dbfba6e26f0d6351d04e0d6}{mouse\+Pos}} (const QPointF \&\mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_tool_spline_a83dd67db4bc8169217169764c870f7c5}{Vis\+Tool\+Spline}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_tool_spline_af683caca04575ba0464118af897a7c6f}{$\sim$\+Vis\+Tool\+Spline}} ()
+\item 
+virtual void \mbox{\hyperlink{class_vis_tool_spline_a7aef8479fcfb504ee71a8dfa1a3159b1}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a66b43d0bbaeb463449c92aa79405cc47}{set\+Object4\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a7572ef2d52c8e7b1f8f1da9f6e2df676}{Set\+Angle1}} (const qreal \&value)
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a15301c8a9a90e6677eaf8c487931a473}{Set\+Angle2}} (const qreal \&value)
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a1d66603be548111268aa1c3f8d7e9a31}{Set\+KAsm1}} (const qreal \&value)
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_abe7dc11c3605196f54c23e7bd7825fef}{Set\+KAsm2}} (const qreal \&value)
+\item 
+void \mbox{\hyperlink{class_vis_tool_spline_a116f8cb5d4449120f10c9da94af9d6e6}{Set\+KCurve}} (const qreal \&value)
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_spline_aa5dd40e8b48b56b2d06068a9ec60a040}{Get\+P2}} () const
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_spline_a4c6e687d50113f8a7074dddbb9d72d7d}{Get\+P3}} () const
+\item 
+virtual int \mbox{\hyperlink{class_vis_tool_spline_af3e90d1d88690da047335ac60f6773cb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_vis_path}{Vis\+Path}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_path_a01f558535a450225d6aae2333584c8ce}{Vis\+Path}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_path_aab05748eaa5f1b8045c0fe6eb8f8c2a0}{$\sim$\+Vis\+Path}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_vis_path_aa00ad73e91c41aeb8ed9b432b94ad2f6}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_visualization_a2463087184767bfb81578f8e3b63077c}{Visualization}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+virtual \mbox{\hyperlink{class_visualization_ac0f658bb8e47eae0c94cc28bb40bf438}{$\sim$\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Refresh\+Geometry}} ()=0
+\item 
+void \mbox{\hyperlink{class_visualization_a9e24acf5c3162cbbeb3652fa9a6e493d}{set\+Object1\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_ac6f3fffeba3ddecac71bd5857d112441}{set\+Line\+Style}} (const Qt\+::\+Pen\+Style \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3e8891a967b0070b38fb7944a05bca96}{set\+Line\+Weight}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}{set\+Scene\+Pos}} (const QPointF \&value)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visual\+Mode}} (const quint32 \&point\+Id)
+\item 
+void \mbox{\hyperlink{class_visualization_ad8c250063388c98129072b915422d918}{set\+Main\+Color}} (const QColor \&value)
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_aa059d42719891e59f6d6ae626864595f}{get\+Data}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a92191f09709684b5b1927ab68e136c9c}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_ac190793c0074c8d149d2fb52136875b4}{Get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a7c351376e6eea24c27d33e43c4287fea}{Set\+Mode}} (const \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \&value)
+\item 
+QString \mbox{\hyperlink{class_visualization_a07121a63283dbbeeddf5b88df391fc71}{Current\+Tool\+Tip}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_curve_path_item_afeec664eb1c5b67804738b6fb723ae85}{VCurve\+Path\+Item}} (QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_curve_path_item_af2fcf19d6e933819b51455a4e1c74c4c}{$\sim$\+VCurve\+Path\+Item}} ()=default
+\item 
+virtual QPainter\+Path \mbox{\hyperlink{class_v_curve_path_item_ad156dd55692fe69fe7a24c14a55164a1}{shape}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_curve_path_item_a00e8d346f9b37afed4b45d9c3240bfc9}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_v_curve_path_item_a1b475a322062f79bad4b87ec1301b7d7}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_curve_path_item_afcba17e2cfd14cd064c6b9c47eaaa3cb}{Set\+Direction\+Arrows}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPair$<$ QLineF, QLineF $>$ $>$ \&arrows)
+\item 
+void \mbox{\hyperlink{class_v_curve_path_item_a289c31eb596e0c07f0b0331be7d072b5}{Set\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_vis_tool_spline_ad71f36114b5ea0b972ca31977f0cdff0}{object4\+Id}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_tool_spline_af0319c1468ec42ac095ab40c0e575e77}{point1}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_tool_spline_a47df0bc10e05a862c2af0e1c1034f52c}{point4}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_spline_a3662074c464fe1bc915d8abfb1de6cd3}{angle1}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_spline_a4f72142120a0f42f73fd62ea54fc4609}{angle2}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_spline_a784f5cf9879cb8db88bd3e335df3db11}{k\+Asm1}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_spline_a5d7f139162e35baa23c8fb491399f2a6}{k\+Asm2}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_spline_afeb8554767aa2f13d6b240f61d933ed2}{k\+Curve}}
+\item 
+bool \mbox{\hyperlink{class_vis_tool_spline_a66adcfac48ac9aca954fa8a11280ad65}{is\+Left\+Mouse\+Pressed}}
+\item 
+bool \mbox{\hyperlink{class_vis_tool_spline_a7fa4d20282d60ad707054fe76e19f6fc}{p2\+Selected}}
+\item 
+bool \mbox{\hyperlink{class_vis_tool_spline_a12fdd3eec32c4c59fbd1e3a414c4362a}{p3\+Selected}}
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_spline_a5a13f0f2ca3b8e5824b1da76ca1525b3}{p2}}
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_spline_aba7158461c9cee0b814dd4b945c20784}{p3}}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} $\ast$ $>$ \mbox{\hyperlink{class_vis_tool_spline_a764cb66c84e85c19d4b2e2427ea7ae59}{control\+Points}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}
+\item 
+QPointF \mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a19c42b9f6c14d1b1415f8510409d49f7}{main\+Color}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a07dccd56934096a975a542c908acdde9}{support\+Color}}
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{class_visualization_adb70fdc205739ea12298e4cc607ed2d6}{line\+Style}}
+\item 
+qreal \mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}
+\item 
+quint32 \mbox{\hyperlink{class_visualization_ac6d70a998feaf629960293be3b6d8b09}{object1\+Id}}
+\item 
+QString \mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}}
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_aa02ec87a8384819f82ad61d08441b44b}{mode}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a18b00680e4072f9f56071722e0cf47d4}{Tool\+Tip}} (const QString \&\mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_visualization_a6479c586e581d8868775eb49aa031f19}{Find\+Length}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\item 
+static qreal \mbox{\hyperlink{class_visualization_ada5e59b62fca6a9a6e4fd3965b8eae92}{Find\+Val}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_vis_path}{Vis\+Path}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_vis_path_ac9ab0de4fcfaf1982fc1f750120fec47}{init\+Pen}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_vis_path_a2db2203ace9494354a920d51c13a35f2}{Add\+On\+Scene}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{class_v_simple_point}{VSimple\+Point}} $\ast$ \mbox{\hyperlink{class_vis_path_acd2e830a9ce2dd7f86aee0cfe2d566fb}{Get\+Point}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_simple_point}{VSimple\+Point}} $\ast$ $>$ \&points, quint32 i, const QColor \&color)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aa2477ee93caae188c7a9ae4f9dfeb771}{init\+Pen}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_visualization_abfe137bc2a0b78369361a19726ed728b}{Add\+On\+Scene}} ()=0
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_abc9b78a7c14e4441b39eb43edf14b72e}{Init\+Point}} (const QColor \&color, QGraphics\+Item $\ast$parent, qreal z=0) const
+\item 
+void \mbox{\hyperlink{class_visualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}{Draw\+Point}} (QGraphics\+Ellipse\+Item $\ast$point, const QPointF \&pos, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_ab8a024f82b22c147839e7f2057e3c977}{Draw\+Line}} (\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$line\+Item, const QLineF \&line, const QColor \&color, const qreal \&\mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a9704c6411feed0ae73e2068e230e4678}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_a598d2794b073ee9ade1c69b3862f0879}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&direction\+Arrows, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_aa9ea2c766a799875af2b79d6400c116b}{draw\+Arrowed\+Line}} (\mbox{\hyperlink{class_arrowed_line_item}{Arrowed\+Line\+Item}} $\ast$item, const QLineF \&line, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}{draw\+Arrow}} (const QLineF \&axis, QPainter\+Path \&path, const qreal \&arrow\+\_\+size)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_visualization_ae9816e2088cc535fd0c956cd0f67ec3d}{add\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$ \mbox{\hyperlink{class_visualization_a533ef28c50007971f69483ef4103774a}{Init\+Item}} (const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_curve_path_item_a28c02ec565c598866b418a64412c2874}{Scale\+Pen\+Width}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_a9f13506fd762ba59d26496427327fa52}{Get\+Point\+Item}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ $>$ \&points, quint32 i, const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_vis_tool_spline_ad605d48408d37f081c5f8cfc006ce799}\label{class_vis_tool_spline_ad605d48408d37f081c5f8cfc006ce799}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolSpline@{VisToolSpline}}\index{VisToolSpline@{VisToolSpline}!Type@{Type}}}\mbox{\Hypertarget{class_vis_tool_spline_ad605d48408d37f081c5f8cfc006ce799a592a8a373581253d93fbd64be44cbb42}\label{class_vis_tool_spline_ad605d48408d37f081c5f8cfc006ce799a592a8a373581253d93fbd64be44cbb42}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vis_tool_spline_a83dd67db4bc8169217169764c870f7c5}\label{class_vis_tool_spline_a83dd67db4bc8169217169764c870f7c5}} 
+\index{VisToolSpline@{VisToolSpline}!VisToolSpline@{VisToolSpline}}
+\index{VisToolSpline@{VisToolSpline}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{VisToolSpline()}{VisToolSpline()}}
+{\footnotesize\ttfamily Vis\+Tool\+Spline\+::\+Vis\+Tool\+Spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_af683caca04575ba0464118af897a7c6f}\label{class_vis_tool_spline_af683caca04575ba0464118af897a7c6f}} 
+\index{VisToolSpline@{VisToolSpline}!````~VisToolSpline@{$\sim$VisToolSpline}}
+\index{````~VisToolSpline@{$\sim$VisToolSpline}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolSpline()}{~VisToolSpline()}}
+{\footnotesize\ttfamily Vis\+Tool\+Spline\+::$\sim$\+Vis\+Tool\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vis_tool_spline_aa5dd40e8b48b56b2d06068a9ec60a040}\label{class_vis_tool_spline_aa5dd40e8b48b56b2d06068a9ec60a040}} 
+\index{VisToolSpline@{VisToolSpline}!GetP2@{GetP2}}
+\index{GetP2@{GetP2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{GetP2()}{GetP2()}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Spline\+::\+Get\+P2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a4c6e687d50113f8a7074dddbb9d72d7d}\label{class_vis_tool_spline_a4c6e687d50113f8a7074dddbb9d72d7d}} 
+\index{VisToolSpline@{VisToolSpline}!GetP3@{GetP3}}
+\index{GetP3@{GetP3}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{GetP3()}{GetP3()}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Spline\+::\+Get\+P3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_spline_ac3d21d2e793d10ad90d1fbd360fdf74b}\label{class_vis_tool_spline_ac3d21d2e793d10ad90d1fbd360fdf74b}} 
+\index{VisToolSpline@{VisToolSpline}!MouseLeftPressed@{MouseLeftPressed}}
+\index{MouseLeftPressed@{MouseLeftPressed}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{MouseLeftPressed}{MouseLeftPressed}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Mouse\+Left\+Pressed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a3dcb0a8564df45b5e7368bb5f9e400a3}\label{class_vis_tool_spline_a3dcb0a8564df45b5e7368bb5f9e400a3}} 
+\index{VisToolSpline@{VisToolSpline}!MouseLeftReleased@{MouseLeftReleased}}
+\index{MouseLeftReleased@{MouseLeftReleased}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{MouseLeftReleased}{MouseLeftReleased}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Mouse\+Left\+Released (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a7aef8479fcfb504ee71a8dfa1a3159b1}\label{class_vis_tool_spline_a7aef8479fcfb504ee71a8dfa1a3159b1}} 
+\index{VisToolSpline@{VisToolSpline}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{class_vis_tool_spline_a7572ef2d52c8e7b1f8f1da9f6e2df676}\label{class_vis_tool_spline_a7572ef2d52c8e7b1f8f1da9f6e2df676}} 
+\index{VisToolSpline@{VisToolSpline}!SetAngle1@{SetAngle1}}
+\index{SetAngle1@{SetAngle1}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{SetAngle1()}{SetAngle1()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Set\+Angle1 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a15301c8a9a90e6677eaf8c487931a473}\label{class_vis_tool_spline_a15301c8a9a90e6677eaf8c487931a473}} 
+\index{VisToolSpline@{VisToolSpline}!SetAngle2@{SetAngle2}}
+\index{SetAngle2@{SetAngle2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{SetAngle2()}{SetAngle2()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Set\+Angle2 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a1d66603be548111268aa1c3f8d7e9a31}\label{class_vis_tool_spline_a1d66603be548111268aa1c3f8d7e9a31}} 
+\index{VisToolSpline@{VisToolSpline}!SetKAsm1@{SetKAsm1}}
+\index{SetKAsm1@{SetKAsm1}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{SetKAsm1()}{SetKAsm1()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Set\+KAsm1 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_abe7dc11c3605196f54c23e7bd7825fef}\label{class_vis_tool_spline_abe7dc11c3605196f54c23e7bd7825fef}} 
+\index{VisToolSpline@{VisToolSpline}!SetKAsm2@{SetKAsm2}}
+\index{SetKAsm2@{SetKAsm2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{SetKAsm2()}{SetKAsm2()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Set\+KAsm2 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a116f8cb5d4449120f10c9da94af9d6e6}\label{class_vis_tool_spline_a116f8cb5d4449120f10c9da94af9d6e6}} 
+\index{VisToolSpline@{VisToolSpline}!SetKCurve@{SetKCurve}}
+\index{SetKCurve@{SetKCurve}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{SetKCurve()}{SetKCurve()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::\+Set\+KCurve (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a66b43d0bbaeb463449c92aa79405cc47}\label{class_vis_tool_spline_a66b43d0bbaeb463449c92aa79405cc47}} 
+\index{VisToolSpline@{VisToolSpline}!setObject4Id@{setObject4Id}}
+\index{setObject4Id@{setObject4Id}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{setObject4Id()}{setObject4Id()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Spline\+::set\+Object4\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_spline_af3e90d1d88690da047335ac60f6773cb}\label{class_vis_tool_spline_af3e90d1d88690da047335ac60f6773cb}} 
+\index{VisToolSpline@{VisToolSpline}!type@{type}}
+\index{type@{type}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Spline\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_vis_path_aa00ad73e91c41aeb8ed9b432b94ad2f6}{Vis\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_vis_tool_spline_a3662074c464fe1bc915d8abfb1de6cd3}\label{class_vis_tool_spline_a3662074c464fe1bc915d8abfb1de6cd3}} 
+\index{VisToolSpline@{VisToolSpline}!angle1@{angle1}}
+\index{angle1@{angle1}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{angle1}{angle1}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Spline\+::angle1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a4f72142120a0f42f73fd62ea54fc4609}\label{class_vis_tool_spline_a4f72142120a0f42f73fd62ea54fc4609}} 
+\index{VisToolSpline@{VisToolSpline}!angle2@{angle2}}
+\index{angle2@{angle2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{angle2}{angle2}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Spline\+::angle2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a764cb66c84e85c19d4b2e2427ea7ae59}\label{class_vis_tool_spline_a764cb66c84e85c19d4b2e2427ea7ae59}} 
+\index{VisToolSpline@{VisToolSpline}!controlPoints@{controlPoints}}
+\index{controlPoints@{controlPoints}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{controlPoints}{controlPoints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} $\ast$$>$ Vis\+Tool\+Spline\+::control\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a66adcfac48ac9aca954fa8a11280ad65}\label{class_vis_tool_spline_a66adcfac48ac9aca954fa8a11280ad65}} 
+\index{VisToolSpline@{VisToolSpline}!isLeftMousePressed@{isLeftMousePressed}}
+\index{isLeftMousePressed@{isLeftMousePressed}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{isLeftMousePressed}{isLeftMousePressed}}
+{\footnotesize\ttfamily bool Vis\+Tool\+Spline\+::is\+Left\+Mouse\+Pressed\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a784f5cf9879cb8db88bd3e335df3db11}\label{class_vis_tool_spline_a784f5cf9879cb8db88bd3e335df3db11}} 
+\index{VisToolSpline@{VisToolSpline}!kAsm1@{kAsm1}}
+\index{kAsm1@{kAsm1}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{kAsm1}{kAsm1}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Spline\+::k\+Asm1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a5d7f139162e35baa23c8fb491399f2a6}\label{class_vis_tool_spline_a5d7f139162e35baa23c8fb491399f2a6}} 
+\index{VisToolSpline@{VisToolSpline}!kAsm2@{kAsm2}}
+\index{kAsm2@{kAsm2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{kAsm2}{kAsm2}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Spline\+::k\+Asm2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_afeb8554767aa2f13d6b240f61d933ed2}\label{class_vis_tool_spline_afeb8554767aa2f13d6b240f61d933ed2}} 
+\index{VisToolSpline@{VisToolSpline}!kCurve@{kCurve}}
+\index{kCurve@{kCurve}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{kCurve}{kCurve}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Spline\+::k\+Curve\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_ad71f36114b5ea0b972ca31977f0cdff0}\label{class_vis_tool_spline_ad71f36114b5ea0b972ca31977f0cdff0}} 
+\index{VisToolSpline@{VisToolSpline}!object4Id@{object4Id}}
+\index{object4Id@{object4Id}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{object4Id}{object4Id}}
+{\footnotesize\ttfamily quint32 Vis\+Tool\+Spline\+::object4\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a5a13f0f2ca3b8e5824b1da76ca1525b3}\label{class_vis_tool_spline_a5a13f0f2ca3b8e5824b1da76ca1525b3}} 
+\index{VisToolSpline@{VisToolSpline}!p2@{p2}}
+\index{p2@{p2}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{p2}{p2}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Spline\+::p2\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a7fa4d20282d60ad707054fe76e19f6fc}\label{class_vis_tool_spline_a7fa4d20282d60ad707054fe76e19f6fc}} 
+\index{VisToolSpline@{VisToolSpline}!p2Selected@{p2Selected}}
+\index{p2Selected@{p2Selected}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{p2Selected}{p2Selected}}
+{\footnotesize\ttfamily bool Vis\+Tool\+Spline\+::p2\+Selected\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_aba7158461c9cee0b814dd4b945c20784}\label{class_vis_tool_spline_aba7158461c9cee0b814dd4b945c20784}} 
+\index{VisToolSpline@{VisToolSpline}!p3@{p3}}
+\index{p3@{p3}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{p3}{p3}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Spline\+::p3\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a12fdd3eec32c4c59fbd1e3a414c4362a}\label{class_vis_tool_spline_a12fdd3eec32c4c59fbd1e3a414c4362a}} 
+\index{VisToolSpline@{VisToolSpline}!p3Selected@{p3Selected}}
+\index{p3Selected@{p3Selected}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{p3Selected}{p3Selected}}
+{\footnotesize\ttfamily bool Vis\+Tool\+Spline\+::p3\+Selected\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_af0319c1468ec42ac095ab40c0e575e77}\label{class_vis_tool_spline_af0319c1468ec42ac095ab40c0e575e77}} 
+\index{VisToolSpline@{VisToolSpline}!point1@{point1}}
+\index{point1@{point1}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{point1}{point1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Spline\+::point1\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_vis_tool_spline_a47df0bc10e05a862c2af0e1c1034f52c}\label{class_vis_tool_spline_a47df0bc10e05a862c2af0e1c1034f52c}} 
+\index{VisToolSpline@{VisToolSpline}!point4@{point4}}
+\index{point4@{point4}!VisToolSpline@{VisToolSpline}}
+\doxysubsubsection{\texorpdfstring{point4}{point4}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Spline\+::point4\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/path/\mbox{\hyperlink{vistoolspline_8h}{vistoolspline.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/path/\mbox{\hyperlink{vistoolspline_8cpp}{vistoolspline.\+cpp}}\end{DoxyCompactItemize}

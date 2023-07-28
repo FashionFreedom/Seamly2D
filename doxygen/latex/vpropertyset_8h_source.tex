@@ -1,0 +1,99 @@
+\hypertarget{vpropertyset_8h_source}{}\doxysection{vpropertyset.\+h}
+\label{vpropertyset_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyset.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyset.h}}
+\mbox{\hyperlink{vpropertyset_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertyset.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYSET\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYSET\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vproperty_8h}{vproperty.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ Key,\ \textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_map}{QMap}};}
+\DoxyCodeLine{00032\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_list}{QList}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }VPropertySetPrivate;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ todo:\ better\ description}}
+\DoxyCodeLine{00045\ \textcolor{comment}{}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VPropertySet}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a4107b6ef491f588ddc99cdebff01def7}{VPropertySet}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a24f44cb4bb715e538dd08100da482513}{\string~VPropertySet}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a2f62506ef1e7c28a537eb2cfe1553fcc}{addProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ property,\ \textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ QString\&\ parentid);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a2f62506ef1e7c28a537eb2cfe1553fcc}{addProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ property,\ \textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ parent\_property\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a7c1c583787ed9f5246b5b178b0871560}{hasProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ property)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a97d440a972d139965ac5e137cd9a4b02}{getProperty}}(\textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_aed64bef23adc00270656073b9375b760}{takeProperty}}(\textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a187bbe1d3b51039c3a7c38a790fcc7b8}{removeProperty}}(\textcolor{keyword}{const}\ QString\&\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a187bbe1d3b51039c3a7c38a790fcc7b8}{removeProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ prop,\ \textcolor{keywordtype}{bool}\ delete\_property\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a3d0595691034a434e30b075f3b07536f}{count}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a1f7c984378b682fbcee52836f38346c2}{clear}}(\textcolor{keywordtype}{bool}\ delete\_properties\ =\ \textcolor{keyword}{true});}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a5ca8889c5dd506ed06c46a2b25dcf8f5}{getPropertyID}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ prop,\ \textcolor{keywordtype}{bool}\ look\_for\_parent\_id\ =\ \textcolor{keyword}{true})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ VProperty*>}}\&\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_aa195ed438f9468222ce4ec8a9d5be7fb}{getPropertiesMap}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_list}{QList<VProperty*>}}\&\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_ab3ff63f86bc731a60576fb492b805e52}{getRootProperties}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a2877ae74013ba174be70c1120286ab7e}{getRootProperty}}(\textcolor{keywordtype}{int}\ row)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a9f819f893cab7b86ed3207aa5354f5f3}{getRootPropertyCount}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00119\ \ \ \ \ Q\_REQUIRED\_RESULT\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VPropertySet}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a1f2aaac249ab7f5041f8ad3c25e32211}{clone}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a7c1c583787ed9f5246b5b178b0871560}{hasProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ property,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ parent)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a9bd8e97bc77ac404147706499ff9bcd8}{cloneProperty}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ property\_to\_clone,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ parent\_property,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VPropertySet}}*\ output\_set)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a5d49c09e0e95ec08db6ef7232df4993b}{removePropertyFromSet}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ prop);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_private}{VPropertySetPrivate}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_set_a157b8b91508cf99f6f785b864a4b3301}{d\_ptr}};}
+\DoxyCodeLine{00136\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00137\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_property_set}{VPropertySet}})}
+\DoxyCodeLine{00138\ \};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYMODEL\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,92 @@
+\hypertarget{pen__toolbar_8h_source}{}\doxysection{pen\+\_\+toolbar.\+h}
+\label{pen__toolbar_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/pen\_toolbar.h@{D:/Github/Seamly2D/src/libs/vwidgets/pen\_toolbar.h}}
+\mbox{\hyperlink{pen__toolbar_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ pen\_toolbar.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 16,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ PEN\_TOOLBAR\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PEN\_TOOLBAR\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QToolBar>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QAction>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{color__combobox_8h}{color\_combobox.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lineweight__combobox_8h}{lineweight\_combobox.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{linetype__combobox_8h}{linetype\_combobox.h}}"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }QAction;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }QToolButton;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_color_combo_box}{ColorComboBox}};}
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_weight_combo_box}{LineWeightComboBox}};}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_type_combo_box}{LineTypeComboBox}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{class_pen}{Pen}}}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ QString\ \mbox{\hyperlink{class_pen_a1b81ceddf168867acbefd28d40fa2ab9}{color}}\{QString(\textcolor{stringliteral}{"{}black"{}})\};}
+\DoxyCodeLine{00052\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_pen_a8b8e10b8a87731d9dd7afbfdf750a92c}{lineWeight}}\{1.20\};}
+\DoxyCodeLine{00053\ \ \ \ \ QString\ \mbox{\hyperlink{class_pen_aa0a6c0530ec9fe6b855cc35b1645fe9e}{lineType}}\{QString(\textcolor{stringliteral}{"{}solidline"{}})\};}
+\DoxyCodeLine{00054\ \};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}}:\ \textcolor{keyword}{public}\ QToolBar}
+\DoxyCodeLine{00057\ \{}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ Q\_OBJECT}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}}(\textcolor{keyword}{const}\ QString\ \&title,\ QWidget\ *parent\ =\ 0);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a8decdd24e0db07fc1ee4bf755bcd8b11}{\string~PenToolBar}}();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_pen}{Pen}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a0737d24ba65374b1427ec6c942d9048e}{getPen}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_pen}{Pen}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a40a77e269680bb41a7e21d0d949d3f12}{currentPen}};}
+\DoxyCodeLine{00067\ \ \ \ \ QPointer<ColorComboBox>\ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a6e78da4871289ebae9a96e8b4890a087}{colorBox}};}
+\DoxyCodeLine{00068\ \ \ \ \ QPointer<LineTypeComboBox>\ \ \ \mbox{\hyperlink{class_pen_tool_bar_a32650f840db977d0c93cdc94d452ad5a}{lineTypeBox}};}
+\DoxyCodeLine{00069\ \ \ \ \ QPointer<LineWeightComboBox>\ \mbox{\hyperlink{class_pen_tool_bar_a0771edf90870418c8c577d6f6ed46319}{lineWeightBox}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_ae819e6691728049e6ae568e1243acda0}{colorChanged}}(\textcolor{keyword}{const}\ QString\ \&color);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_af4f6c6b90f4aeb2c1e64a1d1240b8c16}{lineWeightChanged}}(\textcolor{keyword}{const}\ qreal\ \&weight);}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_af36bbd20283b5e0cd8a38b9b6f3c0824}{lineTypeChanged}}(\textcolor{keyword}{const}\ QString\ \&type);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a018995b1e5633d07b0424e6e88fd68e4}{penReset}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a109a664ed240f867ae1587f853bfc283}{savePreset}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ signals:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_pen_tool_bar_a372edaf83345196217837833ef572deb}{penChanged}}(\mbox{\hyperlink{class_pen}{Pen}}\ pen);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \ \ QAction\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_pen_tool_bar_ad7005c5a2e4af76a5046ce57d7f1abdd}{resetAction}};}
+\DoxyCodeLine{00083\ \ \ \ \ QAction\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_pen_tool_bar_a8050103fcf8ea892afe3c7ba9828f95d}{savePresetAction}};}
+\DoxyCodeLine{00084\ \};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

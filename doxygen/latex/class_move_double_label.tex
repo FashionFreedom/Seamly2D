@@ -1,0 +1,195 @@
+\hypertarget{class_move_double_label}{}\doxysection{Move\+Double\+Label Class Reference}
+\label{class_move_double_label}\index{MoveDoubleLabel@{MoveDoubleLabel}}
+
+
+{\ttfamily \#include $<$movedoublelabel.\+h$>$}
+
+Inheritance diagram for Move\+Double\+Label\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_move_double_label}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_double_label_ac9ad40abf8dc967bedca5eef79242e7a}{Move\+Double\+Label}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const QPointF \&pos, \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}} type, quint32 tool\+Id, quint32 point\+Id, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_move_double_label_a58d7de2d743b6ca52822241da0f59367}{$\sim$\+Move\+Double\+Label}} ()=default
+\item 
+virtual bool \mbox{\hyperlink{class_move_double_label_a8d5b54f74d2d3a158b5d3c0d9546cfd2}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_move_double_label_ae9e46ed4668a98fef70dc55185cfdf94}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_move_double_label_a31ae3e4090c9500ae6ae3d83782731c2}{Get\+Tool\+Id}} () const
+\item 
+\mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}} \mbox{\hyperlink{class_move_double_label_a83efb81c279384b1acc0825e7daa049c}{Get\+Point\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_move_abstract_label}{Move\+Abstract\+Label}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_abstract_label_a9bf0b1e3cf0d0773fc6acd71d889c605}{Move\+Abstract\+Label}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, quint32 point\+Id, const QPointF \&pos, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_move_abstract_label_a94d603092466ddf18a7598b46d096600}{$\sim$\+Move\+Abstract\+Label}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_move_abstract_label_aa892c2d5f15e2a0c466778a016642f87}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_abstract_label_a11bb5df0266505c7ba91c708b0788a35}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_move_abstract_label_abe1dc35676b10b07522a6d6ad98ea8f3}{Get\+Point\+Id}} () const
+\item 
+QPointF \mbox{\hyperlink{class_move_abstract_label_a20c4d75ad6683559c2f5d7412f6c4da0}{Get\+New\+Pos}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_move_double_label_a6b3be9f6a06caf2025fc0c41c38db0fa}{Do}} (const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_move_abstract_label_aa57b546b1ac96182f898726bec555801}{Do}} (const QPointF \&pos)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}} \mbox{\hyperlink{class_move_double_label_ace689b2719bae1a923da1af890fe1b5f}{m\+\_\+type}}
+\item 
+quint32 \mbox{\hyperlink{class_move_double_label_a2fd3efdd07a0b377ccf06bdb8aef1db5}{m\+\_\+id\+Tool}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_move_double_label_ace6fea654eeac2ff1ef35aed6f607093}{m\+\_\+scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_move_abstract_label}{Move\+Abstract\+Label}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_move_abstract_label_a30bb680147e64a653883a17aa5d7a134}{m\+\_\+old\+Pos}}
+\item 
+QPointF \mbox{\hyperlink{class_move_abstract_label_ad6bb824f05e6dae0c8d56137211b3ee2}{m\+\_\+new\+Pos}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_move_double_label_ac9ad40abf8dc967bedca5eef79242e7a}\label{class_move_double_label_ac9ad40abf8dc967bedca5eef79242e7a}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!MoveDoubleLabel@{MoveDoubleLabel}}
+\index{MoveDoubleLabel@{MoveDoubleLabel}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{MoveDoubleLabel()}{MoveDoubleLabel()}}
+{\footnotesize\ttfamily Move\+Double\+Label\+::\+Move\+Double\+Label (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const QPointF \&}]{pos,  }\item[{\mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}}}]{type,  }\item[{quint32}]{tool\+Id,  }\item[{quint32}]{point\+Id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_move_double_label_a58d7de2d743b6ca52822241da0f59367}\label{class_move_double_label_a58d7de2d743b6ca52822241da0f59367}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!````~MoveDoubleLabel@{$\sim$MoveDoubleLabel}}
+\index{````~MoveDoubleLabel@{$\sim$MoveDoubleLabel}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{$\sim$MoveDoubleLabel()}{~MoveDoubleLabel()}}
+{\footnotesize\ttfamily virtual Move\+Double\+Label\+::$\sim$\+Move\+Double\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_move_double_label_a6b3be9f6a06caf2025fc0c41c38db0fa}\label{class_move_double_label_a6b3be9f6a06caf2025fc0c41c38db0fa}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!Do@{Do}}
+\index{Do@{Do}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{Do()}{Do()}}
+{\footnotesize\ttfamily void Move\+Double\+Label\+::\+Do (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_move_abstract_label_aa57b546b1ac96182f898726bec555801}{Move\+Abstract\+Label}}.
+
+\mbox{\Hypertarget{class_move_double_label_a83efb81c279384b1acc0825e7daa049c}\label{class_move_double_label_a83efb81c279384b1acc0825e7daa049c}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!GetPointType@{GetPointType}}
+\index{GetPointType@{GetPointType}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{GetPointType()}{GetPointType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}} Move\+Double\+Label\+::\+Get\+Point\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_double_label_a31ae3e4090c9500ae6ae3d83782731c2}\label{class_move_double_label_a31ae3e4090c9500ae6ae3d83782731c2}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!GetToolId@{GetToolId}}
+\index{GetToolId@{GetToolId}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{GetToolId()}{GetToolId()}}
+{\footnotesize\ttfamily quint32 Move\+Double\+Label\+::\+Get\+Tool\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_double_label_ae9e46ed4668a98fef70dc55185cfdf94}\label{class_move_double_label_ae9e46ed4668a98fef70dc55185cfdf94}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!id@{id}}
+\index{id@{id}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Move\+Double\+Label\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_double_label_a8d5b54f74d2d3a158b5d3c0d9546cfd2}\label{class_move_double_label_a8d5b54f74d2d3a158b5d3c0d9546cfd2}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Move\+Double\+Label\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_move_double_label_a2fd3efdd07a0b377ccf06bdb8aef1db5}\label{class_move_double_label_a2fd3efdd07a0b377ccf06bdb8aef1db5}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!m\_idTool@{m\_idTool}}
+\index{m\_idTool@{m\_idTool}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{m\_idTool}{m\_idTool}}
+{\footnotesize\ttfamily quint32 Move\+Double\+Label\+::m\+\_\+id\+Tool\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_double_label_ace6fea654eeac2ff1ef35aed6f607093}\label{class_move_double_label_ace6fea654eeac2ff1ef35aed6f607093}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!m\_scene@{m\_scene}}
+\index{m\_scene@{m\_scene}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{m\_scene}{m\_scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Move\+Double\+Label\+::m\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_double_label_ace689b2719bae1a923da1af890fe1b5f}\label{class_move_double_label_ace689b2719bae1a923da1af890fe1b5f}} 
+\index{MoveDoubleLabel@{MoveDoubleLabel}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!MoveDoubleLabel@{MoveDoubleLabel}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{movedoublelabel_8h_ac729adba1aa3854c486794f6bfdd22fd}{Move\+Double\+Point}} Move\+Double\+Label\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/label/\mbox{\hyperlink{movedoublelabel_8h}{movedoublelabel.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/label/\mbox{\hyperlink{movedoublelabel_8cpp}{movedoublelabel.\+cpp}}\end{DoxyCompactItemize}

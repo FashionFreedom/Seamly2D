@@ -1,0 +1,70 @@
+\hypertarget{drw__dbg_8h_source}{}\doxysection{drw\+\_\+dbg.\+h}
+\label{drw__dbg_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/drw\_dbg.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/drw\_dbg.h}}
+\mbox{\hyperlink{drw__dbg_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ libDXFrw\ -\/\ Library\ to\ read/write\ DXF\ files\ (ascii\ \&\ binary)\ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2011-\/2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DRW\_DBG\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DRW\_DBG\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\#include\ <iomanip>}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ DRW\_DBGSL(a)\ DRW\_dbg::getInstance()-\/>setLevel(a)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ DRW\_DBGGL\ DRW\_dbg::getInstance()-\/>getLevel()}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ DRW\_DBG(a)\ DRW\_dbg::getInstance()-\/>print(a)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ DRW\_DBGH(a)\ DRW\_dbg::getInstance()-\/>printH(a)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ DRW\_DBGB(a)\ DRW\_dbg::getInstance()-\/>printB(a)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ DRW\_DBGHL(a,\ b,\ c)\ DRW\_dbg::getInstance()-\/>printHL(a,\ b\ ,c)}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DRW\_DBGPT(a,\ b,\ c)\ DRW\_dbg::getInstance()-\/>printPT(a,\ b,\ c)}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classprint__none}{print\_none}};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_r_w__dbg}{DRW\_dbg}}\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbe}{LEVEL}}\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbead279ca2814783ff4cd44d24ab227a9ce}{NONE}},}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbea4013700433d70ce69df39c993c14b199}{DEBUG}}}
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_af943f7d412f15c20fdc22696f3140d47}{setLevel}}(\mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbe}{LEVEL}}\ lvl);}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbe}{LEVEL}}\ \mbox{\hyperlink{class_d_r_w__dbg_ab456be1595319fd32e58e95f367a24a5}{getLevel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_d_r_w__dbg}{DRW\_dbg}}\ *\mbox{\hyperlink{class_d_r_w__dbg_ae5e8d35c7bf806f11b51ee2ffcbcf4f9}{getInstance}}();}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(std::string\ s);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_aa53a38ce7f9c0607ba1559176f5b4528}{print}}(\textcolor{keywordtype}{double}\ d);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_a0bb6639af39fb537edc3b41c1f97a37d}{printH}}(\textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_ad85db7997e420c33a67ce5a0c8c96171}{printB}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_a444df56318d575344c6df222ad7d1aed}{printHL}}(\textcolor{keywordtype}{int}\ c,\ \textcolor{keywordtype}{int}\ s,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_d_r_w__dbg_ac2e9ef64854de7f321abbc6c32eaef0d}{printPT}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y,\ \textcolor{keywordtype}{double}\ z);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00054\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_d_r_w__dbg}{DRW\_dbg}})}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_ad2c86160a065fb6fb5af6f4790a7678d}{DRW\_dbg}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_af6bf876cf4743d4f6cd7298e8d3d174d}{\string~DRW\_dbg}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_d_r_w__dbg}{DRW\_dbg}}\ *\mbox{\hyperlink{class_d_r_w__dbg_a041a542b3a386745e693a96a04a25082}{instance}};}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_d_r_w__dbg_a425240c28c98880853d8e4f22cc88bbe}{LEVEL}}\ \mbox{\hyperlink{class_d_r_w__dbg_a0df4c8e3ffc7334f868d908cc6588efe}{level}};}
+\DoxyCodeLine{00059\ \ \ \ \ std::ios\_base::fmtflags\ \mbox{\hyperlink{class_d_r_w__dbg_adeec72a8939e5e3378ffe83366d4b814}{flags}};}
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classprint__none}{print\_none}}*\ \mbox{\hyperlink{class_d_r_w__dbg_aba86efce3e6d6ad494a33b15ed9c8006}{prClass}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRW\_DBG\_H}}
+
+\end{DoxyCode}

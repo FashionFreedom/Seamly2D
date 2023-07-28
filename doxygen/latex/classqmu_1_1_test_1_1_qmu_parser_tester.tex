@@ -1,0 +1,583 @@
+\hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester}{}\doxysection{qmu\+::Test\+::Qmu\+Parser\+Tester Class Reference}
+\label{classqmu_1_1_test_1_1_qmu_parser_tester}\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+
+
+\mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} cases for unit testing.  
+
+
+
+
+{\ttfamily \#include $<$qmuparsertest.\+h$>$}
+
+Inheritance diagram for qmu\+::Test\+::Qmu\+Parser\+Tester\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqmu_1_1_test_1_1_qmu_parser_tester}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef int(Qmu\+Parser\+Tester\+::$\ast$ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\+\_\+type}}) ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a10720219b49372bc32795f03a3738fc0}{Qmu\+Parser\+Tester}} (QObject $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f18620d38fb2fe5957a6a4283708f9b}{Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ab3408fedc65b5522f32ed67a11d56292}{Add\+Test}} (\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\+\_\+type}} a\+\_\+p\+Fun)
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a586bf81c93754a87c4e71ff216f580c4}{Test\+Names}} ()
+\begin{DoxyCompactList}\small\item\em Check mu\+Parser name restriction enforcement. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ab4d204b09457399209caa6c15441790d}{Test\+Syntax}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8826882010cfc992c5817a837352b137}{Test\+Multi\+Arg}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aeb31487ad59492c18ee9534829d6d593}{Test\+Post\+Fix}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2294da295e276cf6019ef32932fd4ec4}{Test\+Expression}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_add3ca6b4bbace2da051197f85a29f36e}{Test\+Infix\+Oprt}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad40dc7a9f29c3e907fc1077db323d89e}{Test\+Bin\+Oprt}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a07217a64a66deca328f5e432b86a4005}{Test\+Var\+Const}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8119141b46925c1896d26552dbf3a00d}{Test\+Interface}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad211d0f2086f1b2c122a642c14da0cbe}{Test\+Exception}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_add3eaf3f7698ec1e0264e09f28020fc0}{Test\+Str\+Arg}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a57038e663d4132f97a3c3c524211fd5c}{Test\+If\+Then\+Else}} ()
+\item 
+int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a025b40c5ae2f9ae2ec90dca999e6c0f0}{Test\+Bulk\+Mode}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4bdae81e2caabfb15e3b16082792a3d0}{Eqn\+Test}} (const QString \&a\+\_\+str, double a\+\_\+f\+Res, bool a\+\_\+f\+Pass)
+\begin{DoxyCompactList}\small\item\em Evaluate a tet expression. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a9ca3f426bfbf3e0bc93dcac418573d2b}{Eqn\+Test\+With\+Var\+Change}} (const QString \&a\+\_\+str, double a\+\_\+f\+Res1, double a\+\_\+f\+Var1, double a\+\_\+f\+Res2, double a\+\_\+f\+Var2)
+\begin{DoxyCompactList}\small\item\em Evaluate a tet expression. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a57679cbf9e7727b53a0a850173878ffd}{Throw\+Test}} (const QString \&a\+\_\+str, int a\+\_\+i\+Errc, bool a\+\_\+b\+Fail=true)
+\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aff2822768ab9ca09a99effdd7901d60d}{Eqn\+Test\+Bulk}} (const QString \&a\+\_\+str, double a\+\_\+f\+Res\mbox{[}4\mbox{]}, bool a\+\_\+f\+Pass)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} an expression in Bulk Mode. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a798e2771ca46b5be792580544b0ab546}{f1of1}} (qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a33f065dc9611f31109911cddd9acd0bd}{f1of2}} (qreal v, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a15e89fc49ab4837da28b62539b415bba}{f2of2}} (qreal, qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad21da7a9ef66c178851b45a816291009}{f1of3}} (qreal v, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f600aa43edff504414c9312d53cb179}{f2of3}} (qreal, qreal v, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a9e85c933647d54101b9042b27faadf99}{f3of3}} (qreal, qreal, qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a59ffc51075d22a237a4cca379938d16e}{f1of4}} (qreal v, qreal, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a74ed0fbcd226c3ddcd521ed90a10ddbc}{f2of4}} (qreal, qreal v, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a636b34577f0c3c7067c36abc0bcffa46}{f3of4}} (qreal, qreal, qreal v, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a439fdfede3099c927775788aa5c8dd5c}{f4of4}} (qreal, qreal, qreal, qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa2fe0ae00fff746bea3225fdbc98a9ed}{f1of5}} (qreal v, qreal, qreal, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a620b7bc8d0b151102ae51b43ea86fcd3}{f2of5}} (qreal, qreal v, qreal, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a112618c8a243d138df28ce38defcff78}{f3of5}} (qreal, qreal, qreal v, qreal, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4d700f765aa6390fcfe15b52b9276aef}{f4of5}} (qreal, qreal, qreal, qreal v, qreal)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ac2586ae0e8b9d372900b4aca596c5bb8}{f5of5}} (qreal, qreal, qreal, qreal, qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa3d4b06888f13ada134247e291c73e1c}{Min}} (qreal a\+\_\+f\+Val1, qreal a\+\_\+f\+Val2)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aadd4872410c360fae2da40351d37dccf}{Max}} (qreal a\+\_\+f\+Val1, qreal a\+\_\+f\+Val2)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ae0a9af6f6aa067ec473a84fab91119e3}{plus2}} (qreal v1)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af41d59d240d90d226d692fd07c4c6bb8}{times3}} (qreal v1)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa0d71365c42839bfdc24798f5e0fce60}{sqr}} (qreal v1)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a6d45ff69a3b4bd845295497e84f82e7c}{sign}} (qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a681511ea72e1f392b6babf6aa4e7ba8a}{add}} (qreal v1, qreal v2)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a0dd3a063c8a2a298572f0d59dbd48ca4}{land}} (qreal v1, qreal v2)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af017eefd543fa15808a4b379522d65fa}{First\+Arg}} (const qreal $\ast$a\+\_\+af\+Arg, int a\+\_\+i\+Argc)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ac9bcd8ce861befd7e90702a6cd3c312b}{Last\+Arg}} (const qreal $\ast$a\+\_\+af\+Arg, int a\+\_\+i\+Argc)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a7382b0230e8bf97cdab501bc75b4ea55}{Sum}} (const qreal $\ast$a\+\_\+af\+Arg, int a\+\_\+i\+Argc)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aabfe7b0282c923a2b16bf51bfb222a02}{Rnd}} (qreal v)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a94cb4af612bd44e97c1b78a6c9735105}{Rnd\+With\+String}} (const \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}} $\ast$)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a91c77f1ef32ef139d3268d60af457fee}{Ping}} ()
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a06668b14f9b56ce00e0758c084498496}{Value\+Of}} (const QString \&)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a812de8b7d5d366bffe86d569fbfbbe8b}{Str\+Fun1}} (const QString \&v1)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af325559f230ee55395cba5daccb3be1b}{Str\+Fun2}} (const QString \&v1, qreal v2)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a68573d4c9aa92a80e53fd23b679065ac}{Str\+Fun3}} (const QString \&v1, qreal v2, qreal v3)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f7eafa28bffe0ae107c1004a81c3aba}{Str\+To\+Float}} (const QString \&a\+\_\+sz\+Msg)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4e8f321e41dbcb41ce9d3d13441794c8}{Mega}} (qreal a\+\_\+f\+Val)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_afb4d60446ec6276a50ea9d33143d7ab1}{Micro}} (qreal a\+\_\+f\+Val)
+\item 
+static qreal \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aeab27f45a0be5446e04f32c8ba5ebe08}{Milli}} (qreal a\+\_\+f\+Val)
+\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af0427aa8b231156ceb4b8b200aead22d}{Is\+Hex\+Val}} (const QString \&a\+\_\+sz\+Expr, int $\ast$a\+\_\+i\+Pos, qreal $\ast$a\+\_\+f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\item 
+static void \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a3e7b3b78edf70f276bb1b1a7d67aa7d6}{Abort}} ()
+\begin{DoxyCompactList}\small\item\em Internal error in test class \mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} is going to be aborted. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\+\_\+type}} $>$ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ae360fa06e18076011d7b39000a3e8303}{m\+\_\+v\+Test\+Fun}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a77a822e7530d02180c79f6b54c290774}{c\+\_\+i\+Count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} cases for unit testing. 
+
+(C) 2004-\/2011 Ingo Berg 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!testfun\_type@{testfun\_type}}
+\index{testfun\_type@{testfun\_type}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{testfun\_type}{testfun\_type}}
+{\footnotesize\ttfamily typedef int(Qmu\+Parser\+Tester\+::$\ast$ qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::testfun\+\_\+type) ()}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a10720219b49372bc32795f03a3738fc0}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a10720219b49372bc32795f03a3738fc0}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!QmuParserTester@{QmuParserTester}}
+\index{QmuParserTester@{QmuParserTester}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{QmuParserTester()}{QmuParserTester()}}
+{\footnotesize\ttfamily qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Qmu\+Parser\+Tester (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a3e7b3b78edf70f276bb1b1a7d67aa7d6}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a3e7b3b78edf70f276bb1b1a7d67aa7d6}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Abort@{Abort}}
+\index{Abort@{Abort}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Abort()}{Abort()}}
+{\footnotesize\ttfamily void qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Internal error in test class \mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} is going to be aborted. 
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a681511ea72e1f392b6babf6aa4e7ba8a}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a681511ea72e1f392b6babf6aa4e7ba8a}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!add@{add}}
+\index{add@{add}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::add (\begin{DoxyParamCaption}\item[{qreal}]{v1,  }\item[{qreal}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ab3408fedc65b5522f32ed67a11d56292}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ab3408fedc65b5522f32ed67a11d56292}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!AddTest@{AddTest}}
+\index{AddTest@{AddTest}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{AddTest()}{AddTest()}}
+{\footnotesize\ttfamily void qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Add\+Test (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\+\_\+type}}}]{a\+\_\+p\+Fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a4bdae81e2caabfb15e3b16082792a3d0}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a4bdae81e2caabfb15e3b16082792a3d0}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!EqnTest@{EqnTest}}
+\index{EqnTest@{EqnTest}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{EqnTest()}{EqnTest()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Eqn\+Test (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+str,  }\item[{double}]{a\+\_\+f\+Res,  }\item[{bool}]{a\+\_\+f\+Pass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Evaluate a tet expression. 
+
+\begin{DoxyReturn}{Returns}
+1 in case of a failure, 0 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aff2822768ab9ca09a99effdd7901d60d}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aff2822768ab9ca09a99effdd7901d60d}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!EqnTestBulk@{EqnTestBulk}}
+\index{EqnTestBulk@{EqnTestBulk}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{EqnTestBulk()}{EqnTestBulk()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Eqn\+Test\+Bulk (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+str,  }\item[{double}]{a\+\_\+f\+Res\mbox{[}4\mbox{]},  }\item[{bool}]{a\+\_\+f\+Pass }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{namespaceqmu_1_1_test}{Test}} an expression in Bulk Mode. 
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a9ca3f426bfbf3e0bc93dcac418573d2b}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a9ca3f426bfbf3e0bc93dcac418573d2b}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!EqnTestWithVarChange@{EqnTestWithVarChange}}
+\index{EqnTestWithVarChange@{EqnTestWithVarChange}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{EqnTestWithVarChange()}{EqnTestWithVarChange()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Eqn\+Test\+With\+Var\+Change (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+str,  }\item[{double}]{a\+\_\+f\+Res1,  }\item[{double}]{a\+\_\+f\+Var1,  }\item[{double}]{a\+\_\+f\+Res2,  }\item[{double}]{a\+\_\+f\+Var2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Evaluate a tet expression. 
+
+\begin{DoxyReturn}{Returns}
+1 in case of a failure, 0 otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a798e2771ca46b5be792580544b0ab546}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a798e2771ca46b5be792580544b0ab546}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f1of1@{f1of1}}
+\index{f1of1@{f1of1}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f1of1()}{f1of1()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f1of1 (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a33f065dc9611f31109911cddd9acd0bd}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a33f065dc9611f31109911cddd9acd0bd}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f1of2@{f1of2}}
+\index{f1of2@{f1of2}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f1of2()}{f1of2()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f1of2 (\begin{DoxyParamCaption}\item[{qreal}]{v,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ad21da7a9ef66c178851b45a816291009}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ad21da7a9ef66c178851b45a816291009}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f1of3@{f1of3}}
+\index{f1of3@{f1of3}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f1of3()}{f1of3()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f1of3 (\begin{DoxyParamCaption}\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a59ffc51075d22a237a4cca379938d16e}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a59ffc51075d22a237a4cca379938d16e}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f1of4@{f1of4}}
+\index{f1of4@{f1of4}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f1of4()}{f1of4()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f1of4 (\begin{DoxyParamCaption}\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aa2fe0ae00fff746bea3225fdbc98a9ed}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aa2fe0ae00fff746bea3225fdbc98a9ed}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f1of5@{f1of5}}
+\index{f1of5@{f1of5}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f1of5()}{f1of5()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f1of5 (\begin{DoxyParamCaption}\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a15e89fc49ab4837da28b62539b415bba}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a15e89fc49ab4837da28b62539b415bba}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f2of2@{f2of2}}
+\index{f2of2@{f2of2}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f2of2()}{f2of2()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f2of2 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a2f600aa43edff504414c9312d53cb179}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a2f600aa43edff504414c9312d53cb179}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f2of3@{f2of3}}
+\index{f2of3@{f2of3}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f2of3()}{f2of3()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f2of3 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a74ed0fbcd226c3ddcd521ed90a10ddbc}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a74ed0fbcd226c3ddcd521ed90a10ddbc}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f2of4@{f2of4}}
+\index{f2of4@{f2of4}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f2of4()}{f2of4()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f2of4 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a620b7bc8d0b151102ae51b43ea86fcd3}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a620b7bc8d0b151102ae51b43ea86fcd3}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f2of5@{f2of5}}
+\index{f2of5@{f2of5}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f2of5()}{f2of5()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f2of5 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a9e85c933647d54101b9042b27faadf99}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a9e85c933647d54101b9042b27faadf99}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f3of3@{f3of3}}
+\index{f3of3@{f3of3}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f3of3()}{f3of3()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f3of3 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a636b34577f0c3c7067c36abc0bcffa46}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a636b34577f0c3c7067c36abc0bcffa46}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f3of4@{f3of4}}
+\index{f3of4@{f3of4}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f3of4()}{f3of4()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f3of4 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a112618c8a243d138df28ce38defcff78}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a112618c8a243d138df28ce38defcff78}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f3of5@{f3of5}}
+\index{f3of5@{f3of5}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f3of5()}{f3of5()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f3of5 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a439fdfede3099c927775788aa5c8dd5c}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a439fdfede3099c927775788aa5c8dd5c}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f4of4@{f4of4}}
+\index{f4of4@{f4of4}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f4of4()}{f4of4()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f4of4 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a4d700f765aa6390fcfe15b52b9276aef}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a4d700f765aa6390fcfe15b52b9276aef}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f4of5@{f4of5}}
+\index{f4of5@{f4of5}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f4of5()}{f4of5()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f4of5 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v,  }\item[{qreal}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ac2586ae0e8b9d372900b4aca596c5bb8}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ac2586ae0e8b9d372900b4aca596c5bb8}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!f5of5@{f5of5}}
+\index{f5of5@{f5of5}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{f5of5()}{f5of5()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::f5of5 (\begin{DoxyParamCaption}\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{,  }\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_af017eefd543fa15808a4b379522d65fa}\label{classqmu_1_1_test_1_1_qmu_parser_tester_af017eefd543fa15808a4b379522d65fa}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!FirstArg@{FirstArg}}
+\index{FirstArg@{FirstArg}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{FirstArg()}{FirstArg()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+First\+Arg (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_af0427aa8b231156ceb4b8b200aead22d}\label{classqmu_1_1_test_1_1_qmu_parser_tester_af0427aa8b231156ceb4b8b200aead22d}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!IsHexVal@{IsHexVal}}
+\index{IsHexVal@{IsHexVal}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{IsHexVal()}{IsHexVal()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Is\+Hex\+Val (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+sz\+Expr,  }\item[{int $\ast$}]{a\+\_\+i\+Pos,  }\item[{qreal $\ast$}]{a\+\_\+f\+Val,  }\item[{const QLocale \&}]{locale,  }\item[{const QChar \&}]{decimal,  }\item[{const QChar \&}]{thousand }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a0dd3a063c8a2a298572f0d59dbd48ca4}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a0dd3a063c8a2a298572f0d59dbd48ca4}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!land@{land}}
+\index{land@{land}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{land()}{land()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::land (\begin{DoxyParamCaption}\item[{qreal}]{v1,  }\item[{qreal}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ac9bcd8ce861befd7e90702a6cd3c312b}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ac9bcd8ce861befd7e90702a6cd3c312b}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!LastArg@{LastArg}}
+\index{LastArg@{LastArg}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{LastArg()}{LastArg()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Last\+Arg (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aadd4872410c360fae2da40351d37dccf}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aadd4872410c360fae2da40351d37dccf}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Max@{Max}}
+\index{Max@{Max}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Max()}{Max()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Max (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val1,  }\item[{qreal}]{a\+\_\+f\+Val2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a4e8f321e41dbcb41ce9d3d13441794c8}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a4e8f321e41dbcb41ce9d3d13441794c8}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Mega@{Mega}}
+\index{Mega@{Mega}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Mega()}{Mega()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Mega (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_afb4d60446ec6276a50ea9d33143d7ab1}\label{classqmu_1_1_test_1_1_qmu_parser_tester_afb4d60446ec6276a50ea9d33143d7ab1}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Micro@{Micro}}
+\index{Micro@{Micro}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Micro()}{Micro()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Micro (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aeab27f45a0be5446e04f32c8ba5ebe08}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aeab27f45a0be5446e04f32c8ba5ebe08}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Milli@{Milli}}
+\index{Milli@{Milli}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Milli()}{Milli()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Milli (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aa3d4b06888f13ada134247e291c73e1c}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aa3d4b06888f13ada134247e291c73e1c}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Min@{Min}}
+\index{Min@{Min}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Min()}{Min()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Min (\begin{DoxyParamCaption}\item[{qreal}]{a\+\_\+f\+Val1,  }\item[{qreal}]{a\+\_\+f\+Val2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a91c77f1ef32ef139d3268d60af457fee}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a91c77f1ef32ef139d3268d60af457fee}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Ping@{Ping}}
+\index{Ping@{Ping}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Ping()}{Ping()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Ping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ae0a9af6f6aa067ec473a84fab91119e3}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ae0a9af6f6aa067ec473a84fab91119e3}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!plus2@{plus2}}
+\index{plus2@{plus2}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{plus2()}{plus2()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::plus2 (\begin{DoxyParamCaption}\item[{qreal}]{v1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aabfe7b0282c923a2b16bf51bfb222a02}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aabfe7b0282c923a2b16bf51bfb222a02}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Rnd@{Rnd}}
+\index{Rnd@{Rnd}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Rnd()}{Rnd()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Rnd (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a94cb4af612bd44e97c1b78a6c9735105}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a94cb4af612bd44e97c1b78a6c9735105}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!RndWithString@{RndWithString}}
+\index{RndWithString@{RndWithString}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{RndWithString()}{RndWithString()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Rnd\+With\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a2f18620d38fb2fe5957a6a4283708f9b}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a2f18620d38fb2fe5957a6a4283708f9b}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Run@{Run}}
+\index{Run@{Run}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Run}{Run}}
+{\footnotesize\ttfamily void qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a6d45ff69a3b4bd845295497e84f82e7c}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a6d45ff69a3b4bd845295497e84f82e7c}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!sign@{sign}}
+\index{sign@{sign}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{sign()}{sign()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::sign (\begin{DoxyParamCaption}\item[{qreal}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aa0d71365c42839bfdc24798f5e0fce60}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aa0d71365c42839bfdc24798f5e0fce60}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!sqr@{sqr}}
+\index{sqr@{sqr}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{sqr()}{sqr()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::sqr (\begin{DoxyParamCaption}\item[{qreal}]{v1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a812de8b7d5d366bffe86d569fbfbbe8b}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a812de8b7d5d366bffe86d569fbfbbe8b}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!StrFun1@{StrFun1}}
+\index{StrFun1@{StrFun1}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{StrFun1()}{StrFun1()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Str\+Fun1 (\begin{DoxyParamCaption}\item[{const QString \&}]{v1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_af325559f230ee55395cba5daccb3be1b}\label{classqmu_1_1_test_1_1_qmu_parser_tester_af325559f230ee55395cba5daccb3be1b}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!StrFun2@{StrFun2}}
+\index{StrFun2@{StrFun2}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{StrFun2()}{StrFun2()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Str\+Fun2 (\begin{DoxyParamCaption}\item[{const QString \&}]{v1,  }\item[{qreal}]{v2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a68573d4c9aa92a80e53fd23b679065ac}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a68573d4c9aa92a80e53fd23b679065ac}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!StrFun3@{StrFun3}}
+\index{StrFun3@{StrFun3}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{StrFun3()}{StrFun3()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Str\+Fun3 (\begin{DoxyParamCaption}\item[{const QString \&}]{v1,  }\item[{qreal}]{v2,  }\item[{qreal}]{v3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a2f7eafa28bffe0ae107c1004a81c3aba}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a2f7eafa28bffe0ae107c1004a81c3aba}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!StrToFloat@{StrToFloat}}
+\index{StrToFloat@{StrToFloat}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{StrToFloat()}{StrToFloat()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Str\+To\+Float (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+sz\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a7382b0230e8bf97cdab501bc75b4ea55}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a7382b0230e8bf97cdab501bc75b4ea55}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!Sum@{Sum}}
+\index{Sum@{Sum}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{Sum()}{Sum()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Sum (\begin{DoxyParamCaption}\item[{const qreal $\ast$}]{a\+\_\+af\+Arg,  }\item[{int}]{a\+\_\+i\+Argc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ad40dc7a9f29c3e907fc1077db323d89e}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ad40dc7a9f29c3e907fc1077db323d89e}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestBinOprt@{TestBinOprt}}
+\index{TestBinOprt@{TestBinOprt}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestBinOprt()}{TestBinOprt()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Bin\+Oprt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a025b40c5ae2f9ae2ec90dca999e6c0f0}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a025b40c5ae2f9ae2ec90dca999e6c0f0}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestBulkMode@{TestBulkMode}}
+\index{TestBulkMode@{TestBulkMode}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestBulkMode()}{TestBulkMode()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Bulk\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ad211d0f2086f1b2c122a642c14da0cbe}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ad211d0f2086f1b2c122a642c14da0cbe}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestException@{TestException}}
+\index{TestException@{TestException}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestException()}{TestException()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a2294da295e276cf6019ef32932fd4ec4}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a2294da295e276cf6019ef32932fd4ec4}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestExpression@{TestExpression}}
+\index{TestExpression@{TestExpression}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestExpression()}{TestExpression()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Expression (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a57038e663d4132f97a3c3c524211fd5c}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a57038e663d4132f97a3c3c524211fd5c}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestIfThenElse@{TestIfThenElse}}
+\index{TestIfThenElse@{TestIfThenElse}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestIfThenElse()}{TestIfThenElse()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+If\+Then\+Else (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_add3ca6b4bbace2da051197f85a29f36e}\label{classqmu_1_1_test_1_1_qmu_parser_tester_add3ca6b4bbace2da051197f85a29f36e}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestInfixOprt@{TestInfixOprt}}
+\index{TestInfixOprt@{TestInfixOprt}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestInfixOprt()}{TestInfixOprt()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Infix\+Oprt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a8119141b46925c1896d26552dbf3a00d}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a8119141b46925c1896d26552dbf3a00d}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestInterface@{TestInterface}}
+\index{TestInterface@{TestInterface}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestInterface()}{TestInterface()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Interface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a8826882010cfc992c5817a837352b137}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a8826882010cfc992c5817a837352b137}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestMultiArg@{TestMultiArg}}
+\index{TestMultiArg@{TestMultiArg}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestMultiArg()}{TestMultiArg()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Multi\+Arg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a586bf81c93754a87c4e71ff216f580c4}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a586bf81c93754a87c4e71ff216f580c4}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestNames@{TestNames}}
+\index{TestNames@{TestNames}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestNames()}{TestNames()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Check mu\+Parser name restriction enforcement. 
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_aeb31487ad59492c18ee9534829d6d593}\label{classqmu_1_1_test_1_1_qmu_parser_tester_aeb31487ad59492c18ee9534829d6d593}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestPostFix@{TestPostFix}}
+\index{TestPostFix@{TestPostFix}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestPostFix()}{TestPostFix()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Post\+Fix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_add3eaf3f7698ec1e0264e09f28020fc0}\label{classqmu_1_1_test_1_1_qmu_parser_tester_add3eaf3f7698ec1e0264e09f28020fc0}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestStrArg@{TestStrArg}}
+\index{TestStrArg@{TestStrArg}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestStrArg()}{TestStrArg()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Str\+Arg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ab4d204b09457399209caa6c15441790d}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ab4d204b09457399209caa6c15441790d}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestSyntax@{TestSyntax}}
+\index{TestSyntax@{TestSyntax}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestSyntax()}{TestSyntax()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Syntax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a07217a64a66deca328f5e432b86a4005}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a07217a64a66deca328f5e432b86a4005}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!TestVarConst@{TestVarConst}}
+\index{TestVarConst@{TestVarConst}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{TestVarConst()}{TestVarConst()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Test\+Var\+Const (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a57679cbf9e7727b53a0a850173878ffd}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a57679cbf9e7727b53a0a850173878ffd}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!ThrowTest@{ThrowTest}}
+\index{ThrowTest@{ThrowTest}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{ThrowTest()}{ThrowTest()}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Throw\+Test (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+str,  }\item[{int}]{a\+\_\+i\+Errc,  }\item[{bool}]{a\+\_\+b\+Fail = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_af41d59d240d90d226d692fd07c4c6bb8}\label{classqmu_1_1_test_1_1_qmu_parser_tester_af41d59d240d90d226d692fd07c4c6bb8}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!times3@{times3}}
+\index{times3@{times3}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{times3()}{times3()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::times3 (\begin{DoxyParamCaption}\item[{qreal}]{v1 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a06668b14f9b56ce00e0758c084498496}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a06668b14f9b56ce00e0758c084498496}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!ValueOf@{ValueOf}}
+\index{ValueOf@{ValueOf}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{ValueOf()}{ValueOf()}}
+{\footnotesize\ttfamily static qreal qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::\+Value\+Of (\begin{DoxyParamCaption}\item[{const QString \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_a77a822e7530d02180c79f6b54c290774}\label{classqmu_1_1_test_1_1_qmu_parser_tester_a77a822e7530d02180c79f6b54c290774}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!c\_iCount@{c\_iCount}}
+\index{c\_iCount@{c\_iCount}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{c\_iCount}{c\_iCount}}
+{\footnotesize\ttfamily int qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::c\+\_\+i\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_test_1_1_qmu_parser_tester_ae360fa06e18076011d7b39000a3e8303}\label{classqmu_1_1_test_1_1_qmu_parser_tester_ae360fa06e18076011d7b39000a3e8303}} 
+\index{qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}!m\_vTestFun@{m\_vTestFun}}
+\index{m\_vTestFun@{m\_vTestFun}!qmu::Test::QmuParserTester@{qmu::Test::QmuParserTester}}
+\doxysubsubsection{\texorpdfstring{m\_vTestFun}{m\_vTestFun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\+\_\+type}}$>$ qmu\+::\+Test\+::\+Qmu\+Parser\+Tester\+::m\+\_\+v\+Test\+Fun\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuparsertest_8h}{qmuparsertest.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuparsertest_8cpp}{qmuparsertest.\+cpp}}\end{DoxyCompactItemize}

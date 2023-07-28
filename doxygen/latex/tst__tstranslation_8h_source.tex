@@ -1,0 +1,102 @@
+\hypertarget{tst__tstranslation_8h_source}{}\doxysection{tst\+\_\+tstranslation.\+h}
+\label{tst__tstranslation_8h_source}\index{D:/Github/Seamly2D/src/test/TranslationsTest/tst\_tstranslation.h@{D:/Github/Seamly2D/src/test/TranslationsTest/tst\_tstranslation.h}}
+\mbox{\hyperlink{tst__tstranslation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ tst\_tstranslation.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 13\ 12,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ TST\_TSTRANSLATION\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ TST\_TSTRANSLATION\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QDomDocument>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QFile>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_s_t___t_s_translation}{TST\_TSTranslation}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00063\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_t_s_t___t_s_translation}{TST\_TSTranslation}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a9b78e042af51cf6ef7631e338b0fb44e}{CheckEnglishLocalization\_data}}();}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_af2209a78eff03a12ab9e9d64b86540b0}{CheckEnglishLocalization}}();}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a21a278240a5b580baa9d19bac0a29063}{CheckEmptyToolButton\_data}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_aedb61829c5cc6f947c3cd750e0b6c798}{CheckEmptyToolButton}}();}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_ace68ac0a42b2c36aa7aeed19549ee92b}{CheckPlaceMarkerExist\_data}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a4b87e1802f66c0eb6bef1d172c004d09}{CheckPlaceMarkerExist}}();}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a720b557620404d455b3098fcf91df0ff}{TestPunctuation\_data}}();}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_ad83512db3b9f29ad7104ae3e9616ae1d}{TestPunctuation}}();}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a6d45b55ced1ce5be6154b1f5077450e3}{TestHTMLTags\_data}}();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a41fb9ebdc43dec4ecd0c0695c74abfb9}{TestHTMLTags}}();}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_t_s_t___t_s_translation}{TST\_TSTranslation}})}
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<QFile>\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a03e52b4cbb4560f31ee44d0ce148c95a}{tsFile}};}
+\DoxyCodeLine{00081\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<QDomDocument>\ \mbox{\hyperlink{class_t_s_t___t_s_translation_ab163236c0f951d9326d05cfc99405523}{tsXML}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a41a3968da24ba3adc70ed4b4cf81b0db}{TagName}};}
+\DoxyCodeLine{00084\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_abf4607cc69ee34236d3729bc18b9da78}{TagMessage}};}
+\DoxyCodeLine{00085\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a6cd3370015bc95e63004ab7ba6bebb88}{TagSource}};}
+\DoxyCodeLine{00086\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a172fc33cdce9231577196c4be288c298}{TagTranslation}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a96dadc4849eb4568cd70dfbdb4bc2894}{AttrType}};}
+\DoxyCodeLine{00089\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a255f21809e629142c57602f8f8e0e4d9}{AttrValVanished}};}
+\DoxyCodeLine{00090\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a61c038ddf09def12b047a694296368ef}{AttrValUnfinished}};}
+\DoxyCodeLine{00091\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_t_s_t___t_s_translation_abdb63474b6a3e41cdee4d83539966744}{AttrValObsolete}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ QDomNodeList\ \mbox{\hyperlink{class_t_s_t___t_s_translation_a010e327324fa86e9ee223449a8bbf2fd}{LoadTSFile}}(const\ QString\ \&filename);}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TST\_TSTRANSLATION\_H}}
+
+\end{DoxyCode}

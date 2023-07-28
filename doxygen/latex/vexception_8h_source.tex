@@ -1,0 +1,124 @@
+\hypertarget{vexception_8h_source}{}\doxysection{vexception.\+h}
+\label{vexception_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/exception/vexception.h@{D:/Github/Seamly2D/src/libs/ifc/exception/vexception.h}}
+\mbox{\hyperlink{vexception_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vexception.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VEXCEPTION\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VEXCEPTION\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QException>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../ifcdef.h"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_exception}{VException}}\ :\ \textcolor{keyword}{public}\ QException}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_exception}{VException}})}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_exception}{VException}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}});}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_exception}{VException}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception}{VException}}\ \&e);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_exception}{VException}}\ \&\mbox{\hyperlink{class_v_exception_ab27d8cb624f122a27652ce7121541be0}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception}{VException}}\ \&e);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_exception_aae323f3b6135454c4fa95e6acf6c0d25}{\string~VException}}()\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true)\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ Q\_NORETURN\ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_exception_aec24ab0270a07d0e52ccb5382355ca45}{raise}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ unusedFunction}}
+\DoxyCodeLine{00077\ \ \ \ \ Q\_REQUIRED\_RESULT\ virtual\ \mbox{\hyperlink{class_v_exception}{VException}}\ *\mbox{\hyperlink{class_v_exception_a00a2ef1d19c3a50e9feacb846d40e782}{clone}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{ErrorMessage}}()\ const;}
+\DoxyCodeLine{00080\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{DetailedInformation}}()\ const;}
+\DoxyCodeLine{00081\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_aa77494f07b02b94d690c6957bf51e811}{WhatUtf8}}()\ const\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true);}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_a6a82b04f0ecd7ffc2e1807339a10648d}{AddMoreInformation}}(const\ QString\ \&info);}
+\DoxyCodeLine{00083\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_a38ab9eec99ff781a31b7f050be6addef}{MoreInformation}}()\ const;}
+\DoxyCodeLine{00084\ \ \ \ \ virtual\ const\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}}()\ const\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ protected:}
+\DoxyCodeLine{00088\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_aaaa9e47957031ba5481cd12aedc0926a}{moreInfo}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_a0480a8ae3ddd5d9b86d26156c2a34344}{MoreInfo}}(const\ QString\ \&detInfo)\ const;}
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00101\ \textcolor{comment}{}inline\ QString\ \mbox{\hyperlink{class_v_exception}{VException}}::\mbox{\hyperlink{class_v_exception_aa77494f07b02b94d690c6957bf51e811}{WhatUtf8}}()\ const\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true)}
+\DoxyCodeLine{00102\ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}};}
+\DoxyCodeLine{00104\ \}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00111\ \textcolor{comment}{}\textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_exception_a38ab9eec99ff781a31b7f050be6addef}{VException::MoreInformation}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00112\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_exception_aaaa9e47957031ba5481cd12aedc0926a}{moreInfo}};}
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ Want\ have\ special\ exception\ for\ catching\ unhadled\ deleting\ a\ tool}}
+\DoxyCodeLine{00117\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_exception}{VException}}}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(VExceptionToolDeleted)}
+\DoxyCodeLine{00120\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}(\textcolor{keyword}{const}\ QString\ \&error);}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}\ \&e);}
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}\ \&operator=(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}\ \&e);}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_exception_tool_was_deleted_a6fa80b942935b793c0d1eac8e24b030b}{\string~VExceptionToolWasDeleted}}()\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true)\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ Q\_NORETURN\ virtual\ \textcolor{keywordtype}{void}\ raise()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ unusedFunction}}
+\DoxyCodeLine{00128\ \ \ \ \ virtual\ \mbox{\hyperlink{class_v_exception_tool_was_deleted}{VExceptionToolWasDeleted}}\ *clone()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00129\ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VEXCEPTION\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,361 @@
+\hypertarget{classqmu_1_1_qmu_parser_error}{}\doxysection{qmu\+::Qmu\+Parser\+Error Class Reference}
+\label{classqmu_1_1_qmu_parser_error}\index{qmu::QmuParserError@{qmu::QmuParserError}}
+
+
+Error class of the parser.  
+
+
+
+
+{\ttfamily \#include $<$qmuparsererror.\+h$>$}
+
+Inheritance diagram for qmu\+::Qmu\+Parser\+Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classqmu_1_1_qmu_parser_error}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a72a27057182feef29b9ea40305d902bb}{Qmu\+Parser\+Error}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_adacc37ec35de0e8eadb82942071fc8bb}{Qmu\+Parser\+Error}} (\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} a\+\_\+i\+Errc)
+\begin{DoxyCompactList}\small\item\em This Constructor is used for internal exceptions only. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ad3cf6a5d20834936ad8b87eea481ed93}{Qmu\+Parser\+Error}} (const QString \&s\+Msg)
+\begin{DoxyCompactList}\small\item\em Construct an error from a message text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a49e1efbfdca5b6cc15c0294bcd7113c2}{Qmu\+Parser\+Error}} (\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} a\+\_\+i\+Errc, const QString \&s\+Tok, const QString \&s\+Formula=QString(), int a\+\_\+i\+Pos=-\/1)
+\begin{DoxyCompactList}\small\item\em Construct an error object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ae9898562e87b68fa6e2ad7455418d0cc}{Qmu\+Parser\+Error}} (\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} a\+\_\+i\+Errc, int a\+\_\+i\+Pos, const QString \&s\+Tok)
+\begin{DoxyCompactList}\small\item\em Construct an error object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a937956369d9e44dd65f61d0253992f02}{Qmu\+Parser\+Error}} (const QString \&sz\+Msg, int i\+Pos, const QString \&s\+Tok=QString())
+\begin{DoxyCompactList}\small\item\em Construct an error object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a350d202ad704d6bc6dd4bec2803767c2}{Qmu\+Parser\+Error}} (const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \&a\+\_\+\+Obj)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ae9140696a0f4e4543282e857123b6390}{operator=}} (const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \&a\+\_\+\+Obj)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_aef810f8f21f6a9642f3f83320dc1e0d3}{$\sim$\+Qmu\+Parser\+Error}} () \mbox{\hyperlink{qmuparserdef_8h_a0b363e781bc37fed726a07b0e173f704}{QMUP\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a6594ff5546d58e0a9e522759ff2ed913}{Set\+Formula}} (const QString \&a\+\_\+str\+Formula)
+\begin{DoxyCompactList}\small\item\em Set the expression related to this error. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ae0d27429de9b04f8d8f505708dbb4710}{Get\+Expr}} () const
+\begin{DoxyCompactList}\small\item\em gets the expression related tp this error. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_aae24164b49751b5cba36eba7f9935406}{Get\+Msg}} () const
+\begin{DoxyCompactList}\small\item\em Returns the message string for this error. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ab23ba16e1b8d592b772b4b5607257968}{Get\+Pos}} () const
+\begin{DoxyCompactList}\small\item\em Return the formula position related to the error. \end{DoxyCompactList}\item 
+const QString \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ab4eb32ab107783932cb45c0828603cbf}{Get\+Token}} () const
+\begin{DoxyCompactList}\small\item\em Return string related with this token (if available). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a341e16b91919caa7e0eaaf834d31cbc3}{Get\+Code}} () const
+\begin{DoxyCompactList}\small\item\em Return the error code. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+NORETURN void \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_aa844acddcbb9c786b6d42c30995f48b2}{raise}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em raise method raise for exception \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} $\ast$ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a81879c5d9c3a748abe6e4bd9afbb1bbd}{clone}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em clone clone exception \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a964950fbc287ab625bdf4dc877d2b459}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset the erro object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ab2ed6673662ff8109733f8c88ec05503}{m\+\_\+s\+Msg}}
+\begin{DoxyCompactList}\small\item\em The message string. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a0452ba45757c96917e91d036bb0a5e45}{m\+\_\+s\+Expr}}
+\begin{DoxyCompactList}\small\item\em Formula string. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a06b4453266917a092a6c7c7df5868c81}{m\+\_\+s\+Tok}}
+\begin{DoxyCompactList}\small\item\em Token related with the error. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a0b10a53da0e22605267473d99467e869}{m\+\_\+i\+Pos}}
+\begin{DoxyCompactList}\small\item\em Formula position related to the error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_a66e3865e0fa2f68b7939ec04799aa8c3}{m\+\_\+i\+Errc}}
+\begin{DoxyCompactList}\small\item\em Error code. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{Qmu\+Parser\+Error\+Msg}} \& \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_ab59cbb516b5c46e2219c0b577be4df1d}{m\+\_\+\+Err\+Msg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Error class of the parser. 
+
+\begin{DoxyAuthor}{Author}
+Ingo Berg
+\end{DoxyAuthor}
+Part of the math parser package. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a72a27057182feef29b9ea40305d902bb}\label{classqmu_1_1_qmu_parser_error_a72a27057182feef29b9ea40305d902bb}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_adacc37ec35de0e8eadb82942071fc8bb}\label{classqmu_1_1_qmu_parser_error_adacc37ec35de0e8eadb82942071fc8bb}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}}}]{a\+\_\+i\+Errc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+This Constructor is used for internal exceptions only. 
+
+It does not contain any information but the error code. \mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ad3cf6a5d20834936ad8b87eea481ed93}\label{classqmu_1_1_qmu_parser_error_ad3cf6a5d20834936ad8b87eea481ed93}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{const QString \&}]{s\+Msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct an error from a message text. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a49e1efbfdca5b6cc15c0294bcd7113c2}\label{classqmu_1_1_qmu_parser_error_a49e1efbfdca5b6cc15c0294bcd7113c2}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}}}]{i\+Errc,  }\item[{const QString \&}]{s\+Tok,  }\item[{const QString \&}]{s\+Expr = {\ttfamily QString()},  }\item[{int}]{i\+Pos = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+Construct an error object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em i\+Errc} & the error code. \\
+\hline
+\mbox{\texttt{ in}}  & {\em s\+Tok} & The token string related to this error. \\
+\hline
+\mbox{\texttt{ in}}  & {\em s\+Expr} & The expression related to the error. \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Pos} & the position in the expression where the error occured. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ae9898562e87b68fa6e2ad7455418d0cc}\label{classqmu_1_1_qmu_parser_error_ae9898562e87b68fa6e2ad7455418d0cc}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}}}]{a\+\_\+i\+Errc,  }\item[{int}]{a\+\_\+i\+Pos,  }\item[{const QString \&}]{s\+Tok }\end{DoxyParamCaption})}
+
+
+
+Construct an error object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Errc} & the error code. \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+\_\+i\+Pos} & the position in the expression where the error occured. \\
+\hline
+\mbox{\texttt{ in}}  & {\em s\+Tok} & The token string related to this error. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a937956369d9e44dd65f61d0253992f02}\label{classqmu_1_1_qmu_parser_error_a937956369d9e44dd65f61d0253992f02}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{const QString \&}]{sz\+Msg,  }\item[{int}]{i\+Pos,  }\item[{const QString \&}]{s\+Tok = {\ttfamily QString()} }\end{DoxyParamCaption})}
+
+
+
+Construct an error object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sz\+Msg} & The error message text. \\
+\hline
+\mbox{\texttt{ in}}  & {\em i\+Pos} & the position related to the error. \\
+\hline
+\mbox{\texttt{ in}}  & {\em s\+Tok} & The token string related to this error. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a350d202ad704d6bc6dd4bec2803767c2}\label{classqmu_1_1_qmu_parser_error_a350d202ad704d6bc6dd4bec2803767c2}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!QmuParserError@{QmuParserError}}
+\index{QmuParserError@{QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{QmuParserError()}{QmuParserError()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily qmu\+::\+Qmu\+Parser\+Error\+::\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \&}]{a\+\_\+\+Obj }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_aef810f8f21f6a9642f3f83320dc1e0d3}\label{classqmu_1_1_qmu_parser_error_aef810f8f21f6a9642f3f83320dc1e0d3}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!````~QmuParserError@{$\sim$QmuParserError}}
+\index{````~QmuParserError@{$\sim$QmuParserError}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{$\sim$QmuParserError()}{~QmuParserError()}}
+{\footnotesize\ttfamily virtual qmu\+::\+Qmu\+Parser\+Error\+::$\sim$\+Qmu\+Parser\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a81879c5d9c3a748abe6e4bd9afbb1bbd}\label{classqmu_1_1_qmu_parser_error_a81879c5d9c3a748abe6e4bd9afbb1bbd}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!clone@{clone}}
+\index{clone@{clone}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} $\ast$ qmu\+::\+Qmu\+Parser\+Error\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+clone clone exception 
+
+\begin{DoxyReturn}{Returns}
+new exception 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a341e16b91919caa7e0eaaf834d31cbc3}\label{classqmu_1_1_qmu_parser_error_a341e16b91919caa7e0eaaf834d31cbc3}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!GetCode@{GetCode}}
+\index{GetCode@{GetCode}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{GetCode()}{GetCode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} qmu\+::\+Qmu\+Parser\+Error\+::\+Get\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the error code. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ae0d27429de9b04f8d8f505708dbb4710}\label{classqmu_1_1_qmu_parser_error_ae0d27429de9b04f8d8f505708dbb4710}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!GetExpr@{GetExpr}}
+\index{GetExpr@{GetExpr}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{GetExpr()}{GetExpr()}}
+{\footnotesize\ttfamily const QString \& qmu\+::\+Qmu\+Parser\+Error\+::\+Get\+Expr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+gets the expression related tp this error. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_aae24164b49751b5cba36eba7f9935406}\label{classqmu_1_1_qmu_parser_error_aae24164b49751b5cba36eba7f9935406}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!GetMsg@{GetMsg}}
+\index{GetMsg@{GetMsg}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{GetMsg()}{GetMsg()}}
+{\footnotesize\ttfamily const QString \& qmu\+::\+Qmu\+Parser\+Error\+::\+Get\+Msg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the message string for this error. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ab23ba16e1b8d592b772b4b5607257968}\label{classqmu_1_1_qmu_parser_error_ab23ba16e1b8d592b772b4b5607257968}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!GetPos@{GetPos}}
+\index{GetPos@{GetPos}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{GetPos()}{GetPos()}}
+{\footnotesize\ttfamily int qmu\+::\+Qmu\+Parser\+Error\+::\+Get\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the formula position related to the error. 
+
+If the error is not related to a distinct position this will return -\/1 \mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ab4eb32ab107783932cb45c0828603cbf}\label{classqmu_1_1_qmu_parser_error_ab4eb32ab107783932cb45c0828603cbf}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!GetToken@{GetToken}}
+\index{GetToken@{GetToken}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{GetToken()}{GetToken()}}
+{\footnotesize\ttfamily const QString \& qmu\+::\+Qmu\+Parser\+Error\+::\+Get\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return string related with this token (if available). 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ae9140696a0f4e4543282e857123b6390}\label{classqmu_1_1_qmu_parser_error_ae9140696a0f4e4543282e857123b6390}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!operator=@{operator=}}
+\index{operator=@{operator=}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \& qmu\+::\+Qmu\+Parser\+Error\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}} \&}]{a\+\_\+\+Obj }\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_aa844acddcbb9c786b6d42c30995f48b2}\label{classqmu_1_1_qmu_parser_error_aa844acddcbb9c786b6d42c30995f48b2}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!raise@{raise}}
+\index{raise@{raise}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{raise()}{raise()}}
+{\footnotesize\ttfamily Q\+\_\+\+NORETURN void qmu\+::\+Qmu\+Parser\+Error\+::raise (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+raise method raise for exception 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a964950fbc287ab625bdf4dc877d2b459}\label{classqmu_1_1_qmu_parser_error_a964950fbc287ab625bdf4dc877d2b459}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!Reset@{Reset}}
+\index{Reset@{Reset}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Error\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Reset the erro object. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a6594ff5546d58e0a9e522759ff2ed913}\label{classqmu_1_1_qmu_parser_error_a6594ff5546d58e0a9e522759ff2ed913}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!SetFormula@{SetFormula}}
+\index{SetFormula@{SetFormula}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{SetFormula()}{SetFormula()}}
+{\footnotesize\ttfamily void qmu\+::\+Qmu\+Parser\+Error\+::\+Set\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{a\+\_\+str\+Formula }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the expression related to this error. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ab59cbb516b5c46e2219c0b577be4df1d}\label{classqmu_1_1_qmu_parser_error_ab59cbb516b5c46e2219c0b577be4df1d}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_ErrMsg@{m\_ErrMsg}}
+\index{m\_ErrMsg@{m\_ErrMsg}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_ErrMsg}{m\_ErrMsg}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{Qmu\+Parser\+Error\+Msg}}\& qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+\+Err\+Msg\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a66e3865e0fa2f68b7939ec04799aa8c3}\label{classqmu_1_1_qmu_parser_error_a66e3865e0fa2f68b7939ec04799aa8c3}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_iErrc@{m\_iErrc}}
+\index{m\_iErrc@{m\_iErrc}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_iErrc}{m\_iErrc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+i\+Errc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Error code. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a0b10a53da0e22605267473d99467e869}\label{classqmu_1_1_qmu_parser_error_a0b10a53da0e22605267473d99467e869}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_iPos@{m\_iPos}}
+\index{m\_iPos@{m\_iPos}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_iPos}{m\_iPos}}
+{\footnotesize\ttfamily int qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+i\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Formula position related to the error. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a0452ba45757c96917e91d036bb0a5e45}\label{classqmu_1_1_qmu_parser_error_a0452ba45757c96917e91d036bb0a5e45}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_sExpr@{m\_sExpr}}
+\index{m\_sExpr@{m\_sExpr}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_sExpr}{m\_sExpr}}
+{\footnotesize\ttfamily QString qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+s\+Expr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Formula string. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_ab2ed6673662ff8109733f8c88ec05503}\label{classqmu_1_1_qmu_parser_error_ab2ed6673662ff8109733f8c88ec05503}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_sMsg@{m\_sMsg}}
+\index{m\_sMsg@{m\_sMsg}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_sMsg}{m\_sMsg}}
+{\footnotesize\ttfamily QString qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+s\+Msg\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The message string. 
+
+\mbox{\Hypertarget{classqmu_1_1_qmu_parser_error_a06b4453266917a092a6c7c7df5868c81}\label{classqmu_1_1_qmu_parser_error_a06b4453266917a092a6c7c7df5868c81}} 
+\index{qmu::QmuParserError@{qmu::QmuParserError}!m\_sTok@{m\_sTok}}
+\index{m\_sTok@{m\_sTok}!qmu::QmuParserError@{qmu::QmuParserError}}
+\doxysubsubsection{\texorpdfstring{m\_sTok}{m\_sTok}}
+{\footnotesize\ttfamily QString qmu\+::\+Qmu\+Parser\+Error\+::m\+\_\+s\+Tok\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Token related with the error. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuparsererror_8h}{qmuparsererror.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/\mbox{\hyperlink{qmuparsererror_8cpp}{qmuparsererror.\+cpp}}\end{DoxyCompactItemize}

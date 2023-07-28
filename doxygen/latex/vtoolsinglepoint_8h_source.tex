@@ -1,0 +1,125 @@
+\hypertarget{vtoolsinglepoint_8h_source}{}\doxysection{vtoolsinglepoint.\+h}
+\label{vtoolsinglepoint_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.h}}
+\mbox{\hyperlink{vtoolsinglepoint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vtoolsinglepoint.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VTOOLSINGLEPOINT\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VTOOLSINGLEPOINT\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}../vabstractpoint.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vscenepoint.h"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_single_point}{VToolSinglePoint}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_point}{VAbstractPoint}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_scene_point}{VScenePoint}}}
+\DoxyCodeLine{00074\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point}{VToolSinglePoint}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ quint32\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QColor\ \&lineColor,\ QGraphicsItem\ *\ parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_abb7a66c55046b19ec2f7831ef251e256}{\string~VToolSinglePoint}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_single_point_acad9e639d51055f27e171107b8078507a99d35f51844bf8cedff66fa1ede7ead8}{Type}};\}}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_v_tool_single_point_acad9e639d51055f27e171107b8078507a99d35f51844bf8cedff66fa1ede7ead8}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Tool::SinglePoint)\};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a8c4b5d6116e06faf934d6037de77ebde}{setName}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}{name}});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_ac5a60ed790f52beeb7af83a8d67906d5}{SetEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_ae2125c5ac20e2fd2b78cfdf59de39b17}{GroupVisibility}}(quint32\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_ab4df6679e9abb658a7cc959e368dcf29}{isPointNameVisible}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_adf1edd24f9cb60e4ed2a6b335ee7ed78}{setPointNameVisiblity}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a5b2fae5472dbf3ec77d414f440f491d5}{setPointNamePosition}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ QPointF\ \&pos)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a0ee076f09229701d3aa659e09a098d74}{pointnameChangedPosition}}(\textcolor{keyword}{const}\ QPointF\ \&pos);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a084116afbeb5f639306ce8f16e9c1db3}{Disable}}(\textcolor{keywordtype}{bool}\ disable,\ \textcolor{keyword}{const}\ QString\ \&draftBlockName)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a15592b7a5d11309bd71058992428468c}{EnableToolMove}}(\textcolor{keywordtype}{bool}\ move)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_af5144077dc4228e070ceff9833685a59}{pointChosen}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a3f9ba6e07492adc29120495bb1c6d1e4}{pointSelected}}(\textcolor{keywordtype}{bool}\ selected);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a3aaa5b2fb2e6cb11f57bb72fbb55ef1d}{FullUpdateFromFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00101\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a646249c6fcfbb679e977b8ccfa9cab9a}{AllowHover}}(\textcolor{keywordtype}{bool}\ enabled)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00102\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a1e1984b35f5686ee9419bb98462aecd5}{AllowSelecting}}(\textcolor{keywordtype}{bool}\ enabled)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_abef8d94d20ba2a92671a272d37aec16d}{allowTextHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_acc97af78fd88dd97b40f2881b374a020}{allowTextSelectable}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00105\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a9629e2b75ae2a068f19a56bd40512a50}{ToolSelectionType}}(const\ \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{SelectionType}}\ \&\mbox{\hyperlink{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}{type}})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ protected:}
+\DoxyCodeLine{00108\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_acd3f0d8d8df4904bee7d2b68de273e85}{updatePointNameVisibility}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00109\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a5038c882d4d8a780412d22c9e5d560af}{updatePointNamePosition}}(quint32\ \textcolor{keywordtype}{id},\ const\ QPointF\ \&pos)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00110\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_af32c7b8b0d752a1410721e4dccde7b5e}{mousePressEvent}}(QGraphicsSceneMouseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00111\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a2e991c0c19294b42cff934888b5a6da5}{mouseReleaseEvent}}\ (\ QGraphicsSceneMouseEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00112\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_abe5baf59c4fe740e9ca6b0349a985645}{hoverEnterEvent}}(QGraphicsSceneHoverEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00113\ \ \ \ \ virtual\ QVariant\ \mbox{\hyperlink{class_v_tool_single_point_ae9a4b8548e1dce4db3b0a915da9ff075}{itemChange}}\ (\ GraphicsItemChange\ change,\ const\ QVariant\ \&value\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00114\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a624767d8ec6d8c6d7247749274f0d87c}{keyReleaseEvent}}(QKeyEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00115\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a67ed7edb23595288e31136e0c8bf898b}{contextMenuEvent}}\ (QGraphicsSceneContextMenuEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00116\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_v_tool_single_point_a768712ef8d8b98350d1af66ebee6e63e}{SaveOptions}}(QDomElement\ \&tag,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ private:}
+\DoxyCodeLine{00119\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_tool_single_point}{VToolSinglePoint}})}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTOOLSINGLEPOINT\_H}}
+
+\end{DoxyCode}

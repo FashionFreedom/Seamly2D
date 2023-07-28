@@ -1,0 +1,725 @@
+\hypertarget{class_v_piece}{}\doxysection{VPiece Class Reference}
+\label{class_v_piece}\index{VPiece@{VPiece}}
+
+
+{\ttfamily \#include $<$vpiece.\+h$>$}
+
+Inheritance diagram for VPiece\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_piece}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_a9d02c261801066d9ffccfbef27fe3876}{VPiece}} ()
+\item 
+\mbox{\hyperlink{class_v_piece_acd67dec48fcddbd4e3c80bb343c78f80}{VPiece}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+virtual \mbox{\hyperlink{class_v_piece_a632aa6567b35565cd04b60de97c69028}{$\sim$\+VPiece}} ()
+\item 
+\mbox{\hyperlink{class_v_piece}{VPiece}} \& \mbox{\hyperlink{class_v_piece_a66dca1f56a1f0448e07981c3671ba14a}{operator=}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+void \mbox{\hyperlink{class_v_piece_a3edb9b2b52587180960a07cc2551156b}{Swap}} (\mbox{\hyperlink{class_v_piece}{VPiece}} \&piece) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+\mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \mbox{\hyperlink{class_v_piece_afee4dd59c910226b135f53b95eeeff64}{Get\+Path}} () const
+\item 
+\mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \& \mbox{\hyperlink{class_v_piece_a43be76b3a0b60931a1a2820fabc8c901}{Get\+Path}} ()
+\item 
+void \mbox{\hyperlink{class_v_piece_a55c9a1c2b96e1f55cc0bb04aecf97d64}{Set\+Path}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_piece_abe6acc56fd08a258b4f1f826735ff415}{Main\+Path\+Points}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_point_f}{VPointF}} $>$ \mbox{\hyperlink{class_v_piece_a84f3eb9ca46ef0775d8cc60170c24bff}{Main\+Path\+Node\+Points}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, bool show\+Excluded=false) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_piece_a695e4e432618d9ebb60024bb76e77739}{Seam\+Allowance\+Points}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a3b4c8790f6f0062086e7095f9f7b52e3}{create\+Notch\+Lines}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance=\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$()) const
+\item 
+QPainter\+Path \mbox{\hyperlink{class_v_piece_a76713a14a629f0b82f26ede22cdddfb3}{Main\+Path\+Path}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+QPainter\+Path \mbox{\hyperlink{class_v_piece_a083068e3f14363a24d1200dbcfe6d9a8}{Seam\+Allowance\+Path}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+QPainter\+Path \mbox{\hyperlink{class_v_piece_a105a064216a76c2ee48ad3d82f1be0a1}{Seam\+Allowance\+Path}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points) const
+\item 
+QPainter\+Path \mbox{\hyperlink{class_v_piece_a43910cc4bfdf56c903e26144e911b9f3}{get\+Notches\+Path}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance=\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$()) const
+\item 
+bool \mbox{\hyperlink{class_v_piece_a44e9c85ae75330204c4f64730693e094}{is\+In\+Layout}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_a5b96f01d9b5bad37ce7f3a5e58bf75d7}{Set\+In\+Layout}} (bool in\+Layout)
+\item 
+bool \mbox{\hyperlink{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}{is\+Locked}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_a05e2eb1a5a6470981141bd3d8fdae515}{set\+Is\+Locked}} (bool \mbox{\hyperlink{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}{is\+Locked}})
+\item 
+bool \mbox{\hyperlink{class_v_piece_ad4f0f9998c377c531fa40c9a01e0eb0e}{Is\+United}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_ab73271a2197d96a782769b6858548321}{Set\+United}} (bool united)
+\item 
+QString \mbox{\hyperlink{class_v_piece_a2ac014baad5b629c4bed7a193c33a106}{get\+Seam\+Allowance\+Width\+Formula}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_aa0939a481a8e68fde162e017c25492b2}{set\+Seam\+Allowance\+Width\+Formula}} (const QString \&formula, qreal value)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_a45f8730b44dea91f5a3f0354cb209a8c}{Get\+Internal\+Paths}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \& \mbox{\hyperlink{class_v_piece_a6776034feccfc8cd000f00e5c365f9d5}{Get\+Internal\+Paths}} ()
+\item 
+void \mbox{\hyperlink{class_v_piece_aa1e564b9e6ab7581431f88e5f41eb9c0}{Set\+Internal\+Paths}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&i\+Paths)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \mbox{\hyperlink{class_v_piece_a17cbfead7f305d471c3961405d672804}{Get\+Custom\+SARecords}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \& \mbox{\hyperlink{class_v_piece_a7cf8d1dff45a2948315327351f1e0e4a}{Get\+Custom\+SARecords}} ()
+\item 
+void \mbox{\hyperlink{class_v_piece_a8d0ada81223a2ee5f2c3040283555afe}{Set\+Custom\+SARecords}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&records)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_a60f7c94fd9d23b8f59fbbf67af20ef8e}{get\+Anchors}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \& \mbox{\hyperlink{class_v_piece_a6995918dfaf4f866d1312bb8c198276a}{get\+Anchors}} ()
+\item 
+void \mbox{\hyperlink{class_v_piece_a68d27cdab3714904d965db2c263463f8}{set\+Anchors}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&anchors)
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_a85ff9c8d58ab81997d1f292c29860750}{Missing\+Nodes}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece) const
+\begin{DoxyCompactList}\small\item\em Missing\+Nodes find missing nodes in piece. When we deleted object in piece and return this piece need understand, what nodes need make invisible. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_afb101b0db6f4150be25de40c3ebc1909}{Missing\+CSAPath}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_a7b3346f5cbebff66dd4e8f908ba4d62b}{Missing\+Internal\+Paths}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_v_piece_a5eea73b258c21152bea952b62fdcb27a}{missing\+Anchors}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece) const
+\item 
+void \mbox{\hyperlink{class_v_piece_a84ef5d6f411e53506b166308b312f6f5}{Set\+Pattern\+Piece\+Data}} (const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&data)
+\item 
+\mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& \mbox{\hyperlink{class_v_piece_a160098d4ad976226313e93df07e4afce}{Get\+Pattern\+Piece\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Returns full access to the pattern piece data object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& \mbox{\hyperlink{class_v_piece_a20e26521582b231f515d076e09a24ee4}{Get\+Pattern\+Piece\+Data}} () const
+\begin{DoxyCompactList}\small\item\em Returns the read only reference to the pattern piece data object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_piece_adb7a5569f95c6dd8e5e06b0d760bdb05}{Set\+Pattern\+Info}} (const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \&info)
+\item 
+\mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \& \mbox{\hyperlink{class_v_piece_ae6ff206d2922365cc5b3e9c5d38df806}{Get\+Pattern\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Returns full access to the pattern info geometry object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \& \mbox{\hyperlink{class_v_piece_aa5b1caa15d56fd1e325a50b51341de5c}{Get\+Pattern\+Info}} () const
+\begin{DoxyCompactList}\small\item\em Returns the read only reference to the pattern info geometry object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_grainline_data}{VGrainline\+Data}} \& \mbox{\hyperlink{class_v_piece_adcfb004220f50478cef56553c90d0ee9}{Get\+Grainline\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em VDetail\+::\+Get\+Grainline\+Geometry full access to the grainline geometry object. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_grainline_data}{VGrainline\+Data}} \& \mbox{\hyperlink{class_v_piece_a4a17d6dc1aa1f2303d36bc90caec5740}{Get\+Grainline\+Geometry}} () const
+\begin{DoxyCompactList}\small\item\em VDetail\+::\+Get\+Grainline\+Geometry returns the read-\/only reference to the grainline geometry object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_piece_a9b1ed15515716448b88bdb013e4c0968}{VAbstract\+Piece}} ()
+\item 
+\mbox{\hyperlink{class_v_abstract_piece_ab9d56f37650af4c1912385bcfdd64130}{VAbstract\+Piece}} (const \mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}} \&piece)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_piece_ab99ae6b5abad7fd51ccf45bacf71a674}{$\sim$\+VAbstract\+Piece}} ()
+\item 
+\mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}} \& \mbox{\hyperlink{class_v_abstract_piece_afd384b7b176133bb3901c4484e32dbbf}{operator=}} (const \mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}} \&piece)
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_ab36f3c10a48c7759b5a77974d22ba09a}{Swap}} (\mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}} \&piece) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+QString \mbox{\hyperlink{class_v_abstract_piece_aba4041e943f9df0f2469ddc10b59c3c7}{Get\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a9e18fab40c18507160ce266edfdb5a75}{Set\+Name}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_piece_a3564e3abe80952e52fe699398598507a}{get\+Color}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a91440f1d032a865c23b973fc076ee16b}{set\+Color}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_piece_ad0d53cc62b26c9b2115fe830e5f082b1}{get\+Fill}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a178f875d422518ab254b4361f0e71a46}{set\+Fill}} (const QString \&value)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_piece_a28ca0685609a7983d8bd6b68902ca048}{get\+Lock}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a31e569e754dd4a7ce65d1c19efcb01a2}{set\+Lock}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_piece_adaa935cdd342d1462737362425f61601}{Is\+Forbid\+Flipping}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a8e4b8bc754d27b36d2f13ce79e09ad02}{Set\+Forbid\+Flipping}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_piece_a0e366ec876de3688c27dbf9fdc027497}{Is\+Seam\+Allowance}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_ab4f69ed440de05ec38c86d55e1bebbcd}{Set\+Seam\+Allowance}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_piece_a0b1835b127611ae3a78fc7f4f706b230}{Is\+Seam\+Allowance\+Built\+In}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_aa354630ab15072b7679c7c919ee92c8f}{Set\+Seam\+Allowance\+Built\+In}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_abstract_piece_a1016d9f04c766417f608ae61c1457a4a}{is\+Hide\+Seam\+Line}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a9a9b6fb2d5cf592c2f5702229f85d275}{set\+Hide\+Seam\+Line}} (bool value)
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_piece_a2d1643bb29d1794e651456c993689469}{Get\+SAWidth}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a79f384e68823f084101724db25a197d4}{Set\+SAWidth}} (qreal value)
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_piece_a60a04d4c6a901a56c7b7255232e19feb}{Get\+Mx}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_a25954bab5a6c8e5f05526ef0c1c0c033}{Set\+Mx}} (qreal value)
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_piece_abcc361356be8e49f5c705e7faa426f96}{Get\+My}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_piece_ae032ef5de6c350945203438fd8b2420d}{Set\+My}} (qreal value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_piece_a13d0a2894f1750b9e9d40bb6d63c711a}{Get\+United\+Path}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \mbox{\hyperlink{class_v_piece_acdb94745d64fa25e866ce9d3c3522dd2}{Get\+Valid\+Records}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \mbox{\hyperlink{class_v_piece_a00345893532d429e86751b5fdf348833}{Filter\+Records}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ records) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} $>$ \mbox{\hyperlink{class_v_piece_a3c335179471d5593f4db890a4b501551}{get\+Node\+SAPoints}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int index, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data) const
+\item 
+bool \mbox{\hyperlink{class_v_piece_a199dce5fb3c7b2a9897c588290ab4720}{get\+Notch\+SAPoint}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int index, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&point) const
+\item 
+bool \mbox{\hyperlink{class_v_piece_a1d413acab729c68ff3ae4fd338dcc836}{get\+Notch\+Previous\+SAPoints}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int index, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&notch\+SAPoint, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&point) const
+\item 
+int \mbox{\hyperlink{class_v_piece_af0a834171d8ebc1d74e19aac48b9483a}{get\+Next\+Notch\+SAPoints}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int index, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&notch\+SAPoint, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&point) const
+\item 
+bool \mbox{\hyperlink{class_v_piece_a1453a75e11555462e919fab9e153fd7e}{get\+Seam\+Notch\+SAPoint}} (const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&previous\+SAPoint, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&notch\+SAPoint, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&next\+SAPoint, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, QPointF \&point) const
+\item 
+bool \mbox{\hyperlink{class_v_piece_a0edbfb5c857e9f256dd762413eb6a35e}{is\+Notch\+Visible}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int notch\+Index) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a50246c6ac8e6deab7187f705e4e71ad4}{create\+Notch}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, int previous\+Index, int notch\+Index, int next\+Index, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path\+Points=\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$()) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_ab309d0f2d7d5c903ec67b45540223a00}{create\+Seam\+Allowance\+Notch}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&previous\+SAPoint, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&notch\+SAPoint, \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&next\+SAPoint, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, int notch\+Index, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path\+Points=\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$()) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a44aa80c114b482114906920a9c0ead3b}{create\+Built\+In\+Sa\+Notch}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&path, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&previous\+SAPoint, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&notch\+SAPoint, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&next\+SAPoint, const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, int notch\+Index, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path\+Points) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a50b30a664808e28ff04ca7c29a2d5c5c}{create\+Slit\+Notch}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a4ea821b935b8d748dc91b17174d42678}{create\+TNotch}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path\+Points) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_aa9b87b2b5aaaa2e0ac826be7c040aedf}{create\+UNotch}} (const \mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a96e7a404e41a2b3b51cb089fb67641c9}{create\+VInternal\+Notch}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path\+Points) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a6d478cdc5edc2184aee84a7605bc3b0e}{create\+VExternal\+Notch}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_adb76c43ea5dcbf0a3a7e5287ff0d77a6}{create\+Castle\+Notch}} (const \mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_a7891c795349eaa692aa8c65316fc60da}{create\+Diamond\+Notch}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ \mbox{\hyperlink{class_v_piece_ae52c6d187f519b6e74b5b4360979b313}{create\+Notches}} (\mbox{\hyperlink{struct_notch_data}{Notch\+Data}} notch\+Data, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance) const
+\item 
+QLineF \mbox{\hyperlink{class_v_piece_abb3d5e5af8b36ece0249f5e9a8fd2bb3}{find\+Intersection}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&seam\+Allowance, const QLineF \&line) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_piece_a75476252eaf5c2b57280cdc51328389b}{Is\+CSAStart}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&records, quint32 id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_piece_data}{VPiece\+Data}} $>$ \mbox{\hyperlink{class_v_piece_a32c421ed27fffaa7202d43f134ae371c}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_piece_a292f7d4da418ba3514ae7678cb4d0a79}{Equidistant}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} $>$ \&points, qreal width)
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_piece_a5777b88093be5350bcabe027b5d06843}{sum\+Trapezoids}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_piece_a11d660242b47335f8fed94c19c661e45}{is\+Clockwise}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_piece_abf5674417e34e924bf3addae32c2e90a}{Check\+Loops}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Check\+Loops seek and delete loops in equidistant. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_piece_a82a226f6158a666575dcfc79070c7e05}{Ekv\+Point}} (const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p1\+Line1, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p2\+Line1, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p1\+Line2, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p2\+Line2, qreal width)
+\begin{DoxyCompactList}\small\item\em Ekv\+Point return seam allowance points in place of intersection of two edges. Last points of two edges should be equal. \end{DoxyCompactList}\item 
+static QLineF \mbox{\hyperlink{class_v_abstract_piece_a4f9f76512e6988f3695451acae4427a2}{create\+Parallel\+Line}} (const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p1, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p2, qreal width)
+\item 
+static QLineF \mbox{\hyperlink{class_v_abstract_piece_a8c0bac291d03722b86ef89ee8ff8ce61}{create\+Parallel\+Line}} (const QPointF \&p1, const QPointF \&p2, qreal width)
+\item 
+{\footnotesize template$<$class T $>$ }\\static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \mbox{\hyperlink{class_v_abstract_piece_ad76cabb9b832def6129d3c049614debd}{Correct\+Equidistant\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \&points, bool remove\+First\+And\+Last=true)
+\begin{DoxyCompactList}\small\item\em Correct\+Equidistant\+Points clear equivalent points and remove point on line from equdistant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_piece}{VAbstract\+Piece}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \mbox{\hyperlink{class_v_abstract_piece_aa1c6f83486d65c6c563feaef210fbe3a}{Remove\+Dublicates}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \&points, bool remove\+First\+And\+Last=true)
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_piece_a97a516118aa522873659244fba646887}{Max\+Local\+SA}} (const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&p, qreal width)
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_piece_a23b4ad0609cfb756db3b8d5c1f3ca0d4}{Is\+Ekv\+Point\+On\+Line}} (const QPointF \&i\+Point, const QPointF \&prev\+Point, const QPointF \&next\+Point)
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_piece_a5a5f5319b3222cb5df34f0584098a1b6}{Is\+Ekv\+Point\+On\+Line}} (const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&i\+Point, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&prev\+Point, const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&next\+Point)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_piece_a9d02c261801066d9ffccfbef27fe3876}\label{class_v_piece_a9d02c261801066d9ffccfbef27fe3876}} 
+\index{VPiece@{VPiece}!VPiece@{VPiece}}
+\index{VPiece@{VPiece}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{VPiece()}{VPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VPiece\+::\+VPiece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_acd67dec48fcddbd4e3c80bb343c78f80}\label{class_v_piece_acd67dec48fcddbd4e3c80bb343c78f80}} 
+\index{VPiece@{VPiece}!VPiece@{VPiece}}
+\index{VPiece@{VPiece}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{VPiece()}{VPiece()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VPiece\+::\+VPiece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a632aa6567b35565cd04b60de97c69028}\label{class_v_piece_a632aa6567b35565cd04b60de97c69028}} 
+\index{VPiece@{VPiece}!````~VPiece@{$\sim$VPiece}}
+\index{````~VPiece@{$\sim$VPiece}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPiece()}{~VPiece()}}
+{\footnotesize\ttfamily VPiece\+::$\sim$\+VPiece (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_piece_a44aa80c114b482114906920a9c0ead3b}\label{class_v_piece_a44aa80c114b482114906920a9c0ead3b}} 
+\index{VPiece@{VPiece}!createBuiltInSaNotch@{createBuiltInSaNotch}}
+\index{createBuiltInSaNotch@{createBuiltInSaNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createBuiltInSaNotch()}{createBuiltInSaNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Built\+In\+Sa\+Notch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{previous\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{notch\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{next\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{int}]{notch\+Index,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{path\+Points }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_adb76c43ea5dcbf0a3a7e5287ff0d77a6}\label{class_v_piece_adb76c43ea5dcbf0a3a7e5287ff0d77a6}} 
+\index{VPiece@{VPiece}!createCastleNotch@{createCastleNotch}}
+\index{createCastleNotch@{createCastleNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createCastleNotch()}{createCastleNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Castle\+Notch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a7891c795349eaa692aa8c65316fc60da}\label{class_v_piece_a7891c795349eaa692aa8c65316fc60da}} 
+\index{VPiece@{VPiece}!createDiamondNotch@{createDiamondNotch}}
+\index{createDiamondNotch@{createDiamondNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createDiamondNotch()}{createDiamondNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Diamond\+Notch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a50246c6ac8e6deab7187f705e4e71ad4}\label{class_v_piece_a50246c6ac8e6deab7187f705e4e71ad4}} 
+\index{VPiece@{VPiece}!createNotch@{createNotch}}
+\index{createNotch@{createNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createNotch()}{createNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Notch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{previous\+Index,  }\item[{int}]{notch\+Index,  }\item[{int}]{next\+Index,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{path\+Points = {\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$QPointF$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_ae52c6d187f519b6e74b5b4360979b313}\label{class_v_piece_ae52c6d187f519b6e74b5b4360979b313}} 
+\index{VPiece@{VPiece}!createNotches@{createNotches}}
+\index{createNotches@{createNotches}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createNotches()}{createNotches()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Notches (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a3b4c8790f6f0062086e7095f9f7b52e3}\label{class_v_piece_a3b4c8790f6f0062086e7095f9f7b52e3}} 
+\index{VPiece@{VPiece}!createNotchLines@{createNotchLines}}
+\index{createNotchLines@{createNotchLines}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createNotchLines()}{createNotchLines()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Notch\+Lines (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance = {\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$QPointF$>$()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_ab309d0f2d7d5c903ec67b45540223a00}\label{class_v_piece_ab309d0f2d7d5c903ec67b45540223a00}} 
+\index{VPiece@{VPiece}!createSeamAllowanceNotch@{createSeamAllowanceNotch}}
+\index{createSeamAllowanceNotch@{createSeamAllowanceNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createSeamAllowanceNotch()}{createSeamAllowanceNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Seam\+Allowance\+Notch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{\mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{previous\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{notch\+SAPoint,  }\item[{\mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{next\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{int}]{notch\+Index,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{path\+Points = {\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$QPointF$>$()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a50b30a664808e28ff04ca7c29a2d5c5c}\label{class_v_piece_a50b30a664808e28ff04ca7c29a2d5c5c}} 
+\index{VPiece@{VPiece}!createSlitNotch@{createSlitNotch}}
+\index{createSlitNotch@{createSlitNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createSlitNotch()}{createSlitNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+Slit\+Notch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a4ea821b935b8d748dc91b17174d42678}\label{class_v_piece_a4ea821b935b8d748dc91b17174d42678}} 
+\index{VPiece@{VPiece}!createTNotch@{createTNotch}}
+\index{createTNotch@{createTNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createTNotch()}{createTNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+TNotch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{path\+Points }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_aa9b87b2b5aaaa2e0ac826be7c040aedf}\label{class_v_piece_aa9b87b2b5aaaa2e0ac826be7c040aedf}} 
+\index{VPiece@{VPiece}!createUNotch@{createUNotch}}
+\index{createUNotch@{createUNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createUNotch()}{createUNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+UNotch (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a6d478cdc5edc2184aee84a7605bc3b0e}\label{class_v_piece_a6d478cdc5edc2184aee84a7605bc3b0e}} 
+\index{VPiece@{VPiece}!createVExternalNotch@{createVExternalNotch}}
+\index{createVExternalNotch@{createVExternalNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createVExternalNotch()}{createVExternalNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+VExternal\+Notch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a96e7a404e41a2b3b51cb089fb67641c9}\label{class_v_piece_a96e7a404e41a2b3b51cb089fb67641c9}} 
+\index{VPiece@{VPiece}!createVInternalNotch@{createVInternalNotch}}
+\index{createVInternalNotch@{createVInternalNotch}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{createVInternalNotch()}{createVInternalNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QLineF $>$ VPiece\+::create\+VInternal\+Notch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_notch_data}{Notch\+Data}}}]{notch\+Data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{path\+Points }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a00345893532d429e86751b5fdf348833}\label{class_v_piece_a00345893532d429e86751b5fdf348833}} 
+\index{VPiece@{VPiece}!FilterRecords@{FilterRecords}}
+\index{FilterRecords@{FilterRecords}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{FilterRecords()}{FilterRecords()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ VPiece\+::\+Filter\+Records (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$}]{records }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_abb3d5e5af8b36ece0249f5e9a8fd2bb3}\label{class_v_piece_abb3d5e5af8b36ece0249f5e9a8fd2bb3}} 
+\index{VPiece@{VPiece}!findIntersection@{findIntersection}}
+\index{findIntersection@{findIntersection}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{findIntersection()}{findIntersection()}}
+{\footnotesize\ttfamily QLineF VPiece\+::find\+Intersection (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance,  }\item[{const QLineF \&}]{line }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a6995918dfaf4f866d1312bb8c198276a}\label{class_v_piece_a6995918dfaf4f866d1312bb8c198276a}} 
+\index{VPiece@{VPiece}!getAnchors@{getAnchors}}
+\index{getAnchors@{getAnchors}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getAnchors()}{getAnchors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \& VPiece\+::get\+Anchors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a60f7c94fd9d23b8f59fbbf67af20ef8e}\label{class_v_piece_a60f7c94fd9d23b8f59fbbf67af20ef8e}} 
+\index{VPiece@{VPiece}!getAnchors@{getAnchors}}
+\index{getAnchors@{getAnchors}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getAnchors()}{getAnchors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::get\+Anchors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a7cf8d1dff45a2948315327351f1e0e4a}\label{class_v_piece_a7cf8d1dff45a2948315327351f1e0e4a}} 
+\index{VPiece@{VPiece}!GetCustomSARecords@{GetCustomSARecords}}
+\index{GetCustomSARecords@{GetCustomSARecords}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetCustomSARecords()}{GetCustomSARecords()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \& VPiece\+::\+Get\+Custom\+SARecords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a17cbfead7f305d471c3961405d672804}\label{class_v_piece_a17cbfead7f305d471c3961405d672804}} 
+\index{VPiece@{VPiece}!GetCustomSARecords@{GetCustomSARecords}}
+\index{GetCustomSARecords@{GetCustomSARecords}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetCustomSARecords()}{GetCustomSARecords()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ VPiece\+::\+Get\+Custom\+SARecords (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_adcfb004220f50478cef56553c90d0ee9}\label{class_v_piece_adcfb004220f50478cef56553c90d0ee9}} 
+\index{VPiece@{VPiece}!GetGrainlineGeometry@{GetGrainlineGeometry}}
+\index{GetGrainlineGeometry@{GetGrainlineGeometry}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetGrainlineGeometry()}{GetGrainlineGeometry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_grainline_data}{VGrainline\+Data}} \& VPiece\+::\+Get\+Grainline\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+VDetail\+::\+Get\+Grainline\+Geometry full access to the grainline geometry object. 
+
+\begin{DoxyReturn}{Returns}
+reference to grainline geometry object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a4a17d6dc1aa1f2303d36bc90caec5740}\label{class_v_piece_a4a17d6dc1aa1f2303d36bc90caec5740}} 
+\index{VPiece@{VPiece}!GetGrainlineGeometry@{GetGrainlineGeometry}}
+\index{GetGrainlineGeometry@{GetGrainlineGeometry}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetGrainlineGeometry()}{GetGrainlineGeometry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_grainline_data}{VGrainline\+Data}} \& VPiece\+::\+Get\+Grainline\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+VDetail\+::\+Get\+Grainline\+Geometry returns the read-\/only reference to the grainline geometry object. 
+
+\begin{DoxyReturn}{Returns}
+reference to grainline geometry object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a6776034feccfc8cd000f00e5c365f9d5}\label{class_v_piece_a6776034feccfc8cd000f00e5c365f9d5}} 
+\index{VPiece@{VPiece}!GetInternalPaths@{GetInternalPaths}}
+\index{GetInternalPaths@{GetInternalPaths}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetInternalPaths()}{GetInternalPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \& VPiece\+::\+Get\+Internal\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a45f8730b44dea91f5a3f0354cb209a8c}\label{class_v_piece_a45f8730b44dea91f5a3f0354cb209a8c}} 
+\index{VPiece@{VPiece}!GetInternalPaths@{GetInternalPaths}}
+\index{GetInternalPaths@{GetInternalPaths}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetInternalPaths()}{GetInternalPaths()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::\+Get\+Internal\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_af0a834171d8ebc1d74e19aac48b9483a}\label{class_v_piece_af0a834171d8ebc1d74e19aac48b9483a}} 
+\index{VPiece@{VPiece}!getNextNotchSAPoints@{getNextNotchSAPoints}}
+\index{getNextNotchSAPoints@{getNextNotchSAPoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getNextNotchSAPoints()}{getNextNotchSAPoints()}}
+{\footnotesize\ttfamily int VPiece\+::get\+Next\+Notch\+SAPoints (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{index,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{notch\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a3c335179471d5593f4db890a4b501551}\label{class_v_piece_a3c335179471d5593f4db890a4b501551}} 
+\index{VPiece@{VPiece}!getNodeSAPoints@{getNodeSAPoints}}
+\index{getNodeSAPoints@{getNodeSAPoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getNodeSAPoints()}{getNodeSAPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} $>$ VPiece\+::get\+Node\+SAPoints (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{index,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a43910cc4bfdf56c903e26144e911b9f3}\label{class_v_piece_a43910cc4bfdf56c903e26144e911b9f3}} 
+\index{VPiece@{VPiece}!getNotchesPath@{getNotchesPath}}
+\index{getNotchesPath@{getNotchesPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getNotchesPath()}{getNotchesPath()}}
+{\footnotesize\ttfamily QPainter\+Path VPiece\+::get\+Notches\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{seam\+Allowance = {\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$QPointF$>$()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a1d413acab729c68ff3ae4fd338dcc836}\label{class_v_piece_a1d413acab729c68ff3ae4fd338dcc836}} 
+\index{VPiece@{VPiece}!getNotchPreviousSAPoints@{getNotchPreviousSAPoints}}
+\index{getNotchPreviousSAPoints@{getNotchPreviousSAPoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getNotchPreviousSAPoints()}{getNotchPreviousSAPoints()}}
+{\footnotesize\ttfamily bool VPiece\+::get\+Notch\+Previous\+SAPoints (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{index,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{notch\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a199dce5fb3c7b2a9897c588290ab4720}\label{class_v_piece_a199dce5fb3c7b2a9897c588290ab4720}} 
+\index{VPiece@{VPiece}!getNotchSAPoint@{getNotchSAPoint}}
+\index{getNotchSAPoint@{getNotchSAPoint}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getNotchSAPoint()}{getNotchSAPoint()}}
+{\footnotesize\ttfamily bool VPiece\+::get\+Notch\+SAPoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{index,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a43be76b3a0b60931a1a2820fabc8c901}\label{class_v_piece_a43be76b3a0b60931a1a2820fabc8c901}} 
+\index{VPiece@{VPiece}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \& VPiece\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_afee4dd59c910226b135f53b95eeeff64}\label{class_v_piece_afee4dd59c910226b135f53b95eeeff64}} 
+\index{VPiece@{VPiece}!GetPath@{GetPath}}
+\index{GetPath@{GetPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPath()}{GetPath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} VPiece\+::\+Get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_ae6ff206d2922365cc5b3e9c5d38df806}\label{class_v_piece_ae6ff206d2922365cc5b3e9c5d38df806}} 
+\index{VPiece@{VPiece}!GetPatternInfo@{GetPatternInfo}}
+\index{GetPatternInfo@{GetPatternInfo}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPatternInfo()}{GetPatternInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \& VPiece\+::\+Get\+Pattern\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns full access to the pattern info geometry object. 
+
+\begin{DoxyReturn}{Returns}
+pattern info geometry object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_aa5b1caa15d56fd1e325a50b51341de5c}\label{class_v_piece_aa5b1caa15d56fd1e325a50b51341de5c}} 
+\index{VPiece@{VPiece}!GetPatternInfo@{GetPatternInfo}}
+\index{GetPatternInfo@{GetPatternInfo}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPatternInfo()}{GetPatternInfo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \& VPiece\+::\+Get\+Pattern\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the read only reference to the pattern info geometry object. 
+
+\begin{DoxyReturn}{Returns}
+pattern info geometry object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a160098d4ad976226313e93df07e4afce}\label{class_v_piece_a160098d4ad976226313e93df07e4afce}} 
+\index{VPiece@{VPiece}!GetPatternPieceData@{GetPatternPieceData}}
+\index{GetPatternPieceData@{GetPatternPieceData}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPatternPieceData()}{GetPatternPieceData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& VPiece\+::\+Get\+Pattern\+Piece\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns full access to the pattern piece data object. 
+
+\begin{DoxyReturn}{Returns}
+pattern piece data object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a20e26521582b231f515d076e09a24ee4}\label{class_v_piece_a20e26521582b231f515d076e09a24ee4}} 
+\index{VPiece@{VPiece}!GetPatternPieceData@{GetPatternPieceData}}
+\index{GetPatternPieceData@{GetPatternPieceData}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetPatternPieceData()}{GetPatternPieceData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \& VPiece\+::\+Get\+Pattern\+Piece\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the read only reference to the pattern piece data object. 
+
+\begin{DoxyReturn}{Returns}
+pattern piece data object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a2ac014baad5b629c4bed7a193c33a106}\label{class_v_piece_a2ac014baad5b629c4bed7a193c33a106}} 
+\index{VPiece@{VPiece}!getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}}
+\index{getSeamAllowanceWidthFormula@{getSeamAllowanceWidthFormula}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getSeamAllowanceWidthFormula()}{getSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily QString VPiece\+::get\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a1453a75e11555462e919fab9e153fd7e}\label{class_v_piece_a1453a75e11555462e919fab9e153fd7e}} 
+\index{VPiece@{VPiece}!getSeamNotchSAPoint@{getSeamNotchSAPoint}}
+\index{getSeamNotchSAPoint@{getSeamNotchSAPoint}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{getSeamNotchSAPoint()}{getSeamNotchSAPoint()}}
+{\footnotesize\ttfamily bool VPiece\+::get\+Seam\+Notch\+SAPoint (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{previous\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{notch\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}} \&}]{next\+SAPoint,  }\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{QPointF \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a13d0a2894f1750b9e9d40bb6d63c711a}\label{class_v_piece_a13d0a2894f1750b9e9d40bb6d63c711a}} 
+\index{VPiece@{VPiece}!GetUnitedPath@{GetUnitedPath}}
+\index{GetUnitedPath@{GetUnitedPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetUnitedPath()}{GetUnitedPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ VPiece\+::\+Get\+United\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_acdb94745d64fa25e866ce9d3c3522dd2}\label{class_v_piece_acdb94745d64fa25e866ce9d3c3522dd2}} 
+\index{VPiece@{VPiece}!GetValidRecords@{GetValidRecords}}
+\index{GetValidRecords@{GetValidRecords}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{GetValidRecords()}{GetValidRecords()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ VPiece\+::\+Get\+Valid\+Records (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a75476252eaf5c2b57280cdc51328389b}\label{class_v_piece_a75476252eaf5c2b57280cdc51328389b}} 
+\index{VPiece@{VPiece}!IsCSAStart@{IsCSAStart}}
+\index{IsCSAStart@{IsCSAStart}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{IsCSAStart()}{IsCSAStart()}}
+{\footnotesize\ttfamily int VPiece\+::\+Is\+CSAStart (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&}]{records,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_a44e9c85ae75330204c4f64730693e094}\label{class_v_piece_a44e9c85ae75330204c4f64730693e094}} 
+\index{VPiece@{VPiece}!isInLayout@{isInLayout}}
+\index{isInLayout@{isInLayout}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{isInLayout()}{isInLayout()}}
+{\footnotesize\ttfamily bool VPiece\+::is\+In\+Layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}\label{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}} 
+\index{VPiece@{VPiece}!isLocked@{isLocked}}
+\index{isLocked@{isLocked}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{isLocked()}{isLocked()}}
+{\footnotesize\ttfamily bool VPiece\+::is\+Locked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a0edbfb5c857e9f256dd762413eb6a35e}\label{class_v_piece_a0edbfb5c857e9f256dd762413eb6a35e}} 
+\index{VPiece@{VPiece}!isNotchVisible@{isNotchVisible}}
+\index{isNotchVisible@{isNotchVisible}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{isNotchVisible()}{isNotchVisible()}}
+{\footnotesize\ttfamily bool VPiece\+::is\+Notch\+Visible (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&}]{path,  }\item[{int}]{notch\+Index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_piece_ad4f0f9998c377c531fa40c9a01e0eb0e}\label{class_v_piece_ad4f0f9998c377c531fa40c9a01e0eb0e}} 
+\index{VPiece@{VPiece}!IsUnited@{IsUnited}}
+\index{IsUnited@{IsUnited}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{IsUnited()}{IsUnited()}}
+{\footnotesize\ttfamily bool VPiece\+::\+Is\+United (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a84f3eb9ca46ef0775d8cc60170c24bff}\label{class_v_piece_a84f3eb9ca46ef0775d8cc60170c24bff}} 
+\index{VPiece@{VPiece}!MainPathNodePoints@{MainPathNodePoints}}
+\index{MainPathNodePoints@{MainPathNodePoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MainPathNodePoints()}{MainPathNodePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_point_f}{VPointF}} $>$ VPiece\+::\+Main\+Path\+Node\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{bool}]{show\+Excluded = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a76713a14a629f0b82f26ede22cdddfb3}\label{class_v_piece_a76713a14a629f0b82f26ede22cdddfb3}} 
+\index{VPiece@{VPiece}!MainPathPath@{MainPathPath}}
+\index{MainPathPath@{MainPathPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MainPathPath()}{MainPathPath()}}
+{\footnotesize\ttfamily QPainter\+Path VPiece\+::\+Main\+Path\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_abe6acc56fd08a258b4f1f826735ff415}\label{class_v_piece_abe6acc56fd08a258b4f1f826735ff415}} 
+\index{VPiece@{VPiece}!MainPathPoints@{MainPathPoints}}
+\index{MainPathPoints@{MainPathPoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MainPathPoints()}{MainPathPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VPiece\+::\+Main\+Path\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a5eea73b258c21152bea952b62fdcb27a}\label{class_v_piece_a5eea73b258c21152bea952b62fdcb27a}} 
+\index{VPiece@{VPiece}!missingAnchors@{missingAnchors}}
+\index{missingAnchors@{missingAnchors}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{missingAnchors()}{missingAnchors()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::missing\+Anchors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_afb101b0db6f4150be25de40c3ebc1909}\label{class_v_piece_afb101b0db6f4150be25de40c3ebc1909}} 
+\index{VPiece@{VPiece}!MissingCSAPath@{MissingCSAPath}}
+\index{MissingCSAPath@{MissingCSAPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MissingCSAPath()}{MissingCSAPath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::\+Missing\+CSAPath (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a7b3346f5cbebff66dd4e8f908ba4d62b}\label{class_v_piece_a7b3346f5cbebff66dd4e8f908ba4d62b}} 
+\index{VPiece@{VPiece}!MissingInternalPaths@{MissingInternalPaths}}
+\index{MissingInternalPaths@{MissingInternalPaths}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MissingInternalPaths()}{MissingInternalPaths()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::\+Missing\+Internal\+Paths (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a85ff9c8d58ab81997d1f292c29860750}\label{class_v_piece_a85ff9c8d58ab81997d1f292c29860750}} 
+\index{VPiece@{VPiece}!MissingNodes@{MissingNodes}}
+\index{MissingNodes@{MissingNodes}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{MissingNodes()}{MissingNodes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ VPiece\+::\+Missing\+Nodes (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption}) const}
+
+
+
+Missing\+Nodes find missing nodes in piece. When we deleted object in piece and return this piece need understand, what nodes need make invisible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em piece} & changed piece. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list with missing nodes. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_a66dca1f56a1f0448e07981c3671ba14a}\label{class_v_piece_a66dca1f56a1f0448e07981c3671ba14a}} 
+\index{VPiece@{VPiece}!operator=@{operator=}}
+\index{operator=@{operator=}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece}{VPiece}} \& VPiece\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a105a064216a76c2ee48ad3d82f1be0a1}\label{class_v_piece_a105a064216a76c2ee48ad3d82f1be0a1}} 
+\index{VPiece@{VPiece}!SeamAllowancePath@{SeamAllowancePath}}
+\index{SeamAllowancePath@{SeamAllowancePath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SeamAllowancePath()}{SeamAllowancePath()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QPainter\+Path VPiece\+::\+Seam\+Allowance\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{points }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a083068e3f14363a24d1200dbcfe6d9a8}\label{class_v_piece_a083068e3f14363a24d1200dbcfe6d9a8}} 
+\index{VPiece@{VPiece}!SeamAllowancePath@{SeamAllowancePath}}
+\index{SeamAllowancePath@{SeamAllowancePath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SeamAllowancePath()}{SeamAllowancePath()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QPainter\+Path VPiece\+::\+Seam\+Allowance\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a695e4e432618d9ebb60024bb76e77739}\label{class_v_piece_a695e4e432618d9ebb60024bb76e77739}} 
+\index{VPiece@{VPiece}!SeamAllowancePoints@{SeamAllowancePoints}}
+\index{SeamAllowancePoints@{SeamAllowancePoints}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SeamAllowancePoints()}{SeamAllowancePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VPiece\+::\+Seam\+Allowance\+Points (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_a68d27cdab3714904d965db2c263463f8}\label{class_v_piece_a68d27cdab3714904d965db2c263463f8}} 
+\index{VPiece@{VPiece}!setAnchors@{setAnchors}}
+\index{setAnchors@{setAnchors}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{setAnchors()}{setAnchors()}}
+{\footnotesize\ttfamily void VPiece\+::set\+Anchors (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{anchors }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a8d0ada81223a2ee5f2c3040283555afe}\label{class_v_piece_a8d0ada81223a2ee5f2c3040283555afe}} 
+\index{VPiece@{VPiece}!SetCustomSARecords@{SetCustomSARecords}}
+\index{SetCustomSARecords@{SetCustomSARecords}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetCustomSARecords()}{SetCustomSARecords()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+Custom\+SARecords (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&}]{records }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a5b96f01d9b5bad37ce7f3a5e58bf75d7}\label{class_v_piece_a5b96f01d9b5bad37ce7f3a5e58bf75d7}} 
+\index{VPiece@{VPiece}!SetInLayout@{SetInLayout}}
+\index{SetInLayout@{SetInLayout}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetInLayout()}{SetInLayout()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+In\+Layout (\begin{DoxyParamCaption}\item[{bool}]{in\+Layout }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_aa1e564b9e6ab7581431f88e5f41eb9c0}\label{class_v_piece_aa1e564b9e6ab7581431f88e5f41eb9c0}} 
+\index{VPiece@{VPiece}!SetInternalPaths@{SetInternalPaths}}
+\index{SetInternalPaths@{SetInternalPaths}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetInternalPaths()}{SetInternalPaths()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+Internal\+Paths (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&}]{i\+Paths }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a05e2eb1a5a6470981141bd3d8fdae515}\label{class_v_piece_a05e2eb1a5a6470981141bd3d8fdae515}} 
+\index{VPiece@{VPiece}!setIsLocked@{setIsLocked}}
+\index{setIsLocked@{setIsLocked}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{setIsLocked()}{setIsLocked()}}
+{\footnotesize\ttfamily void VPiece\+::set\+Is\+Locked (\begin{DoxyParamCaption}\item[{bool}]{is\+Locked }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a55c9a1c2b96e1f55cc0bb04aecf97d64}\label{class_v_piece_a55c9a1c2b96e1f55cc0bb04aecf97d64}} 
+\index{VPiece@{VPiece}!SetPath@{SetPath}}
+\index{SetPath@{SetPath}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetPath()}{SetPath()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_adb7a5569f95c6dd8e5e06b0d760bdb05}\label{class_v_piece_adb7a5569f95c6dd8e5e06b0d760bdb05}} 
+\index{VPiece@{VPiece}!SetPatternInfo@{SetPatternInfo}}
+\index{SetPatternInfo@{SetPatternInfo}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetPatternInfo()}{SetPatternInfo()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+Pattern\+Info (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_pattern_label_data}{VPattern\+Label\+Data}} \&}]{info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a84ef5d6f411e53506b166308b312f6f5}\label{class_v_piece_a84ef5d6f411e53506b166308b312f6f5}} 
+\index{VPiece@{VPiece}!SetPatternPieceData@{SetPatternPieceData}}
+\index{SetPatternPieceData@{SetPatternPieceData}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetPatternPieceData()}{SetPatternPieceData()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+Pattern\+Piece\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_aa0939a481a8e68fde162e017c25492b2}\label{class_v_piece_aa0939a481a8e68fde162e017c25492b2}} 
+\index{VPiece@{VPiece}!setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}}
+\index{setSeamAllowanceWidthFormula@{setSeamAllowanceWidthFormula}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{setSeamAllowanceWidthFormula()}{setSeamAllowanceWidthFormula()}}
+{\footnotesize\ttfamily void VPiece\+::set\+Seam\+Allowance\+Width\+Formula (\begin{DoxyParamCaption}\item[{const QString \&}]{formula,  }\item[{qreal}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_ab73271a2197d96a782769b6858548321}\label{class_v_piece_ab73271a2197d96a782769b6858548321}} 
+\index{VPiece@{VPiece}!SetUnited@{SetUnited}}
+\index{SetUnited@{SetUnited}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{SetUnited()}{SetUnited()}}
+{\footnotesize\ttfamily void VPiece\+::\+Set\+United (\begin{DoxyParamCaption}\item[{bool}]{united }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_a3edb9b2b52587180960a07cc2551156b}\label{class_v_piece_a3edb9b2b52587180960a07cc2551156b}} 
+\index{VPiece@{VPiece}!Swap@{Swap}}
+\index{Swap@{Swap}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VPiece\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_piece_a32c421ed27fffaa7202d43f134ae371c}\label{class_v_piece_a32c421ed27fffaa7202d43f134ae371c}} 
+\index{VPiece@{VPiece}!d@{d}}
+\index{d@{d}!VPiece@{VPiece}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_piece_data}{VPiece\+Data}}$>$ VPiece\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vpiece_8h}{vpiece.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vpiece_8cpp}{vpiece.\+cpp}}\end{DoxyCompactItemize}

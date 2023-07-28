@@ -1,0 +1,865 @@
+\hypertarget{class_v_abstract_spline}{}\doxysection{VAbstract\+Spline Class Reference}
+\label{class_v_abstract_spline}\index{VAbstractSpline@{VAbstractSpline}}
+
+
+{\ttfamily \#include $<$vabstractspline.\+h$>$}
+
+Inheritance diagram for VAbstract\+Spline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.809524cm]{class_v_abstract_spline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_abstract_spline_aee9c54c582ba9b11f36e3f9cc45203cba5e6067d470e90d60e5d55298f7b4889c}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Tool\+::Abstract\+Spline)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a86cf86a7405e085507153d867de852a6}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_ad1c179af1c20dead50473144e9463ee5}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a39de8f1b6d8b6bfb31933d19f506c034}{pieces\+Mode}} (bool mode) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a8c22684e7bce33542b257c2f9ccaa8df}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a5fea771e3e4040fde5d5fd8dc726a47b}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_spline_ab10ed4c1ff02b1bb8b8c3501c33d40ea}{make\+Tool\+Tip}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_ac690669e1b70895f191733e64497f354}{Show\+Tool}} (quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}{active\+Block\+Changed}} (const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em active\+Block\+Changed disable or enable context menu after change active draft block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}{block\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em block\+Name\+Changed save new name active draft block. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}{Enable\+Tool\+Move}} (bool move)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}{Disable}} (bool disable, const QString \&draft\+Block\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}{pieces\+Mode}} (bool mode)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_af9b3bf3bcbcfa2ed5a0f570e5c607627}{Full\+Update\+From\+Gui\+Ok}} (int result)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Ok refresh tool data after change in options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_interactive_tool_aae1bd5db994fa4e01b7f24944ae89416}{Full\+Update\+From\+Gui\+Apply}} ()
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Apply refresh tool data after change in options but do not delete dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2c046b690ce16eb362a17c99b8dda223}{Full\+Update\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a7b15b7bc134aa340d45083017c29b8a9}{Allow\+Hover}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a3122ee94213c72455fa293f4e37e42d2}{Allow\+Selecting}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae6776c165682947d2158bcad167fba89}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_spline_a4865961167e58bfa78c2a509dfa149f5}{set\+Enabled\+Point}} (bool enable)
+\begin{DoxyCompactList}\small\item\em set\+Enabled\+Point disable control points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}{Changed\+Tool\+Selection}} (bool selected, quint32 object, quint32 tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a63a8130db67b2ecfca1dcac01e5a3b09}{tool\+Has\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em tool\+Has\+Changes emit if tool create change that need save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a92725224cd297bc5c878c3eea25f376b}{chosen\+Tool}} (quint32 id, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} type)
+\begin{DoxyCompactList}\small\item\em chosen\+Tool emit if object was clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_acd11c60a16d75bad927b93ae25f7bae9}{Lite\+Update\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+Tree emit if need reparse pattern file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a7727b48eed40340db6bd1688cafb4592}{Tool\+Tip}} (const QString \&tool\+Tip)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_spline_adac240c1bd7e5bccf728c877f4944ee8}{VAbstract\+Spline}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_spline_a70fef99fc9ac9f5e6e5937fd30ec20cb}{$\sim$\+VAbstract\+Spline}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QPainter\+Path \mbox{\hyperlink{class_v_abstract_spline_a08f7a1dda2f654627011b34b9e76abdb}{shape}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a8523fec59145638240b8be0b5a203380}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_v_abstract_spline_ae9aade1d9110d27a0b2716be02ef3f5d}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_spline_a7476f39c541355ae1a3ba1a408a7b890}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_abstract_spline_adcbdfd07a7e91df6e1cf7869975d59d8}{Show\+Handles}} (bool show)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_spline_a83e650557fcb7aa0b0db86d5347ac61b}{get\+Line\+Color}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_spline_a17b4128c7bc2c1f157e1eae1515116dc}{set\+Line\+Color}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_spline_ad84de2e9deb1c92032ff73c06a14affe}{Get\+Pen\+Style}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_spline_a271ff2b8ea70fea8ef44d15845537b31}{Set\+Pen\+Style}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_spline_ae4b362b3178b3f940991f76a9d5dfff1}{get\+Line\+Weight}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Weight return line weight of the spline \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_spline_a85831cc33133d8d076b8a981892109cb}{set\+Line\+Weight}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em set\+Line\+Weight set line weight of the spline \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_abstract_spline_a7ffc35b6b8ba935eb8ec9eb7e3c925e8}{name}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_ae0fa6465677283a89664927256642daf}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_draw_tool_a53337331770ec1b94109b18778f7c115}{VDraw\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}{$\sim$\+VDraw\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}{get\+Line\+Type}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}{set\+Line\+Type}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}{get\+Line\+Weight}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}{set\+Line\+Weight}} (const QString \&value)
+\item 
+virtual bool \mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{is\+Point\+Name\+Visible}} (quint32 id) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_interactive_tool_abe7c4ba7a7bbccc369663a8fca6d085a}{VInteractive\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_interactive_tool_ac4b82e4601a204eb28d402f6229a7beb}{$\sim$\+VInteractive\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_a2b3dd25afc73662182cf9e30121c5d1e}{Dialog\+Link\+Destroy}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool_a70b99e9c5f5de0524b2feddaa2e8f660}{VAbstract\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} container. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_tool_ad7b86091cf994df352cc6f2dc8ca7d6a}{$\sim$\+VAbstract\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return pointer to data container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{class_v_abstract_tool_abcd2a5c12d31e607ad69c3f97db87c41}{Points\+List}} () const
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{get\+Tag\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{Show\+Visualization}} (bool show)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a4e402cb1af57c62e88b64c8d7149c78e}{Refresh\+Geometry}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Geometry refresh item on scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a2a751da0d59123535d05956e07f48e63}{Show\+Tool}} (quint32 id, bool enable) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a7cb7b8771efce1776a863e0237da71ae}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em hover\+Enter\+Event handle hover enter events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a911fef828b907068abcae5ce5b3d941a}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em hover\+Leave\+Event handle hover leave events. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_abstract_spline_ab78f73cc2d180cc633861c3288d5c078}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em item\+Change hadle item change. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_aac52d0346b0a842bbcc7974f70e39d1d}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em key\+Release\+Event handle key release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a40d7da6419a40b656b96bab58c0018ee}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a16e655fb0b01ff65b9ba5b00ce2a06f2}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em mouse\+Release\+Event handle mouse release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a24438e166a5fa87260e4e3d59c7c03c3}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a01f2c57f0ce45ef261cd41c0065502e8}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a5f0966ec14920934769180107c2f5f7b}{refresh\+Ctrl\+Points}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_spline_a46e73fab976e305bd68cf084f6d96d14}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{class_v_spline}{VSpline}} \mbox{\hyperlink{class_v_abstract_spline_af305a831406351c2f912e314df8e8460}{Corrected\+Spline}} (const \mbox{\hyperlink{class_v_spline}{VSpline}} \&spline, const \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \&position, const QPointF \&pos) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_spline_aa0d7f952f11afe3d7f733f691a337f69}{Show\+Tool\+Visualization}} (bool show)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}{Add\+To\+Calculation}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em type\+Line line weight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}{add\+Dependence}} (\mbox{\hyperlink{class_q_list}{QList}}$<$ quint32 $>$ \&list, quint32 object\+Id) const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}{Save\+Dialog}} (QDom\+Element \&dom\+Element)=0
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}{Save\+Dialog\+Change}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}{Save\+Option}} (\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual QString \mbox{\hyperlink{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}{make\+Tool\+Tip}} () const
+\item 
+bool \mbox{\hyperlink{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}{Correct\+Disable}} (bool disable, const QString \&draft\+Block\+Name) const
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}{Read\+Attributes}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible)
+\item 
+{\footnotesize template$<$typename Dialog $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}{Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 item\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \&show\+Remove=\mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Remove\+Option\+::\+Enable}}, const \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \&ref=\mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Referens\+::\+Follow}})
+\begin{DoxyCompactList}\small\item\em Context\+Menu show context menu for tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}{Show\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item, quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Item highlight tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\QString \mbox{\hyperlink{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}{Object\+Name}} (quint32 id) const
+\begin{DoxyCompactList}\small\item\em Object\+Name get object (point, curve, arc) name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_ad039d030b4cc44b00004133f138a61c2}{set\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_a0cc935f9208f6decc289a875e550b6c0}{Save\+Dialog\+Change}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{Add\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_adb481734d9b7052cdcd3b5d112df18e0}{Refresh\+Data\+In\+File}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a78a11cab1da83de526158893aa5b212a}{Remove\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a4c7fb8ceeaefd964fa11577b688a7ec1}{delete\+Tool}} (bool ask=true)
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_tool_a29f253e0480640a6e6a423345132fc80}{Add\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{Set\+Visualization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a981e6bae05ffb564bfac034ccff918da}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_abstract_spline_a8a0ddf28df5b4912f46a0b35769bd588}{Init\+Spline\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_abstract_spline_a177bf3ceb99e5b3705de9d417a9b1a46}{Init\+Spline\+Path\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_abstract_spline_a9cd196024cba72d27863a2b10233dc7e}{Init\+Arc\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_abstract_spline_a04ed70ab6aabb800890a3fca502f290f}{Init\+El\+Arc\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{Init\+Draw\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_tool_aa852f252dc5e5cd7aeefb08e57fb15ef}{Confirm\+Deletion}} ()
+\item 
+static QDom\+Element \mbox{\hyperlink{class_v_abstract_tool_a649bbf0925c735e77bf9fab29236c599}{Add\+SANode}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, const QString \&tag\+Name, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a821ab22da8243998dcc7b0ea051e2a6d}{Add\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a6364648b0ecc8434d91e8edda185e61a}{Prepare\+Nodes}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static quint32 \mbox{\hyperlink{class_v_abstract_tool_ad94d663a3861710c44e6ca293e0440cb}{Prepare\+Node}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} $\ast$ $>$ \mbox{\hyperlink{class_v_abstract_spline_acb1f431abbebd24d1bb6946a40ac7ef3}{control\+Points}}
+\begin{DoxyCompactList}\small\item\em control\+Points list pointers of control points. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \mbox{\hyperlink{class_v_abstract_spline_a864157fe430342b77b606a82344122e9}{scene\+Type}}
+\item 
+bool \mbox{\hyperlink{class_v_abstract_spline_a242c74892b81c36c3acc29af0568a0cb}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_v_abstract_spline_a2ca0db20e0ab24359670bcb001031161}{m\+\_\+pieces\+Mode}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}{active\+Block\+Name}}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}{m\+\_\+line\+Type}}
+\begin{DoxyCompactList}\small\item\em active\+Block\+Name name of tool\textquotesingle{}s pattern peace. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}{m\+\_\+line\+Weight}}
+\begin{DoxyCompactList}\small\item\em type\+Line line type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} $>$ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\+\_\+dialog}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+dialog tool\textquotesingle{}s dialog options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+const quint32 \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_tool_aecd87c3d6c77ffa2a70d0377d0cca30b}{selection\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_spline_a8ead801b6285dbbdb80e9f175a7a6e31}{Init\+Def\+Shape}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_tool_ad0bfc359f78eb591511452ce58b33c66}{Check\+Formula}} (const quint32 \&tool\+Id, QString \&formula, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Check\+Formula check formula. \end{DoxyCompactList}\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_a92535ec97f566be641640d0aac73406b}{Colors}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aab1175fc0f86a9e52da9d145195b3b86}{Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aa881e27f598b21107b5a0e476d98b0a6}{support\+Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_afc244270d10e1bd14d3151d9fba3f893}{background\+Colors\+List}} ()
+\item 
+static QPixmap \mbox{\hyperlink{class_v_abstract_tool_ae07b095b26ee07e932e5db9976d75252}{create\+Color\+Icon}} (const int w, const int h, const QString \&color)
+\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_ab641d32d6545e0b24b45df643bff1a67}{fills}} ()
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_ab1112692b84f354bf0d2c60ed2056fa5}{Add\+Record}} (const quint32 id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tool\+Type, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\begin{DoxyCompactList}\small\item\em Add\+Record add record about tool in history. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a08c03ebfcbbcfbc4f7433de128a5a3d5}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_addcb4bd6032101ed1cd28c43e2f8bb8d}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static quint32 \mbox{\hyperlink{class_v_abstract_tool_a1771c54e6b0d1f94e9346650e8e1e1a9}{Create\+Node}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\begin{DoxyCompactList}\small\item\em Create\+Node create new node for detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\+\_\+suppress\+Context\+Menu}} = false
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_tool_a0c69b5e6f0c973457eebb1759b285e79}{Attr\+In\+Use}} = QString\+Literal(\char`\"{}in\+Use\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04eabcfaccebf745acfd5e75351095a5394a}{Disable}} = false
+, \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Enable}} = true
+ \}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Follow}} = true
+, \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}{Ignore}} = false
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Slots inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_abstract_spline_aee9c54c582ba9b11f36e3f9cc45203cb}\label{class_v_abstract_spline_aee9c54c582ba9b11f36e3f9cc45203cb}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VAbstractSpline@{VAbstractSpline}}\index{VAbstractSpline@{VAbstractSpline}!Type@{Type}}}\mbox{\Hypertarget{class_v_abstract_spline_aee9c54c582ba9b11f36e3f9cc45203cba5e6067d470e90d60e5d55298f7b4889c}\label{class_v_abstract_spline_aee9c54c582ba9b11f36e3f9cc45203cba5e6067d470e90d60e5d55298f7b4889c}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_abstract_spline_adac240c1bd7e5bccf728c877f4944ee8}\label{class_v_abstract_spline_adac240c1bd7e5bccf728c877f4944ee8}} 
+\index{VAbstractSpline@{VAbstractSpline}!VAbstractSpline@{VAbstractSpline}}
+\index{VAbstractSpline@{VAbstractSpline}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{VAbstractSpline()}{VAbstractSpline()}}
+{\footnotesize\ttfamily VAbstract\+Spline\+::\+VAbstract\+Spline (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a70fef99fc9ac9f5e6e5937fd30ec20cb}\label{class_v_abstract_spline_a70fef99fc9ac9f5e6e5937fd30ec20cb}} 
+\index{VAbstractSpline@{VAbstractSpline}!````~VAbstractSpline@{$\sim$VAbstractSpline}}
+\index{````~VAbstractSpline@{$\sim$VAbstractSpline}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractSpline()}{~VAbstractSpline()}}
+{\footnotesize\ttfamily virtual VAbstract\+Spline\+::$\sim$\+VAbstract\+Spline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_abstract_spline_a8c22684e7bce33542b257c2f9ccaa8df}\label{class_v_abstract_spline_a8c22684e7bce33542b257c2f9ccaa8df}} 
+\index{VAbstractSpline@{VAbstractSpline}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a5fea771e3e4040fde5d5fd8dc726a47b}\label{class_v_abstract_spline_a5fea771e3e4040fde5d5fd8dc726a47b}} 
+\index{VAbstractSpline@{VAbstractSpline}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a46e73fab976e305bd68cf084f6d96d14}\label{class_v_abstract_spline_a46e73fab976e305bd68cf084f6d96d14}} 
+\index{VAbstractSpline@{VAbstractSpline}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_af305a831406351c2f912e314df8e8460}\label{class_v_abstract_spline_af305a831406351c2f912e314df8e8460}} 
+\index{VAbstractSpline@{VAbstractSpline}!CorrectedSpline@{CorrectedSpline}}
+\index{CorrectedSpline@{CorrectedSpline}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{CorrectedSpline()}{CorrectedSpline()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline}{VSpline}} VAbstract\+Spline\+::\+Corrected\+Spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spline,  }\item[{const \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{Spline\+Point\+Position}} \&}]{position,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_ad1c179af1c20dead50473144e9463ee5}\label{class_v_abstract_spline_ad1c179af1c20dead50473144e9463ee5}} 
+\index{VAbstractSpline@{VAbstractSpline}!Disable@{Disable}}
+\index{Disable@{Disable}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a86cf86a7405e085507153d867de852a6}\label{class_v_abstract_spline_a86cf86a7405e085507153d867de852a6}} 
+\index{VAbstractSpline@{VAbstractSpline}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Full\+Update\+From\+File update tool data form file. 
+
+\mbox{\Hypertarget{class_v_abstract_spline_a83e650557fcb7aa0b0db86d5347ac61b}\label{class_v_abstract_spline_a83e650557fcb7aa0b0db86d5347ac61b}} 
+\index{VAbstractSpline@{VAbstractSpline}!getLineColor@{getLineColor}}
+\index{getLineColor@{getLineColor}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{getLineColor()}{getLineColor()}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::get\+Line\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_spline_ae4b362b3178b3f940991f76a9d5dfff1}\label{class_v_abstract_spline_ae4b362b3178b3f940991f76a9d5dfff1}} 
+\index{VAbstractSpline@{VAbstractSpline}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+get\+Line\+Weight return line weight of the spline 
+
+\begin{DoxyReturn}{Returns}
+line weight 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_abstract_spline_ad84de2e9deb1c92032ff73c06a14affe}\label{class_v_abstract_spline_ad84de2e9deb1c92032ff73c06a14affe}} 
+\index{VAbstractSpline@{VAbstractSpline}!GetPenStyle@{GetPenStyle}}
+\index{GetPenStyle@{GetPenStyle}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{GetPenStyle()}{GetPenStyle()}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::\+Get\+Pen\+Style (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a7476f39c541355ae1a3ba1a408a7b890}\label{class_v_abstract_spline_a7476f39c541355ae1a3ba1a408a7b890}} 
+\index{VAbstractSpline@{VAbstractSpline}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_arc_aad5bf058c73f41e60c407dc83cb04a61}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_a96d60be5064c476b410f20106ea86e63}{VTool\+Arc\+With\+Length}}, and \mbox{\hyperlink{class_v_tool_elliptical_arc_a4062d19cb077479b21361c0c99659ef3}{VTool\+Elliptical\+Arc}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_ae0fa6465677283a89664927256642daf}\label{class_v_abstract_spline_ae0fa6465677283a89664927256642daf}} 
+\index{VAbstractSpline@{VAbstractSpline}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a7cb7b8771efce1776a863e0237da71ae}\label{class_v_abstract_spline_a7cb7b8771efce1776a863e0237da71ae}} 
+\index{VAbstractSpline@{VAbstractSpline}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+hover\+Enter\+Event handle hover enter events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & hover enter event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_spline_a5eadbffa3e982f3e4512c87d1071e686}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_ae1c35b163e12c72c2393fff56a3c79f9}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a911fef828b907068abcae5ce5b3d941a}\label{class_v_abstract_spline_a911fef828b907068abcae5ce5b3d941a}} 
+\index{VAbstractSpline@{VAbstractSpline}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+hover\+Leave\+Event handle hover leave events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & hover leave event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_spline_a605009103651d081ebd62fea598bd2ff}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_ae02045edccd42aa2d1d7196d1fe42f6a}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a9cd196024cba72d27863a2b10233dc7e}\label{class_v_abstract_spline_a9cd196024cba72d27863a2b10233dc7e}} 
+\index{VAbstractSpline@{VAbstractSpline}!InitArcToolConnections@{InitArcToolConnections}}
+\index{InitArcToolConnections@{InitArcToolConnections}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{InitArcToolConnections()}{InitArcToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Spline\+::\+Init\+Arc\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a8ead801b6285dbbdb80e9f175a7a6e31}\label{class_v_abstract_spline_a8ead801b6285dbbdb80e9f175a7a6e31}} 
+\index{VAbstractSpline@{VAbstractSpline}!InitDefShape@{InitDefShape}}
+\index{InitDefShape@{InitDefShape}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{InitDefShape()}{InitDefShape()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Init\+Def\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a04ed70ab6aabb800890a3fca502f290f}\label{class_v_abstract_spline_a04ed70ab6aabb800890a3fca502f290f}} 
+\index{VAbstractSpline@{VAbstractSpline}!InitElArcToolConnections@{InitElArcToolConnections}}
+\index{InitElArcToolConnections@{InitElArcToolConnections}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{InitElArcToolConnections()}{InitElArcToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Spline\+::\+Init\+El\+Arc\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a177bf3ceb99e5b3705de9d417a9b1a46}\label{class_v_abstract_spline_a177bf3ceb99e5b3705de9d417a9b1a46}} 
+\index{VAbstractSpline@{VAbstractSpline}!InitSplinePathToolConnections@{InitSplinePathToolConnections}}
+\index{InitSplinePathToolConnections@{InitSplinePathToolConnections}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{InitSplinePathToolConnections()}{InitSplinePathToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Spline\+::\+Init\+Spline\+Path\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a8a0ddf28df5b4912f46a0b35769bd588}\label{class_v_abstract_spline_a8a0ddf28df5b4912f46a0b35769bd588}} 
+\index{VAbstractSpline@{VAbstractSpline}!InitSplineToolConnections@{InitSplineToolConnections}}
+\index{InitSplineToolConnections@{InitSplineToolConnections}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{InitSplineToolConnections()}{InitSplineToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Spline\+::\+Init\+Spline\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_ab78f73cc2d180cc633861c3288d5c078}\label{class_v_abstract_spline_ab78f73cc2d180cc633861c3288d5c078}} 
+\index{VAbstractSpline@{VAbstractSpline}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VAbstract\+Spline\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+item\+Change hadle item change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & change. \\
+\hline
+{\em value} & value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_abstract_spline_aac52d0346b0a842bbcc7974f70e39d1d}\label{class_v_abstract_spline_aac52d0346b0a842bbcc7974f70e39d1d}} 
+\index{VAbstractSpline@{VAbstractSpline}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+key\+Release\+Event handle key release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & key release event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_abstract_spline_ab10ed4c1ff02b1bb8b8c3501c33d40ea}\label{class_v_abstract_spline_ab10ed4c1ff02b1bb8b8c3501c33d40ea}} 
+\index{VAbstractSpline@{VAbstractSpline}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{makeToolTip}{makeToolTip}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_arc_a610280c9989cc927a58678173081e70e}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_ac5d9663c42e5607e2f7fe0505e4f5208}{VTool\+Arc\+With\+Length}}, and \mbox{\hyperlink{class_v_tool_elliptical_arc_a5d600cd873a1694ba3e6a418b3f497a9}{VTool\+Elliptical\+Arc}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a40d7da6419a40b656b96bab58c0018ee}\label{class_v_abstract_spline_a40d7da6419a40b656b96bab58c0018ee}} 
+\index{VAbstractSpline@{VAbstractSpline}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_spline_a337d02d2eef0b1988c07799b6fa87778}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_ae7e41d478a2a76f59d7e155287a854e7}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a16e655fb0b01ff65b9ba5b00ce2a06f2}\label{class_v_abstract_spline_a16e655fb0b01ff65b9ba5b00ce2a06f2}} 
+\index{VAbstractSpline@{VAbstractSpline}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+mouse\+Release\+Event handle mouse release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & mouse release event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_spline_a6ef14216ea377d64afabdfe40b0dd370}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_aa4ae5e7628845f44d0ab67d794b40165}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a7ffc35b6b8ba935eb8ec9eb7e3c925e8}\label{class_v_abstract_spline_a7ffc35b6b8ba935eb8ec9eb7e3c925e8}} 
+\index{VAbstractSpline@{VAbstractSpline}!name@{name}}
+\index{name@{name}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily QString VAbstract\+Spline\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a8523fec59145638240b8be0b5a203380}\label{class_v_abstract_spline_a8523fec59145638240b8be0b5a203380}} 
+\index{VAbstractSpline@{VAbstractSpline}!paint@{paint}}
+\index{paint@{paint}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a39de8f1b6d8b6bfb31933d19f506c034}\label{class_v_abstract_spline_a39de8f1b6d8b6bfb31933d19f506c034}} 
+\index{VAbstractSpline@{VAbstractSpline}!piecesMode@{piecesMode}}
+\index{piecesMode@{piecesMode}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{piecesMode}{piecesMode}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::pieces\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a24438e166a5fa87260e4e3d59c7c03c3}\label{class_v_abstract_spline_a24438e166a5fa87260e4e3d59c7c03c3}} 
+\index{VAbstractSpline@{VAbstractSpline}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a5f0966ec14920934769180107c2f5f7b}\label{class_v_abstract_spline_a5f0966ec14920934769180107c2f5f7b}} 
+\index{VAbstractSpline@{VAbstractSpline}!refreshCtrlPoints@{refreshCtrlPoints}}
+\index{refreshCtrlPoints@{refreshCtrlPoints}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{refreshCtrlPoints()}{refreshCtrlPoints()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::refresh\+Ctrl\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_spline_a4adfc8704e02e04515ec42aa4d4bb5b4}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_a85b6160fdf140e8ad183370a81ecd419}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a4e402cb1af57c62e88b64c8d7149c78e}\label{class_v_abstract_spline_a4e402cb1af57c62e88b64c8d7149c78e}} 
+\index{VAbstractSpline@{VAbstractSpline}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Refresh\+Geometry refresh item on scene. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_cubic_bezier_a2495a2ea0cff2638c8bd8d78f59dfbe1}{VTool\+Cubic\+Bezier}}, and \mbox{\hyperlink{class_v_tool_cubic_bezier_path_abd71b5aa181dda510befc47a63c9be8e}{VTool\+Cubic\+Bezier\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a01f2c57f0ce45ef261cd41c0065502e8}\label{class_v_abstract_spline_a01f2c57f0ce45ef261cd41c0065502e8}} 
+\index{VAbstractSpline@{VAbstractSpline}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{VDraw\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_arc_a7594d8a0980a0f86b53d4f6ffc5b520a}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_ad63c5be617118bfe420459f5235e6745}{VTool\+Arc\+With\+Length}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_a01e7cc3df9d49a41ab7191c925a56219}{VTool\+Cubic\+Bezier}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_path_a76111843d6f1c7d04b41229cce4713c0}{VTool\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_v_tool_elliptical_arc_a31c8db849de325ea67218bfdaeedebc5}{VTool\+Elliptical\+Arc}}, \mbox{\hyperlink{class_v_tool_spline_a27ac09221f73a5134a383879c3de121d}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_a2595d294d9e3ae951cfdcdfff0f2a2b0}{VTool\+Spline\+Path}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a4865961167e58bfa78c2a509dfa149f5}\label{class_v_abstract_spline_a4865961167e58bfa78c2a509dfa149f5}} 
+\index{VAbstractSpline@{VAbstractSpline}!setEnabledPoint@{setEnabledPoint}}
+\index{setEnabledPoint@{setEnabledPoint}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{setEnabledPoint}{setEnabledPoint}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::set\+Enabled\+Point (\begin{DoxyParamCaption}\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+set\+Enabled\+Point disable control points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enable} & enable or diasable points. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_abstract_spline_a17b4128c7bc2c1f157e1eae1515116dc}\label{class_v_abstract_spline_a17b4128c7bc2c1f157e1eae1515116dc}} 
+\index{VAbstractSpline@{VAbstractSpline}!setLineColor@{setLineColor}}
+\index{setLineColor@{setLineColor}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{setLineColor()}{setLineColor()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::set\+Line\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a85831cc33133d8d076b8a981892109cb}\label{class_v_abstract_spline_a85831cc33133d8d076b8a981892109cb}} 
+\index{VAbstractSpline@{VAbstractSpline}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Line\+Weight set line weight of the spline 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & line weight \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_a271ff2b8ea70fea8ef44d15845537b31}\label{class_v_abstract_spline_a271ff2b8ea70fea8ef44d15845537b31}} 
+\index{VAbstractSpline@{VAbstractSpline}!SetPenStyle@{SetPenStyle}}
+\index{SetPenStyle@{SetPenStyle}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{SetPenStyle()}{SetPenStyle()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Set\+Pen\+Style (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a08f7a1dda2f654627011b34b9e76abdb}\label{class_v_abstract_spline_a08f7a1dda2f654627011b34b9e76abdb}} 
+\index{VAbstractSpline@{VAbstractSpline}!shape@{shape}}
+\index{shape@{shape}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{shape()}{shape()}}
+{\footnotesize\ttfamily QPainter\+Path VAbstract\+Spline\+::shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_adcbdfd07a7e91df6e1cf7869975d59d8}\label{class_v_abstract_spline_adcbdfd07a7e91df6e1cf7869975d59d8}} 
+\index{VAbstractSpline@{VAbstractSpline}!ShowHandles@{ShowHandles}}
+\index{ShowHandles@{ShowHandles}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{ShowHandles()}{ShowHandles()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Show\+Handles (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a2a751da0d59123535d05956e07f48e63}\label{class_v_abstract_spline_a2a751da0d59123535d05956e07f48e63}} 
+\index{VAbstractSpline@{VAbstractSpline}!ShowTool@{ShowTool}}
+\index{ShowTool@{ShowTool}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{ShowTool()}{ShowTool()}}
+{\footnotesize\ttfamily void VAbstract\+Spline\+::\+Show\+Tool (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Show\+Tool highlight tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id in container \\
+\hline
+{\em enable} & enable or disable highlight. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_ac690669e1b70895f191733e64497f354}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{class_v_abstract_spline_aa0d7f952f11afe3d7f733f691a337f69}\label{class_v_abstract_spline_aa0d7f952f11afe3d7f733f691a337f69}} 
+\index{VAbstractSpline@{VAbstractSpline}!ShowToolVisualization@{ShowToolVisualization}}
+\index{ShowToolVisualization@{ShowToolVisualization}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{ShowToolVisualization()}{ShowToolVisualization()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VAbstract\+Spline\+::\+Show\+Tool\+Visualization (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_ae9aade1d9110d27a0b2716be02ef3f5d}\label{class_v_abstract_spline_ae9aade1d9110d27a0b2716be02ef3f5d}} 
+\index{VAbstractSpline@{VAbstractSpline}!type@{type}}
+\index{type@{type}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VAbstract\+Spline\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_arc_a426a97d9841eed15d0cf01b17fc583cc}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_adac1e47188f7effe29329c353c4d6ee1}{VTool\+Arc\+With\+Length}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_aca3ab5779c7954862a6c729b4d9d45bb}{VTool\+Cubic\+Bezier}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_path_a0282038890944132bbc8872a247124eb}{VTool\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_v_tool_elliptical_arc_a676044c4669443462195b5d346ae4fa7}{VTool\+Elliptical\+Arc}}, \mbox{\hyperlink{class_v_tool_spline_a94aef74949bd277298d9d7f7eef48a56}{VTool\+Spline}}, and \mbox{\hyperlink{class_v_tool_spline_path_a5325c0ed6f9b4a7f6118d984a1ba210a}{VTool\+Spline\+Path}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_abstract_spline_acb1f431abbebd24d1bb6946a40ac7ef3}\label{class_v_abstract_spline_acb1f431abbebd24d1bb6946a40ac7ef3}} 
+\index{VAbstractSpline@{VAbstractSpline}!controlPoints@{controlPoints}}
+\index{controlPoints@{controlPoints}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{controlPoints}{controlPoints}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_control_point_spline}{VControl\+Point\+Spline}} $\ast$$>$ VAbstract\+Spline\+::control\+Points\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+control\+Points list pointers of control points. 
+
+\mbox{\Hypertarget{class_v_abstract_spline_a242c74892b81c36c3acc29af0568a0cb}\label{class_v_abstract_spline_a242c74892b81c36c3acc29af0568a0cb}} 
+\index{VAbstractSpline@{VAbstractSpline}!m\_isHovered@{m\_isHovered}}
+\index{m\_isHovered@{m\_isHovered}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{m\_isHovered}{m\_isHovered}}
+{\footnotesize\ttfamily bool VAbstract\+Spline\+::m\+\_\+is\+Hovered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a2ca0db20e0ab24359670bcb001031161}\label{class_v_abstract_spline_a2ca0db20e0ab24359670bcb001031161}} 
+\index{VAbstractSpline@{VAbstractSpline}!m\_piecesMode@{m\_piecesMode}}
+\index{m\_piecesMode@{m\_piecesMode}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{m\_piecesMode}{m\_piecesMode}}
+{\footnotesize\ttfamily bool VAbstract\+Spline\+::m\+\_\+pieces\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_spline_a864157fe430342b77b606a82344122e9}\label{class_v_abstract_spline_a864157fe430342b77b606a82344122e9}} 
+\index{VAbstractSpline@{VAbstractSpline}!sceneType@{sceneType}}
+\index{sceneType@{sceneType}!VAbstractSpline@{VAbstractSpline}}
+\doxysubsubsection{\texorpdfstring{sceneType}{sceneType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} VAbstract\+Spline\+::scene\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vabstractspline_8h}{vabstractspline.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/toolcurve/\mbox{\hyperlink{vabstractspline_8cpp}{vabstractspline.\+cpp}}\end{DoxyCompactItemize}

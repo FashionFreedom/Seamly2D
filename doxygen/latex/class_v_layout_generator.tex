@@ -1,0 +1,570 @@
+\hypertarget{class_v_layout_generator}{}\doxysection{VLayout\+Generator Class Reference}
+\label{class_v_layout_generator}\index{VLayoutGenerator@{VLayoutGenerator}}
+
+
+{\ttfamily \#include $<$vlayoutgenerator.\+h$>$}
+
+Inheritance diagram for VLayout\+Generator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_layout_generator}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a4b30486086641002db6f0f4cb27d6cef}{Abort}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a3845eec98806acd5ec4e210895b171ba}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a359129571ff4922be2b39ac4261d07c3}{Arranged}} (int count)
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_ad6e4d45809775725afaab645781fe3a6}{Error}} (const \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} \&\mbox{\hyperlink{class_v_layout_generator_ab3f370583b54653665f03b342922d271}{state}})
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a42fd669afb64adde0481d56ddc807d41}{Finished}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_layout_generator_af6a494b194aebaca65358503036bdcd5}{VLayout\+Generator}} (QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_layout_generator_a8a150313fb2d63f6f70fb9485e51619a}{$\sim$\+VLayout\+Generator}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a39c5f9e0727073d0c1b6e8d457cc25be}{set\+Pieces}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&details)
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a27161b0b7081919a4c177220556bbeb5}{Set\+Layout\+Width}} (qreal width)
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_aa1078abf49867338cf142398ca038bdb}{Set\+Case\+Type}} (\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} case\+Type)
+\item 
+int \mbox{\hyperlink{class_v_layout_generator_a8ff8dde05f5c9d6cc3e99f1295b8bb31}{Piece\+Count}} ()
+\item 
+qreal \mbox{\hyperlink{class_v_layout_generator_a01475255b0aaf904c57bb3f69bce13ba}{Get\+Paper\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a243116a9d958ab5319b4c885cbcac293}{Set\+Paper\+Height}} (qreal value)
+\item 
+qreal \mbox{\hyperlink{class_v_layout_generator_aa359c484afbd0a48deb0bd51c64612a4}{Get\+Paper\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a29052bbb971efe52e772525199e28250}{Set\+Paper\+Width}} (qreal value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_aff21ab84aa2f9e00138c107cd875fbef}{Is\+Use\+Printer\+Fields}} () const
+\item 
+QMarginsF \mbox{\hyperlink{class_v_layout_generator_aa65b356f2d95ad4397975524e49e036e}{Get\+Printer\+Fields}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a8fae5c85bebcb923c00970e52c0e5b94}{Set\+Printer\+Fields}} (bool \mbox{\hyperlink{class_v_layout_generator_a98976de729e4a11d8bccb1760060a00e}{use\+Printer\+Fields}}, const QMarginsF \&value)
+\item 
+quint32 \mbox{\hyperlink{class_v_layout_generator_aee72eac028859c12f5a9febf79614d52}{Get\+Shift}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_ace55451c057f27e61f1f21a27c7214fe}{Set\+Shift}} (quint32 \mbox{\hyperlink{class_v_layout_generator_a90eb9274bd65e1d3a499c17515e9008d}{shift}})
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a5d5baba4e344674fc1a872972145ccf9}{Generate}} ()
+\item 
+\mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} \mbox{\hyperlink{class_v_layout_generator_ad56e367d403e6e8247b23812763bb92d}{State}} () const
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ \mbox{\hyperlink{class_v_layout_generator_a2e810cd775e1662831ae50cffebd973d}{Get\+Papers\+Items}} () const
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ $>$ \mbox{\hyperlink{class_v_layout_generator_a7505dea560f543ffa43add7d9f557a6d}{get\+All\+Piece\+Items}} () const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ $>$ \mbox{\hyperlink{class_v_layout_generator_af7dda68248c869ddad9cab547f74e25f}{get\+All\+Pieces}} () const
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_abbc4297a7ca6255e9eb273d303fe3352}{Get\+Rotate}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a85ef63bae016c7d0475f87a86464e9d7}{Set\+Rotate}} (bool value)
+\item 
+int \mbox{\hyperlink{class_v_layout_generator_a4ae0264be8843330433b9e3ecd25ca7d}{Get\+Rotation\+Increase}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a631d8506609f94f7fbbedca28c762535}{Set\+Rotation\+Increase}} (int value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a92f32c45efca8a5f2584b2bad303e7b5}{Get\+Auto\+Crop}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a32322ae845e6c9968a006b03ee8acfba}{Set\+Auto\+Crop}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_aa0d7f041ec7a167ac5b62c4143542860}{Is\+Save\+Length}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_afc760b2352f97ce0264b56d94358e864}{Set\+Save\+Length}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a752a4772d3dcd3bc5e54d2cb2ef5d90c}{Is\+Unite\+Pages}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a4bde24d5d2f2b387f39ddaedb0c658d3}{Set\+Unite\+Pages}} (bool value)
+\item 
+quint8 \mbox{\hyperlink{class_v_layout_generator_a5171eb4d56cc2275ade0fbc2c27110a9}{Get\+Multiplier}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_abea72f118ebd214d23703801b5b8d4e7}{Set\+Multiplier}} (const quint8 \&value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_ae02084ec804bbfab2b6ccc2eeb9d49fc}{Is\+Strip\+Optimization}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_ac2088062a91f8470bff85709d9aa6247}{Set\+Strip\+Optimization}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_ad83ea2f8f0d47f5068d281a9a220e056}{Is\+Test\+As\+Paths}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a89c0625ebc5cdd096e4bbd6898a65ca0}{Set\+Test\+As\+Paths}} (bool value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_v_layout_generator_afd3ca8c20dd9c2570202a4a56a27f934}{Page\+Height}} () const
+\item 
+int \mbox{\hyperlink{class_v_layout_generator_ae9ac819e2b389a3ffa9aa190750582f2}{Page\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a9014578a56deeffca0bdab866a46b98b}{Gather\+Pages}} ()
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a89550b62a65cd464fe3f4cbb2dac821c}{Unite\+Pages}} ()
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_aa50c72ef467691de5a7aaad1e326c13b}{unite\+Pieces}} (int j, \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ $>$ \&pieces, qreal length, int i)
+\item 
+void \mbox{\hyperlink{class_v_layout_generator_a5bd55c91d486acc0cb0b3c566a9bbdf1}{Unite\+Papers}} (int j, \mbox{\hyperlink{class_q_list}{QList}}$<$ qreal $>$ \&papers\+Length, qreal length)
+\item 
+\mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \mbox{\hyperlink{class_v_layout_generator_a734cdac74ed5a2758ac33c169bd88d5c}{move\+Pieces}} (qreal length, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&pieces)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} $>$ \mbox{\hyperlink{class_v_layout_generator_ada97866687e79e2dfa77602ef89eb5b8}{papers}}
+\item 
+\mbox{\hyperlink{class_v_bank}{VBank}} $\ast$ \mbox{\hyperlink{class_v_layout_generator_ab553f1b2d1bbd3df4a0d769cd69236f3}{bank}}
+\item 
+qreal \mbox{\hyperlink{class_v_layout_generator_a8e0727b5dbe0ac43568ff6936a575a3d}{paper\+Height}}
+\item 
+qreal \mbox{\hyperlink{class_v_layout_generator_a68fc2e575b227e9e451511595df6ede6}{paper\+Width}}
+\item 
+QMarginsF \mbox{\hyperlink{class_v_layout_generator_aebdc97bb80622955f9d6657cac6b380f}{margins}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a98976de729e4a11d8bccb1760060a00e}{use\+Printer\+Fields}}
+\item 
+std\+::atomic\+\_\+bool \mbox{\hyperlink{class_v_layout_generator_abf662da9f6e22987d19d8edfc3e06797}{stop\+Generation}}
+\item 
+\mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} \mbox{\hyperlink{class_v_layout_generator_ab3f370583b54653665f03b342922d271}{state}}
+\item 
+quint32 \mbox{\hyperlink{class_v_layout_generator_a90eb9274bd65e1d3a499c17515e9008d}{shift}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_aeb35b9fa569b74d4ad5f248c5d542020}{rotate}}
+\item 
+int \mbox{\hyperlink{class_v_layout_generator_a16c15ab5486191d00ae48220c64d1845}{rotation\+Increase}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a31d27326c295e698731533f2a890ce3a}{auto\+Crop}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a4fba524303b20de80961322166423ad2}{save\+Length}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a34fb5cd132b2def3336031432e6d3c5a}{unite\+Pages}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a43567711eec3f8ff0b0d445fa2ea1b39}{strip\+Optimization\+Enabled}}
+\item 
+quint8 \mbox{\hyperlink{class_v_layout_generator_a406dd1437bb321710c59253b12cb85db}{multiplier}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a2ef0137ea578aee8c7d224f338d8aa58}{strip\+Optimization}}
+\item 
+bool \mbox{\hyperlink{class_v_layout_generator_a102046a68590dae020c9cb9a963cffde}{text\+As\+Paths}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_layout_generator_af6a494b194aebaca65358503036bdcd5}\label{class_v_layout_generator_af6a494b194aebaca65358503036bdcd5}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!VLayoutGenerator@{VLayoutGenerator}}
+\index{VLayoutGenerator@{VLayoutGenerator}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{VLayoutGenerator()}{VLayoutGenerator()}}
+{\footnotesize\ttfamily VLayout\+Generator\+::\+VLayout\+Generator (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a8a150313fb2d63f6f70fb9485e51619a}\label{class_v_layout_generator_a8a150313fb2d63f6f70fb9485e51619a}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!````~VLayoutGenerator@{$\sim$VLayoutGenerator}}
+\index{````~VLayoutGenerator@{$\sim$VLayoutGenerator}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{$\sim$VLayoutGenerator()}{~VLayoutGenerator()}}
+{\footnotesize\ttfamily VLayout\+Generator\+::$\sim$\+VLayout\+Generator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_layout_generator_a4b30486086641002db6f0f4cb27d6cef}\label{class_v_layout_generator_a4b30486086641002db6f0f4cb27d6cef}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Abort@{Abort}}
+\index{Abort@{Abort}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Abort}{Abort}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a359129571ff4922be2b39ac4261d07c3}\label{class_v_layout_generator_a359129571ff4922be2b39ac4261d07c3}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Arranged@{Arranged}}
+\index{Arranged@{Arranged}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Arranged}{Arranged}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Arranged (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ad6e4d45809775725afaab645781fe3a6}\label{class_v_layout_generator_ad6e4d45809775725afaab645781fe3a6}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Error@{Error}}
+\index{Error@{Error}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Error}{Error}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} \&}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a42fd669afb64adde0481d56ddc807d41}\label{class_v_layout_generator_a42fd669afb64adde0481d56ddc807d41}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Finished@{Finished}}
+\index{Finished@{Finished}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Finished}{Finished}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a9014578a56deeffca0bdab866a46b98b}\label{class_v_layout_generator_a9014578a56deeffca0bdab866a46b98b}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GatherPages@{GatherPages}}
+\index{GatherPages@{GatherPages}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GatherPages()}{GatherPages()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Gather\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a5d5baba4e344674fc1a872972145ccf9}\label{class_v_layout_generator_a5d5baba4e344674fc1a872972145ccf9}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Generate@{Generate}}
+\index{Generate@{Generate}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Generate()}{Generate()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Generate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a7505dea560f543ffa43add7d9f557a6d}\label{class_v_layout_generator_a7505dea560f543ffa43add7d9f557a6d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!getAllPieceItems@{getAllPieceItems}}
+\index{getAllPieceItems@{getAllPieceItems}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{getAllPieceItems()}{getAllPieceItems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ $>$ VLayout\+Generator\+::get\+All\+Piece\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_af7dda68248c869ddad9cab547f74e25f}\label{class_v_layout_generator_af7dda68248c869ddad9cab547f74e25f}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!getAllPieces@{getAllPieces}}
+\index{getAllPieces@{getAllPieces}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{getAllPieces()}{getAllPieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ $>$ VLayout\+Generator\+::get\+All\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a92f32c45efca8a5f2584b2bad303e7b5}\label{class_v_layout_generator_a92f32c45efca8a5f2584b2bad303e7b5}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetAutoCrop@{GetAutoCrop}}
+\index{GetAutoCrop@{GetAutoCrop}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetAutoCrop()}{GetAutoCrop()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Get\+Auto\+Crop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a5171eb4d56cc2275ade0fbc2c27110a9}\label{class_v_layout_generator_a5171eb4d56cc2275ade0fbc2c27110a9}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetMultiplier@{GetMultiplier}}
+\index{GetMultiplier@{GetMultiplier}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetMultiplier()}{GetMultiplier()}}
+{\footnotesize\ttfamily quint8 VLayout\+Generator\+::\+Get\+Multiplier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a01475255b0aaf904c57bb3f69bce13ba}\label{class_v_layout_generator_a01475255b0aaf904c57bb3f69bce13ba}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetPaperHeight@{GetPaperHeight}}
+\index{GetPaperHeight@{GetPaperHeight}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetPaperHeight()}{GetPaperHeight()}}
+{\footnotesize\ttfamily qreal VLayout\+Generator\+::\+Get\+Paper\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a2e810cd775e1662831ae50cffebd973d}\label{class_v_layout_generator_a2e810cd775e1662831ae50cffebd973d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetPapersItems@{GetPapersItems}}
+\index{GetPapersItems@{GetPapersItems}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetPapersItems()}{GetPapersItems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ VLayout\+Generator\+::\+Get\+Papers\+Items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_aa359c484afbd0a48deb0bd51c64612a4}\label{class_v_layout_generator_aa359c484afbd0a48deb0bd51c64612a4}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetPaperWidth@{GetPaperWidth}}
+\index{GetPaperWidth@{GetPaperWidth}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetPaperWidth()}{GetPaperWidth()}}
+{\footnotesize\ttfamily qreal VLayout\+Generator\+::\+Get\+Paper\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_aa65b356f2d95ad4397975524e49e036e}\label{class_v_layout_generator_aa65b356f2d95ad4397975524e49e036e}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetPrinterFields@{GetPrinterFields}}
+\index{GetPrinterFields@{GetPrinterFields}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetPrinterFields()}{GetPrinterFields()}}
+{\footnotesize\ttfamily QMarginsF VLayout\+Generator\+::\+Get\+Printer\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_abbc4297a7ca6255e9eb273d303fe3352}\label{class_v_layout_generator_abbc4297a7ca6255e9eb273d303fe3352}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetRotate@{GetRotate}}
+\index{GetRotate@{GetRotate}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetRotate()}{GetRotate()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Get\+Rotate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a4ae0264be8843330433b9e3ecd25ca7d}\label{class_v_layout_generator_a4ae0264be8843330433b9e3ecd25ca7d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetRotationIncrease@{GetRotationIncrease}}
+\index{GetRotationIncrease@{GetRotationIncrease}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetRotationIncrease()}{GetRotationIncrease()}}
+{\footnotesize\ttfamily int VLayout\+Generator\+::\+Get\+Rotation\+Increase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_aee72eac028859c12f5a9febf79614d52}\label{class_v_layout_generator_aee72eac028859c12f5a9febf79614d52}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!GetShift@{GetShift}}
+\index{GetShift@{GetShift}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{GetShift()}{GetShift()}}
+{\footnotesize\ttfamily quint32 VLayout\+Generator\+::\+Get\+Shift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_aa0d7f041ec7a167ac5b62c4143542860}\label{class_v_layout_generator_aa0d7f041ec7a167ac5b62c4143542860}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!IsSaveLength@{IsSaveLength}}
+\index{IsSaveLength@{IsSaveLength}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{IsSaveLength()}{IsSaveLength()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Is\+Save\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_ae02084ec804bbfab2b6ccc2eeb9d49fc}\label{class_v_layout_generator_ae02084ec804bbfab2b6ccc2eeb9d49fc}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!IsStripOptimization@{IsStripOptimization}}
+\index{IsStripOptimization@{IsStripOptimization}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{IsStripOptimization()}{IsStripOptimization()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Is\+Strip\+Optimization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_ad83ea2f8f0d47f5068d281a9a220e056}\label{class_v_layout_generator_ad83ea2f8f0d47f5068d281a9a220e056}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!IsTestAsPaths@{IsTestAsPaths}}
+\index{IsTestAsPaths@{IsTestAsPaths}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{IsTestAsPaths()}{IsTestAsPaths()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Is\+Test\+As\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a752a4772d3dcd3bc5e54d2cb2ef5d90c}\label{class_v_layout_generator_a752a4772d3dcd3bc5e54d2cb2ef5d90c}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!IsUnitePages@{IsUnitePages}}
+\index{IsUnitePages@{IsUnitePages}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{IsUnitePages()}{IsUnitePages()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Is\+Unite\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_aff21ab84aa2f9e00138c107cd875fbef}\label{class_v_layout_generator_aff21ab84aa2f9e00138c107cd875fbef}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!IsUsePrinterFields@{IsUsePrinterFields}}
+\index{IsUsePrinterFields@{IsUsePrinterFields}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{IsUsePrinterFields()}{IsUsePrinterFields()}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::\+Is\+Use\+Printer\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a734cdac74ed5a2758ac33c169bd88d5c}\label{class_v_layout_generator_a734cdac74ed5a2758ac33c169bd88d5c}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!movePieces@{movePieces}}
+\index{movePieces@{movePieces}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{movePieces()}{movePieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ VLayout\+Generator\+::move\+Pieces (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_afd3ca8c20dd9c2570202a4a56a27f934}\label{class_v_layout_generator_afd3ca8c20dd9c2570202a4a56a27f934}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!PageHeight@{PageHeight}}
+\index{PageHeight@{PageHeight}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{PageHeight()}{PageHeight()}}
+{\footnotesize\ttfamily int VLayout\+Generator\+::\+Page\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ae9ac819e2b389a3ffa9aa190750582f2}\label{class_v_layout_generator_ae9ac819e2b389a3ffa9aa190750582f2}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!PageWidth@{PageWidth}}
+\index{PageWidth@{PageWidth}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{PageWidth()}{PageWidth()}}
+{\footnotesize\ttfamily int VLayout\+Generator\+::\+Page\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a8ff8dde05f5c9d6cc3e99f1295b8bb31}\label{class_v_layout_generator_a8ff8dde05f5c9d6cc3e99f1295b8bb31}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!PieceCount@{PieceCount}}
+\index{PieceCount@{PieceCount}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{PieceCount()}{PieceCount()}}
+{\footnotesize\ttfamily int VLayout\+Generator\+::\+Piece\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a32322ae845e6c9968a006b03ee8acfba}\label{class_v_layout_generator_a32322ae845e6c9968a006b03ee8acfba}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetAutoCrop@{SetAutoCrop}}
+\index{SetAutoCrop@{SetAutoCrop}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetAutoCrop()}{SetAutoCrop()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Auto\+Crop (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_aa1078abf49867338cf142398ca038bdb}\label{class_v_layout_generator_aa1078abf49867338cf142398ca038bdb}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetCaseType@{SetCaseType}}
+\index{SetCaseType@{SetCaseType}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetCaseType()}{SetCaseType()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Case\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}}]{case\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a27161b0b7081919a4c177220556bbeb5}\label{class_v_layout_generator_a27161b0b7081919a4c177220556bbeb5}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetLayoutWidth@{SetLayoutWidth}}
+\index{SetLayoutWidth@{SetLayoutWidth}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetLayoutWidth()}{SetLayoutWidth()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Layout\+Width (\begin{DoxyParamCaption}\item[{qreal}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_abea72f118ebd214d23703801b5b8d4e7}\label{class_v_layout_generator_abea72f118ebd214d23703801b5b8d4e7}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetMultiplier@{SetMultiplier}}
+\index{SetMultiplier@{SetMultiplier}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetMultiplier()}{SetMultiplier()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Multiplier (\begin{DoxyParamCaption}\item[{const quint8 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a243116a9d958ab5319b4c885cbcac293}\label{class_v_layout_generator_a243116a9d958ab5319b4c885cbcac293}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetPaperHeight@{SetPaperHeight}}
+\index{SetPaperHeight@{SetPaperHeight}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetPaperHeight()}{SetPaperHeight()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Paper\+Height (\begin{DoxyParamCaption}\item[{qreal}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a29052bbb971efe52e772525199e28250}\label{class_v_layout_generator_a29052bbb971efe52e772525199e28250}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetPaperWidth@{SetPaperWidth}}
+\index{SetPaperWidth@{SetPaperWidth}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetPaperWidth()}{SetPaperWidth()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Paper\+Width (\begin{DoxyParamCaption}\item[{qreal}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a39c5f9e0727073d0c1b6e8d457cc25be}\label{class_v_layout_generator_a39c5f9e0727073d0c1b6e8d457cc25be}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!setPieces@{setPieces}}
+\index{setPieces@{setPieces}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{setPieces()}{setPieces()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::set\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{details }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a8fae5c85bebcb923c00970e52c0e5b94}\label{class_v_layout_generator_a8fae5c85bebcb923c00970e52c0e5b94}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetPrinterFields@{SetPrinterFields}}
+\index{SetPrinterFields@{SetPrinterFields}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetPrinterFields()}{SetPrinterFields()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Printer\+Fields (\begin{DoxyParamCaption}\item[{bool}]{use\+Printer\+Fields,  }\item[{const QMarginsF \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a85ef63bae016c7d0475f87a86464e9d7}\label{class_v_layout_generator_a85ef63bae016c7d0475f87a86464e9d7}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetRotate@{SetRotate}}
+\index{SetRotate@{SetRotate}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetRotate()}{SetRotate()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Rotate (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a631d8506609f94f7fbbedca28c762535}\label{class_v_layout_generator_a631d8506609f94f7fbbedca28c762535}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetRotationIncrease@{SetRotationIncrease}}
+\index{SetRotationIncrease@{SetRotationIncrease}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetRotationIncrease()}{SetRotationIncrease()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Rotation\+Increase (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_afc760b2352f97ce0264b56d94358e864}\label{class_v_layout_generator_afc760b2352f97ce0264b56d94358e864}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetSaveLength@{SetSaveLength}}
+\index{SetSaveLength@{SetSaveLength}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetSaveLength()}{SetSaveLength()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Save\+Length (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_ace55451c057f27e61f1f21a27c7214fe}\label{class_v_layout_generator_ace55451c057f27e61f1f21a27c7214fe}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetShift@{SetShift}}
+\index{SetShift@{SetShift}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetShift()}{SetShift()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Shift (\begin{DoxyParamCaption}\item[{quint32}]{shift }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_ac2088062a91f8470bff85709d9aa6247}\label{class_v_layout_generator_ac2088062a91f8470bff85709d9aa6247}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetStripOptimization@{SetStripOptimization}}
+\index{SetStripOptimization@{SetStripOptimization}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetStripOptimization()}{SetStripOptimization()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Strip\+Optimization (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a89c0625ebc5cdd096e4bbd6898a65ca0}\label{class_v_layout_generator_a89c0625ebc5cdd096e4bbd6898a65ca0}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetTestAsPaths@{SetTestAsPaths}}
+\index{SetTestAsPaths@{SetTestAsPaths}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetTestAsPaths()}{SetTestAsPaths()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Test\+As\+Paths (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a4bde24d5d2f2b387f39ddaedb0c658d3}\label{class_v_layout_generator_a4bde24d5d2f2b387f39ddaedb0c658d3}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!SetUnitePages@{SetUnitePages}}
+\index{SetUnitePages@{SetUnitePages}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{SetUnitePages()}{SetUnitePages()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Set\+Unite\+Pages (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_generator_a3845eec98806acd5ec4e210895b171ba}\label{class_v_layout_generator_a3845eec98806acd5ec4e210895b171ba}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!Start@{Start}}
+\index{Start@{Start}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{Start}{Start}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ad56e367d403e6e8247b23812763bb92d}\label{class_v_layout_generator_ad56e367d403e6e8247b23812763bb92d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!State@{State}}
+\index{State@{State}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} VLayout\+Generator\+::\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_generator_a89550b62a65cd464fe3f4cbb2dac821c}\label{class_v_layout_generator_a89550b62a65cd464fe3f4cbb2dac821c}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!UnitePages@{UnitePages}}
+\index{UnitePages@{UnitePages}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{UnitePages()}{UnitePages()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Unite\+Pages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a5bd55c91d486acc0cb0b3c566a9bbdf1}\label{class_v_layout_generator_a5bd55c91d486acc0cb0b3c566a9bbdf1}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!UnitePapers@{UnitePapers}}
+\index{UnitePapers@{UnitePapers}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{UnitePapers()}{UnitePapers()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::\+Unite\+Papers (\begin{DoxyParamCaption}\item[{int}]{j,  }\item[{\mbox{\hyperlink{class_q_list}{QList}}$<$ qreal $>$ \&}]{papers\+Length,  }\item[{qreal}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_aa50c72ef467691de5a7aaad1e326c13b}\label{class_v_layout_generator_aa50c72ef467691de5a7aaad1e326c13b}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!unitePieces@{unitePieces}}
+\index{unitePieces@{unitePieces}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{unitePieces()}{unitePieces()}}
+{\footnotesize\ttfamily void VLayout\+Generator\+::unite\+Pieces (\begin{DoxyParamCaption}\item[{int}]{j,  }\item[{\mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ $>$ \&}]{pieces,  }\item[{qreal}]{length,  }\item[{int}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_layout_generator_a31d27326c295e698731533f2a890ce3a}\label{class_v_layout_generator_a31d27326c295e698731533f2a890ce3a}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!autoCrop@{autoCrop}}
+\index{autoCrop@{autoCrop}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{autoCrop}{autoCrop}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::auto\+Crop\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ab553f1b2d1bbd3df4a0d769cd69236f3}\label{class_v_layout_generator_ab553f1b2d1bbd3df4a0d769cd69236f3}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!bank@{bank}}
+\index{bank@{bank}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{bank}{bank}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_bank}{VBank}}$\ast$ VLayout\+Generator\+::bank\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_aebdc97bb80622955f9d6657cac6b380f}\label{class_v_layout_generator_aebdc97bb80622955f9d6657cac6b380f}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!margins@{margins}}
+\index{margins@{margins}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{margins}{margins}}
+{\footnotesize\ttfamily QMarginsF VLayout\+Generator\+::margins\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a406dd1437bb321710c59253b12cb85db}\label{class_v_layout_generator_a406dd1437bb321710c59253b12cb85db}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!multiplier@{multiplier}}
+\index{multiplier@{multiplier}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{multiplier}{multiplier}}
+{\footnotesize\ttfamily quint8 VLayout\+Generator\+::multiplier\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a8e0727b5dbe0ac43568ff6936a575a3d}\label{class_v_layout_generator_a8e0727b5dbe0ac43568ff6936a575a3d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!paperHeight@{paperHeight}}
+\index{paperHeight@{paperHeight}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{paperHeight}{paperHeight}}
+{\footnotesize\ttfamily qreal VLayout\+Generator\+::paper\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ada97866687e79e2dfa77602ef89eb5b8}\label{class_v_layout_generator_ada97866687e79e2dfa77602ef89eb5b8}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!papers@{papers}}
+\index{papers@{papers}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{papers}{papers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}}$>$ VLayout\+Generator\+::papers\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a68fc2e575b227e9e451511595df6ede6}\label{class_v_layout_generator_a68fc2e575b227e9e451511595df6ede6}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!paperWidth@{paperWidth}}
+\index{paperWidth@{paperWidth}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{paperWidth}{paperWidth}}
+{\footnotesize\ttfamily qreal VLayout\+Generator\+::paper\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_aeb35b9fa569b74d4ad5f248c5d542020}\label{class_v_layout_generator_aeb35b9fa569b74d4ad5f248c5d542020}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!rotate@{rotate}}
+\index{rotate@{rotate}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{rotate}{rotate}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::rotate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a16c15ab5486191d00ae48220c64d1845}\label{class_v_layout_generator_a16c15ab5486191d00ae48220c64d1845}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!rotationIncrease@{rotationIncrease}}
+\index{rotationIncrease@{rotationIncrease}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{rotationIncrease}{rotationIncrease}}
+{\footnotesize\ttfamily int VLayout\+Generator\+::rotation\+Increase\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a4fba524303b20de80961322166423ad2}\label{class_v_layout_generator_a4fba524303b20de80961322166423ad2}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!saveLength@{saveLength}}
+\index{saveLength@{saveLength}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{saveLength}{saveLength}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::save\+Length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a90eb9274bd65e1d3a499c17515e9008d}\label{class_v_layout_generator_a90eb9274bd65e1d3a499c17515e9008d}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!shift@{shift}}
+\index{shift@{shift}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{shift}{shift}}
+{\footnotesize\ttfamily quint32 VLayout\+Generator\+::shift\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_ab3f370583b54653665f03b342922d271}\label{class_v_layout_generator_ab3f370583b54653665f03b342922d271}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!state@{state}}
+\index{state@{state}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{Layout\+Errors}} VLayout\+Generator\+::state\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_abf662da9f6e22987d19d8edfc3e06797}\label{class_v_layout_generator_abf662da9f6e22987d19d8edfc3e06797}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!stopGeneration@{stopGeneration}}
+\index{stopGeneration@{stopGeneration}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{stopGeneration}{stopGeneration}}
+{\footnotesize\ttfamily std\+::atomic\+\_\+bool VLayout\+Generator\+::stop\+Generation\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a2ef0137ea578aee8c7d224f338d8aa58}\label{class_v_layout_generator_a2ef0137ea578aee8c7d224f338d8aa58}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!stripOptimization@{stripOptimization}}
+\index{stripOptimization@{stripOptimization}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{stripOptimization}{stripOptimization}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::strip\+Optimization\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a43567711eec3f8ff0b0d445fa2ea1b39}\label{class_v_layout_generator_a43567711eec3f8ff0b0d445fa2ea1b39}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!stripOptimizationEnabled@{stripOptimizationEnabled}}
+\index{stripOptimizationEnabled@{stripOptimizationEnabled}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{stripOptimizationEnabled}{stripOptimizationEnabled}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::strip\+Optimization\+Enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a102046a68590dae020c9cb9a963cffde}\label{class_v_layout_generator_a102046a68590dae020c9cb9a963cffde}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!textAsPaths@{textAsPaths}}
+\index{textAsPaths@{textAsPaths}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{textAsPaths}{textAsPaths}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::text\+As\+Paths\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a34fb5cd132b2def3336031432e6d3c5a}\label{class_v_layout_generator_a34fb5cd132b2def3336031432e6d3c5a}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!unitePages@{unitePages}}
+\index{unitePages@{unitePages}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{unitePages}{unitePages}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::unite\+Pages\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_generator_a98976de729e4a11d8bccb1760060a00e}\label{class_v_layout_generator_a98976de729e4a11d8bccb1760060a00e}} 
+\index{VLayoutGenerator@{VLayoutGenerator}!usePrinterFields@{usePrinterFields}}
+\index{usePrinterFields@{usePrinterFields}!VLayoutGenerator@{VLayoutGenerator}}
+\doxysubsubsection{\texorpdfstring{usePrinterFields}{usePrinterFields}}
+{\footnotesize\ttfamily bool VLayout\+Generator\+::use\+Printer\+Fields\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vlayoutgenerator_8h}{vlayoutgenerator.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vlayoutgenerator_8cpp}{vlayoutgenerator.\+cpp}}\end{DoxyCompactItemize}

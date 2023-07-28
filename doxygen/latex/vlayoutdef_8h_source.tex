@@ -1,0 +1,101 @@
+\hypertarget{vlayoutdef_8h_source}{}\doxysection{vlayoutdef.\+h}
+\label{vlayoutdef_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vlayoutdef.h@{D:/Github/Seamly2D/src/libs/vlayout/vlayoutdef.h}}
+\mbox{\hyperlink{vlayoutdef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vlayoutdef.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 7\ 1,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VLAYOUTDEF\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VLAYOUTDEF\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#ifdef\ Q\_CC\_MSVC}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ciso646>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Q\_CC\_MSVC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385}{LayoutErrors}}\ :\ \textcolor{keywordtype}{char}}
+\DoxyCodeLine{00060\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385a70a47cae4eb221930f2663fd244369ea}{NoError}},}
+\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385a8c4a5810902e7660d6ab7658bdde74e6}{PrepareLayoutError}},}
+\DoxyCodeLine{00063\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34}{ProcessStoped}},}
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_a5f6d2a61316a995217a124144c21e385a664c140e94e21ff7725b2f5cbeb09af2}{EmptyPaperError}}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{BestFrom}}\ :\ \textcolor{keywordtype}{char}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503aaf1a42bd417390fc63b030a519624607a}{Rotation}}\ =\ 0,}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503aae7b3c0acb7168c7969b03e8aebc67ce7}{Combine}}\ =\ 1}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ Warning!\ Debugging\ doesn't\ work\ stable\ in\ debug\ mode.\ If\ you\ need\ big\ allocation\ use\ release\ mode.\ Or\ disable}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ Address\ Sanitizer.}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00076\ \textcolor{comment}{//\#define\ LAYOUT\_DEBUG\ //\ Enable\ debug\ mode}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ This\ block\ help\ rule\ debug\ mode.\ Don't\ turn\ all\ options\ at\ the\ same\ time!}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#ifdef\ LAYOUT\_DEBUG}}
+\DoxyCodeLine{00080\ \textcolor{comment}{//\ Nice\ looking}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#\ \ \ define\ SHOW\_VERTICES\ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Show\ contour\ vertices}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#\ \ \ define\ SHOW\_DIRECTION\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Show\ contour\ direction}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#\ \ \ define\ ARRANGED\_PIECES\ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Show\ already\ arranged\ pieces}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\#\ \ \ define\ SHOW\_SHEET\ \ \ \ \ \ \ \ \ \ \ \ //\ Show\ sheet\ rect}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ Debugging}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#\ \ \ define\ SHOW\_CANDIDATE\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Show\ each\ position}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\#\ \ \ define\ SHOW\_ROTATION\ \ \ \ \ \ \ \ \ //\ For\ each\ position\ show\ rotation\ part}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\#\ \ \ define\ SHOW\_COMBINE\ \ \ \ \ \ \ \ \ \ //\ For\ each\ position\ show\ edge\ combine\ part}}
+\DoxyCodeLine{00090\ \textcolor{comment}{//\#\ \ \ define\ SHOW\_MIRROR\ \ \ \ \ \ \ \ \ \ \ //\ For\ each\ position\ show\ mirror\ part}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\#\ \ \ define\ SHOW\_CANDIDATE\_BEST\ \ \ //\ For\ only\ correct\ positions\ that\ pass\ checks}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#\ \ \ define\ SHOW\_BEST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ Show\ only\ best\ position\ for\ workpiece}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif}\textcolor{comment}{//LAYOUT\_DEBUG}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VLAYOUTDEF\_H}}
+
+\end{DoxyCode}

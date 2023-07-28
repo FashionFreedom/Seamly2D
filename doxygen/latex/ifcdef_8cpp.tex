@@ -1,0 +1,1429 @@
+\hypertarget{ifcdef_8cpp}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/ifcdef.cpp File Reference}
+\label{ifcdef_8cpp}\index{D:/Github/Seamly2D/src/libs/ifc/ifcdef.cpp@{D:/Github/Seamly2D/src/libs/ifc/ifcdef.cpp}}
+{\ttfamily \#include \char`\"{}ifcdef.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QBrush$>$}\newline
+{\ttfamily \#include $<$QIcon$>$}\newline
+{\ttfamily \#include $<$QMap$>$}\newline
+{\ttfamily \#include $<$QPainter$>$}\newline
+{\ttfamily \#include $<$QPen$>$}\newline
+{\ttfamily \#include $<$QPixmap$>$}\newline
+{\ttfamily \#include $<$QStatic\+String\+Data$>$}\newline
+{\ttfamily \#include $<$QString\+Data$>$}\newline
+{\ttfamily \#include $<$QString\+Data\+Ptr$>$}\newline
+{\ttfamily \#include \char`\"{}../vmisc/diagnostic.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QString\+List \mbox{\hyperlink{ifcdef_8cpp_a71924e5b0ca1bf43364edbf093fa239f}{Line\+Types}} ()
+\begin{DoxyCompactList}\small\item\em Line\+Type\+List return list of all line types. \end{DoxyCompactList}\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{ifcdef_8cpp_aed7354461477f562d0c10d0fbbd4eab6}{line\+Type\+To\+Pen\+Style}} (const QString \&line\+Type)
+\begin{DoxyCompactList}\small\item\em Line\+Style return pen style for current line style. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{ifcdef_8cpp_aae47f0fb5becf32c2558c61a6532b252}{Pen\+Style\+To\+Line\+Type}} (Qt\+::\+Pen\+Style pen\+Style)
+\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{ifcdef_8cpp_a5cb5961413672d946f110c14bddb1283}{curve\+Line\+Type\+List}} ()
+\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{ifcdef_8cpp_ac50707a7f7194f86018a84ae0ce06ff7}{line\+Type\+List}} ()
+\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{ifcdef_8cpp_a6e9214ecd06f31da918bccdc89c9b4d4}{line\+Weight\+List}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a06d2c73abe15fdf5c894e5b6dfdd6c56}{Custom\+MSign}} = QString\+Literal(\char`\"{}@\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0df1f36e04cd4077a0c9e3915b070a83}{Custom\+Incr\+Sign}} = QString\+Literal(\char`\"{}\#\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac412474bb61348c1aaec0e5aafa5f384}{Attr\+Type}} = QString\+Literal(\char`\"{}type\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a4e47afa33b3a502fbb0c6c00eef94be5}{Attr\+Mx}} = QString\+Literal(\char`\"{}mx\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac87455b0aca94fd5536255f6b0fe288f}{Attr\+My}} = QString\+Literal(\char`\"{}my\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0ab5c27057f217548fb4ee4e5a1f847d}{Attr\+Name}} = QString\+Literal(\char`\"{}name\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad63b2ef5c517d7b329ce9db54abcfa86}{Attr\+Mx1}} = QString\+Literal(\char`\"{}mx1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ada977615c2cc1578981daeffa7b2f5dc}{Attr\+My1}} = QString\+Literal(\char`\"{}my1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1e6fd405dd4229f1acca2689b55790cf}{Attr\+Name1}} = QString\+Literal(\char`\"{}name1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a80abe6a05bf95043a4153f9439b9d091}{Attr\+Mx2}} = QString\+Literal(\char`\"{}mx2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_adb3ff75924803916e515588e5a7428a3}{Attr\+My2}} = QString\+Literal(\char`\"{}my2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9feb5d243cbbe476e29db2cf67312298}{Attr\+Name2}} = QString\+Literal(\char`\"{}name2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a27961a71c483b818751fe79cd3f1bd7c}{Attr\+Base\+Line\+P1}} = QString\+Literal(\char`\"{}base\+Line\+P1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a987f47ee1e36d5e0d91e4fe41699dcb3}{Attr\+Base\+Line\+P2}} = QString\+Literal(\char`\"{}base\+Line\+P2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a99113e095826ef4e76670d07a16430e0}{Attr\+Dart\+P1}} = QString\+Literal(\char`\"{}dart\+P1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a80eec24b17d92655932fdc5493680447}{Attr\+Dart\+P2}} = QString\+Literal(\char`\"{}dart\+P2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac61fa56def489e867aba336694057b21}{Attr\+Dart\+P3}} = QString\+Literal(\char`\"{}dart\+P3\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a7a7fb3ccc3f0532d0a8d6e7dd01c4fda}{AttrX}} = QString\+Literal(\char`\"{}x\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a6b02102b5c8d1591ddf85f9f30c96c4b}{AttrY}} = QString\+Literal(\char`\"{}y\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a24888ed518ac9d1a2b71e04b070443a3}{Attr\+Line\+Type}} = QString\+Literal(\char`\"{}line\+Type\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a35cf841500a60217130aa7aaae9e2e50}{Attr\+Line\+Weight}} = QString\+Literal(\char`\"{}line\+Weight\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9ca4826ebf781979ebfd4347451624a1}{Attr\+Obj\+Name}} = QString\+Literal(\char`\"{}obj\+Name\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af9129a869058711967153d571465d32b}{Attr\+Cut}} = QString\+Literal(\char`\"{}cut\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1c1fb2b1b5785a8988a97715935d85e7}{Attr\+Length}} = QString\+Literal(\char`\"{}length\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a05c30b130424bc06db810d468e908d55}{Attr\+Base\+Point}} = QString\+Literal(\char`\"{}base\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a3572c5564adcfc0b4fab1f00e35eb9dd}{Attr\+First\+Point}} = QString\+Literal(\char`\"{}first\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2ab434e5bbf87005e34a0d68fed6af33}{Attr\+Second\+Point}} = QString\+Literal(\char`\"{}second\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_abe4b85ddd44820d4c6446ecf3e40f551}{Attr\+Third\+Point}} = QString\+Literal(\char`\"{}third\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af6110531a70a4421c229653a26c0f653}{Attr\+Center}} = QString\+Literal(\char`\"{}center\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9eda07e5d16d894daab75af01e7a6e7b}{Attr\+Radius}} = QString\+Literal(\char`\"{}radius\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9a2febd08aaefbbe92379bef1039e298}{Attr\+Radius1}} = QString\+Literal(\char`\"{}radius1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a50c79cdda0450fce044687d233d45016}{Attr\+Radius2}} = QString\+Literal(\char`\"{}radius2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a43d444edc848513399704861d8c66602}{Attr\+Angle}} = QString\+Literal(\char`\"{}angle\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af25c6cc00bbe1e7e67c024b48a620025}{Attr\+Angle1}} = QString\+Literal(\char`\"{}angle1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_acf3d254d196bad60a18c02f31bed59f8}{Attr\+Angle2}} = QString\+Literal(\char`\"{}angle2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aa2767350e4b6f38fb8c36ca9279d0fed}{Attr\+Length1}} = QString\+Literal(\char`\"{}length1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a8740b5e726527d926374999d8d75a3d5}{Attr\+Length2}} = QString\+Literal(\char`\"{}length2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a3c732cab74ec12835d0e764244a169b3}{Attr\+P1\+Line}} = QString\+Literal(\char`\"{}p1\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a5f2391a6b9fb248f7685d6ad547c5d60}{Attr\+P2\+Line}} = QString\+Literal(\char`\"{}p2\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a3777302d5db4240bf7a83fe2baf2e8c3}{Attr\+P1\+Line1}} = QString\+Literal(\char`\"{}p1\+Line1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_adc5efed853ac5697e693f63edf1615bc}{Attr\+P2\+Line1}} = QString\+Literal(\char`\"{}p2\+Line1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad90fa7681cad751b275f9ba4f0233360}{Attr\+P1\+Line2}} = QString\+Literal(\char`\"{}p1\+Line2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad7d0290557800a97f2a3511a4d0c5d01}{Attr\+P2\+Line2}} = QString\+Literal(\char`\"{}p2\+Line2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1cfd95c0c70c83257941709fb6b83b35}{Attr\+PShoulder}} = QString\+Literal(\char`\"{}p\+Shoulder\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a8c5478cedb79acf85d1b8b4c8e7209c6}{Attr\+Point1}} = QString\+Literal(\char`\"{}point1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0047f40552b454c63a2c92e8a71400f5}{Attr\+Point2}} = QString\+Literal(\char`\"{}point2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a7eefd465cdeaf904947263cc899a356c}{Attr\+Point3}} = QString\+Literal(\char`\"{}point3\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad9834b939fa81a678718b1ff68a6290b}{Attr\+Point4}} = QString\+Literal(\char`\"{}point4\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_afa5c8a8f9799d7d0a25071920343d3a9}{Attr\+KAsm1}} = QString\+Literal(\char`\"{}k\+Asm1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0bf0415132cb5fa79525e210762184b0}{Attr\+KAsm2}} = QString\+Literal(\char`\"{}k\+Asm2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab8035f39e54f0073103f89059059fad3}{Attr\+KCurve}} = QString\+Literal(\char`\"{}k\+Curve\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1105faa3848cb2f2fbc8b47dcd336797}{Attr\+Duplicate}} = QString\+Literal(\char`\"{}duplicate\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad0d2194cee1619acaf1eb70de0e481cc}{Attr\+Path\+Point}} = QString\+Literal(\char`\"{}path\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a38dfc05262a53888797b29d88178b2a3}{Attr\+PSpline}} = QString\+Literal(\char`\"{}p\+Spline\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac794b55dff01ed160b3c50d8355529e1}{Attr\+Axis\+P1}} = QString\+Literal(\char`\"{}axis\+P1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a8d6438adbf55b4efd8c7938e1bbc6f30}{Attr\+Axis\+P2}} = QString\+Literal(\char`\"{}axis\+P2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a44922b484c05888d36d860133be0b5d5}{Attr\+Curve}} = QString\+Literal(\char`\"{}curve\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a56386a17c8d10d1f19236a9554458523}{Attr\+Curve1}} = QString\+Literal(\char`\"{}curve1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2b67536757e61b1616f4e22621454315}{Attr\+Curve2}} = QString\+Literal(\char`\"{}curve2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aca790b7abc395f2520c5777c66ebbb72}{Attr\+Line\+Color}} = QString\+Literal(\char`\"{}line\+Color\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ad9ba18833a8ef4dd009e4fa0c7e8f35a}{Attr\+Color}} = QString\+Literal(\char`\"{}color\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a41358a1780a3c57af87919d9add77a52}{Attr\+Pen\+Style}} = QString\+Literal(\char`\"{}pen\+Style\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a497d952a1b6a67067433cf4d1ecb69d7}{Attr\+First\+Arc}} = QString\+Literal(\char`\"{}first\+Arc\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a417bd258422ce78f30aa0bcf0bf5cb7b}{Attr\+Second\+Arc}} = QString\+Literal(\char`\"{}second\+Arc\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a7304a9d8fae2b7e6ceca18172e05adb0}{Attr\+Cross\+Point}} = QString\+Literal(\char`\"{}cross\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac45da9d48ee7743e9bcacd4ebeac9a5e}{Attr\+VCross\+Point}} = QString\+Literal(\char`\"{}v\+Cross\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aa07db222cea404ec8e5a08d9d2f0ad97}{Attr\+HCross\+Point}} = QString\+Literal(\char`\"{}h\+Cross\+Point\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a664605ab22fd4e63f25a6f5b3caeaf9a}{Attr\+Axis\+Type}} = QString\+Literal(\char`\"{}axis\+Type\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a70050d1637cdee92b5724a96fcc94fd2}{Attr\+C1\+Center}} = QString\+Literal(\char`\"{}c1\+Center\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab7093387e935aed66e0254c3ed9a2919}{Attr\+C2\+Center}} = QString\+Literal(\char`\"{}c2\+Center\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a08c03d16a35e4af9b20a53567480a5e6}{Attr\+C1\+Radius}} = QString\+Literal(\char`\"{}c1\+Radius\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2b11ee521e3535e73ff65df7b50bbc21}{Attr\+C2\+Radius}} = QString\+Literal(\char`\"{}c2\+Radius\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ae25e598b1eda89435a31abbe1c367905}{Attr\+CCenter}} = QString\+Literal(\char`\"{}c\+Center\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a7d919fbc3871d2fd3c47b496ea3f7b08}{Attr\+Tangent}} = QString\+Literal(\char`\"{}tangent\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac82e7751185700326956ee26ada91f55}{Attr\+CRadius}} = QString\+Literal(\char`\"{}c\+Radius\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aeef25e16ff1a6e4e92d58664052e4deb}{Attr\+Arc}} = QString\+Literal(\char`\"{}arc\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_adabdb32ceafcefecf3f63d9bdb5ba82c}{Attr\+Suffix}} = QString\+Literal(\char`\"{}suffix\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ada5c8833f656de3578fad8f5fd0e27d1}{Attr\+Id\+Object}} = QString\+Literal(\char`\"{}id\+Object\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aa31422413e25304b0f0837229bfbaa62}{Attr\+In\+Layout}} = QString\+Literal(\char`\"{}in\+Layout\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a949e736dfb870bdfd0dc25b2c9c1ba57}{Attr\+Piece\+Locked}} = QString\+Literal(\char`\"{}locked\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a95cafa1f0097ada0cc6a1aeb104f6719}{Attr\+Rotation\+Angle}} = QString\+Literal(\char`\"{}rotation\+Angle\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a98e60441adeaa1f75f83c9d978cdfb99}{Attr\+Closed}} = QString\+Literal(\char`\"{}closed\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a51a98ddf539cbd1a59faec3a85adcba7}{Attr\+Show\+Point\+Name}} = QString\+Literal(\char`\"{}show\+Point\+Name\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a45cbea0860cfd3ae3cde072749fe2518}{Attr\+Show\+Point\+Name1}} = QString\+Literal(\char`\"{}show\+Point\+Name1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a3b09dd5e1b115ea2df1ee4ba45a28f47}{Attr\+Show\+Point\+Name2}} = QString\+Literal(\char`\"{}show\+Point\+Name2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ade9b666332fdbaa424309442114920cd}{Attr\+Alias}} = QString\+Literal(\char`\"{}alias\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9990d8b8bf3a8cd17d9cf96fdd4ed5da}{Line\+Type\+None}} = QString\+Literal(\char`\"{}none\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a34c7d45d4b6acb3c0da108b28639b99d}{Line\+Type\+Solid\+Line}} = QString\+Literal(\char`\"{}solid\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a5eeaef17d5541167d8b8acda02946102}{Line\+Type\+Dash\+Line}} = QString\+Literal(\char`\"{}dash\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_afb8b1265c7f505ee8cb5c02f6121d59c}{Line\+Type\+Dot\+Line}} = QString\+Literal(\char`\"{}dot\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a47745fcde526eee0ec4a17c4f3463038}{Line\+Type\+Dash\+Dot\+Line}} = QString\+Literal(\char`\"{}dash\+Dot\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a4bf9b24aa833ad31cb748fa3afaf04ea}{Line\+Type\+Dash\+Dot\+Dot\+Line}} = QString\+Literal(\char`\"{}dash\+Dot\+Dot\+Line\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af3f5ffc1e37a155d3021a770e64b0008}{Line\+Weight\+By\+Group}} = QString\+Literal(\char`\"{}by\+Group\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a08e640e6ed2724cec96a3d106e6e120c}{Line\+Type\+By\+Group}} = QString\+Literal(\char`\"{}by\+Group\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af1c805ceb54ffdb8e439360ae81235f2}{Color\+By\+Group}} = QString\+Literal(\char`\"{}by\+Group\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a12a78cdfd176f8b9c0436e669218ec11}{Color\+None}} = QString\+Literal(\char`\"{}none\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a97d7850641d04d1390958021adf3eae4}{Color\+Black}} = QString\+Literal(\char`\"{}black\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af001b3fa0cfd3276bb8928a1745965cf}{Color\+Green}} = QString\+Literal(\char`\"{}green\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a213ac73627229f3bb8864f386581d784}{Color\+Blue}} = QString\+Literal(\char`\"{}blue\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a00433e7bbbf9ec4046298b8f20eea4b7}{Color\+Dark\+Red}} = QString\+Literal(\char`\"{}dark\+Red\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab961ffd08bd8f2a61601d39b5ac2af3e}{Color\+Dark\+Green}} = QString\+Literal(\char`\"{}dark\+Green\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a7020e44b806646dee4d406e68954e07f}{Color\+Dark\+Blue}} = QString\+Literal(\char`\"{}dark\+Blue\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a3cfd81f0b9ed3d55e9ee6083222be8c0}{Color\+Yellow}} = QString\+Literal(\char`\"{}yellow\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a954bc7eaa9f6a821957cab77ecc0d757}{Color\+Light\+Salmon}} = QString\+Literal(\char`\"{}lightsalmon\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a6e113a553a0176d39cd03c432b7106fb}{Color\+Golden\+Rod}} = QString\+Literal(\char`\"{}goldenrod\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af3df8c36a57ee504d1dab7c0193f7852}{Color\+Orange}} = QString\+Literal(\char`\"{}orange\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac668b1d6365c72ad33eac7ae86c615a7}{Color\+Deep\+Pink}} = QString\+Literal(\char`\"{}deeppink\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a724414a3b08a10b0f591472ee7bef6cb}{Color\+Violet}} = QString\+Literal(\char`\"{}violet\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_afb06ea4fedd2e52b5a3cccfcad1432e2}{Color\+Dark\+Violet}} = QString\+Literal(\char`\"{}darkviolet\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a39932f3a24d591d1c5bbd62f120a0f9b}{Color\+Medium\+Sea\+Green}} = QString\+Literal(\char`\"{}mediumseagreen\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af4faf41e1de3dc4109516dd66f4042ea}{Color\+Lime}} = QString\+Literal(\char`\"{}lime\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af8aa3dbcc43d9b1c038d5570856ba03c}{Color\+Deep\+Sky\+Blue}} = QString\+Literal(\char`\"{}deepskyblue\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0659e5c9f1b262a117e73d59a59defd7}{Color\+Corn\+Flower\+Blue}} = QString\+Literal(\char`\"{}cornflowerblue\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a50061a81692fd26976b71cffaf15111b}{Color\+Gray}} = QString\+Literal(\char`\"{}gray\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a0482b3174beb074f65e01ccd0372a876}{Color\+Dark\+Gray}} = QString\+Literal(\char`\"{}darkgray\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1cdd65f1d5a03b524b94c43453cc0535}{Color\+Light\+Gray}} = QString\+Literal(\char`\"{}lightgray\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_abff7a40b341052315fd1908c6fcd94ef}{Color\+White}} = QString\+Literal(\char`\"{}white\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a72c99687b70dae8e5f5180cd8a9f7dcf}{Fill\+None}} = QString\+Literal(\char`\"{}nobrush\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ac236a8dfc0e3be09dc07fc6b5726b25d}{Fill\+Solid}} = QString\+Literal(\char`\"{}solidpattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ae31da243d621ad6032b031dc1068bbdf}{Fill\+Dense1}} = QString\+Literal(\char`\"{}dense1pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a86bcbacf1bf366b9007a5788f54db259}{Fill\+Dense2}} = QString\+Literal(\char`\"{}dense2pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a58dca946c491863cefa0672f0804d7cf}{Fill\+Dense3}} = QString\+Literal(\char`\"{}dense3pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a30d8bed2763a82e019aab8f8c60f479d}{Fill\+Dense4}} = QString\+Literal(\char`\"{}dense4pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9183a956f54a75d56023f17c7af5f551}{Fill\+Dense5}} = QString\+Literal(\char`\"{}dense5pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2099b37d19b695f456c6c6936a5ffae7}{Fill\+Dense6}} = QString\+Literal(\char`\"{}dense6pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aea4485cec4f0330d6f515027f431de9e}{Fill\+Dense7}} = QString\+Literal(\char`\"{}dense7pattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a6336cf92a0f2c42ce625b4692d2744c6}{Fill\+Horiz\+Lines}} = QString\+Literal(\char`\"{}horpattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ae65acb2bbc099e7b13c4d98883116c22}{Fill\+Vert\+Lines}} = QString\+Literal(\char`\"{}verpattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a86a005b6031afb7bfa67efb9ba68f790}{Fill\+Cross}} = QString\+Literal(\char`\"{}crosspattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2cbc954ba9f8bba8d86221e2c1398647}{Fill\+Backward\+Diagonal}} = QString\+Literal(\char`\"{}bdiagpattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_afd184140313b5d5a4b037bb9b1c3d4c7}{Fill\+Forward\+Diagonal}} = QString\+Literal(\char`\"{}fdiagpattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2b27f55e5896fa26952ad410405519c2}{Filld\+Diagonal\+Cross}} = QString\+Literal(\char`\"{}diagcrosspattern\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aebb333a8d51106ae4af6d969efebf614}{measurement\+\_\+}} = QString\+Literal(\char`\"{}M\+\_\+\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a9f3ed812ea406c2606223e027025313b}{variable\+\_\+}} = QString\+Literal(\char`\"{}Variable\+\_\+\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a8f15aea12a1f1e6f90bc1647fce9a03d}{line\+\_\+}} = QString\+Literal(\char`\"{}Line\+\_\+\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab9564a417fa51f153567e3e56efbc7ca}{angle\+Line\+\_\+}} = QString\+Literal(\char`\"{}Angle\+Line\+\_\+\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}} = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a473d8fd4862f8f0be8c4edde634dbf22}{SPL\+\_\+}})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}} = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a083cf79a1d07db29c288384cb2338745}{ARC\+\_\+}})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}} = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a05373fd85d080b39cffeb5fa971a7964}{ELARC\+\_\+}})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}} = QString\+Literal(\char`\"{}Spl\+Path\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} = QString\+Literal(\char`\"{}Radius\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab9452d90ed05fed378f199b847479e6f}{radius\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_af4464db521057ca2da8927d671fe1185}{radius1\+El\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + QLatin1\+Char(\textquotesingle{}1\textquotesingle{}) + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1f577e496e04fe827b25cc298e06012e}{radius2\+El\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + QLatin1\+Char(\textquotesingle{}2\textquotesingle{}) + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} = QString\+Literal(\char`\"{}Angle1\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} = QString\+Literal(\char`\"{}Angle2\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}{c1\+Length\+\_\+V}} = QString\+Literal(\char`\"{}C1\+Length\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}{c2\+Length\+\_\+V}} = QString\+Literal(\char`\"{}C2\+Length\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a1fb7a28b074e7d2c89b9e6a14bd9f83a}{c1\+Length\+Spl\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}{c1\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab05c9b16c498d593f387710275f27e9e}{c2\+Length\+Spl\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}{c2\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_aa71c1f7a45d923a9546ed85b5bc542fb}{c1\+Length\+Spl\+Path}} = \mbox{\hyperlink{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}{c1\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_acaf75b416f020991ca24f5226152df2a}{c2\+Length\+Spl\+Path}} = \mbox{\hyperlink{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}{c2\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a26036bddd3c34c28fd26858555e27c7c}{angle1\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a56160bb66564baaaf7d3b9134f97cc89}{angle2\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a125e0c6b1a95847b2c0133e9d4e2d380}{angle1\+El\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a88ae45c7245ae1ba6b60e6b98cfda461}{angle2\+El\+Arc\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_ab2f28cd550be09584754e7447d8b9068}{angle1\+Spl\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_adc55e2e472f2a1112e434a74281526a2}{angle2\+Spl\+\_\+}} = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a18d3dcc54adfb57db65992d1ea0397e0}{angle1\+Spl\+Path}} = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a908a8a869addc6bf9ea85b98d62acafb}{angle2\+Spl\+Path}} = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a60582d208ea24de885ed492051184129}{seg\+\_\+}} = QString\+Literal(\char`\"{}Seg\+\_\+\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_abf25a0ae9a3dc29bb5def396ba66fbf8}{current\+Length}} = QString\+Literal(\char`\"{}Current\+Length\char`\"{})
+\item 
+const QString \mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{current\+Seam\+Allowance}} = QString\+Literal(\char`\"{}Current\+Seam\+Allowance\char`\"{})
+\item 
+const QString\+List \mbox{\hyperlink{ifcdef_8cpp_ac429aa4d4621f2de562bf3837508e3d0}{buil\+In\+Variables}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ifcdef_8cpp_a5cb5961413672d946f110c14bddb1283}\label{ifcdef_8cpp_a5cb5961413672d946f110c14bddb1283}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!curveLineTypeList@{curveLineTypeList}}
+\index{curveLineTypeList@{curveLineTypeList}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{curveLineTypeList()}{curveLineTypeList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ curve\+Line\+Type\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac50707a7f7194f86018a84ae0ce06ff7}\label{ifcdef_8cpp_ac50707a7f7194f86018a84ae0ce06ff7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!lineTypeList@{lineTypeList}}
+\index{lineTypeList@{lineTypeList}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{lineTypeList()}{lineTypeList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ line\+Type\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a71924e5b0ca1bf43364edbf093fa239f}\label{ifcdef_8cpp_a71924e5b0ca1bf43364edbf093fa239f}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypes@{LineTypes}}
+\index{LineTypes@{LineTypes}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypes()}{LineTypes()}}
+{\footnotesize\ttfamily QString\+List Line\+Types (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Line\+Type\+List return list of all line types. 
+
+\begin{DoxyReturn}{Returns}
+list of all line types. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ifcdef_8cpp_aed7354461477f562d0c10d0fbbd4eab6}\label{ifcdef_8cpp_aed7354461477f562d0c10d0fbbd4eab6}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!lineTypeToPenStyle@{lineTypeToPenStyle}}
+\index{lineTypeToPenStyle@{lineTypeToPenStyle}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{lineTypeToPenStyle()}{lineTypeToPenStyle()}}
+{\footnotesize\ttfamily Qt\+::\+Pen\+Style line\+Type\+To\+Pen\+Style (\begin{DoxyParamCaption}\item[{const QString \&}]{line\+Type }\end{DoxyParamCaption})}
+
+
+
+Line\+Style return pen style for current line style. 
+
+\begin{DoxyReturn}{Returns}
+pen style. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{ifcdef_8cpp_a6e9214ecd06f31da918bccdc89c9b4d4}\label{ifcdef_8cpp_a6e9214ecd06f31da918bccdc89c9b4d4}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!lineWeightList@{lineWeightList}}
+\index{lineWeightList@{lineWeightList}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{lineWeightList()}{lineWeightList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ line\+Weight\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aae47f0fb5becf32c2558c61a6532b252}\label{ifcdef_8cpp_aae47f0fb5becf32c2558c61a6532b252}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!PenStyleToLineType@{PenStyleToLineType}}
+\index{PenStyleToLineType@{PenStyleToLineType}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{PenStyleToLineType()}{PenStyleToLineType()}}
+{\footnotesize\ttfamily QString Pen\+Style\+To\+Line\+Type (\begin{DoxyParamCaption}\item[{Qt\+::\+Pen\+Style}]{pen\+Style }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}\label{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle1\_V@{angle1\_V}}
+\index{angle1\_V@{angle1\_V}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle1\_V}{angle1\_V}}
+{\footnotesize\ttfamily const QString angle1\+\_\+V = QString\+Literal(\char`\"{}Angle1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a26036bddd3c34c28fd26858555e27c7c}\label{ifcdef_8cpp_a26036bddd3c34c28fd26858555e27c7c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle1Arc\_@{angle1Arc\_}}
+\index{angle1Arc\_@{angle1Arc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle1Arc\_}{angle1Arc\_}}
+{\footnotesize\ttfamily const QString angle1\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a125e0c6b1a95847b2c0133e9d4e2d380}\label{ifcdef_8cpp_a125e0c6b1a95847b2c0133e9d4e2d380}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle1ElArc\_@{angle1ElArc\_}}
+\index{angle1ElArc\_@{angle1ElArc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle1ElArc\_}{angle1ElArc\_}}
+{\footnotesize\ttfamily const QString angle1\+El\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab2f28cd550be09584754e7447d8b9068}\label{ifcdef_8cpp_ab2f28cd550be09584754e7447d8b9068}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle1Spl\_@{angle1Spl\_}}
+\index{angle1Spl\_@{angle1Spl\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle1Spl\_}{angle1Spl\_}}
+{\footnotesize\ttfamily const QString angle1\+Spl\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a18d3dcc54adfb57db65992d1ea0397e0}\label{ifcdef_8cpp_a18d3dcc54adfb57db65992d1ea0397e0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle1SplPath@{angle1SplPath}}
+\index{angle1SplPath@{angle1SplPath}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle1SplPath}{angle1SplPath}}
+{\footnotesize\ttfamily const QString angle1\+Spl\+Path = \mbox{\hyperlink{ifcdef_8cpp_ae821a5220412cd3f50dab1f4a6219e41}{angle1\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}\label{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle2\_V@{angle2\_V}}
+\index{angle2\_V@{angle2\_V}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle2\_V}{angle2\_V}}
+{\footnotesize\ttfamily const QString angle2\+\_\+V = QString\+Literal(\char`\"{}Angle2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a56160bb66564baaaf7d3b9134f97cc89}\label{ifcdef_8cpp_a56160bb66564baaaf7d3b9134f97cc89}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle2Arc\_@{angle2Arc\_}}
+\index{angle2Arc\_@{angle2Arc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle2Arc\_}{angle2Arc\_}}
+{\footnotesize\ttfamily const QString angle2\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a88ae45c7245ae1ba6b60e6b98cfda461}\label{ifcdef_8cpp_a88ae45c7245ae1ba6b60e6b98cfda461}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle2ElArc\_@{angle2ElArc\_}}
+\index{angle2ElArc\_@{angle2ElArc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle2ElArc\_}{angle2ElArc\_}}
+{\footnotesize\ttfamily const QString angle2\+El\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_adc55e2e472f2a1112e434a74281526a2}\label{ifcdef_8cpp_adc55e2e472f2a1112e434a74281526a2}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle2Spl\_@{angle2Spl\_}}
+\index{angle2Spl\_@{angle2Spl\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle2Spl\_}{angle2Spl\_}}
+{\footnotesize\ttfamily const QString angle2\+Spl\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a908a8a869addc6bf9ea85b98d62acafb}\label{ifcdef_8cpp_a908a8a869addc6bf9ea85b98d62acafb}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angle2SplPath@{angle2SplPath}}
+\index{angle2SplPath@{angle2SplPath}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angle2SplPath}{angle2SplPath}}
+{\footnotesize\ttfamily const QString angle2\+Spl\+Path = \mbox{\hyperlink{ifcdef_8cpp_a883e8ecc7964954f5c9b610fda47f124}{angle2\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab9564a417fa51f153567e3e56efbc7ca}\label{ifcdef_8cpp_ab9564a417fa51f153567e3e56efbc7ca}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!angleLine\_@{angleLine\_}}
+\index{angleLine\_@{angleLine\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{angleLine\_}{angleLine\_}}
+{\footnotesize\ttfamily const QString angle\+Line\+\_\+ = QString\+Literal(\char`\"{}Angle\+Line\+\_\+\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}\label{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!arc\_@{arc\_}}
+\index{arc\_@{arc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{arc\_}{arc\_}}
+{\footnotesize\ttfamily const QString arc\+\_\+ = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a083cf79a1d07db29c288384cb2338745}{ARC\+\_\+}})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ade9b666332fdbaa424309442114920cd}\label{ifcdef_8cpp_ade9b666332fdbaa424309442114920cd}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAlias@{AttrAlias}}
+\index{AttrAlias@{AttrAlias}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAlias}{AttrAlias}}
+{\footnotesize\ttfamily const QString Attr\+Alias = QString\+Literal(\char`\"{}alias\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a43d444edc848513399704861d8c66602}\label{ifcdef_8cpp_a43d444edc848513399704861d8c66602}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAngle@{AttrAngle}}
+\index{AttrAngle@{AttrAngle}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAngle}{AttrAngle}}
+{\footnotesize\ttfamily const QString Attr\+Angle = QString\+Literal(\char`\"{}angle\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af25c6cc00bbe1e7e67c024b48a620025}\label{ifcdef_8cpp_af25c6cc00bbe1e7e67c024b48a620025}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAngle1@{AttrAngle1}}
+\index{AttrAngle1@{AttrAngle1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAngle1}{AttrAngle1}}
+{\footnotesize\ttfamily const QString Attr\+Angle1 = QString\+Literal(\char`\"{}angle1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_acf3d254d196bad60a18c02f31bed59f8}\label{ifcdef_8cpp_acf3d254d196bad60a18c02f31bed59f8}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAngle2@{AttrAngle2}}
+\index{AttrAngle2@{AttrAngle2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAngle2}{AttrAngle2}}
+{\footnotesize\ttfamily const QString Attr\+Angle2 = QString\+Literal(\char`\"{}angle2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aeef25e16ff1a6e4e92d58664052e4deb}\label{ifcdef_8cpp_aeef25e16ff1a6e4e92d58664052e4deb}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrArc@{AttrArc}}
+\index{AttrArc@{AttrArc}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrArc}{AttrArc}}
+{\footnotesize\ttfamily const QString Attr\+Arc = QString\+Literal(\char`\"{}arc\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac794b55dff01ed160b3c50d8355529e1}\label{ifcdef_8cpp_ac794b55dff01ed160b3c50d8355529e1}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAxisP1@{AttrAxisP1}}
+\index{AttrAxisP1@{AttrAxisP1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAxisP1}{AttrAxisP1}}
+{\footnotesize\ttfamily const QString Attr\+Axis\+P1 = QString\+Literal(\char`\"{}axis\+P1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a8d6438adbf55b4efd8c7938e1bbc6f30}\label{ifcdef_8cpp_a8d6438adbf55b4efd8c7938e1bbc6f30}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAxisP2@{AttrAxisP2}}
+\index{AttrAxisP2@{AttrAxisP2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAxisP2}{AttrAxisP2}}
+{\footnotesize\ttfamily const QString Attr\+Axis\+P2 = QString\+Literal(\char`\"{}axis\+P2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a664605ab22fd4e63f25a6f5b3caeaf9a}\label{ifcdef_8cpp_a664605ab22fd4e63f25a6f5b3caeaf9a}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrAxisType@{AttrAxisType}}
+\index{AttrAxisType@{AttrAxisType}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrAxisType}{AttrAxisType}}
+{\footnotesize\ttfamily const QString Attr\+Axis\+Type = QString\+Literal(\char`\"{}axis\+Type\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a27961a71c483b818751fe79cd3f1bd7c}\label{ifcdef_8cpp_a27961a71c483b818751fe79cd3f1bd7c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrBaseLineP1@{AttrBaseLineP1}}
+\index{AttrBaseLineP1@{AttrBaseLineP1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrBaseLineP1}{AttrBaseLineP1}}
+{\footnotesize\ttfamily const QString Attr\+Base\+Line\+P1 = QString\+Literal(\char`\"{}base\+Line\+P1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a987f47ee1e36d5e0d91e4fe41699dcb3}\label{ifcdef_8cpp_a987f47ee1e36d5e0d91e4fe41699dcb3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrBaseLineP2@{AttrBaseLineP2}}
+\index{AttrBaseLineP2@{AttrBaseLineP2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrBaseLineP2}{AttrBaseLineP2}}
+{\footnotesize\ttfamily const QString Attr\+Base\+Line\+P2 = QString\+Literal(\char`\"{}base\+Line\+P2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a05c30b130424bc06db810d468e908d55}\label{ifcdef_8cpp_a05c30b130424bc06db810d468e908d55}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrBasePoint@{AttrBasePoint}}
+\index{AttrBasePoint@{AttrBasePoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrBasePoint}{AttrBasePoint}}
+{\footnotesize\ttfamily const QString Attr\+Base\+Point = QString\+Literal(\char`\"{}base\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a70050d1637cdee92b5724a96fcc94fd2}\label{ifcdef_8cpp_a70050d1637cdee92b5724a96fcc94fd2}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrC1Center@{AttrC1Center}}
+\index{AttrC1Center@{AttrC1Center}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrC1Center}{AttrC1Center}}
+{\footnotesize\ttfamily const QString Attr\+C1\+Center = QString\+Literal(\char`\"{}c1\+Center\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a08c03d16a35e4af9b20a53567480a5e6}\label{ifcdef_8cpp_a08c03d16a35e4af9b20a53567480a5e6}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrC1Radius@{AttrC1Radius}}
+\index{AttrC1Radius@{AttrC1Radius}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrC1Radius}{AttrC1Radius}}
+{\footnotesize\ttfamily const QString Attr\+C1\+Radius = QString\+Literal(\char`\"{}c1\+Radius\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab7093387e935aed66e0254c3ed9a2919}\label{ifcdef_8cpp_ab7093387e935aed66e0254c3ed9a2919}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrC2Center@{AttrC2Center}}
+\index{AttrC2Center@{AttrC2Center}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrC2Center}{AttrC2Center}}
+{\footnotesize\ttfamily const QString Attr\+C2\+Center = QString\+Literal(\char`\"{}c2\+Center\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2b11ee521e3535e73ff65df7b50bbc21}\label{ifcdef_8cpp_a2b11ee521e3535e73ff65df7b50bbc21}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrC2Radius@{AttrC2Radius}}
+\index{AttrC2Radius@{AttrC2Radius}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrC2Radius}{AttrC2Radius}}
+{\footnotesize\ttfamily const QString Attr\+C2\+Radius = QString\+Literal(\char`\"{}c2\+Radius\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ae25e598b1eda89435a31abbe1c367905}\label{ifcdef_8cpp_ae25e598b1eda89435a31abbe1c367905}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCCenter@{AttrCCenter}}
+\index{AttrCCenter@{AttrCCenter}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCCenter}{AttrCCenter}}
+{\footnotesize\ttfamily const QString Attr\+CCenter = QString\+Literal(\char`\"{}c\+Center\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af6110531a70a4421c229653a26c0f653}\label{ifcdef_8cpp_af6110531a70a4421c229653a26c0f653}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCenter@{AttrCenter}}
+\index{AttrCenter@{AttrCenter}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCenter}{AttrCenter}}
+{\footnotesize\ttfamily const QString Attr\+Center = QString\+Literal(\char`\"{}center\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a98e60441adeaa1f75f83c9d978cdfb99}\label{ifcdef_8cpp_a98e60441adeaa1f75f83c9d978cdfb99}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrClosed@{AttrClosed}}
+\index{AttrClosed@{AttrClosed}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrClosed}{AttrClosed}}
+{\footnotesize\ttfamily const QString Attr\+Closed = QString\+Literal(\char`\"{}closed\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad9ba18833a8ef4dd009e4fa0c7e8f35a}\label{ifcdef_8cpp_ad9ba18833a8ef4dd009e4fa0c7e8f35a}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrColor@{AttrColor}}
+\index{AttrColor@{AttrColor}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrColor}{AttrColor}}
+{\footnotesize\ttfamily const QString Attr\+Color = QString\+Literal(\char`\"{}color\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac82e7751185700326956ee26ada91f55}\label{ifcdef_8cpp_ac82e7751185700326956ee26ada91f55}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCRadius@{AttrCRadius}}
+\index{AttrCRadius@{AttrCRadius}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCRadius}{AttrCRadius}}
+{\footnotesize\ttfamily const QString Attr\+CRadius = QString\+Literal(\char`\"{}c\+Radius\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a7304a9d8fae2b7e6ceca18172e05adb0}\label{ifcdef_8cpp_a7304a9d8fae2b7e6ceca18172e05adb0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCrossPoint@{AttrCrossPoint}}
+\index{AttrCrossPoint@{AttrCrossPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCrossPoint}{AttrCrossPoint}}
+{\footnotesize\ttfamily const QString Attr\+Cross\+Point = QString\+Literal(\char`\"{}cross\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a44922b484c05888d36d860133be0b5d5}\label{ifcdef_8cpp_a44922b484c05888d36d860133be0b5d5}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCurve@{AttrCurve}}
+\index{AttrCurve@{AttrCurve}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCurve}{AttrCurve}}
+{\footnotesize\ttfamily const QString Attr\+Curve = QString\+Literal(\char`\"{}curve\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a56386a17c8d10d1f19236a9554458523}\label{ifcdef_8cpp_a56386a17c8d10d1f19236a9554458523}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCurve1@{AttrCurve1}}
+\index{AttrCurve1@{AttrCurve1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCurve1}{AttrCurve1}}
+{\footnotesize\ttfamily const QString Attr\+Curve1 = QString\+Literal(\char`\"{}curve1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2b67536757e61b1616f4e22621454315}\label{ifcdef_8cpp_a2b67536757e61b1616f4e22621454315}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCurve2@{AttrCurve2}}
+\index{AttrCurve2@{AttrCurve2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCurve2}{AttrCurve2}}
+{\footnotesize\ttfamily const QString Attr\+Curve2 = QString\+Literal(\char`\"{}curve2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af9129a869058711967153d571465d32b}\label{ifcdef_8cpp_af9129a869058711967153d571465d32b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrCut@{AttrCut}}
+\index{AttrCut@{AttrCut}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrCut}{AttrCut}}
+{\footnotesize\ttfamily const QString Attr\+Cut = QString\+Literal(\char`\"{}cut\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a99113e095826ef4e76670d07a16430e0}\label{ifcdef_8cpp_a99113e095826ef4e76670d07a16430e0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrDartP1@{AttrDartP1}}
+\index{AttrDartP1@{AttrDartP1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrDartP1}{AttrDartP1}}
+{\footnotesize\ttfamily const QString Attr\+Dart\+P1 = QString\+Literal(\char`\"{}dart\+P1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a80eec24b17d92655932fdc5493680447}\label{ifcdef_8cpp_a80eec24b17d92655932fdc5493680447}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrDartP2@{AttrDartP2}}
+\index{AttrDartP2@{AttrDartP2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrDartP2}{AttrDartP2}}
+{\footnotesize\ttfamily const QString Attr\+Dart\+P2 = QString\+Literal(\char`\"{}dart\+P2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac61fa56def489e867aba336694057b21}\label{ifcdef_8cpp_ac61fa56def489e867aba336694057b21}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrDartP3@{AttrDartP3}}
+\index{AttrDartP3@{AttrDartP3}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrDartP3}{AttrDartP3}}
+{\footnotesize\ttfamily const QString Attr\+Dart\+P3 = QString\+Literal(\char`\"{}dart\+P3\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1105faa3848cb2f2fbc8b47dcd336797}\label{ifcdef_8cpp_a1105faa3848cb2f2fbc8b47dcd336797}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrDuplicate@{AttrDuplicate}}
+\index{AttrDuplicate@{AttrDuplicate}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrDuplicate}{AttrDuplicate}}
+{\footnotesize\ttfamily const QString Attr\+Duplicate = QString\+Literal(\char`\"{}duplicate\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a497d952a1b6a67067433cf4d1ecb69d7}\label{ifcdef_8cpp_a497d952a1b6a67067433cf4d1ecb69d7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrFirstArc@{AttrFirstArc}}
+\index{AttrFirstArc@{AttrFirstArc}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrFirstArc}{AttrFirstArc}}
+{\footnotesize\ttfamily const QString Attr\+First\+Arc = QString\+Literal(\char`\"{}first\+Arc\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a3572c5564adcfc0b4fab1f00e35eb9dd}\label{ifcdef_8cpp_a3572c5564adcfc0b4fab1f00e35eb9dd}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrFirstPoint@{AttrFirstPoint}}
+\index{AttrFirstPoint@{AttrFirstPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrFirstPoint}{AttrFirstPoint}}
+{\footnotesize\ttfamily const QString Attr\+First\+Point = QString\+Literal(\char`\"{}first\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aa07db222cea404ec8e5a08d9d2f0ad97}\label{ifcdef_8cpp_aa07db222cea404ec8e5a08d9d2f0ad97}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrHCrossPoint@{AttrHCrossPoint}}
+\index{AttrHCrossPoint@{AttrHCrossPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrHCrossPoint}{AttrHCrossPoint}}
+{\footnotesize\ttfamily const QString Attr\+HCross\+Point = QString\+Literal(\char`\"{}h\+Cross\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ada5c8833f656de3578fad8f5fd0e27d1}\label{ifcdef_8cpp_ada5c8833f656de3578fad8f5fd0e27d1}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrIdObject@{AttrIdObject}}
+\index{AttrIdObject@{AttrIdObject}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrIdObject}{AttrIdObject}}
+{\footnotesize\ttfamily const QString Attr\+Id\+Object = QString\+Literal(\char`\"{}id\+Object\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aa31422413e25304b0f0837229bfbaa62}\label{ifcdef_8cpp_aa31422413e25304b0f0837229bfbaa62}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrInLayout@{AttrInLayout}}
+\index{AttrInLayout@{AttrInLayout}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrInLayout}{AttrInLayout}}
+{\footnotesize\ttfamily const QString Attr\+In\+Layout = QString\+Literal(\char`\"{}in\+Layout\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_afa5c8a8f9799d7d0a25071920343d3a9}\label{ifcdef_8cpp_afa5c8a8f9799d7d0a25071920343d3a9}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrKAsm1@{AttrKAsm1}}
+\index{AttrKAsm1@{AttrKAsm1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrKAsm1}{AttrKAsm1}}
+{\footnotesize\ttfamily const QString Attr\+KAsm1 = QString\+Literal(\char`\"{}k\+Asm1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0bf0415132cb5fa79525e210762184b0}\label{ifcdef_8cpp_a0bf0415132cb5fa79525e210762184b0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrKAsm2@{AttrKAsm2}}
+\index{AttrKAsm2@{AttrKAsm2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrKAsm2}{AttrKAsm2}}
+{\footnotesize\ttfamily const QString Attr\+KAsm2 = QString\+Literal(\char`\"{}k\+Asm2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab8035f39e54f0073103f89059059fad3}\label{ifcdef_8cpp_ab8035f39e54f0073103f89059059fad3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrKCurve@{AttrKCurve}}
+\index{AttrKCurve@{AttrKCurve}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrKCurve}{AttrKCurve}}
+{\footnotesize\ttfamily const QString Attr\+KCurve = QString\+Literal(\char`\"{}k\+Curve\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1c1fb2b1b5785a8988a97715935d85e7}\label{ifcdef_8cpp_a1c1fb2b1b5785a8988a97715935d85e7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLength@{AttrLength}}
+\index{AttrLength@{AttrLength}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLength}{AttrLength}}
+{\footnotesize\ttfamily const QString Attr\+Length = QString\+Literal(\char`\"{}length\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aa2767350e4b6f38fb8c36ca9279d0fed}\label{ifcdef_8cpp_aa2767350e4b6f38fb8c36ca9279d0fed}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLength1@{AttrLength1}}
+\index{AttrLength1@{AttrLength1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLength1}{AttrLength1}}
+{\footnotesize\ttfamily const QString Attr\+Length1 = QString\+Literal(\char`\"{}length1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a8740b5e726527d926374999d8d75a3d5}\label{ifcdef_8cpp_a8740b5e726527d926374999d8d75a3d5}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLength2@{AttrLength2}}
+\index{AttrLength2@{AttrLength2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLength2}{AttrLength2}}
+{\footnotesize\ttfamily const QString Attr\+Length2 = QString\+Literal(\char`\"{}length2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aca790b7abc395f2520c5777c66ebbb72}\label{ifcdef_8cpp_aca790b7abc395f2520c5777c66ebbb72}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLineColor@{AttrLineColor}}
+\index{AttrLineColor@{AttrLineColor}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLineColor}{AttrLineColor}}
+{\footnotesize\ttfamily const QString Attr\+Line\+Color = QString\+Literal(\char`\"{}line\+Color\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a24888ed518ac9d1a2b71e04b070443a3}\label{ifcdef_8cpp_a24888ed518ac9d1a2b71e04b070443a3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLineType@{AttrLineType}}
+\index{AttrLineType@{AttrLineType}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLineType}{AttrLineType}}
+{\footnotesize\ttfamily const QString Attr\+Line\+Type = QString\+Literal(\char`\"{}line\+Type\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a35cf841500a60217130aa7aaae9e2e50}\label{ifcdef_8cpp_a35cf841500a60217130aa7aaae9e2e50}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrLineWeight@{AttrLineWeight}}
+\index{AttrLineWeight@{AttrLineWeight}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrLineWeight}{AttrLineWeight}}
+{\footnotesize\ttfamily const QString Attr\+Line\+Weight = QString\+Literal(\char`\"{}line\+Weight\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a4e47afa33b3a502fbb0c6c00eef94be5}\label{ifcdef_8cpp_a4e47afa33b3a502fbb0c6c00eef94be5}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMx@{AttrMx}}
+\index{AttrMx@{AttrMx}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMx}{AttrMx}}
+{\footnotesize\ttfamily const QString Attr\+Mx = QString\+Literal(\char`\"{}mx\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad63b2ef5c517d7b329ce9db54abcfa86}\label{ifcdef_8cpp_ad63b2ef5c517d7b329ce9db54abcfa86}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMx1@{AttrMx1}}
+\index{AttrMx1@{AttrMx1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMx1}{AttrMx1}}
+{\footnotesize\ttfamily const QString Attr\+Mx1 = QString\+Literal(\char`\"{}mx1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a80abe6a05bf95043a4153f9439b9d091}\label{ifcdef_8cpp_a80abe6a05bf95043a4153f9439b9d091}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMx2@{AttrMx2}}
+\index{AttrMx2@{AttrMx2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMx2}{AttrMx2}}
+{\footnotesize\ttfamily const QString Attr\+Mx2 = QString\+Literal(\char`\"{}mx2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac87455b0aca94fd5536255f6b0fe288f}\label{ifcdef_8cpp_ac87455b0aca94fd5536255f6b0fe288f}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMy@{AttrMy}}
+\index{AttrMy@{AttrMy}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMy}{AttrMy}}
+{\footnotesize\ttfamily const QString Attr\+My = QString\+Literal(\char`\"{}my\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ada977615c2cc1578981daeffa7b2f5dc}\label{ifcdef_8cpp_ada977615c2cc1578981daeffa7b2f5dc}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMy1@{AttrMy1}}
+\index{AttrMy1@{AttrMy1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMy1}{AttrMy1}}
+{\footnotesize\ttfamily const QString Attr\+My1 = QString\+Literal(\char`\"{}my1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_adb3ff75924803916e515588e5a7428a3}\label{ifcdef_8cpp_adb3ff75924803916e515588e5a7428a3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrMy2@{AttrMy2}}
+\index{AttrMy2@{AttrMy2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrMy2}{AttrMy2}}
+{\footnotesize\ttfamily const QString Attr\+My2 = QString\+Literal(\char`\"{}my2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0ab5c27057f217548fb4ee4e5a1f847d}\label{ifcdef_8cpp_a0ab5c27057f217548fb4ee4e5a1f847d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrName@{AttrName}}
+\index{AttrName@{AttrName}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrName}{AttrName}}
+{\footnotesize\ttfamily const QString Attr\+Name = QString\+Literal(\char`\"{}name\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1e6fd405dd4229f1acca2689b55790cf}\label{ifcdef_8cpp_a1e6fd405dd4229f1acca2689b55790cf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrName1@{AttrName1}}
+\index{AttrName1@{AttrName1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrName1}{AttrName1}}
+{\footnotesize\ttfamily const QString Attr\+Name1 = QString\+Literal(\char`\"{}name1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9feb5d243cbbe476e29db2cf67312298}\label{ifcdef_8cpp_a9feb5d243cbbe476e29db2cf67312298}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrName2@{AttrName2}}
+\index{AttrName2@{AttrName2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrName2}{AttrName2}}
+{\footnotesize\ttfamily const QString Attr\+Name2 = QString\+Literal(\char`\"{}name2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9ca4826ebf781979ebfd4347451624a1}\label{ifcdef_8cpp_a9ca4826ebf781979ebfd4347451624a1}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrObjName@{AttrObjName}}
+\index{AttrObjName@{AttrObjName}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrObjName}{AttrObjName}}
+{\footnotesize\ttfamily const QString Attr\+Obj\+Name = QString\+Literal(\char`\"{}obj\+Name\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a3c732cab74ec12835d0e764244a169b3}\label{ifcdef_8cpp_a3c732cab74ec12835d0e764244a169b3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP1Line@{AttrP1Line}}
+\index{AttrP1Line@{AttrP1Line}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP1Line}{AttrP1Line}}
+{\footnotesize\ttfamily const QString Attr\+P1\+Line = QString\+Literal(\char`\"{}p1\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a3777302d5db4240bf7a83fe2baf2e8c3}\label{ifcdef_8cpp_a3777302d5db4240bf7a83fe2baf2e8c3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP1Line1@{AttrP1Line1}}
+\index{AttrP1Line1@{AttrP1Line1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP1Line1}{AttrP1Line1}}
+{\footnotesize\ttfamily const QString Attr\+P1\+Line1 = QString\+Literal(\char`\"{}p1\+Line1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad90fa7681cad751b275f9ba4f0233360}\label{ifcdef_8cpp_ad90fa7681cad751b275f9ba4f0233360}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP1Line2@{AttrP1Line2}}
+\index{AttrP1Line2@{AttrP1Line2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP1Line2}{AttrP1Line2}}
+{\footnotesize\ttfamily const QString Attr\+P1\+Line2 = QString\+Literal(\char`\"{}p1\+Line2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a5f2391a6b9fb248f7685d6ad547c5d60}\label{ifcdef_8cpp_a5f2391a6b9fb248f7685d6ad547c5d60}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP2Line@{AttrP2Line}}
+\index{AttrP2Line@{AttrP2Line}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP2Line}{AttrP2Line}}
+{\footnotesize\ttfamily const QString Attr\+P2\+Line = QString\+Literal(\char`\"{}p2\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_adc5efed853ac5697e693f63edf1615bc}\label{ifcdef_8cpp_adc5efed853ac5697e693f63edf1615bc}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP2Line1@{AttrP2Line1}}
+\index{AttrP2Line1@{AttrP2Line1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP2Line1}{AttrP2Line1}}
+{\footnotesize\ttfamily const QString Attr\+P2\+Line1 = QString\+Literal(\char`\"{}p2\+Line1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad7d0290557800a97f2a3511a4d0c5d01}\label{ifcdef_8cpp_ad7d0290557800a97f2a3511a4d0c5d01}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrP2Line2@{AttrP2Line2}}
+\index{AttrP2Line2@{AttrP2Line2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrP2Line2}{AttrP2Line2}}
+{\footnotesize\ttfamily const QString Attr\+P2\+Line2 = QString\+Literal(\char`\"{}p2\+Line2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad0d2194cee1619acaf1eb70de0e481cc}\label{ifcdef_8cpp_ad0d2194cee1619acaf1eb70de0e481cc}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPathPoint@{AttrPathPoint}}
+\index{AttrPathPoint@{AttrPathPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPathPoint}{AttrPathPoint}}
+{\footnotesize\ttfamily const QString Attr\+Path\+Point = QString\+Literal(\char`\"{}path\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a41358a1780a3c57af87919d9add77a52}\label{ifcdef_8cpp_a41358a1780a3c57af87919d9add77a52}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPenStyle@{AttrPenStyle}}
+\index{AttrPenStyle@{AttrPenStyle}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPenStyle}{AttrPenStyle}}
+{\footnotesize\ttfamily const QString Attr\+Pen\+Style = QString\+Literal(\char`\"{}pen\+Style\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a949e736dfb870bdfd0dc25b2c9c1ba57}\label{ifcdef_8cpp_a949e736dfb870bdfd0dc25b2c9c1ba57}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPieceLocked@{AttrPieceLocked}}
+\index{AttrPieceLocked@{AttrPieceLocked}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPieceLocked}{AttrPieceLocked}}
+{\footnotesize\ttfamily const QString Attr\+Piece\+Locked = QString\+Literal(\char`\"{}locked\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a8c5478cedb79acf85d1b8b4c8e7209c6}\label{ifcdef_8cpp_a8c5478cedb79acf85d1b8b4c8e7209c6}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPoint1@{AttrPoint1}}
+\index{AttrPoint1@{AttrPoint1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPoint1}{AttrPoint1}}
+{\footnotesize\ttfamily const QString Attr\+Point1 = QString\+Literal(\char`\"{}point1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0047f40552b454c63a2c92e8a71400f5}\label{ifcdef_8cpp_a0047f40552b454c63a2c92e8a71400f5}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPoint2@{AttrPoint2}}
+\index{AttrPoint2@{AttrPoint2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPoint2}{AttrPoint2}}
+{\footnotesize\ttfamily const QString Attr\+Point2 = QString\+Literal(\char`\"{}point2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a7eefd465cdeaf904947263cc899a356c}\label{ifcdef_8cpp_a7eefd465cdeaf904947263cc899a356c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPoint3@{AttrPoint3}}
+\index{AttrPoint3@{AttrPoint3}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPoint3}{AttrPoint3}}
+{\footnotesize\ttfamily const QString Attr\+Point3 = QString\+Literal(\char`\"{}point3\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ad9834b939fa81a678718b1ff68a6290b}\label{ifcdef_8cpp_ad9834b939fa81a678718b1ff68a6290b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPoint4@{AttrPoint4}}
+\index{AttrPoint4@{AttrPoint4}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPoint4}{AttrPoint4}}
+{\footnotesize\ttfamily const QString Attr\+Point4 = QString\+Literal(\char`\"{}point4\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1cfd95c0c70c83257941709fb6b83b35}\label{ifcdef_8cpp_a1cfd95c0c70c83257941709fb6b83b35}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPShoulder@{AttrPShoulder}}
+\index{AttrPShoulder@{AttrPShoulder}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPShoulder}{AttrPShoulder}}
+{\footnotesize\ttfamily const QString Attr\+PShoulder = QString\+Literal(\char`\"{}p\+Shoulder\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a38dfc05262a53888797b29d88178b2a3}\label{ifcdef_8cpp_a38dfc05262a53888797b29d88178b2a3}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrPSpline@{AttrPSpline}}
+\index{AttrPSpline@{AttrPSpline}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrPSpline}{AttrPSpline}}
+{\footnotesize\ttfamily const QString Attr\+PSpline = QString\+Literal(\char`\"{}p\+Spline\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9eda07e5d16d894daab75af01e7a6e7b}\label{ifcdef_8cpp_a9eda07e5d16d894daab75af01e7a6e7b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrRadius@{AttrRadius}}
+\index{AttrRadius@{AttrRadius}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrRadius}{AttrRadius}}
+{\footnotesize\ttfamily const QString Attr\+Radius = QString\+Literal(\char`\"{}radius\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9a2febd08aaefbbe92379bef1039e298}\label{ifcdef_8cpp_a9a2febd08aaefbbe92379bef1039e298}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrRadius1@{AttrRadius1}}
+\index{AttrRadius1@{AttrRadius1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrRadius1}{AttrRadius1}}
+{\footnotesize\ttfamily const QString Attr\+Radius1 = QString\+Literal(\char`\"{}radius1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a50c79cdda0450fce044687d233d45016}\label{ifcdef_8cpp_a50c79cdda0450fce044687d233d45016}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrRadius2@{AttrRadius2}}
+\index{AttrRadius2@{AttrRadius2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrRadius2}{AttrRadius2}}
+{\footnotesize\ttfamily const QString Attr\+Radius2 = QString\+Literal(\char`\"{}radius2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a95cafa1f0097ada0cc6a1aeb104f6719}\label{ifcdef_8cpp_a95cafa1f0097ada0cc6a1aeb104f6719}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrRotationAngle@{AttrRotationAngle}}
+\index{AttrRotationAngle@{AttrRotationAngle}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrRotationAngle}{AttrRotationAngle}}
+{\footnotesize\ttfamily const QString Attr\+Rotation\+Angle = QString\+Literal(\char`\"{}rotation\+Angle\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a417bd258422ce78f30aa0bcf0bf5cb7b}\label{ifcdef_8cpp_a417bd258422ce78f30aa0bcf0bf5cb7b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrSecondArc@{AttrSecondArc}}
+\index{AttrSecondArc@{AttrSecondArc}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrSecondArc}{AttrSecondArc}}
+{\footnotesize\ttfamily const QString Attr\+Second\+Arc = QString\+Literal(\char`\"{}second\+Arc\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2ab434e5bbf87005e34a0d68fed6af33}\label{ifcdef_8cpp_a2ab434e5bbf87005e34a0d68fed6af33}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrSecondPoint@{AttrSecondPoint}}
+\index{AttrSecondPoint@{AttrSecondPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrSecondPoint}{AttrSecondPoint}}
+{\footnotesize\ttfamily const QString Attr\+Second\+Point = QString\+Literal(\char`\"{}second\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a51a98ddf539cbd1a59faec3a85adcba7}\label{ifcdef_8cpp_a51a98ddf539cbd1a59faec3a85adcba7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrShowPointName@{AttrShowPointName}}
+\index{AttrShowPointName@{AttrShowPointName}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrShowPointName}{AttrShowPointName}}
+{\footnotesize\ttfamily const QString Attr\+Show\+Point\+Name = QString\+Literal(\char`\"{}show\+Point\+Name\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a45cbea0860cfd3ae3cde072749fe2518}\label{ifcdef_8cpp_a45cbea0860cfd3ae3cde072749fe2518}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrShowPointName1@{AttrShowPointName1}}
+\index{AttrShowPointName1@{AttrShowPointName1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrShowPointName1}{AttrShowPointName1}}
+{\footnotesize\ttfamily const QString Attr\+Show\+Point\+Name1 = QString\+Literal(\char`\"{}show\+Point\+Name1\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a3b09dd5e1b115ea2df1ee4ba45a28f47}\label{ifcdef_8cpp_a3b09dd5e1b115ea2df1ee4ba45a28f47}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrShowPointName2@{AttrShowPointName2}}
+\index{AttrShowPointName2@{AttrShowPointName2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrShowPointName2}{AttrShowPointName2}}
+{\footnotesize\ttfamily const QString Attr\+Show\+Point\+Name2 = QString\+Literal(\char`\"{}show\+Point\+Name2\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_adabdb32ceafcefecf3f63d9bdb5ba82c}\label{ifcdef_8cpp_adabdb32ceafcefecf3f63d9bdb5ba82c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrSuffix@{AttrSuffix}}
+\index{AttrSuffix@{AttrSuffix}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrSuffix}{AttrSuffix}}
+{\footnotesize\ttfamily const QString Attr\+Suffix = QString\+Literal(\char`\"{}suffix\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a7d919fbc3871d2fd3c47b496ea3f7b08}\label{ifcdef_8cpp_a7d919fbc3871d2fd3c47b496ea3f7b08}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrTangent@{AttrTangent}}
+\index{AttrTangent@{AttrTangent}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrTangent}{AttrTangent}}
+{\footnotesize\ttfamily const QString Attr\+Tangent = QString\+Literal(\char`\"{}tangent\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_abe4b85ddd44820d4c6446ecf3e40f551}\label{ifcdef_8cpp_abe4b85ddd44820d4c6446ecf3e40f551}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrThirdPoint@{AttrThirdPoint}}
+\index{AttrThirdPoint@{AttrThirdPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrThirdPoint}{AttrThirdPoint}}
+{\footnotesize\ttfamily const QString Attr\+Third\+Point = QString\+Literal(\char`\"{}third\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac412474bb61348c1aaec0e5aafa5f384}\label{ifcdef_8cpp_ac412474bb61348c1aaec0e5aafa5f384}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrType@{AttrType}}
+\index{AttrType@{AttrType}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrType}{AttrType}}
+{\footnotesize\ttfamily const QString Attr\+Type = QString\+Literal(\char`\"{}type\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac45da9d48ee7743e9bcacd4ebeac9a5e}\label{ifcdef_8cpp_ac45da9d48ee7743e9bcacd4ebeac9a5e}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrVCrossPoint@{AttrVCrossPoint}}
+\index{AttrVCrossPoint@{AttrVCrossPoint}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrVCrossPoint}{AttrVCrossPoint}}
+{\footnotesize\ttfamily const QString Attr\+VCross\+Point = QString\+Literal(\char`\"{}v\+Cross\+Point\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a7a7fb3ccc3f0532d0a8d6e7dd01c4fda}\label{ifcdef_8cpp_a7a7fb3ccc3f0532d0a8d6e7dd01c4fda}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrX@{AttrX}}
+\index{AttrX@{AttrX}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrX}{AttrX}}
+{\footnotesize\ttfamily const QString AttrX = QString\+Literal(\char`\"{}x\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a6b02102b5c8d1591ddf85f9f30c96c4b}\label{ifcdef_8cpp_a6b02102b5c8d1591ddf85f9f30c96c4b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!AttrY@{AttrY}}
+\index{AttrY@{AttrY}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{AttrY}{AttrY}}
+{\footnotesize\ttfamily const QString AttrY = QString\+Literal(\char`\"{}y\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac429aa4d4621f2de562bf3837508e3d0}\label{ifcdef_8cpp_ac429aa4d4621f2de562bf3837508e3d0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!builInVariables@{builInVariables}}
+\index{builInVariables@{builInVariables}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{builInVariables}{builInVariables}}
+{\footnotesize\ttfamily const QString\+List buil\+In\+Variables}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ QStringList()\ <<\ \mbox{\hyperlink{ifcdef_8cpp_aebb333a8d51106ae4af6d969efebf614}{measurement\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a9f3ed812ea406c2606223e027025313b}{variable\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a8f15aea12a1f1e6f90bc1647fce9a03d}{line\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_ab9564a417fa51f153567e3e56efbc7ca}{angleLine\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{splPath}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_ab9452d90ed05fed378f199b847479e6f}{radiusArc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_af4464db521057ca2da8927d671fe1185}{radius1ElArc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a1f577e496e04fe827b25cc298e06012e}{radius2ElArc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a26036bddd3c34c28fd26858555e27c7c}{angle1Arc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a56160bb66564baaaf7d3b9134f97cc89}{angle2Arc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a125e0c6b1a95847b2c0133e9d4e2d380}{angle1ElArc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a88ae45c7245ae1ba6b60e6b98cfda461}{angle2ElArc\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_ab2f28cd550be09584754e7447d8b9068}{angle1Spl\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_adc55e2e472f2a1112e434a74281526a2}{angle2Spl\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a18d3dcc54adfb57db65992d1ea0397e0}{angle1SplPath}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a908a8a869addc6bf9ea85b98d62acafb}{angle2SplPath}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a60582d208ea24de885ed492051184129}{seg\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_abf25a0ae9a3dc29bb5def396ba66fbf8}{currentLength}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_a1fb7a28b074e7d2c89b9e6a14bd9f83a}{c1LengthSpl\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_ab05c9b16c498d593f387710275f27e9e}{c2LengthSpl\_}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_aa71c1f7a45d923a9546ed85b5bc542fb}{c1LengthSplPath}}}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \mbox{\hyperlink{ifcdef_8cpp_acaf75b416f020991ca24f5226152df2a}{c2LengthSplPath}}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}\label{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c1Length\_V@{c1Length\_V}}
+\index{c1Length\_V@{c1Length\_V}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c1Length\_V}{c1Length\_V}}
+{\footnotesize\ttfamily const QString c1\+Length\+\_\+V = QString\+Literal(\char`\"{}C1\+Length\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1fb7a28b074e7d2c89b9e6a14bd9f83a}\label{ifcdef_8cpp_a1fb7a28b074e7d2c89b9e6a14bd9f83a}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c1LengthSpl\_@{c1LengthSpl\_}}
+\index{c1LengthSpl\_@{c1LengthSpl\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c1LengthSpl\_}{c1LengthSpl\_}}
+{\footnotesize\ttfamily const QString c1\+Length\+Spl\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}{c1\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aa71c1f7a45d923a9546ed85b5bc542fb}\label{ifcdef_8cpp_aa71c1f7a45d923a9546ed85b5bc542fb}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c1LengthSplPath@{c1LengthSplPath}}
+\index{c1LengthSplPath@{c1LengthSplPath}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c1LengthSplPath}{c1LengthSplPath}}
+{\footnotesize\ttfamily const QString c1\+Length\+Spl\+Path = \mbox{\hyperlink{ifcdef_8cpp_a924e70b2cadd890f6cae5d7673c0a6e6}{c1\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}\label{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c2Length\_V@{c2Length\_V}}
+\index{c2Length\_V@{c2Length\_V}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c2Length\_V}{c2Length\_V}}
+{\footnotesize\ttfamily const QString c2\+Length\+\_\+V = QString\+Literal(\char`\"{}C2\+Length\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab05c9b16c498d593f387710275f27e9e}\label{ifcdef_8cpp_ab05c9b16c498d593f387710275f27e9e}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c2LengthSpl\_@{c2LengthSpl\_}}
+\index{c2LengthSpl\_@{c2LengthSpl\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c2LengthSpl\_}{c2LengthSpl\_}}
+{\footnotesize\ttfamily const QString c2\+Length\+Spl\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}{c2\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}{spl\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_acaf75b416f020991ca24f5226152df2a}\label{ifcdef_8cpp_acaf75b416f020991ca24f5226152df2a}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!c2LengthSplPath@{c2LengthSplPath}}
+\index{c2LengthSplPath@{c2LengthSplPath}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{c2LengthSplPath}{c2LengthSplPath}}
+{\footnotesize\ttfamily const QString c2\+Length\+Spl\+Path = \mbox{\hyperlink{ifcdef_8cpp_a1be08446df3762d4a2c30338257d7c27}{c2\+Length\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a97d7850641d04d1390958021adf3eae4}\label{ifcdef_8cpp_a97d7850641d04d1390958021adf3eae4}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorBlack@{ColorBlack}}
+\index{ColorBlack@{ColorBlack}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorBlack}{ColorBlack}}
+{\footnotesize\ttfamily const QString Color\+Black = QString\+Literal(\char`\"{}black\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a213ac73627229f3bb8864f386581d784}\label{ifcdef_8cpp_a213ac73627229f3bb8864f386581d784}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorBlue@{ColorBlue}}
+\index{ColorBlue@{ColorBlue}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorBlue}{ColorBlue}}
+{\footnotesize\ttfamily const QString Color\+Blue = QString\+Literal(\char`\"{}blue\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af1c805ceb54ffdb8e439360ae81235f2}\label{ifcdef_8cpp_af1c805ceb54ffdb8e439360ae81235f2}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorByGroup@{ColorByGroup}}
+\index{ColorByGroup@{ColorByGroup}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorByGroup}{ColorByGroup}}
+{\footnotesize\ttfamily const QString Color\+By\+Group = QString\+Literal(\char`\"{}by\+Group\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0659e5c9f1b262a117e73d59a59defd7}\label{ifcdef_8cpp_a0659e5c9f1b262a117e73d59a59defd7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorCornFlowerBlue@{ColorCornFlowerBlue}}
+\index{ColorCornFlowerBlue@{ColorCornFlowerBlue}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorCornFlowerBlue}{ColorCornFlowerBlue}}
+{\footnotesize\ttfamily const QString Color\+Corn\+Flower\+Blue = QString\+Literal(\char`\"{}cornflowerblue\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a7020e44b806646dee4d406e68954e07f}\label{ifcdef_8cpp_a7020e44b806646dee4d406e68954e07f}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDarkBlue@{ColorDarkBlue}}
+\index{ColorDarkBlue@{ColorDarkBlue}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDarkBlue}{ColorDarkBlue}}
+{\footnotesize\ttfamily const QString Color\+Dark\+Blue = QString\+Literal(\char`\"{}dark\+Blue\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0482b3174beb074f65e01ccd0372a876}\label{ifcdef_8cpp_a0482b3174beb074f65e01ccd0372a876}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDarkGray@{ColorDarkGray}}
+\index{ColorDarkGray@{ColorDarkGray}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDarkGray}{ColorDarkGray}}
+{\footnotesize\ttfamily const QString Color\+Dark\+Gray = QString\+Literal(\char`\"{}darkgray\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab961ffd08bd8f2a61601d39b5ac2af3e}\label{ifcdef_8cpp_ab961ffd08bd8f2a61601d39b5ac2af3e}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDarkGreen@{ColorDarkGreen}}
+\index{ColorDarkGreen@{ColorDarkGreen}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDarkGreen}{ColorDarkGreen}}
+{\footnotesize\ttfamily const QString Color\+Dark\+Green = QString\+Literal(\char`\"{}dark\+Green\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a00433e7bbbf9ec4046298b8f20eea4b7}\label{ifcdef_8cpp_a00433e7bbbf9ec4046298b8f20eea4b7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDarkRed@{ColorDarkRed}}
+\index{ColorDarkRed@{ColorDarkRed}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDarkRed}{ColorDarkRed}}
+{\footnotesize\ttfamily const QString Color\+Dark\+Red = QString\+Literal(\char`\"{}dark\+Red\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_afb06ea4fedd2e52b5a3cccfcad1432e2}\label{ifcdef_8cpp_afb06ea4fedd2e52b5a3cccfcad1432e2}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDarkViolet@{ColorDarkViolet}}
+\index{ColorDarkViolet@{ColorDarkViolet}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDarkViolet}{ColorDarkViolet}}
+{\footnotesize\ttfamily const QString Color\+Dark\+Violet = QString\+Literal(\char`\"{}darkviolet\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac668b1d6365c72ad33eac7ae86c615a7}\label{ifcdef_8cpp_ac668b1d6365c72ad33eac7ae86c615a7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDeepPink@{ColorDeepPink}}
+\index{ColorDeepPink@{ColorDeepPink}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDeepPink}{ColorDeepPink}}
+{\footnotesize\ttfamily const QString Color\+Deep\+Pink = QString\+Literal(\char`\"{}deeppink\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af8aa3dbcc43d9b1c038d5570856ba03c}\label{ifcdef_8cpp_af8aa3dbcc43d9b1c038d5570856ba03c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorDeepSkyBlue@{ColorDeepSkyBlue}}
+\index{ColorDeepSkyBlue@{ColorDeepSkyBlue}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorDeepSkyBlue}{ColorDeepSkyBlue}}
+{\footnotesize\ttfamily const QString Color\+Deep\+Sky\+Blue = QString\+Literal(\char`\"{}deepskyblue\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a6e113a553a0176d39cd03c432b7106fb}\label{ifcdef_8cpp_a6e113a553a0176d39cd03c432b7106fb}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorGoldenRod@{ColorGoldenRod}}
+\index{ColorGoldenRod@{ColorGoldenRod}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorGoldenRod}{ColorGoldenRod}}
+{\footnotesize\ttfamily const QString Color\+Golden\+Rod = QString\+Literal(\char`\"{}goldenrod\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a50061a81692fd26976b71cffaf15111b}\label{ifcdef_8cpp_a50061a81692fd26976b71cffaf15111b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorGray@{ColorGray}}
+\index{ColorGray@{ColorGray}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorGray}{ColorGray}}
+{\footnotesize\ttfamily const QString Color\+Gray = QString\+Literal(\char`\"{}gray\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af001b3fa0cfd3276bb8928a1745965cf}\label{ifcdef_8cpp_af001b3fa0cfd3276bb8928a1745965cf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorGreen@{ColorGreen}}
+\index{ColorGreen@{ColorGreen}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorGreen}{ColorGreen}}
+{\footnotesize\ttfamily const QString Color\+Green = QString\+Literal(\char`\"{}green\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1cdd65f1d5a03b524b94c43453cc0535}\label{ifcdef_8cpp_a1cdd65f1d5a03b524b94c43453cc0535}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorLightGray@{ColorLightGray}}
+\index{ColorLightGray@{ColorLightGray}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorLightGray}{ColorLightGray}}
+{\footnotesize\ttfamily const QString Color\+Light\+Gray = QString\+Literal(\char`\"{}lightgray\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a954bc7eaa9f6a821957cab77ecc0d757}\label{ifcdef_8cpp_a954bc7eaa9f6a821957cab77ecc0d757}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorLightSalmon@{ColorLightSalmon}}
+\index{ColorLightSalmon@{ColorLightSalmon}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorLightSalmon}{ColorLightSalmon}}
+{\footnotesize\ttfamily const QString Color\+Light\+Salmon = QString\+Literal(\char`\"{}lightsalmon\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af4faf41e1de3dc4109516dd66f4042ea}\label{ifcdef_8cpp_af4faf41e1de3dc4109516dd66f4042ea}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorLime@{ColorLime}}
+\index{ColorLime@{ColorLime}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorLime}{ColorLime}}
+{\footnotesize\ttfamily const QString Color\+Lime = QString\+Literal(\char`\"{}lime\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a39932f3a24d591d1c5bbd62f120a0f9b}\label{ifcdef_8cpp_a39932f3a24d591d1c5bbd62f120a0f9b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorMediumSeaGreen@{ColorMediumSeaGreen}}
+\index{ColorMediumSeaGreen@{ColorMediumSeaGreen}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorMediumSeaGreen}{ColorMediumSeaGreen}}
+{\footnotesize\ttfamily const QString Color\+Medium\+Sea\+Green = QString\+Literal(\char`\"{}mediumseagreen\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a12a78cdfd176f8b9c0436e669218ec11}\label{ifcdef_8cpp_a12a78cdfd176f8b9c0436e669218ec11}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorNone@{ColorNone}}
+\index{ColorNone@{ColorNone}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorNone}{ColorNone}}
+{\footnotesize\ttfamily const QString Color\+None = QString\+Literal(\char`\"{}none\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af3df8c36a57ee504d1dab7c0193f7852}\label{ifcdef_8cpp_af3df8c36a57ee504d1dab7c0193f7852}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorOrange@{ColorOrange}}
+\index{ColorOrange@{ColorOrange}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorOrange}{ColorOrange}}
+{\footnotesize\ttfamily const QString Color\+Orange = QString\+Literal(\char`\"{}orange\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a724414a3b08a10b0f591472ee7bef6cb}\label{ifcdef_8cpp_a724414a3b08a10b0f591472ee7bef6cb}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorViolet@{ColorViolet}}
+\index{ColorViolet@{ColorViolet}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorViolet}{ColorViolet}}
+{\footnotesize\ttfamily const QString Color\+Violet = QString\+Literal(\char`\"{}violet\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_abff7a40b341052315fd1908c6fcd94ef}\label{ifcdef_8cpp_abff7a40b341052315fd1908c6fcd94ef}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorWhite@{ColorWhite}}
+\index{ColorWhite@{ColorWhite}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorWhite}{ColorWhite}}
+{\footnotesize\ttfamily const QString Color\+White = QString\+Literal(\char`\"{}white\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a3cfd81f0b9ed3d55e9ee6083222be8c0}\label{ifcdef_8cpp_a3cfd81f0b9ed3d55e9ee6083222be8c0}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!ColorYellow@{ColorYellow}}
+\index{ColorYellow@{ColorYellow}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{ColorYellow}{ColorYellow}}
+{\footnotesize\ttfamily const QString Color\+Yellow = QString\+Literal(\char`\"{}yellow\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_abf25a0ae9a3dc29bb5def396ba66fbf8}\label{ifcdef_8cpp_abf25a0ae9a3dc29bb5def396ba66fbf8}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!currentLength@{currentLength}}
+\index{currentLength@{currentLength}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{currentLength}{currentLength}}
+{\footnotesize\ttfamily const QString current\+Length = QString\+Literal(\char`\"{}Current\+Length\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}\label{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!currentSeamAllowance@{currentSeamAllowance}}
+\index{currentSeamAllowance@{currentSeamAllowance}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{currentSeamAllowance}{currentSeamAllowance}}
+{\footnotesize\ttfamily const QString current\+Seam\+Allowance = QString\+Literal(\char`\"{}Current\+Seam\+Allowance\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a0df1f36e04cd4077a0c9e3915b070a83}\label{ifcdef_8cpp_a0df1f36e04cd4077a0c9e3915b070a83}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!CustomIncrSign@{CustomIncrSign}}
+\index{CustomIncrSign@{CustomIncrSign}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{CustomIncrSign}{CustomIncrSign}}
+{\footnotesize\ttfamily const QString Custom\+Incr\+Sign = QString\+Literal(\char`\"{}\#\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a06d2c73abe15fdf5c894e5b6dfdd6c56}\label{ifcdef_8cpp_a06d2c73abe15fdf5c894e5b6dfdd6c56}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!CustomMSign@{CustomMSign}}
+\index{CustomMSign@{CustomMSign}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{CustomMSign}{CustomMSign}}
+{\footnotesize\ttfamily const QString Custom\+MSign = QString\+Literal(\char`\"{}@\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}\label{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!elarc\_@{elarc\_}}
+\index{elarc\_@{elarc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{elarc\_}{elarc\_}}
+{\footnotesize\ttfamily const QString elarc\+\_\+ = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a05373fd85d080b39cffeb5fa971a7964}{ELARC\+\_\+}})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2cbc954ba9f8bba8d86221e2c1398647}\label{ifcdef_8cpp_a2cbc954ba9f8bba8d86221e2c1398647}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillBackwardDiagonal@{FillBackwardDiagonal}}
+\index{FillBackwardDiagonal@{FillBackwardDiagonal}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillBackwardDiagonal}{FillBackwardDiagonal}}
+{\footnotesize\ttfamily const QString Fill\+Backward\+Diagonal = QString\+Literal(\char`\"{}bdiagpattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a86a005b6031afb7bfa67efb9ba68f790}\label{ifcdef_8cpp_a86a005b6031afb7bfa67efb9ba68f790}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillCross@{FillCross}}
+\index{FillCross@{FillCross}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillCross}{FillCross}}
+{\footnotesize\ttfamily const QString Fill\+Cross = QString\+Literal(\char`\"{}crosspattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2b27f55e5896fa26952ad410405519c2}\label{ifcdef_8cpp_a2b27f55e5896fa26952ad410405519c2}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FilldDiagonalCross@{FilldDiagonalCross}}
+\index{FilldDiagonalCross@{FilldDiagonalCross}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FilldDiagonalCross}{FilldDiagonalCross}}
+{\footnotesize\ttfamily const QString Filld\+Diagonal\+Cross = QString\+Literal(\char`\"{}diagcrosspattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ae31da243d621ad6032b031dc1068bbdf}\label{ifcdef_8cpp_ae31da243d621ad6032b031dc1068bbdf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense1@{FillDense1}}
+\index{FillDense1@{FillDense1}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense1}{FillDense1}}
+{\footnotesize\ttfamily const QString Fill\+Dense1 = QString\+Literal(\char`\"{}dense1pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a86bcbacf1bf366b9007a5788f54db259}\label{ifcdef_8cpp_a86bcbacf1bf366b9007a5788f54db259}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense2@{FillDense2}}
+\index{FillDense2@{FillDense2}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense2}{FillDense2}}
+{\footnotesize\ttfamily const QString Fill\+Dense2 = QString\+Literal(\char`\"{}dense2pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a58dca946c491863cefa0672f0804d7cf}\label{ifcdef_8cpp_a58dca946c491863cefa0672f0804d7cf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense3@{FillDense3}}
+\index{FillDense3@{FillDense3}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense3}{FillDense3}}
+{\footnotesize\ttfamily const QString Fill\+Dense3 = QString\+Literal(\char`\"{}dense3pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a30d8bed2763a82e019aab8f8c60f479d}\label{ifcdef_8cpp_a30d8bed2763a82e019aab8f8c60f479d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense4@{FillDense4}}
+\index{FillDense4@{FillDense4}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense4}{FillDense4}}
+{\footnotesize\ttfamily const QString Fill\+Dense4 = QString\+Literal(\char`\"{}dense4pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9183a956f54a75d56023f17c7af5f551}\label{ifcdef_8cpp_a9183a956f54a75d56023f17c7af5f551}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense5@{FillDense5}}
+\index{FillDense5@{FillDense5}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense5}{FillDense5}}
+{\footnotesize\ttfamily const QString Fill\+Dense5 = QString\+Literal(\char`\"{}dense5pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2099b37d19b695f456c6c6936a5ffae7}\label{ifcdef_8cpp_a2099b37d19b695f456c6c6936a5ffae7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense6@{FillDense6}}
+\index{FillDense6@{FillDense6}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense6}{FillDense6}}
+{\footnotesize\ttfamily const QString Fill\+Dense6 = QString\+Literal(\char`\"{}dense6pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aea4485cec4f0330d6f515027f431de9e}\label{ifcdef_8cpp_aea4485cec4f0330d6f515027f431de9e}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillDense7@{FillDense7}}
+\index{FillDense7@{FillDense7}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillDense7}{FillDense7}}
+{\footnotesize\ttfamily const QString Fill\+Dense7 = QString\+Literal(\char`\"{}dense7pattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_afd184140313b5d5a4b037bb9b1c3d4c7}\label{ifcdef_8cpp_afd184140313b5d5a4b037bb9b1c3d4c7}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillForwardDiagonal@{FillForwardDiagonal}}
+\index{FillForwardDiagonal@{FillForwardDiagonal}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillForwardDiagonal}{FillForwardDiagonal}}
+{\footnotesize\ttfamily const QString Fill\+Forward\+Diagonal = QString\+Literal(\char`\"{}fdiagpattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a6336cf92a0f2c42ce625b4692d2744c6}\label{ifcdef_8cpp_a6336cf92a0f2c42ce625b4692d2744c6}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillHorizLines@{FillHorizLines}}
+\index{FillHorizLines@{FillHorizLines}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillHorizLines}{FillHorizLines}}
+{\footnotesize\ttfamily const QString Fill\+Horiz\+Lines = QString\+Literal(\char`\"{}horpattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a72c99687b70dae8e5f5180cd8a9f7dcf}\label{ifcdef_8cpp_a72c99687b70dae8e5f5180cd8a9f7dcf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillNone@{FillNone}}
+\index{FillNone@{FillNone}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillNone}{FillNone}}
+{\footnotesize\ttfamily const QString Fill\+None = QString\+Literal(\char`\"{}nobrush\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ac236a8dfc0e3be09dc07fc6b5726b25d}\label{ifcdef_8cpp_ac236a8dfc0e3be09dc07fc6b5726b25d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillSolid@{FillSolid}}
+\index{FillSolid@{FillSolid}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillSolid}{FillSolid}}
+{\footnotesize\ttfamily const QString Fill\+Solid = QString\+Literal(\char`\"{}solidpattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ae65acb2bbc099e7b13c4d98883116c22}\label{ifcdef_8cpp_ae65acb2bbc099e7b13c4d98883116c22}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!FillVertLines@{FillVertLines}}
+\index{FillVertLines@{FillVertLines}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{FillVertLines}{FillVertLines}}
+{\footnotesize\ttfamily const QString Fill\+Vert\+Lines = QString\+Literal(\char`\"{}verpattern\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a8f15aea12a1f1e6f90bc1647fce9a03d}\label{ifcdef_8cpp_a8f15aea12a1f1e6f90bc1647fce9a03d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!line\_@{line\_}}
+\index{line\_@{line\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{line\_}{line\_}}
+{\footnotesize\ttfamily const QString line\+\_\+ = QString\+Literal(\char`\"{}Line\+\_\+\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a08e640e6ed2724cec96a3d106e6e120c}\label{ifcdef_8cpp_a08e640e6ed2724cec96a3d106e6e120c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeByGroup@{LineTypeByGroup}}
+\index{LineTypeByGroup@{LineTypeByGroup}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeByGroup}{LineTypeByGroup}}
+{\footnotesize\ttfamily const QString Line\+Type\+By\+Group = QString\+Literal(\char`\"{}by\+Group\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a4bf9b24aa833ad31cb748fa3afaf04ea}\label{ifcdef_8cpp_a4bf9b24aa833ad31cb748fa3afaf04ea}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeDashDotDotLine@{LineTypeDashDotDotLine}}
+\index{LineTypeDashDotDotLine@{LineTypeDashDotDotLine}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeDashDotDotLine}{LineTypeDashDotDotLine}}
+{\footnotesize\ttfamily const QString Line\+Type\+Dash\+Dot\+Dot\+Line = QString\+Literal(\char`\"{}dash\+Dot\+Dot\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a47745fcde526eee0ec4a17c4f3463038}\label{ifcdef_8cpp_a47745fcde526eee0ec4a17c4f3463038}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeDashDotLine@{LineTypeDashDotLine}}
+\index{LineTypeDashDotLine@{LineTypeDashDotLine}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeDashDotLine}{LineTypeDashDotLine}}
+{\footnotesize\ttfamily const QString Line\+Type\+Dash\+Dot\+Line = QString\+Literal(\char`\"{}dash\+Dot\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a5eeaef17d5541167d8b8acda02946102}\label{ifcdef_8cpp_a5eeaef17d5541167d8b8acda02946102}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeDashLine@{LineTypeDashLine}}
+\index{LineTypeDashLine@{LineTypeDashLine}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeDashLine}{LineTypeDashLine}}
+{\footnotesize\ttfamily const QString Line\+Type\+Dash\+Line = QString\+Literal(\char`\"{}dash\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_afb8b1265c7f505ee8cb5c02f6121d59c}\label{ifcdef_8cpp_afb8b1265c7f505ee8cb5c02f6121d59c}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeDotLine@{LineTypeDotLine}}
+\index{LineTypeDotLine@{LineTypeDotLine}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeDotLine}{LineTypeDotLine}}
+{\footnotesize\ttfamily const QString Line\+Type\+Dot\+Line = QString\+Literal(\char`\"{}dot\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9990d8b8bf3a8cd17d9cf96fdd4ed5da}\label{ifcdef_8cpp_a9990d8b8bf3a8cd17d9cf96fdd4ed5da}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeNone@{LineTypeNone}}
+\index{LineTypeNone@{LineTypeNone}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeNone}{LineTypeNone}}
+{\footnotesize\ttfamily const QString Line\+Type\+None = QString\+Literal(\char`\"{}none\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a34c7d45d4b6acb3c0da108b28639b99d}\label{ifcdef_8cpp_a34c7d45d4b6acb3c0da108b28639b99d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineTypeSolidLine@{LineTypeSolidLine}}
+\index{LineTypeSolidLine@{LineTypeSolidLine}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineTypeSolidLine}{LineTypeSolidLine}}
+{\footnotesize\ttfamily const QString Line\+Type\+Solid\+Line = QString\+Literal(\char`\"{}solid\+Line\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af3f5ffc1e37a155d3021a770e64b0008}\label{ifcdef_8cpp_af3f5ffc1e37a155d3021a770e64b0008}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!LineWeightByGroup@{LineWeightByGroup}}
+\index{LineWeightByGroup@{LineWeightByGroup}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{LineWeightByGroup}{LineWeightByGroup}}
+{\footnotesize\ttfamily const QString Line\+Weight\+By\+Group = QString\+Literal(\char`\"{}by\+Group\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aebb333a8d51106ae4af6d969efebf614}\label{ifcdef_8cpp_aebb333a8d51106ae4af6d969efebf614}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!measurement\_@{measurement\_}}
+\index{measurement\_@{measurement\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{measurement\_}{measurement\_}}
+{\footnotesize\ttfamily const QString measurement\+\_\+ = QString\+Literal(\char`\"{}M\+\_\+\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_af4464db521057ca2da8927d671fe1185}\label{ifcdef_8cpp_af4464db521057ca2da8927d671fe1185}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!radius1ElArc\_@{radius1ElArc\_}}
+\index{radius1ElArc\_@{radius1ElArc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{radius1ElArc\_}{radius1ElArc\_}}
+{\footnotesize\ttfamily const QString radius1\+El\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + QLatin1\+Char(\textquotesingle{}1\textquotesingle{}) + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a1f577e496e04fe827b25cc298e06012e}\label{ifcdef_8cpp_a1f577e496e04fe827b25cc298e06012e}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!radius2ElArc\_@{radius2ElArc\_}}
+\index{radius2ElArc\_@{radius2ElArc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{radius2ElArc\_}{radius2ElArc\_}}
+{\footnotesize\ttfamily const QString radius2\+El\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + QLatin1\+Char(\textquotesingle{}2\textquotesingle{}) + \mbox{\hyperlink{ifcdef_8cpp_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}\label{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!radius\_V@{radius\_V}}
+\index{radius\_V@{radius\_V}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{radius\_V}{radius\_V}}
+{\footnotesize\ttfamily const QString radius\+\_\+V = QString\+Literal(\char`\"{}Radius\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_ab9452d90ed05fed378f199b847479e6f}\label{ifcdef_8cpp_ab9452d90ed05fed378f199b847479e6f}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!radiusArc\_@{radiusArc\_}}
+\index{radiusArc\_@{radiusArc\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{radiusArc\_}{radiusArc\_}}
+{\footnotesize\ttfamily const QString radius\+Arc\+\_\+ = \mbox{\hyperlink{ifcdef_8cpp_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\+\_\+V}} + \mbox{\hyperlink{ifcdef_8cpp_a289f0293fa68b58447b0a7f5ed4423d5}{arc\+\_\+}}}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a60582d208ea24de885ed492051184129}\label{ifcdef_8cpp_a60582d208ea24de885ed492051184129}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!seg\_@{seg\_}}
+\index{seg\_@{seg\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{seg\_}{seg\_}}
+{\footnotesize\ttfamily const QString seg\+\_\+ = QString\+Literal(\char`\"{}Seg\+\_\+\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}\label{ifcdef_8cpp_aae1b086a7a80736297528e849eac280a}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!spl\_@{spl\_}}
+\index{spl\_@{spl\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{spl\_}{spl\_}}
+{\footnotesize\ttfamily const QString spl\+\_\+ = QString\+Literal(\mbox{\hyperlink{ifcdef_8h_a473d8fd4862f8f0be8c4edde634dbf22}{SPL\+\_\+}})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}\label{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!splPath@{splPath}}
+\index{splPath@{splPath}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{splPath}{splPath}}
+{\footnotesize\ttfamily const QString spl\+Path = QString\+Literal(\char`\"{}Spl\+Path\char`\"{})}
+
+\mbox{\Hypertarget{ifcdef_8cpp_a9f3ed812ea406c2606223e027025313b}\label{ifcdef_8cpp_a9f3ed812ea406c2606223e027025313b}} 
+\index{ifcdef.cpp@{ifcdef.cpp}!variable\_@{variable\_}}
+\index{variable\_@{variable\_}!ifcdef.cpp@{ifcdef.cpp}}
+\doxysubsubsection{\texorpdfstring{variable\_}{variable\_}}
+{\footnotesize\ttfamily const QString variable\+\_\+ = QString\+Literal(\char`\"{}Variable\+\_\+\char`\"{})}
+

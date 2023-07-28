@@ -1,0 +1,89 @@
+\hypertarget{intersect__circles__visual_8h_source}{}\doxysection{intersect\+\_\+circles\+\_\+visual.\+h}
+\label{intersect__circles__visual_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/line/intersect\_circles\_visual.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/line/intersect\_circles\_visual.h}}
+\mbox{\hyperlink{intersect__circles__visual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ intersect\_circles\_visual.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 29\ 5,\ 2015}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S.\ Caskey}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @date\ \ \ 7.16.2022}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2022\ Seamly2D\ project.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ by\ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ or\ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ INTERSECT\_CIRCLES\_VISUAL\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ INTERSECT\_CIRCLES\_VISUAL\_H}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{visline_8h}{visline.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_intersect_circles_visual}{IntersectCirclesVisual}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_line}{VisLine}}}
+\DoxyCodeLine{00049\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual}{IntersectCirclesVisual}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a13b37a95bedc51d9360d86acfb0c917d}{\string~IntersectCirclesVisual}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a09a8255dd4463d86e0785c00ccae1e51}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00057\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_ab740b9fa5dc7cd656ea5af37b24cc762}{VisualMode}}(const\ quint32\ \&\textcolor{keywordtype}{id})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a6b832c14896aed8be07e0fe1d828fe90}{setObject2Id}}(const\ quint32\ \&value);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a021e3127a9656326428198d1e6340104}{setC1Radius}}(const\ QString\ \&value);}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_ae529cf48c8480d826565b5eb1ba0a55f}{setC2Radius}}(const\ QString\ \&value);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a8d42367df46d713c3ac623386c02aed8}{setCrossPoint}}(const\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \&value);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_ab56269006e2dd8600999f035270fe062}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_intersect_circles_visual_a3e3b268308a771b3b0cd97dc9e1c9913a70c88857c12f8363a229210c4e9a8739}{Type}};\}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{enum}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{class_intersect_circles_visual_a3e3b268308a771b3b0cd97dc9e1c9913a70c88857c12f8363a229210c4e9a8739}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ToolPointOfIntersectionCircles)\};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_intersect_circles_visual}{IntersectCirclesVisual}})}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a3e39f023895db0e041963658d5643169}{object2Id}};}
+\DoxyCodeLine{00071\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_ad7fa1566691e0a3173bc33298d771ccc}{c1Radius}};}
+\DoxyCodeLine{00072\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a037a10798ba0c35642ca31ce78c52c2a}{c2Radius}};}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_aebd09a215e649109f48eac647df37844}{crossPoint}};}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ \ \ \ \ \ \ *\mbox{\hyperlink{class_intersect_circles_visual_ae55d0be557f2295c8e3a9130820adf34}{point}};}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ \ \ \ \ \ \ *\mbox{\hyperlink{class_intersect_circles_visual_a7db2846ee3222c7a212a2214cc7014ad}{c1Center}};}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ \ \ \ \ \ \ *\mbox{\hyperlink{class_intersect_circles_visual_a6f73ffdb05cb280f7b5d95f9870a5f78}{c2Center}};}
+\DoxyCodeLine{00077\ \ \ \ \ QGraphicsEllipseItem\ *\mbox{\hyperlink{class_intersect_circles_visual_a55b97675c7989033ccffda578ba734f3}{c1Path}};}
+\DoxyCodeLine{00078\ \ \ \ \ QGraphicsEllipseItem\ *\mbox{\hyperlink{class_intersect_circles_visual_a2da47b6608aa625bbe302b37aaeb6aa9}{c2Path}};}
+\DoxyCodeLine{00079\ \ \ \ \ QColor\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a4036b0a69cad9f5a7c247dbab43fa04e}{m\_secondrySupportColor}};}
+\DoxyCodeLine{00080\ \ \ \ \ QColor\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_intersect_circles_visual_a97db2bdfbb13010edd2fce40c66ba1d0}{m\_tertiarySupportColor}};}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INTERSECT\_CIRCLES\_VISUAL\_H}}
+
+\end{DoxyCode}

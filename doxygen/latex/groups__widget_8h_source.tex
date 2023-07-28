@@ -1,0 +1,130 @@
+\hypertarget{groups__widget_8h_source}{}\doxysection{groups\+\_\+widget.\+h}
+\label{groups__widget_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/groups\_widget.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/groups\_widget.h}}
+\mbox{\hyperlink{groups__widget_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ groups\_widget.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 11\ Jun,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{\ /************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ \ **\ \ @file\ \ \ vwidgetgroups.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ \ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ \ **\ \ @date\ \ \ 6\ 4,\ 2016}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ \ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ \ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ \ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ \ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ \ **\ \ Copyright\ (C)\ 2016\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ \ **\ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ \ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ \ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ \ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ \ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ \ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ \ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ \ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ \ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ \ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ \ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ \ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ \ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ GROUPS\_WIDGET\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ GROUPS\_WIDGET\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vtools/dialogs/tools/editgroup\_dialog.h"{}}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QTableWidget>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}};}
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00065\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_edit_group_dialog}{EditGroupDialog}};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_groups_widget}{GroupsWidget}};}
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_groups_widget}{GroupsWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget}{GroupsWidget}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *doc,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a23decc7b1408343e0f0df71607db67a9}{\string~GroupsWidget}}();}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ad7780eb1bfc21e4b80a0be8064be6b56}{updateGroups}}();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a30cd8180e6b7bc36c02dbed4d1885295}{showGroups}}(\mbox{\hyperlink{class_q_map}{QMap<quint32,QString>}}\ groups);}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a76e7ba9b26ba0c3215bf9d39b4b20880}{showAllGroups}}();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a57bed1332b8487b0281379ebb3b0974c}{hideAllGroups}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ab22577549d439176b57c52af854137d4}{lockAllGroups}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a81c0446a2a02d49247576c8dfb39d460}{unlockAllGroups}}();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ad4189778b64e1f853925d86413f40842}{addGroupToList}}();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ac6fd298e78a3d4dcf3582cbcec2e4021}{deleteGroupFromList}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a529e329caa532270edfd0e08f76e1243}{editGroup}}();}
+\DoxyCodeLine{00090\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a58e2d86e3eaecabbb9c7da075bb02593}{getGroupId}}();}
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_af56e55db79007be96cab79c5deff4bcc}{getCurrentGroupName}}();}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_aa9faa127e2112912e6898b230818a92c}{setAddGroupEnabled}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ae9d9625861bc64810c1e4692040ea455}{clear}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a7332fe8871fc0f086e59ddbf1a21ff54}{groupVisibilityChanged}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_af1ffb50e75dd2615ad009e9eaba9be8c}{groupLockChanged}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a20d0cb5a5fdc4e5c89a1ee527af890c7}{renameGroup}}(\textcolor{keywordtype}{int}\ row,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a9b612c8d1e20f7302ac1faf8533c98d2}{groupContextMenu}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a35ecd548edee87654305c045bf8e4271}{draftBlockHasGroups}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00103\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_groups_widget}{GroupsWidget}})}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_groups_widget}{GroupsWidget}}\ *\mbox{\hyperlink{class_groups_widget_ad24f67c7e59789c751183fe5d4fde4cb}{ui}};}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_groups_widget_ad4ff50d31f07643b71b15a87771dbca5}{m\_doc}};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ *\mbox{\hyperlink{class_groups_widget_a36c115d4c2247f3f4299181f3cb9cbba}{m\_data}};}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a9536c829a4e976f334cc9b7de3993fca}{m\_patternHasGroups}};}
+\DoxyCodeLine{00108\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ae06ced498e64a14985da5edcc707652c}{m\_currentGroupId}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a60cf1e07127fef860cef74844868aa60}{fillTable}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ \mbox{\hyperlink{struct_group_attributes}{GroupAttributes}}>\ \&groups);}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_aa0f7d657096fe07da756fbbea0171e76}{fillGroupItemList}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a7470d0781ec36b162c0c8d6c26da6bb3}{addGroupItem}}(const\ quint32\ \&toolId,\ const\ quint32\ \&objId,\ const\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \&tooltype);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a4d76435cf8920a19ff52225b32f22acf}{groupItemContextMenu}}(const\ QPoint\ \&pos);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_ae747d915ee5eb4fcd794bbddfb6f3111}{itemDoubleClicked}}(QListWidgetItem\ *item);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a862e5ff08ed0d3a36235f4699061cf72}{zoomToObject}}(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_point_f}{VPointF}}>\ point);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a85224808bafc1248e7a5b1928e6b9063}{setGroupVisibility}}(QTableWidgetItem\ *item,\ const\ quint32\ \&groupId,\ const\ \textcolor{keywordtype}{bool}\ \&visible);}
+\DoxyCodeLine{00117\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a356f599cbed259c6b560f9d01d7900b4}{getPointName}}(quint32\ pointId);}
+\DoxyCodeLine{00118\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a24def2ed9844e27d9f8a55a4244b6454}{attrUInt}}(const\ QDomElement\ \&domElement,\ const\ QString\ \&name);}
+\DoxyCodeLine{00119\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a92a03b91455b3f3df8c41b9a227864ba}{getObjName}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_aae8626398cbbee809ffd918c85221df4}{splitterMoved}}(\textcolor{keywordtype}{int}\ pos,\ \textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_groups_widget_a510fa9c431833f849e0abeb0cc436d2c}{headerClicked}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ GROUPS\_WIDGET\_H}}
+
+\end{DoxyCode}

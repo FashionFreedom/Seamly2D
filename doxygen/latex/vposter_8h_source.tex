@@ -1,0 +1,113 @@
+\hypertarget{vposter_8h_source}{}\doxysection{vposter.\+h}
+\label{vposter_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vposter.h@{D:/Github/Seamly2D/src/libs/vlayout/vposter.h}}
+\mbox{\hyperlink{vposter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vposter.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 11\ 4,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VPOSTER\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VPOSTER\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QRect>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }QGraphicsItem;}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }QPrinter;}
+\DoxyCodeLine{00063\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_vector}{QVector}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_poster_data}{PosterData}}}
+\DoxyCodeLine{00066\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{struct_poster_data_a14eca5a0d0b31ded6b36d22c7815cfae}{PosterData}}()}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_poster_data_a8e10b289d0d07354d512e5a49426415c}{index}}(0),}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_poster_data_a3fdcc40c12d26eb2518202ba86032fb7}{row}}(0),}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_poster_data_af7e79904766d58385a28efa7da311f48}{column}}(0),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_poster_data_a13f420df5b09a8fcdd2f72cc575cf90e}{rows}}(0),}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_poster_data_a2f37fb7e0d940e5ca3a193c5632aaf11}{columns}}(0),}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_poster_data_ac7ef548c1aecc5861e39f95c25326963}{rect}}()\{\}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_poster_data_a8e10b289d0d07354d512e5a49426415c}{index}};\ \textcolor{comment}{//\ paper\ index}}
+\DoxyCodeLine{00076\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_poster_data_a3fdcc40c12d26eb2518202ba86032fb7}{row}};\ \textcolor{comment}{//\ positions\ in\ the\ grid}}
+\DoxyCodeLine{00077\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_poster_data_af7e79904766d58385a28efa7da311f48}{column}};}
+\DoxyCodeLine{00078\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_poster_data_a13f420df5b09a8fcdd2f72cc575cf90e}{rows}};}
+\DoxyCodeLine{00079\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_poster_data_a2f37fb7e0d940e5ca3a193c5632aaf11}{columns}};}
+\DoxyCodeLine{00080\ \ \ \ \ QRect\ \mbox{\hyperlink{struct_poster_data_ac7ef548c1aecc5861e39f95c25326963}{rect}};\ \textcolor{comment}{//\ rect\ section}}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{//\ cppcheck-\/suppress\ noConstructor}}
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_poster}{VPoster}}}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_poster}{VPoster}})}
+\DoxyCodeLine{00087\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_poster}{VPoster}}(\textcolor{keyword}{const}\ QPrinter\ *\mbox{\hyperlink{class_v_poster_a8b240f1c74ee9cbc4c2a477c4e4403a6}{printer}});}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<PosterData>}}\ \mbox{\hyperlink{class_v_poster_a07c0152acd5e0e5d2227fd135ea073bf}{Calc}}(\textcolor{keyword}{const}\ QRect\ \&imageRect,\ \textcolor{keywordtype}{int}\ page,\ \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{PageOrientation}}\ orientation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QGraphicsItem\ *>}}\ \mbox{\hyperlink{class_v_poster_aaf30d722cf10f4b0a8085e03898cc648}{Borders}}(QGraphicsItem\ *parent,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_poster_data}{PosterData}}\ \&img,\ \textcolor{keywordtype}{int}\ sheets)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ QPrinter\ *\mbox{\hyperlink{class_v_poster_a8b240f1c74ee9cbc4c2a477c4e4403a6}{printer}};}
+\DoxyCodeLine{00099\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_poster_a529ce70757aaf43e59c465e96fe8f94c}{allowance}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_poster_aed5f863c7ddc448edf7980f2193858d4}{CountRows}}(\textcolor{keywordtype}{int}\ height,\ \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{PageOrientation}}\ orientation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_poster_a2d1cc5429c5a0f8aaa693505e55b6ff1}{CountColumns}}(\textcolor{keywordtype}{int}\ width,\ \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{PageOrientation}}\ orientation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{struct_poster_data}{PosterData}}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeb334dca00e390e0d3ebf52d205807d7}{Cut}}(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keyword}{const}\ QRect\ \&imageRect,\ \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{PageOrientation}}\ orientation)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ QRect\ \mbox{\hyperlink{class_v_poster_afa4aa3534da006cb92874abb390b454e}{PageRect}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{class_v_poster_ab5c60c2db770b13e93363de9645daecf}{ToPixel}}(qreal\ val);}
+\DoxyCodeLine{00109\ \};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPOSTER\_H}}
+
+\end{DoxyCode}

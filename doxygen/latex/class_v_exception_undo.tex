@@ -1,0 +1,88 @@
+\hypertarget{class_v_exception_undo}{}\doxysection{VException\+Undo Class Reference}
+\label{class_v_exception_undo}\index{VExceptionUndo@{VExceptionUndo}}
+
+
+{\ttfamily \#include $<$vexceptionundo.\+h$>$}
+
+Inheritance diagram for VException\+Undo\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_exception_undo}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_undo_ae2ae4218cecfcf50d9a421594ef58376}{VException\+Undo}} (const QString \&\mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}})
+\item 
+\mbox{\hyperlink{class_v_exception_undo_ad0febfb61a71b66fcdcf9e4b90581ade}{VException\+Undo}} (const \mbox{\hyperlink{class_v_exception_undo}{VException\+Undo}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_undo_af1f0410c835566efaf9c5ae5a4ae76e3}{$\sim$\+VException\+Undo}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_a0a32aae7ed885f3402a1761a83328323}{VException}} (const QString \&\mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} constructor exception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_a4b2b9c63ee20b69f20d11d627b9cc6f2}{VException}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception}{VException}} \& \mbox{\hyperlink{class_v_exception_ab27d8cb624f122a27652ce7121541be0}{operator=}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_aae323f3b6135454c4fa95e6acf6c0d25}{$\sim$\+VException}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual Q\+\_\+\+NORETURN void \mbox{\hyperlink{class_v_exception_aec24ab0270a07d0e52ccb5382355ca45}{raise}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em raise method raise for exception \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_v_exception}{VException}} $\ast$ \mbox{\hyperlink{class_v_exception_a00a2ef1d19c3a50e9feacb846d40e782}{clone}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em clone clone exception \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{Error\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{Detailed\+Information}} () const
+\begin{DoxyCompactList}\small\item\em Detailed\+Information return detailed information about error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aa77494f07b02b94d690c6957bf51e811}{What\+Utf8}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true)
+\begin{DoxyCompactList}\small\item\em What return string with error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_exception_a6a82b04f0ecd7ffc2e1807339a10648d}{Add\+More\+Information}} (const QString \&info)
+\begin{DoxyCompactList}\small\item\em Add\+More\+Information add more information for error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_a38ab9eec99ff781a31b7f050be6addef}{More\+Information}} () const
+\begin{DoxyCompactList}\small\item\em More\+Information return more information for error. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a0480a8ae3ddd5d9b86d26156c2a34344}{More\+Info}} (const QString \&det\+Info) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}}
+\begin{DoxyCompactList}\small\item\em error string with error \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aaaa9e47957031ba5481cd12aedc0926a}{more\+Info}}
+\begin{DoxyCompactList}\small\item\em more\+Info more information about error \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_exception_undo_ae2ae4218cecfcf50d9a421594ef58376}\label{class_v_exception_undo_ae2ae4218cecfcf50d9a421594ef58376}} 
+\index{VExceptionUndo@{VExceptionUndo}!VExceptionUndo@{VExceptionUndo}}
+\index{VExceptionUndo@{VExceptionUndo}!VExceptionUndo@{VExceptionUndo}}
+\doxysubsubsection{\texorpdfstring{VExceptionUndo()}{VExceptionUndo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VException\+Undo\+::\+VException\+Undo (\begin{DoxyParamCaption}\item[{const QString \&}]{what }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_exception_undo_ad0febfb61a71b66fcdcf9e4b90581ade}\label{class_v_exception_undo_ad0febfb61a71b66fcdcf9e4b90581ade}} 
+\index{VExceptionUndo@{VExceptionUndo}!VExceptionUndo@{VExceptionUndo}}
+\index{VExceptionUndo@{VExceptionUndo}!VExceptionUndo@{VExceptionUndo}}
+\doxysubsubsection{\texorpdfstring{VExceptionUndo()}{VExceptionUndo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VException\+Undo\+::\+VException\+Undo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_exception_undo}{VException\+Undo}} \&}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_exception_undo_af1f0410c835566efaf9c5ae5a4ae76e3}\label{class_v_exception_undo_af1f0410c835566efaf9c5ae5a4ae76e3}} 
+\index{VExceptionUndo@{VExceptionUndo}!````~VExceptionUndo@{$\sim$VExceptionUndo}}
+\index{````~VExceptionUndo@{$\sim$VExceptionUndo}!VExceptionUndo@{VExceptionUndo}}
+\doxysubsubsection{\texorpdfstring{$\sim$VExceptionUndo()}{~VExceptionUndo()}}
+{\footnotesize\ttfamily virtual VException\+Undo\+::$\sim$\+VException\+Undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionundo_8h}{vexceptionundo.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionundo_8cpp}{vexceptionundo.\+cpp}}\end{DoxyCompactItemize}

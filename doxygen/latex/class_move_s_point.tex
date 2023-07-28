@@ -1,0 +1,202 @@
+\hypertarget{class_move_s_point}{}\doxysection{Move\+SPoint Class Reference}
+\label{class_move_s_point}\index{MoveSPoint@{MoveSPoint}}
+
+
+{\ttfamily \#include $<$movespoint.\+h$>$}
+
+Inheritance diagram for Move\+SPoint\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_move_s_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_s_point_a9220d8f2379da13417c945fd1ae1ed51}{Move\+SPoint}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const double \&x, const double \&y, const quint32 \&\mbox{\hyperlink{class_move_s_point_a89a5d871ef10b513e2d436786e2ca094}{id}}, QGraphics\+Scene $\ast$\mbox{\hyperlink{class_move_s_point_a6bc20f86e8501442e41eb3af570df5ca}{scene}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_move_s_point_a955aa785e049fc8ef265e6339e682aa5}{$\sim$\+Move\+SPoint}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_s_point_a8a3a046f8e0886b2a22633b7ff359754}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_s_point_afdbb4002f62802eb67c40034a013f014}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_move_s_point_a0366f67dfabc86d550e66305ebff7ac1}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_move_s_point_a89a5d871ef10b513e2d436786e2ca094}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_move_s_point_aa56d0126fe164286e4261097340828f9}{get\+SPoint\+Id}} () const
+\item 
+double \mbox{\hyperlink{class_move_s_point_a4d4de9a2f7572fc1c890f888a97bb64f}{get\+NewX}} () const
+\item 
+double \mbox{\hyperlink{class_move_s_point_ab32e0005ecd899a00e23a88d13f877bd}{get\+NewY}} () const
+\item 
+void \mbox{\hyperlink{class_move_s_point_aa653ceef0bc9d8b75d3357e3da9aba0f}{Do}} (double x, double y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_move_s_point_a2e398b7e9410308e2de80a63af292971}{oldX}}
+\item 
+double \mbox{\hyperlink{class_move_s_point_a16378c392090fda9efd14e80a6ad1bf2}{oldY}}
+\item 
+double \mbox{\hyperlink{class_move_s_point_adc2a5fbfd7cf8d9653ff917a361d373f}{newX}}
+\item 
+double \mbox{\hyperlink{class_move_s_point_ad2312061685773da9957238d3316e60a}{newY}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_move_s_point_a6bc20f86e8501442e41eb3af570df5ca}{scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_move_s_point_a9220d8f2379da13417c945fd1ae1ed51}\label{class_move_s_point_a9220d8f2379da13417c945fd1ae1ed51}} 
+\index{MoveSPoint@{MoveSPoint}!MoveSPoint@{MoveSPoint}}
+\index{MoveSPoint@{MoveSPoint}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{MoveSPoint()}{MoveSPoint()}}
+{\footnotesize\ttfamily Move\+SPoint\+::\+Move\+SPoint (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const double \&}]{x,  }\item[{const double \&}]{y,  }\item[{const quint32 \&}]{id,  }\item[{QGraphics\+Scene $\ast$}]{scene,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_move_s_point_a955aa785e049fc8ef265e6339e682aa5}\label{class_move_s_point_a955aa785e049fc8ef265e6339e682aa5}} 
+\index{MoveSPoint@{MoveSPoint}!````~MoveSPoint@{$\sim$MoveSPoint}}
+\index{````~MoveSPoint@{$\sim$MoveSPoint}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$MoveSPoint()}{~MoveSPoint()}}
+{\footnotesize\ttfamily Move\+SPoint\+::$\sim$\+Move\+SPoint (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_move_s_point_aa653ceef0bc9d8b75d3357e3da9aba0f}\label{class_move_s_point_aa653ceef0bc9d8b75d3357e3da9aba0f}} 
+\index{MoveSPoint@{MoveSPoint}!Do@{Do}}
+\index{Do@{Do}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{Do()}{Do()}}
+{\footnotesize\ttfamily void Move\+SPoint\+::\+Do (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_move_s_point_a4d4de9a2f7572fc1c890f888a97bb64f}\label{class_move_s_point_a4d4de9a2f7572fc1c890f888a97bb64f}} 
+\index{MoveSPoint@{MoveSPoint}!getNewX@{getNewX}}
+\index{getNewX@{getNewX}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{getNewX()}{getNewX()}}
+{\footnotesize\ttfamily double Move\+SPoint\+::get\+NewX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_s_point_ab32e0005ecd899a00e23a88d13f877bd}\label{class_move_s_point_ab32e0005ecd899a00e23a88d13f877bd}} 
+\index{MoveSPoint@{MoveSPoint}!getNewY@{getNewY}}
+\index{getNewY@{getNewY}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{getNewY()}{getNewY()}}
+{\footnotesize\ttfamily double Move\+SPoint\+::get\+NewY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_s_point_aa56d0126fe164286e4261097340828f9}\label{class_move_s_point_aa56d0126fe164286e4261097340828f9}} 
+\index{MoveSPoint@{MoveSPoint}!getSPointId@{getSPointId}}
+\index{getSPointId@{getSPointId}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{getSPointId()}{getSPointId()}}
+{\footnotesize\ttfamily quint32 Move\+SPoint\+::get\+SPoint\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_s_point_a89a5d871ef10b513e2d436786e2ca094}\label{class_move_s_point_a89a5d871ef10b513e2d436786e2ca094}} 
+\index{MoveSPoint@{MoveSPoint}!id@{id}}
+\index{id@{id}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Move\+SPoint\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_s_point_a0366f67dfabc86d550e66305ebff7ac1}\label{class_move_s_point_a0366f67dfabc86d550e66305ebff7ac1}} 
+\index{MoveSPoint@{MoveSPoint}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Move\+SPoint\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_s_point_afdbb4002f62802eb67c40034a013f014}\label{class_move_s_point_afdbb4002f62802eb67c40034a013f014}} 
+\index{MoveSPoint@{MoveSPoint}!redo@{redo}}
+\index{redo@{redo}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Move\+SPoint\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_s_point_a8a3a046f8e0886b2a22633b7ff359754}\label{class_move_s_point_a8a3a046f8e0886b2a22633b7ff359754}} 
+\index{MoveSPoint@{MoveSPoint}!undo@{undo}}
+\index{undo@{undo}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Move\+SPoint\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_move_s_point_adc2a5fbfd7cf8d9653ff917a361d373f}\label{class_move_s_point_adc2a5fbfd7cf8d9653ff917a361d373f}} 
+\index{MoveSPoint@{MoveSPoint}!newX@{newX}}
+\index{newX@{newX}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{newX}{newX}}
+{\footnotesize\ttfamily double Move\+SPoint\+::newX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_s_point_ad2312061685773da9957238d3316e60a}\label{class_move_s_point_ad2312061685773da9957238d3316e60a}} 
+\index{MoveSPoint@{MoveSPoint}!newY@{newY}}
+\index{newY@{newY}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{newY}{newY}}
+{\footnotesize\ttfamily double Move\+SPoint\+::newY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_s_point_a2e398b7e9410308e2de80a63af292971}\label{class_move_s_point_a2e398b7e9410308e2de80a63af292971}} 
+\index{MoveSPoint@{MoveSPoint}!oldX@{oldX}}
+\index{oldX@{oldX}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{oldX}{oldX}}
+{\footnotesize\ttfamily double Move\+SPoint\+::oldX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_s_point_a16378c392090fda9efd14e80a6ad1bf2}\label{class_move_s_point_a16378c392090fda9efd14e80a6ad1bf2}} 
+\index{MoveSPoint@{MoveSPoint}!oldY@{oldY}}
+\index{oldY@{oldY}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{oldY}{oldY}}
+{\footnotesize\ttfamily double Move\+SPoint\+::oldY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_s_point_a6bc20f86e8501442e41eb3af570df5ca}\label{class_move_s_point_a6bc20f86e8501442e41eb3af570df5ca}} 
+\index{MoveSPoint@{MoveSPoint}!scene@{scene}}
+\index{scene@{scene}!MoveSPoint@{MoveSPoint}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Move\+SPoint\+::scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movespoint_8h}{movespoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movespoint_8cpp}{movespoint.\+cpp}}\end{DoxyCompactItemize}

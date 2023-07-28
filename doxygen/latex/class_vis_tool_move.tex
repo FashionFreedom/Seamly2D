@@ -1,0 +1,476 @@
+\hypertarget{class_vis_tool_move}{}\doxysection{Vis\+Tool\+Move Class Reference}
+\label{class_vis_tool_move}\index{VisToolMove@{VisToolMove}}
+
+
+{\ttfamily \#include $<$vistoolmove.\+h$>$}
+
+Inheritance diagram for Vis\+Tool\+Move\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_vis_tool_move}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_tool_move_a1410bf3739e0f133a1116502fe6c7e43a865acd412568004954a03821963cc57f}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Tool\+Move)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_vis_operation}{Vis\+Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_operation_a40280df4841b65da92bd55f2a2cd7ab7afde36e23a9ab389adcce94da6fa835b3}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Tool\+Rotation)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_line_ac9406f2639874624be32499f41f963e1aed90a7174d284927b12b901708d9cb63}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scaled_line_a1539929463148fd6ab01d5e5cf8be8e9a141df4e3b299f029e9d7e6e9370766ec}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scaled\+Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_tool_move_a23b3e5a120322b68f87d6e9463e251b3}{Vis\+Tool\+Move}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_tool_move_a49250cf55db03c929de37cd0a806b993}{$\sim$\+Vis\+Tool\+Move}} ()
+\item 
+virtual void \mbox{\hyperlink{class_vis_tool_move_a04364256d28ca72f3427ffa881186cc4}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_vis_tool_move_a8410deb4f98186d7f94c198f658fa686}{Angle}} () const
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_a8af6bf55d0b1e08941d403d03df925c9}{Set\+Angle}} (const QString \&expression)
+\item 
+QString \mbox{\hyperlink{class_vis_tool_move_aa6f1e3d06cd8fc875d12df4349beebf9}{Rotation}} () const
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_a99200f6df94e1fccf32abd6722dc9cb4}{set\+Rotation}} (const QString \&expression)
+\item 
+QString \mbox{\hyperlink{class_vis_tool_move_a2cfce0186bdfa3c69c8117f3be24d664}{Length}} () const
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_move_ae4c7c5551feb7d62d2bc0a864d8bf1c2}{Length\+Value}} () const
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_ae828fc5fa812f5d692976f3f677d7b63}{Set\+Length}} (const QString \&expression)
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_a986e3c113b8ba32d76518e689e798318}{set\+Origin\+Point\+Id}} (quint32 value)
+\item 
+virtual int \mbox{\hyperlink{class_vis_tool_move_a3cbca6d05b12920ec7b10ba4a46c508f}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_vis_operation}{Vis\+Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_operation_aa34168a2e9cd74dff09a1cfbdc4cb527}{Vis\+Operation}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_operation_af2f6eb310633c72371130afdca24eb89}{$\sim$\+Vis\+Operation}} ()
+\item 
+void \mbox{\hyperlink{class_vis_operation_a161455b7f01e55a7305e36e4fdaf1a44}{set\+Objects}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_vis_operation_ab701bfa2c29b52f99836d415f784acf7}{objects}})
+\item 
+virtual void \mbox{\hyperlink{class_vis_operation_a2d9a92e9bfeb26ce2afedf0d121a6d26}{Visual\+Mode}} (const quint32 \&point\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_vis_operation_aa1fd1e3e3034af62c1f3b1691551f50f}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_line_a3594b9caf48ca88a60a12aaafb9faadf}{Vis\+Line}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_line_a63a57079a48545d24c40c42088120c52}{$\sim$\+Vis\+Line}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_vis_line_ac418da09bac578ad2c9b6cf29ed5f6b9}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_visualization_a2463087184767bfb81578f8e3b63077c}{Visualization}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+virtual \mbox{\hyperlink{class_visualization_ac0f658bb8e47eae0c94cc28bb40bf438}{$\sim$\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Refresh\+Geometry}} ()=0
+\item 
+void \mbox{\hyperlink{class_visualization_a9e24acf5c3162cbbeb3652fa9a6e493d}{set\+Object1\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_ac6f3fffeba3ddecac71bd5857d112441}{set\+Line\+Style}} (const Qt\+::\+Pen\+Style \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3e8891a967b0070b38fb7944a05bca96}{set\+Line\+Weight}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}{set\+Scene\+Pos}} (const QPointF \&value)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visual\+Mode}} (const quint32 \&point\+Id)
+\item 
+void \mbox{\hyperlink{class_visualization_ad8c250063388c98129072b915422d918}{set\+Main\+Color}} (const QColor \&value)
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_aa059d42719891e59f6d6ae626864595f}{get\+Data}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a92191f09709684b5b1927ab68e136c9c}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_ac190793c0074c8d149d2fb52136875b4}{Get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a7c351376e6eea24c27d33e43c4287fea}{Set\+Mode}} (const \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \&value)
+\item 
+QString \mbox{\hyperlink{class_visualization_a07121a63283dbbeeddf5b88df391fc71}{Current\+Tool\+Tip}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scaled_line_a8419b148df27070f3a08d9c27244b4dc}{VScaled\+Line}} (QGraphics\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_v_scaled_line_a5277761a86ee993138f9e1b25922e0da}{VScaled\+Line}} (const QLineF \&line, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scaled_line_a1429d6f468ce3f4da13c45e0604507f2}{$\sim$\+VScaled\+Line}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scaled_line_a3ab1763240ff918be30a44512dc650ff}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scaled_line_ad9b093631b2bc2283330fe0185514891}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+qreal \mbox{\hyperlink{class_v_scaled_line_a071602288ffae13e7a1645ce9e0276bc}{Get\+Basic\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_scaled_line_a25a9922519e4e3c4ae6f740798cdb85f}{set\+Basic\+Width}} (const qreal \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\QGraphics\+Path\+Item $\ast$ \mbox{\hyperlink{class_vis_tool_move_a4cd8bf62e7fd0e78aa4343a4f71fa8d4}{Add\+Origin\+Curve}} (quint32 id, int \&i)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\int \mbox{\hyperlink{class_vis_tool_move_a85985f3b663a92b3be2e7c09c25f75f5}{Add\+Destination\+Curve}} (qreal \mbox{\hyperlink{class_vis_tool_move_a8642695c093d99e76c0460272839fb30}{angle}}, qreal \mbox{\hyperlink{class_vis_tool_move_ae5b7e92296e4f2575a30f13925ed5a46}{length}}, quint32 id, int i, qreal \mbox{\hyperlink{class_vis_tool_move_a917946c94877699b673759ebcab5a7db}{rotation\+Angle}}, const QPointF \&rotation\+Origin)
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_a9ab95e7f79a36fd9cdc9e5edb13d9e33}{create\+Origin\+Objects}} (int \&i\+Point, int \&i\+Curve)
+\item 
+void \mbox{\hyperlink{class_vis_tool_move_a4defd04d2c69ef1dd55f269fd4f4e60e}{create\+Rotated\+Objects}} (int \&i\+Point, int \&i\+Curve, qreal \mbox{\hyperlink{class_vis_tool_move_ae5b7e92296e4f2575a30f13925ed5a46}{length}}, qreal \mbox{\hyperlink{class_vis_tool_move_a8642695c093d99e76c0460272839fb30}{angle}}, qreal \mbox{\hyperlink{class_vis_tool_move_a917946c94877699b673759ebcab5a7db}{rotation\+Angle}}, const QPointF \&rotation\+Origin)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_move_a8642695c093d99e76c0460272839fb30}{angle}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_move_ae5b7e92296e4f2575a30f13925ed5a46}{length}}
+\item 
+qreal \mbox{\hyperlink{class_vis_tool_move_a917946c94877699b673759ebcab5a7db}{rotation\+Angle}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_tool_move_a5c4b9911bc13eae4563c46945ebd38b6}{origin\+Point\+Item}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_tool_move_a38ef3466380f5ebb69770c573bad5f25}{rotation\+Origin\+Point\+Item}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_tool_move_aba16e87bb968056eae2b0dd2cf48c597}{rotation\+Finish\+Point\+Item}}
+\item 
+\mbox{\hyperlink{class_arrowed_line_item}{Arrowed\+Line\+Item}} $\ast$ \mbox{\hyperlink{class_vis_tool_move_a77be1016e77aee0184d1792408e6f486}{move\+Line\+Item}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_vis_tool_move_a73f9dc1e2a31dfabebdcc7ce1c6926d2}{rotation\+Line\+Item}}
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_move_a962225c5f0d473f67d3ad61eb1d4d3c1}{m\+\_\+origin}}
+\item 
+QPointF \mbox{\hyperlink{class_vis_tool_move_a3be45990f20b220fda7007920bb4fe7f}{m\+\_\+rotation\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a0ce122004dbfba6e26f0d6351d04e0d6}{mouse\+Pos}} (const QPointF \&\mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a18b00680e4072f9f56071722e0cf47d4}{Tool\+Tip}} (const QString \&\mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_vis_line_a4f8e6ea00d2ff1d1457a58e42d4f2932}{Correct\+Angle}} (const qreal \&angle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_visualization_a6479c586e581d8868775eb49aa031f19}{Find\+Length}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\item 
+static qreal \mbox{\hyperlink{class_visualization_ada5e59b62fca6a9a6e4fd3965b8eae92}{Find\+Val}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_vis_operation}{Vis\+Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_vis_operation_ab61b3839a3324b168c2e1a14245dabba}{Get\+Point}} (quint32 i, const QColor \&color)
+\item 
+\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$ \mbox{\hyperlink{class_vis_operation_a7d39a39152661b8d415607051ebf3d14}{Get\+Curve}} (quint32 i, const QColor \&color)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\int \mbox{\hyperlink{class_vis_operation_af0f8673f06afdfc4354910343375d9e9}{add\+Flipped\+Curve}} (const QPointF \&first\+Point, const QPointF \&second\+Point, quint32 id, int i)
+\item 
+void \mbox{\hyperlink{class_vis_operation_a767585ed59f1b91ea675b0e25c5db390}{refresh\+Mirrored\+Objects}} (const QPointF \&first\+Point, const QPointF \&second\+Point)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_vis_line_afcf89cfb13f788641f0385b29e0867c4}{Ray}} (const QPointF \&first\+Point, const qreal \&angle) const
+\item 
+QPointF \mbox{\hyperlink{class_vis_line_a751425ae650a84980374e16058f743ee}{Ray}} (const QPointF \&first\+Point) const
+\item 
+QLineF \mbox{\hyperlink{class_vis_line_aaecc477dd569efe445d3e4fa60f7fed3}{Axis}} (const QPointF \&p, const qreal \&angle) const
+\item 
+QLineF \mbox{\hyperlink{class_vis_line_ad64a3a6cc5530fb0f0cb68b22b20a315}{Axis}} (const QPointF \&p1, const QPointF \&p2) const
+\item 
+virtual void \mbox{\hyperlink{class_vis_line_a3d128e18290ca9d6888e8a112c538efc}{init\+Pen}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_vis_line_a84d78868f9ff710c0cc364f22609d6d4}{Add\+On\+Scene}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_vis_line_a552c99a21ca06c9b5f72eb3f913b8892}{Draw\+Ray}} (\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$line\+Item, const QPointF \&p, const QPointF \&p\+Tangent, const QColor \&color, Qt\+::\+Pen\+Style style)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aa2477ee93caae188c7a9ae4f9dfeb771}{init\+Pen}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_visualization_abfe137bc2a0b78369361a19726ed728b}{Add\+On\+Scene}} ()=0
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_abc9b78a7c14e4441b39eb43edf14b72e}{Init\+Point}} (const QColor \&color, QGraphics\+Item $\ast$parent, qreal z=0) const
+\item 
+void \mbox{\hyperlink{class_visualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}{Draw\+Point}} (QGraphics\+Ellipse\+Item $\ast$point, const QPointF \&pos, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_ab8a024f82b22c147839e7f2057e3c977}{Draw\+Line}} (\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$line\+Item, const QLineF \&line, const QColor \&color, const qreal \&\mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a9704c6411feed0ae73e2068e230e4678}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_a598d2794b073ee9ade1c69b3862f0879}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&direction\+Arrows, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_aa9ea2c766a799875af2b79d6400c116b}{draw\+Arrowed\+Line}} (\mbox{\hyperlink{class_arrowed_line_item}{Arrowed\+Line\+Item}} $\ast$item, const QLineF \&line, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}{draw\+Arrow}} (const QLineF \&axis, QPainter\+Path \&path, const qreal \&arrow\+\_\+size)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_visualization_ae9816e2088cc535fd0c956cd0f67ec3d}{add\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$ \mbox{\hyperlink{class_visualization_a533ef28c50007971f69483ef4103774a}{Init\+Item}} (const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_a9f13506fd762ba59d26496427327fa52}{Get\+Point\+Item}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ $>$ \&points, quint32 i, const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_vis_operation}{Vis\+Operation}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \mbox{\hyperlink{class_vis_operation_ab701bfa2c29b52f99836d415f784acf7}{objects}}
+\item 
+QColor \mbox{\hyperlink{class_vis_operation_abb539d3abaa87f94276fca260c19a62b}{support\+Color2}}
+\item 
+QColor \mbox{\hyperlink{class_vis_operation_ab30c128b0171671ba21d59d992c7b9ad}{support\+Color3}}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ $>$ \mbox{\hyperlink{class_vis_operation_a60d01d9411c35a1066bf21571cb481fe}{points}}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_vis_operation_acbf3d1aa06391b6dfcb6781c9b22b39f}{curves}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}
+\item 
+QPointF \mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a19c42b9f6c14d1b1415f8510409d49f7}{main\+Color}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a07dccd56934096a975a542c908acdde9}{support\+Color}}
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{class_visualization_adb70fdc205739ea12298e4cc607ed2d6}{line\+Style}}
+\item 
+qreal \mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}
+\item 
+quint32 \mbox{\hyperlink{class_visualization_ac6d70a998feaf629960293be3b6d8b09}{object1\+Id}}
+\item 
+QString \mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}}
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_aa02ec87a8384819f82ad61d08441b44b}{mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_vis_tool_move_a1410bf3739e0f133a1116502fe6c7e43}\label{class_vis_tool_move_a1410bf3739e0f133a1116502fe6c7e43}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VisToolMove@{VisToolMove}}\index{VisToolMove@{VisToolMove}!Type@{Type}}}\mbox{\Hypertarget{class_vis_tool_move_a1410bf3739e0f133a1116502fe6c7e43a865acd412568004954a03821963cc57f}\label{class_vis_tool_move_a1410bf3739e0f133a1116502fe6c7e43a865acd412568004954a03821963cc57f}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_vis_tool_move_a23b3e5a120322b68f87d6e9463e251b3}\label{class_vis_tool_move_a23b3e5a120322b68f87d6e9463e251b3}} 
+\index{VisToolMove@{VisToolMove}!VisToolMove@{VisToolMove}}
+\index{VisToolMove@{VisToolMove}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{VisToolMove()}{VisToolMove()}}
+{\footnotesize\ttfamily Vis\+Tool\+Move\+::\+Vis\+Tool\+Move (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a49250cf55db03c929de37cd0a806b993}\label{class_vis_tool_move_a49250cf55db03c929de37cd0a806b993}} 
+\index{VisToolMove@{VisToolMove}!````~VisToolMove@{$\sim$VisToolMove}}
+\index{````~VisToolMove@{$\sim$VisToolMove}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{$\sim$VisToolMove()}{~VisToolMove()}}
+{\footnotesize\ttfamily Vis\+Tool\+Move\+::$\sim$\+Vis\+Tool\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_vis_tool_move_a85985f3b663a92b3be2e7c09c25f75f5}\label{class_vis_tool_move_a85985f3b663a92b3be2e7c09c25f75f5}} 
+\index{VisToolMove@{VisToolMove}!AddDestinationCurve@{AddDestinationCurve}}
+\index{AddDestinationCurve@{AddDestinationCurve}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{AddDestinationCurve()}{AddDestinationCurve()}}
+{\footnotesize\ttfamily template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ \\
+int Vis\+Tool\+Move\+::\+Add\+Destination\+Curve (\begin{DoxyParamCaption}\item[{qreal}]{angle,  }\item[{qreal}]{length,  }\item[{quint32}]{id,  }\item[{int}]{i,  }\item[{qreal}]{rotation\+Angle,  }\item[{const QPointF \&}]{rotation\+Origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a4cd8bf62e7fd0e78aa4343a4f71fa8d4}\label{class_vis_tool_move_a4cd8bf62e7fd0e78aa4343a4f71fa8d4}} 
+\index{VisToolMove@{VisToolMove}!AddOriginCurve@{AddOriginCurve}}
+\index{AddOriginCurve@{AddOriginCurve}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{AddOriginCurve()}{AddOriginCurve()}}
+{\footnotesize\ttfamily template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ \\
+QGraphics\+Path\+Item $\ast$ Vis\+Tool\+Move\+::\+Add\+Origin\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{int \&}]{i }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a8410deb4f98186d7f94c198f658fa686}\label{class_vis_tool_move_a8410deb4f98186d7f94c198f658fa686}} 
+\index{VisToolMove@{VisToolMove}!Angle@{Angle}}
+\index{Angle@{Angle}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{Angle()}{Angle()}}
+{\footnotesize\ttfamily QString Vis\+Tool\+Move\+::\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_move_a9ab95e7f79a36fd9cdc9e5edb13d9e33}\label{class_vis_tool_move_a9ab95e7f79a36fd9cdc9e5edb13d9e33}} 
+\index{VisToolMove@{VisToolMove}!createOriginObjects@{createOriginObjects}}
+\index{createOriginObjects@{createOriginObjects}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{createOriginObjects()}{createOriginObjects()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH void Vis\+Tool\+Move\+::create\+Origin\+Objects (\begin{DoxyParamCaption}\item[{int \&}]{i\+Point,  }\item[{int \&}]{i\+Curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a4defd04d2c69ef1dd55f269fd4f4e60e}\label{class_vis_tool_move_a4defd04d2c69ef1dd55f269fd4f4e60e}} 
+\index{VisToolMove@{VisToolMove}!createRotatedObjects@{createRotatedObjects}}
+\index{createRotatedObjects@{createRotatedObjects}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{createRotatedObjects()}{createRotatedObjects()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+POP QT\+\_\+\+WARNING\+\_\+\+PUSH void Vis\+Tool\+Move\+::create\+Rotated\+Objects (\begin{DoxyParamCaption}\item[{int \&}]{i\+Point,  }\item[{int \&}]{i\+Curve,  }\item[{qreal}]{length,  }\item[{qreal}]{angle,  }\item[{qreal}]{rotation\+Angle,  }\item[{const QPointF \&}]{rotation\+Origin }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a2cfce0186bdfa3c69c8117f3be24d664}\label{class_vis_tool_move_a2cfce0186bdfa3c69c8117f3be24d664}} 
+\index{VisToolMove@{VisToolMove}!Length@{Length}}
+\index{Length@{Length}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{Length()}{Length()}}
+{\footnotesize\ttfamily QString Vis\+Tool\+Move\+::\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_move_ae4c7c5551feb7d62d2bc0a864d8bf1c2}\label{class_vis_tool_move_ae4c7c5551feb7d62d2bc0a864d8bf1c2}} 
+\index{VisToolMove@{VisToolMove}!LengthValue@{LengthValue}}
+\index{LengthValue@{LengthValue}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{LengthValue()}{LengthValue()}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Move\+::\+Length\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_move_a04364256d28ca72f3427ffa881186cc4}\label{class_vis_tool_move_a04364256d28ca72f3427ffa881186cc4}} 
+\index{VisToolMove@{VisToolMove}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Move\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{class_vis_tool_move_aa6f1e3d06cd8fc875d12df4349beebf9}\label{class_vis_tool_move_aa6f1e3d06cd8fc875d12df4349beebf9}} 
+\index{VisToolMove@{VisToolMove}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}}
+{\footnotesize\ttfamily QString Vis\+Tool\+Move\+::\+Rotation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_vis_tool_move_a8af6bf55d0b1e08941d403d03df925c9}\label{class_vis_tool_move_a8af6bf55d0b1e08941d403d03df925c9}} 
+\index{VisToolMove@{VisToolMove}!SetAngle@{SetAngle}}
+\index{SetAngle@{SetAngle}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{SetAngle()}{SetAngle()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Move\+::\+Set\+Angle (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_move_ae828fc5fa812f5d692976f3f677d7b63}\label{class_vis_tool_move_ae828fc5fa812f5d692976f3f677d7b63}} 
+\index{VisToolMove@{VisToolMove}!SetLength@{SetLength}}
+\index{SetLength@{SetLength}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{SetLength()}{SetLength()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Move\+::\+Set\+Length (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_move_a986e3c113b8ba32d76518e689e798318}\label{class_vis_tool_move_a986e3c113b8ba32d76518e689e798318}} 
+\index{VisToolMove@{VisToolMove}!setOriginPointId@{setOriginPointId}}
+\index{setOriginPointId@{setOriginPointId}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{setOriginPointId()}{setOriginPointId()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Move\+::set\+Origin\+Point\+Id (\begin{DoxyParamCaption}\item[{quint32}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_move_a99200f6df94e1fccf32abd6722dc9cb4}\label{class_vis_tool_move_a99200f6df94e1fccf32abd6722dc9cb4}} 
+\index{VisToolMove@{VisToolMove}!setRotation@{setRotation}}
+\index{setRotation@{setRotation}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{setRotation()}{setRotation()}}
+{\footnotesize\ttfamily void Vis\+Tool\+Move\+::set\+Rotation (\begin{DoxyParamCaption}\item[{const QString \&}]{expression }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_vis_tool_move_a3cbca6d05b12920ec7b10ba4a46c508f}\label{class_vis_tool_move_a3cbca6d05b12920ec7b10ba4a46c508f}} 
+\index{VisToolMove@{VisToolMove}!type@{type}}
+\index{type@{type}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Vis\+Tool\+Move\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_vis_operation_aa1fd1e3e3034af62c1f3b1691551f50f}{Vis\+Operation}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_vis_tool_move_a8642695c093d99e76c0460272839fb30}\label{class_vis_tool_move_a8642695c093d99e76c0460272839fb30}} 
+\index{VisToolMove@{VisToolMove}!angle@{angle}}
+\index{angle@{angle}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{angle}{angle}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Move\+::angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_ae5b7e92296e4f2575a30f13925ed5a46}\label{class_vis_tool_move_ae5b7e92296e4f2575a30f13925ed5a46}} 
+\index{VisToolMove@{VisToolMove}!length@{length}}
+\index{length@{length}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Move\+::length\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a962225c5f0d473f67d3ad61eb1d4d3c1}\label{class_vis_tool_move_a962225c5f0d473f67d3ad61eb1d4d3c1}} 
+\index{VisToolMove@{VisToolMove}!m\_origin@{m\_origin}}
+\index{m\_origin@{m\_origin}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{m\_origin}{m\_origin}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Move\+::m\+\_\+origin\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a3be45990f20b220fda7007920bb4fe7f}\label{class_vis_tool_move_a3be45990f20b220fda7007920bb4fe7f}} 
+\index{VisToolMove@{VisToolMove}!m\_rotationPoint@{m\_rotationPoint}}
+\index{m\_rotationPoint@{m\_rotationPoint}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{m\_rotationPoint}{m\_rotationPoint}}
+{\footnotesize\ttfamily QPointF Vis\+Tool\+Move\+::m\+\_\+rotation\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a77be1016e77aee0184d1792408e6f486}\label{class_vis_tool_move_a77be1016e77aee0184d1792408e6f486}} 
+\index{VisToolMove@{VisToolMove}!moveLineItem@{moveLineItem}}
+\index{moveLineItem@{moveLineItem}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{moveLineItem}{moveLineItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_arrowed_line_item}{Arrowed\+Line\+Item}}$\ast$ Vis\+Tool\+Move\+::move\+Line\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a5c4b9911bc13eae4563c46945ebd38b6}\label{class_vis_tool_move_a5c4b9911bc13eae4563c46945ebd38b6}} 
+\index{VisToolMove@{VisToolMove}!originPointItem@{originPointItem}}
+\index{originPointItem@{originPointItem}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{originPointItem}{originPointItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Move\+::origin\+Point\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a917946c94877699b673759ebcab5a7db}\label{class_vis_tool_move_a917946c94877699b673759ebcab5a7db}} 
+\index{VisToolMove@{VisToolMove}!rotationAngle@{rotationAngle}}
+\index{rotationAngle@{rotationAngle}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{rotationAngle}{rotationAngle}}
+{\footnotesize\ttfamily qreal Vis\+Tool\+Move\+::rotation\+Angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_aba16e87bb968056eae2b0dd2cf48c597}\label{class_vis_tool_move_aba16e87bb968056eae2b0dd2cf48c597}} 
+\index{VisToolMove@{VisToolMove}!rotationFinishPointItem@{rotationFinishPointItem}}
+\index{rotationFinishPointItem@{rotationFinishPointItem}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{rotationFinishPointItem}{rotationFinishPointItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Move\+::rotation\+Finish\+Point\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a73f9dc1e2a31dfabebdcc7ce1c6926d2}\label{class_vis_tool_move_a73f9dc1e2a31dfabebdcc7ce1c6926d2}} 
+\index{VisToolMove@{VisToolMove}!rotationLineItem@{rotationLineItem}}
+\index{rotationLineItem@{rotationLineItem}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{rotationLineItem}{rotationLineItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}$\ast$ Vis\+Tool\+Move\+::rotation\+Line\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_vis_tool_move_a38ef3466380f5ebb69770c573bad5f25}\label{class_vis_tool_move_a38ef3466380f5ebb69770c573bad5f25}} 
+\index{VisToolMove@{VisToolMove}!rotationOriginPointItem@{rotationOriginPointItem}}
+\index{rotationOriginPointItem@{rotationOriginPointItem}!VisToolMove@{VisToolMove}}
+\doxysubsubsection{\texorpdfstring{rotationOriginPointItem}{rotationOriginPointItem}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Vis\+Tool\+Move\+::rotation\+Origin\+Point\+Item\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/line/operation/\mbox{\hyperlink{vistoolmove_8h}{vistoolmove.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/line/operation/\mbox{\hyperlink{vistoolmove_8cpp}{vistoolmove.\+cpp}}\end{DoxyCompactItemize}

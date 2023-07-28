@@ -1,0 +1,115 @@
+\hypertarget{vwidgets_2calculator_2calculator_8h_source}{}\doxysection{calculator.\+h}
+\label{vwidgets_2calculator_2calculator_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/calculator/calculator.h@{D:/Github/Seamly2D/src/libs/vwidgets/calculator/calculator.h}}
+\mbox{\hyperlink{vwidgets_2calculator_2calculator_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/****************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Copyright\ (C)\ 2016\ The\ Qt\ Company\ Ltd.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ Contact:\ https://www.qt.io/licensing/}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ This\ file\ is\ part\ of\ the\ examples\ of\ the\ Qt\ Toolkit.}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \$QT\_BEGIN\_LICENSE:BSD\$}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ Commercial\ License\ Usage}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ Licensees\ holding\ valid\ commercial\ Qt\ licenses\ may\ use\ this\ file\ in}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ accordance\ with\ the\ commercial\ license\ agreement\ provided\ with\ the}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**\ Software\ or,\ alternatively,\ in\ accordance\ with\ the\ terms\ contained\ in}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ a\ written\ agreement\ between\ you\ and\ The\ Qt\ Company.\ For\ licensing\ terms}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ and\ conditions\ see\ https://www.qt.io/terms-\/conditions.\ For\ further}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ information\ use\ the\ contact\ form\ at\ https://www.qt.io/contact-\/us.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**\ BSD\ License\ Usage}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ Alternatively,\ you\ may\ use\ this\ file\ under\ the\ terms\ of\ the\ BSD\ license}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ as\ follows:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ "{}Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ met:}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ \ *\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{**\ \ \ *\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{**\ \ \ \ \ notice,\ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in}}
+\DoxyCodeLine{00028\ \textcolor{comment}{**\ \ \ \ \ the\ documentation\ and/or\ other\ materials\ provided\ with\ the}}
+\DoxyCodeLine{00029\ \textcolor{comment}{**\ \ \ \ \ distribution.}}
+\DoxyCodeLine{00030\ \textcolor{comment}{**\ \ \ *\ Neither\ the\ name\ of\ The\ Qt\ Company\ Ltd\ nor\ the\ names\ of\ its}}
+\DoxyCodeLine{00031\ \textcolor{comment}{**\ \ \ \ \ contributors\ may\ be\ used\ to\ endorse\ or\ promote\ products\ derived}}
+\DoxyCodeLine{00032\ \textcolor{comment}{**\ \ \ \ \ from\ this\ software\ without\ specific\ prior\ written\ permission.}}
+\DoxyCodeLine{00033\ \textcolor{comment}{**}}
+\DoxyCodeLine{00034\ \textcolor{comment}{**}}
+\DoxyCodeLine{00035\ \textcolor{comment}{**\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS}}
+\DoxyCodeLine{00036\ \textcolor{comment}{**\ "{}AS\ IS"{}\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00037\ \textcolor{comment}{**\ LIMITED\ TO,\ THE\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR}}
+\DoxyCodeLine{00038\ \textcolor{comment}{**\ A\ PARTICULAR\ PURPOSE\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT}}
+\DoxyCodeLine{00039\ \textcolor{comment}{**\ OWNER\ OR\ CONTRIBUTORS\ BE\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,}}
+\DoxyCodeLine{00040\ \textcolor{comment}{**\ SPECIAL,\ EXEMPLARY,\ OR\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT}}
+\DoxyCodeLine{00041\ \textcolor{comment}{**\ LIMITED\ TO,\ PROCUREMENT\ OF\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,}}
+\DoxyCodeLine{00042\ \textcolor{comment}{**\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY}}
+\DoxyCodeLine{00043\ \textcolor{comment}{**\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT}}
+\DoxyCodeLine{00044\ \textcolor{comment}{**\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE}}
+\DoxyCodeLine{00045\ \textcolor{comment}{**\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE\ POSSIBILITY\ OF\ SUCH\ DAMAGE."{}}}
+\DoxyCodeLine{00046\ \textcolor{comment}{**}}
+\DoxyCodeLine{00047\ \textcolor{comment}{**\ \$QT\_END\_LICENSE\$}}
+\DoxyCodeLine{00048\ \textcolor{comment}{**}}
+\DoxyCodeLine{00049\ \textcolor{comment}{****************************************************************************/}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#ifndef\ CALCULATOR\_H}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CALCULATOR\_H}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//QT\_BEGIN\_NAMESPACE}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{class\ }QLineEdit;}
+\DoxyCodeLine{00058\ \textcolor{comment}{//QT\_END\_NAMESPACE}}
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_button}{Button}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00062\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00063\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ class\ \mbox{\hyperlink{class_calculator_util}{CalculatorUtil}}\ :\ public\ QWidget}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_calculator_util}{CalculatorUtil}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_calculator_util}{\string~CalculatorUtil}}();}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ digitClicked();}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ unaryOperatorClicked();}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ additiveOperatorClicked();}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ multiplicativeOperatorClicked();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ equalClicked();}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ pointClicked();}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ changeSignClicked();}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ backspaceClicked();}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ clear();}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ clearAll();}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ clearMemory();}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ readMemory();}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ setMemory();}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ addToMemory();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_button}{Button}}\ *createButton(\textcolor{keyword}{const}\ QString\ \&text,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *member);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ abortOperation();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ calculate(\textcolor{keywordtype}{double}\ rightOperand,\ \textcolor{keyword}{const}\ QString\ \&pendingOperator);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_calculator_util_a1c5fa3d72c218aa99d9d8426efea98c4}{sumInMemory}};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_calculator_util_a82b2baa247cbc45c0dd2b66070c4d2ae}{sumSoFar}};}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_calculator_util_ada6ee796648ad9d02eec0f7eb86550f1}{factorSoFar}};}
+\DoxyCodeLine{00106\ \ \ \ \ QString\ \mbox{\hyperlink{class_calculator_util_aa9f63cfa177206698783ea92eac1ab3f}{pendingAdditiveOperator}};}
+\DoxyCodeLine{00108\ \ \ \ \ QString\ \mbox{\hyperlink{class_calculator_util_a536d2d346fa312b824880eebb4b93a06}{pendingMultiplicativeOperator}};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_calculator_util_a75c597be27eb738d1e5c8f1ba6ec9212}{waitingForOperand}};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ QLineEdit\ *\mbox{\hyperlink{class_calculator_util_ab89f78b463bc3a7925d654b3f90606e2}{display}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ NumDigitButtons\ =\ 10\ \};}
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{class_button}{Button}}\ *digitButtons[NumDigitButtons];}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

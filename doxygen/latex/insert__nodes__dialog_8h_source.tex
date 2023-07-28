@@ -1,0 +1,115 @@
+\hypertarget{insert__nodes__dialog_8h_source}{}\doxysection{insert\+\_\+nodes\+\_\+dialog.\+h}
+\label{insert__nodes__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/insert\_nodes\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/insert\_nodes\_dialog.h}}
+\mbox{\hyperlink{insert__nodes__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ insert\_nodes\_dialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ dialoginsertnode.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 21\ 3,\ 2017}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ INSERT\_NODES\_DIALOG\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ INSERT\_NODES\_DIALOG\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vpiecenode.h"{}}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QSound>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_node}{VPieceNode}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_insert_nodes_dialog}{InsertNodesDialog}};}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_insert_nodes_dialog}{InsertNodesDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog}{InsertNodesDialog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ quint32\ \mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a37b355b5a8ea95b8041c4f778ec1e230}{\string~InsertNodesDialog}}();}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a8c30e7b2689ce9cf97707a60e6196d58}{SetPiecesList}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&list)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a6605c41474d873d189e4ecabf9706e04}{getPieceId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a4daea07ef936d1676cee9213b42a093c}{getNodes}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a7f26a9ea6b8130eef05917bdad78dee8}{ShowDialog}}(\textcolor{keywordtype}{bool}\ click)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a28a8bcd37dba692becb61993149a81ba}{SelectedObject}}(\textcolor{keywordtype}{bool}\ selected,\ quint32\ \textcolor{keywordtype}{object},\ quint32\ tool)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a79f36683b8b32b1b6a5c5199ad776d74}{showContextMenu}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_acf329c9cb15862b683219538f47a487f}{checkState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a7c277255cc48bb9e19d6d51f70039842}{eventFilter}}(QObject\ *\textcolor{keywordtype}{object},\ QEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_insert_nodes_dialog}{InsertNodesDialog}})}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_insert_nodes_dialog}{InsertNodesDialog}}\ *\mbox{\hyperlink{class_insert_nodes_dialog_a2e8a581d22b91e9057ec71518f19b5e0}{ui}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_piece_node}{VPieceNode}}>\ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a053b2f338c335dac4b8edabde3a9fec3}{m\_nodes}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a7ec0029575802b4b79a29f8fc394a933}{m\_nodeFlag}};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a9f94c760be6124e078826cfcd4a48209}{m\_piecesFlag}};}
+\DoxyCodeLine{00101\ \ \ \ \ QSound\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_insert_nodes_dialog_acac62f2af5f5e15f9e0d7be594e980d0}{m\_beep}};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_aa619eb01de42f338dc05737f2bbcc0fe}{validatePieces}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a043a925866d530baac3cf421c919c363}{validateNodes}}();}
+\DoxyCodeLine{00104\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a399c28e1feddd610a36a9fea2911eb65}{getLastNodeId}}()\ const;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_a34feb0c8da2921d232384151c5ea5498}{correctCurveDirection}}(quint32\ objectId);}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_insert_nodes_dialog_ac81d04a4523dd86ca25db07369456049}{insertCurveNodes}}(\mbox{\hyperlink{class_v_piece_node}{VPieceNode}}\ curveNode);}
+\DoxyCodeLine{00107\ \};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ INSERT\_NODES\_DIALOG\_H}}
+
+\end{DoxyCode}

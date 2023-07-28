@@ -1,0 +1,64 @@
+\hypertarget{lineweight__combobox_8h_source}{}\doxysection{lineweight\+\_\+combobox.\+h}
+\label{lineweight__combobox_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/lineweight\_combobox.h@{D:/Github/Seamly2D/src/libs/vwidgets/lineweight\_combobox.h}}
+\mbox{\hyperlink{lineweight__combobox_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ lineweight\_combobox.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ DS\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Nov\ 2,\ 2021}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ LINEWEIGHT\_COMBOBOX\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ LINEWEIGHT\_COMBOBOX\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_line_weight_combo_box}{LineWeightComboBox}}:\ \textcolor{keyword}{public}\ QComboBox}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box}{LineWeightComboBox}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box}{LineWeightComboBox}}(\textcolor{keywordtype}{int}\ width,\ \textcolor{keywordtype}{int}\ height,\ \ \ \ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name=\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a57d4914bce781901e500f389d800f2af}{\string~LineWeightComboBox}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a09116c564b8e390ddf0d9653481d9a09}{init}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a957a8b8f40e0533e354170660bdcf722}{getLineWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a965e1cca884a1c38a54aaf17fedb1a53}{setLineWeight}}(\textcolor{keyword}{const}\ qreal\ \&weight);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a01795caa0b53608670f8b4b75a3d0f5b}{updateLineWeight}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ signals:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_af80520a1454698dfc7e08992346d6ce8}{lineWeightChanged}}(\textcolor{keyword}{const}\ qreal\ \&weight);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ QIcon\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a4a9d8f8c28a93ebfdffb10322ab164e8}{createIcon}}(\textcolor{keyword}{const}\ qreal\ \&width);}
+\DoxyCodeLine{00056\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a4c309705109e72def15f9848f47fa89b}{m\_currentWeight}};}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_aef98b03ac098cefdaed6c37e0ccefe24}{m\_iconWidth}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_line_weight_combo_box_a967f1ca9926dc4be3f2d7094d641849d}{m\_iconHeight}};}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

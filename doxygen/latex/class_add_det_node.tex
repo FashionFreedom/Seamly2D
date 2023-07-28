@@ -1,0 +1,133 @@
+\hypertarget{class_add_det_node}{}\doxysection{Add\+Det\+Node Class Reference}
+\label{class_add_det_node}\index{AddDetNode@{AddDetNode}}
+
+
+{\ttfamily \#include $<$adddetnode.\+h$>$}
+
+Inheritance diagram for Add\+Det\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_add_det_node}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_add_det_node_a17df58b295553169a414757e126dda93}{Add\+Det\+Node}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const QString \&block\+Name, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_add_det_node_a58de05b3452908ea5e1f97f0203cfd2d}{$\sim$\+Add\+Det\+Node}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_add_det_node_ad065f7bd2ea7004a2cfd392f43667e35}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_add_det_node_a09cf5942649ddce5977437a301f594b4}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_add_det_node_a835d4ecc511b08d68513fd64ecf0fc7b}{Get\+Modeling\+Section}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_add_det_node_a34e536c4928d65713b4f7d87fa441845}{m\+\_\+block\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_add_det_node_a17df58b295553169a414757e126dda93}\label{class_add_det_node_a17df58b295553169a414757e126dda93}} 
+\index{AddDetNode@{AddDetNode}!AddDetNode@{AddDetNode}}
+\index{AddDetNode@{AddDetNode}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{AddDetNode()}{AddDetNode()}}
+{\footnotesize\ttfamily Add\+Det\+Node\+::\+Add\+Det\+Node (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{xml,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const QString \&}]{block\+Name,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_add_det_node_a58de05b3452908ea5e1f97f0203cfd2d}\label{class_add_det_node_a58de05b3452908ea5e1f97f0203cfd2d}} 
+\index{AddDetNode@{AddDetNode}!````~AddDetNode@{$\sim$AddDetNode}}
+\index{````~AddDetNode@{$\sim$AddDetNode}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$AddDetNode()}{~AddDetNode()}}
+{\footnotesize\ttfamily Add\+Det\+Node\+::$\sim$\+Add\+Det\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_add_det_node_a835d4ecc511b08d68513fd64ecf0fc7b}\label{class_add_det_node_a835d4ecc511b08d68513fd64ecf0fc7b}} 
+\index{AddDetNode@{AddDetNode}!GetModelingSection@{GetModelingSection}}
+\index{GetModelingSection@{GetModelingSection}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{GetModelingSection()}{GetModelingSection()}}
+{\footnotesize\ttfamily QDom\+Element Add\+Det\+Node\+::\+Get\+Modeling\+Section (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_add_det_node_a09cf5942649ddce5977437a301f594b4}\label{class_add_det_node_a09cf5942649ddce5977437a301f594b4}} 
+\index{AddDetNode@{AddDetNode}!redo@{redo}}
+\index{redo@{redo}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Add\+Det\+Node\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_add_det_node_ad065f7bd2ea7004a2cfd392f43667e35}\label{class_add_det_node_ad065f7bd2ea7004a2cfd392f43667e35}} 
+\index{AddDetNode@{AddDetNode}!undo@{undo}}
+\index{undo@{undo}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Add\+Det\+Node\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_add_det_node_a34e536c4928d65713b4f7d87fa441845}\label{class_add_det_node_a34e536c4928d65713b4f7d87fa441845}} 
+\index{AddDetNode@{AddDetNode}!m\_blockName@{m\_blockName}}
+\index{m\_blockName@{m\_blockName}!AddDetNode@{AddDetNode}}
+\doxysubsubsection{\texorpdfstring{m\_blockName}{m\_blockName}}
+{\footnotesize\ttfamily QString Add\+Det\+Node\+::m\+\_\+block\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{adddetnode_8h}{adddetnode.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{adddetnode_8cpp}{adddetnode.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,183 @@
+\hypertarget{class_v_data_tool}{}\doxysection{VData\+Tool Class Reference}
+\label{class_v_data_tool}\index{VDataTool@{VDataTool}}
+
+
+The \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} class need for getting access to data container of tool.  
+
+
+
+
+{\ttfamily \#include $<$vdatatool.\+h$>$}
+
+Inheritance diagram for VData\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.700788cm]{class_v_data_tool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} class need for getting access to data container of tool. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}\label{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}} 
+\index{VDataTool@{VDataTool}!VDataTool@{VDataTool}}
+\index{VDataTool@{VDataTool}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{VDataTool()}{VDataTool()}}
+{\footnotesize\ttfamily VData\+Tool\+::\+VData\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container with variables \\
+\hline
+{\em parent} & parent object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}\label{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}} 
+\index{VDataTool@{VDataTool}!````~VDataTool@{$\sim$VDataTool}}
+\index{````~VDataTool@{$\sim$VDataTool}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{$\sim$VDataTool()}{~VDataTool()}}
+{\footnotesize\ttfamily virtual VData\+Tool\+::$\sim$\+VData\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}\label{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}} 
+\index{VDataTool@{VDataTool}!decrementReferens@{decrementReferens}}
+\index{decrementReferens@{decrementReferens}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{decrementReferens()}{decrementReferens()}}
+{\footnotesize\ttfamily void VData\+Tool\+::decrement\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+decrement\+Referens decrement referens. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_base_point_adafbf7602d5aa539857cf80af730c3ba}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_abstract_node_ae1b128d8c45545bdbc73f7615f6b15d3}{VAbstract\+Node}}, \mbox{\hyperlink{class_v_tool_internal_path_a04c7d03e47a941db93d5c3ef7e311ed6}{VTool\+Internal\+Path}}, and \mbox{\hyperlink{class_union_tool_a2dc807b02c33b34615e3cfdc49fd0693}{Union\+Tool}}.
+
+\mbox{\Hypertarget{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}\label{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}} 
+\index{VDataTool@{VDataTool}!getData@{getData}}
+\index{getData@{getData}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{getData()}{getData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}} VData\+Tool\+::get\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get\+Data return data container. 
+
+\begin{DoxyReturn}{Returns}
+container. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}\label{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}} 
+\index{VDataTool@{VDataTool}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily virtual void VData\+Tool\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_v_abstract_operation_a9d1896119c335b5e127aeaaa936a8cf8}{VAbstract\+Operation}}, \mbox{\hyperlink{class_v_abstract_spline_ae0fa6465677283a89664927256642daf}{VAbstract\+Spline}}, \mbox{\hyperlink{class_v_tool_double_point_a8ed85c139211d65f0347a3ddc3caddfd}{VTool\+Double\+Point}}, \mbox{\hyperlink{class_v_tool_single_point_ae2125c5ac20e2fd2b78cfdf59de39b17}{VTool\+Single\+Point}}, \mbox{\hyperlink{class_v_tool_line_a0f666247541a69b707c302a6ce19bd64}{VTool\+Line}}, \mbox{\hyperlink{class_v_abstract_node_ae0d0f0405089cae06015303e57533399}{VAbstract\+Node}}, \mbox{\hyperlink{class_pattern_piece_tool_aa019972ddbff4af0d165dcc9876d1f76}{Pattern\+Piece\+Tool}}, and \mbox{\hyperlink{class_union_tool_a8430b56d90d4253d9e93e0fa05c6d981}{Union\+Tool}}.
+
+\mbox{\Hypertarget{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}\label{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}} 
+\index{VDataTool@{VDataTool}!incrementReferens@{incrementReferens}}
+\index{incrementReferens@{incrementReferens}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{incrementReferens()}{incrementReferens()}}
+{\footnotesize\ttfamily void VData\+Tool\+::increment\+Referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+increment\+Referens increment referens. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_abstract_node_a762966d68cbb8e65a6822794347fa4c4}{VAbstract\+Node}}, \mbox{\hyperlink{class_v_tool_internal_path_a4a65cc5aa1e58ff5d61f5c50c7a093aa}{VTool\+Internal\+Path}}, and \mbox{\hyperlink{class_union_tool_a2945710454ca0d66a408ef1e6d9e2090}{Union\+Tool}}.
+
+\mbox{\Hypertarget{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}\label{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}} 
+\index{VDataTool@{VDataTool}!referens@{referens}}
+\index{referens@{referens}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{referens()}{referens()}}
+{\footnotesize\ttfamily quint32 VData\+Tool\+::referens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+referens return count of referens. 
+
+\begin{DoxyReturn}{Returns}
+count count of referens. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}\label{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}} 
+\index{VDataTool@{VDataTool}!setData@{setData}}
+\index{setData@{setData}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void VData\+Tool\+::set\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set\+Data set data container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & container. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_data_tool_a40badacf10d985708aea80fea513fff1}\label{class_v_data_tool_a40badacf10d985708aea80fea513fff1}} 
+\index{VDataTool@{VDataTool}!\_referens@{\_referens}}
+\index{\_referens@{\_referens}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{\_referens}{\_referens}}
+{\footnotesize\ttfamily quint32 VData\+Tool\+::\+\_\+referens\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. 
+
+\mbox{\Hypertarget{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}\label{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}} 
+\index{VDataTool@{VDataTool}!data@{data}}
+\index{data@{data}!VDataTool@{VDataTool}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}} VData\+Tool\+::data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+data container with data 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/\mbox{\hyperlink{vdatatool_8h}{vdatatool.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/\mbox{\hyperlink{vdatatool_8cpp}{vdatatool.\+cpp}}\end{DoxyCompactItemize}

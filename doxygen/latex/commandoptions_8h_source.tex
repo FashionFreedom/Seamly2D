@@ -1,0 +1,141 @@
+\hypertarget{commandoptions_8h_source}{}\doxysection{commandoptions.\+h}
+\label{commandoptions_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/commandoptions.h@{D:/Github/Seamly2D/src/libs/vmisc/commandoptions.h}}
+\mbox{\hyperlink{commandoptions_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ commandoptions.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 9\ 11,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ COMMANDOPTIONS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ COMMANDOPTIONS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a7e118a37005f38fb9534a9f486397d52}{LONG\_OPTION\_BASENAME}};}
+\DoxyCodeLine{00058\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a20a731b2636d29e76be07aa157a4d62e}{SINGLE\_OPTION\_BASENAME}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_af158f308a779782c81e8b740118915ba}{LONG\_OPTION\_DESTINATION}};}
+\DoxyCodeLine{00061\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ae4997b378273e02b5b98922a38b11294}{SINGLE\_OPTION\_DESTINATION}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ae36bae0810efa203deaa5ed09c60f181}{LONG\_OPTION\_MEASUREFILE}};}
+\DoxyCodeLine{00064\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_af5fddb1ef75a9c9bb9dde3fcf80c5264}{SINGLE\_OPTION\_MEASUREFILE}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aa1e9808e5e39caaee44e123b1379b20b}{LONG\_OPTION\_PAGETEMPLATE}};}
+\DoxyCodeLine{00067\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a5e41cf6d011ac015f3d6258ae375ff57}{SINGLE\_OPTION\_PAGETEMPLATE}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a10416e6159c762ee808d91b78084e09d}{LONG\_OPTION\_EXP2FORMAT}};}
+\DoxyCodeLine{00070\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a2783743c5d43dd58fdec6047889d136d}{SINGLE\_OPTION\_EXP2FORMAT}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a3c599d635073ec072b6b7869398d09a7}{LONG\_OPTION\_BINARYDXF}};}
+\DoxyCodeLine{00073\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ae4ea3c0a02221d92bbab0594dd68e840}{LONG\_OPTION\_TEXT2PATHS}};}
+\DoxyCodeLine{00074\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a75a128da4872614fc55435e8a520a6f0}{LONG\_OPTION\_EXPORTONLYDETAILS}};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aa78859c91c6580e49a93c181c5d96845}{LONG\_OPTION\_ROTATE}};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a1f426abee08cdedae43d110b2417fa87}{SINGLE\_OPTION\_ROTATE}};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aa6dd2e03ecfdaa0552c4636ce1906572}{LONG\_OPTION\_CROP}};}
+\DoxyCodeLine{00080\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a33dfd2c65c5463755937fb91bdbd1c27}{SINGLE\_OPTION\_CROP}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ac2c2ec043cc97f1b7026eec3da3e94ee}{LONG\_OPTION\_UNITE}};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ac0c0e9949d3db7cfa0bd32810c03df56}{SINGLE\_OPTION\_UNITE}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_afad3ac5008f378073e3e916175917853}{LONG\_OPTION\_PAGEW}};}
+\DoxyCodeLine{00086\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a48e09f7bebcebb110ca653aeb6ca7bb8}{SINGLE\_OPTION\_PAGEW}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a0ffd36db497528b13f2f65dd3c5e16b0}{LONG\_OPTION\_PAGEH}};}
+\DoxyCodeLine{00089\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a3bfa1938d584e89031ebde0b51e37225}{SINGLE\_OPTION\_PAGEH}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aa6e61a7e9219e1bf91c5edc5fc479ded}{LONG\_OPTION\_PAGEUNITS}};}
+\DoxyCodeLine{00092\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ad3b9af8e965e0833078617e4ecaafe42}{SINGLE\_OPTION\_PAGEUNITS}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a2bfa0881f153e01a4cea00de3dc7a757}{LONG\_OPTION\_SAVELENGTH}};}
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a39c17e56f208d74c95b96b975d2bc33b}{SINGLE\_OPTION\_SAVELENGTH}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ab9c2b955cf95b50e6277506f12c3f809}{LONG\_OPTION\_SHIFTLENGTH}};}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aff4ad50bde8019d48c2f14f4ee5e63ad}{SINGLE\_OPTION\_SHIFTLENGTH}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ab0a98bfe048c0c625ed70647de5ae79c}{LONG\_OPTION\_SHIFTUNITS}};}
+\DoxyCodeLine{00101\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a3c2d93dd04b90cb92a5205eefcf45cdd}{SINGLE\_OPTION\_SHIFTUNITS}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ab7f28fe8828144810901bdc23cc783cf}{LONG\_OPTION\_GAPWIDTH}};}
+\DoxyCodeLine{00104\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a2194a0ad272c12a565a3702c0ee99137}{SINGLE\_OPTION\_GAPWIDTH}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a249d6c1406fbf6fed7d8bf228b1fce48}{LONG\_OPTION\_GROUPPING}};}
+\DoxyCodeLine{00107\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_abae075889764bded8ecf9376ae6754a7}{SINGLE\_OPTION\_GROUPPING}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a3b4d1f48af9a4ca0b912fe7ac4004d2f}{LONG\_OPTION\_TEST}};}
+\DoxyCodeLine{00110\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ad2787f3fcd4a50a7e03ee0f27955fb0b}{SINGLE\_OPTION\_TEST}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ab4b6739a5807c861d5d69f46b9ad9ebb}{LONG\_OPTION\_GRADATIONSIZE}};}
+\DoxyCodeLine{00113\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aebcda0e2f197d4277641977c1a5a3dbc}{SINGLE\_OPTION\_GRADATIONSIZE}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_adc3269c4450941ae34f23d257bae8109}{LONG\_OPTION\_GRADATIONHEIGHT}};}
+\DoxyCodeLine{00116\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ae052e299685efaa7adbd43b0c0d05637}{SINGLE\_OPTION\_GRADATIONHEIGHT}};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ae693e0bbfddf0b9d7b6adf03aaed4be7}{LONG\_OPTION\_IGNORE\_MARGINS}};}
+\DoxyCodeLine{00119\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_ac64b5615e8d6467883af204f198fb0a7}{SINGLE\_OPTION\_IGNORE\_MARGINS}};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a1426bba6f574c6bf194e788f605e8e77}{LONG\_OPTION\_LEFT\_MARGIN}};}
+\DoxyCodeLine{00122\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a07c5e4efb7dd635e8b17c213562139ec}{SINGLE\_OPTION\_LEFT\_MARGIN}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a1432cf30979d3b360ed312d89c22536c}{LONG\_OPTION\_RIGHT\_MARGIN}};}
+\DoxyCodeLine{00125\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a246d15fe0786c633fde52aa3cb1b48d7}{SINGLE\_OPTION\_RIGHT\_MARGIN}};}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a3f061133f5af94b813eeaddbf38a71db}{LONG\_OPTION\_TOP\_MARGIN}};}
+\DoxyCodeLine{00128\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_aa2e763a485bf04edd5330388314cb38d}{SINGLE\_OPTION\_TOP\_MARGIN}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a6112cca7a24adecfdaff9865a41609eb}{LONG\_OPTION\_BOTTOM\_MARGIN}};}
+\DoxyCodeLine{00131\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{commandoptions_8h_a53ad388c3c0f17a73d9370d7f213f5c6}{SINGLE\_OPTION\_BOTTOM\_MARGIN}};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ QStringList\ \mbox{\hyperlink{commandoptions_8h_aa9d02924542745590293bbc695e98ecb}{AllKeys}}();}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COMMANDOPTIONS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,73 @@
+\hypertarget{vistoolellipticalarc_8h_source}{}\doxysection{vistoolellipticalarc.\+h}
+\label{vistoolellipticalarc_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolellipticalarc.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/path/vistoolellipticalarc.h}}
+\mbox{\hyperlink{vistoolellipticalarc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vistoolellipticalarc.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Valentina\ Zhuravska\ <zhuravska19(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 24\ 10,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ VISTOOLELLIPTICALARC\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ VISTOOLELLIPTICALARC\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vispath_8h}{vispath.h}}"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_vis_tool_elliptical_arc}{VisToolEllipticalArc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_path}{VisPath}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc}{VisToolEllipticalArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a18cf4d5f6764a1398c3764c6ac900a9f}{\string~VisToolEllipticalArc}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a5d7d22132cbe989465f299cc0eb84df5}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_ad55975dcf5b154e2ff6beafcc074df75}{setRadius1}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a1d801fa37cca9a6d7988bb5f8378a396}{setRadius2}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a03883e85adfc209ab8312d5482a13962}{setF1}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a5f58f61fb5f998cdb636b18af7d57d9b}{setF2}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_af5e4ec498ee94ed2c2be1db6a00645a3}{setRotationAngle}}(const\ QString\ \&expression);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_ab8052a7c518036539b0482da140dccaa}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a4e79a11496ca3c0b8e0244a5c03fa0b3a035ae703a185be967a78c94c18d72bf3}{Type}};\}}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a4e79a11496ca3c0b8e0244a5c03fa0b3a035ae703a185be967a78c94c18d72bf3}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ToolEllipticalArc)\};}
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_vis_tool_elliptical_arc}{VisToolEllipticalArc}})}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ *\mbox{\hyperlink{class_vis_tool_elliptical_arc_a2fb4970469b5872188042b2c2c5b5eee}{arcCenter}};}
+\DoxyCodeLine{00060\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_elliptical_arc_acbe5ac3beeed49cffa43e8fb4afdc120}{radius1}};}
+\DoxyCodeLine{00061\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_elliptical_arc_af38b7ffeb09fd7136bffb6528e0b1f02}{radius2}};}
+\DoxyCodeLine{00062\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_elliptical_arc_af0495ad313d0b6e55ceee059941f499e}{f1}};}
+\DoxyCodeLine{00063\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_elliptical_arc_a37cf32b7c17eec12bc8079231ae65e4a}{f2}};}
+\DoxyCodeLine{00064\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_vis_tool_elliptical_arc_aa25c13348d14d48d2d5a83fe1a981ab6}{rotationAngle}};}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VISTOOLELLIPTICALARC\_H}}
+
+\end{DoxyCode}

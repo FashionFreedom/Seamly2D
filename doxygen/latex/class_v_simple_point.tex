@@ -1,0 +1,397 @@
+\hypertarget{class_v_simple_point}{}\doxysection{VSimple\+Point Class Reference}
+\label{class_v_simple_point}\index{VSimplePoint@{VSimplePoint}}
+
+
+{\ttfamily \#include $<$vsimplepoint.\+h$>$}
+
+Inheritance diagram for VSimple\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_simple_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_simple_point_a43b0fab6ba3d96c7746d166f4ad02e18a1d7c589d88d4e734aabb7ad9d8faee81}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Simple\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a03d41a9a17e327ef93fc8c714a7c222c}{delete\+Point}} ()
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a3aef51ef767f82ac0a9fc150a4c1b3d2}{point\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{class_v_simple_point_ab13ad4f72c7deba5ec606a3b16152d40}{point\+Selected}} (bool selected)
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a9e3e60024c5b41c042b2ec3a98dacd9e}{pointname\+Changed\+Position}} (const QPointF \&pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a4af0666c2a9f5e9e6d503419720ee469}{Choosed}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}})
+\begin{DoxyCompactList}\small\item\em Choosed send id when clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_simple_point_a923d3ff899e0b9fe4ed62c82ec658b49}{Selected}} (bool selected, quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}})
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a186e8ce0f381199c2c6bc70a0a9e5788}{name\+Changed\+Position}} (const QPointF \&pos, quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_aec2a97157878cc97c9936aedc0a7c8ba}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_a1d69e439569d116982bd572079080b6e}{Delete}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_simple_point_a13ed5faa56d9ad2236cae01908069958}{VSimple\+Point}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}, const QColor \&current\+Color, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_simple_point_aa31cf1e7de37b252975cacd595f3750d}{$\sim$\+VSimple\+Point}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_simple_point_a8aac3410e03fa782c1ece91351702f16}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a4c107ff49cec2bdfc4f055855d10a165}{Set\+Visualization\+Mode}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_simple_point_a8098ba182092a1a8799bcdb76f769391}{Is\+Visualization\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a281858c78501558e212f062e227ef5e2}{Set\+Point\+Highlight}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a24643a2ce0d32fc2725efd5aaa12a463}{Set\+Enabled}} (bool enabled)
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a3d7f3dbe2861e699a6f50c83c8d5f6d0}{Enable\+Tool\+Move}} (bool move)
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a72715b2a0a1d91f67ecf667e170ce217}{allow\+Text\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a791ce500a6ec8ef8484590fe342997d6}{allow\+Text\+Selectable}} (bool enabled)
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_aea1e4e23f0ac2f7d09521505e3474acc}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{class_v_simple_point_a8aac3410e03fa782c1ece91351702f16}{type}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_simple_point_a8f46d5cea1f11223a4617c2dbee7f063}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_simple_point_a851350e309710a93c75cf986a4e457e3}{is\+Only\+Point}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_simple_a240b504d51a9cb5786672328a1ffea01}{VAbstract\+Simple}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_simple_a2c14483b7f080dc0b243c815f64350a8}{$\sim$\+VAbstract\+Simple}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_simple_a45769635aa6f0b8aaa9e72df952fb364}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{class_v_abstract_simple_acc448adda4bee15b5fd9eb7826ce15b6}{type}})
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_abstract_simple_a1a87f6fd8438aee3b08f79c9e19d2d9e}{Get\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_ad54bea21519adc2087e9bb52c87323de}{Set\+Type}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}{VScene\+Point}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}{$\sim$\+VScene\+Point}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\item 
+void \mbox{\hyperlink{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}{refresh\+Leader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_ae70c91926f26ffd003e7d84f91a858a7}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_aceba28288958c30ba91a51c36267ff56}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_ac1d2294cca5247dea75d6ee77ca37119}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_abbd59df934ad32510153f894875e57b1}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_a97d76c8e72038d102098ba8b04f89c97}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_v_simple_point_a10ec9d73ea7aab57310c217cfa794ec3}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_point_a0a7503edf7d42c8081711b77e9fb93a1}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_v_simple_point_a02de2714c6fb4f580475ca9b8ffec8ed}{m\+\_\+visualization\+Mode}}
+\item 
+bool \mbox{\hyperlink{class_v_simple_point_a45eee67c824a471e447c33cd6933639d}{m\+\_\+always\+Hovered}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}
+\begin{DoxyCompactList}\small\item\em id spline id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_simple_a387087aee6242d2d7a176bd5c98f0a49}{selection\+Type}}
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_abstract_simple_acc448adda4bee15b5fd9eb7826ce15b6}{type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}{m\+\_\+point\+Name}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}{m\+\_\+point\+Leader}}
+\begin{DoxyCompactList}\small\item\em name\+Point point text. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}{m\+\_\+point\+Color}}
+\begin{DoxyCompactList}\small\item\em pointL line that we see if Text is moved too away from point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+point\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_simple_point_a43b0fab6ba3d96c7746d166f4ad02e18}\label{class_v_simple_point_a43b0fab6ba3d96c7746d166f4ad02e18}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VSimplePoint@{VSimplePoint}}\index{VSimplePoint@{VSimplePoint}!Type@{Type}}}\mbox{\Hypertarget{class_v_simple_point_a43b0fab6ba3d96c7746d166f4ad02e18a1d7c589d88d4e734aabb7ad9d8faee81}\label{class_v_simple_point_a43b0fab6ba3d96c7746d166f4ad02e18a1d7c589d88d4e734aabb7ad9d8faee81}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_simple_point_a13ed5faa56d9ad2236cae01908069958}\label{class_v_simple_point_a13ed5faa56d9ad2236cae01908069958}} 
+\index{VSimplePoint@{VSimplePoint}!VSimplePoint@{VSimplePoint}}
+\index{VSimplePoint@{VSimplePoint}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{VSimplePoint()}{VSimplePoint()}}
+{\footnotesize\ttfamily VSimple\+Point\+::\+VSimple\+Point (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QColor \&}]{current\+Color,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_aa31cf1e7de37b252975cacd595f3750d}\label{class_v_simple_point_aa31cf1e7de37b252975cacd595f3750d}} 
+\index{VSimplePoint@{VSimplePoint}!````~VSimplePoint@{$\sim$VSimplePoint}}
+\index{````~VSimplePoint@{$\sim$VSimplePoint}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VSimplePoint()}{~VSimplePoint()}}
+{\footnotesize\ttfamily virtual VSimple\+Point\+::$\sim$\+VSimple\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_simple_point_a72715b2a0a1d91f67ecf667e170ce217}\label{class_v_simple_point_a72715b2a0a1d91f67ecf667e170ce217}} 
+\index{VSimplePoint@{VSimplePoint}!allowTextHover@{allowTextHover}}
+\index{allowTextHover@{allowTextHover}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextHover()}{allowTextHover()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::allow\+Text\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_a791ce500a6ec8ef8484590fe342997d6}\label{class_v_simple_point_a791ce500a6ec8ef8484590fe342997d6}} 
+\index{VSimplePoint@{VSimplePoint}!allowTextSelectable@{allowTextSelectable}}
+\index{allowTextSelectable@{allowTextSelectable}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextSelectable()}{allowTextSelectable()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::allow\+Text\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_a4af0666c2a9f5e9e6d503419720ee469}\label{class_v_simple_point_a4af0666c2a9f5e9e6d503419720ee469}} 
+\index{VSimplePoint@{VSimplePoint}!Choosed@{Choosed}}
+\index{Choosed@{Choosed}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{Choosed}{Choosed}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Choosed (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Choosed send id when clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & point id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_simple_point_a0a7503edf7d42c8081711b77e9fb93a1}\label{class_v_simple_point_a0a7503edf7d42c8081711b77e9fb93a1}} 
+\index{VSimplePoint@{VSimplePoint}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a03d41a9a17e327ef93fc8c714a7c222c}\label{class_v_simple_point_a03d41a9a17e327ef93fc8c714a7c222c}} 
+\index{VSimplePoint@{VSimplePoint}!deletePoint@{deletePoint}}
+\index{deletePoint@{deletePoint}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{deletePoint}{deletePoint}}
+{\footnotesize\ttfamily void VSimple\+Point\+::delete\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a3d7f3dbe2861e699a6f50c83c8d5f6d0}\label{class_v_simple_point_a3d7f3dbe2861e699a6f50c83c8d5f6d0}} 
+\index{VSimplePoint@{VSimplePoint}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove()}{EnableToolMove()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_ac1d2294cca5247dea75d6ee77ca37119}\label{class_v_simple_point_ac1d2294cca5247dea75d6ee77ca37119}} 
+\index{VSimplePoint@{VSimplePoint}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{VScene\+Point}}.
+
+\mbox{\Hypertarget{class_v_simple_point_abbd59df934ad32510153f894875e57b1}\label{class_v_simple_point_abbd59df934ad32510153f894875e57b1}} 
+\index{VSimplePoint@{VSimplePoint}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}{VScene\+Point}}.
+
+\mbox{\Hypertarget{class_v_simple_point_a851350e309710a93c75cf986a4e457e3}\label{class_v_simple_point_a851350e309710a93c75cf986a4e457e3}} 
+\index{VSimplePoint@{VSimplePoint}!isOnlyPoint@{isOnlyPoint}}
+\index{isOnlyPoint@{isOnlyPoint}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{isOnlyPoint()}{isOnlyPoint()}}
+{\footnotesize\ttfamily bool VScene\+Point\+::is\+Only\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_simple_point_a8098ba182092a1a8799bcdb76f769391}\label{class_v_simple_point_a8098ba182092a1a8799bcdb76f769391}} 
+\index{VSimplePoint@{VSimplePoint}!IsVisualizationMode@{IsVisualizationMode}}
+\index{IsVisualizationMode@{IsVisualizationMode}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{IsVisualizationMode()}{IsVisualizationMode()}}
+{\footnotesize\ttfamily bool VSimple\+Point\+::\+Is\+Visualization\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_simple_point_a10ec9d73ea7aab57310c217cfa794ec3}\label{class_v_simple_point_a10ec9d73ea7aab57310c217cfa794ec3}} 
+\index{VSimplePoint@{VSimplePoint}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VSimple\+Point\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a97d76c8e72038d102098ba8b04f89c97}\label{class_v_simple_point_a97d76c8e72038d102098ba8b04f89c97}} 
+\index{VSimplePoint@{VSimplePoint}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_point_ae70c91926f26ffd003e7d84f91a858a7}\label{class_v_simple_point_ae70c91926f26ffd003e7d84f91a858a7}} 
+\index{VSimplePoint@{VSimplePoint}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_point_aceba28288958c30ba91a51c36267ff56}\label{class_v_simple_point_aceba28288958c30ba91a51c36267ff56}} 
+\index{VSimplePoint@{VSimplePoint}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a186e8ce0f381199c2c6bc70a0a9e5788}\label{class_v_simple_point_a186e8ce0f381199c2c6bc70a0a9e5788}} 
+\index{VSimplePoint@{VSimplePoint}!nameChangedPosition@{nameChangedPosition}}
+\index{nameChangedPosition@{nameChangedPosition}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{nameChangedPosition}{nameChangedPosition}}
+{\footnotesize\ttfamily void VSimple\+Point\+::name\+Changed\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a3aef51ef767f82ac0a9fc150a4c1b3d2}\label{class_v_simple_point_a3aef51ef767f82ac0a9fc150a4c1b3d2}} 
+\index{VSimplePoint@{VSimplePoint}!pointChosen@{pointChosen}}
+\index{pointChosen@{pointChosen}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{pointChosen}{pointChosen}}
+{\footnotesize\ttfamily void VSimple\+Point\+::point\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a9e3e60024c5b41c042b2ec3a98dacd9e}\label{class_v_simple_point_a9e3e60024c5b41c042b2ec3a98dacd9e}} 
+\index{VSimplePoint@{VSimplePoint}!pointnameChangedPosition@{pointnameChangedPosition}}
+\index{pointnameChangedPosition@{pointnameChangedPosition}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{pointnameChangedPosition}{pointnameChangedPosition}}
+{\footnotesize\ttfamily void VSimple\+Point\+::pointname\+Changed\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_point_ab13ad4f72c7deba5ec606a3b16152d40}\label{class_v_simple_point_ab13ad4f72c7deba5ec606a3b16152d40}} 
+\index{VSimplePoint@{VSimplePoint}!pointSelected@{pointSelected}}
+\index{pointSelected@{pointSelected}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{pointSelected}{pointSelected}}
+{\footnotesize\ttfamily void VSimple\+Point\+::point\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a923d3ff899e0b9fe4ed62c82ec658b49}\label{class_v_simple_point_a923d3ff899e0b9fe4ed62c82ec658b49}} 
+\index{VSimplePoint@{VSimplePoint}!Selected@{Selected}}
+\index{Selected@{Selected}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{Selected}{Selected}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a24643a2ce0d32fc2725efd5aaa12a463}\label{class_v_simple_point_a24643a2ce0d32fc2725efd5aaa12a463}} 
+\index{VSimplePoint@{VSimplePoint}!SetEnabled@{SetEnabled}}
+\index{SetEnabled@{SetEnabled}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{SetEnabled()}{SetEnabled()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_a8f46d5cea1f11223a4617c2dbee7f063}\label{class_v_simple_point_a8f46d5cea1f11223a4617c2dbee7f063}} 
+\index{VSimplePoint@{VSimplePoint}!setOnlyPoint@{setOnlyPoint}}
+\index{setOnlyPoint@{setOnlyPoint}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{setOnlyPoint()}{setOnlyPoint()}}
+{\footnotesize\ttfamily void VScene\+Point\+::set\+Only\+Point (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_a281858c78501558e212f062e227ef5e2}\label{class_v_simple_point_a281858c78501558e212f062e227ef5e2}} 
+\index{VSimplePoint@{VSimplePoint}!SetPointHighlight@{SetPointHighlight}}
+\index{SetPointHighlight@{SetPointHighlight}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{SetPointHighlight()}{SetPointHighlight()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Set\+Point\+Highlight (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_a4c107ff49cec2bdfc4f055855d10a165}\label{class_v_simple_point_a4c107ff49cec2bdfc4f055855d10a165}} 
+\index{VSimplePoint@{VSimplePoint}!SetVisualizationMode@{SetVisualizationMode}}
+\index{SetVisualizationMode@{SetVisualizationMode}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{SetVisualizationMode()}{SetVisualizationMode()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Set\+Visualization\+Mode (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_point_aea1e4e23f0ac2f7d09521505e3474acc}\label{class_v_simple_point_aea1e4e23f0ac2f7d09521505e3474acc}} 
+\index{VSimplePoint@{VSimplePoint}!ToolSelectionType@{ToolSelectionType}}
+\index{ToolSelectionType@{ToolSelectionType}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{ToolSelectionType()}{ToolSelectionType()}}
+{\footnotesize\ttfamily void VSimple\+Point\+::\+Tool\+Selection\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_abstract_simple_a45769635aa6f0b8aaa9e72df952fb364}{VAbstract\+Simple}}.
+
+\mbox{\Hypertarget{class_v_simple_point_a8aac3410e03fa782c1ece91351702f16}\label{class_v_simple_point_a8aac3410e03fa782c1ece91351702f16}} 
+\index{VSimplePoint@{VSimplePoint}!type@{type}}
+\index{type@{type}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VSimple\+Point\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{VScene\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_simple_point_a45eee67c824a471e447c33cd6933639d}\label{class_v_simple_point_a45eee67c824a471e447c33cd6933639d}} 
+\index{VSimplePoint@{VSimplePoint}!m\_alwaysHovered@{m\_alwaysHovered}}
+\index{m\_alwaysHovered@{m\_alwaysHovered}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{m\_alwaysHovered}{m\_alwaysHovered}}
+{\footnotesize\ttfamily bool VSimple\+Point\+::m\+\_\+always\+Hovered\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_simple_point_a02de2714c6fb4f580475ca9b8ffec8ed}\label{class_v_simple_point_a02de2714c6fb4f580475ca9b8ffec8ed}} 
+\index{VSimplePoint@{VSimplePoint}!m\_visualizationMode@{m\_visualizationMode}}
+\index{m\_visualizationMode@{m\_visualizationMode}!VSimplePoint@{VSimplePoint}}
+\doxysubsubsection{\texorpdfstring{m\_visualizationMode}{m\_visualizationMode}}
+{\footnotesize\ttfamily bool VSimple\+Point\+::m\+\_\+visualization\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vsimplepoint_8h}{vsimplepoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vsimplepoint_8cpp}{vsimplepoint.\+cpp}}\end{DoxyCompactItemize}

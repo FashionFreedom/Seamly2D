@@ -1,0 +1,128 @@
+\hypertarget{vundocommand_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/vundocommand.h File Reference}
+\label{vundocommand_8h}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/vundocommand.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/vundocommand.h}}
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QDom\+Element$>$}\newline
+{\ttfamily \#include $<$QMeta\+Object$>$}\newline
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QUndo\+Command$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vabstractpattern.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/logging.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}{Undo\+Command}} \+: char \{ \newline
+\mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48}{Add\+Draft\+Block}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a6dc1ff82c45870cf9c88adcddc62eb91}{Add\+To\+Calc}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ac3c54fe88bfb24394bac8d42ca73db55}{Move\+Spline}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ada52c4835d5cda6736523f84934023c1}{Move\+Spline\+Path}}
+, \newline
+\mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a4ad9a4a52b30b30c6a8e9b5ed4d49437}{Move\+SPoint}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a5eba4390d4c153fe97e65d831de3a8c3}{Save\+Tool\+Options}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a184d86ac7612dd413631ea214d438b75}{Save\+Piece\+Options}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aad1442a5664c0ff0eb63d3ea3846801e}{Save\+Piece\+Path\+Options}}
+, \newline
+\mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a9a875336313e9e2a92b7d2f5e4ed2bad}{Move\+Piece}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ae68bc399bdb34d1d55d27faed16c52cb}{delete\+Tool}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a861ca4154699fc64fcd0ea220147bb31}{Delete\+Draft\+Block}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab3ac850020a8828e0c9408a37ee10ebe}{Rename\+Draft\+Block}}
+, \newline
+\mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a102c66ce362e36345ff6ee05da5073a9}{Move\+Label}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93}{Move\+Double\+Label}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aafec0a707b911fa3d4a057b499b7856c}{Rotation\+Move\+Label}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc}{Toggle\+Piece\+In\+Layout}}
+, \newline
+\mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4}{Toggle\+Piece\+Lock}}
+, \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe}{Set\+Piece\+Color}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}} 
+\index{vundocommand.h@{vundocommand.h}!UndoCommand@{UndoCommand}}
+\index{UndoCommand@{UndoCommand}!vundocommand.h@{vundocommand.h}}
+\doxysubsubsection{\texorpdfstring{UndoCommand}{UndoCommand}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}{Undo\+Command}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddDraftBlock@{AddDraftBlock}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!AddDraftBlock@{AddDraftBlock}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab1b2d508a8b34dac324dae207e657d48}} 
+Add\+Draft\+Block&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AddToCalc@{AddToCalc}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!AddToCalc@{AddToCalc}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a6dc1ff82c45870cf9c88adcddc62eb91}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a6dc1ff82c45870cf9c88adcddc62eb91}} 
+Add\+To\+Calc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveSpline@{MoveSpline}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MoveSpline@{MoveSpline}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ac3c54fe88bfb24394bac8d42ca73db55}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ac3c54fe88bfb24394bac8d42ca73db55}} 
+Move\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveSplinePath@{MoveSplinePath}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MoveSplinePath@{MoveSplinePath}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ada52c4835d5cda6736523f84934023c1}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ada52c4835d5cda6736523f84934023c1}} 
+Move\+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveSPoint@{MoveSPoint}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MoveSPoint@{MoveSPoint}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a4ad9a4a52b30b30c6a8e9b5ed4d49437}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a4ad9a4a52b30b30c6a8e9b5ed4d49437}} 
+Move\+SPoint&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SaveToolOptions@{SaveToolOptions}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!SaveToolOptions@{SaveToolOptions}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a5eba4390d4c153fe97e65d831de3a8c3}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a5eba4390d4c153fe97e65d831de3a8c3}} 
+Save\+Tool\+Options&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SavePieceOptions@{SavePieceOptions}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!SavePieceOptions@{SavePieceOptions}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a184d86ac7612dd413631ea214d438b75}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a184d86ac7612dd413631ea214d438b75}} 
+Save\+Piece\+Options&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SavePiecePathOptions@{SavePiecePathOptions}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!SavePiecePathOptions@{SavePiecePathOptions}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aad1442a5664c0ff0eb63d3ea3846801e}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aad1442a5664c0ff0eb63d3ea3846801e}} 
+Save\+Piece\+Path\+Options&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MovePiece@{MovePiece}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MovePiece@{MovePiece}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a9a875336313e9e2a92b7d2f5e4ed2bad}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a9a875336313e9e2a92b7d2f5e4ed2bad}} 
+Move\+Piece&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{deleteTool@{deleteTool}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!deleteTool@{deleteTool}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ae68bc399bdb34d1d55d27faed16c52cb}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ae68bc399bdb34d1d55d27faed16c52cb}} 
+delete\+Tool&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DeleteDraftBlock@{DeleteDraftBlock}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!DeleteDraftBlock@{DeleteDraftBlock}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a861ca4154699fc64fcd0ea220147bb31}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a861ca4154699fc64fcd0ea220147bb31}} 
+Delete\+Draft\+Block&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RenameDraftBlock@{RenameDraftBlock}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!RenameDraftBlock@{RenameDraftBlock}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab3ac850020a8828e0c9408a37ee10ebe}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6ab3ac850020a8828e0c9408a37ee10ebe}} 
+Rename\+Draft\+Block&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveLabel@{MoveLabel}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MoveLabel@{MoveLabel}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a102c66ce362e36345ff6ee05da5073a9}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a102c66ce362e36345ff6ee05da5073a9}} 
+Move\+Label&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MoveDoubleLabel@{MoveDoubleLabel}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!MoveDoubleLabel@{MoveDoubleLabel}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a0065b32ebc01feeebdc4113120ef8d93}} 
+Move\+Double\+Label&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RotationMoveLabel@{RotationMoveLabel}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!RotationMoveLabel@{RotationMoveLabel}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aafec0a707b911fa3d4a057b499b7856c}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aafec0a707b911fa3d4a057b499b7856c}} 
+Rotation\+Move\+Label&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TogglePieceInLayout@{TogglePieceInLayout}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!TogglePieceInLayout@{TogglePieceInLayout}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc}} 
+Toggle\+Piece\+In\+Layout&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TogglePieceLock@{TogglePieceLock}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!TogglePieceLock@{TogglePieceLock}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4}} 
+Toggle\+Piece\+Lock&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SetPieceColor@{SetPieceColor}!vundocommand.h@{vundocommand.h}}\index{vundocommand.h@{vundocommand.h}!SetPieceColor@{SetPieceColor}}}\mbox{\Hypertarget{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe}\label{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe}} 
+Set\+Piece\+Color&\\
+\hline
+
+\end{DoxyEnumFields}

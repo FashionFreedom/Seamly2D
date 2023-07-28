@@ -1,0 +1,399 @@
+\hypertarget{dialogtool_8h_source}{}\doxysection{dialogtool.\+h}
+\label{dialogtool_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogtool.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogtool.h}}
+\mbox{\hyperlink{dialogtool_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogtool.cpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogtool.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ DIALOGTOOL\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DIALOGTOOL\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QCheckBox>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QComboBox>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QDialogButtonBox>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QListWidget>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QLocale>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ <QPushButton>}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ <QRadioButton>}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}../vtools/visualization/visualization.h"{}}\ \textcolor{comment}{//\ Issue\ on\ Windows}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vgeometrydef.h"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ "{}../vmisc/logging.h"{}}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vcommonsettings.h"{}}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vmaingraphicsscene.h"{}}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_node_info}{NodeInfo}}}
+\DoxyCodeLine{00087\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ QString\ \mbox{\hyperlink{struct_node_info_afd1b17fe1b39c69bdd469e2387e396c5}{icon}}\{\};}
+\DoxyCodeLine{00089\ \ \ \ \ \ QString\ \mbox{\hyperlink{struct_node_info_a099414f044f611bb9fe5a4b95fcab934}{name}}\{\};}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ Q\_DECLARE\_LOGGING\_CATEGORY(vDialog)}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }QDoubleSpinBox;}
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }QLabel;}
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }QPlainTextEdit;}
+\DoxyCodeLine{00099\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ :\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050}{Whole}},\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac73b91f310fd0038f160f1721d4bace6}{NoChildren}}\};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00106\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_tool}{DialogTool}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00109\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ae3c1cbf86b6e304c999cd7dcce757545}{\string~DialogTool}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}}*\ \ \ \mbox{\hyperlink{class_dialog_tool_a224b095efb6bf4df93b3048c7ffbc625}{GetAssociatedTool}}();}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a51759a1e557e81b0fea372b51719b32f}{SetAssociatedTool}}(\mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}}*\ tool);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a6da67387057958c9a8de664a86c14efb}{ShowDialog}}(\textcolor{keywordtype}{bool}\ click);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ab3d6e3c597c29a71a517e2432a5a979e}{Build}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \&type);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ae8a522bc8cd5063cf17cb29d2c14e453}{SetPiecesList}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&list);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af9467b65f15e412b823d5097141437f6}{GetToolId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aa41431027e66aac4474c163fcb8460a6}{SetToolId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a83443b31adec5f8e62f475ec558040ab}{getPointName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8117559f39a9b9068f94f21f25a4b4ad}{moveListRowTop}}(QListWidget\ *list);}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aed689641215eb4d3af8e11e81df8a1d1}{moveListRowUp}}(QListWidget\ *list);}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a5672621ca3d899af2173bc1444a6dea8}{moveListRowDown}}(QListWidget\ *list);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a4902afcca8125302cdde635be455f83e}{moveListRowBottom}}(QListWidget\ *list);}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ signals:}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a2393a727a5d951da5daf2a5950b726af}{DialogClosed}}(\textcolor{keywordtype}{int}\ result);}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ac326a802f9ee83296e1ff3d5bc95b6e5}{DialogApplied}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a1320c278e99ba783af0a5c289375bf9a}{ToolTip}}(\textcolor{keyword}{const}\ QString\ \&toolTip);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a230903cc2885e3126cc71f175cba6b52}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type);}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aed1e44149aa815113d986a9bc124681b}{SelectedObject}}(\textcolor{keywordtype}{bool}\ selected,\ quint32\ \textcolor{keywordtype}{object},\ quint32\ tool);}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a2a6070cab102675260601eb6fdaf61a2}{NamePointChanged}}();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7c0456ea20eb5f1e21a56af2e98a506b}{DialogAccepted}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_acbd2be3e1ce1652e3fa6177793b22001}{DialogApply}}();}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a03b5e1c41a10e70de19c8800e1dbfe7c}{DialogRejected}}();}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a397da3002c5c83a84d784c6b466ec8a8}{FormulaChanged}}();}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af00983bcf09aa5eeed7aefec44c61ba6}{FormulaChangedPlainText}}();}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a2ed974d6b2bb05b329d6732da9ddf772}{ArrowUp}}();}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a02478f50983ed4280041b57abf22d305}{ArrowDown}}();}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a1ece1f4ebba4c9e2e2654e1b0dd44f5f}{ArrowLeft}}();}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a3d554a0670c223fe2189dfe2efd105a7}{ArrowRight}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a0cac370d042a2303a53fbd4fe18522d1}{ArrowLeftUp}}();}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ab7008c4410ba66f31a706b17f9727011}{ArrowLeftDown}}();}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7c0a8dbcea95d198bf3e07ac10827ff0}{ArrowRightUp}}();}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a298b9ca0770a58aaa31acc24ef7ad82f}{ArrowRightDown}}();}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ad9d6d2baa969f338436cd53d0f33e24f}{EvalFormula}}();}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ad0735fb82a3aa73ec2eb8efdd7276084}{PointNameChanged}}()\ \{\}}
+\DoxyCodeLine{00172\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00173\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_tool}{DialogTool}})}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ }
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ duplInheritedMember}}
+\DoxyCodeLine{00177\ \ \ \ \ const\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7e9f7c34ba709ce74ed865ee990bb9f0}{isInitialized}};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}{flagName}};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a3e515cda2fda84c61765eb64eeea7d34}{flagFormula}};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a9581294606516971fdf492161d59fff9}{flagError}};}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00196\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_accfd3d6d420e77a482145f715a915dfe}{timerFormula}};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00199\ \ \ \ \ QPushButton\ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}{ok\_Button}};}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00202\ \ \ \ \ QPushButton\ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}{apply\_Button}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00205\ \ \ \ \ QDoubleSpinBox\ \ \ *\mbox{\hyperlink{class_dialog_tool_a0a118fe7df26258a50f0bb05c5d1c2cf}{spinBoxAngle}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00208\ \ \ \ \ QPlainTextEdit\ \ \ *\mbox{\hyperlink{class_dialog_tool_a9bd2db37902c5cdc80815322a4d039b1}{plainTextEditFormula}};}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00211\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_ab4865848cb3cb7af4a539c8794503c2e}{labelResultCalculation}};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00214\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}{labelEditNamePoint}};}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00217\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_tool_a8842d70341f4aa1f27b6787ce83f433a}{labelEditFormula}};}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ const\ QColor\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a080d3a4a41e6b70099d201fd2bb8a963}{okColor}};}
+\DoxyCodeLine{00220\ \ \ \ \ const\ QColor\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a6a353f3802c04a2ece105e0283d6052e}{errorColor}};}
+\DoxyCodeLine{00224\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}}\ \ \ \ *\mbox{\hyperlink{class_dialog_tool_aad9a35a39c3034577c209f304f4457d7}{associatedTool}};}
+\DoxyCodeLine{00225\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a9ccfbc64fabcbc33167437af63980278}{prepare}};}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00231\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a400ae6a47a2596e2ccec2bc892171d77}{pointName}};}
+\DoxyCodeLine{00232\ }
+\DoxyCodeLine{00234\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a6f583a6003585697d9b06234fd1ace14}{number}};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ QPointer<\mbox{\hyperlink{class_visualization}{Visualization}}>\ \mbox{\hyperlink{class_dialog_tool_aef05247e05fbecb1b99ebcf486972ee6}{vis}};}
+\DoxyCodeLine{00237\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aa719545191dd63fba3deee7346dbc4a0}{keyPressEvent}}(QKeyEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00238\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7351661dd7dfb8231ffdd4b92ddcc11b}{closeEvent}}\ (\ QCloseEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00239\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a60bf040b63da264b842ebe9b7ef76564}{showEvent}}(\ QShowEvent\ *event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aee0fad677c762a4570cc2bc75c781723}{FillComboBoxPiecesList}}(QComboBox\ *box,\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \&list);}
+\DoxyCodeLine{00242\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a1dde56c8348fe3d0f6de9b3c8883e4e5}{FillComboBoxPoints}}(QComboBox\ *box,\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ rule\ =\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}::\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050}{Whole}},}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ quint32\ \&ch1\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ const\ quint32\ \&ch2\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})const;}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8829145090f7ae6629274efe045808c8}{FillComboBoxArcs}}(QComboBox\ *box,\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ rule\ =\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}::\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050}{Whole}},}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ quint32\ \&ch1\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ const\ quint32\ \&ch2\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})const;}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8171b02d23b8f1b68fcf8046cd5f3b73}{FillComboBoxSplines}}(QComboBox\ *box)const;}
+\DoxyCodeLine{00247\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a6630707aad32ef268dbaad5e59528c99}{FillComboBoxSplinesPath}}(QComboBox\ *box)const;}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8a67989df6bc57ce966be64b8144c464}{FillComboBoxCurves}}(QComboBox\ *box)const;}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af10d637cab7eea9a92019f0ba63eedf8}{FillComboBoxTypeLine}}(QComboBox\ *box,\ const\ \mbox{\hyperlink{class_q_map}{QMap}}<QString,\ QIcon>\ \&stylesPics)\ const;}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7cef0dbb035fbd6c4bc96c3a2bb5564a}{FillComboBoxLineColors}}(QComboBox\ *box)const;}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a33aa732acd7827a8bb95000570eb5730}{FillComboBoxCrossCirclesPoints}}(QComboBox\ *box)\ const;}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a93fa9411022d5f4a62e5a7a8844939eb}{FillComboBoxVCrossCurvesPoint}}(QComboBox\ *box)\ const;}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ae5549ef0e9efca43b6ef5e47de4caae4}{FillComboBoxHCrossCurvesPoint}}(QComboBox\ *box)\ const;}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a1dde216466b3f09ff51f8538bb279457}{CheckState}}();}
+\DoxyCodeLine{00256\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a9cb6fec9007d2c41cafbefddfbc029ce}{GetComboBoxCurrentData}}(const\ QComboBox\ *box,\ const\ QString\ \&def)const;}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a0185e281fed2b396c9297363b5950fa9}{ChangeCurrentData}}(QComboBox\ *box,\ const\ QVariant\ \&value)\ const;}
+\DoxyCodeLine{00258\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a741d3d48764376f0141fed30732dc929}{ValFormulaChanged}}(\textcolor{keywordtype}{bool}\ \&flag,\ QLineEdit\ *edit,\ QTimer\ *\ timer,\ const\ QString\ \&postfix\ =\ QString());}
+\DoxyCodeLine{00259\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a741d3d48764376f0141fed30732dc929}{ValFormulaChanged}}(\textcolor{keywordtype}{bool}\ \&flag,\ QPlainTextEdit\ *edit,\ QTimer\ *\ timer,}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&postfix\ =\ QString());}
+\DoxyCodeLine{00261\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a4b5df9919f56e6e1b12a4c2941470108}{Eval}}(const\ QString\ \&text,\ \textcolor{keywordtype}{bool}\ \&flag,\ QLabel\ *label,\ const\ QString\ \&postfix,}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ checkZero\ =\ true,\ \textcolor{keywordtype}{bool}\ checkLessThanZero\ =\ false);}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a0eab9de855cc29e63f22aa5e087a25f3}{normalize}}(const\ qreal\ value,\ const\ qreal\ start,\ const\ qreal\ end)\ ;}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a016b1091fc5d9a147a02701e69f3ae31}{setCurrentPointId}}(QComboBox\ *box,\ const\ quint32\ \&value,}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ rule\ =\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}::\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac73b91f310fd0038f160f1721d4bace6}{NoChildren}},}
+\DoxyCodeLine{00268\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ quint32\ \&ch1\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ const\ quint32\ \&ch2\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})\ const;}
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a3e775b55743322dd5bed09c46d15cb0c}{setCurrentSplineId}}(QComboBox\ *box,\ const\ quint32\ \&value)\ const;}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a0ecf83868bfccb70cc591b1b34fd771c}{setCurrentArcId}}(QComboBox\ *box,\ const\ quint32\ \&value,}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ rule\ =\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}::\mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844ac73b91f310fd0038f160f1721d4bace6}{NoChildren}},}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ quint32\ \&ch1\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ const\ quint32\ \&ch2\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})\ const;}
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a9492af06a71defebbb5162b68eec4e31}{setCurrentSplinePathId}}(QComboBox\ *box,\ const\ quint32\ \&value)\ const;}
+\DoxyCodeLine{00274\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ae6eff8c971708961729f688140cab7b3}{setCurrentCurveId}}(QComboBox\ *box,\ const\ quint32\ \&value)\ const;}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_afa53df30e6ef6b3fb2bae2884a2fd49f}{getCurrentObjectId}}(QComboBox\ *box)\ const;}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00279\ \ \ \ \ T\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af503e383e8d38ee0c3a257097ce07050}{getCurrentCrossPoint}}(QComboBox\ *box)\ const;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7a40d87b6501f1123c624e1a71d6b22b}{SetObject}}(const\ quint32\ \&\textcolor{keywordtype}{id},\ QComboBox\ *box,\ const\ QString\ \&toolTip);}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af877cbf87f21cb27e263b2cacfab245c}{DeployFormula}}(QPlainTextEdit\ *formula,\ QPushButton\ *buttonGrowLength,\ \textcolor{keywordtype}{int}\ formulaBaseHeight);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a901630e1afd5b1f74c829b3ec701ac52}{initializeOkCancelApply}}(T\ *ui);}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00287\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}{initializeOkCancel}}(T\ *ui);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00291\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_acf79dba7d4eb08e97b7f31a8c1b384f3}{initializeFormulaUi}}(T\ *ui);}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00294\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7b73bc6fd8437d4367508610fc8e339c}{AddVisualization}}();}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00297\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<T>\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ae701ca9f14235946065b508fe2389d45}{GetListInternals}}(const\ QListWidget\ *list)\ const;}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_af5329ca717794e40fe429d8535bda252}{ChangeColor}}(QWidget\ *widget,\ const\ QColor\ \&color);}
+\DoxyCodeLine{00300\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a27c61eab1bc3d32f6917983612ab8594}{ShowVisualization}}()\ \{\}}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_aa197a256d8d19a03878816f138e4e248}{SaveData}}()\ \{\}}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a36321c7aa19366c412c876622c944941}{MoveCursorToEnd}}(QPlainTextEdit\ *plainTextEdit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_acfc81e416e8719ca8c2d78f54ded9ce3}{eventFilter}}(QObject\ *\textcolor{keywordtype}{object},\ QEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00307\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a019114875b8df91da6678dbc581ea3dc}{DNumber}}(\textcolor{keyword}{const}\ QString\ \&baseName)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8f60df422aa5ea1ecc624cf43022ba2d}{FindNotExcludedNodeDown}}(QListWidget\ *listWidget,\ \textcolor{keywordtype}{int}\ candidate);}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a2982410c0fd57467d34bca670eb5a1b9}{FindNotExcludedNodeUp}}(QListWidget\ *listWidget,\ \textcolor{keywordtype}{int}\ candidate);}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a11954ff102b5b3ab8dfdb9412fd91de4}{isFirstPointSameAsLast}}(QListWidget\ *listWidget);}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a4156f1949ecd5d512063d66dbd00b760}{doublePointsExist}}(QListWidget\ *listWidget);}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ab13e9c3720e404f3c9eb7b08f6655c86}{isEachPointNameUnique}}(QListWidget\ *listWidget);}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \ \ \mbox{\hyperlink{class_dialog_tool_ae1015f240bf8db960be4c55cb4e06af8}{DialogWarningIcon}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{static}\ QFont\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a85e03f7e768ff5534af1888c09d3704a}{NodeFont}}(\textcolor{keywordtype}{bool}\ nodeExcluded);}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \mbox{\hyperlink{struct_node_info}{NodeInfo}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a5eef349e9569db795e529aa76781ef8c}{getNodeInfo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_node}{VPieceNode}}\ \&node,\ \textcolor{keywordtype}{bool}\ showNotch\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a720450bced2cbb0fbff11d2f638d2078}{newNodeItem}}(QListWidget\ *listWidget,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_node}{VPieceNode}}\ \&node,}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ nodeExcluded\ =\ \textcolor{keyword}{true},\ \textcolor{keywordtype}{bool}\ isDuplicate\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ac9178fdeab3fb37fc6ca434aefea6b3e}{initializeNodeAngles}}(QComboBox\ *box);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a75a5c4949c44282eddb9ab3df2c1fa57}{FillList}}(QComboBox\ *box,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ quint32>}}\ \&list)\textcolor{keyword}{const};}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a60b9a53cf72829a083fec2c3bdbb7214}{PrepareList}}(\mbox{\hyperlink{class_q_map}{QMap<QString,\ quint32>}}\ \&list,\ quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00328\ }
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a706841d17b43aa0407e847f52e9b00b7}{IsSpline}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}\ \&obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_afa5b038b1b7df8c71b214cc8f7f4ec7e}{IsSplinePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}\ \&obj)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ GObject>}
+\DoxyCodeLine{00333\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8ffc4bee8d0c15fce56bf6eeb0b5ee9c}{FillCombo}}(QComboBox\ *box,\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ gType,\ \mbox{\hyperlink{dialogtool_8h_a68b566b665945afc1b16dd60d38f5844}{FillComboBox}}\ rule\ =\ FillComboBox::Whole,}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ quint32\ \&ch1\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ \textcolor{keyword}{const}\ quint32\ \&ch2\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \};}
+\DoxyCodeLine{00338\ }
+\DoxyCodeLine{00339\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00340\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00341\ \mbox{\hyperlink{class_q_vector}{QVector<T>}}\ \mbox{\hyperlink{class_dialog_tool_ae701ca9f14235946065b508fe2389d45}{DialogTool::GetListInternals}}(\textcolor{keyword}{const}\ QListWidget\ *list)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00342\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00343\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(list\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00344\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<T>}}\ internals;}
+\DoxyCodeLine{00345\ \ \ \ \ \textcolor{keywordflow}{for}\ (qint32\ i\ =\ 0;\ i\ <\ list-\/>count();\ ++i)}
+\DoxyCodeLine{00346\ \ \ \ \ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ QListWidgetItem\ *item\ =\ list-\/>item(i);}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ internals.append(qvariant\_cast<T>(item-\/>data(Qt::UserRole)));}
+\DoxyCodeLine{00349\ \ \ \ \ \}}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keywordflow}{return}\ internals;}
+\DoxyCodeLine{00351\ \}}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00354\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}}\ *\mbox{\hyperlink{class_dialog_tool_a224b095efb6bf4df93b3048c7ffbc625}{DialogTool::GetAssociatedTool}}()}
+\DoxyCodeLine{00355\ \{}
+\DoxyCodeLine{00356\ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{class_dialog_tool_aad9a35a39c3034577c209f304f4457d7}{associatedTool}};}
+\DoxyCodeLine{00357\ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00360\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00365\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_tool_a901630e1afd5b1f74c829b3ec701ac52}{DialogTool::initializeOkCancelApply}}(T\ *ui)}
+\DoxyCodeLine{00366\ \{}
+\DoxyCodeLine{00367\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}{initializeOkCancel}}(ui);}
+\DoxyCodeLine{00368\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}{apply\_Button}}\ =\ ui-\/>buttonBox-\/>button(QDialogButtonBox::Apply);}
+\DoxyCodeLine{00369\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(\mbox{\hyperlink{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}{apply\_Button}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00370\ \ \ \ \ connect(\mbox{\hyperlink{class_dialog_tool_a7d257367c86ec4b1860066cb7e0838df}{apply\_Button}},\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_dialog_tool_acbd2be3e1ce1652e3fa6177793b22001}{DialogTool::DialogApply}});}
+\DoxyCodeLine{00371\ \}}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00374\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00379\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_tool_a5b72c35054a2ebd44445b3108b70f378}{DialogTool::initializeOkCancel}}(T\ *ui)}
+\DoxyCodeLine{00380\ \{}
+\DoxyCodeLine{00381\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}{ok\_Button}}\ =\ ui-\/>buttonBox-\/>button(QDialogButtonBox::Ok);}
+\DoxyCodeLine{00382\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(\mbox{\hyperlink{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}{ok\_Button}}\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00383\ \ \ \ \ connect(\mbox{\hyperlink{class_dialog_tool_a36d26ab1674aa213ce63fff219d0820e}{ok\_Button}},\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_dialog_tool_a7c0456ea20eb5f1e21a56af2e98a506b}{DialogTool::DialogAccepted}});}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \ \ \ \ QPushButton\ *bCancel\ =\ ui-\/>buttonBox-\/>button(QDialogButtonBox::Cancel);}
+\DoxyCodeLine{00386\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(bCancel\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00387\ \ \ \ \ connect(bCancel,\ \&QPushButton::clicked,\ \textcolor{keyword}{this},\ \&\mbox{\hyperlink{class_dialog_tool_a03b5e1c41a10e70de19c8800e1dbfe7c}{DialogTool::DialogRejected}});}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>GetOsSeparator()\ ?\ setLocale(QLocale())\ :\ setLocale(QLocale::c());}
+\DoxyCodeLine{00390\ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00392\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00393\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00398\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_tool_acf79dba7d4eb08e97b7f31a8c1b384f3}{DialogTool::initializeFormulaUi}}(T\ *ui)}
+\DoxyCodeLine{00399\ \{}
+\DoxyCodeLine{00400\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_ab4865848cb3cb7af4a539c8794503c2e}{labelResultCalculation}}\ =\ ui-\/>labelResultCalculation;}
+\DoxyCodeLine{00401\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a9bd2db37902c5cdc80815322a4d039b1}{plainTextEditFormula}}\ =\ ui-\/>plainTextEditFormula;}
+\DoxyCodeLine{00402\ \ \ \ \ \mbox{\hyperlink{class_dialog_tool_a8842d70341f4aa1f27b6787ce83f433a}{labelEditFormula}}\ =\ ui-\/>labelEditFormula;}
+\DoxyCodeLine{00403\ \}}
+\DoxyCodeLine{00404\ }
+\DoxyCodeLine{00405\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00406\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00407\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_tool_a7b73bc6fd8437d4367508610fc8e339c}{DialogTool::AddVisualization}}()}
+\DoxyCodeLine{00408\ \{}
+\DoxyCodeLine{00409\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_dialog_tool_a9ccfbc64fabcbc33167437af63980278}{prepare}}\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00410\ \ \ \ \ \{}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene\ =\ qobject\_cast<VMainGraphicsScene\ *>(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>getCurrentScene());}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(scene\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ T\ *toolVis\ =\ qobject\_cast<T\ *>(\mbox{\hyperlink{class_dialog_tool_aef05247e05fbecb1b99ebcf486972ee6}{vis}});}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(toolVis\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ scene-\/>items().contains(toolVis))}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \ \ \ \ scene-\/>addItem(toolVis);}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ toolVis-\/>SetMode(Mode::Show);}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ toolVis-\/>RefreshGeometry();}
+\DoxyCodeLine{00424\ \ \ \ \ \}}
+\DoxyCodeLine{00425\ \}}
+\DoxyCodeLine{00426\ }
+\DoxyCodeLine{00427\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00428\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00429\ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{class_dialog_tool_af503e383e8d38ee0c3a257097ce07050}{DialogTool::getCurrentCrossPoint}}(QComboBox\ *box)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00430\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00431\ \ \ \ \ \textcolor{keywordtype}{int}\ value;}
+\DoxyCodeLine{00432\ \ \ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00433\ \ \ \ \ value\ =\ box-\/>currentData().toInt(\&ok);}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ ok)}
+\DoxyCodeLine{00436\ \ \ \ \ \{}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{00438\ \ \ \ \ \}}
+\DoxyCodeLine{00439\ }
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordflow}{switch}(value)}
+\DoxyCodeLine{00441\ \ \ \ \ \{}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(value);}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}T\textcolor{keyword}{>}(1);}
+\DoxyCodeLine{00447\ \ \ \ \ \}}
+\DoxyCodeLine{00448\ \}}
+\DoxyCodeLine{00449\ }
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGTOOL\_H}}
+
+\end{DoxyCode}

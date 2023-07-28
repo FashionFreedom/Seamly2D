@@ -1,0 +1,324 @@
+\hypertarget{qmuparsertest_8h_source}{}\doxysection{qmuparsertest.\+h}
+\label{qmuparsertest_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsertest.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsertest.h}}
+\mbox{\hyperlink{qmuparsertest_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPARSERTEST\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPARSERTEST\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QRandomGenerator>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QRandomGenerator>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparser_8h}{qmuparser.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparserdef_8h}{qmuparserdef.h}}"{}}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparsererror_8h}{qmuparsererror.h}}"{}}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00049\ \textcolor{keyword}{namespace\ }Test}
+\DoxyCodeLine{00050\ \{}
+\DoxyCodeLine{00051\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00057\ \textcolor{comment}{}\textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester}{QmuParserTester}}\ :\ \textcolor{keyword}{public}\ QObject\ \textcolor{comment}{//\ final}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{typedef}\ int\ (\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester}{QmuParserTester}}::*\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\_type}}\ )\ ();}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester}{QmuParserTester}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f18620d38fb2fe5957a6a4283708f9b}{Run}}();}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00069\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester}{QmuParserTester}})}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\_type}}>\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ae360fa06e18076011d7b39000a3e8303}{m\_vTestFun}};}
+\DoxyCodeLine{00071\ \ \ \ \ static\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a77a822e7530d02180c79f6b54c290774}{c\_iCount}};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ab3408fedc65b5522f32ed67a11d56292}{AddTest}}\ (\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8ce9290507ae805024fded8b58671477}{testfun\_type}}\ a\_pFun\ );}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{comment}{//\ Test\ Double\ Parser}}
+\DoxyCodeLine{00076\ \ \ \ \ static\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4bdae81e2caabfb15e3b16082792a3d0}{EqnTest}}\ (\ const\ QString\ \&a\_str,\ \textcolor{keywordtype}{double}\ a\_fRes,\ \textcolor{keywordtype}{bool}\ a\_fPass\ );}
+\DoxyCodeLine{00077\ \ \ \ \ static\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a9ca3f426bfbf3e0bc93dcac418573d2b}{EqnTestWithVarChange}}\ (const\ QString\ \&a\_str,\ \textcolor{keywordtype}{double}\ a\_fRes1,\ \textcolor{keywordtype}{double}\ a\_fVar1,\ \textcolor{keywordtype}{double}\ a\_fRes2,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ a\_fVar2);}
+\DoxyCodeLine{00079\ \ \ \ \ static\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a57679cbf9e7727b53a0a850173878ffd}{ThrowTest}}\ (\ const\ QString\ \&a\_str,\ \textcolor{keywordtype}{int}\ a\_iErrc,\ \textcolor{keywordtype}{bool}\ a\_bFail\ =\ true\ );}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{comment}{//\ Test\ Bulkmode}}
+\DoxyCodeLine{00082\ \ \ \ \ static\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aff2822768ab9ca09a99effdd7901d60d}{EqnTestBulk}}(const\ QString\ \&a\_str,\ \textcolor{keywordtype}{double}\ a\_fRes[4],\ \textcolor{keywordtype}{bool}\ a\_fPass);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{comment}{//\ Multiarg\ callbacks}}
+\DoxyCodeLine{00085\ \ \ \ \ static\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a798e2771ca46b5be792580544b0ab546}{f1of1}}\ (\ qreal\ v\ )}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a33f065dc9611f31109911cddd9acd0bd}{f1of2}}\ (\ qreal\ v,\ qreal\ \ )}
+\DoxyCodeLine{00091\ \ \ \ \ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00093\ \ \ \ \ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a15e89fc49ab4837da28b62539b415bba}{f2of2}}\ (\ qreal,\ qreal\ v\ )}
+\DoxyCodeLine{00096\ \ \ \ \ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00098\ \ \ \ \ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad21da7a9ef66c178851b45a816291009}{f1of3}}\ (\ qreal\ v,\ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00101\ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00103\ \ \ \ \ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f600aa43edff504414c9312d53cb179}{f2of3}}\ (\ qreal,\ qreal\ v,\ qreal\ \ )}
+\DoxyCodeLine{00106\ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00108\ \ \ \ \ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a9e85c933647d54101b9042b27faadf99}{f3of3}}\ (\ qreal,\ qreal,\ qreal\ v\ )}
+\DoxyCodeLine{00111\ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a59ffc51075d22a237a4cca379938d16e}{f1of4}}\ (\ qreal\ v,\ qreal,\ \ \ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00116\ \ \ \ \ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00118\ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a74ed0fbcd226c3ddcd521ed90a10ddbc}{f2of4}}\ (\ qreal,\ qreal\ v,\ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00121\ \ \ \ \ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a636b34577f0c3c7067c36abc0bcffa46}{f3of4}}\ (\ qreal,\ qreal,\ \ \ qreal\ v,\ qreal\ \ )}
+\DoxyCodeLine{00126\ \ \ \ \ \{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00128\ \ \ \ \ \}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a439fdfede3099c927775788aa5c8dd5c}{f4of4}}\ (\ qreal,\ qreal,\ \ \ qreal,\ qreal\ v\ )}
+\DoxyCodeLine{00131\ \ \ \ \ \{}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa2fe0ae00fff746bea3225fdbc98a9ed}{f1of5}}\ (\ qreal\ v,\ qreal,\ \ \ qreal,\ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00136\ \ \ \ \ \{}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00138\ \ \ \ \ \}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a620b7bc8d0b151102ae51b43ea86fcd3}{f2of5}}\ (\ qreal,\ qreal\ v,\ qreal,\ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00141\ \ \ \ \ \{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00143\ \ \ \ \ \}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a112618c8a243d138df28ce38defcff78}{f3of5}}\ (\ qreal,\ qreal,\ \ \ qreal\ v,\ qreal,\ qreal\ \ )}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4d700f765aa6390fcfe15b52b9276aef}{f4of5}}\ (\ qreal,\ qreal,\ \ \ qreal,\ qreal\ v,\ qreal\ \ )}
+\DoxyCodeLine{00151\ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ac2586ae0e8b9d372900b4aca596c5bb8}{f5of5}}\ (\ qreal,\ qreal,\ \ \ qreal,\ qreal,\ qreal\ v\ )}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00158\ \ \ \ \ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa3d4b06888f13ada134247e291c73e1c}{Min}}\ (\ qreal\ a\_fVal1,\ qreal\ a\_fVal2\ )}
+\DoxyCodeLine{00161\ \ \ \ \ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ a\_fVal1\ <\ a\_fVal2\ )\ ?\ a\_fVal1\ :\ a\_fVal2;}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aadd4872410c360fae2da40351d37dccf}{Max}}\ (\ qreal\ a\_fVal1,\ qreal\ a\_fVal2\ )}
+\DoxyCodeLine{00166\ \ \ \ \ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ a\_fVal1\ >\ a\_fVal2\ )\ ?\ a\_fVal1\ :\ a\_fVal2;}
+\DoxyCodeLine{00168\ \ \ \ \ \}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ae0a9af6f6aa067ec473a84fab91119e3}{plus2}}\ (\ qreal\ v1\ )}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v1\ +\ 2;}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af41d59d240d90d226d692fd07c4c6bb8}{times3}}\ (\ qreal\ v1\ )}
+\DoxyCodeLine{00176\ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v1\ *\ 3;}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aa0d71365c42839bfdc24798f5e0fce60}{sqr}}\ (\ qreal\ v1\ )}
+\DoxyCodeLine{00181\ \ \ \ \ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v1\ *\ v1;}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a6d45ff69a3b4bd845295497e84f82e7c}{sign}}\ (\ qreal\ v\ )}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/v;}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a681511ea72e1f392b6babf6aa4e7ba8a}{add}}\ (\ qreal\ v1,\ qreal\ v2\ )}
+\DoxyCodeLine{00191\ \ \ \ \ \{}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v1\ +\ v2;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a0dd3a063c8a2a298572f0d59dbd48ca4}{land}}\ (\ qreal\ v1,\ qreal\ v2\ )}
+\DoxyCodeLine{00196\ \ \ \ \ \{}
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\ v1\ )\ \&\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(\ v2\ );}
+\DoxyCodeLine{00198\ \ \ \ \ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af017eefd543fa15808a4b379522d65fa}{FirstArg}}\ (\ \textcolor{keyword}{const}\ qreal*\ a\_afArg,\ \textcolor{keywordtype}{int}\ a\_iArgc\ )}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ a\_iArgc\ ==\ 0)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{stringliteral}{"{}too\ few\ arguments\ for\ function\ FirstArg."{}}\ );}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_afArg[0];}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ac9bcd8ce861befd7e90702a6cd3c312b}{LastArg}}\ (\ \textcolor{keyword}{const}\ qreal*\ a\_afArg,\ \textcolor{keywordtype}{int}\ a\_iArgc\ )}
+\DoxyCodeLine{00211\ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ a\_iArgc\ ==\ 0)}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{stringliteral}{"{}too\ few\ arguments\ for\ function\ LastArg."{}}\ );}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_afArg[a\_iArgc\ -\/\ 1];}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a7382b0230e8bf97cdab501bc75b4ea55}{Sum}}\ (\ \textcolor{keyword}{const}\ qreal*\ a\_afArg,\ \textcolor{keywordtype}{int}\ a\_iArgc\ )}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ a\_iArgc\ ==\ 0)}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \textcolor{stringliteral}{"{}too\ few\ arguments\ for\ function\ sum."{}}\ );}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ qreal\ fRes\ =\ 0;}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\ \textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ a\_iArgc;\ ++i\ )}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ fRes\ +=\ a\_afArg[i];}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ fRes;}
+\DoxyCodeLine{00233\ \ \ \ \ \}}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aabfe7b0282c923a2b16bf51bfb222a02}{Rnd}}\ (\ qreal\ v\ )}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ (\ 1\ +\ (\ v\ *\ QRandomGenerator::global()-\/>generate()\ /\ (\ RAND\_MAX\ +\ 1.0\ )\ )\ )\ );}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a94cb4af612bd44e97c1b78a6c9735105}{RndWithString}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\_type}}*\ )}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ (\ 1\ +\ (\ 1000.0f\ *\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(QRandomGenerator::global()-\/>generate())\ /\ (\ RAND\_MAX\ +\ 1.0\ )\ )\ )\ );}
+\DoxyCodeLine{00243\ \ \ \ \ \}}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a91c77f1ef32ef139d3268d60af457fee}{Ping}}()}
+\DoxyCodeLine{00246\ \ \ \ \ \{}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 10;}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a06668b14f9b56ce00e0758c084498496}{ValueOf}}\ (\ \textcolor{keyword}{const}\ QString\ \&\ )}
+\DoxyCodeLine{00251\ \ \ \ \ \{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 123;}
+\DoxyCodeLine{00253\ \ \ \ \ \}}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a812de8b7d5d366bffe86d569fbfbbe8b}{StrFun1}}\ (\ \textcolor{keyword}{const}\ QString\ \&\ v1\ )}
+\DoxyCodeLine{00256\ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ v1.toInt();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(val);}
+\DoxyCodeLine{00259\ \ \ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af325559f230ee55395cba5daccb3be1b}{StrFun2}}\ (\ \textcolor{keyword}{const}\ QString\ \&\ v1,\ qreal\ v2\ )}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ v1.toInt();}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ val\ +\ v2\ );}
+\DoxyCodeLine{00265\ \ \ \ \ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a68573d4c9aa92a80e53fd23b679065ac}{StrFun3}}\ (\ \textcolor{keyword}{const}\ QString\ \&\ v1,\ qreal\ v2,\ qreal\ v3\ )}
+\DoxyCodeLine{00268\ \ \ \ \ \{}
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ val\ =\ v1.toInt();}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val\ +\ v2\ +\ v3;}
+\DoxyCodeLine{00271\ \ \ \ \ \}}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2f7eafa28bffe0ae107c1004a81c3aba}{StrToFloat}}\ (\ \textcolor{keyword}{const}\ QString\ \&\ a\_szMsg\ )}
+\DoxyCodeLine{00274\ \ \ \ \ \{}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ qreal\ val\ =\ a\_szMsg.toDouble();}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ val;}
+\DoxyCodeLine{00277\ \ \ \ \ \}}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{comment}{//\ postfix\ operator\ callback}}
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a4e8f321e41dbcb41ce9d3d13441794c8}{Mega}}\ (\ qreal\ a\_fVal\ )}
+\DoxyCodeLine{00281\ \ \ \ \ \{}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_fVal\ *\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ 1e6\ );}
+\DoxyCodeLine{00283\ \ \ \ \ \}}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_afb4d60446ec6276a50ea9d33143d7ab1}{Micro}}\ (\ qreal\ a\_fVal\ )}
+\DoxyCodeLine{00286\ \ \ \ \ \{}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_fVal\ *\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ 1e-\/6\ );}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aeab27f45a0be5446e04f32c8ba5ebe08}{Milli}}\ (\ qreal\ a\_fVal\ )}
+\DoxyCodeLine{00291\ \ \ \ \ \{}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ a\_fVal\ /\ \textcolor{keyword}{static\_cast<}qreal\textcolor{keyword}{>}(\ 1e3\ );}
+\DoxyCodeLine{00293\ \ \ \ \ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \textcolor{comment}{//\ Custom\ value\ recognition}}
+\DoxyCodeLine{00296\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_af0427aa8b231156ceb4b8b200aead22d}{IsHexVal}}\ (\textcolor{keyword}{const}\ QString\ \&a\_szExpr,\ \textcolor{keywordtype}{int}\ *a\_iPos,\ qreal\ *a\_fVal,\ \textcolor{keyword}{const}\ QLocale\ \&locale,}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QChar\ \&decimal,\ \textcolor{keyword}{const}\ QChar\ \&thousand);}
+\DoxyCodeLine{00298\ }
+\DoxyCodeLine{00299\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00300\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a586bf81c93754a87c4e71ff216f580c4}{TestNames}}();}
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ab4d204b09457399209caa6c15441790d}{TestSyntax}}();}
+\DoxyCodeLine{00303\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00304\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8826882010cfc992c5817a837352b137}{TestMultiArg}}();}
+\DoxyCodeLine{00305\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_aeb31487ad59492c18ee9534829d6d593}{TestPostFix}}();}
+\DoxyCodeLine{00307\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00308\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a2294da295e276cf6019ef32932fd4ec4}{TestExpression}}();}
+\DoxyCodeLine{00309\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00310\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_add3ca6b4bbace2da051197f85a29f36e}{TestInfixOprt}}();}
+\DoxyCodeLine{00311\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00312\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad40dc7a9f29c3e907fc1077db323d89e}{TestBinOprt}}();}
+\DoxyCodeLine{00313\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00314\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a07217a64a66deca328f5e432b86a4005}{TestVarConst}}();}
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00316\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a8119141b46925c1896d26552dbf3a00d}{TestInterface}}();}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_ad211d0f2086f1b2c122a642c14da0cbe}{TestException}}();}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00320\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_add3eaf3f7698ec1e0264e09f28020fc0}{TestStrArg}}();}
+\DoxyCodeLine{00321\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00322\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a57038e663d4132f97a3c3c524211fd5c}{TestIfThenElse}}();}
+\DoxyCodeLine{00323\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00324\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a025b40c5ae2f9ae2ec90dca999e6c0f0}{TestBulkMode}}();}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_test_1_1_qmu_parser_tester_a3e7b3b78edf70f276bb1b1a7d67aa7d6}{Abort}}();}
+\DoxyCodeLine{00327\ \};}
+\DoxyCodeLine{00328\ \}\ \textcolor{comment}{//\ namespace\ Test}}
+\DoxyCodeLine{00329\ \}\ \textcolor{comment}{//\ namespace\ qmu}}
+\DoxyCodeLine{00330\ }
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

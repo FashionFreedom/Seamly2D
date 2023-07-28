@@ -1,0 +1,453 @@
+\hypertarget{class_v_point_f}{}\doxysection{VPointF Class Reference}
+\label{class_v_point_f}\index{VPointF@{VPointF}}
+
+
+The \mbox{\hyperlink{class_v_point_f}{VPointF}} class keep data of point.  
+
+
+
+
+{\ttfamily \#include $<$vpointf.\+h$>$}
+
+Inheritance diagram for VPointF\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_point_f}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_point_f_a3011162c3504a0764224bfc3159262c7}{VPointF}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_point_f}{VPointF}} creat empty point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_point_f_ac4aee0e2c249996c1b344687bd343e48}{VPointF}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\item 
+\mbox{\hyperlink{class_v_point_f_a5d9de8faf7dfa3b2d1bc85cf4ae1b5e6}{VPointF}} (const QPointF \&point)
+\item 
+\mbox{\hyperlink{class_v_point_f_a8c2bba0832e74582e35f55904bfc845f}{VPointF}} (qreal \mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}}, qreal \mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}}, const QString \&\mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}}, qreal \mbox{\hyperlink{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}{mx}}, qreal \mbox{\hyperlink{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}{my}}, quint32 id\+Object=0, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_point_f}{VPointF}} create new point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_point_f_a0211ced0e8d70775bee674f709d23fa3}{VPointF}} (const QPointF \&point, const QString \&\mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}}, qreal \mbox{\hyperlink{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}{mx}}, qreal \mbox{\hyperlink{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}{my}}, quint32 id\+Object=0, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_point_f}{VPointF}} create new point. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_point_f_a2753b62241a9de69b6a9130de99e7b5a}{$\sim$\+VPointF}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{class_v_point_f}{VPointF}} \& \mbox{\hyperlink{class_v_point_f_a4a26d0faba5986d99cc4998807abc893}{operator=}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\begin{DoxyCompactList}\small\item\em operator = assignment operator \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_point_f_a6e0e3817f9c9356a8a90dc6e2b7c0994}{Swap}} (\mbox{\hyperlink{class_v_point_f}{VPointF}} \&point) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+\mbox{\hyperlink{class_v_point_f_a620ca071d212597bba42f9fb4ee0b31f}{operator QPointF}} () const
+\item 
+\mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_point_f_a88edd1678d8a96491aa85dc23f1544ce}{Rotate}} (const QPointF \&origin\+Point, qreal degrees, const QString \&prefix=QString()) const
+\item 
+\mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_point_f_abc43653b42695e82d69fa37bf9630c74}{Flip}} (const QLineF \&axis, const QString \&prefix=QString()) const
+\item 
+\mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_point_f_adf84b2a73939bc1f11e3b1532cb19eb7}{Move}} (qreal length, qreal angle, const QString \&prefix=QString()) const
+\item 
+qreal \mbox{\hyperlink{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}{mx}} () const
+\begin{DoxyCompactList}\small\item\em mx return offset name respect to x \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}{my}} () const
+\begin{DoxyCompactList}\small\item\em my return offset name respect to y \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_point_f_a08baec5c736cf2da28890aa3cb385601}{set\+Mx}} (qreal \mbox{\hyperlink{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}{mx}})
+\begin{DoxyCompactList}\small\item\em set\+Mx set offset name respect to x \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_point_f_a3d440ff538f290fe5f5bc82555693559}{set\+My}} (qreal \mbox{\hyperlink{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}{my}})
+\begin{DoxyCompactList}\small\item\em set\+My set offset name respect to y \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_v_point_f_ac40b6b39ec65f96390adb8f296d69cf5}{to\+QPointF}} () const
+\item 
+qreal \mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}} () const
+\begin{DoxyCompactList}\small\item\em x return x coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_point_f_a25f6b2a358d25882b6dd6e21579f8a75}{setX}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em setX set x coordinate \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}} () const
+\begin{DoxyCompactList}\small\item\em y return y coordinate \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_point_f_a4a8417b22002fb4ee1ad050e5b74fe45}{setY}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em setY set y coordinate \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_point_f_a78054c4436534a0638070c47e9ed9569}{is\+Show\+Point\+Name}} () const
+\item 
+void \mbox{\hyperlink{class_v_point_f_aa2124a8469c6a99052c267a1501f9912}{set\+Show\+Point\+Name}} (bool show)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_g_object_a290ccb753f6a061bbb263d6c2879dfdf}{VGObject}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_g_object_af54a936c1fcd8431e88ed25e9a473027}{VGObject}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=0, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_g_object_a5b3e92a581ef188fa7dd2977f3c5c3e8}{VGObject}} (const \mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_g_object_a86f1f3ecec079f581b615ef4c5ab2498}{$\sim$\+VGObject}} ()
+\item 
+\mbox{\hyperlink{class_v_g_object}{VGObject}} \& \mbox{\hyperlink{class_v_g_object_a3ffc95524099af4edd57b017863fed61}{operator=}} (const \mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em operator = assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_ab487dac4a019d27636e498278363f03b}{Swap}} (\mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+quint32 \mbox{\hyperlink{class_v_g_object_ab615b0fb0db689f92cd9c562329cc52b}{get\+Id\+Object}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id\+Object return parent id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a1a0486d2fe696c580a1c4d31c7097eb0}{set\+Id\+Object}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Id\+Object set parent id. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}} () const
+\begin{DoxyCompactList}\small\item\em name return name graphical object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_ac52a0bdf810d43fb282f65a58933ea75}{set\+Name}} (const QString \&\mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}})
+\begin{DoxyCompactList}\small\item\em set\+Name set name graphical object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{class_v_g_object_adb3c731522d5eb353f32ded63c2f3d0a}{get\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em get\+Mode return mode creation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a1246f01103985c75f71698e60ddcccfa}{set\+Mode}} (const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Mode set mode creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_g_object_a0af4987353bc1def71cfbd2087824764}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type return object type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a163fca66a2e581abc8a6511156bc766e}{set\+Type}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type)
+\item 
+quint32 \mbox{\hyperlink{class_v_g_object_adc4efb22ae87dbb029f586f0bc2a074c}{id}} () const
+\begin{DoxyCompactList}\small\item\em id return id object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_g_object_ae7856ac9f6974ee8e0c517f6887bd15b}{set\+Id}} (const quint32 \&\mbox{\hyperlink{class_v_g_object_adc4efb22ae87dbb029f586f0bc2a074c}{id}})
+\begin{DoxyCompactList}\small\item\em set\+Id set id object. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_g_object_af594a1eb7fb163a99194f5d5b02ffcf7}{get\+Id\+Tool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QPointF \mbox{\hyperlink{class_v_point_f_a644cebf76d83c3ce5eafb9fd31218bf1}{Rotate\+PF}} (const QPointF \&origin\+Point, const QPointF \&point, qreal degrees)
+\item 
+static QPointF \mbox{\hyperlink{class_v_point_f_ae1761dc9edc264ed9bd6b024cce33f11}{Flip\+PF}} (const QLineF \&axis, const QPointF \&point)
+\item 
+static QPointF \mbox{\hyperlink{class_v_point_f_a739fde1446a3f17655f6efb4192c7675}{Move\+PF}} (const QPointF \&origin\+Point, qreal length, qreal angle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_aab2d01aac093c13430d5119abbd52764}{Build\+Line}} (const QPointF \&p1, const qreal \&length, const qreal \&angle)
+\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_a7e896d2c79a25c2e50df967c6a8b597b}{Build\+Ray}} (const QPointF \&first\+Point, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_a1e04049160703519875f9647f238eb9c}{Build\+Axis}} (const QPointF \&p, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_a1ef91cb41647e4bd5a93da616ed5e645}{Build\+Axis}} (const QPointF \&p1, const QPointF \&p2, const QRectF \&sc\+Rect)
+\item 
+static int \mbox{\hyperlink{class_v_g_object_af4b00190bf3d6d98addbe0c998cd3959}{Contact\+Points}} (const QPointF \&p, const QPointF \&center, qreal radius, QPointF \&p1, QPointF \&p2)
+\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_ac313f36a13cd183209097a0a780baceb}{Line\+Intersect\+Rect}} (const QRectF \&rec, const QLineF \&line)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Rect find point intersection line and rect. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_v_g_object_a503181efc48d49b416daca9480c15793}{Intersection\+Circles}} (const QPointF \&c1, double r1, const QPointF \&c2, double r2, QPointF \&p1, QPointF \&p2)
+\item 
+static qint32 \mbox{\hyperlink{class_v_g_object_a26474388e3837e3984bf52543aede141}{Line\+Intersect\+Circle}} (const QPointF \&center, qreal radius, const QLineF \&line, QPointF \&p1, QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Circle find point intersection line and circle. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_a2c4ba515566c606663ce28ca67e01933}{Closest\+Point}} (const QLineF \&line, const QPointF \&point)
+\begin{DoxyCompactList}\small\item\em Closest\+Point find point projection of point onto line. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_ae9510ae75f41b950483054e74ece64fc}{add\+Vector}} (const QPointF \&p, const QPointF \&p1, const QPointF \&p2, qreal k)
+\item 
+static void \mbox{\hyperlink{class_v_g_object_a502259e60c007a3ad11a738151aa1c0b}{Line\+Coefficients}} (const QLineF \&line, qreal $\ast$a, qreal $\ast$b, qreal $\ast$c)
+\begin{DoxyCompactList}\small\item\em Line\+Coefficients coefficient for equation of segment. Segment equestion ax+by+c=0. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_g_object_a040e4a0f193e1330e9caa4dd8dcc1201}{Is\+Point\+On\+Line\+Segment}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Line\+Segment Check if the point is on the line segment. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_g_object_a6c36e7396fa9c367730c07453280a413}{Is\+Point\+On\+Linevia\+PDP}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Linevia\+PDP use the perp dot product (PDP) way. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \mbox{\hyperlink{class_v_g_object_a61329d34b5ecd0118974ba1f38803b47}{Get\+Reverse\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Get\+Reverse\+Point return revers container of points. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_v_g_object_aea5059e80866ae47eaa7f31acb72c486}{Get\+Length\+Contour}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&contour, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&new\+Points)
+\begin{DoxyCompactList}\small\item\em Get\+Length\+Contour return length of contour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_point_f_data}{VPoint\+FData}} $>$ \mbox{\hyperlink{class_v_point_f_a76212d1adabb53fcee6a49192f5ec19f}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_v_g_object_af893a07c68c71231b5eaeceda31ad368}{accuracy\+Point\+On\+Line}} = (0.\+1555 / 25.\+4) $\ast$ 96.\+0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static QTransform \mbox{\hyperlink{class_v_g_object_a4a0e1a72e7f0a197c5e4e24336350e4f}{flip\+Transform}} (const QLineF \&axis)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_point_f}{VPointF}} class keep data of point. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_point_f_a3011162c3504a0764224bfc3159262c7}\label{class_v_point_f_a3011162c3504a0764224bfc3159262c7}} 
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{VPointF()}{VPointF()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily VPoint\+F\+::\+VPointF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_point_f}{VPointF}} creat empty point. 
+
+\mbox{\Hypertarget{class_v_point_f_ac4aee0e2c249996c1b344687bd343e48}\label{class_v_point_f_ac4aee0e2c249996c1b344687bd343e48}} 
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{VPointF()}{VPointF()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily VPoint\+F\+::\+VPointF (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_point_f_a5d9de8faf7dfa3b2d1bc85cf4ae1b5e6}\label{class_v_point_f_a5d9de8faf7dfa3b2d1bc85cf4ae1b5e6}} 
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{VPointF()}{VPointF()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily VPoint\+F\+::\+VPointF (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_point_f_a8c2bba0832e74582e35f55904bfc845f}\label{class_v_point_f_a8c2bba0832e74582e35f55904bfc845f}} 
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{VPointF()}{VPointF()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily VPoint\+F\+::\+VPointF (\begin{DoxyParamCaption}\item[{qreal}]{x,  }\item[{qreal}]{y,  }\item[{const QString \&}]{name,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{quint32}]{id\+Object = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&}]{mode = {\ttfamily Draw\+:\+:Calculation} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_point_f}{VPointF}} create new point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x coordinate \\
+\hline
+{\em y} & y coordinate \\
+\hline
+{\em name} & point label \\
+\hline
+{\em mx} & offset name respect to x \\
+\hline
+{\em my} & offset name respect to y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_a0211ced0e8d70775bee674f709d23fa3}\label{class_v_point_f_a0211ced0e8d70775bee674f709d23fa3}} 
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\index{VPointF@{VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{VPointF()}{VPointF()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily VPoint\+F\+::\+VPointF (\begin{DoxyParamCaption}\item[{const QPointF \&}]{point,  }\item[{const QString \&}]{name,  }\item[{qreal}]{mx,  }\item[{qreal}]{my,  }\item[{quint32}]{id\+Object = {\ttfamily 0},  }\item[{const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&}]{mode = {\ttfamily Draw\+:\+:Calculation} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_point_f}{VPointF}} create new point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & point \\
+\hline
+{\em name} & point label \\
+\hline
+{\em mx} & offset name respect to x \\
+\hline
+{\em my} & offset name respect to y \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_a2753b62241a9de69b6a9130de99e7b5a}\label{class_v_point_f_a2753b62241a9de69b6a9130de99e7b5a}} 
+\index{VPointF@{VPointF}!````~VPointF@{$\sim$VPointF}}
+\index{````~VPointF@{$\sim$VPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPointF()}{~VPointF()}}
+{\footnotesize\ttfamily VPoint\+F\+::$\sim$\+VPointF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_point_f_abc43653b42695e82d69fa37bf9630c74}\label{class_v_point_f_abc43653b42695e82d69fa37bf9630c74}} 
+\index{VPointF@{VPointF}!Flip@{Flip}}
+\index{Flip@{Flip}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{Flip()}{Flip()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VPoint\+F\+::\+Flip (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_point_f_ae1761dc9edc264ed9bd6b024cce33f11}\label{class_v_point_f_ae1761dc9edc264ed9bd6b024cce33f11}} 
+\index{VPointF@{VPointF}!FlipPF@{FlipPF}}
+\index{FlipPF@{FlipPF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{FlipPF()}{FlipPF()}}
+{\footnotesize\ttfamily QPointF VPoint\+F\+::\+Flip\+PF (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis,  }\item[{const QPointF \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_point_f_a78054c4436534a0638070c47e9ed9569}\label{class_v_point_f_a78054c4436534a0638070c47e9ed9569}} 
+\index{VPointF@{VPointF}!isShowPointName@{isShowPointName}}
+\index{isShowPointName@{isShowPointName}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{isShowPointName()}{isShowPointName()}}
+{\footnotesize\ttfamily bool VPoint\+F\+::is\+Show\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_point_f_adf84b2a73939bc1f11e3b1532cb19eb7}\label{class_v_point_f_adf84b2a73939bc1f11e3b1532cb19eb7}} 
+\index{VPointF@{VPointF}!Move@{Move}}
+\index{Move@{Move}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VPoint\+F\+::\+Move (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_point_f_a739fde1446a3f17655f6efb4192c7675}\label{class_v_point_f_a739fde1446a3f17655f6efb4192c7675}} 
+\index{VPointF@{VPointF}!MovePF@{MovePF}}
+\index{MovePF@{MovePF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{MovePF()}{MovePF()}}
+{\footnotesize\ttfamily QPointF VPoint\+F\+::\+Move\+PF (\begin{DoxyParamCaption}\item[{const QPointF \&}]{origin\+Point,  }\item[{qreal}]{length,  }\item[{qreal}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}\label{class_v_point_f_a668b3ec84dc3bd4a2e09b423446e8586}} 
+\index{VPointF@{VPointF}!mx@{mx}}
+\index{mx@{mx}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{mx()}{mx()}}
+{\footnotesize\ttfamily qreal VPoint\+F\+::mx (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+mx return offset name respect to x 
+
+\begin{DoxyReturn}{Returns}
+offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}\label{class_v_point_f_ade607c2f7c70e05130b635c134bd71dd}} 
+\index{VPointF@{VPointF}!my@{my}}
+\index{my@{my}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{my()}{my()}}
+{\footnotesize\ttfamily qreal VPoint\+F\+::my (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+my return offset name respect to y 
+
+\begin{DoxyReturn}{Returns}
+offset 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_point_f_a620ca071d212597bba42f9fb4ee0b31f}\label{class_v_point_f_a620ca071d212597bba42f9fb4ee0b31f}} 
+\index{VPointF@{VPointF}!operator QPointF@{operator QPointF}}
+\index{operator QPointF@{operator QPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{operator QPointF()}{operator QPointF()}}
+{\footnotesize\ttfamily VPoint\+F\+::operator QPointF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_point_f_a4a26d0faba5986d99cc4998807abc893}\label{class_v_point_f_a4a26d0faba5986d99cc4998807abc893}} 
+\index{VPointF@{VPointF}!operator=@{operator=}}
+\index{operator=@{operator=}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} \& VPoint\+F\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+operator = assignment operator 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_point_f_a88edd1678d8a96491aa85dc23f1544ce}\label{class_v_point_f_a88edd1678d8a96491aa85dc23f1544ce}} 
+\index{VPointF@{VPointF}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VPoint\+F\+::\+Rotate (\begin{DoxyParamCaption}\item[{const QPointF \&}]{origin\+Point,  }\item[{qreal}]{degrees,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_point_f_a644cebf76d83c3ce5eafb9fd31218bf1}\label{class_v_point_f_a644cebf76d83c3ce5eafb9fd31218bf1}} 
+\index{VPointF@{VPointF}!RotatePF@{RotatePF}}
+\index{RotatePF@{RotatePF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{RotatePF()}{RotatePF()}}
+{\footnotesize\ttfamily QPointF VPoint\+F\+::\+Rotate\+PF (\begin{DoxyParamCaption}\item[{const QPointF \&}]{origin\+Point,  }\item[{const QPointF \&}]{point,  }\item[{qreal}]{degrees }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_point_f_a08baec5c736cf2da28890aa3cb385601}\label{class_v_point_f_a08baec5c736cf2da28890aa3cb385601}} 
+\index{VPointF@{VPointF}!setMx@{setMx}}
+\index{setMx@{setMx}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{setMx()}{setMx()}}
+{\footnotesize\ttfamily void VPoint\+F\+::set\+Mx (\begin{DoxyParamCaption}\item[{qreal}]{mx }\end{DoxyParamCaption})}
+
+
+
+set\+Mx set offset name respect to x 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & offset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_a3d440ff538f290fe5f5bc82555693559}\label{class_v_point_f_a3d440ff538f290fe5f5bc82555693559}} 
+\index{VPointF@{VPointF}!setMy@{setMy}}
+\index{setMy@{setMy}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{setMy()}{setMy()}}
+{\footnotesize\ttfamily void VPoint\+F\+::set\+My (\begin{DoxyParamCaption}\item[{qreal}]{my }\end{DoxyParamCaption})}
+
+
+
+set\+My set offset name respect to y 
+
+
+\begin{DoxyParams}{Parameters}
+{\em my} & offset \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_aa2124a8469c6a99052c267a1501f9912}\label{class_v_point_f_aa2124a8469c6a99052c267a1501f9912}} 
+\index{VPointF@{VPointF}!setShowPointName@{setShowPointName}}
+\index{setShowPointName@{setShowPointName}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{setShowPointName()}{setShowPointName()}}
+{\footnotesize\ttfamily void VPoint\+F\+::set\+Show\+Point\+Name (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_point_f_a25f6b2a358d25882b6dd6e21579f8a75}\label{class_v_point_f_a25f6b2a358d25882b6dd6e21579f8a75}} 
+\index{VPointF@{VPointF}!setX@{setX}}
+\index{setX@{setX}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void VPoint\+F\+::setX (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+setX set x coordinate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & x coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_a4a8417b22002fb4ee1ad050e5b74fe45}\label{class_v_point_f_a4a8417b22002fb4ee1ad050e5b74fe45}} 
+\index{VPointF@{VPointF}!setY@{setY}}
+\index{setY@{setY}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void VPoint\+F\+::setY (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+setY set y coordinate 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & y coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_point_f_a6e0e3817f9c9356a8a90dc6e2b7c0994}\label{class_v_point_f_a6e0e3817f9c9356a8a90dc6e2b7c0994}} 
+\index{VPointF@{VPointF}!Swap@{Swap}}
+\index{Swap@{Swap}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VPoint\+F\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_point_f_ac40b6b39ec65f96390adb8f296d69cf5}\label{class_v_point_f_ac40b6b39ec65f96390adb8f296d69cf5}} 
+\index{VPointF@{VPointF}!toQPointF@{toQPointF}}
+\index{toQPointF@{toQPointF}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{toQPointF()}{toQPointF()}}
+{\footnotesize\ttfamily QPointF VPoint\+F\+::to\+QPointF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}\label{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}} 
+\index{VPointF@{VPointF}!x@{x}}
+\index{x@{x}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily qreal VPoint\+F\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+x return x coordinate 
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}\label{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}} 
+\index{VPointF@{VPointF}!y@{y}}
+\index{y@{y}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily qreal VPoint\+F\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+y return y coordinate 
+
+\begin{DoxyReturn}{Returns}
+value 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_point_f_a76212d1adabb53fcee6a49192f5ec19f}\label{class_v_point_f_a76212d1adabb53fcee6a49192f5ec19f}} 
+\index{VPointF@{VPointF}!d@{d}}
+\index{d@{d}!VPointF@{VPointF}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_point_f_data}{VPoint\+FData}}$>$ VPoint\+F\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vpointf_8h}{vpointf.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vpointf_8cpp}{vpointf.\+cpp}}\end{DoxyCompactItemize}

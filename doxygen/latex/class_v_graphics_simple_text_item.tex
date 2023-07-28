@@ -1,0 +1,452 @@
+\hypertarget{class_v_graphics_simple_text_item}{}\doxysection{VGraphics\+Simple\+Text\+Item Class Reference}
+\label{class_v_graphics_simple_text_item}\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+
+
+The \mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} class pointer label.  
+
+
+
+
+{\ttfamily \#include $<$vgraphicssimpletextitem.\+h$>$}
+
+Inheritance diagram for VGraphics\+Simple\+Text\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_graphics_simple_text_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_graphics_simple_text_item_a176facf543a4521a3dba8ea85cd4875aa13cb506cd5217d0aa14147a699c9a3e1}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Graphics\+Simple\+Text\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_ab12a7c465cf23abbf545581d39151092}{name\+Changed\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em name\+Changed\+Position emit when label change position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a818d41734ecedd94699eb59ba6065d47}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event)
+\begin{DoxyCompactList}\small\item\em show\+Context\+Menu emit when need show tool context menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a8d45a44fdb4727cdcc56f698db0071d0}{delete\+Tool}} ()
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a0fa4fda06d820e8ce3d00ce761baf366}{point\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_abe332dfa2a23a078e5ed4ec110bd370e}{point\+Selected}} (bool selected)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item_aaaeb9ea97c7ccab6d2915e8628cf43d0}{VGraphics\+Simple\+Text\+Item}} (QColor color, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item_a54c16aba2a52097be3ff02aeda596103}{VGraphics\+Simple\+Text\+Item}} (const QString \&text, QColor text\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_graphics_simple_text_item_ab0247a47ee2b8db76906354037a30f8d}{$\sim$\+VGraphics\+Simple\+Text\+Item}} ()=default
+\item 
+qint32 \mbox{\hyperlink{class_v_graphics_simple_text_item_a842cfe03c7f18641f4a000e805114d7d}{Base\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Font\+Size return label font size. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_v_graphics_simple_text_item_a150056333a93b60d75ca1ff15a879273}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a91e89d69ab5cf100130aee65c96b6d11}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a551dec0c77beb3222f110238e8231836}{set\+Enabled}} (bool enabled)
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a76477109ef92ecf17f6bcd577b6e91be}{text\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{class_v_graphics_simple_text_item_a150056333a93b60d75ca1ff15a879273}{type}})
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_aa91c89eaa73b4b0cef83d085d7025c04}{set\+Show\+Parent\+Tooltip}} (bool show)
+\item 
+QColor \mbox{\hyperlink{class_v_graphics_simple_text_item_a41137f1cfdb49a0d43ec572a74c53c29}{get\+Text\+Brush\+Color}} ()
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a0e56802aca143132a523f42a2ad62eed}{set\+Text\+Color}} (const QColor \&color)
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a652ecd000f6c4de5cef9d216194eed93}{set\+Position}} (QPointF pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual QVariant \mbox{\hyperlink{class_v_graphics_simple_text_item_a13b74266db0b6109feee7ee1eeae06ba}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em item\+Change handle item change. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a31be745080f4f9c6179f3b7bd63f604f}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em hover\+Enter\+Event handle hover enter events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a5172f4cc7ae06cc0b91d7c89329eef64}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em hover\+Leave\+Event handle hover leave events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_ac7885577f2af536dfd027990c7924f4f}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em context\+Menu\+Event handle context menu events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a8098c3409fad5479b96fba9aba391f9b}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a032e5f5e075cf8d4818f5fdc53419119}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_graphics_simple_text_item_a9d562e6d1efbe9c81149eafaa3372401}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a3323d9db24ae820ecd0093405f07f547}{init\+Item}} ()
+\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a17d55d8b26b9ddc05564aef7275af759}{scale\+Point\+Name}} (const qreal \&scale)
+\begin{DoxyCompactList}\small\item\em scale\+Point\+Name handle point name scaling to maintain same size when scene scale changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_adf57487aac7de02641bfb69bc71e320c}{scale\+Position}} ()
+\begin{DoxyCompactList}\small\item\em scale\+Position handle point name position scaling to maintain same distance when scene scale changes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_graphics_simple_text_item_a5ef63c23f5442b64faa95cb92c69fd35}{update\+Leader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+qint32 \mbox{\hyperlink{class_v_graphics_simple_text_item_a5175a4abaaa6fba3cc09e16a440eac67}{m\+\_\+font\+Size}}
+\begin{DoxyCompactList}\small\item\em font\+Size label font size. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_graphics_simple_text_item_ad55adfba7b76a6d7d08188dea768f6a1}{m\+\_\+scale}}
+\item 
+QColor \mbox{\hyperlink{class_v_graphics_simple_text_item_a2004a2e4fe74143526cf232f53620680}{m\+\_\+text\+Color}}
+\item 
+bool \mbox{\hyperlink{class_v_graphics_simple_text_item_aee2a9b01fc9341baf7969ff6da2dacfb}{m\+\_\+is\+Name\+Hovered}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_graphics_simple_text_item_a8fe5b5336d9c84d3696c358286073506}{selection\+Type}}
+\item 
+bool \mbox{\hyperlink{class_v_graphics_simple_text_item_a1c44256f6049b1fec650646c6969755f}{m\+\_\+show\+Parent\+Tooltip}}
+\item 
+QPointF \mbox{\hyperlink{class_v_graphics_simple_text_item_a6ce87883b877f45159565ee87df5ea0c}{m\+\_\+point\+Name\+Pos}} \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} class pointer label. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a176facf543a4521a3dba8ea85cd4875a}\label{class_v_graphics_simple_text_item_a176facf543a4521a3dba8ea85cd4875a}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!Type@{Type}}}\mbox{\Hypertarget{class_v_graphics_simple_text_item_a176facf543a4521a3dba8ea85cd4875aa13cb506cd5217d0aa14147a699c9a3e1}\label{class_v_graphics_simple_text_item_a176facf543a4521a3dba8ea85cd4875aa13cb506cd5217d0aa14147a699c9a3e1}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_aaaeb9ea97c7ccab6d2915e8628cf43d0}\label{class_v_graphics_simple_text_item_aaaeb9ea97c7ccab6d2915e8628cf43d0}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{VGraphicsSimpleTextItem()}{VGraphicsSimpleTextItem()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VGraphics\+Simple\+Text\+Item\+::\+VGraphics\+Simple\+Text\+Item (\begin{DoxyParamCaption}\item[{QColor}]{text\+Color,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a54c16aba2a52097be3ff02aeda596103}\label{class_v_graphics_simple_text_item_a54c16aba2a52097be3ff02aeda596103}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{VGraphicsSimpleTextItem()}{VGraphicsSimpleTextItem()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VGraphics\+Simple\+Text\+Item\+::\+VGraphics\+Simple\+Text\+Item (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{QColor}]{text\+Color,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & text. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_ab0247a47ee2b8db76906354037a30f8d}\label{class_v_graphics_simple_text_item_ab0247a47ee2b8db76906354037a30f8d}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!````~VGraphicsSimpleTextItem@{$\sim$VGraphicsSimpleTextItem}}
+\index{````~VGraphicsSimpleTextItem@{$\sim$VGraphicsSimpleTextItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$VGraphicsSimpleTextItem()}{~VGraphicsSimpleTextItem()}}
+{\footnotesize\ttfamily virtual VGraphics\+Simple\+Text\+Item\+::$\sim$\+VGraphics\+Simple\+Text\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a842cfe03c7f18641f4a000e805114d7d}\label{class_v_graphics_simple_text_item_a842cfe03c7f18641f4a000e805114d7d}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!BaseFontSize@{BaseFontSize}}
+\index{BaseFontSize@{BaseFontSize}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{BaseFontSize()}{BaseFontSize()}}
+{\footnotesize\ttfamily qint32 VGraphics\+Simple\+Text\+Item\+::\+Base\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Font\+Size return label font size. 
+
+\begin{DoxyReturn}{Returns}
+font size. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_ac7885577f2af536dfd027990c7924f4f}\label{class_v_graphics_simple_text_item_ac7885577f2af536dfd027990c7924f4f}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+context\+Menu\+Event handle context menu events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a8d45a44fdb4727cdcc56f698db0071d0}\label{class_v_graphics_simple_text_item_a8d45a44fdb4727cdcc56f698db0071d0}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!deleteTool@{deleteTool}}
+\index{deleteTool@{deleteTool}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{deleteTool}{deleteTool}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::delete\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a41137f1cfdb49a0d43ec572a74c53c29}\label{class_v_graphics_simple_text_item_a41137f1cfdb49a0d43ec572a74c53c29}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!getTextBrushColor@{getTextBrushColor}}
+\index{getTextBrushColor@{getTextBrushColor}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{getTextBrushColor()}{getTextBrushColor()}}
+{\footnotesize\ttfamily QColor VGraphics\+Simple\+Text\+Item\+::get\+Text\+Brush\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a31be745080f4f9c6179f3b7bd63f604f}\label{class_v_graphics_simple_text_item_a31be745080f4f9c6179f3b7bd63f604f}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+hover\+Enter\+Event handle hover enter events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & hover enter event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a5172f4cc7ae06cc0b91d7c89329eef64}\label{class_v_graphics_simple_text_item_a5172f4cc7ae06cc0b91d7c89329eef64}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+hover\+Leave\+Event handle hover leave events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & hover leave event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a3323d9db24ae820ecd0093405f07f547}\label{class_v_graphics_simple_text_item_a3323d9db24ae820ecd0093405f07f547}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!initItem@{initItem}}
+\index{initItem@{initItem}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{initItem()}{initItem()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::init\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a13b74266db0b6109feee7ee1eeae06ba}\label{class_v_graphics_simple_text_item_a13b74266db0b6109feee7ee1eeae06ba}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VGraphics\+Simple\+Text\+Item\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+item\+Change handle item change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & change. \\
+\hline
+{\em value} & value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a9d562e6d1efbe9c81149eafaa3372401}\label{class_v_graphics_simple_text_item_a9d562e6d1efbe9c81149eafaa3372401}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a8098c3409fad5479b96fba9aba391f9b}\label{class_v_graphics_simple_text_item_a8098c3409fad5479b96fba9aba391f9b}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a032e5f5e075cf8d4818f5fdc53419119}\label{class_v_graphics_simple_text_item_a032e5f5e075cf8d4818f5fdc53419119}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_ab12a7c465cf23abbf545581d39151092}\label{class_v_graphics_simple_text_item_ab12a7c465cf23abbf545581d39151092}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!nameChangedPosition@{nameChangedPosition}}
+\index{nameChangedPosition@{nameChangedPosition}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{nameChangedPosition}{nameChangedPosition}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::name\+Changed\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+name\+Changed\+Position emit when label change position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & new posotion. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a91e89d69ab5cf100130aee65c96b6d11}\label{class_v_graphics_simple_text_item_a91e89d69ab5cf100130aee65c96b6d11}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!paint@{paint}}
+\index{paint@{paint}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a0fa4fda06d820e8ce3d00ce761baf366}\label{class_v_graphics_simple_text_item_a0fa4fda06d820e8ce3d00ce761baf366}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!pointChosen@{pointChosen}}
+\index{pointChosen@{pointChosen}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{pointChosen}{pointChosen}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::point\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_abe332dfa2a23a078e5ed4ec110bd370e}\label{class_v_graphics_simple_text_item_abe332dfa2a23a078e5ed4ec110bd370e}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!pointSelected@{pointSelected}}
+\index{pointSelected@{pointSelected}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{pointSelected}{pointSelected}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::point\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a17d55d8b26b9ddc05564aef7275af759}\label{class_v_graphics_simple_text_item_a17d55d8b26b9ddc05564aef7275af759}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!scalePointName@{scalePointName}}
+\index{scalePointName@{scalePointName}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{scalePointName()}{scalePointName()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::scale\+Point\+Name (\begin{DoxyParamCaption}\item[{const qreal \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scale\+Point\+Name handle point name scaling to maintain same size when scene scale changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & parent scene scale. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_adf57487aac7de02641bfb69bc71e320c}\label{class_v_graphics_simple_text_item_adf57487aac7de02641bfb69bc71e320c}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!scalePosition@{scalePosition}}
+\index{scalePosition@{scalePosition}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{scalePosition()}{scalePosition()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::scale\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+scale\+Position handle point name position scaling to maintain same distance when scene scale changes. 
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a551dec0c77beb3222f110238e8231836}\label{class_v_graphics_simple_text_item_a551dec0c77beb3222f110238e8231836}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!setEnabled@{setEnabled}}
+\index{setEnabled@{setEnabled}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{setEnabled()}{setEnabled()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a652ecd000f6c4de5cef9d216194eed93}\label{class_v_graphics_simple_text_item_a652ecd000f6c4de5cef9d216194eed93}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::set\+Position (\begin{DoxyParamCaption}\item[{QPointF}]{pos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_aa91c89eaa73b4b0cef83d085d7025c04}\label{class_v_graphics_simple_text_item_aa91c89eaa73b4b0cef83d085d7025c04}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!setShowParentTooltip@{setShowParentTooltip}}
+\index{setShowParentTooltip@{setShowParentTooltip}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{setShowParentTooltip()}{setShowParentTooltip()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::set\+Show\+Parent\+Tooltip (\begin{DoxyParamCaption}\item[{bool}]{show }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a0e56802aca143132a523f42a2ad62eed}\label{class_v_graphics_simple_text_item_a0e56802aca143132a523f42a2ad62eed}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!setTextColor@{setTextColor}}
+\index{setTextColor@{setTextColor}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{setTextColor()}{setTextColor()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::set\+Text\+Color (\begin{DoxyParamCaption}\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a818d41734ecedd94699eb59ba6065d47}\label{class_v_graphics_simple_text_item_a818d41734ecedd94699eb59ba6065d47}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+show\+Context\+Menu emit when need show tool context menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a76477109ef92ecf17f6bcd577b6e91be}\label{class_v_graphics_simple_text_item_a76477109ef92ecf17f6bcd577b6e91be}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!textSelectionType@{textSelectionType}}
+\index{textSelectionType@{textSelectionType}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{textSelectionType()}{textSelectionType()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::text\+Selection\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a150056333a93b60d75ca1ff15a879273}\label{class_v_graphics_simple_text_item_a150056333a93b60d75ca1ff15a879273}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!type@{type}}
+\index{type@{type}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VGraphics\+Simple\+Text\+Item\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a5ef63c23f5442b64faa95cb92c69fd35}\label{class_v_graphics_simple_text_item_a5ef63c23f5442b64faa95cb92c69fd35}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!updateLeader@{updateLeader}}
+\index{updateLeader@{updateLeader}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{updateLeader()}{updateLeader()}}
+{\footnotesize\ttfamily void VGraphics\+Simple\+Text\+Item\+::update\+Leader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a5175a4abaaa6fba3cc09e16a440eac67}\label{class_v_graphics_simple_text_item_a5175a4abaaa6fba3cc09e16a440eac67}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_fontSize@{m\_fontSize}}
+\index{m\_fontSize@{m\_fontSize}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_fontSize}{m\_fontSize}}
+{\footnotesize\ttfamily qint32 VGraphics\+Simple\+Text\+Item\+::m\+\_\+font\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+font\+Size label font size. 
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_aee2a9b01fc9341baf7969ff6da2dacfb}\label{class_v_graphics_simple_text_item_aee2a9b01fc9341baf7969ff6da2dacfb}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_isNameHovered@{m\_isNameHovered}}
+\index{m\_isNameHovered@{m\_isNameHovered}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_isNameHovered}{m\_isNameHovered}}
+{\footnotesize\ttfamily bool VGraphics\+Simple\+Text\+Item\+::m\+\_\+is\+Name\+Hovered\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a6ce87883b877f45159565ee87df5ea0c}\label{class_v_graphics_simple_text_item_a6ce87883b877f45159565ee87df5ea0c}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_pointNamePos@{m\_pointNamePos}}
+\index{m\_pointNamePos@{m\_pointNamePos}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_pointNamePos}{m\_pointNamePos}}
+{\footnotesize\ttfamily QPointF VGraphics\+Simple\+Text\+Item\+::m\+\_\+point\+Name\+Pos \{\}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_ad55adfba7b76a6d7d08188dea768f6a1}\label{class_v_graphics_simple_text_item_ad55adfba7b76a6d7d08188dea768f6a1}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_scale@{m\_scale}}
+\index{m\_scale@{m\_scale}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_scale}{m\_scale}}
+{\footnotesize\ttfamily qreal VGraphics\+Simple\+Text\+Item\+::m\+\_\+scale\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a1c44256f6049b1fec650646c6969755f}\label{class_v_graphics_simple_text_item_a1c44256f6049b1fec650646c6969755f}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_showParentTooltip@{m\_showParentTooltip}}
+\index{m\_showParentTooltip@{m\_showParentTooltip}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_showParentTooltip}{m\_showParentTooltip}}
+{\footnotesize\ttfamily bool VGraphics\+Simple\+Text\+Item\+::m\+\_\+show\+Parent\+Tooltip\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a2004a2e4fe74143526cf232f53620680}\label{class_v_graphics_simple_text_item_a2004a2e4fe74143526cf232f53620680}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!m\_textColor@{m\_textColor}}
+\index{m\_textColor@{m\_textColor}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{m\_textColor}{m\_textColor}}
+{\footnotesize\ttfamily QColor VGraphics\+Simple\+Text\+Item\+::m\+\_\+text\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_graphics_simple_text_item_a8fe5b5336d9c84d3696c358286073506}\label{class_v_graphics_simple_text_item_a8fe5b5336d9c84d3696c358286073506}} 
+\index{VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}!selectionType@{selectionType}}
+\index{selectionType@{selectionType}!VGraphicsSimpleTextItem@{VGraphicsSimpleTextItem}}
+\doxysubsubsection{\texorpdfstring{selectionType}{selectionType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} VGraphics\+Simple\+Text\+Item\+::selection\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vgraphicssimpletextitem_8h}{vgraphicssimpletextitem.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vgraphicssimpletextitem_8cpp}{vgraphicssimpletextitem.\+cpp}}\end{DoxyCompactItemize}

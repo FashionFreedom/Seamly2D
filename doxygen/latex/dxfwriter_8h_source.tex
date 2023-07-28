@@ -1,0 +1,77 @@
+\hypertarget{dxfwriter_8h_source}{}\doxysection{dxfwriter.\+h}
+\label{dxfwriter_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/dxfwriter.h@{D:/Github/Seamly2D/src/libs/vdxf/libdxfrw/intern/dxfwriter.h}}
+\mbox{\hyperlink{dxfwriter_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ \ libDXFrw\ -\/\ Library\ to\ read/write\ DXF\ files\ (ascii\ \&\ binary)\ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2011-\/2015\ José\ F.\ Soriano,\ rallazz@gmail.com\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ This\ library\ is\ free\ software,\ licensed\ under\ the\ terms\ of\ the\ GNU\ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ General\ Public\ License\ as\ published\ by\ the\ Free\ Software\ Foundation,\ \ \ \ \ **}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ either\ version\ 2\ of\ the\ License,\ or\ (at\ your\ option)\ any\ later\ version.\ \ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License\ \ \ \ \ \ \ \ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.\ \ \ \ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{******************************************************************************/}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ DXFWRITER\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ DXFWRITER\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__textcodec_8h}{drw\_textcodec.h}}"{}}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_writer}{dxfWriter}}\ \{}
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_writer_a6144e17b1eb593cf9eeef5276e8312bc}{dxfWriter}}(std::ofstream\ *stream)}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdxf_writer_ad5829abb51dfc015890bf184c2beadea}{filestr}}(stream),}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}}()}
+\DoxyCodeLine{00023\ \ \ \ \ \{\}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_writer_aeee2c4203343c2e6653a824cc22a3ce8}{\string~dxfWriter}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a63b9ff453f41759914c73c108450e6ec}{writeString}}(\textcolor{keywordtype}{int}\ code,\ std::string\ text)\ =\ 0;}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_ab626867ecd329728b135d1a1351120c3}{writeUtf8String}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keyword}{const}\ std::string\ \&text);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a80661b7d9491013443915cdbad33e4de}{writeUtf8Caps}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keyword}{const}\ std::string\ \&text);}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_writer_aca2bac33f26041d820dff3cd4e24e9e7}{fromUtf8String}}(std::string\ t)\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_abba7567a1e4ac13328ac58ac6fc2f809}{fromUtf8}}(t);\}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a9c5f609840aeb2a1c3218fff84c1693a}{writeInt16}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data)\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_adce2dc57c74bf3ddb03c9769563450f1}{writeInt32}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data)\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a454f17fb9213a1dcde6c073e614a9f5a}{writeInt64}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ data)\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a2adba3b09587e382ce886ac1a0ef14e7}{writeDouble}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{double}\ data)\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_abea6468805103d768fa89ff3d0598334}{writeBool}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{bool}\ data)\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_writer_a8d9ff14862b4be3ec9a4236c06bea1cc}{setVersion}}(std::string\ *v,\ \textcolor{keywordtype}{bool}\ dxfFormat)\{\mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}{setVersion}}(v,\ dxfFormat);\}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classdxf_writer_a326e6fe9da46d450eeb075a56686d12c}{setCodePage}}(std::string\ *c)\{\mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}{setCodePage}}(c,\ \textcolor{keyword}{true});\}}
+\DoxyCodeLine{00037\ \ \ \ \ std::string\ \mbox{\hyperlink{classdxf_writer_a90fe25b2b1e8831d17a5c4439c0704d0}{getCodePage}}()\textcolor{keyword}{\ const\ }\{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}}.\mbox{\hyperlink{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}{getCodePage}}();\}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00039\ \ \ \ \ std::ofstream\ *\mbox{\hyperlink{classdxf_writer_ad5829abb51dfc015890bf184c2beadea}{filestr}};}
+\DoxyCodeLine{00040\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{classdxf_writer}{dxfWriter}})}
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___text_codec}{DRW\_TextCodec}}\ \mbox{\hyperlink{classdxf_writer_a229e436b1ea62c7371b892950bd1823e}{encoder}};}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ class\ \mbox{\hyperlink{classdxf_writer_binary}{dxfWriterBinary}}\ :\ public\ \mbox{\hyperlink{classdxf_writer}{dxfWriter}}\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_writer_binary_a01951a5efab3bd5de82e07e57981cf7c}{dxfWriterBinary}}(std::ofstream\ *stream)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classdxf_writer}{dxfWriter}}(stream)}
+\DoxyCodeLine{00049\ \ \ \ \ \{\}}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_writer_binary_a6e6caed0626e8057ae1852c20aa2f917}{\string~dxfWriterBinary}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a63b9ff453f41759914c73c108450e6ec}{writeString}}(\textcolor{keywordtype}{int}\ code,\ std::string\ text);}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a9c5f609840aeb2a1c3218fff84c1693a}{writeInt16}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_adce2dc57c74bf3ddb03c9769563450f1}{writeInt32}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a454f17fb9213a1dcde6c073e614a9f5a}{writeInt64}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_a2adba3b09587e382ce886ac1a0ef14e7}{writeDouble}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{double}\ data);}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classdxf_writer_abea6468805103d768fa89ff3d0598334}{writeBool}}(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{bool}\ data);}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdxf_writer_ascii}{dxfWriterAscii}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classdxf_writer}{dxfWriter}}\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classdxf_writer_ascii}{dxfWriterAscii}}(std::ofstream\ *stream);}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classdxf_writer_ascii_ab71ae146e6e48d4e305b19e2d7086798}{\string~dxfWriterAscii}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeString(\textcolor{keywordtype}{int}\ code,\ std::string\ text);}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeInt16(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeInt32(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeInt64(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{int}\ data);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeDouble(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{double}\ data);}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ writeBool(\textcolor{keywordtype}{int}\ code,\ \textcolor{keywordtype}{bool}\ data);}
+\DoxyCodeLine{00069\ \};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DXFWRITER\_H}}
+
+\end{DoxyCode}

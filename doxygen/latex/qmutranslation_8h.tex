@@ -1,0 +1,28 @@
+\hypertarget{qmutranslation_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/qmutranslation.h File Reference}
+\label{qmutranslation_8h}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmutranslation.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmutranslation.h}}
+
+
+The VTranslation class help store string for translation.  
+
+
+{\ttfamily \#include $<$QString$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_translation}{qmu\+::\+Qmu\+Translation}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqmu}{qmu}}
+\begin{DoxyCompactList}\small\item\em Namespace for mathematical applications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The VTranslation class help store string for translation. 
+
+I took idea from this article \href{http://ololoepepe.blogspot.com/2013/08/qt.html}{\texttt{ http\+://ololoepepe.\+blogspot.\+com/2013/08/qt.\+html}}. As you know, if wrap string to a function translate, it will be marked for translation. No matter what namespace contains this function. In class Translation used this circumstance. This mean never change name of method translate!!!!!. Instead of using QT\+\_\+\+TRANSLATE\+\_\+\+NOOP3 macros we can store strings in \mbox{\hyperlink{class_q_map}{QMap}}. Example\+: create map and fill up its QMap$<$\+QString, VTranslation$>$ map; map.\+insert(\char`\"{}head\+\_\+girth\char`\"{}, VTranslation\+::translate(\char`\"{}\+Measurements\char`\"{}, \char`\"{}head\+\_\+girth\char`\"{}, \char`\"{}\+Around fullest part of Head.\char`\"{})); get translated string map.\+value(measurement).\mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{translate()}};
+
+Hint. Define macros \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{translate()}} for reducing code complexity. \#define \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{translate(context, source, disambiguation)}} Qmu\+Translation\+::translate((context), (source), (disambiguation))
+
+Don\textquotesingle{}t forget to undef macros later! 

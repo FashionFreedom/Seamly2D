@@ -1,0 +1,70 @@
+\hypertarget{calculator__dialog_8h_source}{}\doxysection{calculator\+\_\+dialog.\+h}
+\label{calculator__dialog_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/calculator\_dialog.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/calculator\_dialog.h}}
+\mbox{\hyperlink{calculator__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ calculator\_dialog.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ DSCaskey\ <dscaskey@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 26,\ 2021}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ DIALOGCALCULATOR\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ DIALOGCALCULATOR\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/calculator/calculator.h"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculator_dialog}{CalculatorDialog}};}
+\DoxyCodeLine{00040\ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }QWidget;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculator}{Calculator}};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculator_dialog}{CalculatorDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_calculator_dialog}{CalculatorDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_calculator_dialog_a9e61f393e1d7bc8143959756a82b8044}{\string~CalculatorDialog}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_calculator_dialog_ab7be2d61b2fdf828293774c03d1fa6dc}{showEvent}}(QShowEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ Ui::CalculatorDialog\ *\mbox{\hyperlink{class_calculator_dialog_afa679fbc2e4696de0b0f7cf8370b8c93}{ui}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_calculator_dialog_a361a09a846c6a66cffc114027a474cb0}{isInitialized}};}
+\DoxyCodeLine{00059\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_calculator_dialog}{CalculatorDialog}})}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_calculator_util}{CalculatorUtil}}\ *\mbox{\hyperlink{class_calculator_dialog_a7bb8dec8f119728c84d09cba14a17ae7}{calc}};}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGCALCULATOR\_H}}
+
+\end{DoxyCode}

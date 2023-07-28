@@ -1,0 +1,705 @@
+\hypertarget{class_v_draw_tool}{}\doxysection{VDraw\+Tool Class Reference}
+\label{class_v_draw_tool}\index{VDrawTool@{VDrawTool}}
+
+
+The \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} abstract class for all draw tool.  
+
+
+
+
+{\ttfamily \#include $<$vdrawtool.\+h$>$}
+
+Inheritance diagram for VDraw\+Tool\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.253968cm]{class_v_draw_tool}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_ac690669e1b70895f191733e64497f354}{Show\+Tool}} (quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}{active\+Block\+Changed}} (const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em active\+Block\+Changed disable or enable context menu after change active draft block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}{block\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em block\+Name\+Changed save new name active draft block. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}{Enable\+Tool\+Move}} (bool move)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}{Disable}} (bool disable, const QString \&draft\+Block\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}{pieces\+Mode}} (bool mode)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_af9b3bf3bcbcfa2ed5a0f570e5c607627}{Full\+Update\+From\+Gui\+Ok}} (int result)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Ok refresh tool data after change in options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_interactive_tool_aae1bd5db994fa4e01b7f24944ae89416}{Full\+Update\+From\+Gui\+Apply}} ()
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Apply refresh tool data after change in options but do not delete dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2c046b690ce16eb362a17c99b8dda223}{Full\+Update\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a7b15b7bc134aa340d45083017c29b8a9}{Allow\+Hover}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a3122ee94213c72455fa293f4e37e42d2}{Allow\+Selecting}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae6776c165682947d2158bcad167fba89}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}{Changed\+Tool\+Selection}} (bool selected, quint32 object, quint32 tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a63a8130db67b2ecfca1dcac01e5a3b09}{tool\+Has\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em tool\+Has\+Changes emit if tool create change that need save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a92725224cd297bc5c878c3eea25f376b}{chosen\+Tool}} (quint32 id, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} type)
+\begin{DoxyCompactList}\small\item\em chosen\+Tool emit if object was clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_acd11c60a16d75bad927b93ae25f7bae9}{Lite\+Update\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+Tree emit if need reparse pattern file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a7727b48eed40340db6bd1688cafb4592}{Tool\+Tip}} (const QString \&tool\+Tip)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_draw_tool_a53337331770ec1b94109b18778f7c115}{VDraw\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}{$\sim$\+VDraw\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}{get\+Line\+Type}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}{set\+Line\+Type}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}{get\+Line\+Weight}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}{set\+Line\+Weight}} (const QString \&value)
+\item 
+virtual bool \mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{is\+Point\+Name\+Visible}} (quint32 id) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_interactive_tool_abe7c4ba7a7bbccc369663a8fca6d085a}{VInteractive\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_interactive_tool_ac4b82e4601a204eb28d402f6229a7beb}{$\sim$\+VInteractive\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_a2b3dd25afc73662182cf9e30121c5d1e}{Dialog\+Link\+Destroy}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool_a70b99e9c5f5de0524b2feddaa2e8f660}{VAbstract\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} container. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_tool_ad7b86091cf994df352cc6f2dc8ca7d6a}{$\sim$\+VAbstract\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return pointer to data container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{class_v_abstract_tool_abcd2a5c12d31e607ad69c3f97db87c41}{Points\+List}} () const
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{get\+Tag\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{Show\+Visualization}} (bool show)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04eabcfaccebf745acfd5e75351095a5394a}{Disable}} = false
+, \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Enable}} = true
+ \}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Follow}} = true
+, \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}{Ignore}} = false
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}{Add\+To\+Calculation}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em type\+Line line weight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}{add\+Dependence}} (\mbox{\hyperlink{class_q_list}{QList}}$<$ quint32 $>$ \&list, quint32 object\+Id) const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}{Save\+Dialog}} (QDom\+Element \&dom\+Element)=0
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}{Save\+Dialog\+Change}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}{Save\+Option}} (\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual QString \mbox{\hyperlink{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}{make\+Tool\+Tip}} () const
+\item 
+bool \mbox{\hyperlink{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}{Correct\+Disable}} (bool disable, const QString \&draft\+Block\+Name) const
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}{Read\+Attributes}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible)
+\item 
+{\footnotesize template$<$typename Dialog $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}{Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 item\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \&show\+Remove=\mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Remove\+Option\+::\+Enable}}, const \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \&ref=\mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Referens\+::\+Follow}})
+\begin{DoxyCompactList}\small\item\em Context\+Menu show context menu for tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}{Show\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item, quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Item highlight tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\QString \mbox{\hyperlink{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}{Object\+Name}} (quint32 id) const
+\begin{DoxyCompactList}\small\item\em Object\+Name get object (point, curve, arc) name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_ad039d030b4cc44b00004133f138a61c2}{set\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_a0cc935f9208f6decc289a875e550b6c0}{Save\+Dialog\+Change}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{Add\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_adb481734d9b7052cdcd3b5d112df18e0}{Refresh\+Data\+In\+File}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a78a11cab1da83de526158893aa5b212a}{Remove\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a4c7fb8ceeaefd964fa11577b688a7ec1}{delete\+Tool}} (bool ask=true)
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_tool_a29f253e0480640a6e6a423345132fc80}{Add\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{Set\+Visualization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a981e6bae05ffb564bfac034ccff918da}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{Init\+Draw\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_tool_aa852f252dc5e5cd7aeefb08e57fb15ef}{Confirm\+Deletion}} ()
+\item 
+static QDom\+Element \mbox{\hyperlink{class_v_abstract_tool_a649bbf0925c735e77bf9fab29236c599}{Add\+SANode}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, const QString \&tag\+Name, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a821ab22da8243998dcc7b0ea051e2a6d}{Add\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a6364648b0ecc8434d91e8edda185e61a}{Prepare\+Nodes}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static quint32 \mbox{\hyperlink{class_v_abstract_tool_ad94d663a3861710c44e6ca293e0440cb}{Prepare\+Node}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}{active\+Block\+Name}}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}{m\+\_\+line\+Type}}
+\begin{DoxyCompactList}\small\item\em active\+Block\+Name name of tool\textquotesingle{}s pattern peace. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}{m\+\_\+line\+Weight}}
+\begin{DoxyCompactList}\small\item\em type\+Line line type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} $>$ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\+\_\+dialog}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+dialog tool\textquotesingle{}s dialog options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+const quint32 \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_tool_aecd87c3d6c77ffa2a70d0377d0cca30b}{selection\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_tool_ad0bfc359f78eb591511452ce58b33c66}{Check\+Formula}} (const quint32 \&tool\+Id, QString \&formula, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Check\+Formula check formula. \end{DoxyCompactList}\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_a92535ec97f566be641640d0aac73406b}{Colors}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aab1175fc0f86a9e52da9d145195b3b86}{Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aa881e27f598b21107b5a0e476d98b0a6}{support\+Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_afc244270d10e1bd14d3151d9fba3f893}{background\+Colors\+List}} ()
+\item 
+static QPixmap \mbox{\hyperlink{class_v_abstract_tool_ae07b095b26ee07e932e5db9976d75252}{create\+Color\+Icon}} (const int w, const int h, const QString \&color)
+\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_ab641d32d6545e0b24b45df643bff1a67}{fills}} ()
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_ab1112692b84f354bf0d2c60ed2056fa5}{Add\+Record}} (const quint32 id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tool\+Type, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\begin{DoxyCompactList}\small\item\em Add\+Record add record about tool in history. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a08c03ebfcbbcfbc4f7433de128a5a3d5}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_addcb4bd6032101ed1cd28c43e2f8bb8d}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static quint32 \mbox{\hyperlink{class_v_abstract_tool_a1771c54e6b0d1f94e9346650e8e1e1a9}{Create\+Node}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\begin{DoxyCompactList}\small\item\em Create\+Node create new node for detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\+\_\+suppress\+Context\+Menu}} = false
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_tool_a0c69b5e6f0c973457eebb1759b285e79}{Attr\+In\+Use}} = QString\+Literal(\char`\"{}in\+Use\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} abstract class for all draw tool. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}\label{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}} 
+\index{VDrawTool@{VDrawTool}!Referens@{Referens}}
+\index{Referens@{Referens}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{Referens}{Referens}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{VDraw\+Tool\+::\+Referens}} \+: bool\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Follow@{Follow}!VDrawTool@{VDrawTool}}\index{VDrawTool@{VDrawTool}!Follow@{Follow}}}\mbox{\Hypertarget{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}\label{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}} 
+Follow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ignore@{Ignore}!VDrawTool@{VDrawTool}}\index{VDrawTool@{VDrawTool}!Ignore@{Ignore}}}\mbox{\Hypertarget{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}\label{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}} 
+Ignore&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}\label{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}} 
+\index{VDrawTool@{VDrawTool}!RemoveOption@{RemoveOption}}
+\index{RemoveOption@{RemoveOption}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{RemoveOption}{RemoveOption}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{VDraw\+Tool\+::\+Remove\+Option}} \+: bool\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Disable@{Disable}!VDrawTool@{VDrawTool}}\index{VDrawTool@{VDrawTool}!Disable@{Disable}}}\mbox{\Hypertarget{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04eabcfaccebf745acfd5e75351095a5394a}\label{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04eabcfaccebf745acfd5e75351095a5394a}} 
+Disable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Enable@{Enable}!VDrawTool@{VDrawTool}}\index{VDrawTool@{VDrawTool}!Enable@{Enable}}}\mbox{\Hypertarget{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}\label{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}} 
+Enable&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_draw_tool_a53337331770ec1b94109b18778f7c115}\label{class_v_draw_tool_a53337331770ec1b94109b18778f7c115}} 
+\index{VDrawTool@{VDrawTool}!VDrawTool@{VDrawTool}}
+\index{VDrawTool@{VDrawTool}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{VDrawTool()}{VDrawTool()}}
+{\footnotesize\ttfamily VDraw\+Tool\+::\+VDraw\+Tool (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}\label{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}} 
+\index{VDrawTool@{VDrawTool}!````~VDrawTool@{$\sim$VDrawTool}}
+\index{````~VDrawTool@{$\sim$VDrawTool}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{$\sim$VDrawTool()}{~VDrawTool()}}
+{\footnotesize\ttfamily virtual VDraw\+Tool\+::$\sim$\+VDraw\+Tool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}\label{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}} 
+\index{VDrawTool@{VDrawTool}!activeBlockChanged@{activeBlockChanged}}
+\index{activeBlockChanged@{activeBlockChanged}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{activeBlockChanged}{activeBlockChanged}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::active\+Block\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+active\+Block\+Changed disable or enable context menu after change active draft block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Name} & new name active draft block. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}\label{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}} 
+\index{VDrawTool@{VDrawTool}!addDependence@{addDependence}}
+\index{addDependence@{addDependence}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{addDependence()}{addDependence()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::add\+Dependence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_list}{QList}}$<$ quint32 $>$ \&}]{list,  }\item[{quint32}]{object\+Id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}\label{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}} 
+\index{VDrawTool@{VDrawTool}!AddToCalculation@{AddToCalculation}}
+\index{AddToCalculation@{AddToCalculation}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{AddToCalculation()}{AddToCalculation()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Add\+To\+Calculation (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+type\+Line line weight. 
+
+Add\+To\+Calculation add tool to calculation tag in pattern file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dom\+Element} & tag in xml tree. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}\label{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}} 
+\index{VDrawTool@{VDrawTool}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{VAbstract\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_abstract_operation_a3488839503157457a43266614ac8502a}{VAbstract\+Operation}}, \mbox{\hyperlink{class_v_tool_double_point_a470ac7af1695585d017cac6524a892e2}{VTool\+Double\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_aba80c37cd3f072c892de6b91d9242590}{VTool\+Base\+Point}}, and \mbox{\hyperlink{class_v_tool_line_abac80f3d576ce9b535a14aa2038af4f4}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}\label{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}} 
+\index{VDrawTool@{VDrawTool}!blockNameChanged@{blockNameChanged}}
+\index{blockNameChanged@{blockNameChanged}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{blockNameChanged}{blockNameChanged}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::block\+Name\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{old\+Name,  }\item[{const QString \&}]{new\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+block\+Name\+Changed save new name active draft block. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em old\+Name} & old name. \\
+\hline
+{\em new\+Name} & new name active draft block. new name. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}\label{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}} 
+\index{VDrawTool@{VDrawTool}!ChangedToolSelection@{ChangedToolSelection}}
+\index{ChangedToolSelection@{ChangedToolSelection}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ChangedToolSelection}{ChangedToolSelection}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Changed\+Tool\+Selection (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{object,  }\item[{quint32}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}\label{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}} 
+\index{VDrawTool@{VDrawTool}!ContextMenu@{ContextMenu}}
+\index{ContextMenu@{ContextMenu}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ContextMenu()}{ContextMenu()}}
+{\footnotesize\ttfamily template$<$typename Dialog $>$ \\
+void VDraw\+Tool\+::\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{item\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}},  }\item[{const \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \&}]{show\+Remove = {\ttfamily \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Remove\+Option\+::\+Enable}}},  }\item[{const \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \&}]{ref = {\ttfamily \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Referens\+::\+Follow}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Context\+Menu show context menu for tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Id} & id of point. \\
+\hline
+{\em event} & context menu event. \\
+\hline
+{\em show\+Remove} & true -\/ tool enable option delete. \\
+\hline
+{\em ref} & true -\/ do not ignore referens value. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}\label{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}} 
+\index{VDrawTool@{VDrawTool}!CorrectDisable@{CorrectDisable}}
+\index{CorrectDisable@{CorrectDisable}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{CorrectDisable()}{CorrectDisable()}}
+{\footnotesize\ttfamily bool VDraw\+Tool\+::\+Correct\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}\label{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}} 
+\index{VDrawTool@{VDrawTool}!Disable@{Disable}}
+\index{Disable@{Disable}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily virtual void VDraw\+Tool\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}\label{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}} 
+\index{VDrawTool@{VDrawTool}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}\label{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}} 
+\index{VDrawTool@{VDrawTool}!getLineType@{getLineType}}
+\index{getLineType@{getLineType}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{getLineType()}{getLineType()}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::get\+Line\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}\label{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}} 
+\index{VDrawTool@{VDrawTool}!getLineWeight@{getLineWeight}}
+\index{getLineWeight@{getLineWeight}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{getLineWeight()}{getLineWeight()}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::get\+Line\+Weight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}\label{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}} 
+\index{VDrawTool@{VDrawTool}!InitDrawToolConnections@{InitDrawToolConnections}}
+\index{InitDrawToolConnections@{InitDrawToolConnections}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{InitDrawToolConnections()}{InitDrawToolConnections()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VDraw\+Tool\+::\+Init\+Draw\+Tool\+Connections (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{T $\ast$}]{tool }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}\label{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}} 
+\index{VDrawTool@{VDrawTool}!isPointNameVisible@{isPointNameVisible}}
+\index{isPointNameVisible@{isPointNameVisible}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{isPointNameVisible()}{isPointNameVisible()}}
+{\footnotesize\ttfamily bool VDraw\+Tool\+::is\+Point\+Name\+Visible (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_abstract_operation_ad73e132904ef1e840e8135329acb825c}{VAbstract\+Operation}}, \mbox{\hyperlink{class_v_tool_double_point_a357bc6ed2703980d90bc80adc13e0e1a}{VTool\+Double\+Point}}, and \mbox{\hyperlink{class_v_tool_single_point_ab4df6679e9abb658a7cc959e368dcf29}{VTool\+Single\+Point}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}\label{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}} 
+\index{VDrawTool@{VDrawTool}!makeToolTip@{makeToolTip}}
+\index{makeToolTip@{makeToolTip}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{makeToolTip()}{makeToolTip()}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::make\+Tool\+Tip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_mirror_by_axis_a855842d8a590cf6628879494985d87fa}{VTool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_v_tool_mirror_by_line_aeb49f66b3ea1bc695ed45a4ed5edfef5}{VTool\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_v_tool_move_ad39cba30f626872189b91c9409d400f0}{VTool\+Move}}, \mbox{\hyperlink{class_v_tool_rotation_a65724df7083eda6484c0b394fec7fb6e}{VTool\+Rotation}}, \mbox{\hyperlink{class_v_tool_arc_a610280c9989cc927a58678173081e70e}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_ac5d9663c42e5607e2f7fe0505e4f5208}{VTool\+Arc\+With\+Length}}, \mbox{\hyperlink{class_v_tool_elliptical_arc_a5d600cd873a1694ba3e6a418b3f497a9}{VTool\+Elliptical\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_arc_afbe13f6de9bce835f71bfa6aca585089}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_abe71c5c0c60b2dbb8319196be530aea1}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_a5f9eeac3737cb9b9b4bd82ea28fbf838}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_double_line_point_tool_a44f2f5ace18cc52ca278862714d63380}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_along_line_add5ff3d1679ed16ad02211a56d2c467b}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_height_a35c557f58b2f0a5a95027d736812abe8}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a7e60b72de3655af891ab3d39876aad86}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_line_point_aa03614472dd179bf23227a526ac131c1}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_shoulder_point_afe8bd6f7c8a87c4d8509cfe9b9c34690}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a7327836aeea4e71451db2ec25876edfa}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_a3c8c34876fa7c3d17192129ebcc94b3f}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_of_contact_ab863e4f3a077919c760aa1aaa30bb8d6}{VTool\+Point\+Of\+Contact}}, and \mbox{\hyperlink{class_v_tool_line_afe42453b4381f735b8d0b73dcb2444b3}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}\label{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}} 
+\index{VDrawTool@{VDrawTool}!ObjectName@{ObjectName}}
+\index{ObjectName@{ObjectName}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ObjectName()}{ObjectName()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+QString VDraw\+Tool\+::\+Object\+Name (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Object\+Name get object (point, curve, arc) name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id in container. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}\label{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}} 
+\index{VDrawTool@{VDrawTool}!piecesMode@{piecesMode}}
+\index{piecesMode@{piecesMode}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{piecesMode}{piecesMode}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::pieces\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}\label{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}} 
+\index{VDrawTool@{VDrawTool}!ReadAttributes@{ReadAttributes}}
+\index{ReadAttributes@{ReadAttributes}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ReadAttributes()}{ReadAttributes()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Read\+Attributes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}\label{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}} 
+\index{VDrawTool@{VDrawTool}!ReadToolAttributes@{ReadToolAttributes}}
+\index{ReadToolAttributes@{ReadToolAttributes}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ReadToolAttributes()}{ReadToolAttributes()}}
+{\footnotesize\ttfamily virtual void VDraw\+Tool\+::\+Read\+Tool\+Attributes (\begin{DoxyParamCaption}\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_v_tool_mirror_by_axis_a1e0e56b31f008aa655b3d766401060b6}{VTool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_v_tool_mirror_by_line_abcdd9d772c6b9a98561ffc1d1ccb19dd}{VTool\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_v_abstract_operation_a90699b27c2b71ae695661c98f1125ece}{VAbstract\+Operation}}, \mbox{\hyperlink{class_v_tool_move_add7fb511df986d7247d5506d6a1568ba}{VTool\+Move}}, \mbox{\hyperlink{class_v_tool_rotation_a7189b8f2018c021e4121880e67a16418}{VTool\+Rotation}}, \mbox{\hyperlink{class_v_abstract_spline_a24438e166a5fa87260e4e3d59c7c03c3}{VAbstract\+Spline}}, \mbox{\hyperlink{class_v_tool_true_darts_a28300e5865b34b79f3c80cec18b50bd2}{VTool\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_tool_a0745a704d015503c0713042081c65e10}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a15c858cd7f5d8b2a783557ab447e9aef}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_a18d220a23f8279d5f765e8c492212e41}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_arc_aa7084d6ee20b7dd54f104934dbdc2294}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_a5c8eb7e605e25f12d87e2f6de8a6c4a3}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_aa5ef2ad7ef6eab2407d6eb55a889909d}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_v_tool_along_line_a5c45d37d5e8f18537fee4ef3fa37f794}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_ab4803575e978023975f4946216825e1f}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_ab797b10bb79fcbcc13def065037dcd51}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_a90a08481dd1212e0d6e083f86a5b1198}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_af9e9784e2c10dc52362744b67113be86}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a7a58112e1f64b636084776c1daf108ee}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_normal_affac46df1d089b5444926767b9054f5e}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_aedca8885777984e844351f92f0afe00f}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a7c833ed214f0af29acf29df2028f8471}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_a36a8a0b0cc8b12c6a34cc6919c0781be}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_a6dba8a9ef18545dc498ad11fcc031666}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_a9068f5aefce10bd882cb6b814d44239d}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ac3f5560e237bdfa75a98826209ba1a98}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a6925a9d741388b3ed71c9e69527f9123}{VTool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_v_tool_triangle_ac42f7751c08c6e64e4b81d582c5745b2}{VTool\+Triangle}}, and \mbox{\hyperlink{class_v_tool_line_a7b999625ad4f5b3dcce0b32934392e0a}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}\label{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}} 
+\index{VDrawTool@{VDrawTool}!SaveDialog@{SaveDialog}}
+\index{SaveDialog@{SaveDialog}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{SaveDialog()}{SaveDialog()}}
+{\footnotesize\ttfamily virtual void VDraw\+Tool\+::\+Save\+Dialog (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Save\+Dialog save options into file after change in dialog. 
+
+
+
+Implemented in \mbox{\hyperlink{class_v_tool_mirror_by_axis_a1409093ab6db65a1fb6efdc5ddf3da5d}{VTool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_v_tool_mirror_by_line_a61292cec4ab4d12c6c7f28b516e4b607}{VTool\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_v_tool_move_af4205b7f0a8825065c9cbe5d40a874c8}{VTool\+Move}}, \mbox{\hyperlink{class_v_tool_rotation_aacf0d374e5b73012f98609982aca44ae}{VTool\+Rotation}}, \mbox{\hyperlink{class_v_tool_arc_a5a4790c6927c119b82e1773e01702122}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_a9ff1cc7f26cfd62618f09c43a3d9b518}{VTool\+Arc\+With\+Length}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_a7081e71cb63c4515a3abdea54bffc4e9}{VTool\+Cubic\+Bezier}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_path_acf1e4da85e87d2d5c30ebc098d316690}{VTool\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_v_tool_elliptical_arc_ab9592e76807ac64ea01035710dc728aa}{VTool\+Elliptical\+Arc}}, \mbox{\hyperlink{class_v_tool_spline_ac31e56a994948d3540a917208d2fe3ad}{VTool\+Spline}}, \mbox{\hyperlink{class_v_tool_spline_path_a04bdf1e112062fc65c965fd8e9eb9045}{VTool\+Spline\+Path}}, \mbox{\hyperlink{class_v_tool_true_darts_ad86c1d4c738a59aa4e6e18c4d03f857b}{VTool\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_tool_a3c73afb7fb05bb05f4de0138351629eb}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a35d66e27f87a3cfd1808b8c258ff6e02}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_ac8f60ef891e5f27d05019286cbb6d00a}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_arc_afbabe27359103946bb1eae79f950a706}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_a41c455c950471ee4cba0ee52bd237b87}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_ab90ae60adcf3ce7cb5930a604b8ddf80}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_v_tool_along_line_a072eaec97362caa99012afb6280dede0}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_ad676e3d401b0b047edc984bb1d25cbfe}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_a4dd862c147330f72c1ae7ef675582d44}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_ad22a3fcdf736a9b492a5c669f6c11631}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_aa9ca85b1e1c6fb44d4402e964127445d}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_ad2687acd98746b01f7a76b6bbe7f3271}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_normal_a38cb9091298f9d6c4622b66a0c38421e}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_acb58958c2c536eb46ea9c93b2982cbbe}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_aa53a2d562bc8d28893da7261c9b8044f}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_ac7f147a5ed3f4e9eb1f63054140f1caf}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_ac1cc1919fabd3797ce8f10e19501eed7}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_a3342d8117ad3417ed6b96d1a0f3d3415}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_ad37dd1e5211f4a62eff77da07367139f}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a0cbcc4a9654d4da3c0e32928239e9864}{VTool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_v_tool_triangle_a305ea03ee587efbee018df963d6ee29e}{VTool\+Triangle}}, and \mbox{\hyperlink{class_v_tool_line_a7678d5c86ca01ff681e877d79faf83a3}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}\label{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}} 
+\index{VDrawTool@{VDrawTool}!SaveDialogChange@{SaveDialogChange}}
+\index{SaveDialogChange@{SaveDialogChange}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{SaveDialogChange()}{SaveDialogChange()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Save\+Dialog\+Change (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_interactive_tool_a0cc935f9208f6decc289a875e550b6c0}{VInteractive\+Tool}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}\label{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}} 
+\index{VDrawTool@{VDrawTool}!SaveOption@{SaveOption}}
+\index{SaveOption@{SaveOption}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{SaveOption()}{SaveOption()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Save\+Option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a7d08276443940981864477fe86f28090}\label{class_v_draw_tool_a7d08276443940981864477fe86f28090}} 
+\index{VDrawTool@{VDrawTool}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_mirror_by_axis_adddafec02825cd6ccaed7d71efb6fee4}{VTool\+Mirror\+By\+Axis}}, \mbox{\hyperlink{class_v_tool_mirror_by_line_ab00fc53bf7cd2600b052ccc36b9a55e5}{VTool\+Mirror\+By\+Line}}, \mbox{\hyperlink{class_v_abstract_operation_a0ac2d9f9cc3218f3736d621ff7145f40}{VAbstract\+Operation}}, \mbox{\hyperlink{class_v_tool_move_af0ad53a47691f9506e38b710be6630b4}{VTool\+Move}}, \mbox{\hyperlink{class_v_tool_rotation_a862c85b03cfe275ba5049528547b0270}{VTool\+Rotation}}, \mbox{\hyperlink{class_v_abstract_spline_a01f2c57f0ce45ef261cd41c0065502e8}{VAbstract\+Spline}}, \mbox{\hyperlink{class_v_tool_arc_a7594d8a0980a0f86b53d4f6ffc5b520a}{VTool\+Arc}}, \mbox{\hyperlink{class_v_tool_arc_with_length_ad63c5be617118bfe420459f5235e6745}{VTool\+Arc\+With\+Length}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_a01e7cc3df9d49a41ab7191c925a56219}{VTool\+Cubic\+Bezier}}, \mbox{\hyperlink{class_v_tool_cubic_bezier_path_a76111843d6f1c7d04b41229cce4713c0}{VTool\+Cubic\+Bezier\+Path}}, \mbox{\hyperlink{class_v_tool_elliptical_arc_a31c8db849de325ea67218bfdaeedebc5}{VTool\+Elliptical\+Arc}}, \mbox{\hyperlink{class_v_tool_spline_a27ac09221f73a5134a383879c3de121d}{VTool\+Spline}}, \mbox{\hyperlink{class_v_tool_spline_path_a2595d294d9e3ae951cfdcdfff0f2a2b0}{VTool\+Spline\+Path}}, \mbox{\hyperlink{class_v_tool_double_point_a36f8638749c7ef12bef629e67e1ec88d}{VTool\+Double\+Point}}, \mbox{\hyperlink{class_v_tool_true_darts_a1cfa077664b9fbac098ec60e1a383264}{VTool\+True\+Darts}}, \mbox{\hyperlink{class_intersect_circles_tool_a3cb3973bb18f692b1de77e0a0370e5fb}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a1213ca7c848b1a93f31626aaf15c81f9}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_a96db1de2a80484e6270d2a33c2ae53ee}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_arc_a9c2075ef08e504637563c2dec1627860}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_a754ccf9917a467d3358654cfc4eed4c6}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_a6ca6bc497e3c03d02b0fddbd7668cc8d}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_double_line_point_tool_ad62446eed1c102eb66294842da699adc}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_along_line_a26a25d024d5fd574c03780f7df68016b}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_a277cfa4f6d3938cf0b58e4a6920db0e8}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_a2871a007b2cb24fab07bf3a0df742a59}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_a5ac37adae45ae8012c50cccd60eeb0de}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_a4ffec38cb3c52b551822bbabfbf8a1fc}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a38ba19d8f4708d6872999c05a5e6dbd3}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_line_point_aeb690c0edbb55cb5e2e61fdd7e906a4c}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_normal_a40600a9dcfa862541312d85671370850}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_a8cd0eb2ffe53f5f991f335512aee10d0}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a13e98b687f6b9a993ce801dcffa6b680}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_a653ae24b93310820607723db0d04f401}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_ab252276d3d826c69509ebeca7baba0ef}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_a40377e82aa08b12d311d6b5f723273f2}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_adc3c944d893fc3e308a8dd75a00ee06b}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a032c3cd3e3afa7238777e61e14d667b2}{VTool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_v_tool_single_point_a768712ef8d8b98350d1af66ebee6e63e}{VTool\+Single\+Point}}, \mbox{\hyperlink{class_v_tool_triangle_a0130f55bbb0b46acb7d43aa506aa794b}{VTool\+Triangle}}, and \mbox{\hyperlink{class_v_tool_line_a74adf48424f5571ac1d4611dd4f52f69}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}\label{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}} 
+\index{VDrawTool@{VDrawTool}!setLineType@{setLineType}}
+\index{setLineType@{setLineType}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{setLineType()}{setLineType()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::set\+Line\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_line_afca6cd48062e3cb7cdf96e21fef39056}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}\label{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}} 
+\index{VDrawTool@{VDrawTool}!setLineWeight@{setLineWeight}}
+\index{setLineWeight@{setLineWeight}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{setLineWeight()}{setLineWeight()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::set\+Line\+Weight (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_abstract_spline_a85831cc33133d8d076b8a981892109cb}{VAbstract\+Spline}}, and \mbox{\hyperlink{class_v_tool_line_acb54952b3850f3599445395ff24b7520}{VTool\+Line}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}\label{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}} 
+\index{VDrawTool@{VDrawTool}!showContextMenu@{showContextMenu}}
+\index{showContextMenu@{showContextMenu}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{showContextMenu}{showContextMenu}}
+{\footnotesize\ttfamily virtual void VDraw\+Tool\+::show\+Context\+Menu (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event,  }\item[{quint32}]{id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}\label{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}} 
+\index{VDrawTool@{VDrawTool}!ShowItem@{ShowItem}}
+\index{ShowItem@{ShowItem}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ShowItem()}{ShowItem()}}
+{\footnotesize\ttfamily template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ \\
+void VDraw\+Tool\+::\+Show\+Item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$}]{item,  }\item[{quint32}]{id,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Show\+Item highlight tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & tool. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em enable} & enable or disable highlight. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_draw_tool_ac690669e1b70895f191733e64497f354}\label{class_v_draw_tool_ac690669e1b70895f191733e64497f354}} 
+\index{VDrawTool@{VDrawTool}!ShowTool@{ShowTool}}
+\index{ShowTool@{ShowTool}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{ShowTool}{ShowTool}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::\+Show\+Tool (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Show\+Tool highlight tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & object id in container. \\
+\hline
+{\em enable} & enable or disable highlight. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_abstract_spline_a2a751da0d59123535d05956e07f48e63}{VAbstract\+Spline}}.
+
+\mbox{\Hypertarget{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}\label{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}} 
+\index{VDrawTool@{VDrawTool}!updatePointNameVisibility@{updatePointNameVisibility}}
+\index{updatePointNameVisibility@{updatePointNameVisibility}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{updatePointNameVisibility()}{updatePointNameVisibility()}}
+{\footnotesize\ttfamily void VDraw\+Tool\+::update\+Point\+Name\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_double_point_a9f2010f3d084c5428075fdc7264fb0cd}{VTool\+Double\+Point}}, and \mbox{\hyperlink{class_v_tool_single_point_acd3f0d8d8df4904bee7d2b68de273e85}{VTool\+Single\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}\label{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}} 
+\index{VDrawTool@{VDrawTool}!activeBlockName@{activeBlockName}}
+\index{activeBlockName@{activeBlockName}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{activeBlockName}{activeBlockName}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::active\+Block\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}\label{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}} 
+\index{VDrawTool@{VDrawTool}!m\_lineType@{m\_lineType}}
+\index{m\_lineType@{m\_lineType}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{m\_lineType}{m\_lineType}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::m\+\_\+line\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+active\+Block\+Name name of tool\textquotesingle{}s pattern peace. 
+
+\mbox{\Hypertarget{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}\label{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}} 
+\index{VDrawTool@{VDrawTool}!m\_lineWeight@{m\_lineWeight}}
+\index{m\_lineWeight@{m\_lineWeight}!VDrawTool@{VDrawTool}}
+\doxysubsubsection{\texorpdfstring{m\_lineWeight}{m\_lineWeight}}
+{\footnotesize\ttfamily QString VDraw\+Tool\+::m\+\_\+line\+Weight\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+type\+Line line type. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/\mbox{\hyperlink{vdrawtool_8h}{vdrawtool.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/\mbox{\hyperlink{vdrawtool_8cpp}{vdrawtool.\+cpp}}\end{DoxyCompactItemize}

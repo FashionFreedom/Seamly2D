@@ -1,0 +1,54 @@
+\hypertarget{vgraphicsfillitem_8h_source}{}\doxysection{vgraphicsfillitem.\+h}
+\label{vgraphicsfillitem_8h_source}\index{D:/Github/Seamly2D/src/libs/vlayout/vgraphicsfillitem.h@{D:/Github/Seamly2D/src/libs/vlayout/vgraphicsfillitem.h}}
+\mbox{\hyperlink{vgraphicsfillitem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vgraphicsfillitem.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Bojan\ Kverh}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ October\ 16,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VGRAPHICSFILLITEM\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VGRAPHICSFILLITEM\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QGraphicsPathItem>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QPainter>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_graphics_fill_item}{VGraphicsFillItem}}\ :\ \textcolor{keyword}{public}\ QGraphicsPathItem}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_graphics_fill_item}{VGraphicsFillItem}}(\textcolor{keyword}{const}\ QColor\ \&color,\ \textcolor{keywordtype}{bool}\ fill,\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_v_graphics_fill_item_a43b1845dd52506b5e2a971751966998e}{\string~VGraphicsFillItem}}();}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_graphics_fill_item_a305eff88fe84a40c2c1e31228708d52f}{paint}}(QPainter\ *painter,\ \textcolor{keyword}{const}\ QStyleOptionGraphicsItem\ *option,\ QWidget\ *widget);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00057\ \ \ \ \ QColor\ \ \ \mbox{\hyperlink{class_v_graphics_fill_item_a530d466ffdaf97d6c20eeba1f71ad188}{m\_color}};}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_v_graphics_fill_item_ac895571221091248bfe82bd2ec0e97f4}{m\_fill}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VGRAPHICSFILLITEM\_H}}
+
+\end{DoxyCode}

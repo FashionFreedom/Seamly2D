@@ -1,0 +1,281 @@
+\hypertarget{class_v_exception_empty_parameter}{}\doxysection{VException\+Empty\+Parameter Class Reference}
+\label{class_v_exception_empty_parameter}\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+
+
+The \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} class for exception empty parameter.  
+
+
+
+
+{\ttfamily \#include $<$vexceptionemptyparameter.\+h$>$}
+
+Inheritance diagram for VException\+Empty\+Parameter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_exception_empty_parameter}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_empty_parameter_a68b78b14710aaa226861457d7513b640}{VException\+Empty\+Parameter}} (const QString \&\mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}}, const QString \&\mbox{\hyperlink{class_v_exception_empty_parameter_acf08401da745b6fcfaf3aca013589bbb}{name}}, const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} exception empty parameter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_empty_parameter_a3f56b8f084a135390ac755c3754f57d9}{VException\+Empty\+Parameter}} (const \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \& \mbox{\hyperlink{class_v_exception_empty_parameter_acc5fcc826acd35931bbd6a73a9fb9b3f}{operator=}} (const \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_empty_parameter_aa6bfb85d5bfa78c7d276bc58eda52c71}{$\sim$\+VException\+Empty\+Parameter}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{class_v_exception_empty_parameter_a8ae9c9867020c9b032ad8bca634421e7}{Error\+Message}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_empty_parameter_ac44b734dfcd74007f45ba27445ddf5e0}{Detailed\+Information}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Detailed\+Information return detailed information about error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_a0ae1584f17063b61826fde0c938d9397}{Name}} () const
+\begin{DoxyCompactList}\small\item\em Name return name of attribute where error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_a8ed9d764a7d0dbfd88149255b237bfc3}{Tag\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Tag\+Text return tag text. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_ab5c677bbd867e194a2d23c6e3d950e8e}{Tag\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Tag\+Name return tag name. \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{class_v_exception_empty_parameter_a02833319e7240c1acd5a2592a2917b7d}{Line\+Number}} () const
+\begin{DoxyCompactList}\small\item\em Line\+Number return line number of tag. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_a0a32aae7ed885f3402a1761a83328323}{VException}} (const QString \&\mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} constructor exception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_a4b2b9c63ee20b69f20d11d627b9cc6f2}{VException}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception}{VException}} \& \mbox{\hyperlink{class_v_exception_ab27d8cb624f122a27652ce7121541be0}{operator=}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_aae323f3b6135454c4fa95e6acf6c0d25}{$\sim$\+VException}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual Q\+\_\+\+NORETURN void \mbox{\hyperlink{class_v_exception_aec24ab0270a07d0e52ccb5382355ca45}{raise}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em raise method raise for exception \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_v_exception}{VException}} $\ast$ \mbox{\hyperlink{class_v_exception_a00a2ef1d19c3a50e9feacb846d40e782}{clone}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em clone clone exception \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{Error\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{Detailed\+Information}} () const
+\begin{DoxyCompactList}\small\item\em Detailed\+Information return detailed information about error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aa77494f07b02b94d690c6957bf51e811}{What\+Utf8}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true)
+\begin{DoxyCompactList}\small\item\em What return string with error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_exception_a6a82b04f0ecd7ffc2e1807339a10648d}{Add\+More\+Information}} (const QString \&info)
+\begin{DoxyCompactList}\small\item\em Add\+More\+Information add more information for error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_a38ab9eec99ff781a31b7f050be6addef}{More\+Information}} () const
+\begin{DoxyCompactList}\small\item\em More\+Information return more information for error. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_acf08401da745b6fcfaf3aca013589bbb}{name}}
+\begin{DoxyCompactList}\small\item\em name name attribute \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_a92f87e2c8b55cf9ab1ff6cfa2ae23a2a}{tag\+Text}}
+\begin{DoxyCompactList}\small\item\em tag\+Text tag text \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_empty_parameter_a93e8553413f68c89bea7a25478a5ec7d}{tag\+Name}}
+\begin{DoxyCompactList}\small\item\em tag\+Name tag name \end{DoxyCompactList}\item 
+qint32 \mbox{\hyperlink{class_v_exception_empty_parameter_ac076d2e8bef53ca1315106995a91467a}{line\+Number}}
+\begin{DoxyCompactList}\small\item\em line\+Number line number \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}}
+\begin{DoxyCompactList}\small\item\em error string with error \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aaaa9e47957031ba5481cd12aedc0926a}{more\+Info}}
+\begin{DoxyCompactList}\small\item\em more\+Info more information about error \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a0480a8ae3ddd5d9b86d26156c2a34344}{More\+Info}} (const QString \&det\+Info) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} class for exception empty parameter. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a68b78b14710aaa226861457d7513b640}\label{class_v_exception_empty_parameter_a68b78b14710aaa226861457d7513b640}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{VExceptionEmptyParameter()}{VExceptionEmptyParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VException\+Empty\+Parameter\+::\+VException\+Empty\+Parameter (\begin{DoxyParamCaption}\item[{const QString \&}]{what,  }\item[{const QString \&}]{name,  }\item[{const QDom\+Element \&}]{dom\+Element }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} exception empty parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em what} & string with error \\
+\hline
+{\em name} & name of attribute where error \\
+\hline
+{\em dom\+Element} & dom element \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a3f56b8f084a135390ac755c3754f57d9}\label{class_v_exception_empty_parameter_a3f56b8f084a135390ac755c3754f57d9}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{VExceptionEmptyParameter()}{VExceptionEmptyParameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VException\+Empty\+Parameter\+::\+VException\+Empty\+Parameter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & exception \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_aa6bfb85d5bfa78c7d276bc58eda52c71}\label{class_v_exception_empty_parameter_aa6bfb85d5bfa78c7d276bc58eda52c71}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!````~VExceptionEmptyParameter@{$\sim$VExceptionEmptyParameter}}
+\index{````~VExceptionEmptyParameter@{$\sim$VExceptionEmptyParameter}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{$\sim$VExceptionEmptyParameter()}{~VExceptionEmptyParameter()}}
+{\footnotesize\ttfamily virtual VException\+Empty\+Parameter\+::$\sim$\+VException\+Empty\+Parameter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_ac44b734dfcd74007f45ba27445ddf5e0}\label{class_v_exception_empty_parameter_ac44b734dfcd74007f45ba27445ddf5e0}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!DetailedInformation@{DetailedInformation}}
+\index{DetailedInformation@{DetailedInformation}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{DetailedInformation()}{DetailedInformation()}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::\+Detailed\+Information (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Detailed\+Information return detailed information about error. 
+
+\begin{DoxyReturn}{Returns}
+detailed information 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{VException}}.
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a8ae9c9867020c9b032ad8bca634421e7}\label{class_v_exception_empty_parameter_a8ae9c9867020c9b032ad8bca634421e7}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!ErrorMessage@{ErrorMessage}}
+\index{ErrorMessage@{ErrorMessage}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{ErrorMessage()}{ErrorMessage()}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Error\+Message return main error message. 
+
+\begin{DoxyReturn}{Returns}
+main error message 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{VException}}.
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a02833319e7240c1acd5a2592a2917b7d}\label{class_v_exception_empty_parameter_a02833319e7240c1acd5a2592a2917b7d}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!LineNumber@{LineNumber}}
+\index{LineNumber@{LineNumber}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{LineNumber()}{LineNumber()}}
+{\footnotesize\ttfamily qint32 VException\+Empty\+Parameter\+::\+Line\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Line\+Number return line number of tag. 
+
+\begin{DoxyReturn}{Returns}
+line number 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a0ae1584f17063b61826fde0c938d9397}\label{class_v_exception_empty_parameter_a0ae1584f17063b61826fde0c938d9397}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!Name@{Name}}
+\index{Name@{Name}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{Name()}{Name()}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Name return name of attribute where error. 
+
+\begin{DoxyReturn}{Returns}
+name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_acc5fcc826acd35931bbd6a73a9fb9b3f}\label{class_v_exception_empty_parameter_acc5fcc826acd35931bbd6a73a9fb9b3f}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!operator=@{operator=}}
+\index{operator=@{operator=}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \& VException\+Empty\+Parameter\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_exception_empty_parameter}{VException\+Empty\+Parameter}} \&}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_ab5c677bbd867e194a2d23c6e3d950e8e}\label{class_v_exception_empty_parameter_ab5c677bbd867e194a2d23c6e3d950e8e}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!TagName@{TagName}}
+\index{TagName@{TagName}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{TagName()}{TagName()}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tag\+Name return tag name. 
+
+\begin{DoxyReturn}{Returns}
+tag name 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a8ed9d764a7d0dbfd88149255b237bfc3}\label{class_v_exception_empty_parameter_a8ed9d764a7d0dbfd88149255b237bfc3}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!TagText@{TagText}}
+\index{TagText@{TagText}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{TagText()}{TagText()}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::\+Tag\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Tag\+Text return tag text. 
+
+\begin{DoxyReturn}{Returns}
+tag text 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_exception_empty_parameter_ac076d2e8bef53ca1315106995a91467a}\label{class_v_exception_empty_parameter_ac076d2e8bef53ca1315106995a91467a}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!lineNumber@{lineNumber}}
+\index{lineNumber@{lineNumber}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{lineNumber}{lineNumber}}
+{\footnotesize\ttfamily qint32 VException\+Empty\+Parameter\+::line\+Number\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+line\+Number line number 
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_acf08401da745b6fcfaf3aca013589bbb}\label{class_v_exception_empty_parameter_acf08401da745b6fcfaf3aca013589bbb}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!name@{name}}
+\index{name@{name}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+name name attribute 
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a93e8553413f68c89bea7a25478a5ec7d}\label{class_v_exception_empty_parameter_a93e8553413f68c89bea7a25478a5ec7d}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!tagName@{tagName}}
+\index{tagName@{tagName}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{tagName}{tagName}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::tag\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tag\+Name tag name 
+
+\mbox{\Hypertarget{class_v_exception_empty_parameter_a92f87e2c8b55cf9ab1ff6cfa2ae23a2a}\label{class_v_exception_empty_parameter_a92f87e2c8b55cf9ab1ff6cfa2ae23a2a}} 
+\index{VExceptionEmptyParameter@{VExceptionEmptyParameter}!tagText@{tagText}}
+\index{tagText@{tagText}!VExceptionEmptyParameter@{VExceptionEmptyParameter}}
+\doxysubsubsection{\texorpdfstring{tagText}{tagText}}
+{\footnotesize\ttfamily QString VException\+Empty\+Parameter\+::tag\+Text\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+tag\+Text tag text 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionemptyparameter_8h}{vexceptionemptyparameter.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionemptyparameter_8cpp}{vexceptionemptyparameter.\+cpp}}\end{DoxyCompactItemize}

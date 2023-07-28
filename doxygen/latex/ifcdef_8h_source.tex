@@ -1,0 +1,296 @@
+\hypertarget{ifcdef_8h_source}{}\doxysection{ifcdef.\+h}
+\label{ifcdef_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/ifcdef.h@{D:/Github/Seamly2D/src/libs/ifc/ifcdef.h}}
+\mbox{\hyperlink{ifcdef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{*\ \ \ @file\ \ \ ifcdef.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ \ @date\ \ \ 30\ Apr,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{**}}
+\DoxyCodeLine{00023\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{**\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{**}}
+\DoxyCodeLine{00026\ \textcolor{comment}{*************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @file\ \ \ ifcdef.h}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @date\ \ \ 10\ 12,\ 2014}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00054\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#ifndef\ IFCDEF\_H}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ IFCDEF\_H}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a06d2c73abe15fdf5c894e5b6dfdd6c56}{CustomMSign}};}
+\DoxyCodeLine{00067\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0df1f36e04cd4077a0c9e3915b070a83}{CustomIncrSign}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#ifdef\ Q\_OS\_WIN32}}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{extern}\ Q\_CORE\_EXPORT\ \textcolor{keywordtype}{int}\ qt\_ntfs\_permission\_lookup;}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \ \ \#include\ <windows.h>}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*Q\_OS\_WIN32*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ quint32\ null\_id\ =\ 0;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ NULL\_ID\ null\_id}\textcolor{comment}{//use\ this\ value\ for\ initialization\ variables\ that\ keeps\ id\ values.\ 0\ mean\ Unknown\ id\ value.}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ NULL\_ID\_STR\ "{}0"{}}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ Detect\ whether\ the\ compiler\ supports\ C++11\ noexcept\ exception\ specifications.}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#\ \ if\ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#\ \ \ \ if\ \_\_has\_feature(cxx\_noexcept)}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#\ \ \ \ \ \ define\ V\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ Clang\ 3.0\ and\ above\ have\ noexcept}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#\ \ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#\ \ \ \ if\ (\_\_GNUC\_\_\ >\ 4\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 6))\ \&\&\ defined(\_\_GXX\_EXPERIMENTAL\_CXX0X\_\_)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#\ \ \ \ \ \ define\ V\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ GCC\ 4.7\ and\ following\ have\ noexcept}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#\ \ elif\ defined(\_MSC\_FULL\_VER)\ \&\&\ \_MSC\_FULL\_VER\ >=\ 190023026}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#\ \ \ \ define\ V\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ Visual\ Studio\ 2015\ and\ following\ have\ noexcept}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#\ \ else}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#\ \ \ \ define\ V\_NOEXCEPT\_EXPR(x)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#\ \ endif}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac412474bb61348c1aaec0e5aafa5f384}{AttrType}};}
+\DoxyCodeLine{00095\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a4e47afa33b3a502fbb0c6c00eef94be5}{AttrMx}};}
+\DoxyCodeLine{00096\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac87455b0aca94fd5536255f6b0fe288f}{AttrMy}};}
+\DoxyCodeLine{00097\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0ab5c27057f217548fb4ee4e5a1f847d}{AttrName}};}
+\DoxyCodeLine{00098\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad63b2ef5c517d7b329ce9db54abcfa86}{AttrMx1}};}
+\DoxyCodeLine{00099\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ada977615c2cc1578981daeffa7b2f5dc}{AttrMy1}};}
+\DoxyCodeLine{00100\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1e6fd405dd4229f1acca2689b55790cf}{AttrName1}};}
+\DoxyCodeLine{00101\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a80abe6a05bf95043a4153f9439b9d091}{AttrMx2}};}
+\DoxyCodeLine{00102\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_adb3ff75924803916e515588e5a7428a3}{AttrMy2}};}
+\DoxyCodeLine{00103\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9feb5d243cbbe476e29db2cf67312298}{AttrName2}};}
+\DoxyCodeLine{00104\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a27961a71c483b818751fe79cd3f1bd7c}{AttrBaseLineP1}};}
+\DoxyCodeLine{00105\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a987f47ee1e36d5e0d91e4fe41699dcb3}{AttrBaseLineP2}};}
+\DoxyCodeLine{00106\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a99113e095826ef4e76670d07a16430e0}{AttrDartP1}};}
+\DoxyCodeLine{00107\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a80eec24b17d92655932fdc5493680447}{AttrDartP2}};}
+\DoxyCodeLine{00108\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac61fa56def489e867aba336694057b21}{AttrDartP3}};}
+\DoxyCodeLine{00109\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a7a7fb3ccc3f0532d0a8d6e7dd01c4fda}{AttrX}};}
+\DoxyCodeLine{00110\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a6b02102b5c8d1591ddf85f9f30c96c4b}{AttrY}};}
+\DoxyCodeLine{00111\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a24888ed518ac9d1a2b71e04b070443a3}{AttrLineType}};}
+\DoxyCodeLine{00112\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a35cf841500a60217130aa7aaae9e2e50}{AttrLineWeight}};}
+\DoxyCodeLine{00113\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9ca4826ebf781979ebfd4347451624a1}{AttrObjName}};}
+\DoxyCodeLine{00114\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af9129a869058711967153d571465d32b}{AttrCut}};}
+\DoxyCodeLine{00115\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1c1fb2b1b5785a8988a97715935d85e7}{AttrLength}};}
+\DoxyCodeLine{00116\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a05c30b130424bc06db810d468e908d55}{AttrBasePoint}};}
+\DoxyCodeLine{00117\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a3572c5564adcfc0b4fab1f00e35eb9dd}{AttrFirstPoint}};}
+\DoxyCodeLine{00118\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2ab434e5bbf87005e34a0d68fed6af33}{AttrSecondPoint}};}
+\DoxyCodeLine{00119\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_abe4b85ddd44820d4c6446ecf3e40f551}{AttrThirdPoint}};}
+\DoxyCodeLine{00120\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af6110531a70a4421c229653a26c0f653}{AttrCenter}};}
+\DoxyCodeLine{00121\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9eda07e5d16d894daab75af01e7a6e7b}{AttrRadius}};}
+\DoxyCodeLine{00122\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9a2febd08aaefbbe92379bef1039e298}{AttrRadius1}};}
+\DoxyCodeLine{00123\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a50c79cdda0450fce044687d233d45016}{AttrRadius2}};}
+\DoxyCodeLine{00124\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a43d444edc848513399704861d8c66602}{AttrAngle}};}
+\DoxyCodeLine{00125\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af25c6cc00bbe1e7e67c024b48a620025}{AttrAngle1}};}
+\DoxyCodeLine{00126\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_acf3d254d196bad60a18c02f31bed59f8}{AttrAngle2}};}
+\DoxyCodeLine{00127\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a95cafa1f0097ada0cc6a1aeb104f6719}{AttrRotationAngle}};}
+\DoxyCodeLine{00128\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aa2767350e4b6f38fb8c36ca9279d0fed}{AttrLength1}};}
+\DoxyCodeLine{00129\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a8740b5e726527d926374999d8d75a3d5}{AttrLength2}};}
+\DoxyCodeLine{00130\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a3c732cab74ec12835d0e764244a169b3}{AttrP1Line}};}
+\DoxyCodeLine{00131\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a5f2391a6b9fb248f7685d6ad547c5d60}{AttrP2Line}};}
+\DoxyCodeLine{00132\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a3777302d5db4240bf7a83fe2baf2e8c3}{AttrP1Line1}};}
+\DoxyCodeLine{00133\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_adc5efed853ac5697e693f63edf1615bc}{AttrP2Line1}};}
+\DoxyCodeLine{00134\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad90fa7681cad751b275f9ba4f0233360}{AttrP1Line2}};}
+\DoxyCodeLine{00135\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad7d0290557800a97f2a3511a4d0c5d01}{AttrP2Line2}};}
+\DoxyCodeLine{00136\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1cfd95c0c70c83257941709fb6b83b35}{AttrPShoulder}};}
+\DoxyCodeLine{00137\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a8c5478cedb79acf85d1b8b4c8e7209c6}{AttrPoint1}};}
+\DoxyCodeLine{00138\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0047f40552b454c63a2c92e8a71400f5}{AttrPoint2}};}
+\DoxyCodeLine{00139\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a7eefd465cdeaf904947263cc899a356c}{AttrPoint3}};}
+\DoxyCodeLine{00140\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad9834b939fa81a678718b1ff68a6290b}{AttrPoint4}};}
+\DoxyCodeLine{00141\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_afa5c8a8f9799d7d0a25071920343d3a9}{AttrKAsm1}};\textcolor{comment}{//\ TODO.\ Delete\ if\ minimal\ supported\ version\ is\ 0.2.7}}
+\DoxyCodeLine{00142\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0bf0415132cb5fa79525e210762184b0}{AttrKAsm2}};\textcolor{comment}{//\ TODO.\ Delete\ if\ minimal\ supported\ version\ is\ 0.2.7}}
+\DoxyCodeLine{00143\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab8035f39e54f0073103f89059059fad3}{AttrKCurve}};\textcolor{comment}{//\ TODO.\ Delete\ if\ minimal\ supported\ version\ is\ 0.2.7}}
+\DoxyCodeLine{00144\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1105faa3848cb2f2fbc8b47dcd336797}{AttrDuplicate}};}
+\DoxyCodeLine{00145\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad0d2194cee1619acaf1eb70de0e481cc}{AttrPathPoint}};}
+\DoxyCodeLine{00146\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a38dfc05262a53888797b29d88178b2a3}{AttrPSpline}};}
+\DoxyCodeLine{00147\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac794b55dff01ed160b3c50d8355529e1}{AttrAxisP1}};}
+\DoxyCodeLine{00148\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a8d6438adbf55b4efd8c7938e1bbc6f30}{AttrAxisP2}};}
+\DoxyCodeLine{00149\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a44922b484c05888d36d860133be0b5d5}{AttrCurve}};}
+\DoxyCodeLine{00150\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a56386a17c8d10d1f19236a9554458523}{AttrCurve1}};}
+\DoxyCodeLine{00151\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2b67536757e61b1616f4e22621454315}{AttrCurve2}};}
+\DoxyCodeLine{00152\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aca790b7abc395f2520c5777c66ebbb72}{AttrLineColor}};}
+\DoxyCodeLine{00153\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ad9ba18833a8ef4dd009e4fa0c7e8f35a}{AttrColor}};}
+\DoxyCodeLine{00154\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a41358a1780a3c57af87919d9add77a52}{AttrPenStyle}};}
+\DoxyCodeLine{00155\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a497d952a1b6a67067433cf4d1ecb69d7}{AttrFirstArc}};}
+\DoxyCodeLine{00156\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a417bd258422ce78f30aa0bcf0bf5cb7b}{AttrSecondArc}};}
+\DoxyCodeLine{00157\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a7304a9d8fae2b7e6ceca18172e05adb0}{AttrCrossPoint}};}
+\DoxyCodeLine{00158\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac45da9d48ee7743e9bcacd4ebeac9a5e}{AttrVCrossPoint}};}
+\DoxyCodeLine{00159\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aa07db222cea404ec8e5a08d9d2f0ad97}{AttrHCrossPoint}};}
+\DoxyCodeLine{00160\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a664605ab22fd4e63f25a6f5b3caeaf9a}{AttrAxisType}};}
+\DoxyCodeLine{00161\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a70050d1637cdee92b5724a96fcc94fd2}{AttrC1Center}};}
+\DoxyCodeLine{00162\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab7093387e935aed66e0254c3ed9a2919}{AttrC2Center}};}
+\DoxyCodeLine{00163\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a08c03d16a35e4af9b20a53567480a5e6}{AttrC1Radius}};}
+\DoxyCodeLine{00164\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2b11ee521e3535e73ff65df7b50bbc21}{AttrC2Radius}};}
+\DoxyCodeLine{00165\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ae25e598b1eda89435a31abbe1c367905}{AttrCCenter}};}
+\DoxyCodeLine{00166\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a7d919fbc3871d2fd3c47b496ea3f7b08}{AttrTangent}};}
+\DoxyCodeLine{00167\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac82e7751185700326956ee26ada91f55}{AttrCRadius}};}
+\DoxyCodeLine{00168\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aeef25e16ff1a6e4e92d58664052e4deb}{AttrArc}};}
+\DoxyCodeLine{00169\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_adabdb32ceafcefecf3f63d9bdb5ba82c}{AttrSuffix}};}
+\DoxyCodeLine{00170\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ada5c8833f656de3578fad8f5fd0e27d1}{AttrIdObject}};}
+\DoxyCodeLine{00171\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aa31422413e25304b0f0837229bfbaa62}{AttrInLayout}};}
+\DoxyCodeLine{00172\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a949e736dfb870bdfd0dc25b2c9c1ba57}{AttrPieceLocked}};}
+\DoxyCodeLine{00173\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a98e60441adeaa1f75f83c9d978cdfb99}{AttrClosed}};}
+\DoxyCodeLine{00174\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a51a98ddf539cbd1a59faec3a85adcba7}{AttrShowPointName}};}
+\DoxyCodeLine{00175\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a45cbea0860cfd3ae3cde072749fe2518}{AttrShowPointName1}};}
+\DoxyCodeLine{00176\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a3b09dd5e1b115ea2df1ee4ba45a28f47}{AttrShowPointName2}};}
+\DoxyCodeLine{00177\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ade9b666332fdbaa424309442114920cd}{AttrAlias}};}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9990d8b8bf3a8cd17d9cf96fdd4ed5da}{LineTypeNone}};}
+\DoxyCodeLine{00180\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a34c7d45d4b6acb3c0da108b28639b99d}{LineTypeSolidLine}};}
+\DoxyCodeLine{00181\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a5eeaef17d5541167d8b8acda02946102}{LineTypeDashLine}};}
+\DoxyCodeLine{00182\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_afb8b1265c7f505ee8cb5c02f6121d59c}{LineTypeDotLine}};}
+\DoxyCodeLine{00183\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a47745fcde526eee0ec4a17c4f3463038}{LineTypeDashDotLine}};}
+\DoxyCodeLine{00184\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a4bf9b24aa833ad31cb748fa3afaf04ea}{LineTypeDashDotDotLine}};}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ifcdef_8h_a71924e5b0ca1bf43364edbf093fa239f}{LineTypes}}();}
+\DoxyCodeLine{00187\ Qt::PenStyle\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ifcdef_8h_aed7354461477f562d0c10d0fbbd4eab6}{lineTypeToPenStyle}}(\textcolor{keyword}{const}\ QString\ \&lineType);}
+\DoxyCodeLine{00188\ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{ifcdef_8h_aae47f0fb5becf32c2558c61a6532b252}{PenStyleToLineType}}(Qt::PenStyle\ penStyle);}
+\DoxyCodeLine{00189\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QString>}}\ \mbox{\hyperlink{ifcdef_8h_ac50707a7f7194f86018a84ae0ce06ff7}{lineTypeList}}();}
+\DoxyCodeLine{00190\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QString>}}\ \mbox{\hyperlink{ifcdef_8h_a5cb5961413672d946f110c14bddb1283}{curveLineTypeList}}();}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QString>}}\ \mbox{\hyperlink{ifcdef_8h_a6e9214ecd06f31da918bccdc89c9b4d4}{lineWeightList}}();}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af3f5ffc1e37a155d3021a770e64b0008}{LineWeightByGroup}};}
+\DoxyCodeLine{00195\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a08e640e6ed2724cec96a3d106e6e120c}{LineTypeByGroup}};}
+\DoxyCodeLine{00196\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af1c805ceb54ffdb8e439360ae81235f2}{ColorByGroup}};}
+\DoxyCodeLine{00197\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a12a78cdfd176f8b9c0436e669218ec11}{ColorNone}};}
+\DoxyCodeLine{00198\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a97d7850641d04d1390958021adf3eae4}{ColorBlack}};}
+\DoxyCodeLine{00199\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af001b3fa0cfd3276bb8928a1745965cf}{ColorGreen}};}
+\DoxyCodeLine{00200\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a213ac73627229f3bb8864f386581d784}{ColorBlue}};}
+\DoxyCodeLine{00201\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a00433e7bbbf9ec4046298b8f20eea4b7}{ColorDarkRed}};}
+\DoxyCodeLine{00202\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab961ffd08bd8f2a61601d39b5ac2af3e}{ColorDarkGreen}};}
+\DoxyCodeLine{00203\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a7020e44b806646dee4d406e68954e07f}{ColorDarkBlue}};}
+\DoxyCodeLine{00204\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a3cfd81f0b9ed3d55e9ee6083222be8c0}{ColorYellow}};}
+\DoxyCodeLine{00205\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a954bc7eaa9f6a821957cab77ecc0d757}{ColorLightSalmon}};}
+\DoxyCodeLine{00206\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a6e113a553a0176d39cd03c432b7106fb}{ColorGoldenRod}};}
+\DoxyCodeLine{00207\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af3df8c36a57ee504d1dab7c0193f7852}{ColorOrange}};}
+\DoxyCodeLine{00208\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac668b1d6365c72ad33eac7ae86c615a7}{ColorDeepPink}};}
+\DoxyCodeLine{00209\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a724414a3b08a10b0f591472ee7bef6cb}{ColorViolet}};}
+\DoxyCodeLine{00210\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_afb06ea4fedd2e52b5a3cccfcad1432e2}{ColorDarkViolet}};}
+\DoxyCodeLine{00211\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a39932f3a24d591d1c5bbd62f120a0f9b}{ColorMediumSeaGreen}};}
+\DoxyCodeLine{00212\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af4faf41e1de3dc4109516dd66f4042ea}{ColorLime}};}
+\DoxyCodeLine{00213\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af8aa3dbcc43d9b1c038d5570856ba03c}{ColorDeepSkyBlue}};}
+\DoxyCodeLine{00214\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0659e5c9f1b262a117e73d59a59defd7}{ColorCornFlowerBlue}};}
+\DoxyCodeLine{00215\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a50061a81692fd26976b71cffaf15111b}{ColorGray}};}
+\DoxyCodeLine{00216\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a0482b3174beb074f65e01ccd0372a876}{ColorDarkGray}};}
+\DoxyCodeLine{00217\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1cdd65f1d5a03b524b94c43453cc0535}{ColorLightGray}};}
+\DoxyCodeLine{00218\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_abff7a40b341052315fd1908c6fcd94ef}{ColorWhite}};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a72c99687b70dae8e5f5180cd8a9f7dcf}{FillNone}};}
+\DoxyCodeLine{00221\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ac236a8dfc0e3be09dc07fc6b5726b25d}{FillSolid}};}
+\DoxyCodeLine{00222\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ae31da243d621ad6032b031dc1068bbdf}{FillDense1}};}
+\DoxyCodeLine{00223\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a86bcbacf1bf366b9007a5788f54db259}{FillDense2}};}
+\DoxyCodeLine{00224\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a58dca946c491863cefa0672f0804d7cf}{FillDense3}};}
+\DoxyCodeLine{00225\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a30d8bed2763a82e019aab8f8c60f479d}{FillDense4}};}
+\DoxyCodeLine{00226\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9183a956f54a75d56023f17c7af5f551}{FillDense5}};}
+\DoxyCodeLine{00227\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2099b37d19b695f456c6c6936a5ffae7}{FillDense6}};}
+\DoxyCodeLine{00228\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aea4485cec4f0330d6f515027f431de9e}{FillDense7}};}
+\DoxyCodeLine{00229\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a6336cf92a0f2c42ce625b4692d2744c6}{FillHorizLines}};}
+\DoxyCodeLine{00230\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ae65acb2bbc099e7b13c4d98883116c22}{FillVertLines}};}
+\DoxyCodeLine{00231\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a86a005b6031afb7bfa67efb9ba68f790}{FillCross}};}
+\DoxyCodeLine{00232\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2cbc954ba9f8bba8d86221e2c1398647}{FillBackwardDiagonal}};}
+\DoxyCodeLine{00233\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_afd184140313b5d5a4b037bb9b1c3d4c7}{FillForwardDiagonal}};}
+\DoxyCodeLine{00234\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2b27f55e5896fa26952ad410405519c2}{FilldDiagonalCross}};}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{comment}{//\ variables\ name}}
+\DoxyCodeLine{00237\ \textcolor{comment}{//\ Hacks\ for\ avoiding\ the\ linker\ error\ "{}undefined\ reference\ to"{}}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ SPL\_\ "{}Spl\_"{}}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ ARC\_\ "{}Arc\_"{}}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ ELARC\_\ "{}ElArc\_"{}}}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aebb333a8d51106ae4af6d969efebf614}{measurement\_}};}
+\DoxyCodeLine{00243\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a9f3ed812ea406c2606223e027025313b}{variable\_}};}
+\DoxyCodeLine{00244\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a8f15aea12a1f1e6f90bc1647fce9a03d}{line\_}};}
+\DoxyCodeLine{00245\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab9564a417fa51f153567e3e56efbc7ca}{angleLine\_}};}
+\DoxyCodeLine{00246\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a289f0293fa68b58447b0a7f5ed4423d5}{arc\_}};}
+\DoxyCodeLine{00247\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1aeb99428b3bf157cb2bf2544e3d9b41}{elarc\_}};}
+\DoxyCodeLine{00248\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aae1b086a7a80736297528e849eac280a}{spl\_}};}
+\DoxyCodeLine{00249\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a10f135a849fd89285cc24865990a5a0d}{splPath}};}
+\DoxyCodeLine{00250\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a2c4faf63c42b7cd3aceb16fe8e8d05cf}{radius\_V}};}
+\DoxyCodeLine{00251\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab9452d90ed05fed378f199b847479e6f}{radiusArc\_}};}
+\DoxyCodeLine{00252\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_af4464db521057ca2da8927d671fe1185}{radius1ElArc\_}};}
+\DoxyCodeLine{00253\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1f577e496e04fe827b25cc298e06012e}{radius2ElArc\_}};}
+\DoxyCodeLine{00254\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ae821a5220412cd3f50dab1f4a6219e41}{angle1\_V}};}
+\DoxyCodeLine{00255\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a883e8ecc7964954f5c9b610fda47f124}{angle2\_V}};}
+\DoxyCodeLine{00256\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a924e70b2cadd890f6cae5d7673c0a6e6}{c1Length\_V}};}
+\DoxyCodeLine{00257\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1be08446df3762d4a2c30338257d7c27}{c2Length\_V}};}
+\DoxyCodeLine{00258\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a1fb7a28b074e7d2c89b9e6a14bd9f83a}{c1LengthSpl\_}};}
+\DoxyCodeLine{00259\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab05c9b16c498d593f387710275f27e9e}{c2LengthSpl\_}};}
+\DoxyCodeLine{00260\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_aa71c1f7a45d923a9546ed85b5bc542fb}{c1LengthSplPath}};}
+\DoxyCodeLine{00261\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_acaf75b416f020991ca24f5226152df2a}{c2LengthSplPath}};}
+\DoxyCodeLine{00262\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a26036bddd3c34c28fd26858555e27c7c}{angle1Arc\_}};}
+\DoxyCodeLine{00263\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a56160bb66564baaaf7d3b9134f97cc89}{angle2Arc\_}};}
+\DoxyCodeLine{00264\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a125e0c6b1a95847b2c0133e9d4e2d380}{angle1ElArc\_}};}
+\DoxyCodeLine{00265\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a88ae45c7245ae1ba6b60e6b98cfda461}{angle2ElArc\_}};}
+\DoxyCodeLine{00266\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_ab2f28cd550be09584754e7447d8b9068}{angle1Spl\_}};}
+\DoxyCodeLine{00267\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_adc55e2e472f2a1112e434a74281526a2}{angle2Spl\_}};}
+\DoxyCodeLine{00268\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a18d3dcc54adfb57db65992d1ea0397e0}{angle1SplPath}};}
+\DoxyCodeLine{00269\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a908a8a869addc6bf9ea85b98d62acafb}{angle2SplPath}};}
+\DoxyCodeLine{00270\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a60582d208ea24de885ed492051184129}{seg\_}};}
+\DoxyCodeLine{00271\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_abf25a0ae9a3dc29bb5def396ba66fbf8}{currentLength}};}
+\DoxyCodeLine{00272\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{ifcdef_8h_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}};}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ QStringList\ \mbox{\hyperlink{ifcdef_8h_ac429aa4d4621f2de562bf3837508e3d0}{builInVariables}};}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00276\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00277\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00278\ }
+\DoxyCodeLine{00279\ struct\ \mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}}
+\DoxyCodeLine{00280\ \{}
+\DoxyCodeLine{00281\ \ \ \ \ QString\ \mbox{\hyperlink{struct_v_label_template_line_a0cd50ffd0ed628e0d43874f71ced50bf}{line}};}
+\DoxyCodeLine{00282\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{struct_v_label_template_line_a044c7f9d6cebbea41933955ef9947235}{bold}};}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{struct_v_label_template_line_a002b6f9f8075396961dae2b25718c060}{italic}};}
+\DoxyCodeLine{00284\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{struct_v_label_template_line_a959e663200d6a9eafdd99ca0aa08c5a4}{alignment}};}
+\DoxyCodeLine{00285\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{struct_v_label_template_line_a911cdff76bc8a2fd777df4b16a6cd380}{fontSizeIncrement}};}
+\DoxyCodeLine{00286\ \};}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ IFCDEF\_H}}
+
+\end{DoxyCode}

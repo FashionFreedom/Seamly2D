@@ -1,0 +1,515 @@
+\hypertarget{vabstractpattern_8h_source}{}\doxysection{vabstractpattern.\+h}
+\label{vabstractpattern_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/xml/vabstractpattern.h@{D:/Github/Seamly2D/src/libs/ifc/xml/vabstractpattern.h}}
+\mbox{\hyperlink{vabstractpattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractpattern.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Mar\ 1,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vabstractpattern.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 15\ 6,\ 2015}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTPATTERN\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VABSTRACTPATTERN\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QPair>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vdomdocument_8h}{vdomdocument.h}}"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolrecord_8h}{vtoolrecord.h}}"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/pen\_toolbar.h"{}}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{class\ }QDomElement;}
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_path}{VPiecePath}};}
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_node}{VPieceNode}};}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_pen_tool_bar}{PenToolBar}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ :\ \textcolor{keywordtype}{char}\ \{\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202adb22028d495f0deff7064f1471b4933c}{LiteParse}},\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202a6c1e150164cce531fddd70fad7db282f}{LiteBlockParse}},\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}{FullParse}}\ \};}
+\DoxyCodeLine{00079\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{LabelType}}\ :\ \textcolor{keywordtype}{char}\ \{\mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa58b2398ca2e7e833e9e0e53b31aee633}{NewPatternPiece}},\ \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfaa337ccf7d7f2dd8d2857b49a78d7d7fc3}{NewLabel}}\};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ Don't\ touch\ values!!!.\ Same\ values\ stored\ in\ xml.}}
+\DoxyCodeLine{00082\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{CrossCirclesPoint}}\ :\ \textcolor{keywordtype}{char}\ \{\mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7ba7f96422659759463a6faa5a17b7a5554}{FirstPoint}}\ =\ 1,\ \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7bac8dcbd757e675381f3f7b5d2c75de2e8}{SecondPoint}}\ =\ 2\};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498de}{VCrossCurvesPoint}}\ :\ \textcolor{keywordtype}{char}\ \{\mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deafd44f1be21b9031b47d69681f77a2884}{HighestPoint}}\ =\ 1,\ \mbox{\hyperlink{vabstractpattern_8h_a968324ddec8a7f7498fc97a24f0498deabe1992d4b6d1c95cc5cbd2a422495caf}{LowestPoint}}\ =\ 2\};}
+\DoxyCodeLine{00084\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2}{HCrossCurvesPoint}}\ :\ \textcolor{keywordtype}{char}\ \{\mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2a1127489e32f2f6802c3155a464434d72}{LeftmostPoint}}\ =\ 1,\ \mbox{\hyperlink{vabstractpattern_8h_a7a2eb4ed5c1958e5bf0fe28638ad6ef2ac5357df0bec8a2decc37f2ad9986bf85}{RightmostPoint}}\ =\ 2\};}
+\DoxyCodeLine{00085\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263e}{AxisType}}\ :\ \textcolor{keywordtype}{char}\ \{\mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263eae513c83b89a32e58750f3874f73204f5}{VerticalAxis}}\ =\ 1,\ \mbox{\hyperlink{vabstractpattern_8h_ac0eaf9908bdb2df95232be5bf4c7263ea43cd3e11a6a791780a930161f4c9ee20}{HorizontalAxis}}\ =\ 2\};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00088\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_data_tool}{VDataTool}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00091\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ struct\ \mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ QString\ \ \ \ \ \mbox{\hyperlink{struct_v_formula_field_ad91a1bdc8d51df07c2dcff235d2e9edf}{expression}};}
+\DoxyCodeLine{00096\ \ \ \ \ QDomElement\ \mbox{\hyperlink{struct_v_formula_field_a815fd1833f3496ac20ad69cef5465897}{element}};}
+\DoxyCodeLine{00097\ \ \ \ \ QString\ \ \ \ \ \mbox{\hyperlink{struct_v_formula_field_a956c5c7f4048e2077124af233083845f}{attribute}};}
+\DoxyCodeLine{00098\ \};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_group_attributes}{GroupAttributes}}}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \ QString\ \ \mbox{\hyperlink{struct_group_attributes_a0c1c4f04e9d565df4f54605370cd2f29}{name}};}
+\DoxyCodeLine{00103\ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{struct_group_attributes_a8b2cfbabf8b1452e49f1c4e490286dd9}{visible}};}
+\DoxyCodeLine{00104\ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{struct_group_attributes_a41f68739ef7cbe70c847ab56aacb72a5}{locked}};}
+\DoxyCodeLine{00105\ \ \ \ QString\ \ \mbox{\hyperlink{struct_group_attributes_a4cd669641496d697360af0d5aeef4c0c}{color}};}
+\DoxyCodeLine{00106\ \ \ \ QString\ \ \mbox{\hyperlink{struct_group_attributes_a04138b4624a8b7f3f7d4ba8d8d5a1e0c}{linetype}};}
+\DoxyCodeLine{00107\ \ \ \ QString\ \ \mbox{\hyperlink{struct_group_attributes_a02a00d7c5635fc784d288c5213d2b1f6}{lineweight}};}
+\DoxyCodeLine{00108\ \};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ :\ \textcolor{keyword}{public}\ QObject,\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_dom_document}{VDomDocument}}}
+\DoxyCodeLine{00113\ \{}
+\DoxyCodeLine{00114\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00115\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a9cf2553eb1c690ac1b6623455b5a355d}{\string~VAbstractPattern}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aaeef13149e81d44bec0ceec6a52b78f7}{ListMeasurements}}()\ const;}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ace38e9782ed82518017a02180d12c39d}{ListExpressions}}()\ const;}
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ad64f8ee344e7f4f1ab03925f08d1df79}{ListIncrementExpressions}}()\ const;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa4d1f7ce6efd34666ec9dfd453bbef57}{CreateEmptyFile}}()=0;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_af0079631abf55300f5a48d7630a44e9f}{changeActiveDraftBlock}}(const\ QString\ \&name,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse\ =\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}::\mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}{FullParse}});}
+\DoxyCodeLine{00126\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_acc1c3efbffeeb7fc9861fb3cc2c966e5}{getActiveDraftBlockName}}()\ const;}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a606f94b6733093ee8ae2a705efedd866}{draftBlockNameExists}}(const\ QString\ \&name)\ const;}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a46bbde5615d7573d3074780b32ffaaac}{draftBlockCount}}()\ const;}
+\DoxyCodeLine{00130\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6e4f35de17639cad2059e2669e4e4d72}{getDraftBlockElement}}(const\ QString\ \&name);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a433e0f26a55c2a22591c876619ae93f8}{renameDraftBlock}}(const\ QString\ \&oldName,\ const\ QString\ \&newName);}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7385782927b9171fd943af6e60fb1ade}{appendDraftBlock}}(const\ QString\ \&name);}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac53c83d69a34ab0ad23b6050670147e3}{getActiveNodeElement}}(const\ QString\ \&name,\ QDomElement\ \&element)\ const;}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ace9622fda402fc01cd2e94d357376477}{getCursor}}()\ const;}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_abe4933bc31e9abb4a8a3076e39ec4bb0}{setCursor}}(const\ quint32\ \&value);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa9f95c268bc04ab673d74a3adb4546f9}{setDefaultPen}}(\mbox{\hyperlink{class_pen}{Pen}}\ pen);}
+\DoxyCodeLine{00140\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aef8ec9eebacc96a730c61f57de3974c1}{getDefaultLineColor}}()\ const;}
+\DoxyCodeLine{00141\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aeda9bee3956d471a11c185fbc6be6105}{getDefaultLineWeight}}()\ const;}
+\DoxyCodeLine{00142\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac19ec3f5598642af4bdd34686a997ec9}{getDefaultLineType}}()\ const;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a698f53614173279191a3f46f5ba5e950}{IncrementReferens}}(quint32\ \textcolor{keywordtype}{id})\ const=0;}
+\DoxyCodeLine{00145\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_af1c8c3bc15ed22d49354ffb6358ff964}{DecrementReferens}}(quint32\ \textcolor{keywordtype}{id})\ const=0;}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ virtual\ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0d40e39a61c18c8663d82e3280065859}{GenerateLabel}}(const\ \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{LabelType}}\ \&type,\ const\ QString\ \&reservedName\ =\ QString())const=0;}
+\DoxyCodeLine{00148\ \ \ \ \ virtual\ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae5fcc863a494308e7397906d0972bfde}{GenerateSuffix}}(const\ QString\ \&type)\ const=0;}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a3f3b6ce0527e751e3ce4d89f3f2ec444}{UpdateToolData}}(const\ quint32\ \&\textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)=0;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ static\ \mbox{\hyperlink{class_v_data_tool}{VDataTool}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_pattern_aa4dad9c79b6f2e51c9939fd1721c1a0b}{getTool}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00153\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a708f3a836e2ff3e6191abbc38a365afa}{AddTool}}(quint32\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_v_data_tool}{VDataTool}}\ *tool);}
+\DoxyCodeLine{00154\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa888559d3d61f3cba4626f8f3a79d974}{RemoveTool}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ static\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab1dd7a2471e7300913006196b7ff5859}{ParsePieceNodes}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00157\ \ \ \ \ static\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_custom_s_a_record}{CustomSARecord}}>\ \mbox{\hyperlink{class_v_abstract_pattern_ab04410bff65b6a3e4e7648fa1e69188c}{ParsePieceCSARecords}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00158\ \ \ \ \ static\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aff1b730e9e43c789f48693651194afcc}{ParsePieceInternalPaths}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00159\ \ \ \ \ static\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a395ce6b7b9783a022175b21b395683f4}{ParsePieceAnchors}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a1987718fa3362d0c0dc75c9a3540107c}{AddToolOnRemove}}(\mbox{\hyperlink{class_v_data_tool}{VDataTool}}\ *tool);}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_tool_record}{VToolRecord}}>\ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_abstract_pattern_af411279aac4c763979d5dfab59465538}{getHistory}}();}
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_tool_record}{VToolRecord}}>\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa27ab44659f3d020bac0ee520d8bf2a1}{getBlockHistory}}()\ const;}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}>\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab9138b681d7ee73fa74fa178b3011ca7}{getGroupObjHistory}}()\ const;}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a4f3269597160b3600995b767e5d42a01}{MPath}}()\ const;}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_afd18f2961e7d882057d303fed983a709}{SetMPath}}(const\ QString\ \&path);}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a58beeca8626849307421f90ee3f44477}{SiblingNodeId}}(const\ quint32\ \&nodeId)\ const;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a5626feae59a2250ab9e6eca4e0490f1e}{getPatternPieces}}()\ const;}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}},\ \textcolor{keywordtype}{bool}>\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a985afcfe89462c7a22bf29191b5a860b}{GetGradationHeights}}()\ const;}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a04895b108bb041004eee42c6fb999e97}{SetGradationHeights}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}},\ \textcolor{keywordtype}{bool}>\ \&options);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}},\ \textcolor{keywordtype}{bool}>\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab15b15d6e1c4b38261945680aaeb5b58}{GetGradationSizes}}()\ const;}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_addcdcbaf1f3bd043da34d61a85461ef2}{SetGradationSizes}}(const\ \mbox{\hyperlink{class_q_map}{QMap}}<\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}},\ \textcolor{keywordtype}{bool}>\ \&options);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a84f106dc3f41f3124d5b60df621390ee}{GetDescription}}()\ const;}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_afd8319cd4fbacf4efeee5c8d16243b95}{SetDescription}}(const\ QString\ \&text);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aedc3a8d564d1daab47ec4e8e0fd8d324}{GetNotes}}()\ const;}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac24c71446c94c75f4d2df66b9ae3d57a}{SetNotes}}(const\ QString\ \&text);}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a5117596db58a68eb13086ffc9f00eb20}{GetPatternName}}()\ const;}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6c39894a4171242aef6ca6d554aae07f}{SetPatternName}}(const\ QString\ \&qsName);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a1b8cd0f8af9e209d8bd0b0b9c1072045}{GetCompanyName}}()\ const;}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac736024ee90ae15269284c3b0e203089}{SetCompanyName}}(const\ QString\ \&qsName);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a51638fb46d418bb2348c488fbd47f41d}{GetPatternNumber}}()\ const;}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a024d57aefc86cc965a8535d6d49c087c}{SetPatternNumber}}(const\ QString\ \&qsNum);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab090da99389df7a4e644cd65d58fbe7d}{GetCustomerName}}()\ const;}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7f3bc6c2ac7e86c71f8f3fd4f3b3f2ee}{SetCustomerName}}(const\ QString\ \&qsName);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a3ba9b824db220be8d90387aa0db9f753}{GetLabelDateFormat}}()\ const;}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac883e83b6999d50b4995270088ca7365}{SetLabelDateFormat}}(const\ QString\ \&format);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae851ba1788259138864d64abcbc55274}{GetLabelTimeFormat}}()\ const;}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aee2a3bbc7fb538360685d0f948490151}{SetLabelTimeFormat}}(const\ QString\ \&format);}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a77ce763318b8909c96afc836df2fed02}{setPatternLabelTemplate}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ \&lines);}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a20584ccd992a16abe52783f957885e49}{getPatternLabelTemplate}}()\ const;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a5bfe864f38ea22f19380ce7a9e20d878}{SetPatternWasChanged}}(\textcolor{keywordtype}{bool}\ changed);}
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a118ac5af1a3d6c9a6a51f09a735ad8c7}{GetPatternWasChanged}}()\ const;}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa2bb22d7915e28fda720bd1fe7da4819}{GetImage}}()\ const;}
+\DoxyCodeLine{00212\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a61640294cfc905d1d50b5f616c7b3f13}{GetImageExtension}}()\ const;}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0d0007d5288692cffe022c7272111d21}{SetImage}}(const\ QString\ \&text,\ const\ QString\ \&extension);}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ad878f2df8a2c2cccb70c9eb1c9dd7a39}{DeleteImage}}();}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a803a7bda1d14671529af9234fd83f3f3}{GetVersion}}()\ const;}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa145bf409f4500ac5236ab24bd0b4303}{SetVersion}}();}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6825403de75751aa7de5fe2b25928e94}{getOpItems}}(const\ quint32\ \&toolId,\ const\ QString\ \&itemType);}
+\DoxyCodeLine{00220\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a3c603629c89c825dfad7008602dbff66}{getDartItems}}(const\ quint32\ \&toolId);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa42e9c14c26c88222e2ac6acf30e5ac8}{IsModified}}()\ const;}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a433c240d03bffb31ad5887e009e07834}{SetModified}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_abstract_pattern_aef8c350521b58d4ed1712c9e6df3dc98}{modified}});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa4ef7229ac7560c39a1ea2451fe4d525}{getDraw}}(const\ QString\ \&name)\ const;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a966d7c9577c0729f302748a71276ae6d}{parseGroups}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00228\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a24d7b4b567b4f13e5231fb4de4c8f14b}{createGroups}}();}
+\DoxyCodeLine{00229\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a88649eff73235ab3bf4440af8214cddf}{createGroup}}(quint32\ \textcolor{keywordtype}{id},\ const\ QString\ \&name,\ const\ QString\ \&color,\ const\ QString\ \&type,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&weight,\ const\ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ quint32>\ \&groupData);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a8303bb869ecf04b47f592c9362474eb2}{addGroupItems}}(const\ QString\ \&name,\ const\ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ quint32>\ \&groupData);}
+\DoxyCodeLine{00233\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7b473aa93a26457868cb5d9b632bef78}{getGroupName}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa4c782f86220447dee00dee79adb3c84}{setGroupName}}(quint32\ \textcolor{keywordtype}{id},\ const\ QString\ \&name);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ \mbox{\hyperlink{struct_group_attributes}{GroupAttributes}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a100cc4652920340486dbb997e1b4b007}{getGroups}}();}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a3272656a86be9cddacd787cf68fb236c}{groupListByName}}();}
+\DoxyCodeLine{00239\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a31eeef7cb27ca5b4eaccd6ab3a0e0546}{getGroupByName}}(const\ QString\ \&name);}
+\DoxyCodeLine{00240\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a622ad112d231e1c32f6f1516eccec4dc}{getGroupIdByName}}(const\ QString\ \&name);}
+\DoxyCodeLine{00241\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ QString>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ace1bb83ea9b3f89c55b68a0ba61967df}{getGroupsContainingItem}}(quint32\ toolId,\ quint32\ objectId,\ \textcolor{keywordtype}{bool}\ containsItem);}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a14f62603e1ea7df9d469d27cf8fe3820}{deleteToolFromGroup}}(quint32\ toolId);}
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6c71cc4329d51c5650b4134da7a8f1e6}{addToolToGroup}}(quint32\ toolId,\ quint32\ objectId,\ const\ QString\ \&groupName\ );}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7610fad3fe65cccc65641ea9ea652c84}{addGroupItem}}(quint32\ toolId,\ quint32\ objectId,\ quint32\ groupId);}
+\DoxyCodeLine{00247\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a2f4da766b7d4f7bcd48082e54f7d4581}{removeGroupItem}}(quint32\ toolId,\ quint32\ objectId,\ quint32\ groupId);}
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a390764261c73a4942840d674f0059504}{isGroupEmpty}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a8e8e03f7c90530ce959ac81153e7413d}{getGroupVisibility}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae7d190c106c2a2a49d6c7e57e403b749}{setGroupVisibility}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible);}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a098ca8ead8e17361a8d2ff46e7dd825c}{getGroupLock}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a01fe7d183d93ca66f609e39cb55f1feb}{setGroupLock}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ locked);}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae1a72bbc44da24e061a0e1f82f7dc625}{getGroupColor}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00257\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0e63bd1b814f536a5dcbb502f6d4ca3a}{setGroupColor}}(quint32\ \textcolor{keywordtype}{id},\ QString\ color);}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00259\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab1956595ba542488875ae8f36ec31e9f}{getGroupLineType}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00260\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab0e75a764ad8c88cc1edb25ed62aa7d5}{setGroupLineType}}(quint32\ \textcolor{keywordtype}{id},\ QString\ type);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a9706ba2e9707314910f852ab0931f2f3}{getGroupLineWeight}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a142bb55bd6fd9c86b4a70198f78ea168}{setGroupLineWeight}}(quint32\ \textcolor{keywordtype}{id},\ QString\ weight);}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_acfd14832746968dd45e6b036f5b526a4}{groupNameExists}}(const\ QString\ \&groupName);}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00267\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a491972f831d63e2d39f26f0d0d5e18d6}{useGroupColor}}(quint32\ toolId,\ QString\ color);}
+\DoxyCodeLine{00268\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ac7967fd65249b5b7bc332810305ebb9e}{useGroupLineType}}(quint32\ toolId,\ QString\ type);}
+\DoxyCodeLine{00269\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab9045e2a8a47615ad0a761c4c45b6638}{useGroupLineWeight}}(quint32\ toolId,\ QString\ weight);}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00271\ \ \ \ \ QPair<\textcolor{keywordtype}{bool},\ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ quint32>\ >\ \mbox{\hyperlink{class_v_abstract_pattern_a383b680af9cf68fe91ed34e3269b2344}{parseItemElement}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a655b2c1e56eda53619b31631de38ce60}{TagPattern}};}
+\DoxyCodeLine{00274\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae1a00732e559ec5c66b663c1a177014f}{TagCalculation}};}
+\DoxyCodeLine{00275\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a58b700e58deba5480973f01696630380}{TagModeling}};}
+\DoxyCodeLine{00276\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a38fd4709613698e4a4e19441f57b2ceb}{TagPieces}};}
+\DoxyCodeLine{00277\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ad152fb326ae3edcbcec3fecc429452ec}{TagPiece}};}
+\DoxyCodeLine{00278\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a40ca50a3725d53e4f280d2781e08cfd3}{TagDescription}};}
+\DoxyCodeLine{00279\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae075c73c95d8a8962b8606446bd51164}{TagImage}};}
+\DoxyCodeLine{00280\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a78b38a8e90f909bcd597ac4c3ab486ae}{TagNotes}};}
+\DoxyCodeLine{00281\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4d469fe0927bc92579aca10cc6d303c6}{TagMeasurements}};}
+\DoxyCodeLine{00282\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af8a54ac96a63d0cc3bf4c646ba35b64d}{TagIncrements}};}
+\DoxyCodeLine{00283\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa59cabfbb5d3b02ad6e17f948d8ffe50}{TagIncrement}};}
+\DoxyCodeLine{00284\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ab013c406edc625c42aae088d86e7c1d6}{TagDraftBlock}};}
+\DoxyCodeLine{00285\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa60fb33f0cc193c640b6ecebf774870a}{TagGroups}};}
+\DoxyCodeLine{00286\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a81b912c268d488cc3430c3a00fdc2c72}{TagGroup}};}
+\DoxyCodeLine{00287\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a7e1341c31f6b3defb098c1945186d9b9}{TagGroupItem}};}
+\DoxyCodeLine{00288\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aee43ab4c241e21a90d8981d068a2d540}{TagPoint}};}
+\DoxyCodeLine{00289\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a1406dd4249c79f15934c4eeb5a7afc0d}{TagSpline}};}
+\DoxyCodeLine{00290\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a5a9f32fda02f9b73dcfa91149f4210ea}{TagArc}};}
+\DoxyCodeLine{00291\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8b64e0964386907b054b61a7dc6ddaed}{TagElArc}};}
+\DoxyCodeLine{00292\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a7a675d2c8e9cba962b08d98baba7d25d}{TagTools}};}
+\DoxyCodeLine{00293\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_abaea099d70fb4766d397c0a18ff8268f}{TagOperation}};}
+\DoxyCodeLine{00294\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aef365b96e1d3cc1f9f26b72f4f06e9df}{TagGradation}};}
+\DoxyCodeLine{00295\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a896ab7e6958ebd85e46420b680a8f537}{TagHeights}};}
+\DoxyCodeLine{00296\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_afef434a1bc9731d588a9618581f4e254}{TagSizes}};}
+\DoxyCodeLine{00297\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a0d807ad4ee38d3970fa88ebcae496061}{TagData}};}
+\DoxyCodeLine{00298\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a88296528e243d0057ad12cbf60150715}{TagPatternInfo}};}
+\DoxyCodeLine{00299\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a5f0567a3d2a1c009054cfd91149a56ea}{TagPatternName}};}
+\DoxyCodeLine{00300\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa698b52087c0dd4d02327c1e61f57fe3}{TagPatternNum}};}
+\DoxyCodeLine{00301\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ad28cb07a91d484aeb1d1d1cc7939a348}{TagCompanyName}};}
+\DoxyCodeLine{00302\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a86ff40e643e5a9a74f65eb8978ab546c}{TagCustomerName}};}
+\DoxyCodeLine{00303\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9d4887542e1f5eb22cdd734dd97567b4}{TagPatternLabel}};}
+\DoxyCodeLine{00304\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae365b2fed5f7df11845adc17ccaac615}{TagGrainline}};}
+\DoxyCodeLine{00305\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ad0bf69464cfd466fed0985a2d20a1a11}{TagPath}};}
+\DoxyCodeLine{00306\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af41a02351134bc71ec7453adbb4ba669}{TagNodes}};}
+\DoxyCodeLine{00307\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a04572e55082d88315e3ee7025e86ca2a}{TagNode}};}
+\DoxyCodeLine{00308\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa4818fc626b29e9532ec15f0764e162e}{TagLine}};}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aea3325cda214b61b101f019e1f9d3383}{AttrName}};}
+\DoxyCodeLine{00311\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aee42868a6a1cf1942d55d54dda0b4163}{AttrVisible}};}
+\DoxyCodeLine{00312\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a873145017474704fc14d12e7827b8941}{AttrGroupLocked}};}
+\DoxyCodeLine{00313\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2f37cc865847f27e0e1b9745b2b88068}{AttrGroupColor}};}
+\DoxyCodeLine{00314\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a06d33cf1793e6639ece07a9ed31517ed}{AttrObject}};}
+\DoxyCodeLine{00315\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9e1178e49626b19138a2fe0357f1b09e}{AttrTool}};}
+\DoxyCodeLine{00316\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2ae9a9a96d512c818dc7a9ecbd5255f0}{AttrType}};}
+\DoxyCodeLine{00317\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a05e56f79f54a9d46b8f47d692ed7c9e4}{AttrLetter}};}
+\DoxyCodeLine{00318\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2070188dd3e7116c61e5848d0116a584}{AttrAnnotation}};}
+\DoxyCodeLine{00319\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9ca80390300b5bb85b2cc7d35363fb21}{AttrOrientation}};}
+\DoxyCodeLine{00320\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9325a8f103a96ec321d36d7a1ac77d54}{AttrRotationWay}};}
+\DoxyCodeLine{00321\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a353fe06802ce321b28635a17dd34232b}{AttrTilt}};}
+\DoxyCodeLine{00322\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a44208f95ff97dc3252b737f07778a9fa}{AttrFoldPosition}};}
+\DoxyCodeLine{00323\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8f9018d69760759ec7bf673c4dfb866b}{AttrQuantity}};}
+\DoxyCodeLine{00324\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a6979b02bf6877a811f263385de4feb6b}{AttrOnFold}};}
+\DoxyCodeLine{00325\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae10d24291769e67d3eeccd2b86efa354}{AttrDateFormat}};}
+\DoxyCodeLine{00326\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a0085e944a385c92d9cc077616215a3a4}{AttrTimeFormat}};}
+\DoxyCodeLine{00327\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aac5f2501c0c641bc8e8b50c8d31c5312}{AttrArrows}};}
+\DoxyCodeLine{00328\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_acab69134d17a9a94babe7aefc078b3be}{AttrNodeReverse}};}
+\DoxyCodeLine{00329\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_acfaf751157c367f86496a245c33cc55b}{AttrNodeExcluded}};}
+\DoxyCodeLine{00330\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aed15c1115d1c372712089bd4b744adaa}{AttrNodeIsNotch}};}
+\DoxyCodeLine{00331\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a3d15aab568dda4e2706265ee5194ac20}{AttrNodeNotchType}};}
+\DoxyCodeLine{00332\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8252c078a937585860a98efebf482759}{AttrNodeNotchSubType}};}
+\DoxyCodeLine{00333\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af6d4f4bc63329ac5cc5d15d876955b7a}{AttrNodeShowNotch}};}
+\DoxyCodeLine{00334\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8edf536d8bb40884925958d68baff7dd}{AttrNodeShowSecondNotch}};}
+\DoxyCodeLine{00335\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa5a9d482a4a5d4d622239d610357ba27}{AttrNodeNotchLength}};}
+\DoxyCodeLine{00336\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af19d7128f2b5454a306ca18e3244d4a9}{AttrNodeNotchWidth}};}
+\DoxyCodeLine{00337\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aecb8277374e5294c00a0ae16f1554093}{AttrNodeNotchAngle}};}
+\DoxyCodeLine{00338\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aaa211217cb90089e88cd9c63ee888ea5}{AttrNodeNotchCount}};}
+\DoxyCodeLine{00339\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aaaacca9feb284e104710b2c68b3450a7}{AttrSABefore}};}
+\DoxyCodeLine{00340\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9cd9ff48505166cd898914864e4a7aac}{AttrSAAfter}};}
+\DoxyCodeLine{00341\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4632d9d35ed07aec35e9937068af3a29}{AttrStart}};}
+\DoxyCodeLine{00342\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a86d92c83d4900065b7c15d628ef354a9}{AttrPath}};}
+\DoxyCodeLine{00343\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a09c401423772780aa4ecbbbec7d48c95}{AttrEnd}};}
+\DoxyCodeLine{00344\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_abc62b4ad20d0efcf008bcfc01a40462e}{AttrIncludeAs}};}
+\DoxyCodeLine{00345\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a78923c614ae30f6937710e0aa94fe696}{AttrWidth}};}
+\DoxyCodeLine{00346\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a3b57d2dad039ac21304f12767debe6f3}{AttrRotation}};}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a5016f1d6d9bc10b4096589f1a3e26157}{AttrAll}};}
+\DoxyCodeLine{00349\ }
+\DoxyCodeLine{00350\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2cd696662e79956907d1e89c472be648}{AttrH50}};}
+\DoxyCodeLine{00351\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a89a0f141796bd809ba3aff3944c1c459}{AttrH56}};}
+\DoxyCodeLine{00352\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aadbac3bf7536c948bf83fd35e35eae47}{AttrH62}};}
+\DoxyCodeLine{00353\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a584c06f7974f1b270f49db47590c0c80}{AttrH68}};}
+\DoxyCodeLine{00354\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a834b7acc61969c47f34131d788efbc04}{AttrH74}};}
+\DoxyCodeLine{00355\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a7c6025aab43305f72154dee25fc7f4ec}{AttrH80}};}
+\DoxyCodeLine{00356\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a7eb0cbfb9fdfab00d2047375eaef2848}{AttrH86}};}
+\DoxyCodeLine{00357\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a79a182ac0560064269c1c1404f39f9b3}{AttrH92}};}
+\DoxyCodeLine{00358\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aab571a71d3fd4c6c6e8730ec2ee7014c}{AttrH98}};}
+\DoxyCodeLine{00359\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_abf005a297db1be31b520d602103a67f3}{AttrH104}};}
+\DoxyCodeLine{00360\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8ceadb09ee932d87e0d1702743fd9f3e}{AttrH110}};}
+\DoxyCodeLine{00361\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ad3205ba91020607de55cde5839762281}{AttrH116}};}
+\DoxyCodeLine{00362\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_adb3c4abe5e3269dd872e7a69eed3f53b}{AttrH122}};}
+\DoxyCodeLine{00363\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a62f9955a426c7e76064a83e4c36d7f1a}{AttrH128}};}
+\DoxyCodeLine{00364\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a5394d23b51a23f2d1bb4db95faf79b83}{AttrH134}};}
+\DoxyCodeLine{00365\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a6c0623eda12aab6b7a4e6698fcec1cd3}{AttrH140}};}
+\DoxyCodeLine{00366\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8e32d3c65ece9343ddee0946a35df146}{AttrH146}};}
+\DoxyCodeLine{00367\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aca514ca7e6c1621e7e44fc314567342d}{AttrH152}};}
+\DoxyCodeLine{00368\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2fa15d62cc4c7b16fc6d059433bd3617}{AttrH158}};}
+\DoxyCodeLine{00369\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a981f33d694cfd61485cd67ae34adba54}{AttrH164}};}
+\DoxyCodeLine{00370\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae2653ab083d38acb54ad1e8359827962}{AttrH170}};}
+\DoxyCodeLine{00371\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ac53602e3320e33472506825c5e73c978}{AttrH176}};}
+\DoxyCodeLine{00372\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2d75e182babd1d4c2ca3dbe4364b28cc}{AttrH182}};}
+\DoxyCodeLine{00373\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a9e2dfc5932c1875efa6f291346a6b092}{AttrH188}};}
+\DoxyCodeLine{00374\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a87cc7d2e4a33b1fff6d3f691976726fc}{AttrH194}};}
+\DoxyCodeLine{00375\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ac23fc1ed69e16051698f699966acc191}{AttrH200}};}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aac8425cbd3698e310b0790e0cd28610a}{AttrS22}};}
+\DoxyCodeLine{00378\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_adeb2b8275d475d22941787b27fa8e211}{AttrS24}};}
+\DoxyCodeLine{00379\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4aea1893478527cd6b759bb39abe07b4}{AttrS26}};}
+\DoxyCodeLine{00380\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a035bb6aca2b916e3b791827d72d97c66}{AttrS28}};}
+\DoxyCodeLine{00381\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ab6cb6c77efe29be24ce7435fa22fd708}{AttrS30}};}
+\DoxyCodeLine{00382\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8844dfb0f97db3750ec64f40bcb219a4}{AttrS32}};}
+\DoxyCodeLine{00383\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4328070ad771825f3a62224807c7acb2}{AttrS34}};}
+\DoxyCodeLine{00384\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a1f8d06e560a0be2df775ba847d5a6dc1}{AttrS36}};}
+\DoxyCodeLine{00385\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aad47a9073874201e01a8e38da3fcb132}{AttrS38}};}
+\DoxyCodeLine{00386\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8024c3fdabe52af622563eaaa4fc419c}{AttrS40}};}
+\DoxyCodeLine{00387\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ae0c54da5f2f42dcda4b8b4294d49c96f}{AttrS42}};}
+\DoxyCodeLine{00388\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a91ad55c55b6628db8ba3d226b15762ed}{AttrS44}};}
+\DoxyCodeLine{00389\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_aa3da85e7f2853cfed66cf21bc42e0e06}{AttrS46}};}
+\DoxyCodeLine{00390\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_acc8e84a57c64bc95384fff0c0cc5618e}{AttrS48}};}
+\DoxyCodeLine{00391\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a1d10899fa85e1b66af25af90b359d262}{AttrS50}};}
+\DoxyCodeLine{00392\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a43e9c7677da6232a0f45cb61dceb7325}{AttrS52}};}
+\DoxyCodeLine{00393\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a2e53f114162aebf5a7d8fd1f98cd2365}{AttrS54}};}
+\DoxyCodeLine{00394\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a28e7c4402cad56cce595d80320718509}{AttrS56}};}
+\DoxyCodeLine{00395\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a703b46f85dc78e09cec2a57085e72d68}{AttrS58}};}
+\DoxyCodeLine{00396\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a1c91b7d7f6ecde8d458d9226641e0aca}{AttrS60}};}
+\DoxyCodeLine{00397\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4fdc2fe2adc472e045a0d0b6d7121efa}{AttrS62}};}
+\DoxyCodeLine{00398\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_abaede9a4c1f908e3828ce5e770e9f6ee}{AttrS64}};}
+\DoxyCodeLine{00399\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a0b3d59400ba6f627223b2d62db9b67e1}{AttrS66}};}
+\DoxyCodeLine{00400\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af00d166bfe14796783fad50f9994dbed}{AttrS68}};}
+\DoxyCodeLine{00401\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a1c08300f9d717394fbb4eafcf8b918c2}{AttrS70}};}
+\DoxyCodeLine{00402\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af0e8fbbbbef610cbab8100587a59206f}{AttrS72}};}
+\DoxyCodeLine{00403\ }
+\DoxyCodeLine{00404\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a48b8f4c2cb65c0d2c44070d2e0fcdcf0}{AttrCustom}};}
+\DoxyCodeLine{00405\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_af2966fc0d3f0bd9229cdcd11b05a4f7b}{AttrDefHeight}};}
+\DoxyCodeLine{00406\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a651eb3ad857b141ef853d309898e9b38}{AttrDefSize}};}
+\DoxyCodeLine{00407\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a48e6cd7b64f23c51084c06793c33b2d6}{AttrExtension}};}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ab37acf5937002ab9336c8ea6d680417c}{IncrementName}};}
+\DoxyCodeLine{00410\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ac4b0b284ed98a54350999678e5948ef6}{IncrementFormula}};}
+\DoxyCodeLine{00411\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4e7df8b32eb1db44d8a0ef4b1545487c}{IncrementDescription}};}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a39ed5f7674c6f8050889a5bb14082a36}{NodeArc}};}
+\DoxyCodeLine{00414\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_ab3d64ea3174240f4dd7708d67d729624}{NodeElArc}};}
+\DoxyCodeLine{00415\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a4791a95cb3aa67130446da82c29efed1}{NodePoint}};}
+\DoxyCodeLine{00416\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8e323f646c4f7b9df3bfa6a4252130ce}{NodeSpline}};}
+\DoxyCodeLine{00417\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_pattern_a8693a1fb7b51b815a48c63ca48856ebb}{NodeSplinePath}};}
+\DoxyCodeLine{00418\ }
+\DoxyCodeLine{00419\ signals:}
+\DoxyCodeLine{00424\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a79ae485e18f75f7d2619b15e511774af}{activeDraftBlockChanged}}(const\ QString\ \&newName);}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00430\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a393acaa1e7a66877b639260638c2766f}{ChangedCursor}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00431\ }
+\DoxyCodeLine{00437\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a1e3241563df4a79996faa884df45f400}{draftBlockNameChanged}}(const\ QString\ \&oldName,\ const\ QString\ \&newName);}
+\DoxyCodeLine{00441\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a2490137462ef75b44abc4cceafb2f0a3}{FullUpdateFromFile}}();}
+\DoxyCodeLine{00445\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7d938cb0568dce72c2c34769b96ef1b2}{patternChanged}}(\textcolor{keywordtype}{bool}\ saved);}
+\DoxyCodeLine{00446\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a97b08b1037219231986fd9ce2ea78a07}{UpdatePatternLabel}}();}
+\DoxyCodeLine{00452\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a61e3a51093ef0555b997688a554f0912}{ShowTool}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a7e4838c9005f310757392ac20cfc0c53}{ClearMainWindow}}();}
+\DoxyCodeLine{00454\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vundocommand_8h_aeb42a5e0c886f3719edb15c410d148e6}{UndoCommand}}();}
+\DoxyCodeLine{00455\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a19032074f054fd53b32f4ceb156df8ef}{setGuiEnabled}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a8276410ca024ac045a12e51e8e39503e}{CheckLayout}}();}
+\DoxyCodeLine{00457\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a2b8ab63bf5a82f9a57c8b4dab31cac43}{UpdateInLayoutList}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00458\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_abcb22a2fffcfbd48d34d7078527d4d7d}{showPiece}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00459\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae788472aa31640ba404eea3230d7e523}{setCurrentDraftBlock}}(const\ QString\ \&patterPiece);}
+\DoxyCodeLine{00460\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_afe68dbf09a046fee9737735915efd4ef}{patternHasGroups}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00461\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a3a47a9fb94c5a12511140dd4c40f0cd6}{updateGroups}}();}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00463\ public\ slots:}
+\DoxyCodeLine{00464\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0b3f166afef48929872c89fa7a2b76c9}{LiteParseTree}}(const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse)=0;}
+\DoxyCodeLine{00465\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6c49f7fb40b9d88a3618ce9347aacfdd}{haveLiteChange}}();}
+\DoxyCodeLine{00466\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a51edbae2fd300644da649aa09d976cac}{NeedFullParsing}}();}
+\DoxyCodeLine{00467\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_abc72813c6ad43b99d7c614c80e5b5b4e}{ClearScene}}();}
+\DoxyCodeLine{00468\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a02a687367402141e43ca91820dfda2a0}{updatePieceList}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00469\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a9d6e39b782c0386492dc914d45f4ceae}{selectedPiece}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00470\ }
+\DoxyCodeLine{00471\ protected:}
+\DoxyCodeLine{00473\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a600aa6428d2cb9ba2953d5f7c8660e73}{activeDraftBlock}};}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a5f8b56fed587ef46543f12c00c9fcb12}{m\_DefaultLineColor}};}
+\DoxyCodeLine{00476\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a01a5851df890fb1f1510fd4aa9559855}{m\_DefaultLineWeight}};}
+\DoxyCodeLine{00477\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a5586a0937ba6ca9281a3f2520ba48c9a}{m\_DefaultLineType}};}
+\DoxyCodeLine{00478\ }
+\DoxyCodeLine{00479\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0ecc96e1e7e7cb98e640a0cfe5319a3d}{lastSavedExportFormat}};}
+\DoxyCodeLine{00480\ }
+\DoxyCodeLine{00482\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa8c8b319ff8fa3436556557f31a32f54}{cursor}};}
+\DoxyCodeLine{00483\ }
+\DoxyCodeLine{00484\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_data_tool}{VDataTool}}*>\ \mbox{\hyperlink{class_v_abstract_pattern_ad4938696d725c59c9d129feaeba0aa84}{toolsOnRemove}};}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00487\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_tool_record}{VToolRecord}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a89fcbafbb01d44d271a7366f8595e0b2}{history}};}
+\DoxyCodeLine{00488\ }
+\DoxyCodeLine{00490\ \ \ \ \ QStringList\ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_afeae88da3708ba52a5f22ea8445d85fd}{patternPieces}};}
+\DoxyCodeLine{00491\ }
+\DoxyCodeLine{00493\ \ \ \ \ mutable\ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aef8c350521b58d4ed1712c9e6df3dc98}{modified}};}
+\DoxyCodeLine{00494\ }
+\DoxyCodeLine{00496\ \ \ \ \ static\ \mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_data_tool}{VDataTool}}*>\ \mbox{\hyperlink{class_v_abstract_pattern_a96c6a2e3ac001241e1a8283a449f6045}{tools}};}
+\DoxyCodeLine{00498\ \ \ \ \ static\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_label_template_line}{VLabelTemplateLine}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a1b041aaed59edd0794f2c409606ccf30}{patternLabelLines}};}
+\DoxyCodeLine{00499\ \ \ \ \ static\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_abstract_pattern_af8425dabb1700c130b35ca637095862c}{patternLabelWasChanged}};}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00501\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ae044fbfc407e3b397a53bd77384a4021}{ToolExists}}(const\ quint32\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00502\ \ \ \ \ static\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \mbox{\hyperlink{class_v_abstract_pattern_aa24395bd8dd6e49c4694eccdb869c30b}{ParsePathNodes}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00503\ \ \ \ \ static\ \mbox{\hyperlink{class_v_piece_node}{VPieceNode}}\ \mbox{\hyperlink{class_v_abstract_pattern_aac2f13e315763d8f2615f9238405facf}{ParseSANode}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00504\ }
+\DoxyCodeLine{00505\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a6275c668dcc62e3ef0a1041c33d2d0b1}{setActiveDraftBlock}}(const\ QString\ \&name);}
+\DoxyCodeLine{00506\ }
+\DoxyCodeLine{00507\ \ \ \ \ QDomElement\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ade35a3300e35543c955f163d1dcd521b}{CheckTagExists}}(const\ QString\ \&tag);}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab4f20d0bc976b71ffbb2b0ec9f5c20c7}{InsertTag}}(const\ QStringList\ \&tags,\ const\ QDomElement\ \&element);}
+\DoxyCodeLine{00509\ }
+\DoxyCodeLine{00510\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a684c5781f31ff8544f99c88ac2a72ecf}{SetChildTag}}(const\ QString\ \&qsParent,\ const\ QString\ \&qsChild,\ const\ QString\ \&qsValue);}
+\DoxyCodeLine{00511\ }
+\DoxyCodeLine{00512\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_afc233b2d8c5066086c838af58f791182}{getActiveDraftBlockIndex}}()\ const;}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_aa630833d4bb764c227f9754c140e77e4}{getActiveDraftElement}}(QDomElement\ \&element)\ const;}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00515\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_adee9dcdd9c9eeb57e91962e980bae052}{hasGroupItem}}(const\ QDomElement\ \&domElement,\ quint32\ toolId,\ quint32\ objectId);}
+\DoxyCodeLine{00516\ }
+\DoxyCodeLine{00517\ private:}
+\DoxyCodeLine{00518\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}})}
+\DoxyCodeLine{00519\ }
+\DoxyCodeLine{00520\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab0d3a6e3f02d3dc6d6bd31297310fc56}{ListIncrements}}()\ const;}
+\DoxyCodeLine{00521\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_ae0ee717654cad71ca40b5ce06c9ed9ac}{ListPointExpressions}}()\ const;}
+\DoxyCodeLine{00522\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a13377df721d4b0303eca50e23fbd98e3}{ListArcExpressions}}()\ const;}
+\DoxyCodeLine{00523\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a9d37fec24748662337d80ccad34871ef}{ListElArcExpressions}}()\ const;}
+\DoxyCodeLine{00524\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_af79005b7f4c156b5c33ec55acb92d957}{ListSplineExpressions}}()\ const;}
+\DoxyCodeLine{00525\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a9317c97dc20fc90a6ab62d6ce1d0ad04}{ListPathPointExpressions}}()\ const;}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a8d130a17b2865fdf4cd92940e42c14db}{ListOperationExpressions}}()\ const;}
+\DoxyCodeLine{00527\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_ae1a407983e4b0c56e60ae5068e87cd73}{ListNodesExpressions}}(const\ QDomElement\ \&nodes)\ const;}
+\DoxyCodeLine{00528\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_affa7b2278b9b5f1a30c2b4fcb84367ed}{ListPathExpressions}}()\ const;}
+\DoxyCodeLine{00529\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_a91837df8ac9899d6cf846e4bf360f958}{ListGrainlineExpressions}}(const\ QDomElement\ \&element)\ const;}
+\DoxyCodeLine{00530\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_v_formula_field}{VFormulaField}}>\ \mbox{\hyperlink{class_v_abstract_pattern_aeb8987286fed0a278bb17b75f1464a18}{ListPieceExpressions}}()\ const;}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_ab2244f2ff18aaadd0b268f2a9f416ad5}{IsVariable}}(const\ QString\ \&token)\ const;}
+\DoxyCodeLine{00533\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a31c4c23b82fb9186e452c4d2d0331164}{IsPostfixOperator}}(const\ QString\ \&token)\ const;}
+\DoxyCodeLine{00534\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern_a0ce62673844b88b43c143697d922ec01}{IsFunction}}(const\ QString\ \&token)\ const;}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \ \ QPair<\textcolor{keywordtype}{bool},\ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ quint32>\ >\ \mbox{\hyperlink{class_v_abstract_pattern_acf0ac26f5e06a83299293d9b411ab0cd}{ParseItemElement}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ \};}
+\DoxyCodeLine{00539\ }
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTPATTERN\_H}}
+
+\end{DoxyCode}

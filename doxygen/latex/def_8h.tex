@@ -1,0 +1,2636 @@
+\hypertarget{def_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/def.h File Reference}
+\label{def_8h}\index{D:/Github/Seamly2D/src/libs/vmisc/def.h@{D:/Github/Seamly2D/src/libs/vmisc/def.h}}
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QLineF$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QString\+List$>$}\newline
+{\ttfamily \#include $<$Qt$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include $<$QPrinter$>$}\newline
+{\ttfamily \#include $<$csignal$>$}\newline
+{\ttfamily \#include \char`\"{}debugbreak.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}}
+\begin{DoxyCompactList}\small\item\em The Custom\+SA struct contains record about custom seam allowanse (SA). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_qxt_private}{Qxt\+Private$<$ PUB $>$}}
+\item 
+class \mbox{\hyperlink{class_qxt_private_interface}{Qxt\+Private\+Interface$<$ PUB, PVT $>$}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{def_8h_a8084f95d171e33ef73bf44aed20a4378}{Scene\+Size}}~50000
+\item 
+\#define \mbox{\hyperlink{def_8h_abb52cf8f360453bdd87e44d6dcf17ce9}{QIMAGE\+\_\+\+MAX}}~32768
+\item 
+\#define \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(cond)
+\item 
+\#define \mbox{\hyperlink{def_8h_aeed0a618f017e128a5d8654754f792db}{\+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute}}(x)~0
+\item 
+\#define \mbox{\hyperlink{def_8h_a380cf399715eea06631207dd0f18de71}{V\+\_\+\+FALLTHROUGH}}
+\item 
+\#define \mbox{\hyperlink{def_8h_ac5322e633cecd76fb5bf9af96a41c38a}{QXT\+\_\+\+DECLARE\+\_\+\+PRIVATE}}(PUB)~friend class PUB\#\#Private; \mbox{\hyperlink{class_qxt_private_interface}{Qxt\+Private\+Interface}}$<$PUB, PUB\#\#Private$>$ qxt\+\_\+d;
+\item 
+\#define \mbox{\hyperlink{def_8h_a0a0eab9c8a09c0a03185d2fd8b7cb8d5}{QXT\+\_\+\+DECLARE\+\_\+\+PUBLIC}}(PUB)~friend class PUB;
+\item 
+\#define \mbox{\hyperlink{def_8h_aafaaa31f6c623c1276ab7ce4f36b6b8a}{QXT\+\_\+\+INIT\+\_\+\+PRIVATE}}(PUB)~qxt\+\_\+d.\+set\+Public(this);
+\item 
+\#define \mbox{\hyperlink{def_8h_ad2abcc48ab132b008a0976cda54786c2}{QXT\+\_\+D}}(PUB)~PUB\#\#Private\& d = qxt\+\_\+d()
+\item 
+\#define \mbox{\hyperlink{def_8h_ad17a8c04e466fb37425a987acaa9f021}{QXT\+\_\+P}}(PUB)~PUB\& p = qxt\+\_\+p()
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef int \mbox{\hyperlink{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}{Tool\+Vis\+Holder\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \+: char \{ \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8acd15a75c26008696647b31a3f0de43b3}{SVG}} = 0
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcd1b68617759b1dfcff0403a6b5a8d1}{PDF}} = 1
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a168165f5664e9d78af0fe3e875266e57}{PDFTiled}} = 2
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a55505ba281b015ec31f03ccb151b2a34}{PNG}} = 3
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a92769fe7c40229f4301d6125e0a9e928}{JPG}} = 4
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aa5d5ca1447586e23dc011f8c0cc0a6db}{BMP}} = 5
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4bb1ebdeeb70354069bc644b9c94ee5f}{PPM}} = 6
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8af34d534adfb78a9e6432be4621a93eec}{OBJ}} = 7
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ad3d4c5deb455ac79dd5ff47c88bd65d9}{PS}} = 8
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ac2c027d8c62500300145c3043546d4c6}{EPS}} = 9
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a40caae61e0856460a34c325ac1f59d29}{DXF\+\_\+\+AC1006\+\_\+\+Flat}} = 10
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5b1be9b650d700a3eddaaab883cc7d19}{DXF\+\_\+\+AC1009\+\_\+\+Flat}} = 11
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7a381c69173f01ea86d844e6b8b20c3c}{DXF\+\_\+\+AC1012\+\_\+\+Flat}} = 12
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d75e6c692da07040c1237f6f35f6fff}{DXF\+\_\+\+AC1014\+\_\+\+Flat}} = 13
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8adc1ace66930128604f46699c90fda7fe}{DXF\+\_\+\+AC1015\+\_\+\+Flat}} = 14
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4ab7a758242ab49ca8f008d08475a579}{DXF\+\_\+\+AC1018\+\_\+\+Flat}} = 15
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a17fbe7dbe9b7155cc6385cfcbf5d46e2}{DXF\+\_\+\+AC1021\+\_\+\+Flat}} = 16
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0ff09ceeaabd3fce7947827f7f8c7391}{DXF\+\_\+\+AC1024\+\_\+\+Flat}} = 17
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4b2279fcb40c173610018f0551e2f9}{DXF\+\_\+\+AC1027\+\_\+\+Flat}} = 18
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcee11059bd3dead6679b79421cf023c}{DXF\+\_\+\+AC1006\+\_\+\+AAMA}} = 19
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d5dc27de880aba520be5b8fca116318}{DXF\+\_\+\+AC1009\+\_\+\+AAMA}} = 20
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a03cb44b9a18a1d334ec65452d872cff9}{DXF\+\_\+\+AC1012\+\_\+\+AAMA}} = 21
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aca79fec4852cf2e6824f2f538153b891}{DXF\+\_\+\+AC1014\+\_\+\+AAMA}} = 22
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7db10b30d04749fcbead11fcb3151553}{DXF\+\_\+\+AC1015\+\_\+\+AAMA}} = 23
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a326010dab9d7012eb1b5f03982390e46}{DXF\+\_\+\+AC1018\+\_\+\+AAMA}} = 24
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5ed795176ddbcc346039d42be23ab0d7}{DXF\+\_\+\+AC1021\+\_\+\+AAMA}} = 25
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a61758b37d92483b019d40f2888597cdd}{DXF\+\_\+\+AC1024\+\_\+\+AAMA}} = 26
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae67451ea2dffa8010f095eb5fab56bdc}{DXF\+\_\+\+AC1027\+\_\+\+AAMA}} = 27
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4991e4150fbe596d638877162e8da8}{DXF\+\_\+\+AC1006\+\_\+\+ASTM}} = 28
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a43433440e342342ed94b10c65e60da29}{DXF\+\_\+\+AC1009\+\_\+\+ASTM}} = 29
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5d83ceb5d4a90c7eea5917389c875b10}{DXF\+\_\+\+AC1012\+\_\+\+ASTM}} = 30
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5330666c000a6c1f5311e32dc9f1ae58}{DXF\+\_\+\+AC1014\+\_\+\+ASTM}} = 31
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aaf04f20232b34e4e0757561b4db16f88}{DXF\+\_\+\+AC1015\+\_\+\+ASTM}} = 32
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a791a94998d31bce43408afaff6fc3659}{DXF\+\_\+\+AC1018\+\_\+\+ASTM}} = 33
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae74058cae3b52decee0b258a0b595bc7}{DXF\+\_\+\+AC1021\+\_\+\+ASTM}} = 34
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a338bd519ef4a8b710dbe99cb8eb1eef4}{DXF\+\_\+\+AC1024\+\_\+\+ASTM}} = 35
+, \newline
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a6b7f254819328e16f59096a9b9968b05}{DXF\+\_\+\+AC1027\+\_\+\+ASTM}} = 36
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a9442880680eb5d7fb60d15f422004547}{TIF}} = 37
+, \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4905ac9d6a22bdfc1ae096094ce6248d}{COUNT}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} \+: char \{ \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653a0b3303e86f36d6d2b1266da88cf76e66}{Contour}}
+, \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653a36ca8b27f92026a233b4a2f81dc92397}{Modeling}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \+: char \{ \newline
+\mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c}{Point}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa4803e6b9e63dabf04de980788d6a13c4}{Line}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa4cff6afc4963881749f7742fbb4d1392}{Spline}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa2b73f91683611c489560a1d163e37902}{Arc}}
+, \newline
+\mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa3d4c024fe1469ea05ea6d0e472dbf063}{El\+Arc}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa67413f4b19957f72684b994ad47bfc0b}{Spline\+Path}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc}{Piece}}
+, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2afa88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \+: char \{ \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc}{Multisize}}
+, \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519}{Individual}}
+, \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \+: char \{ \newline
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92}{Mm}} = 0
+, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889a4d42fd7ad795178d64613eba2a2aa9ad}{Cm}}
+, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956}{Inch}}
+, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2}{Px}}
+, \newline
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889a6fa34b7823874c978ddbc1a79d0b202d}{LAST\+\_\+\+UNIT\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \+: char \{ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a441976ef37c7a96c741620cc1b26255b}{From\+Gui}}
+, \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a34fdc781f6a322fcd6c512fea9164952}{From\+File}}
+, \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a95f330e7d71abcef52e6522fa0fa7a2c}{From\+Tool}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \+: bool \{ \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473aebbdcb9b6e8d8d2e78b279fcbd115f22}{Not\+In\+Use}} = false
+, \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473ad19e0242c51b633ff754f5b3c032f9bf}{In\+Use}} = true
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \+: bool \{ \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a8c769025d3274255a72fa16ac0716495}{By\+Mouse\+Press}}
+, \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74}{By\+Mouse\+Release}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{Page\+Orientation}} \+: bool \{ \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763a1c7444be9626d149ab598fb79b639f96}{Portrait}} = true
+, \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0}{Landscape}} = false
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{Piece\+Node\+Angle}} \+: unsigned char \{ \newline
+\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d}{By\+Length}} = 0
+, \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2a8f2a6e10487912a3529d97426fb2d25e}{By\+Points\+Intersection}}
+, \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2a9c3a7e96ef77ec2e07866e5252f852aa}{By\+First\+Edge\+Symmetry}}
+, \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2a74eff2b5500a999e5f43d6a698baa88d}{By\+Second\+Edge\+Symmetry}}
+, \newline
+\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2a14a082df2cdd2b16b3b2e4cfc3098a13}{By\+First\+Edge\+Right\+Angle}}
+, \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2a588b049dfcaba2e26bb2315b1db7654b}{By\+Second\+Edge\+Right\+Angle}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} \+: unsigned char \{ \newline
+\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca86cce5d39437eef876e5f6ae19fff606}{Slit}} = 0
+, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0cab212b1690f8ff3f0ea69e5265334c659}{TNotch}}
+, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca98b3e76892aab28594ed239d28b625df}{VInternal}}
+, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0caf41674a3bb1f1ffa7b87d2ae523ab603}{VExternal}}
+, \newline
+\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0cadb33f96c3a91f62cc92e3c9fbfdcbfa7}{UNotch}}
+, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca11081b0ce75b0e635708443850bef902}{Castle}}
+, \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca8f7671185d590914ac21c7511767b699}{Diamond}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} \+: unsigned char \{ \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770}{Straightforward}} = 0
+, \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a4e3c3e18ebb64f7aaaa75ea75475ecf8}{Bisector}}
+, \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4aa06d31c2ee920b4d53e8c9c06d90ba24}{Intersection}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9}{Piece\+Path\+Include\+Type}} \+: unsigned char \{ \mbox{\hyperlink{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a391427a944eea6e8075c2612ba7a5c06}{As\+Main\+Path}} = 0
+, \mbox{\hyperlink{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a86919337ed22bee06378065ed08d90fd}{As\+Custom\+SA}} = 1
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} \+: unsigned char \{ \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2caafa48855cdf79f137f8838837376ef35}{Piece\+Path}} = 0
+, \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2ca1ca40c3c642dd93a0289a9e7f0665439}{Custom\+Seam\+Allowance}} = 1
+, \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2ca2fdb8a5feb2bdffba4f35a5b601670e7}{Internal\+Path}} = 2
+, \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2ca88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}} = 3
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \+: Tool\+Vis\+Holder\+Type \{ \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0f4e1aaabd074689b7d3ead824d1ee8e}{Arrow}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a1dd773e22d00c1a26c1bd2af74da255d}{Single\+Point}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9c66963590259b5a5f6868e3ab681db6}{Double\+Point}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7614bd87c183f5b8cfb48401353dfc06}{Line\+Point}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab754c38aa8014f7f8df1994356e0208f}{Abstract\+Spline}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeb334dca00e390e0d3ebf52d205807d7}{Cut}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a794fdf7ea22e73af20feb0e3aecdc010}{Base\+Point}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a199d9cfe87715e1993bc7f13652c7b56}{End\+Line}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4803e6b9e63dabf04de980788d6a13c4}{Line}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a18f03b87a16e74dd401aeba426c2afaf}{Along\+Line}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cae4ac6672bad1d9af4148d27e21752}{Shoulder\+Point}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a960b44c579bc2f6818d2daaf9e4c16f0}{Normal}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4e3c3e18ebb64f7aaaa75ea75475ecf8}{Bisector}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a73217d80ee9984d928bb20b974b7d6e7}{Line\+Intersect}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cff6afc4963881749f7742fbb4d1392}{Spline}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aced824f3a4e9dd5feb68da4cb78a3430}{Cubic\+Bezier}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395af232248f10352b6b07d8b3bb1cd3c472}{Cut\+Spline}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f77496c8d99343125e3e11d4aea3a9e}{Cut\+Arc}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2b73f91683611c489560a1d163e37902}{Arc}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0fd80d9f0067bedaaa4130cfa7c135ac}{Arc\+With\+Length}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a67413f4b19957f72684b994ad47bfc0b}{Spline\+Path}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a055e1a10b2aeb1d4a3658732fb7361ba}{Cubic\+Bezier\+Path}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab18e5d694158e4bde0d766be38137a15}{Cut\+Spline\+Path}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa693360c628143b6f7eb6662d47d4444}{Point\+Of\+Contact}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa5d512bf83495b68d0ffa20f79804dfc}{Piece}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2fdb8a5feb2bdffba4f35a5b601670e7}{Internal\+Path}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665}{Node\+Point}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7834e9645ab39bee56c8a2f05bcbfc5e}{Node\+Arc}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5cc897244b3411a2e7aaa3a3d86b3491}{Node\+El\+Arc}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5c154f81745acc39349dfdc1db292c40}{Node\+Spline}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4f4bf4f1f7f694f345020a82cc90c2f8}{Node\+Spline\+Path}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeec6c4bdbd339edf8cbea68becb85244}{Height}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5e5500cb2b82eb72d550de644bd1b64b}{Triangle}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0ba6dc34e63d1faa6e8dd3c1e3105557}{Line\+Intersect\+Axis}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae5dd98ba75569128c1aca84f1e626fd8}{Point\+Of\+Intersection\+Arcs}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a085eda864e221d3b11d4e5ecf9efe7e1}{Point\+Of\+Intersection\+Circles}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a06b217a107bc2dad308a8699e0a9cb44}{Point\+Of\+Intersection\+Curves}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6935eca9369f9ca2d59c9567e09741da}{Curve\+Intersect\+Axis}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a936b6b7db3c2fb433938f4b6b4c24a14}{Arc\+Intersect\+Axis}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ac19f7dd8aff07bb844acd02eb917bccf}{Point\+Of\+Intersection}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2da30dffe7df7e1be826dd75de422143}{Point\+From\+Circle\+And\+Tangent}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab626c14540deb5069485b8f47f524f3a}{Point\+From\+Arc\+And\+Tangent}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5dfca91ad242999873a9c2f90e6b1467}{True\+Darts}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aaef12e903e606a4895a16b393bfdec8c}{Union}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a03937134cedab9078be39a77ee3a48a0}{Group}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395af1a42bd417390fc63b030a519624607a}{Rotation}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a3e47505c979558f227a12258a1e9b68a}{Mirror\+By\+Line}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae43cfe075ef839af26f7d7a97c04b55f}{Mirror\+By\+Axis}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}{Move}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f56c02b34d312867e3f63c9f21fe5c8}{Midpoint}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9ede004c94369027853b4a491071ef53}{Elliptical\+Arc}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395af74e06a1915cb029355bd2ae65605c06}{Anchor\+Point}}
+, \newline
+\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aec7a544ff2c982a59c0e0b6d64cba991}{Insert\+Nodes}}
+, \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae154556eea64f68495301fc09a12122e}{LAST\+\_\+\+ONE\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582}{Vis}} \+: Tool\+Vis\+Holder\+Type \{ \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a4dbdb1be12f6b21e8f3a00208ca579fc}{Control\+Point\+Spline}} = static\+\_\+cast\texorpdfstring{$<$}{<}Tool\+Vis\+Holder\+Type\texorpdfstring{$>$}{>}(Tool\+::LAST\+\_\+\+ONE\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE)
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ac2648cbfd51082b99520275e5637f3a7}{Graphics\+Simple\+Text\+Item}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a82a7ea46fa1348f7b4767cf33cd2793a}{Simple\+Point}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a6e893fc047dade1aa10a2111a32a6824}{Simple\+Curve}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a00cb30894c7b12fd3725059cfe3dfedd}{Scaled\+Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a8750dfc38db4b84c58ce36463649b9f5}{Scaled\+Ellipse}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a4803e6b9e63dabf04de980788d6a13c4}{Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582aac70412e939d72a9234cdebb1af5867b}{Path}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a2a78ed76450c3cb42320882b3e055b31}{Operation}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582abb46d85b89ca6cd08081140f19c280f8}{Tool\+Along\+Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582aceb14bf862801786bd6e9ff9034bf4fa}{Tool\+Arc}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a4fc3e89783159c84754ed3ad3b74717e}{Tool\+Arc\+With\+Length}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ab9beda3c8186d7fce8b70bde94a5c988}{Tool\+Bisector}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a9c7424743c8f1829a31ac70f4db7aaec}{Tool\+Cut\+Arc}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ae5fb65b8fdf593cd90e076746f602fc8}{Tool\+End\+Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ac310f491c8f4fc8cba17da91e5e8791b}{Tool\+Height}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a30c4d45c1de9cd329df337ccf3e9dc2e}{Tool\+Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ae192e223a8562bad6f295dc062bd943b}{Tool\+Line\+Intersect}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582acdb7e048f84ff9acdeb23d4ba50972be}{Tool\+Normal}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a04fa575bdc33e250dc6254f4e04ce0de}{Tool\+Point\+Of\+Contact}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582aa1ff456a221afbe0179bd057ff55ad43}{Tool\+Point\+Of\+Intersection}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a1cbd5fe009a53cdc3fe828886e0842f7}{Tool\+Point\+Of\+Intersection\+Arcs}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a871dca562ebc008f67ad5d030147c21c}{Tool\+Point\+Of\+Intersection\+Circles}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a31e0819aa01ec8effbe75dfe550dfbcb}{Tool\+Point\+Of\+Intersection\+Curves}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a2ce56519b7880370d6e07856dbcddb39}{Tool\+Point\+From\+Circle\+And\+Tangent}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a5c4046a71993bf73da5c8627e56e611f}{Tool\+Point\+From\+Arc\+And\+Tangent}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a640b930884e9b4dadad37c71be903f18}{Tool\+Shoulder\+Point}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582acbbcf86384906288fcba6921390f6bf1}{Tool\+Spline}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ac98ce25c6dc19d88fcba7ebc7b5feb83}{Tool\+Cubic\+Bezier}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a61cb9812d52455bf9f1fe5d75810728f}{Tool\+Cubic\+Bezier\+Path}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582acead18c4443ac44979ce08cceb0988ff}{Tool\+Triangle}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ad05431c7a704ef9727f1448024c7e97b}{Tool\+Cut\+Spline}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a739ddf5dfe4d33c97df4ba3034d15437}{Tool\+Spline\+Path}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a09be2588de4cb8688e5d912c36bcb4fd}{Tool\+Cut\+Spline\+Path}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a15435e178243dc1d70abf65c3a2dbfdf}{Tool\+Line\+Intersect\+Axis}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ace5398e66fa390b4ac5bb1d10c8295c6}{Tool\+Curve\+Intersect\+Axis}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a6392e85b116c3345c3e1da4c901844dd}{Tool\+True\+Darts}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a9e8250d70b5b570311e2e8ad5d6b0ab8}{Tool\+Rotation}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a84efa0793b38bf98ca0558f3424d0cb5}{Tool\+Mirror\+By\+Line}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ae35cc2e33be1a02f271069f5c5d5e7e3}{Tool\+Mirror\+By\+Axis}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582aa489dca2acec830adc132e50a5aa473e}{Tool\+Move}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a16e990a5747056316876d425c584396e}{Tool\+Elliptical\+Arc}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a52d2862744b248a814fd1164760292e7}{Tool\+Piece}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a68a3701b1e981f3aca45827575770b33}{Tool\+Internal\+Path}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a1da44444c8ea9a2e21080d0cdeeb51b7}{Tool\+Anchor\+Point}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582abfeac4d2a4b06a560f03220010fc967f}{Piece\+Anchors}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a3551767772b716f2f7c75d99502a0858}{No\+Brush}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ab0dd7b9c610b813ea08edfccac12b79e}{Curve\+Path\+Item}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a79eb152cfee6d8bf7adfcff628fe258b}{Grainline\+Item}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ac45acdcc79d5c8e03f527849ff7b2d80}{Piece\+Item}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582aa3497af332fdd4d0f50eaaff1354f432}{Text\+Graphics\+Item}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a11392118cd8b68ad9454c047ec4caf35}{Scene\+Point}}
+, \newline
+\mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582a055e03f381e3c702e1df99f27fed2a8b}{Arrowed\+Line\+Item}}
+, \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582ae154556eea64f68495301fc09a12122e}{LAST\+\_\+\+ONE\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \+: char \{ \newline
+\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a6f15bdfa71aa83b0d197cad75757d580}{Increment}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a759c1b50a557f26c1af2cddc11c366bb}{Line\+Length}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178ab80307c6e28ae1a1a1b50732aa331ef9}{Curve\+Length}}
+, \newline
+\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a60201241f8a110ff2fb5ee72a507f3c4}{Curve\+CLength}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178ab0abd1bb737df8ddcf7d449874af313a}{Line\+Angle}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a105df25996f22239bab516b648aedd86}{Curve\+Angle}}
+, \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a6f8706a42ffde90d8d12ab11f7e4bd1e}{Arc\+Radius}}
+, \newline
+\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}}
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}} \+: unsigned char \{ \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5fb1f955b45e38e31789286a1790398d}{ALL}}
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cad1b0e30914a2c99c4d610fbc7affbd63}{H50}} =50
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca44ecc8f8561d6274a520abf2f818a14b}{H56}} =56
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca252ae6e34362a6b548e990505bff8ede}{H62}} =62
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca35c605672afeb8da2ea1c1f408d84932}{H68}} =68
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca49be3d3e052a2b799f11305f91c7316a}{H74}} =74
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca0016f05ada6f9008984f57109047e93a}{H80}} =80
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caea65ad67e2ec7ac9a7a4892e320cd352}{H86}} =86
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadbf7793fc64a9851f96213910bda127b}{H92}} =92
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7adc8d40028c80faf72ee41a5e6fcb98}{H98}} =98
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca51c6a3b82abc942176442a2dea05dbc0}{H104}} =104
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caefd126282f1ab2d944e464252df26556}{H110}} =110
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7d8ab224698daa4769a6b1735c190ac8}{H116}} =116
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca93a56968970082249bf283cd2b8fd7ad}{H122}} =122
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca86003a091075b74186ec6b17953e703f}{H128}} =128
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadc0082809d18c517aed755ddc7479ca2}{H134}} =134
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caed30ba0e1bcce501ee7b618f3795afe9}{H140}} =140
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca80fda810b974544752c335c022081c1b}{H146}} =146
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5651891e0f033bc2b033e51b2e9b9ce7}{H152}} =152
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca131623e5200844edf3d0b87da2d8faff}{H158}} =158
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca9bb0849bdc11ae790a3a6bc8c135f921}{H164}} =164
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cae3438b61311e5424ed514b6f81eddafa}{H170}} =170
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca47c0781030c296c9d1528ce96e80d6bb}{H176}} =176
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cac8e9599579ece011c9e3d4c036d19b0e}{H182}} =182
+, \newline
+\mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5e2e6c20d7826527152036e96fb37e2b}{H188}} =188
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca17b7eaff8c76e45ef9e20f5ce4bc5c57}{H194}} =194
+, \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca03ed6b724b9485d847c0ea7e6b0b3984}{H200}} =200
+ \}
+\item 
+enum class \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}} \+: unsigned char \{ \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5fb1f955b45e38e31789286a1790398d}{ALL}}
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa75804b4c66c019655d1d2b56a2422fdd}{S22}} =22
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa9faa0e15000c875b39db3b57c572bcd0}{S24}} =24
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa40de877cfb3dfae492573a2f04f40db6}{S26}} =26
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac6e17193c24a30186413ef4de26e98aa}{S28}} =28
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac317634f2e2547e5909e87d80dd62c6e}{S30}} =30
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aaa1e28eee0339658d39a8b4d325b56e9c}{S32}} =32
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac30f4db30d4782382db0b47e7745253c}{S34}} =34
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa0de238eec061c8e5ed3b3a28aa61c160}{S36}} =36
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadfbe37005c59642c32e910b68e21f6c6}{S38}} =38
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aab4c9ab83ce71596a1ac5e45722e3e0cb}{S40}} =40
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3cae54bbaee17374d6f71402c6885b4b}{S42}} =42
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa66232a53d9dc07d637c333e03390520a}{S44}} =44
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae961e926cc4ab0fc2b147d877dad9b35}{S46}} =46
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3ce7decba1d3f9a28669422eed04bb2c}{S48}} =48
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5f3a04687b9d195f7eb9ef6c888cffa4}{S50}} =50
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa72c2ea1b6246efce8241768ad50583b2}{S52}} =52
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa2b59390314ca175c3e5d8ede111b725b}{S54}} =54
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae6a91f44fb265a9c01720d590569b1f7}{S56}} =56
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac5771b3330280bc84bf1a7583565f73d}{S58}} =58
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadaf759c6ceddc3e56dd0f1d00dc43a01}{S60}} =60
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa71d94b4a720f35a43b27ef3acc406c90}{S62}} =62
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa115dca124dc6423c7a400b8a8a0270cc}{S64}} =64
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7a37e051a76be1638d92470778569d8c}{S66}} =66
+, \newline
+\mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7dd44c42e8918263f2d31317771e252d}{S68}} =68
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa56e525612e2b9c88fbeaeb6ced0c46e8}{S70}} =70
+, \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa1504e8f555c2103d91e11818acc7b05f}{S72}} =72
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{def_8h_af49aeb9df96488d2b90dece1756b1d2c}{notch\+Type\+To\+String}} (\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} type)
+\item 
+\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} \mbox{\hyperlink{def_8h_ade9d3157f89470d2e21387fd88334fd9}{string\+To\+Notch\+Type}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{def_8h_a45306c2fc908e7e89e2bd49fd6df23b0}{notch\+Sub\+Type\+To\+String}} (\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} type)
+\item 
+\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} \mbox{\hyperlink{def_8h_afe3d74de98705f0a262de22f028cbb1d}{string\+To\+Notch\+Sub\+Type}} (const QString \&value)
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{def_8h_a066169b6c24aec89a790711c082e6432}{Str\+To\+Units}} (const QString \&unit)
+\item 
+QString \mbox{\hyperlink{def_8h_ae102c2c24c0d1bd2230dd9292169f6cf}{Units\+To\+Str}} (const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&unit, const bool \mbox{\hyperlink{vcmdexport_8cpp_ab6a325bf2bc129783fe131d6f59d420b}{translate}}=false)
+\begin{DoxyCompactList}\small\item\em Units\+To\+Str translate unit to string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{def_8h_a9d0bfb211c7efe9986367b0de5883ad9}{Is\+Option\+Set}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, const char $\ast$option)
+\item 
+void \mbox{\hyperlink{def_8h_a1a1ecd7b9352a026b0a07b101a539a95}{Init\+High\+Dpi\+Scaling}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{def_8h_ac50ba30a64d21ea38312134c435a5a34}{Set\+Item\+Override\+Cursor}} (QGraphics\+Item $\ast$item, const QString \&pixmap\+Path, int hotX=-\/1, int hotY=-\/1)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT double \mbox{\hyperlink{def_8h_ab9291bba925fda9caaab0b0861642f30}{To\+Pixel}} (double val, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&unit)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT double \mbox{\hyperlink{def_8h_ad344c39a9d756b7ae9a7c0fb7ab4767b}{From\+Pixel}} (double pix, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&unit)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT qreal \mbox{\hyperlink{def_8h_aca89a6dfa5cdcf627b6ba95df560932b}{Unit\+Convertor}} (qreal value, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&from, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&to)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QMarginsF \mbox{\hyperlink{def_8h_a715dcfeef57319913811763f8e9261a0}{Unit\+Convertor}} (const QMarginsF \&margins, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&from, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&to)
+\begin{DoxyCompactList}\small\item\em Unit\+Convertor Converts the values of the given margin from given unit to the new unit. returns a new instand of QMarginsF. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{def_8h_aaf08b4a7d0085a255e1dde1ce3b7206e}{Init\+Languages}} (QCombo\+Box $\ast$combobox)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString\+List \mbox{\hyperlink{def_8h_a7b4a736138c35f50e76e645cfb11ece1}{Supported\+Locales}} ()
+\item 
+QString \mbox{\hyperlink{def_8h_a0d388d3b034a1f7b4f3618163b213f73}{make\+Header\+Name}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em make\+Header\+Name make a 1 char tablewidgetitem header name based on a translated string. \end{DoxyCompactList}\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString \mbox{\hyperlink{def_8h_a87d0bbeb72fd3f881aec730edcfb9248}{stripped\+Name}} (const QString \&full\+File\+Name)
+\begin{DoxyCompactList}\small\item\em stripped\+Name the function call around cur\+File to exclude the path to the file. \end{DoxyCompactList}\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString \mbox{\hyperlink{def_8h_a70500634183359838388ccd270379787}{Relative\+MPath}} (const QString \&pattern\+Path, const QString \&absolute\+MPath)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString \mbox{\hyperlink{def_8h_a109bfae79164a25450f13a1145e21246}{Absolute\+MPath}} (const QString \&pattern\+Path, const QString \&relative\+MPath)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ \mbox{\hyperlink{def_8h_a4d48e08b62697a4d46199919f131efb2}{Prepare\+Printer}} (const QPrinter\+Info \&info, QPrinter\+::\+Printer\+Mode mode=QPrinter\+::\+Screen\+Resolution)
+\item 
+QMarginsF \mbox{\hyperlink{def_8h_add7320b6951a9336f34f515402f29388}{Get\+Min\+Printer\+Fields}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ \&printer)
+\item 
+QMarginsF \mbox{\hyperlink{def_8h_a2cd5bde5ec66f27f34b8844839fe6da2}{Get\+Printer\+Fields}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ \&printer)
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QPixmap \mbox{\hyperlink{def_8h_a3f58bf4b46e94f75893d1e8005582a80}{darken\+Pixmap}} (const QPixmap \&pixmap)
+\item 
+void \mbox{\hyperlink{def_8h_a7b1907f9df8d8f726641e41137e42fe9}{Show\+In\+Graphical\+Shell}} (const QString \&file\+Path)
+\item 
+\mbox{\hyperlink{def_8h_ac2a684cd90d4072b96ca1cf87d980dbf}{Q\+\_\+\+DECLARE\+\_\+\+TYPEINFO}} (\mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}}, Q\+\_\+\+MOVABLE\+\_\+\+TYPE)
+\item 
+{\footnotesize template$<$typename T , template$<$ typename $>$ class C$>$ }\\QSet$<$ T $>$ \mbox{\hyperlink{def_8h_a9b5dc664655cd45f745dfa6cb03dcb97}{convert\+To\+Set}} (const C$<$ T $>$ \&list)
+\item 
+{\footnotesize template$<$typename T , typename C $>$ }\\QSet$<$ T $>$ \mbox{\hyperlink{def_8h_a3ecf6230eab9b9997515ace558e1ffac}{convert\+To\+Set}} (const C \&list)
+\item 
+{\footnotesize template$<$typename T , template$<$ typename $>$ class C$>$ }\\\mbox{\hyperlink{class_q_list}{QList}}$<$ T $>$ \mbox{\hyperlink{def_8h_a0bab8a55be6e28603efc4f99b140a779}{convert\+To\+List}} (const C$<$ T $>$ \&set)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const QString \mbox{\hyperlink{def_8h_a583c6976ba4178828de84178a051b7fd}{LONG\+\_\+\+OPTION\+\_\+\+NO\+\_\+\+HDPI\+\_\+\+SCALING}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ad0679d063111d3e8aceaf2a91d243398}{deg\+Torad\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_abcd3f7959815043120cf428698e3b6ed}{rad\+Todeg\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a5ee284ec559bdbc00fd8b7e86f468c0f}{sin\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a907fbe0d9febed0a1d8ee2a48dd63c6c}{cos\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a4bda123ee197114f19a17337adc46b4d}{tan\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_acfa1ca2db5780f98ce8199978285f4be}{asin\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a3c7ecc005d5a28dfdbc2ff2dffc924d1}{acos\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a598ba0614837d8e08bc1eee7e323f127}{atan\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a852ca08ff416add569934e5ed595cf67}{sinh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ab086d134c6a1009fa00962fa54d9e93e}{cosh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a1704d90dd6579db6136cba7a915961af}{tanh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aa69f921c63dbdff7a0b9e7521fd7ab2f}{asinh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a968c778240eb3fc8112b358466da004f}{acosh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a9c83fe23bf62c84fd401dca765416705}{atanh\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a741f8fe695d3104406290d3a5d56066b}{sin\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a6e5401b1aa0800349bc4a045e46f1ed3}{cos\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a33e164bc4fa180dd56aa80abfd42ab56}{tan\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a044d36af6892145441cb33fed7540e6a}{asin\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a6784530e8d1c3c0ae7a11012c5737400}{acos\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a9b710a67731637bcbbda66b303c66553}{atan\+D\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aa2f78d797da2b0db54b3442287406684}{log2\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a0b0b924467b309d67220f93427c08add}{log10\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_afa0a872157a8d9c2a6ad6542ebf34d59}{log\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a233fac81cd5ef9e110485858585f855e}{ln\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ae67530a59f92381ca67213f3c044c1a8}{exp\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac889b53c7acfce1f2e4d463444c29c26}{sqrt\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac21960e9f3dfad194618a93d1beba716}{sign\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a865f221e170fc6efc72ea89a2480a21f}{rint\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac05089e33da08abbc68bbf5b98075918}{abs\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a5c953c7ed6cb697e8c24301f22793a3e}{min\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ae1b46785711aac1f8d20005bbcf549c3}{max\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a4253b67bd577327fc987c73a1e8a4616}{sum\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a920d2e9faff05acd0a2540672b49657f}{avg\+\_\+F}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aa756c1d1c671d2f2c3fda105827aee22}{fmod\+\_\+F}}
+\item 
+const QString\+List \mbox{\hyperlink{def_8h_a1052d0e96bf77c0e3c55ac8e789e66e8}{buil\+In\+Functions}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a12396836a60de634462f2ee54252d1f7}{cm\+\_\+\+Oprt}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a2e41946b3bd4c4deca854519c30dff61}{mm\+\_\+\+Oprt}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a739ec234ec816160375873f8ef4b0da4}{in\+\_\+\+Oprt}}
+\item 
+const QString\+List \mbox{\hyperlink{def_8h_a877646bc626cf8de6f51fa7cf8ea1458}{buil\+In\+Postfix\+Operators}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a002c4f84a6530c008248951a9211dfd2}{pl\+\_\+size}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aef3f59a3627dc21b5cfa06bf7fdde1c7}{pl\+\_\+height}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac52a3218c508f115a16c9bec3c3595c6}{pl\+\_\+date}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a45650c07a5b615e2dc41cac88d8018b4}{pl\+\_\+time}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a66765d6231f7691b11943ed0ee379fdb}{pl\+\_\+pattern\+Name}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a885a5ef9ad2ada9c6d419f0868e10d91}{pl\+\_\+pattern\+Number}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a3e020d7871c589a61d1249396d62d2ec}{pl\+\_\+author}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a04c369e60fdf2488a7673979551ce03c}{pl\+\_\+customer}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a126630e3f437e12f190ea601b046dc3c}{pl\+\_\+p\+Ext}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aafc0b4336cc0203b8519f5f53a8cd060}{pl\+\_\+p\+File\+Name}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a65e418ff8a3ba84e3530a4d46ac42788}{pl\+\_\+m\+File\+Name}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a22f0193379e93ae0b16e61759d4ca1c2}{pl\+\_\+m\+Ext}}
+\item 
+const QString \mbox{\hyperlink{def_8h_af0523eb397a368f935f2dc75a79eaa8b}{pl\+\_\+p\+Letter}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a69e0550c0ce6585dad49008086eb8d16}{pl\+\_\+p\+Annotation}}
+\item 
+const QString \mbox{\hyperlink{def_8h_acb38d16047a732cb79743fac09199073}{pl\+\_\+p\+Orientation}}
+\item 
+const QString \mbox{\hyperlink{def_8h_acec4b5b5e1f59df499aac7be4f115e2b}{pl\+\_\+p\+Rotation}}
+\item 
+const QString \mbox{\hyperlink{def_8h_adef42b0af47e8eca46f9e22b8d6f8bc3}{pl\+\_\+p\+Tilt}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a26ba9ec448f8196b66b001e67c0a9617}{pl\+\_\+p\+Fold\+Position}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a7671961c3e8a2472598ac0cd42d1e4c4}{pl\+\_\+p\+Name}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a54a894cc2b8d28ebf4d04914f17c0752}{pl\+\_\+p\+Quantity}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aca85afd28800eec1de80cb0b5f4b4992}{pl\+\_\+m\+Fabric}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a99042ca92cbc65f5eaf520e8c14e9850}{pl\+\_\+m\+Lining}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac831e27dca69ca162825300f4f3c2c55}{pl\+\_\+m\+Interfacing}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ad03657039d6134eb6cf107b515bb1d75}{pl\+\_\+m\+Interlining}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a35fc31f943043d85fe84430ecd29cda4}{pl\+\_\+w\+Cut}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a7d656df7518f7a033c37d396c66f6b67}{pl\+\_\+w\+On\+Fold}}
+\item 
+const QString\+List \mbox{\hyperlink{def_8h_a615623de036744d9ae9a2828af024f8d}{label\+Template\+Placeholders}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a0f35c65ac737bad188895abceeadcf48}{cursor\+Arrow\+Open\+Hand}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a7b39ab83231e23ee686ecabe02567714}{cursor\+Arrow\+Close\+Hand}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a9d57cde0b2077de64d37157baa0e9d10}{degree\+Symbol}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ad02992006af50f2843f23279d26ae939}{true\+Str}}
+\item 
+const QString \mbox{\hyperlink{def_8h_add2311fa670dce61b8bbdd6baf9841bb}{false\+Str}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a8d75f5702d2dbe0830669ce3e78c3932}{str\+Slit}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a649cee1df19c5ee54bd377e7e84f6fa0}{str\+Straightforward}}
+\item 
+const QString \mbox{\hyperlink{def_8h_aefb6e31b0bee618cc6955ebc20972bc5}{str\+Bisector}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a591c07f442a7d9ece6817a7ca6a1ebc3}{str\+Intersection}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a4b5c5c4ec31a31da47f7aa6fe4231101}{unit\+MM}}
+\item 
+const QString \mbox{\hyperlink{def_8h_a76bea8e4da8138da44cd242f8aa85a37}{unit\+CM}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ac99511a44618ea64c4927fe23f1a8832}{unit\+INCH}}
+\item 
+const QString \mbox{\hyperlink{def_8h_ab7b5d272ddc9705ff0a78d42eb8060a1}{unit\+PX}}
+\item 
+const qreal \mbox{\hyperlink{def_8h_a31472dd563848abd25354504b9cdc505}{Print\+DPI}}
+\item 
+constexpr qreal \mbox{\hyperlink{def_8h_a2dda73e54262018b6c65e5dee11fe34d}{accuracy\+Point\+On\+Line}} = (0.\+1555 / 25.\+4) $\ast$ 96.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{def_8h_aeed0a618f017e128a5d8654754f792db}\label{def_8h_aeed0a618f017e128a5d8654754f792db}} 
+\index{def.h@{def.h}!\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}}
+\index{\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{\_\_has\_cpp\_attribute}{\_\_has\_cpp\_attribute}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~0}
+
+\mbox{\Hypertarget{def_8h_abb52cf8f360453bdd87e44d6dcf17ce9}\label{def_8h_abb52cf8f360453bdd87e44d6dcf17ce9}} 
+\index{def.h@{def.h}!QIMAGE\_MAX@{QIMAGE\_MAX}}
+\index{QIMAGE\_MAX@{QIMAGE\_MAX}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QIMAGE\_MAX}{QIMAGE\_MAX}}
+{\footnotesize\ttfamily \#define QIMAGE\+\_\+\+MAX~32768}
+
+\mbox{\Hypertarget{def_8h_ad2abcc48ab132b008a0976cda54786c2}\label{def_8h_ad2abcc48ab132b008a0976cda54786c2}} 
+\index{def.h@{def.h}!QXT\_D@{QXT\_D}}
+\index{QXT\_D@{QXT\_D}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QXT\_D}{QXT\_D}}
+{\footnotesize\ttfamily \#define QXT\+\_\+D(\begin{DoxyParamCaption}\item[{}]{PUB }\end{DoxyParamCaption})~PUB\#\#Private\& d = qxt\+\_\+d()}
+
+\mbox{\Hypertarget{def_8h_ac5322e633cecd76fb5bf9af96a41c38a}\label{def_8h_ac5322e633cecd76fb5bf9af96a41c38a}} 
+\index{def.h@{def.h}!QXT\_DECLARE\_PRIVATE@{QXT\_DECLARE\_PRIVATE}}
+\index{QXT\_DECLARE\_PRIVATE@{QXT\_DECLARE\_PRIVATE}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QXT\_DECLARE\_PRIVATE}{QXT\_DECLARE\_PRIVATE}}
+{\footnotesize\ttfamily \#define QXT\+\_\+\+DECLARE\+\_\+\+PRIVATE(\begin{DoxyParamCaption}\item[{}]{PUB }\end{DoxyParamCaption})~friend class PUB\#\#Private; \mbox{\hyperlink{class_qxt_private_interface}{Qxt\+Private\+Interface}}$<$PUB, PUB\#\#Private$>$ qxt\+\_\+d;}
+
+\mbox{\Hypertarget{def_8h_a0a0eab9c8a09c0a03185d2fd8b7cb8d5}\label{def_8h_a0a0eab9c8a09c0a03185d2fd8b7cb8d5}} 
+\index{def.h@{def.h}!QXT\_DECLARE\_PUBLIC@{QXT\_DECLARE\_PUBLIC}}
+\index{QXT\_DECLARE\_PUBLIC@{QXT\_DECLARE\_PUBLIC}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QXT\_DECLARE\_PUBLIC}{QXT\_DECLARE\_PUBLIC}}
+{\footnotesize\ttfamily \#define QXT\+\_\+\+DECLARE\+\_\+\+PUBLIC(\begin{DoxyParamCaption}\item[{}]{PUB }\end{DoxyParamCaption})~friend class PUB;}
+
+\mbox{\Hypertarget{def_8h_aafaaa31f6c623c1276ab7ce4f36b6b8a}\label{def_8h_aafaaa31f6c623c1276ab7ce4f36b6b8a}} 
+\index{def.h@{def.h}!QXT\_INIT\_PRIVATE@{QXT\_INIT\_PRIVATE}}
+\index{QXT\_INIT\_PRIVATE@{QXT\_INIT\_PRIVATE}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QXT\_INIT\_PRIVATE}{QXT\_INIT\_PRIVATE}}
+{\footnotesize\ttfamily \#define QXT\+\_\+\+INIT\+\_\+\+PRIVATE(\begin{DoxyParamCaption}\item[{}]{PUB }\end{DoxyParamCaption})~qxt\+\_\+d.\+set\+Public(this);}
+
+\mbox{\Hypertarget{def_8h_ad17a8c04e466fb37425a987acaa9f021}\label{def_8h_ad17a8c04e466fb37425a987acaa9f021}} 
+\index{def.h@{def.h}!QXT\_P@{QXT\_P}}
+\index{QXT\_P@{QXT\_P}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{QXT\_P}{QXT\_P}}
+{\footnotesize\ttfamily \#define QXT\+\_\+P(\begin{DoxyParamCaption}\item[{}]{PUB }\end{DoxyParamCaption})~PUB\& p = qxt\+\_\+p()}
+
+\mbox{\Hypertarget{def_8h_a0f58c1b57bda3c300da3e175201e543c}\label{def_8h_a0f58c1b57bda3c300da3e175201e543c}} 
+\index{def.h@{def.h}!SCASSERT@{SCASSERT}}
+\index{SCASSERT@{SCASSERT}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SCASSERT}{SCASSERT}}
+{\footnotesize\ttfamily \#define SCASSERT(\begin{DoxyParamCaption}\item[{}]{cond }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!(cond))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ qCritical(\textcolor{stringliteral}{"{}ASSERT:\ \%s\ in\ \%s\ (\%s:\%u)"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \#cond,\ Q\_FUNC\_INFO\ ,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ debug\_break();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ abort();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{def_8h_a8084f95d171e33ef73bf44aed20a4378}\label{def_8h_a8084f95d171e33ef73bf44aed20a4378}} 
+\index{def.h@{def.h}!SceneSize@{SceneSize}}
+\index{SceneSize@{SceneSize}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SceneSize}{SceneSize}}
+{\footnotesize\ttfamily \#define Scene\+Size~50000}
+
+\mbox{\Hypertarget{def_8h_a380cf399715eea06631207dd0f18de71}\label{def_8h_a380cf399715eea06631207dd0f18de71}} 
+\index{def.h@{def.h}!V\_FALLTHROUGH@{V\_FALLTHROUGH}}
+\index{V\_FALLTHROUGH@{V\_FALLTHROUGH}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{V\_FALLTHROUGH}{V\_FALLTHROUGH}}
+{\footnotesize\ttfamily \#define V\+\_\+\+FALLTHROUGH}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}\label{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}} 
+\index{def.h@{def.h}!ToolVisHolderType@{ToolVisHolderType}}
+\index{ToolVisHolderType@{ToolVisHolderType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{ToolVisHolderType}{ToolVisHolderType}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}{Tool\+Vis\+Holder\+Type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}} 
+\index{def.h@{def.h}!GHeights@{GHeights}}
+\index{GHeights@{GHeights}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{GHeights}{GHeights}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a4b7c0f8c2e84b979340816a0d8e6767c}{GHeights}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL@{ALL}!def.h@{def.h}}\index{def.h@{def.h}!ALL@{ALL}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5fb1f955b45e38e31789286a1790398d}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5fb1f955b45e38e31789286a1790398d}} 
+ALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H50@{H50}!def.h@{def.h}}\index{def.h@{def.h}!H50@{H50}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cad1b0e30914a2c99c4d610fbc7affbd63}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cad1b0e30914a2c99c4d610fbc7affbd63}} 
+H50&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H56@{H56}!def.h@{def.h}}\index{def.h@{def.h}!H56@{H56}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca44ecc8f8561d6274a520abf2f818a14b}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca44ecc8f8561d6274a520abf2f818a14b}} 
+H56&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H62@{H62}!def.h@{def.h}}\index{def.h@{def.h}!H62@{H62}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca252ae6e34362a6b548e990505bff8ede}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca252ae6e34362a6b548e990505bff8ede}} 
+H62&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H68@{H68}!def.h@{def.h}}\index{def.h@{def.h}!H68@{H68}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca35c605672afeb8da2ea1c1f408d84932}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca35c605672afeb8da2ea1c1f408d84932}} 
+H68&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H74@{H74}!def.h@{def.h}}\index{def.h@{def.h}!H74@{H74}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca49be3d3e052a2b799f11305f91c7316a}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca49be3d3e052a2b799f11305f91c7316a}} 
+H74&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H80@{H80}!def.h@{def.h}}\index{def.h@{def.h}!H80@{H80}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca0016f05ada6f9008984f57109047e93a}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca0016f05ada6f9008984f57109047e93a}} 
+H80&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H86@{H86}!def.h@{def.h}}\index{def.h@{def.h}!H86@{H86}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caea65ad67e2ec7ac9a7a4892e320cd352}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caea65ad67e2ec7ac9a7a4892e320cd352}} 
+H86&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H92@{H92}!def.h@{def.h}}\index{def.h@{def.h}!H92@{H92}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadbf7793fc64a9851f96213910bda127b}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadbf7793fc64a9851f96213910bda127b}} 
+H92&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H98@{H98}!def.h@{def.h}}\index{def.h@{def.h}!H98@{H98}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7adc8d40028c80faf72ee41a5e6fcb98}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7adc8d40028c80faf72ee41a5e6fcb98}} 
+H98&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H104@{H104}!def.h@{def.h}}\index{def.h@{def.h}!H104@{H104}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca51c6a3b82abc942176442a2dea05dbc0}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca51c6a3b82abc942176442a2dea05dbc0}} 
+H104&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H110@{H110}!def.h@{def.h}}\index{def.h@{def.h}!H110@{H110}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caefd126282f1ab2d944e464252df26556}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caefd126282f1ab2d944e464252df26556}} 
+H110&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H116@{H116}!def.h@{def.h}}\index{def.h@{def.h}!H116@{H116}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7d8ab224698daa4769a6b1735c190ac8}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca7d8ab224698daa4769a6b1735c190ac8}} 
+H116&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H122@{H122}!def.h@{def.h}}\index{def.h@{def.h}!H122@{H122}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca93a56968970082249bf283cd2b8fd7ad}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca93a56968970082249bf283cd2b8fd7ad}} 
+H122&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H128@{H128}!def.h@{def.h}}\index{def.h@{def.h}!H128@{H128}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca86003a091075b74186ec6b17953e703f}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca86003a091075b74186ec6b17953e703f}} 
+H128&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H134@{H134}!def.h@{def.h}}\index{def.h@{def.h}!H134@{H134}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadc0082809d18c517aed755ddc7479ca2}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cadc0082809d18c517aed755ddc7479ca2}} 
+H134&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H140@{H140}!def.h@{def.h}}\index{def.h@{def.h}!H140@{H140}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caed30ba0e1bcce501ee7b618f3795afe9}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767caed30ba0e1bcce501ee7b618f3795afe9}} 
+H140&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H146@{H146}!def.h@{def.h}}\index{def.h@{def.h}!H146@{H146}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca80fda810b974544752c335c022081c1b}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca80fda810b974544752c335c022081c1b}} 
+H146&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H152@{H152}!def.h@{def.h}}\index{def.h@{def.h}!H152@{H152}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5651891e0f033bc2b033e51b2e9b9ce7}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5651891e0f033bc2b033e51b2e9b9ce7}} 
+H152&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H158@{H158}!def.h@{def.h}}\index{def.h@{def.h}!H158@{H158}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca131623e5200844edf3d0b87da2d8faff}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca131623e5200844edf3d0b87da2d8faff}} 
+H158&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H164@{H164}!def.h@{def.h}}\index{def.h@{def.h}!H164@{H164}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca9bb0849bdc11ae790a3a6bc8c135f921}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca9bb0849bdc11ae790a3a6bc8c135f921}} 
+H164&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H170@{H170}!def.h@{def.h}}\index{def.h@{def.h}!H170@{H170}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cae3438b61311e5424ed514b6f81eddafa}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cae3438b61311e5424ed514b6f81eddafa}} 
+H170&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H176@{H176}!def.h@{def.h}}\index{def.h@{def.h}!H176@{H176}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca47c0781030c296c9d1528ce96e80d6bb}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca47c0781030c296c9d1528ce96e80d6bb}} 
+H176&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H182@{H182}!def.h@{def.h}}\index{def.h@{def.h}!H182@{H182}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cac8e9599579ece011c9e3d4c036d19b0e}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767cac8e9599579ece011c9e3d4c036d19b0e}} 
+H182&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H188@{H188}!def.h@{def.h}}\index{def.h@{def.h}!H188@{H188}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5e2e6c20d7826527152036e96fb37e2b}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca5e2e6c20d7826527152036e96fb37e2b}} 
+H188&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H194@{H194}!def.h@{def.h}}\index{def.h@{def.h}!H194@{H194}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca17b7eaff8c76e45ef9e20f5ce4bc5c57}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca17b7eaff8c76e45ef9e20f5ce4bc5c57}} 
+H194&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{H200@{H200}!def.h@{def.h}}\index{def.h@{def.h}!H200@{H200}}}\mbox{\Hypertarget{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca03ed6b724b9485d847c0ea7e6b0b3984}\label{def_8h_a4b7c0f8c2e84b979340816a0d8e6767ca03ed6b724b9485d847c0ea7e6b0b3984}} 
+H200&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}} 
+\index{def.h@{def.h}!GSizes@{GSizes}}
+\index{GSizes@{GSizes}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{GSizes}{GSizes}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6a}{GSizes}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ALL@{ALL}!def.h@{def.h}}\index{def.h@{def.h}!ALL@{ALL}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5fb1f955b45e38e31789286a1790398d}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5fb1f955b45e38e31789286a1790398d}} 
+ALL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S22@{S22}!def.h@{def.h}}\index{def.h@{def.h}!S22@{S22}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa75804b4c66c019655d1d2b56a2422fdd}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa75804b4c66c019655d1d2b56a2422fdd}} 
+S22&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S24@{S24}!def.h@{def.h}}\index{def.h@{def.h}!S24@{S24}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa9faa0e15000c875b39db3b57c572bcd0}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa9faa0e15000c875b39db3b57c572bcd0}} 
+S24&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S26@{S26}!def.h@{def.h}}\index{def.h@{def.h}!S26@{S26}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa40de877cfb3dfae492573a2f04f40db6}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa40de877cfb3dfae492573a2f04f40db6}} 
+S26&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S28@{S28}!def.h@{def.h}}\index{def.h@{def.h}!S28@{S28}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac6e17193c24a30186413ef4de26e98aa}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac6e17193c24a30186413ef4de26e98aa}} 
+S28&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S30@{S30}!def.h@{def.h}}\index{def.h@{def.h}!S30@{S30}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac317634f2e2547e5909e87d80dd62c6e}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac317634f2e2547e5909e87d80dd62c6e}} 
+S30&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S32@{S32}!def.h@{def.h}}\index{def.h@{def.h}!S32@{S32}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aaa1e28eee0339658d39a8b4d325b56e9c}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aaa1e28eee0339658d39a8b4d325b56e9c}} 
+S32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S34@{S34}!def.h@{def.h}}\index{def.h@{def.h}!S34@{S34}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac30f4db30d4782382db0b47e7745253c}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac30f4db30d4782382db0b47e7745253c}} 
+S34&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S36@{S36}!def.h@{def.h}}\index{def.h@{def.h}!S36@{S36}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa0de238eec061c8e5ed3b3a28aa61c160}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa0de238eec061c8e5ed3b3a28aa61c160}} 
+S36&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S38@{S38}!def.h@{def.h}}\index{def.h@{def.h}!S38@{S38}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadfbe37005c59642c32e910b68e21f6c6}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadfbe37005c59642c32e910b68e21f6c6}} 
+S38&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S40@{S40}!def.h@{def.h}}\index{def.h@{def.h}!S40@{S40}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aab4c9ab83ce71596a1ac5e45722e3e0cb}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aab4c9ab83ce71596a1ac5e45722e3e0cb}} 
+S40&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S42@{S42}!def.h@{def.h}}\index{def.h@{def.h}!S42@{S42}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3cae54bbaee17374d6f71402c6885b4b}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3cae54bbaee17374d6f71402c6885b4b}} 
+S42&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S44@{S44}!def.h@{def.h}}\index{def.h@{def.h}!S44@{S44}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa66232a53d9dc07d637c333e03390520a}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa66232a53d9dc07d637c333e03390520a}} 
+S44&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S46@{S46}!def.h@{def.h}}\index{def.h@{def.h}!S46@{S46}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae961e926cc4ab0fc2b147d877dad9b35}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae961e926cc4ab0fc2b147d877dad9b35}} 
+S46&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S48@{S48}!def.h@{def.h}}\index{def.h@{def.h}!S48@{S48}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3ce7decba1d3f9a28669422eed04bb2c}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa3ce7decba1d3f9a28669422eed04bb2c}} 
+S48&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S50@{S50}!def.h@{def.h}}\index{def.h@{def.h}!S50@{S50}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5f3a04687b9d195f7eb9ef6c888cffa4}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa5f3a04687b9d195f7eb9ef6c888cffa4}} 
+S50&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S52@{S52}!def.h@{def.h}}\index{def.h@{def.h}!S52@{S52}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa72c2ea1b6246efce8241768ad50583b2}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa72c2ea1b6246efce8241768ad50583b2}} 
+S52&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S54@{S54}!def.h@{def.h}}\index{def.h@{def.h}!S54@{S54}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa2b59390314ca175c3e5d8ede111b725b}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa2b59390314ca175c3e5d8ede111b725b}} 
+S54&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S56@{S56}!def.h@{def.h}}\index{def.h@{def.h}!S56@{S56}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae6a91f44fb265a9c01720d590569b1f7}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aae6a91f44fb265a9c01720d590569b1f7}} 
+S56&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S58@{S58}!def.h@{def.h}}\index{def.h@{def.h}!S58@{S58}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac5771b3330280bc84bf1a7583565f73d}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aac5771b3330280bc84bf1a7583565f73d}} 
+S58&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S60@{S60}!def.h@{def.h}}\index{def.h@{def.h}!S60@{S60}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadaf759c6ceddc3e56dd0f1d00dc43a01}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aadaf759c6ceddc3e56dd0f1d00dc43a01}} 
+S60&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S62@{S62}!def.h@{def.h}}\index{def.h@{def.h}!S62@{S62}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa71d94b4a720f35a43b27ef3acc406c90}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa71d94b4a720f35a43b27ef3acc406c90}} 
+S62&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S64@{S64}!def.h@{def.h}}\index{def.h@{def.h}!S64@{S64}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa115dca124dc6423c7a400b8a8a0270cc}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa115dca124dc6423c7a400b8a8a0270cc}} 
+S64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S66@{S66}!def.h@{def.h}}\index{def.h@{def.h}!S66@{S66}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7a37e051a76be1638d92470778569d8c}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7a37e051a76be1638d92470778569d8c}} 
+S66&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S68@{S68}!def.h@{def.h}}\index{def.h@{def.h}!S68@{S68}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7dd44c42e8918263f2d31317771e252d}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa7dd44c42e8918263f2d31317771e252d}} 
+S68&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S70@{S70}!def.h@{def.h}}\index{def.h@{def.h}!S70@{S70}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa56e525612e2b9c88fbeaeb6ced0c46e8}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa56e525612e2b9c88fbeaeb6ced0c46e8}} 
+S70&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S72@{S72}!def.h@{def.h}}\index{def.h@{def.h}!S72@{S72}}}\mbox{\Hypertarget{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa1504e8f555c2103d91e11818acc7b05f}\label{def_8h_a4fcb3e6f8d8b01a87d730588bdba9a6aa1504e8f555c2103d91e11818acc7b05f}} 
+S72&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}} 
+\index{def.h@{def.h}!LayoutExportFormat@{LayoutExportFormat}}
+\index{LayoutExportFormat@{LayoutExportFormat}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{LayoutExportFormat}{LayoutExportFormat}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SVG@{SVG}!def.h@{def.h}}\index{def.h@{def.h}!SVG@{SVG}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8acd15a75c26008696647b31a3f0de43b3}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8acd15a75c26008696647b31a3f0de43b3}} 
+SVG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDF@{PDF}!def.h@{def.h}}\index{def.h@{def.h}!PDF@{PDF}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcd1b68617759b1dfcff0403a6b5a8d1}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcd1b68617759b1dfcff0403a6b5a8d1}} 
+PDF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PDFTiled@{PDFTiled}!def.h@{def.h}}\index{def.h@{def.h}!PDFTiled@{PDFTiled}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a168165f5664e9d78af0fe3e875266e57}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a168165f5664e9d78af0fe3e875266e57}} 
+PDFTiled&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PNG@{PNG}!def.h@{def.h}}\index{def.h@{def.h}!PNG@{PNG}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a55505ba281b015ec31f03ccb151b2a34}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a55505ba281b015ec31f03ccb151b2a34}} 
+PNG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JPG@{JPG}!def.h@{def.h}}\index{def.h@{def.h}!JPG@{JPG}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a92769fe7c40229f4301d6125e0a9e928}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a92769fe7c40229f4301d6125e0a9e928}} 
+JPG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BMP@{BMP}!def.h@{def.h}}\index{def.h@{def.h}!BMP@{BMP}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aa5d5ca1447586e23dc011f8c0cc0a6db}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aa5d5ca1447586e23dc011f8c0cc0a6db}} 
+BMP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PPM@{PPM}!def.h@{def.h}}\index{def.h@{def.h}!PPM@{PPM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4bb1ebdeeb70354069bc644b9c94ee5f}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4bb1ebdeeb70354069bc644b9c94ee5f}} 
+PPM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJ@{OBJ}!def.h@{def.h}}\index{def.h@{def.h}!OBJ@{OBJ}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8af34d534adfb78a9e6432be4621a93eec}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8af34d534adfb78a9e6432be4621a93eec}} 
+OBJ&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PS@{PS}!def.h@{def.h}}\index{def.h@{def.h}!PS@{PS}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ad3d4c5deb455ac79dd5ff47c88bd65d9}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ad3d4c5deb455ac79dd5ff47c88bd65d9}} 
+PS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EPS@{EPS}!def.h@{def.h}}\index{def.h@{def.h}!EPS@{EPS}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ac2c027d8c62500300145c3043546d4c6}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ac2c027d8c62500300145c3043546d4c6}} 
+EPS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1006\_Flat@{DXF\_AC1006\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1006\_Flat@{DXF\_AC1006\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a40caae61e0856460a34c325ac1f59d29}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a40caae61e0856460a34c325ac1f59d29}} 
+DXF\+\_\+\+AC1006\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1009\_Flat@{DXF\_AC1009\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1009\_Flat@{DXF\_AC1009\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5b1be9b650d700a3eddaaab883cc7d19}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5b1be9b650d700a3eddaaab883cc7d19}} 
+DXF\+\_\+\+AC1009\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1012\_Flat@{DXF\_AC1012\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1012\_Flat@{DXF\_AC1012\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7a381c69173f01ea86d844e6b8b20c3c}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7a381c69173f01ea86d844e6b8b20c3c}} 
+DXF\+\_\+\+AC1012\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1014\_Flat@{DXF\_AC1014\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1014\_Flat@{DXF\_AC1014\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d75e6c692da07040c1237f6f35f6fff}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d75e6c692da07040c1237f6f35f6fff}} 
+DXF\+\_\+\+AC1014\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1015\_Flat@{DXF\_AC1015\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1015\_Flat@{DXF\_AC1015\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8adc1ace66930128604f46699c90fda7fe}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8adc1ace66930128604f46699c90fda7fe}} 
+DXF\+\_\+\+AC1015\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1018\_Flat@{DXF\_AC1018\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1018\_Flat@{DXF\_AC1018\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4ab7a758242ab49ca8f008d08475a579}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4ab7a758242ab49ca8f008d08475a579}} 
+DXF\+\_\+\+AC1018\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1021\_Flat@{DXF\_AC1021\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1021\_Flat@{DXF\_AC1021\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a17fbe7dbe9b7155cc6385cfcbf5d46e2}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a17fbe7dbe9b7155cc6385cfcbf5d46e2}} 
+DXF\+\_\+\+AC1021\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1024\_Flat@{DXF\_AC1024\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1024\_Flat@{DXF\_AC1024\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0ff09ceeaabd3fce7947827f7f8c7391}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0ff09ceeaabd3fce7947827f7f8c7391}} 
+DXF\+\_\+\+AC1024\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1027\_Flat@{DXF\_AC1027\_Flat}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1027\_Flat@{DXF\_AC1027\_Flat}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4b2279fcb40c173610018f0551e2f9}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4b2279fcb40c173610018f0551e2f9}} 
+DXF\+\_\+\+AC1027\+\_\+\+Flat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1006\_AAMA@{DXF\_AC1006\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1006\_AAMA@{DXF\_AC1006\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcee11059bd3dead6679b79421cf023c}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8abcee11059bd3dead6679b79421cf023c}} 
+DXF\+\_\+\+AC1006\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1009\_AAMA@{DXF\_AC1009\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1009\_AAMA@{DXF\_AC1009\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d5dc27de880aba520be5b8fca116318}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0d5dc27de880aba520be5b8fca116318}} 
+DXF\+\_\+\+AC1009\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1012\_AAMA@{DXF\_AC1012\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1012\_AAMA@{DXF\_AC1012\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a03cb44b9a18a1d334ec65452d872cff9}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a03cb44b9a18a1d334ec65452d872cff9}} 
+DXF\+\_\+\+AC1012\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1014\_AAMA@{DXF\_AC1014\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1014\_AAMA@{DXF\_AC1014\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aca79fec4852cf2e6824f2f538153b891}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aca79fec4852cf2e6824f2f538153b891}} 
+DXF\+\_\+\+AC1014\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1015\_AAMA@{DXF\_AC1015\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1015\_AAMA@{DXF\_AC1015\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7db10b30d04749fcbead11fcb3151553}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a7db10b30d04749fcbead11fcb3151553}} 
+DXF\+\_\+\+AC1015\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1018\_AAMA@{DXF\_AC1018\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1018\_AAMA@{DXF\_AC1018\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a326010dab9d7012eb1b5f03982390e46}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a326010dab9d7012eb1b5f03982390e46}} 
+DXF\+\_\+\+AC1018\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1021\_AAMA@{DXF\_AC1021\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1021\_AAMA@{DXF\_AC1021\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5ed795176ddbcc346039d42be23ab0d7}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5ed795176ddbcc346039d42be23ab0d7}} 
+DXF\+\_\+\+AC1021\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1024\_AAMA@{DXF\_AC1024\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1024\_AAMA@{DXF\_AC1024\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a61758b37d92483b019d40f2888597cdd}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a61758b37d92483b019d40f2888597cdd}} 
+DXF\+\_\+\+AC1024\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1027\_AAMA@{DXF\_AC1027\_AAMA}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1027\_AAMA@{DXF\_AC1027\_AAMA}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae67451ea2dffa8010f095eb5fab56bdc}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae67451ea2dffa8010f095eb5fab56bdc}} 
+DXF\+\_\+\+AC1027\+\_\+\+AAMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1006\_ASTM@{DXF\_AC1006\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1006\_ASTM@{DXF\_AC1006\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4991e4150fbe596d638877162e8da8}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a0a4991e4150fbe596d638877162e8da8}} 
+DXF\+\_\+\+AC1006\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1009\_ASTM@{DXF\_AC1009\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1009\_ASTM@{DXF\_AC1009\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a43433440e342342ed94b10c65e60da29}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a43433440e342342ed94b10c65e60da29}} 
+DXF\+\_\+\+AC1009\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1012\_ASTM@{DXF\_AC1012\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1012\_ASTM@{DXF\_AC1012\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5d83ceb5d4a90c7eea5917389c875b10}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5d83ceb5d4a90c7eea5917389c875b10}} 
+DXF\+\_\+\+AC1012\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1014\_ASTM@{DXF\_AC1014\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1014\_ASTM@{DXF\_AC1014\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5330666c000a6c1f5311e32dc9f1ae58}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a5330666c000a6c1f5311e32dc9f1ae58}} 
+DXF\+\_\+\+AC1014\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1015\_ASTM@{DXF\_AC1015\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1015\_ASTM@{DXF\_AC1015\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aaf04f20232b34e4e0757561b4db16f88}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8aaf04f20232b34e4e0757561b4db16f88}} 
+DXF\+\_\+\+AC1015\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1018\_ASTM@{DXF\_AC1018\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1018\_ASTM@{DXF\_AC1018\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a791a94998d31bce43408afaff6fc3659}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a791a94998d31bce43408afaff6fc3659}} 
+DXF\+\_\+\+AC1018\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1021\_ASTM@{DXF\_AC1021\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1021\_ASTM@{DXF\_AC1021\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae74058cae3b52decee0b258a0b595bc7}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8ae74058cae3b52decee0b258a0b595bc7}} 
+DXF\+\_\+\+AC1021\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1024\_ASTM@{DXF\_AC1024\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1024\_ASTM@{DXF\_AC1024\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a338bd519ef4a8b710dbe99cb8eb1eef4}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a338bd519ef4a8b710dbe99cb8eb1eef4}} 
+DXF\+\_\+\+AC1024\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DXF\_AC1027\_ASTM@{DXF\_AC1027\_ASTM}!def.h@{def.h}}\index{def.h@{def.h}!DXF\_AC1027\_ASTM@{DXF\_AC1027\_ASTM}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a6b7f254819328e16f59096a9b9968b05}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a6b7f254819328e16f59096a9b9968b05}} 
+DXF\+\_\+\+AC1027\+\_\+\+ASTM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TIF@{TIF}!def.h@{def.h}}\index{def.h@{def.h}!TIF@{TIF}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a9442880680eb5d7fb60d15f422004547}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a9442880680eb5d7fb60d15f422004547}} 
+TIF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COUNT@{COUNT}!def.h@{def.h}}\index{def.h@{def.h}!COUNT@{COUNT}}}\mbox{\Hypertarget{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4905ac9d6a22bdfc1ae096094ce6248d}\label{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8a4905ac9d6a22bdfc1ae096094ce6248d}} 
+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a55ff83aa1faba5d2fcc34767a5502386}\label{def_8h_a55ff83aa1faba5d2fcc34767a5502386}} 
+\index{def.h@{def.h}!MeasurementsType@{MeasurementsType}}
+\index{MeasurementsType@{MeasurementsType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{MeasurementsType}{MeasurementsType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Multisize@{Multisize}!def.h@{def.h}}\index{def.h@{def.h}!Multisize@{Multisize}}}\mbox{\Hypertarget{def_8h_a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc}\label{def_8h_a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc}} 
+Multisize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Individual@{Individual}!def.h@{def.h}}\index{def.h@{def.h}!Individual@{Individual}}}\mbox{\Hypertarget{def_8h_a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519}\label{def_8h_a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519}} 
+Individual&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!def.h@{def.h}}\index{def.h@{def.h}!Unknown@{Unknown}}}\mbox{\Hypertarget{def_8h_a55ff83aa1faba5d2fcc34767a5502386a88183b946cc5f0e8c96b2e66e1c74a7e}\label{def_8h_a55ff83aa1faba5d2fcc34767a5502386a88183b946cc5f0e8c96b2e66e1c74a7e}} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a136551301e3a6163c0233081fe424653}\label{def_8h_a136551301e3a6163c0233081fe424653}} 
+\index{def.h@{def.h}!NodeDetail@{NodeDetail}}
+\index{NodeDetail@{NodeDetail}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{NodeDetail}{NodeDetail}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a136551301e3a6163c0233081fe424653}{Node\+Detail}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Contour@{Contour}!def.h@{def.h}}\index{def.h@{def.h}!Contour@{Contour}}}\mbox{\Hypertarget{def_8h_a136551301e3a6163c0233081fe424653a0b3303e86f36d6d2b1266da88cf76e66}\label{def_8h_a136551301e3a6163c0233081fe424653a0b3303e86f36d6d2b1266da88cf76e66}} 
+Contour&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Modeling@{Modeling}!def.h@{def.h}}\index{def.h@{def.h}!Modeling@{Modeling}}}\mbox{\Hypertarget{def_8h_a136551301e3a6163c0233081fe424653a36ca8b27f92026a233b4a2f81dc92397}\label{def_8h_a136551301e3a6163c0233081fe424653a36ca8b27f92026a233b4a2f81dc92397}} 
+Modeling&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}\label{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}} 
+\index{def.h@{def.h}!NodeUsage@{NodeUsage}}
+\index{NodeUsage@{NodeUsage}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{NodeUsage}{NodeUsage}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_ae9cd89aeb9b330f44aadd560b61a3473}{Node\+Usage}} \+: bool\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotInUse@{NotInUse}!def.h@{def.h}}\index{def.h@{def.h}!NotInUse@{NotInUse}}}\mbox{\Hypertarget{def_8h_ae9cd89aeb9b330f44aadd560b61a3473aebbdcb9b6e8d8d2e78b279fcbd115f22}\label{def_8h_ae9cd89aeb9b330f44aadd560b61a3473aebbdcb9b6e8d8d2e78b279fcbd115f22}} 
+Not\+In\+Use&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InUse@{InUse}!def.h@{def.h}}\index{def.h@{def.h}!InUse@{InUse}}}\mbox{\Hypertarget{def_8h_ae9cd89aeb9b330f44aadd560b61a3473ad19e0242c51b633ff754f5b3c032f9bf}\label{def_8h_ae9cd89aeb9b330f44aadd560b61a3473ad19e0242c51b633ff754f5b3c032f9bf}} 
+In\+Use&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}\label{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}} 
+\index{def.h@{def.h}!NotchSubType@{NotchSubType}}
+\index{NotchSubType@{NotchSubType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{NotchSubType}{NotchSubType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Straightforward@{Straightforward}!def.h@{def.h}}\index{def.h@{def.h}!Straightforward@{Straightforward}}}\mbox{\Hypertarget{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770}\label{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770}} 
+Straightforward&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bisector@{Bisector}!def.h@{def.h}}\index{def.h@{def.h}!Bisector@{Bisector}}}\mbox{\Hypertarget{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a4e3c3e18ebb64f7aaaa75ea75475ecf8}\label{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a4e3c3e18ebb64f7aaaa75ea75475ecf8}} 
+Bisector&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Intersection@{Intersection}!def.h@{def.h}}\index{def.h@{def.h}!Intersection@{Intersection}}}\mbox{\Hypertarget{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4aa06d31c2ee920b4d53e8c9c06d90ba24}\label{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4aa06d31c2ee920b4d53e8c9c06d90ba24}} 
+Intersection&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}} 
+\index{def.h@{def.h}!NotchType@{NotchType}}
+\index{NotchType@{NotchType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{NotchType}{NotchType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Slit@{Slit}!def.h@{def.h}}\index{def.h@{def.h}!Slit@{Slit}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca86cce5d39437eef876e5f6ae19fff606}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca86cce5d39437eef876e5f6ae19fff606}} 
+Slit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TNotch@{TNotch}!def.h@{def.h}}\index{def.h@{def.h}!TNotch@{TNotch}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0cab212b1690f8ff3f0ea69e5265334c659}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0cab212b1690f8ff3f0ea69e5265334c659}} 
+TNotch&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VInternal@{VInternal}!def.h@{def.h}}\index{def.h@{def.h}!VInternal@{VInternal}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca98b3e76892aab28594ed239d28b625df}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca98b3e76892aab28594ed239d28b625df}} 
+VInternal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VExternal@{VExternal}!def.h@{def.h}}\index{def.h@{def.h}!VExternal@{VExternal}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0caf41674a3bb1f1ffa7b87d2ae523ab603}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0caf41674a3bb1f1ffa7b87d2ae523ab603}} 
+VExternal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNotch@{UNotch}!def.h@{def.h}}\index{def.h@{def.h}!UNotch@{UNotch}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0cadb33f96c3a91f62cc92e3c9fbfdcbfa7}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0cadb33f96c3a91f62cc92e3c9fbfdcbfa7}} 
+UNotch&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Castle@{Castle}!def.h@{def.h}}\index{def.h@{def.h}!Castle@{Castle}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca11081b0ce75b0e635708443850bef902}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca11081b0ce75b0e635708443850bef902}} 
+Castle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Diamond@{Diamond}!def.h@{def.h}}\index{def.h@{def.h}!Diamond@{Diamond}}}\mbox{\Hypertarget{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca8f7671185d590914ac21c7511767b699}\label{def_8h_a0caf9d3130a2202ad0e8c90233960a0ca8f7671185d590914ac21c7511767b699}} 
+Diamond&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a54267460986230f3ed5d2f2921983763}\label{def_8h_a54267460986230f3ed5d2f2921983763}} 
+\index{def.h@{def.h}!PageOrientation@{PageOrientation}}
+\index{PageOrientation@{PageOrientation}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PageOrientation}{PageOrientation}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a54267460986230f3ed5d2f2921983763}{Page\+Orientation}} \+: bool\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Portrait@{Portrait}!def.h@{def.h}}\index{def.h@{def.h}!Portrait@{Portrait}}}\mbox{\Hypertarget{def_8h_a54267460986230f3ed5d2f2921983763a1c7444be9626d149ab598fb79b639f96}\label{def_8h_a54267460986230f3ed5d2f2921983763a1c7444be9626d149ab598fb79b639f96}} 
+Portrait&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Landscape@{Landscape}!def.h@{def.h}}\index{def.h@{def.h}!Landscape@{Landscape}}}\mbox{\Hypertarget{def_8h_a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0}\label{def_8h_a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0}} 
+Landscape&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2}} 
+\index{def.h@{def.h}!PieceNodeAngle@{PieceNodeAngle}}
+\index{PieceNodeAngle@{PieceNodeAngle}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PieceNodeAngle}{PieceNodeAngle}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{Piece\+Node\+Angle}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByLength@{ByLength}!def.h@{def.h}}\index{def.h@{def.h}!ByLength@{ByLength}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d}} 
+By\+Length&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByPointsIntersection@{ByPointsIntersection}!def.h@{def.h}}\index{def.h@{def.h}!ByPointsIntersection@{ByPointsIntersection}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2a8f2a6e10487912a3529d97426fb2d25e}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2a8f2a6e10487912a3529d97426fb2d25e}} 
+By\+Points\+Intersection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByFirstEdgeSymmetry@{ByFirstEdgeSymmetry}!def.h@{def.h}}\index{def.h@{def.h}!ByFirstEdgeSymmetry@{ByFirstEdgeSymmetry}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2a9c3a7e96ef77ec2e07866e5252f852aa}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2a9c3a7e96ef77ec2e07866e5252f852aa}} 
+By\+First\+Edge\+Symmetry&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BySecondEdgeSymmetry@{BySecondEdgeSymmetry}!def.h@{def.h}}\index{def.h@{def.h}!BySecondEdgeSymmetry@{BySecondEdgeSymmetry}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2a74eff2b5500a999e5f43d6a698baa88d}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2a74eff2b5500a999e5f43d6a698baa88d}} 
+By\+Second\+Edge\+Symmetry&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByFirstEdgeRightAngle@{ByFirstEdgeRightAngle}!def.h@{def.h}}\index{def.h@{def.h}!ByFirstEdgeRightAngle@{ByFirstEdgeRightAngle}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2a14a082df2cdd2b16b3b2e4cfc3098a13}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2a14a082df2cdd2b16b3b2e4cfc3098a13}} 
+By\+First\+Edge\+Right\+Angle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BySecondEdgeRightAngle@{BySecondEdgeRightAngle}!def.h@{def.h}}\index{def.h@{def.h}!BySecondEdgeRightAngle@{BySecondEdgeRightAngle}}}\mbox{\Hypertarget{def_8h_a2fedf9fccccc9531756a26b2128252e2a588b049dfcaba2e26bb2315b1db7654b}\label{def_8h_a2fedf9fccccc9531756a26b2128252e2a588b049dfcaba2e26bb2315b1db7654b}} 
+By\+Second\+Edge\+Right\+Angle&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9}\label{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9}} 
+\index{def.h@{def.h}!PiecePathIncludeType@{PiecePathIncludeType}}
+\index{PiecePathIncludeType@{PiecePathIncludeType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PiecePathIncludeType}{PiecePathIncludeType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9}{Piece\+Path\+Include\+Type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AsMainPath@{AsMainPath}!def.h@{def.h}}\index{def.h@{def.h}!AsMainPath@{AsMainPath}}}\mbox{\Hypertarget{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a391427a944eea6e8075c2612ba7a5c06}\label{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a391427a944eea6e8075c2612ba7a5c06}} 
+As\+Main\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AsCustomSA@{AsCustomSA}!def.h@{def.h}}\index{def.h@{def.h}!AsCustomSA@{AsCustomSA}}}\mbox{\Hypertarget{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a86919337ed22bee06378065ed08d90fd}\label{def_8h_ab8fa4e94052ef2bd4984009414bdd9f9a86919337ed22bee06378065ed08d90fd}} 
+As\+Custom\+SA&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a88e60e344acff17e2af5630c0aa28c2c}\label{def_8h_a88e60e344acff17e2af5630c0aa28c2c}} 
+\index{def.h@{def.h}!PiecePathType@{PiecePathType}}
+\index{PiecePathType@{PiecePathType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PiecePathType}{PiecePathType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{Piece\+Path\+Type}} \+: unsigned char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PiecePath@{PiecePath}!def.h@{def.h}}\index{def.h@{def.h}!PiecePath@{PiecePath}}}\mbox{\Hypertarget{def_8h_a88e60e344acff17e2af5630c0aa28c2caafa48855cdf79f137f8838837376ef35}\label{def_8h_a88e60e344acff17e2af5630c0aa28c2caafa48855cdf79f137f8838837376ef35}} 
+Piece\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CustomSeamAllowance@{CustomSeamAllowance}!def.h@{def.h}}\index{def.h@{def.h}!CustomSeamAllowance@{CustomSeamAllowance}}}\mbox{\Hypertarget{def_8h_a88e60e344acff17e2af5630c0aa28c2ca1ca40c3c642dd93a0289a9e7f0665439}\label{def_8h_a88e60e344acff17e2af5630c0aa28c2ca1ca40c3c642dd93a0289a9e7f0665439}} 
+Custom\+Seam\+Allowance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InternalPath@{InternalPath}!def.h@{def.h}}\index{def.h@{def.h}!InternalPath@{InternalPath}}}\mbox{\Hypertarget{def_8h_a88e60e344acff17e2af5630c0aa28c2ca2fdb8a5feb2bdffba4f35a5b601670e7}\label{def_8h_a88e60e344acff17e2af5630c0aa28c2ca2fdb8a5feb2bdffba4f35a5b601670e7}} 
+Internal\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!def.h@{def.h}}\index{def.h@{def.h}!Unknown@{Unknown}}}\mbox{\Hypertarget{def_8h_a88e60e344acff17e2af5630c0aa28c2ca88183b946cc5f0e8c96b2e66e1c74a7e}\label{def_8h_a88e60e344acff17e2af5630c0aa28c2ca88183b946cc5f0e8c96b2e66e1c74a7e}} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2af}\label{def_8h_a74373d9b05edd25d6786a07d0130a2af}} 
+\index{def.h@{def.h}!SceneObject@{SceneObject}}
+\index{SceneObject@{SceneObject}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SceneObject}{SceneObject}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Point@{Point}!def.h@{def.h}}\index{def.h@{def.h}!Point@{Point}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c}} 
+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Line@{Line}!def.h@{def.h}}\index{def.h@{def.h}!Line@{Line}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa4803e6b9e63dabf04de980788d6a13c4}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa4803e6b9e63dabf04de980788d6a13c4}} 
+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spline@{Spline}!def.h@{def.h}}\index{def.h@{def.h}!Spline@{Spline}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa4cff6afc4963881749f7742fbb4d1392}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa4cff6afc4963881749f7742fbb4d1392}} 
+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arc@{Arc}!def.h@{def.h}}\index{def.h@{def.h}!Arc@{Arc}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa2b73f91683611c489560a1d163e37902}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa2b73f91683611c489560a1d163e37902}} 
+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ElArc@{ElArc}!def.h@{def.h}}\index{def.h@{def.h}!ElArc@{ElArc}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa3d4c024fe1469ea05ea6d0e472dbf063}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa3d4c024fe1469ea05ea6d0e472dbf063}} 
+El\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SplinePath@{SplinePath}!def.h@{def.h}}\index{def.h@{def.h}!SplinePath@{SplinePath}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa67413f4b19957f72684b994ad47bfc0b}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa67413f4b19957f72684b994ad47bfc0b}} 
+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Piece@{Piece}!def.h@{def.h}}\index{def.h@{def.h}!Piece@{Piece}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afaa5d512bf83495b68d0ffa20f79804dfc}} 
+Piece&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!def.h@{def.h}}\index{def.h@{def.h}!Unknown@{Unknown}}}\mbox{\Hypertarget{def_8h_a74373d9b05edd25d6786a07d0130a2afa88183b946cc5f0e8c96b2e66e1c74a7e}\label{def_8h_a74373d9b05edd25d6786a07d0130a2afa88183b946cc5f0e8c96b2e66e1c74a7e}} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}\label{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}} 
+\index{def.h@{def.h}!SelectionType@{SelectionType}}
+\index{SelectionType@{SelectionType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SelectionType}{SelectionType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \+: bool\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByMousePress@{ByMousePress}!def.h@{def.h}}\index{def.h@{def.h}!ByMousePress@{ByMousePress}}}\mbox{\Hypertarget{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a8c769025d3274255a72fa16ac0716495}\label{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a8c769025d3274255a72fa16ac0716495}} 
+By\+Mouse\+Press&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByMouseRelease@{ByMouseRelease}!def.h@{def.h}}\index{def.h@{def.h}!ByMouseRelease@{ByMouseRelease}}}\mbox{\Hypertarget{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74}\label{def_8h_ab8c951c98d26f226ee3fd55d9e80a241a36229f8b8a947054c77f27000d893a74}} 
+By\+Mouse\+Release&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}\label{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}} 
+\index{def.h@{def.h}!Source@{Source}}
+\index{Source@{Source}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{Source}{Source}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FromGui@{FromGui}!def.h@{def.h}}\index{def.h@{def.h}!FromGui@{FromGui}}}\mbox{\Hypertarget{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a441976ef37c7a96c741620cc1b26255b}\label{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a441976ef37c7a96c741620cc1b26255b}} 
+From\+Gui&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FromFile@{FromFile}!def.h@{def.h}}\index{def.h@{def.h}!FromFile@{FromFile}}}\mbox{\Hypertarget{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a34fdc781f6a322fcd6c512fea9164952}\label{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a34fdc781f6a322fcd6c512fea9164952}} 
+From\+File&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FromTool@{FromTool}!def.h@{def.h}}\index{def.h@{def.h}!FromTool@{FromTool}}}\mbox{\Hypertarget{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a95f330e7d71abcef52e6522fa0fa7a2c}\label{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a95f330e7d71abcef52e6522fa0fa7a2c}} 
+From\+Tool&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395}} 
+\index{def.h@{def.h}!Tool@{Tool}}
+\index{Tool@{Tool}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{Tool}{Tool}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \+: \mbox{\hyperlink{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}{Tool\+Vis\+Holder\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arrow@{Arrow}!def.h@{def.h}}\index{def.h@{def.h}!Arrow@{Arrow}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0f4e1aaabd074689b7d3ead824d1ee8e}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0f4e1aaabd074689b7d3ead824d1ee8e}} 
+Arrow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SinglePoint@{SinglePoint}!def.h@{def.h}}\index{def.h@{def.h}!SinglePoint@{SinglePoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a1dd773e22d00c1a26c1bd2af74da255d}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a1dd773e22d00c1a26c1bd2af74da255d}} 
+Single\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DoublePoint@{DoublePoint}!def.h@{def.h}}\index{def.h@{def.h}!DoublePoint@{DoublePoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9c66963590259b5a5f6868e3ab681db6}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9c66963590259b5a5f6868e3ab681db6}} 
+Double\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LinePoint@{LinePoint}!def.h@{def.h}}\index{def.h@{def.h}!LinePoint@{LinePoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7614bd87c183f5b8cfb48401353dfc06}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7614bd87c183f5b8cfb48401353dfc06}} 
+Line\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AbstractSpline@{AbstractSpline}!def.h@{def.h}}\index{def.h@{def.h}!AbstractSpline@{AbstractSpline}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab754c38aa8014f7f8df1994356e0208f}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab754c38aa8014f7f8df1994356e0208f}} 
+Abstract\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cut@{Cut}!def.h@{def.h}}\index{def.h@{def.h}!Cut@{Cut}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeb334dca00e390e0d3ebf52d205807d7}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeb334dca00e390e0d3ebf52d205807d7}} 
+Cut&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BasePoint@{BasePoint}!def.h@{def.h}}\index{def.h@{def.h}!BasePoint@{BasePoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a794fdf7ea22e73af20feb0e3aecdc010}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a794fdf7ea22e73af20feb0e3aecdc010}} 
+Base\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EndLine@{EndLine}!def.h@{def.h}}\index{def.h@{def.h}!EndLine@{EndLine}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a199d9cfe87715e1993bc7f13652c7b56}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a199d9cfe87715e1993bc7f13652c7b56}} 
+End\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Line@{Line}!def.h@{def.h}}\index{def.h@{def.h}!Line@{Line}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4803e6b9e63dabf04de980788d6a13c4}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4803e6b9e63dabf04de980788d6a13c4}} 
+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AlongLine@{AlongLine}!def.h@{def.h}}\index{def.h@{def.h}!AlongLine@{AlongLine}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a18f03b87a16e74dd401aeba426c2afaf}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a18f03b87a16e74dd401aeba426c2afaf}} 
+Along\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ShoulderPoint@{ShoulderPoint}!def.h@{def.h}}\index{def.h@{def.h}!ShoulderPoint@{ShoulderPoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cae4ac6672bad1d9af4148d27e21752}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cae4ac6672bad1d9af4148d27e21752}} 
+Shoulder\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Normal@{Normal}!def.h@{def.h}}\index{def.h@{def.h}!Normal@{Normal}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a960b44c579bc2f6818d2daaf9e4c16f0}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a960b44c579bc2f6818d2daaf9e4c16f0}} 
+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Bisector@{Bisector}!def.h@{def.h}}\index{def.h@{def.h}!Bisector@{Bisector}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4e3c3e18ebb64f7aaaa75ea75475ecf8}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4e3c3e18ebb64f7aaaa75ea75475ecf8}} 
+Bisector&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineIntersect@{LineIntersect}!def.h@{def.h}}\index{def.h@{def.h}!LineIntersect@{LineIntersect}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a73217d80ee9984d928bb20b974b7d6e7}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a73217d80ee9984d928bb20b974b7d6e7}} 
+Line\+Intersect&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Spline@{Spline}!def.h@{def.h}}\index{def.h@{def.h}!Spline@{Spline}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cff6afc4963881749f7742fbb4d1392}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4cff6afc4963881749f7742fbb4d1392}} 
+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubicBezier@{CubicBezier}!def.h@{def.h}}\index{def.h@{def.h}!CubicBezier@{CubicBezier}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aced824f3a4e9dd5feb68da4cb78a3430}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aced824f3a4e9dd5feb68da4cb78a3430}} 
+Cubic\+Bezier&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CutSpline@{CutSpline}!def.h@{def.h}}\index{def.h@{def.h}!CutSpline@{CutSpline}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395af232248f10352b6b07d8b3bb1cd3c472}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395af232248f10352b6b07d8b3bb1cd3c472}} 
+Cut\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CutArc@{CutArc}!def.h@{def.h}}\index{def.h@{def.h}!CutArc@{CutArc}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f77496c8d99343125e3e11d4aea3a9e}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f77496c8d99343125e3e11d4aea3a9e}} 
+Cut\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arc@{Arc}!def.h@{def.h}}\index{def.h@{def.h}!Arc@{Arc}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2b73f91683611c489560a1d163e37902}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2b73f91683611c489560a1d163e37902}} 
+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArcWithLength@{ArcWithLength}!def.h@{def.h}}\index{def.h@{def.h}!ArcWithLength@{ArcWithLength}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0fd80d9f0067bedaaa4130cfa7c135ac}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0fd80d9f0067bedaaa4130cfa7c135ac}} 
+Arc\+With\+Length&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SplinePath@{SplinePath}!def.h@{def.h}}\index{def.h@{def.h}!SplinePath@{SplinePath}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a67413f4b19957f72684b994ad47bfc0b}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a67413f4b19957f72684b994ad47bfc0b}} 
+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CubicBezierPath@{CubicBezierPath}!def.h@{def.h}}\index{def.h@{def.h}!CubicBezierPath@{CubicBezierPath}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a055e1a10b2aeb1d4a3658732fb7361ba}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a055e1a10b2aeb1d4a3658732fb7361ba}} 
+Cubic\+Bezier\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CutSplinePath@{CutSplinePath}!def.h@{def.h}}\index{def.h@{def.h}!CutSplinePath@{CutSplinePath}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab18e5d694158e4bde0d766be38137a15}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab18e5d694158e4bde0d766be38137a15}} 
+Cut\+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointOfContact@{PointOfContact}!def.h@{def.h}}\index{def.h@{def.h}!PointOfContact@{PointOfContact}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa693360c628143b6f7eb6662d47d4444}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa693360c628143b6f7eb6662d47d4444}} 
+Point\+Of\+Contact&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Piece@{Piece}!def.h@{def.h}}\index{def.h@{def.h}!Piece@{Piece}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa5d512bf83495b68d0ffa20f79804dfc}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aa5d512bf83495b68d0ffa20f79804dfc}} 
+Piece&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InternalPath@{InternalPath}!def.h@{def.h}}\index{def.h@{def.h}!InternalPath@{InternalPath}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2fdb8a5feb2bdffba4f35a5b601670e7}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2fdb8a5feb2bdffba4f35a5b601670e7}} 
+Internal\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodePoint@{NodePoint}!def.h@{def.h}}\index{def.h@{def.h}!NodePoint@{NodePoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665}} 
+Node\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeArc@{NodeArc}!def.h@{def.h}}\index{def.h@{def.h}!NodeArc@{NodeArc}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7834e9645ab39bee56c8a2f05bcbfc5e}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7834e9645ab39bee56c8a2f05bcbfc5e}} 
+Node\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeElArc@{NodeElArc}!def.h@{def.h}}\index{def.h@{def.h}!NodeElArc@{NodeElArc}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5cc897244b3411a2e7aaa3a3d86b3491}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5cc897244b3411a2e7aaa3a3d86b3491}} 
+Node\+El\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeSpline@{NodeSpline}!def.h@{def.h}}\index{def.h@{def.h}!NodeSpline@{NodeSpline}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5c154f81745acc39349dfdc1db292c40}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5c154f81745acc39349dfdc1db292c40}} 
+Node\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NodeSplinePath@{NodeSplinePath}!def.h@{def.h}}\index{def.h@{def.h}!NodeSplinePath@{NodeSplinePath}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4f4bf4f1f7f694f345020a82cc90c2f8}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a4f4bf4f1f7f694f345020a82cc90c2f8}} 
+Node\+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Height@{Height}!def.h@{def.h}}\index{def.h@{def.h}!Height@{Height}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeec6c4bdbd339edf8cbea68becb85244}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeec6c4bdbd339edf8cbea68becb85244}} 
+Height&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Triangle@{Triangle}!def.h@{def.h}}\index{def.h@{def.h}!Triangle@{Triangle}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5e5500cb2b82eb72d550de644bd1b64b}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5e5500cb2b82eb72d550de644bd1b64b}} 
+Triangle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineIntersectAxis@{LineIntersectAxis}!def.h@{def.h}}\index{def.h@{def.h}!LineIntersectAxis@{LineIntersectAxis}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0ba6dc34e63d1faa6e8dd3c1e3105557}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a0ba6dc34e63d1faa6e8dd3c1e3105557}} 
+Line\+Intersect\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointOfIntersectionArcs@{PointOfIntersectionArcs}!def.h@{def.h}}\index{def.h@{def.h}!PointOfIntersectionArcs@{PointOfIntersectionArcs}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae5dd98ba75569128c1aca84f1e626fd8}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae5dd98ba75569128c1aca84f1e626fd8}} 
+Point\+Of\+Intersection\+Arcs&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointOfIntersectionCircles@{PointOfIntersectionCircles}!def.h@{def.h}}\index{def.h@{def.h}!PointOfIntersectionCircles@{PointOfIntersectionCircles}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a085eda864e221d3b11d4e5ecf9efe7e1}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a085eda864e221d3b11d4e5ecf9efe7e1}} 
+Point\+Of\+Intersection\+Circles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointOfIntersectionCurves@{PointOfIntersectionCurves}!def.h@{def.h}}\index{def.h@{def.h}!PointOfIntersectionCurves@{PointOfIntersectionCurves}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a06b217a107bc2dad308a8699e0a9cb44}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a06b217a107bc2dad308a8699e0a9cb44}} 
+Point\+Of\+Intersection\+Curves&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveIntersectAxis@{CurveIntersectAxis}!def.h@{def.h}}\index{def.h@{def.h}!CurveIntersectAxis@{CurveIntersectAxis}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6935eca9369f9ca2d59c9567e09741da}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6935eca9369f9ca2d59c9567e09741da}} 
+Curve\+Intersect\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArcIntersectAxis@{ArcIntersectAxis}!def.h@{def.h}}\index{def.h@{def.h}!ArcIntersectAxis@{ArcIntersectAxis}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a936b6b7db3c2fb433938f4b6b4c24a14}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a936b6b7db3c2fb433938f4b6b4c24a14}} 
+Arc\+Intersect\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointOfIntersection@{PointOfIntersection}!def.h@{def.h}}\index{def.h@{def.h}!PointOfIntersection@{PointOfIntersection}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ac19f7dd8aff07bb844acd02eb917bccf}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ac19f7dd8aff07bb844acd02eb917bccf}} 
+Point\+Of\+Intersection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointFromCircleAndTangent@{PointFromCircleAndTangent}!def.h@{def.h}}\index{def.h@{def.h}!PointFromCircleAndTangent@{PointFromCircleAndTangent}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2da30dffe7df7e1be826dd75de422143}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a2da30dffe7df7e1be826dd75de422143}} 
+Point\+From\+Circle\+And\+Tangent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PointFromArcAndTangent@{PointFromArcAndTangent}!def.h@{def.h}}\index{def.h@{def.h}!PointFromArcAndTangent@{PointFromArcAndTangent}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab626c14540deb5069485b8f47f524f3a}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ab626c14540deb5069485b8f47f524f3a}} 
+Point\+From\+Arc\+And\+Tangent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TrueDarts@{TrueDarts}!def.h@{def.h}}\index{def.h@{def.h}!TrueDarts@{TrueDarts}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5dfca91ad242999873a9c2f90e6b1467}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a5dfca91ad242999873a9c2f90e6b1467}} 
+True\+Darts&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Union@{Union}!def.h@{def.h}}\index{def.h@{def.h}!Union@{Union}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aaef12e903e606a4895a16b393bfdec8c}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aaef12e903e606a4895a16b393bfdec8c}} 
+Union&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Group@{Group}!def.h@{def.h}}\index{def.h@{def.h}!Group@{Group}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a03937134cedab9078be39a77ee3a48a0}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a03937134cedab9078be39a77ee3a48a0}} 
+Group&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation@{Rotation}!def.h@{def.h}}\index{def.h@{def.h}!Rotation@{Rotation}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395af1a42bd417390fc63b030a519624607a}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395af1a42bd417390fc63b030a519624607a}} 
+Rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MirrorByLine@{MirrorByLine}!def.h@{def.h}}\index{def.h@{def.h}!MirrorByLine@{MirrorByLine}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a3e47505c979558f227a12258a1e9b68a}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a3e47505c979558f227a12258a1e9b68a}} 
+Mirror\+By\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MirrorByAxis@{MirrorByAxis}!def.h@{def.h}}\index{def.h@{def.h}!MirrorByAxis@{MirrorByAxis}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae43cfe075ef839af26f7d7a97c04b55f}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae43cfe075ef839af26f7d7a97c04b55f}} 
+Mirror\+By\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Move@{Move}!def.h@{def.h}}\index{def.h@{def.h}!Move@{Move}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}} 
+Move&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Midpoint@{Midpoint}!def.h@{def.h}}\index{def.h@{def.h}!Midpoint@{Midpoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f56c02b34d312867e3f63c9f21fe5c8}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f56c02b34d312867e3f63c9f21fe5c8}} 
+Midpoint&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EllipticalArc@{EllipticalArc}!def.h@{def.h}}\index{def.h@{def.h}!EllipticalArc@{EllipticalArc}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9ede004c94369027853b4a491071ef53}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395a9ede004c94369027853b4a491071ef53}} 
+Elliptical\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AnchorPoint@{AnchorPoint}!def.h@{def.h}}\index{def.h@{def.h}!AnchorPoint@{AnchorPoint}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395af74e06a1915cb029355bd2ae65605c06}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395af74e06a1915cb029355bd2ae65605c06}} 
+Anchor\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InsertNodes@{InsertNodes}!def.h@{def.h}}\index{def.h@{def.h}!InsertNodes@{InsertNodes}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395aec7a544ff2c982a59c0e0b6d64cba991}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395aec7a544ff2c982a59c0e0b6d64cba991}} 
+Insert\+Nodes&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAST\_ONE\_DO\_NOT\_USE@{LAST\_ONE\_DO\_NOT\_USE}!def.h@{def.h}}\index{def.h@{def.h}!LAST\_ONE\_DO\_NOT\_USE@{LAST\_ONE\_DO\_NOT\_USE}}}\mbox{\Hypertarget{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae154556eea64f68495301fc09a12122e}\label{def_8h_ab8460ab56e3e92e57d3ed3b717492395ae154556eea64f68495301fc09a12122e}} 
+LAST\+\_\+\+ONE\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889}} 
+\index{def.h@{def.h}!Unit@{Unit}}
+\index{Unit@{Unit}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{Unit}{Unit}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mm@{Mm}!def.h@{def.h}}\index{def.h@{def.h}!Mm@{Mm}}}\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92}} 
+Mm&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cm@{Cm}!def.h@{def.h}}\index{def.h@{def.h}!Cm@{Cm}}}\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889a4d42fd7ad795178d64613eba2a2aa9ad}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889a4d42fd7ad795178d64613eba2a2aa9ad}} 
+Cm&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inch@{Inch}!def.h@{def.h}}\index{def.h@{def.h}!Inch@{Inch}}}\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956}} 
+Inch&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Px@{Px}!def.h@{def.h}}\index{def.h@{def.h}!Px@{Px}}}\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2}} 
+Px&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAST\_UNIT\_DO\_NOT\_USE@{LAST\_UNIT\_DO\_NOT\_USE}!def.h@{def.h}}\index{def.h@{def.h}!LAST\_UNIT\_DO\_NOT\_USE@{LAST\_UNIT\_DO\_NOT\_USE}}}\mbox{\Hypertarget{def_8h_aa5a23406ae0e7d969b980e50c4e94889a6fa34b7823874c978ddbc1a79d0b202d}\label{def_8h_aa5a23406ae0e7d969b980e50c4e94889a6fa34b7823874c978ddbc1a79d0b202d}} 
+LAST\+\_\+\+UNIT\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178}\label{def_8h_a76d9a90fa899857cf4616065998e6178}} 
+\index{def.h@{def.h}!VarType@{VarType}}
+\index{VarType@{VarType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{VarType}{VarType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Measurement@{Measurement}!def.h@{def.h}}\index{def.h@{def.h}!Measurement@{Measurement}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}\label{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}} 
+Measurement&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Increment@{Increment}!def.h@{def.h}}\index{def.h@{def.h}!Increment@{Increment}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a6f15bdfa71aa83b0d197cad75757d580}\label{def_8h_a76d9a90fa899857cf4616065998e6178a6f15bdfa71aa83b0d197cad75757d580}} 
+Increment&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineLength@{LineLength}!def.h@{def.h}}\index{def.h@{def.h}!LineLength@{LineLength}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a759c1b50a557f26c1af2cddc11c366bb}\label{def_8h_a76d9a90fa899857cf4616065998e6178a759c1b50a557f26c1af2cddc11c366bb}} 
+Line\+Length&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveLength@{CurveLength}!def.h@{def.h}}\index{def.h@{def.h}!CurveLength@{CurveLength}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178ab80307c6e28ae1a1a1b50732aa331ef9}\label{def_8h_a76d9a90fa899857cf4616065998e6178ab80307c6e28ae1a1a1b50732aa331ef9}} 
+Curve\+Length&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveCLength@{CurveCLength}!def.h@{def.h}}\index{def.h@{def.h}!CurveCLength@{CurveCLength}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a60201241f8a110ff2fb5ee72a507f3c4}\label{def_8h_a76d9a90fa899857cf4616065998e6178a60201241f8a110ff2fb5ee72a507f3c4}} 
+Curve\+CLength&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineAngle@{LineAngle}!def.h@{def.h}}\index{def.h@{def.h}!LineAngle@{LineAngle}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178ab0abd1bb737df8ddcf7d449874af313a}\label{def_8h_a76d9a90fa899857cf4616065998e6178ab0abd1bb737df8ddcf7d449874af313a}} 
+Line\+Angle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurveAngle@{CurveAngle}!def.h@{def.h}}\index{def.h@{def.h}!CurveAngle@{CurveAngle}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a105df25996f22239bab516b648aedd86}\label{def_8h_a76d9a90fa899857cf4616065998e6178a105df25996f22239bab516b648aedd86}} 
+Curve\+Angle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArcRadius@{ArcRadius}!def.h@{def.h}}\index{def.h@{def.h}!ArcRadius@{ArcRadius}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a6f8706a42ffde90d8d12ab11f7e4bd1e}\label{def_8h_a76d9a90fa899857cf4616065998e6178a6f8706a42ffde90d8d12ab11f7e4bd1e}} 
+Arc\+Radius&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown@{Unknown}!def.h@{def.h}}\index{def.h@{def.h}!Unknown@{Unknown}}}\mbox{\Hypertarget{def_8h_a76d9a90fa899857cf4616065998e6178a88183b946cc5f0e8c96b2e66e1c74a7e}\label{def_8h_a76d9a90fa899857cf4616065998e6178a88183b946cc5f0e8c96b2e66e1c74a7e}} 
+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582}\label{def_8h_a474a10f771dff4181411f5ff47029582}} 
+\index{def.h@{def.h}!Vis@{Vis}}
+\index{Vis@{Vis}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{Vis}{Vis}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{def_8h_a474a10f771dff4181411f5ff47029582}{Vis}} \+: \mbox{\hyperlink{def_8h_acb16ac88f43c4dcfdc9e43baf22da452}{Tool\+Vis\+Holder\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ControlPointSpline@{ControlPointSpline}!def.h@{def.h}}\index{def.h@{def.h}!ControlPointSpline@{ControlPointSpline}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a4dbdb1be12f6b21e8f3a00208ca579fc}\label{def_8h_a474a10f771dff4181411f5ff47029582a4dbdb1be12f6b21e8f3a00208ca579fc}} 
+Control\+Point\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GraphicsSimpleTextItem@{GraphicsSimpleTextItem}!def.h@{def.h}}\index{def.h@{def.h}!GraphicsSimpleTextItem@{GraphicsSimpleTextItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ac2648cbfd51082b99520275e5637f3a7}\label{def_8h_a474a10f771dff4181411f5ff47029582ac2648cbfd51082b99520275e5637f3a7}} 
+Graphics\+Simple\+Text\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SimplePoint@{SimplePoint}!def.h@{def.h}}\index{def.h@{def.h}!SimplePoint@{SimplePoint}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a82a7ea46fa1348f7b4767cf33cd2793a}\label{def_8h_a474a10f771dff4181411f5ff47029582a82a7ea46fa1348f7b4767cf33cd2793a}} 
+Simple\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SimpleCurve@{SimpleCurve}!def.h@{def.h}}\index{def.h@{def.h}!SimpleCurve@{SimpleCurve}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a6e893fc047dade1aa10a2111a32a6824}\label{def_8h_a474a10f771dff4181411f5ff47029582a6e893fc047dade1aa10a2111a32a6824}} 
+Simple\+Curve&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScaledLine@{ScaledLine}!def.h@{def.h}}\index{def.h@{def.h}!ScaledLine@{ScaledLine}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a00cb30894c7b12fd3725059cfe3dfedd}\label{def_8h_a474a10f771dff4181411f5ff47029582a00cb30894c7b12fd3725059cfe3dfedd}} 
+Scaled\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScaledEllipse@{ScaledEllipse}!def.h@{def.h}}\index{def.h@{def.h}!ScaledEllipse@{ScaledEllipse}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a8750dfc38db4b84c58ce36463649b9f5}\label{def_8h_a474a10f771dff4181411f5ff47029582a8750dfc38db4b84c58ce36463649b9f5}} 
+Scaled\+Ellipse&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Line@{Line}!def.h@{def.h}}\index{def.h@{def.h}!Line@{Line}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a4803e6b9e63dabf04de980788d6a13c4}\label{def_8h_a474a10f771dff4181411f5ff47029582a4803e6b9e63dabf04de980788d6a13c4}} 
+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Path@{Path}!def.h@{def.h}}\index{def.h@{def.h}!Path@{Path}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582aac70412e939d72a9234cdebb1af5867b}\label{def_8h_a474a10f771dff4181411f5ff47029582aac70412e939d72a9234cdebb1af5867b}} 
+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Operation@{Operation}!def.h@{def.h}}\index{def.h@{def.h}!Operation@{Operation}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a2a78ed76450c3cb42320882b3e055b31}\label{def_8h_a474a10f771dff4181411f5ff47029582a2a78ed76450c3cb42320882b3e055b31}} 
+Operation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolAlongLine@{ToolAlongLine}!def.h@{def.h}}\index{def.h@{def.h}!ToolAlongLine@{ToolAlongLine}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582abb46d85b89ca6cd08081140f19c280f8}\label{def_8h_a474a10f771dff4181411f5ff47029582abb46d85b89ca6cd08081140f19c280f8}} 
+Tool\+Along\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolArc@{ToolArc}!def.h@{def.h}}\index{def.h@{def.h}!ToolArc@{ToolArc}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582aceb14bf862801786bd6e9ff9034bf4fa}\label{def_8h_a474a10f771dff4181411f5ff47029582aceb14bf862801786bd6e9ff9034bf4fa}} 
+Tool\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolArcWithLength@{ToolArcWithLength}!def.h@{def.h}}\index{def.h@{def.h}!ToolArcWithLength@{ToolArcWithLength}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a4fc3e89783159c84754ed3ad3b74717e}\label{def_8h_a474a10f771dff4181411f5ff47029582a4fc3e89783159c84754ed3ad3b74717e}} 
+Tool\+Arc\+With\+Length&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolBisector@{ToolBisector}!def.h@{def.h}}\index{def.h@{def.h}!ToolBisector@{ToolBisector}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ab9beda3c8186d7fce8b70bde94a5c988}\label{def_8h_a474a10f771dff4181411f5ff47029582ab9beda3c8186d7fce8b70bde94a5c988}} 
+Tool\+Bisector&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCutArc@{ToolCutArc}!def.h@{def.h}}\index{def.h@{def.h}!ToolCutArc@{ToolCutArc}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a9c7424743c8f1829a31ac70f4db7aaec}\label{def_8h_a474a10f771dff4181411f5ff47029582a9c7424743c8f1829a31ac70f4db7aaec}} 
+Tool\+Cut\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolEndLine@{ToolEndLine}!def.h@{def.h}}\index{def.h@{def.h}!ToolEndLine@{ToolEndLine}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ae5fb65b8fdf593cd90e076746f602fc8}\label{def_8h_a474a10f771dff4181411f5ff47029582ae5fb65b8fdf593cd90e076746f602fc8}} 
+Tool\+End\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolHeight@{ToolHeight}!def.h@{def.h}}\index{def.h@{def.h}!ToolHeight@{ToolHeight}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ac310f491c8f4fc8cba17da91e5e8791b}\label{def_8h_a474a10f771dff4181411f5ff47029582ac310f491c8f4fc8cba17da91e5e8791b}} 
+Tool\+Height&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolLine@{ToolLine}!def.h@{def.h}}\index{def.h@{def.h}!ToolLine@{ToolLine}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a30c4d45c1de9cd329df337ccf3e9dc2e}\label{def_8h_a474a10f771dff4181411f5ff47029582a30c4d45c1de9cd329df337ccf3e9dc2e}} 
+Tool\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolLineIntersect@{ToolLineIntersect}!def.h@{def.h}}\index{def.h@{def.h}!ToolLineIntersect@{ToolLineIntersect}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ae192e223a8562bad6f295dc062bd943b}\label{def_8h_a474a10f771dff4181411f5ff47029582ae192e223a8562bad6f295dc062bd943b}} 
+Tool\+Line\+Intersect&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolNormal@{ToolNormal}!def.h@{def.h}}\index{def.h@{def.h}!ToolNormal@{ToolNormal}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582acdb7e048f84ff9acdeb23d4ba50972be}\label{def_8h_a474a10f771dff4181411f5ff47029582acdb7e048f84ff9acdeb23d4ba50972be}} 
+Tool\+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointOfContact@{ToolPointOfContact}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointOfContact@{ToolPointOfContact}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a04fa575bdc33e250dc6254f4e04ce0de}\label{def_8h_a474a10f771dff4181411f5ff47029582a04fa575bdc33e250dc6254f4e04ce0de}} 
+Tool\+Point\+Of\+Contact&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointOfIntersection@{ToolPointOfIntersection}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointOfIntersection@{ToolPointOfIntersection}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582aa1ff456a221afbe0179bd057ff55ad43}\label{def_8h_a474a10f771dff4181411f5ff47029582aa1ff456a221afbe0179bd057ff55ad43}} 
+Tool\+Point\+Of\+Intersection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointOfIntersectionArcs@{ToolPointOfIntersectionArcs}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointOfIntersectionArcs@{ToolPointOfIntersectionArcs}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a1cbd5fe009a53cdc3fe828886e0842f7}\label{def_8h_a474a10f771dff4181411f5ff47029582a1cbd5fe009a53cdc3fe828886e0842f7}} 
+Tool\+Point\+Of\+Intersection\+Arcs&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointOfIntersectionCircles@{ToolPointOfIntersectionCircles}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointOfIntersectionCircles@{ToolPointOfIntersectionCircles}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a871dca562ebc008f67ad5d030147c21c}\label{def_8h_a474a10f771dff4181411f5ff47029582a871dca562ebc008f67ad5d030147c21c}} 
+Tool\+Point\+Of\+Intersection\+Circles&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointOfIntersectionCurves@{ToolPointOfIntersectionCurves}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointOfIntersectionCurves@{ToolPointOfIntersectionCurves}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a31e0819aa01ec8effbe75dfe550dfbcb}\label{def_8h_a474a10f771dff4181411f5ff47029582a31e0819aa01ec8effbe75dfe550dfbcb}} 
+Tool\+Point\+Of\+Intersection\+Curves&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointFromCircleAndTangent@{ToolPointFromCircleAndTangent}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointFromCircleAndTangent@{ToolPointFromCircleAndTangent}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a2ce56519b7880370d6e07856dbcddb39}\label{def_8h_a474a10f771dff4181411f5ff47029582a2ce56519b7880370d6e07856dbcddb39}} 
+Tool\+Point\+From\+Circle\+And\+Tangent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPointFromArcAndTangent@{ToolPointFromArcAndTangent}!def.h@{def.h}}\index{def.h@{def.h}!ToolPointFromArcAndTangent@{ToolPointFromArcAndTangent}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a5c4046a71993bf73da5c8627e56e611f}\label{def_8h_a474a10f771dff4181411f5ff47029582a5c4046a71993bf73da5c8627e56e611f}} 
+Tool\+Point\+From\+Arc\+And\+Tangent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolShoulderPoint@{ToolShoulderPoint}!def.h@{def.h}}\index{def.h@{def.h}!ToolShoulderPoint@{ToolShoulderPoint}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a640b930884e9b4dadad37c71be903f18}\label{def_8h_a474a10f771dff4181411f5ff47029582a640b930884e9b4dadad37c71be903f18}} 
+Tool\+Shoulder\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolSpline@{ToolSpline}!def.h@{def.h}}\index{def.h@{def.h}!ToolSpline@{ToolSpline}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582acbbcf86384906288fcba6921390f6bf1}\label{def_8h_a474a10f771dff4181411f5ff47029582acbbcf86384906288fcba6921390f6bf1}} 
+Tool\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCubicBezier@{ToolCubicBezier}!def.h@{def.h}}\index{def.h@{def.h}!ToolCubicBezier@{ToolCubicBezier}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ac98ce25c6dc19d88fcba7ebc7b5feb83}\label{def_8h_a474a10f771dff4181411f5ff47029582ac98ce25c6dc19d88fcba7ebc7b5feb83}} 
+Tool\+Cubic\+Bezier&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCubicBezierPath@{ToolCubicBezierPath}!def.h@{def.h}}\index{def.h@{def.h}!ToolCubicBezierPath@{ToolCubicBezierPath}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a61cb9812d52455bf9f1fe5d75810728f}\label{def_8h_a474a10f771dff4181411f5ff47029582a61cb9812d52455bf9f1fe5d75810728f}} 
+Tool\+Cubic\+Bezier\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolTriangle@{ToolTriangle}!def.h@{def.h}}\index{def.h@{def.h}!ToolTriangle@{ToolTriangle}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582acead18c4443ac44979ce08cceb0988ff}\label{def_8h_a474a10f771dff4181411f5ff47029582acead18c4443ac44979ce08cceb0988ff}} 
+Tool\+Triangle&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCutSpline@{ToolCutSpline}!def.h@{def.h}}\index{def.h@{def.h}!ToolCutSpline@{ToolCutSpline}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ad05431c7a704ef9727f1448024c7e97b}\label{def_8h_a474a10f771dff4181411f5ff47029582ad05431c7a704ef9727f1448024c7e97b}} 
+Tool\+Cut\+Spline&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolSplinePath@{ToolSplinePath}!def.h@{def.h}}\index{def.h@{def.h}!ToolSplinePath@{ToolSplinePath}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a739ddf5dfe4d33c97df4ba3034d15437}\label{def_8h_a474a10f771dff4181411f5ff47029582a739ddf5dfe4d33c97df4ba3034d15437}} 
+Tool\+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCutSplinePath@{ToolCutSplinePath}!def.h@{def.h}}\index{def.h@{def.h}!ToolCutSplinePath@{ToolCutSplinePath}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a09be2588de4cb8688e5d912c36bcb4fd}\label{def_8h_a474a10f771dff4181411f5ff47029582a09be2588de4cb8688e5d912c36bcb4fd}} 
+Tool\+Cut\+Spline\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolLineIntersectAxis@{ToolLineIntersectAxis}!def.h@{def.h}}\index{def.h@{def.h}!ToolLineIntersectAxis@{ToolLineIntersectAxis}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a15435e178243dc1d70abf65c3a2dbfdf}\label{def_8h_a474a10f771dff4181411f5ff47029582a15435e178243dc1d70abf65c3a2dbfdf}} 
+Tool\+Line\+Intersect\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolCurveIntersectAxis@{ToolCurveIntersectAxis}!def.h@{def.h}}\index{def.h@{def.h}!ToolCurveIntersectAxis@{ToolCurveIntersectAxis}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ace5398e66fa390b4ac5bb1d10c8295c6}\label{def_8h_a474a10f771dff4181411f5ff47029582ace5398e66fa390b4ac5bb1d10c8295c6}} 
+Tool\+Curve\+Intersect\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolTrueDarts@{ToolTrueDarts}!def.h@{def.h}}\index{def.h@{def.h}!ToolTrueDarts@{ToolTrueDarts}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a6392e85b116c3345c3e1da4c901844dd}\label{def_8h_a474a10f771dff4181411f5ff47029582a6392e85b116c3345c3e1da4c901844dd}} 
+Tool\+True\+Darts&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolRotation@{ToolRotation}!def.h@{def.h}}\index{def.h@{def.h}!ToolRotation@{ToolRotation}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a9e8250d70b5b570311e2e8ad5d6b0ab8}\label{def_8h_a474a10f771dff4181411f5ff47029582a9e8250d70b5b570311e2e8ad5d6b0ab8}} 
+Tool\+Rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolMirrorByLine@{ToolMirrorByLine}!def.h@{def.h}}\index{def.h@{def.h}!ToolMirrorByLine@{ToolMirrorByLine}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a84efa0793b38bf98ca0558f3424d0cb5}\label{def_8h_a474a10f771dff4181411f5ff47029582a84efa0793b38bf98ca0558f3424d0cb5}} 
+Tool\+Mirror\+By\+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolMirrorByAxis@{ToolMirrorByAxis}!def.h@{def.h}}\index{def.h@{def.h}!ToolMirrorByAxis@{ToolMirrorByAxis}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ae35cc2e33be1a02f271069f5c5d5e7e3}\label{def_8h_a474a10f771dff4181411f5ff47029582ae35cc2e33be1a02f271069f5c5d5e7e3}} 
+Tool\+Mirror\+By\+Axis&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolMove@{ToolMove}!def.h@{def.h}}\index{def.h@{def.h}!ToolMove@{ToolMove}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582aa489dca2acec830adc132e50a5aa473e}\label{def_8h_a474a10f771dff4181411f5ff47029582aa489dca2acec830adc132e50a5aa473e}} 
+Tool\+Move&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolEllipticalArc@{ToolEllipticalArc}!def.h@{def.h}}\index{def.h@{def.h}!ToolEllipticalArc@{ToolEllipticalArc}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a16e990a5747056316876d425c584396e}\label{def_8h_a474a10f771dff4181411f5ff47029582a16e990a5747056316876d425c584396e}} 
+Tool\+Elliptical\+Arc&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolPiece@{ToolPiece}!def.h@{def.h}}\index{def.h@{def.h}!ToolPiece@{ToolPiece}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a52d2862744b248a814fd1164760292e7}\label{def_8h_a474a10f771dff4181411f5ff47029582a52d2862744b248a814fd1164760292e7}} 
+Tool\+Piece&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolInternalPath@{ToolInternalPath}!def.h@{def.h}}\index{def.h@{def.h}!ToolInternalPath@{ToolInternalPath}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a68a3701b1e981f3aca45827575770b33}\label{def_8h_a474a10f771dff4181411f5ff47029582a68a3701b1e981f3aca45827575770b33}} 
+Tool\+Internal\+Path&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ToolAnchorPoint@{ToolAnchorPoint}!def.h@{def.h}}\index{def.h@{def.h}!ToolAnchorPoint@{ToolAnchorPoint}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a1da44444c8ea9a2e21080d0cdeeb51b7}\label{def_8h_a474a10f771dff4181411f5ff47029582a1da44444c8ea9a2e21080d0cdeeb51b7}} 
+Tool\+Anchor\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PieceAnchors@{PieceAnchors}!def.h@{def.h}}\index{def.h@{def.h}!PieceAnchors@{PieceAnchors}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582abfeac4d2a4b06a560f03220010fc967f}\label{def_8h_a474a10f771dff4181411f5ff47029582abfeac4d2a4b06a560f03220010fc967f}} 
+Piece\+Anchors&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoBrush@{NoBrush}!def.h@{def.h}}\index{def.h@{def.h}!NoBrush@{NoBrush}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a3551767772b716f2f7c75d99502a0858}\label{def_8h_a474a10f771dff4181411f5ff47029582a3551767772b716f2f7c75d99502a0858}} 
+No\+Brush&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CurvePathItem@{CurvePathItem}!def.h@{def.h}}\index{def.h@{def.h}!CurvePathItem@{CurvePathItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ab0dd7b9c610b813ea08edfccac12b79e}\label{def_8h_a474a10f771dff4181411f5ff47029582ab0dd7b9c610b813ea08edfccac12b79e}} 
+Curve\+Path\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GrainlineItem@{GrainlineItem}!def.h@{def.h}}\index{def.h@{def.h}!GrainlineItem@{GrainlineItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a79eb152cfee6d8bf7adfcff628fe258b}\label{def_8h_a474a10f771dff4181411f5ff47029582a79eb152cfee6d8bf7adfcff628fe258b}} 
+Grainline\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PieceItem@{PieceItem}!def.h@{def.h}}\index{def.h@{def.h}!PieceItem@{PieceItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ac45acdcc79d5c8e03f527849ff7b2d80}\label{def_8h_a474a10f771dff4181411f5ff47029582ac45acdcc79d5c8e03f527849ff7b2d80}} 
+Piece\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TextGraphicsItem@{TextGraphicsItem}!def.h@{def.h}}\index{def.h@{def.h}!TextGraphicsItem@{TextGraphicsItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582aa3497af332fdd4d0f50eaaff1354f432}\label{def_8h_a474a10f771dff4181411f5ff47029582aa3497af332fdd4d0f50eaaff1354f432}} 
+Text\+Graphics\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScenePoint@{ScenePoint}!def.h@{def.h}}\index{def.h@{def.h}!ScenePoint@{ScenePoint}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a11392118cd8b68ad9454c047ec4caf35}\label{def_8h_a474a10f771dff4181411f5ff47029582a11392118cd8b68ad9454c047ec4caf35}} 
+Scene\+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ArrowedLineItem@{ArrowedLineItem}!def.h@{def.h}}\index{def.h@{def.h}!ArrowedLineItem@{ArrowedLineItem}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582a055e03f381e3c702e1df99f27fed2a8b}\label{def_8h_a474a10f771dff4181411f5ff47029582a055e03f381e3c702e1df99f27fed2a8b}} 
+Arrowed\+Line\+Item&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAST\_ONE\_DO\_NOT\_USE@{LAST\_ONE\_DO\_NOT\_USE}!def.h@{def.h}}\index{def.h@{def.h}!LAST\_ONE\_DO\_NOT\_USE@{LAST\_ONE\_DO\_NOT\_USE}}}\mbox{\Hypertarget{def_8h_a474a10f771dff4181411f5ff47029582ae154556eea64f68495301fc09a12122e}\label{def_8h_a474a10f771dff4181411f5ff47029582ae154556eea64f68495301fc09a12122e}} 
+LAST\+\_\+\+ONE\+\_\+\+DO\+\_\+\+NOT\+\_\+\+USE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{def_8h_a109bfae79164a25450f13a1145e21246}\label{def_8h_a109bfae79164a25450f13a1145e21246}} 
+\index{def.h@{def.h}!AbsoluteMPath@{AbsoluteMPath}}
+\index{AbsoluteMPath@{AbsoluteMPath}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{AbsoluteMPath()}{AbsoluteMPath()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString Absolute\+MPath (\begin{DoxyParamCaption}\item[{const QString \&}]{pattern\+Path,  }\item[{const QString \&}]{relative\+MPath }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a0bab8a55be6e28603efc4f99b140a779}\label{def_8h_a0bab8a55be6e28603efc4f99b140a779}} 
+\index{def.h@{def.h}!convertToList@{convertToList}}
+\index{convertToList@{convertToList}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{convertToList()}{convertToList()}}
+{\footnotesize\ttfamily template$<$typename T , template$<$ typename $>$ class C$>$ \\
+\mbox{\hyperlink{class_q_list}{QList}}$<$ T $>$ convert\+To\+List (\begin{DoxyParamCaption}\item[{const C$<$ T $>$ \&}]{set }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{def_8h_a3ecf6230eab9b9997515ace558e1ffac}\label{def_8h_a3ecf6230eab9b9997515ace558e1ffac}} 
+\index{def.h@{def.h}!convertToSet@{convertToSet}}
+\index{convertToSet@{convertToSet}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{convertToSet()}{convertToSet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T , typename C $>$ \\
+QSet$<$ T $>$ convert\+To\+Set (\begin{DoxyParamCaption}\item[{const C \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{def_8h_a9b5dc664655cd45f745dfa6cb03dcb97}\label{def_8h_a9b5dc664655cd45f745dfa6cb03dcb97}} 
+\index{def.h@{def.h}!convertToSet@{convertToSet}}
+\index{convertToSet@{convertToSet}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{convertToSet()}{convertToSet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T , template$<$ typename $>$ class C$>$ \\
+QSet$<$ T $>$ convert\+To\+Set (\begin{DoxyParamCaption}\item[{const C$<$ T $>$ \&}]{list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{def_8h_a3f58bf4b46e94f75893d1e8005582a80}\label{def_8h_a3f58bf4b46e94f75893d1e8005582a80}} 
+\index{def.h@{def.h}!darkenPixmap@{darkenPixmap}}
+\index{darkenPixmap@{darkenPixmap}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{darkenPixmap()}{darkenPixmap()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QPixmap darken\+Pixmap (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{pixmap }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ad344c39a9d756b7ae9a7c0fb7ab4767b}\label{def_8h_ad344c39a9d756b7ae9a7c0fb7ab4767b}} 
+\index{def.h@{def.h}!FromPixel@{FromPixel}}
+\index{FromPixel@{FromPixel}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{FromPixel()}{FromPixel()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT double From\+Pixel (\begin{DoxyParamCaption}\item[{double}]{pix,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_add7320b6951a9336f34f515402f29388}\label{def_8h_add7320b6951a9336f34f515402f29388}} 
+\index{def.h@{def.h}!GetMinPrinterFields@{GetMinPrinterFields}}
+\index{GetMinPrinterFields@{GetMinPrinterFields}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{GetMinPrinterFields()}{GetMinPrinterFields()}}
+{\footnotesize\ttfamily QMarginsF Get\+Min\+Printer\+Fields (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ \&}]{printer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a2cd5bde5ec66f27f34b8844839fe6da2}\label{def_8h_a2cd5bde5ec66f27f34b8844839fe6da2}} 
+\index{def.h@{def.h}!GetPrinterFields@{GetPrinterFields}}
+\index{GetPrinterFields@{GetPrinterFields}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{GetPrinterFields()}{GetPrinterFields()}}
+{\footnotesize\ttfamily QMarginsF Get\+Printer\+Fields (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ \&}]{printer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a1a1ecd7b9352a026b0a07b101a539a95}\label{def_8h_a1a1ecd7b9352a026b0a07b101a539a95}} 
+\index{def.h@{def.h}!InitHighDpiScaling@{InitHighDpiScaling}}
+\index{InitHighDpiScaling@{InitHighDpiScaling}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{InitHighDpiScaling()}{InitHighDpiScaling()}}
+{\footnotesize\ttfamily void Init\+High\+Dpi\+Scaling (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_aaf08b4a7d0085a255e1dde1ce3b7206e}\label{def_8h_aaf08b4a7d0085a255e1dde1ce3b7206e}} 
+\index{def.h@{def.h}!InitLanguages@{InitLanguages}}
+\index{InitLanguages@{InitLanguages}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{InitLanguages()}{InitLanguages()}}
+{\footnotesize\ttfamily void Init\+Languages (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{combobox }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a9d0bfb211c7efe9986367b0de5883ad9}\label{def_8h_a9d0bfb211c7efe9986367b0de5883ad9}} 
+\index{def.h@{def.h}!IsOptionSet@{IsOptionSet}}
+\index{IsOptionSet@{IsOptionSet}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{IsOptionSet()}{IsOptionSet()}}
+{\footnotesize\ttfamily bool Is\+Option\+Set (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]},  }\item[{const char $\ast$}]{option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a0d388d3b034a1f7b4f3618163b213f73}\label{def_8h_a0d388d3b034a1f7b4f3618163b213f73}} 
+\index{def.h@{def.h}!makeHeaderName@{makeHeaderName}}
+\index{makeHeaderName@{makeHeaderName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{makeHeaderName()}{makeHeaderName()}}
+{\footnotesize\ttfamily QString make\+Header\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+make\+Header\+Name make a 1 char tablewidgetitem header name based on a translated string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & full name of header item. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 char name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{def_8h_a45306c2fc908e7e89e2bd49fd6df23b0}\label{def_8h_a45306c2fc908e7e89e2bd49fd6df23b0}} 
+\index{def.h@{def.h}!notchSubTypeToString@{notchSubTypeToString}}
+\index{notchSubTypeToString@{notchSubTypeToString}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{notchSubTypeToString()}{notchSubTypeToString()}}
+{\footnotesize\ttfamily QString notch\+Sub\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_af49aeb9df96488d2b90dece1756b1d2c}\label{def_8h_af49aeb9df96488d2b90dece1756b1d2c}} 
+\index{def.h@{def.h}!notchTypeToString@{notchTypeToString}}
+\index{notchTypeToString@{notchTypeToString}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{notchTypeToString()}{notchTypeToString()}}
+{\footnotesize\ttfamily QString notch\+Type\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}}}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a4d48e08b62697a4d46199919f131efb2}\label{def_8h_a4d48e08b62697a4d46199919f131efb2}} 
+\index{def.h@{def.h}!PreparePrinter@{PreparePrinter}}
+\index{PreparePrinter@{PreparePrinter}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PreparePrinter()}{PreparePrinter()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ QPrinter $>$ Prepare\+Printer (\begin{DoxyParamCaption}\item[{const QPrinter\+Info \&}]{info,  }\item[{QPrinter\+::\+Printer\+Mode}]{mode = {\ttfamily QPrinter\+:\+:ScreenResolution} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ac2a684cd90d4072b96ca1cf87d980dbf}\label{def_8h_ac2a684cd90d4072b96ca1cf87d980dbf}} 
+\index{def.h@{def.h}!Q\_DECLARE\_TYPEINFO@{Q\_DECLARE\_TYPEINFO}}
+\index{Q\_DECLARE\_TYPEINFO@{Q\_DECLARE\_TYPEINFO}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{Q\_DECLARE\_TYPEINFO()}{Q\_DECLARE\_TYPEINFO()}}
+{\footnotesize\ttfamily Q\+\_\+\+DECLARE\+\_\+\+TYPEINFO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}}}]{,  }\item[{Q\+\_\+\+MOVABLE\+\_\+\+TYPE}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a70500634183359838388ccd270379787}\label{def_8h_a70500634183359838388ccd270379787}} 
+\index{def.h@{def.h}!RelativeMPath@{RelativeMPath}}
+\index{RelativeMPath@{RelativeMPath}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{RelativeMPath()}{RelativeMPath()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString Relative\+MPath (\begin{DoxyParamCaption}\item[{const QString \&}]{pattern\+Path,  }\item[{const QString \&}]{absolute\+MPath }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ac50ba30a64d21ea38312134c435a5a34}\label{def_8h_ac50ba30a64d21ea38312134c435a5a34}} 
+\index{def.h@{def.h}!SetItemOverrideCursor@{SetItemOverrideCursor}}
+\index{SetItemOverrideCursor@{SetItemOverrideCursor}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SetItemOverrideCursor()}{SetItemOverrideCursor()}}
+{\footnotesize\ttfamily void Set\+Item\+Override\+Cursor (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{item,  }\item[{const QString \&}]{pixmap\+Path,  }\item[{int}]{hotX = {\ttfamily -\/1},  }\item[{int}]{hotY = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a7b1907f9df8d8f726641e41137e42fe9}\label{def_8h_a7b1907f9df8d8f726641e41137e42fe9}} 
+\index{def.h@{def.h}!ShowInGraphicalShell@{ShowInGraphicalShell}}
+\index{ShowInGraphicalShell@{ShowInGraphicalShell}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{ShowInGraphicalShell()}{ShowInGraphicalShell()}}
+{\footnotesize\ttfamily void Show\+In\+Graphical\+Shell (\begin{DoxyParamCaption}\item[{const QString \&}]{file\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_afe3d74de98705f0a262de22f028cbb1d}\label{def_8h_afe3d74de98705f0a262de22f028cbb1d}} 
+\index{def.h@{def.h}!stringToNotchSubType@{stringToNotchSubType}}
+\index{stringToNotchSubType@{stringToNotchSubType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{stringToNotchSubType()}{stringToNotchSubType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{Notch\+Sub\+Type}} string\+To\+Notch\+Sub\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ade9d3157f89470d2e21387fd88334fd9}\label{def_8h_ade9d3157f89470d2e21387fd88334fd9}} 
+\index{def.h@{def.h}!stringToNotchType@{stringToNotchType}}
+\index{stringToNotchType@{stringToNotchType}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{stringToNotchType()}{stringToNotchType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{Notch\+Type}} string\+To\+Notch\+Type (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a87d0bbeb72fd3f881aec730edcfb9248}\label{def_8h_a87d0bbeb72fd3f881aec730edcfb9248}} 
+\index{def.h@{def.h}!strippedName@{strippedName}}
+\index{strippedName@{strippedName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{strippedName()}{strippedName()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString stripped\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{full\+File\+Name }\end{DoxyParamCaption})}
+
+
+
+stripped\+Name the function call around cur\+File to exclude the path to the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em full\+File\+Name} & full path to the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+file name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{def_8h_a066169b6c24aec89a790711c082e6432}\label{def_8h_a066169b6c24aec89a790711c082e6432}} 
+\index{def.h@{def.h}!StrToUnits@{StrToUnits}}
+\index{StrToUnits@{StrToUnits}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{StrToUnits()}{StrToUnits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} Str\+To\+Units (\begin{DoxyParamCaption}\item[{const QString \&}]{unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a7b4a736138c35f50e76e645cfb11ece1}\label{def_8h_a7b4a736138c35f50e76e645cfb11ece1}} 
+\index{def.h@{def.h}!SupportedLocales@{SupportedLocales}}
+\index{SupportedLocales@{SupportedLocales}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{SupportedLocales()}{SupportedLocales()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QString\+List Supported\+Locales (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ab9291bba925fda9caaab0b0861642f30}\label{def_8h_ab9291bba925fda9caaab0b0861642f30}} 
+\index{def.h@{def.h}!ToPixel@{ToPixel}}
+\index{ToPixel@{ToPixel}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{ToPixel()}{ToPixel()}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT double To\+Pixel (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_a715dcfeef57319913811763f8e9261a0}\label{def_8h_a715dcfeef57319913811763f8e9261a0}} 
+\index{def.h@{def.h}!UnitConvertor@{UnitConvertor}}
+\index{UnitConvertor@{UnitConvertor}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{UnitConvertor()}{UnitConvertor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT QMarginsF Unit\+Convertor (\begin{DoxyParamCaption}\item[{const QMarginsF \&}]{margins,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{from,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{to }\end{DoxyParamCaption})}
+
+
+
+Unit\+Convertor Converts the values of the given margin from given unit to the new unit. returns a new instand of QMarginsF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em margin} & \\
+\hline
+{\em from} & \\
+\hline
+{\em to} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{def_8h_aca89a6dfa5cdcf627b6ba95df560932b}\label{def_8h_aca89a6dfa5cdcf627b6ba95df560932b}} 
+\index{def.h@{def.h}!UnitConvertor@{UnitConvertor}}
+\index{UnitConvertor@{UnitConvertor}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{UnitConvertor()}{UnitConvertor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Q\+\_\+\+REQUIRED\+\_\+\+RESULT qreal Unit\+Convertor (\begin{DoxyParamCaption}\item[{qreal}]{value,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{from,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{to }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{def_8h_ae102c2c24c0d1bd2230dd9292169f6cf}\label{def_8h_ae102c2c24c0d1bd2230dd9292169f6cf}} 
+\index{def.h@{def.h}!UnitsToStr@{UnitsToStr}}
+\index{UnitsToStr@{UnitsToStr}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{UnitsToStr()}{UnitsToStr()}}
+{\footnotesize\ttfamily QString Units\+To\+Str (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{unit,  }\item[{const bool}]{translate }\end{DoxyParamCaption})}
+
+
+
+Units\+To\+Str translate unit to string. 
+
+This method used when need write unit in xml file and for showing unit in dialogs. 
+\begin{DoxyParams}{Parameters}
+{\em unit} & curent unit \\
+\hline
+{\em translate} & true if need show translated name. Default value false. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string reprezantation for unit. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{def_8h_ac05089e33da08abbc68bbf5b98075918}\label{def_8h_ac05089e33da08abbc68bbf5b98075918}} 
+\index{def.h@{def.h}!abs\_F@{abs\_F}}
+\index{abs\_F@{abs\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{abs\_F}{abs\_F}}
+{\footnotesize\ttfamily const QString abs\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a2dda73e54262018b6c65e5dee11fe34d}\label{def_8h_a2dda73e54262018b6c65e5dee11fe34d}} 
+\index{def.h@{def.h}!accuracyPointOnLine@{accuracyPointOnLine}}
+\index{accuracyPointOnLine@{accuracyPointOnLine}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{accuracyPointOnLine}{accuracyPointOnLine}}
+{\footnotesize\ttfamily constexpr qreal accuracy\+Point\+On\+Line = (0.\+1555 / 25.\+4) $\ast$ 96.\+0\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{def_8h_a3c7ecc005d5a28dfdbc2ff2dffc924d1}\label{def_8h_a3c7ecc005d5a28dfdbc2ff2dffc924d1}} 
+\index{def.h@{def.h}!acos\_F@{acos\_F}}
+\index{acos\_F@{acos\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{acos\_F}{acos\_F}}
+{\footnotesize\ttfamily const QString acos\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a6784530e8d1c3c0ae7a11012c5737400}\label{def_8h_a6784530e8d1c3c0ae7a11012c5737400}} 
+\index{def.h@{def.h}!acosD\_F@{acosD\_F}}
+\index{acosD\_F@{acosD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{acosD\_F}{acosD\_F}}
+{\footnotesize\ttfamily const QString acos\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a968c778240eb3fc8112b358466da004f}\label{def_8h_a968c778240eb3fc8112b358466da004f}} 
+\index{def.h@{def.h}!acosh\_F@{acosh\_F}}
+\index{acosh\_F@{acosh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{acosh\_F}{acosh\_F}}
+{\footnotesize\ttfamily const QString acosh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_acfa1ca2db5780f98ce8199978285f4be}\label{def_8h_acfa1ca2db5780f98ce8199978285f4be}} 
+\index{def.h@{def.h}!asin\_F@{asin\_F}}
+\index{asin\_F@{asin\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{asin\_F}{asin\_F}}
+{\footnotesize\ttfamily const QString asin\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a044d36af6892145441cb33fed7540e6a}\label{def_8h_a044d36af6892145441cb33fed7540e6a}} 
+\index{def.h@{def.h}!asinD\_F@{asinD\_F}}
+\index{asinD\_F@{asinD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{asinD\_F}{asinD\_F}}
+{\footnotesize\ttfamily const QString asin\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aa69f921c63dbdff7a0b9e7521fd7ab2f}\label{def_8h_aa69f921c63dbdff7a0b9e7521fd7ab2f}} 
+\index{def.h@{def.h}!asinh\_F@{asinh\_F}}
+\index{asinh\_F@{asinh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{asinh\_F}{asinh\_F}}
+{\footnotesize\ttfamily const QString asinh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a598ba0614837d8e08bc1eee7e323f127}\label{def_8h_a598ba0614837d8e08bc1eee7e323f127}} 
+\index{def.h@{def.h}!atan\_F@{atan\_F}}
+\index{atan\_F@{atan\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{atan\_F}{atan\_F}}
+{\footnotesize\ttfamily const QString atan\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a9b710a67731637bcbbda66b303c66553}\label{def_8h_a9b710a67731637bcbbda66b303c66553}} 
+\index{def.h@{def.h}!atanD\_F@{atanD\_F}}
+\index{atanD\_F@{atanD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{atanD\_F}{atanD\_F}}
+{\footnotesize\ttfamily const QString atan\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a9c83fe23bf62c84fd401dca765416705}\label{def_8h_a9c83fe23bf62c84fd401dca765416705}} 
+\index{def.h@{def.h}!atanh\_F@{atanh\_F}}
+\index{atanh\_F@{atanh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{atanh\_F}{atanh\_F}}
+{\footnotesize\ttfamily const QString atanh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a920d2e9faff05acd0a2540672b49657f}\label{def_8h_a920d2e9faff05acd0a2540672b49657f}} 
+\index{def.h@{def.h}!avg\_F@{avg\_F}}
+\index{avg\_F@{avg\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{avg\_F}{avg\_F}}
+{\footnotesize\ttfamily const QString avg\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a1052d0e96bf77c0e3c55ac8e789e66e8}\label{def_8h_a1052d0e96bf77c0e3c55ac8e789e66e8}} 
+\index{def.h@{def.h}!builInFunctions@{builInFunctions}}
+\index{builInFunctions@{builInFunctions}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{builInFunctions}{builInFunctions}}
+{\footnotesize\ttfamily const QString\+List buil\+In\+Functions\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a877646bc626cf8de6f51fa7cf8ea1458}\label{def_8h_a877646bc626cf8de6f51fa7cf8ea1458}} 
+\index{def.h@{def.h}!builInPostfixOperators@{builInPostfixOperators}}
+\index{builInPostfixOperators@{builInPostfixOperators}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{builInPostfixOperators}{builInPostfixOperators}}
+{\footnotesize\ttfamily const QString\+List buil\+In\+Postfix\+Operators\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a12396836a60de634462f2ee54252d1f7}\label{def_8h_a12396836a60de634462f2ee54252d1f7}} 
+\index{def.h@{def.h}!cm\_Oprt@{cm\_Oprt}}
+\index{cm\_Oprt@{cm\_Oprt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cm\_Oprt}{cm\_Oprt}}
+{\footnotesize\ttfamily const QString cm\+\_\+\+Oprt\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a907fbe0d9febed0a1d8ee2a48dd63c6c}\label{def_8h_a907fbe0d9febed0a1d8ee2a48dd63c6c}} 
+\index{def.h@{def.h}!cos\_F@{cos\_F}}
+\index{cos\_F@{cos\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cos\_F}{cos\_F}}
+{\footnotesize\ttfamily const QString cos\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a6e5401b1aa0800349bc4a045e46f1ed3}\label{def_8h_a6e5401b1aa0800349bc4a045e46f1ed3}} 
+\index{def.h@{def.h}!cosD\_F@{cosD\_F}}
+\index{cosD\_F@{cosD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cosD\_F}{cosD\_F}}
+{\footnotesize\ttfamily const QString cos\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ab086d134c6a1009fa00962fa54d9e93e}\label{def_8h_ab086d134c6a1009fa00962fa54d9e93e}} 
+\index{def.h@{def.h}!cosh\_F@{cosh\_F}}
+\index{cosh\_F@{cosh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cosh\_F}{cosh\_F}}
+{\footnotesize\ttfamily const QString cosh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a7b39ab83231e23ee686ecabe02567714}\label{def_8h_a7b39ab83231e23ee686ecabe02567714}} 
+\index{def.h@{def.h}!cursorArrowCloseHand@{cursorArrowCloseHand}}
+\index{cursorArrowCloseHand@{cursorArrowCloseHand}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cursorArrowCloseHand}{cursorArrowCloseHand}}
+{\footnotesize\ttfamily const QString cursor\+Arrow\+Close\+Hand\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a0f35c65ac737bad188895abceeadcf48}\label{def_8h_a0f35c65ac737bad188895abceeadcf48}} 
+\index{def.h@{def.h}!cursorArrowOpenHand@{cursorArrowOpenHand}}
+\index{cursorArrowOpenHand@{cursorArrowOpenHand}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{cursorArrowOpenHand}{cursorArrowOpenHand}}
+{\footnotesize\ttfamily const QString cursor\+Arrow\+Open\+Hand\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a9d57cde0b2077de64d37157baa0e9d10}\label{def_8h_a9d57cde0b2077de64d37157baa0e9d10}} 
+\index{def.h@{def.h}!degreeSymbol@{degreeSymbol}}
+\index{degreeSymbol@{degreeSymbol}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{degreeSymbol}{degreeSymbol}}
+{\footnotesize\ttfamily const QString degree\+Symbol\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ad0679d063111d3e8aceaf2a91d243398}\label{def_8h_ad0679d063111d3e8aceaf2a91d243398}} 
+\index{def.h@{def.h}!degTorad\_F@{degTorad\_F}}
+\index{degTorad\_F@{degTorad\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{degTorad\_F}{degTorad\_F}}
+{\footnotesize\ttfamily const QString deg\+Torad\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ae67530a59f92381ca67213f3c044c1a8}\label{def_8h_ae67530a59f92381ca67213f3c044c1a8}} 
+\index{def.h@{def.h}!exp\_F@{exp\_F}}
+\index{exp\_F@{exp\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{exp\_F}{exp\_F}}
+{\footnotesize\ttfamily const QString exp\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_add2311fa670dce61b8bbdd6baf9841bb}\label{def_8h_add2311fa670dce61b8bbdd6baf9841bb}} 
+\index{def.h@{def.h}!falseStr@{falseStr}}
+\index{falseStr@{falseStr}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{falseStr}{falseStr}}
+{\footnotesize\ttfamily const QString false\+Str\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aa756c1d1c671d2f2c3fda105827aee22}\label{def_8h_aa756c1d1c671d2f2c3fda105827aee22}} 
+\index{def.h@{def.h}!fmod\_F@{fmod\_F}}
+\index{fmod\_F@{fmod\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{fmod\_F}{fmod\_F}}
+{\footnotesize\ttfamily const QString fmod\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a739ec234ec816160375873f8ef4b0da4}\label{def_8h_a739ec234ec816160375873f8ef4b0da4}} 
+\index{def.h@{def.h}!in\_Oprt@{in\_Oprt}}
+\index{in\_Oprt@{in\_Oprt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{in\_Oprt}{in\_Oprt}}
+{\footnotesize\ttfamily const QString in\+\_\+\+Oprt\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a615623de036744d9ae9a2828af024f8d}\label{def_8h_a615623de036744d9ae9a2828af024f8d}} 
+\index{def.h@{def.h}!labelTemplatePlaceholders@{labelTemplatePlaceholders}}
+\index{labelTemplatePlaceholders@{labelTemplatePlaceholders}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{labelTemplatePlaceholders}{labelTemplatePlaceholders}}
+{\footnotesize\ttfamily const QString\+List label\+Template\+Placeholders\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a233fac81cd5ef9e110485858585f855e}\label{def_8h_a233fac81cd5ef9e110485858585f855e}} 
+\index{def.h@{def.h}!ln\_F@{ln\_F}}
+\index{ln\_F@{ln\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{ln\_F}{ln\_F}}
+{\footnotesize\ttfamily const QString ln\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a0b0b924467b309d67220f93427c08add}\label{def_8h_a0b0b924467b309d67220f93427c08add}} 
+\index{def.h@{def.h}!log10\_F@{log10\_F}}
+\index{log10\_F@{log10\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{log10\_F}{log10\_F}}
+{\footnotesize\ttfamily const QString log10\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aa2f78d797da2b0db54b3442287406684}\label{def_8h_aa2f78d797da2b0db54b3442287406684}} 
+\index{def.h@{def.h}!log2\_F@{log2\_F}}
+\index{log2\_F@{log2\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{log2\_F}{log2\_F}}
+{\footnotesize\ttfamily const QString log2\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_afa0a872157a8d9c2a6ad6542ebf34d59}\label{def_8h_afa0a872157a8d9c2a6ad6542ebf34d59}} 
+\index{def.h@{def.h}!log\_F@{log\_F}}
+\index{log\_F@{log\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{log\_F}{log\_F}}
+{\footnotesize\ttfamily const QString log\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a583c6976ba4178828de84178a051b7fd}\label{def_8h_a583c6976ba4178828de84178a051b7fd}} 
+\index{def.h@{def.h}!LONG\_OPTION\_NO\_HDPI\_SCALING@{LONG\_OPTION\_NO\_HDPI\_SCALING}}
+\index{LONG\_OPTION\_NO\_HDPI\_SCALING@{LONG\_OPTION\_NO\_HDPI\_SCALING}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{LONG\_OPTION\_NO\_HDPI\_SCALING}{LONG\_OPTION\_NO\_HDPI\_SCALING}}
+{\footnotesize\ttfamily const QString LONG\+\_\+\+OPTION\+\_\+\+NO\+\_\+\+HDPI\+\_\+\+SCALING\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ae1b46785711aac1f8d20005bbcf549c3}\label{def_8h_ae1b46785711aac1f8d20005bbcf549c3}} 
+\index{def.h@{def.h}!max\_F@{max\_F}}
+\index{max\_F@{max\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{max\_F}{max\_F}}
+{\footnotesize\ttfamily const QString max\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a5c953c7ed6cb697e8c24301f22793a3e}\label{def_8h_a5c953c7ed6cb697e8c24301f22793a3e}} 
+\index{def.h@{def.h}!min\_F@{min\_F}}
+\index{min\_F@{min\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{min\_F}{min\_F}}
+{\footnotesize\ttfamily const QString min\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a2e41946b3bd4c4deca854519c30dff61}\label{def_8h_a2e41946b3bd4c4deca854519c30dff61}} 
+\index{def.h@{def.h}!mm\_Oprt@{mm\_Oprt}}
+\index{mm\_Oprt@{mm\_Oprt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{mm\_Oprt}{mm\_Oprt}}
+{\footnotesize\ttfamily const QString mm\+\_\+\+Oprt\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a3e020d7871c589a61d1249396d62d2ec}\label{def_8h_a3e020d7871c589a61d1249396d62d2ec}} 
+\index{def.h@{def.h}!pl\_author@{pl\_author}}
+\index{pl\_author@{pl\_author}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_author}{pl\_author}}
+{\footnotesize\ttfamily const QString pl\+\_\+author\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a04c369e60fdf2488a7673979551ce03c}\label{def_8h_a04c369e60fdf2488a7673979551ce03c}} 
+\index{def.h@{def.h}!pl\_customer@{pl\_customer}}
+\index{pl\_customer@{pl\_customer}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_customer}{pl\_customer}}
+{\footnotesize\ttfamily const QString pl\+\_\+customer\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ac52a3218c508f115a16c9bec3c3595c6}\label{def_8h_ac52a3218c508f115a16c9bec3c3595c6}} 
+\index{def.h@{def.h}!pl\_date@{pl\_date}}
+\index{pl\_date@{pl\_date}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_date}{pl\_date}}
+{\footnotesize\ttfamily const QString pl\+\_\+date\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aef3f59a3627dc21b5cfa06bf7fdde1c7}\label{def_8h_aef3f59a3627dc21b5cfa06bf7fdde1c7}} 
+\index{def.h@{def.h}!pl\_height@{pl\_height}}
+\index{pl\_height@{pl\_height}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_height}{pl\_height}}
+{\footnotesize\ttfamily const QString pl\+\_\+height\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a22f0193379e93ae0b16e61759d4ca1c2}\label{def_8h_a22f0193379e93ae0b16e61759d4ca1c2}} 
+\index{def.h@{def.h}!pl\_mExt@{pl\_mExt}}
+\index{pl\_mExt@{pl\_mExt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mExt}{pl\_mExt}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+Ext\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aca85afd28800eec1de80cb0b5f4b4992}\label{def_8h_aca85afd28800eec1de80cb0b5f4b4992}} 
+\index{def.h@{def.h}!pl\_mFabric@{pl\_mFabric}}
+\index{pl\_mFabric@{pl\_mFabric}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mFabric}{pl\_mFabric}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+Fabric\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a65e418ff8a3ba84e3530a4d46ac42788}\label{def_8h_a65e418ff8a3ba84e3530a4d46ac42788}} 
+\index{def.h@{def.h}!pl\_mFileName@{pl\_mFileName}}
+\index{pl\_mFileName@{pl\_mFileName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mFileName}{pl\_mFileName}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+File\+Name\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ac831e27dca69ca162825300f4f3c2c55}\label{def_8h_ac831e27dca69ca162825300f4f3c2c55}} 
+\index{def.h@{def.h}!pl\_mInterfacing@{pl\_mInterfacing}}
+\index{pl\_mInterfacing@{pl\_mInterfacing}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mInterfacing}{pl\_mInterfacing}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+Interfacing\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ad03657039d6134eb6cf107b515bb1d75}\label{def_8h_ad03657039d6134eb6cf107b515bb1d75}} 
+\index{def.h@{def.h}!pl\_mInterlining@{pl\_mInterlining}}
+\index{pl\_mInterlining@{pl\_mInterlining}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mInterlining}{pl\_mInterlining}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+Interlining\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a99042ca92cbc65f5eaf520e8c14e9850}\label{def_8h_a99042ca92cbc65f5eaf520e8c14e9850}} 
+\index{def.h@{def.h}!pl\_mLining@{pl\_mLining}}
+\index{pl\_mLining@{pl\_mLining}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_mLining}{pl\_mLining}}
+{\footnotesize\ttfamily const QString pl\+\_\+m\+Lining\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a69e0550c0ce6585dad49008086eb8d16}\label{def_8h_a69e0550c0ce6585dad49008086eb8d16}} 
+\index{def.h@{def.h}!pl\_pAnnotation@{pl\_pAnnotation}}
+\index{pl\_pAnnotation@{pl\_pAnnotation}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pAnnotation}{pl\_pAnnotation}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Annotation\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a66765d6231f7691b11943ed0ee379fdb}\label{def_8h_a66765d6231f7691b11943ed0ee379fdb}} 
+\index{def.h@{def.h}!pl\_patternName@{pl\_patternName}}
+\index{pl\_patternName@{pl\_patternName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_patternName}{pl\_patternName}}
+{\footnotesize\ttfamily const QString pl\+\_\+pattern\+Name\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a885a5ef9ad2ada9c6d419f0868e10d91}\label{def_8h_a885a5ef9ad2ada9c6d419f0868e10d91}} 
+\index{def.h@{def.h}!pl\_patternNumber@{pl\_patternNumber}}
+\index{pl\_patternNumber@{pl\_patternNumber}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_patternNumber}{pl\_patternNumber}}
+{\footnotesize\ttfamily const QString pl\+\_\+pattern\+Number\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a126630e3f437e12f190ea601b046dc3c}\label{def_8h_a126630e3f437e12f190ea601b046dc3c}} 
+\index{def.h@{def.h}!pl\_pExt@{pl\_pExt}}
+\index{pl\_pExt@{pl\_pExt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pExt}{pl\_pExt}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Ext\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aafc0b4336cc0203b8519f5f53a8cd060}\label{def_8h_aafc0b4336cc0203b8519f5f53a8cd060}} 
+\index{def.h@{def.h}!pl\_pFileName@{pl\_pFileName}}
+\index{pl\_pFileName@{pl\_pFileName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pFileName}{pl\_pFileName}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+File\+Name\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a26ba9ec448f8196b66b001e67c0a9617}\label{def_8h_a26ba9ec448f8196b66b001e67c0a9617}} 
+\index{def.h@{def.h}!pl\_pFoldPosition@{pl\_pFoldPosition}}
+\index{pl\_pFoldPosition@{pl\_pFoldPosition}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pFoldPosition}{pl\_pFoldPosition}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Fold\+Position\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_af0523eb397a368f935f2dc75a79eaa8b}\label{def_8h_af0523eb397a368f935f2dc75a79eaa8b}} 
+\index{def.h@{def.h}!pl\_pLetter@{pl\_pLetter}}
+\index{pl\_pLetter@{pl\_pLetter}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pLetter}{pl\_pLetter}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Letter\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a7671961c3e8a2472598ac0cd42d1e4c4}\label{def_8h_a7671961c3e8a2472598ac0cd42d1e4c4}} 
+\index{def.h@{def.h}!pl\_pName@{pl\_pName}}
+\index{pl\_pName@{pl\_pName}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pName}{pl\_pName}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Name\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_acb38d16047a732cb79743fac09199073}\label{def_8h_acb38d16047a732cb79743fac09199073}} 
+\index{def.h@{def.h}!pl\_pOrientation@{pl\_pOrientation}}
+\index{pl\_pOrientation@{pl\_pOrientation}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pOrientation}{pl\_pOrientation}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Orientation\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a54a894cc2b8d28ebf4d04914f17c0752}\label{def_8h_a54a894cc2b8d28ebf4d04914f17c0752}} 
+\index{def.h@{def.h}!pl\_pQuantity@{pl\_pQuantity}}
+\index{pl\_pQuantity@{pl\_pQuantity}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pQuantity}{pl\_pQuantity}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Quantity\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_acec4b5b5e1f59df499aac7be4f115e2b}\label{def_8h_acec4b5b5e1f59df499aac7be4f115e2b}} 
+\index{def.h@{def.h}!pl\_pRotation@{pl\_pRotation}}
+\index{pl\_pRotation@{pl\_pRotation}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pRotation}{pl\_pRotation}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Rotation\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_adef42b0af47e8eca46f9e22b8d6f8bc3}\label{def_8h_adef42b0af47e8eca46f9e22b8d6f8bc3}} 
+\index{def.h@{def.h}!pl\_pTilt@{pl\_pTilt}}
+\index{pl\_pTilt@{pl\_pTilt}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_pTilt}{pl\_pTilt}}
+{\footnotesize\ttfamily const QString pl\+\_\+p\+Tilt\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a002c4f84a6530c008248951a9211dfd2}\label{def_8h_a002c4f84a6530c008248951a9211dfd2}} 
+\index{def.h@{def.h}!pl\_size@{pl\_size}}
+\index{pl\_size@{pl\_size}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_size}{pl\_size}}
+{\footnotesize\ttfamily const QString pl\+\_\+size\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a45650c07a5b615e2dc41cac88d8018b4}\label{def_8h_a45650c07a5b615e2dc41cac88d8018b4}} 
+\index{def.h@{def.h}!pl\_time@{pl\_time}}
+\index{pl\_time@{pl\_time}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_time}{pl\_time}}
+{\footnotesize\ttfamily const QString pl\+\_\+time\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a35fc31f943043d85fe84430ecd29cda4}\label{def_8h_a35fc31f943043d85fe84430ecd29cda4}} 
+\index{def.h@{def.h}!pl\_wCut@{pl\_wCut}}
+\index{pl\_wCut@{pl\_wCut}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_wCut}{pl\_wCut}}
+{\footnotesize\ttfamily const QString pl\+\_\+w\+Cut\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a7d656df7518f7a033c37d396c66f6b67}\label{def_8h_a7d656df7518f7a033c37d396c66f6b67}} 
+\index{def.h@{def.h}!pl\_wOnFold@{pl\_wOnFold}}
+\index{pl\_wOnFold@{pl\_wOnFold}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{pl\_wOnFold}{pl\_wOnFold}}
+{\footnotesize\ttfamily const QString pl\+\_\+w\+On\+Fold\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a31472dd563848abd25354504b9cdc505}\label{def_8h_a31472dd563848abd25354504b9cdc505}} 
+\index{def.h@{def.h}!PrintDPI@{PrintDPI}}
+\index{PrintDPI@{PrintDPI}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{PrintDPI}{PrintDPI}}
+{\footnotesize\ttfamily const qreal Print\+DPI\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_abcd3f7959815043120cf428698e3b6ed}\label{def_8h_abcd3f7959815043120cf428698e3b6ed}} 
+\index{def.h@{def.h}!radTodeg\_F@{radTodeg\_F}}
+\index{radTodeg\_F@{radTodeg\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{radTodeg\_F}{radTodeg\_F}}
+{\footnotesize\ttfamily const QString rad\+Todeg\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a865f221e170fc6efc72ea89a2480a21f}\label{def_8h_a865f221e170fc6efc72ea89a2480a21f}} 
+\index{def.h@{def.h}!rint\_F@{rint\_F}}
+\index{rint\_F@{rint\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{rint\_F}{rint\_F}}
+{\footnotesize\ttfamily const QString rint\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ac21960e9f3dfad194618a93d1beba716}\label{def_8h_ac21960e9f3dfad194618a93d1beba716}} 
+\index{def.h@{def.h}!sign\_F@{sign\_F}}
+\index{sign\_F@{sign\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sign\_F}{sign\_F}}
+{\footnotesize\ttfamily const QString sign\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a5ee284ec559bdbc00fd8b7e86f468c0f}\label{def_8h_a5ee284ec559bdbc00fd8b7e86f468c0f}} 
+\index{def.h@{def.h}!sin\_F@{sin\_F}}
+\index{sin\_F@{sin\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sin\_F}{sin\_F}}
+{\footnotesize\ttfamily const QString sin\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a741f8fe695d3104406290d3a5d56066b}\label{def_8h_a741f8fe695d3104406290d3a5d56066b}} 
+\index{def.h@{def.h}!sinD\_F@{sinD\_F}}
+\index{sinD\_F@{sinD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sinD\_F}{sinD\_F}}
+{\footnotesize\ttfamily const QString sin\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a852ca08ff416add569934e5ed595cf67}\label{def_8h_a852ca08ff416add569934e5ed595cf67}} 
+\index{def.h@{def.h}!sinh\_F@{sinh\_F}}
+\index{sinh\_F@{sinh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sinh\_F}{sinh\_F}}
+{\footnotesize\ttfamily const QString sinh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ac889b53c7acfce1f2e4d463444c29c26}\label{def_8h_ac889b53c7acfce1f2e4d463444c29c26}} 
+\index{def.h@{def.h}!sqrt\_F@{sqrt\_F}}
+\index{sqrt\_F@{sqrt\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sqrt\_F}{sqrt\_F}}
+{\footnotesize\ttfamily const QString sqrt\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_aefb6e31b0bee618cc6955ebc20972bc5}\label{def_8h_aefb6e31b0bee618cc6955ebc20972bc5}} 
+\index{def.h@{def.h}!strBisector@{strBisector}}
+\index{strBisector@{strBisector}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{strBisector}{strBisector}}
+{\footnotesize\ttfamily const QString str\+Bisector\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a591c07f442a7d9ece6817a7ca6a1ebc3}\label{def_8h_a591c07f442a7d9ece6817a7ca6a1ebc3}} 
+\index{def.h@{def.h}!strIntersection@{strIntersection}}
+\index{strIntersection@{strIntersection}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{strIntersection}{strIntersection}}
+{\footnotesize\ttfamily const QString str\+Intersection\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a8d75f5702d2dbe0830669ce3e78c3932}\label{def_8h_a8d75f5702d2dbe0830669ce3e78c3932}} 
+\index{def.h@{def.h}!strSlit@{strSlit}}
+\index{strSlit@{strSlit}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{strSlit}{strSlit}}
+{\footnotesize\ttfamily const QString str\+Slit\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a649cee1df19c5ee54bd377e7e84f6fa0}\label{def_8h_a649cee1df19c5ee54bd377e7e84f6fa0}} 
+\index{def.h@{def.h}!strStraightforward@{strStraightforward}}
+\index{strStraightforward@{strStraightforward}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{strStraightforward}{strStraightforward}}
+{\footnotesize\ttfamily const QString str\+Straightforward\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a4253b67bd577327fc987c73a1e8a4616}\label{def_8h_a4253b67bd577327fc987c73a1e8a4616}} 
+\index{def.h@{def.h}!sum\_F@{sum\_F}}
+\index{sum\_F@{sum\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{sum\_F}{sum\_F}}
+{\footnotesize\ttfamily const QString sum\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a4bda123ee197114f19a17337adc46b4d}\label{def_8h_a4bda123ee197114f19a17337adc46b4d}} 
+\index{def.h@{def.h}!tan\_F@{tan\_F}}
+\index{tan\_F@{tan\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{tan\_F}{tan\_F}}
+{\footnotesize\ttfamily const QString tan\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a33e164bc4fa180dd56aa80abfd42ab56}\label{def_8h_a33e164bc4fa180dd56aa80abfd42ab56}} 
+\index{def.h@{def.h}!tanD\_F@{tanD\_F}}
+\index{tanD\_F@{tanD\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{tanD\_F}{tanD\_F}}
+{\footnotesize\ttfamily const QString tan\+D\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a1704d90dd6579db6136cba7a915961af}\label{def_8h_a1704d90dd6579db6136cba7a915961af}} 
+\index{def.h@{def.h}!tanh\_F@{tanh\_F}}
+\index{tanh\_F@{tanh\_F}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{tanh\_F}{tanh\_F}}
+{\footnotesize\ttfamily const QString tanh\+\_\+F\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ad02992006af50f2843f23279d26ae939}\label{def_8h_ad02992006af50f2843f23279d26ae939}} 
+\index{def.h@{def.h}!trueStr@{trueStr}}
+\index{trueStr@{trueStr}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{trueStr}{trueStr}}
+{\footnotesize\ttfamily const QString true\+Str\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a76bea8e4da8138da44cd242f8aa85a37}\label{def_8h_a76bea8e4da8138da44cd242f8aa85a37}} 
+\index{def.h@{def.h}!unitCM@{unitCM}}
+\index{unitCM@{unitCM}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{unitCM}{unitCM}}
+{\footnotesize\ttfamily const QString unit\+CM\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ac99511a44618ea64c4927fe23f1a8832}\label{def_8h_ac99511a44618ea64c4927fe23f1a8832}} 
+\index{def.h@{def.h}!unitINCH@{unitINCH}}
+\index{unitINCH@{unitINCH}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{unitINCH}{unitINCH}}
+{\footnotesize\ttfamily const QString unit\+INCH\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_a4b5c5c4ec31a31da47f7aa6fe4231101}\label{def_8h_a4b5c5c4ec31a31da47f7aa6fe4231101}} 
+\index{def.h@{def.h}!unitMM@{unitMM}}
+\index{unitMM@{unitMM}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{unitMM}{unitMM}}
+{\footnotesize\ttfamily const QString unit\+MM\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{def_8h_ab7b5d272ddc9705ff0a78d42eb8060a1}\label{def_8h_ab7b5d272ddc9705ff0a78d42eb8060a1}} 
+\index{def.h@{def.h}!unitPX@{unitPX}}
+\index{unitPX@{unitPX}!def.h@{def.h}}
+\doxysubsubsection{\texorpdfstring{unitPX}{unitPX}}
+{\footnotesize\ttfamily const QString unit\+PX\hspace{0.3cm}{\ttfamily [extern]}}
+

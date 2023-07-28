@@ -1,0 +1,408 @@
+\hypertarget{classdx__iface}{}\doxysection{dx\+\_\+iface Class Reference}
+\label{classdx__iface}\index{dx\_iface@{dx\_iface}}
+
+
+{\ttfamily \#include $<$dxiface.\+h$>$}
+
+Inheritance diagram for dx\+\_\+iface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classdx__iface}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdx__iface_ac77befd585743f08e905d606965b63fe}{dx\+\_\+iface}} (const std\+::string \&file, \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} v, \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} var\+Measurement, \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} var\+Insunits)
+\item 
+virtual \mbox{\hyperlink{classdx__iface_adfa4eca88ca52b4932e41b17598f8189}{$\sim$dx\+\_\+iface}} ()
+\item 
+bool \mbox{\hyperlink{classdx__iface_aaaa95a5336b8fa149984192018f9f76e}{file\+Export}} (bool binary)
+\item 
+void \mbox{\hyperlink{classdx__iface_abe8d8b51f81a2ef461462e4af434859f}{write\+Entity}} (\mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} $\ast$e)
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a8e10a45367b00cb49ba4e094d57c5152}{write\+Header}} (\mbox{\hyperlink{class_d_r_w___header}{DRW\+\_\+\+Header}} \&data)
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_af068a4cb9a5c1e3022e1ed93a3c33141}{write\+Blocks}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_ae6caacacc471215206723ae72480e434}{write\+Block\+Records}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a7f1bf1212351b263bdb51243769cf083}{write\+Entities}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a7ff81808f71c727aafa6c573ceabff51}{write\+LTypes}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_aa330d25140d54ead7795d1f5cd64b5a0}{write\+Layers}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_af4fc28ddd12ba1554f747e0a78463f84}{write\+Textstyles}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a5062fc90dc97c5172e0fe8945eaa970b}{write\+Vports}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a5c5c098f475be255af01c0844e0c3433}{write\+Dimstyles}} ()
+\item 
+virtual void \mbox{\hyperlink{classdx__iface_a1b731ad982e0e73bc536e59751912df9}{write\+App\+Id}} ()
+\item 
+void \mbox{\hyperlink{classdx__iface_a717ea28ab64a19a2063587135c62ce4c}{Add\+Entity}} (\mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} $\ast$e)
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{classdx__iface_ac4e3aa1c54d3cdabe4c2a99f66eaed93}{Add\+Font}} (const QFont \&f)
+\item 
+void \mbox{\hyperlink{classdx__iface_a2a4cb5cb793d07fbcdea0ad8888969d3}{Add\+Block}} (\mbox{\hyperlink{classdx__iface_block}{dx\+\_\+iface\+Block}} $\ast$block)
+\item 
+void \mbox{\hyperlink{classdx__iface_a4bc695489404db4c875575ef5b2e15e6}{Add\+Qt\+LTypes}} ()
+\item 
+void \mbox{\hyperlink{classdx__iface_a761b6dec69345355efc0f9d851e91f22}{Add\+Def\+Layers}} ()
+\item 
+void \mbox{\hyperlink{classdx__iface_ad4602ea8e7beeb95f0e6e8b9b497c2e5}{Add\+AAMALayers}} ()
+\item 
+void \mbox{\hyperlink{classdx__iface_af0d8cebd48a52fae2f589fd66d64e447}{Add\+AAMAHeader\+Data}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___interface}{DRW\+\_\+\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___interface_a0443fe407739845d4ac7e82992f61eeb}{DRW\+\_\+\+Interface}} ()
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___interface_a890a5ba051a67e13a622c71963939f19}{$\sim$\+DRW\+\_\+\+Interface}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a0559efbcf39b628e6e6bad88db8b48a8}{add\+Header}} (const \mbox{\hyperlink{class_d_r_w___header}{DRW\+\_\+\+Header}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a22abf9136e84d8f094d922e186e3f50e}{add\+LType}} (const \mbox{\hyperlink{class_d_r_w___l_type}{DRW\+\_\+\+LType}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a53e5e8c9b47a19f5b1b63142b66a036e}{add\+Layer}} (const \mbox{\hyperlink{class_d_r_w___layer}{DRW\+\_\+\+Layer}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a75d86bae80208e5cbb0a31fe7b303ef5}{add\+Dim\+Style}} (const \mbox{\hyperlink{class_d_r_w___dimstyle}{DRW\+\_\+\+Dimstyle}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a8c75371ad44b5418ff38470bea6f8635}{add\+Vport}} (const \mbox{\hyperlink{class_d_r_w___vport}{DRW\+\_\+\+Vport}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_aeb4f7343e534e4db46e9f1a35828df67}{add\+Text\+Style}} (const \mbox{\hyperlink{class_d_r_w___textstyle}{DRW\+\_\+\+Textstyle}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a20a6c1d8eabe59a476d057eabb19c07f}{add\+App\+Id}} (const \mbox{\hyperlink{class_d_r_w___app_id}{DRW\+\_\+\+App\+Id}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ad5c28694611b144cf6d7b41988038618}{add\+Block}} (const \mbox{\hyperlink{class_d_r_w___block}{DRW\+\_\+\+Block}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a3b0f0598f66706f36440f84c2e3300ba}{end\+Block}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a2a926eca21e4bdfe13e2e01d4dbe18e9}{add\+Point}} (const \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ad86e06568e47e608a36d2c1cbc4f6104}{add\+Line}} (const \mbox{\hyperlink{class_d_r_w___line}{DRW\+\_\+\+Line}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ae64a064a05b0b24f227584434efb1836}{add\+Ray}} (const \mbox{\hyperlink{class_d_r_w___ray}{DRW\+\_\+\+Ray}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a598a61c2502a18ec0fcdc15f56f1bb7e}{add\+Xline}} (const \mbox{\hyperlink{class_d_r_w___xline}{DRW\+\_\+\+Xline}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ab76c7ae4c89158fb83eeec01ffc380ac}{add\+Arc}} (const \mbox{\hyperlink{class_d_r_w___arc}{DRW\+\_\+\+Arc}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a00f3844ada3c8ac28987be17b3e7b68a}{add\+Circle}} (const \mbox{\hyperlink{class_d_r_w___circle}{DRW\+\_\+\+Circle}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_aff986ccf5df133d7d0bf62a829edc4c0}{add\+Ellipse}} (const \mbox{\hyperlink{class_d_r_w___ellipse}{DRW\+\_\+\+Ellipse}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a89652fae7307d96f0ba4a8031a17745e}{add\+LWPolyline}} (const \mbox{\hyperlink{class_d_r_w___l_w_polyline}{DRW\+\_\+\+LWPolyline}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a5f70eebf2498d273641a3a9a113b3af7}{add\+Polyline}} (const \mbox{\hyperlink{class_d_r_w___polyline}{DRW\+\_\+\+Polyline}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ac25ef84efc3aa355f0c612eb44c3055d}{add\+Spline}} (const \mbox{\hyperlink{class_d_r_w___spline}{DRW\+\_\+\+Spline}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a4c5303d28ec509864b86aab3fc1f46e9}{add\+Knot}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_abb920f697a7acefcfa2f40adb1de84a4}{add\+Insert}} (const \mbox{\hyperlink{class_d_r_w___insert}{DRW\+\_\+\+Insert}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a8879355e616e1bc0fada6e1e7329b506}{add\+Trace}} (const \mbox{\hyperlink{class_d_r_w___trace}{DRW\+\_\+\+Trace}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a3b936789fcae51b6e2cad27b74a3318f}{add3d\+Face}} (const \mbox{\hyperlink{class_d_r_w__3_dface}{DRW\+\_\+3\+Dface}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a631a4261763a09f860e0291232efe5c8}{add\+Solid}} (const \mbox{\hyperlink{class_d_r_w___solid}{DRW\+\_\+\+Solid}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a7bb004c9a734e583525d2d1a0473dc7f}{add\+MText}} (const \mbox{\hyperlink{class_d_r_w___m_text}{DRW\+\_\+\+MText}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a2462b3886ee2aca4ea81b723e3747661}{add\+Text}} (const \mbox{\hyperlink{class_d_r_w___text}{DRW\+\_\+\+Text}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a49c5a7563b39f6e3c7bee48cca0f42eb}{add\+Dim\+Align}} (const \mbox{\hyperlink{class_d_r_w___dim_aligned}{DRW\+\_\+\+Dim\+Aligned}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ae28afeac3c7e49331084a06be75afba3}{add\+Dim\+Linear}} (const \mbox{\hyperlink{class_d_r_w___dim_linear}{DRW\+\_\+\+Dim\+Linear}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_aa795b104654bb4358666d82fb5c37fd4}{add\+Dim\+Radial}} (const \mbox{\hyperlink{class_d_r_w___dim_radial}{DRW\+\_\+\+Dim\+Radial}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a22cf989c0a9b0da1d1eebeb41fab2b03}{add\+Dim\+Diametric}} (const \mbox{\hyperlink{class_d_r_w___dim_diametric}{DRW\+\_\+\+Dim\+Diametric}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a19479524039a16d080d1d1d8cd9f2195}{add\+Dim\+Angular}} (const \mbox{\hyperlink{class_d_r_w___dim_angular}{DRW\+\_\+\+Dim\+Angular}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a0b6b3d07c052c3b6a904659cd19b550a}{add\+Dim\+Angular3P}} (const \mbox{\hyperlink{class_d_r_w___dim_angular3p}{DRW\+\_\+\+Dim\+Angular3p}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_afb5999753b883d590961069e51479c6e}{add\+Dim\+Ordinate}} (const \mbox{\hyperlink{class_d_r_w___dim_ordinate}{DRW\+\_\+\+Dim\+Ordinate}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a9a30ae693b3a580f869fca08f54fad27}{add\+Leader}} (const \mbox{\hyperlink{class_d_r_w___leader}{DRW\+\_\+\+Leader}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a6b06fab60f6466a4c979555a065069d5}{add\+Hatch}} (const \mbox{\hyperlink{class_d_r_w___hatch}{DRW\+\_\+\+Hatch}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ab1cd13aaf7cfb5f3807f834839d4dfb1}{add\+Viewport}} (const \mbox{\hyperlink{class_d_r_w___viewport}{DRW\+\_\+\+Viewport}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_aacf4b780aedeed341ca87d169e863c78}{add\+Image}} (const \mbox{\hyperlink{class_d_r_w___image}{DRW\+\_\+\+Image}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ab144bf179ac5cb576acbc8a393ccb817}{link\+Image}} (const \mbox{\hyperlink{class_d_r_w___image_def}{DRW\+\_\+\+Image\+Def}} $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a1648324d219a5b552553eab918397cc7}{add\+Comment}} (const char $\ast$)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a86f4b83dbdee8d108b8cb439370052a6}{write\+Header}} (\mbox{\hyperlink{class_d_r_w___header}{DRW\+\_\+\+Header}} \&)
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ab5d6b141dcd717133027484a98261405}{write\+Blocks}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ac7ce632f1a1ab25121a12b2be7514b23}{write\+Block\+Records}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_afc6fe6a77e896f1f68feba5a043f08fd}{write\+Entities}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a320d8c4807f23afa9e9df556f863c4a2}{write\+LTypes}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_ab50af4d5d7d830b4af3f7a3ce6f1f3b9}{write\+Layers}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a023bc69cc2d1e61df543b930d475d38b}{write\+Textstyles}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a392f03cb83a9543c8c6ec182d834336a}{write\+Vports}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a5d35dadae5759a64477be974c5c41deb}{write\+Dimstyles}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___interface_a0e1550a7ba2f18200c5f04049cd9c4b0}{write\+App\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classdx__iface_ae8490149564c2012f1b95164d4e6aa4e}{Init\+Header}} (\mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}} var\+Measurement, \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}} var\+Insunits)
+\item 
+void \mbox{\hyperlink{classdx__iface_a3d37759f87850fa3eeaef1ce7c6ab278}{Init\+Textstyles}} ()
+\item 
+void \mbox{\hyperlink{classdx__iface_a4a90e04f197174961a230d540763e0ca}{Init\+App\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classdx__iface_afc21c1b1735cf598bb2537ac3347a4d1}{Locale\+To\+ISO}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdxf_r_w}{dxf\+RW}} $\ast$ \mbox{\hyperlink{classdx__iface_a7ebf29986a6d7b30aed28431811698fa}{dxfW}}
+\item 
+\mbox{\hyperlink{classdx__data}{dx\+\_\+data}} \mbox{\hyperlink{classdx__iface_a6009a5005a177c8d3b18f360b67eecd4}{c\+Data}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} \mbox{\hyperlink{classdx__iface_a0a1b632d266e4559d9387ad529f33559}{version}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdx__iface_ac77befd585743f08e905d606965b63fe}\label{classdx__iface_ac77befd585743f08e905d606965b63fe}} 
+\index{dx\_iface@{dx\_iface}!dx\_iface@{dx\_iface}}
+\index{dx\_iface@{dx\_iface}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{dx\_iface()}{dx\_iface()}}
+{\footnotesize\ttfamily dx\+\_\+iface\+::dx\+\_\+iface (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file,  }\item[{\mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}}}]{v,  }\item[{\mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}}}]{var\+Measurement,  }\item[{\mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}}}]{var\+Insunits }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_adfa4eca88ca52b4932e41b17598f8189}\label{classdx__iface_adfa4eca88ca52b4932e41b17598f8189}} 
+\index{dx\_iface@{dx\_iface}!````~dx\_iface@{$\sim$dx\_iface}}
+\index{````~dx\_iface@{$\sim$dx\_iface}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{$\sim$dx\_iface()}{~dx\_iface()}}
+{\footnotesize\ttfamily dx\+\_\+iface\+::$\sim$dx\+\_\+iface (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdx__iface_af0d8cebd48a52fae2f589fd66d64e447}\label{classdx__iface_af0d8cebd48a52fae2f589fd66d64e447}} 
+\index{dx\_iface@{dx\_iface}!AddAAMAHeaderData@{AddAAMAHeaderData}}
+\index{AddAAMAHeaderData@{AddAAMAHeaderData}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddAAMAHeaderData()}{AddAAMAHeaderData()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+AAMAHeader\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_ad4602ea8e7beeb95f0e6e8b9b497c2e5}\label{classdx__iface_ad4602ea8e7beeb95f0e6e8b9b497c2e5}} 
+\index{dx\_iface@{dx\_iface}!AddAAMALayers@{AddAAMALayers}}
+\index{AddAAMALayers@{AddAAMALayers}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddAAMALayers()}{AddAAMALayers()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+AAMALayers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a2a4cb5cb793d07fbcdea0ad8888969d3}\label{classdx__iface_a2a4cb5cb793d07fbcdea0ad8888969d3}} 
+\index{dx\_iface@{dx\_iface}!AddBlock@{AddBlock}}
+\index{AddBlock@{AddBlock}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddBlock()}{AddBlock()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+Block (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdx__iface_block}{dx\+\_\+iface\+Block}} $\ast$}]{block }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a761b6dec69345355efc0f9d851e91f22}\label{classdx__iface_a761b6dec69345355efc0f9d851e91f22}} 
+\index{dx\_iface@{dx\_iface}!AddDefLayers@{AddDefLayers}}
+\index{AddDefLayers@{AddDefLayers}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddDefLayers()}{AddDefLayers()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+Def\+Layers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a717ea28ab64a19a2063587135c62ce4c}\label{classdx__iface_a717ea28ab64a19a2063587135c62ce4c}} 
+\index{dx\_iface@{dx\_iface}!AddEntity@{AddEntity}}
+\index{AddEntity@{AddEntity}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddEntity()}{AddEntity()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_ac4e3aa1c54d3cdabe4c2a99f66eaed93}\label{classdx__iface_ac4e3aa1c54d3cdabe4c2a99f66eaed93}} 
+\index{dx\_iface@{dx\_iface}!AddFont@{AddFont}}
+\index{AddFont@{AddFont}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddFont()}{AddFont()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} dx\+\_\+iface\+::\+Add\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{f }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a4bc695489404db4c875575ef5b2e15e6}\label{classdx__iface_a4bc695489404db4c875575ef5b2e15e6}} 
+\index{dx\_iface@{dx\_iface}!AddQtLTypes@{AddQtLTypes}}
+\index{AddQtLTypes@{AddQtLTypes}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{AddQtLTypes()}{AddQtLTypes()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Add\+Qt\+LTypes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_aaaa95a5336b8fa149984192018f9f76e}\label{classdx__iface_aaaa95a5336b8fa149984192018f9f76e}} 
+\index{dx\_iface@{dx\_iface}!fileExport@{fileExport}}
+\index{fileExport@{fileExport}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{fileExport()}{fileExport()}}
+{\footnotesize\ttfamily bool dx\+\_\+iface\+::file\+Export (\begin{DoxyParamCaption}\item[{bool}]{binary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a4a90e04f197174961a230d540763e0ca}\label{classdx__iface_a4a90e04f197174961a230d540763e0ca}} 
+\index{dx\_iface@{dx\_iface}!InitAppId@{InitAppId}}
+\index{InitAppId@{InitAppId}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{InitAppId()}{InitAppId()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Init\+App\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_ae8490149564c2012f1b95164d4e6aa4e}\label{classdx__iface_ae8490149564c2012f1b95164d4e6aa4e}} 
+\index{dx\_iface@{dx\_iface}!InitHeader@{InitHeader}}
+\index{InitHeader@{InitHeader}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{InitHeader()}{InitHeader()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Init\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{Var\+Measurement}}}]{var\+Measurement,  }\item[{\mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{Var\+Insunits}}}]{var\+Insunits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_a3d37759f87850fa3eeaef1ce7c6ab278}\label{classdx__iface_a3d37759f87850fa3eeaef1ce7c6ab278}} 
+\index{dx\_iface@{dx\_iface}!InitTextstyles@{InitTextstyles}}
+\index{InitTextstyles@{InitTextstyles}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{InitTextstyles()}{InitTextstyles()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::\+Init\+Textstyles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_afc21c1b1735cf598bb2537ac3347a4d1}\label{classdx__iface_afc21c1b1735cf598bb2537ac3347a4d1}} 
+\index{dx\_iface@{dx\_iface}!LocaleToISO@{LocaleToISO}}
+\index{LocaleToISO@{LocaleToISO}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{LocaleToISO()}{LocaleToISO()}}
+{\footnotesize\ttfamily std\+::string dx\+\_\+iface\+::\+Locale\+To\+ISO (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_a1b731ad982e0e73bc536e59751912df9}\label{classdx__iface_a1b731ad982e0e73bc536e59751912df9}} 
+\index{dx\_iface@{dx\_iface}!writeAppId@{writeAppId}}
+\index{writeAppId@{writeAppId}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeAppId()}{writeAppId()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+App\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a0e1550a7ba2f18200c5f04049cd9c4b0}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_ae6caacacc471215206723ae72480e434}\label{classdx__iface_ae6caacacc471215206723ae72480e434}} 
+\index{dx\_iface@{dx\_iface}!writeBlockRecords@{writeBlockRecords}}
+\index{writeBlockRecords@{writeBlockRecords}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeBlockRecords()}{writeBlockRecords()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Block\+Records (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_ac7ce632f1a1ab25121a12b2be7514b23}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_af068a4cb9a5c1e3022e1ed93a3c33141}\label{classdx__iface_af068a4cb9a5c1e3022e1ed93a3c33141}} 
+\index{dx\_iface@{dx\_iface}!writeBlocks@{writeBlocks}}
+\index{writeBlocks@{writeBlocks}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeBlocks()}{writeBlocks()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Blocks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_ab5d6b141dcd717133027484a98261405}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_a5c5c098f475be255af01c0844e0c3433}\label{classdx__iface_a5c5c098f475be255af01c0844e0c3433}} 
+\index{dx\_iface@{dx\_iface}!writeDimstyles@{writeDimstyles}}
+\index{writeDimstyles@{writeDimstyles}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeDimstyles()}{writeDimstyles()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Dimstyles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a5d35dadae5759a64477be974c5c41deb}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_a7f1bf1212351b263bdb51243769cf083}\label{classdx__iface_a7f1bf1212351b263bdb51243769cf083}} 
+\index{dx\_iface@{dx\_iface}!writeEntities@{writeEntities}}
+\index{writeEntities@{writeEntities}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeEntities()}{writeEntities()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Entities (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_afc6fe6a77e896f1f68feba5a043f08fd}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_abe8d8b51f81a2ef461462e4af434859f}\label{classdx__iface_abe8d8b51f81a2ef461462e4af434859f}} 
+\index{dx\_iface@{dx\_iface}!writeEntity@{writeEntity}}
+\index{writeEntity@{writeEntity}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeEntity()}{writeEntity()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} $\ast$}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdx__iface_a8e10a45367b00cb49ba4e094d57c5152}\label{classdx__iface_a8e10a45367b00cb49ba4e094d57c5152}} 
+\index{dx\_iface@{dx\_iface}!writeHeader@{writeHeader}}
+\index{writeHeader@{writeHeader}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeHeader()}{writeHeader()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Header (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___header}{DRW\+\_\+\+Header}} \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a86f4b83dbdee8d108b8cb439370052a6}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_aa330d25140d54ead7795d1f5cd64b5a0}\label{classdx__iface_aa330d25140d54ead7795d1f5cd64b5a0}} 
+\index{dx\_iface@{dx\_iface}!writeLayers@{writeLayers}}
+\index{writeLayers@{writeLayers}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeLayers()}{writeLayers()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Layers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_ab50af4d5d7d830b4af3f7a3ce6f1f3b9}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_a7ff81808f71c727aafa6c573ceabff51}\label{classdx__iface_a7ff81808f71c727aafa6c573ceabff51}} 
+\index{dx\_iface@{dx\_iface}!writeLTypes@{writeLTypes}}
+\index{writeLTypes@{writeLTypes}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeLTypes()}{writeLTypes()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+LTypes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a320d8c4807f23afa9e9df556f863c4a2}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_af4fc28ddd12ba1554f747e0a78463f84}\label{classdx__iface_af4fc28ddd12ba1554f747e0a78463f84}} 
+\index{dx\_iface@{dx\_iface}!writeTextstyles@{writeTextstyles}}
+\index{writeTextstyles@{writeTextstyles}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeTextstyles()}{writeTextstyles()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Textstyles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a023bc69cc2d1e61df543b930d475d38b}{DRW\+\_\+\+Interface}}.
+
+\mbox{\Hypertarget{classdx__iface_a5062fc90dc97c5172e0fe8945eaa970b}\label{classdx__iface_a5062fc90dc97c5172e0fe8945eaa970b}} 
+\index{dx\_iface@{dx\_iface}!writeVports@{writeVports}}
+\index{writeVports@{writeVports}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{writeVports()}{writeVports()}}
+{\footnotesize\ttfamily void dx\+\_\+iface\+::write\+Vports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___interface_a392f03cb83a9543c8c6ec182d834336a}{DRW\+\_\+\+Interface}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdx__iface_a6009a5005a177c8d3b18f360b67eecd4}\label{classdx__iface_a6009a5005a177c8d3b18f360b67eecd4}} 
+\index{dx\_iface@{dx\_iface}!cData@{cData}}
+\index{cData@{cData}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{cData}{cData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdx__data}{dx\+\_\+data}} dx\+\_\+iface\+::c\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_a7ebf29986a6d7b30aed28431811698fa}\label{classdx__iface_a7ebf29986a6d7b30aed28431811698fa}} 
+\index{dx\_iface@{dx\_iface}!dxfW@{dxfW}}
+\index{dxfW@{dxfW}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{dxfW}{dxfW}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdxf_r_w}{dxf\+RW}}$\ast$ dx\+\_\+iface\+::dxfW\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classdx__iface_a0a1b632d266e4559d9387ad529f33559}\label{classdx__iface_a0a1b632d266e4559d9387ad529f33559}} 
+\index{dx\_iface@{dx\_iface}!version@{version}}
+\index{version@{version}!dx\_iface@{dx\_iface}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_d_r_w_aba47c0c1ab66b07f7d670c0b449ea5e8}{DRW\+::\+Version}} dx\+\_\+iface\+::version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/\mbox{\hyperlink{dxiface_8h}{dxiface.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/\mbox{\hyperlink{dxiface_8cpp}{dxiface.\+cpp}}\end{DoxyCompactItemize}

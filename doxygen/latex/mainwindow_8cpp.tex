@@ -1,0 +1,92 @@
+\hypertarget{mainwindow_8cpp}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/app/seamly2d/mainwindow.cpp File Reference}
+\label{mainwindow_8cpp}\index{D:/Github/Seamly2D/src/app/seamly2d/mainwindow.cpp@{D:/Github/Seamly2D/src/app/seamly2d/mainwindow.cpp}}
+{\ttfamily \#include \char`\"{}mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ui\+\_\+mainwindow.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vgeometry/vspline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/exception/vexceptionobjecterror.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/exception/vexceptionconversionerror.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/exception/vexceptionemptyparameter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/exception/vexceptionwrongid.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/exception/vexceptionundo.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}version.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}core/vapplication.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/customevents.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/vsettings.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/qxtcsvmodel.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/dialogs/dialogexporttocsv.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}undocommands/rename\+\_\+draftblock.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}core/vtooloptionspropertybrowser.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}options.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vpatternconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/logging.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vformat/vmeasurements.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vvstconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ifc/xml/vvitconverter.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vwidgets/vwidgetpopup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vwidgets/vmaingraphicsscene.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vwidgets/mouse\+\_\+coordinates.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vtools/tools/draw\+Tools/drawtools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vtools/dialogs/tooldialogs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tools/pattern\+\_\+piece\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tools/node\+Details/vtoolinternalpath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tools/node\+Details/anchorpoint\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tools/union\+\_\+tool.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dialogs/dialogs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vtools/undocommands/addgroup.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vtools/undocommands/label/showpointname.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vpatterndb/vpiecepath.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../qmuparser/qmuparsererror.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vtools/dialogs/support/editlabeltemplate\+\_\+dialog.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QInput\+Dialog$>$}\newline
+{\ttfamily \#include $<$Qt\+Debug$>$}\newline
+{\ttfamily \#include $<$QMessage\+Box$>$}\newline
+{\ttfamily \#include $<$QShow\+Event$>$}\newline
+{\ttfamily \#include $<$QScroll\+Bar$>$}\newline
+{\ttfamily \#include $<$QFile\+Dialog$>$}\newline
+{\ttfamily \#include $<$QSource\+Location$>$}\newline
+{\ttfamily \#include $<$QUndo\+Stack$>$}\newline
+{\ttfamily \#include $<$QAction$>$}\newline
+{\ttfamily \#include $<$QProcess$>$}\newline
+{\ttfamily \#include $<$QSettings$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include $<$QDesktop\+Widget$>$}\newline
+{\ttfamily \#include $<$QDesktop\+Services$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include $<$QFile\+System\+Watcher$>$}\newline
+{\ttfamily \#include $<$QCombo\+Box$>$}\newline
+{\ttfamily \#include $<$QFont\+Combo\+Box$>$}\newline
+{\ttfamily \#include $<$QText\+Codec$>$}\newline
+{\ttfamily \#include $<$QDouble\+Spin\+Box$>$}\newline
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+QT\+\_\+\+WARNING\+\_\+\+PUSH QT\+\_\+\+WARNING\+\_\+\+POP const QString \mbox{\hyperlink{mainwindow_8cpp_af3d0b6f4e684f83ad658f94bb5a2234a}{autosave\+Prefix}} = QString\+Literal(\char`\"{}.autosave\char`\"{})
+\item 
+const QString \mbox{\hyperlink{mainwindow_8cpp_af4373a076cd610e657f7e1d63486e337}{str\+QShortcut}} = QString\+Literal(\char`\"{}QShortcut\char`\"{})
+\item 
+const QString \mbox{\hyperlink{mainwindow_8cpp_aee35d89c888e999fd85048be69c760e1}{str\+Ctrl}} = QString\+Literal(\char`\"{}Ctrl\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mainwindow_8cpp_af3d0b6f4e684f83ad658f94bb5a2234a}\label{mainwindow_8cpp_af3d0b6f4e684f83ad658f94bb5a2234a}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!autosavePrefix@{autosavePrefix}}
+\index{autosavePrefix@{autosavePrefix}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{autosavePrefix}{autosavePrefix}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH QT\+\_\+\+WARNING\+\_\+\+POP const QString autosave\+Prefix = QString\+Literal(\char`\"{}.autosave\char`\"{})}
+
+\mbox{\Hypertarget{mainwindow_8cpp_aee35d89c888e999fd85048be69c760e1}\label{mainwindow_8cpp_aee35d89c888e999fd85048be69c760e1}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!strCtrl@{strCtrl}}
+\index{strCtrl@{strCtrl}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{strCtrl}{strCtrl}}
+{\footnotesize\ttfamily const QString str\+Ctrl = QString\+Literal(\char`\"{}Ctrl\char`\"{})}
+
+\mbox{\Hypertarget{mainwindow_8cpp_af4373a076cd610e657f7e1d63486e337}\label{mainwindow_8cpp_af4373a076cd610e657f7e1d63486e337}} 
+\index{mainwindow.cpp@{mainwindow.cpp}!strQShortcut@{strQShortcut}}
+\index{strQShortcut@{strQShortcut}!mainwindow.cpp@{mainwindow.cpp}}
+\doxysubsubsection{\texorpdfstring{strQShortcut}{strQShortcut}}
+{\footnotesize\ttfamily const QString str\+QShortcut = QString\+Literal(\char`\"{}QShortcut\char`\"{})}
+

@@ -1,0 +1,141 @@
+\hypertarget{union__dialog_8h_source}{}\doxysection{union\+\_\+dialog.\+h}
+\label{union__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/union\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/union\_dialog.h}}
+\mbox{\hyperlink{union__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ union\_dialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ dialoguniondetails.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 23\ 12,\ 2013}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ UNION\_DIALOG\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ UNION\_DIALOG\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QSound>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_union_dialog}{UnionDialog}};}
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_union_dialog}{UnionDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog}{UnionDialog}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a1e33de121c0121fe1258d33ab61be398}{\string~UnionDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a662f62fcee07ef86e7dcc650d69c331f}{getPiece1Id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a3ee73e36fb3fddfc3c1daf980336e608}{getPiece2Id}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_adc49828b59cfb1d05f11b46bf8cccd9a}{getPiece1Index}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_ac2023f4dab56bf902eac3efefe410ecd}{getPiece2Index}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a7bfd430920918bbfa7b97797fe44a17e}{retainPieces}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_dialog_a2b39d641065e8dcf203a8d93d34e3193}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_union_dialog}{UnionDialog}})}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_union_dialog}{UnionDialog}}\ *\mbox{\hyperlink{class_union_dialog_ae834da06144fca5e4d11dfe2d9fbd810}{ui}};\ \ \ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_aca7de2fba52835785fddec4ff1654cb9}{piece1\_Index}};\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a40919a0bd4b60dc0e2c3cdd358975799}{piece2\_Index}};\ }
+\DoxyCodeLine{00099\ \ \ \ \ quint32\ \ \mbox{\hyperlink{class_union_dialog_aa1404d8933fc57b4ec610ea7724387a1}{d1}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \ \ quint32\ \ \mbox{\hyperlink{class_union_dialog_abf426ee427b51d56a0f2bb1bc8fe95f1}{d2}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \ \ qint32\ \ \ \mbox{\hyperlink{class_union_dialog_a3db03871b1f4d700120d4b3c0d08422c}{numberD}};\ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \ \ qint32\ \ \ \mbox{\hyperlink{class_union_dialog_a172c21bafdd0d977b9a180ffa087b72c}{numberP}};\ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \ \ quint32\ \ \mbox{\hyperlink{class_union_dialog_aa63a5a4a544366a988f9f866a2b297e2}{p1}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ quint32\ \ \mbox{\hyperlink{class_union_dialog_a6761074621354f738648db0c5c80b206}{p2}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ QSound\ \ *\mbox{\hyperlink{class_union_dialog_a5c67af9c94ab65ea0bb0af2aa45a5e4d}{m\_beep}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a870ac054ab6e2e6ef2973af3e617e192}{CheckObject}}(const\ quint32\ \&\textcolor{keywordtype}{id},\ const\ quint32\ \&pieceId)\ const;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a8e4c5cf573cb2ca714d14f97eb4adf8c}{checkPiece}}(const\ quint32\ \&pieceId)\ const;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \mbox{\hyperlink{class_union_dialog_a2df0dc9548662d32c4a592430a123668}{chosenPiece}}(const\ quint32\ \&\textcolor{keywordtype}{id},\ const\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type,\ quint32\ \&pieceId,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \&index);}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00119\ \textcolor{comment}{}inline\ quint32\ \mbox{\hyperlink{class_union_dialog}{UnionDialog}}::\mbox{\hyperlink{class_union_dialog_a662f62fcee07ef86e7dcc650d69c331f}{getPiece1Id}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00120\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_union_dialog_aa1404d8933fc57b4ec610ea7724387a1}{d1}};}
+\DoxyCodeLine{00122\ \}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00129\ \textcolor{comment}{}\textcolor{keyword}{inline}\ quint32\ \mbox{\hyperlink{class_union_dialog_a3ee73e36fb3fddfc3c1daf980336e608}{UnionDialog::getPiece2Id}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_union_dialog_abf426ee427b51d56a0f2bb1bc8fe95f1}{d2}};}
+\DoxyCodeLine{00132\ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00139\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_union_dialog_adc49828b59cfb1d05f11b46bf8cccd9a}{UnionDialog::getPiece1Index}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_union_dialog_aca7de2fba52835785fddec4ff1654cb9}{piece1\_Index}};}
+\DoxyCodeLine{00142\ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00149\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_union_dialog_ac2023f4dab56bf902eac3efefe410ecd}{UnionDialog::getPiece2Index}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_union_dialog_a40919a0bd4b60dc0e2c3cdd358975799}{piece2\_Index}};}
+\DoxyCodeLine{00152\ \}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNION\_DIALOG\_H}}
+
+\end{DoxyCode}

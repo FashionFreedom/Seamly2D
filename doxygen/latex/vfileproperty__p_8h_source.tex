@@ -1,0 +1,59 @@
+\hypertarget{vfileproperty__p_8h_source}{}\doxysection{vfileproperty\+\_\+p.\+h}
+\label{vfileproperty__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vfileproperty\_p.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vfileproperty\_p.h}}
+\mbox{\hyperlink{vfileproperty__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vfileproperty\_p.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VFILEPROPERTY\_P\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VFILEPROPERTY\_P\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ ONLY\ INCLUDE\ THIS\ IN\ .CPP\ FILES}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vproperty__p_8h}{vproperty\_p.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private}{VFilePropertyPrivate}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_ad8cec8259ad5fb3522f1092bc30db531}{FileFilters}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_a80881767043e8a318d71a60760c286a2}{Directory}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_a08247083ba285e1614327dde6d19990f}{VFilePropertyPrivate}}(\textcolor{keyword}{const}\ QString\&\ name,\ QVariant::Type\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private_a1cf462a465655a8f5fae60fc1c2bc9ca}{type}},\ \textcolor{keywordtype}{bool}\ directory\ =\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}}(name,\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private_a1cf462a465655a8f5fae60fc1c2bc9ca}{type}}),\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_ad8cec8259ad5fb3522f1092bc30db531}{FileFilters}}(),\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_a80881767043e8a318d71a60760c286a2}{Directory}}(directory)\ \{\}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_af2af3a0840d2e1e7b180147a7ace34da}{VFilePropertyPrivate}}()}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VPropertyPrivate}}(),\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_ad8cec8259ad5fb3522f1092bc30db531}{FileFilters}}(),\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_a80881767043e8a318d71a60760c286a2}{Directory}}(false)\ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private_a4b6f41b6ca486a892411f10429815f51}{\string~VFilePropertyPrivate}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private}{VFilePropertyPrivate}}::\string~\mbox{\hyperlink{class_v_p_e_1_1_v_file_property_private}{VFilePropertyPrivate}}()}
+\DoxyCodeLine{00053\ \{\}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VFILEPROPERTY\_P\_H}}
+
+\end{DoxyCode}

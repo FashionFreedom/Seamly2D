@@ -1,0 +1,180 @@
+\hypertarget{debugbreak_8h_source}{}\doxysection{debugbreak.\+h}
+\label{debugbreak_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/debugbreak.h@{D:/Github/Seamly2D/src/libs/vmisc/debugbreak.h}}
+\mbox{\hyperlink{debugbreak_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Copyright\ (c)\ 2011-\/2021,\ Scott\ Tsai}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ All\ rights\ reserved.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ Redistribution\ and\ use\ in\ source\ and\ binary\ forms,\ with\ or\ without}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ modification,\ are\ permitted\ provided\ that\ the\ following\ conditions\ are\ met:}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *\ 1.\ Redistributions\ of\ source\ code\ must\ retain\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *\ 2.\ Redistributions\ in\ binary\ form\ must\ reproduce\ the\ above\ copyright\ notice,}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ \ \ \ this\ list\ of\ conditions\ and\ the\ following\ disclaimer\ in\ the\ documentation}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *\ \ \ \ and/or\ other\ materials\ provided\ with\ the\ distribution.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ }}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ THIS\ SOFTWARE\ IS\ PROVIDED\ BY\ THE\ COPYRIGHT\ HOLDERS\ AND\ CONTRIBUTORS\ "{}AS\ IS"{}}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ AND\ ANY\ EXPRESS\ OR\ IMPLIED\ WARRANTIES,\ INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ THE}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *\ IMPLIED\ WARRANTIES\ OF\ MERCHANTABILITY\ AND\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ ARE\ DISCLAIMED.\ IN\ NO\ EVENT\ SHALL\ THE\ COPYRIGHT\ HOLDER\ OR\ CONTRIBUTORS\ BE}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ LIABLE\ FOR\ ANY\ DIRECT,\ INDIRECT,\ INCIDENTAL,\ SPECIAL,\ EXEMPLARY,\ OR}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ CONSEQUENTIAL\ DAMAGES\ (INCLUDING,\ BUT\ NOT\ LIMITED\ TO,\ PROCUREMENT\ OF}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *\ SUBSTITUTE\ GOODS\ OR\ SERVICES;\ LOSS\ OF\ USE,\ DATA,\ OR\ PROFITS;\ OR\ BUSINESS}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ INTERRUPTION)\ HOWEVER\ CAUSED\ AND\ ON\ ANY\ THEORY\ OF\ LIABILITY,\ WHETHER\ IN}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ CONTRACT,\ STRICT\ LIABILITY,\ OR\ TORT\ (INCLUDING\ NEGLIGENCE\ OR\ OTHERWISE)}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ ARISING\ IN\ ANY\ WAY\ OUT\ OF\ THE\ USE\ OF\ THIS\ SOFTWARE,\ EVEN\ IF\ ADVISED\ OF\ THE}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ POSSIBILITY\ OF\ SUCH\ DAMAGE.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#ifndef\ DEBUG\_BREAK\_H}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ DEBUG\_BREAK\_H}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifdef\ \_MSC\_VER}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ debug\_break\ \_\_debugbreak}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00036\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION\ 1}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ DEBUG\_BREAK\_USE\_BULTIN\_TRAP\ \ \ \ \ \ 2}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ DEBUG\_BREAK\_USE\_SIGTRAP\ \ \ \ \ \ \ \ \ \ 3}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#if\ defined(\_\_i386\_\_)\ ||\ defined(\_\_x86\_64\_\_)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00045\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}int\ \$0x03"{}});}
+\DoxyCodeLine{00048\ \}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#elif\ defined(\_\_thumb\_\_)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*\ FIXME:\ handle\ \_\_THUMB\_INTERWORK\_\_\ */}}
+\DoxyCodeLine{00052\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00053\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{/*\ See\ 'arm-\/linux-\/tdep.c'\ in\ GDB\ source.}}
+\DoxyCodeLine{00056\ \textcolor{comment}{\ \ \ \ \ *\ Both\ instruction\ sequences\ below\ work.\ */}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#if\ 1}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{/*\ 'eabi\_linux\_thumb\_le\_breakpoint'\ */}}
+\DoxyCodeLine{00059\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.inst\ 0xde01"{}});}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{/*\ 'eabi\_linux\_thumb2\_le\_breakpoint'\ */}}
+\DoxyCodeLine{00062\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.inst.w\ 0xf7f0a000"{}});}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{/*\ Known\ problem:}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ \ *\ After\ a\ breakpoint\ hit,\ can't\ 'stepi',\ 'step',\ or\ 'continue'\ in\ GDB.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ \ *\ 'step'\ would\ keep\ getting\ stuck\ on\ the\ same\ instruction.}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ *\ Workaround:\ use\ the\ new\ GDB\ commands\ 'debugbreak-\/step'\ and}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ \ \ \ \ *\ 'debugbreak-\/continue'\ that\ become\ available}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ \ \ \ \ *\ after\ you\ source\ the\ script\ from\ GDB:}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ \ \ \ \ *\ \$\ gdb\ -\/x\ debugbreak-\/gdb.py\ <...\ USUAL\ ARGUMENTS\ ...>}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ *\ 'debugbreak-\/step'\ would\ jump\ over\ the\ breakpoint\ instruction\ with}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ *\ roughly\ equivalent\ of:}}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ *\ (gdb)\ set\ \$instruction\_len\ =\ 2}}
+\DoxyCodeLine{00078\ \textcolor{comment}{\ \ \ \ \ *\ (gdb)\ tbreak\ *(\$pc\ +\ \$instruction\_len)}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ \ \ \ \ *\ (gdb)\ jump\ \ \ *(\$pc\ +\ \$instruction\_len)}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ */}}
+\DoxyCodeLine{00081\ \}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#elif\ defined(\_\_arm\_\_)\ \&\&\ !defined(\_\_thumb\_\_)}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00084\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00085\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00086\ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{/*\ See\ 'arm-\/linux-\/tdep.c'\ in\ GDB\ source,}}
+\DoxyCodeLine{00088\ \textcolor{comment}{\ \ \ \ \ *\ 'eabi\_linux\_arm\_le\_breakpoint'\ */}}
+\DoxyCodeLine{00089\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.inst\ 0xe7f001f0"{}});}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{/*\ Known\ problem:}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ \ \ \ \ *\ Same\ problem\ and\ workaround\ as\ Thumb\ mode\ */}}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#elif\ defined(\_\_aarch64\_\_)\ \&\&\ defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_BULTIN\_DEBUGTRAP}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#elif\ defined(\_\_aarch64\_\_)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00098\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{/*\ See\ 'aarch64-\/tdep.c'\ in\ GDB\ source,}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ \ \ \ \ *\ 'aarch64\_default\_breakpoint'\ */}}
+\DoxyCodeLine{00102\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.inst\ 0xd4200000"{}});}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#elif\ defined(\_\_powerpc\_\_)}}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{comment}{/*\ PPC\ 32\ or\ 64-\/bit,\ big\ or\ little\ endian\ */}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00108\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00109\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{comment}{/*\ See\ 'rs6000-\/tdep.c'\ in\ GDB\ source,}}
+\DoxyCodeLine{00111\ \textcolor{comment}{\ \ \ \ \ *\ 'rs6000\_breakpoint'\ */}}
+\DoxyCodeLine{00112\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.4byte\ 0x7d821008"{}});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{comment}{/*\ Known\ problem:}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ \ \ \ \ *\ After\ a\ breakpoint\ hit,\ can't\ 'stepi',\ 'step',\ or\ 'continue'\ in\ GDB.}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ \ \ \ \ *\ 'step'\ stuck\ on\ the\ same\ instruction\ ("{}twge\ r2,r2"{}).}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ \ \ \ \ *}}
+\DoxyCodeLine{00118\ \textcolor{comment}{\ \ \ \ \ *\ The\ workaround\ is\ the\ same\ as\ ARM\ Thumb\ mode:\ use\ debugbreak-\/gdb.py}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ \ \ \ \ *\ or\ manually\ jump\ over\ the\ instruction.\ */}}
+\DoxyCodeLine{00120\ \}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#elif\ defined(\_\_riscv)}}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{/*\ RISC-\/V\ 32\ or\ 64-\/bit,\ whether\ the\ "{}C"{}\ extension}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ \ \ \ \ *\ for\ compressed,\ 16-\/bit\ instructions\ are\ supported\ or\ not\ */}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00126\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ trap\_instruction(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00127\ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{/*\ See\ 'riscv-\/tdep.c'\ in\ GDB\ source,}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ \ \ \ \ *\ 'riscv\_sw\_breakpoint\_from\_kind'\ */}}
+\DoxyCodeLine{00130\ \ \ \ \ \_\_asm\_\_\ \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"{}.4byte\ 0x00100073"{}});}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ \#define\ DEBUG\_BREAK\_IMPL\ DEBUG\_BREAK\_USE\_SIGTRAP}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#ifndef\ DEBUG\_BREAK\_IMPL}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#error\ "{}debugbreak.h\ is\ not\ supported\ on\ this\ target"{}}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#elif\ DEBUG\_BREAK\_IMPL\ ==\ DEBUG\_BREAK\_USE\_TRAP\_INSTRUCTION}}
+\DoxyCodeLine{00140\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00141\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_break(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00142\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ trap\_instruction();}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#elif\ DEBUG\_BREAK\_IMPL\ ==\ DEBUG\_BREAK\_USE\_BULTIN\_DEBUGTRAP}}
+\DoxyCodeLine{00146\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00147\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_break(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00148\ \{}
+\DoxyCodeLine{00149\ \ \ \ \ \_\_builtin\_debugtrap();}
+\DoxyCodeLine{00150\ \}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#elif\ DEBUG\_BREAK\_IMPL\ ==\ DEBUG\_BREAK\_USE\_BULTIN\_TRAP}}
+\DoxyCodeLine{00152\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00153\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_break(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00154\ \{}
+\DoxyCodeLine{00155\ \ \ \ \ \_\_builtin\_trap();}
+\DoxyCodeLine{00156\ \}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#elif\ DEBUG\_BREAK\_IMPL\ ==\ DEBUG\_BREAK\_USE\_SIGTRAP}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#include\ <signal.h>}}
+\DoxyCodeLine{00159\ \mbox{\hyperlink{debugbreak_8h_a372a9503e67211b07cd698712947e693}{\_\_attribute\_\_}}((always\_inline))}
+\DoxyCodeLine{00160\ \_\_inline\_\_\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ debug\_break(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00161\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ raise(SIGTRAP);}
+\DoxyCodeLine{00163\ \}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#error\ "{}invalid\ DEBUG\_BREAK\_IMPL\ value"{}}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00169\ \}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ifdef\ \_MSC\_VER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ifndef\ DEBUG\_BREAK\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

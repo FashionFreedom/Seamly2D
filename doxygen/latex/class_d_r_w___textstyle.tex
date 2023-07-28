@@ -1,0 +1,175 @@
+\hypertarget{class_d_r_w___textstyle}{}\doxysection{DRW\+\_\+\+Textstyle Class Reference}
+\label{class_d_r_w___textstyle}\index{DRW\_Textstyle@{DRW\_Textstyle}}
+
+
+Class to handle text style entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+objects.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Textstyle\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_d_r_w___textstyle}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___textstyle_a9adcd9f13cbeac9dc5b37ec31a47d6e9}{DRW\+\_\+\+Textstyle}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___textstyle_a90263566cb080c5757b8a9f7ec1258c9}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}{DRW\+\_\+\+Table\+Entry}} ()
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}{$\sim$\+DRW\+\_\+\+Table\+Entry}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}{DRW\+\_\+\+Table\+Entry}} (const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_d_r_w___textstyle_a23809c13d923ae1ae43dc83c2f200e47}{height}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___textstyle_a36bce344a959c198199e88482ede075a}{width}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___textstyle_a5d133a89292ecc76b6a66af88039c6cc}{oblique}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___textstyle_adec337333f98e34908076b2b1a0a10a0}{gen\+Flag}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___textstyle_ad7c6c347da9dfa658fabeeb46e430da4}{last\+Height}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___textstyle_ac04f9a321fbb47a3adc3aaf65b30f02b}{font}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___textstyle_a5e5bee24192efcdc25e2922c2639a73e}{big\+Font}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___textstyle_a40ef37c402a0f1b75f481be925c85357}{font\+Family}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}} \mbox{\hyperlink{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}{t\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}{handle}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}{name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}{flags}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___textstyle_a05f7de5ef7082ac33bbc61908dfc7c24}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Class to handle text style entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Base class for tables entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}{reset}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle text style entries. 
+
+Class to handle text style symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___textstyle_a9adcd9f13cbeac9dc5b37ec31a47d6e9}\label{class_d_r_w___textstyle_a9adcd9f13cbeac9dc5b37ec31a47d6e9}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!DRW\_Textstyle@{DRW\_Textstyle}}
+\index{DRW\_Textstyle@{DRW\_Textstyle}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{DRW\_Textstyle()}{DRW\_Textstyle()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Textstyle\+::\+DRW\+\_\+\+Textstyle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___textstyle_a05f7de5ef7082ac33bbc61908dfc7c24}\label{class_d_r_w___textstyle_a05f7de5ef7082ac33bbc61908dfc7c24}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Textstyle\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Class to handle text style entries. 
+
+Class to handle text style symbol table entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_d_r_w___textstyle_a90263566cb080c5757b8a9f7ec1258c9}\label{class_d_r_w___textstyle_a90263566cb080c5757b8a9f7ec1258c9}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!reset@{reset}}
+\index{reset@{reset}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Textstyle\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___textstyle_a5e5bee24192efcdc25e2922c2639a73e}\label{class_d_r_w___textstyle_a5e5bee24192efcdc25e2922c2639a73e}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!bigFont@{bigFont}}
+\index{bigFont@{bigFont}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{bigFont}{bigFont}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Textstyle\+::big\+Font}
+
+bigfont file name or blank if none, code 4 \mbox{\Hypertarget{class_d_r_w___textstyle_ac04f9a321fbb47a3adc3aaf65b30f02b}\label{class_d_r_w___textstyle_ac04f9a321fbb47a3adc3aaf65b30f02b}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!font@{font}}
+\index{font@{font}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Textstyle\+::font}
+
+primary font file name, code 3 \mbox{\Hypertarget{class_d_r_w___textstyle_a40ef37c402a0f1b75f481be925c85357}\label{class_d_r_w___textstyle_a40ef37c402a0f1b75f481be925c85357}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!fontFamily@{fontFamily}}
+\index{fontFamily@{fontFamily}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{fontFamily}{fontFamily}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Textstyle\+::font\+Family}
+
+ttf font family, italic and bold flags, code 1071 \mbox{\Hypertarget{class_d_r_w___textstyle_adec337333f98e34908076b2b1a0a10a0}\label{class_d_r_w___textstyle_adec337333f98e34908076b2b1a0a10a0}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!genFlag@{genFlag}}
+\index{genFlag@{genFlag}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{genFlag}{genFlag}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Textstyle\+::gen\+Flag}
+
+Text generation flags, code 71 \mbox{\Hypertarget{class_d_r_w___textstyle_a23809c13d923ae1ae43dc83c2f200e47}\label{class_d_r_w___textstyle_a23809c13d923ae1ae43dc83c2f200e47}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!height@{height}}
+\index{height@{height}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Textstyle\+::height}
+
+Fixed text height (0 not set), code 40 \mbox{\Hypertarget{class_d_r_w___textstyle_ad7c6c347da9dfa658fabeeb46e430da4}\label{class_d_r_w___textstyle_ad7c6c347da9dfa658fabeeb46e430da4}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!lastHeight@{lastHeight}}
+\index{lastHeight@{lastHeight}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{lastHeight}{lastHeight}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Textstyle\+::last\+Height}
+
+Last height used, code 42 \mbox{\Hypertarget{class_d_r_w___textstyle_a5d133a89292ecc76b6a66af88039c6cc}\label{class_d_r_w___textstyle_a5d133a89292ecc76b6a66af88039c6cc}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!oblique@{oblique}}
+\index{oblique@{oblique}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{oblique}{oblique}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Textstyle\+::oblique}
+
+Oblique angle, code 50 \mbox{\Hypertarget{class_d_r_w___textstyle_a36bce344a959c198199e88482ede075a}\label{class_d_r_w___textstyle_a36bce344a959c198199e88482ede075a}} 
+\index{DRW\_Textstyle@{DRW\_Textstyle}!width@{width}}
+\index{width@{width}!DRW\_Textstyle@{DRW\_Textstyle}}
+\doxysubsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Textstyle\+::width}
+
+Width factor, code 41 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8h}{drw\+\_\+objects.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8cpp}{drw\+\_\+objects.\+cpp}}\end{DoxyCompactItemize}

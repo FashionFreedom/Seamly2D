@@ -1,0 +1,138 @@
+\hypertarget{vellipticalarc_8h_source}{}\doxysection{vellipticalarc.\+h}
+\label{vellipticalarc_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vellipticalarc.h@{D:/Github/Seamly2D/src/libs/vgeometry/vellipticalarc.h}}
+\mbox{\hyperlink{vellipticalarc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vellipticalarc.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Valentina\ Zhuravska\ <zhuravska19(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ February\ 1,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VELLIPTICALARC\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VELLIPTICALARC\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractarc_8h}{vabstractarc.h}}"{}}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vgeometrydef_8h}{vgeometrydef.h}}"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpointf_8h}{vpointf.h}}"{}}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_elliptical_arc_data}{VEllipticalArcData}};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_arc}{VAbstractArc}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}})}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ radius1,\ qreal\ radius2,\ \textcolor{keyword}{const}\ QString\ \&formulaRadius1,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaRadius2,\ qreal\ f1,\ \textcolor{keyword}{const}\ QString\ \&formulaF1,\ qreal\ f2,}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaF2,\ qreal\ rotationAngle,\ \textcolor{keyword}{const}\ QString\ \&formulaRotationAngle,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quint32\ idObject\ =\ 0,\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ radius1,\ qreal\ radius2,\ qreal\ f1,\ qreal\ f2,\ qreal\ rotationAngle);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}(qreal\ length,\ \textcolor{keyword}{const}\ QString\ \&formulaLength,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ radius1,\ qreal\ radius2,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&formulaRadius1,\ \textcolor{keyword}{const}\ QString\ \&formulaRadius2,\ qreal\ f1,\ \textcolor{keyword}{const}\ QString\ \&formulaF1,}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ rotationAngle,\ \textcolor{keyword}{const}\ QString\ \&formulaRotationAngle,\ quint32\ idObject\ =\ 0,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ mode\ =\ Draw::Calculation);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}(qreal\ length,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \&center,\ qreal\ radius1,\ qreal\ radius2,\ qreal\ f1,\ qreal\ rotationAngle);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5a0e6f25ee3572cfe66fbe55d5bd1d95}{VEllipticalArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&arc);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \ \mbox{\hyperlink{class_v_elliptical_arc_a15fe983c0c2be29b8818b4ef1397500e}{Rotate}}(QPointF\ originPoint,\ qreal\ degrees,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \ \mbox{\hyperlink{class_v_elliptical_arc_a019e784ba8c8a93e7b459284dd5ace55}{Flip}}(\textcolor{keyword}{const}\ QLineF\ \&axis,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a6bc362dbf494c61ea117fe3c71ca48a5}{Move}}(qreal\ length,\ qreal\ angle,\ \textcolor{keyword}{const}\ QString\ \&prefix\ =\ QString())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a5b11a7c722d28082dbbc187a80e6bd4d}{\string~VEllipticalArc}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&\mbox{\hyperlink{class_v_elliptical_arc_a1f0138e0dcd228cfb91c194837eebd69}{operator=\ }}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&arc);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&\mbox{\hyperlink{class_v_elliptical_arc_a1f0138e0dcd228cfb91c194837eebd69}{operator=}}(\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&\&arc)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_af334fab8bf1e0a7538a63354fb555bb0}{Swap}}(\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&arc)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a809aaf96f55fa799e059b196bc78a444}{GetFormulaRotationAngle}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_aaf1e2bf8e8c171307bf7ac4c57229cfb}{SetFormulaRotationAngle}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00085\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_ade1e2ab88cde2f7848d8ebd01e5f6f3d}{GetRotationAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a461d76165fc2cf224d1888e8bec67917}{GetFormulaRadius1}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a498c61cedd8b8f188a80b06ce330c0b2}{SetFormulaRadius1}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00089\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a68be0cef003b6c91065d1ce4005505a8}{GetRadius1}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a078514f4d6436758abc0190066c71ac8}{GetFormulaRadius2}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_aeae3d4b442690d8d9c3dbdba548f6e86}{SetFormulaRadius2}}\ (\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00093\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a0368c9802429a36698c7960a96d50c92}{GetRadius2}}\ ()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_ae61bca8d7e1f1656f138a36d1d017ed8}{GetLength}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a2efa9b02df13af8f126d8a821694c3d9}{GetP1}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_ac94418f2acf74d2831ac6e30163001c7}{GetP2}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ QTransform\ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_ae3f243a5e93ea8adc3e997fff6aafa2d}{getTransform}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a7dd8bbe2e458452d5aa8dca151796db2}{setTransform}}(\textcolor{keyword}{const}\ QTransform\ \&matrix,\ \textcolor{keywordtype}{bool}\ combine\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_elliptical_arc_a48abedc3116ead7a6593fe42091ebf61}{GetCenter}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \mbox{\hyperlink{class_v_elliptical_arc_a7391b2c8103061a36250ba4ee90cc1d3}{getPoints}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a21e6d94b9772597df1d58768b2b48bb4}{GetStartAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ qreal\ \ \ \mbox{\hyperlink{class_v_elliptical_arc_abaa2f2a7f68a9ad052c12ccacc0739f0}{GetEndAngle}}\ ()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f77496c8d99343125e3e11d4aea3a9e}{CutArc}}\ (\textcolor{keyword}{const}\ qreal\ \&length,\ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&arc1,\ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}\ \&arc2)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395a7f77496c8d99343125e3e11d4aea3a9e}{CutArc}}\ (\textcolor{keyword}{const}\ qreal\ \&length)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a243e8446ed0ed7bb3f81ab1469ca3f73}{normalizeAngle}}(qreal\ angle);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_afe6101a15e58a0dc7dceadb1a43f23bf}{CreateName}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_a7908bb65a6f50d7817187f31da0e6994}{FindF2}}(qreal\ length)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00118\ \ \ \ \ QSharedDataPointer<VEllipticalArcData>\ \mbox{\hyperlink{class_v_elliptical_arc_a7111f6cfc0be1e2dc02cce3be124d106}{d}};}
+\DoxyCodeLine{00119\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_acf802e123e3a0f9f70d62d71da240459}{MaxLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_ac10e28e64994d4c13dd1aba605469d00}{getPoint}}\ (qreal\ angle)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00121\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_elliptical_arc_aeb5f6ed625f3ccb895117e4b9d2b519f}{getRealEndAngle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ \};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ Q\_DECLARE\_METATYPE(\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}})}
+\DoxyCodeLine{00125\ \mbox{\hyperlink{vellipticalarc_8h_a12f429186a063a050d0dde5dc08edc91}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00128\ inline\ qreal\ \mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}}::normalizeAngle(qreal\ angle)}
+\DoxyCodeLine{00129\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ angle\ -\/\ 360.*qFloor(angle/360.);}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VELLIPTICALARC\_H}}
+
+\end{DoxyCode}

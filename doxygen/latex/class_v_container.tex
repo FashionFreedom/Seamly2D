@@ -1,0 +1,808 @@
+\hypertarget{class_v_container}{}\doxysection{VContainer Class Reference}
+\label{class_v_container}\index{VContainer@{VContainer}}
+
+
+The \mbox{\hyperlink{class_v_container}{VContainer}} class container of all variables.  
+
+
+
+
+{\ttfamily \#include $<$vcontainer.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container_a56655a57b8894ab6e1a8a7408ab7c323}{VContainer}} (const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$tr\+Vars, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$pattern\+Unit)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_container}{VContainer}} create empty container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_container_a5d519dd182270995c497466e25b5f1ce}{VContainer}} (const \mbox{\hyperlink{class_v_container}{VContainer}} \&data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_container}{VContainer}} create container from another container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_container_ad9538b65e7cefffe8846d901ce1b8c0e}{$\sim$\+VContainer}} ()
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \& \mbox{\hyperlink{class_v_container_a2f26d4b8875f74d17f39ad204d529d04}{operator=}} (const \mbox{\hyperlink{class_v_container}{VContainer}} \&data)
+\begin{DoxyCompactList}\small\item\em operator = copy constructor \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_container_ade46c349b82abd5f45cc9b268a8ae5af}{Swap}} (\mbox{\hyperlink{class_v_container}{VContainer}} \&data) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \mbox{\hyperlink{class_v_container_aa5ac2a3108612bcad2520613c558469c}{Geometric\+Object}} (const quint32 \&id) const
+\item 
+const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \mbox{\hyperlink{class_v_container_a956a1e551804359b7aa46a389b4055da}{Get\+GObject}} (quint32 id) const
+\begin{DoxyCompactList}\small\item\em Get\+GObject returns a point by id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_piece}{VPiece}} \mbox{\hyperlink{class_v_container_afb5d32209e05cbefb3bb25e595ff9651}{Get\+Piece}} (quint32 id) const
+\item 
+\mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \mbox{\hyperlink{class_v_container_abb4c7c51ea6ffe590934e8d93e14f987}{Get\+Piece\+Path}} (quint32 id) const
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \mbox{\hyperlink{class_v_container_acb7eb6721eb6fcd66ddd67a389a6bbbf}{Get\+Variable}} (QString name) const
+\begin{DoxyCompactList}\small\item\em Get\+Variable return varible by name. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_container_acc5ab46f429a82089f10c4ffa9a75a95}{Add\+GObject}} (\mbox{\hyperlink{class_v_g_object}{VGObject}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Add\+GObject add new GObject to container. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_container_aa0ec4c1a8be6129228915f4dc8bceb2e}{Add\+Piece}} (const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+quint32 \mbox{\hyperlink{class_v_container_ae16cf7d961c9bf6d56d53b2bf526ffbc}{Add\+Piece\+Path}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+void \mbox{\hyperlink{class_v_container_a4d9978382da2129234543e9c2e587ce6}{Add\+Line}} (const quint32 \&first\+Point\+Id, const quint32 \&second\+Point\+Id)
+\begin{DoxyCompactList}\small\item\em Add\+Line add line to container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_container_a7feda3494b23830410c3bc82dedd88a5}{Add\+Arc}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&arc, const quint32 \&id, const quint32 \&parent\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+void \mbox{\hyperlink{class_v_container_ab8c2df1916af449248fc1cc3b114e4b0}{Add\+Spline}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}} $>$ \&curve, quint32 id, quint32 parent\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+void \mbox{\hyperlink{class_v_container_a023a6526c9cfac29eae6130d18678567}{Add\+Curve\+With\+Segments}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_cubic_bezier_path}{VAbstract\+Cubic\+Bezier\+Path}} $>$ \&curve, const quint32 \&id, quint32 parent\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{Add\+Variable}} (const QString \&name, T $\ast$var)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_container_a3f9d1ecfa71498bc346f109f4c0fdd9d}{Add\+Variable}} (const QString \&name, const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&var)
+\item 
+void \mbox{\hyperlink{class_v_container_a3782bdd0898b8786fbaec79e26b9f294}{Remove\+Variable}} (const QString \&name)
+\item 
+void \mbox{\hyperlink{class_v_container_a36dd0a361ee85e91696e591191be906f}{Remove\+Piece}} (quint32 id)
+\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{Update\+GObject}} (quint32 id, T $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Update\+GObject update GObject by id. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \mbox{\hyperlink{class_v_container_ac13b933b056a294f05de6ee5a67cb618}{Update\+GObject}} (quint32 id, const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&obj)
+\item 
+void \mbox{\hyperlink{class_v_container_a348116d426dd469c51f1db7367a6c16f}{Update\+Piece}} (quint32 id, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+void \mbox{\hyperlink{class_v_container_a5765bfea2a56818b1ecfdb613a92b0e3}{Update\+Piece\+Path}} (quint32 id, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+void \mbox{\hyperlink{class_v_container_a734cbfdf6f7b4f21ef303adf3af3ac21}{Clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear clear data in container. Id will be 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_container_add698bed8316b4cc17fc729c12d0ce6e}{Clear\+For\+Full\+Parse}} ()
+\item 
+void \mbox{\hyperlink{class_v_container_a79fcff11cc02337a45d5823b6bd27fbf}{Clear\+GObjects}} ()
+\begin{DoxyCompactList}\small\item\em Clear\+Object points, splines, arcs, spline paths will be cleared. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_container_a5971c5d060ff7f8e3ea3b4c2963b7476}{Clear\+Calculation\+GObjects}} ()
+\item 
+void \mbox{\hyperlink{class_v_container_a6af91c1f60fbd9436f6906cb3cc15bf0}{Clear\+Variables}} (const \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \&type=Var\+Type\+::\+Unknown)
+\item 
+void \mbox{\hyperlink{class_v_container_ae72c0205cb81f1897ca8151ea91713a5}{remove\+Custom\+Variable}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em remove\+Custom\+Variable remove increment by name from increment table \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ quint32, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ $>$ $\ast$ \mbox{\hyperlink{class_v_container_abf178a7ab3e8da08b920d4706987576f}{Data\+GObjects}} () const
+\begin{DoxyCompactList}\small\item\em data container with datag\+Objects return container of g\+Objects \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ quint32, \mbox{\hyperlink{class_v_piece}{VPiece}} $>$ $\ast$ \mbox{\hyperlink{class_v_container_a2018d29f87319368589dc20eb578b1e7}{Data\+Pieces}} () const
+\item 
+const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$ \mbox{\hyperlink{class_v_container_a85bd18752992d6a481ae95a553d64562}{Data\+Variables}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_measurement}{VMeasurement}} $>$ $>$ \mbox{\hyperlink{class_v_container_af184c8e803566243f1e3c66252d03bf1}{Data\+Measurements}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_increment}{VIncrement}} $>$ $>$ \mbox{\hyperlink{class_v_container_ab718ceda5f073b8f5f3b68ae45caba73}{variables\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_length_line}{VLength\+Line}} $>$ $>$ \mbox{\hyperlink{class_v_container_a8369f3f12c26e803eadaed76bb5c4fc9}{line\+Lengths\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_length}{VCurve\+Length}} $>$ $>$ \mbox{\hyperlink{class_v_container_a7f2071f98399ae905a224ce89b461ffb}{curve\+Lengths\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_c_length}{VCurve\+CLength}} $>$ $>$ \mbox{\hyperlink{class_v_container_a29e2d00478b9482ceb281101496f1b69}{control\+Point\+Lengths\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_line_angle}{VLine\+Angle}} $>$ $>$ \mbox{\hyperlink{class_v_container_a10a3da038590e6ee972c6bdbdfd7f195}{line\+Angles\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_arc_radius}{VArc\+Radius}} $>$ $>$ \mbox{\hyperlink{class_v_container_a0330c9b75cda9865431a323f46af4058}{arc\+Radiuses\+Data}} () const
+\item 
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_angle}{VCurve\+Angle}} $>$ $>$ \mbox{\hyperlink{class_v_container_a12e8cee502903c71d41e48510b410fb8}{curve\+Angles\+Data}} () const
+\item 
+const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$ \mbox{\hyperlink{class_v_container_acf4b6cb5a02f7aa204ce5a088f028a39}{Get\+Pattern\+Unit}} () const
+\item 
+const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ \mbox{\hyperlink{class_v_container_a1a28f581e994741e019dd8ca50d70b06}{Get\+Tr\+Vars}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \mbox{\hyperlink{class_v_container_ad3b0b75ee519737fd81922d9ccd8a1b0}{Get\+Fake\+GObject}} (quint32 id)
+\item 
+static quint32 \mbox{\hyperlink{class_v_container_a8b9f99f3ffab1e4427e32e1ed9fd331c}{get\+Id}} ()
+\item 
+static quint32 \mbox{\hyperlink{class_v_container_a3bc8542ea3777a73755c94864dbdf471}{get\+Next\+Id}} ()
+\begin{DoxyCompactList}\small\item\em get\+Next\+Id generate next unique id \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_container_a565c594b62d332110b3185457062c999}{Update\+Id}} (quint32 new\+Id)
+\begin{DoxyCompactList}\small\item\em Update\+Id update id. If new id bigger when current save new like current. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_container_a33a7250ec0af542595c8f9a1ee1fe2c0}{Clear\+Unique\+Names}} ()
+\item 
+static void \mbox{\hyperlink{class_v_container_aeb966d8c1eeae8deb1778170fc2a87f3}{Clear\+Unique\+Increment\+Names}} ()
+\item 
+static void \mbox{\hyperlink{class_v_container_a14c6f9dbb224c5c731cc70dfb6be7d86}{Set\+Size}} (qreal \mbox{\hyperlink{class_v_container_a89327043e0a0fac60ed599078d6cdd08}{size}})
+\begin{DoxyCompactList}\small\item\em Set\+Size set value of size. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_container_ad2bd73807fe0d4856e6e317644ec561c}{Set\+Height}} (qreal \mbox{\hyperlink{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}{height}})
+\begin{DoxyCompactList}\small\item\em Set\+Growth set value of growth. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{class_v_container_a89327043e0a0fac60ed599078d6cdd08}{size}} ()
+\begin{DoxyCompactList}\small\item\em size return size \end{DoxyCompactList}\item 
+static qreal $\ast$ \mbox{\hyperlink{class_v_container_a6dbfd90ceb0810c0e19a0a56978a76bc}{rsize}} ()
+\item 
+static qreal \mbox{\hyperlink{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}{height}} ()
+\begin{DoxyCompactList}\small\item\em height return height \end{DoxyCompactList}\item 
+static qreal $\ast$ \mbox{\hyperlink{class_v_container_aad707a2d87e8c2fa067eb472babd247a}{rheight}} ()
+\item 
+static bool \mbox{\hyperlink{class_v_container_a64f2ef99d6306c96b350649de15cb8ec}{Is\+Unique}} (const QString \&name)
+\item 
+static QString\+List \mbox{\hyperlink{class_v_container_ab1207327782f49f561c9bdfac6c8d4c8}{All\+Unique\+Names}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_container_a7acb0e6033d5af1040338c1bb3736d49}{Add\+Curve}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&curve, const quint32 \&id, quint32 parent\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+{\footnotesize template$<$class T $>$ }\\uint \mbox{\hyperlink{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}{q\+Hash}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&p)
+\item 
+{\footnotesize template$<$typename key , typename val $>$ }\\const val \mbox{\hyperlink{class_v_container_aa7781b6470dd71a79964cfb1ae2a8413}{Get\+Object}} (const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ key, val $>$ \&obj, key id) const
+\begin{DoxyCompactList}\small\item\em Get\+Object return object from container. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}{Update\+Object}} (const quint32 \&id, const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&point)
+\begin{DoxyCompactList}\small\item\em Update\+Object update object in container. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ $>$ \mbox{\hyperlink{class_v_container_afb1609ee616de6fda333d9b809163863}{Data\+Var}} (const \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \&type) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename key , typename val $>$ }\\static quint32 \mbox{\hyperlink{class_v_container_a8c00a7150785862a4bb8bbcc7737307d}{Add\+Object}} (\mbox{\hyperlink{class_q_hash}{QHash}}$<$ key, val $>$ \&obj, val value)
+\begin{DoxyCompactList}\small\item\em Add\+Object add object to container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_container_data}{VContainer\+Data}} $>$ \mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static quint32 \mbox{\hyperlink{class_v_container_a23b71f06366d832f634f8117fddb5048}{\+\_\+id}} = \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}
+\begin{DoxyCompactList}\small\item\em \+\_\+id current id. New object will have value +1. For empty class equal 0. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{class_v_container_a9c6dc336b3e1843145e3bb9d5f6add58}{\+\_\+size}} = 50
+\item 
+static qreal \mbox{\hyperlink{class_v_container_af7c8b18a9b0b7eda822c104d357ef173}{\+\_\+height}} = 176
+\item 
+static QSet$<$ QString $>$ \mbox{\hyperlink{class_v_container_a15028ead081712c2bc9eb45b4d5affea}{unique\+Names}} = QSet$<$QString$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_container}{VContainer}} class container of all variables. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_container_a56655a57b8894ab6e1a8a7408ab7c323}\label{class_v_container_a56655a57b8894ab6e1a8a7408ab7c323}} 
+\index{VContainer@{VContainer}!VContainer@{VContainer}}
+\index{VContainer@{VContainer}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{VContainer()}{VContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VContainer\+::\+VContainer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$}]{tr\+Vars,  }\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$}]{pattern\+Unit }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_container}{VContainer}} create empty container. 
+
+\mbox{\Hypertarget{class_v_container_a5d519dd182270995c497466e25b5f1ce}\label{class_v_container_a5d519dd182270995c497466e25b5f1ce}} 
+\index{VContainer@{VContainer}!VContainer@{VContainer}}
+\index{VContainer@{VContainer}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{VContainer()}{VContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VContainer\+::\+VContainer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_container}{VContainer}} create container from another container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_ad9538b65e7cefffe8846d901ce1b8c0e}\label{class_v_container_ad9538b65e7cefffe8846d901ce1b8c0e}} 
+\index{VContainer@{VContainer}!````~VContainer@{$\sim$VContainer}}
+\index{````~VContainer@{$\sim$VContainer}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{$\sim$VContainer()}{~VContainer()}}
+{\footnotesize\ttfamily VContainer\+::$\sim$\+VContainer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_container_a7feda3494b23830410c3bc82dedd88a5}\label{class_v_container_a7feda3494b23830410c3bc82dedd88a5}} 
+\index{VContainer@{VContainer}!AddArc@{AddArc}}
+\index{AddArc@{AddArc}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddArc()}{AddArc()}}
+{\footnotesize\ttfamily void VContainer\+::\+Add\+Arc (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&}]{arc,  }\item[{const quint32 \&}]{id,  }\item[{const quint32 \&}]{parent\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a7acb0e6033d5af1040338c1bb3736d49}\label{class_v_container_a7acb0e6033d5af1040338c1bb3736d49}} 
+\index{VContainer@{VContainer}!AddCurve@{AddCurve}}
+\index{AddCurve@{AddCurve}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddCurve()}{AddCurve()}}
+{\footnotesize\ttfamily void VContainer\+::\+Add\+Curve (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&}]{curve,  }\item[{const quint32 \&}]{id,  }\item[{quint32}]{parent\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_a023a6526c9cfac29eae6130d18678567}\label{class_v_container_a023a6526c9cfac29eae6130d18678567}} 
+\index{VContainer@{VContainer}!AddCurveWithSegments@{AddCurveWithSegments}}
+\index{AddCurveWithSegments@{AddCurveWithSegments}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddCurveWithSegments()}{AddCurveWithSegments()}}
+{\footnotesize\ttfamily void VContainer\+::\+Add\+Curve\+With\+Segments (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_cubic_bezier_path}{VAbstract\+Cubic\+Bezier\+Path}} $>$ \&}]{curve,  }\item[{const quint32 \&}]{id,  }\item[{quint32}]{parent\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_acc5ab46f429a82089f10c4ffa9a75a95}\label{class_v_container_acc5ab46f429a82089f10c4ffa9a75a95}} 
+\index{VContainer@{VContainer}!AddGObject@{AddGObject}}
+\index{AddGObject@{AddGObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddGObject()}{AddGObject()}}
+{\footnotesize\ttfamily quint32 VContainer\+::\+Add\+GObject (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_g_object}{VGObject}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Add\+GObject add new GObject to container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & new object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return id of new object in container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_a4d9978382da2129234543e9c2e587ce6}\label{class_v_container_a4d9978382da2129234543e9c2e587ce6}} 
+\index{VContainer@{VContainer}!AddLine@{AddLine}}
+\index{AddLine@{AddLine}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddLine()}{AddLine()}}
+{\footnotesize\ttfamily void VContainer\+::\+Add\+Line (\begin{DoxyParamCaption}\item[{const quint32 \&}]{first\+Point\+Id,  }\item[{const quint32 \&}]{second\+Point\+Id }\end{DoxyParamCaption})}
+
+
+
+Add\+Line add line to container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em first\+Point\+Id} & id of first point of line \\
+\hline
+{\em second\+Point\+Id} & id of second point of line \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a8c00a7150785862a4bb8bbcc7737307d}\label{class_v_container_a8c00a7150785862a4bb8bbcc7737307d}} 
+\index{VContainer@{VContainer}!AddObject@{AddObject}}
+\index{AddObject@{AddObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddObject()}{AddObject()}}
+{\footnotesize\ttfamily template$<$typename key , typename val $>$ \\
+quint32 VContainer\+::\+Add\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_hash}{QHash}}$<$ key, val $>$ \&}]{obj,  }\item[{val}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Add\+Object add object to container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & container \\
+\hline
+{\em value} & object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+id of object in container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_aa0ec4c1a8be6129228915f4dc8bceb2e}\label{class_v_container_aa0ec4c1a8be6129228915f4dc8bceb2e}} 
+\index{VContainer@{VContainer}!AddPiece@{AddPiece}}
+\index{AddPiece@{AddPiece}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddPiece()}{AddPiece()}}
+{\footnotesize\ttfamily quint32 VContainer\+::\+Add\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_ae16cf7d961c9bf6d56d53b2bf526ffbc}\label{class_v_container_ae16cf7d961c9bf6d56d53b2bf526ffbc}} 
+\index{VContainer@{VContainer}!AddPiecePath@{AddPiecePath}}
+\index{AddPiecePath@{AddPiecePath}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddPiecePath()}{AddPiecePath()}}
+{\footnotesize\ttfamily quint32 VContainer\+::\+Add\+Piece\+Path (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_ab8c2df1916af449248fc1cc3b114e4b0}\label{class_v_container_ab8c2df1916af449248fc1cc3b114e4b0}} 
+\index{VContainer@{VContainer}!AddSpline@{AddSpline}}
+\index{AddSpline@{AddSpline}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddSpline()}{AddSpline()}}
+{\footnotesize\ttfamily void VContainer\+::\+Add\+Spline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}} $>$ \&}]{curve,  }\item[{quint32}]{id,  }\item[{quint32}]{parent\+Id = {\ttfamily \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a3f9d1ecfa71498bc346f109f4c0fdd9d}\label{class_v_container_a3f9d1ecfa71498bc346f109f4c0fdd9d}} 
+\index{VContainer@{VContainer}!AddVariable@{AddVariable}}
+\index{AddVariable@{AddVariable}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddVariable()}{AddVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VContainer\+::\+Add\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}\label{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}} 
+\index{VContainer@{VContainer}!AddVariable@{AddVariable}}
+\index{AddVariable@{AddVariable}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AddVariable()}{AddVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VContainer\+::\+Add\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{T $\ast$}]{var }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_ab1207327782f49f561c9bdfac6c8d4c8}\label{class_v_container_ab1207327782f49f561c9bdfac6c8d4c8}} 
+\index{VContainer@{VContainer}!AllUniqueNames@{AllUniqueNames}}
+\index{AllUniqueNames@{AllUniqueNames}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{AllUniqueNames()}{AllUniqueNames()}}
+{\footnotesize\ttfamily QString\+List VContainer\+::\+All\+Unique\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a0330c9b75cda9865431a323f46af4058}\label{class_v_container_a0330c9b75cda9865431a323f46af4058}} 
+\index{VContainer@{VContainer}!arcRadiusesData@{arcRadiusesData}}
+\index{arcRadiusesData@{arcRadiusesData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{arcRadiusesData()}{arcRadiusesData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_arc_radius}{VArc\+Radius}} $>$ $>$ VContainer\+::arc\+Radiuses\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a734cbfdf6f7b4f21ef303adf3af3ac21}\label{class_v_container_a734cbfdf6f7b4f21ef303adf3af3ac21}} 
+\index{VContainer@{VContainer}!Clear@{Clear}}
+\index{Clear@{Clear}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{Clear()}{Clear()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear clear data in container. Id will be 0. 
+
+\mbox{\Hypertarget{class_v_container_a5971c5d060ff7f8e3ea3b4c2963b7476}\label{class_v_container_a5971c5d060ff7f8e3ea3b4c2963b7476}} 
+\index{VContainer@{VContainer}!ClearCalculationGObjects@{ClearCalculationGObjects}}
+\index{ClearCalculationGObjects@{ClearCalculationGObjects}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearCalculationGObjects()}{ClearCalculationGObjects()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+Calculation\+GObjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_add698bed8316b4cc17fc729c12d0ce6e}\label{class_v_container_add698bed8316b4cc17fc729c12d0ce6e}} 
+\index{VContainer@{VContainer}!ClearForFullParse@{ClearForFullParse}}
+\index{ClearForFullParse@{ClearForFullParse}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearForFullParse()}{ClearForFullParse()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+For\+Full\+Parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a79fcff11cc02337a45d5823b6bd27fbf}\label{class_v_container_a79fcff11cc02337a45d5823b6bd27fbf}} 
+\index{VContainer@{VContainer}!ClearGObjects@{ClearGObjects}}
+\index{ClearGObjects@{ClearGObjects}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearGObjects()}{ClearGObjects()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+GObjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear\+Object points, splines, arcs, spline paths will be cleared. 
+
+\mbox{\Hypertarget{class_v_container_aeb966d8c1eeae8deb1778170fc2a87f3}\label{class_v_container_aeb966d8c1eeae8deb1778170fc2a87f3}} 
+\index{VContainer@{VContainer}!ClearUniqueIncrementNames@{ClearUniqueIncrementNames}}
+\index{ClearUniqueIncrementNames@{ClearUniqueIncrementNames}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearUniqueIncrementNames()}{ClearUniqueIncrementNames()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+Unique\+Increment\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a33a7250ec0af542595c8f9a1ee1fe2c0}\label{class_v_container_a33a7250ec0af542595c8f9a1ee1fe2c0}} 
+\index{VContainer@{VContainer}!ClearUniqueNames@{ClearUniqueNames}}
+\index{ClearUniqueNames@{ClearUniqueNames}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearUniqueNames()}{ClearUniqueNames()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+Unique\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a6af91c1f60fbd9436f6906cb3cc15bf0}\label{class_v_container_a6af91c1f60fbd9436f6906cb3cc15bf0}} 
+\index{VContainer@{VContainer}!ClearVariables@{ClearVariables}}
+\index{ClearVariables@{ClearVariables}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{ClearVariables()}{ClearVariables()}}
+{\footnotesize\ttfamily void VContainer\+::\+Clear\+Variables (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \&}]{type = {\ttfamily VarType\+:\+:Unknown} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a29e2d00478b9482ceb281101496f1b69}\label{class_v_container_a29e2d00478b9482ceb281101496f1b69}} 
+\index{VContainer@{VContainer}!controlPointLengthsData@{controlPointLengthsData}}
+\index{controlPointLengthsData@{controlPointLengthsData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{controlPointLengthsData()}{controlPointLengthsData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_c_length}{VCurve\+CLength}} $>$ $>$ VContainer\+::control\+Point\+Lengths\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a12e8cee502903c71d41e48510b410fb8}\label{class_v_container_a12e8cee502903c71d41e48510b410fb8}} 
+\index{VContainer@{VContainer}!curveAnglesData@{curveAnglesData}}
+\index{curveAnglesData@{curveAnglesData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{curveAnglesData()}{curveAnglesData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_angle}{VCurve\+Angle}} $>$ $>$ VContainer\+::curve\+Angles\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a7f2071f98399ae905a224ce89b461ffb}\label{class_v_container_a7f2071f98399ae905a224ce89b461ffb}} 
+\index{VContainer@{VContainer}!curveLengthsData@{curveLengthsData}}
+\index{curveLengthsData@{curveLengthsData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{curveLengthsData()}{curveLengthsData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_curve_length}{VCurve\+Length}} $>$ $>$ VContainer\+::curve\+Lengths\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_abf178a7ab3e8da08b920d4706987576f}\label{class_v_container_abf178a7ab3e8da08b920d4706987576f}} 
+\index{VContainer@{VContainer}!DataGObjects@{DataGObjects}}
+\index{DataGObjects@{DataGObjects}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{DataGObjects()}{DataGObjects()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ quint32, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ $>$ $\ast$ VContainer\+::\+Data\+GObjects (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+data container with datag\+Objects return container of g\+Objects 
+
+\begin{DoxyReturn}{Returns}
+pointer on container of g\+Objects 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_af184c8e803566243f1e3c66252d03bf1}\label{class_v_container_af184c8e803566243f1e3c66252d03bf1}} 
+\index{VContainer@{VContainer}!DataMeasurements@{DataMeasurements}}
+\index{DataMeasurements@{DataMeasurements}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{DataMeasurements()}{DataMeasurements()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_measurement}{VMeasurement}} $>$ $>$ VContainer\+::\+Data\+Measurements (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a2018d29f87319368589dc20eb578b1e7}\label{class_v_container_a2018d29f87319368589dc20eb578b1e7}} 
+\index{VContainer@{VContainer}!DataPieces@{DataPieces}}
+\index{DataPieces@{DataPieces}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{DataPieces()}{DataPieces()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ quint32, \mbox{\hyperlink{class_v_piece}{VPiece}} $>$ $\ast$ VContainer\+::\+Data\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_afb1609ee616de6fda333d9b809163863}\label{class_v_container_afb1609ee616de6fda333d9b809163863}} 
+\index{VContainer@{VContainer}!DataVar@{DataVar}}
+\index{DataVar@{DataVar}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{DataVar()}{DataVar()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ $>$ VContainer\+::\+Data\+Var (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{Var\+Type}} \&}]{type }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_a85bd18752992d6a481ae95a553d64562}\label{class_v_container_a85bd18752992d6a481ae95a553d64562}} 
+\index{VContainer@{VContainer}!DataVariables@{DataVariables}}
+\index{DataVariables@{DataVariables}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{DataVariables()}{DataVariables()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$ VContainer\+::\+Data\+Variables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_aa5ac2a3108612bcad2520613c558469c}\label{class_v_container_aa5ac2a3108612bcad2520613c558469c}} 
+\index{VContainer@{VContainer}!GeometricObject@{GeometricObject}}
+\index{GeometricObject@{GeometricObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GeometricObject()}{GeometricObject()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ VContainer\+::\+Geometric\+Object (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_ad3b0b75ee519737fd81922d9ccd8a1b0}\label{class_v_container_ad3b0b75ee519737fd81922d9ccd8a1b0}} 
+\index{VContainer@{VContainer}!GetFakeGObject@{GetFakeGObject}}
+\index{GetFakeGObject@{GetFakeGObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetFakeGObject()}{GetFakeGObject()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ VContainer\+::\+Get\+Fake\+GObject (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a956a1e551804359b7aa46a389b4055da}\label{class_v_container_a956a1e551804359b7aa46a389b4055da}} 
+\index{VContainer@{VContainer}!GetGObject@{GetGObject}}
+\index{GetGObject@{GetGObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetGObject()}{GetGObject()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ VContainer\+::\+Get\+GObject (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const}
+
+
+
+Get\+GObject returns a point by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_a8b9f99f3ffab1e4427e32e1ed9fd331c}\label{class_v_container_a8b9f99f3ffab1e4427e32e1ed9fd331c}} 
+\index{VContainer@{VContainer}!getId@{getId}}
+\index{getId@{getId}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily quint32 VContainer\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a3bc8542ea3777a73755c94864dbdf471}\label{class_v_container_a3bc8542ea3777a73755c94864dbdf471}} 
+\index{VContainer@{VContainer}!getNextId@{getNextId}}
+\index{getNextId@{getNextId}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{getNextId()}{getNextId()}}
+{\footnotesize\ttfamily quint32 VContainer\+::get\+Next\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+get\+Next\+Id generate next unique id 
+
+\begin{DoxyReturn}{Returns}
+next unique id 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_aa7781b6470dd71a79964cfb1ae2a8413}\label{class_v_container_aa7781b6470dd71a79964cfb1ae2a8413}} 
+\index{VContainer@{VContainer}!GetObject@{GetObject}}
+\index{GetObject@{GetObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetObject()}{GetObject()}}
+{\footnotesize\ttfamily template$<$typename key , typename val $>$ \\
+const val VContainer\+::\+Get\+Object (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ key, val $>$ \&}]{obj,  }\item[{key}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Get\+Object return object from container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj} & container \\
+\hline
+{\em id} & id of object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_acf4b6cb5a02f7aa204ce5a088f028a39}\label{class_v_container_acf4b6cb5a02f7aa204ce5a088f028a39}} 
+\index{VContainer@{VContainer}!GetPatternUnit@{GetPatternUnit}}
+\index{GetPatternUnit@{GetPatternUnit}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetPatternUnit()}{GetPatternUnit()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$ VContainer\+::\+Get\+Pattern\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_afb5d32209e05cbefb3bb25e595ff9651}\label{class_v_container_afb5d32209e05cbefb3bb25e595ff9651}} 
+\index{VContainer@{VContainer}!GetPiece@{GetPiece}}
+\index{GetPiece@{GetPiece}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetPiece()}{GetPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece}{VPiece}} VContainer\+::\+Get\+Piece (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_abb4c7c51ea6ffe590934e8d93e14f987}\label{class_v_container_abb4c7c51ea6ffe590934e8d93e14f987}} 
+\index{VContainer@{VContainer}!GetPiecePath@{GetPiecePath}}
+\index{GetPiecePath@{GetPiecePath}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetPiecePath()}{GetPiecePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} VContainer\+::\+Get\+Piece\+Path (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a1a28f581e994741e019dd8ca50d70b06}\label{class_v_container_a1a28f581e994741e019dd8ca50d70b06}} 
+\index{VContainer@{VContainer}!GetTrVars@{GetTrVars}}
+\index{GetTrVars@{GetTrVars}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetTrVars()}{GetTrVars()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ VContainer\+::\+Get\+Tr\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_acb7eb6721eb6fcd66ddd67a389a6bbbf}\label{class_v_container_acb7eb6721eb6fcd66ddd67a389a6bbbf}} 
+\index{VContainer@{VContainer}!GetVariable@{GetVariable}}
+\index{GetVariable@{GetVariable}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{GetVariable()}{GetVariable()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ VContainer\+::\+Get\+Variable (\begin{DoxyParamCaption}\item[{QString}]{name }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Variable return varible by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & variable\textquotesingle{}s name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+variable 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}\label{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}} 
+\index{VContainer@{VContainer}!height@{height}}
+\index{height@{height}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily qreal VContainer\+::height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+height return height 
+
+\begin{DoxyReturn}{Returns}
+height in pattern units 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_a64f2ef99d6306c96b350649de15cb8ec}\label{class_v_container_a64f2ef99d6306c96b350649de15cb8ec}} 
+\index{VContainer@{VContainer}!IsUnique@{IsUnique}}
+\index{IsUnique@{IsUnique}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{IsUnique()}{IsUnique()}}
+{\footnotesize\ttfamily bool VContainer\+::\+Is\+Unique (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a10a3da038590e6ee972c6bdbdfd7f195}\label{class_v_container_a10a3da038590e6ee972c6bdbdfd7f195}} 
+\index{VContainer@{VContainer}!lineAnglesData@{lineAnglesData}}
+\index{lineAnglesData@{lineAnglesData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{lineAnglesData()}{lineAnglesData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_line_angle}{VLine\+Angle}} $>$ $>$ VContainer\+::line\+Angles\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a8369f3f12c26e803eadaed76bb5c4fc9}\label{class_v_container_a8369f3f12c26e803eadaed76bb5c4fc9}} 
+\index{VContainer@{VContainer}!lineLengthsData@{lineLengthsData}}
+\index{lineLengthsData@{lineLengthsData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{lineLengthsData()}{lineLengthsData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_length_line}{VLength\+Line}} $>$ $>$ VContainer\+::line\+Lengths\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_container_a2f26d4b8875f74d17f39ad204d529d04}\label{class_v_container_a2f26d4b8875f74d17f39ad204d529d04}} 
+\index{VContainer@{VContainer}!operator=@{operator=}}
+\index{operator=@{operator=}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}} \& VContainer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+operator = copy constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & container \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy container 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}\label{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}} 
+\index{VContainer@{VContainer}!qHash@{qHash}}
+\index{qHash@{qHash}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{qHash()}{qHash()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+uint VContainer\+::q\+Hash (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_ae72c0205cb81f1897ca8151ea91713a5}\label{class_v_container_ae72c0205cb81f1897ca8151ea91713a5}} 
+\index{VContainer@{VContainer}!removeCustomVariable@{removeCustomVariable}}
+\index{removeCustomVariable@{removeCustomVariable}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{removeCustomVariable()}{removeCustomVariable()}}
+{\footnotesize\ttfamily void VContainer\+::remove\+Custom\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+
+
+remove\+Custom\+Variable remove increment by name from increment table 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of existing increment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a36dd0a361ee85e91696e591191be906f}\label{class_v_container_a36dd0a361ee85e91696e591191be906f}} 
+\index{VContainer@{VContainer}!RemovePiece@{RemovePiece}}
+\index{RemovePiece@{RemovePiece}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{RemovePiece()}{RemovePiece()}}
+{\footnotesize\ttfamily void VContainer\+::\+Remove\+Piece (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a3782bdd0898b8786fbaec79e26b9f294}\label{class_v_container_a3782bdd0898b8786fbaec79e26b9f294}} 
+\index{VContainer@{VContainer}!RemoveVariable@{RemoveVariable}}
+\index{RemoveVariable@{RemoveVariable}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{RemoveVariable()}{RemoveVariable()}}
+{\footnotesize\ttfamily void VContainer\+::\+Remove\+Variable (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_aad707a2d87e8c2fa067eb472babd247a}\label{class_v_container_aad707a2d87e8c2fa067eb472babd247a}} 
+\index{VContainer@{VContainer}!rheight@{rheight}}
+\index{rheight@{rheight}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{rheight()}{rheight()}}
+{\footnotesize\ttfamily qreal $\ast$ VContainer\+::rheight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_a6dbfd90ceb0810c0e19a0a56978a76bc}\label{class_v_container_a6dbfd90ceb0810c0e19a0a56978a76bc}} 
+\index{VContainer@{VContainer}!rsize@{rsize}}
+\index{rsize@{rsize}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{rsize()}{rsize()}}
+{\footnotesize\ttfamily qreal $\ast$ VContainer\+::rsize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_container_ad2bd73807fe0d4856e6e317644ec561c}\label{class_v_container_ad2bd73807fe0d4856e6e317644ec561c}} 
+\index{VContainer@{VContainer}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
+{\footnotesize\ttfamily void VContainer\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{qreal}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set\+Growth set value of growth. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & value of height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a14c6f9dbb224c5c731cc70dfb6be7d86}\label{class_v_container_a14c6f9dbb224c5c731cc70dfb6be7d86}} 
+\index{VContainer@{VContainer}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily void VContainer\+::\+Set\+Size (\begin{DoxyParamCaption}\item[{qreal}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set\+Size set value of size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & value of size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a89327043e0a0fac60ed599078d6cdd08}\label{class_v_container_a89327043e0a0fac60ed599078d6cdd08}} 
+\index{VContainer@{VContainer}!size@{size}}
+\index{size@{size}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily qreal VContainer\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+size return size 
+
+\begin{DoxyReturn}{Returns}
+size in mm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_container_ade46c349b82abd5f45cc9b268a8ae5af}\label{class_v_container_ade46c349b82abd5f45cc9b268a8ae5af}} 
+\index{VContainer@{VContainer}!Swap@{Swap}}
+\index{Swap@{Swap}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VContainer\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_container}{VContainer}} \&}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_ac13b933b056a294f05de6ee5a67cb618}\label{class_v_container_ac13b933b056a294f05de6ee5a67cb618}} 
+\index{VContainer@{VContainer}!UpdateGObject@{UpdateGObject}}
+\index{UpdateGObject@{UpdateGObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdateGObject()}{UpdateGObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void VContainer\+::\+Update\+GObject (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_af307a17c9bc394063c081d95f39523cd}\label{class_v_container_af307a17c9bc394063c081d95f39523cd}} 
+\index{VContainer@{VContainer}!UpdateGObject@{UpdateGObject}}
+\index{UpdateGObject@{UpdateGObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdateGObject()}{UpdateGObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void VContainer\+::\+Update\+GObject (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{T $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Update\+GObject update GObject by id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of existing GObject \\
+\hline
+{\em obj} & object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a565c594b62d332110b3185457062c999}\label{class_v_container_a565c594b62d332110b3185457062c999}} 
+\index{VContainer@{VContainer}!UpdateId@{UpdateId}}
+\index{UpdateId@{UpdateId}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdateId()}{UpdateId()}}
+{\footnotesize\ttfamily void VContainer\+::\+Update\+Id (\begin{DoxyParamCaption}\item[{quint32}]{new\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Update\+Id update id. If new id bigger when current save new like current. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Id} & id \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}\label{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}} 
+\index{VContainer@{VContainer}!UpdateObject@{UpdateObject}}
+\index{UpdateObject@{UpdateObject}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdateObject()}{UpdateObject()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void VContainer\+::\+Update\+Object (\begin{DoxyParamCaption}\item[{const quint32 \&}]{id,  }\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ T $>$ \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update\+Object update object in container. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & id of existing object \\
+\hline
+{\em point} & object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_container_a348116d426dd469c51f1db7367a6c16f}\label{class_v_container_a348116d426dd469c51f1db7367a6c16f}} 
+\index{VContainer@{VContainer}!UpdatePiece@{UpdatePiece}}
+\index{UpdatePiece@{UpdatePiece}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdatePiece()}{UpdatePiece()}}
+{\footnotesize\ttfamily void VContainer\+::\+Update\+Piece (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{class_v_piece}{VPiece}} \&}]{piece }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_a5765bfea2a56818b1ecfdb613a92b0e3}\label{class_v_container_a5765bfea2a56818b1ecfdb613a92b0e3}} 
+\index{VContainer@{VContainer}!UpdatePiecePath@{UpdatePiecePath}}
+\index{UpdatePiecePath@{UpdatePiecePath}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{UpdatePiecePath()}{UpdatePiecePath()}}
+{\footnotesize\ttfamily void VContainer\+::\+Update\+Piece\+Path (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_container_ab718ceda5f073b8f5f3b68ae45caba73}\label{class_v_container_ab718ceda5f073b8f5f3b68ae45caba73}} 
+\index{VContainer@{VContainer}!variablesData@{variablesData}}
+\index{variablesData@{variablesData}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{variablesData()}{variablesData()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_increment}{VIncrement}} $>$ $>$ VContainer\+::variables\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_container_af7c8b18a9b0b7eda822c104d357ef173}\label{class_v_container_af7c8b18a9b0b7eda822c104d357ef173}} 
+\index{VContainer@{VContainer}!\_height@{\_height}}
+\index{\_height@{\_height}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{\_height}{\_height}}
+{\footnotesize\ttfamily qreal VContainer\+::\+\_\+height = 176\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_a23b71f06366d832f634f8117fddb5048}\label{class_v_container_a23b71f06366d832f634f8117fddb5048}} 
+\index{VContainer@{VContainer}!\_id@{\_id}}
+\index{\_id@{\_id}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{\_id}{\_id}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH QT\+\_\+\+WARNING\+\_\+\+POP quint32 VContainer\+::\+\_\+id = \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\+\_\+id current id. New object will have value +1. For empty class equal 0. 
+
+\mbox{\Hypertarget{class_v_container_a9c6dc336b3e1843145e3bb9d5f6add58}\label{class_v_container_a9c6dc336b3e1843145e3bb9d5f6add58}} 
+\index{VContainer@{VContainer}!\_size@{\_size}}
+\index{\_size@{\_size}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{\_size}{\_size}}
+{\footnotesize\ttfamily qreal VContainer\+::\+\_\+size = 50\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_ace09a59d4652a9386ede5041817a8f7d}\label{class_v_container_ace09a59d4652a9386ede5041817a8f7d}} 
+\index{VContainer@{VContainer}!d@{d}}
+\index{d@{d}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_container_data}{VContainer\+Data}}$>$ VContainer\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_container_a15028ead081712c2bc9eb45b4d5affea}\label{class_v_container_a15028ead081712c2bc9eb45b4d5affea}} 
+\index{VContainer@{VContainer}!uniqueNames@{uniqueNames}}
+\index{uniqueNames@{uniqueNames}!VContainer@{VContainer}}
+\doxysubsubsection{\texorpdfstring{uniqueNames}{uniqueNames}}
+{\footnotesize\ttfamily QSet$<$ QString $>$ VContainer\+::unique\+Names = QSet$<$QString$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vcontainer_8h}{vcontainer.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpatterndb/\mbox{\hyperlink{vcontainer_8cpp}{vcontainer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\hypertarget{me__shortcuts__dialog_8h_source}{}\doxysection{me\+\_\+shortcuts\+\_\+dialog.\+h}
+\label{me__shortcuts__dialog_8h_source}\index{D:/Github/Seamly2D/src/app/seamlyme/dialogs/me\_shortcuts\_dialog.h@{D:/Github/Seamly2D/src/app/seamlyme/dialogs/me\_shortcuts\_dialog.h}}
+\mbox{\hyperlink{me__shortcuts__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ me\_shortcuts\_dialog.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ DSCaskey\ <dscaskey@gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 5\ 14,\ 2022}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ ME\_SHORTCUTS\_DIALOG\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ ME\_SHORTCUTS\_DIALOG\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_me_shortcuts_dialog}{MeShortcutsDialog}};}
+\DoxyCodeLine{00037\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_me_shortcuts_dialog}{MeShortcutsDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_me_shortcuts_dialog}{MeShortcutsDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_me_shortcuts_dialog_ac873f7c32f71d6a55e8e3faea5d723aa}{\string~MeShortcutsDialog}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_me_shortcuts_dialog_a9243af4cd0ad59492900755641bc3453}{showEvent}}(QShowEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00051\ \ \ \ \ Ui::MeShortcutsDialog\ *\mbox{\hyperlink{class_me_shortcuts_dialog_ae5582996665867a797a7d138e7f50597}{ui}};}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_me_shortcuts_dialog_adf5736311c540738c24f1d0e8bd3936b}{isInitialized}};}
+\DoxyCodeLine{00053\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_me_shortcuts_dialog}{MeShortcutsDialog}})}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_me_shortcuts_dialog_a45586bfb59992ab1cf9c47210e3951cd}{copyToClipboard}}();}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_me_shortcuts_dialog_abc38ed10387087370e0efe25fd3ca9e0}{sendToPrinter}}();}
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_me_shortcuts_dialog_aadd417a6ac831cbed8dd57846258165a}{exportPdf}}();}
+\DoxyCodeLine{00058\ \};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ME\_SHORTCUTS\_DIALOG\_H}}
+
+\end{DoxyCode}

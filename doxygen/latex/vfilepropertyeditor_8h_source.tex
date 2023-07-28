@@ -1,0 +1,101 @@
+\hypertarget{vfilepropertyeditor_8h_source}{}\doxysection{vfilepropertyeditor.\+h}
+\label{vfilepropertyeditor_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vfilepropertyeditor.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vfilepropertyeditor.h}}
+\mbox{\hyperlink{vfilepropertyeditor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vfilepropertyeditor.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VFILEPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VFILEPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QMimeData>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget}{VFileEditWidget}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget}{VFileEditWidget}}(QWidget*\ parent,\ \textcolor{keywordtype}{bool}\ is\_directory\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a33aff352ae514c2bf7e3f75265b6dc0c}{\string~VFileEditWidget}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ab4cd38732237f9b189d804f9249bff96}{getFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a895262236fc44bd65561fd8863203932}{eventFilter}}(QObject*\ obj,\ QEvent*\ ev)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_af70de8d1ec28d384a26c22ce41f163a5}{isDirectory}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ signals:}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ac753eca02b685ce2e83005a80382068a}{dataChangedByUser}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ab4cd38732237f9b189d804f9249bff96}{getFile}},\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget}{VFileEditWidget}}*\ editor);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a0cb0cdaf4d338fbfb99311eca0b22722}{commitData}}(QWidget*\ editor);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ab3f46a5d12ae9e1223e890e0bcf278f3}{setFile}}(\textcolor{keyword}{const}\ QString\ \&value,\ \textcolor{keywordtype}{bool}\ emit\_signal\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_adeb9b293c352331e3d760cb0b0bd630f}{setFilter}}(\textcolor{keyword}{const}\ QString\&\ dialog\_filter\ =\ QString(),\ \textcolor{keyword}{const}\ QStringList\&\ filter\_list\ =\ QStringList());}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a5b1e1b8a7cc5ed870a9fb69e0279be0f}{setDirectory}}(\textcolor{keywordtype}{bool}\ dir);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a2fc6d5c6361efee0263535caff9bbcef}{onToolButtonClicked}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a22392eae8cd6c3a05e58fb76c2a19dfc}{dragEnterEvent}}(QDragEnterEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a6f93063bc46f20146dc842ebebf5b690}{dragMoveEvent}}(QDragMoveEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a042c9f798df851d47f984beec56a59d0}{dragLeaveEvent}}(QDragLeaveEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a967a59740344eed10dc9b69c1f7a2ed6}{dropEvent}}(QDropEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ad5fddfa9fd6c06a2e0eb44e90e32ba8d}{checkMimeData}}(\textcolor{keyword}{const}\ QMimeData*\ data,\ QString\&\ file)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_ad8034c392ac9b792fadf460b10b625f0}{checkFileFilter}}(\textcolor{keyword}{const}\ QString\&\ file)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a30048348cf6e6cf45451553eda9163e5}{CurrentFilePath}};}
+\DoxyCodeLine{00102\ \ \ \ \ QToolButton*\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_acd4aeb83d26b191a16098ce12945d654}{ToolButton}};}
+\DoxyCodeLine{00103\ \ \ \ \ QLineEdit*\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a0ef062346f55f1386ef83bf0cbdd1598}{FileLineEdit}};}
+\DoxyCodeLine{00104\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_aff064e71f91f4886f4f98e2db257bb55}{FileDialogFilter}};}
+\DoxyCodeLine{00105\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_af3a9fff0daef7c873ae825088c370509}{FilterList}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget_a974325ea74c883edf68f024c19861d87}{Directory}};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_file_edit_widget}{VFileEditWidget}})}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VFILEPROPERTYEDITOR\_H}}
+
+\end{DoxyCode}

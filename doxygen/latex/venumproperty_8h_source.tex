@@ -1,0 +1,90 @@
+\hypertarget{venumproperty_8h_source}{}\doxysection{venumproperty.\+h}
+\label{venumproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/venumproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/venumproperty.h}}
+\mbox{\hyperlink{venumproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ venumproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VENUMPROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VENUMPROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QStyleOptionViewItem>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../vproperty.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_enum_property}{VEnumProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property}{VEnumProperty}}(\textcolor{keyword}{const}\ QString\&\ name);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a4e81fd56f04d12a26feb583be76889fb}{\string~VEnumProperty}}()\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a7b6d88c9f8c4792c34334a50a6e83053}{data}}\ (\textcolor{keywordtype}{int}\ column\ =\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\_Name}},\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ QWidget*\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_ac295fc5adae292cc0165ac77823cf346}{createEditor}}(QWidget*\ parent,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\&\ options,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QAbstractItemDelegate*\ delegate)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a97e5b0f57559def3f9c76957940ffdcc}{getEditorData}}(\textcolor{keyword}{const}\ QWidget*\ editor)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_af3b22867359dbfe84908cad4e24d40c7}{setLiterals}}(\textcolor{keyword}{const}\ QStringList\ \&literals);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a2306414da3dac4211e78b7fb14302488}{getLiterals}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a5c8a7f311ede2d82168fd588bb336d31}{setValue}}(\textcolor{keyword}{const}\ QVariant\&\ value)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a957483ea4a83fcd6c0407a0fe520f930}{type}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00080\ \ \ \ \ Q\_REQUIRED\_RESULT\ virtual\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a8d7bbdcfd7d5fca19df5fcabbb8c81a4}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ true,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ container\ =\ \textcolor{keywordtype}{nullptr})\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a93af365785fa5332ec385449a0c8ff70}{setSetting}}(const\ QString\&\ key,\ const\ QVariant\&\ value)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ virtual\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_aa3496f5af04a46c6e4bba40ae5273364}{getSetting}}(const\ QString\&\ key)\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ virtual\ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a75c191a1100d3b8eabc9f5c1aeea9ef4}{getSettingKeys}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ public\ slots:}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_a0d40eaac8935161c5e8af377b1f26269}{currentIndexChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ protected:}
+\DoxyCodeLine{00099\ \ \ \ \ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_v_enum_property_ae2a2f1ca0e4097d0a9a6ece70f9c8732}{EnumerationLiterals}};}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ No\ use\ of\ d-\/pointer\ in\ this\ case,\ because\ it\ is\ unlikely\ this\ will\ change.\ If\ it\ does,\ we\ can\ still\ add\ other}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//members\ by\ reimplementing\ the\ VPropertyPrivate\ class\ without\ touching\ this\ header\ file.}}
+\DoxyCodeLine{00102\ private:}
+\DoxyCodeLine{00103\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_enum_property}{VEnumProperty}})}
+\DoxyCodeLine{00104\ \};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VENUMPROPERTY\_H}}
+
+\end{DoxyCode}

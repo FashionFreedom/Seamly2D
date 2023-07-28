@@ -1,0 +1,400 @@
+\hypertarget{class_calculator_util}{}\doxysection{Calculator\+Util Class Reference}
+\label{class_calculator_util}\index{CalculatorUtil@{CalculatorUtil}}
+
+
+\mbox{[}0\mbox{]}  
+
+
+
+
+{\ttfamily \#include $<$calculator.\+h$>$}
+
+Inheritance diagram for Calculator\+Util\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_calculator_util}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_calculator_util_a693df4184f0f96afeb67ab9eb91b2c1e}{Calculator\+Util}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{[}0\mbox{]} \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_calculator_util_a7402c165d79612dfdb7ee7c9f2f4b830}{$\sim$\+Calculator\+Util}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}6\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5}{Num\+Digit\+Buttons}} = 10
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{[}9\mbox{]} //! \mbox{[}10\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_calculator_util_ab752390f6a018006550e5b0ad1752262}{digit\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}7\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a5223aca8e549289c5a99107feba86951}{unary\+Operator\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}7\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a8c11c8bc36ed8ec349aafa3587fc3b09}{additive\+Operator\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}9\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_acb50de2f6a5ae44986c3089fefd93e3d}{multiplicative\+Operator\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}17\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_af11788741fbd85dad1dc429528f51f30}{equal\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}18\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a4d1543998adb739cbb88d14af2ff3b11}{point\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}20\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a69f0b22832c807d13b7ff85042e089b5}{change\+Sign\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}22\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a463e96cb64ba133780c49d2e49c64e25}{backspace\+Clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}24\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a5635e52a789f5c00bdd2e110e089ad98}{clear}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}26\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a512814d978591ec1010ebfecc2bb370e}{clear\+All}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}28\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a37107ce71a40a4c6a34ba123aaabcf34}{clear\+Memory}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}30\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_a5010f58c675db84b69030dda406be0e8}{read\+Memory}} ()
+\item 
+void \mbox{\hyperlink{class_calculator_util_a8c1d956406a4fd0825ccec2c7dd8e220}{set\+Memory}} ()
+\item 
+void \mbox{\hyperlink{class_calculator_util_a547c0cac33556cb6786baf87ed29e114}{add\+To\+Memory}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_button}{Button}} $\ast$ \mbox{\hyperlink{class_calculator_util_a8f2894fdc926e4b03dad2c7bc18b4d9b}{create\+Button}} (const QString \&text, const char $\ast$member)
+\begin{DoxyCompactList}\small\item\em \mbox{[}0\mbox{]} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_calculator_util_ace78658e07feba5c4ce8cd7f04e80248}{abort\+Operation}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}34\mbox{]} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_calculator_util_a3ecb6af731de1c83eb9893b5895de392}{calculate}} (double right\+Operand, const QString \&pending\+Operator)
+\begin{DoxyCompactList}\small\item\em \mbox{[}36\mbox{]} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_calculator_util_a1c5fa3d72c218aa99d9d8426efea98c4}{sum\+In\+Memory}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}2\mbox{]} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_calculator_util_a82b2baa247cbc45c0dd2b66070c4d2ae}{sum\+So\+Far}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}3\mbox{]} //! \mbox{[}4\mbox{]} \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_calculator_util_ada6ee796648ad9d02eec0f7eb86550f1}{factor\+So\+Far}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}4\mbox{]} //! \mbox{[}5\mbox{]} \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_calculator_util_aa9f63cfa177206698783ea92eac1ab3f}{pending\+Additive\+Operator}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}5\mbox{]} //! \mbox{[}6\mbox{]} \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_calculator_util_a536d2d346fa312b824880eebb4b93a06}{pending\+Multiplicative\+Operator}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}6\mbox{]} //! \mbox{[}7\mbox{]} \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_calculator_util_a75c597be27eb738d1e5c8f1ba6ec9212}{waiting\+For\+Operand}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}7\mbox{]} //! \mbox{[}8\mbox{]} \end{DoxyCompactList}\item 
+QLine\+Edit $\ast$ \mbox{\hyperlink{class_calculator_util_ab89f78b463bc3a7925d654b3f90606e2}{display}}
+\begin{DoxyCompactList}\small\item\em \mbox{[}8\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_button}{Button}} $\ast$ \mbox{\hyperlink{class_calculator_util_a91244852687fb69753282e9c0b04a775}{digit\+Buttons}} \mbox{[}\mbox{\hyperlink{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5}{Num\+Digit\+Buttons}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{[}0\mbox{]} 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54f}\label{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54f}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}9\mbox{]} //! \mbox{[}10\mbox{]} 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NumDigitButtons@{NumDigitButtons}!CalculatorUtil@{CalculatorUtil}}\index{CalculatorUtil@{CalculatorUtil}!NumDigitButtons@{NumDigitButtons}}}\mbox{\Hypertarget{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5}\label{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5}} 
+Num\+Digit\+Buttons&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_calculator_util_a693df4184f0f96afeb67ab9eb91b2c1e}\label{class_calculator_util_a693df4184f0f96afeb67ab9eb91b2c1e}} 
+\index{CalculatorUtil@{CalculatorUtil}!CalculatorUtil@{CalculatorUtil}}
+\index{CalculatorUtil@{CalculatorUtil}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{CalculatorUtil()}{CalculatorUtil()}}
+{\footnotesize\ttfamily Calculator\+Util\+::\+Calculator\+Util (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{[}0\mbox{]} 
+
+\mbox{[}0\mbox{]} \mbox{[}1\mbox{]} \mbox{[}1\mbox{]} //! \mbox{[}2\mbox{]}
+
+\mbox{[}2\mbox{]}
+
+\mbox{[}4\mbox{]}
+
+\mbox{[}4\mbox{]}
+
+\mbox{[}5\mbox{]}
+
+\mbox{[}5\mbox{]} //! \mbox{[}6\mbox{]}\mbox{\Hypertarget{class_calculator_util_a7402c165d79612dfdb7ee7c9f2f4b830}\label{class_calculator_util_a7402c165d79612dfdb7ee7c9f2f4b830}} 
+\index{CalculatorUtil@{CalculatorUtil}!````~CalculatorUtil@{$\sim$CalculatorUtil}}
+\index{````~CalculatorUtil@{$\sim$CalculatorUtil}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{$\sim$CalculatorUtil()}{~CalculatorUtil()}}
+{\footnotesize\ttfamily Calculator\+Util\+::$\sim$\+Calculator\+Util (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{[}6\mbox{]} 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_calculator_util_ace78658e07feba5c4ce8cd7f04e80248}\label{class_calculator_util_ace78658e07feba5c4ce8cd7f04e80248}} 
+\index{CalculatorUtil@{CalculatorUtil}!abortOperation@{abortOperation}}
+\index{abortOperation@{abortOperation}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{abortOperation()}{abortOperation()}}
+{\footnotesize\ttfamily void Calculator\+Util\+::abort\+Operation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}34\mbox{]} 
+
+\mbox{[}36\mbox{]} \mbox{\Hypertarget{class_calculator_util_a8c11c8bc36ed8ec349aafa3587fc3b09}\label{class_calculator_util_a8c11c8bc36ed8ec349aafa3587fc3b09}} 
+\index{CalculatorUtil@{CalculatorUtil}!additiveOperatorClicked@{additiveOperatorClicked}}
+\index{additiveOperatorClicked@{additiveOperatorClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{additiveOperatorClicked}{additiveOperatorClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::additive\+Operator\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}9\mbox{]} 
+
+\mbox{[}10\mbox{]} \mbox{[}10\mbox{]} //! \mbox{[}11\mbox{]} \mbox{[}11\mbox{]} //! \mbox{[}12\mbox{]}
+
+\mbox{[}12\mbox{]} //! \mbox{[}13\mbox{]}
+
+\mbox{[}13\mbox{]} //! \mbox{[}14\mbox{]}
+
+\mbox{[}14\mbox{]} //! \mbox{[}15\mbox{]}
+
+\mbox{[}15\mbox{]} //! \mbox{[}16\mbox{]}
+
+\mbox{[}16\mbox{]} //! \mbox{[}17\mbox{]}\mbox{\Hypertarget{class_calculator_util_a547c0cac33556cb6786baf87ed29e114}\label{class_calculator_util_a547c0cac33556cb6786baf87ed29e114}} 
+\index{CalculatorUtil@{CalculatorUtil}!addToMemory@{addToMemory}}
+\index{addToMemory@{addToMemory}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{addToMemory}{addToMemory}}
+{\footnotesize\ttfamily void Calculator\+Util\+::add\+To\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_calculator_util_a463e96cb64ba133780c49d2e49c64e25}\label{class_calculator_util_a463e96cb64ba133780c49d2e49c64e25}} 
+\index{CalculatorUtil@{CalculatorUtil}!backspaceClicked@{backspaceClicked}}
+\index{backspaceClicked@{backspaceClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{backspaceClicked}{backspaceClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::backspace\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}24\mbox{]} 
+
+\mbox{[}26\mbox{]} \mbox{\Hypertarget{class_calculator_util_a3ecb6af731de1c83eb9893b5895de392}\label{class_calculator_util_a3ecb6af731de1c83eb9893b5895de392}} 
+\index{CalculatorUtil@{CalculatorUtil}!calculate@{calculate}}
+\index{calculate@{calculate}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{calculate()}{calculate()}}
+{\footnotesize\ttfamily bool Calculator\+Util\+::calculate (\begin{DoxyParamCaption}\item[{double}]{right\+Operand,  }\item[{const QString \&}]{pending\+Operator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}36\mbox{]} 
+
+\mbox{[}38\mbox{]} \mbox{\Hypertarget{class_calculator_util_a69f0b22832c807d13b7ff85042e089b5}\label{class_calculator_util_a69f0b22832c807d13b7ff85042e089b5}} 
+\index{CalculatorUtil@{CalculatorUtil}!changeSignClicked@{changeSignClicked}}
+\index{changeSignClicked@{changeSignClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{changeSignClicked}{changeSignClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::change\+Sign\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}22\mbox{]} 
+
+\mbox{[}24\mbox{]} \mbox{\Hypertarget{class_calculator_util_a5635e52a789f5c00bdd2e110e089ad98}\label{class_calculator_util_a5635e52a789f5c00bdd2e110e089ad98}} 
+\index{CalculatorUtil@{CalculatorUtil}!clear@{clear}}
+\index{clear@{clear}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{clear}{clear}}
+{\footnotesize\ttfamily void Calculator\+Util\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}26\mbox{]} 
+
+\mbox{[}28\mbox{]} \mbox{\Hypertarget{class_calculator_util_a512814d978591ec1010ebfecc2bb370e}\label{class_calculator_util_a512814d978591ec1010ebfecc2bb370e}} 
+\index{CalculatorUtil@{CalculatorUtil}!clearAll@{clearAll}}
+\index{clearAll@{clearAll}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{clearAll}{clearAll}}
+{\footnotesize\ttfamily void Calculator\+Util\+::clear\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}28\mbox{]} 
+
+\mbox{[}30\mbox{]} \mbox{\Hypertarget{class_calculator_util_a37107ce71a40a4c6a34ba123aaabcf34}\label{class_calculator_util_a37107ce71a40a4c6a34ba123aaabcf34}} 
+\index{CalculatorUtil@{CalculatorUtil}!clearMemory@{clearMemory}}
+\index{clearMemory@{clearMemory}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{clearMemory}{clearMemory}}
+{\footnotesize\ttfamily void Calculator\+Util\+::clear\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}30\mbox{]} 
+
+\mbox{[}32\mbox{]} \mbox{\Hypertarget{class_calculator_util_a8f2894fdc926e4b03dad2c7bc18b4d9b}\label{class_calculator_util_a8f2894fdc926e4b03dad2c7bc18b4d9b}} 
+\index{CalculatorUtil@{CalculatorUtil}!createButton@{createButton}}
+\index{createButton@{createButton}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{createButton()}{createButton()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_button}{Button}} $\ast$ Calculator\+Util\+::create\+Button (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{const char $\ast$}]{member }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}0\mbox{]} 
+
+\mbox{[}1\mbox{]} \mbox{[}1\mbox{]} //! \mbox{[}2\mbox{]}
+
+\mbox{[}32\mbox{]} \mbox{[}34\mbox{]} \mbox{\Hypertarget{class_calculator_util_ab752390f6a018006550e5b0ad1752262}\label{class_calculator_util_ab752390f6a018006550e5b0ad1752262}} 
+\index{CalculatorUtil@{CalculatorUtil}!digitClicked@{digitClicked}}
+\index{digitClicked@{digitClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{digitClicked}{digitClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::digit\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}7\mbox{]} 
+
+\mbox{\Hypertarget{class_calculator_util_af11788741fbd85dad1dc429528f51f30}\label{class_calculator_util_af11788741fbd85dad1dc429528f51f30}} 
+\index{CalculatorUtil@{CalculatorUtil}!equalClicked@{equalClicked}}
+\index{equalClicked@{equalClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{equalClicked}{equalClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::equal\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}18\mbox{]} 
+
+\mbox{[}20\mbox{]} \mbox{\Hypertarget{class_calculator_util_acb50de2f6a5ae44986c3089fefd93e3d}\label{class_calculator_util_acb50de2f6a5ae44986c3089fefd93e3d}} 
+\index{CalculatorUtil@{CalculatorUtil}!multiplicativeOperatorClicked@{multiplicativeOperatorClicked}}
+\index{multiplicativeOperatorClicked@{multiplicativeOperatorClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{multiplicativeOperatorClicked}{multiplicativeOperatorClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::multiplicative\+Operator\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}17\mbox{]} 
+
+\mbox{[}18\mbox{]} \mbox{\Hypertarget{class_calculator_util_a4d1543998adb739cbb88d14af2ff3b11}\label{class_calculator_util_a4d1543998adb739cbb88d14af2ff3b11}} 
+\index{CalculatorUtil@{CalculatorUtil}!pointClicked@{pointClicked}}
+\index{pointClicked@{pointClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{pointClicked}{pointClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::point\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}20\mbox{]} 
+
+\mbox{[}22\mbox{]} \mbox{\Hypertarget{class_calculator_util_a5010f58c675db84b69030dda406be0e8}\label{class_calculator_util_a5010f58c675db84b69030dda406be0e8}} 
+\index{CalculatorUtil@{CalculatorUtil}!readMemory@{readMemory}}
+\index{readMemory@{readMemory}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{readMemory}{readMemory}}
+{\footnotesize\ttfamily void Calculator\+Util\+::read\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_calculator_util_a8c1d956406a4fd0825ccec2c7dd8e220}\label{class_calculator_util_a8c1d956406a4fd0825ccec2c7dd8e220}} 
+\index{CalculatorUtil@{CalculatorUtil}!setMemory@{setMemory}}
+\index{setMemory@{setMemory}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{setMemory}{setMemory}}
+{\footnotesize\ttfamily void Calculator\+Util\+::set\+Memory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_calculator_util_a5223aca8e549289c5a99107feba86951}\label{class_calculator_util_a5223aca8e549289c5a99107feba86951}} 
+\index{CalculatorUtil@{CalculatorUtil}!unaryOperatorClicked@{unaryOperatorClicked}}
+\index{unaryOperatorClicked@{unaryOperatorClicked}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{unaryOperatorClicked}{unaryOperatorClicked}}
+{\footnotesize\ttfamily void Calculator\+Util\+::unary\+Operator\+Clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+
+
+\mbox{[}7\mbox{]} 
+
+\mbox{[}8\mbox{]} \mbox{[}8\mbox{]} //! \mbox{[}9\mbox{]} 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_calculator_util_a91244852687fb69753282e9c0b04a775}\label{class_calculator_util_a91244852687fb69753282e9c0b04a775}} 
+\index{CalculatorUtil@{CalculatorUtil}!digitButtons@{digitButtons}}
+\index{digitButtons@{digitButtons}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{digitButtons}{digitButtons}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_button}{Button}}$\ast$ Calculator\+Util\+::digit\+Buttons\mbox{[}\mbox{\hyperlink{class_calculator_util_a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5}{Num\+Digit\+Buttons}}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_calculator_util_ab89f78b463bc3a7925d654b3f90606e2}\label{class_calculator_util_ab89f78b463bc3a7925d654b3f90606e2}} 
+\index{CalculatorUtil@{CalculatorUtil}!display@{display}}
+\index{display@{display}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{display}{display}}
+{\footnotesize\ttfamily QLine\+Edit$\ast$ Calculator\+Util\+::display\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}8\mbox{]} 
+
+\mbox{[}9\mbox{]} \mbox{\Hypertarget{class_calculator_util_ada6ee796648ad9d02eec0f7eb86550f1}\label{class_calculator_util_ada6ee796648ad9d02eec0f7eb86550f1}} 
+\index{CalculatorUtil@{CalculatorUtil}!factorSoFar@{factorSoFar}}
+\index{factorSoFar@{factorSoFar}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{factorSoFar}{factorSoFar}}
+{\footnotesize\ttfamily double Calculator\+Util\+::factor\+So\+Far\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}4\mbox{]} //! \mbox{[}5\mbox{]} 
+
+\mbox{\Hypertarget{class_calculator_util_aa9f63cfa177206698783ea92eac1ab3f}\label{class_calculator_util_aa9f63cfa177206698783ea92eac1ab3f}} 
+\index{CalculatorUtil@{CalculatorUtil}!pendingAdditiveOperator@{pendingAdditiveOperator}}
+\index{pendingAdditiveOperator@{pendingAdditiveOperator}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{pendingAdditiveOperator}{pendingAdditiveOperator}}
+{\footnotesize\ttfamily QString Calculator\+Util\+::pending\+Additive\+Operator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}5\mbox{]} //! \mbox{[}6\mbox{]} 
+
+\mbox{\Hypertarget{class_calculator_util_a536d2d346fa312b824880eebb4b93a06}\label{class_calculator_util_a536d2d346fa312b824880eebb4b93a06}} 
+\index{CalculatorUtil@{CalculatorUtil}!pendingMultiplicativeOperator@{pendingMultiplicativeOperator}}
+\index{pendingMultiplicativeOperator@{pendingMultiplicativeOperator}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{pendingMultiplicativeOperator}{pendingMultiplicativeOperator}}
+{\footnotesize\ttfamily QString Calculator\+Util\+::pending\+Multiplicative\+Operator\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}6\mbox{]} //! \mbox{[}7\mbox{]} 
+
+\mbox{\Hypertarget{class_calculator_util_a1c5fa3d72c218aa99d9d8426efea98c4}\label{class_calculator_util_a1c5fa3d72c218aa99d9d8426efea98c4}} 
+\index{CalculatorUtil@{CalculatorUtil}!sumInMemory@{sumInMemory}}
+\index{sumInMemory@{sumInMemory}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{sumInMemory}{sumInMemory}}
+{\footnotesize\ttfamily double Calculator\+Util\+::sum\+In\+Memory\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}2\mbox{]} 
+
+\mbox{[}3\mbox{]} \mbox{\Hypertarget{class_calculator_util_a82b2baa247cbc45c0dd2b66070c4d2ae}\label{class_calculator_util_a82b2baa247cbc45c0dd2b66070c4d2ae}} 
+\index{CalculatorUtil@{CalculatorUtil}!sumSoFar@{sumSoFar}}
+\index{sumSoFar@{sumSoFar}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{sumSoFar}{sumSoFar}}
+{\footnotesize\ttfamily double Calculator\+Util\+::sum\+So\+Far\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}3\mbox{]} //! \mbox{[}4\mbox{]} 
+
+\mbox{\Hypertarget{class_calculator_util_a75c597be27eb738d1e5c8f1ba6ec9212}\label{class_calculator_util_a75c597be27eb738d1e5c8f1ba6ec9212}} 
+\index{CalculatorUtil@{CalculatorUtil}!waitingForOperand@{waitingForOperand}}
+\index{waitingForOperand@{waitingForOperand}!CalculatorUtil@{CalculatorUtil}}
+\doxysubsubsection{\texorpdfstring{waitingForOperand}{waitingForOperand}}
+{\footnotesize\ttfamily bool Calculator\+Util\+::waiting\+For\+Operand\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{[}7\mbox{]} //! \mbox{[}8\mbox{]} 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/calculator/\mbox{\hyperlink{vwidgets_2calculator_2calculator_8h}{calculator.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/calculator/\mbox{\hyperlink{vwidgets_2calculator_2calculator_8cpp}{calculator.\+cpp}}\end{DoxyCompactItemize}

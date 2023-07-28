@@ -1,0 +1,359 @@
+\hypertarget{class_intersect_circle_tangent_visual}{}\doxysection{Intersect\+Circle\+Tangent\+Visual Class Reference}
+\label{class_intersect_circle_tangent_visual}\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+
+
+{\ttfamily \#include $<$intersect\+\_\+circletangent\+\_\+visual.\+h$>$}
+
+Inheritance diagram for Intersect\+Circle\+Tangent\+Visual\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_intersect_circle_tangent_visual}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a1dd8a5e66db429ca01f6ddb8eac87949afa3251c92f6620580238692bd43790e5}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Tool\+Point\+From\+Circle\+And\+Tangent)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_vis_line_ac9406f2639874624be32499f41f963e1aed90a7174d284927b12b901708d9cb63}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scaled_line_a1539929463148fd6ab01d5e5cf8be8e9a141df4e3b299f029e9d7e6e9370766ec}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scaled\+Line)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_intersect_circle_tangent_visual_adbfe05e4f249332b6b6a6cbf4bc20292}{Intersect\+Circle\+Tangent\+Visual}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_intersect_circle_tangent_visual_a073335d6b4d9e5c5c49e447a56fccae5}{$\sim$\+Intersect\+Circle\+Tangent\+Visual}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_intersect_circle_tangent_visual_a1a2b2cf85b6fd24e3cb9826ccf0512ae}{Refresh\+Geometry}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_intersect_circle_tangent_visual_a97136fc406bbc9b165def3a2897a49f0}{set\+Object2\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_intersect_circle_tangent_visual_a384a46a8cf1f2543b1dc04cfdd843be4}{set\+CRadius}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{class_intersect_circle_tangent_visual_a38de0a89c4c08ffa30975af92e221d00}{set\+Cross\+Point}} (const \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \&value)
+\item 
+virtual int \mbox{\hyperlink{class_intersect_circle_tangent_visual_ad99c2afbb65c71dd06ca3ecda88d16aa}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vis_line_a3594b9caf48ca88a60a12aaafb9faadf}{Vis\+Line}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_vis_line_a63a57079a48545d24c40c42088120c52}{$\sim$\+Vis\+Line}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_vis_line_ac418da09bac578ad2c9b6cf29ed5f6b9}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_visualization_a2463087184767bfb81578f8e3b63077c}{Visualization}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+virtual \mbox{\hyperlink{class_visualization_ac0f658bb8e47eae0c94cc28bb40bf438}{$\sim$\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Refresh\+Geometry}} ()=0
+\item 
+void \mbox{\hyperlink{class_visualization_a9e24acf5c3162cbbeb3652fa9a6e493d}{set\+Object1\+Id}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_ac6f3fffeba3ddecac71bd5857d112441}{set\+Line\+Style}} (const Qt\+::\+Pen\+Style \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3e8891a967b0070b38fb7944a05bca96}{set\+Line\+Weight}} (const QString \&value)
+\item 
+void \mbox{\hyperlink{class_visualization_a3cc2d4cf3e1c7ac9c99887745b9725ce}{set\+Scene\+Pos}} (const QPointF \&value)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_a861d9e8fb92c505f90f6ddb016d72a74}{Visual\+Mode}} (const quint32 \&point\+Id)
+\item 
+void \mbox{\hyperlink{class_visualization_ad8c250063388c98129072b915422d918}{set\+Main\+Color}} (const QColor \&value)
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_aa059d42719891e59f6d6ae626864595f}{get\+Data}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a92191f09709684b5b1927ab68e136c9c}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}})
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_ac190793c0074c8d149d2fb52136875b4}{Get\+Mode}} () const
+\item 
+void \mbox{\hyperlink{class_visualization_a7c351376e6eea24c27d33e43c4287fea}{Set\+Mode}} (const \mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \&value)
+\item 
+QString \mbox{\hyperlink{class_visualization_a07121a63283dbbeeddf5b88df391fc71}{Current\+Tool\+Tip}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scaled_line_a8419b148df27070f3a08d9c27244b4dc}{VScaled\+Line}} (QGraphics\+Item $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_v_scaled_line_a5277761a86ee993138f9e1b25922e0da}{VScaled\+Line}} (const QLineF \&line, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scaled_line_a1429d6f468ce3f4da13c45e0604507f2}{$\sim$\+VScaled\+Line}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scaled_line_a3ab1763240ff918be30a44512dc650ff}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scaled_line_ad9b093631b2bc2283330fe0185514891}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+qreal \mbox{\hyperlink{class_v_scaled_line_a071602288ffae13e7a1645ce9e0276bc}{Get\+Basic\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_scaled_line_a25a9922519e4e3c4ae6f740798cdb85f}{set\+Basic\+Width}} (const qreal \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_intersect_circle_tangent_visual_af3a55daa699052ba19a80d3d884fe8e7}{Find\+Rays}} (const QPointF \&p, const QPointF \&center, qreal radius)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_intersect_circle_tangent_visual_ac39b2d4a893db261b3a71cc9eb53a587}{object2\+Id}}
+\item 
+qreal \mbox{\hyperlink{class_intersect_circle_tangent_visual_a7eab57b26ac40ad60445d7ef3911d8eb}{c\+Radius}}
+\item 
+\mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \mbox{\hyperlink{class_intersect_circle_tangent_visual_a15f0e00feb25d4ca7d3c8149ff65f5ec}{cross\+Point}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a145ceae407310e3b567a0961906cf6ed}{point}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a7f94809af6b8da5fa23c3d89d999589a}{tangent}}
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a64b22117b5691484f338d30539adc3a2}{c\+Center}}
+\item 
+QGraphics\+Ellipse\+Item $\ast$ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a5949c468f689dbfd153238111eeadd95}{c\+Path}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_intersect_circle_tangent_visual_a28d202378f1fe7a0e650bb3d025dbda9}{tangent2}}
+\item 
+QColor \mbox{\hyperlink{class_intersect_circle_tangent_visual_a2898d2f9eb1d2e28bca6104e03decc8b}{m\+\_\+secondary\+Support\+Color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a0ce122004dbfba6e26f0d6351d04e0d6}{mouse\+Pos}} (const QPointF \&\mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_visualization_a18b00680e4072f9f56071722e0cf47d4}{Tool\+Tip}} (const QString \&\mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_vis_line_a4f8e6ea00d2ff1d1457a58e42d4f2932}{Correct\+Angle}} (const qreal \&angle)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_visualization_a6479c586e581d8868775eb49aa031f19}{Find\+Length}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\item 
+static qreal \mbox{\hyperlink{class_visualization_ada5e59b62fca6a9a6e4fd3965b8eae92}{Find\+Val}} (const QString \&expression, const \mbox{\hyperlink{class_q_hash}{QHash}}$<$ QString, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_internal_variable}{VInternal\+Variable}} $>$ $>$ $\ast$vars)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_vis_line}{Vis\+Line}}}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_vis_line_afcf89cfb13f788641f0385b29e0867c4}{Ray}} (const QPointF \&first\+Point, const qreal \&angle) const
+\item 
+QPointF \mbox{\hyperlink{class_vis_line_a751425ae650a84980374e16058f743ee}{Ray}} (const QPointF \&first\+Point) const
+\item 
+QLineF \mbox{\hyperlink{class_vis_line_aaecc477dd569efe445d3e4fa60f7fed3}{Axis}} (const QPointF \&p, const qreal \&angle) const
+\item 
+QLineF \mbox{\hyperlink{class_vis_line_ad64a3a6cc5530fb0f0cb68b22b20a315}{Axis}} (const QPointF \&p1, const QPointF \&p2) const
+\item 
+virtual void \mbox{\hyperlink{class_vis_line_a3d128e18290ca9d6888e8a112c538efc}{init\+Pen}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_vis_line_a84d78868f9ff710c0cc364f22609d6d4}{Add\+On\+Scene}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_vis_line_a552c99a21ca06c9b5f72eb3f913b8892}{Draw\+Ray}} (\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$line\+Item, const QPointF \&p, const QPointF \&p\+Tangent, const QColor \&color, Qt\+::\+Pen\+Style style)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_visualization_aa2477ee93caae188c7a9ae4f9dfeb771}{init\+Pen}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_visualization_abfe137bc2a0b78369361a19726ed728b}{Add\+On\+Scene}} ()=0
+\item 
+\mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_abc9b78a7c14e4441b39eb43edf14b72e}{Init\+Point}} (const QColor \&color, QGraphics\+Item $\ast$parent, qreal z=0) const
+\item 
+void \mbox{\hyperlink{class_visualization_a3ddc22b12c0158bc9cc10f77f4f6fe2c}{Draw\+Point}} (QGraphics\+Ellipse\+Item $\ast$point, const QPointF \&pos, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+virtual void \mbox{\hyperlink{class_visualization_ab8a024f82b22c147839e7f2057e3c977}{Draw\+Line}} (\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$line\+Item, const QLineF \&line, const QColor \&color, const qreal \&\mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a9704c6411feed0ae73e2068e230e4678}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_a598d2794b073ee9ade1c69b3862f0879}{Draw\+Path}} (\mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}} $\ast$path\+Item, const QPainter\+Path \&path, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&direction\+Arrows, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line, const qreal \&weight=0.\+35, Qt\+::\+Pen\+Cap\+Style cap=Qt\+::\+Square\+Cap)
+\item 
+void \mbox{\hyperlink{class_visualization_aa9ea2c766a799875af2b79d6400c116b}{draw\+Arrowed\+Line}} (\mbox{\hyperlink{class_arrowed_line_item}{Arrowed\+Line\+Item}} $\ast$item, const QLineF \&line, const QColor \&color, Qt\+::\+Pen\+Style style=Qt\+::\+Solid\+Line)
+\item 
+void \mbox{\hyperlink{class_visualization_a6e2b0cf9513f6e8ee5f6ac1c65265e33}{draw\+Arrow}} (const QLineF \&axis, QPainter\+Path \&path, const qreal \&arrow\+\_\+size)
+\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_visualization_ae9816e2088cc535fd0c956cd0f67ec3d}{add\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item)
+\item 
+{\footnotesize template$<$class \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$ \mbox{\hyperlink{class_visualization_a533ef28c50007971f69483ef4103774a}{Init\+Item}} (const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ \mbox{\hyperlink{class_visualization_a9f13506fd762ba59d26496427327fa52}{Get\+Point\+Item}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}} $\ast$ $>$ \&points, quint32 i, const QColor \&color, QGraphics\+Item $\ast$parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_visualization}{Visualization}}}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}}
+\item 
+QPointF \mbox{\hyperlink{class_visualization_aa2bbae2ea80646d9cead20b75f3a524f}{scene\+Pos}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a19c42b9f6c14d1b1415f8510409d49f7}{main\+Color}}
+\item 
+QColor \mbox{\hyperlink{class_visualization_a07dccd56934096a975a542c908acdde9}{support\+Color}}
+\item 
+Qt\+::\+Pen\+Style \mbox{\hyperlink{class_visualization_adb70fdc205739ea12298e4cc607ed2d6}{line\+Style}}
+\item 
+qreal \mbox{\hyperlink{class_visualization_a6741617653bafbaec1ada649955974e6}{line\+Weight}}
+\item 
+quint32 \mbox{\hyperlink{class_visualization_ac6d70a998feaf629960293be3b6d8b09}{object1\+Id}}
+\item 
+QString \mbox{\hyperlink{class_visualization_abbdc0462042f392ebd52ddc67170aee4}{tool\+Tip}}
+\item 
+\mbox{\hyperlink{visualization_8h_afcbd6bdd41f75046052efd922bdc95dc}{Mode}} \mbox{\hyperlink{class_visualization_aa02ec87a8384819f82ad61d08441b44b}{mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a1dd8a5e66db429ca01f6ddb8eac87949}\label{class_intersect_circle_tangent_visual_a1dd8a5e66db429ca01f6ddb8eac87949}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!Type@{Type}}}\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a1dd8a5e66db429ca01f6ddb8eac87949afa3251c92f6620580238692bd43790e5}\label{class_intersect_circle_tangent_visual_a1dd8a5e66db429ca01f6ddb8eac87949afa3251c92f6620580238692bd43790e5}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_adbfe05e4f249332b6b6a6cbf4bc20292}\label{class_intersect_circle_tangent_visual_adbfe05e4f249332b6b6a6cbf4bc20292}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{IntersectCircleTangentVisual()}{IntersectCircleTangentVisual()}}
+{\footnotesize\ttfamily Intersect\+Circle\+Tangent\+Visual\+::\+Intersect\+Circle\+Tangent\+Visual (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a073335d6b4d9e5c5c49e447a56fccae5}\label{class_intersect_circle_tangent_visual_a073335d6b4d9e5c5c49e447a56fccae5}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!````~IntersectCircleTangentVisual@{$\sim$IntersectCircleTangentVisual}}
+\index{````~IntersectCircleTangentVisual@{$\sim$IntersectCircleTangentVisual}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{$\sim$IntersectCircleTangentVisual()}{~IntersectCircleTangentVisual()}}
+{\footnotesize\ttfamily virtual Intersect\+Circle\+Tangent\+Visual\+::$\sim$\+Intersect\+Circle\+Tangent\+Visual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_af3a55daa699052ba19a80d3d884fe8e7}\label{class_intersect_circle_tangent_visual_af3a55daa699052ba19a80d3d884fe8e7}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!FindRays@{FindRays}}
+\index{FindRays@{FindRays}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{FindRays()}{FindRays()}}
+{\footnotesize\ttfamily void Intersect\+Circle\+Tangent\+Visual\+::\+Find\+Rays (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p,  }\item[{const QPointF \&}]{center,  }\item[{qreal}]{radius }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a1a2b2cf85b6fd24e3cb9826ccf0512ae}\label{class_intersect_circle_tangent_visual_a1a2b2cf85b6fd24e3cb9826ccf0512ae}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void Intersect\+Circle\+Tangent\+Visual\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_visualization_aaabd4adaec0c8b32ff2e3895f74ffdc6}{Visualization}}.
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a384a46a8cf1f2543b1dc04cfdd843be4}\label{class_intersect_circle_tangent_visual_a384a46a8cf1f2543b1dc04cfdd843be4}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!setCRadius@{setCRadius}}
+\index{setCRadius@{setCRadius}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{setCRadius()}{setCRadius()}}
+{\footnotesize\ttfamily void Intersect\+Circle\+Tangent\+Visual\+::set\+CRadius (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a38de0a89c4c08ffa30975af92e221d00}\label{class_intersect_circle_tangent_visual_a38de0a89c4c08ffa30975af92e221d00}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!setCrossPoint@{setCrossPoint}}
+\index{setCrossPoint@{setCrossPoint}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{setCrossPoint()}{setCrossPoint()}}
+{\footnotesize\ttfamily void Intersect\+Circle\+Tangent\+Visual\+::set\+Cross\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a97136fc406bbc9b165def3a2897a49f0}\label{class_intersect_circle_tangent_visual_a97136fc406bbc9b165def3a2897a49f0}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!setObject2Id@{setObject2Id}}
+\index{setObject2Id@{setObject2Id}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{setObject2Id()}{setObject2Id()}}
+{\footnotesize\ttfamily void Intersect\+Circle\+Tangent\+Visual\+::set\+Object2\+Id (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_ad99c2afbb65c71dd06ca3ecda88d16aa}\label{class_intersect_circle_tangent_visual_ad99c2afbb65c71dd06ca3ecda88d16aa}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!type@{type}}
+\index{type@{type}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int Intersect\+Circle\+Tangent\+Visual\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_vis_line_ac418da09bac578ad2c9b6cf29ed5f6b9}{Vis\+Line}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a64b22117b5691484f338d30539adc3a2}\label{class_intersect_circle_tangent_visual_a64b22117b5691484f338d30539adc3a2}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!cCenter@{cCenter}}
+\index{cCenter@{cCenter}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{cCenter}{cCenter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circle\+Tangent\+Visual\+::c\+Center\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a5949c468f689dbfd153238111eeadd95}\label{class_intersect_circle_tangent_visual_a5949c468f689dbfd153238111eeadd95}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!cPath@{cPath}}
+\index{cPath@{cPath}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{cPath}{cPath}}
+{\footnotesize\ttfamily QGraphics\+Ellipse\+Item$\ast$ Intersect\+Circle\+Tangent\+Visual\+::c\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a7eab57b26ac40ad60445d7ef3911d8eb}\label{class_intersect_circle_tangent_visual_a7eab57b26ac40ad60445d7ef3911d8eb}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!cRadius@{cRadius}}
+\index{cRadius@{cRadius}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{cRadius}{cRadius}}
+{\footnotesize\ttfamily qreal Intersect\+Circle\+Tangent\+Visual\+::c\+Radius\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a15f0e00feb25d4ca7d3c8149ff65f5ec}\label{class_intersect_circle_tangent_visual_a15f0e00feb25d4ca7d3c8149ff65f5ec}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!crossPoint@{crossPoint}}
+\index{crossPoint@{crossPoint}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{crossPoint}{crossPoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vabstractpattern_8h_af5d8c100715d98b96732eae3baeaaf7b}{Cross\+Circles\+Point}} Intersect\+Circle\+Tangent\+Visual\+::cross\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a2898d2f9eb1d2e28bca6104e03decc8b}\label{class_intersect_circle_tangent_visual_a2898d2f9eb1d2e28bca6104e03decc8b}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!m\_secondarySupportColor@{m\_secondarySupportColor}}
+\index{m\_secondarySupportColor@{m\_secondarySupportColor}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{m\_secondarySupportColor}{m\_secondarySupportColor}}
+{\footnotesize\ttfamily QColor Intersect\+Circle\+Tangent\+Visual\+::m\+\_\+secondary\+Support\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_ac39b2d4a893db261b3a71cc9eb53a587}\label{class_intersect_circle_tangent_visual_ac39b2d4a893db261b3a71cc9eb53a587}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!object2Id@{object2Id}}
+\index{object2Id@{object2Id}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{object2Id}{object2Id}}
+{\footnotesize\ttfamily quint32 Intersect\+Circle\+Tangent\+Visual\+::object2\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a145ceae407310e3b567a0961906cf6ed}\label{class_intersect_circle_tangent_visual_a145ceae407310e3b567a0961906cf6ed}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!point@{point}}
+\index{point@{point}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{point}{point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circle\+Tangent\+Visual\+::point\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a7f94809af6b8da5fa23c3d89d999589a}\label{class_intersect_circle_tangent_visual_a7f94809af6b8da5fa23c3d89d999589a}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!tangent@{tangent}}
+\index{tangent@{tangent}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{tangent}{tangent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_ellipse}{VScaled\+Ellipse}}$\ast$ Intersect\+Circle\+Tangent\+Visual\+::tangent\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_intersect_circle_tangent_visual_a28d202378f1fe7a0e650bb3d025dbda9}\label{class_intersect_circle_tangent_visual_a28d202378f1fe7a0e650bb3d025dbda9}} 
+\index{IntersectCircleTangentVisual@{IntersectCircleTangentVisual}!tangent2@{tangent2}}
+\index{tangent2@{tangent2}!IntersectCircleTangentVisual@{IntersectCircleTangentVisual}}
+\doxysubsubsection{\texorpdfstring{tangent2}{tangent2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}$\ast$ Intersect\+Circle\+Tangent\+Visual\+::tangent2\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/line/\mbox{\hyperlink{intersect__circletangent__visual_8h}{intersect\+\_\+circletangent\+\_\+visual.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/visualization/line/\mbox{\hyperlink{intersect__circletangent__visual_8cpp}{intersect\+\_\+circletangent\+\_\+visual.\+cpp}}\end{DoxyCompactItemize}

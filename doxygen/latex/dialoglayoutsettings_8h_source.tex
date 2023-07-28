@@ -1,0 +1,194 @@
+\hypertarget{dialoglayoutsettings_8h_source}{}\doxysection{dialoglayoutsettings.\+h}
+\label{dialoglayoutsettings_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialoglayoutsettings.h@{D:/Github/Seamly2D/src/app/seamly2d/dialogs/dialoglayoutsettings.h}}
+\mbox{\hyperlink{dialoglayoutsettings_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialoglayoutsettings.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 13\ 1,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGLAYOUTSETTINGS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGLAYOUTSETTINGS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractlayoutdialog_8h}{vabstractlayoutdialog.h}}"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vlayout/vbank.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QCloseEvent>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QMargins>}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}};}
+\DoxyCodeLine{00066\ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_layout_generator}{VLayoutGenerator}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstractLayoutDialog}}}
+\DoxyCodeLine{00071\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}}(\mbox{\hyperlink{class_v_layout_generator}{VLayoutGenerator}}\ *\mbox{\hyperlink{class_dialog_layout_settings_a6d4d807107194545050900fd9d4aff0f}{generator}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a047fb421851b0c547d89454da79bede2}{disableSettings}}\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dialog_layout_settings_acf602d8ee2c6de4c2cf5671da72104d6}{\string~DialogLayoutSettings}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_afbe856437ed83c333d44c8c0ce1d6b18}{GetPaperHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_ae19301b8fd24050d9aa4ee13cc9d1e1b}{SetPaperHeight}}(qreal\ value);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_a7b35e2db36ed4ffb48795f8cad84a24c}{GetPaperWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_af3fed71bc538b3a238b21eb86cd43062}{SetPaperWidth}}(qreal\ value);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_a3f156a84f44f892d901f0d7602191ff0}{GetShift}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_aa84c74bf23489b6e707d846a5d57df4b}{SetShift}}(qreal\ value);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_af2ac271296f27de6f84b592f965088d4}{GetLayoutWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a8bfa56e3f702ffea0c6998e49405fbf1}{SetLayoutWidth}}(qreal\ value);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ QMarginsF\ \mbox{\hyperlink{class_dialog_layout_settings_a8919424b05a5e4df63bc179bbdd97718}{GetFields}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_af0166cdbb5cdc1dafbd83b48b31d8f38}{SetFields}}(\textcolor{keyword}{const}\ QMarginsF\ \&value);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ \mbox{\hyperlink{class_dialog_layout_settings_a32ceaec5ae764ba293acf9a96a80c3ae}{GetGroup}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a383e7d60c948284ea09bd469c83bad18}{SetGroup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}\ \&value);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_ab6bee5dd9a91f19c36312521958bee67}{GetRotate}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_ad1d337aa61dd4fd9011125bd625e6788}{SetRotate}}(\textcolor{keywordtype}{bool}\ state);}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dialog_layout_settings_a89581f9ddfcfbadc3e0c93ad17e412a5}{GetIncrease}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_aaf1ab2b3339fe3a55f3ea8a947de58c6}{SetIncrease}}(\textcolor{keywordtype}{int}\ increase);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_ac892179c861ffc7c6a9f5226e3409122}{GetAutoCrop}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a5a6d62e427bd18df372dfa16114df178}{SetAutoCrop}}(\textcolor{keywordtype}{bool}\ autoCrop);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a4be9a05235d86faa8ce223a3da9387cc}{IsSaveLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_aad9e785049a945be70fa6f16e067970f}{SetSaveLength}}(\textcolor{keywordtype}{bool}\ save);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_ae896d4da50f77e96b5d459b4fffcce04}{IsUnitePages}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a5f445874c1de255ada06cdae10297e31}{SetUnitePages}}(\textcolor{keywordtype}{bool}\ save);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a02ab175eaa87539d19be77389a844048}{IsStripOptimization}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_afb5a094ce191cf20dfcadd8d624c5efd}{SetStripOptimization}}(\textcolor{keywordtype}{bool}\ save);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ quint8\ \mbox{\hyperlink{class_dialog_layout_settings_adfe709b011c1cf2ce641242ff97adc32}{GetMultiplier}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_dialog_layout_settings_a48d105f86eac4d59136548f8d6ae06a1}{SetMultiplier}}(\textcolor{keyword}{const}\ quint8\ \&value);}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_acb6e44bd4380e04ce7215d32f2bb2168}{IsIgnoreAllFields}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a58fd811b4c0201f2bac8a80622b5f0fd}{SetIgnoreAllFields}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a295a2454967425d7b8e03d0a53d88d70}{isTextAsPaths}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a5c5a9bd44947ea9468be1f234e238d36}{setTextAsPaths}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ QString\ \mbox{\hyperlink{class_dialog_layout_settings_ad07927e41cfeb8edd9ebeb8a1e133410}{SelectedPrinter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{comment}{//support\ functions\ for\ the\ command\ line\ parser\ which\ uses\ invisible\ dialog\ to\ properly\ build\ layout\ generator}}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_af125c7177989e6a7ae433caff654581e}{SelectTemplate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3}{PaperSizeTemplate}}\&\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_dialog_layout_settings_a77930c7da51be8babfc05763dcfc9983}{MakeHelpTemplateList}}();}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a8ca57779d8b2d1c8abf9a4e77ecc986f}{SelectPaperUnit}}(\textcolor{keyword}{const}\ QString\&\ units);}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a26260883795f12bec16d1035f950f041}{SelectLayoutUnit}}(\textcolor{keyword}{const}\ QString\&\ units);}
+\DoxyCodeLine{00129\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_a54eb92bf16e26db9af18ba3ff6c9dec5}{LayoutToPixels}}(qreal\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ \ \ \ \ qreal\ \mbox{\hyperlink{class_dialog_layout_settings_a0cc510df334eca8dc5425d0603cd1930}{PageToPixels}}(qreal\ value)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_dialog_layout_settings_a7b12e2e94d48a29c1930de7a2cddb3f8}{MakeGroupsHelp}}();}
+\DoxyCodeLine{00132\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a32814c484bd142e3a481fb87983dbcce}{showEvent}}(QShowEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00134\ \ \ \ \ QSizeF\ \mbox{\hyperlink{class_dialog_layout_settings_a9822323a0fd59be715a4b19ce341494f}{getTemplateSize}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3}{PaperSizeTemplate}}\ \&tmpl,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \&unit)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a015e60d31d8c517da8c74a0fd0cde88d}{DialogAccepted}}();}
+\DoxyCodeLine{00138\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_ab1808f1a1780a8c39194ce3369f5688f}{ConvertPaperSize}}();}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a8f7219a4c19a10e5bc4b38ae61379662}{ConvertLayoutSize}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a48777feea95dc4785acf9f0c67b95d59}{TemplateSelected}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_af70e6a67e94fd45f6526489422fe4757}{FindTemplate}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_acf9e85c47c786866918615c52a1c8908}{PaperSizeChanged}}();}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_aebefa9f7a4af43860d6cd0bef2a025b4}{Swap}}(\textcolor{keywordtype}{bool}\ checked);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a599a6239b3691e3f7203d41694f7e50a}{RestoreDefaults}}();}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a0be5de3be4bb828ff3376d82fda68987}{PrinterMargins}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a4202ac325f586cbc2eefdb74a8597990}{CorrectMaxFileds}}();}
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a50a3bb71e20a18c0346b2afd9fc11c18}{IgnoreAllFields}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{00150\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00151\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}})}
+\DoxyCodeLine{00152\ \ \ \ \ typedef\ QStringList\ \mbox{\hyperlink{class_dialog_layout_settings_a7ee1945646da1d8ed6b65bf0767b122f}{FormatsVector}};}
+\DoxyCodeLine{00153\ \ \ \ \ typedef\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_dialog_layout_settings_a9ed3e070b53c975c315cee62cda1eb2f}{VIndexType}};}
+\DoxyCodeLine{00154\ \ \ \ \ const\ static\ \ \mbox{\hyperlink{class_dialog_layout_settings_a7ee1945646da1d8ed6b65bf0767b122f}{FormatsVector}}\ \mbox{\hyperlink{class_dialog_layout_settings_ac66172f690c04e8ac16ed63d720009cf}{pageFormatNames}};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a047fb421851b0c547d89454da79bede2}{disableSettings}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_layout_settings}{DialogLayoutSettings}}\ *\mbox{\hyperlink{class_dialog_layout_settings_a7049db2c15edd3898a986e6ed9af5d0a}{ui}};}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \mbox{\hyperlink{class_dialog_layout_settings_a7099f30cdc341b0ea81d2c8c5908b400}{oldPaperUnit}};}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \mbox{\hyperlink{class_dialog_layout_settings_a46f8643a8ea3f0f95e663eb74f8dfc6a}{oldLayoutUnit}};}
+\DoxyCodeLine{00161\ \ \ \ \ \mbox{\hyperlink{class_v_layout_generator}{VLayoutGenerator}}\ *\mbox{\hyperlink{class_dialog_layout_settings_a6d4d807107194545050900fd9d4aff0f}{generator}};}
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_layout_settings_a60e93ddeb366f78e3bca36f46635bcd0}{isInitialized}};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_abd382fe443df54b4d2ee39ea93cbe06b}{InitPaperUnits}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_ab1c8c4aaf45ee4b344d19d09880098ad}{InitLayoutUnits}}();}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_abf750d3a76b91223680a6ab56a88292c}{InitPrinter}}();}
+\DoxyCodeLine{00167\ \ \ \ \ QSizeF\ \mbox{\hyperlink{class_dialog_layout_settings_a98f845913b7758eae3356dd81b4bd38a}{Template}}();}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ QMarginsF\ \mbox{\hyperlink{class_dialog_layout_settings_a810876ccaf79fb13b8ac6a4c0c043f3c}{MinPrinterFields}}()\ const;}
+\DoxyCodeLine{00170\ \ \ \ \ QMarginsF\ \mbox{\hyperlink{class_dialog_layout_settings_a919dcf71b09f4ca7e41e0728d6663b68}{GetDefPrinterFields}}()\ const;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \mbox{\hyperlink{class_dialog_layout_settings_a759fa9090e72f24217f6c40062c2ef6f}{PaperUnit}}()\ const;}
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ \mbox{\hyperlink{class_dialog_layout_settings_a4e55820bc15c355711e1340f37ca1efc}{LayoutUnit}}()\ const;}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a501ee6564ac832c79d9b6077b3bae46e}{CorrectPaperDecimals}}();}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_ad9b3321ca2c9147268515a13375c14bd}{CorrectLayoutDecimals}}();}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a84b9af07f7623fb9c698449d5a777c9e}{MinimumPaperSize}}();}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a414dc5e0d663cffa4da8929bf49c6f4e}{MinimumLayoutSize}}();}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a9495a62d5469a018c31e3794cf02f9d9}{ReadSettings}}();}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a115e75b840d236bda884f0ff64e8646b}{WriteSettings}}()\ const;}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a267ce1c24f39d4c2be906394d61acedb}{SheetSize}}(const\ QSizeF\ \&size);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_layout_settings_a8896d6b6353d817eb2884c0cd25d67cf}{SetAdditionalOptions}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00186\ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGLAYOUTSETTINGS\_H}}
+
+\end{DoxyCode}

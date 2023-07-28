@@ -1,0 +1,86 @@
+\hypertarget{vcolorpropertyeditor_8h_source}{}\doxysection{vcolorpropertyeditor.\+h}
+\label{vcolorpropertyeditor_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vcolorpropertyeditor.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vcolorpropertyeditor.h}}
+\mbox{\hyperlink{vcolorpropertyeditor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vcolorpropertyeditor.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VCOLORPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VCOLORPROPERTYEDITOR\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QLabel>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QLineEdit>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QPixmap>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QSpacerItem>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QToolButton>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QWidget>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor}{VColorPropertyEditor}}\ :\ \textcolor{keyword}{public}\ QWidget}
+\DoxyCodeLine{00041\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor}{VColorPropertyEditor}}(QWidget\ *parent);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_ac25c0c60770b762254eb42829b18d6a2}{\string~VColorPropertyEditor}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ QColor\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_ab3b317827e03d3f5b52c9c12803a497e}{getLineColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{static}\ QPixmap\ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a328dff1f96646f2294460948881886cd}{GetColorPixmap}}(\textcolor{keyword}{const}\ QColor\ \&color,\ quint32\ size\ =\ 16);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a1bbf692a510b5b454c33ee28438266d8}{GetColorString}}(\textcolor{keyword}{const}\ QColor\ \&color);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a94144d52409e1c9cd354d9eb46a156c1}{eventFilter}}(QObject\ *obj,\ QEvent\ *ev)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ signals:}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_aa08931a7d329d6a175ea0303f4edc542}{dataChangedByUser}}(\textcolor{keyword}{const}\ QColor\ \&GetColor,\ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor}{VColorPropertyEditor}}\ *editor);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a9d5028c2a4879b0765157fd0eeebaa10}{dataChanged}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_affe9cb782a0c70ba5c95df4081a6191b}{setLineColor}}(\textcolor{keyword}{const}\ QColor\ \&color\_);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_acc3721b7e361caf64a0051fd08a3f6d6}{onToolButtonClicked}}();}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00083\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor}{VColorPropertyEditor}})}
+\DoxyCodeLine{00084\ \ \ \ \ QColor\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_ab64ac67593b36ede31005da8238e6295}{Color}};}
+\DoxyCodeLine{00085\ \ \ \ \ QToolButton\ \ \ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_af28480d8c8f72943725454e5e2d4a6b3}{ToolButton}};}
+\DoxyCodeLine{00086\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a786317ec29b0568f4470a9c7c8551eb1}{TextLabel}};}
+\DoxyCodeLine{00087\ \ \ \ \ QLabel\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_ac80e65139d46702fe75eee78288df8f3}{ColorLabel}};}
+\DoxyCodeLine{00088\ \ \ \ \ QSpacerItem\ \ \ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_editor_a5d436e72edb907a6746cf75736111c55}{Spacer}};}
+\DoxyCodeLine{00089\ \};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QFILEPROPERTYEDITOR\_H}}
+
+\end{DoxyCode}

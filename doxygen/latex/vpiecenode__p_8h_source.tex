@@ -1,0 +1,230 @@
+\hypertarget{vpiecenode__p_8h_source}{}\doxysection{vpiecenode\+\_\+p.\+h}
+\label{vpiecenode__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/vpiecenode\_p.h@{D:/Github/Seamly2D/src/libs/vpatterndb/vpiecenode\_p.h}}
+\mbox{\hyperlink{vpiecenode__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 3\ 11,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VPIECENODE\_P\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VPIECENODE\_P\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QDataStream>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vcommonsettings.h"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00064\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00065\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ class\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_piece_node_data_a9c8bdb7b3ea9bd5894f7ee0ee7b6167e}{VPieceNodeData}}()}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ :\ m\_id(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ,\ m\_typeTool(\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}::\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665}{NodePoint}})}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ ,\ m\_reverse(false)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ,\ m\_excluded(false)}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ ,\ m\_isNotch(false)}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ ,\ m\_isMainPathNode(true)}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ ,\ m\_beforeWidthFormula(\mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}})}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ ,\ m\_afterWidthFormula(\mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}})}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ ,\ m\_angleType(\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{PieceNodeAngle}}::\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d}{ByLength}})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ ,\ m\_notchType(\mbox{\hyperlink{def_8cpp_ade9d3157f89470d2e21387fd88334fd9}{stringToNotchType}}(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchType()))}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ ,\ m\_notchSubType(\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{NotchSubType}}::\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770}{Straightforward}})}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ ,\ m\_showNotch(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>showSeamAllowanceNotch())}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ ,\ m\_showSeamlineNotch(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>showSeamlineNotch())}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ ,\ m\_notchLength(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchLength())}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ ,\ m\_notchWidth(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchWidth())}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ ,\ m\_notchAngle(.000)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ ,\ m\_notchCount(1)}
+\DoxyCodeLine{00088\ \ \ \ \ \{\}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{class_v_piece_node_data_a8cb2333f0317761cf034caf42a2e9fb5}{VPieceNodeData}}(quint32\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ typeTool,\ \textcolor{keywordtype}{bool}\ reverse)}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ :\ m\_id(id)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ ,\ m\_typeTool(typeTool)}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ ,\ m\_reverse(reverse)}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ ,\ m\_excluded(false)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ ,\ m\_isNotch(false)}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ ,\ m\_isMainPathNode(true)}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ ,\ m\_beforeWidthFormula(\mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}})}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ ,\ m\_afterWidthFormula(\mbox{\hyperlink{ifcdef_8cpp_a8ee6a51dae224b6a2b5a7562b01bc2fd}{currentSeamAllowance}})}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ ,\ m\_angleType(\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{PieceNodeAngle}}::\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d}{ByLength}})}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ ,\ m\_notchType(\mbox{\hyperlink{def_8cpp_ade9d3157f89470d2e21387fd88334fd9}{stringToNotchType}}(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchType()))}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ ,\ m\_notchSubType(\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{NotchSubType}}::\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4a0ecb7adb3485f25769712398fb73e770}{Straightforward}})}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ ,\ m\_showNotch(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>showSeamAllowanceNotch())}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ ,\ m\_showSeamlineNotch(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>showSeamlineNotch())}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ ,\ m\_notchLength(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchLength())}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ ,\ m\_notchWidth(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>Settings()-\/>getDefaultNotchWidth())}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ ,\ m\_notchAngle(.000)}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ ,\ m\_notchCount(1)}
+\DoxyCodeLine{00108\ \ \ \ \ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (m\_typeTool\ ==\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395acd7236e1d584dcfc791f42196931e665}{Tool::NodePoint}})}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ m\_reverse\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_v_piece_node_data_a2a27e960ab101500409693a658ce056b}{VPieceNodeData}}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\&\ node)}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ :\ QSharedData(node)}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ ,\ m\_id(node.m\_id)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ ,\ m\_typeTool(node.m\_typeTool)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ ,\ m\_reverse(node.m\_reverse)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ ,\ m\_excluded(node.m\_excluded)}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ ,\ m\_isNotch(node.m\_isNotch)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ ,\ m\_isMainPathNode(node.m\_isMainPathNode)}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ ,\ m\_beforeWidthFormula(node.m\_beforeWidthFormula)}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ ,\ m\_afterWidthFormula(node.m\_afterWidthFormula)}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ ,\ m\_angleType(node.m\_angleType)}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ ,\ m\_notchType(node.m\_notchType)}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ ,\ m\_notchSubType(node.m\_notchSubType)}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ ,\ m\_showNotch(node.m\_showNotch)}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ ,\ m\_showSeamlineNotch(node.m\_showSeamlineNotch)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ ,\ m\_notchLength(node.m\_notchLength)}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ ,\ m\_notchWidth(node.m\_notchWidth)}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ ,\ m\_notchAngle(node.m\_notchAngle)}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ ,\ m\_notchCount(node.m\_notchCount)}
+\DoxyCodeLine{00134\ \ \ \ \ \{\}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{class_v_piece_node_data_adbab82fecc92bd0a9b45a348fe857870}{\string~VPieceNodeData}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ friend\ QDataStream\&\ operator<<(QDataStream\&\ out,\ const\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\&\ p);}
+\DoxyCodeLine{00139\ \ \ \ \ friend\ QDataStream\&\ operator>>(QDataStream\&\ in,\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\&\ p);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ quint32\ \ \ \ \ \ \ \ m\_id;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \ \ \ \ \ \ \ \ \ \ m\_typeTool;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_reverse;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_excluded;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_isNotch;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_isMainPathNode;\ \ }
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ QString\ \ \ \ \ \ \ \ m\_beforeWidthFormula;}
+\DoxyCodeLine{00152\ \ \ \ \ QString\ \ \ \ \ \ \ \ m\_afterWidthFormula;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{PieceNodeAngle}}\ m\_angleType;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{NotchType}}\ \ \ \ \ \ m\_notchType;}
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{NotchSubType}}\ \ \ m\_notchSubType;}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_showNotch;}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ m\_showSeamlineNotch;}
+\DoxyCodeLine{00160\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ m\_notchLength;}
+\DoxyCodeLine{00161\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ m\_notchWidth;}
+\DoxyCodeLine{00162\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ m\_notchAngle;}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ m\_notchCount;}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ private:}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\ \&operator=(const\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00167\ \};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \textcolor{comment}{//\ Friend\ functions}}
+\DoxyCodeLine{00170\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00171\ QDataStream\ \&operator<<(QDataStream\ \&out,\ const\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\ \&p)}
+\DoxyCodeLine{00172\ \{}
+\DoxyCodeLine{00173\ \ \ \ \ out\ <<\ p.\mbox{\hyperlink{class_v_piece_node_data_a8b9d430363d5581510a7660ad17d7e71}{m\_id}}}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(p.m\_typeTool)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ <<\ p.m\_reverse}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ <<\ p.m\_excluded}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ <<\ p.m\_isNotch}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ <<\ p.m\_beforeWidthFormula}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ <<\ p.m\_afterWidthFormula}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(p.m\_angleType)}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(p.m\_notchType)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ <<\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(p.m\_notchSubType)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ <<\ p.m\_showNotch}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ <<\ p.m\_showSeamlineNotch}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ <<\ p.m\_notchLength}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ <<\ p.m\_notchWidth}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ <<\ p.m\_notchAngle}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ <<\ p.m\_notchCount;}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordflow}{return}\ out;}
+\DoxyCodeLine{00190\ \}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00193\ QDataStream\ \&\mbox{\hyperlink{vpiecenode__p_8h_aa16b5469492769486b19ccdb6c561fd3}{operator>>}}(QDataStream\ \&in,\ \mbox{\hyperlink{class_v_piece_node_data}{VPieceNodeData}}\ \&p)}
+\DoxyCodeLine{00194\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{int}\ typeTool\ \ \ \ \ =\ 0;}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{int}\ angleType\ \ \ \ =\ 0;}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{int}\ notchType\ \ \ \ =\ 0;}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{int}\ notchSubType\ =\ 0;}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ in\ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a8b9d430363d5581510a7660ad17d7e71}{m\_id}}}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ >>\ typeTool}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_afec71e3fdfad8dc77fbef2b44b79e500}{m\_reverse}}}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a8e7dfd8ff3c2beabe7b00e17e2041cca}{m\_excluded}}}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a1a4e62247e6e58634e38997ca5a2c96a}{m\_isNotch}}}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a83abfead0955a974e14b9f237e973a2c}{m\_beforeWidthFormula}}}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a5185703bef8d41bd2989505bc2c80bdf}{m\_afterWidthFormula}}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ >>\ angleType}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ >>\ notchType}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ >>\ notchSubType}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_abd48a5bfc9f9b50de7941931d5496864}{m\_showNotch}}}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a2d4079210953112a90562187824a893b}{m\_showSeamlineNotch}}}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a13263b128600c8440111ff1f28fe983a}{m\_notchLength}}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_adf13499da7c102bbda827badd5226564}{m\_notchWidth}}}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a850540f50a612f3968a0e00347941641}{m\_notchAngle}}}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ >>\ p.\mbox{\hyperlink{class_v_piece_node_data_a8c946efb2ec5c648a9c19a2556de2094}{m\_notchCount}};}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ p.\mbox{\hyperlink{class_v_piece_node_data_a8403717eeb584219259ab606968ef275}{m\_typeTool}}\ \ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\textcolor{keyword}{>}(typeTool);}
+\DoxyCodeLine{00218\ \ \ \ \ p.\mbox{\hyperlink{class_v_piece_node_data_a56f2e0e27b03bca03e945ea927b4b73f}{m\_angleType}}\ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{def_8h_a2fedf9fccccc9531756a26b2128252e2}{PieceNodeAngle}}\textcolor{keyword}{>}(angleType);}
+\DoxyCodeLine{00219\ \ \ \ \ p.\mbox{\hyperlink{class_v_piece_node_data_aa37c0205e6746e6c190143b6c1087213}{m\_notchType}}\ \ \ \ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{NotchType}}\textcolor{keyword}{>}(notchType);}
+\DoxyCodeLine{00220\ \ \ \ \ p.\mbox{\hyperlink{class_v_piece_node_data_a6baac3dfbbc09a6545f3a4b98c4c1992}{m\_notchSubType}}\ =\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{NotchSubType}}\textcolor{keyword}{>}(notchSubType);}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{return}\ in;}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPIECENODE\_P\_H}}
+
+\end{DoxyCode}

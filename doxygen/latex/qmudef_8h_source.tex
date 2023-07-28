@@ -1,0 +1,86 @@
+\hypertarget{qmudef_8h_source}{}\doxysection{qmudef.\+h}
+\label{qmudef_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmudef.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmudef.h}}
+\mbox{\hyperlink{qmudef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUDEF\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUDEF\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QChar>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QLocale>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00032\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Wattributes"{}})}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ Q\_CC\_MSVC}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\ \ \ \ \#include\ <ciso646>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Q\_CC\_MSVC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ INIT\_LOCALE\_VARIABLES(locale)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{const\ QChar\ positiveSign\ \ \ =\ (locale).positiveSign();\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{const\ QChar\ negativeSign\ \ \ =\ (locale).negativeSign();\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{const\ QChar\ sign0\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(0).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{const\ QChar\ sign1\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(1).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{const\ QChar\ sign2\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(2).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{const\ QChar\ sign3\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(3).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{const\ QChar\ sign4\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(4).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{const\ QChar\ sign5\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(5).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{const\ QChar\ sign6\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(6).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{const\ QChar\ sign7\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(7).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{const\ QChar\ sign8\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(8).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{const\ QChar\ sign9\ \ \ \ \ \ \ \ \ \ =\ (locale).toString(9).at(0);\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{const\ QChar\ expUpper\ \ \ \ \ \ \ =\ (locale).exponential().toUpper();\ \(\backslash\)}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{const\ QChar\ expLower\ \ \ \ \ \ \ =\ (locale).exponential().toLower();\ \(\backslash\)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{const\ QChar\ decimalPoint\ \ \ =\ (locale).decimalPoint();\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{const\ QChar\ groupSeparator\ =\ (locale).groupSeparator()\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{}}
+\DoxyCodeLine{00056\ QString\ \mbox{\hyperlink{qmudef_8h_a0e9b14da123c7eb60aaa7cfff6086a2e}{NameRegExp}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ Q\_REQUIRED\_RESULT\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ QmuFuzzyComparePossibleNulls(\textcolor{keywordtype}{double}\ p1,\ \textcolor{keywordtype}{double}\ p2);}
+\DoxyCodeLine{00061\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ QmuFuzzyComparePossibleNulls(\textcolor{keywordtype}{double}\ p1,\ \textcolor{keywordtype}{double}\ p2)}
+\DoxyCodeLine{00062\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}(qFuzzyIsNull(p1))}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ qFuzzyIsNull(p2);}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(qFuzzyIsNull(p2))}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00070\ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00072\ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ qFuzzyCompare(p1,\ p2);}
+\DoxyCodeLine{00074\ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{qmudef_8h_a664390df11653050bb081955cd3fc653}{ReadVal}}(\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ \&val,\ \textcolor{keyword}{const}\ QLocale\ \&locale,\ \textcolor{keyword}{const}\ QChar\ \&decimal,}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QChar\ \&thousand);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QMUDEF\_H}}
+
+\end{DoxyCode}

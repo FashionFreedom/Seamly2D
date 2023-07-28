@@ -1,0 +1,395 @@
+\hypertarget{vcontainer_8h_source}{}\doxysection{vcontainer.\+h}
+\label{vcontainer_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/vcontainer.h@{D:/Github/Seamly2D/src/libs/vpatterndb/vcontainer.h}}
+\mbox{\hyperlink{vcontainer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vcontainer.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VCONTAINER\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VCONTAINER\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QCoreApplication>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QHash>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QMessageLogger>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QSet>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <QTypeInfo>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ <new>}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}../ifc/exception/vexceptionbadid.h"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vabstractcubicbezierpath.h"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vabstractcurve.h"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vgobject.h"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{variables_8h}{variables.h}}"{}}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vinternalvariable_8h}{variables/vinternalvariable.h}}"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpiece_8h}{vpiece.h}}"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpiecepath_8h}{vpiecepath.h}}"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtranslatevars_8h}{vtranslatevars.h}}"{}}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_elliptical_arc}{VEllipticalArc}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00086\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00087\ QT\_WARNING\_DISABLE\_INTEL(2021)}
+\DoxyCodeLine{00088\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ class\ \mbox{\hyperlink{class_v_container_data}{VContainerData}}\ :\ public\ QSharedData\ \textcolor{comment}{//-\/V690}}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_v_container_data_a862905fed70202c8734183a979d0a7c1}{VContainerData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *trVars,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ *patternUnit)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ :\ gObjects(\mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ >()),}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ variables(\mbox{\hyperlink{class_q_hash}{QHash}}<QString,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_internal_variable}{VInternalVariable}}>\ >\ ()),}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ pieces(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_piece}{VPiece}}>>(new\ \mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_piece}{VPiece}}>())),}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ piecePaths(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}>>(new\ \mbox{\hyperlink{class_q_hash}{QHash}}<quint32,\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}>())),}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ trVars(trVars),}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ patternUnit(patternUnit)}
+\DoxyCodeLine{00101\ \ \ \ \ \{\}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_v_container_data_a5bb37aaf37f2b52d5a905bf4e8a1dade}{VContainerData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container_data}{VContainerData}}\ \&data)}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ :\ QSharedData(data),}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ gObjects(data.gObjects),}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ variables(data.variables),}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ pieces(data.pieces),}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ piecePaths(data.piecePaths),}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ trVars(data.trVars),}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ patternUnit(data.patternUnit)}
+\DoxyCodeLine{00111\ \ \ \ \ \{\}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_container_data}{\string~VContainerData}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash<quint32,\ QSharedPointer<VGObject>}}\ >\ \mbox{\hyperlink{class_v_container_data_a9647e38fdc1bcec5fd7e3f08cd275260}{gObjects}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{class_q_hash}{QHash<QString,\ QSharedPointer<VInternalVariable>}}>\ \mbox{\hyperlink{class_v_container_data_ab5d814055431720d5aae828f2d0ae9d3}{variables}};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<QHash<quint32,\ VPiece>}}>\ \mbox{\hyperlink{class_v_container_data_a40e129856d726490ef778f12dcefb1c4}{pieces}};}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<QHash<quint32,\ VPiecePath>}}>\ \mbox{\hyperlink{class_v_container_data_a29d8baca87fb94ca75ac93b04623073a}{piecePaths}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *\mbox{\hyperlink{class_v_container_data_acf3bec049fc4e0123bcde4f10a50b39f}{trVars}};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ *\mbox{\hyperlink{class_v_container_data_af6ce0a0754fff49d5296a64e40e0b054}{patternUnit}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_v_container_data}{VContainerData}}\ \&\mbox{\hyperlink{class_v_container_data_a9a90061e8af40a43d7827207faec4700}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container_data}{VContainerData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00133\ \};}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}}}
+\DoxyCodeLine{00141\ \{}
+\DoxyCodeLine{00142\ \ \ \ \ Q\_DECLARE\_TR\_FUNCTIONS(\mbox{\hyperlink{class_v_container}{VContainer}})}
+\DoxyCodeLine{00143\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *trVars,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ *patternUnit);}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ \&data);}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_v_container_ad9538b65e7cefffe8846d901ce1b8c0e}{\string~VContainer}}();}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \&\mbox{\hyperlink{class_v_container_a2f26d4b8875f74d17f39ad204d529d04}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ \&data);}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \&\mbox{\hyperlink{class_v_container_a2f26d4b8875f74d17f39ad204d529d04}{operator=}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ \&\&data)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_ade46c349b82abd5f45cc9b268a8ae5af}{Swap}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ \&data)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00156\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \mbox{\hyperlink{class_v_container_aa5ac2a3108612bcad2520613c558469c}{GeometricObject}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}\ \mbox{\hyperlink{class_v_container_a956a1e551804359b7aa46a389b4055da}{GetGObject}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}\ \mbox{\hyperlink{class_v_container_ad3b0b75ee519737fd81922d9ccd8a1b0}{GetFakeGObject}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_afb5d32209e05cbefb3bb25e595ff9651}{GetPiece}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_abb4c7c51ea6ffe590934e8d93e14f987}{GetPiecePath}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \ \mbox{\hyperlink{class_v_container_acb7eb6721eb6fcd66ddd67a389a6bbbf}{GetVariable}}(QString\ name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{static}\ quint32\ \ \ \ \ \mbox{\hyperlink{class_v_container_a8b9f99f3ffab1e4427e32e1ed9fd331c}{getId}}();}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keyword}{static}\ quint32\ \ \ \ \ \mbox{\hyperlink{class_v_container_a3bc8542ea3777a73755c94864dbdf471}{getNextId}}();}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a565c594b62d332110b3185457062c999}{UpdateId}}(quint32\ newId);}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_acc5ab46f429a82089f10c4ffa9a75a95}{AddGObject}}(\mbox{\hyperlink{class_v_g_object}{VGObject}}\ *obj);}
+\DoxyCodeLine{00168\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_piece}{AddPiece}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece);}
+\DoxyCodeLine{00169\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ae16cf7d961c9bf6d56d53b2bf526ffbc}{AddPiecePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&path);}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a4d9978382da2129234543e9c2e587ce6}{AddLine}}(\textcolor{keyword}{const}\ quint32\ \&firstPointId,\ \textcolor{keyword}{const}\ quint32\ \&secondPointId);}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a7feda3494b23830410c3bc82dedd88a5}{AddArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VAbstractCurve>}}\ \&arc,\ \textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ quint32\ \&parentId\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}});}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ab8c2df1916af449248fc1cc3b114e4b0}{AddSpline}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VAbstractBezier>}}\ \&curve,\ quint32\ \textcolor{keywordtype}{id},\ quint32\ parentId\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}});}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a023a6526c9cfac29eae6130d18678567}{AddCurveWithSegments}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VAbstractCubicBezierPath>}}\ \&curve,\ \textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quint32\ parentId\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}});}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{AddVariable}}(\textcolor{keyword}{const}\ QString\&\ name,\ T\ *var);}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{AddVariable}}(\textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&var);}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a3782bdd0898b8786fbaec79e26b9f294}{RemoveVariable}}(\textcolor{keyword}{const}\ QString\&\ name);}
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a36dd0a361ee85e91696e591191be906f}{RemovePiece}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{UpdateGObject}}(quint32\ \textcolor{keywordtype}{id},\ T*\ obj);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{UpdateGObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&obj);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a348116d426dd469c51f1db7367a6c16f}{UpdatePiece}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece);}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a5765bfea2a56818b1ecfdb613a92b0e3}{UpdatePiecePath}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&path);}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a734cbfdf6f7b4f21ef303adf3af3ac21}{Clear}}();}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_add698bed8316b4cc17fc729c12d0ce6e}{ClearForFullParse}}();}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a79fcff11cc02337a45d5823b6bd27fbf}{ClearGObjects}}();}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a5971c5d060ff7f8e3ea3b4c2963b7476}{ClearCalculationGObjects}}();}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a6af91c1f60fbd9436f6906cb3cc15bf0}{ClearVariables}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{VarType}}\ \&type\ =\ VarType::Unknown);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a33a7250ec0af542595c8f9a1ee1fe2c0}{ClearUniqueNames}}();}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_aeb966d8c1eeae8deb1778170fc2a87f3}{ClearUniqueIncrementNames}}();}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a14c6f9dbb224c5c731cc70dfb6be7d86}{SetSize}}(qreal\ \mbox{\hyperlink{class_v_container_a89327043e0a0fac60ed599078d6cdd08}{size}});}
+\DoxyCodeLine{00201\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ad2bd73807fe0d4856e6e317644ec561c}{SetHeight}}(qreal\ \mbox{\hyperlink{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}{height}});}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a89327043e0a0fac60ed599078d6cdd08}{size}}();}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ *\mbox{\hyperlink{class_v_container_a6dbfd90ceb0810c0e19a0a56978a76bc}{rsize}}();}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a14373b61f41dd8e9a31f1f54a02b0d3b}{height}}();}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ *\mbox{\hyperlink{class_v_container_aad707a2d87e8c2fa067eb472babd247a}{rheight}}();}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ae72c0205cb81f1897ca8151ea91713a5}{removeCustomVariable}}(\textcolor{keyword}{const}\ QString\&\ name);}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_hash}{QHash<quint32,\ QSharedPointer<VGObject>}}\ >\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_container_abf178a7ab3e8da08b920d4706987576f}{DataGObjects}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_hash}{QHash<quint32,\ VPiece>}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_container_a2018d29f87319368589dc20eb578b1e7}{DataPieces}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_hash}{QHash<QString,\ QSharedPointer<VInternalVariable>}}>\ *\mbox{\hyperlink{class_v_container_a85bd18752992d6a481ae95a553d64562}{DataVariables}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VMeasurement>}}\ >\ \ \mbox{\hyperlink{class_v_container_af184c8e803566243f1e3c66252d03bf1}{DataMeasurements}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VIncrement>}}\ >\ \ \ \ \mbox{\hyperlink{class_v_container_ab718ceda5f073b8f5f3b68ae45caba73}{variablesData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VLengthLine>}}\ >\ \ \ \mbox{\hyperlink{class_v_container_a8369f3f12c26e803eadaed76bb5c4fc9}{lineLengthsData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VCurveLength>}}\ >\ \ \mbox{\hyperlink{class_v_container_a7f2071f98399ae905a224ce89b461ffb}{curveLengthsData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VCurveCLength>}}\ >\ \mbox{\hyperlink{class_v_container_a29e2d00478b9482ceb281101496f1b69}{controlPointLengthsData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VLineAngle>}}\ >\ \ \ \ \mbox{\hyperlink{class_v_container_a10a3da038590e6ee972c6bdbdfd7f195}{lineAnglesData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VArcRadius>}}\ >\ \ \ \ \mbox{\hyperlink{class_v_container_a0330c9b75cda9865431a323f46af4058}{arcRadiusesData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00220\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<VCurveAngle>}}\ >\ \ \ \mbox{\hyperlink{class_v_container_a12e8cee502903c71d41e48510b410fb8}{curveAnglesData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_a64f2ef99d6306c96b350649de15cb8ec}{IsUnique}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keyword}{static}\ QStringList\ \mbox{\hyperlink{class_v_container_ab1207327782f49f561c9bdfac6c8d4c8}{AllUniqueNames}}();}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}}\ *\mbox{\hyperlink{class_v_container_acf4b6cb5a02f7aa204ce5a088f028a39}{GetPatternUnit}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *\mbox{\hyperlink{class_v_container_a1a28f581e994741e019dd8ca50d70b06}{GetTrVars}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{static}\ quint32\ \mbox{\hyperlink{class_v_container_a23b71f06366d832f634f8117fddb5048}{\_id}};}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \mbox{\hyperlink{class_v_container_a9c6dc336b3e1843145e3bb9d5f6add58}{\_size}};}
+\DoxyCodeLine{00234\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \mbox{\hyperlink{class_v_container_af7c8b18a9b0b7eda822c104d357ef173}{\_height}};}
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keyword}{static}\ QSet<QString>\ \mbox{\hyperlink{class_v_container_a15028ead081712c2bc9eb45b4d5affea}{uniqueNames}};}
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00237\ \ \ \ \ QSharedDataPointer<VContainerData>\ \mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}};}
+\DoxyCodeLine{00238\ }
+\DoxyCodeLine{00239\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_a7acb0e6033d5af1040338c1bb3736d49}{AddCurve}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VAbstractCurve>}}\ \&curve,\ \textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},\ quint32\ parentId\ =\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}});}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00242\ \ \ \ \ uint\ \mbox{\hyperlink{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}{qHash}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&p\ );}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ key,\ \textcolor{keyword}{typename}\ val>}
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00246\ \ \ \ \ \textcolor{keyword}{const}\ val\ \mbox{\hyperlink{class_v_container_aa7781b6470dd71a79964cfb1ae2a8413}{GetObject}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_hash}{QHash<key,\ val>}}\ \&obj,\ key\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}{UpdateObject}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&point);}
+\DoxyCodeLine{00250\ }
+\DoxyCodeLine{00251\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ key,\ \textcolor{keyword}{typename}\ val>}
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{static}\ quint32\ \mbox{\hyperlink{class_v_container_a8c00a7150785862a4bb8bbcc7737307d}{AddObject}}(\mbox{\hyperlink{class_q_hash}{QHash<key,\ val>}}\ \&obj,\ val\ value);}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QSharedPointer<T>}}\ >\ \mbox{\hyperlink{class_v_container_afb1609ee616de6fda333d9b809163863}{DataVar}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178}{VarType}}\ \&type)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00256\ \};}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \mbox{\hyperlink{vcontainer_8h_adb9ae0c7ad2132a891ffe4fba086f52e}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_container}{VContainer}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00260\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00261\ \textcolor{comment}{*\ \ Defintion\ of\ templated\ member\ functions\ of\ VContainer}}
+\DoxyCodeLine{00262\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00265\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00266\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \mbox{\hyperlink{class_v_container_aa5ac2a3108612bcad2520613c558469c}{VContainer::GeometricObject}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00267\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keywordtype}{id}\ ==\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})}
+\DoxyCodeLine{00270\ \ \ \ \ \{}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ find\ object"{}}),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00272\ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00274\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}\ gObj\ =\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<VGObject>}}();}
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>gObjects.contains(\textcolor{keywordtype}{id}))}
+\DoxyCodeLine{00276\ \ \ \ \ \{}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ gObj\ =\ \mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>gObjects.value(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00278\ \ \ \ \ \}}
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ find\ object\ Id:\ "{}}),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00282\ \ \ \ \ \}}
+\DoxyCodeLine{00283\ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00284\ \ \ \ \ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ obj\ =\ qSharedPointerDynamicCast<T>(gObj);}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(obj.isNull()\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ obj;}
+\DoxyCodeLine{00288\ \ \ \ \ \}}
+\DoxyCodeLine{00289\ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::bad\_alloc\ \&)}
+\DoxyCodeLine{00290\ \ \ \ \ \{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ cast\ object"{}}),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00292\ \ \ \ \ \}}
+\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00296\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00302\ \textcolor{comment}{}\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00303\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \mbox{\hyperlink{class_v_container_acb7eb6721eb6fcd66ddd67a389a6bbbf}{VContainer::GetVariable}}(QString\ name)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00304\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00305\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(name.isEmpty()==\textcolor{keyword}{false})}
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.contains(name))}
+\DoxyCodeLine{00307\ \ \ \ \ \{}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ value\ =\ qSharedPointerDynamicCast<T>(\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.value(name));}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(value.isNull()\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::bad\_alloc\ \&)}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ cast\ object"{}}),\ name);}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00318\ \ \ \ \ \}}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00320\ \ \ \ \ \{}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ find\ object"{}}),\ name);}
+\DoxyCodeLine{00322\ \ \ \ \ \}}
+\DoxyCodeLine{00323\ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00326\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00327\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{VContainer::AddVariable}}(\textcolor{keyword}{const}\ QString\&\ name,\ T\ *var)}
+\DoxyCodeLine{00328\ \{}
+\DoxyCodeLine{00329\ \ \ \ \ \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{AddVariable}}(name,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}(var));}
+\DoxyCodeLine{00330\ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00333\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00334\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_a140b7d7b13a38158eb80bb609f4209fd}{VContainer::AddVariable}}(\textcolor{keyword}{const}\ QString\&\ name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&var)}
+\DoxyCodeLine{00335\ \{}
+\DoxyCodeLine{00336\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.contains(name))}
+\DoxyCodeLine{00337\ \ \ \ \ \{}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.value(name)-\/>GetType()\ ==\ var-\/>GetType())}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ v\ =\ qSharedPointerDynamicCast<T>(\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.value(name));}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.isNull())}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ cast\ object."{}}),\ name);}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ *v\ =\ *var;}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ find\ object.\ Type\ mismatch."{}}),\ name);}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00353\ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>variables.insert(name,\ var);}
+\DoxyCodeLine{00355\ \ \ \ \ \}}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \mbox{\hyperlink{class_v_container_a15028ead081712c2bc9eb45b4d5affea}{uniqueNames}}.insert(name);}
+\DoxyCodeLine{00358\ \}}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00361\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00362\ uint\ \mbox{\hyperlink{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}{VContainer::qHash}}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&p\ )}
+\DoxyCodeLine{00363\ \{}
+\DoxyCodeLine{00364\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_container_ac6f2ed98892ad74c1e248a1c9b61dfda}{qHash}}(\ p.data()\ );}
+\DoxyCodeLine{00365\ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00373\ \textcolor{comment}{}\textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00374\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{VContainer::UpdateGObject}}(quint32\ \textcolor{keywordtype}{id},\ T*\ obj)}
+\DoxyCodeLine{00375\ \{}
+\DoxyCodeLine{00376\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(obj\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00377\ \ \ \ \ \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{UpdateGObject}}(\textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}(obj));}
+\DoxyCodeLine{00378\ \}}
+\DoxyCodeLine{00379\ }
+\DoxyCodeLine{00380\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00381\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>}
+\DoxyCodeLine{00382\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_af307a17c9bc394063c081d95f39523cd}{VContainer::UpdateGObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&obj)}
+\DoxyCodeLine{00383\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(not\ obj.isNull())}
+\DoxyCodeLine{00385\ \ \ \ \ \mbox{\hyperlink{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}{UpdateObject}}(\textcolor{keywordtype}{id},\ obj);}
+\DoxyCodeLine{00386\ \ \ \ \ \mbox{\hyperlink{class_v_container_a15028ead081712c2bc9eb45b4d5affea}{uniqueNames}}.insert(obj-\/>name());}
+\DoxyCodeLine{00387\ \}}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00395\ \textcolor{comment}{}\textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00396\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_container_a2bf213f0dd3a7751e0df3455987f1edc}{VContainer::UpdateObject}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ \&point)}
+\DoxyCodeLine{00397\ \{}
+\DoxyCodeLine{00398\ \ \ \ \ Q\_ASSERT\_X(\textcolor{keywordtype}{id}\ !=\ \mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}},\ Q\_FUNC\_INFO,\ \textcolor{stringliteral}{"{}id\ ==\ 0"{}});\ \textcolor{comment}{//-\/V654\ //-\/V712}}
+\DoxyCodeLine{00399\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(point.isNull()\ ==\ \textcolor{keyword}{false})}
+\DoxyCodeLine{00400\ \ \ \ \ point-\/>setId(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>gObjects.contains(\textcolor{keywordtype}{id}))}
+\DoxyCodeLine{00402\ \ \ \ \ \{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<T>}}\ obj\ =\ qSharedPointerDynamicCast<T>(\mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>gObjects.value(\textcolor{keywordtype}{id}));}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (obj.isNull())}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{class_v_exception_bad_id}{VExceptionBadId}}(tr(\textcolor{stringliteral}{"{}Can't\ cast\ object"{}}),\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ *obj\ =\ *point;}
+\DoxyCodeLine{00409\ \ \ \ \ \}}
+\DoxyCodeLine{00410\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00411\ \ \ \ \ \{}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container_ace09a59d4652a9386ede5041817a8f7d}{d}}-\/>gObjects.insert(\textcolor{keywordtype}{id},\ point);}
+\DoxyCodeLine{00413\ \ \ \ \ \}}
+\DoxyCodeLine{00414\ \ \ \ \ \mbox{\hyperlink{class_v_container_a565c594b62d332110b3185457062c999}{UpdateId}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00415\ \}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VCONTAINER\_H}}
+
+\end{DoxyCode}

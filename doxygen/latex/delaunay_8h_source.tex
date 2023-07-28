@@ -1,0 +1,90 @@
+\hypertarget{delaunay_8h_source}{}\doxysection{delaunay.\+h}
+\label{delaunay_8h_source}\index{D:/Github/Seamly2D/src/libs/vobj/delaunay.h@{D:/Github/Seamly2D/src/libs/vobj/delaunay.h}}
+\mbox{\hyperlink{delaunay_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DELAUNAY\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DELAUNAY\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ \ delaunay.c\ :\ compute\ 2D\ delaunay\ triangulation\ in\ the\ plane.}}
+\DoxyCodeLine{00006\ \textcolor{comment}{**\ \ Copyright\ (C)\ 2005\ \ Wael\ El\ Oraiby\ <wael.eloraiby@gmail.com>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{**}}
+\DoxyCodeLine{00008\ \textcolor{comment}{**}}
+\DoxyCodeLine{00009\ \textcolor{comment}{**\ \ This\ program\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{**\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{**\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{**\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{**}}
+\DoxyCodeLine{00014\ \textcolor{comment}{**\ \ This\ program\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{**\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{**\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{**\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{**}}
+\DoxyCodeLine{00019\ \textcolor{comment}{**\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{**\ \ along\ with\ this\ program.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ DEL\_CIRCLE}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{comment}{/*\ define\ the\ floating\ point\ type,\ comment\ to\ use\ float\ -\/\ Be\ careful\ "{}float"{}\ type\ will\ assert\ more\ often\ */}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ USE\_DOUBLE}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ FAST\_PREDICATE\ \ 1\ \ \ }\textcolor{comment}{/*\ fast\ but\ floating\ point\ errors\ are\ more\ likely\ to\ occur\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ LOOSE\_PREDICATE\ 2\ \ \ }\textcolor{comment}{/*\ loose\ with\ epsilon\ defined\ in\ the\ delaunay\ file\ -\/\ errors\ will\ happen\ but\ less\ frequently\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ EXACT\_PREDICATE\ 3\ \ \ }\textcolor{comment}{/*\ use\ exact\ arithmetic\ -\/\ slower,\ but\ shouldn't\ produce\ any\ floating\ point\ error\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ PREDICATE\ \ \ EXACT\_PREDICATE}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ PREDICATE\ ==\ EXACT\_PREDICATE\ \&\&\ !defined(USE\_DOUBLE)}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#\ \ \ define\ USE\_DOUBLE}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#ifdef\ USE\_DOUBLE}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{delaunay_8h_a11d147c64891830c9e79b3315b1b2e21}{real}};}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{float}\ \ \ \mbox{\hyperlink{delaunay_8h_a11d147c64891830c9e79b3315b1b2e21}{real}};}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{delaunay_8h_a11d147c64891830c9e79b3315b1b2e21}{real}}\ \ \ \ \mbox{\hyperlink{structdel__point2d__t_a94e4e02a59789e5b9dbbedf3f48a98fb}{x}},\ y;}
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00056\ \ \ \ \ quint32\ \mbox{\hyperlink{structdelaunay2d__t_ad40d999651b7db64910a0b6030a7ab30}{num\_points}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}*\ \mbox{\hyperlink{structdelaunay2d__t_ae3646095201e553b11b87bb73223e2b7}{points}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ \ \ \ \ quint32\ \mbox{\hyperlink{structdelaunay2d__t_ad411607311feeedf3e43955a782b100c}{num\_faces}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00065\ \ \ \ \ quint32*\ \ \ \ \mbox{\hyperlink{structdelaunay2d__t_a00a9bc862a0e00eb02e24ee3858d9304}{faces}};}
+\DoxyCodeLine{00066\ \}\ \mbox{\hyperlink{structdelaunay2d__t}{delaunay2d\_t}};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{typedef}\ int\ \ \ \ \ (*\mbox{\hyperlink{delaunay_8h_aa43a90ec8bee97fadf60b448ff83ab93}{incircle\_predicate\_t}})(\mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}*\ p0,\ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}*\ p1,\ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}*\ p2,\ \mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}*\ p3);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ build\ the\ 2D\ Delaunay\ triangulation\ given\ a\ set\ of\ points\ of\ at\ least\ 3\ points}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ @param\ points\ point\ set\ given\ as\ a\ sequence\ of\ tuple\ x0,\ y0,\ x1,\ y1,\ ....}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ @param\ num\_points\ number\ of\ given\ point}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ *\ @return:\ the\ number\ of\ created\ faces}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00077\ \mbox{\hyperlink{structdelaunay2d__t}{delaunay2d\_t}}*\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{delaunay_8h_a938f1abcc70d2a57f9c2ac314e2d7fbf}{delaunay2d\_from}}(\mbox{\hyperlink{structdel__point2d__t}{del\_point2d\_t}}\ *points,\ quint32\ num\_points);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ *\ release\ a\ delaunay2d\ object}}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{delaunay_8h_a1d72649401c3585246bb912f38b86785}{delaunay2d\_release}}(\mbox{\hyperlink{structdelaunay2d__t}{delaunay2d\_t}}*\ del);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00085\ \}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DELAUNAY\_H}}
+
+\end{DoxyCode}

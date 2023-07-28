@@ -1,0 +1,198 @@
+\hypertarget{vmaingraphicsview_8h_source}{}\doxysection{vmaingraphicsview.\+h}
+\label{vmaingraphicsview_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/vmaingraphicsview.h@{D:/Github/Seamly2D/src/libs/vwidgets/vmaingraphicsview.h}}
+\mbox{\hyperlink{vmaingraphicsview_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vmaingraphicsview.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VMAINGRAPHICSVIEW\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VMAINGRAPHICSVIEW\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QGraphicsView>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QRubberBand>}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00095\ \textcolor{keyword}{class\ }QTimeLine;}
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }QTransform;}
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }QGesture;}
+\DoxyCodeLine{00098\ \textcolor{keyword}{class\ }QGestureEvent;}
+\DoxyCodeLine{00099\ \textcolor{keyword}{class\ }QPanGesture;}
+\DoxyCodeLine{00100\ \textcolor{keyword}{class\ }QPinchGesture;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_graphics_view_zoom}{GraphicsViewZoom}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00103\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom}{GraphicsViewZoom}}(QGraphicsView*\ view);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_acc00956cb373ab94b52b69524ec9d217}{gentleZoom}}(qreal\ factor);}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a8cceee86f3a8a3653c525399d9cfee85}{setModifiers}}(Qt::KeyboardModifiers\ modifiers);}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ab14ea54555d5d608bb209dabb525748e}{setZoomSpeedFactor}}(qreal\ value);}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ae83c858788ecce81f36e6392dba9c239}{initScrollAnimations}}();}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ signals:}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a797129d490eb20ddc0538bf8450600a4}{zoomed}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ab4983f6c6de03a1b70215deb48f93707}{verticalScrollingTime}}(qreal\ x);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a1b42746f05079d1f165b303347985719}{horizontalScrollingTime}}(qreal\ x);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_aee1a7c77e3ce2121120c3a69cefdf405}{animFinished}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a552851f1b2e1eae67aa69fee26833ff7}{eventFilter}}(QObject*\ \textcolor{keywordtype}{object},\ QEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00124\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_graphics_view_zoom}{GraphicsViewZoom}})}
+\DoxyCodeLine{00125\ \ \ \ \ QGraphicsView\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_graphics_view_zoom_aa9e336b8a44d5e87fdd39423d165c66a}{m\_view}};}
+\DoxyCodeLine{00126\ \ \ \ \ Qt::KeyboardModifiers\ \mbox{\hyperlink{class_graphics_view_zoom_a39516c8d2c851f9ae2381de87be17c61}{m\_modifiers}};}
+\DoxyCodeLine{00127\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ad2006e798fc9ea3571d4c8b8be2ef875}{m\_zoomSpeedFactor}};}
+\DoxyCodeLine{00128\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a3a992b45f8b9c89bc391752a3b6f192e}{targetScenePos}};}
+\DoxyCodeLine{00129\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_aacbf4221713be6032c1f2036a910be38}{targetViewPos}};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a9409dbb2720f8f1a17d1807e40048777}{m\_duration}};}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ad6421ec6628f98b8dc4f9c5e9f808407}{m\_updateInterval}};}
+\DoxyCodeLine{00132\ \ \ \ \ QTimeLine\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_graphics_view_zoom_a05cd3c1b93ff588d7fdec99a3e5595f9}{verticalScrollAnim}};}
+\DoxyCodeLine{00134\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a5206ed21975321765916b316c5d2da4d}{m\_numScheduledVerticalScrollings}};}
+\DoxyCodeLine{00135\ \ \ \ \ QTimeLine\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_graphics_view_zoom_ace683c6a6a54382a8277d2619f8f7bf0}{horizontalScrollAnim}};}
+\DoxyCodeLine{00137\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_aec9b0e644a799fbb1686434eec84089a}{m\_numScheduledHorizontalScrollings}};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ab9e4a53bf3517b5de8383e48185d00bd}{fictiveSceneRect}}(QGraphicsScene\ *sc,\ QGraphicsView\ *view);}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_abbf02babadfac5b5c895f779035e2c3c}{startVerticalScrollings}}(QWheelEvent*\ wheel\_event);}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a45331485fe252680fa466c53c7952b9d}{startHorizontalScrollings}}(QWheelEvent*\ wheel\_event);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a8479bba051ef04be054efcfa22b8702c}{gestureEvent}}(QGestureEvent*\ event);}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a06777057e03dcbc655cd6a8c2a8801f7}{panTriggered}}(QPanGesture*\ gesture);}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a8d6481efaca890c1ef7a172f4b2d6b4d}{pinchTriggered}}(QPinchGesture*\ gesture);}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ QGesture\ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_graphics_view_zoom_ae05600b5cb37aedd08a07df0f7977a6d}{pan}};}
+\DoxyCodeLine{00148\ \ \ \ \ QGesture\ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_graphics_view_zoom_a06773d0da98811e3459d38ab144dc99a}{pinch}};}
+\DoxyCodeLine{00149\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ab44d25f42d7907724e88135becb33301}{horizontalOffset}};}
+\DoxyCodeLine{00150\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a4c1dab8498956f9495434b1102e05474}{verticalOffset}};}
+\DoxyCodeLine{00151\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_ad1a01827e2690b2a4a00752e538d9c41}{scaleFactor}};}
+\DoxyCodeLine{00152\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom_a6bc415e761839327d976b36f0ce66b1d}{currentScaleFactor}};}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00158\ class\ \mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}}\ :\ public\ QGraphicsView}
+\DoxyCodeLine{00159\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00161\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setShowToolOptions(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00165\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ allowRubberBand(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomPanEnabled(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomToAreaEnabled(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ NewSceneRect(QGraphicsScene\ *sc,\ QGraphicsView\ *view,\ QGraphicsItem\ *item\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keyword}{static}\ QRectF\ \ \ \ \ \ \ \ \ SceneVisibleArea(QGraphicsView\ *view);}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ \ \ \ \ MinScale();}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \ \ \ \ \ \ \ \ \ MaxScale();}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ setRubberBandColor(QRubberBand\ *band,\ \textcolor{keyword}{const}\ QColor\ \&color);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ initScrollBars();}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00179\ signals:}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view_a92ac082f654c125138cd37850234167b}{mouseRelease}}();}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view_a144c8eaf58e89bb89fcb51f9d1204580}{itemClicked}}(QGraphicsItem\ *item);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_view_a1acab2c8d6d72e090b11b07bbb4d8fa2}{signalZoomScaleChanged}}(qreal\ scale);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomByScale(qreal\ scale);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomIn();}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomOut();}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoom100Percent();}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomToFit();}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ zoomToRect(\textcolor{keyword}{const}\ QRectF\ \&rect);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ updateView(\textcolor{keyword}{const}\ QTransform\ \&transform);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resetScrollBars();}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resetScrollAnimations();}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ mousePressEvent(QMouseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ mouseMoveEvent(QMouseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ mouseReleaseEvent(QMouseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ mouseDoubleClickEvent(QMouseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<QCursor>}}\ \mbox{\hyperlink{class_v_main_graphics_view_a6173641442850edbf7891dfd654b158b}{curMagnifier}};}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00210\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_main_graphics_view}{VMainGraphicsView}})}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_graphics_view_zoom}{GraphicsViewZoom}}\ \ \ \ \ *zoom;}
+\DoxyCodeLine{00212\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showToolProperties;}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ showScrollBars;}
+\DoxyCodeLine{00214\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isallowRubberBand;}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isZoomToAreaActive;}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isRubberBandActive;}
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isRubberBandColorSet;}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isZoomPanActive;}
+\DoxyCodeLine{00219\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ isPanDragActive;}
+\DoxyCodeLine{00220\ \ \ \ \ QRubberBand\ \ \ \ \ \ \ \ \ \ *rubberBand;}
+\DoxyCodeLine{00221\ \ \ \ \ QRect\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *rubberBandRect;}
+\DoxyCodeLine{00222\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ startPoint;}
+\DoxyCodeLine{00223\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ endPoint;}
+\DoxyCodeLine{00224\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ m\_ptStartPos;}
+\DoxyCodeLine{00225\ \ \ \ \ QPoint\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cursorPos;}
+\DoxyCodeLine{00226\ \};}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VMAINGRAPHICSVIEW\_H}}
+
+\end{DoxyCode}

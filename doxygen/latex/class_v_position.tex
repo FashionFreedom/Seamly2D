@@ -1,0 +1,398 @@
+\hypertarget{class_v_position}{}\doxysection{VPosition Class Reference}
+\label{class_v_position}\index{VPosition@{VPosition}}
+
+
+{\ttfamily \#include $<$vposition.\+h$>$}
+
+Inheritance diagram for VPosition\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_position}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_position_a126f7855883eec2710a8b168a32eb154}{VPosition}} (const \mbox{\hyperlink{class_v_contour}{VContour}} \&\mbox{\hyperlink{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}{g\+Contour}}, int \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}}, const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, int \mbox{\hyperlink{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}{i}}, std\+::atomic\+\_\+bool $\ast$\mbox{\hyperlink{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}{stop}}, bool \mbox{\hyperlink{class_v_position_a4647280c58adbcd7eed174ee825a1f25}{rotate}}, int \mbox{\hyperlink{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}{rotation\+Increase}}, bool save\+Length)
+\item 
+virtual \mbox{\hyperlink{class_v_position_aba1a2cef3f1a3c399d6cb343f2cc51b7}{$\sim$\+VPosition}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_position_a3556714db4723880369ade5136f2f21f}{get\+Paper\+Index}} () const
+\item 
+void \mbox{\hyperlink{class_v_position_aacc3244379ed04fa3a04395bfbec577d}{set\+Paper\+Index}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{class_v_position_ab618737a804c3efd280a967a9e75ee58}{get\+Frame}} () const
+\item 
+void \mbox{\hyperlink{class_v_position_a87c88d6dc509d400f35a058db661091f}{set\+Frame}} (const quint32 \&value)
+\item 
+quint32 \mbox{\hyperlink{class_v_position_abfe449dd446104adf41eb58d8f37ca8f}{get\+Piece\+Count}} () const
+\item 
+void \mbox{\hyperlink{class_v_position_ade623355694b7415849ddaec643929d1}{set\+Piece\+Count}} (const quint32 \&value)
+\item 
+void \mbox{\hyperlink{class_v_position_a61fda7c8b52bd6d12b43bc1eca205f5e}{set\+Pieces}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}})
+\item 
+\mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \mbox{\hyperlink{class_v_position_a339dee5152a2e1944ce662e76167efe4}{get\+Best\+Result}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_v_position_a40667971787e2df19f05235c9aa8e13f}{Draw\+Debug}} (const \mbox{\hyperlink{class_v_contour}{VContour}} \&contour, const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, int \mbox{\hyperlink{class_v_position_a0f9889501aa66e9073f72e693363d1f7}{frame}}, quint32 \mbox{\hyperlink{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}{paper\+Index}}, int \mbox{\hyperlink{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}{pieces\+Count}}, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}}=\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$())
+\item 
+static int \mbox{\hyperlink{class_v_position_a0e6eeb71ad80c20f3a66e015198fb19c}{Bias}} (int length, int max\+Length)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{Crossing\+Type}} \+: char \{ \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa81313ddfa184bc1ecb63b5feae91e45}{No\+Intersection}} = 0
+, \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa06d31c2ee920b4d53e8c9c06d90ba24}{Intersection}} = 1
+, \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8caa9ee830e9296511bc8dcd5ba9fee3ca3}{Edge\+Error}} = 2
+ \}
+\item 
+enum class \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6}{Inside\+Type}} \+: char \{ \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a76fbf0ccd7fcd64879c2ff2119dc15a4}{Outside}} = 0
+, \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a9b6d3000134648fc9f1e71094ae0847d}{Inside}} = 1
+, \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6aa9ee830e9296511bc8dcd5ba9fee3ca3}{Edge\+Error}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_position_a57b3acc10553c3d0f88a45c7d2140510}{run}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_position_af6a86ce46919965e58cf791981884118}{Save\+Candidate}} (\mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \&\mbox{\hyperlink{class_v_position_a03474c28aad62727da8690e57641fae6}{best\+Result}}, const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, int globalI, int detJ, \mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{Best\+From}} type)
+\item 
+bool \mbox{\hyperlink{class_v_position_a9ba944109d6f068cf22cffed1c32967f}{Check\+Combine\+Edges}} (\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, int \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}}, int \&d\+Edge)
+\item 
+bool \mbox{\hyperlink{class_v_position_a328905fe0346c1140b3a1787065907d3}{Check\+Rotation\+Edges}} (\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, int \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}}, int d\+Edge, int angle) const
+\item 
+\mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{Crossing\+Type}} \mbox{\hyperlink{class_v_position_a0c061c00ed3c9ce74a7e6618b12020a2}{Crossing}} (const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}) const
+\item 
+bool \mbox{\hyperlink{class_v_position_aabbb722461716aea7acc2302c5282699}{Sheet\+Contains}} (const QRectF \&rect) const
+\item 
+void \mbox{\hyperlink{class_v_position_a35efb2449b767ff7a13c05959816b654}{Combine\+Edges}} (\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, const QLineF \&global\+Edge, const int \&d\+Edge)
+\item 
+void \mbox{\hyperlink{class_v_position_a7ad73775e05e76b020d28ff2c5a2067b}{Rotate\+Edges}} (\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&\mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}, const QLineF \&global\+Edge, int d\+Edge, int angle) const
+\item 
+void \mbox{\hyperlink{class_v_position_a2c3d14ff2f695a176fed250f83b166dd}{Rotate}} (int increase)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QPainter\+Path \mbox{\hyperlink{class_v_position_a2ac9426bd746b420c80249a7727d5ffc}{Show\+Direction}} (const QLineF \&edge)
+\item 
+static QPainter\+Path \mbox{\hyperlink{class_v_position_a71279746287f3f49ce38116855fb1609}{Draw\+Contour}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\item 
+static QPainter\+Path \mbox{\hyperlink{class_v_position_a5cfdb5daf69f4c4613ff32d063f01dc5}{draw\+Pieces}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&\mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \mbox{\hyperlink{class_v_position_a03474c28aad62727da8690e57641fae6}{best\+Result}}
+\item 
+const \mbox{\hyperlink{class_v_contour}{VContour}} \mbox{\hyperlink{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}{g\+Contour}}
+\item 
+const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \mbox{\hyperlink{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}{piece}}
+\item 
+int \mbox{\hyperlink{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}{i}}
+\item 
+int \mbox{\hyperlink{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}{j}}
+\item 
+quint32 \mbox{\hyperlink{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}{paper\+Index}}
+\item 
+quint32 \mbox{\hyperlink{class_v_position_a0f9889501aa66e9073f72e693363d1f7}{frame}}
+\item 
+quint32 \mbox{\hyperlink{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}{pieces\+Count}}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \mbox{\hyperlink{class_v_position_a008d9b87647fb707335f6ea650a38e57}{pieces}}
+\item 
+std\+::atomic\+\_\+bool $\ast$ \mbox{\hyperlink{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}{stop}}
+\item 
+bool \mbox{\hyperlink{class_v_position_a4647280c58adbcd7eed174ee825a1f25}{rotate}}
+\item 
+int \mbox{\hyperlink{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}{rotation\+Increase}}
+\item 
+qreal \mbox{\hyperlink{class_v_position_a0bb52e74f94b7d9c75543484a60b569f}{angle\+\_\+between}}
+\begin{DoxyCompactList}\small\item\em angle\+\_\+between keep angle between global edge and piece edge. Need for optimization rotation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_position_a905ce9545365858a6297da654abe1b8c}\label{class_v_position_a905ce9545365858a6297da654abe1b8c}} 
+\index{VPosition@{VPosition}!CrossingType@{CrossingType}}
+\index{CrossingType@{CrossingType}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{CrossingType}{CrossingType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{VPosition\+::\+Crossing\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NoIntersection@{NoIntersection}!VPosition@{VPosition}}\index{VPosition@{VPosition}!NoIntersection@{NoIntersection}}}\mbox{\Hypertarget{class_v_position_a905ce9545365858a6297da654abe1b8caa81313ddfa184bc1ecb63b5feae91e45}\label{class_v_position_a905ce9545365858a6297da654abe1b8caa81313ddfa184bc1ecb63b5feae91e45}} 
+No\+Intersection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Intersection@{Intersection}!VPosition@{VPosition}}\index{VPosition@{VPosition}!Intersection@{Intersection}}}\mbox{\Hypertarget{class_v_position_a905ce9545365858a6297da654abe1b8caa06d31c2ee920b4d53e8c9c06d90ba24}\label{class_v_position_a905ce9545365858a6297da654abe1b8caa06d31c2ee920b4d53e8c9c06d90ba24}} 
+Intersection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EdgeError@{EdgeError}!VPosition@{VPosition}}\index{VPosition@{VPosition}!EdgeError@{EdgeError}}}\mbox{\Hypertarget{class_v_position_a905ce9545365858a6297da654abe1b8caa9ee830e9296511bc8dcd5ba9fee3ca3}\label{class_v_position_a905ce9545365858a6297da654abe1b8caa9ee830e9296511bc8dcd5ba9fee3ca3}} 
+Edge\+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6}\label{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6}} 
+\index{VPosition@{VPosition}!InsideType@{InsideType}}
+\index{InsideType@{InsideType}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{InsideType}{InsideType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6}{VPosition\+::\+Inside\+Type}} \+: char\hspace{0.3cm}{\ttfamily [strong]}, {\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Outside@{Outside}!VPosition@{VPosition}}\index{VPosition@{VPosition}!Outside@{Outside}}}\mbox{\Hypertarget{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a76fbf0ccd7fcd64879c2ff2119dc15a4}\label{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a76fbf0ccd7fcd64879c2ff2119dc15a4}} 
+Outside&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Inside@{Inside}!VPosition@{VPosition}}\index{VPosition@{VPosition}!Inside@{Inside}}}\mbox{\Hypertarget{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a9b6d3000134648fc9f1e71094ae0847d}\label{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6a9b6d3000134648fc9f1e71094ae0847d}} 
+Inside&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EdgeError@{EdgeError}!VPosition@{VPosition}}\index{VPosition@{VPosition}!EdgeError@{EdgeError}}}\mbox{\Hypertarget{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6aa9ee830e9296511bc8dcd5ba9fee3ca3}\label{class_v_position_a0e4742abd3fb33c3c712dbf88ff74dc6aa9ee830e9296511bc8dcd5ba9fee3ca3}} 
+Edge\+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_position_a126f7855883eec2710a8b168a32eb154}\label{class_v_position_a126f7855883eec2710a8b168a32eb154}} 
+\index{VPosition@{VPosition}!VPosition@{VPosition}}
+\index{VPosition@{VPosition}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{VPosition()}{VPosition()}}
+{\footnotesize\ttfamily VPosition\+::\+VPosition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_contour}{VContour}} \&}]{g\+Contour,  }\item[{int}]{j,  }\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{int}]{i,  }\item[{std\+::atomic\+\_\+bool $\ast$}]{stop,  }\item[{bool}]{rotate,  }\item[{int}]{rotation\+Increase,  }\item[{bool}]{save\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_position_aba1a2cef3f1a3c399d6cb343f2cc51b7}\label{class_v_position_aba1a2cef3f1a3c399d6cb343f2cc51b7}} 
+\index{VPosition@{VPosition}!````~VPosition@{$\sim$VPosition}}
+\index{````~VPosition@{$\sim$VPosition}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPosition()}{~VPosition()}}
+{\footnotesize\ttfamily virtual VPosition\+::$\sim$\+VPosition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_position_a0e6eeb71ad80c20f3a66e015198fb19c}\label{class_v_position_a0e6eeb71ad80c20f3a66e015198fb19c}} 
+\index{VPosition@{VPosition}!Bias@{Bias}}
+\index{Bias@{Bias}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{Bias()}{Bias()}}
+{\footnotesize\ttfamily int VPosition\+::\+Bias (\begin{DoxyParamCaption}\item[{int}]{length,  }\item[{int}]{max\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_position_a9ba944109d6f068cf22cffed1c32967f}\label{class_v_position_a9ba944109d6f068cf22cffed1c32967f}} 
+\index{VPosition@{VPosition}!CheckCombineEdges@{CheckCombineEdges}}
+\index{CheckCombineEdges@{CheckCombineEdges}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{CheckCombineEdges()}{CheckCombineEdges()}}
+{\footnotesize\ttfamily bool VPosition\+::\+Check\+Combine\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{int}]{j,  }\item[{int \&}]{d\+Edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a328905fe0346c1140b3a1787065907d3}\label{class_v_position_a328905fe0346c1140b3a1787065907d3}} 
+\index{VPosition@{VPosition}!CheckRotationEdges@{CheckRotationEdges}}
+\index{CheckRotationEdges@{CheckRotationEdges}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{CheckRotationEdges()}{CheckRotationEdges()}}
+{\footnotesize\ttfamily bool VPosition\+::\+Check\+Rotation\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{int}]{j,  }\item[{int}]{d\+Edge,  }\item[{int}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a35efb2449b767ff7a13c05959816b654}\label{class_v_position_a35efb2449b767ff7a13c05959816b654}} 
+\index{VPosition@{VPosition}!CombineEdges@{CombineEdges}}
+\index{CombineEdges@{CombineEdges}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{CombineEdges()}{CombineEdges()}}
+{\footnotesize\ttfamily void VPosition\+::\+Combine\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{const QLineF \&}]{global\+Edge,  }\item[{const int \&}]{d\+Edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a0c061c00ed3c9ce74a7e6618b12020a2}\label{class_v_position_a0c061c00ed3c9ce74a7e6618b12020a2}} 
+\index{VPosition@{VPosition}!Crossing@{Crossing}}
+\index{Crossing@{Crossing}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{Crossing()}{Crossing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_position_a905ce9545365858a6297da654abe1b8c}{VPosition\+::\+Crossing\+Type}} VPosition\+::\+Crossing (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a71279746287f3f49ce38116855fb1609}\label{class_v_position_a71279746287f3f49ce38116855fb1609}} 
+\index{VPosition@{VPosition}!DrawContour@{DrawContour}}
+\index{DrawContour@{DrawContour}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{DrawContour()}{DrawContour()}}
+{\footnotesize\ttfamily QPainter\+Path VPosition\+::\+Draw\+Contour (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a40667971787e2df19f05235c9aa8e13f}\label{class_v_position_a40667971787e2df19f05235c9aa8e13f}} 
+\index{VPosition@{VPosition}!DrawDebug@{DrawDebug}}
+\index{DrawDebug@{DrawDebug}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{DrawDebug()}{DrawDebug()}}
+{\footnotesize\ttfamily void VPosition\+::\+Draw\+Debug (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_contour}{VContour}} \&}]{contour,  }\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{int}]{frame,  }\item[{quint32}]{paper\+Index,  }\item[{int}]{pieces\+Count,  }\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces = {\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}}$>$()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_v_position_a5cfdb5daf69f4c4613ff32d063f01dc5}\label{class_v_position_a5cfdb5daf69f4c4613ff32d063f01dc5}} 
+\index{VPosition@{VPosition}!drawPieces@{drawPieces}}
+\index{drawPieces@{drawPieces}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{drawPieces()}{drawPieces()}}
+{\footnotesize\ttfamily QPainter\+Path VPosition\+::draw\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a339dee5152a2e1944ce662e76167efe4}\label{class_v_position_a339dee5152a2e1944ce662e76167efe4}} 
+\index{VPosition@{VPosition}!getBestResult@{getBestResult}}
+\index{getBestResult@{getBestResult}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{getBestResult()}{getBestResult()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_best_square}{VBest\+Square}} VPosition\+::get\+Best\+Result (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_position_ab618737a804c3efd280a967a9e75ee58}\label{class_v_position_ab618737a804c3efd280a967a9e75ee58}} 
+\index{VPosition@{VPosition}!getFrame@{getFrame}}
+\index{getFrame@{getFrame}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{getFrame()}{getFrame()}}
+{\footnotesize\ttfamily quint32 VPosition\+::get\+Frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_position_a3556714db4723880369ade5136f2f21f}\label{class_v_position_a3556714db4723880369ade5136f2f21f}} 
+\index{VPosition@{VPosition}!getPaperIndex@{getPaperIndex}}
+\index{getPaperIndex@{getPaperIndex}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{getPaperIndex()}{getPaperIndex()}}
+{\footnotesize\ttfamily quint32 VPosition\+::get\+Paper\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_position_abfe449dd446104adf41eb58d8f37ca8f}\label{class_v_position_abfe449dd446104adf41eb58d8f37ca8f}} 
+\index{VPosition@{VPosition}!getPieceCount@{getPieceCount}}
+\index{getPieceCount@{getPieceCount}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{getPieceCount()}{getPieceCount()}}
+{\footnotesize\ttfamily quint32 VPosition\+::get\+Piece\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_position_a2c3d14ff2f695a176fed250f83b166dd}\label{class_v_position_a2c3d14ff2f695a176fed250f83b166dd}} 
+\index{VPosition@{VPosition}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily void VPosition\+::\+Rotate (\begin{DoxyParamCaption}\item[{int}]{increase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a7ad73775e05e76b020d28ff2c5a2067b}\label{class_v_position_a7ad73775e05e76b020d28ff2c5a2067b}} 
+\index{VPosition@{VPosition}!RotateEdges@{RotateEdges}}
+\index{RotateEdges@{RotateEdges}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{RotateEdges()}{RotateEdges()}}
+{\footnotesize\ttfamily void VPosition\+::\+Rotate\+Edges (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{const QLineF \&}]{global\+Edge,  }\item[{int}]{d\+Edge,  }\item[{int}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a57b3acc10553c3d0f88a45c7d2140510}\label{class_v_position_a57b3acc10553c3d0f88a45c7d2140510}} 
+\index{VPosition@{VPosition}!run@{run}}
+\index{run@{run}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void VPosition\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_position_af6a86ce46919965e58cf791981884118}\label{class_v_position_af6a86ce46919965e58cf791981884118}} 
+\index{VPosition@{VPosition}!SaveCandidate@{SaveCandidate}}
+\index{SaveCandidate@{SaveCandidate}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{SaveCandidate()}{SaveCandidate()}}
+{\footnotesize\ttfamily void VPosition\+::\+Save\+Candidate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \&}]{best\+Result,  }\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{int}]{globalI,  }\item[{int}]{detJ,  }\item[{\mbox{\hyperlink{vlayoutdef_8h_af1e732f0ac9c7478f79af187b99e503a}{Best\+From}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a87c88d6dc509d400f35a058db661091f}\label{class_v_position_a87c88d6dc509d400f35a058db661091f}} 
+\index{VPosition@{VPosition}!setFrame@{setFrame}}
+\index{setFrame@{setFrame}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{setFrame()}{setFrame()}}
+{\footnotesize\ttfamily void VPosition\+::set\+Frame (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_position_aacc3244379ed04fa3a04395bfbec577d}\label{class_v_position_aacc3244379ed04fa3a04395bfbec577d}} 
+\index{VPosition@{VPosition}!setPaperIndex@{setPaperIndex}}
+\index{setPaperIndex@{setPaperIndex}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{setPaperIndex()}{setPaperIndex()}}
+{\footnotesize\ttfamily void VPosition\+::set\+Paper\+Index (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_position_ade623355694b7415849ddaec643929d1}\label{class_v_position_ade623355694b7415849ddaec643929d1}} 
+\index{VPosition@{VPosition}!setPieceCount@{setPieceCount}}
+\index{setPieceCount@{setPieceCount}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{setPieceCount()}{setPieceCount()}}
+{\footnotesize\ttfamily void VPosition\+::set\+Piece\+Count (\begin{DoxyParamCaption}\item[{const quint32 \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_position_a61fda7c8b52bd6d12b43bc1eca205f5e}\label{class_v_position_a61fda7c8b52bd6d12b43bc1eca205f5e}} 
+\index{VPosition@{VPosition}!setPieces@{setPieces}}
+\index{setPieces@{setPieces}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{setPieces()}{setPieces()}}
+{\footnotesize\ttfamily void VPosition\+::set\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_position_aabbb722461716aea7acc2302c5282699}\label{class_v_position_aabbb722461716aea7acc2302c5282699}} 
+\index{VPosition@{VPosition}!SheetContains@{SheetContains}}
+\index{SheetContains@{SheetContains}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{SheetContains()}{SheetContains()}}
+{\footnotesize\ttfamily bool VPosition\+::\+Sheet\+Contains (\begin{DoxyParamCaption}\item[{const QRectF \&}]{rect }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a2ac9426bd746b420c80249a7727d5ffc}\label{class_v_position_a2ac9426bd746b420c80249a7727d5ffc}} 
+\index{VPosition@{VPosition}!ShowDirection@{ShowDirection}}
+\index{ShowDirection@{ShowDirection}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{ShowDirection()}{ShowDirection()}}
+{\footnotesize\ttfamily QPainter\+Path VPosition\+::\+Show\+Direction (\begin{DoxyParamCaption}\item[{const QLineF \&}]{edge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_position_a0bb52e74f94b7d9c75543484a60b569f}\label{class_v_position_a0bb52e74f94b7d9c75543484a60b569f}} 
+\index{VPosition@{VPosition}!angle\_between@{angle\_between}}
+\index{angle\_between@{angle\_between}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{angle\_between}{angle\_between}}
+{\footnotesize\ttfamily qreal VPosition\+::angle\+\_\+between\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+angle\+\_\+between keep angle between global edge and piece edge. Need for optimization rotation. 
+
+\mbox{\Hypertarget{class_v_position_a03474c28aad62727da8690e57641fae6}\label{class_v_position_a03474c28aad62727da8690e57641fae6}} 
+\index{VPosition@{VPosition}!bestResult@{bestResult}}
+\index{bestResult@{bestResult}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{bestResult}{bestResult}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_best_square}{VBest\+Square}} VPosition\+::best\+Result\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a0f9889501aa66e9073f72e693363d1f7}\label{class_v_position_a0f9889501aa66e9073f72e693363d1f7}} 
+\index{VPosition@{VPosition}!frame@{frame}}
+\index{frame@{frame}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily quint32 VPosition\+::frame\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}\label{class_v_position_a8a6fe551126d0602c2850cef93aa21cb}} 
+\index{VPosition@{VPosition}!gContour@{gContour}}
+\index{gContour@{gContour}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{gContour}{gContour}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_contour}{VContour}} VPosition\+::g\+Contour\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}\label{class_v_position_a926186ff9eb92016bfe85d8b2a1b0d57}} 
+\index{VPosition@{VPosition}!i@{i}}
+\index{i@{i}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{i}{i}}
+{\footnotesize\ttfamily int VPosition\+::i\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}\label{class_v_position_af7dfd8ed79a58d4a5a2e5ebb8a65f0be}} 
+\index{VPosition@{VPosition}!j@{j}}
+\index{j@{j}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{j}{j}}
+{\footnotesize\ttfamily int VPosition\+::j\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}\label{class_v_position_a10ab5730c675fc40af6a7fbdbf069a95}} 
+\index{VPosition@{VPosition}!paperIndex@{paperIndex}}
+\index{paperIndex@{paperIndex}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{paperIndex}{paperIndex}}
+{\footnotesize\ttfamily quint32 VPosition\+::paper\+Index\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}\label{class_v_position_a4d7129a528de8ad17f27d9057c4716ab}} 
+\index{VPosition@{VPosition}!piece@{piece}}
+\index{piece@{piece}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{piece}{piece}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} VPosition\+::piece\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a008d9b87647fb707335f6ea650a38e57}\label{class_v_position_a008d9b87647fb707335f6ea650a38e57}} 
+\index{VPosition@{VPosition}!pieces@{pieces}}
+\index{pieces@{pieces}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{pieces}{pieces}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}}$>$ VPosition\+::pieces\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}\label{class_v_position_ab639d95ea21c6c79e225a8efea1350e9}} 
+\index{VPosition@{VPosition}!piecesCount@{piecesCount}}
+\index{piecesCount@{piecesCount}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{piecesCount}{piecesCount}}
+{\footnotesize\ttfamily quint32 VPosition\+::pieces\+Count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a4647280c58adbcd7eed174ee825a1f25}\label{class_v_position_a4647280c58adbcd7eed174ee825a1f25}} 
+\index{VPosition@{VPosition}!rotate@{rotate}}
+\index{rotate@{rotate}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{rotate}{rotate}}
+{\footnotesize\ttfamily bool VPosition\+::rotate\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}\label{class_v_position_ae2a089b225cad8c5421abe79be6dcdba}} 
+\index{VPosition@{VPosition}!rotationIncrease@{rotationIncrease}}
+\index{rotationIncrease@{rotationIncrease}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{rotationIncrease}{rotationIncrease}}
+{\footnotesize\ttfamily int VPosition\+::rotation\+Increase\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}\label{class_v_position_a7f7520bb2690903c8a8a272e114f1d02}} 
+\index{VPosition@{VPosition}!stop@{stop}}
+\index{stop@{stop}!VPosition@{VPosition}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily std\+::atomic\+\_\+bool$\ast$ VPosition\+::stop\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vposition_8h}{vposition.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vposition_8cpp}{vposition.\+cpp}}\end{DoxyCompactItemize}

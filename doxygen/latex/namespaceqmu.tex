@@ -1,0 +1,1046 @@
+\hypertarget{namespaceqmu}{}\doxysection{qmu Namespace Reference}
+\label{namespaceqmu}\index{qmu@{qmu}}
+
+
+Namespace for mathematical applications.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqmu_1_1_test}{Test}}
+\begin{DoxyCompactList}\small\item\em Namespace for test cases. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_formula_base}{Qmu\+Formula\+Base}}
+\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser}{Qmu\+Parser}}
+\begin{DoxyCompactList}\small\item\em Mathematical expressions parser. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{Qmu\+Parser\+Base}}
+\begin{DoxyCompactList}\small\item\em Mathematical expressions parser (base parser engine). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_byte_code}{Qmu\+Parser\+Byte\+Code}}
+\begin{DoxyCompactList}\small\item\em Bytecode implementation of the Math Parser. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_callback}{Qmu\+Parser\+Callback}}
+\begin{DoxyCompactList}\small\item\em Encapsulation of prototypes for a numerical parser function. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{Qmu\+Parser\+Error}}
+\begin{DoxyCompactList}\small\item\em Error class of the parser. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{Qmu\+Parser\+Error\+Msg}}
+\begin{DoxyCompactList}\small\item\em A class that handles the error messages. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{Qmu\+Parser\+Token}}
+\begin{DoxyCompactList}\small\item\em Encapsulation of the data for a single formula token. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_reader}{Qmu\+Parser\+Token\+Reader}}
+\begin{DoxyCompactList}\small\item\em Token reader for the Parser\+Base class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_token_parser}{Qmu\+Token\+Parser}}
+\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_translation}{Qmu\+Translation}}
+\item 
+struct \mbox{\hyperlink{structqmu_1_1_s_token}{SToken}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ QString, \mbox{\hyperlink{classqmu_1_1_qmu_parser_callback}{Qmu\+Parser\+Callback}} $>$ \mbox{\hyperlink{namespaceqmu_a11d7cc4b28fa2a91468a57a22ab1dcd3}{funmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Container for Callback objects. \end{DoxyCompactList}\item 
+typedef \mbox{\hyperlink{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}{QMUP\+\_\+\+STRING\+\_\+\+TYPE}} \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{string\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The stringtype used by the parser. \end{DoxyCompactList}\item 
+typedef string\+\_\+type\+::value\+\_\+type \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The character type used by the parser. \end{DoxyCompactList}\item 
+typedef std\+::basic\+\_\+stringstream$<$ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}}, std\+::char\+\_\+traits$<$ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}} $>$, std\+::allocator$<$ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}} $>$ $>$ \mbox{\hyperlink{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}{stringstream\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Typedef for easily using stringstream that respect the parser stringtype. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, qreal $\ast$ $>$ \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{varmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type used for storing variables. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, qreal $>$ \mbox{\hyperlink{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}{valmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type used for storing constants. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, int $>$ \mbox{\hyperlink{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}{strmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type for assigning a string name to an index in the internal string table. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\+\_\+fun\+\_\+type}}) ()
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a856810e705b6638e2e224df1a251fa16}{fun\+\_\+type0}}) ()
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af1467daf91600a063fe199df73e49520}{fun\+\_\+type1}}) (qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a single arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}{fun\+\_\+type2}}) (qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with two arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_abbab00fd89ac8a2da37ce7d2967571ba}{fun\+\_\+type3}}) (qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with three arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_acc5f2f5a075c0e89e2bd5f2e26d492ef}{fun\+\_\+type4}}) (qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with four arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a9937160e08609bc544e14765025770fd}{fun\+\_\+type5}}) (qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aaad2f7a24195cc21070a39a77523ea43}{fun\+\_\+type6}}) (qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a61b12af0083a97a3b03c79c0858cf0ce}{fun\+\_\+type7}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a22c12ce3b785ca34fe7641a181b342c8}{fun\+\_\+type8}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a56c962afb0219556e86308cd861edda3}{fun\+\_\+type9}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a50b8452865cb745a9da2f4aa147469ca}{fun\+\_\+type10}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_ab345e0ad1f32adb507926310276656e5}{bulkfun\+\_\+type0}}) (int, int)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a92e5c3a267c5911e704ca37940000c05}{bulkfun\+\_\+type1}}) (int, int, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a single arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af20d7b9af9d552b05bce9b5f097643e4}{bulkfun\+\_\+type2}}) (int, int, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with two arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_accf421ab9da567d0a09097da949aab37}{bulkfun\+\_\+type3}}) (int, int, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with three arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a52d56880710aa1876e3d0224ff88c307}{bulkfun\+\_\+type4}}) (int, int, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with four arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_ab8ba891f9b9aaa685826be34760c2ce7}{bulkfun\+\_\+type5}}) (int, int, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a560fffc4cf20fe4f8fc5bd60226fcb8f}{bulkfun\+\_\+type6}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a7150bf79fe19c9617ab58acb75591e2f}{bulkfun\+\_\+type7}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a701cf679a8834fce8751050970e74a2c}{bulkfun\+\_\+type8}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a832d7bb132c3bd4b70d67618651d24fb}{bulkfun\+\_\+type9}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aae60889d81393f7161da314871e7cceb}{bulkfun\+\_\+type10}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_abeea51e1b81fbfc9ea2a65ac530f0b11}{multfun\+\_\+type}}) (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a variable argument list. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a08d73a4d1e185a7df46ce2267e52bf5d}{strfun\+\_\+type1}}) (const QString \&)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string as an argument. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af9c9650ca886118d83f2f82118c98652}{strfun\+\_\+type2}}) (const QString \&, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string and a value as arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aaa596a2c4e3fd0a31ed23f988d893c49}{strfun\+\_\+type3}}) (const QString \&, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string and two values as arguments. \end{DoxyCompactList}\item 
+typedef int($\ast$ \mbox{\hyperlink{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}{identfun\+\_\+type}}) (const QString \&s\+Expr, int $\ast$n\+Pos, qreal $\ast$f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\begin{DoxyCompactList}\small\item\em Callback used for functions that identify values in a string. \end{DoxyCompactList}\item 
+typedef qreal $\ast$($\ast$ \mbox{\hyperlink{namespaceqmu_a7045fd256c04b2e6e01be1f8f6d517a4}{facfun\+\_\+type}}) (const QString \&, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Callback used for variable creation factory functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmd\+Code}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}{cm\+LE}} = 0
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}{cm\+GE}} = 1
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}{cm\+NEQ}} = 2
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}{cm\+EQ}} = 3
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}{cm\+LT}} = 4
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}{cm\+GT}} = 5
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}{cm\+ADD}} = 6
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}{cm\+SUB}} = 7
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}{cm\+MUL}} = 8
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}{cm\+DIV}} = 9
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}{cm\+POW}} = 10
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}{cm\+LAND}} = 11
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}{cm\+LOR}} = 12
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}{cm\+ASSIGN}} = 13
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}{cm\+BO}} = 14
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}{cm\+BC}} = 15
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}{cm\+IF}} = 16
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}{cm\+ELSE}} = 17
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}{cm\+ENDIF}} = 18
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}{cm\+ARG\+\_\+\+SEP}} = 19
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cm\+VAR}} = 20
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{cm\+VAL}} = 21
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}{cm\+VARPOW2}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}{cm\+VARPOW3}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}{cm\+VARPOW4}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}{cm\+VARMUL}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}{cm\+POW2}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}{cm\+FUNC}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}{cm\+FUNC\+\_\+\+STR}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}{cm\+FUNC\+\_\+\+BULK}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cm\+STRING}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{cm\+OPRT\+\_\+\+BIN}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}{cm\+OPRT\+\_\+\+POSTFIX}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}{cm\+OPRT\+\_\+\+INFIX}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}{cm\+END}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}{cm\+UNKNOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Bytecode values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{EType\+Code}} \{ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}{tp\+STR}} = 0
+, \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}{tp\+DBL}} = 1
+, \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{tp\+VOID}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Types internally used by the parser. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}{EParser\+Version\+Info}} \{ \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca45e93ce2c6838f817e8d5adf2f3b8dec}{pvi\+BRIEF}}
+, \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}{pvi\+FULL}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprt\+Associativity}} \{ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}{oa\+LEFT}} = 0
+, \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5}{oa\+RIGHT}} = 1
+, \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563ca075fd5295bd303abfb0a1773face9acf}{oa\+NONE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Parser operator precedence values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}{EOprt\+Precedence}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15}{pr\+LOR}} = 1
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43}{pr\+LAND}} = 2
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8}{pr\+LOGIC}} = 3
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a5c092eaa85ec73555611b384ede7a9dd}{pr\+CMP}} = 4
+, \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a}{pr\+ADD\+\_\+\+SUB}} = 5
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8ae948d8b7a449d6a594caaf049e5b00e0}{pr\+MUL\+\_\+\+DIV}} = 6
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53}{pr\+POW}} = 7
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}{pr\+INFIX}} = 6
+, \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415}{pr\+POSTFIX}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Parser operator precedence values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{EError\+Codes}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee}{ec\+UNEXPECTED\+\_\+\+OPERATOR}} = 0
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794}{ec\+UNASSIGNABLE\+\_\+\+TOKEN}} = 1
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1}{ec\+UNEXPECTED\+\_\+\+EOF}} = 2
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c8fdb374f8c031a17cc041cb1db1b44}{ec\+UNEXPECTED\+\_\+\+ARG\+\_\+\+SEP}} = 3
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9b65abb5eca21f59be7e59e2a8a8d0cc}{ec\+UNEXPECTED\+\_\+\+ARG}} = 4
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad679dfa31262d0d9ad99fe0e4f95db9c}{ec\+UNEXPECTED\+\_\+\+VAL}} = 5
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad430edd7ca97fff68971649ec8f57f57}{ec\+UNEXPECTED\+\_\+\+VAR}} = 6
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ac666593b660f72f5c1d416f0bdccb5ab}{ec\+UNEXPECTED\+\_\+\+PARENS}} = 7
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a68544c2f71f449bc78c02e127abc6da7}{ec\+UNEXPECTED\+\_\+\+STR}} = 8
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652}{ec\+STRING\+\_\+\+EXPECTED}} = 9
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}{ec\+VAL\+\_\+\+EXPECTED}} = 10
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a324ba20c1bbdc353348126f4249d49b0}{ec\+MISSING\+\_\+\+PARENS}} = 11
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8b1d1113d0289b0a16118f7c7279a25e}{ec\+UNEXPECTED\+\_\+\+FUN}} = 12
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ae9c3119a29913fe79760f988d4bb0304}{ec\+UNTERMINATED\+\_\+\+STRING}} = 13
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab261c4a8c03763f3d7f3c78b0c6b7b51}{ec\+TOO\+\_\+\+MANY\+\_\+\+PARAMS}} = 14
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2b981b97792a8f3481583f736c41f5c6}{ec\+TOO\+\_\+\+FEW\+\_\+\+PARAMS}} = 15
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a41236d0a7ee64937f77eab322cea78cf}{ec\+OPRT\+\_\+\+TYPE\+\_\+\+CONFLICT}} = 16
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9fb56a155841aa4f5060f2ec72c5a7e0}{ec\+STR\+\_\+\+RESULT}} = 17
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a486683e3a93bf9bdde7ff7b21423c5ca}{ec\+INVALID\+\_\+\+NAME}} = 18
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad28b986862287dc5016dcb93f116edfe}{ec\+INVALID\+\_\+\+BINOP\+\_\+\+IDENT}} = 19
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a2826d81c0ead9d8e6c0cf2865805dc}{ec\+INVALID\+\_\+\+INFIX\+\_\+\+IDENT}} = 20
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aac6608764ab31a8eba0027c7395c2bae}{ec\+INVALID\+\_\+\+POSTFIX\+\_\+\+IDENT}} = 21
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a}{ec\+BUILTIN\+\_\+\+OVERLOAD}} = 22
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1}{ec\+INVALID\+\_\+\+FUN\+\_\+\+PTR}} = 23
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad8e712064ad91707afadeda05b632e13}{ec\+INVALID\+\_\+\+VAR\+\_\+\+PTR}} = 24
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aaa7a0a0f5a849e15df140c6f9e76bdfd}{ec\+EMPTY\+\_\+\+EXPRESSION}} = 25
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e}{ec\+NAME\+\_\+\+CONFLICT}} = 26
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab62e0fd43daf51a87476b910ef3855e1}{ec\+OPT\+\_\+\+PRI}} = 27
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a1f908341a6c6baad4f886cf897c5a9a8}{ec\+DOMAIN\+\_\+\+ERROR}} = 28
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af8c2e506d9713f8aff37f6e5562cf7a1}{ec\+DIV\+\_\+\+BY\+\_\+\+ZERO}} = 29
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6470195ead89dfbe323bdad3cda6e7c4}{ec\+GENERIC}} = 30
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a4c55b714057e0f2c1aeb1c14aa5d34b7}{ec\+LOCALE}} = 31
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad4db650a7bb1fb5fd6f6f8de3060dad1}{ec\+UNEXPECTED\+\_\+\+CONDITIONAL}} = 32
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c158c1d93d2152030b8d2239fff5cc3}{ec\+MISSING\+\_\+\+ELSE\+\_\+\+CLAUSE}} = 33
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af915de306b6530f93f3a92a1377f6206}{ec\+MISPLACED\+\_\+\+COLON}} = 34
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ec\+INTERNAL\+\_\+\+ERROR}} = 35
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7afcb30a1f424d206fea7aedd3a3985c58}{ec\+COUNT}}
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2369b91ec2436b7e1ff32d12a2c868b0}{ec\+UNDEFINED}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em Error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Namespace for mathematical applications. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespaceqmu_ab345e0ad1f32adb507926310276656e5}\label{namespaceqmu_ab345e0ad1f32adb507926310276656e5}} 
+\index{qmu@{qmu}!bulkfun\_type0@{bulkfun\_type0}}
+\index{bulkfun\_type0@{bulkfun\_type0}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type0}{bulkfun\_type0}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type0) (int, int)}
+
+
+
+Callback type used for functions without arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a92e5c3a267c5911e704ca37940000c05}\label{namespaceqmu_a92e5c3a267c5911e704ca37940000c05}} 
+\index{qmu@{qmu}!bulkfun\_type1@{bulkfun\_type1}}
+\index{bulkfun\_type1@{bulkfun\_type1}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type1}{bulkfun\_type1}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type1) (int, int, qreal)}
+
+
+
+Callback type used for functions with a single arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aae60889d81393f7161da314871e7cceb}\label{namespaceqmu_aae60889d81393f7161da314871e7cceb}} 
+\index{qmu@{qmu}!bulkfun\_type10@{bulkfun\_type10}}
+\index{bulkfun\_type10@{bulkfun\_type10}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type10}{bulkfun\_type10}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type10) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_af20d7b9af9d552b05bce9b5f097643e4}\label{namespaceqmu_af20d7b9af9d552b05bce9b5f097643e4}} 
+\index{qmu@{qmu}!bulkfun\_type2@{bulkfun\_type2}}
+\index{bulkfun\_type2@{bulkfun\_type2}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type2}{bulkfun\_type2}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type2) (int, int, qreal, qreal)}
+
+
+
+Callback type used for functions with two arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_accf421ab9da567d0a09097da949aab37}\label{namespaceqmu_accf421ab9da567d0a09097da949aab37}} 
+\index{qmu@{qmu}!bulkfun\_type3@{bulkfun\_type3}}
+\index{bulkfun\_type3@{bulkfun\_type3}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type3}{bulkfun\_type3}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type3) (int, int, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with three arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a52d56880710aa1876e3d0224ff88c307}\label{namespaceqmu_a52d56880710aa1876e3d0224ff88c307}} 
+\index{qmu@{qmu}!bulkfun\_type4@{bulkfun\_type4}}
+\index{bulkfun\_type4@{bulkfun\_type4}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type4}{bulkfun\_type4}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type4) (int, int, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with four arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_ab8ba891f9b9aaa685826be34760c2ce7}\label{namespaceqmu_ab8ba891f9b9aaa685826be34760c2ce7}} 
+\index{qmu@{qmu}!bulkfun\_type5@{bulkfun\_type5}}
+\index{bulkfun\_type5@{bulkfun\_type5}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type5}{bulkfun\_type5}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type5) (int, int, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a560fffc4cf20fe4f8fc5bd60226fcb8f}\label{namespaceqmu_a560fffc4cf20fe4f8fc5bd60226fcb8f}} 
+\index{qmu@{qmu}!bulkfun\_type6@{bulkfun\_type6}}
+\index{bulkfun\_type6@{bulkfun\_type6}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type6}{bulkfun\_type6}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type6) (int, int, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a7150bf79fe19c9617ab58acb75591e2f}\label{namespaceqmu_a7150bf79fe19c9617ab58acb75591e2f}} 
+\index{qmu@{qmu}!bulkfun\_type7@{bulkfun\_type7}}
+\index{bulkfun\_type7@{bulkfun\_type7}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type7}{bulkfun\_type7}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type7) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a701cf679a8834fce8751050970e74a2c}\label{namespaceqmu_a701cf679a8834fce8751050970e74a2c}} 
+\index{qmu@{qmu}!bulkfun\_type8@{bulkfun\_type8}}
+\index{bulkfun\_type8@{bulkfun\_type8}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type8}{bulkfun\_type8}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type8) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a832d7bb132c3bd4b70d67618651d24fb}\label{namespaceqmu_a832d7bb132c3bd4b70d67618651d24fb}} 
+\index{qmu@{qmu}!bulkfun\_type9@{bulkfun\_type9}}
+\index{bulkfun\_type9@{bulkfun\_type9}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{bulkfun\_type9}{bulkfun\_type9}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::bulkfun\+\_\+type9) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}\label{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}} 
+\index{qmu@{qmu}!char\_type@{char\_type}}
+\index{char\_type@{char\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{char\_type}{char\_type}}
+{\footnotesize\ttfamily typedef string\+\_\+type\+::value\+\_\+type \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{qmu\+::char\+\_\+type}}}
+
+
+
+The character type used by the parser. 
+
+Depends on wether UNICODE is used or not. \mbox{\Hypertarget{namespaceqmu_a7045fd256c04b2e6e01be1f8f6d517a4}\label{namespaceqmu_a7045fd256c04b2e6e01be1f8f6d517a4}} 
+\index{qmu@{qmu}!facfun\_type@{facfun\_type}}
+\index{facfun\_type@{facfun\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{facfun\_type}{facfun\_type}}
+{\footnotesize\ttfamily typedef qreal $\ast$($\ast$ qmu\+::facfun\+\_\+type) (const QString \&, void $\ast$)}
+
+
+
+Callback used for variable creation factory functions. 
+
+\mbox{\Hypertarget{namespaceqmu_a856810e705b6638e2e224df1a251fa16}\label{namespaceqmu_a856810e705b6638e2e224df1a251fa16}} 
+\index{qmu@{qmu}!fun\_type0@{fun\_type0}}
+\index{fun\_type0@{fun\_type0}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type0}{fun\_type0}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type0) ()}
+
+
+
+Callback type used for functions without arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_af1467daf91600a063fe199df73e49520}\label{namespaceqmu_af1467daf91600a063fe199df73e49520}} 
+\index{qmu@{qmu}!fun\_type1@{fun\_type1}}
+\index{fun\_type1@{fun\_type1}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type1}{fun\_type1}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type1) (qreal)}
+
+
+
+Callback type used for functions with a single arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a50b8452865cb745a9da2f4aa147469ca}\label{namespaceqmu_a50b8452865cb745a9da2f4aa147469ca}} 
+\index{qmu@{qmu}!fun\_type10@{fun\_type10}}
+\index{fun\_type10@{fun\_type10}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type10}{fun\_type10}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type10) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}\label{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}} 
+\index{qmu@{qmu}!fun\_type2@{fun\_type2}}
+\index{fun\_type2@{fun\_type2}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type2}{fun\_type2}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type2) (qreal, qreal)}
+
+
+
+Callback type used for functions with two arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_abbab00fd89ac8a2da37ce7d2967571ba}\label{namespaceqmu_abbab00fd89ac8a2da37ce7d2967571ba}} 
+\index{qmu@{qmu}!fun\_type3@{fun\_type3}}
+\index{fun\_type3@{fun\_type3}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type3}{fun\_type3}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type3) (qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with three arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_acc5f2f5a075c0e89e2bd5f2e26d492ef}\label{namespaceqmu_acc5f2f5a075c0e89e2bd5f2e26d492ef}} 
+\index{qmu@{qmu}!fun\_type4@{fun\_type4}}
+\index{fun\_type4@{fun\_type4}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type4}{fun\_type4}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type4) (qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with four arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a9937160e08609bc544e14765025770fd}\label{namespaceqmu_a9937160e08609bc544e14765025770fd}} 
+\index{qmu@{qmu}!fun\_type5@{fun\_type5}}
+\index{fun\_type5@{fun\_type5}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type5}{fun\_type5}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type5) (qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aaad2f7a24195cc21070a39a77523ea43}\label{namespaceqmu_aaad2f7a24195cc21070a39a77523ea43}} 
+\index{qmu@{qmu}!fun\_type6@{fun\_type6}}
+\index{fun\_type6@{fun\_type6}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type6}{fun\_type6}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type6) (qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a61b12af0083a97a3b03c79c0858cf0ce}\label{namespaceqmu_a61b12af0083a97a3b03c79c0858cf0ce}} 
+\index{qmu@{qmu}!fun\_type7@{fun\_type7}}
+\index{fun\_type7@{fun\_type7}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type7}{fun\_type7}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type7) (qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a22c12ce3b785ca34fe7641a181b342c8}\label{namespaceqmu_a22c12ce3b785ca34fe7641a181b342c8}} 
+\index{qmu@{qmu}!fun\_type8@{fun\_type8}}
+\index{fun\_type8@{fun\_type8}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type8}{fun\_type8}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type8) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a56c962afb0219556e86308cd861edda3}\label{namespaceqmu_a56c962afb0219556e86308cd861edda3}} 
+\index{qmu@{qmu}!fun\_type9@{fun\_type9}}
+\index{fun\_type9@{fun\_type9}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{fun\_type9}{fun\_type9}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::fun\+\_\+type9) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)}
+
+
+
+Callback type used for functions with five arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_a11d7cc4b28fa2a91468a57a22ab1dcd3}\label{namespaceqmu_a11d7cc4b28fa2a91468a57a22ab1dcd3}} 
+\index{qmu@{qmu}!funmap\_type@{funmap\_type}}
+\index{funmap\_type@{funmap\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{funmap\_type}{funmap\_type}}
+{\footnotesize\ttfamily typedef std\+::map$<$QString, \mbox{\hyperlink{classqmu_1_1_qmu_parser_callback}{Qmu\+Parser\+Callback}}$>$ \mbox{\hyperlink{namespaceqmu_a11d7cc4b28fa2a91468a57a22ab1dcd3}{qmu\+::funmap\+\_\+type}}}
+
+
+
+Container for Callback objects. 
+
+\mbox{\Hypertarget{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}\label{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}} 
+\index{qmu@{qmu}!generic\_fun\_type@{generic\_fun\_type}}
+\index{generic\_fun\_type@{generic\_fun\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{generic\_fun\_type}{generic\_fun\_type}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::generic\+\_\+fun\+\_\+type) ()}
+
+
+
+Callback type used for functions without arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}\label{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}} 
+\index{qmu@{qmu}!identfun\_type@{identfun\_type}}
+\index{identfun\_type@{identfun\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{identfun\_type}{identfun\_type}}
+{\footnotesize\ttfamily typedef int($\ast$ qmu\+::identfun\+\_\+type) (const QString \&s\+Expr, int $\ast$n\+Pos, qreal $\ast$f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)}
+
+
+
+Callback used for functions that identify values in a string. 
+
+\mbox{\Hypertarget{namespaceqmu_abeea51e1b81fbfc9ea2a65ac530f0b11}\label{namespaceqmu_abeea51e1b81fbfc9ea2a65ac530f0b11}} 
+\index{qmu@{qmu}!multfun\_type@{multfun\_type}}
+\index{multfun\_type@{multfun\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{multfun\_type}{multfun\_type}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::multfun\+\_\+type) (const qreal $\ast$, int)}
+
+
+
+Callback type used for functions with a variable argument list. 
+
+\mbox{\Hypertarget{namespaceqmu_a08d73a4d1e185a7df46ce2267e52bf5d}\label{namespaceqmu_a08d73a4d1e185a7df46ce2267e52bf5d}} 
+\index{qmu@{qmu}!strfun\_type1@{strfun\_type1}}
+\index{strfun\_type1@{strfun\_type1}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{strfun\_type1}{strfun\_type1}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::strfun\+\_\+type1) (const QString \&)}
+
+
+
+Callback type used for functions taking a string as an argument. 
+
+\mbox{\Hypertarget{namespaceqmu_af9c9650ca886118d83f2f82118c98652}\label{namespaceqmu_af9c9650ca886118d83f2f82118c98652}} 
+\index{qmu@{qmu}!strfun\_type2@{strfun\_type2}}
+\index{strfun\_type2@{strfun\_type2}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{strfun\_type2}{strfun\_type2}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::strfun\+\_\+type2) (const QString \&, qreal)}
+
+
+
+Callback type used for functions taking a string and a value as arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aaa596a2c4e3fd0a31ed23f988d893c49}\label{namespaceqmu_aaa596a2c4e3fd0a31ed23f988d893c49}} 
+\index{qmu@{qmu}!strfun\_type3@{strfun\_type3}}
+\index{strfun\_type3@{strfun\_type3}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{strfun\_type3}{strfun\_type3}}
+{\footnotesize\ttfamily typedef qreal($\ast$ qmu\+::strfun\+\_\+type3) (const QString \&, qreal, qreal)}
+
+
+
+Callback type used for functions taking a string and two values as arguments. 
+
+\mbox{\Hypertarget{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}\label{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}} 
+\index{qmu@{qmu}!string\_type@{string\_type}}
+\index{string\_type@{string\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{string\_type}{string\_type}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}{QMUP\+\_\+\+STRING\+\_\+\+TYPE}} \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{qmu\+::string\+\_\+type}}}
+
+
+
+The stringtype used by the parser. 
+
+Depends on wether UNICODE is used or not. \mbox{\Hypertarget{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}\label{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}} 
+\index{qmu@{qmu}!stringstream\_type@{stringstream\_type}}
+\index{stringstream\_type@{stringstream\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{stringstream\_type}{stringstream\_type}}
+{\footnotesize\ttfamily typedef std\+::basic\+\_\+stringstream$<$ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}}, std\+::char\+\_\+traits$<$\mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}}$>$, std\+::allocator$<$\mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\+\_\+type}}$>$ $>$ \mbox{\hyperlink{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}{qmu\+::stringstream\+\_\+type}}}
+
+
+
+Typedef for easily using stringstream that respect the parser stringtype. 
+
+\mbox{\Hypertarget{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}\label{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}} 
+\index{qmu@{qmu}!strmap\_type@{strmap\_type}}
+\index{strmap\_type@{strmap\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{strmap\_type}{strmap\_type}}
+{\footnotesize\ttfamily typedef std\+::map$<$QString, int$>$ \mbox{\hyperlink{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}{qmu\+::strmap\+\_\+type}}}
+
+
+
+Type for assigning a string name to an index in the internal string table. 
+
+\mbox{\Hypertarget{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}\label{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}} 
+\index{qmu@{qmu}!valmap\_type@{valmap\_type}}
+\index{valmap\_type@{valmap\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{valmap\_type}{valmap\_type}}
+{\footnotesize\ttfamily typedef std\+::map$<$QString, qreal$>$ \mbox{\hyperlink{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}{qmu\+::valmap\+\_\+type}}}
+
+
+
+Type used for storing constants. 
+
+\mbox{\Hypertarget{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}\label{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}} 
+\index{qmu@{qmu}!varmap\_type@{varmap\_type}}
+\index{varmap\_type@{varmap\_type}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{varmap\_type}{varmap\_type}}
+{\footnotesize\ttfamily typedef std\+::map$<$QString, qreal$\ast$$>$ \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{qmu\+::varmap\+\_\+type}}}
+
+
+
+Type used for storing variables. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}} 
+\index{qmu@{qmu}!ECmdCode@{ECmdCode}}
+\index{ECmdCode@{ECmdCode}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{ECmdCode}{ECmdCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{qmu\+::\+ECmd\+Code}}}
+
+
+
+Bytecode values. 
+
+\begin{DoxyAttention}{Attention}
+The order of the operator entries must match the order in Parser\+Base\+::c\+\_\+\+Default\+Oprt! 
+\end{DoxyAttention}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmLE@{cmLE}!qmu@{qmu}}\index{qmu@{qmu}!cmLE@{cmLE}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}} 
+cm\+LE&Operator item\+: less or equal. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmGE@{cmGE}!qmu@{qmu}}\index{qmu@{qmu}!cmGE@{cmGE}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}} 
+cm\+GE&Operator item\+: greater or equal. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmNEQ@{cmNEQ}!qmu@{qmu}}\index{qmu@{qmu}!cmNEQ@{cmNEQ}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}} 
+cm\+NEQ&Operator item\+: not equal. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmEQ@{cmEQ}!qmu@{qmu}}\index{qmu@{qmu}!cmEQ@{cmEQ}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}} 
+cm\+EQ&Operator item\+: equals. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmLT@{cmLT}!qmu@{qmu}}\index{qmu@{qmu}!cmLT@{cmLT}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}} 
+cm\+LT&Operator item\+: less than. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmGT@{cmGT}!qmu@{qmu}}\index{qmu@{qmu}!cmGT@{cmGT}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}} 
+cm\+GT&Operator item\+: greater than. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmADD@{cmADD}!qmu@{qmu}}\index{qmu@{qmu}!cmADD@{cmADD}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}} 
+cm\+ADD&Operator item\+: add. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmSUB@{cmSUB}!qmu@{qmu}}\index{qmu@{qmu}!cmSUB@{cmSUB}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}} 
+cm\+SUB&Operator item\+: subtract. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmMUL@{cmMUL}!qmu@{qmu}}\index{qmu@{qmu}!cmMUL@{cmMUL}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}} 
+cm\+MUL&Operator item\+: multiply. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmDIV@{cmDIV}!qmu@{qmu}}\index{qmu@{qmu}!cmDIV@{cmDIV}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}} 
+cm\+DIV&Operator item\+: division. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmPOW@{cmPOW}!qmu@{qmu}}\index{qmu@{qmu}!cmPOW@{cmPOW}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}} 
+cm\+POW&Operator item\+: y to the power of ... \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmLAND@{cmLAND}!qmu@{qmu}}\index{qmu@{qmu}!cmLAND@{cmLAND}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}} 
+cm\+LAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmLOR@{cmLOR}!qmu@{qmu}}\index{qmu@{qmu}!cmLOR@{cmLOR}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}} 
+cm\+LOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmASSIGN@{cmASSIGN}!qmu@{qmu}}\index{qmu@{qmu}!cmASSIGN@{cmASSIGN}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}} 
+cm\+ASSIGN&Operator item\+: Assignment operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmBO@{cmBO}!qmu@{qmu}}\index{qmu@{qmu}!cmBO@{cmBO}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}} 
+cm\+BO&Operator item\+: opening bracket. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmBC@{cmBC}!qmu@{qmu}}\index{qmu@{qmu}!cmBC@{cmBC}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}} 
+cm\+BC&Operator item\+: closing bracket. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmIF@{cmIF}!qmu@{qmu}}\index{qmu@{qmu}!cmIF@{cmIF}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}} 
+cm\+IF&For use in the ternary if-\/then-\/else operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmELSE@{cmELSE}!qmu@{qmu}}\index{qmu@{qmu}!cmELSE@{cmELSE}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}} 
+cm\+ELSE&For use in the ternary if-\/then-\/else operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmENDIF@{cmENDIF}!qmu@{qmu}}\index{qmu@{qmu}!cmENDIF@{cmENDIF}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}} 
+cm\+ENDIF&For use in the ternary if-\/then-\/else operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmARG\_SEP@{cmARG\_SEP}!qmu@{qmu}}\index{qmu@{qmu}!cmARG\_SEP@{cmARG\_SEP}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}} 
+cm\+ARG\+\_\+\+SEP&function argument separator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVAR@{cmVAR}!qmu@{qmu}}\index{qmu@{qmu}!cmVAR@{cmVAR}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}} 
+cm\+VAR&variable item \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVAL@{cmVAL}!qmu@{qmu}}\index{qmu@{qmu}!cmVAL@{cmVAL}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}} 
+cm\+VAL&value item \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVARPOW2@{cmVARPOW2}!qmu@{qmu}}\index{qmu@{qmu}!cmVARPOW2@{cmVARPOW2}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}} 
+cm\+VARPOW2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVARPOW3@{cmVARPOW3}!qmu@{qmu}}\index{qmu@{qmu}!cmVARPOW3@{cmVARPOW3}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}} 
+cm\+VARPOW3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVARPOW4@{cmVARPOW4}!qmu@{qmu}}\index{qmu@{qmu}!cmVARPOW4@{cmVARPOW4}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}} 
+cm\+VARPOW4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmVARMUL@{cmVARMUL}!qmu@{qmu}}\index{qmu@{qmu}!cmVARMUL@{cmVARMUL}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}} 
+cm\+VARMUL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmPOW2@{cmPOW2}!qmu@{qmu}}\index{qmu@{qmu}!cmPOW2@{cmPOW2}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}} 
+cm\+POW2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmFUNC@{cmFUNC}!qmu@{qmu}}\index{qmu@{qmu}!cmFUNC@{cmFUNC}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}} 
+cm\+FUNC&Code for a generic function item. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmFUNC\_STR@{cmFUNC\_STR}!qmu@{qmu}}\index{qmu@{qmu}!cmFUNC\_STR@{cmFUNC\_STR}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}} 
+cm\+FUNC\+\_\+\+STR&Code for a function with a string parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmFUNC\_BULK@{cmFUNC\_BULK}!qmu@{qmu}}\index{qmu@{qmu}!cmFUNC\_BULK@{cmFUNC\_BULK}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}} 
+cm\+FUNC\+\_\+\+BULK&Special callbacks for Bulk mode with an additional parameter for the bulk index. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmSTRING@{cmSTRING}!qmu@{qmu}}\index{qmu@{qmu}!cmSTRING@{cmSTRING}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}} 
+cm\+STRING&Code for a string token. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmOPRT\_BIN@{cmOPRT\_BIN}!qmu@{qmu}}\index{qmu@{qmu}!cmOPRT\_BIN@{cmOPRT\_BIN}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}} 
+cm\+OPRT\+\_\+\+BIN&user defined binary operator \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmOPRT\_POSTFIX@{cmOPRT\_POSTFIX}!qmu@{qmu}}\index{qmu@{qmu}!cmOPRT\_POSTFIX@{cmOPRT\_POSTFIX}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}} 
+cm\+OPRT\+\_\+\+POSTFIX&code for postfix operators \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmOPRT\_INFIX@{cmOPRT\_INFIX}!qmu@{qmu}}\index{qmu@{qmu}!cmOPRT\_INFIX@{cmOPRT\_INFIX}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}} 
+cm\+OPRT\+\_\+\+INFIX&code for infix operators \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmEND@{cmEND}!qmu@{qmu}}\index{qmu@{qmu}!cmEND@{cmEND}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}} 
+cm\+END&end of formula \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{cmUNKNOWN@{cmUNKNOWN}!qmu@{qmu}}\index{qmu@{qmu}!cmUNKNOWN@{cmUNKNOWN}}}\mbox{\Hypertarget{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}\label{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}} 
+cm\+UNKNOWN&uninitialized item \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}} 
+\index{qmu@{qmu}!EErrorCodes@{EErrorCodes}}
+\index{EErrorCodes@{EErrorCodes}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{EErrorCodes}{EErrorCodes}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{qmu\+::\+EError\+Codes}}}
+
+
+
+Error codes. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_OPERATOR@{ecUNEXPECTED\_OPERATOR}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_OPERATOR@{ecUNEXPECTED\_OPERATOR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee}} 
+ec\+UNEXPECTED\+\_\+\+OPERATOR&Unexpected binary operator found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNASSIGNABLE\_TOKEN@{ecUNASSIGNABLE\_TOKEN}!qmu@{qmu}}\index{qmu@{qmu}!ecUNASSIGNABLE\_TOKEN@{ecUNASSIGNABLE\_TOKEN}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794}} 
+ec\+UNASSIGNABLE\+\_\+\+TOKEN&Token cant be identified. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_EOF@{ecUNEXPECTED\_EOF}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_EOF@{ecUNEXPECTED\_EOF}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1}} 
+ec\+UNEXPECTED\+\_\+\+EOF&Unexpected end of formula. (Example\+: \char`\"{}2+sin(\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_ARG\_SEP@{ecUNEXPECTED\_ARG\_SEP}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_ARG\_SEP@{ecUNEXPECTED\_ARG\_SEP}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c8fdb374f8c031a17cc041cb1db1b44}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c8fdb374f8c031a17cc041cb1db1b44}} 
+ec\+UNEXPECTED\+\_\+\+ARG\+\_\+\+SEP&An unexpected semicolon has been found. (Example\+: \char`\"{}1;23\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_ARG@{ecUNEXPECTED\_ARG}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_ARG@{ecUNEXPECTED\_ARG}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9b65abb5eca21f59be7e59e2a8a8d0cc}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9b65abb5eca21f59be7e59e2a8a8d0cc}} 
+ec\+UNEXPECTED\+\_\+\+ARG&An unexpected argument has been found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_VAL@{ecUNEXPECTED\_VAL}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_VAL@{ecUNEXPECTED\_VAL}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad679dfa31262d0d9ad99fe0e4f95db9c}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad679dfa31262d0d9ad99fe0e4f95db9c}} 
+ec\+UNEXPECTED\+\_\+\+VAL&An unexpected value token has been found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_VAR@{ecUNEXPECTED\_VAR}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_VAR@{ecUNEXPECTED\_VAR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad430edd7ca97fff68971649ec8f57f57}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad430edd7ca97fff68971649ec8f57f57}} 
+ec\+UNEXPECTED\+\_\+\+VAR&An unexpected variable token has been found. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_PARENS@{ecUNEXPECTED\_PARENS}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_PARENS@{ecUNEXPECTED\_PARENS}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ac666593b660f72f5c1d416f0bdccb5ab}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ac666593b660f72f5c1d416f0bdccb5ab}} 
+ec\+UNEXPECTED\+\_\+\+PARENS&Unexpected Parenthesis, opening or closing. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_STR@{ecUNEXPECTED\_STR}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_STR@{ecUNEXPECTED\_STR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a68544c2f71f449bc78c02e127abc6da7}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a68544c2f71f449bc78c02e127abc6da7}} 
+ec\+UNEXPECTED\+\_\+\+STR&A string has been found at an inapropriate position. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecSTRING\_EXPECTED@{ecSTRING\_EXPECTED}!qmu@{qmu}}\index{qmu@{qmu}!ecSTRING\_EXPECTED@{ecSTRING\_EXPECTED}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652}} 
+ec\+STRING\+\_\+\+EXPECTED&A string function has been called with a different type of argument. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecVAL\_EXPECTED@{ecVAL\_EXPECTED}!qmu@{qmu}}\index{qmu@{qmu}!ecVAL\_EXPECTED@{ecVAL\_EXPECTED}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}} 
+ec\+VAL\+\_\+\+EXPECTED&A numerical function has been called with a non value type of argument. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecMISSING\_PARENS@{ecMISSING\_PARENS}!qmu@{qmu}}\index{qmu@{qmu}!ecMISSING\_PARENS@{ecMISSING\_PARENS}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a324ba20c1bbdc353348126f4249d49b0}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a324ba20c1bbdc353348126f4249d49b0}} 
+ec\+MISSING\+\_\+\+PARENS&Missing parens. (Example\+: \char`\"{}3$\ast$sin(3\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_FUN@{ecUNEXPECTED\_FUN}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_FUN@{ecUNEXPECTED\_FUN}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8b1d1113d0289b0a16118f7c7279a25e}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8b1d1113d0289b0a16118f7c7279a25e}} 
+ec\+UNEXPECTED\+\_\+\+FUN&Unexpected function found. (Example\+: \char`\"{}sin(8)cos(9)\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNTERMINATED\_STRING@{ecUNTERMINATED\_STRING}!qmu@{qmu}}\index{qmu@{qmu}!ecUNTERMINATED\_STRING@{ecUNTERMINATED\_STRING}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ae9c3119a29913fe79760f988d4bb0304}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ae9c3119a29913fe79760f988d4bb0304}} 
+ec\+UNTERMINATED\+\_\+\+STRING&unterminated string constant. (Example\+: \char`\"{}3$\ast$valueof(\char`\"{}hello)"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecTOO\_MANY\_PARAMS@{ecTOO\_MANY\_PARAMS}!qmu@{qmu}}\index{qmu@{qmu}!ecTOO\_MANY\_PARAMS@{ecTOO\_MANY\_PARAMS}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab261c4a8c03763f3d7f3c78b0c6b7b51}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab261c4a8c03763f3d7f3c78b0c6b7b51}} 
+ec\+TOO\+\_\+\+MANY\+\_\+\+PARAMS&Too many function parameters. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecTOO\_FEW\_PARAMS@{ecTOO\_FEW\_PARAMS}!qmu@{qmu}}\index{qmu@{qmu}!ecTOO\_FEW\_PARAMS@{ecTOO\_FEW\_PARAMS}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2b981b97792a8f3481583f736c41f5c6}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2b981b97792a8f3481583f736c41f5c6}} 
+ec\+TOO\+\_\+\+FEW\+\_\+\+PARAMS&Too few function parameters. (Example\+: \char`\"{}ite(1$<$2;2)\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecOPRT\_TYPE\_CONFLICT@{ecOPRT\_TYPE\_CONFLICT}!qmu@{qmu}}\index{qmu@{qmu}!ecOPRT\_TYPE\_CONFLICT@{ecOPRT\_TYPE\_CONFLICT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a41236d0a7ee64937f77eab322cea78cf}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a41236d0a7ee64937f77eab322cea78cf}} 
+ec\+OPRT\+\_\+\+TYPE\+\_\+\+CONFLICT&binary operators may only be applied to value items of the same type \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecSTR\_RESULT@{ecSTR\_RESULT}!qmu@{qmu}}\index{qmu@{qmu}!ecSTR\_RESULT@{ecSTR\_RESULT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9fb56a155841aa4f5060f2ec72c5a7e0}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9fb56a155841aa4f5060f2ec72c5a7e0}} 
+ec\+STR\+\_\+\+RESULT&result is a string \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_NAME@{ecINVALID\_NAME}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_NAME@{ecINVALID\_NAME}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a486683e3a93bf9bdde7ff7b21423c5ca}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a486683e3a93bf9bdde7ff7b21423c5ca}} 
+ec\+INVALID\+\_\+\+NAME&Invalid function, variable or constant name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_BINOP\_IDENT@{ecINVALID\_BINOP\_IDENT}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_BINOP\_IDENT@{ecINVALID\_BINOP\_IDENT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad28b986862287dc5016dcb93f116edfe}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad28b986862287dc5016dcb93f116edfe}} 
+ec\+INVALID\+\_\+\+BINOP\+\_\+\+IDENT&Invalid binary operator identifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_INFIX\_IDENT@{ecINVALID\_INFIX\_IDENT}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_INFIX\_IDENT@{ecINVALID\_INFIX\_IDENT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a2826d81c0ead9d8e6c0cf2865805dc}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a2826d81c0ead9d8e6c0cf2865805dc}} 
+ec\+INVALID\+\_\+\+INFIX\+\_\+\+IDENT&Invalid function, variable or constant name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_POSTFIX\_IDENT@{ecINVALID\_POSTFIX\_IDENT}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_POSTFIX\_IDENT@{ecINVALID\_POSTFIX\_IDENT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aac6608764ab31a8eba0027c7395c2bae}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aac6608764ab31a8eba0027c7395c2bae}} 
+ec\+INVALID\+\_\+\+POSTFIX\+\_\+\+IDENT&Invalid function, variable or constant name. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecBUILTIN\_OVERLOAD@{ecBUILTIN\_OVERLOAD}!qmu@{qmu}}\index{qmu@{qmu}!ecBUILTIN\_OVERLOAD@{ecBUILTIN\_OVERLOAD}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a}} 
+ec\+BUILTIN\+\_\+\+OVERLOAD&Trying to overload builtin operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_FUN\_PTR@{ecINVALID\_FUN\_PTR}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_FUN\_PTR@{ecINVALID\_FUN\_PTR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1}} 
+ec\+INVALID\+\_\+\+FUN\+\_\+\+PTR&Invalid callback function pointer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINVALID\_VAR\_PTR@{ecINVALID\_VAR\_PTR}!qmu@{qmu}}\index{qmu@{qmu}!ecINVALID\_VAR\_PTR@{ecINVALID\_VAR\_PTR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad8e712064ad91707afadeda05b632e13}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad8e712064ad91707afadeda05b632e13}} 
+ec\+INVALID\+\_\+\+VAR\+\_\+\+PTR&Invalid variable pointer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecEMPTY\_EXPRESSION@{ecEMPTY\_EXPRESSION}!qmu@{qmu}}\index{qmu@{qmu}!ecEMPTY\_EXPRESSION@{ecEMPTY\_EXPRESSION}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aaa7a0a0f5a849e15df140c6f9e76bdfd}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aaa7a0a0f5a849e15df140c6f9e76bdfd}} 
+ec\+EMPTY\+\_\+\+EXPRESSION&The Expression is empty. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecNAME\_CONFLICT@{ecNAME\_CONFLICT}!qmu@{qmu}}\index{qmu@{qmu}!ecNAME\_CONFLICT@{ecNAME\_CONFLICT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e}} 
+ec\+NAME\+\_\+\+CONFLICT&Name conflict. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecOPT\_PRI@{ecOPT\_PRI}!qmu@{qmu}}\index{qmu@{qmu}!ecOPT\_PRI@{ecOPT\_PRI}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab62e0fd43daf51a87476b910ef3855e1}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab62e0fd43daf51a87476b910ef3855e1}} 
+ec\+OPT\+\_\+\+PRI&Invalid operator priority. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecDOMAIN\_ERROR@{ecDOMAIN\_ERROR}!qmu@{qmu}}\index{qmu@{qmu}!ecDOMAIN\_ERROR@{ecDOMAIN\_ERROR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a1f908341a6c6baad4f886cf897c5a9a8}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a1f908341a6c6baad4f886cf897c5a9a8}} 
+ec\+DOMAIN\+\_\+\+ERROR&catch division by zero, sqrt(-\/1), log(0) (currently unused) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecDIV\_BY\_ZERO@{ecDIV\_BY\_ZERO}!qmu@{qmu}}\index{qmu@{qmu}!ecDIV\_BY\_ZERO@{ecDIV\_BY\_ZERO}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af8c2e506d9713f8aff37f6e5562cf7a1}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af8c2e506d9713f8aff37f6e5562cf7a1}} 
+ec\+DIV\+\_\+\+BY\+\_\+\+ZERO&Division by zero (currently unused) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecGENERIC@{ecGENERIC}!qmu@{qmu}}\index{qmu@{qmu}!ecGENERIC@{ecGENERIC}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6470195ead89dfbe323bdad3cda6e7c4}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6470195ead89dfbe323bdad3cda6e7c4}} 
+ec\+GENERIC&Generic error. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecLOCALE@{ecLOCALE}!qmu@{qmu}}\index{qmu@{qmu}!ecLOCALE@{ecLOCALE}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a4c55b714057e0f2c1aeb1c14aa5d34b7}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a4c55b714057e0f2c1aeb1c14aa5d34b7}} 
+ec\+LOCALE&Conflict with current locale. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNEXPECTED\_CONDITIONAL@{ecUNEXPECTED\_CONDITIONAL}!qmu@{qmu}}\index{qmu@{qmu}!ecUNEXPECTED\_CONDITIONAL@{ecUNEXPECTED\_CONDITIONAL}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad4db650a7bb1fb5fd6f6f8de3060dad1}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad4db650a7bb1fb5fd6f6f8de3060dad1}} 
+ec\+UNEXPECTED\+\_\+\+CONDITIONAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecMISSING\_ELSE\_CLAUSE@{ecMISSING\_ELSE\_CLAUSE}!qmu@{qmu}}\index{qmu@{qmu}!ecMISSING\_ELSE\_CLAUSE@{ecMISSING\_ELSE\_CLAUSE}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c158c1d93d2152030b8d2239fff5cc3}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c158c1d93d2152030b8d2239fff5cc3}} 
+ec\+MISSING\+\_\+\+ELSE\+\_\+\+CLAUSE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecMISPLACED\_COLON@{ecMISPLACED\_COLON}!qmu@{qmu}}\index{qmu@{qmu}!ecMISPLACED\_COLON@{ecMISPLACED\_COLON}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af915de306b6530f93f3a92a1377f6206}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af915de306b6530f93f3a92a1377f6206}} 
+ec\+MISPLACED\+\_\+\+COLON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecINTERNAL\_ERROR@{ecINTERNAL\_ERROR}!qmu@{qmu}}\index{qmu@{qmu}!ecINTERNAL\_ERROR@{ecINTERNAL\_ERROR}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}} 
+ec\+INTERNAL\+\_\+\+ERROR&Internal error of any kind. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecCOUNT@{ecCOUNT}!qmu@{qmu}}\index{qmu@{qmu}!ecCOUNT@{ecCOUNT}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7afcb30a1f424d206fea7aedd3a3985c58}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7afcb30a1f424d206fea7aedd3a3985c58}} 
+ec\+COUNT&This is no error code, It just stores just the total number of error codes. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecUNDEFINED@{ecUNDEFINED}!qmu@{qmu}}\index{qmu@{qmu}!ecUNDEFINED@{ecUNDEFINED}}}\mbox{\Hypertarget{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2369b91ec2436b7e1ff32d12a2c868b0}\label{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2369b91ec2436b7e1ff32d12a2c868b0}} 
+ec\+UNDEFINED&Undefined message, placeholder to detect unassigned error messages. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}\label{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}} 
+\index{qmu@{qmu}!EOprtAssociativity@{EOprtAssociativity}}
+\index{EOprtAssociativity@{EOprtAssociativity}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{EOprtAssociativity}{EOprtAssociativity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{qmu\+::\+EOprt\+Associativity}}}
+
+
+
+Parser operator precedence values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{oaLEFT@{oaLEFT}!qmu@{qmu}}\index{qmu@{qmu}!oaLEFT@{oaLEFT}}}\mbox{\Hypertarget{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}\label{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}} 
+oa\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{oaRIGHT@{oaRIGHT}!qmu@{qmu}}\index{qmu@{qmu}!oaRIGHT@{oaRIGHT}}}\mbox{\Hypertarget{namespaceqmu_ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5}\label{namespaceqmu_ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5}} 
+oa\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{oaNONE@{oaNONE}!qmu@{qmu}}\index{qmu@{qmu}!oaNONE@{oaNONE}}}\mbox{\Hypertarget{namespaceqmu_ab18cd5836bb9de744b95b05da221563ca075fd5295bd303abfb0a1773face9acf}\label{namespaceqmu_ab18cd5836bb9de744b95b05da221563ca075fd5295bd303abfb0a1773face9acf}} 
+oa\+NONE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}} 
+\index{qmu@{qmu}!EOprtPrecedence@{EOprtPrecedence}}
+\index{EOprtPrecedence@{EOprtPrecedence}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{EOprtPrecedence}{EOprtPrecedence}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}{qmu\+::\+EOprt\+Precedence}}}
+
+
+
+Parser operator precedence values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prLOR@{prLOR}!qmu@{qmu}}\index{qmu@{qmu}!prLOR@{prLOR}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15}} 
+pr\+LOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prLAND@{prLAND}!qmu@{qmu}}\index{qmu@{qmu}!prLAND@{prLAND}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43}} 
+pr\+LAND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prLOGIC@{prLOGIC}!qmu@{qmu}}\index{qmu@{qmu}!prLOGIC@{prLOGIC}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8}} 
+pr\+LOGIC&logic operators \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prCMP@{prCMP}!qmu@{qmu}}\index{qmu@{qmu}!prCMP@{prCMP}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a5c092eaa85ec73555611b384ede7a9dd}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a5c092eaa85ec73555611b384ede7a9dd}} 
+pr\+CMP&comparsion operators \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prADD\_SUB@{prADD\_SUB}!qmu@{qmu}}\index{qmu@{qmu}!prADD\_SUB@{prADD\_SUB}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a}} 
+pr\+ADD\+\_\+\+SUB&addition \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prMUL\_DIV@{prMUL\_DIV}!qmu@{qmu}}\index{qmu@{qmu}!prMUL\_DIV@{prMUL\_DIV}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8ae948d8b7a449d6a594caaf049e5b00e0}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8ae948d8b7a449d6a594caaf049e5b00e0}} 
+pr\+MUL\+\_\+\+DIV&multiplication/division \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prPOW@{prPOW}!qmu@{qmu}}\index{qmu@{qmu}!prPOW@{prPOW}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53}} 
+pr\+POW&power operator priority (highest) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prINFIX@{prINFIX}!qmu@{qmu}}\index{qmu@{qmu}!prINFIX@{prINFIX}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}} 
+pr\+INFIX&Signs have a higher priority than ADD\+\_\+\+SUB, but lower than power operator. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{prPOSTFIX@{prPOSTFIX}!qmu@{qmu}}\index{qmu@{qmu}!prPOSTFIX@{prPOSTFIX}}}\mbox{\Hypertarget{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415}\label{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415}} 
+pr\+POSTFIX&Postfix operator priority (currently unused) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}\label{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}} 
+\index{qmu@{qmu}!EParserVersionInfo@{EParserVersionInfo}}
+\index{EParserVersionInfo@{EParserVersionInfo}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{EParserVersionInfo}{EParserVersionInfo}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}{qmu\+::\+EParser\+Version\+Info}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pviBRIEF@{pviBRIEF}!qmu@{qmu}}\index{qmu@{qmu}!pviBRIEF@{pviBRIEF}}}\mbox{\Hypertarget{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca45e93ce2c6838f817e8d5adf2f3b8dec}\label{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca45e93ce2c6838f817e8d5adf2f3b8dec}} 
+pvi\+BRIEF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{pviFULL@{pviFULL}!qmu@{qmu}}\index{qmu@{qmu}!pviFULL@{pviFULL}}}\mbox{\Hypertarget{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}\label{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}} 
+pvi\+FULL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}\label{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}} 
+\index{qmu@{qmu}!ETypeCode@{ETypeCode}}
+\index{ETypeCode@{ETypeCode}!qmu@{qmu}}
+\doxysubsubsection{\texorpdfstring{ETypeCode}{ETypeCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{qmu\+::\+EType\+Code}}}
+
+
+
+Types internally used by the parser. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tpSTR@{tpSTR}!qmu@{qmu}}\index{qmu@{qmu}!tpSTR@{tpSTR}}}\mbox{\Hypertarget{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}\label{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}} 
+tp\+STR&String type (Function arguments and constants only, no string variables) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tpDBL@{tpDBL}!qmu@{qmu}}\index{qmu@{qmu}!tpDBL@{tpDBL}}}\mbox{\Hypertarget{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}\label{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}} 
+tp\+DBL&Floating point variables. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tpVOID@{tpVOID}!qmu@{qmu}}\index{qmu@{qmu}!tpVOID@{tpVOID}}}\mbox{\Hypertarget{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}\label{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}} 
+tp\+VOID&Undefined type. \\
+\hline
+
+\end{DoxyEnumFields}

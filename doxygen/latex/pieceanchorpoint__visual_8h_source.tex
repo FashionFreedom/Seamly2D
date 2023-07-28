@@ -1,0 +1,64 @@
+\hypertarget{pieceanchorpoint__visual_8h_source}{}\doxysection{pieceanchorpoint\+\_\+visual.\+h}
+\label{pieceanchorpoint__visual_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/path/pieceanchorpoint\_visual.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/path/pieceanchorpoint\_visual.h}}
+\mbox{\hyperlink{pieceanchorpoint__visual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ pieceanchorpoint\_visual.cpp}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 14\ 2,\ 2017}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2022\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#ifndef\ PIECE\_ANCHOR\_POINT\_VISUAL\_H}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ PIECE\_ANCHOR\_POINT\_VISUAL\_H}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vispath_8h}{vispath.h}}"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_simple_point}{VSimplePoint}};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_piece_anchor_point_visual}{PieceAnchorPointVisual}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_path}{VisPath}}}
+\DoxyCodeLine{00036\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual}{PieceAnchorPointVisual}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_a623c38cc3bdbafabc8dd1f7f62b62062}{\string~PieceAnchorPointVisual}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_a0ebf852d203f87dd2eb9d3b39d0ac894}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_a43ab78a716306d67e577ae2530043ebb}{setAnchors}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \&anchors);}
+\DoxyCodeLine{00045\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_adf2a0ba8e1545d1150e87199d0b42b42}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_piece_anchor_point_visual_a5ac1434b4ef29ebfde493caa03f218dbadccf8aebeedd8c571e48d703927bd53c}{Type}};\}}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_piece_anchor_point_visual_a5ac1434b4ef29ebfde493caa03f218dbadccf8aebeedd8c571e48d703927bd53c}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::PieceAnchors)\};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_piece_anchor_point_visual}{PieceAnchorPointVisual}})}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_simple_point}{VSimplePoint}}\ *>\ \ \mbox{\hyperlink{class_piece_anchor_point_visual_a6231eda63c826e4572bd1f739a06bd72}{m\_points}};}
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_ab325794f4ce666679cad1087b7358f50}{m\_anchors}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_v_simple_point}{VSimplePoint}}\ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_piece_anchor_point_visual_af937f14d763e8bd7751c9b6cfebcdc35}{GetPoint}}(quint32\ i,\ const\ QColor\ \&color);}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_piece_anchor_point_visual_ab7680d636d5a0f256d0575c98d0e19a8}{HideAllItems}}();}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ PIECE\_ANCHOR\_POINT\_VISUAL\_H}}
+
+\end{DoxyCode}

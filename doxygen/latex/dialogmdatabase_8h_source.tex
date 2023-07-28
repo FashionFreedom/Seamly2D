@@ -1,0 +1,159 @@
+\hypertarget{dialogmdatabase_8h_source}{}\doxysection{dialogmdatabase.\+h}
+\label{dialogmdatabase_8h_source}\index{D:/Github/Seamly2D/src/app/seamlyme/dialogs/dialogmdatabase.h@{D:/Github/Seamly2D/src/app/seamlyme/dialogs/dialogmdatabase.h}}
+\mbox{\hyperlink{dialogmdatabase_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogmdatabase.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 26\ 7,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGMDATABASE\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGMDATABASE\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{class\ }DialogMDataBase;}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }QTreeWidgetItem;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}\ :\ \textcolor{keyword}{public}\ QDialog}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}(\textcolor{keyword}{const}\ QStringList\ \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_ad80ce3377e5c85cbbc3655705ace49c1}{\string~MeasurementDatabaseDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a67c7f97f1cfd9b2bcf3fe4e838d196b1}{retranslateGroups}}();}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a259e435237bf19b42f288a5129d2becb}{getNewMeasurementNames}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{static}\ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_afe3759f80bf5b7e76e25d04a946420e6}{imageUrl}}(\textcolor{keyword}{const}\ QString\ \&number);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_ad509c0fc3ab379a99641f02f72286d22}{changeEvent}}(QEvent*\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a3b9fb09abab711034df10235a74f1be6}{eventFilter}}(QObject\ *target,\ QEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a2027519ce17c6d614f56e4b9a01a79f7}{updateChecks}}(QTreeWidgetItem\ *item,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_ae532a82e691f21b25e1840e6ed8097b2}{showDescription}}(QTreeWidgetItem\ *item,\ \textcolor{keywordtype}{int}\ column);}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a8c4fa762ff6942ca557208b0fa36a9be}{treeContextMenu}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a740a34d15362aa2b752d9293b4b73007}{recheckState}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00089\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}})}
+\DoxyCodeLine{00090\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::DialogMDataBase\ *\mbox{\hyperlink{class_measurement_database_dialog_a4be131636ad892949b770300fe80d1e6}{ui}};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a58751935054c2f14924e93dd99fe5a5a}{selectMode}};}
+\DoxyCodeLine{00092\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}};}
+\DoxyCodeLine{00093\ \ \ \ \ QStringList\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}{newMeasurements}};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a9afa449990fdeb981bd4111d5736c2d5}{groupAText}}\ =\ "{}A.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Direct\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395aeec6c4bdbd339edf8cbea68becb85244}{Height}}"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00096\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_ac814fdf6334c1f88acebb335b4055b8d}{groupBText}}\ =\ "{}B.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Direct\ Width"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00097\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_ae2a5a47c7267e047e970ee564a5142fc}{groupCText}}\ =\ "{}C.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Indentation"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00098\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a8f24b2157314146856b14ee2da9707d9}{groupDText}}\ =\ "{}D.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Hand"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00099\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a6ecf17afa665e81aa10b31073dae00d1}{groupEText}}\ =\ "{}E.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Foot"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00100\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a32e4e95a5ac36200c1ab965a9cad5aa7}{groupFText}}\ =\ "{}F.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Head"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00101\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a02bb27304bcd067e15980d444e6a2bd0}{groupGText}}\ =\ "{}G.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Circumference\ and\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9a2b73f91683611c489560a1d163e37902}{Arc}}"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00102\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a7fdfb5534701d78a3aed864a85c42a9e}{groupHText}}\ =\ "{}H.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Vertical"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00103\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_afc762317cffa8ba2e5ffc3c32828cddc}{groupIText}}\ =\ "{}I.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Horizontal"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00104\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_abc04390ac8e8600b37911448e67992bf}{groupJText}}\ =\ "{}J.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Bust"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00105\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_aa525e3df7d744e721cb78587c3ccd0fe}{groupKText}}\ =\ "{}K.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Balance"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00106\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a03654ef831f2bd6ca47f4622f2a09f7b}{groupLText}}\ =\ "{}L.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Arm"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00107\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a05ded8b58963207fa8cfdb318499c7a6}{groupMText}}\ =\ "{}M.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Leg"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00108\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a4793a945194eccb38811737a2f095ae5}{groupNText}}\ =\ "{}N.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Crotch\ and\ Rise"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00109\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a99cb610e3630978b03107ab55b972db1}{groupOText}}\ =\ "{}O.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Men\ \&\ Tailoring"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00110\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a305e9c1b8f10fc890f56463b9f2b8953}{groupPText}}\ =\ "{}P.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Historical\ \&\ Specialty"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00111\ \ \ \ \ const\ QString\ \mbox{\hyperlink{class_measurement_database_dialog_a326f16fed6149461f5bc5f23910556e7}{groupQText}}\ =\ "{}Q.\ "{}\ +\ \mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}::tr("{}Patternmaking\ \mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}}"{},\ "{}\mbox{\hyperlink{def_8h_a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975}{Measurement}}\ section"{});}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_adc44ec5341e482ab523f8246159729f8}{groupA}};}
+\DoxyCodeLine{00114\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a0320f8185d42966d64d6ce3562c3da47}{groupB}};}
+\DoxyCodeLine{00115\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a4f60f6362e5f8ef27cfa6f04c42d1e04}{groupC}};}
+\DoxyCodeLine{00116\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a4be78043d0850d01b57d5ee66a36d906}{groupD}};}
+\DoxyCodeLine{00117\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a2c36a112956f0c564ef34b5cbe783ad9}{groupE}};}
+\DoxyCodeLine{00118\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_aab816cc548d739bc0be421756ccb2bd6}{groupF}};}
+\DoxyCodeLine{00119\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_aa8056387b7cf64c1a7288e3a2145c0b7}{groupG}};}
+\DoxyCodeLine{00120\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a195ded3eab73c88618a8bdadbdf0d8fc}{groupH}};}
+\DoxyCodeLine{00121\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_aa643373dd9904f6d7f82773d673b17a2}{groupI}};}
+\DoxyCodeLine{00122\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a8b5f6522a6ba8677199de982e77ebc49}{groupJ}};}
+\DoxyCodeLine{00123\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_af8682ef1dacb792e5c85cd8840bdd2b0}{groupK}};}
+\DoxyCodeLine{00124\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a4dae3e52d0473eaa161748d8e5ba5fd7}{groupL}};}
+\DoxyCodeLine{00125\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a245845863694967baabbd75fb3406b22}{groupM}};}
+\DoxyCodeLine{00126\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a6b9b799a8cec07ffc0d6e15ffbcc3119}{groupN}};}
+\DoxyCodeLine{00127\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_adca59bec905f8bd82817772d5ffbfa2f}{groupO}};}
+\DoxyCodeLine{00128\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a1e06d2335e54e9d4f8e57dcfa809dea9}{groupP}};}
+\DoxyCodeLine{00129\ \ \ \ \ QTreeWidgetItem\ \ \ \ \ *\mbox{\hyperlink{class_measurement_database_dialog_a5338194c6b4ebb8f606511b5ca1098ef}{groupQ}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a3b0d518a946ca3128d8786094c09336a}{initDataBase}}(const\ QStringList\ \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}}\ =\ QStringList());}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_af60d53df80e6eae3238bf671a1a32059}{initGroup}}(QTreeWidgetItem\ **group,\ const\ QString\ \&groupName,\ const\ QStringList\ \&groupList,}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QStringList\ \&measurementList\ =\ QStringList());}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ Q\_REQUIRED\_RESULT\ QTreeWidgetItem\ *\mbox{\hyperlink{class_measurement_database_dialog_a45ed834ad736ae26970da56be0936dda}{addMeasurementGroup}}(const\ QString\ \&text);}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a001623d84ac7f5c2275ef92f2b852f9b}{addMeasurement}}(QTreeWidgetItem\ *group,\ const\ QString\ \&groupName,}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QStringList\ \&\mbox{\hyperlink{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}{newMeasurements}});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_abe914f0ed745077a9a51335f88124afd}{readSettings}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a0eb90e4d703a64d58f6a3243a99c87d1}{writeSettings}}();}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_aef8fed2ff6b717dbd061a8c94d21732a}{filterGroups}}(const\ QString\ searchString);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a05bdd6229cdcaeb174ac3bd5b64b969b}{filterGroup}}(QTreeWidgetItem\ *group,\ const\ QString\ \&searchString);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_acf2ade9d4b92347d9e4ba731db1b6ee1}{retranslateGroup}}(QTreeWidgetItem\ *group,\ const\ QString\ \&groupName,}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QStringList\ \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}});}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_aaec7a69060c9ba9db92ea9f194f897cc}{retranslateMeasurement}}(QTreeWidgetItem\ *group,\ \textcolor{keywordtype}{int}\ index,\ const\ QString\ \&name);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a773f78e825c3b8ab508cef2a0def7a00}{changeCheckState}}(QTreeWidgetItem\ *group,\ Qt::CheckState\ state);}
+\DoxyCodeLine{00150\ \ \ \ \ Qt::CheckState\ \ \ \ \ \ \mbox{\hyperlink{class_measurement_database_dialog_a42d5bed78930e19fa7059a2bd26cc277}{globalCheckState}}()\ const;}
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGMDATABASE\_H}}
+
+\end{DoxyCode}

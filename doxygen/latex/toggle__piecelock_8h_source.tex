@@ -1,0 +1,67 @@
+\hypertarget{toggle__piecelock_8h_source}{}\doxysection{toggle\+\_\+piecelock.\+h}
+\label{toggle__piecelock_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/undocommands/toggle\_piecelock.h@{D:/Github/Seamly2D/src/libs/vtools/undocommands/toggle\_piecelock.h}}
+\mbox{\hyperlink{toggle__piecelock_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ toggle\_piecelock.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 1,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ TOGGLE\_PIECELOCK\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ TOGGLE\_PIECELOCK\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vundocommand_8h}{vundocommand.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toggle_piece_lock}{TogglePieceLock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_undo_command}{VUndoCommand}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock}{TogglePieceLock}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ lock,\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}},\ QUndoCommand\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_ad610472f855f047da40ecca275b7f800}{\string~TogglePieceLock}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_piece_lock_a71c6ed269b9d4fc79ba62f22fb8e775b}{undo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_piece_lock_ac2a0d987ceec9eb09590742966cc0759}{redo}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_toggle_piece_lock_a1b6c48eb3a8ffe1abd64d68be59c54e9}{id}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00045\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_a7ab9ddc3cafabcb3b11ba64e68cacf3c}{getpieceId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_a9d217cc8fdd4f17df6eab225fc295350}{getNewLock}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ signals:}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_a8f0d30813258eab12a6950ab395e3a02}{updateList}}(quint32\ \mbox{\hyperlink{class_toggle_piece_lock_a73fa080a31b617e192493b155e464e06}{m\_id}});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00052\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_toggle_piece_lock}{TogglePieceLock}})}
+\DoxyCodeLine{00053\ \ \ \ \ quint32\ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_a73fa080a31b617e192493b155e464e06}{m\_id}};}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ *\mbox{\hyperlink{class_toggle_piece_lock_ac0d42abc549cd1f7a6b6fd13e3dbced6}{m\_data}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_ad58d58ebc3590e97e86051edbf7ed9ed}{m\_oldLock}};}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_aa43d8fcd2496ad79297f5edf6b50cc99}{m\_newLock}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_toggle_piece_lock_abbcb4093085e71b9ccdf5734d7342e3d}{doCmd}}(\textcolor{keywordtype}{bool}\ lock);}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TOGGLE\_PIECELOCK\_H}}
+
+\end{DoxyCode}

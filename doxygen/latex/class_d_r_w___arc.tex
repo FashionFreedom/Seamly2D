@@ -1,0 +1,286 @@
+\hypertarget{class_d_r_w___arc}{}\doxysection{DRW\+\_\+\+Arc Class Reference}
+\label{class_d_r_w___arc}\index{DRW\_Arc@{DRW\_Arc}}
+
+
+Class to handle arc entity.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Arc\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_d_r_w___arc}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___arc_a594a93a1d855c6e95b5ca84e8834ddc9}{DRW\+\_\+\+Arc}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___arc_abbc2d4bdd58b048b22049b546ea87386}{apply\+Extrusion}} ()
+\item 
+const \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{class_d_r_w___arc_ae638cb0839a1845302f22e9457fc8c0b}{center}} () const
+\begin{DoxyCompactList}\small\item\em center point in OCS \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_d_r_w___arc_a25918658679d04295e3c3cdcf1e7e5b3}{radius}} () const
+\begin{DoxyCompactList}\small\item\em the radius of the circle \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_d_r_w___arc_ac5dc02c672d6ff62da63cbcba8c58b36}{start\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em start angle in radians \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_d_r_w___arc_a12fcd9d9774fbe3fb04592ff5579ec04}{end\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em end angle in radians \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_d_r_w___arc_a4fddb335b59d0186ca3260134eb5c676}{thick}} () const
+\begin{DoxyCompactList}\small\item\em thickness \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \& \mbox{\hyperlink{class_d_r_w___arc_ae93e6d00b763e9d081007daea214d1e9}{extrusion}} () const
+\begin{DoxyCompactList}\small\item\em extrusion \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___circle}{DRW\+\_\+\+Circle}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___circle_a6db3e2f683250925718dba4801d7379f}{DRW\+\_\+\+Circle}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___circle_a5c0add6ddd14a386a8c73cc4e13ce88c}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___point_a408ab5bebb57a972704bee95d84d0e5d}{DRW\+\_\+\+Point}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___point_a6922b7e506b81509fc4369e5e89301a4}{apply\+Extrusion}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}{DRW\+\_\+\+Entity}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}{DRW\+\_\+\+Entity}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}{$\sim$\+DRW\+\_\+\+Entity}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}{reset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}{apply\+Extrusion}} ()=0
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}{set\+Width\+Mm}} (double millimeters)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_d_r_w___arc_a7718d55eb1ddd3c4038be5798f37570e}{staangle}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___arc_a3425163b91e875fc7ffad0176e0e8183}{endangle}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___arc_aaacaac1262bc3e4a2e83c13804d1cb00}{isccw}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___circle}{DRW\+\_\+\+Circle}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_d_r_w___circle_ab431594544fbe949dd44cbb79e1a7237}{radious}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_afaa15dc45c45d9057257e478c9746169}{base\+Point}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___point_a909f6f2623e3b5cf40393636f3119954}{thickness}}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___point_ab55e32170a648e8469844c886ff56fc7}{ext\+Point}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}} \mbox{\hyperlink{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}{e\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}{handle}}
+\item 
+std\+::list$<$ std\+::list$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $>$ $>$ \mbox{\hyperlink{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}{app\+Data}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}} \mbox{\hyperlink{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}{space}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}{layer}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}{line\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}{material}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}{color}}
+\item 
+enum \mbox{\hyperlink{class_d_r_w___l_w___conv_aed68cbc3d8bdf7e20003dd2d970279b3}{DRW\+\_\+\+LW\+\_\+\+Conv\+::line\+Width}} \mbox{\hyperlink{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}{l\+Weight}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}{ltype\+Scale}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}{visible}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}{num\+Proxy\+Graph}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}{proxy\+Graphics}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}{color24}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}{color\+Name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}{transparency}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}{plot\+Style}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}} \mbox{\hyperlink{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}{shadow}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}{have\+Extrusion}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___arc_a837c22a41f1b3eff3c64b10faff85de5}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em interpret code in dxf reading process or dispatch to inherited class \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___circle}{DRW\+\_\+\+Circle}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___circle_af460c83853091101f0305387c61da1b2}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___point}{DRW\+\_\+\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___point_aafe53e3c2a9453d52652d849a7390c9f}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}{calculate\+Axis}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point)
+\begin{DoxyCompactList}\small\item\em Calculate arbitary axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}{extrude\+Point}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point, \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Extrude a point using arbitary axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}{parse\+Dxf\+Groups}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class to handle arc entity. 
+
+Class to handle arc entity \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___arc_a594a93a1d855c6e95b5ca84e8834ddc9}\label{class_d_r_w___arc_a594a93a1d855c6e95b5ca84e8834ddc9}} 
+\index{DRW\_Arc@{DRW\_Arc}!DRW\_Arc@{DRW\_Arc}}
+\index{DRW\_Arc@{DRW\_Arc}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{DRW\_Arc()}{DRW\_Arc()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Arc\+::\+DRW\+\_\+\+Arc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___arc_abbc2d4bdd58b048b22049b546ea87386}\label{class_d_r_w___arc_abbc2d4bdd58b048b22049b546ea87386}} 
+\index{DRW\_Arc@{DRW\_Arc}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Arc\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_d_r_w___circle_a5c0add6ddd14a386a8c73cc4e13ce88c}{DRW\+\_\+\+Circle}}.
+
+\mbox{\Hypertarget{class_d_r_w___arc_ae638cb0839a1845302f22e9457fc8c0b}\label{class_d_r_w___arc_ae638cb0839a1845302f22e9457fc8c0b}} 
+\index{DRW\_Arc@{DRW\_Arc}!center@{center}}
+\index{center@{center}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{center()}{center()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \& DRW\+\_\+\+Arc\+::center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+center point in OCS 
+
+\mbox{\Hypertarget{class_d_r_w___arc_a12fcd9d9774fbe3fb04592ff5579ec04}\label{class_d_r_w___arc_a12fcd9d9774fbe3fb04592ff5579ec04}} 
+\index{DRW\_Arc@{DRW\_Arc}!endAngle@{endAngle}}
+\index{endAngle@{endAngle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{endAngle()}{endAngle()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::end\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+end angle in radians 
+
+\mbox{\Hypertarget{class_d_r_w___arc_ae93e6d00b763e9d081007daea214d1e9}\label{class_d_r_w___arc_ae93e6d00b763e9d081007daea214d1e9}} 
+\index{DRW\_Arc@{DRW\_Arc}!extrusion@{extrusion}}
+\index{extrusion@{extrusion}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{extrusion()}{extrusion()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \& DRW\+\_\+\+Arc\+::extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+extrusion 
+
+\mbox{\Hypertarget{class_d_r_w___arc_a837c22a41f1b3eff3c64b10faff85de5}\label{class_d_r_w___arc_a837c22a41f1b3eff3c64b10faff85de5}} 
+\index{DRW\_Arc@{DRW\_Arc}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Arc\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+interpret code in dxf reading process or dispatch to inherited class 
+
+\mbox{\Hypertarget{class_d_r_w___arc_a25918658679d04295e3c3cdcf1e7e5b3}\label{class_d_r_w___arc_a25918658679d04295e3c3cdcf1e7e5b3}} 
+\index{DRW\_Arc@{DRW\_Arc}!radius@{radius}}
+\index{radius@{radius}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{radius()}{radius()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+the radius of the circle 
+
+\mbox{\Hypertarget{class_d_r_w___arc_ac5dc02c672d6ff62da63cbcba8c58b36}\label{class_d_r_w___arc_ac5dc02c672d6ff62da63cbcba8c58b36}} 
+\index{DRW\_Arc@{DRW\_Arc}!startAngle@{startAngle}}
+\index{startAngle@{startAngle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{startAngle()}{startAngle()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::start\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+start angle in radians 
+
+\mbox{\Hypertarget{class_d_r_w___arc_a4fddb335b59d0186ca3260134eb5c676}\label{class_d_r_w___arc_a4fddb335b59d0186ca3260134eb5c676}} 
+\index{DRW\_Arc@{DRW\_Arc}!thick@{thick}}
+\index{thick@{thick}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{thick()}{thick()}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::thick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+thickness 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___arc_a3425163b91e875fc7ffad0176e0e8183}\label{class_d_r_w___arc_a3425163b91e875fc7ffad0176e0e8183}} 
+\index{DRW\_Arc@{DRW\_Arc}!endangle@{endangle}}
+\index{endangle@{endangle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{endangle}{endangle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::endangle}
+
+end angle, code 51 in radians \mbox{\Hypertarget{class_d_r_w___arc_aaacaac1262bc3e4a2e83c13804d1cb00}\label{class_d_r_w___arc_aaacaac1262bc3e4a2e83c13804d1cb00}} 
+\index{DRW\_Arc@{DRW\_Arc}!isccw@{isccw}}
+\index{isccw@{isccw}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{isccw}{isccw}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Arc\+::isccw}
+
+is counter clockwise arc?, only used in hatch, code 73 \mbox{\Hypertarget{class_d_r_w___arc_a7718d55eb1ddd3c4038be5798f37570e}\label{class_d_r_w___arc_a7718d55eb1ddd3c4038be5798f37570e}} 
+\index{DRW\_Arc@{DRW\_Arc}!staangle@{staangle}}
+\index{staangle@{staangle}!DRW\_Arc@{DRW\_Arc}}
+\doxysubsubsection{\texorpdfstring{staangle}{staangle}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Arc\+::staangle}
+
+start angle, code 50 in radians 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

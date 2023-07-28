@@ -1,0 +1,541 @@
+\hypertarget{class_measurement_database_dialog}{}\doxysection{Measurement\+Database\+Dialog Class Reference}
+\label{class_measurement_database_dialog}\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+
+
+{\ttfamily \#include $<$dialogmdatabase.\+h$>$}
+
+Inheritance diagram for Measurement\+Database\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_measurement_database_dialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_measurement_database_dialog_a847ac6f48c6a209ea20015b12c939d54}{Measurement\+Database\+Dialog}} (const QString\+List \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}}, QWidget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_measurement_database_dialog_adae8c7ae609a3fd12774540a7660b897}{Measurement\+Database\+Dialog}} (QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_measurement_database_dialog_ad80ce3377e5c85cbbc3655705ace49c1}{$\sim$\+Measurement\+Database\+Dialog}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a67c7f97f1cfd9b2bcf3fe4e838d196b1}{retranslate\+Groups}} ()
+\item 
+QString\+List \mbox{\hyperlink{class_measurement_database_dialog_a259e435237bf19b42f288a5129d2becb}{get\+New\+Measurement\+Names}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_measurement_database_dialog_afe3759f80bf5b7e76e25d04a946420e6}{image\+Url}} (const QString \&number)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_measurement_database_dialog_ad509c0fc3ab379a99641f02f72286d22}{change\+Event}} (QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_measurement_database_dialog_a3b9fb09abab711034df10235a74f1be6}{event\+Filter}} (QObject $\ast$target, QEvent $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a2027519ce17c6d614f56e4b9a01a79f7}{update\+Checks}} (QTree\+Widget\+Item $\ast$item, int column)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_ae532a82e691f21b25e1840e6ed8097b2}{show\+Description}} (QTree\+Widget\+Item $\ast$item, int column)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a8c4fa762ff6942ca557208b0fa36a9be}{tree\+Context\+Menu}} (const QPoint \&pos)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a740a34d15362aa2b752d9293b4b73007}{recheck\+State}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a3b0d518a946ca3128d8786094c09336a}{init\+Data\+Base}} (const QString\+List \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}}=QString\+List())
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_af60d53df80e6eae3238bf671a1a32059}{init\+Group}} (QTree\+Widget\+Item $\ast$$\ast$group, const QString \&group\+Name, const QString\+List \&group\+List, const QString\+List \&measurement\+List=QString\+List())
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a45ed834ad736ae26970da56be0936dda}{add\+Measurement\+Group}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a001623d84ac7f5c2275ef92f2b852f9b}{add\+Measurement}} (QTree\+Widget\+Item $\ast$group, const QString \&group\+Name, const QString\+List \&\mbox{\hyperlink{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}{new\+Measurements}})
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_abe914f0ed745077a9a51335f88124afd}{read\+Settings}} ()
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a0eb90e4d703a64d58f6a3243a99c87d1}{write\+Settings}} ()
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_aef8fed2ff6b717dbd061a8c94d21732a}{filter\+Groups}} (const QString search\+String)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a05bdd6229cdcaeb174ac3bd5b64b969b}{filter\+Group}} (QTree\+Widget\+Item $\ast$group, const QString \&search\+String)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_acf2ade9d4b92347d9e4ba731db1b6ee1}{retranslate\+Group}} (QTree\+Widget\+Item $\ast$group, const QString \&group\+Name, const QString\+List \&\mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}})
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_aaec7a69060c9ba9db92ea9f194f897cc}{retranslate\+Measurement}} (QTree\+Widget\+Item $\ast$group, int index, const QString \&name)
+\item 
+void \mbox{\hyperlink{class_measurement_database_dialog_a773f78e825c3b8ab508cef2a0def7a00}{change\+Check\+State}} (QTree\+Widget\+Item $\ast$group, Qt\+::\+Check\+State state)
+\item 
+Qt\+::\+Check\+State \mbox{\hyperlink{class_measurement_database_dialog_a42d5bed78930e19fa7059a2bd26cc277}{global\+Check\+State}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Dialog\+MData\+Base $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a4be131636ad892949b770300fe80d1e6}{ui}}
+\item 
+bool \mbox{\hyperlink{class_measurement_database_dialog_a58751935054c2f14924e93dd99fe5a5a}{select\+Mode}}
+\item 
+QString\+List \mbox{\hyperlink{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}{measurements}}
+\item 
+QString\+List \mbox{\hyperlink{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}{new\+Measurements}}
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a9afa449990fdeb981bd4111d5736c2d5}{group\+AText}} = \char`\"{}A. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Direct Height\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_ac814fdf6334c1f88acebb335b4055b8d}{group\+BText}} = \char`\"{}B. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Direct Width\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_ae2a5a47c7267e047e970ee564a5142fc}{group\+CText}} = \char`\"{}C. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Indentation\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a8f24b2157314146856b14ee2da9707d9}{group\+DText}} = \char`\"{}D. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Hand\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a6ecf17afa665e81aa10b31073dae00d1}{group\+EText}} = \char`\"{}E. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Foot\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a32e4e95a5ac36200c1ab965a9cad5aa7}{group\+FText}} = \char`\"{}F. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Head\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a02bb27304bcd067e15980d444e6a2bd0}{group\+GText}} = \char`\"{}G. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Circumference and Arc\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a7fdfb5534701d78a3aed864a85c42a9e}{group\+HText}} = \char`\"{}H. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Vertical\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_afc762317cffa8ba2e5ffc3c32828cddc}{group\+IText}} = \char`\"{}I. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Horizontal\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_abc04390ac8e8600b37911448e67992bf}{group\+JText}} = \char`\"{}J. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Bust\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_aa525e3df7d744e721cb78587c3ccd0fe}{group\+KText}} = \char`\"{}K. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Balance\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a03654ef831f2bd6ca47f4622f2a09f7b}{group\+LText}} = \char`\"{}L. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Arm\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a05ded8b58963207fa8cfdb318499c7a6}{group\+MText}} = \char`\"{}M. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Leg\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a4793a945194eccb38811737a2f095ae5}{group\+NText}} = \char`\"{}N. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Crotch and Rise\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a99cb610e3630978b03107ab55b972db1}{group\+OText}} = \char`\"{}O. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Men \& Tailoring\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a305e9c1b8f10fc890f56463b9f2b8953}{group\+PText}} = \char`\"{}P. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Historical \& Specialty\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+const QString \mbox{\hyperlink{class_measurement_database_dialog_a326f16fed6149461f5bc5f23910556e7}{group\+QText}} = \char`\"{}Q. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Patternmaking measurements\char`\"{}, \char`\"{}Measurement section\char`\"{})
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_adc44ec5341e482ab523f8246159729f8}{groupA}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a0320f8185d42966d64d6ce3562c3da47}{groupB}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a4f60f6362e5f8ef27cfa6f04c42d1e04}{groupC}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a4be78043d0850d01b57d5ee66a36d906}{groupD}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a2c36a112956f0c564ef34b5cbe783ad9}{groupE}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_aab816cc548d739bc0be421756ccb2bd6}{groupF}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_aa8056387b7cf64c1a7288e3a2145c0b7}{groupG}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a195ded3eab73c88618a8bdadbdf0d8fc}{groupH}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_aa643373dd9904f6d7f82773d673b17a2}{groupI}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a8b5f6522a6ba8677199de982e77ebc49}{groupJ}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_af8682ef1dacb792e5c85cd8840bdd2b0}{groupK}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a4dae3e52d0473eaa161748d8e5ba5fd7}{groupL}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a245845863694967baabbd75fb3406b22}{groupM}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a6b9b799a8cec07ffc0d6e15ffbcc3119}{groupN}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_adca59bec905f8bd82817772d5ffbfa2f}{groupO}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a1e06d2335e54e9d4f8e57dcfa809dea9}{groupP}}
+\item 
+QTree\+Widget\+Item $\ast$ \mbox{\hyperlink{class_measurement_database_dialog_a5338194c6b4ebb8f606511b5ca1098ef}{groupQ}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_measurement_database_dialog_a847ac6f48c6a209ea20015b12c939d54}\label{class_measurement_database_dialog_a847ac6f48c6a209ea20015b12c939d54}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{MeasurementDatabaseDialog()}{MeasurementDatabaseDialog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Measurement\+Database\+Dialog\+::\+Measurement\+Database\+Dialog (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{measurements,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_adae8c7ae609a3fd12774540a7660b897}\label{class_measurement_database_dialog_adae8c7ae609a3fd12774540a7660b897}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{MeasurementDatabaseDialog()}{MeasurementDatabaseDialog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Measurement\+Database\+Dialog\+::\+Measurement\+Database\+Dialog (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ad80ce3377e5c85cbbc3655705ace49c1}\label{class_measurement_database_dialog_ad80ce3377e5c85cbbc3655705ace49c1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!````~MeasurementDatabaseDialog@{$\sim$MeasurementDatabaseDialog}}
+\index{````~MeasurementDatabaseDialog@{$\sim$MeasurementDatabaseDialog}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$MeasurementDatabaseDialog()}{~MeasurementDatabaseDialog()}}
+{\footnotesize\ttfamily Measurement\+Database\+Dialog\+::$\sim$\+Measurement\+Database\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_measurement_database_dialog_a001623d84ac7f5c2275ef92f2b852f9b}\label{class_measurement_database_dialog_a001623d84ac7f5c2275ef92f2b852f9b}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!addMeasurement@{addMeasurement}}
+\index{addMeasurement@{addMeasurement}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{addMeasurement()}{addMeasurement()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::add\+Measurement (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{group,  }\item[{const QString \&}]{group\+Name,  }\item[{const QString\+List \&}]{new\+Measurements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a45ed834ad736ae26970da56be0936dda}\label{class_measurement_database_dialog_a45ed834ad736ae26970da56be0936dda}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!addMeasurementGroup@{addMeasurementGroup}}
+\index{addMeasurementGroup@{addMeasurementGroup}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{addMeasurementGroup()}{addMeasurementGroup()}}
+{\footnotesize\ttfamily QTree\+Widget\+Item $\ast$ Measurement\+Database\+Dialog\+::add\+Measurement\+Group (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a773f78e825c3b8ab508cef2a0def7a00}\label{class_measurement_database_dialog_a773f78e825c3b8ab508cef2a0def7a00}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!changeCheckState@{changeCheckState}}
+\index{changeCheckState@{changeCheckState}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{changeCheckState()}{changeCheckState()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::change\+Check\+State (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{group,  }\item[{Qt\+::\+Check\+State}]{state }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ad509c0fc3ab379a99641f02f72286d22}\label{class_measurement_database_dialog_ad509c0fc3ab379a99641f02f72286d22}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!changeEvent@{changeEvent}}
+\index{changeEvent@{changeEvent}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{changeEvent()}{changeEvent()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::change\+Event (\begin{DoxyParamCaption}\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a3b9fb09abab711034df10235a74f1be6}\label{class_measurement_database_dialog_a3b9fb09abab711034df10235a74f1be6}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool Measurement\+Database\+Dialog\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{target,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a05bdd6229cdcaeb174ac3bd5b64b969b}\label{class_measurement_database_dialog_a05bdd6229cdcaeb174ac3bd5b64b969b}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!filterGroup@{filterGroup}}
+\index{filterGroup@{filterGroup}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{filterGroup()}{filterGroup()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::filter\+Group (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{group,  }\item[{const QString \&}]{search\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aef8fed2ff6b717dbd061a8c94d21732a}\label{class_measurement_database_dialog_aef8fed2ff6b717dbd061a8c94d21732a}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!filterGroups@{filterGroups}}
+\index{filterGroups@{filterGroups}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{filterGroups()}{filterGroups()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::filter\+Groups (\begin{DoxyParamCaption}\item[{const QString}]{search\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a259e435237bf19b42f288a5129d2becb}\label{class_measurement_database_dialog_a259e435237bf19b42f288a5129d2becb}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!getNewMeasurementNames@{getNewMeasurementNames}}
+\index{getNewMeasurementNames@{getNewMeasurementNames}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{getNewMeasurementNames()}{getNewMeasurementNames()}}
+{\footnotesize\ttfamily QString\+List Measurement\+Database\+Dialog\+::get\+New\+Measurement\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a42d5bed78930e19fa7059a2bd26cc277}\label{class_measurement_database_dialog_a42d5bed78930e19fa7059a2bd26cc277}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!globalCheckState@{globalCheckState}}
+\index{globalCheckState@{globalCheckState}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{globalCheckState()}{globalCheckState()}}
+{\footnotesize\ttfamily Qt\+::\+Check\+State Measurement\+Database\+Dialog\+::global\+Check\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_afe3759f80bf5b7e76e25d04a946420e6}\label{class_measurement_database_dialog_afe3759f80bf5b7e76e25d04a946420e6}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!imageUrl@{imageUrl}}
+\index{imageUrl@{imageUrl}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{imageUrl()}{imageUrl()}}
+{\footnotesize\ttfamily QString Measurement\+Database\+Dialog\+::image\+Url (\begin{DoxyParamCaption}\item[{const QString \&}]{number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a3b0d518a946ca3128d8786094c09336a}\label{class_measurement_database_dialog_a3b0d518a946ca3128d8786094c09336a}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!initDataBase@{initDataBase}}
+\index{initDataBase@{initDataBase}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{initDataBase()}{initDataBase()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::init\+Data\+Base (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{measurements = {\ttfamily QStringList()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_af60d53df80e6eae3238bf671a1a32059}\label{class_measurement_database_dialog_af60d53df80e6eae3238bf671a1a32059}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!initGroup@{initGroup}}
+\index{initGroup@{initGroup}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{initGroup()}{initGroup()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::init\+Group (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$$\ast$}]{group,  }\item[{const QString \&}]{group\+Name,  }\item[{const QString\+List \&}]{group\+List,  }\item[{const QString\+List \&}]{measurement\+List = {\ttfamily QStringList()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_abe914f0ed745077a9a51335f88124afd}\label{class_measurement_database_dialog_abe914f0ed745077a9a51335f88124afd}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!readSettings@{readSettings}}
+\index{readSettings@{readSettings}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{readSettings()}{readSettings()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::read\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a740a34d15362aa2b752d9293b4b73007}\label{class_measurement_database_dialog_a740a34d15362aa2b752d9293b4b73007}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!recheckState@{recheckState}}
+\index{recheckState@{recheckState}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{recheckState}{recheckState}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::recheck\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_acf2ade9d4b92347d9e4ba731db1b6ee1}\label{class_measurement_database_dialog_acf2ade9d4b92347d9e4ba731db1b6ee1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!retranslateGroup@{retranslateGroup}}
+\index{retranslateGroup@{retranslateGroup}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{retranslateGroup()}{retranslateGroup()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::retranslate\+Group (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{group,  }\item[{const QString \&}]{group\+Name,  }\item[{const QString\+List \&}]{measurements }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a67c7f97f1cfd9b2bcf3fe4e838d196b1}\label{class_measurement_database_dialog_a67c7f97f1cfd9b2bcf3fe4e838d196b1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!retranslateGroups@{retranslateGroups}}
+\index{retranslateGroups@{retranslateGroups}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{retranslateGroups()}{retranslateGroups()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::retranslate\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aaec7a69060c9ba9db92ea9f194f897cc}\label{class_measurement_database_dialog_aaec7a69060c9ba9db92ea9f194f897cc}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!retranslateMeasurement@{retranslateMeasurement}}
+\index{retranslateMeasurement@{retranslateMeasurement}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{retranslateMeasurement()}{retranslateMeasurement()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::retranslate\+Measurement (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{group,  }\item[{int}]{index,  }\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ae532a82e691f21b25e1840e6ed8097b2}\label{class_measurement_database_dialog_ae532a82e691f21b25e1840e6ed8097b2}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!showDescription@{showDescription}}
+\index{showDescription@{showDescription}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{showDescription}{showDescription}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::show\+Description (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{item,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a8c4fa762ff6942ca557208b0fa36a9be}\label{class_measurement_database_dialog_a8c4fa762ff6942ca557208b0fa36a9be}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!treeContextMenu@{treeContextMenu}}
+\index{treeContextMenu@{treeContextMenu}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{treeContextMenu}{treeContextMenu}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::tree\+Context\+Menu (\begin{DoxyParamCaption}\item[{const QPoint \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a2027519ce17c6d614f56e4b9a01a79f7}\label{class_measurement_database_dialog_a2027519ce17c6d614f56e4b9a01a79f7}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!updateChecks@{updateChecks}}
+\index{updateChecks@{updateChecks}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{updateChecks}{updateChecks}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::update\+Checks (\begin{DoxyParamCaption}\item[{QTree\+Widget\+Item $\ast$}]{item,  }\item[{int}]{column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a0eb90e4d703a64d58f6a3243a99c87d1}\label{class_measurement_database_dialog_a0eb90e4d703a64d58f6a3243a99c87d1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!writeSettings@{writeSettings}}
+\index{writeSettings@{writeSettings}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{writeSettings()}{writeSettings()}}
+{\footnotesize\ttfamily void Measurement\+Database\+Dialog\+::write\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_measurement_database_dialog_adc44ec5341e482ab523f8246159729f8}\label{class_measurement_database_dialog_adc44ec5341e482ab523f8246159729f8}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupA@{groupA}}
+\index{groupA@{groupA}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupA}{groupA}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupA\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a9afa449990fdeb981bd4111d5736c2d5}\label{class_measurement_database_dialog_a9afa449990fdeb981bd4111d5736c2d5}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupAText@{groupAText}}
+\index{groupAText@{groupAText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupAText}{groupAText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+AText = \char`\"{}A. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Direct Height\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a0320f8185d42966d64d6ce3562c3da47}\label{class_measurement_database_dialog_a0320f8185d42966d64d6ce3562c3da47}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupB@{groupB}}
+\index{groupB@{groupB}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupB}{groupB}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupB\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ac814fdf6334c1f88acebb335b4055b8d}\label{class_measurement_database_dialog_ac814fdf6334c1f88acebb335b4055b8d}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupBText@{groupBText}}
+\index{groupBText@{groupBText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupBText}{groupBText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+BText = \char`\"{}B. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Direct Width\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a4f60f6362e5f8ef27cfa6f04c42d1e04}\label{class_measurement_database_dialog_a4f60f6362e5f8ef27cfa6f04c42d1e04}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupC@{groupC}}
+\index{groupC@{groupC}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupC}{groupC}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupC\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ae2a5a47c7267e047e970ee564a5142fc}\label{class_measurement_database_dialog_ae2a5a47c7267e047e970ee564a5142fc}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupCText@{groupCText}}
+\index{groupCText@{groupCText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupCText}{groupCText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+CText = \char`\"{}C. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Indentation\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a4be78043d0850d01b57d5ee66a36d906}\label{class_measurement_database_dialog_a4be78043d0850d01b57d5ee66a36d906}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupD@{groupD}}
+\index{groupD@{groupD}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupD}{groupD}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupD\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a8f24b2157314146856b14ee2da9707d9}\label{class_measurement_database_dialog_a8f24b2157314146856b14ee2da9707d9}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupDText@{groupDText}}
+\index{groupDText@{groupDText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupDText}{groupDText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+DText = \char`\"{}D. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Hand\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a2c36a112956f0c564ef34b5cbe783ad9}\label{class_measurement_database_dialog_a2c36a112956f0c564ef34b5cbe783ad9}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupE@{groupE}}
+\index{groupE@{groupE}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupE}{groupE}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupE\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a6ecf17afa665e81aa10b31073dae00d1}\label{class_measurement_database_dialog_a6ecf17afa665e81aa10b31073dae00d1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupEText@{groupEText}}
+\index{groupEText@{groupEText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupEText}{groupEText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+EText = \char`\"{}E. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Foot\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aab816cc548d739bc0be421756ccb2bd6}\label{class_measurement_database_dialog_aab816cc548d739bc0be421756ccb2bd6}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupF@{groupF}}
+\index{groupF@{groupF}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupF}{groupF}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupF\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a32e4e95a5ac36200c1ab965a9cad5aa7}\label{class_measurement_database_dialog_a32e4e95a5ac36200c1ab965a9cad5aa7}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupFText@{groupFText}}
+\index{groupFText@{groupFText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupFText}{groupFText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+FText = \char`\"{}F. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Head\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aa8056387b7cf64c1a7288e3a2145c0b7}\label{class_measurement_database_dialog_aa8056387b7cf64c1a7288e3a2145c0b7}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupG@{groupG}}
+\index{groupG@{groupG}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupG}{groupG}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupG\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a02bb27304bcd067e15980d444e6a2bd0}\label{class_measurement_database_dialog_a02bb27304bcd067e15980d444e6a2bd0}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupGText@{groupGText}}
+\index{groupGText@{groupGText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupGText}{groupGText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+GText = \char`\"{}G. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Circumference and Arc\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a195ded3eab73c88618a8bdadbdf0d8fc}\label{class_measurement_database_dialog_a195ded3eab73c88618a8bdadbdf0d8fc}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupH@{groupH}}
+\index{groupH@{groupH}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupH}{groupH}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupH\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a7fdfb5534701d78a3aed864a85c42a9e}\label{class_measurement_database_dialog_a7fdfb5534701d78a3aed864a85c42a9e}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupHText@{groupHText}}
+\index{groupHText@{groupHText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupHText}{groupHText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+HText = \char`\"{}H. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Vertical\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aa643373dd9904f6d7f82773d673b17a2}\label{class_measurement_database_dialog_aa643373dd9904f6d7f82773d673b17a2}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupI@{groupI}}
+\index{groupI@{groupI}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupI}{groupI}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupI\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_afc762317cffa8ba2e5ffc3c32828cddc}\label{class_measurement_database_dialog_afc762317cffa8ba2e5ffc3c32828cddc}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupIText@{groupIText}}
+\index{groupIText@{groupIText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupIText}{groupIText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+IText = \char`\"{}I. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Horizontal\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a8b5f6522a6ba8677199de982e77ebc49}\label{class_measurement_database_dialog_a8b5f6522a6ba8677199de982e77ebc49}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupJ@{groupJ}}
+\index{groupJ@{groupJ}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupJ}{groupJ}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupJ\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_abc04390ac8e8600b37911448e67992bf}\label{class_measurement_database_dialog_abc04390ac8e8600b37911448e67992bf}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupJText@{groupJText}}
+\index{groupJText@{groupJText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupJText}{groupJText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+JText = \char`\"{}J. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Bust\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_af8682ef1dacb792e5c85cd8840bdd2b0}\label{class_measurement_database_dialog_af8682ef1dacb792e5c85cd8840bdd2b0}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupK@{groupK}}
+\index{groupK@{groupK}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupK}{groupK}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupK\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_aa525e3df7d744e721cb78587c3ccd0fe}\label{class_measurement_database_dialog_aa525e3df7d744e721cb78587c3ccd0fe}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupKText@{groupKText}}
+\index{groupKText@{groupKText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupKText}{groupKText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+KText = \char`\"{}K. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Balance\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a4dae3e52d0473eaa161748d8e5ba5fd7}\label{class_measurement_database_dialog_a4dae3e52d0473eaa161748d8e5ba5fd7}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupL@{groupL}}
+\index{groupL@{groupL}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupL}{groupL}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupL\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a03654ef831f2bd6ca47f4622f2a09f7b}\label{class_measurement_database_dialog_a03654ef831f2bd6ca47f4622f2a09f7b}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupLText@{groupLText}}
+\index{groupLText@{groupLText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupLText}{groupLText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+LText = \char`\"{}L. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Arm\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a245845863694967baabbd75fb3406b22}\label{class_measurement_database_dialog_a245845863694967baabbd75fb3406b22}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupM@{groupM}}
+\index{groupM@{groupM}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupM}{groupM}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupM\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a05ded8b58963207fa8cfdb318499c7a6}\label{class_measurement_database_dialog_a05ded8b58963207fa8cfdb318499c7a6}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupMText@{groupMText}}
+\index{groupMText@{groupMText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupMText}{groupMText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+MText = \char`\"{}M. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Leg\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a6b9b799a8cec07ffc0d6e15ffbcc3119}\label{class_measurement_database_dialog_a6b9b799a8cec07ffc0d6e15ffbcc3119}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupN@{groupN}}
+\index{groupN@{groupN}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupN}{groupN}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupN\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a4793a945194eccb38811737a2f095ae5}\label{class_measurement_database_dialog_a4793a945194eccb38811737a2f095ae5}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupNText@{groupNText}}
+\index{groupNText@{groupNText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupNText}{groupNText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+NText = \char`\"{}N. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Crotch and Rise\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_adca59bec905f8bd82817772d5ffbfa2f}\label{class_measurement_database_dialog_adca59bec905f8bd82817772d5ffbfa2f}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupO@{groupO}}
+\index{groupO@{groupO}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupO}{groupO}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupO\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a99cb610e3630978b03107ab55b972db1}\label{class_measurement_database_dialog_a99cb610e3630978b03107ab55b972db1}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupOText@{groupOText}}
+\index{groupOText@{groupOText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupOText}{groupOText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+OText = \char`\"{}O. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Men \& Tailoring\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a1e06d2335e54e9d4f8e57dcfa809dea9}\label{class_measurement_database_dialog_a1e06d2335e54e9d4f8e57dcfa809dea9}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupP@{groupP}}
+\index{groupP@{groupP}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupP}{groupP}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupP\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a305e9c1b8f10fc890f56463b9f2b8953}\label{class_measurement_database_dialog_a305e9c1b8f10fc890f56463b9f2b8953}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupPText@{groupPText}}
+\index{groupPText@{groupPText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupPText}{groupPText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+PText = \char`\"{}P. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Historical \& Specialty\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a5338194c6b4ebb8f606511b5ca1098ef}\label{class_measurement_database_dialog_a5338194c6b4ebb8f606511b5ca1098ef}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupQ@{groupQ}}
+\index{groupQ@{groupQ}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupQ}{groupQ}}
+{\footnotesize\ttfamily QTree\+Widget\+Item$\ast$ Measurement\+Database\+Dialog\+::groupQ\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a326f16fed6149461f5bc5f23910556e7}\label{class_measurement_database_dialog_a326f16fed6149461f5bc5f23910556e7}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!groupQText@{groupQText}}
+\index{groupQText@{groupQText}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{groupQText}{groupQText}}
+{\footnotesize\ttfamily const QString Measurement\+Database\+Dialog\+::group\+QText = \char`\"{}Q. \char`\"{} + Measurement\+Database\+Dialog\+::tr(\char`\"{}Patternmaking measurements\char`\"{}, \char`\"{}Measurement section\char`\"{})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}\label{class_measurement_database_dialog_a7027545bcba3c991984990baedd83120}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!measurements@{measurements}}
+\index{measurements@{measurements}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{measurements}{measurements}}
+{\footnotesize\ttfamily QString\+List Measurement\+Database\+Dialog\+::measurements\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}\label{class_measurement_database_dialog_ad1b28101608110acaa93974286c95901}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!newMeasurements@{newMeasurements}}
+\index{newMeasurements@{newMeasurements}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{newMeasurements}{newMeasurements}}
+{\footnotesize\ttfamily QString\+List Measurement\+Database\+Dialog\+::new\+Measurements\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a58751935054c2f14924e93dd99fe5a5a}\label{class_measurement_database_dialog_a58751935054c2f14924e93dd99fe5a5a}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!selectMode@{selectMode}}
+\index{selectMode@{selectMode}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{selectMode}{selectMode}}
+{\footnotesize\ttfamily bool Measurement\+Database\+Dialog\+::select\+Mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_measurement_database_dialog_a4be131636ad892949b770300fe80d1e6}\label{class_measurement_database_dialog_a4be131636ad892949b770300fe80d1e6}} 
+\index{MeasurementDatabaseDialog@{MeasurementDatabaseDialog}!ui@{ui}}
+\index{ui@{ui}!MeasurementDatabaseDialog@{MeasurementDatabaseDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Dialog\+MData\+Base$\ast$ Measurement\+Database\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/app/seamlyme/dialogs/\mbox{\hyperlink{dialogmdatabase_8h}{dialogmdatabase.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/app/seamlyme/dialogs/\mbox{\hyperlink{dialogmdatabase_8cpp}{dialogmdatabase.\+cpp}}\end{DoxyCompactItemize}

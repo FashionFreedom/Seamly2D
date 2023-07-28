@@ -1,0 +1,97 @@
+\hypertarget{qmuparser_8h_source}{}\doxysection{qmuparser.\+h}
+\label{qmuparser_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparser.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparser.h}}
+\mbox{\hyperlink{qmuparser_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPARSER\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPARSER\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparserbase_8h}{qmuparserbase.h}}"{}}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{comment}{/*\ final\ */}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_qmu_parser}{QmuParser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_base}{QmuParserBase}}}
+\DoxyCodeLine{00050\ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a5f7a5f34255477e7a7c280090766c3fa}{QmuParser}}();}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ae6bed8b51928071ee9c368ea06d71d34}{InitCharSets}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a18bc60dcd0dcfc5f67e34cfe05d9531d}{InitFun}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a34ba9be2fce696c68d1c8da31e43fabf}{InitConst}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a0c98d05db96dfd1e2e67879a70b088fb}{InitOprt}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ac77c139b1d1adf5e795f2a828d729cc0}{OnDetectVar}}(\textcolor{keyword}{const}\ QString\ \&pExpr,\ \textcolor{keywordtype}{int}\ \&nStart,\ \textcolor{keywordtype}{int}\ \&nEnd)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ qreal\ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ad7bcbeda861ad1331d41f3e0e6e7153e}{Diff}}(qreal\ *a\_Var,\ qreal\ a\_fPos,\ qreal\ a\_fEpsilon\ =\ 0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a986d1b38db11d9126c4cb273704ef09e}{IsVal}}(\textcolor{keyword}{const}\ QString\ \&a\_szExpr,\ \textcolor{keywordtype}{int}\ *a\_iPos,\ qreal\ *a\_fVal,\ \textcolor{keyword}{const}\ QLocale\ \&locale,}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QChar\ \&decimal,\ \textcolor{keyword}{const}\ QChar\ \&thousand);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ hyperbolic\ functions}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a52432e9aad22fde1a28604ba987098b2}{Sinh}}(qreal);}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_aef225fb1932aa2c96cc9d9c8efc12f3e}{Cosh}}(qreal);}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a315c23033cfe1ffac90d9827310c8f7f}{Tanh}}(qreal);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ inverse\ hyperbolic\ functions}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_aadcc795568eae9042a34bb6b0ceb7c8e}{ASinh}}(qreal);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a3c8cedab6d5a3efa0838116c9e3f9fa9}{ACosh}}(qreal);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a463e3e07fc37ab203d19184592520bc1}{ATanh}}(qreal);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ functions\ working\ with\ degrees}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a55b629a57d1c5174f0558a3294347a3a}{DegreeToRadian}}(qreal);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a1b43c66ab5308dc96a792cdb43321e41}{RadianToDegree}}(qreal);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a9ac131876c0fb63c72cd17c50ec55bd1}{SinD}}(qreal);}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ac95b361ae09ef46bbd2a1c976f76ab2c}{CosD}}(qreal);}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ad646bdc0938d2edddb3ba35ccae704e5}{TanD}}(qreal);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_adc34a118e6b957503cfc4686921b27dc}{ASinD}}(qreal);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a21f9ecc52d3e26dc5219f755a265cceb}{ACosD}}(qreal);}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a6205e16135a0aab1920c7d80ccbc0799}{ATanD}}(qreal);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Logarithm\ functions}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_adc0b82c9263337c536fabb37164c13f1}{Log2}}(qreal);\ \ \textcolor{comment}{//\ Logarithm\ Base\ 2}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_af17ab3ea7969ffdce8fe274f63534f56}{Log10}}(qreal);\ \textcolor{comment}{//\ Logarithm\ Base\ 10}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ misc}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a786ce5f73534f306880fbb0f7b297ccc}{Abs}}(qreal);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a172ead4c742c2cc6e799fada706fe417}{Rint}}(qreal);}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a644a0975b1f1966fa848c415c85c2dd7}{Sign}}(qreal);}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a8820404580463becf996a90090de03db}{FMod}}(qreal,\ qreal);}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Prefix\ operators}}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ !!!\ Unary\ Minus\ is\ a\ MUST\ if\ you\ want\ to\ use\ negative\ signs\ !!!}}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a286af87c388e426cae5e20813ff9682f}{UnaryMinus}}(qreal\ v);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Functions\ with\ variable\ number\ of\ arguments}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a1c316760b747bd194c4ff3320937aeb0}{Sum}}(\textcolor{keyword}{const}\ qreal*,\ \textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ sum}}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_abf427bce301624189e115a15517d83a2}{Avg}}(\textcolor{keyword}{const}\ qreal*,\ \textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ mean\ value}}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a0d726b5161ca0b6b4c5390416da473c7}{Min}}(\textcolor{keyword}{const}\ qreal*,\ \textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ minimum}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_ae80845b01f032e13df81ec1832fcf591}{Max}}(\textcolor{keyword}{const}\ qreal*,\ \textcolor{keywordtype}{int});\ \ \textcolor{comment}{//\ maximum}}
+\DoxyCodeLine{00096\ \ \ \ \ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00104\ \textcolor{comment}{}\textcolor{keyword}{inline}\ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_a286af87c388e426cae5e20813ff9682f}{QmuParser::UnaryMinus}}(qreal\ v)}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/v;}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \}\ \textcolor{comment}{//\ namespace\ qmu}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ QMUPARSER\_H}}
+
+\end{DoxyCode}

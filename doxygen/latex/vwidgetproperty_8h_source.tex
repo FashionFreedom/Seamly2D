@@ -1,0 +1,65 @@
+\hypertarget{vwidgetproperty_8h_source}{}\doxysection{vwidgetproperty.\+h}
+\label{vwidgetproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vwidgetproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vwidgetproperty.h}}
+\mbox{\hyperlink{vwidgetproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vwidgetproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VWIDGETROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VWIDGETROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QPointer>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vemptyproperty_8h}{vemptyproperty.h}}"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}\ \{}
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }VProperty;}
+\DoxyCodeLine{00032\ \}\ \ \textcolor{comment}{//\ namespace\ VPE}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00035\ \{}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ todo:\ this\ way,\ this\ class\ doesn't\ really\ make\ sense.\ What\ we\ have\ to\ do\ is\ pass\ a\ widget\ factory\ instead\ of\ the}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ actual\ widget!}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_widget_property}{VWidgetProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_empty_property}{VEmptyProperty}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property}{VWidgetProperty}}(\textcolor{keyword}{const}\ QString\ \&name,\ QWidget*\ widget\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property_a5d854ae5521b83b45a3aa7faf96e3049}{\string~VWidgetProperty}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ \ \ \ \ QWidget*\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property_a73f708d45bd8985fb79471e85b8d59b5}{getWidget}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property_a7e2262fab8326088de8aea506da4177e}{setWidget}}(QWidget*\ widget);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property_ae002ec93b9e50408e6208ad0bfa39408}{type}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00065\ \ \ \ \ Q\_REQUIRED\_RESULT\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_widget_property_a12fd469adcd89bd1e3606169da2aa0cd}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*\ container\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VWIDGETROPERTY\_H}}
+
+\end{DoxyCode}

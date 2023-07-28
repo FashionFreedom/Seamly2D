@@ -1,0 +1,139 @@
+\hypertarget{class_v_lock_guard}{}\doxysection{VLock\+Guard\texorpdfstring{$<$}{<} Guarded \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_v_lock_guard}\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+
+
+{\ttfamily \#include $<$vlockguard.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_lock_guard_a1c2354814d0075eb204c146b16e11353}{VLock\+Guard}} (const QString \&lock\+Name, int stale=0, int timeout=0)
+\item 
+{\footnotesize template$<$typename Alloc $>$ }\\\mbox{\hyperlink{class_v_lock_guard_ac17d1d11c058bc2d0a3af777fdee6660}{VLock\+Guard}} (const QString \&lock\+Name, Alloc a, int stale=0, int timeout=0)
+\item 
+{\footnotesize template$<$typename Alloc , typename Delete $>$ }\\\mbox{\hyperlink{class_v_lock_guard_ab4da208d615517802d16be93a76b86eb}{VLock\+Guard}} (const QString \&lock\+Name, Alloc a, Delete d, int stale=0, int timeout=0)
+\item 
+const std\+::shared\+\_\+ptr$<$ Guarded $>$ \& \mbox{\hyperlink{class_v_lock_guard_a58b98f2793ff7adfc8a81004b0fb3428}{Get\+Protected}} () const
+\item 
+int \mbox{\hyperlink{class_v_lock_guard_ab6ab0fee23d09c619cf6b61d7e62e1e7}{Get\+Lock\+Error}} () const
+\item 
+bool \mbox{\hyperlink{class_v_lock_guard_a08ecb69c5ed55d6516c8a6476150e5fe}{Is\+Locked}} () const
+\item 
+QString \mbox{\hyperlink{class_v_lock_guard_a832502051bcbad9f65ce82e15a301e50}{Get\+Lock\+File}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{Try\+Lock}} (const QString \&lock\+Name, int stale, int timeout)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ Guarded $>$ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}
+\item 
+int \mbox{\hyperlink{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}{lock\+Error}}
+\item 
+QString \mbox{\hyperlink{class_v_lock_guard_abca942710349eeab3e8f20302612c808}{lock\+File}}
+\item 
+std\+::shared\+\_\+ptr$<$ QLock\+File $>$ \mbox{\hyperlink{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}{lock}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_lock_guard_a1c2354814d0075eb204c146b16e11353}\label{class_v_lock_guard_a1c2354814d0075eb204c146b16e11353}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!VLockGuard@{VLockGuard}}
+\index{VLockGuard@{VLockGuard}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{VLockGuard()}{VLockGuard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+\mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\mbox{\hyperlink{class_v_lock_guard}{\+::\+VLock\+Guard}} (\begin{DoxyParamCaption}\item[{const QString \&}]{lock\+Name,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_lock_guard_ac17d1d11c058bc2d0a3af777fdee6660}\label{class_v_lock_guard_ac17d1d11c058bc2d0a3af777fdee6660}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!VLockGuard@{VLockGuard}}
+\index{VLockGuard@{VLockGuard}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{VLockGuard()}{VLockGuard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+template$<$typename Alloc $>$ \\
+\mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\mbox{\hyperlink{class_v_lock_guard}{\+::\+VLock\+Guard}} (\begin{DoxyParamCaption}\item[{const QString \&}]{lock\+Name,  }\item[{Alloc}]{a,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_lock_guard_ab4da208d615517802d16be93a76b86eb}\label{class_v_lock_guard_ab4da208d615517802d16be93a76b86eb}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!VLockGuard@{VLockGuard}}
+\index{VLockGuard@{VLockGuard}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{VLockGuard()}{VLockGuard()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+template$<$typename Alloc , typename Delete $>$ \\
+\mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\mbox{\hyperlink{class_v_lock_guard}{\+::\+VLock\+Guard}} (\begin{DoxyParamCaption}\item[{const QString \&}]{lock\+Name,  }\item[{Alloc}]{a,  }\item[{Delete}]{d,  }\item[{int}]{stale = {\ttfamily 0},  }\item[{int}]{timeout = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_lock_guard_ab6ab0fee23d09c619cf6b61d7e62e1e7}\label{class_v_lock_guard_ab6ab0fee23d09c619cf6b61d7e62e1e7}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!GetLockError@{GetLockError}}
+\index{GetLockError@{GetLockError}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{GetLockError()}{GetLockError()}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+int \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::\+Get\+Lock\+Error}
+
+\mbox{\Hypertarget{class_v_lock_guard_a832502051bcbad9f65ce82e15a301e50}\label{class_v_lock_guard_a832502051bcbad9f65ce82e15a301e50}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!GetLockFile@{GetLockFile}}
+\index{GetLockFile@{GetLockFile}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{GetLockFile()}{GetLockFile()}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+QString \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::\+Get\+Lock\+File}
+
+\mbox{\Hypertarget{class_v_lock_guard_a58b98f2793ff7adfc8a81004b0fb3428}\label{class_v_lock_guard_a58b98f2793ff7adfc8a81004b0fb3428}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!GetProtected@{GetProtected}}
+\index{GetProtected@{GetProtected}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{GetProtected()}{GetProtected()}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+const std\+::shared\+\_\+ptr$<$ Guarded $>$ \& \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::\+Get\+Protected}
+
+\mbox{\Hypertarget{class_v_lock_guard_a08ecb69c5ed55d6516c8a6476150e5fe}\label{class_v_lock_guard_a08ecb69c5ed55d6516c8a6476150e5fe}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!IsLocked@{IsLocked}}
+\index{IsLocked@{IsLocked}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{IsLocked()}{IsLocked()}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+bool \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::\+Is\+Locked}
+
+\mbox{\Hypertarget{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}\label{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!TryLock@{TryLock}}
+\index{TryLock@{TryLock}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{TryLock()}{TryLock()}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+bool \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::\+Try\+Lock (\begin{DoxyParamCaption}\item[{const QString \&}]{lock\+Name,  }\item[{int}]{stale,  }\item[{int}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}\label{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!holder@{holder}}
+\index{holder@{holder}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{holder}{holder}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+std\+::shared\+\_\+ptr$<$Guarded$>$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::holder\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}\label{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!lock@{lock}}
+\index{lock@{lock}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{lock}{lock}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+std\+::shared\+\_\+ptr$<$QLock\+File$>$ \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::lock\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}\label{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!lockError@{lockError}}
+\index{lockError@{lockError}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{lockError}{lockError}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+int \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::lock\+Error\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_lock_guard_abca942710349eeab3e8f20302612c808}\label{class_v_lock_guard_abca942710349eeab3e8f20302612c808}} 
+\index{VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}!lockFile@{lockFile}}
+\index{lockFile@{lockFile}!VLockGuard$<$ Guarded $>$@{VLockGuard$<$ Guarded $>$}}
+\doxysubsubsection{\texorpdfstring{lockFile}{lockFile}}
+{\footnotesize\ttfamily template$<$typename Guarded $>$ \\
+QString \mbox{\hyperlink{class_v_lock_guard}{VLock\+Guard}}$<$ Guarded $>$\+::lock\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/\mbox{\hyperlink{vlockguard_8h}{vlockguard.\+h}}\end{DoxyCompactItemize}

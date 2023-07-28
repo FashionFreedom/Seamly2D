@@ -1,0 +1,353 @@
+\hypertarget{class_d_r_w___entity}{}\doxysection{DRW\+\_\+\+Entity Class Reference}
+\label{class_d_r_w___entity}\index{DRW\_Entity@{DRW\_Entity}}
+
+
+Base class for entities.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+entities.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=8.296296cm]{class_d_r_w___entity}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}{DRW\+\_\+\+Entity}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}{DRW\+\_\+\+Entity}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}{$\sim$\+DRW\+\_\+\+Entity}} ()
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}{reset}} ()
+\item 
+virtual void \mbox{\hyperlink{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}{apply\+Extrusion}} ()=0
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}{set\+Width\+Mm}} (double millimeters)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}} \mbox{\hyperlink{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}{e\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}{handle}}
+\item 
+std\+::list$<$ std\+::list$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $>$ $>$ \mbox{\hyperlink{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}{app\+Data}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}} \mbox{\hyperlink{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}{space}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}{layer}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}{line\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}{material}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}{color}}
+\item 
+enum \mbox{\hyperlink{class_d_r_w___l_w___conv_aed68cbc3d8bdf7e20003dd2d970279b3}{DRW\+\_\+\+LW\+\_\+\+Conv\+::line\+Width}} \mbox{\hyperlink{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}{l\+Weight}}
+\item 
+double \mbox{\hyperlink{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}{ltype\+Scale}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}{visible}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}{num\+Proxy\+Graph}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}{proxy\+Graphics}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}{color24}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}{color\+Name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}{transparency}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}{plot\+Style}}
+\item 
+\mbox{\hyperlink{namespace_d_r_w_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}} \mbox{\hyperlink{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}{shadow}}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}{have\+Extrusion}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\item 
+void \mbox{\hyperlink{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}{calculate\+Axis}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point)
+\begin{DoxyCompactList}\small\item\em Calculate arbitary axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}{extrude\+Point}} (\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} ext\+Point, \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} $\ast$point) const
+\begin{DoxyCompactList}\small\item\em Extrude a point using arbitary axis. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}{parse\+Dxf\+Groups}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \& \mbox{\hyperlink{class_d_r_w___entity_ac934ccff63c8819b6073ae50d185b9b6}{operator=}} (const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___entity_aa217be6c37b7e323d4b3801a7d2463c8}{ext\+AxisX}}
+\item 
+\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} \mbox{\hyperlink{class_d_r_w___entity_a2a68d61b1672f1c78d19dfd994649bd7}{ext\+AxisY}}
+\item 
+\mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ \mbox{\hyperlink{class_d_r_w___entity_a95081b4f8961ca785534a7561af477bb}{curr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for entities. 
+
+Base class for entities \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}\label{class_d_r_w___entity_ae4423a968e9edbb4ce88a03f126ee5c0}} 
+\index{DRW\_Entity@{DRW\_Entity}!DRW\_Entity@{DRW\_Entity}}
+\index{DRW\_Entity@{DRW\_Entity}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{DRW\_Entity()}{DRW\_Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Entity\+::\+DRW\+\_\+\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}\label{class_d_r_w___entity_abeddea1b91fe64af4a631970323ccee8}} 
+\index{DRW\_Entity@{DRW\_Entity}!DRW\_Entity@{DRW\_Entity}}
+\index{DRW\_Entity@{DRW\_Entity}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{DRW\_Entity()}{DRW\_Entity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Entity\+::\+DRW\+\_\+\+Entity (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}\label{class_d_r_w___entity_aa4fc5fa5e6669594925e63261886ef8e}} 
+\index{DRW\_Entity@{DRW\_Entity}!````~DRW\_Entity@{$\sim$DRW\_Entity}}
+\index{````~DRW\_Entity@{$\sim$DRW\_Entity}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{$\sim$DRW\_Entity()}{~DRW\_Entity()}}
+{\footnotesize\ttfamily virtual DRW\+\_\+\+Entity\+::$\sim$\+DRW\+\_\+\+Entity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}\label{class_d_r_w___entity_a202fefae9154ebddcf7f007af5517982}} 
+\index{DRW\_Entity@{DRW\_Entity}!applyExtrusion@{applyExtrusion}}
+\index{applyExtrusion@{applyExtrusion}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{applyExtrusion()}{applyExtrusion()}}
+{\footnotesize\ttfamily virtual void DRW\+\_\+\+Entity\+::apply\+Extrusion (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_d_r_w___point_a6922b7e506b81509fc4369e5e89301a4}{DRW\+\_\+\+Point}}, \mbox{\hyperlink{class_d_r_w___line_a6aab28594c628f6330bfcb030d1a20c4}{DRW\+\_\+\+Line}}, \mbox{\hyperlink{class_d_r_w___circle_a5c0add6ddd14a386a8c73cc4e13ce88c}{DRW\+\_\+\+Circle}}, \mbox{\hyperlink{class_d_r_w___arc_abbc2d4bdd58b048b22049b546ea87386}{DRW\+\_\+\+Arc}}, \mbox{\hyperlink{class_d_r_w___ellipse_a0f6b2a379597a4cf33c37007f39fd667}{DRW\+\_\+\+Ellipse}}, \mbox{\hyperlink{class_d_r_w___trace_ad5c6dedeebd12bc17a93e0d759914fb4}{DRW\+\_\+\+Trace}}, \mbox{\hyperlink{class_d_r_w__3_dface_ab1632466a8dc3dff5295e09b6a893229}{DRW\+\_\+3\+Dface}}, \mbox{\hyperlink{class_d_r_w___block_a39ff8d019e6bc71543aff4006870cafd}{DRW\+\_\+\+Block}}, \mbox{\hyperlink{class_d_r_w___l_w_polyline_a19b9554fccc115de6d4a0ee4d556b6f2}{DRW\+\_\+\+LWPolyline}}, \mbox{\hyperlink{class_d_r_w___text_acdb987486bf1a47c585bcef48e8c22b5}{DRW\+\_\+\+Text}}, \mbox{\hyperlink{class_d_r_w___spline_a88fe2fc3e31dd4d13d126a4c0737d528}{DRW\+\_\+\+Spline}}, \mbox{\hyperlink{class_d_r_w___hatch_a5f4d83f519ba43ce26d6c9d91f6f0bc3}{DRW\+\_\+\+Hatch}}, \mbox{\hyperlink{class_d_r_w___dimension_a2a76f7b7a368bf5d447bed4fdcd565a4}{DRW\+\_\+\+Dimension}}, \mbox{\hyperlink{class_d_r_w___leader_a4949b7f618c7a9d839b1e835e52bab00}{DRW\+\_\+\+Leader}}, and \mbox{\hyperlink{class_d_r_w___viewport_a450cc9bee864aab3ecd99c091310baf2}{DRW\+\_\+\+Viewport}}.
+
+\mbox{\Hypertarget{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}\label{class_d_r_w___entity_a84d72c116d6bfaf0b1dab2782b8a764b}} 
+\index{DRW\_Entity@{DRW\_Entity}!calculateAxis@{calculateAxis}}
+\index{calculateAxis@{calculateAxis}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{calculateAxis()}{calculateAxis()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Entity\+::calculate\+Axis (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}}}]{ext\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Calculate arbitary axis. 
+
+Calculate arbitary axis for apply extrusions \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}\label{class_d_r_w___entity_abc7422d608a0475e895e06945198dbfe}} 
+\index{DRW\_Entity@{DRW\_Entity}!extrudePoint@{extrudePoint}}
+\index{extrudePoint@{extrudePoint}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{extrudePoint()}{extrudePoint()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Entity\+::extrude\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}}}]{ext\+Point,  }\item[{\mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} $\ast$}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Extrude a point using arbitary axis. 
+
+apply extrusion in a point using arbitary axis (previous calculated) \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_d_r_w___entity_ac934ccff63c8819b6073ae50d185b9b6}\label{class_d_r_w___entity_ac934ccff63c8819b6073ae50d185b9b6}} 
+\index{DRW\_Entity@{DRW\_Entity}!operator=@{operator=}}
+\index{operator=@{operator=}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \& DRW\+\_\+\+Entity\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___entity}{DRW\+\_\+\+Entity}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}\label{class_d_r_w___entity_a0442f246da3beb5636246053f159299b}} 
+\index{DRW\_Entity@{DRW\_Entity}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Entity\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}\label{class_d_r_w___entity_aefb69e3db9ec8635d46c8881dc6efec2}} 
+\index{DRW\_Entity@{DRW\_Entity}!parseDxfGroups@{parseDxfGroups}}
+\index{parseDxfGroups@{parseDxfGroups}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{parseDxfGroups()}{parseDxfGroups()}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Entity\+::parse\+Dxf\+Groups (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}\label{class_d_r_w___entity_aa76222a7a4f4b6977959d212e21d5fa3}} 
+\index{DRW\_Entity@{DRW\_Entity}!reset@{reset}}
+\index{reset@{reset}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Entity\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}\label{class_d_r_w___entity_a98d3a5dcaa6fd57caf3121697a530fe1}} 
+\index{DRW\_Entity@{DRW\_Entity}!setWidthMm@{setWidthMm}}
+\index{setWidthMm@{setWidthMm}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{setWidthMm()}{setWidthMm()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Entity\+::set\+Width\+Mm (\begin{DoxyParamCaption}\item[{double}]{millimeters }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}\label{class_d_r_w___entity_a51ad65890e8a979c645241d14a38c566}} 
+\index{DRW\_Entity@{DRW\_Entity}!appData@{appData}}
+\index{appData@{appData}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{appData}{appData}}
+{\footnotesize\ttfamily std\+::list$<$std\+::list$<$\mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}}$>$ $>$ DRW\+\_\+\+Entity\+::app\+Data}
+
+list of application data, code 102 \mbox{\Hypertarget{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}\label{class_d_r_w___entity_a199afc08d2cc4c44ea58d49780582526}} 
+\index{DRW\_Entity@{DRW\_Entity}!color@{color}}
+\index{color@{color}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Entity\+::color}
+
+entity color, code 62 \mbox{\Hypertarget{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}\label{class_d_r_w___entity_a4448fbdbe618f83ed71a7c1ed98caeae}} 
+\index{DRW\_Entity@{DRW\_Entity}!color24@{color24}}
+\index{color24@{color24}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{color24}{color24}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Entity\+::color24}
+
+24-\/bit color, code 420 \mbox{\Hypertarget{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}\label{class_d_r_w___entity_a84620ae9c9eea40d9d6373f28db5877a}} 
+\index{DRW\_Entity@{DRW\_Entity}!colorName@{colorName}}
+\index{colorName@{colorName}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{colorName}{colorName}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Entity\+::color\+Name}
+
+color name, code 430 \mbox{\Hypertarget{class_d_r_w___entity_a95081b4f8961ca785534a7561af477bb}\label{class_d_r_w___entity_a95081b4f8961ca785534a7561af477bb}} 
+\index{DRW\_Entity@{DRW\_Entity}!curr@{curr}}
+\index{curr@{curr}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{curr}{curr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}}$\ast$ DRW\+\_\+\+Entity\+::curr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}\label{class_d_r_w___entity_a36dff42707384984a085dbea602d0217}} 
+\index{DRW\_Entity@{DRW\_Entity}!eType@{eType}}
+\index{eType@{eType}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{eType}{eType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_d_r_w_aed9c4c5a1029af6370dd34d45e5ccd19}{DRW\+::\+ETYPE}} DRW\+\_\+\+Entity\+::e\+Type}
+
+enum\+: entity type, code 0 \mbox{\Hypertarget{class_d_r_w___entity_aa217be6c37b7e323d4b3801a7d2463c8}\label{class_d_r_w___entity_aa217be6c37b7e323d4b3801a7d2463c8}} 
+\index{DRW\_Entity@{DRW\_Entity}!extAxisX@{extAxisX}}
+\index{extAxisX@{extAxisX}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{extAxisX}{extAxisX}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Entity\+::ext\+AxisX\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_a2a68d61b1672f1c78d19dfd994649bd7}\label{class_d_r_w___entity_a2a68d61b1672f1c78d19dfd994649bd7}} 
+\index{DRW\_Entity@{DRW\_Entity}!extAxisY@{extAxisY}}
+\index{extAxisY@{extAxisY}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{extAxisY}{extAxisY}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___coord}{DRW\+\_\+\+Coord}} DRW\+\_\+\+Entity\+::ext\+AxisY\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}\label{class_d_r_w___entity_ae0fa011de4f631f68fee5c3ec07a518b}} 
+\index{DRW\_Entity@{DRW\_Entity}!extData@{extData}}
+\index{extData@{extData}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{extData}{extData}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}}$\ast$$>$ DRW\+\_\+\+Entity\+::ext\+Data}
+
+FIFO list of extended data, codes 1000 to 1071 \mbox{\Hypertarget{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}\label{class_d_r_w___entity_a041b53f6fb12cda99ecf7f6093b6895a}} 
+\index{DRW\_Entity@{DRW\_Entity}!handle@{handle}}
+\index{handle@{handle}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Entity\+::handle}
+
+entity identifier, code 5 \mbox{\Hypertarget{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}\label{class_d_r_w___entity_a62545716d4aec61cabb85576afc78dee}} 
+\index{DRW\_Entity@{DRW\_Entity}!haveExtrusion@{haveExtrusion}}
+\index{haveExtrusion@{haveExtrusion}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{haveExtrusion}{haveExtrusion}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Entity\+::have\+Extrusion}
+
+set to true if the entity have extrusion \mbox{\Hypertarget{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}\label{class_d_r_w___entity_a65b68c6c8712de3e2fada1d263b96042}} 
+\index{DRW\_Entity@{DRW\_Entity}!layer@{layer}}
+\index{layer@{layer}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{layer}{layer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Entity\+::layer}
+
+layer name, code 8 \mbox{\Hypertarget{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}\label{class_d_r_w___entity_a1180883df434a22fdafbc8ac1273e46e}} 
+\index{DRW\_Entity@{DRW\_Entity}!lineType@{lineType}}
+\index{lineType@{lineType}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{lineType}{lineType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Entity\+::line\+Type}
+
+line type, code 6 \mbox{\Hypertarget{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}\label{class_d_r_w___entity_a167d107e81c5b2bb4ee015fa62e2fde2}} 
+\index{DRW\_Entity@{DRW\_Entity}!ltypeScale@{ltypeScale}}
+\index{ltypeScale@{ltypeScale}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{ltypeScale}{ltypeScale}}
+{\footnotesize\ttfamily double DRW\+\_\+\+Entity\+::ltype\+Scale}
+
+linetype scale, code 48 \mbox{\Hypertarget{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}\label{class_d_r_w___entity_a5e01429ed3b7199b17367a5c85970a0d}} 
+\index{DRW\_Entity@{DRW\_Entity}!lWeight@{lWeight}}
+\index{lWeight@{lWeight}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{lWeight}{lWeight}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_d_r_w___l_w___conv_aed68cbc3d8bdf7e20003dd2d970279b3}{DRW\+\_\+\+LW\+\_\+\+Conv\+::line\+Width}} DRW\+\_\+\+Entity\+::l\+Weight}
+
+entity lineweight, code 370 \mbox{\Hypertarget{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}\label{class_d_r_w___entity_a3daa127922fa3534a86e92e2824f94a1}} 
+\index{DRW\_Entity@{DRW\_Entity}!material@{material}}
+\index{material@{material}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{material}{material}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Entity\+::material}
+
+hard pointer id to material object, code 347 \mbox{\Hypertarget{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}\label{class_d_r_w___entity_af1e8cd5aedc575cccc3ef2e6046d4463}} 
+\index{DRW\_Entity@{DRW\_Entity}!numProxyGraph@{numProxyGraph}}
+\index{numProxyGraph@{numProxyGraph}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{numProxyGraph}{numProxyGraph}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Entity\+::num\+Proxy\+Graph}
+
+Number of bytes in proxy graphics, code 92 \mbox{\Hypertarget{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}\label{class_d_r_w___entity_a2a0bac2e6b2801402ba1ecc8c7a05ea5}} 
+\index{DRW\_Entity@{DRW\_Entity}!parentHandle@{parentHandle}}
+\index{parentHandle@{parentHandle}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{parentHandle}{parentHandle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Entity\+::parent\+Handle}
+
+Soft-\/pointer ID/handle to owner BLOCK\+\_\+\+RECORD object, code 330 \mbox{\Hypertarget{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}\label{class_d_r_w___entity_abebf612b67fe860b34163f8cc16f0e78}} 
+\index{DRW\_Entity@{DRW\_Entity}!plotStyle@{plotStyle}}
+\index{plotStyle@{plotStyle}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{plotStyle}{plotStyle}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Entity\+::plot\+Style}
+
+hard pointer id to plot style object, code 390 \mbox{\Hypertarget{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}\label{class_d_r_w___entity_a90ff1e0025478488ffdb488d2f478e84}} 
+\index{DRW\_Entity@{DRW\_Entity}!proxyGraphics@{proxyGraphics}}
+\index{proxyGraphics@{proxyGraphics}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{proxyGraphics}{proxyGraphics}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Entity\+::proxy\+Graphics}
+
+proxy graphics bytes, code 310 \mbox{\Hypertarget{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}\label{class_d_r_w___entity_add69fd0a0f9ac49dfc5aca84c3023c56}} 
+\index{DRW\_Entity@{DRW\_Entity}!shadow@{shadow}}
+\index{shadow@{shadow}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{shadow}{shadow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_d_r_w_ab462fce211a98cb90a64d90a053e4d47}{DRW\+::\+Shadow\+Mode}} DRW\+\_\+\+Entity\+::shadow}
+
+shadow mode, code 284 \mbox{\Hypertarget{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}\label{class_d_r_w___entity_a8baf5455459e70a668e59fd13cfa72e2}} 
+\index{DRW\_Entity@{DRW\_Entity}!space@{space}}
+\index{space@{space}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{space}{space}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_d_r_w_af8659f260592217f3b16624b858fe97a}{DRW\+::\+Space}} DRW\+\_\+\+Entity\+::space}
+
+space indicator, code 67 \mbox{\Hypertarget{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}\label{class_d_r_w___entity_a3706fb94037a61f8a4b705210b136117}} 
+\index{DRW\_Entity@{DRW\_Entity}!transparency@{transparency}}
+\index{transparency@{transparency}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{transparency}{transparency}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Entity\+::transparency}
+
+transparency, code 440 \mbox{\Hypertarget{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}\label{class_d_r_w___entity_a410a134f3127298598a0075e60f3616d}} 
+\index{DRW\_Entity@{DRW\_Entity}!visible@{visible}}
+\index{visible@{visible}!DRW\_Entity@{DRW\_Entity}}
+\doxysubsubsection{\texorpdfstring{visible}{visible}}
+{\footnotesize\ttfamily bool DRW\+\_\+\+Entity\+::visible}
+
+entity visibility, code 60 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8h}{drw\+\_\+entities.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__entities_8cpp}{drw\+\_\+entities.\+cpp}}\end{DoxyCompactItemize}

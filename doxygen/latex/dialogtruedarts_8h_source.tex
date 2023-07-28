@@ -1,0 +1,135 @@
+\hypertarget{dialogtruedarts_8h_source}{}\doxysection{dialogtruedarts.\+h}
+\label{dialogtruedarts_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogtruedarts.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogtruedarts.h}}
+\mbox{\hyperlink{dialogtruedarts_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogtruedarts.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 6,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGTRUEDARTS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGTRUEDARTS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00065\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_true_darts}{DialogTrueDarts}};}
+\DoxyCodeLine{00067\ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_true_darts}{DialogTrueDarts}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00074\ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts}{DialogTrueDarts}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a32b65c87355d700c02c36435beeda9c2}{\string~DialogTrueDarts}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a62fcba8a45d977b9cef32aa78b2d7c9a}{GetFirstNewDartPointName}}();}
+\DoxyCodeLine{00078\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a11f0ab7ddf4c3d56b7d3eb365caf4cba}{GetSecondNewDartPointName}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a84b470aa3f90a537950125fd4d1875a3}{SetNewDartPointNames}}(\textcolor{keyword}{const}\ QString\ \&firstPoint,\ \textcolor{keyword}{const}\ QString\ \&secondPoint);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_aa398386f5c692d8d9fa03f5c62096004}{GetFirstBasePointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a9d5c79ac4c20d3c123177e813792f2e8}{SetFirstBasePointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_af71dcf42b0b9b41ff6afd748c957cfa9}{GetSecondBasePointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a901a51967438a41068aa9c8862f7b514}{SetSecondBasePointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_ad3a2927242e1bd42b3dd669dfde7146c}{GetFirstDartPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a870f68bdd7411734e195ad83f4d6968e}{SetFirstDartPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a5f12a54865798b4daaf8851ab5815873}{GetSecondDartPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a1feb575ff09f535af3592063e6a3d837}{SetSecondDartPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_ab7d31ce9dc50db6cd16cc73dfb0abe94}{GetThirdDartPointId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_aa28d73c2da94d2b2857b9f58f0f90680}{SetThirdDartPointId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_acf1365d1dc8aa8e281c3a80b0669e113}{SetChildrenId}}(\textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_true_darts_a4e6306e5d87631662eddf274a30d5be5}{ch1}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_true_darts_adf4fba1a908a8e2b143b41bcdc9dee8b}{ch2}});}
+\DoxyCodeLine{00097\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_ad382ca87388ec296919f552307982325}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_acbe89fbe8e26e0ee0ca348b47036257c}{PointNameChanged}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a672f7bc9a609e73509b1db11538b3950}{NameDartPoint1Changed}}();}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_aa529cf8a86cd24c140d7152753f8e521}{NameDartPoint2Changed}}();}
+\DoxyCodeLine{00102\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_a628ccf2077e78bc42f48c4199b904178}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_aa76e7d409c327e2b5a8c755313512962}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_true_darts_af94a5536051d33ccbdd74be5dbbc42aa}{CheckState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00111\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_true_darts}{DialogTrueDarts}})}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_true_darts}{DialogTrueDarts}}\ *\mbox{\hyperlink{class_dialog_true_darts_ac4c58ee39534cd2bdd0cbb8918a99fc3}{ui}};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ QString\ \mbox{\hyperlink{class_dialog_true_darts_a2395bc512ea4d9dfea798193058ef758}{d1PointName}};}
+\DoxyCodeLine{00115\ \ \ \ \ QString\ \mbox{\hyperlink{class_dialog_true_darts_a462df9cb8a41d56aab6d1df1a99db88f}{d2PointName}};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ quint32\ \mbox{\hyperlink{class_dialog_true_darts_a4e6306e5d87631662eddf274a30d5be5}{ch1}};}
+\DoxyCodeLine{00118\ \ \ \ \ quint32\ \mbox{\hyperlink{class_dialog_true_darts_adf4fba1a908a8e2b143b41bcdc9dee8b}{ch2}};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_true_darts_a858087e07153c29cf777c80dee9d5b49}{flagName1}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_dialog_true_darts_af190ae1307ec89829c0bdb28ba1fd91b}{flagName2}};}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_true_darts_ab6e4fff33bf5e572d16209a2e78f757a}{NameChanged}}(QLabel\ *\mbox{\hyperlink{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}{labelEditNamePoint}},\ const\ QString\ \&pointD1Name,\ const\ QString\ \&pointD2Name,}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QLineEdit\ *secondPointName,\ \textcolor{keywordtype}{bool}\ \&\mbox{\hyperlink{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}{flagName}});}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_true_darts_a2c544f9ab2399a859d7693325e8dff2f}{FillComboBoxs}}(const\ quint32\ \&\mbox{\hyperlink{class_dialog_true_darts_a4e6306e5d87631662eddf274a30d5be5}{ch1}},\ const\ quint32\ \&\mbox{\hyperlink{class_dialog_true_darts_adf4fba1a908a8e2b143b41bcdc9dee8b}{ch2}});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dialog_true_darts_a6e08e146615171c89e7c27db86cd6917}{CheckName}}(QLineEdit*\ edit,\ QLabel\ *\mbox{\hyperlink{class_dialog_tool_a83828f6965c85a1d6a2b2503fad08cb6}{labelEditNamePoint}},\ const\ QString\ \&pointD1Name,\ const\ QString\ \&pointD2Name,}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QLineEdit\ *secondPointName,\ \textcolor{keywordtype}{bool}\ \&\mbox{\hyperlink{class_dialog_tool_a2db9f4445b0d31e652cc3ee8919b71d7}{flagName}});}
+\DoxyCodeLine{00130\ \};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGTRUEDARTS\_H}}
+
+\end{DoxyCode}

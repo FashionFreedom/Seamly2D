@@ -1,0 +1,26 @@
+var class_v_abstract_converter =
+[
+    [ "VAbstractConverter", "class_v_abstract_converter.html#ac3d3813fa37c8318cb8cbdce1338bcd6", null ],
+    [ "~VAbstractConverter", "class_v_abstract_converter.html#a01bcdda71d95757723470aad69c90259", null ],
+    [ "ApplyPatches", "class_v_abstract_converter.html#ae04ccf4d6d1675286c58c4ec319c9ef9", null ],
+    [ "Convert", "class_v_abstract_converter.html#a493e411fb2c42d9c9d8986a115db98f5", null ],
+    [ "CorrectionsPositions", "class_v_abstract_converter.html#aa154603e35eba9a31c58456ab482dda7", null ],
+    [ "DowngradeToCurrentMaxVersion", "class_v_abstract_converter.html#a0f46c3e6317e94d2d453de3bc4186fe3", null ],
+    [ "GetCurrentFormatVarsion", "class_v_abstract_converter.html#a556c0cbe8b6830bb5f3a524919d95371", null ],
+    [ "GetVersionStr", "class_v_abstract_converter.html#aab39aa2f7ece866f41458b1bc8188b59", null ],
+    [ "InvalidVersion", "class_v_abstract_converter.html#a668bef779f47938b2435c0ca592445e8", null ],
+    [ "IsReadOnly", "class_v_abstract_converter.html#a1cade5805a3311ad15d9b5751e0794c4", null ],
+    [ "MaxVer", "class_v_abstract_converter.html#a7ba0322bf55f57c65b94ac330923b6d2", null ],
+    [ "MaxVerStr", "class_v_abstract_converter.html#a53c85557ad7fb333da0cfb6b11a2f188", null ],
+    [ "MinVer", "class_v_abstract_converter.html#aa19fd0110422f48c38e321bce5ff7061", null ],
+    [ "MinVerStr", "class_v_abstract_converter.html#acbd0459d9b4198d2357513cc15a3320c", null ],
+    [ "Replace", "class_v_abstract_converter.html#a4a9fe798f769c6441cba22cad35d7f51", null ],
+    [ "ReserveFile", "class_v_abstract_converter.html#a930138079bb7213d0bfcfc4e5dd29863", null ],
+    [ "Save", "class_v_abstract_converter.html#a828b502d62876f9c4c2572baf6d25f07", null ],
+    [ "SetVersion", "class_v_abstract_converter.html#a25df5d21a491a8005db0f8e30f7dfe14", null ],
+    [ "ValidateInputFile", "class_v_abstract_converter.html#aa9bb1ef0ced9213b9edb7f57f11a89df", null ],
+    [ "XSDSchema", "class_v_abstract_converter.html#a75aabd195bb498cfe25b7e122b1701d8", null ],
+    [ "m_convertedFileName", "class_v_abstract_converter.html#ad8b075a504b0375d8b4b07a437c13446", null ],
+    [ "m_tmpFile", "class_v_abstract_converter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3", null ],
+    [ "m_ver", "class_v_abstract_converter.html#ac7802ae1c36c2bf136bfc94d65a3bea9", null ]
+];

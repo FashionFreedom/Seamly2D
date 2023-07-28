@@ -1,0 +1,177 @@
+\hypertarget{dialoginternalpath_8h_source}{}\doxysection{dialoginternalpath.\+h}
+\label{dialoginternalpath_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/piece/dialoginternalpath.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/piece/dialoginternalpath.h}}
+\mbox{\hyperlink{dialoginternalpath_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ dialoginternalpath.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 22\ 11,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DIALOGINTERNALPATH\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DIALOGINTERNALPATH\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}../dialogtool.h"{}}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_internal_path}{DialogInternalPath}};}
+\DoxyCodeLine{00060\ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_internal_path}{DialogInternalPath}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00063\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path}{DialogInternalPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ quint32\ \mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a21ffbd298cf6b300fbf9f480ba10087f}{\string~DialogInternalPath}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a89a75deeb1386fbf9e339dbbc9f632fb}{EnbleShowMode}}(\textcolor{keywordtype}{bool}\ disable);}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aa61656361cd2eccb0a172dfd353a93f9}{GetPiecePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a002d12fa006ccc4910415126b70e0f76}{SetPiecePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&path);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a5704a9c83aa4a98f83b7315a9a07904c}{GetPieceId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ae902053a8d11214351105b1b626014db}{SetPieceId}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_af8b06926546a0c617ef770b61967d4f8}{getSeamAllowanceWidthFormula}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a94ae60c341fe4e2d434273c5d443e070}{setSeamAllowanceWidthFormula}}(\textcolor{keyword}{const}\ QString\ \&formula);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_afc1ab0a65ee6f4bd6690890942d36c03}{SetPiecesList}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&list)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a112ec8e310f233ff4a6468ca253143b9}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a2953e4b9f3a308e948c52890376673ca}{ShowDialog}}(\textcolor{keywordtype}{bool}\ click)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a0e88d4458efc81e940c0fae432289316}{CheckState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a8cadbff0e7d5daba4d7b6486a84e20d9}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a760c267e9d4e87167521ad9c90515fff}{closeEvent}}(QCloseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ab52d8375d7b900c4dec8bed2961debbf}{ShowContextMenu}}(\textcolor{keyword}{const}\ QPoint\ \&pos);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a5e90934d638077ffaae5a684bf8453bc}{ListChanged}}();}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a799ebc1534b287ea9481079cc73c9309}{NameChanged}}();}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a6a10c1d6a41bef4b6e46dbbd315af695}{nodeChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a72781f136d102e5a767ab8bc112bed4f}{notchChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a2e1927e1e74974603312f82672b9de29}{enableDefaultBeforeButton}}();}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_acb868e27590346cc7592d4cc9d129695}{enableDefaultAfterButton}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a8c5a93ccb021ee95e40029ec6802e15a}{notchTypeChanged}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a23a24c6e7c1bd85dd1cae9ca33bfd6f8}{notchSubTypeChanged}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ae49dc173c008b80bea4d5fe4c6c331b7}{evaluateDefaultWidth}}();}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_af2a8337b41957cf6bd374a9526db7554}{evaluateBeforeWidth}}();}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a41338f454670e77671babfaa5bc3d93c}{evaluateAfterWidth}}();}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a05262c5ff85a420cfe6b463132bc855c}{editDefaultSeamAllowanceWidth}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a0a236c92171ed4efb0aa2452f6fc7d32}{editBeforeSeamAllowanceWidth}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a0450bd7cd6492b5cfe764d803f6a74d6}{editAfterSeamAllowanceWidth}}();}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a9dd6d95577c9f5952108f5eac152e6bb}{defaultWidthChanged}}();}
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a6396b400b8c374419318df708fa017f9}{beforeWidthChanged}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a76a1e655a77e77559d3d06074522edf1}{afterWidthChanged}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_acbf03e6e27902431941bdf67a51d78cd}{expandWidthFormulaTextEdit}}();}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_af8c8377b6a589375edf503501eb9e7f4}{expandWidthBeforeFormulaTextEdit}}();}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aab8941379855a8ca02b1701d46227bf6}{expandWidthAfterFormulaTextEdit}}();}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00119\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_internal_path}{DialogInternalPath}})}
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_internal_path}{DialogInternalPath}}\ *\mbox{\hyperlink{class_dialog_internal_path_a6dd21edfb743b6c11ddf619b8dde96a3}{ui}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a826873a438fee6b956a2f1a860f69a12}{m\_showMode}};}
+\DoxyCodeLine{00122\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a65887981ddfe597ee886aa97bd2080dc}{m\_saWidth}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_internal_path_a261ed0065f1e97e6a4067618885329ed}{m\_timerWidth}};}
+\DoxyCodeLine{00125\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_internal_path_a88a3e197051abdf0a59ff0baa66a6f00}{m\_timerWidthBefore}};}
+\DoxyCodeLine{00126\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_internal_path_a93c638971538e644c1c8a3ca9c364e00}{m\_timerWidthAfter}};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a688e2a892be19292da40fbcfa81860a7}{m\_widthFormula}};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a688fcf297eadd46af1a35cb0ace99659}{m\_beforeWidthFormula}};}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a59a788b5cfe68ae0ee50d0edeeb5c8ec}{m\_afterWidthFormula}};}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ab04b7ade6ef30ea70ff2d1d937706d50}{InitPathTab}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a385a2a0be3b834b2866de9071422bb88}{InitSeamAllowanceTab}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a4ac09186a7862b9a6476bf99982bb663}{InitNotchesTab}}();}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aeff86f67f0130416fe227a217448e520}{InitPathTypes}}();}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a20cd4d978cafdb9137ad3af694100efe}{initializeNodesList}}();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a1a37200e8e3a4c7e50aceb17992744bc}{initializeNotchesList}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aa5a36fdde18c453880fc2aaaf9638b12}{nodeAngleChanged}}(\textcolor{keywordtype}{int}\ index);}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a6680cb04fb8e2d29586c24b5c4fd4e91}{CreatePath}}()\ const;}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ae6d6c8e519750d56de755bccf1e9c410}{PathIsValid}}()\ const;}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a0d679c89cf4648b51f56dd2f9786e493}{ValidObjects}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a8b36c4dbb3ea39a77a06838caf4231fd}{NewItem}}(const\ \mbox{\hyperlink{class_v_piece_node}{VPieceNode}}\ \&node);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{PiecePathType}}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_adf41f41775c58d2e829082dbc43ade5b}{GetType}}()\ const;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aa33e5787aa4c8d59769b215985040a6d}{SetType}}(\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{PiecePathType}}\ type);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ Qt::PenStyle\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_abd849854b9f42928818ca722d2c7457f}{GetPenType}}()\ const;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_af58ae08a65335708dcda4e83ab6b9987}{SetPenType}}(const\ Qt::PenStyle\ \&type);}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a0daa98fd39caf25ae19ebd31e3cc04d5}{IsCutPath}}()\ const;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a9689074a1ef31c9933069204c4c3d725}{SetCutPath}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ QListWidgetItem\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_internal_path_ad6e8c467bb852b3bbc81dff7e3b2ca87}{getItemById}}(quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_af4c83a9c7326ef31bb3d8692c63e17d2}{GetLastId}}()\ const;}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a3eb0080eea1a7ad304bd0e066fe5eb62}{SetCurrentSABefore}}(const\ QString\ \&formula);}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a82282466eafd372e3aa1c1ff5ebca4e0}{setCurrentAfterSeamAllowance}}(const\ QString\ \&formula);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a76105b1f55c7139565f01de23846c162}{updateNodeBeforeSeamAllowance}}(const\ QString\ \&formula);}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_ab3692c9046f803d78f49b6d8069c8e34}{updateNodeAfterSeamAllowance}}(const\ QString\ \&formula);}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a9b9c394c8d173fe1cacc0be1ba4a6a77}{getSeamAllowanceWidthFormulaBefore}}()\ const;}
+\DoxyCodeLine{00166\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_aeac7be333c5c1a2d5e35e7a63ddcd1ad}{getSeamAllowanceWidthFormulaAfter}}()\ const;}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_internal_path_a19e4502f8aae71ff6b4980bb93b937e9}{setMoveExclusions}}();}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGINTERNALPATH\_H}}
+
+\end{DoxyCode}

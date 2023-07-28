@@ -1,0 +1,107 @@
+\hypertarget{global_8cpp}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/global.cpp File Reference}
+\label{global_8cpp}\index{D:/Github/Seamly2D/src/libs/vwidgets/global.cpp@{D:/Github/Seamly2D/src/libs/vwidgets/global.cpp}}
+{\ttfamily \#include \char`\"{}global.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vmisc/def.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QGraphics\+Item$>$}\newline
+{\ttfamily \#include $<$QGraphics\+Scene$>$}\newline
+{\ttfamily \#include $<$QGraphics\+View$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+qreal \mbox{\hyperlink{global_8cpp_a234d81c6e11194f74abe5f5abdafd772}{scene\+Scale}} (QGraphics\+Scene $\ast$scene)
+\item 
+QColor \mbox{\hyperlink{global_8cpp_a9b9f769370ea4d46dd631409eeb7bf5b}{correct\+Color}} (const QGraphics\+Item $\ast$item, const QColor \&color)
+\item 
+QRectF \mbox{\hyperlink{global_8cpp_a3807c5cf77e9a4366ce5cd238b694275}{Point\+Rect}} (qreal radius)
+\item 
+qreal \mbox{\hyperlink{global_8cpp_a616656278306146bc53c60e0dcaec695}{scaled\+Radius}} (qreal scale)
+\item 
+void \mbox{\hyperlink{global_8cpp_a4c4949f8eb7810c58750e1fa26829d5e}{scale\+Circle\+Size}} (QGraphics\+Ellipse\+Item $\ast$item, qreal scale)
+\item 
+void \mbox{\hyperlink{global_8cpp_a9ba0be559ee9d17092d093e687a9476f}{scale\+Rect\+Size}} (QGraphics\+Rect\+Item $\ast$item, qreal scale)
+\item 
+qreal \mbox{\hyperlink{global_8cpp_a7ad613ad11b3969bfc38dfb18f713657}{scale\+Width}} (qreal width, qreal scale)
+\item 
+QPainter\+Path \mbox{\hyperlink{global_8cpp_a5c3249b6978a84dc3934735b467b02d4}{Item\+Shape\+From\+Path}} (const QPainter\+Path \&path, const QPen \&pen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const qreal \mbox{\hyperlink{global_8cpp_a23f3225389836d860dd8f79f03bf3667}{def\+Point\+Radius\+Pixel}} = (2. / 25.\+4) $\ast$ \mbox{\hyperlink{def_8cpp_a31472dd563848abd25354504b9cdc505}{Print\+DPI}}
+\item 
+const qreal \mbox{\hyperlink{global_8cpp_a0488081c01f6c5d5f05bbed5af47d22c}{width\+Main\+Line}} = (1.\+2 / 25.\+4) $\ast$ \mbox{\hyperlink{def_8cpp_a31472dd563848abd25354504b9cdc505}{Print\+DPI}}
+\item 
+const qreal \mbox{\hyperlink{global_8cpp_ab8c04d4b47d8cb7e5045d37a19ec6772}{width\+Hair\+Line}} = \mbox{\hyperlink{global_8cpp_a0488081c01f6c5d5f05bbed5af47d22c}{width\+Main\+Line}}/3.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{global_8cpp_a9b9f769370ea4d46dd631409eeb7bf5b}\label{global_8cpp_a9b9f769370ea4d46dd631409eeb7bf5b}} 
+\index{global.cpp@{global.cpp}!correctColor@{correctColor}}
+\index{correctColor@{correctColor}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{correctColor()}{correctColor()}}
+{\footnotesize\ttfamily QColor correct\+Color (\begin{DoxyParamCaption}\item[{const QGraphics\+Item $\ast$}]{item,  }\item[{const QColor \&}]{color }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a5c3249b6978a84dc3934735b467b02d4}\label{global_8cpp_a5c3249b6978a84dc3934735b467b02d4}} 
+\index{global.cpp@{global.cpp}!ItemShapeFromPath@{ItemShapeFromPath}}
+\index{ItemShapeFromPath@{ItemShapeFromPath}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{ItemShapeFromPath()}{ItemShapeFromPath()}}
+{\footnotesize\ttfamily QPainter\+Path Item\+Shape\+From\+Path (\begin{DoxyParamCaption}\item[{const QPainter\+Path \&}]{path,  }\item[{const QPen \&}]{pen }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a3807c5cf77e9a4366ce5cd238b694275}\label{global_8cpp_a3807c5cf77e9a4366ce5cd238b694275}} 
+\index{global.cpp@{global.cpp}!PointRect@{PointRect}}
+\index{PointRect@{PointRect}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{PointRect()}{PointRect()}}
+{\footnotesize\ttfamily QRectF Point\+Rect (\begin{DoxyParamCaption}\item[{qreal}]{radius }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a4c4949f8eb7810c58750e1fa26829d5e}\label{global_8cpp_a4c4949f8eb7810c58750e1fa26829d5e}} 
+\index{global.cpp@{global.cpp}!scaleCircleSize@{scaleCircleSize}}
+\index{scaleCircleSize@{scaleCircleSize}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{scaleCircleSize()}{scaleCircleSize()}}
+{\footnotesize\ttfamily void scale\+Circle\+Size (\begin{DoxyParamCaption}\item[{QGraphics\+Ellipse\+Item $\ast$}]{item,  }\item[{qreal}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a616656278306146bc53c60e0dcaec695}\label{global_8cpp_a616656278306146bc53c60e0dcaec695}} 
+\index{global.cpp@{global.cpp}!scaledRadius@{scaledRadius}}
+\index{scaledRadius@{scaledRadius}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{scaledRadius()}{scaledRadius()}}
+{\footnotesize\ttfamily qreal scaled\+Radius (\begin{DoxyParamCaption}\item[{qreal}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a9ba0be559ee9d17092d093e687a9476f}\label{global_8cpp_a9ba0be559ee9d17092d093e687a9476f}} 
+\index{global.cpp@{global.cpp}!scaleRectSize@{scaleRectSize}}
+\index{scaleRectSize@{scaleRectSize}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{scaleRectSize()}{scaleRectSize()}}
+{\footnotesize\ttfamily void scale\+Rect\+Size (\begin{DoxyParamCaption}\item[{QGraphics\+Rect\+Item $\ast$}]{item,  }\item[{qreal}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a7ad613ad11b3969bfc38dfb18f713657}\label{global_8cpp_a7ad613ad11b3969bfc38dfb18f713657}} 
+\index{global.cpp@{global.cpp}!scaleWidth@{scaleWidth}}
+\index{scaleWidth@{scaleWidth}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{scaleWidth()}{scaleWidth()}}
+{\footnotesize\ttfamily qreal scale\+Width (\begin{DoxyParamCaption}\item[{qreal}]{width,  }\item[{qreal}]{scale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{global_8cpp_a234d81c6e11194f74abe5f5abdafd772}\label{global_8cpp_a234d81c6e11194f74abe5f5abdafd772}} 
+\index{global.cpp@{global.cpp}!sceneScale@{sceneScale}}
+\index{sceneScale@{sceneScale}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{sceneScale()}{sceneScale()}}
+{\footnotesize\ttfamily qreal scene\+Scale (\begin{DoxyParamCaption}\item[{QGraphics\+Scene $\ast$}]{scene }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{global_8cpp_a23f3225389836d860dd8f79f03bf3667}\label{global_8cpp_a23f3225389836d860dd8f79f03bf3667}} 
+\index{global.cpp@{global.cpp}!defPointRadiusPixel@{defPointRadiusPixel}}
+\index{defPointRadiusPixel@{defPointRadiusPixel}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{defPointRadiusPixel}{defPointRadiusPixel}}
+{\footnotesize\ttfamily const qreal def\+Point\+Radius\+Pixel = (2. / 25.\+4) $\ast$ \mbox{\hyperlink{def_8cpp_a31472dd563848abd25354504b9cdc505}{Print\+DPI}}}
+
+\mbox{\Hypertarget{global_8cpp_ab8c04d4b47d8cb7e5045d37a19ec6772}\label{global_8cpp_ab8c04d4b47d8cb7e5045d37a19ec6772}} 
+\index{global.cpp@{global.cpp}!widthHairLine@{widthHairLine}}
+\index{widthHairLine@{widthHairLine}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{widthHairLine}{widthHairLine}}
+{\footnotesize\ttfamily const qreal width\+Hair\+Line = \mbox{\hyperlink{global_8cpp_a0488081c01f6c5d5f05bbed5af47d22c}{width\+Main\+Line}}/3.\+0}
+
+\mbox{\Hypertarget{global_8cpp_a0488081c01f6c5d5f05bbed5af47d22c}\label{global_8cpp_a0488081c01f6c5d5f05bbed5af47d22c}} 
+\index{global.cpp@{global.cpp}!widthMainLine@{widthMainLine}}
+\index{widthMainLine@{widthMainLine}!global.cpp@{global.cpp}}
+\doxysubsubsection{\texorpdfstring{widthMainLine}{widthMainLine}}
+{\footnotesize\ttfamily const qreal width\+Main\+Line = (1.\+2 / 25.\+4) $\ast$ \mbox{\hyperlink{def_8cpp_a31472dd563848abd25354504b9cdc505}{Print\+DPI}}}
+

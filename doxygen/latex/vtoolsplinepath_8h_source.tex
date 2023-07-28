@@ -1,0 +1,143 @@
+\hypertarget{vtoolsplinepath_8h_source}{}\doxysection{vtoolsplinepath.\+h}
+\label{vtoolsplinepath_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolcurve/vtoolsplinepath.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/toolcurve/vtoolsplinepath.h}}
+\mbox{\hyperlink{vtoolsplinepath_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vtoolsplinepath.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VTOOLSPLINEPATH\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VTOOLSPLINEPATH\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/vgeometrydef.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractspline_8h}{vabstractspline.h}}"{}}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_spline_path}{VSplinePath}};}
+\DoxyCodeLine{00070\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}}:\textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_spline}{VAbstractSpline}}}
+\DoxyCodeLine{00076\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a855e122225eb8eb96c2ddf737e269a8f}{\string~VToolSplinePath}}()\ =\textcolor{keywordflow}{default};}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a0b07f1461d243c2d21fce799dcf85c1d}{setDialog}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ \ \ \ \ static\ \mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}}\ *\mbox{\hyperlink{class_v_tool_spline_path_a0c6e1e92040d6af931fc680513db6c02}{Create}}(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_dialog_tool}{DialogTool}}>\ dialog,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ \ *scene,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}});}
+\DoxyCodeLine{00083\ \ \ \ \ static\ \mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}}\ *\mbox{\hyperlink{class_v_tool_spline_path_a0c6e1e92040d6af931fc680513db6c02}{Create}}(const\ quint32\ \_id,\ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ *path,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \&typeCreation);}
+\DoxyCodeLine{00086\ \ \ \ \ static\ \mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}}\ *\mbox{\hyperlink{class_v_tool_spline_path_a0c6e1e92040d6af931fc680513db6c02}{Create}}(const\ quint32\ \_id,\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \&points,\ \mbox{\hyperlink{class_q_vector}{QVector}}<QString>\ \&a1,}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<QString>\ \&a2,\ \mbox{\hyperlink{class_q_vector}{QVector}}<QString>\ \&l1,\ \mbox{\hyperlink{class_q_vector}{QVector}}<QString>\ \&l2,}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&color,\ const\ QString\ \&penStyle,\ const\ QString\ \&lineWeight,}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quint32\ duplicate,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \&typeCreation);}
+\DoxyCodeLine{00091\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_tool_spline_path_a3064157a70402bfaa782b382659e5146}{ToolType}};}
+\DoxyCodeLine{00092\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_tool_spline_path_a337aefc086f03ba5cb0accfd83729249}{OldToolType}};}
+\DoxyCodeLine{00093\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a1b6903f12da87dc62f9fd5552cee8c06}{UpdatePathPoints}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ QDomElement\ \&element,\ const\ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ \&path);}
+\DoxyCodeLine{00094\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a5325c0ed6f9b4a7f6118d984a1ba210a}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_spline_path_a5f6fab274f8246aeab058da410ebdaf6a1493a608ae95227356f1a38968e38c3a}{Type}};\}}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_v_tool_spline_path_a5f6fab274f8246aeab058da410ebdaf6a1493a608ae95227356f1a38968e38c3a}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Tool::SplinePath)\};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ \ \ \mbox{\hyperlink{class_v_tool_spline_path_add6c21a3310c7cd7cabbc0b3853d2507}{getSplinePath}}()\textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_ab8cf41122811084221b75c2f947fc88b}{setSplinePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ \&\mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{splPath}});}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a719032123fa6290b5f56b14b397dfdf5}{ShowVisualization}}(\textcolor{keywordtype}{bool}\ show)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ signals:}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_aab9c5a1dfb8d85b82c3ce98911b46d42}{RefreshLine}}(\textcolor{keyword}{const}\ qint32\ \&indexSpline,\ \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{SplinePointPosition}}\ pos,\ \textcolor{keyword}{const}\ QPointF\ \&controlPoint,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\ \&splinePoint);}
+\DoxyCodeLine{00112\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_ad5f4f28dcc2a024d17faf49e66b0547e}{ControlPointChangePosition}}(\textcolor{keyword}{const}\ qint32\ \&indexSpline,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{vgeometrydef_8h_aea380938ffc14e1e5baefe358e7f1d8f}{SplinePointPosition}}\ \&position,}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QPointF\ \&pos);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a46e624f3d430621cd344d6066173e38e}{EnableToolMove}}(\textcolor{keywordtype}{bool}\ move)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{protected}\ slots:}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a30e5f4592576ea7a28e092ba867f6d3d}{showContextMenu}}(QGraphicsSceneContextMenuEvent\ *event,\ quint32\ \textcolor{keywordtype}{id}=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_af700c338b2f1be0dbda253dffc3cd5fd}{RemoveReferens}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00123\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a04bdf1e112062fc65c965fd8e9eb9045}{SaveDialog}}(QDomElement\ \&domElement)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00124\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a2595d294d9e3ae951cfdcdfff0f2a2b0}{SaveOptions}}(QDomElement\ \&tag,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00125\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_ae7e41d478a2a76f59d7e155287a854e7}{mousePressEvent}}(QGraphicsSceneMouseEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00126\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_aa4ae5e7628845f44d0ab67d794b40165}{mouseReleaseEvent}}\ (\ QGraphicsSceneMouseEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00127\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a90c1f85ea506e766602413d5b732b137}{mouseMoveEvent}}(QGraphicsSceneMouseEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00128\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_ae1c35b163e12c72c2393fff56a3c79f9}{hoverEnterEvent}}\ (\ QGraphicsSceneHoverEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00129\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_ae02045edccd42aa2d1d7196d1fe42f6a}{hoverLeaveEvent}}\ (\ QGraphicsSceneHoverEvent\ *\ event\ )\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00130\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a18ec6c4f9305a2b0086eba845229722a}{SetVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00131\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_v_tool_spline_path_a85b6160fdf140e8ad183370a81ecd419}{refreshCtrlPoints}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ private:}
+\DoxyCodeLine{00134\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}})}
+\DoxyCodeLine{00135\ \ \ \ \ QPointF\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a8cbbe1b8edf03e13a358a1f3742fe792}{oldPosition}};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a51a45f7873a48088d603d08bf5f544df}{splIndex}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path}{VToolSplinePath}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ quint32\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \&typeCreation,\ QGraphicsItem\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_adc162e7bf27b7405dd4e565e8e73ffd9}{IsMovable}}(\textcolor{keywordtype}{int}\ index)\ const;}
+\DoxyCodeLine{00142\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a02b790336f6c6e3e42d9b8d3e714eb22}{AddPathPoint}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{class_v_spline_point}{VSplinePoint}}\ \&splPoint);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a6ce008558e03edb8a4c925b6d1833156}{UpdateControlPoints}}(const\ \mbox{\hyperlink{class_v_spline}{VSpline}}\ \&spl,\ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ \&\mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{splPath}},\ const\ qint32\ \&indexSpline)\ const;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_tool_spline_path_a1b7944ddf83d0eac242035cce02f1258}{SetSplinePathAttributes}}(QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{class_v_spline_path}{VSplinePath}}\ \&path);}
+\DoxyCodeLine{00145\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTOOLSPLINEPATH\_H}}
+
+\end{DoxyCode}

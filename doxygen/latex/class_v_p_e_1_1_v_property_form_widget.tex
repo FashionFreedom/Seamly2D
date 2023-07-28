@@ -1,0 +1,239 @@
+\hypertarget{class_v_p_e_1_1_v_property_form_widget}{}\doxysection{VPE\+::VProperty\+Form\+Widget Class Reference}
+\label{class_v_p_e_1_1_v_property_form_widget}\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+
+
+Class that displays the sub properties of a property using a form layout.  
+
+
+
+
+{\ttfamily \#include $<$vpropertyformwidget.\+h$>$}
+
+Inheritance diagram for VPE\+::VProperty\+Form\+Widget\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_p_e_1_1_v_property_form_widget}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a45cffa681e72e4aeafbbf07a27d4aba4}{build}} ()
+\begin{DoxyCompactList}\small\item\em Rebuilds the whole form. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a8c85969729790ffd139e8ab06227c99d}{build\+Editor}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$property, QForm\+Layout $\ast$form\+Layout, \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}} type=\mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaa1fbb1e3943c2c6c560247ac8f9289780}{Property\+::\+Simple}})
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_ad8406af707fd345d94a8a53e10c98f8a}{commit\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Reads the data from the editors and commits it to the properties. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a4d97599340d6cd555cf1376335b61115}{load\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Refills the editors with the propertie\textquotesingle{}s data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a4cf362097ae6bbaea54da301fe822ce5}{commit\+Data}} (int row)
+\begin{DoxyCompactList}\small\item\em Reads the data from row\textquotesingle{}th editor and commits it to the property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_ae6a013277f90d6f02a8c4a57a63a0abb}{load\+Data}} (int row)
+\begin{DoxyCompactList}\small\item\em Reads the data from row\textquotesingle{}th property. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a0bc422c3541313fa6813b4ae85117308}{set\+Commit\+Behaviour}} (bool auto\+\_\+commit=true)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a03e2b0d69cd404006dd866ad4c7277ef}{property\+Data\+Submitted}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$property)
+\begin{DoxyCompactList}\small\item\em Emitted whenever a property data changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a273212d2595e89319276554873346b87}{VProperty\+Form\+Widget}} (const QString \&title, const QString \&description, const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ $>$ \&properties, QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a5e9862b8c3b58e881f80a9dc9e3d4e4c}{VProperty\+Form\+Widget}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$parent\+\_\+property, QWidget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a69692735259b3867996bc32a26acbc10}{$\sim$\+VProperty\+Form\+Widget}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VProperty\+Form\+Widget}} $\ast$ $>$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a20854849733f463d31013f8bc19636b9}{get\+Child\+Property\+Form\+Widgets}} () const
+\begin{DoxyCompactList}\small\item\em Returns a list of all child property form widgets (note that indirect children will not be in the list) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_adfc9a67bc5955abfb1e957b6ec32c759}{VProperty\+Form\+Widget}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}} $\ast$d\+\_\+pointer, QWidget $\ast$parent, const QString \&title=QString(), const QString \&description=QString())
+\begin{DoxyCompactList}\small\item\em Protected Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_af6886a0b3343d081d57353a610414575}{event\+Filter}} (QObject $\ast$object, QEvent $\ast$event)
+\begin{DoxyCompactList}\small\item\em Event filter for the editor widgets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_aaf7e93a48858ef2f610bb55fc3fc532d}{commit\+Data}} (const QWidget $\ast$editor)
+\begin{DoxyCompactList}\small\item\em Commits data of an editor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_a21bca61d5c00aed381943633562ebee9}{d\+\_\+ptr}}
+\begin{DoxyCompactList}\small\item\em The protected data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that displays the sub properties of a property using a form layout. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a273212d2595e89319276554873346b87}\label{class_v_p_e_1_1_v_property_form_widget_a273212d2595e89319276554873346b87}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!VPropertyFormWidget@{VPropertyFormWidget}}
+\index{VPropertyFormWidget@{VPropertyFormWidget}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormWidget()}{VPropertyFormWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+Widget\+::\+VProperty\+Form\+Widget (\begin{DoxyParamCaption}\item[{const QString \&}]{title,  }\item[{const QString \&}]{description,  }\item[{const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ $>$ \&}]{properties,  }\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a5e9862b8c3b58e881f80a9dc9e3d4e4c}\label{class_v_p_e_1_1_v_property_form_widget_a5e9862b8c3b58e881f80a9dc9e3d4e4c}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!VPropertyFormWidget@{VPropertyFormWidget}}
+\index{VPropertyFormWidget@{VPropertyFormWidget}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormWidget()}{VPropertyFormWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+Widget\+::\+VProperty\+Form\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$}]{parent\+\_\+property,  }\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a69692735259b3867996bc32a26acbc10}\label{class_v_p_e_1_1_v_property_form_widget_a69692735259b3867996bc32a26acbc10}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!````~VPropertyFormWidget@{$\sim$VPropertyFormWidget}}
+\index{````~VPropertyFormWidget@{$\sim$VPropertyFormWidget}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPropertyFormWidget()}{~VPropertyFormWidget()}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+Widget\+::$\sim$\+VProperty\+Form\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_adfc9a67bc5955abfb1e957b6ec32c759}\label{class_v_p_e_1_1_v_property_form_widget_adfc9a67bc5955abfb1e957b6ec32c759}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!VPropertyFormWidget@{VPropertyFormWidget}}
+\index{VPropertyFormWidget@{VPropertyFormWidget}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{VPropertyFormWidget()}{VPropertyFormWidget()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Form\+Widget\+::\+VProperty\+Form\+Widget (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}} $\ast$}]{d\+\_\+pointer,  }\item[{QWidget $\ast$}]{parent,  }\item[{const QString \&}]{title = {\ttfamily QString()},  }\item[{const QString \&}]{description = {\ttfamily QString()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Protected Constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a45cffa681e72e4aeafbbf07a27d4aba4}\label{class_v_p_e_1_1_v_property_form_widget_a45cffa681e72e4aeafbbf07a27d4aba4}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!build@{build}}
+\index{build@{build}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{build}{build}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Rebuilds the whole form. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a8c85969729790ffd139e8ab06227c99d}\label{class_v_p_e_1_1_v_property_form_widget_a8c85969729790ffd139e8ab06227c99d}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!buildEditor@{buildEditor}}
+\index{buildEditor@{buildEditor}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{buildEditor}{buildEditor}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::build\+Editor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$}]{property,  }\item[{QForm\+Layout $\ast$}]{form\+Layout,  }\item[{\mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}}}]{type = {\ttfamily \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093acaa1fbb1e3943c2c6c560247ac8f9289780}{Property\+::\+Simple}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_ad8406af707fd345d94a8a53e10c98f8a}\label{class_v_p_e_1_1_v_property_form_widget_ad8406af707fd345d94a8a53e10c98f8a}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!commitData@{commitData}}
+\index{commitData@{commitData}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{commitData}{commitData}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::commit\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Reads the data from the editors and commits it to the properties. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_aaf7e93a48858ef2f610bb55fc3fc532d}\label{class_v_p_e_1_1_v_property_form_widget_aaf7e93a48858ef2f610bb55fc3fc532d}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!commitData@{commitData}}
+\index{commitData@{commitData}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{commitData()}{commitData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::commit\+Data (\begin{DoxyParamCaption}\item[{const QWidget $\ast$}]{editor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Commits data of an editor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a4cf362097ae6bbaea54da301fe822ce5}\label{class_v_p_e_1_1_v_property_form_widget_a4cf362097ae6bbaea54da301fe822ce5}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!commitData@{commitData}}
+\index{commitData@{commitData}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{commitData}{commitData}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::commit\+Data (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Reads the data from row\textquotesingle{}th editor and commits it to the property. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_af6886a0b3343d081d57353a610414575}\label{class_v_p_e_1_1_v_property_form_widget_af6886a0b3343d081d57353a610414575}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!eventFilter@{eventFilter}}
+\index{eventFilter@{eventFilter}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{eventFilter()}{eventFilter()}}
+{\footnotesize\ttfamily bool VPE\+::\+VProperty\+Form\+Widget\+::event\+Filter (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{object,  }\item[{QEvent $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Event filter for the editor widgets. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a20854849733f463d31013f8bc19636b9}\label{class_v_p_e_1_1_v_property_form_widget_a20854849733f463d31013f8bc19636b9}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!getChildPropertyFormWidgets@{getChildPropertyFormWidgets}}
+\index{getChildPropertyFormWidgets@{getChildPropertyFormWidgets}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{getChildPropertyFormWidgets()}{getChildPropertyFormWidgets()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPE\+::\+VProperty\+Form\+Widget}} $\ast$ $>$ VPE\+::\+VProperty\+Form\+Widget\+::get\+Child\+Property\+Form\+Widgets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a list of all child property form widgets (note that indirect children will not be in the list) 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a4d97599340d6cd555cf1376335b61115}\label{class_v_p_e_1_1_v_property_form_widget_a4d97599340d6cd555cf1376335b61115}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!loadData@{loadData}}
+\index{loadData@{loadData}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{loadData}{loadData}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::load\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Refills the editors with the propertie\textquotesingle{}s data. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_ae6a013277f90d6f02a8c4a57a63a0abb}\label{class_v_p_e_1_1_v_property_form_widget_ae6a013277f90d6f02a8c4a57a63a0abb}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!loadData@{loadData}}
+\index{loadData@{loadData}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{loadData}{loadData}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::load\+Data (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+Reads the data from row\textquotesingle{}th property. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a03e2b0d69cd404006dd866ad4c7277ef}\label{class_v_p_e_1_1_v_property_form_widget_a03e2b0d69cd404006dd866ad4c7277ef}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!propertyDataSubmitted@{propertyDataSubmitted}}
+\index{propertyDataSubmitted@{propertyDataSubmitted}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{propertyDataSubmitted}{propertyDataSubmitted}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::property\+Data\+Submitted (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$}]{property }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Emitted whenever a property data changes. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a0bc422c3541313fa6813b4ae85117308}\label{class_v_p_e_1_1_v_property_form_widget_a0bc422c3541313fa6813b4ae85117308}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!setCommitBehaviour@{setCommitBehaviour}}
+\index{setCommitBehaviour@{setCommitBehaviour}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{setCommitBehaviour}{setCommitBehaviour}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Form\+Widget\+::set\+Commit\+Behaviour (\begin{DoxyParamCaption}\item[{bool}]{auto\+\_\+commit = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Sets the update behaviour 
+\begin{DoxyParams}{Parameters}
+{\em auto\+\_\+commit} & If set to true, whenever an event like focus\+Out is triggered on an editor, the data will be submitted to the property. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_form_widget_a21bca61d5c00aed381943633562ebee9}\label{class_v_p_e_1_1_v_property_form_widget_a21bca61d5c00aed381943633562ebee9}} 
+\index{VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}!d\_ptr@{d\_ptr}}
+\index{d\_ptr@{d\_ptr}!VPE::VPropertyFormWidget@{VPE::VPropertyFormWidget}}
+\doxysubsubsection{\texorpdfstring{d\_ptr}{d\_ptr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VProperty\+Form\+Widget\+Private}}$\ast$ VPE\+::\+VProperty\+Form\+Widget\+::d\+\_\+ptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The protected data. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertyformwidget_8h}{vpropertyformwidget.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertyformwidget_8cpp}{vpropertyformwidget.\+cpp}}\end{DoxyCompactItemize}

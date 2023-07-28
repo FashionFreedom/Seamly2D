@@ -1,0 +1,70 @@
+\hypertarget{vcolorproperty_8h_source}{}\doxysection{vcolorproperty.\+h}
+\label{vcolorproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vcolorproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vcolorproperty.h}}
+\mbox{\hyperlink{vcolorproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vcolorproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VCOLORPROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VCOLORPROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QStyleOptionViewItem>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <Qt>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../vproperty.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_color_property}{VColorProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}}
+\DoxyCodeLine{00040\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property}{VColorProperty}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_a1eacc8dd12db60ff68ac1f5581b841e4}{data}}\ (\textcolor{keywordtype}{int}\ column\ =\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\_Name}},\ \textcolor{keywordtype}{int}\ role\ =\ Qt::DisplayRole)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ QWidget\ \ \ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_a83c4df426d5ed7e2daf89e616604bd98}{createEditor}}(QWidget\ *parent,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\ \&options,}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QAbstractItemDelegate\ *delegate)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_a8835fba68447596f6a7884c40ad19a27}{setEditorData}}(QWidget\ *editor)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_ac3c4016a6f7446b564cb768fda3f0c43}{getEditorData}}(\textcolor{keyword}{const}\ QWidget\ *editor)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_color_property_a1ef99bb19bdd884ac58c37a15bd36c91}{type}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *\mbox{\hyperlink{class_v_p_e_1_1_v_color_property_a3efda03cc7cd4c8607781f02821fe5ea}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *container\ =\ NULL)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00073\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_color_property}{VColorProperty}})}
+\DoxyCodeLine{00074\ \};}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VCOLORPROPERTY\_H}}
+
+\end{DoxyCode}

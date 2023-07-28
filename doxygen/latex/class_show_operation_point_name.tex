@@ -1,0 +1,157 @@
+\hypertarget{class_show_operation_point_name}{}\doxysection{Show\+Operation\+Point\+Name Class Reference}
+\label{class_show_operation_point_name}\index{ShowOperationPointName@{ShowOperationPointName}}
+
+
+{\ttfamily \#include $<$showoperationpointname.\+h$>$}
+
+Inheritance diagram for Show\+Operation\+Point\+Name\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_show_operation_point_name}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_show_operation_point_name_a6dafdbf847ea3ffc2a72cc911d0e2589}{Show\+Operation\+Point\+Name}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, quint32 id\+Tool, quint32 id\+Point, bool visible, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_show_operation_point_name_a1c85d19fd2992ade543db7abe782be8b}{$\sim$\+Show\+Operation\+Point\+Name}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_show_operation_point_name_ae1e81bf8ed3448555199a9794f1a0121}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_show_operation_point_name_ac1d7e0cc3467412ff75e31ae26f23e49}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_show_operation_point_name_a8775a007622cbf7569bd0cde3bdc50b8}{Do}} (bool visible)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_show_operation_point_name_ad08cc35276ddebe2b797cbccf77c5846}{m\+\_\+visible}}
+\item 
+bool \mbox{\hyperlink{class_show_operation_point_name_af65a23426f4b3121d3f98af205012f84}{m\+\_\+old\+Visible}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_show_operation_point_name_a4dfdff467c11afc6d3148436e8f07340}{m\+\_\+scene}}
+\item 
+quint32 \mbox{\hyperlink{class_show_operation_point_name_a91fcfdd2f460c6db4ea67fef95335aa8}{m\+\_\+id\+Tool}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_show_operation_point_name_a6dafdbf847ea3ffc2a72cc911d0e2589}\label{class_show_operation_point_name_a6dafdbf847ea3ffc2a72cc911d0e2589}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!ShowOperationPointName@{ShowOperationPointName}}
+\index{ShowOperationPointName@{ShowOperationPointName}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{ShowOperationPointName()}{ShowOperationPointName()}}
+{\footnotesize\ttfamily Show\+Operation\+Point\+Name\+::\+Show\+Operation\+Point\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{quint32}]{id\+Tool,  }\item[{quint32}]{id\+Point,  }\item[{bool}]{visible,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_show_operation_point_name_a1c85d19fd2992ade543db7abe782be8b}\label{class_show_operation_point_name_a1c85d19fd2992ade543db7abe782be8b}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!````~ShowOperationPointName@{$\sim$ShowOperationPointName}}
+\index{````~ShowOperationPointName@{$\sim$ShowOperationPointName}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{$\sim$ShowOperationPointName()}{~ShowOperationPointName()}}
+{\footnotesize\ttfamily virtual Show\+Operation\+Point\+Name\+::$\sim$\+Show\+Operation\+Point\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_show_operation_point_name_a8775a007622cbf7569bd0cde3bdc50b8}\label{class_show_operation_point_name_a8775a007622cbf7569bd0cde3bdc50b8}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!Do@{Do}}
+\index{Do@{Do}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{Do()}{Do()}}
+{\footnotesize\ttfamily void Show\+Operation\+Point\+Name\+::\+Do (\begin{DoxyParamCaption}\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_show_operation_point_name_ac1d7e0cc3467412ff75e31ae26f23e49}\label{class_show_operation_point_name_ac1d7e0cc3467412ff75e31ae26f23e49}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!redo@{redo}}
+\index{redo@{redo}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Show\+Operation\+Point\+Name\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_show_operation_point_name_ae1e81bf8ed3448555199a9794f1a0121}\label{class_show_operation_point_name_ae1e81bf8ed3448555199a9794f1a0121}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!undo@{undo}}
+\index{undo@{undo}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Show\+Operation\+Point\+Name\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_show_operation_point_name_a91fcfdd2f460c6db4ea67fef95335aa8}\label{class_show_operation_point_name_a91fcfdd2f460c6db4ea67fef95335aa8}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!m\_idTool@{m\_idTool}}
+\index{m\_idTool@{m\_idTool}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{m\_idTool}{m\_idTool}}
+{\footnotesize\ttfamily quint32 Show\+Operation\+Point\+Name\+::m\+\_\+id\+Tool\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_show_operation_point_name_af65a23426f4b3121d3f98af205012f84}\label{class_show_operation_point_name_af65a23426f4b3121d3f98af205012f84}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!m\_oldVisible@{m\_oldVisible}}
+\index{m\_oldVisible@{m\_oldVisible}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{m\_oldVisible}{m\_oldVisible}}
+{\footnotesize\ttfamily bool Show\+Operation\+Point\+Name\+::m\+\_\+old\+Visible\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_show_operation_point_name_a4dfdff467c11afc6d3148436e8f07340}\label{class_show_operation_point_name_a4dfdff467c11afc6d3148436e8f07340}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!m\_scene@{m\_scene}}
+\index{m\_scene@{m\_scene}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{m\_scene}{m\_scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Show\+Operation\+Point\+Name\+::m\+\_\+scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_show_operation_point_name_ad08cc35276ddebe2b797cbccf77c5846}\label{class_show_operation_point_name_ad08cc35276ddebe2b797cbccf77c5846}} 
+\index{ShowOperationPointName@{ShowOperationPointName}!m\_visible@{m\_visible}}
+\index{m\_visible@{m\_visible}!ShowOperationPointName@{ShowOperationPointName}}
+\doxysubsubsection{\texorpdfstring{m\_visible}{m\_visible}}
+{\footnotesize\ttfamily bool Show\+Operation\+Point\+Name\+::m\+\_\+visible\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/label/\mbox{\hyperlink{showoperationpointname_8h}{showoperationpointname.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/label/\mbox{\hyperlink{showoperationpointname_8cpp}{showoperationpointname.\+cpp}}\end{DoxyCompactItemize}

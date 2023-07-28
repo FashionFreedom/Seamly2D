@@ -1,0 +1,133 @@
+\hypertarget{qmudef_8cpp}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/qmudef.cpp File Reference}
+\label{qmudef_8cpp}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmudef.cpp@{D:/Github/Seamly2D/src/libs/qmuparser/qmudef.cpp}}
+{\ttfamily \#include \char`\"{}qmudef.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$QLocale$>$}\newline
+{\ttfamily \#include $<$QSet$>$}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \{ \newline
+\mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e}{Init}} = 0
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a644a0975b1f1966fa848c415c85c2dd7}{Sign}} = 1
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a2fa955d9ea7c20d211a258ae20847d39}{Thousand}} = 2
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a08a60d7f2229646a3e0950e80bd84aa4}{Mantissa}} = 3
+, \newline
+\mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8af7f834c597c60e7e59d272d3223742e7}{Dot}} = 4
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8ad261a597bd8bf88876a73a01db2af0d4}{Abscissa}} = 5
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8acaa743049a3ac37ad035b8eef0a082d9}{Exp\+Mark}} = 6
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a5f3fbd29726fc92556c04a8101c9eff9}{Exp\+Sign}} = 7
+, \newline
+\mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a9ae2063c88aba1c6f361b7de367ac9e9}{Exponent}} = 8
+, \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8aa7929b884d7db9093d6ed453feedf2a2}{Done}} = 9
+ \}
+\item 
+enum \mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226}{Input\+Token}} \{ \newline
+\mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a45c02701e464a28017b4f94128d10e77}{Input\+Sign}} = 1
+, \mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a171ddac284aabc7eb158d7e72effe15c}{Input\+Thousand}} = 2
+, \mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a3e5bdd94d86f35221254965300f96a80}{Input\+Digit}} = 3
+, \mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226ae0975713475b374678e591a1f220157e}{Input\+Dot}} = 4
+, \newline
+\mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9}{Input\+Exp}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{qmudef_8cpp_a664390df11653050bb081955cd3fc653}{Read\+Val}} (const QString \&formula, qreal \&val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\item 
+QString \mbox{\hyperlink{qmudef_8cpp_a0e9b14da123c7eb60aaa7cfff6086a2e}{Name\+Reg\+Exp}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226}} 
+\index{qmudef.cpp@{qmudef.cpp}!InputToken@{InputToken}}
+\index{InputToken@{InputToken}!qmudef.cpp@{qmudef.cpp}}
+\doxysubsubsection{\texorpdfstring{InputToken}{InputToken}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226}{Input\+Token}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InputSign@{InputSign}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!InputSign@{InputSign}}}\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a45c02701e464a28017b4f94128d10e77}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a45c02701e464a28017b4f94128d10e77}} 
+Input\+Sign&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InputThousand@{InputThousand}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!InputThousand@{InputThousand}}}\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a171ddac284aabc7eb158d7e72effe15c}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a171ddac284aabc7eb158d7e72effe15c}} 
+Input\+Thousand&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InputDigit@{InputDigit}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!InputDigit@{InputDigit}}}\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a3e5bdd94d86f35221254965300f96a80}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a3e5bdd94d86f35221254965300f96a80}} 
+Input\+Digit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InputDot@{InputDot}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!InputDot@{InputDot}}}\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226ae0975713475b374678e591a1f220157e}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226ae0975713475b374678e591a1f220157e}} 
+Input\+Dot&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{InputExp@{InputExp}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!InputExp@{InputExp}}}\mbox{\Hypertarget{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9}\label{qmudef_8cpp_a4c03a92b86f91e7e4ab59a095ad64226a4d2312d27fa78117b16bc1ba15da28a9}} 
+Input\+Exp&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8}} 
+\index{qmudef.cpp@{qmudef.cpp}!State@{State}}
+\index{State@{State}!qmudef.cpp@{qmudef.cpp}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Init@{Init}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Init@{Init}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a1ff76aa808bb8209a13fcdbaf330587e}} 
+Init&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sign@{Sign}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Sign@{Sign}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a644a0975b1f1966fa848c415c85c2dd7}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a644a0975b1f1966fa848c415c85c2dd7}} 
+Sign&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Thousand@{Thousand}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Thousand@{Thousand}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a2fa955d9ea7c20d211a258ae20847d39}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a2fa955d9ea7c20d211a258ae20847d39}} 
+Thousand&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mantissa@{Mantissa}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Mantissa@{Mantissa}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a08a60d7f2229646a3e0950e80bd84aa4}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a08a60d7f2229646a3e0950e80bd84aa4}} 
+Mantissa&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dot@{Dot}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Dot@{Dot}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8af7f834c597c60e7e59d272d3223742e7}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8af7f834c597c60e7e59d272d3223742e7}} 
+Dot&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Abscissa@{Abscissa}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Abscissa@{Abscissa}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8ad261a597bd8bf88876a73a01db2af0d4}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8ad261a597bd8bf88876a73a01db2af0d4}} 
+Abscissa&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ExpMark@{ExpMark}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!ExpMark@{ExpMark}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8acaa743049a3ac37ad035b8eef0a082d9}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8acaa743049a3ac37ad035b8eef0a082d9}} 
+Exp\+Mark&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ExpSign@{ExpSign}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!ExpSign@{ExpSign}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a5f3fbd29726fc92556c04a8101c9eff9}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a5f3fbd29726fc92556c04a8101c9eff9}} 
+Exp\+Sign&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Exponent@{Exponent}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Exponent@{Exponent}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a9ae2063c88aba1c6f361b7de367ac9e9}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8a9ae2063c88aba1c6f361b7de367ac9e9}} 
+Exponent&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Done@{Done}!qmudef.cpp@{qmudef.cpp}}\index{qmudef.cpp@{qmudef.cpp}!Done@{Done}}}\mbox{\Hypertarget{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8aa7929b884d7db9093d6ed453feedf2a2}\label{qmudef_8cpp_a5d74787dedbc4e11c1ab15bf487e61f8aa7929b884d7db9093d6ed453feedf2a2}} 
+Done&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{qmudef_8cpp_a0e9b14da123c7eb60aaa7cfff6086a2e}\label{qmudef_8cpp_a0e9b14da123c7eb60aaa7cfff6086a2e}} 
+\index{qmudef.cpp@{qmudef.cpp}!NameRegExp@{NameRegExp}}
+\index{NameRegExp@{NameRegExp}!qmudef.cpp@{qmudef.cpp}}
+\doxysubsubsection{\texorpdfstring{NameRegExp()}{NameRegExp()}}
+{\footnotesize\ttfamily QString Name\+Reg\+Exp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qmudef_8cpp_a664390df11653050bb081955cd3fc653}\label{qmudef_8cpp_a664390df11653050bb081955cd3fc653}} 
+\index{qmudef.cpp@{qmudef.cpp}!ReadVal@{ReadVal}}
+\index{ReadVal@{ReadVal}!qmudef.cpp@{qmudef.cpp}}
+\doxysubsubsection{\texorpdfstring{ReadVal()}{ReadVal()}}
+{\footnotesize\ttfamily int Read\+Val (\begin{DoxyParamCaption}\item[{const QString \&}]{formula,  }\item[{qreal \&}]{val,  }\item[{const QLocale \&}]{locale,  }\item[{const QChar \&}]{decimal,  }\item[{const QChar \&}]{thousand }\end{DoxyParamCaption})}
+

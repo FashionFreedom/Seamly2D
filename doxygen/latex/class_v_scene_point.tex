@@ -1,0 +1,230 @@
+\hypertarget{class_v_scene_point}{}\doxysection{VScene\+Point Class Reference}
+\label{class_v_scene_point}\index{VScenePoint@{VScenePoint}}
+
+
+{\ttfamily \#include $<$vscenepoint.\+h$>$}
+
+Inheritance diagram for VScene\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.447762cm]{class_v_scene_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}{VScene\+Point}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}{$\sim$\+VScene\+Point}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\item 
+void \mbox{\hyperlink{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}{refresh\+Leader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}{m\+\_\+point\+Name}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}{m\+\_\+point\+Leader}}
+\begin{DoxyCompactList}\small\item\em name\+Point point text. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}{m\+\_\+point\+Color}}
+\begin{DoxyCompactList}\small\item\em pointL line that we see if Text is moved too away from point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+point\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_scene_point_abe4f41e10c54ed26c00d055bb9ac4859}{set\+Point\+Pen}} (qreal scale)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9ee}\label{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9ee}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VScenePoint@{VScenePoint}}\index{VScenePoint@{VScenePoint}!Type@{Type}}}\mbox{\Hypertarget{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}\label{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}\label{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}} 
+\index{VScenePoint@{VScenePoint}!VScenePoint@{VScenePoint}}
+\index{VScenePoint@{VScenePoint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{VScenePoint()}{VScenePoint()}}
+{\footnotesize\ttfamily VScene\+Point\+::\+VScene\+Point (\begin{DoxyParamCaption}\item[{const QColor \&}]{line\+Color,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}\label{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}} 
+\index{VScenePoint@{VScenePoint}!````~VScenePoint@{$\sim$VScenePoint}}
+\index{````~VScenePoint@{$\sim$VScenePoint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VScenePoint()}{~VScenePoint()}}
+{\footnotesize\ttfamily virtual VScene\+Point\+::$\sim$\+VScene\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}\label{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}} 
+\index{VScenePoint@{VScenePoint}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VScene\+Point\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_node_point_a65d141217011fa1f089545c534b19a96}{VNode\+Point}}, \mbox{\hyperlink{class_double_line_point_tool_a658a226dd3f552bd5a59bbe6afe65777}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_line_point_ad4c0a43fbec1251b9f7fb53c25bf99cd}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a2b6d15724349b06fd75d4099af5a390a}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_single_point_abe5baf59c4fe740e9ca6b0349a985645}{VTool\+Single\+Point}}, and \mbox{\hyperlink{class_v_simple_point_ac1d2294cca5247dea75d6ee77ca37119}{VSimple\+Point}}.
+
+\mbox{\Hypertarget{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}\label{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}} 
+\index{VScenePoint@{VScenePoint}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VScene\+Point\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_double_line_point_tool_a7f708c18a4ca30afc00f5503678e1426}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_line_point_a8e73ec92b8a6165490c2bc88be9e7b88}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a99f707ea5e72e4662f59a4db9b0cec26}{VTool\+Base\+Point}}, and \mbox{\hyperlink{class_v_simple_point_abbd59df934ad32510153f894875e57b1}{VSimple\+Point}}.
+
+\mbox{\Hypertarget{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}\label{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}} 
+\index{VScenePoint@{VScenePoint}!isOnlyPoint@{isOnlyPoint}}
+\index{isOnlyPoint@{isOnlyPoint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{isOnlyPoint()}{isOnlyPoint()}}
+{\footnotesize\ttfamily bool VScene\+Point\+::is\+Only\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}\label{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}} 
+\index{VScenePoint@{VScenePoint}!paint@{paint}}
+\index{paint@{paint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VScene\+Point\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_double_line_point_tool_a2c622e838c00a2adb82b59cb43b6c423}{Double\+Line\+Point\+Tool}}, and \mbox{\hyperlink{class_v_tool_line_point_a11a25500d36a0b55e06e812e90c4bf1b}{VTool\+Line\+Point}}.
+
+\mbox{\Hypertarget{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}\label{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}} 
+\index{VScenePoint@{VScenePoint}!refreshLeader@{refreshLeader}}
+\index{refreshLeader@{refreshLeader}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{refreshLeader()}{refreshLeader()}}
+{\footnotesize\ttfamily void VScene\+Point\+::refresh\+Leader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}\label{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}} 
+\index{VScenePoint@{VScenePoint}!refreshPointGeometry@{refreshPointGeometry}}
+\index{refreshPointGeometry@{refreshPointGeometry}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{refreshPointGeometry()}{refreshPointGeometry()}}
+{\footnotesize\ttfamily void VScene\+Point\+::refresh\+Point\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}\label{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}} 
+\index{VScenePoint@{VScenePoint}!setOnlyPoint@{setOnlyPoint}}
+\index{setOnlyPoint@{setOnlyPoint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{setOnlyPoint()}{setOnlyPoint()}}
+{\footnotesize\ttfamily void VScene\+Point\+::set\+Only\+Point (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}\label{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}} 
+\index{VScenePoint@{VScenePoint}!setPointColor@{setPointColor}}
+\index{setPointColor@{setPointColor}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{setPointColor()}{setPointColor()}}
+{\footnotesize\ttfamily void VScene\+Point\+::set\+Point\+Color (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_scene_point_abe4f41e10c54ed26c00d055bb9ac4859}\label{class_v_scene_point_abe4f41e10c54ed26c00d055bb9ac4859}} 
+\index{VScenePoint@{VScenePoint}!setPointPen@{setPointPen}}
+\index{setPointPen@{setPointPen}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{setPointPen()}{setPointPen()}}
+{\footnotesize\ttfamily void VScene\+Point\+::set\+Point\+Pen (\begin{DoxyParamCaption}\item[{qreal}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}\label{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}} 
+\index{VScenePoint@{VScenePoint}!type@{type}}
+\index{type@{type}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VScene\+Point\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_intersect_circles_tool_a4e9896c841cd81a033b6df9032f2c3b4}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a2b3cc99067a0e0aa5ee1a6e361e84702}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_a0e301cd666bf50767a1605b443708c64}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_a16c23c0f4772aafa2bc288b37c1612eb}{VTool\+Cut}}, \mbox{\hyperlink{class_v_tool_cut_arc_a7c1e634d8c0b02f28618bace60fee4f1}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_ae270bee43b25c04574f7799753830640}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_a044cdeb5e1cf2eee0f51a898f90cbb35}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_double_line_point_tool_a26662892d338ff3d620fdb60f51c709d}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_along_line_a7de076d1d6902a40d40f25026037dfc4}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_a69538b9018fd514789a774b71296b7b8}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_a3d15c0a5b3cdd85dbbac1236857e0235}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_aa18524e406654a1fc3995b9efb35ab8e}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_ab0f6ca87a28362cc3b6d235f760f0fab}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a39a3fee31fabea3322c99348ac7dda4e}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_line_point_ad22cd5cd868ad0481b2a3b6cbab589db}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_normal_a0cb98e9419be876651a00cc2857a0839}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_ab1d193edf6a5cd51d0f01ba069f55b6e}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_addfe11668a4210dafc67b9bb27bbfaaf}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_ad25065d261df137c8b027e09b214521d}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_a093d7f941957c21de8c6ad3c8c2625ed}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_ad561d223bc82f2392ff72b49e7dd4cd0}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_af9f07ed3229b3eac4ec226244259a3d1}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a8e02568af6a030fe466ff03e83eecbca}{VTool\+Point\+Of\+Intersection\+Curves}}, \mbox{\hyperlink{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}{VTool\+Single\+Point}}, \mbox{\hyperlink{class_v_tool_triangle_a8831309638105834dd2d87d87c68ee56}{VTool\+Triangle}}, \mbox{\hyperlink{class_v_node_point_a654158cad5b8d660178b1861d1c54e9e}{VNode\+Point}}, and \mbox{\hyperlink{class_v_simple_point_a8aac3410e03fa782c1ece91351702f16}{VSimple\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}\label{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}} 
+\index{VScenePoint@{VScenePoint}!m\_isHovered@{m\_isHovered}}
+\index{m\_isHovered@{m\_isHovered}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_isHovered}{m\_isHovered}}
+{\footnotesize\ttfamily bool VScene\+Point\+::m\+\_\+is\+Hovered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}\label{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}} 
+\index{VScenePoint@{VScenePoint}!m\_onlyPoint@{m\_onlyPoint}}
+\index{m\_onlyPoint@{m\_onlyPoint}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_onlyPoint}{m\_onlyPoint}}
+{\footnotesize\ttfamily bool VScene\+Point\+::m\+\_\+only\+Point\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+m\+\_\+point\+Color color of point. 
+
+\mbox{\Hypertarget{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}\label{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}} 
+\index{VScenePoint@{VScenePoint}!m\_pointColor@{m\_pointColor}}
+\index{m\_pointColor@{m\_pointColor}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_pointColor}{m\_pointColor}}
+{\footnotesize\ttfamily QColor VScene\+Point\+::m\+\_\+point\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+pointL line that we see if Text is moved too away from point. 
+
+\mbox{\Hypertarget{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}\label{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}} 
+\index{VScenePoint@{VScenePoint}!m\_pointLeader@{m\_pointLeader}}
+\index{m\_pointLeader@{m\_pointLeader}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_pointLeader}{m\_pointLeader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}}$\ast$ VScene\+Point\+::m\+\_\+point\+Leader\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+name\+Point point text. 
+
+\mbox{\Hypertarget{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}\label{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}} 
+\index{VScenePoint@{VScenePoint}!m\_pointName@{m\_pointName}}
+\index{m\_pointName@{m\_pointName}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_pointName}{m\_pointName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}}$\ast$ VScene\+Point\+::m\+\_\+point\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}\label{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}} 
+\index{VScenePoint@{VScenePoint}!m\_showPointName@{m\_showPointName}}
+\index{m\_showPointName@{m\_showPointName}!VScenePoint@{VScenePoint}}
+\doxysubsubsection{\texorpdfstring{m\_showPointName}{m\_showPointName}}
+{\footnotesize\ttfamily bool VScene\+Point\+::m\+\_\+show\+Point\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vscenepoint_8h}{vscenepoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vscenepoint_8cpp}{vscenepoint.\+cpp}}\end{DoxyCompactItemize}

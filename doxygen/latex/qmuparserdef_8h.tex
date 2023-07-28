@@ -1,0 +1,242 @@
+\hypertarget{qmuparserdef_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/qmuparserdef.h File Reference}
+\label{qmuparserdef_8h}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserdef.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserdef.h}}
+
+
+This file contains standard definitions used by the parser.  
+
+
+{\ttfamily \#include $<$QMap$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$locale$>$}\newline
+{\ttfamily \#include \char`\"{}qmuparserfixes.\+h\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqmu}{qmu}}
+\begin{DoxyCompactList}\small\item\em Namespace for mathematical applications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_a79625735257acdb43743beac26a51e88}{QMUP\+\_\+\+VERSION}}~\char`\"{}2.\+5.\+0\char`\"{}
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_ab961326e9331a0cd86bd907ab790be5d}{QMUP\+\_\+\+VERSION\+\_\+\+DATE}}~\char`\"{}20170101; GC\char`\"{}
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_ad548bddece3de0b012ede3fab0c34e7b}{QMUP\+\_\+\+CHARS}}~\char`\"{}abcdefghijklmnopqrstuvwxyz\+ABCDEFGHIJKLMNOPQRSTUVWXYZ\char`\"{}
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_a0b363e781bc37fed726a07b0e173f704}{QMUP\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(x)
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_aeed0a618f017e128a5d8654754f792db}{\+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute}}(x)~0
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_ad903349e807843b6f400b37bbaab96e4}{QMUP\+\_\+\+FALLTHROUGH}}
+\item 
+\#define \mbox{\hyperlink{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}{QMUP\+\_\+\+STRING\+\_\+\+TYPE}}~std\+::wstring
+\begin{DoxyCompactList}\small\item\em If this macro is defined mathematical exceptions (div by zero) will be thrown as exceptions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}{QMUP\+\_\+\+STRING\+\_\+\+TYPE}} \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{qmu\+::string\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The stringtype used by the parser. \end{DoxyCompactList}\item 
+typedef string\+\_\+type\+::value\+\_\+type \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{qmu\+::char\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em The character type used by the parser. \end{DoxyCompactList}\item 
+typedef std\+::basic\+\_\+stringstream$<$ char\+\_\+type, std\+::char\+\_\+traits$<$ char\+\_\+type $>$, std\+::allocator$<$ char\+\_\+type $>$ $>$ \mbox{\hyperlink{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}{qmu\+::stringstream\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Typedef for easily using stringstream that respect the parser stringtype. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, qreal $\ast$ $>$ \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{qmu\+::varmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type used for storing variables. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, qreal $>$ \mbox{\hyperlink{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}{qmu\+::valmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type used for storing constants. \end{DoxyCompactList}\item 
+typedef std\+::map$<$ QString, int $>$ \mbox{\hyperlink{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}{qmu\+::strmap\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Type for assigning a string name to an index in the internal string table. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{qmu\+::generic\+\_\+fun\+\_\+type}}) ()
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a856810e705b6638e2e224df1a251fa16}{qmu\+::fun\+\_\+type0}}) ()
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af1467daf91600a063fe199df73e49520}{qmu\+::fun\+\_\+type1}}) (qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a single arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}{qmu\+::fun\+\_\+type2}}) (qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with two arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_abbab00fd89ac8a2da37ce7d2967571ba}{qmu\+::fun\+\_\+type3}}) (qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with three arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_acc5f2f5a075c0e89e2bd5f2e26d492ef}{qmu\+::fun\+\_\+type4}}) (qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with four arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a9937160e08609bc544e14765025770fd}{qmu\+::fun\+\_\+type5}}) (qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aaad2f7a24195cc21070a39a77523ea43}{qmu\+::fun\+\_\+type6}}) (qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a61b12af0083a97a3b03c79c0858cf0ce}{qmu\+::fun\+\_\+type7}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a22c12ce3b785ca34fe7641a181b342c8}{qmu\+::fun\+\_\+type8}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a56c962afb0219556e86308cd861edda3}{qmu\+::fun\+\_\+type9}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a50b8452865cb745a9da2f4aa147469ca}{qmu\+::fun\+\_\+type10}}) (qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_ab345e0ad1f32adb507926310276656e5}{qmu\+::bulkfun\+\_\+type0}}) (int, int)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions without arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a92e5c3a267c5911e704ca37940000c05}{qmu\+::bulkfun\+\_\+type1}}) (int, int, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a single arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af20d7b9af9d552b05bce9b5f097643e4}{qmu\+::bulkfun\+\_\+type2}}) (int, int, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with two arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_accf421ab9da567d0a09097da949aab37}{qmu\+::bulkfun\+\_\+type3}}) (int, int, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with three arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a52d56880710aa1876e3d0224ff88c307}{qmu\+::bulkfun\+\_\+type4}}) (int, int, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with four arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_ab8ba891f9b9aaa685826be34760c2ce7}{qmu\+::bulkfun\+\_\+type5}}) (int, int, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a560fffc4cf20fe4f8fc5bd60226fcb8f}{qmu\+::bulkfun\+\_\+type6}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a7150bf79fe19c9617ab58acb75591e2f}{qmu\+::bulkfun\+\_\+type7}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a701cf679a8834fce8751050970e74a2c}{qmu\+::bulkfun\+\_\+type8}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a832d7bb132c3bd4b70d67618651d24fb}{qmu\+::bulkfun\+\_\+type9}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aae60889d81393f7161da314871e7cceb}{qmu\+::bulkfun\+\_\+type10}}) (int, int, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with five arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_abeea51e1b81fbfc9ea2a65ac530f0b11}{qmu\+::multfun\+\_\+type}}) (const qreal $\ast$, int)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions with a variable argument list. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_a08d73a4d1e185a7df46ce2267e52bf5d}{qmu\+::strfun\+\_\+type1}}) (const QString \&)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string as an argument. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_af9c9650ca886118d83f2f82118c98652}{qmu\+::strfun\+\_\+type2}}) (const QString \&, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string and a value as arguments. \end{DoxyCompactList}\item 
+typedef qreal($\ast$ \mbox{\hyperlink{namespaceqmu_aaa596a2c4e3fd0a31ed23f988d893c49}{qmu\+::strfun\+\_\+type3}}) (const QString \&, qreal, qreal)
+\begin{DoxyCompactList}\small\item\em Callback type used for functions taking a string and two values as arguments. \end{DoxyCompactList}\item 
+typedef int($\ast$ \mbox{\hyperlink{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}{qmu\+::identfun\+\_\+type}}) (const QString \&s\+Expr, int $\ast$n\+Pos, qreal $\ast$f\+Val, const QLocale \&locale, const QChar \&decimal, const QChar \&thousand)
+\begin{DoxyCompactList}\small\item\em Callback used for functions that identify values in a string. \end{DoxyCompactList}\item 
+typedef qreal $\ast$($\ast$ \mbox{\hyperlink{namespaceqmu_a7045fd256c04b2e6e01be1f8f6d517a4}{qmu\+::facfun\+\_\+type}}) (const QString \&, void $\ast$)
+\begin{DoxyCompactList}\small\item\em Callback used for variable creation factory functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{qmu\+::\+ECmd\+Code}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}{qmu\+::cm\+LE}} = 0
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}{qmu\+::cm\+GE}} = 1
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}{qmu\+::cm\+NEQ}} = 2
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}{qmu\+::cm\+EQ}} = 3
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}{qmu\+::cm\+LT}} = 4
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}{qmu\+::cm\+GT}} = 5
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}{qmu\+::cm\+ADD}} = 6
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}{qmu\+::cm\+SUB}} = 7
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}{qmu\+::cm\+MUL}} = 8
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}{qmu\+::cm\+DIV}} = 9
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}{qmu\+::cm\+POW}} = 10
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}{qmu\+::cm\+LAND}} = 11
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}{qmu\+::cm\+LOR}} = 12
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}{qmu\+::cm\+ASSIGN}} = 13
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}{qmu\+::cm\+BO}} = 14
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}{qmu\+::cm\+BC}} = 15
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}{qmu\+::cm\+IF}} = 16
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}{qmu\+::cm\+ELSE}} = 17
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}{qmu\+::cm\+ENDIF}} = 18
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}{qmu\+::cm\+ARG\+\_\+\+SEP}} = 19
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{qmu\+::cm\+VAR}} = 20
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{qmu\+::cm\+VAL}} = 21
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}{qmu\+::cm\+VARPOW2}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}{qmu\+::cm\+VARPOW3}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}{qmu\+::cm\+VARPOW4}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}{qmu\+::cm\+VARMUL}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}{qmu\+::cm\+POW2}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}{qmu\+::cm\+FUNC}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}{qmu\+::cm\+FUNC\+\_\+\+STR}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}{qmu\+::cm\+FUNC\+\_\+\+BULK}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{qmu\+::cm\+STRING}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{qmu\+::cm\+OPRT\+\_\+\+BIN}}
+, \newline
+\mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}{qmu\+::cm\+OPRT\+\_\+\+POSTFIX}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}{qmu\+::cm\+OPRT\+\_\+\+INFIX}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}{qmu\+::cm\+END}}
+, \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}{qmu\+::cm\+UNKNOWN}}
+ \}
+\begin{DoxyCompactList}\small\item\em Bytecode values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{qmu\+::\+EType\+Code}} \{ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}{qmu\+::tp\+STR}} = 0
+, \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}{qmu\+::tp\+DBL}} = 1
+, \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{qmu\+::tp\+VOID}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Types internally used by the parser. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}{qmu\+::\+EParser\+Version\+Info}} \{ \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca45e93ce2c6838f817e8d5adf2f3b8dec}{qmu\+::pvi\+BRIEF}}
+, \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}{qmu\+::pvi\+FULL}}
+ \}
+\item 
+enum \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{qmu\+::\+EOprt\+Associativity}} \{ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}{qmu\+::oa\+LEFT}} = 0
+, \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5}{qmu\+::oa\+RIGHT}} = 1
+, \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563ca075fd5295bd303abfb0a1773face9acf}{qmu\+::oa\+NONE}} = 2
+ \}
+\begin{DoxyCompactList}\small\item\em Parser operator precedence values. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}{qmu\+::\+EOprt\+Precedence}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15}{qmu\+::pr\+LOR}} = 1
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43}{qmu\+::pr\+LAND}} = 2
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8}{qmu\+::pr\+LOGIC}} = 3
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a5c092eaa85ec73555611b384ede7a9dd}{qmu\+::pr\+CMP}} = 4
+, \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a}{qmu\+::pr\+ADD\+\_\+\+SUB}} = 5
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8ae948d8b7a449d6a594caaf049e5b00e0}{qmu\+::pr\+MUL\+\_\+\+DIV}} = 6
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53}{qmu\+::pr\+POW}} = 7
+, \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}{qmu\+::pr\+INFIX}} = 6
+, \newline
+\mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415}{qmu\+::pr\+POSTFIX}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em Parser operator precedence values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains standard definitions used by the parser. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qmuparserdef_8h_aeed0a618f017e128a5d8654754f792db}\label{qmuparserdef_8h_aeed0a618f017e128a5d8654754f792db}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}}
+\index{\_\_has\_cpp\_attribute@{\_\_has\_cpp\_attribute}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{\_\_has\_cpp\_attribute}{\_\_has\_cpp\_attribute}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+has\+\_\+cpp\+\_\+attribute(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~0}
+
+\mbox{\Hypertarget{qmuparserdef_8h_ad548bddece3de0b012ede3fab0c34e7b}\label{qmuparserdef_8h_ad548bddece3de0b012ede3fab0c34e7b}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_CHARS@{QMUP\_CHARS}}
+\index{QMUP\_CHARS@{QMUP\_CHARS}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_CHARS}{QMUP\_CHARS}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+CHARS~\char`\"{}abcdefghijklmnopqrstuvwxyz\+ABCDEFGHIJKLMNOPQRSTUVWXYZ\char`\"{}}
+
+\mbox{\Hypertarget{qmuparserdef_8h_ad903349e807843b6f400b37bbaab96e4}\label{qmuparserdef_8h_ad903349e807843b6f400b37bbaab96e4}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_FALLTHROUGH@{QMUP\_FALLTHROUGH}}
+\index{QMUP\_FALLTHROUGH@{QMUP\_FALLTHROUGH}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_FALLTHROUGH}{QMUP\_FALLTHROUGH}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+FALLTHROUGH}
+
+\mbox{\Hypertarget{qmuparserdef_8h_a0b363e781bc37fed726a07b0e173f704}\label{qmuparserdef_8h_a0b363e781bc37fed726a07b0e173f704}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_NOEXCEPT\_EXPR@{QMUP\_NOEXCEPT\_EXPR}}
+\index{QMUP\_NOEXCEPT\_EXPR@{QMUP\_NOEXCEPT\_EXPR}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_NOEXCEPT\_EXPR}{QMUP\_NOEXCEPT\_EXPR}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+NOEXCEPT\+\_\+\+EXPR(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}\label{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_STRING\_TYPE@{QMUP\_STRING\_TYPE}}
+\index{QMUP\_STRING\_TYPE@{QMUP\_STRING\_TYPE}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_STRING\_TYPE}{QMUP\_STRING\_TYPE}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+STRING\+\_\+\+TYPE~std\+::wstring}
+
+
+
+If this macro is defined mathematical exceptions (div by zero) will be thrown as exceptions. 
+
+Activate this option in order to compile with Open\+MP support.
+
+Open\+MP is used only in the bulk mode it may increase the performance a bit.
+
+Definition of the basic parser string type. \mbox{\Hypertarget{qmuparserdef_8h_a79625735257acdb43743beac26a51e88}\label{qmuparserdef_8h_a79625735257acdb43743beac26a51e88}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_VERSION@{QMUP\_VERSION}}
+\index{QMUP\_VERSION@{QMUP\_VERSION}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_VERSION}{QMUP\_VERSION}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+VERSION~\char`\"{}2.\+5.\+0\char`\"{}}
+
+\mbox{\Hypertarget{qmuparserdef_8h_ab961326e9331a0cd86bd907ab790be5d}\label{qmuparserdef_8h_ab961326e9331a0cd86bd907ab790be5d}} 
+\index{qmuparserdef.h@{qmuparserdef.h}!QMUP\_VERSION\_DATE@{QMUP\_VERSION\_DATE}}
+\index{QMUP\_VERSION\_DATE@{QMUP\_VERSION\_DATE}!qmuparserdef.h@{qmuparserdef.h}}
+\doxysubsubsection{\texorpdfstring{QMUP\_VERSION\_DATE}{QMUP\_VERSION\_DATE}}
+{\footnotesize\ttfamily \#define QMUP\+\_\+\+VERSION\+\_\+\+DATE~\char`\"{}20170101; GC\char`\"{}}
+

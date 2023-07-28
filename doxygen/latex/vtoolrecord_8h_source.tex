@@ -1,0 +1,132 @@
+\hypertarget{vtoolrecord_8h_source}{}\doxysection{vtoolrecord.\+h}
+\label{vtoolrecord_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/xml/vtoolrecord.h@{D:/Github/Seamly2D/src/libs/ifc/xml/vtoolrecord.h}}
+\mbox{\hyperlink{vtoolrecord_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vtoolrecord.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VTOOLRECORD\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VTOOLRECORD\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_tool_record}{VToolRecord}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}{VToolRecord}}();}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}{VToolRecord}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \&\mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{typeTool}},\ \textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{nameDraw}});}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_tool_record_a1a06eca4c83766a79bc5b296d0981f32}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&record)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&\mbox{\hyperlink{class_v_tool_record_a2280f59d430123fbdd834a9bce2bfcf7}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&record);}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a37ec714186b2e8a9228f2fefe9783d53}{VToolRecord}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&record);}
+\DoxyCodeLine{00071\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}{getId}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_tool_record_a145f5653e30d51763e937453f5e2367d}{setId}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \ \ \ \mbox{\hyperlink{class_v_tool_record_a422d90158375df7ba7a08e3c4ada9571}{getTypeTool}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_tool_record_a870e7aec8cf443b2e4cf72f756df407f}{setTypeTool}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \&value);}
+\DoxyCodeLine{00075\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_tool_record_afcb350cfb92dcf5a2ca38b4e84c6bf06}{getDraftBlockName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_tool_record_afa40f1bd17d1ee23f981213d926c39a9}{setNameDraw}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a4eef2cf3518dd45adcdd0d5e16436f17}{\string~VToolRecord}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00078\ private:}
+\DoxyCodeLine{00080\ \ \ \ \ quint32\ \textcolor{keywordtype}{id};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \ \ \ \mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{typeTool}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{nameDraw}};}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00094\ \textcolor{comment}{}inline\ quint32\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}::\mbox{\hyperlink{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}{getId}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00095\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_record_af488e8aaf812801531f68cdd30844ec6}{id}};}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00104\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_record_a145f5653e30d51763e937453f5e2367d}{VToolRecord::setId}}(\textcolor{keyword}{const}\ quint32\ \&value)}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{id}\ =\ value;}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00114\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \mbox{\hyperlink{class_v_tool_record_a422d90158375df7ba7a08e3c4ada9571}{VToolRecord::getTypeTool}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{typeTool}};}
+\DoxyCodeLine{00117\ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00124\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_record_a870e7aec8cf443b2e4cf72f756df407f}{VToolRecord::setTypeTool}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}}\ \&value)}
+\DoxyCodeLine{00125\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a5dea9244e85484bea4fa055e44e203b9}{typeTool}}\ =\ value;}
+\DoxyCodeLine{00127\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00134\ \textcolor{comment}{}\textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_tool_record_afcb350cfb92dcf5a2ca38b4e84c6bf06}{VToolRecord::getDraftBlockName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00135\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{nameDraw}};}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00144\ \textcolor{comment}{}\textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_tool_record_afa40f1bd17d1ee23f981213d926c39a9}{VToolRecord::setNameDraw}}(\textcolor{keyword}{const}\ QString\ \&value)}
+\DoxyCodeLine{00145\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_v_tool_record_a2dc8bfad3804484e0a69850cd577820c}{nameDraw}}\ =\ value;}
+\DoxyCodeLine{00147\ \}}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00150\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_tool_record_a1a06eca4c83766a79bc5b296d0981f32}{VToolRecord::operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_tool_record}{VToolRecord}}\ \&record)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00151\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{comment}{//\ Id\ should\ be\ enough}}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keywordtype}{id}\ ==\ record.\mbox{\hyperlink{class_v_tool_record_af60a00b5797998d64e1324ccaf59a10d}{getId}}()\textcolor{comment}{/*\ \&\&\ typeTool\ ==\ record.getTypeTool()\ \&\&\ nameDraw\ ==\ record.getDraftBlockName()*/};}
+\DoxyCodeLine{00154\ \}}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VTOOLRECORD\_H}}
+
+\end{DoxyCode}

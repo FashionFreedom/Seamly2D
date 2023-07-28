@@ -1,0 +1,76 @@
+\hypertarget{vpropertyformwidget__p_8h_source}{}\doxysection{vpropertyformwidget\+\_\+p.\+h}
+\label{vpropertyformwidget__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyformwidget\_p.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertyformwidget\_p.h}}
+\mbox{\hyperlink{vpropertyformwidget__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertyformwidget\_p.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYFORMWIDGET\_P\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYFORMWIDGET\_P\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{comment}{//\ ONLY\ INCLUDE\ THIS\ IN\ .CPP\ FILES}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QList>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vproperty_8h}{vproperty.h}}"{}}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00031\ \{}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00034\ QT\_WARNING\_DISABLE\_CLANG(\textcolor{stringliteral}{"{}-\/Wweak-\/vtables"{}})}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ class\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private}{VPropertyFormWidgetPrivate}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget}{SEditorWidget}}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget_a906dc89477ae410f4fb1203c7f20fb28}{SEditorWidget}}()\ :\ FormWidget(nullptr),\ Editor(nullptr)\ \{\}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget_aff17d5582a9b0c8fd482ea9c24a0283e}{SEditorWidget}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPropertyFormWidget}}\ *form\_widget)\ :\ FormWidget(form\_widget),\ Editor(nullptr)\ \{\}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget_adf0610ccbfd3d2e8066c2bf1be9ddb31}{SEditorWidget}}(QWidget\ *editor\_widget)\ :\ FormWidget(nullptr),\ Editor(editor\_widget)\ \{\}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget}{VPropertyFormWidget}}\ *\mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget_aa5ddcaab975949843b8ef8ae19ca026d}{FormWidget}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ QWidget\ *\mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget_a10d97f838d356059fe762367320e639d}{Editor}};}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00051\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList<VProperty*>}}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_a7e154cd325b73e6334f032f2e32af75a}{Properties}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList<SEditorWidget>}}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_a6bf88a26e5644dbcce280e8cd7140c80}{EditorWidgets}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_aa55c9f770e8adadff95a7de555e7b742}{UpdateEditors}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_ab2ee6da96bfe6deb3986d4b64d9e8427}{VPropertyFormWidgetPrivate}}()}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09eab0404ffef733441150fb5ee322fec245}{Properties}}(\mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}*>()),\ EditorWidgets(\mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget}{SEditorWidget}}>()),\ UpdateEditors(true)}
+\DoxyCodeLine{00063\ \ \ \ \ \{\}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_ac30bce10d76563da104e07881724cc7f}{VPropertyFormWidgetPrivate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_list}{QList<VProperty*>}}\ \&properties)}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{pattern__piece__dialog_8h_a99e233a1cb0213a420b931b50195e09eab0404ffef733441150fb5ee322fec245}{Properties}}(properties),\ EditorWidgets(\mbox{\hyperlink{class_q_list}{QList}}<\mbox{\hyperlink{struct_v_p_e_1_1_v_property_form_widget_private_1_1_s_editor_widget}{SEditorWidget}}>()),\ UpdateEditors(true)}
+\DoxyCodeLine{00068\ \ \ \ \ \{\}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_form_widget_private_ac15930bdb697f6b9aee54251b309a600}{\string~VPropertyFormWidgetPrivate}}()\ \{\}}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYFORMWIDGET\_P\_H}}
+
+\end{DoxyCode}

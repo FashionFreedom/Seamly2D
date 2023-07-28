@@ -1,0 +1,110 @@
+\hypertarget{vgrainlineitem_8h_source}{}\doxysection{vgrainlineitem.\+h}
+\label{vgrainlineitem_8h_source}\index{D:/Github/Seamly2D/src/libs/vwidgets/vgrainlineitem.h@{D:/Github/Seamly2D/src/libs/vwidgets/vgrainlineitem.h}}
+\mbox{\hyperlink{vgrainlineitem_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vgrainlineitem.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Bojan\ Kverh}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ September\ 10,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VGRAINLINEITEM\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VGRAINLINEITEM\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpieceitem_8h}{vpieceitem.h}}"{}}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/floatItemData/vgrainlinedata.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_grainline_item}{VGrainlineItem}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_piece_item}{VPieceItem}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_grainline_item}{VGrainlineItem}}(QGraphicsItem*\ pParent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_grainline_item_a881b8b776bdc60df26b460c200831f6b}{\string~VGrainlineItem}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ virtual\ QPainterPath\ \mbox{\hyperlink{class_v_grainline_item_a9fd138f844b4bb629c1123a168722486}{shape}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a5aba05817211179e2a703badf7dfcd63}{paint}}(QPainter*\ pP,\ const\ QStyleOptionGraphicsItem*\ pOption,\ QWidget*\ pWidget)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a30b48687c1b33428daf1595da9a3c2fa}{UpdateGeometry}}(const\ QPointF\&\ ptPos,\ qreal\ dRotation,\ qreal\ dLength,\ \mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}\ eAT);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_v_grainline_item_aaced6ff9cac2e3ad050033cac1ae87c1}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_grainline_item_a43790a07fcca8f028fc14b7ea91fa9c3a6248ec1e290b206a8cf57844862e5df2}{Type}};\}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{enum}\ \{\ \mbox{\hyperlink{class_v_grainline_item_a43790a07fcca8f028fc14b7ea91fa9c3a6248ec1e290b206a8cf57844862e5df2}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::GrainlineItem)\};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_grainline_item_a022e04a406a2cb42066bb7d34d879862}{isContained}}(\textcolor{keyword}{const}\ QPointF\ \&pt,\ qreal\ dRot,\ qreal\ \&dX,\ qreal\ \&dY)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ signals:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a097f69aa120a34cb67e15fa0a38fe9e9}{itemResized}}(qreal\ dLength);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a6ae625fa4e74523bbd31a9d95951cf27}{itemRotated}}(qreal\ dRot,\ \textcolor{keyword}{const}\ QPointF\&\ ptNewPos);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a67917ac029e22732040f034d629f2d08}{mousePressEvent}}(QGraphicsSceneMouseEvent*\ pME)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a5971b85084a9bfac05d01cc7f902823e}{mouseMoveEvent}}(QGraphicsSceneMouseEvent*\ pME)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a41552a7f6077b97d338d413d237bf67c}{mouseReleaseEvent}}(QGraphicsSceneMouseEvent*\ pME)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_ac77d614d3ecfdad1cb3354ff3fe897c4}{hoverEnterEvent}}(QGraphicsSceneHoverEvent*\ pME)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_ac8c8d9a6f53f3dbeed01edbfc2733b39}{hoverLeaveEvent}}(QGraphicsSceneHoverEvent*\ pME)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a73e001bf0e741c72cc712be3312f7584}{Update}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a2e9053b3393b2697f2a16905ffa9461a}{UpdateRectangle}}();}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ virtual\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_grainline_item_af8849d44c6791afbb81b9cb4d2bc07c1}{GetAngle}}(const\ QPointF\ \&pt)\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_v_grainline_item_ae984e7243ba272904a41a841e2a6ae2f}{Rotate}}(const\ QPointF\&\ pt,\ const\ QPointF\&\ ptCenter,\ qreal\ dAng)\ const;}
+\DoxyCodeLine{00069\ \ \ \ \ QPointF\ \mbox{\hyperlink{class_v_grainline_item_a82b56deb5a6a0a77f46d4edd50dd6994}{GetInsideCorner}}(\textcolor{keywordtype}{int}\ i,\ qreal\ dDist)\ const;}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ private:}
+\DoxyCodeLine{00072\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_grainline_item}{VGrainlineItem}})}
+\DoxyCodeLine{00073\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a07dacf64ec0079c06d1567d07385d844}{m\_dRotation}};}
+\DoxyCodeLine{00074\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a895fc29b3072351473216e33627b7084}{m\_dStartRotation}};}
+\DoxyCodeLine{00075\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a36367fee79cfe0cf8802caea8954fb9e}{m\_dLength}};}
+\DoxyCodeLine{00076\ \ \ \ \ QPolygonF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a266789f475aec411483a9b9c1fe81740}{m\_polyBound}};}
+\DoxyCodeLine{00077\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a2f469fa1d1e679dc118c4ab215fa1354}{m\_ptStartPos}};}
+\DoxyCodeLine{00078\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_acb68bbc5944c8367630f0a22191e5bed}{m\_ptStartMove}};}
+\DoxyCodeLine{00079\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_adb6bd019227ea764184a07c291af4e64}{m\_dScale}};}
+\DoxyCodeLine{00080\ \ \ \ \ QPolygonF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a549b25112a3e610d8a13e83771f11c18}{m\_polyResize}};}
+\DoxyCodeLine{00081\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a885374f3ec2a95251bb5cb3997aca115}{m\_dStartLength}};}
+\DoxyCodeLine{00082\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a9c430371d6a64dc32c9b633c2509f22f}{m\_ptStart}};}
+\DoxyCodeLine{00083\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_aa1224b6008b5cf925df051e08826205e}{m\_ptFinish}};}
+\DoxyCodeLine{00084\ \ \ \ \ QPointF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_ab2f53898ce89e3ed0ea55040abe66e60}{m\_ptCenter}};}
+\DoxyCodeLine{00085\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_ad47bdcf10bc133fc8b6bbadf188f487c}{m\_dAngle}};}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_af6f53d03316f61154a5ddfd88b01d23a}{m\_eArrowType}};}
+\DoxyCodeLine{00087\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_item_abc464afe761c339896b1b49b1397360b}{m\_penWidth}};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_grainline_item_a86d9c34c40431ef1a57de6c0c0512a4d}{GetScale}}()\ const;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ QLineF\ \ \ \ \mbox{\hyperlink{class_v_grainline_item_a55de664eadf2790992c68d532985838d}{MainLine}}()\ const;}
+\DoxyCodeLine{00092\ \ \ \ \ QPolygonF\ \mbox{\hyperlink{class_v_grainline_item_ab4f504db47afee77a95f7c28b467b586}{FirstArrow}}(qreal\ dArrLen)\ const;}
+\DoxyCodeLine{00093\ \ \ \ \ QPolygonF\ \mbox{\hyperlink{class_v_grainline_item_a6aac1390c1e5b87c766c842721d0dcd7}{SecondArrow}}(qreal\ dArrLen)\ const;}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ QPainterPath\ \mbox{\hyperlink{class_v_grainline_item_a6a16928b23b224c85aeba73c1f3edd2d}{MainShape}}()\ const;}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a58e95f58e33c208f38b0ec31dbb0d3d9}{allUserModifications}}(const\ QPointF\ \&pos);}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_ad824ea33d30bf9f6631f68b89009da49}{userRotateAndMove}}();}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a73a307f530b4e2823c455958fe9d7f14}{userMoveAndResize}}(const\ QPointF\ \&pos);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_item_a1cebbad6f59070f1b9197049bb711252}{UpdatePolyResize}}();}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VGRAINLINEITEM\_H}}
+
+\end{DoxyCode}

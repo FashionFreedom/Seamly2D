@@ -1,0 +1,240 @@
+\hypertarget{vlockguard_8h_source}{}\doxysection{vlockguard.\+h}
+\label{vlockguard_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/vlockguard.h@{D:/Github/Seamly2D/src/libs/vmisc/vlockguard.h}}
+\mbox{\hyperlink{vlockguard_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ VLockGuard.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Alex\ Zaharov\ <alexzkhr@gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 14\ 9,\ 2015}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VLOCKGUARD\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VLOCKGUARD\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QFileInfo>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QLockFile>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#if\ defined(Q\_OS\_WIN)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ <windows.h>}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{/*@brief}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ This\ class\ creates\ Guarded\ object\ if\ and\ only\ if\ lock\ file\ taken.\ It\ keeps\ shared\_ptr\ to\ object\ and\ lock-\/file.}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *\ Can\ use\ optional\ object\ allocator\ and\ deleter.}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ On\ older\ Qt\ lock\ assumed\ always\ taken\ and\ compile-\/time\ warning\ is\ shown.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00074\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}(\textcolor{keyword}{const}\ QString\&\ lockName,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,\ \textcolor{keywordtype}{int}\ timeout\ =\ 0);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Alloc>}
+\DoxyCodeLine{00082\ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}(\textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,\ \textcolor{keywordtype}{int}\ timeout=0);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Alloc,\ \textcolor{keyword}{typename}\ Delete>}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}(\textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ Delete\ d,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,\ \textcolor{keywordtype}{int}\ timeout=0);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keyword}{const}\ std::shared\_ptr<Guarded>\ \&\mbox{\hyperlink{class_v_lock_guard_a58b98f2793ff7adfc8a81004b0fb3428}{GetProtected}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_ab6ab0fee23d09c619cf6b61d7e62e1e7}{GetLockError}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_a08ecb69c5ed55d6516c8a6476150e5fe}{IsLocked}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_a832502051bcbad9f65ce82e15a301e50}{GetLockFile}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00093\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}})}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ std::shared\_ptr<Guarded>\ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}};}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}{lockError}};}
+\DoxyCodeLine{00097\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_abca942710349eeab3e8f20302612c808}{lockFile}};}
+\DoxyCodeLine{00098\ \ \ \ \ std::shared\_ptr<QLockFile>\ \mbox{\hyperlink{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}{lock}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ functionStatic}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{TryLock}}(const\ QString\ \&lockName,\ \textcolor{keywordtype}{int}\ stale,\ \textcolor{keywordtype}{int}\ timeout);}
+\DoxyCodeLine{00102\ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00105\ template\ <typename\ Guarded>}
+\DoxyCodeLine{00106\ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}<Guarded>::\mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}(const\ QString\ \&lockName,\ \textcolor{keywordtype}{int}\ stale,\ \textcolor{keywordtype}{int}\ timeout)}
+\DoxyCodeLine{00107\ \ \ \ \ :\ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}(\textcolor{keywordtype}{nullptr}),\ \mbox{\hyperlink{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}{lockError}}(0),\ \mbox{\hyperlink{class_v_lock_guard_abca942710349eeab3e8f20302612c808}{lockFile}}(),\ \mbox{\hyperlink{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}{lock}}(\textcolor{keywordtype}{nullptr})}
+\DoxyCodeLine{00108\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{TryLock}}(lockName,\ stale,\ timeout))}
+\DoxyCodeLine{00110\ \ \ \ \ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}.reset(\textcolor{keyword}{new}\ Guarded());}
+\DoxyCodeLine{00112\ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//using\ allocator\ lambdas\ seems\ logically\ better\ than\ supplying\ pointer,\ because\ we\ will\ take\ ownership\ of\ allocated}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//object}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Alloc>}
+\DoxyCodeLine{00119\ \mbox{\hyperlink{class_v_lock_guard_a1c2354814d0075eb204c146b16e11353}{VLockGuard<Guarded>::VLockGuard}}(\textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ \textcolor{keywordtype}{int}\ stale,\ \textcolor{keywordtype}{int}\ timeout)}
+\DoxyCodeLine{00120\ \ \ \ \ :\ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}(nullptr),\ \mbox{\hyperlink{class_v_lock_guard_a11123e9536d1faf0ba9b95b57a9c612a}{lockError}}(0),\ \mbox{\hyperlink{class_v_lock_guard_abca942710349eeab3e8f20302612c808}{lockFile}}(),\ \mbox{\hyperlink{class_v_lock_guard_ae33f915735eab4796d7866a1abce1ff1}{lock}}(nullptr)}
+\DoxyCodeLine{00121\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{TryLock}}(lockName,\ stale,\ timeout))}
+\DoxyCodeLine{00123\ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}.reset(a());}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00129\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Alloc,\ \textcolor{keyword}{typename}\ Delete>}
+\DoxyCodeLine{00130\ \mbox{\hyperlink{class_v_lock_guard_a1c2354814d0075eb204c146b16e11353}{VLockGuard<Guarded>::VLockGuard}}(\textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ Delete\ d,\ \textcolor{keywordtype}{int}\ stale,\ \textcolor{keywordtype}{int}\ timeout)}
+\DoxyCodeLine{00131\ \ \ \ \ :\ holder(nullptr),\ lockError(0),\ lockFile(),\ lock(nullptr)}
+\DoxyCodeLine{00132\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{TryLock}}(lockName,\ stale,\ timeout))}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_lock_guard_ab6451dc9f911e5b59584490419572231}{holder}}.reset(a(),\ d);}
+\DoxyCodeLine{00136\ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \}}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00141\ \textcolor{keyword}{const}\ std::shared\_ptr<Guarded>\ \&\mbox{\hyperlink{class_v_lock_guard_a58b98f2793ff7adfc8a81004b0fb3428}{VLockGuard<Guarded>::GetProtected}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00142\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordflow}{return}\ holder;}
+\DoxyCodeLine{00144\ \}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00147\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00148\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_lock_guard_ab6ab0fee23d09c619cf6b61d7e62e1e7}{VLockGuard<Guarded>::GetLockError}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00149\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordflow}{return}\ lockError;}
+\DoxyCodeLine{00151\ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00154\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00155\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_lock_guard_a08ecb69c5ed55d6516c8a6476150e5fe}{VLockGuard<Guarded>::IsLocked}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{return}\ holder\ !=\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00158\ \}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00161\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00162\ QString\ \mbox{\hyperlink{class_v_lock_guard_a832502051bcbad9f65ce82e15a301e50}{VLockGuard<Guarded>::GetLockFile}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00163\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordflow}{return}\ lockFile;}
+\DoxyCodeLine{00165\ \}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00168\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded>}
+\DoxyCodeLine{00169\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_lock_guard_ab176a6763cfc0aa8514b22ad04b1a522}{VLockGuard<Guarded>::TryLock}}(\textcolor{keyword}{const}\ QString\ \&lockName,\ \textcolor{keywordtype}{int}\ stale,\ \textcolor{keywordtype}{int}\ timeout)}
+\DoxyCodeLine{00170\ \{}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{bool}\ res\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ \ \ \ \ lockFile\ =\ lockName\ +\ QLatin1String(\textcolor{stringliteral}{"{}.lock"{}});}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#if\ defined(Q\_OS\_UNIX)}}
+\DoxyCodeLine{00175\ \ \ \ \ QFileInfo\ info(lockFile);}
+\DoxyCodeLine{00176\ \ \ \ \ lockFile\ =\ info.absolutePath()\ +\ QLatin1String(\textcolor{stringliteral}{"{}/."{}})\ +\ info.fileName();}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00178\ \ \ \ \ lock.reset(\textcolor{keyword}{new}\ QLockFile(lockFile));}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ lock-\/>setStaleLockTime(stale);}
+\DoxyCodeLine{00181\ \ \ \ \ lock-\/>tryLock(timeout);}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordflow}{if}\ (QLockFile::LockFailedError\ ==\ lock-\/>error())}
+\DoxyCodeLine{00184\ \ \ \ \ \{}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ This\ happens\ if\ a\ stale\ lock\ file\ exists\ and\ another\ process\ uses\ that\ PID.}}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Try\ removing\ the\ stale\ file,\ which\ will\ fail\ if\ a\ real\ process\ is\ holding\ a}}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ file-\/level\ lock.\ A\ false\ error\ is\ more\ problematic\ than\ not\ locking\ properly}}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ on\ corner-\/case\ systems.}}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ lock-\/>removeStaleLockFile();}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ lock-\/>tryLock(timeout);}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ \ \ \ \ res\ =\ QLockFile::NoError\ ==\ (lockError\ =\ lock-\/>error());}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordflow}{if}\ (!res)}
+\DoxyCodeLine{00194\ \ \ \ \ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ lock.reset();}
+\DoxyCodeLine{00196\ \ \ \ \ \}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#if\ defined(Q\_OS\_WIN)}}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00199\ \ \ \ \ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ SetFileAttributesW(lockFile.toStdWString().c\_str(),\ FILE\_ATTRIBUTE\_HIDDEN);}
+\DoxyCodeLine{00201\ \ \ \ \ \}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00204\ \}}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \textcolor{comment}{//use\ pointer\ and\ function\ below\ to\ persistent\ things\ like\ class-\/member,\ because\ lock\ is\ taken\ by\ constructor}}
+\DoxyCodeLine{00207\ \textcolor{comment}{//helper\ functions\ allow\ to\ write\ shorter\ creating\ and\ setting\ new\ lock-\/pointer}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00209\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00210\ QT\_WARNING\_DISABLE\_INTEL(1418)}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ template\ <typename\ Guarded>}
+\DoxyCodeLine{00213\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}{VlpCreateLock}}(std::shared\_ptr<\mbox{\hyperlink{class_v_lock_guard}{VLockGuard}}<Guarded>>\&\ r,\ const\ QString\&\ lockName,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,\ \textcolor{keywordtype}{int}\ timeout\ =\ 0)}
+\DoxyCodeLine{00214\ \{}
+\DoxyCodeLine{00215\ \ \ \ \ r.reset(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}}(lockName,\ stale,\ timeout));}
+\DoxyCodeLine{00216\ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded,\ \textcolor{keyword}{typename}\ Alloc>}
+\DoxyCodeLine{00219\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}{VlpCreateLock}}(std::shared\_ptr<\mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}}>\&\ r,\ \textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timeout\ =\ 0)}
+\DoxyCodeLine{00221\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ r.reset(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}}(lockName,\ a,\ stale,\ timeout));}
+\DoxyCodeLine{00223\ \}}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Guarded,\ \textcolor{keyword}{typename}\ Alloc,\ \textcolor{keyword}{typename}\ Del>}
+\DoxyCodeLine{00226\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{vlockguard_8h_a2ee7a5a20698739a128c0c1f4f8fecf5}{VlpCreateLock}}(std::shared\_ptr<\mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}}>\&\ r,\ \textcolor{keyword}{const}\ QString\&\ lockName,\ Alloc\ a,\ Del\ d,\ \textcolor{keywordtype}{int}\ stale\ =\ 0,}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ timeout\ =\ 0)}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ r.reset(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_v_lock_guard}{VLockGuard<Guarded>}}(lockName,\ a,\ d,\ stale,\ timeout));}
+\DoxyCodeLine{00230\ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VLOCKGUARD\_H}}
+
+\end{DoxyCode}

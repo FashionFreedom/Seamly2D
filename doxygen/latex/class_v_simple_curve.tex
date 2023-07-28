@@ -1,0 +1,279 @@
+\hypertarget{class_v_simple_curve}{}\doxysection{VSimple\+Curve Class Reference}
+\label{class_v_simple_curve}\index{VSimpleCurve@{VSimpleCurve}}
+
+
+{\ttfamily \#include $<$vsimplecurve.\+h$>$}
+
+Inheritance diagram for VSimple\+Curve\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_simple_curve}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_simple_curve_aefe2f84f98b564953e20bf6ff20940f6afdf6f122bd05ae49159e274860b52cdd}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Simple\+Curve)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_curve_path_item_a2546429d17ae2f6b3f2953dee90fb4d4a127d4223228fe4d3a175f6044122b1ef}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Curve\+Path\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_simple_curve_aa2be382e6968be1998fb3d107d524d67}{Curve\+Choosed}} ()
+\item 
+void \mbox{\hyperlink{class_v_simple_curve_a09b0d76b35fc7f8adc25a95bd37b1c3e}{Curve\+Selected}} (bool selected)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_simple_curve_aae5e796aa605dfeee69fcbc3384a1117}{Choosed}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}})
+\begin{DoxyCompactList}\small\item\em Choosed send id when clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_simple_curve_a57407a924e6e82e788c7d23de0faca01}{Selected}} (bool selected, quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_aec2a97157878cc97c9936aedc0a7c8ba}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_a1d69e439569d116982bd572079080b6e}{Delete}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_simple_curve_a60377d8fbeb2a92bb880d732b4abcb56}{VSimple\+Curve}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}, const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&curve, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_simple_curve_ab932dfe2bd4ff485e46f25f3164374e2}{$\sim$\+VSimple\+Curve}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual int \mbox{\hyperlink{class_v_simple_curve_a9564b0748c26ee484a8a98aa93fe2abd}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_simple_curve_a2cabace45dc2bc92e33b69306989f85a}{Refresh\+Geometry}} (const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&curve)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_simple_a240b504d51a9cb5786672328a1ffea01}{VAbstract\+Simple}} (quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_simple_a2c14483b7f080dc0b243c815f64350a8}{$\sim$\+VAbstract\+Simple}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_simple_a45769635aa6f0b8aaa9e72df952fb364}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{class_v_abstract_simple_acc448adda4bee15b5fd9eb7826ce15b6}{type}})
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_abstract_simple_a1a87f6fd8438aee3b08f79c9e19d2d9e}{Get\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_simple_ad54bea21519adc2087e9bb52c87323de}{Set\+Type}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&value)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_curve_path_item}{VCurve\+Path\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_curve_path_item_afeec664eb1c5b67804738b6fb723ae85}{VCurve\+Path\+Item}} (QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_curve_path_item_af2fcf19d6e933819b51455a4e1c74c4c}{$\sim$\+VCurve\+Path\+Item}} ()=default
+\item 
+virtual QPainter\+Path \mbox{\hyperlink{class_v_curve_path_item_ad156dd55692fe69fe7a24c14a55164a1}{shape}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_curve_path_item_a00e8d346f9b37afed4b45d9c3240bfc9}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_v_curve_path_item_a1b475a322062f79bad4b87ec1301b7d7}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_curve_path_item_afcba17e2cfd14cd064c6b9c47eaaa3cb}{Set\+Direction\+Arrows}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPair$<$ QLineF, QLineF $>$ $>$ \&arrows)
+\item 
+void \mbox{\hyperlink{class_v_curve_path_item_a289c31eb596e0c07f0b0331be7d072b5}{Set\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_aa9597b32769058581fca41c3fec7987d}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_abccc584e641d72a6163f8f1e9a2c7565}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_a34dc0cbb9f491e8524bf7cf144ac4743}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_a3976f653198fade6f79f3070cf5c2a40}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_v_simple_curve_a1194f892f2571b7a886a151d7c4e3070}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_a4aba733876a9c6cd09075ee5a22a7753}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_a33c0ae813f6dc20f228b0cb25c8c9656}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_simple_curve_a88ac8dbe405939dd0da5de2e553053bb}{Scale\+Pen\+Width}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_curve_path_item_a28c02ec565c598866b418a64412c2874}{Scale\+Pen\+Width}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \mbox{\hyperlink{class_v_simple_curve_af114545d91f8e8f3656ef3fbc2cef7ff}{m\+\_\+curve}}
+\item 
+bool \mbox{\hyperlink{class_v_simple_curve_af672e41ec9edb108ce1f8cee098e7029}{m\+\_\+is\+Hovered}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_simple}{VAbstract\+Simple}}}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_simple_a8d9bbf31aba09bf848781295f2db6dd3}{id}}
+\begin{DoxyCompactList}\small\item\em id spline id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_simple_a387087aee6242d2d7a176bd5c98f0a49}{selection\+Type}}
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_abstract_simple_acc448adda4bee15b5fd9eb7826ce15b6}{type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_simple_curve_aefe2f84f98b564953e20bf6ff20940f6}\label{class_v_simple_curve_aefe2f84f98b564953e20bf6ff20940f6}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VSimpleCurve@{VSimpleCurve}}\index{VSimpleCurve@{VSimpleCurve}!Type@{Type}}}\mbox{\Hypertarget{class_v_simple_curve_aefe2f84f98b564953e20bf6ff20940f6afdf6f122bd05ae49159e274860b52cdd}\label{class_v_simple_curve_aefe2f84f98b564953e20bf6ff20940f6afdf6f122bd05ae49159e274860b52cdd}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_simple_curve_a60377d8fbeb2a92bb880d732b4abcb56}\label{class_v_simple_curve_a60377d8fbeb2a92bb880d732b4abcb56}} 
+\index{VSimpleCurve@{VSimpleCurve}!VSimpleCurve@{VSimpleCurve}}
+\index{VSimpleCurve@{VSimpleCurve}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{VSimpleCurve()}{VSimpleCurve()}}
+{\footnotesize\ttfamily VSimple\+Curve\+::\+VSimple\+Curve (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&}]{curve,  }\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_curve_ab932dfe2bd4ff485e46f25f3164374e2}\label{class_v_simple_curve_ab932dfe2bd4ff485e46f25f3164374e2}} 
+\index{VSimpleCurve@{VSimpleCurve}!````~VSimpleCurve@{$\sim$VSimpleCurve}}
+\index{````~VSimpleCurve@{$\sim$VSimpleCurve}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{$\sim$VSimpleCurve()}{~VSimpleCurve()}}
+{\footnotesize\ttfamily virtual VSimple\+Curve\+::$\sim$\+VSimple\+Curve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_simple_curve_aae5e796aa605dfeee69fcbc3384a1117}\label{class_v_simple_curve_aae5e796aa605dfeee69fcbc3384a1117}} 
+\index{VSimpleCurve@{VSimpleCurve}!Choosed@{Choosed}}
+\index{Choosed@{Choosed}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{Choosed}{Choosed}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Choosed (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Choosed send id when clicked. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & point id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_simple_curve_a4aba733876a9c6cd09075ee5a22a7753}\label{class_v_simple_curve_a4aba733876a9c6cd09075ee5a22a7753}} 
+\index{VSimpleCurve@{VSimpleCurve}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_aa2be382e6968be1998fb3d107d524d67}\label{class_v_simple_curve_aa2be382e6968be1998fb3d107d524d67}} 
+\index{VSimpleCurve@{VSimpleCurve}!CurveChoosed@{CurveChoosed}}
+\index{CurveChoosed@{CurveChoosed}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{CurveChoosed}{CurveChoosed}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Curve\+Choosed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a09b0d76b35fc7f8adc25a95bd37b1c3e}\label{class_v_simple_curve_a09b0d76b35fc7f8adc25a95bd37b1c3e}} 
+\index{VSimpleCurve@{VSimpleCurve}!CurveSelected@{CurveSelected}}
+\index{CurveSelected@{CurveSelected}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{CurveSelected}{CurveSelected}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Curve\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a34dc0cbb9f491e8524bf7cf144ac4743}\label{class_v_simple_curve_a34dc0cbb9f491e8524bf7cf144ac4743}} 
+\index{VSimpleCurve@{VSimpleCurve}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a3976f653198fade6f79f3070cf5c2a40}\label{class_v_simple_curve_a3976f653198fade6f79f3070cf5c2a40}} 
+\index{VSimpleCurve@{VSimpleCurve}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a1194f892f2571b7a886a151d7c4e3070}\label{class_v_simple_curve_a1194f892f2571b7a886a151d7c4e3070}} 
+\index{VSimpleCurve@{VSimpleCurve}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VSimple\+Curve\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a33c0ae813f6dc20f228b0cb25c8c9656}\label{class_v_simple_curve_a33c0ae813f6dc20f228b0cb25c8c9656}} 
+\index{VSimpleCurve@{VSimpleCurve}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_aa9597b32769058581fca41c3fec7987d}\label{class_v_simple_curve_aa9597b32769058581fca41c3fec7987d}} 
+\index{VSimpleCurve@{VSimpleCurve}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_abccc584e641d72a6163f8f1e9a2c7565}\label{class_v_simple_curve_abccc584e641d72a6163f8f1e9a2c7565}} 
+\index{VSimpleCurve@{VSimpleCurve}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a2cabace45dc2bc92e33b69306989f85a}\label{class_v_simple_curve_a2cabace45dc2bc92e33b69306989f85a}} 
+\index{VSimpleCurve@{VSimpleCurve}!RefreshGeometry@{RefreshGeometry}}
+\index{RefreshGeometry@{RefreshGeometry}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{RefreshGeometry()}{RefreshGeometry()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Refresh\+Geometry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} $>$ \&}]{curve }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_simple_curve_a88ac8dbe405939dd0da5de2e553053bb}\label{class_v_simple_curve_a88ac8dbe405939dd0da5de2e553053bb}} 
+\index{VSimpleCurve@{VSimpleCurve}!ScalePenWidth@{ScalePenWidth}}
+\index{ScalePenWidth@{ScalePenWidth}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{ScalePenWidth()}{ScalePenWidth()}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Scale\+Pen\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_curve_path_item_a28c02ec565c598866b418a64412c2874}{VCurve\+Path\+Item}}.
+
+\mbox{\Hypertarget{class_v_simple_curve_a57407a924e6e82e788c7d23de0faca01}\label{class_v_simple_curve_a57407a924e6e82e788c7d23de0faca01}} 
+\index{VSimpleCurve@{VSimpleCurve}!Selected@{Selected}}
+\index{Selected@{Selected}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{Selected}{Selected}}
+{\footnotesize\ttfamily void VSimple\+Curve\+::\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected,  }\item[{quint32}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_a9564b0748c26ee484a8a98aa93fe2abd}\label{class_v_simple_curve_a9564b0748c26ee484a8a98aa93fe2abd}} 
+\index{VSimpleCurve@{VSimpleCurve}!type@{type}}
+\index{type@{type}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VSimple\+Curve\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_curve_path_item_a1b475a322062f79bad4b87ec1301b7d7}{VCurve\+Path\+Item}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_simple_curve_af114545d91f8e8f3656ef3fbc2cef7ff}\label{class_v_simple_curve_af114545d91f8e8f3656ef3fbc2cef7ff}} 
+\index{VSimpleCurve@{VSimpleCurve}!m\_curve@{m\_curve}}
+\index{m\_curve@{m\_curve}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{m\_curve}{m\_curve}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$\mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}}$>$ VSimple\+Curve\+::m\+\_\+curve\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_simple_curve_af672e41ec9edb108ce1f8cee098e7029}\label{class_v_simple_curve_af672e41ec9edb108ce1f8cee098e7029}} 
+\index{VSimpleCurve@{VSimpleCurve}!m\_isHovered@{m\_isHovered}}
+\index{m\_isHovered@{m\_isHovered}!VSimpleCurve@{VSimpleCurve}}
+\doxysubsubsection{\texorpdfstring{m\_isHovered}{m\_isHovered}}
+{\footnotesize\ttfamily bool VSimple\+Curve\+::m\+\_\+is\+Hovered\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vsimplecurve_8h}{vsimplecurve.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vsimplecurve_8cpp}{vsimplecurve.\+cpp}}\end{DoxyCompactItemize}

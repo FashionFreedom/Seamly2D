@@ -1,0 +1,556 @@
+\hypertarget{class_v_text_graphics_item}{}\doxysection{VText\+Graphics\+Item Class Reference}
+\label{class_v_text_graphics_item}\index{VTextGraphicsItem@{VTextGraphicsItem}}
+
+
+The \mbox{\hyperlink{class_v_text_graphics_item}{VText\+Graphics\+Item}} class. This class implements text graphics item, which can be dragged around, resized and rotated within the parent item. The text font size will be automatically updated, so that the entire text will fit into the item.  
+
+
+
+
+{\ttfamily \#include $<$vtextgraphicsitem.\+h$>$}
+
+Inheritance diagram for VText\+Graphics\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_text_graphics_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_text_graphics_item_a00ad44fbd8ff65784b2f95a5963ac469ac186304c618c9cc6449c7948bde3ea2a}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Text\+Graphics\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03}{Move\+Type}} \{ \newline
+\mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a72379022c5851042fa043c86560a7072}{Not\+Movable}} = 0x0
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8c9a284c49ff00c7bf0d28cf4b59e5ad}{Is\+Rotatable}} = 0x1
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a92953b8a07491625abe19b8330ce77cd}{Is\+Resizable}} = 0x2
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a7bad758d98bfb925c1217252610287c6}{Is\+Movable}} = 0x4
+, \newline
+\mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03afd7dedcaa996c403e737bfa6dcac0083}{All\+Modifications}} = Is\+Rotatable $\vert$ Is\+Resizable $\vert$ Is\+Movable
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8e79a2da272950adbbced9e206d843a8}{Error}} = 0x8
+ \}
+\item 
+enum \{ \mbox{\hyperlink{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5a728c0d12c6c0ccf1024791e66b5a2d7d}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Piece\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a55770ba5cd6a5b2cb6813dc207f0836d}{item\+Resized}} (qreal width, int font\+Size)
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a113fb112ad66e56bab2e6849532d6bb4}{item\+Rotated}} (qreal angle)
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a039b00c0c16825c2a1f8b01e1a7287fa}{text\+Shrink}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_piece_item_a8912faa3522a8118fd7cb80c086a1465}{item\+Moved}} (const QPointF \&pt\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_text_graphics_item_ac4e90a6313d473d08141ab2012b0a59c}{VText\+Graphics\+Item}} (QGraphics\+Item $\ast$p\+Parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_ac4e90a6313d473d08141ab2012b0a59c}{VText\+Graphics\+Item\+::\+VText\+Graphics\+Item}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_text_graphics_item_a384e0a62eee61eeeeebb00ca85478569}{$\sim$\+VText\+Graphics\+Item}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_a8cb66274dcfdd12f40f38715f2d9550b}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a8cb66274dcfdd12f40f38715f2d9550b}{VText\+Graphics\+Item\+::paint}} redraws the item content. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}{Update}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}{VText\+Graphics\+Item\+::\+Update}} sets the correct size and font size and redraws the label. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_v_text_graphics_item_ace1763ff021d3ea324a98c1ee43e6ddd}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_ae20f95b859b524e1f0d9eeba818a4e87}{set\+Font}} (const QFont \&font)
+\begin{DoxyCompactList}\small\item\em VText\+Graphics\+Item\+::\+Set\+Font sets the item font. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_text_graphics_item_a6ce47035ad39935899676f69fffbd9bd}{get\+Font\+Size}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a6ce47035ad39935899676f69fffbd9bd}{VText\+Graphics\+Item\+::get\+Font\+Size}} returns the currentext\+Liney used text base font size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_af91a160a36a30fdf0e3edcd96115ec86}{set\+Size}} (qreal width, qreal height)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_af91a160a36a30fdf0e3edcd96115ec86}{VText\+Graphics\+Item\+::set\+Size}} Tries to set the label size to (width, height). If either of those is too small, the labelsize does not change. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_text_graphics_item_aff3c31874477559c43cd058ceb91e610}{is\+Contained}} (QRectF rect\+BB, qreal rotation, qreal \&x\+Pos, qreal \&y\+Pos) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_aff3c31874477559c43cd058ceb91e610}{VText\+Graphics\+Item\+::is\+Contained}} checks if the bounding box around rotated rect\+BB is contained in the parent. If that is not the case, it calculates the amount of movement needed to put it inside the parent and write it into x\+Pos, y\+Pos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}{update\+Data}} (const QString \&name, const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}{VText\+Graphics\+Item\+::update\+Data}} Updates the detail label. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a59b8a2c094d0c51abc7d0c896d60c580}{update\+Data}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$doc)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}{VText\+Graphics\+Item\+::update\+Data}} Updates the pattern label. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_v_text_graphics_item_a769050147926283a3cfb80fcea00e1e3}{get\+Text\+Lines}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a769050147926283a3cfb80fcea00e1e3}{VText\+Graphics\+Item\+::get\+Text\+Lines}} returns the number of lines of text to show. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_item_a7e5e7600e75e5c2b208acdca8526be42}{VPiece\+Item}} (QGraphics\+Item $\ast$p\+Parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_piece_item_a8ec884d901d95b677840c65b6e01607d}{$\sim$\+VPiece\+Item}} ()
+\item 
+virtual QRectF \mbox{\hyperlink{class_v_piece_item_a6d319bf0f884216ba2f2928a2ae63aa1}{bounding\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em bounding\+Rect returns the item bounding box \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_piece_item_a48a1183b2df00b112190679b58fb3bef}{Update}} ()=0
+\item 
+void \mbox{\hyperlink{class_v_piece_item_acb516cd1cdef4ed7a1b27041b65aef28}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset resets the item, putting the mode and z coordinate to normal and redraws it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_item_a534647f3a0bcef2f4cffe3d660c66c6c}{Is\+Idle}} () const
+\begin{DoxyCompactList}\small\item\em Is\+Idle returns the idle flag. \end{DoxyCompactList}\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{class_v_piece_item_ac0b8ada4084947023cf818092050549a}{Get\+Move\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_item_aecf1581842a3095a1b602111a9afec27}{Set\+Move\+Type}} (const VPiece\+Item\+::\+Move\+Types \&move\+Type)
+\item 
+virtual int \mbox{\hyperlink{class_v_piece_item_a47755d8b28d4f633209430da8608b2c0}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_a5b8dd919f3d3b34cb1cf4a83c08e7638}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a5b8dd919f3d3b34cb1cf4a83c08e7638}{VText\+Graphics\+Item\+::mouse\+Press\+Event}} handles left button mouse press events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_ae35734546b6214ca29df8db5cec47a49}{mouse\+Move\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_ae35734546b6214ca29df8db5cec47a49}{VText\+Graphics\+Item\+::mouse\+Move\+Event}} handles mouse move events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_a315cafafbc976d9935f3d509c66a12bb}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a315cafafbc976d9935f3d509c66a12bb}{VText\+Graphics\+Item\+::mouse\+Release\+Event}} handles left button mouse release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_aa011c4b2c38fac72fc0306e67fa79cfb}{hover\+Move\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_aa011c4b2c38fac72fc0306e67fa79cfb}{VText\+Graphics\+Item\+::hover\+Move\+Event}} checks if cursor has to be changed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_text_graphics_item_a2ce7b604f29578423ce9a2914a11fedf}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a2ce7b604f29578423ce9a2914a11fedf}{VText\+Graphics\+Item\+::hover\+Leave\+Event}} tries to restore normal mouse cursor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a1fc483eb1cbd629767cc6ad4b2b46395}{Update\+Box}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_text_graphics_item_a1fc483eb1cbd629767cc6ad4b2b46395}{VText\+Graphics\+Item\+::\+Update\+Box}} redraws the label content. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_adcd55354216081ce80c76b29adefe27f}{correct\+Label}} ()
+\begin{DoxyCompactList}\small\item\em VText\+Graphics\+Item\+::\+Update\+Font sets the text font size, so that the entire text will just fit into the label bounding box. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_v_piece_item_a7f598b94f6e80527082fbf178cebbb79}{Get\+Angle}} (const QPointF \&pt) const
+\begin{DoxyCompactList}\small\item\em Get\+Angle calculates the angle between the line, which goes from rotation center to pt and x axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a6cd110d3f7002867e482052da5aee4bd}{all\+User\+Modifications}} (const QPointF \&pos)
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a3d415e59c50d12ff0dc96afc51b550ad}{user\+Rotate\+And\+Move}} ()
+\item 
+void \mbox{\hyperlink{class_v_text_graphics_item_a7ba9b6631b1d4d16a576c345623ffb88}{user\+Move\+And\+Resize}} (const QPointF \&pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPointF \mbox{\hyperlink{class_v_text_graphics_item_a9f1bfff343a92b727ffd8829c2c01203}{m\+\_\+start\+Pos}}
+\item 
+QPointF \mbox{\hyperlink{class_v_text_graphics_item_ac430f72b9e1f6f5389e79bd78c94aa36}{m\+\_\+start}}
+\item 
+QSizeF \mbox{\hyperlink{class_v_text_graphics_item_ae610d638423eb915f2ab80a197d8a426}{m\+\_\+start\+Size}}
+\item 
+double \mbox{\hyperlink{class_v_text_graphics_item_a0855953aa2ea44c5fa8e485e35425e59}{m\+\_\+rotation}}
+\item 
+double \mbox{\hyperlink{class_v_text_graphics_item_a99702e3954fc97ea41458df82690053e}{m\+\_\+angle}}
+\item 
+QRectF \mbox{\hyperlink{class_v_text_graphics_item_a1fbe8aa9010f116b12bc07a71930fc04}{m\+\_\+rect\+Resize}}
+\item 
+\mbox{\hyperlink{class_v_text_manager}{VText\+Manager}} \mbox{\hyperlink{class_v_text_graphics_item_ae8fed158752457934435c223ef9d1da1}{m\+\_\+text\+Mananger}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{Mode}} \{ \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a11f20da2639e7311025205a795fb5077}{m\+Normal}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a757f06476280dad47461b119ac321c4f}{m\+Move}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a2c8f2b45569ed7a60b3b7f5920809015}{m\+Resize}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a7659d3e4f6d10acd946afc05e7d98c26}{m\+Rotate}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_piece_item}{VPiece\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+QRectF \mbox{\hyperlink{class_v_piece_item_a1dc2a1419e3bdf83354fec313a8375b7}{m\+\_\+rect\+Bounding\+Box}}
+\item 
+\mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{Mode}} \mbox{\hyperlink{class_v_piece_item_aed2b3619129ec1f23565e7d3e88249f0}{m\+\_\+e\+Mode}}
+\item 
+bool \mbox{\hyperlink{class_v_piece_item_a63a2d19fe16f74a3e146f27ca7c8aa50}{m\+\_\+b\+Released}}
+\item 
+QPointF \mbox{\hyperlink{class_v_piece_item_ad5cd9bee05863d5d2fab3e1bb0601f8a}{m\+\_\+pt\+Rot\+Center}}
+\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{class_v_piece_item_a2961c269a8d70009bb1decd53b035392}{m\+\_\+move\+Type}}
+\item 
+qreal \mbox{\hyperlink{class_v_piece_item_a59199ca902be6aa33aa00989a2d1f7ac}{m\+\_\+inactiveZ}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_text_graphics_item}{VText\+Graphics\+Item}} class. This class implements text graphics item, which can be dragged around, resized and rotated within the parent item. The text font size will be automatically updated, so that the entire text will fit into the item. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_text_graphics_item_a00ad44fbd8ff65784b2f95a5963ac469}\label{class_v_text_graphics_item_a00ad44fbd8ff65784b2f95a5963ac469}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VTextGraphicsItem@{VTextGraphicsItem}}\index{VTextGraphicsItem@{VTextGraphicsItem}!Type@{Type}}}\mbox{\Hypertarget{class_v_text_graphics_item_a00ad44fbd8ff65784b2f95a5963ac469ac186304c618c9cc6449c7948bde3ea2a}\label{class_v_text_graphics_item_a00ad44fbd8ff65784b2f95a5963ac469ac186304c618c9cc6449c7948bde3ea2a}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_text_graphics_item_ac4e90a6313d473d08141ab2012b0a59c}\label{class_v_text_graphics_item_ac4e90a6313d473d08141ab2012b0a59c}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!VTextGraphicsItem@{VTextGraphicsItem}}
+\index{VTextGraphicsItem@{VTextGraphicsItem}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{VTextGraphicsItem()}{VTextGraphicsItem()}}
+{\footnotesize\ttfamily VText\+Graphics\+Item\+::\+VText\+Graphics\+Item (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_ac4e90a6313d473d08141ab2012b0a59c}{VText\+Graphics\+Item\+::\+VText\+Graphics\+Item}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & pointer to the parent item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a384e0a62eee61eeeeebb00ca85478569}\label{class_v_text_graphics_item_a384e0a62eee61eeeeebb00ca85478569}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!````~VTextGraphicsItem@{$\sim$VTextGraphicsItem}}
+\index{````~VTextGraphicsItem@{$\sim$VTextGraphicsItem}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$VTextGraphicsItem()}{~VTextGraphicsItem()}}
+{\footnotesize\ttfamily virtual VText\+Graphics\+Item\+::$\sim$\+VText\+Graphics\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_text_graphics_item_a6cd110d3f7002867e482052da5aee4bd}\label{class_v_text_graphics_item_a6cd110d3f7002867e482052da5aee4bd}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!allUserModifications@{allUserModifications}}
+\index{allUserModifications@{allUserModifications}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{allUserModifications()}{allUserModifications()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::all\+User\+Modifications (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_adcd55354216081ce80c76b29adefe27f}\label{class_v_text_graphics_item_adcd55354216081ce80c76b29adefe27f}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!correctLabel@{correctLabel}}
+\index{correctLabel@{correctLabel}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{correctLabel()}{correctLabel()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::correct\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+VText\+Graphics\+Item\+::\+Update\+Font sets the text font size, so that the entire text will just fit into the label bounding box. 
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a6ce47035ad39935899676f69fffbd9bd}\label{class_v_text_graphics_item_a6ce47035ad39935899676f69fffbd9bd}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!getFontSize@{getFontSize}}
+\index{getFontSize@{getFontSize}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{getFontSize()}{getFontSize()}}
+{\footnotesize\ttfamily int VText\+Graphics\+Item\+::get\+Font\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a6ce47035ad39935899676f69fffbd9bd}{VText\+Graphics\+Item\+::get\+Font\+Size}} returns the currentext\+Liney used text base font size. 
+
+\begin{DoxyReturn}{Returns}
+current text base font size 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_text_graphics_item_a769050147926283a3cfb80fcea00e1e3}\label{class_v_text_graphics_item_a769050147926283a3cfb80fcea00e1e3}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!getTextLines@{getTextLines}}
+\index{getTextLines@{getTextLines}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{getTextLines()}{getTextLines()}}
+{\footnotesize\ttfamily int VText\+Graphics\+Item\+::get\+Text\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a769050147926283a3cfb80fcea00e1e3}{VText\+Graphics\+Item\+::get\+Text\+Lines}} returns the number of lines of text to show. 
+
+\begin{DoxyReturn}{Returns}
+number of lines of text 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_text_graphics_item_a2ce7b604f29578423ce9a2914a11fedf}\label{class_v_text_graphics_item_a2ce7b604f29578423ce9a2914a11fedf}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!hoverLeaveEvent@{hoverLeaveEvent}}
+\index{hoverLeaveEvent@{hoverLeaveEvent}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoverLeaveEvent()}{hoverLeaveEvent()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::hover\+Leave\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a2ce7b604f29578423ce9a2914a11fedf}{VText\+Graphics\+Item\+::hover\+Leave\+Event}} tries to restore normal mouse cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & pointer to the scene hover event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_aa011c4b2c38fac72fc0306e67fa79cfb}\label{class_v_text_graphics_item_aa011c4b2c38fac72fc0306e67fa79cfb}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!hoverMoveEvent@{hoverMoveEvent}}
+\index{hoverMoveEvent@{hoverMoveEvent}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{hoverMoveEvent()}{hoverMoveEvent()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::hover\+Move\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_aa011c4b2c38fac72fc0306e67fa79cfb}{VText\+Graphics\+Item\+::hover\+Move\+Event}} checks if cursor has to be changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & pointer to the scene hover event \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_aff3c31874477559c43cd058ceb91e610}\label{class_v_text_graphics_item_aff3c31874477559c43cd058ceb91e610}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!isContained@{isContained}}
+\index{isContained@{isContained}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{isContained()}{isContained()}}
+{\footnotesize\ttfamily bool VText\+Graphics\+Item\+::is\+Contained (\begin{DoxyParamCaption}\item[{QRectF}]{rect\+BB,  }\item[{qreal}]{rotation,  }\item[{qreal \&}]{x\+Pos,  }\item[{qreal \&}]{y\+Pos }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_aff3c31874477559c43cd058ceb91e610}{VText\+Graphics\+Item\+::is\+Contained}} checks if the bounding box around rotated rect\+BB is contained in the parent. If that is not the case, it calculates the amount of movement needed to put it inside the parent and write it into x\+Pos, y\+Pos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rect\+BB} & bounding box in question \\
+\hline
+{\em rotation} & bounding box rotation in degrees \\
+\hline
+{\em x\+Pos} & horizontal translation needed to put the box inside parent item \\
+\hline
+{\em y\+Pos} & vertical translation needed to put the box inside parent item \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true, if rect\+BB is contained in parent item and false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_text_graphics_item_a55770ba5cd6a5b2cb6813dc207f0836d}\label{class_v_text_graphics_item_a55770ba5cd6a5b2cb6813dc207f0836d}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!itemResized@{itemResized}}
+\index{itemResized@{itemResized}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{itemResized}{itemResized}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::item\+Resized (\begin{DoxyParamCaption}\item[{qreal}]{width,  }\item[{int}]{font\+Size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a113fb112ad66e56bab2e6849532d6bb4}\label{class_v_text_graphics_item_a113fb112ad66e56bab2e6849532d6bb4}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!itemRotated@{itemRotated}}
+\index{itemRotated@{itemRotated}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{itemRotated}{itemRotated}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::item\+Rotated (\begin{DoxyParamCaption}\item[{qreal}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_ae35734546b6214ca29df8db5cec47a49}\label{class_v_text_graphics_item_ae35734546b6214ca29df8db5cec47a49}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!mouseMoveEvent@{mouseMoveEvent}}
+\index{mouseMoveEvent@{mouseMoveEvent}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mouseMoveEvent()}{mouseMoveEvent()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::mouse\+Move\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_ae35734546b6214ca29df8db5cec47a49}{VText\+Graphics\+Item\+::mouse\+Move\+Event}} handles mouse move events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & pointer to QGraphics\+Scene\+Mouse\+Event object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a5b8dd919f3d3b34cb1cf4a83c08e7638}\label{class_v_text_graphics_item_a5b8dd919f3d3b34cb1cf4a83c08e7638}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a5b8dd919f3d3b34cb1cf4a83c08e7638}{VText\+Graphics\+Item\+::mouse\+Press\+Event}} handles left button mouse press events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & pointer to QGraphics\+Scene\+Mouse\+Event object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a315cafafbc976d9935f3d509c66a12bb}\label{class_v_text_graphics_item_a315cafafbc976d9935f3d509c66a12bb}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a315cafafbc976d9935f3d509c66a12bb}{VText\+Graphics\+Item\+::mouse\+Release\+Event}} handles left button mouse release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & pointer to QGraphics\+Scene\+Mouse\+Event object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a8cb66274dcfdd12f40f38715f2d9550b}\label{class_v_text_graphics_item_a8cb66274dcfdd12f40f38715f2d9550b}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!paint@{paint}}
+\index{paint@{paint}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+Graphics\+Item $\ast$}]{option,  }\item[{QWidget $\ast$}]{widget }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a8cb66274dcfdd12f40f38715f2d9550b}{VText\+Graphics\+Item\+::paint}} redraws the item content. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em painter} & pointer to the QPainter in use \\
+\hline
+{\em option} & pointer to the object containing the actual label rectangle \\
+\hline
+{\em widget} & not used \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_ae20f95b859b524e1f0d9eeba818a4e87}\label{class_v_text_graphics_item_ae20f95b859b524e1f0d9eeba818a4e87}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!setFont@{setFont}}
+\index{setFont@{setFont}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{setFont()}{setFont()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::set\+Font (\begin{DoxyParamCaption}\item[{const QFont \&}]{font }\end{DoxyParamCaption})}
+
+
+
+VText\+Graphics\+Item\+::\+Set\+Font sets the item font. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em font} & font to be used in item \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_af91a160a36a30fdf0e3edcd96115ec86}\label{class_v_text_graphics_item_af91a160a36a30fdf0e3edcd96115ec86}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!setSize@{setSize}}
+\index{setSize@{setSize}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::set\+Size (\begin{DoxyParamCaption}\item[{qreal}]{width,  }\item[{qreal}]{height }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_af91a160a36a30fdf0e3edcd96115ec86}{VText\+Graphics\+Item\+::set\+Size}} Tries to set the label size to (width, height). If either of those is too small, the labelsize does not change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & label width \\
+\hline
+{\em height} & label height \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a039b00c0c16825c2a1f8b01e1a7287fa}\label{class_v_text_graphics_item_a039b00c0c16825c2a1f8b01e1a7287fa}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!textShrink@{textShrink}}
+\index{textShrink@{textShrink}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{textShrink}{textShrink}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::text\+Shrink (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_ace1763ff021d3ea324a98c1ee43e6ddd}\label{class_v_text_graphics_item_ace1763ff021d3ea324a98c1ee43e6ddd}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!type@{type}}
+\index{type@{type}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VText\+Graphics\+Item\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_piece_item_a47755d8b28d4f633209430da8608b2c0}{VPiece\+Item}}.
+
+\mbox{\Hypertarget{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}\label{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!Update@{Update}}
+\index{Update@{Update}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}{VText\+Graphics\+Item\+::\+Update}} sets the correct size and font size and redraws the label. 
+
+
+
+Implements \mbox{\hyperlink{class_v_piece_item_a48a1183b2df00b112190679b58fb3bef}{VPiece\+Item}}.
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a1fc483eb1cbd629767cc6ad4b2b46395}\label{class_v_text_graphics_item_a1fc483eb1cbd629767cc6ad4b2b46395}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!UpdateBox@{UpdateBox}}
+\index{UpdateBox@{UpdateBox}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{UpdateBox()}{UpdateBox()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::\+Update\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a1fc483eb1cbd629767cc6ad4b2b46395}{VText\+Graphics\+Item\+::\+Update\+Box}} redraws the label content. 
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}\label{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!updateData@{updateData}}
+\index{updateData@{updateData}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::update\+Data (\begin{DoxyParamCaption}\item[{const QString \&}]{name,  }\item[{const \mbox{\hyperlink{class_v_piece_label_data}{VPiece\+Label\+Data}} \&}]{data }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}{VText\+Graphics\+Item\+::update\+Data}} Updates the detail label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & name of detail \\
+\hline
+{\em data} & reference to VPattern\+Piece\+Data \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a59b8a2c094d0c51abc7d0c896d60c580}\label{class_v_text_graphics_item_a59b8a2c094d0c51abc7d0c896d60c580}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!updateData@{updateData}}
+\index{updateData@{updateData}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{updateData()}{updateData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::update\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_text_graphics_item_a9fbdee85cef912de39a34b4bfda18aac}{VText\+Graphics\+Item\+::update\+Data}} Updates the pattern label. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & pointer to the pattern object \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_text_graphics_item_a7ba9b6631b1d4d16a576c345623ffb88}\label{class_v_text_graphics_item_a7ba9b6631b1d4d16a576c345623ffb88}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!userMoveAndResize@{userMoveAndResize}}
+\index{userMoveAndResize@{userMoveAndResize}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{userMoveAndResize()}{userMoveAndResize()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::user\+Move\+And\+Resize (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a3d415e59c50d12ff0dc96afc51b550ad}\label{class_v_text_graphics_item_a3d415e59c50d12ff0dc96afc51b550ad}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!userRotateAndMove@{userRotateAndMove}}
+\index{userRotateAndMove@{userRotateAndMove}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{userRotateAndMove()}{userRotateAndMove()}}
+{\footnotesize\ttfamily void VText\+Graphics\+Item\+::user\+Rotate\+And\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_text_graphics_item_a99702e3954fc97ea41458df82690053e}\label{class_v_text_graphics_item_a99702e3954fc97ea41458df82690053e}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_angle@{m\_angle}}
+\index{m\_angle@{m\_angle}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_angle}{m\_angle}}
+{\footnotesize\ttfamily double VText\+Graphics\+Item\+::m\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a1fbe8aa9010f116b12bc07a71930fc04}\label{class_v_text_graphics_item_a1fbe8aa9010f116b12bc07a71930fc04}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_rectResize@{m\_rectResize}}
+\index{m\_rectResize@{m\_rectResize}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_rectResize}{m\_rectResize}}
+{\footnotesize\ttfamily QRectF VText\+Graphics\+Item\+::m\+\_\+rect\+Resize\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a0855953aa2ea44c5fa8e485e35425e59}\label{class_v_text_graphics_item_a0855953aa2ea44c5fa8e485e35425e59}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily double VText\+Graphics\+Item\+::m\+\_\+rotation\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_ac430f72b9e1f6f5389e79bd78c94aa36}\label{class_v_text_graphics_item_ac430f72b9e1f6f5389e79bd78c94aa36}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_start@{m\_start}}
+\index{m\_start@{m\_start}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_start}{m\_start}}
+{\footnotesize\ttfamily QPointF VText\+Graphics\+Item\+::m\+\_\+start\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_a9f1bfff343a92b727ffd8829c2c01203}\label{class_v_text_graphics_item_a9f1bfff343a92b727ffd8829c2c01203}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_startPos@{m\_startPos}}
+\index{m\_startPos@{m\_startPos}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_startPos}{m\_startPos}}
+{\footnotesize\ttfamily QPointF VText\+Graphics\+Item\+::m\+\_\+start\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_ae610d638423eb915f2ab80a197d8a426}\label{class_v_text_graphics_item_ae610d638423eb915f2ab80a197d8a426}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_startSize@{m\_startSize}}
+\index{m\_startSize@{m\_startSize}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_startSize}{m\_startSize}}
+{\footnotesize\ttfamily QSizeF VText\+Graphics\+Item\+::m\+\_\+start\+Size\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_text_graphics_item_ae8fed158752457934435c223ef9d1da1}\label{class_v_text_graphics_item_ae8fed158752457934435c223ef9d1da1}} 
+\index{VTextGraphicsItem@{VTextGraphicsItem}!m\_textMananger@{m\_textMananger}}
+\index{m\_textMananger@{m\_textMananger}!VTextGraphicsItem@{VTextGraphicsItem}}
+\doxysubsubsection{\texorpdfstring{m\_textMananger}{m\_textMananger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_text_manager}{VText\+Manager}} VText\+Graphics\+Item\+::m\+\_\+text\+Mananger\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vtextgraphicsitem_8h}{vtextgraphicsitem.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vtextgraphicsitem_8cpp}{vtextgraphicsitem.\+cpp}}\end{DoxyCompactItemize}

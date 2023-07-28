@@ -1,0 +1,108 @@
+\hypertarget{vexceptionwrongid_8h_source}{}\doxysection{vexceptionwrongid.\+h}
+\label{vexceptionwrongid_8h_source}\index{D:/Github/Seamly2D/src/libs/ifc/exception/vexceptionwrongid.h@{D:/Github/Seamly2D/src/libs/ifc/exception/vexceptionwrongid.h}}
+\mbox{\hyperlink{vexceptionwrongid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vexceptionwrongparameterid.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VEXCEPTIONWRONGID\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VEXCEPTIONWRONGID\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../ifcdef.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vexception_8h}{vexception.h}}"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }QDomElement;}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_exception}{VException}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}(\textcolor{keyword}{const}\ QString\ \&\mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}},\ \textcolor{keyword}{const}\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}\ \&e);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}\ \&\mbox{\hyperlink{class_v_exception_wrong_id_abbbb2115ea78942fa43c698ce069d79c}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}\ \&e);}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_exception_wrong_id_a960298fe4eefdbe750e592d3134f27f4}{\string~VExceptionWrongId}}()\ \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\_NOEXCEPT\_EXPR}}\ (true)\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00074\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_exception_wrong_id_a8ddd9ad4e9cbdfd58d7235de5c041759}{ErrorMessage}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ \ \ \ \ virtual\ QString\ \mbox{\hyperlink{class_v_exception_wrong_id_a59c0823cf725424ddc90d21b457cc1a6}{DetailedInformation}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00076\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_aac88b552cf7feb8f6d37b8f32fbd3ab9}{TagText}}()\ const;}
+\DoxyCodeLine{00077\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_a0db392937d9794ee0c434c6f680c5f4a}{TagName}}()\ const;}
+\DoxyCodeLine{00078\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_ae149640304f7fae9b914c509d2d36a40}{LineNumber}}()\ const;}
+\DoxyCodeLine{00079\ protected:}
+\DoxyCodeLine{00081\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_a4e5e8e63c0db617e6f3a5a7aaa53d550}{tagText}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_a907e46a88e2ee81a894a28a33c32baad}{tagName}};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_exception_wrong_id_a7022854ab14cf682cdb1e10b549384b1}{lineNumber}};}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00095\ \textcolor{comment}{}inline\ QString\ \mbox{\hyperlink{class_v_exception_wrong_id}{VExceptionWrongId}}::\mbox{\hyperlink{class_v_exception_wrong_id_aac88b552cf7feb8f6d37b8f32fbd3ab9}{TagText}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00096\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_exception_wrong_id_a4e5e8e63c0db617e6f3a5a7aaa53d550}{tagText}};}
+\DoxyCodeLine{00098\ \}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00105\ \textcolor{comment}{}\textcolor{keyword}{inline}\ QString\ \mbox{\hyperlink{class_v_exception_wrong_id_a0db392937d9794ee0c434c6f680c5f4a}{VExceptionWrongId::TagName}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00106\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_exception_wrong_id_a907e46a88e2ee81a894a28a33c32baad}{tagName}};}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00115\ \textcolor{comment}{}\textcolor{keyword}{inline}\ qint32\ \mbox{\hyperlink{class_v_exception_wrong_id_ae149640304f7fae9b914c509d2d36a40}{VExceptionWrongId::LineNumber}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{}\{}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_exception_wrong_id_a7022854ab14cf682cdb1e10b549384b1}{lineNumber}};}
+\DoxyCodeLine{00118\ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VEXCEPTIONWRONGID\_H}}
+
+\end{DoxyCode}

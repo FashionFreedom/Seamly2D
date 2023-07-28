@@ -1,0 +1,137 @@
+\hypertarget{class_v_p_e_1_1_v_property_delegate}{}\doxysection{VPE\+::VProperty\+Delegate Class Reference}
+\label{class_v_p_e_1_1_v_property_delegate}\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+
+
+{\ttfamily \#include $<$vpropertydelegate.\+h$>$}
+
+Inheritance diagram for VPE\+::VProperty\+Delegate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_v_p_e_1_1_v_property_delegate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a651b02361e5f89c55c8d73bd4baac2a1}{VProperty\+Delegate}} (QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2a1d251b25b4d97bf18aa3e93af22bdc}{$\sim$\+VProperty\+Delegate}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_afd40dbc025bb9c06220ab63335203561}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&option, const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Creates the editor widget. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a3b5a2fc1b3446e4a7f0a8ccd0a06f39b}{set\+Editor\+Data}} (QWidget $\ast$editor, const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the index data to the editor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_aa5ddcc07e61cf45ab5000cfbaeb54f88}{set\+Model\+Data}} (QWidget $\ast$editor, QAbstract\+Item\+Model $\ast$model, const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Updates the index data. \end{DoxyCompactList}\item 
+virtual QSize \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_ad29a5be39f15e8b9c94bb11b232f001f}{size\+Hint}} (const QStyle\+Option\+View\+Item \&option, const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns the size hint. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2b0be47a79b41c698822f5dd019190bd}{set\+Row\+Height}} (int height=0, bool add\+\_\+to\+\_\+standard=false)
+\begin{DoxyCompactList}\small\item\em Sets the row height. Set this to 0 and the standard will be taken. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_ad5675c0df717b899427a81701c79a0fe}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+View\+Item \&option, const QModel\+Index \&index) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Renders the delegate using the given painter and style option for the item specified by index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a37ecba35ae69ca6ef89d1b5f5942a8f5}{Row\+Height}}
+\item 
+bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_delegate_a2ad77ae411f4eef7bc71aca2866ec927}{Add\+Row\+Height}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a651b02361e5f89c55c8d73bd4baac2a1}\label{class_v_p_e_1_1_v_property_delegate_a651b02361e5f89c55c8d73bd4baac2a1}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!VPropertyDelegate@{VPropertyDelegate}}
+\index{VPropertyDelegate@{VPropertyDelegate}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{VPropertyDelegate()}{VPropertyDelegate()}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Delegate\+::\+VProperty\+Delegate (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a2a1d251b25b4d97bf18aa3e93af22bdc}\label{class_v_p_e_1_1_v_property_delegate_a2a1d251b25b4d97bf18aa3e93af22bdc}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!````~VPropertyDelegate@{$\sim$VPropertyDelegate}}
+\index{````~VPropertyDelegate@{$\sim$VPropertyDelegate}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPropertyDelegate()}{~VPropertyDelegate()}}
+{\footnotesize\ttfamily VPE\+::\+VProperty\+Delegate\+::$\sim$\+VProperty\+Delegate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_afd40dbc025bb9c06220ab63335203561}\label{class_v_p_e_1_1_v_property_delegate_afd40dbc025bb9c06220ab63335203561}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!createEditor@{createEditor}}
+\index{createEditor@{createEditor}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{createEditor()}{createEditor()}}
+{\footnotesize\ttfamily QWidget $\ast$ VPE\+::\+VProperty\+Delegate\+::create\+Editor (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QStyle\+Option\+View\+Item \&}]{option,  }\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates the editor widget. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_ad5675c0df717b899427a81701c79a0fe}\label{class_v_p_e_1_1_v_property_delegate_ad5675c0df717b899427a81701c79a0fe}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!paint@{paint}}
+\index{paint@{paint}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{paint()}{paint()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Delegate\+::paint (\begin{DoxyParamCaption}\item[{QPainter $\ast$}]{painter,  }\item[{const QStyle\+Option\+View\+Item \&}]{option,  }\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Renders the delegate using the given painter and style option for the item specified by index. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a3b5a2fc1b3446e4a7f0a8ccd0a06f39b}\label{class_v_p_e_1_1_v_property_delegate_a3b5a2fc1b3446e4a7f0a8ccd0a06f39b}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!setEditorData@{setEditorData}}
+\index{setEditorData@{setEditorData}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{setEditorData()}{setEditorData()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Delegate\+::set\+Editor\+Data (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{editor,  }\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the index data to the editor. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_aa5ddcc07e61cf45ab5000cfbaeb54f88}\label{class_v_p_e_1_1_v_property_delegate_aa5ddcc07e61cf45ab5000cfbaeb54f88}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!setModelData@{setModelData}}
+\index{setModelData@{setModelData}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{setModelData()}{setModelData()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Delegate\+::set\+Model\+Data (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{editor,  }\item[{QAbstract\+Item\+Model $\ast$}]{model,  }\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the index data. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a2b0be47a79b41c698822f5dd019190bd}\label{class_v_p_e_1_1_v_property_delegate_a2b0be47a79b41c698822f5dd019190bd}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!setRowHeight@{setRowHeight}}
+\index{setRowHeight@{setRowHeight}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{setRowHeight()}{setRowHeight()}}
+{\footnotesize\ttfamily void VPE\+::\+VProperty\+Delegate\+::set\+Row\+Height (\begin{DoxyParamCaption}\item[{int}]{height = {\ttfamily 0},  }\item[{bool}]{add\+\_\+to\+\_\+standard = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+Sets the row height. Set this to 0 and the standard will be taken. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_ad29a5be39f15e8b9c94bb11b232f001f}\label{class_v_p_e_1_1_v_property_delegate_ad29a5be39f15e8b9c94bb11b232f001f}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!sizeHint@{sizeHint}}
+\index{sizeHint@{sizeHint}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{sizeHint()}{sizeHint()}}
+{\footnotesize\ttfamily QSize VPE\+::\+VProperty\+Delegate\+::size\+Hint (\begin{DoxyParamCaption}\item[{const QStyle\+Option\+View\+Item \&}]{option,  }\item[{const QModel\+Index \&}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the size hint. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a2ad77ae411f4eef7bc71aca2866ec927}\label{class_v_p_e_1_1_v_property_delegate_a2ad77ae411f4eef7bc71aca2866ec927}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!AddRowHeight@{AddRowHeight}}
+\index{AddRowHeight@{AddRowHeight}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{AddRowHeight}{AddRowHeight}}
+{\footnotesize\ttfamily bool VPE\+::\+VProperty\+Delegate\+::\+Add\+Row\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_p_e_1_1_v_property_delegate_a37ecba35ae69ca6ef89d1b5f5942a8f5}\label{class_v_p_e_1_1_v_property_delegate_a37ecba35ae69ca6ef89d1b5f5942a8f5}} 
+\index{VPE::VPropertyDelegate@{VPE::VPropertyDelegate}!RowHeight@{RowHeight}}
+\index{RowHeight@{RowHeight}!VPE::VPropertyDelegate@{VPE::VPropertyDelegate}}
+\doxysubsubsection{\texorpdfstring{RowHeight}{RowHeight}}
+{\footnotesize\ttfamily int VPE\+::\+VProperty\+Delegate\+::\+Row\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertydelegate_8h}{vpropertydelegate.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{vpropertydelegate_8cpp}{vpropertydelegate.\+cpp}}\end{DoxyCompactItemize}

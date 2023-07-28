@@ -1,0 +1,181 @@
+\hypertarget{class_move_spline_path}{}\doxysection{Move\+Spline\+Path Class Reference}
+\label{class_move_spline_path}\index{MoveSplinePath@{MoveSplinePath}}
+
+
+{\ttfamily \#include $<$movesplinepath.\+h$>$}
+
+Inheritance diagram for Move\+Spline\+Path\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_move_spline_path}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_move_spline_path_a162dee5cc399b1c28c0368463290c5b9}{Move\+Spline\+Path}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&old\+Spl\+Path, const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&new\+Spl\+Path, const quint32 \&\mbox{\hyperlink{class_move_spline_path_acc04536063e2b108a14b3b18cd6ac777}{id}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_move_spline_path_a1554d4fcf9c74910ee359d5bf2bbc7f4}{$\sim$\+Move\+Spline\+Path}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_spline_path_a3bcd1f7fa79980c4da0ad698a4575976}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_move_spline_path_a1ca82f78780de3dca81c89fb3976584c}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_move_spline_path_a74395f132c38b2e2c5e6e3e0468940e8}{merge\+With}} (const QUndo\+Command $\ast$command) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_move_spline_path_acc04536063e2b108a14b3b18cd6ac777}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_move_spline_path_a5d96a44996b8cb76beb6594aa6dae274}{get\+Spline\+Path\+Id}} () const
+\item 
+\mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \mbox{\hyperlink{class_move_spline_path_acbe5bef66cbbd96b0082d86c3d4792e4}{get\+New\+Spline\+Path}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_move_spline_path_a53cc20873d87f73508259c7edd9cd4a4}{Do}} (const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&\mbox{\hyperlink{ifcdef_8cpp_a10f135a849fd89285cc24865990a5a0d}{spl\+Path}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \mbox{\hyperlink{class_move_spline_path_a69fc17853c5c4726a982d2016558b2b0}{old\+Spline\+Path}}
+\item 
+\mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \mbox{\hyperlink{class_move_spline_path_a5702d48e547c0b7071c7538a17a60489}{new\+Spline\+Path}}
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_move_spline_path_a02cfc23186097e0a8a18ccc261d67008}{scene}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_move_spline_path_a162dee5cc399b1c28c0368463290c5b9}\label{class_move_spline_path_a162dee5cc399b1c28c0368463290c5b9}} 
+\index{MoveSplinePath@{MoveSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\index{MoveSplinePath@{MoveSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{MoveSplinePath()}{MoveSplinePath()}}
+{\footnotesize\ttfamily Move\+Spline\+Path\+::\+Move\+Spline\+Path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&}]{old\+Spl\+Path,  }\item[{const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&}]{new\+Spl\+Path,  }\item[{const quint32 \&}]{id,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_move_spline_path_a1554d4fcf9c74910ee359d5bf2bbc7f4}\label{class_move_spline_path_a1554d4fcf9c74910ee359d5bf2bbc7f4}} 
+\index{MoveSplinePath@{MoveSplinePath}!````~MoveSplinePath@{$\sim$MoveSplinePath}}
+\index{````~MoveSplinePath@{$\sim$MoveSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{$\sim$MoveSplinePath()}{~MoveSplinePath()}}
+{\footnotesize\ttfamily Move\+Spline\+Path\+::$\sim$\+Move\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_move_spline_path_a53cc20873d87f73508259c7edd9cd4a4}\label{class_move_spline_path_a53cc20873d87f73508259c7edd9cd4a4}} 
+\index{MoveSplinePath@{MoveSplinePath}!Do@{Do}}
+\index{Do@{Do}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{Do()}{Do()}}
+{\footnotesize\ttfamily void Move\+Spline\+Path\+::\+Do (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} \&}]{spl\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_spline_path_acbe5bef66cbbd96b0082d86c3d4792e4}\label{class_move_spline_path_acbe5bef66cbbd96b0082d86c3d4792e4}} 
+\index{MoveSplinePath@{MoveSplinePath}!getNewSplinePath@{getNewSplinePath}}
+\index{getNewSplinePath@{getNewSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{getNewSplinePath()}{getNewSplinePath()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} Move\+Spline\+Path\+::get\+New\+Spline\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a5d96a44996b8cb76beb6594aa6dae274}\label{class_move_spline_path_a5d96a44996b8cb76beb6594aa6dae274}} 
+\index{MoveSplinePath@{MoveSplinePath}!getSplinePathId@{getSplinePathId}}
+\index{getSplinePathId@{getSplinePathId}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{getSplinePathId()}{getSplinePathId()}}
+{\footnotesize\ttfamily quint32 Move\+Spline\+Path\+::get\+Spline\+Path\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_move_spline_path_acc04536063e2b108a14b3b18cd6ac777}\label{class_move_spline_path_acc04536063e2b108a14b3b18cd6ac777}} 
+\index{MoveSplinePath@{MoveSplinePath}!id@{id}}
+\index{id@{id}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Move\+Spline\+Path\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a74395f132c38b2e2c5e6e3e0468940e8}\label{class_move_spline_path_a74395f132c38b2e2c5e6e3e0468940e8}} 
+\index{MoveSplinePath@{MoveSplinePath}!mergeWith@{mergeWith}}
+\index{mergeWith@{mergeWith}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{mergeWith()}{mergeWith()}}
+{\footnotesize\ttfamily bool Move\+Spline\+Path\+::merge\+With (\begin{DoxyParamCaption}\item[{const QUndo\+Command $\ast$}]{command }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a1ca82f78780de3dca81c89fb3976584c}\label{class_move_spline_path_a1ca82f78780de3dca81c89fb3976584c}} 
+\index{MoveSplinePath@{MoveSplinePath}!redo@{redo}}
+\index{redo@{redo}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Move\+Spline\+Path\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a3bcd1f7fa79980c4da0ad698a4575976}\label{class_move_spline_path_a3bcd1f7fa79980c4da0ad698a4575976}} 
+\index{MoveSplinePath@{MoveSplinePath}!undo@{undo}}
+\index{undo@{undo}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Move\+Spline\+Path\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_move_spline_path_a5702d48e547c0b7071c7538a17a60489}\label{class_move_spline_path_a5702d48e547c0b7071c7538a17a60489}} 
+\index{MoveSplinePath@{MoveSplinePath}!newSplinePath@{newSplinePath}}
+\index{newSplinePath@{newSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{newSplinePath}{newSplinePath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} Move\+Spline\+Path\+::new\+Spline\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a69fc17853c5c4726a982d2016558b2b0}\label{class_move_spline_path_a69fc17853c5c4726a982d2016558b2b0}} 
+\index{MoveSplinePath@{MoveSplinePath}!oldSplinePath@{oldSplinePath}}
+\index{oldSplinePath@{oldSplinePath}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{oldSplinePath}{oldSplinePath}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline_path}{VSpline\+Path}} Move\+Spline\+Path\+::old\+Spline\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_move_spline_path_a02cfc23186097e0a8a18ccc261d67008}\label{class_move_spline_path_a02cfc23186097e0a8a18ccc261d67008}} 
+\index{MoveSplinePath@{MoveSplinePath}!scene@{scene}}
+\index{scene@{scene}!MoveSplinePath@{MoveSplinePath}}
+\doxysubsubsection{\texorpdfstring{scene}{scene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$ Move\+Spline\+Path\+::scene\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movesplinepath_8h}{movesplinepath.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{movesplinepath_8cpp}{movesplinepath.\+cpp}}\end{DoxyCompactItemize}

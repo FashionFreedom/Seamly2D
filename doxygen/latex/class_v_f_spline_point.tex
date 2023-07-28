@@ -1,0 +1,281 @@
+\hypertarget{class_v_f_spline_point}{}\doxysection{VFSpline\+Point Class Reference}
+\label{class_v_f_spline_point}\index{VFSplinePoint@{VFSplinePoint}}
+
+
+The \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} class keep information about point in spline path. Each point have two angles and two coefficient. Point represent at the same time first and last point of a spline.  
+
+
+
+
+{\ttfamily \#include $<$vsplinepoint.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_f_spline_point_a901f70409e369d052456ae339a597024}{VFSpline\+Point}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_f_spline_point_a7f5dfd5de5ce38a0487379c3e3a65992}{VFSpline\+Point}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p\+Spline, qreal k\+Asm1, qreal angle1, qreal k\+Asm2, qreal angle2)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_f_spline_point_a48f8372f281d220b69b6fb6591b7c609}{VFSpline\+Point}} (const \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&point)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_f_spline_point_a3a8b4167bb585f862cbab3accc5e60b0}{$\sim$\+VFSpline\+Point}} ()
+\item 
+\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \& \mbox{\hyperlink{class_v_f_spline_point_a8a01b15924d0525759e488c0dd1ed16e}{operator=}} (const \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&point)
+\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a0adee3e77e142ccd221036cd7a669c30}{Swap}} (\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&point) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+\mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_f_spline_point_a0d0c00895308895a1b6eeb12c0d93549}{P}} () const
+\begin{DoxyCompactList}\small\item\em P return point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a46cc412bef9ee0e734bac3332fe9cade}{SetP}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&value)
+\begin{DoxyCompactList}\small\item\em SetP set point. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_f_spline_point_a93001cf3559a68a8aee0cca4ddb811d2}{Angle1}} () const
+\begin{DoxyCompactList}\small\item\em Angle1 return first angle of spline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a95aed4277bfdf954b2a5d708f0fcff71}{Set\+Angle1}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Angle1 set first angle of spline. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a6e154b18a138c5b86880e64362ebbdc6}{Set\+Angle2}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em Set\+Angle2 set second angle of spline. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_f_spline_point_ae23973ec7f38d64a63994daf4f10bed2}{Angle2}} () const
+\begin{DoxyCompactList}\small\item\em Angle2 return second angle of spline. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_f_spline_point_abb9d3e04df26982d1d4fe618b9b94137}{KAsm1}} () const
+\begin{DoxyCompactList}\small\item\em KAsm1 return coefficient of length first control line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a08ada07c3f68fb01eea6b31e26b60a7b}{Set\+KAsm1}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em Set\+KAsm1 set coefficient of length first control line. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_f_spline_point_af66b136afacae995589c27071beb956e}{KAsm2}} () const
+\begin{DoxyCompactList}\small\item\em KAsm2 return coefficient of length second control line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_f_spline_point_a7bd17cff6f271c17ce030583850a6450}{Set\+KAsm2}} (const qreal \&value)
+\begin{DoxyCompactList}\small\item\em Set\+KAsm2 set coefficient of length second control line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_f_spline_point_data}{VFSpline\+Point\+Data}} $>$ \mbox{\hyperlink{class_v_f_spline_point_ab4a82b13da10191fbef31c4959877667}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} class keep information about point in spline path. Each point have two angles and two coefficient. Point represent at the same time first and last point of a spline. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_f_spline_point_a901f70409e369d052456ae339a597024}\label{class_v_f_spline_point_a901f70409e369d052456ae339a597024}} 
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{VFSplinePoint()}{VFSplinePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VFSpline\+Point\+::\+VFSpline\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} default constructor. 
+
+\mbox{\Hypertarget{class_v_f_spline_point_a7f5dfd5de5ce38a0487379c3e3a65992}\label{class_v_f_spline_point_a7f5dfd5de5ce38a0487379c3e3a65992}} 
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{VFSplinePoint()}{VFSplinePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VFSpline\+Point\+::\+VFSpline\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p\+Spline,  }\item[{qreal}]{k\+Asm1,  }\item[{qreal}]{angle1,  }\item[{qreal}]{k\+Asm2,  }\item[{qreal}]{angle2 }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Spline} & spline point. \\
+\hline
+{\em k\+Asm1} & coefficient of length first control line. \\
+\hline
+{\em angle1} & first angle control line. \\
+\hline
+{\em k\+Asm2} & coefficient of length second control line. \\
+\hline
+{\em angle2} & second angle control line. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a48f8372f281d220b69b6fb6591b7c609}\label{class_v_f_spline_point_a48f8372f281d220b69b6fb6591b7c609}} 
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\index{VFSplinePoint@{VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{VFSplinePoint()}{VFSplinePoint()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VFSpline\+Point\+::\+VFSpline\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & point \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a3a8b4167bb585f862cbab3accc5e60b0}\label{class_v_f_spline_point_a3a8b4167bb585f862cbab3accc5e60b0}} 
+\index{VFSplinePoint@{VFSplinePoint}!````~VFSplinePoint@{$\sim$VFSplinePoint}}
+\index{````~VFSplinePoint@{$\sim$VFSplinePoint}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VFSplinePoint()}{~VFSplinePoint()}}
+{\footnotesize\ttfamily VFSpline\+Point\+::$\sim$\+VFSpline\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_f_spline_point_a93001cf3559a68a8aee0cca4ddb811d2}\label{class_v_f_spline_point_a93001cf3559a68a8aee0cca4ddb811d2}} 
+\index{VFSplinePoint@{VFSplinePoint}!Angle1@{Angle1}}
+\index{Angle1@{Angle1}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{Angle1()}{Angle1()}}
+{\footnotesize\ttfamily qreal VFSpline\+Point\+::\+Angle1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Angle1 return first angle of spline. 
+
+\begin{DoxyReturn}{Returns}
+angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_f_spline_point_ae23973ec7f38d64a63994daf4f10bed2}\label{class_v_f_spline_point_ae23973ec7f38d64a63994daf4f10bed2}} 
+\index{VFSplinePoint@{VFSplinePoint}!Angle2@{Angle2}}
+\index{Angle2@{Angle2}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{Angle2()}{Angle2()}}
+{\footnotesize\ttfamily qreal VFSpline\+Point\+::\+Angle2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Angle2 return second angle of spline. 
+
+\begin{DoxyReturn}{Returns}
+angle. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_f_spline_point_abb9d3e04df26982d1d4fe618b9b94137}\label{class_v_f_spline_point_abb9d3e04df26982d1d4fe618b9b94137}} 
+\index{VFSplinePoint@{VFSplinePoint}!KAsm1@{KAsm1}}
+\index{KAsm1@{KAsm1}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{KAsm1()}{KAsm1()}}
+{\footnotesize\ttfamily qreal VFSpline\+Point\+::\+KAsm1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+KAsm1 return coefficient of length first control line. 
+
+\begin{DoxyReturn}{Returns}
+coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_f_spline_point_af66b136afacae995589c27071beb956e}\label{class_v_f_spline_point_af66b136afacae995589c27071beb956e}} 
+\index{VFSplinePoint@{VFSplinePoint}!KAsm2@{KAsm2}}
+\index{KAsm2@{KAsm2}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{KAsm2()}{KAsm2()}}
+{\footnotesize\ttfamily qreal VFSpline\+Point\+::\+KAsm2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+KAsm2 return coefficient of length second control line. 
+
+\begin{DoxyReturn}{Returns}
+coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_f_spline_point_a8a01b15924d0525759e488c0dd1ed16e}\label{class_v_f_spline_point_a8a01b15924d0525759e488c0dd1ed16e}} 
+\index{VFSplinePoint@{VFSplinePoint}!operator=@{operator=}}
+\index{operator=@{operator=}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \& VFSpline\+Point\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&}]{point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_f_spline_point_a0d0c00895308895a1b6eeb12c0d93549}\label{class_v_f_spline_point_a0d0c00895308895a1b6eeb12c0d93549}} 
+\index{VFSplinePoint@{VFSplinePoint}!P@{P}}
+\index{P@{P}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{P()}{P()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VFSpline\+Point\+::P (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+P return point. 
+
+\begin{DoxyReturn}{Returns}
+point. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_f_spline_point_a95aed4277bfdf954b2a5d708f0fcff71}\label{class_v_f_spline_point_a95aed4277bfdf954b2a5d708f0fcff71}} 
+\index{VFSplinePoint@{VFSplinePoint}!SetAngle1@{SetAngle1}}
+\index{SetAngle1@{SetAngle1}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{SetAngle1()}{SetAngle1()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+Set\+Angle1 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Angle1 set first angle of spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & angle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a6e154b18a138c5b86880e64362ebbdc6}\label{class_v_f_spline_point_a6e154b18a138c5b86880e64362ebbdc6}} 
+\index{VFSplinePoint@{VFSplinePoint}!SetAngle2@{SetAngle2}}
+\index{SetAngle2@{SetAngle2}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{SetAngle2()}{SetAngle2()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+Set\+Angle2 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+Angle2 set second angle of spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & angle. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a08ada07c3f68fb01eea6b31e26b60a7b}\label{class_v_f_spline_point_a08ada07c3f68fb01eea6b31e26b60a7b}} 
+\index{VFSplinePoint@{VFSplinePoint}!SetKAsm1@{SetKAsm1}}
+\index{SetKAsm1@{SetKAsm1}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{SetKAsm1()}{SetKAsm1()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+Set\+KAsm1 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+KAsm1 set coefficient of length first control line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & coefficient. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a7bd17cff6f271c17ce030583850a6450}\label{class_v_f_spline_point_a7bd17cff6f271c17ce030583850a6450}} 
+\index{VFSplinePoint@{VFSplinePoint}!SetKAsm2@{SetKAsm2}}
+\index{SetKAsm2@{SetKAsm2}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{SetKAsm2()}{SetKAsm2()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+Set\+KAsm2 (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Set\+KAsm2 set coefficient of length second control line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & coefficient. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a46cc412bef9ee0e734bac3332fe9cade}\label{class_v_f_spline_point_a46cc412bef9ee0e734bac3332fe9cade}} 
+\index{VFSplinePoint@{VFSplinePoint}!SetP@{SetP}}
+\index{SetP@{SetP}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{SetP()}{SetP()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+SetP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+SetP set point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_f_spline_point_a0adee3e77e142ccd221036cd7a669c30}\label{class_v_f_spline_point_a0adee3e77e142ccd221036cd7a669c30}} 
+\index{VFSplinePoint@{VFSplinePoint}!Swap@{Swap}}
+\index{Swap@{Swap}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VFSpline\+Point\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_f_spline_point}{VFSpline\+Point}} \&}]{point }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_f_spline_point_ab4a82b13da10191fbef31c4959877667}\label{class_v_f_spline_point_ab4a82b13da10191fbef31c4959877667}} 
+\index{VFSplinePoint@{VFSplinePoint}!d@{d}}
+\index{d@{d}!VFSplinePoint@{VFSplinePoint}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_f_spline_point_data}{VFSpline\+Point\+Data}}$>$ VFSpline\+Point\+::d\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vsplinepoint_8h}{vsplinepoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vsplinepoint_8cpp}{vsplinepoint.\+cpp}}\end{DoxyCompactItemize}

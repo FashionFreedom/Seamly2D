@@ -1,0 +1,25 @@
+var class_dialog_point_of_contact =
+[
+    [ "DialogPointOfContact", "class_dialog_point_of_contact.html#a028d10e2f42167d3632c0aee6ea60cb2", null ],
+    [ "~DialogPointOfContact", "class_dialog_point_of_contact.html#a77b5f1f72245e680828f731f07757166", null ],
+    [ "ChosenObject", "class_dialog_point_of_contact.html#af998c3daaa72bf0f6c23b113035a6448", null ],
+    [ "closeEvent", "class_dialog_point_of_contact.html#ac9e314f39d75ead66a236a6c8c2ad077", null ],
+    [ "DeployFormulaTextEdit", "class_dialog_point_of_contact.html#ad62b6628fa0bd7205fcd542c7eaf36e3", null ],
+    [ "FormulaTextChanged", "class_dialog_point_of_contact.html#ae8109f4d21da17d7ac4b14e922f9f7b3", null ],
+    [ "FXRadius", "class_dialog_point_of_contact.html#a8a3f6c0ba40e402fdf7da5865f25f08d", null ],
+    [ "getCenter", "class_dialog_point_of_contact.html#a01aa87bd49774cd1847f1a601df7924e", null ],
+    [ "GetFirstPoint", "class_dialog_point_of_contact.html#aa1de8633eff139f70c146ac07197a4d8", null ],
+    [ "getRadius", "class_dialog_point_of_contact.html#a654a0afa0b0074c0ec0463b39930f71a", null ],
+    [ "GetSecondPoint", "class_dialog_point_of_contact.html#acea7bf258cb29c757293c861173a40c2", null ],
+    [ "PointNameChanged", "class_dialog_point_of_contact.html#acfded8fb0d673f8900ec10e4f9cf86e8", null ],
+    [ "SaveData", "class_dialog_point_of_contact.html#aea8f2c69407b653a8244a9c49009b51e", null ],
+    [ "setCenter", "class_dialog_point_of_contact.html#a5ac6085adf282a45537b076593986998", null ],
+    [ "SetFirstPoint", "class_dialog_point_of_contact.html#af5a2ea7016e439f64b5773720cbb7c83", null ],
+    [ "SetPointName", "class_dialog_point_of_contact.html#a8814f935ecfc131e7eb7b87d0aa1a37f", null ],
+    [ "setRadius", "class_dialog_point_of_contact.html#a8f0ef21ffe576a388db7e96c51ada98c", null ],
+    [ "SetSecondPoint", "class_dialog_point_of_contact.html#a22683847873883d56287b270f5a2a574", null ],
+    [ "ShowVisualization", "class_dialog_point_of_contact.html#ada6d0e8460711d31b73539fc4e8c5c21", null ],
+    [ "formulaBaseHeight", "class_dialog_point_of_contact.html#a263728d556fc4b791081d4753a4646f8", null ],
+    [ "radius", "class_dialog_point_of_contact.html#a8d58b950ce39a0ae1d667d213d091f17", null ],
+    [ "ui", "class_dialog_point_of_contact.html#ace66d6537e9eeff678e711b580033ce4", null ]
+];

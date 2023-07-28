@@ -1,0 +1,96 @@
+\hypertarget{drawtools_8h_source}{}\doxysection{drawtools.\+h}
+\label{drawtools_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/drawtools.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/drawtools.h}}
+\mbox{\hyperlink{drawtools_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ drawtools.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ DRAWTOOLS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DRAWTOOLS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolalongline_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolalongline.h}}"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolbisector_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolbisector.h}}"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolendline_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolendline.h}}"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolnormal_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.h}}"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolshoulderpoint_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.h}}"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolheight_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolheight.h}}"{}}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoollineintersectaxis_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoollineintersectaxis.h}}"{}}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcurveintersectaxis_8h}{toolpoint/toolsinglepoint/toollinepoint/vtoolcurveintersectaxis.h}}"{}}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolarc_8h}{toolcurve/vtoolarc.h}}"{}}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolellipticalarc_8h}{toolcurve/vtoolellipticalarc.h}}"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolarcwithlength_8h}{toolcurve/vtoolarcwithlength.h}}"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolspline_8h}{toolcurve/vtoolspline.h}}"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcubicbezier_8h}{toolcurve/vtoolcubicbezier.h}}"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolsplinepath_8h}{toolcurve/vtoolsplinepath.h}}"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcubicbezierpath_8h}{toolcurve/vtoolcubicbezierpath.h}}"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolline_8h}{vtoolline.h}}"{}}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcutspline_8h}{toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h}}"{}}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcutsplinepath_8h}{toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h}}"{}}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolcutarc_8h}{toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h}}"{}}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoollineintersect_8h}{toolpoint/toolsinglepoint/vtoollineintersect.h}}"{}}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolpointofcontact_8h}{toolpoint/toolsinglepoint/vtoolpointofcontact.h}}"{}}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolbasepoint_8h}{toolpoint/toolsinglepoint/vtoolbasepoint.h}}"{}}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtooltriangle_8h}{toolpoint/toolsinglepoint/vtooltriangle.h}}"{}}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{point__intersectxy__tool_8h}{toolpoint/toolsinglepoint/point\_intersectxy\_tool.h}}"{}}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolpointofintersectionarcs_8h}{toolpoint/toolsinglepoint/vtoolpointofintersectionarcs.h}}"{}}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intersect__circles__tool_8h}{toolpoint/toolsinglepoint/intersect\_circles\_tool.h}}"{}}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolpointofintersectioncurves_8h}{toolpoint/toolsinglepoint/vtoolpointofintersectioncurves.h}}"{}}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{intersect__circletangent__tool_8h}{toolpoint/toolsinglepoint/intersect\_circletangent\_tool.h}}"{}}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolpointfromarcandtangent_8h}{toolpoint/toolsinglepoint/vtoolpointfromarcandtangent.h}}"{}}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtooltruedarts_8h}{toolpoint/tooldoublepoint/vtooltruedarts.h}}"{}}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolrotation_8h}{operation/vtoolrotation.h}}"{}}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolmirrorbyline_8h}{operation/mirror/vtoolmirrorbyline.h}}"{}}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolmirrorbyaxis_8h}{operation/mirror/vtoolmirrorbyaxis.h}}"{}}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vtoolmove_8h}{operation/vtoolmove.h}}"{}}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DRAWTOOLS\_H}}
+
+\end{DoxyCode}

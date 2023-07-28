@@ -1,0 +1,85 @@
+\hypertarget{vgrainlinedata_8h_source}{}\doxysection{vgrainlinedata.\+h}
+\label{vgrainlinedata_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vgrainlinedata.h@{D:/Github/Seamly2D/src/libs/vpatterndb/floatItemData/vgrainlinedata.h}}
+\mbox{\hyperlink{vgrainlinedata_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vgrainlinedata.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Bojan\ Kverh}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ September\ 06,\ 2016}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VGRAINLINEGEOMETRY\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VGRAINLINEGEOMETRY\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstractfloatitemdata_8h}{vabstractfloatitemdata.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{floatitemdef_8h}{floatitemdef.h}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_grainline_data_private}{VGrainlineDataPrivate}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_float_item_data}{VAbstractFloatItemData}}}
+\DoxyCodeLine{00045\ \{}
+\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a4f9101cfb8717331faa1b49861f00a80}{VGrainlineData}}();}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a4f9101cfb8717331faa1b49861f00a80}{VGrainlineData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&data);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_grainline_data_a20fb9200d55ea4dd453d2263980a2db3}{\string~VGrainlineData}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&\mbox{\hyperlink{class_v_grainline_data_a1a038a9ba6149d8748a6e05058142a81}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&data);}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00054\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&\mbox{\hyperlink{class_v_grainline_data_a1a038a9ba6149d8748a6e05058142a81}{operator=}}(\mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&\&data)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_grainline_data_ac1992ab1784f721c622c1bab0196cdb5}{Swap}}(\mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\ \&data)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{comment}{//\ methods,\ which\ set\ and\ return\ values\ of\ different\ parameters}}
+\DoxyCodeLine{00060\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_grainline_data_af6d8fa3f0d4195129853175d2b4817db}{GetLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a8e5fcb4a17fd0ba66ed50a68948c50bd}{SetLength}}(\textcolor{keyword}{const}\ QString\&\ qsLen);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_grainline_data_a817026380045956d8cabad474d47052b}{GetRotation}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a644ee2bd93cdfa629cada78ae86495a0}{SetRotation}}(\textcolor{keyword}{const}\ QString\&\ qsRot);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}\ \mbox{\hyperlink{class_v_grainline_data_a150777e457e77621193606d12b1f3747}{GetArrowType}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a94e39401b870819f719e24f3154a024a}{SetArrowType}}(\mbox{\hyperlink{floatitemdef_8h_ad65d3ab4b803afe5820275a9c5fb1566}{ArrowType}}\ eAT);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_grainline_data_a7cc95dd2a428dda0be1ce351c57ca378}{centerAnchorPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_grainline_data_adf922c37db7a0aba2fcdf9ea2140f6e3}{setCenterAnchorPoint}}(quint32\ centerAnchor);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_grainline_data_ac87f88f9f7aa4ad1cc283616f329daac}{topAnchorPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_grainline_data_afe86a204b4f9e38b25729106bbbad83c}{setTopAnchorPoint}}(quint32\ \mbox{\hyperlink{class_v_grainline_data_ac87f88f9f7aa4ad1cc283616f329daac}{topAnchorPoint}});}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ quint32\ \mbox{\hyperlink{class_v_grainline_data_a98e93c6702cad2fe3364e1d23037c5f6}{bottomAnchorPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_v_grainline_data_a1ff34a9e8badbcd92a6ab3a9f4f07d94}{setBottomAnchorPoint}}(quint32\ \mbox{\hyperlink{class_v_grainline_data_a98e93c6702cad2fe3364e1d23037c5f6}{bottomAnchorPoint}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00079\ \ \ \ \ QSharedDataPointer<VGrainlineDataPrivate>\ \mbox{\hyperlink{class_v_grainline_data_a1962af8e258fd39f71a7a0272734c830}{d}};}
+\DoxyCodeLine{00080\ \};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VGRAINLINEGEOMETRY\_H}}
+\DoxyCodeLine{00083\ }
+
+\end{DoxyCode}

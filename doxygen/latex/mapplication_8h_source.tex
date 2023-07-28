@@ -1,0 +1,128 @@
+\hypertarget{mapplication_8h_source}{}\doxysection{mapplication.\+h}
+\label{mapplication_8h_source}\index{D:/Github/Seamly2D/src/app/seamlyme/mapplication.h@{D:/Github/Seamly2D/src/app/seamlyme/mapplication.h}}
+\mbox{\hyperlink{mapplication_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ mapplication.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 8\ 7,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ MAPPLICATION\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ MAPPLICATION\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vtranslatevars.h"{}}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vseamlymesettings.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogmdatabase_8h}{dialogs/dialogmdatabase.h}}"{}}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_application}{MApplication}};\textcolor{comment}{//\ use\ in\ define}}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_t_main_window}{TMainWindow}};}
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }QLocalServer;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ defined(qApp)}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#undef\ qApp}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ qApp\ (static\_cast<MApplication*>(VAbstractApplication::instance()))}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{mapplication_8h_a38acd93203253241a2ac37bd3ff04fdf}{SocketConnection}}\ :\ \textcolor{keywordtype}{bool}\ \{\mbox{\hyperlink{mapplication_8h_a38acd93203253241a2ac37bd3ff04fdfa577d7068826de925ea2aec01dbadf5e4}{Client}}\ =\ \textcolor{keyword}{false},\ \mbox{\hyperlink{mapplication_8h_a38acd93203253241a2ac37bd3ff04fdfa9aa1b03934893d7134a660af4204f2a9}{Server}}\ =\ \textcolor{keyword}{true}\};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_m_application}{MApplication}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_application}{VAbstractApplication}}}
+\DoxyCodeLine{00073\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{class_m_application}{MApplication}}(\textcolor{keywordtype}{int}\ \&argc,\ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_m_application_a85c140e8b501e333c85864113ff58abb}{\string~MApplication}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_application_a15b6c27a62d556b3b8c8fa9f856ccae4}{notify}}(QObject\ *\ receiver,\ QEvent\ *\ \mbox{\hyperlink{class_m_application_aaa3622f5adc946b7cbb92186e51da16f}{event}})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_application_a36c7043f3dcb3b06e3b88e206a2401a2}{IsTestMode}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_application_a3291617bc3706e5c2ebc2fc8eb1cb916}{IsAppInGUIMode}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00084\ \ \ \ \ \mbox{\hyperlink{class_t_main_window}{TMainWindow}}\ *\mbox{\hyperlink{class_m_application_ad5ee659cde8c59be6ce750b434a3252c}{MainWindow}}();}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList<TMainWindow*>}}\ \mbox{\hyperlink{class_m_application_a709ebacdd40826a34adefddf0db6721c}{MainWindows}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_t_main_window}{TMainWindow}}\ *\mbox{\hyperlink{class_m_application_aea055a569f3bc8436c2827073558e509}{NewMainWindow}}();}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a84d41243c695c62d17b54285b91e9f74}{InitOptions}}();}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *\mbox{\hyperlink{class_m_application_a8c640d379eefe7fa1c01b70252d5e5b9}{TrVars}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_m_application_a39c0c4ae690f667f2d46d8dc263460fc}{OpenSettings}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_v_seamly_me_settings}{VSeamlyMeSettings}}\ *\mbox{\hyperlink{class_m_application_adcd9090f222687254148da53f747e2e7}{SeamlyMeSettings}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a9b9c40fbb1992186938195606cdf4e80}{ShowDataBase}}();}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_aa1c47c2f56b21ad5b74c316493550348}{retranslateGroups}}();}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a29865b0724720781a9b9f5bb4b635df4}{RetranslateTables}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_afb5c95bf10f20a88939a09e9d75038b9}{ParseCommandLine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{mapplication_8h_a38acd93203253241a2ac37bd3ff04fdf}{SocketConnection}}\ \&connection,\ \textcolor{keyword}{const}\ QStringList\ \&arguments);}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_ab4db80060aa086ad4fc670b5d7c5a176}{ProcessCMD}}();}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a96cf5e574112b602d09917422e75b657}{InitTrVars}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_application_aaa3622f5adc946b7cbb92186e51da16f}{event}}(QEvent\ *e)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a17514e46fa94c2d6dd459b592e4c91d7}{NewLocalSocketConnection}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00112\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_m_application}{MApplication}})}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_q_list}{QList}}<QPointer<\mbox{\hyperlink{class_t_main_window}{TMainWindow}}>\ >\ \mbox{\hyperlink{class_m_application_ae7d4a424a5c9764d4d5ac0338fc7a2c9}{mainWindows}};}
+\DoxyCodeLine{00114\ \ \ \ \ QLocalServer\ *\mbox{\hyperlink{class_m_application_a1588860c306a02f9d8b22068ae4c84d6}{localServer}};}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{class_v_translate_vars}{VTranslateVars}}\ *\mbox{\hyperlink{class_m_application_ada4c006ea3af8cd12576f19cd406b616}{trVars}};}
+\DoxyCodeLine{00116\ \ \ \ \ QPointer<\mbox{\hyperlink{class_measurement_database_dialog}{MeasurementDatabaseDialog}}>\ \mbox{\hyperlink{class_m_application_aca2b71e7aeecbc46d08de9bc07cb0d2c}{dataBase}};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_m_application_a2a3faa1212afca7062277ff5ea54ac80}{testMode}};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_m_application_a72a0acbe8e722140d5ef3911a674c97a}{Clean}}();}
+\DoxyCodeLine{00120\ \};}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ MAPPLICATION\_H}}
+
+\end{DoxyCode}

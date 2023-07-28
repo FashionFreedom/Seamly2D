@@ -1,0 +1,333 @@
+\hypertarget{class_export_layout_dialog}{}\doxysection{Export\+Layout\+Dialog Class Reference}
+\label{class_export_layout_dialog}\index{ExportLayoutDialog@{ExportLayoutDialog}}
+
+
+{\ttfamily \#include $<$export\+\_\+layout\+\_\+dialog.\+h$>$}
+
+Inheritance diagram for Export\+Layout\+Dialog\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_export_layout_dialog}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_export_layout_dialog_a78f4fd4af94b19f96ee7dafee837b06c}{Export\+Layout\+Dialog}} (int count, \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{class_export_layout_dialog_a3d7d27452e39ee1a410c464a3ff92080}{mode}}=Draw\+::\+Layout, const QString \&\mbox{\hyperlink{class_export_layout_dialog_a4d29e095660e51edee81f86a6d427f86}{file\+Name}}=QString(), QWidget $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_export_layout_dialog_ad750b12f032ee99f3f0b1db737938669}{$\sim$\+Export\+Layout\+Dialog}} ()
+\item 
+QString \mbox{\hyperlink{class_export_layout_dialog_ae8ddcf722aa88bd4f6a7ba71c2a8f846}{path}} () const
+\item 
+QString \mbox{\hyperlink{class_export_layout_dialog_a4d29e095660e51edee81f86a6d427f86}{file\+Name}} () const
+\item 
+QString \mbox{\hyperlink{class_export_layout_dialog_a212ce58f1c02935143d44fad1f0a59a3}{mode\+String}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_export_layout_dialog_a212ce58f1c02935143d44fad1f0a59a3}{mode\+String()}} \end{DoxyCompactList}\item 
+\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \mbox{\hyperlink{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}{format}} () const
+\item 
+QString \mbox{\hyperlink{class_export_layout_dialog_a453eb61793b3b1135e2b956d5f712d7c}{format\+Text}} () const
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_acf55ba320421e4004141423618fe8c36}{select\+Format}} (\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \mbox{\hyperlink{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}{format}})
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_aaa85fad90dfbc512e245204cda87357b}{set\+Binary\+DXFFormat}} (bool binary)
+\item 
+bool \mbox{\hyperlink{class_export_layout_dialog_af6faf332613a178772707ddf9d76ca8d}{is\+Binary\+DXFFormat}} () const
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a05a97329520b5fa1842368daa97363ea}{set\+Destination\+Path}} (const QString \&cmd\+Destination\+Path)
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{class_export_layout_dialog_a3d7d27452e39ee1a410c464a3ff92080}{mode}} () const
+\item 
+bool \mbox{\hyperlink{class_export_layout_dialog_a56920dec6078e1aba9f42156097979c3}{is\+Text\+As\+Paths}} () const
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a85d7846d094b7691bafef2b4dc60e603}{set\+Text\+As\+Paths}} (bool text\+As\+Paths)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstract\+Layout\+Dialog}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_layout_dialog_ad849c0a105d9067f202aeeef9a3bbfb8}{VAbstract\+Layout\+Dialog}} (QWidget $\ast$parent=nullptr)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{class_export_layout_dialog_a5a5e9452f8bdccac188521cc68bf901e}{export\+Format\+Suffix}} (\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \mbox{\hyperlink{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}{format}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_export_layout_dialog_a0198fc5d765f1280580dfc7d9bb74c68}{show\+Event}} (QShow\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a1b22ea63dad7a9bee4f73a851ccb12f7}{init\+Templates}} (QCombo\+Box $\ast$templates)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstract\+Layout\+Dialog}}}
+\begin{DoxyCompactItemize}
+\item 
+QSizeF \mbox{\hyperlink{class_v_abstract_layout_dialog_aafc4085375d25c77ff953822763fe4ea}{get\+Template\+Size}} (const \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3}{Paper\+Size\+Template}} \&tmpl, const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&unit) const
+\begin{DoxyCompactList}\small\item\em Dialog\+Layout\+Settings\+::\+Template\+Size. \end{DoxyCompactList}\item 
+QSizeF \mbox{\hyperlink{class_v_abstract_layout_dialog_aaaa5300eccf290d8b9e2885f2232a59e}{Round\+Template\+Size}} (qreal width, qreal height, \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} unit) const
+\item 
+void \mbox{\hyperlink{class_v_abstract_layout_dialog_a565d1cb3c667569fac1a397750ae6ed5}{init\+Templates}} (QCombo\+Box $\ast$combo\+Box\+Templates)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_afccf6d5fe6f528f0992c35012bc564c5}{save}} ()
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a4a9960ccddad697413167572bac691f5}{path\+Changed}} (const QString \&text)
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a07800061e1ca0bcfa01a245e65cdccc5}{show\+Export\+Files}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_aa3d24041e9e4a364bed2e5a9e2ce53de}{remove\+Format\+From\+List}} (\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} \mbox{\hyperlink{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}{format}})
+\item 
+void \mbox{\hyperlink{class_export_layout_dialog_a1a5efe09de3ef0d949bbabb83bcd017b}{read\+Settings}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_export_layout_dialog_a1a5efe09de3ef0d949bbabb83bcd017b}{Export\+Layout\+Dialog\+::read\+Settings}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_export_layout_dialog_acddbbe1458589ca2c1fdb96ce369b225}{write\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_export_layout_dialog_acddbbe1458589ca2c1fdb96ce369b225}{Export\+Layout\+Dialog\+::write\+Settings}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Export\+Layout\+Dialog $\ast$ \mbox{\hyperlink{class_export_layout_dialog_ac9c8759ec741bde4ea85640fc4a68047}{ui}}
+\item 
+int \mbox{\hyperlink{class_export_layout_dialog_aac5130ef046671ad9da4c8ec77c6bd18}{m\+\_\+count}}
+\item 
+bool \mbox{\hyperlink{class_export_layout_dialog_a0ca1915821513f3252add92a83ed5ea3}{m\+\_\+is\+Initialized}}
+\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{class_export_layout_dialog_a2f5c242f89a886ab3d7bfe55ab6c3ad8}{m\+\_\+mode}}
+\item 
+QPush\+Button $\ast$ \mbox{\hyperlink{class_export_layout_dialog_a64e0413d7885756a85934da1f3704b68}{m\+\_\+\+Save\+Button}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstract\+Layout\+Dialog}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3}{Paper\+Size\+Template}} \+: char \{ \newline
+\mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3ad88c146dfafdea37a837778a92415bc2}{A0}} = 0
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a27f237e6b7f96587b6202ff3607ad88a}{A1}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3ac6bdf6f65f3845da9085e9ae5790b494}{A2}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a6593d7b12fd418cdb35bbf438de72f66}{A3}}
+, \newline
+\mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a0c2f3adf2a48bab3adb470f4da57f3d0}{A4}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a17a53d1a012580ef609b70ef6a25d1f1}{Letter}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3aa10a9bcd450087de1ce1f80b35f44883}{Legal}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3aa53fc34a28678c56601220fc3f021c1d}{Roll24in}} = 7
+, \newline
+\mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a27736e8ab588cd66ad41f2fb889c15f6}{Roll30in}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3add60e15ef4c1163a333d51dfebe197b1}{Roll36in}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3aede3de0cc2a140d0a6b91947069dcc16}{Roll42in}}
+, \mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3aa6cc2c6cd06863094faa905743911aaa}{Roll44in}} = 11
+, \newline
+\mbox{\hyperlink{class_v_abstract_layout_dialog_a86853242b6016dbc651dce0da621f8b3a90589c47f06eb971d548591f23c285af}{Custom}} = 12
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstract\+Layout\+Dialog}}}
+\begin{DoxyCompactItemize}
+\item 
+typedef QString\+List \mbox{\hyperlink{class_v_abstract_layout_dialog_a5533e41817b10ba43a248b2eb1ed2ce8}{Formats\+Vector}}
+\item 
+typedef int \mbox{\hyperlink{class_v_abstract_layout_dialog_a4fb9cb17b5ddae631a11f50f855319e6}{VIndex\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_layout_dialog}{VAbstract\+Layout\+Dialog}}}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_v_abstract_layout_dialog_a5533e41817b10ba43a248b2eb1ed2ce8}{Formats\+Vector}} \mbox{\hyperlink{class_v_abstract_layout_dialog_ad13db56da246bc98677d3c9203775d82}{page\+Format\+Names}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_export_layout_dialog_a78f4fd4af94b19f96ee7dafee837b06c}\label{class_export_layout_dialog_a78f4fd4af94b19f96ee7dafee837b06c}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!ExportLayoutDialog@{ExportLayoutDialog}}
+\index{ExportLayoutDialog@{ExportLayoutDialog}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{ExportLayoutDialog()}{ExportLayoutDialog()}}
+{\footnotesize\ttfamily Export\+Layout\+Dialog\+::\+Export\+Layout\+Dialog (\begin{DoxyParamCaption}\item[{int}]{count,  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}}]{mode = {\ttfamily Draw\+:\+:Layout},  }\item[{const QString \&}]{file\+Name = {\ttfamily QString()},  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_ad750b12f032ee99f3f0b1db737938669}\label{class_export_layout_dialog_ad750b12f032ee99f3f0b1db737938669}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!````~ExportLayoutDialog@{$\sim$ExportLayoutDialog}}
+\index{````~ExportLayoutDialog@{$\sim$ExportLayoutDialog}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{$\sim$ExportLayoutDialog()}{~ExportLayoutDialog()}}
+{\footnotesize\ttfamily Export\+Layout\+Dialog\+::$\sim$\+Export\+Layout\+Dialog (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_export_layout_dialog_a5a5e9452f8bdccac188521cc68bf901e}\label{class_export_layout_dialog_a5a5e9452f8bdccac188521cc68bf901e}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!exportFormatSuffix@{exportFormatSuffix}}
+\index{exportFormatSuffix@{exportFormatSuffix}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{exportFormatSuffix()}{exportFormatSuffix()}}
+{\footnotesize\ttfamily QString Export\+Layout\+Dialog\+::export\+Format\+Suffix (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a4d29e095660e51edee81f86a6d427f86}\label{class_export_layout_dialog_a4d29e095660e51edee81f86a6d427f86}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!fileName@{fileName}}
+\index{fileName@{fileName}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{fileName()}{fileName()}}
+{\footnotesize\ttfamily QString Export\+Layout\+Dialog\+::file\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}\label{class_export_layout_dialog_a06f64cfe19ccdde0b4607f83a842b75b}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!format@{format}}
+\index{format@{format}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{format()}{format()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}} Export\+Layout\+Dialog\+::format (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a453eb61793b3b1135e2b956d5f712d7c}\label{class_export_layout_dialog_a453eb61793b3b1135e2b956d5f712d7c}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!formatText@{formatText}}
+\index{formatText@{formatText}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{formatText()}{formatText()}}
+{\footnotesize\ttfamily QString Export\+Layout\+Dialog\+::format\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a1b22ea63dad7a9bee4f73a851ccb12f7}\label{class_export_layout_dialog_a1b22ea63dad7a9bee4f73a851ccb12f7}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!initTemplates@{initTemplates}}
+\index{initTemplates@{initTemplates}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{initTemplates()}{initTemplates()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::init\+Templates (\begin{DoxyParamCaption}\item[{QCombo\+Box $\ast$}]{templates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_af6faf332613a178772707ddf9d76ca8d}\label{class_export_layout_dialog_af6faf332613a178772707ddf9d76ca8d}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!isBinaryDXFFormat@{isBinaryDXFFormat}}
+\index{isBinaryDXFFormat@{isBinaryDXFFormat}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{isBinaryDXFFormat()}{isBinaryDXFFormat()}}
+{\footnotesize\ttfamily bool Export\+Layout\+Dialog\+::is\+Binary\+DXFFormat (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a56920dec6078e1aba9f42156097979c3}\label{class_export_layout_dialog_a56920dec6078e1aba9f42156097979c3}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!isTextAsPaths@{isTextAsPaths}}
+\index{isTextAsPaths@{isTextAsPaths}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{isTextAsPaths()}{isTextAsPaths()}}
+{\footnotesize\ttfamily bool Export\+Layout\+Dialog\+::is\+Text\+As\+Paths (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a3d7d27452e39ee1a410c464a3ff92080}\label{class_export_layout_dialog_a3d7d27452e39ee1a410c464a3ff92080}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!mode@{mode}}
+\index{mode@{mode}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{mode()}{mode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} Export\+Layout\+Dialog\+::mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a212ce58f1c02935143d44fad1f0a59a3}\label{class_export_layout_dialog_a212ce58f1c02935143d44fad1f0a59a3}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!modeString@{modeString}}
+\index{modeString@{modeString}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{modeString()}{modeString()}}
+{\footnotesize\ttfamily QString Export\+Layout\+Dialog\+::mode\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{class_export_layout_dialog_a212ce58f1c02935143d44fad1f0a59a3}{mode\+String()}} 
+
+\begin{DoxyReturn}{Returns}
+Returns a string that is the mode type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_export_layout_dialog_ae8ddcf722aa88bd4f6a7ba71c2a8f846}\label{class_export_layout_dialog_ae8ddcf722aa88bd4f6a7ba71c2a8f846}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!path@{path}}
+\index{path@{path}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{path()}{path()}}
+{\footnotesize\ttfamily QString Export\+Layout\+Dialog\+::path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a4a9960ccddad697413167572bac691f5}\label{class_export_layout_dialog_a4a9960ccddad697413167572bac691f5}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!pathChanged@{pathChanged}}
+\index{pathChanged@{pathChanged}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{pathChanged}{pathChanged}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::path\+Changed (\begin{DoxyParamCaption}\item[{const QString \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a1a5efe09de3ef0d949bbabb83bcd017b}\label{class_export_layout_dialog_a1a5efe09de3ef0d949bbabb83bcd017b}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!readSettings@{readSettings}}
+\index{readSettings@{readSettings}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{readSettings()}{readSettings()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::read\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_export_layout_dialog_a1a5efe09de3ef0d949bbabb83bcd017b}{Export\+Layout\+Dialog\+::read\+Settings}}. 
+
+Reads the values of the variables needed for the save layout dialog, for instance the margins, teamplte and orientation of tiled pdf. Then sets the corresponding elements of the dialog to these values. \mbox{\Hypertarget{class_export_layout_dialog_aa3d24041e9e4a364bed2e5a9e2ce53de}\label{class_export_layout_dialog_aa3d24041e9e4a364bed2e5a9e2ce53de}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!removeFormatFromList@{removeFormatFromList}}
+\index{removeFormatFromList@{removeFormatFromList}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{removeFormatFromList()}{removeFormatFromList()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::remove\+Format\+From\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}}}]{format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_afccf6d5fe6f528f0992c35012bc564c5}\label{class_export_layout_dialog_afccf6d5fe6f528f0992c35012bc564c5}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!save@{save}}
+\index{save@{save}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{save}{save}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_acf55ba320421e4004141423618fe8c36}\label{class_export_layout_dialog_acf55ba320421e4004141423618fe8c36}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!selectFormat@{selectFormat}}
+\index{selectFormat@{selectFormat}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{selectFormat()}{selectFormat()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::select\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{def_8h_a1f9b518e0e2d2c25a541f09e2e49a9d8}{Layout\+Export\+Format}}}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_export_layout_dialog_aaa85fad90dfbc512e245204cda87357b}\label{class_export_layout_dialog_aaa85fad90dfbc512e245204cda87357b}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!setBinaryDXFFormat@{setBinaryDXFFormat}}
+\index{setBinaryDXFFormat@{setBinaryDXFFormat}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{setBinaryDXFFormat()}{setBinaryDXFFormat()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::set\+Binary\+DXFFormat (\begin{DoxyParamCaption}\item[{bool}]{binary }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a05a97329520b5fa1842368daa97363ea}\label{class_export_layout_dialog_a05a97329520b5fa1842368daa97363ea}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!setDestinationPath@{setDestinationPath}}
+\index{setDestinationPath@{setDestinationPath}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{setDestinationPath()}{setDestinationPath()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::set\+Destination\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{cmd\+Destination\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a85d7846d094b7691bafef2b4dc60e603}\label{class_export_layout_dialog_a85d7846d094b7691bafef2b4dc60e603}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!setTextAsPaths@{setTextAsPaths}}
+\index{setTextAsPaths@{setTextAsPaths}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{setTextAsPaths()}{setTextAsPaths()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::set\+Text\+As\+Paths (\begin{DoxyParamCaption}\item[{bool}]{text\+As\+Paths }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a0198fc5d765f1280580dfc7d9bb74c68}\label{class_export_layout_dialog_a0198fc5d765f1280580dfc7d9bb74c68}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!showEvent@{showEvent}}
+\index{showEvent@{showEvent}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{showEvent()}{showEvent()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::show\+Event (\begin{DoxyParamCaption}\item[{QShow\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a07800061e1ca0bcfa01a245e65cdccc5}\label{class_export_layout_dialog_a07800061e1ca0bcfa01a245e65cdccc5}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!showExportFiles@{showExportFiles}}
+\index{showExportFiles@{showExportFiles}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{showExportFiles}{showExportFiles}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::show\+Export\+Files (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_acddbbe1458589ca2c1fdb96ce369b225}\label{class_export_layout_dialog_acddbbe1458589ca2c1fdb96ce369b225}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!writeSettings@{writeSettings}}
+\index{writeSettings@{writeSettings}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{writeSettings()}{writeSettings()}}
+{\footnotesize\ttfamily void Export\+Layout\+Dialog\+::write\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_export_layout_dialog_acddbbe1458589ca2c1fdb96ce369b225}{Export\+Layout\+Dialog\+::write\+Settings}}. 
+
+Writes the values of some variables (like the margins, template and orientation of tiled pdf). of the save layout dialog into the settings. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_export_layout_dialog_aac5130ef046671ad9da4c8ec77c6bd18}\label{class_export_layout_dialog_aac5130ef046671ad9da4c8ec77c6bd18}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!m\_count@{m\_count}}
+\index{m\_count@{m\_count}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{m\_count}{m\_count}}
+{\footnotesize\ttfamily int Export\+Layout\+Dialog\+::m\+\_\+count\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a0ca1915821513f3252add92a83ed5ea3}\label{class_export_layout_dialog_a0ca1915821513f3252add92a83ed5ea3}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!m\_isInitialized@{m\_isInitialized}}
+\index{m\_isInitialized@{m\_isInitialized}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{m\_isInitialized}{m\_isInitialized}}
+{\footnotesize\ttfamily bool Export\+Layout\+Dialog\+::m\+\_\+is\+Initialized\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a2f5c242f89a886ab3d7bfe55ab6c3ad8}\label{class_export_layout_dialog_a2f5c242f89a886ab3d7bfe55ab6c3ad8}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!m\_mode@{m\_mode}}
+\index{m\_mode@{m\_mode}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{m\_mode}{m\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} Export\+Layout\+Dialog\+::m\+\_\+mode\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_a64e0413d7885756a85934da1f3704b68}\label{class_export_layout_dialog_a64e0413d7885756a85934da1f3704b68}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!m\_SaveButton@{m\_SaveButton}}
+\index{m\_SaveButton@{m\_SaveButton}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{m\_SaveButton}{m\_SaveButton}}
+{\footnotesize\ttfamily QPush\+Button$\ast$ Export\+Layout\+Dialog\+::m\+\_\+\+Save\+Button\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_export_layout_dialog_ac9c8759ec741bde4ea85640fc4a68047}\label{class_export_layout_dialog_ac9c8759ec741bde4ea85640fc4a68047}} 
+\index{ExportLayoutDialog@{ExportLayoutDialog}!ui@{ui}}
+\index{ui@{ui}!ExportLayoutDialog@{ExportLayoutDialog}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Export\+Layout\+Dialog$\ast$ Export\+Layout\+Dialog\+::ui\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/app/seamly2d/dialogs/\mbox{\hyperlink{export__layout__dialog_8h}{export\+\_\+layout\+\_\+dialog.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/app/seamly2d/dialogs/\mbox{\hyperlink{export__layout__dialog_8cpp}{export\+\_\+layout\+\_\+dialog.\+cpp}}\end{DoxyCompactItemize}

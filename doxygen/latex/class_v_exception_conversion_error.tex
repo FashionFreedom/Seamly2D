@@ -1,0 +1,179 @@
+\hypertarget{class_v_exception_conversion_error}{}\doxysection{VException\+Conversion\+Error Class Reference}
+\label{class_v_exception_conversion_error}\index{VExceptionConversionError@{VExceptionConversionError}}
+
+
+The \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} class for exception of conversion error.  
+
+
+
+
+{\ttfamily \#include $<$vexceptionconversionerror.\+h$>$}
+
+Inheritance diagram for VException\+Conversion\+Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_exception_conversion_error}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_conversion_error_ae52a3d2c384e8f4a3d0b0811813c8d16}{VException\+Conversion\+Error}} (const QString \&\mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}}, const QString \&\mbox{\hyperlink{class_v_exception_conversion_error_a101a90aa485fcb96640f4ad8b14086c7}{str}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} exception conversion error. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_conversion_error_a4f905d7b4676e229e61a3e57d9463a18}{VException\+Conversion\+Error}} (const \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \& \mbox{\hyperlink{class_v_exception_conversion_error_a12848c0bb33e336ac64c283e5a0891ba}{operator=}} (const \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_conversion_error_a4ab4cf0be0e61d5d284937818c2a5577}{$\sim$\+VException\+Conversion\+Error}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{class_v_exception_conversion_error_acb21b22a1601950ca02c495e52f8d238}{Error\+Message}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_conversion_error_a5d1e9c21805e80f8dc92cdb5d9839028}{String}} () const
+\begin{DoxyCompactList}\small\item\em String return string, where happend error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_exception_a0a32aae7ed885f3402a1761a83328323}{VException}} (const QString \&\mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}})
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} constructor exception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception_a4b2b9c63ee20b69f20d11d627b9cc6f2}{VException}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_exception}{VException}} copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_exception}{VException}} \& \mbox{\hyperlink{class_v_exception_ab27d8cb624f122a27652ce7121541be0}{operator=}} (const \mbox{\hyperlink{class_v_exception}{VException}} \&e)
+\item 
+virtual \mbox{\hyperlink{class_v_exception_aae323f3b6135454c4fa95e6acf6c0d25}{$\sim$\+VException}} () \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual Q\+\_\+\+NORETURN void \mbox{\hyperlink{class_v_exception_aec24ab0270a07d0e52ccb5382355ca45}{raise}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em raise method raise for exception \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_v_exception}{VException}} $\ast$ \mbox{\hyperlink{class_v_exception_a00a2ef1d19c3a50e9feacb846d40e782}{clone}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em clone clone exception \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{Error\+Message}} () const
+\begin{DoxyCompactList}\small\item\em Error\+Message return main error message. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_exception_aca8103cef3ea50128d4c65cc75568bd2}{Detailed\+Information}} () const
+\begin{DoxyCompactList}\small\item\em Detailed\+Information return detailed information about error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aa77494f07b02b94d690c6957bf51e811}{What\+Utf8}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true)
+\begin{DoxyCompactList}\small\item\em What return string with error. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_exception_a6a82b04f0ecd7ffc2e1807339a10648d}{Add\+More\+Information}} (const QString \&info)
+\begin{DoxyCompactList}\small\item\em Add\+More\+Information add more information for error. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_a38ab9eec99ff781a31b7f050be6addef}{More\+Information}} () const
+\begin{DoxyCompactList}\small\item\em More\+Information return more information for error. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{class_v_exception_a09d8d32f9a78dbe1a59fdd0637f85c7e}{what}} () const \mbox{\hyperlink{ifcdef_8h_adea14202510b5e3d26a56d871e131223}{V\+\_\+\+NOEXCEPT\+\_\+\+EXPR}}(true) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_conversion_error_a101a90aa485fcb96640f4ad8b14086c7}{str}}
+\begin{DoxyCompactList}\small\item\em str string, where happend error \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a6a2a1fb4627830eecbec7ad04642095d}{error}}
+\begin{DoxyCompactList}\small\item\em error string with error \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_exception_aaaa9e47957031ba5481cd12aedc0926a}{more\+Info}}
+\begin{DoxyCompactList}\small\item\em more\+Info more information about error \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_exception}{VException}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_exception_a0480a8ae3ddd5d9b86d26156c2a34344}{More\+Info}} (const QString \&det\+Info) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} class for exception of conversion error. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_exception_conversion_error_ae52a3d2c384e8f4a3d0b0811813c8d16}\label{class_v_exception_conversion_error_ae52a3d2c384e8f4a3d0b0811813c8d16}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!VExceptionConversionError@{VExceptionConversionError}}
+\index{VExceptionConversionError@{VExceptionConversionError}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{VExceptionConversionError()}{VExceptionConversionError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily VException\+Conversion\+Error\+::\+VException\+Conversion\+Error (\begin{DoxyParamCaption}\item[{const QString \&}]{error,  }\item[{const QString \&}]{str }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} exception conversion error. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & string with error \\
+\hline
+{\em str} & string, where happend error \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_exception_conversion_error_a4f905d7b4676e229e61a3e57d9463a18}\label{class_v_exception_conversion_error_a4f905d7b4676e229e61a3e57d9463a18}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!VExceptionConversionError@{VExceptionConversionError}}
+\index{VExceptionConversionError@{VExceptionConversionError}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{VExceptionConversionError()}{VExceptionConversionError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily VException\+Conversion\+Error\+::\+VException\+Conversion\+Error (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \&}]{e }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & exception \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_exception_conversion_error_a4ab4cf0be0e61d5d284937818c2a5577}\label{class_v_exception_conversion_error_a4ab4cf0be0e61d5d284937818c2a5577}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!````~VExceptionConversionError@{$\sim$VExceptionConversionError}}
+\index{````~VExceptionConversionError@{$\sim$VExceptionConversionError}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{$\sim$VExceptionConversionError()}{~VExceptionConversionError()}}
+{\footnotesize\ttfamily virtual VException\+Conversion\+Error\+::$\sim$\+VException\+Conversion\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_exception_conversion_error_acb21b22a1601950ca02c495e52f8d238}\label{class_v_exception_conversion_error_acb21b22a1601950ca02c495e52f8d238}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!ErrorMessage@{ErrorMessage}}
+\index{ErrorMessage@{ErrorMessage}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{ErrorMessage()}{ErrorMessage()}}
+{\footnotesize\ttfamily QString VException\+Conversion\+Error\+::\+Error\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Error\+Message return main error message. 
+
+\begin{DoxyReturn}{Returns}
+main error message 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_exception_a68239f5b9fd12b5f739c5101e616a8a5}{VException}}.
+
+\mbox{\Hypertarget{class_v_exception_conversion_error_a12848c0bb33e336ac64c283e5a0891ba}\label{class_v_exception_conversion_error_a12848c0bb33e336ac64c283e5a0891ba}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!operator=@{operator=}}
+\index{operator=@{operator=}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \& VException\+Conversion\+Error\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_exception_conversion_error}{VException\+Conversion\+Error}} \&}]{e }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_exception_conversion_error_a5d1e9c21805e80f8dc92cdb5d9839028}\label{class_v_exception_conversion_error_a5d1e9c21805e80f8dc92cdb5d9839028}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!String@{String}}
+\index{String@{String}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{String()}{String()}}
+{\footnotesize\ttfamily QString VException\+Conversion\+Error\+::\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+String return string, where happend error. 
+
+\begin{DoxyReturn}{Returns}
+string 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_exception_conversion_error_a101a90aa485fcb96640f4ad8b14086c7}\label{class_v_exception_conversion_error_a101a90aa485fcb96640f4ad8b14086c7}} 
+\index{VExceptionConversionError@{VExceptionConversionError}!str@{str}}
+\index{str@{str}!VExceptionConversionError@{VExceptionConversionError}}
+\doxysubsubsection{\texorpdfstring{str}{str}}
+{\footnotesize\ttfamily QString VException\+Conversion\+Error\+::str\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+str string, where happend error 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionconversionerror_8h}{vexceptionconversionerror.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/ifc/exception/\mbox{\hyperlink{vexceptionconversionerror_8cpp}{vexceptionconversionerror.\+cpp}}\end{DoxyCompactItemize}

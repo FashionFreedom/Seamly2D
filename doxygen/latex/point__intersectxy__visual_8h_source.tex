@@ -1,0 +1,79 @@
+\hypertarget{point__intersectxy__visual_8h_source}{}\doxysection{point\+\_\+intersectxy\+\_\+visual.\+h}
+\label{point__intersectxy__visual_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/visualization/line/point\_intersectxy\_visual.h@{D:/Github/Seamly2D/src/libs/vtools/visualization/line/point\_intersectxy\_visual.h}}
+\mbox{\hyperlink{point__intersectxy__visual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/**************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ point\_intersectxy\_visual.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ 13\ 8,\ 2014}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @date\ \ \ 7.21.2022}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2022\ Seamly2D\ project}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ POINT\_INTERSECTXY\_VISUAL\_H}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ POINT\_INTERSECTXY\_VISUAL\_H}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{visline_8h}{visline.h}}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <QColor>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <QGraphicsItem>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <QLineF>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_intersect_x_y_visual}{PointIntersectXYVisual}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_vis_line}{VisLine}}}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{explicit}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual}{PointIntersectXYVisual}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_visualization_a7fadf653e2583b56cb9bf09cc5954581}{data}},\ QGraphicsItem\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_a9cb19ed5021c1b9d3811594e9b9bfbba}{\string~PointIntersectXYVisual}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_a69390edbb26a5e3822b6073f524d31f0}{RefreshGeometry}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_ac1da3d337501faf45667e1307e2cb0f0}{setPoint2Id}}(const\ quint32\ \&value);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_a6c9d18093c1d58556bb34aa803f99f36}{setPoint1Id}}(const\ quint32\ \&value);}
+\DoxyCodeLine{00059\ \ \ \ \ virtual\ \textcolor{keywordtype}{int}\ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_af7c5a2f2e2774b48f56adedda8f01d0b}{type}}()\ const\ Q\_DECL\_OVERRIDE\ \{\textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_point_intersect_x_y_visual_abecb2aae8fe828c6bc12e70b20b52ca0adb5895c9626620e059914564630117f9}{Type}};\}}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{enum}\ \ \ \ \ \ \ \ \ \ \ \ \{\mbox{\hyperlink{class_point_intersect_x_y_visual_abecb2aae8fe828c6bc12e70b20b52ca0adb5895c9626620e059914564630117f9}{Type}}\ =\ UserType\ +\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(Vis::ToolPointOfIntersection)\};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_point_intersect_x_y_visual}{PointIntersectXYVisual}})}
+\DoxyCodeLine{00064\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_ae7fe80b52e37f99043f4de99ac55d1c1}{point2Id}};}
+\DoxyCodeLine{00065\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ *\mbox{\hyperlink{class_point_intersect_x_y_visual_a2295e71977a82b7b06033d3676c75683}{point}};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ *\mbox{\hyperlink{class_point_intersect_x_y_visual_a244b6489b2338ec11fb83d90269e8ee1}{axisP1}};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_ellipse}{VScaledEllipse}}\ *\mbox{\hyperlink{class_point_intersect_x_y_visual_a8789f177ba9cb6b898dd9f0aad378576}{axisP2}};}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_v_scaled_line}{VScaledLine}}\ \ \ \ *\mbox{\hyperlink{class_point_intersect_x_y_visual_a0c8fa47619783c833fabf4db17353d9a}{axis2}};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_point_intersect_x_y_visual_a74e5025dd8bc9b2184117410832418b1}{showIntersection}}(const\ QLineF\ \&axis1,\ const\ QLineF\ \&\mbox{\hyperlink{class_point_intersect_x_y_visual_a0c8fa47619783c833fabf4db17353d9a}{axis2}},\ const\ QColor\ \&color);}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ POINT\_INTERSECTXY\_VISUAL\_H}}
+
+\end{DoxyCode}

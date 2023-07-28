@@ -1,0 +1,377 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: ClassName
+%%Creator: Doxygen
+%%CreationDate: Time
+%%For: 
+%Magnification: 1.00
+%%Orientation: Portrait
+%%BoundingBox: 0 0 500 2254.901855
+%%Pages: 0
+%%BeginSetup
+%%EndSetup
+%%EndComments
+
+% ----- variables -----
+
+/boxwidth 0 def
+/boxheight 40 def
+/fontheight 24 def
+/marginwidth 10 def
+/distx 20 def
+/disty 40 def
+/boundaspect 0.221739 def  % aspect ratio of the BoundingBox (width/height)
+/boundx 500 def
+/boundy boundx boundaspect div def
+/xspacing 0 def
+/yspacing 0 def
+/rows 46 def
+/cols 2 def
+/scalefactor 0 def
+/boxfont /Times-Roman findfont fontheight scalefont def
+
+% ----- procedures -----
+
+/dotted { [1 4] 0 setdash } def
+/dashed { [5] 0 setdash } def
+/solid  { [] 0 setdash } def
+
+/max % result = MAX(arg1,arg2)
+{
+  /a exch def
+  /b exch def
+  a b gt {a} {b} ifelse
+} def
+
+/xoffset % result = MAX(0,(scalefactor-(boxwidth*cols+distx*(cols-1)))/2)
+{
+  0 scalefactor boxwidth cols mul distx cols 1 sub mul add sub 2 div max
+} def
+
+/cw % boxwidth = MAX(boxwidth, stringwidth(arg1))
+{
+  /str exch def
+  /boxwidth boxwidth str stringwidth pop max def
+} def
+
+/box % draws a box with text 'arg1' at grid pos (arg2,arg3)
+{ gsave
+  2 setlinewidth
+  newpath
+  exch xspacing mul xoffset add
+  exch yspacing mul
+  moveto
+  boxwidth 0 rlineto 
+  0 boxheight rlineto 
+  boxwidth neg 0 rlineto 
+  0 boxheight neg rlineto 
+  closepath
+  dup stringwidth pop neg boxwidth add 2 div
+  boxheight fontheight 2 div sub 2 div
+  rmoveto show stroke
+  grestore
+} def  
+
+/mark
+{ newpath
+  exch xspacing mul xoffset add boxwidth add
+  exch yspacing mul
+  moveto
+  0 boxheight 4 div rlineto
+  boxheight neg 4 div boxheight neg 4 div rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/arrow
+{ newpath
+  moveto
+  3 -8 rlineto
+  -6 0 rlineto
+  3 8 rlineto
+  closepath
+  eofill
+  stroke
+} def
+
+/out % draws an output connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight add
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto 
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/in % draws an input connector for the block at (arg1,arg2)
+{
+  newpath
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul disty 2 div sub
+  /y exch def
+  /x exch def
+  x y moveto
+  0 disty 2 div rlineto
+  stroke
+  1 eq { x y disty 2 div add arrow } if
+} def
+
+/hedge
+{
+  exch xspacing mul xoffset add boxwidth 2 div add
+  exch yspacing mul boxheight 2 div sub
+  /y exch def
+  /x exch def
+  newpath
+  x y moveto
+  boxwidth 2 div distx add 0 rlineto
+  stroke
+  1 eq
+  { newpath x boxwidth 2 div distx add add y moveto
+    -8 3 rlineto
+    0 -6 rlineto
+    8 3 rlineto
+    closepath
+    eofill
+    stroke
+  } if
+} def
+
+/vedge
+{
+  /ye exch def
+  /ys exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add dup
+  ys yspacing mul boxheight 2 div sub
+  moveto
+  ye yspacing mul boxheight 2 div sub
+  lineto
+  stroke
+} def
+
+/conn % connections the blocks from col 'arg1' to 'arg2' of row 'arg3'
+{
+  /ys exch def
+  /xe exch def
+  /xs exch def
+  newpath
+  xs xspacing mul xoffset add boxwidth 2 div add
+  ys yspacing mul disty 2 div sub
+  moveto
+  xspacing xe xs sub mul 0
+  rlineto
+  stroke
+} def
+
+% ----- main ------
+
+boxfont setfont
+1 boundaspect scale
+(DialogTool) cw
+(QDialog) cw
+(AddToGroupDialog) cw
+(AnchorPointDialog) cw
+(DialogAlongLine) cw
+(DialogArc) cw
+(DialogArcWithLength) cw
+(DialogBisector) cw
+(DialogCubicBezier) cw
+(DialogCubicBezierPath) cw
+(DialogCurveIntersectAxis) cw
+(DialogCutArc) cw
+(DialogCutSpline) cw
+(DialogCutSplinePath) cw
+(DialogEllipticalArc) cw
+(DialogEndLine) cw
+(DialogHeight) cw
+(DialogInternalPath) cw
+(DialogLine) cw
+(DialogLineIntersect) cw
+(DialogLineIntersectAxis) cw
+(DialogMirrorByAxis) cw
+(DialogMirrorByLine) cw
+(DialogMove) cw
+(DialogNormal) cw
+(DialogPointFromArcAndTangent) cw
+(DialogPointOfContact) cw
+(DialogPointOfIntersectionArcs) cw
+(DialogPointOfIntersectionCurves) cw
+(DialogRotation) cw
+(DialogShoulderPoint) cw
+(DialogSinglePoint) cw
+(DialogSpline) cw
+(DialogSplinePath) cw
+(DialogTriangle) cw
+(DialogTrueDarts) cw
+(DialogVariables) cw
+(EditFormulaDialog) cw
+(EditGroupDialog) cw
+(HistoryDialog) cw
+(InsertNodesDialog) cw
+(IntersectCircleTangentDialog) cw
+(IntersectCirclesDialog) cw
+(PatternPieceDialog) cw
+(PointIntersectXYDialog) cw
+(UnionDialog) cw
+/boxwidth boxwidth marginwidth 2 mul add def
+/xspacing boxwidth distx add def
+/yspacing boxheight disty add def
+/scalefactor 
+  boxwidth cols mul distx cols 1 sub mul add
+  boxheight rows mul disty rows 1 sub mul add boundaspect mul 
+  max def
+boundx scalefactor div boundy scalefactor div scale
+
+% ----- classes -----
+
+ (DialogTool) 0.000000 44.000000 box
+ (QDialog) 0.000000 45.000000 box
+ (AddToGroupDialog) 1.000000 43.000000 box
+ (AnchorPointDialog) 1.000000 42.000000 box
+ (DialogAlongLine) 1.000000 41.000000 box
+ (DialogArc) 1.000000 40.000000 box
+ (DialogArcWithLength) 1.000000 39.000000 box
+ (DialogBisector) 1.000000 38.000000 box
+ (DialogCubicBezier) 1.000000 37.000000 box
+ (DialogCubicBezierPath) 1.000000 36.000000 box
+ (DialogCurveIntersectAxis) 1.000000 35.000000 box
+ (DialogCutArc) 1.000000 34.000000 box
+ (DialogCutSpline) 1.000000 33.000000 box
+ (DialogCutSplinePath) 1.000000 32.000000 box
+ (DialogEllipticalArc) 1.000000 31.000000 box
+ (DialogEndLine) 1.000000 30.000000 box
+ (DialogHeight) 1.000000 29.000000 box
+ (DialogInternalPath) 1.000000 28.000000 box
+ (DialogLine) 1.000000 27.000000 box
+ (DialogLineIntersect) 1.000000 26.000000 box
+ (DialogLineIntersectAxis) 1.000000 25.000000 box
+ (DialogMirrorByAxis) 1.000000 24.000000 box
+ (DialogMirrorByLine) 1.000000 23.000000 box
+ (DialogMove) 1.000000 22.000000 box
+ (DialogNormal) 1.000000 21.000000 box
+ (DialogPointFromArcAndTangent) 1.000000 20.000000 box
+ (DialogPointOfContact) 1.000000 19.000000 box
+ (DialogPointOfIntersectionArcs) 1.000000 18.000000 box
+ (DialogPointOfIntersectionCurves) 1.000000 17.000000 box
+ (DialogRotation) 1.000000 16.000000 box
+ (DialogShoulderPoint) 1.000000 15.000000 box
+ (DialogSinglePoint) 1.000000 14.000000 box
+ (DialogSpline) 1.000000 13.000000 box
+ (DialogSplinePath) 1.000000 12.000000 box
+ (DialogTriangle) 1.000000 11.000000 box
+ (DialogTrueDarts) 1.000000 10.000000 box
+ (DialogVariables) 1.000000 9.000000 box
+ (EditFormulaDialog) 1.000000 8.000000 box
+ (EditGroupDialog) 1.000000 7.000000 box
+ (HistoryDialog) 1.000000 6.000000 box
+ (InsertNodesDialog) 1.000000 5.000000 box
+ (IntersectCircleTangentDialog) 1.000000 4.000000 box
+ (IntersectCirclesDialog) 1.000000 3.000000 box
+ (PatternPieceDialog) 1.000000 2.000000 box
+ (PointIntersectXYDialog) 1.000000 1.000000 box
+ (UnionDialog) 1.000000 0.000000 box
+
+% ----- relations -----
+
+solid
+0 0.000000 44.000000 out
+solid
+1 0.000000 45.000000 in
+solid
+1 0.000000 43.250000 out
+solid
+0 0.000000 43.500000 hedge
+solid
+0 0.000000 42.500000 hedge
+solid
+0 0.000000 41.500000 hedge
+solid
+0 0.000000 40.500000 hedge
+solid
+0 0.000000 39.500000 hedge
+solid
+0 0.000000 38.500000 hedge
+solid
+0 0.000000 37.500000 hedge
+solid
+0 0.000000 36.500000 hedge
+solid
+0 0.000000 35.500000 hedge
+solid
+0 0.000000 34.500000 hedge
+solid
+0 0.000000 33.500000 hedge
+solid
+0 0.000000 32.500000 hedge
+solid
+0 0.000000 31.500000 hedge
+solid
+0 0.000000 30.500000 hedge
+solid
+0 0.000000 29.500000 hedge
+solid
+0 0.000000 28.500000 hedge
+solid
+0 0.000000 27.500000 hedge
+solid
+0 0.000000 26.500000 hedge
+solid
+0 0.000000 25.500000 hedge
+solid
+0 0.000000 24.500000 hedge
+solid
+0 0.000000 23.500000 hedge
+solid
+0 0.000000 22.500000 hedge
+solid
+0 0.000000 21.500000 hedge
+solid
+0 0.000000 20.500000 hedge
+solid
+0 0.000000 19.500000 hedge
+solid
+0 0.000000 18.500000 hedge
+solid
+0 0.000000 17.500000 hedge
+solid
+0 0.000000 16.500000 hedge
+solid
+0 0.000000 15.500000 hedge
+solid
+0 0.000000 14.500000 hedge
+solid
+0 0.000000 13.500000 hedge
+solid
+0 0.000000 12.500000 hedge
+solid
+0 0.000000 11.500000 hedge
+solid
+0 0.000000 10.500000 hedge
+solid
+0 0.000000 9.500000 hedge
+solid
+0 0.000000 8.500000 hedge
+solid
+0 0.000000 7.500000 hedge
+solid
+0 0.000000 6.500000 hedge
+solid
+0 0.000000 5.500000 hedge
+solid
+0 0.000000 4.500000 hedge
+solid
+0 0.000000 3.500000 hedge
+solid
+0 0.000000 2.500000 hedge
+solid
+0 0.000000 1.500000 hedge
+solid
+0 0.000000 0.500000 hedge
+solid
+0.000000 44.000000 0.500000 vedge

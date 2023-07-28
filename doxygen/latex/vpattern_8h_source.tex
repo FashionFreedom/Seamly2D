@@ -1,0 +1,251 @@
+\hypertarget{vpattern_8h_source}{}\doxysection{vpattern.\+h}
+\label{vpattern_8h_source}\index{D:/Github/Seamly2D/src/app/seamly2d/xml/vpattern.h@{D:/Github/Seamly2D/src/app/seamly2d/xml/vpattern.h}}
+\mbox{\hyperlink{vpattern_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vpattern.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vpattern.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 24\ 2,\ 2014}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VPATTERN\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VPATTERN\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vtoolrecord.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vcontainer.h"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vpatternconverter.h"{}}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}};}
+\DoxyCodeLine{00062\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_node_detail}{VNodeDetail}};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_pattern}{VPattern}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}}
+\DoxyCodeLine{00068\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00070\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_pattern}{VPattern}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_pattern_a39fa904849994626f4fbbbe2071d5381}{data}},\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ *\mbox{\hyperlink{class_v_pattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}},\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *\mbox{\hyperlink{class_v_pattern_a048ef2635e666e8fde5b35955fecc012}{draftScene}},\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *\mbox{\hyperlink{class_v_pattern_a148e6acd29726fecb2203dde2d719a2b}{pieceScene}},}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_a7756dd3ebea99cc496657bb051a57c02}{CreateEmptyFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_af46d35645d7fb00e60d540ad455fe27f}{Parse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_af79f2238575f82168b93fbe09513b2d2}{setCurrentData}}();}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_ac9761d50f31122c83d71d02bab55cfac}{UpdateToolData}}(\textcolor{keyword}{const}\ quint32\ \&\textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_pattern_a39fa904849994626f4fbbbe2071d5381}{data}})\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_acf2548e54b6c3073fa3181cded586ae9}{IncrementReferens}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_a6e5e52d2eafef029b6ed92b3637bce19}{DecrementReferens}}(quint32\ \textcolor{keywordtype}{id})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ quint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a19e139b0a879cb5cfafb864563d34573}{getActiveBasePoint}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \mbox{\hyperlink{class_v_pattern_a117c4c20ac04d46cdd73d91381354c87}{getActivePatternPieces}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_ac760395c10d311cf1fc63e9591e70383}{setXMLContent}}(\textcolor{keyword}{const}\ QString\ \&fileName)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \ \ \mbox{\hyperlink{class_v_pattern_acc2c7ce746bd15e5b0c26b3973e6e731}{SaveDocument}}(\textcolor{keyword}{const}\ QString\ \&fileName,\ QString\ \&error)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ QRectF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a20bd85d98a57ad9e702793573f94d92a}{ActiveDrawBoundingRect}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a688ddc4a60c07bd37cea5186863f4bbf}{addEmptyCustomVariable}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aea374a0772b036f75afc1d5268b19b6b}{addEmptyCustomVariableAfter}}(\textcolor{keyword}{const}\ QString\ \&after,\ \textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_abc5f27642d956ceced33f126393f6213}{removeCustomVariable}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aafe1def7601c2c1dd0943445cac9d931}{MoveUpIncrement}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a07008d7c9eadedb25d09286b22034ce4}{MoveDownIncrement}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ab6480b4f145a1d9978adc19a28f20fe2}{setIncrementName}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a8fd1a3171ae14a2e2c08727f03b21742}{SetIncrementFormula}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a1cd5c3acde6f249c62eefe514df7918a}{setIncrementDescription}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ QString\ \&text);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a14d615104b8565dee335270ac62dcb80}{replaceNameInFormula}}(\mbox{\hyperlink{class_q_vector}{QVector<VFormulaField>}}\ \&expressions,\ \textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ QString\ \&newName);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_pattern_aa3fad01c54e8a66d594d13af8fefa1b1}{GenerateLabel}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_ae7000dac1383b63c0bc228756fc52cfa}{LabelType}}\ \&type,\ \textcolor{keyword}{const}\ QString\ \&reservedName\ =\ QString())\textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_pattern_a398106d3f9107a2ca5a4af2f73fe74bd}{GenerateSuffix}}(\textcolor{keyword}{const}\ QString\ \&type)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_pattern_ab137433052e30764de02adfd625457b3}{IsDefCustom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ae72618baa411af70b212d23967fc7160}{SetDefCustom}}(\textcolor{keywordtype}{bool}\ value);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_v_pattern_a2ea567f21f963b131e58568762ae9b94}{GetDefCustomHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ae8a2f6138b1623468e079a5b9430997d}{SetDefCustomHeight}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{class_v_pattern_a069fecbafa30c34523e6e3a0609b5033}{GetDefCustomSize}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a008814a9d8d82c04a96fe5832d1d469b}{SetDefCustomSize}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_pattern_a8681e4fdd2df4d64dfd4ccdaa33fe96c}{IsReadOnly}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aaa819ebe90fa73ddf6e49c78161b0056}{SetReadOnly}}(\textcolor{keywordtype}{bool}\ rOnly);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a5df4433842644a3cfb3e4340d8c8a0c8}{LiteParseIncrements}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_v_pattern_a1bc942189e2a4247bb420c557e65dac1}{AttrReadOnly}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ad4fb73c93f0028b02295fb1a29bbfac8}{LiteParseTree}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_pattern_a013e4989385c69c57d56d62a48cf6804}{customEvent}}(QEvent\ *\ event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00131\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_pattern}{VPattern}})}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_pattern_a39fa904849994626f4fbbbe2071d5381}{data}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_v_pattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *\mbox{\hyperlink{class_v_pattern_a048ef2635e666e8fde5b35955fecc012}{draftScene}};}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *\mbox{\hyperlink{class_v_pattern_a148e6acd29726fecb2203dde2d719a2b}{pieceScene}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_v_node_detail}{VNodeDetail}}\ \ \ \ \mbox{\hyperlink{class_v_pattern_ab4b1fe68b5c69ef78cae172bb28b086b}{parsePieceNode}}(const\ QDomElement\ \&domElement)\ const;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_ad3408fd765ead3bee06f5741dd3943b2}{parseDraftBlockElement}}(const\ QDomNode\ \&node,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_afbe69479d7aac457590223314d9b9c07}{ParseDrawMode}}(const\ QDomNode\ \&node,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}\ \&\mbox{\hyperlink{class_v_pattern_a1e24bfa57d1cf090908f88f16d20ca56}{mode}});}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a51ee49250452360fb6436188332516b2}{parsePieceElement}}(QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_afe3cb10fbcfb0ef0e97b16d96d07cfd0}{parsePieceNodes}}(const\ QDomElement\ \&domElement,\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece,\ qreal\ width,\ \textcolor{keywordtype}{bool}\ closed)\ const;}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a07788cda32b5f2bbe0573cc4809dc046}{ParsePieceDataTag}}(const\ QDomElement\ \&domElement,\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ const;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a0fb26939b0a6a28b564bf66581adc3e3}{ParsePiecePatternInfo}}(const\ QDomElement\ \&domElement,\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ const;}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a8177c4c301f0e9f1febdfe8e545f6a27}{ParsePieceGrainline}}(const\ QDomElement\ \&domElement,\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ const;}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a70fd49f815f081c3ed98423ad3459712}{parsePatternPieces}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_aaef8a3722c447c2d7e9c9adde9394cdd}{ParsePointElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ QString\ \&type);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_ad79e70002e3bd0c78bfbf4c91ccdb395}{ParseLineElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_ad2ca1a2ee7f939b9ee9799a91b60c3a4}{ParseSplineElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ QString\ \&type);}
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a6dfb7573bc85e24958bbb2048d100640}{ParseArcElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ QString\ \&type);}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_acfe8e8fdef3053d434ea9a18e738e694}{ParseEllipticalArcElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&type);}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_ab1a3e68f9b62881f25d1a9fe908a1246}{ParseToolsElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,\ const\ QString\ \&type);}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a0c67486cfa3a40f4d2728493f1fce905}{ParseOperationElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&type);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a18ecd2b695a460dc1579908523f9bb42}{ParsePathElement}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a1d6f0015a5969848cc91228abff71a24}{ParseIncrementsElement}}(const\ QDomNode\ \&node);}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a31685407b356825767175343ad322e8a}{PrepareForParse}}(const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a2df613d36145ea64f556316c5bfcc321}{ToolsCommonAttributes}}(const\ QDomElement\ \&domElement,\ quint32\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a7b8692b65f7b164d8633ce3a59a0d469}{PointsCommonAttributes}}(const\ QDomElement\ \&domElement,\ quint32\ \&\textcolor{keywordtype}{id},\ QString\ \&name,\ qreal\ \&mx,}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ \&my,\ \textcolor{keywordtype}{bool}\ \&labelVisible,\ QString\ \&lineType,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QString\ \&lineWeight,\ QString\ \&lineColor);}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a7b8692b65f7b164d8633ce3a59a0d469}{PointsCommonAttributes}}(const\ QDomElement\ \&domElement,\ quint32\ \&\textcolor{keywordtype}{id},\ QString\ \&name,\ qreal\ \&mx,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ \&my,\ \textcolor{keywordtype}{bool}\ \&labelVisible);}
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a7b8692b65f7b164d8633ce3a59a0d469}{PointsCommonAttributes}}(const\ QDomElement\ \&domElement,\ quint32\ \&\textcolor{keywordtype}{id},\ qreal\ \&mx,\ qreal\ \&my);}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_ab67ff878805574fc2c1462aeef83ffb0}{SplinesCommonAttributes}}(const\ QDomElement\ \&domElement,\ quint32\ \&\textcolor{keywordtype}{id},\ quint32\ \&idObject,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ quint32\ \&idTool);}
+\DoxyCodeLine{00177\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00178\ \ \ \ \ QRectF\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a4c07606b4257438b868b347b0d69ede5}{ToolBoundingRect}}(const\ QRectF\ \&rec,\ const\ quint32\ \&\textcolor{keywordtype}{id})\ const;}
+\DoxyCodeLine{00179\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a4049c1ad07487c6e65fe5fdcea087a08}{parseCurrentDraftBlock}}();}
+\DoxyCodeLine{00180\ \ \ \ \ QString\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a127db4af838b0a76a37c14d22f325451}{GetLabelBase}}(quint32\ index)const;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ab6cacfbb791d6b2bbfa9a959b429eb73}{ParseToolBasePoint}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a0575f91ef7eb1490388a0c88efe00f42}{ParseToolEndLine}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a501ad3f05a9e9ce8ef305ca6a18c69b7}{ParseToolAlongLine}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aa22b423020bdf556fe229e8d93358124}{ParseToolShoulderPoint}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_acf2ecc1469d55ed8a13c43fd59dfcff3}{ParseToolNormal}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00187\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a2b1591565a5ec5a2d1f9250210a4fb5c}{ParseToolBisector}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a4e00718619366832eea8afd7ffae192c}{ParseToolLineIntersect}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a71177a9ed212018a6fb3424b0783933f}{ParseToolPointOfContact}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a5de0491fe99d03e2bb09d5bbc232e0cb}{ParseNodePoint}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00191\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a22cc37f6916944cd9060e6575de8244a}{ParseAnchorPoint}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a267ba63e834165e37b190607fa089be4}{ParseToolHeight}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ada518c25daf57ce1397cedfe3b859151}{ParseToolTriangle}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aca783bf49194acfc73ef581d2ca831d5}{parseIntersectXYTool}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_abdd0765df4f8c26bd7f58b88cd9776ff}{ParseToolCutSpline}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a2c883d0e6582c6463828b912a0b1b762}{ParseToolCutSplinePath}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_acba38769417de171aab169ef612d0362}{ParseToolCutArc}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a38c5be94b629eef4387203b544b52fe9}{ParseToolLineIntersectAxis}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a5bd15c1ebe5d4fc061c1f7bbdc760e44}{ParseToolCurveIntersectAxis}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_afc90021710966ad3421abfe33a23fd26}{ParseToolPointOfIntersectionArcs}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00202\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a16be59c0b918faa29eda52595973d9f2}{ParseToolPointOfIntersectionCircles}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00203\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a1f11bb55ad174167bf3c2e70d76b041d}{ParseToolPointOfIntersectionCurves}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a724819a7d60ee183e7fdf1eb54c30bdb}{ParseToolPointFromCircleAndTangent}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00206\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a1f86bbf92c2483035ab814734747be0d}{ParseToolPointFromArcAndTangent}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a1e76508accc3c2aeca03845c4af8bbef}{ParseToolTrueDarts}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \textcolor{comment}{//\ TODO.\ Delete\ if\ minimal\ supported\ version\ is\ 0.2.7}}
+\DoxyCodeLine{00211\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a31769d83b29194cca8676aefffb455f0}{Q\_STATIC\_ASSERT\_X}}(\mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}}::PatternMinVer\ <\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(0,\ 2,\ 7),}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Time\ to\ refactor\ the\ code."{});}
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_af159393ed69bf7af389acd4c62365242}{ParseOldToolSpline}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ad50e7ca14a4b8337d1908464fe9fa2de}{ParseToolSpline}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00216\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a6a71e40065c6a487c437ea58574712d0}{ParseToolCubicBezier}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{comment}{//\ TODO.\ Delete\ if\ minimal\ supported\ version\ is\ 0.2.7}}
+\DoxyCodeLine{00219\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_a31769d83b29194cca8676aefffb455f0}{Q\_STATIC\_ASSERT\_X}}(\mbox{\hyperlink{class_v_pattern_converter}{VPatternConverter}}::PatternMinVer\ <\ \mbox{\hyperlink{vabstractconverter_8h_a84d8d5101c009ef420b2a531fb6fbdfa}{CONVERTER\_VERSION\_CHECK}}(0,\ 2,\ 7),}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ "{}Time\ to\ refactor\ the\ code."{});}
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a79f53bf38f13be9d70c3b2bb4c960619}{ParseOldToolSplinePath}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a9174c43e258af7030ca058d3c79815f4}{ParseToolSplinePath}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00224\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ace8654fb06f87dbb7d71fdad242abd41}{ParseToolCubicBezierPath}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a806d6ee4a64d415223b18c60cd736233}{ParseNodeSpline}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00226\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a2f30b129fdae891f7477e7047a7add9e}{ParseNodeSplinePath}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a98d701ff524aef0e429f098f9c7fd802}{ParseToolArc}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a07ab8240324cdad063170d4cce962f5d}{ParseNodeArc}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a41c025faaee38593cb85daf81925f66e}{ParseToolArcWithLength}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ab22bdb8a93f383648d135236a9bfd631}{ParseToolEllipticalArc}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_a379b3f26ba0da4da4e1b996dd3ac97e2}{ParseNodeEllipticalArc}}(const\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ab480ed2ac91adf812daf803bffb62775}{ParseToolRotation}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00236\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aa6bd4ecd1eb9a29e171546536a854568}{ParseToolMirrorByLine}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00237\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_affe684902ad78e05ca4af9bd15869a67}{ParseToolMirrorByAxis}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00238\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_ad6c80531bbbcd2ea6ab960ef6170e1f2}{ParseToolMove}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \&parse);}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \ \ \ \ qreal\ \mbox{\hyperlink{class_v_pattern_afa7d926ebf2b67fdc0e8c3010d536d41}{EvalFormula}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_pattern_a39fa904849994626f4fbbbe2071d5381}{data}},\ const\ QString\ \&formula,\ \textcolor{keywordtype}{bool}\ *ok)\ const;}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ QDomElement\ \mbox{\hyperlink{class_v_pattern_a7c8de429e2511806815f14d0a584c2b6}{MakeEmptyIncrement}}(const\ QString\ \&name);}
+\DoxyCodeLine{00243\ \ \ \ \ QDomElement\ \mbox{\hyperlink{class_v_pattern_a683a2126c06869df8b12cd9d2712273f}{FindIncrement}}(const\ QString\ \&name)\ const;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_pattern_aa5394816d09a7102d49c8e646814c79e}{GarbageCollector}}();}
+\DoxyCodeLine{00246\ \};}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPATTERN\_H}}
+
+\end{DoxyCode}

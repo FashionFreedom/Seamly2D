@@ -1,0 +1,311 @@
+\hypertarget{class_v_piece_item}{}\doxysection{VPiece\+Item Class Reference}
+\label{class_v_piece_item}\index{VPieceItem@{VPieceItem}}
+
+
+{\ttfamily \#include $<$vpieceitem.\+h$>$}
+
+Inheritance diagram for VPiece\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_piece_item}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03}{Move\+Type}} \{ \newline
+\mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a72379022c5851042fa043c86560a7072}{Not\+Movable}} = 0x0
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8c9a284c49ff00c7bf0d28cf4b59e5ad}{Is\+Rotatable}} = 0x1
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a92953b8a07491625abe19b8330ce77cd}{Is\+Resizable}} = 0x2
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a7bad758d98bfb925c1217252610287c6}{Is\+Movable}} = 0x4
+, \newline
+\mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03afd7dedcaa996c403e737bfa6dcac0083}{All\+Modifications}} = Is\+Rotatable $\vert$ Is\+Resizable $\vert$ Is\+Movable
+, \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8e79a2da272950adbbced9e206d843a8}{Error}} = 0x8
+ \}
+\item 
+enum \{ \mbox{\hyperlink{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5a728c0d12c6c0ccf1024791e66b5a2d7d}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Piece\+Item)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_piece_item_a8912faa3522a8118fd7cb80c086a1465}{item\+Moved}} (const QPointF \&pt\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_piece_item_a7e5e7600e75e5c2b208acdca8526be42}{VPiece\+Item}} (QGraphics\+Item $\ast$p\+Parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_piece_item_a8ec884d901d95b677840c65b6e01607d}{$\sim$\+VPiece\+Item}} ()
+\item 
+virtual QRectF \mbox{\hyperlink{class_v_piece_item_a6d319bf0f884216ba2f2928a2ae63aa1}{bounding\+Rect}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em bounding\+Rect returns the item bounding box \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_piece_item_a48a1183b2df00b112190679b58fb3bef}{Update}} ()=0
+\item 
+void \mbox{\hyperlink{class_v_piece_item_acb516cd1cdef4ed7a1b27041b65aef28}{Reset}} ()
+\begin{DoxyCompactList}\small\item\em Reset resets the item, putting the mode and z coordinate to normal and redraws it. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_piece_item_a534647f3a0bcef2f4cffe3d660c66c6c}{Is\+Idle}} () const
+\begin{DoxyCompactList}\small\item\em Is\+Idle returns the idle flag. \end{DoxyCompactList}\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{class_v_piece_item_ac0b8ada4084947023cf818092050549a}{Get\+Move\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_piece_item_aecf1581842a3095a1b602111a9afec27}{Set\+Move\+Type}} (const VPiece\+Item\+::\+Move\+Types \&move\+Type)
+\item 
+virtual int \mbox{\hyperlink{class_v_piece_item_a47755d8b28d4f633209430da8608b2c0}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{Mode}} \{ \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a11f20da2639e7311025205a795fb5077}{m\+Normal}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a757f06476280dad47461b119ac321c4f}{m\+Move}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a2c8f2b45569ed7a60b3b7f5920809015}{m\+Resize}}
+, \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a7659d3e4f6d10acd946afc05e7d98c26}{m\+Rotate}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual double \mbox{\hyperlink{class_v_piece_item_a7f598b94f6e80527082fbf178cebbb79}{Get\+Angle}} (const QPointF \&pt) const
+\begin{DoxyCompactList}\small\item\em Get\+Angle calculates the angle between the line, which goes from rotation center to pt and x axis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QRectF \mbox{\hyperlink{class_v_piece_item_a1dc2a1419e3bdf83354fec313a8375b7}{m\+\_\+rect\+Bounding\+Box}}
+\item 
+\mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{Mode}} \mbox{\hyperlink{class_v_piece_item_aed2b3619129ec1f23565e7d3e88249f0}{m\+\_\+e\+Mode}}
+\item 
+bool \mbox{\hyperlink{class_v_piece_item_a63a2d19fe16f74a3e146f27ca7c8aa50}{m\+\_\+b\+Released}}
+\item 
+QPointF \mbox{\hyperlink{class_v_piece_item_ad5cd9bee05863d5d2fab3e1bb0601f8a}{m\+\_\+pt\+Rot\+Center}}
+\item 
+VPiece\+Item\+::\+Move\+Types \mbox{\hyperlink{class_v_piece_item_a2961c269a8d70009bb1decd53b035392}{m\+\_\+move\+Type}}
+\item 
+qreal \mbox{\hyperlink{class_v_piece_item_a59199ca902be6aa33aa00989a2d1f7ac}{m\+\_\+inactiveZ}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5}\label{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!Type@{Type}}}\mbox{\Hypertarget{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5a728c0d12c6c0ccf1024791e66b5a2d7d}\label{class_v_piece_item_a28cc00915eec648b8a89e7e46abf63a5a728c0d12c6c0ccf1024791e66b5a2d7d}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}\label{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}} 
+\index{VPieceItem@{VPieceItem}!Mode@{Mode}}
+\index{Mode@{Mode}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{VPiece\+Item\+::\+Mode}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mNormal@{mNormal}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!mNormal@{mNormal}}}\mbox{\Hypertarget{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a11f20da2639e7311025205a795fb5077}\label{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a11f20da2639e7311025205a795fb5077}} 
+m\+Normal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mMove@{mMove}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!mMove@{mMove}}}\mbox{\Hypertarget{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a757f06476280dad47461b119ac321c4f}\label{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a757f06476280dad47461b119ac321c4f}} 
+m\+Move&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mResize@{mResize}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!mResize@{mResize}}}\mbox{\Hypertarget{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a2c8f2b45569ed7a60b3b7f5920809015}\label{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a2c8f2b45569ed7a60b3b7f5920809015}} 
+m\+Resize&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mRotate@{mRotate}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!mRotate@{mRotate}}}\mbox{\Hypertarget{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a7659d3e4f6d10acd946afc05e7d98c26}\label{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367a7659d3e4f6d10acd946afc05e7d98c26}} 
+m\+Rotate&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03}} 
+\index{VPieceItem@{VPieceItem}!MoveType@{MoveType}}
+\index{MoveType@{MoveType}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{MoveType}{MoveType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03}{VPiece\+Item\+::\+Move\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NotMovable@{NotMovable}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!NotMovable@{NotMovable}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a72379022c5851042fa043c86560a7072}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a72379022c5851042fa043c86560a7072}} 
+Not\+Movable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsRotatable@{IsRotatable}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!IsRotatable@{IsRotatable}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8c9a284c49ff00c7bf0d28cf4b59e5ad}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8c9a284c49ff00c7bf0d28cf4b59e5ad}} 
+Is\+Rotatable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsResizable@{IsResizable}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!IsResizable@{IsResizable}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a92953b8a07491625abe19b8330ce77cd}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a92953b8a07491625abe19b8330ce77cd}} 
+Is\+Resizable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IsMovable@{IsMovable}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!IsMovable@{IsMovable}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a7bad758d98bfb925c1217252610287c6}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a7bad758d98bfb925c1217252610287c6}} 
+Is\+Movable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AllModifications@{AllModifications}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!AllModifications@{AllModifications}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03afd7dedcaa996c403e737bfa6dcac0083}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03afd7dedcaa996c403e737bfa6dcac0083}} 
+All\+Modifications&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!VPieceItem@{VPieceItem}}\index{VPieceItem@{VPieceItem}!Error@{Error}}}\mbox{\Hypertarget{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8e79a2da272950adbbced9e206d843a8}\label{class_v_piece_item_a09ecb9f194c9e7bb7b1008938050cd03a8e79a2da272950adbbced9e206d843a8}} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_piece_item_a7e5e7600e75e5c2b208acdca8526be42}\label{class_v_piece_item_a7e5e7600e75e5c2b208acdca8526be42}} 
+\index{VPieceItem@{VPieceItem}!VPieceItem@{VPieceItem}}
+\index{VPieceItem@{VPieceItem}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{VPieceItem()}{VPieceItem()}}
+{\footnotesize\ttfamily VPiece\+Item\+::\+VPiece\+Item (\begin{DoxyParamCaption}\item[{QGraphics\+Item $\ast$}]{p\+Parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_piece_item_a8ec884d901d95b677840c65b6e01607d}\label{class_v_piece_item_a8ec884d901d95b677840c65b6e01607d}} 
+\index{VPieceItem@{VPieceItem}!````~VPieceItem@{$\sim$VPieceItem}}
+\index{````~VPieceItem@{$\sim$VPieceItem}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{$\sim$VPieceItem()}{~VPieceItem()}}
+{\footnotesize\ttfamily VPiece\+Item\+::$\sim$\+VPiece\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_piece_item_a6d319bf0f884216ba2f2928a2ae63aa1}\label{class_v_piece_item_a6d319bf0f884216ba2f2928a2ae63aa1}} 
+\index{VPieceItem@{VPieceItem}!boundingRect@{boundingRect}}
+\index{boundingRect@{boundingRect}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{boundingRect()}{boundingRect()}}
+{\footnotesize\ttfamily QRectF VPiece\+Item\+::bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+bounding\+Rect returns the item bounding box 
+
+\begin{DoxyReturn}{Returns}
+item bounding box 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_item_a7f598b94f6e80527082fbf178cebbb79}\label{class_v_piece_item_a7f598b94f6e80527082fbf178cebbb79}} 
+\index{VPieceItem@{VPieceItem}!GetAngle@{GetAngle}}
+\index{GetAngle@{GetAngle}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{GetAngle()}{GetAngle()}}
+{\footnotesize\ttfamily double VPiece\+Item\+::\+Get\+Angle (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pt }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Get\+Angle calculates the angle between the line, which goes from rotation center to pt and x axis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt} & point of interest \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the angle between line from rotation center and point of interest and x axis 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_grainline_item_af8849d44c6791afbb81b9cb4d2bc07c1}{VGrainline\+Item}}.
+
+\mbox{\Hypertarget{class_v_piece_item_ac0b8ada4084947023cf818092050549a}\label{class_v_piece_item_ac0b8ada4084947023cf818092050549a}} 
+\index{VPieceItem@{VPieceItem}!GetMoveType@{GetMoveType}}
+\index{GetMoveType@{GetMoveType}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{GetMoveType()}{GetMoveType()}}
+{\footnotesize\ttfamily VPiece\+Item\+::\+Move\+Types VPiece\+Item\+::\+Get\+Move\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_piece_item_a534647f3a0bcef2f4cffe3d660c66c6c}\label{class_v_piece_item_a534647f3a0bcef2f4cffe3d660c66c6c}} 
+\index{VPieceItem@{VPieceItem}!IsIdle@{IsIdle}}
+\index{IsIdle@{IsIdle}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{IsIdle()}{IsIdle()}}
+{\footnotesize\ttfamily bool VPiece\+Item\+::\+Is\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Is\+Idle returns the idle flag. 
+
+\begin{DoxyReturn}{Returns}
+true, if item mode is normal and false otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_piece_item_a8912faa3522a8118fd7cb80c086a1465}\label{class_v_piece_item_a8912faa3522a8118fd7cb80c086a1465}} 
+\index{VPieceItem@{VPieceItem}!itemMoved@{itemMoved}}
+\index{itemMoved@{itemMoved}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{itemMoved}{itemMoved}}
+{\footnotesize\ttfamily void VPiece\+Item\+::item\+Moved (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pt\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_v_piece_item_acb516cd1cdef4ed7a1b27041b65aef28}\label{class_v_piece_item_acb516cd1cdef4ed7a1b27041b65aef28}} 
+\index{VPieceItem@{VPieceItem}!Reset@{Reset}}
+\index{Reset@{Reset}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void VPiece\+Item\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reset resets the item, putting the mode and z coordinate to normal and redraws it. 
+
+\mbox{\Hypertarget{class_v_piece_item_aecf1581842a3095a1b602111a9afec27}\label{class_v_piece_item_aecf1581842a3095a1b602111a9afec27}} 
+\index{VPieceItem@{VPieceItem}!SetMoveType@{SetMoveType}}
+\index{SetMoveType@{SetMoveType}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{SetMoveType()}{SetMoveType()}}
+{\footnotesize\ttfamily void VPiece\+Item\+::\+Set\+Move\+Type (\begin{DoxyParamCaption}\item[{const VPiece\+Item\+::\+Move\+Types \&}]{move\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_piece_item_a47755d8b28d4f633209430da8608b2c0}\label{class_v_piece_item_a47755d8b28d4f633209430da8608b2c0}} 
+\index{VPieceItem@{VPieceItem}!type@{type}}
+\index{type@{type}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VPiece\+Item\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_grainline_item_aaced6ff9cac2e3ad050033cac1ae87c1}{VGrainline\+Item}}, and \mbox{\hyperlink{class_v_text_graphics_item_ace1763ff021d3ea324a98c1ee43e6ddd}{VText\+Graphics\+Item}}.
+
+\mbox{\Hypertarget{class_v_piece_item_a48a1183b2df00b112190679b58fb3bef}\label{class_v_piece_item_a48a1183b2df00b112190679b58fb3bef}} 
+\index{VPieceItem@{VPieceItem}!Update@{Update}}
+\index{Update@{Update}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void VPiece\+Item\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_v_grainline_item_a73e001bf0e741c72cc712be3312f7584}{VGrainline\+Item}}, and \mbox{\hyperlink{class_v_text_graphics_item_afa667b0430c7f0de6563a669b39cfdb2}{VText\+Graphics\+Item}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_piece_item_a63a2d19fe16f74a3e146f27ca7c8aa50}\label{class_v_piece_item_a63a2d19fe16f74a3e146f27ca7c8aa50}} 
+\index{VPieceItem@{VPieceItem}!m\_bReleased@{m\_bReleased}}
+\index{m\_bReleased@{m\_bReleased}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_bReleased}{m\_bReleased}}
+{\footnotesize\ttfamily bool VPiece\+Item\+::m\+\_\+b\+Released\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_piece_item_aed2b3619129ec1f23565e7d3e88249f0}\label{class_v_piece_item_aed2b3619129ec1f23565e7d3e88249f0}} 
+\index{VPieceItem@{VPieceItem}!m\_eMode@{m\_eMode}}
+\index{m\_eMode@{m\_eMode}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_eMode}{m\_eMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_piece_item_a3e439ca880d8bddb9cff29d04dbc5367}{Mode}} VPiece\+Item\+::m\+\_\+e\+Mode\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_piece_item_a59199ca902be6aa33aa00989a2d1f7ac}\label{class_v_piece_item_a59199ca902be6aa33aa00989a2d1f7ac}} 
+\index{VPieceItem@{VPieceItem}!m\_inactiveZ@{m\_inactiveZ}}
+\index{m\_inactiveZ@{m\_inactiveZ}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_inactiveZ}{m\_inactiveZ}}
+{\footnotesize\ttfamily qreal VPiece\+Item\+::m\+\_\+inactiveZ\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_piece_item_a2961c269a8d70009bb1decd53b035392}\label{class_v_piece_item_a2961c269a8d70009bb1decd53b035392}} 
+\index{VPieceItem@{VPieceItem}!m\_moveType@{m\_moveType}}
+\index{m\_moveType@{m\_moveType}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_moveType}{m\_moveType}}
+{\footnotesize\ttfamily VPiece\+Item\+::\+Move\+Types VPiece\+Item\+::m\+\_\+move\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_piece_item_ad5cd9bee05863d5d2fab3e1bb0601f8a}\label{class_v_piece_item_ad5cd9bee05863d5d2fab3e1bb0601f8a}} 
+\index{VPieceItem@{VPieceItem}!m\_ptRotCenter@{m\_ptRotCenter}}
+\index{m\_ptRotCenter@{m\_ptRotCenter}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_ptRotCenter}{m\_ptRotCenter}}
+{\footnotesize\ttfamily QPointF VPiece\+Item\+::m\+\_\+pt\+Rot\+Center\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_piece_item_a1dc2a1419e3bdf83354fec313a8375b7}\label{class_v_piece_item_a1dc2a1419e3bdf83354fec313a8375b7}} 
+\index{VPieceItem@{VPieceItem}!m\_rectBoundingBox@{m\_rectBoundingBox}}
+\index{m\_rectBoundingBox@{m\_rectBoundingBox}!VPieceItem@{VPieceItem}}
+\doxysubsubsection{\texorpdfstring{m\_rectBoundingBox}{m\_rectBoundingBox}}
+{\footnotesize\ttfamily QRectF VPiece\+Item\+::m\+\_\+rect\+Bounding\+Box\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vpieceitem_8h}{vpieceitem.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vwidgets/\mbox{\hyperlink{vpieceitem_8cpp}{vpieceitem.\+cpp}}\end{DoxyCompactItemize}

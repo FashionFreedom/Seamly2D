@@ -1,0 +1,482 @@
+\hypertarget{class_v_abstract_application}{}\doxysection{VAbstract\+Application Class Reference}
+\label{class_v_abstract_application}\index{VAbstractApplication@{VAbstractApplication}}
+
+
+{\ttfamily \#include $<$vabstractapplication.\+h$>$}
+
+Inheritance diagram for VAbstract\+Application\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_abstract_application}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_application_af7726df174e0447e9922c0cb8f3455fd}{VAbstract\+Application}} (int \&argc, char $\ast$$\ast$argv)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_application_a3323dd8b7f70a78e93587e5c441b05b5}{$\sim$\+VAbstract\+Application}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}{Tr\+Vars}} ()=0
+\item 
+QString \mbox{\hyperlink{class_v_abstract_application_a7f8f1033b717fb83f76d40aea526db87}{translations\+Path}} (const QString \&locale=QString()) const
+\begin{DoxyCompactList}\small\item\em translations\+Path return path to the root directory that contains QM files. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_application_a92886d256c5e9be89659da9dcc191107}{load\+Translations}} (const QString \&locale)
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{pattern\+Unit}} () const
+\item 
+const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a12b9545d6469461f81797e73dd65aae8}{pattern\+UnitP}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a2d5a5eb9c0102caf4176fd5542c2bba7}{set\+Pattern\+Unit}} (const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&\mbox{\hyperlink{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}{pattern\+Unit}})
+\item 
+\mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{pattern\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ab6ab93b0a13844b1d56d9050834e9de2}{set\+Pattern\+Type}} (const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&\mbox{\hyperlink{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}{pattern\+Type}})
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}{Open\+Settings}} ()=0
+\item 
+\mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_aaf7f1160ef591e625cb67d208c6eb6c8}{Settings}} ()
+\begin{DoxyCompactList}\small\item\em get\+Settings hide settings constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\QString \mbox{\hyperlink{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}{Locale\+To\+String}} (const T \&value)
+\item 
+QGraphics\+Scene $\ast$ \mbox{\hyperlink{class_v_abstract_application_af0feb90ee902a084bfc7abe2afb5a744}{get\+Current\+Scene}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a2f8427be7b244fd1d1f16ede1bd1dd0a}{set\+Current\+Scene}} (QGraphics\+Scene $\ast$$\ast$value)
+\item 
+\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_adad4a5d898ccf03d503fdf9896845eda}{get\+Scene\+View}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ae268ff4b92ec50ceeb624ede966ad2a6}{set\+Scene\+View}} (\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$value)
+\item 
+double \mbox{\hyperlink{class_v_abstract_application_a82a68e4e4625193cb2cb439325ab8699}{to\+Pixel}} (double val) const
+\item 
+double \mbox{\hyperlink{class_v_abstract_application_a50d149897aa4a87d01a071420d86c6c5}{from\+Pixel}} (double pix) const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a0dfd5d5f8049b62a35c870ea3521b616}{set\+Current\+Document}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}{doc}})
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_ae1b899800e84b0875383c64d76ad3e64}{get\+Current\+Document}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_aebdbce178306c330a0e33b3a1107c1fb}{set\+Current\+Data}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}{data}})
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a66802fa332e70eed60f483f1a725bef1}{get\+Current\+Data}} () const
+\item 
+bool \mbox{\hyperlink{class_v_abstract_application_a55128bf836ebd9f9875ad787cb022292}{get\+Opening\+Pattern}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a311fbafead9e7563ac189b123b1513ba}{set\+Opening\+Pattern}} ()
+\item 
+QWidget $\ast$ \mbox{\hyperlink{class_v_abstract_application_a442b5d6addd10367c87f86eebba2ced2}{get\+Main\+Window}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a10d1e05f0f266507a37c5fc497d1203b}{set\+Main\+Window}} (QWidget $\ast$value)
+\item 
+QUndo\+Stack $\ast$ \mbox{\hyperlink{class_v_abstract_application_a5ee7ed495fc2df2bd6cc924767c82cc8}{get\+Undo\+Stack}} () const
+\item 
+virtual bool \mbox{\hyperlink{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}{Is\+App\+In\+GUIMode}} () const =0
+\item 
+QString \mbox{\hyperlink{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}{get\+File\+Path}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}{set\+File\+Path}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}{Init\+Tr\+Vars}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QUndo\+Stack $\ast$ \mbox{\hyperlink{class_v_abstract_application_aa76510ae070b475c90495d3606ecf1c6}{undo\+Stack}}
+\item 
+QWidget $\ast$ \mbox{\hyperlink{class_v_abstract_application_a09295c357a27ac2abbc72bceb293d8f4}{main\+Window}}
+\begin{DoxyCompactList}\small\item\em main\+Window pointer to main window. Usefull if need create modal dialog. Without pointer to main window modality doesn\textquotesingle{}t work. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a50de82036e454190206354a81bd24589}{settings}}
+\begin{DoxyCompactList}\small\item\em settings pointer to settings. Help hide constructor creation settings. Make make code more readable. \end{DoxyCompactList}\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a788c21e17e61da37d8640b8b528c144d}{qt\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a8284d973270795306e00c450aaca6700}{qtxml\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a0eba654b3a36e19541d71b5bf8f79856}{qt\+Base\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a6f59fff51e1dd866f7366475dedfb449}{app\+Translator}}
+\item 
+QPointer$<$ QTranslator $>$ \mbox{\hyperlink{class_v_abstract_application_a57da31630cdb4ed4ba90f46275dc21fc}{pms\+Translator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_application_a62efee28a6929615e17eb77f79d57caa}{Clear\+Translation}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \mbox{\hyperlink{class_v_abstract_application_a0c3f2f86e53faf19f81c5748127fc6be}{\+\_\+pattern\+Unit}}
+\item 
+\mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \mbox{\hyperlink{class_v_abstract_application_a2e09cc95b39f6b8d057dc9c15b57f64a}{\+\_\+pattern\+Type}}
+\item 
+QString \mbox{\hyperlink{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}{pattern\+File\+Path}}
+\item 
+QGraphics\+Scene $\ast$$\ast$ \mbox{\hyperlink{class_v_abstract_application_a52285ac28a06f9adb5420456333fbdf1}{current\+Scene}}
+\item 
+\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a21845de2391914691b5978a4f3a3cf35}{scene\+View}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}{doc}}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}{data}}
+\item 
+bool \mbox{\hyperlink{class_v_abstract_application_a0d83297b63dae585ae44f452a4752ef4}{opening\+Pattern}}
+\begin{DoxyCompactList}\small\item\em opening\+Pattern true when we opening pattern. If something will be wrong in formula this help understand if we can allow user use Undo option. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_abstract_application_af7726df174e0447e9922c0cb8f3455fd}\label{class_v_abstract_application_af7726df174e0447e9922c0cb8f3455fd}} 
+\index{VAbstractApplication@{VAbstractApplication}!VAbstractApplication@{VAbstractApplication}}
+\index{VAbstractApplication@{VAbstractApplication}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{VAbstractApplication()}{VAbstractApplication()}}
+{\footnotesize\ttfamily VAbstract\+Application\+::\+VAbstract\+Application (\begin{DoxyParamCaption}\item[{int \&}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a3323dd8b7f70a78e93587e5c441b05b5}\label{class_v_abstract_application_a3323dd8b7f70a78e93587e5c441b05b5}} 
+\index{VAbstractApplication@{VAbstractApplication}!````~VAbstractApplication@{$\sim$VAbstractApplication}}
+\index{````~VAbstractApplication@{$\sim$VAbstractApplication}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{$\sim$VAbstractApplication()}{~VAbstractApplication()}}
+{\footnotesize\ttfamily VAbstract\+Application\+::$\sim$\+VAbstract\+Application (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_abstract_application_a62efee28a6929615e17eb77f79d57caa}\label{class_v_abstract_application_a62efee28a6929615e17eb77f79d57caa}} 
+\index{VAbstractApplication@{VAbstractApplication}!ClearTranslation@{ClearTranslation}}
+\index{ClearTranslation@{ClearTranslation}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{ClearTranslation()}{ClearTranslation()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::\+Clear\+Translation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a50d149897aa4a87d01a071420d86c6c5}\label{class_v_abstract_application_a50d149897aa4a87d01a071420d86c6c5}} 
+\index{VAbstractApplication@{VAbstractApplication}!fromPixel@{fromPixel}}
+\index{fromPixel@{fromPixel}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{fromPixel()}{fromPixel()}}
+{\footnotesize\ttfamily double VAbstract\+Application\+::from\+Pixel (\begin{DoxyParamCaption}\item[{double}]{pix }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a66802fa332e70eed60f483f1a725bef1}\label{class_v_abstract_application_a66802fa332e70eed60f483f1a725bef1}} 
+\index{VAbstractApplication@{VAbstractApplication}!getCurrentData@{getCurrentData}}
+\index{getCurrentData@{getCurrentData}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getCurrentData()}{getCurrentData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ VAbstract\+Application\+::get\+Current\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_ae1b899800e84b0875383c64d76ad3e64}\label{class_v_abstract_application_ae1b899800e84b0875383c64d76ad3e64}} 
+\index{VAbstractApplication@{VAbstractApplication}!getCurrentDocument@{getCurrentDocument}}
+\index{getCurrentDocument@{getCurrentDocument}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getCurrentDocument()}{getCurrentDocument()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ VAbstract\+Application\+::get\+Current\+Document (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_af0feb90ee902a084bfc7abe2afb5a744}\label{class_v_abstract_application_af0feb90ee902a084bfc7abe2afb5a744}} 
+\index{VAbstractApplication@{VAbstractApplication}!getCurrentScene@{getCurrentScene}}
+\index{getCurrentScene@{getCurrentScene}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getCurrentScene()}{getCurrentScene()}}
+{\footnotesize\ttfamily QGraphics\+Scene $\ast$ VAbstract\+Application\+::get\+Current\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}\label{class_v_abstract_application_acf0f5f207f979540043ea1fef34dbd87}} 
+\index{VAbstractApplication@{VAbstractApplication}!getFilePath@{getFilePath}}
+\index{getFilePath@{getFilePath}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getFilePath()}{getFilePath()}}
+{\footnotesize\ttfamily QString VAbstract\+Application\+::get\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a442b5d6addd10367c87f86eebba2ced2}\label{class_v_abstract_application_a442b5d6addd10367c87f86eebba2ced2}} 
+\index{VAbstractApplication@{VAbstractApplication}!getMainWindow@{getMainWindow}}
+\index{getMainWindow@{getMainWindow}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getMainWindow()}{getMainWindow()}}
+{\footnotesize\ttfamily QWidget $\ast$ VAbstract\+Application\+::get\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a55128bf836ebd9f9875ad787cb022292}\label{class_v_abstract_application_a55128bf836ebd9f9875ad787cb022292}} 
+\index{VAbstractApplication@{VAbstractApplication}!getOpeningPattern@{getOpeningPattern}}
+\index{getOpeningPattern@{getOpeningPattern}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getOpeningPattern()}{getOpeningPattern()}}
+{\footnotesize\ttfamily bool VAbstract\+Application\+::get\+Opening\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_adad4a5d898ccf03d503fdf9896845eda}\label{class_v_abstract_application_adad4a5d898ccf03d503fdf9896845eda}} 
+\index{VAbstractApplication@{VAbstractApplication}!getSceneView@{getSceneView}}
+\index{getSceneView@{getSceneView}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getSceneView()}{getSceneView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$ VAbstract\+Application\+::get\+Scene\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a5ee7ed495fc2df2bd6cc924767c82cc8}\label{class_v_abstract_application_a5ee7ed495fc2df2bd6cc924767c82cc8}} 
+\index{VAbstractApplication@{VAbstractApplication}!getUndoStack@{getUndoStack}}
+\index{getUndoStack@{getUndoStack}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{getUndoStack()}{getUndoStack()}}
+{\footnotesize\ttfamily QUndo\+Stack $\ast$ VAbstract\+Application\+::get\+Undo\+Stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}\label{class_v_abstract_application_a72702fb7710eb3fd1a844f451221b3e1}} 
+\index{VAbstractApplication@{VAbstractApplication}!InitTrVars@{InitTrVars}}
+\index{InitTrVars@{InitTrVars}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{InitTrVars()}{InitTrVars()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Application\+::\+Init\+Tr\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_test_v_application_a7308ed4069ef19f0233cf836ee7d89e9}{Test\+VApplication}}, \mbox{\hyperlink{class_v_application_ad72c1a55b2b7b4a6e73f64cbebe88acd}{VApplication}}, and \mbox{\hyperlink{class_m_application_a96cf5e574112b602d09917422e75b657}{MApplication}}.
+
+\mbox{\Hypertarget{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}\label{class_v_abstract_application_a48ea3ca60f82775c77303ffba6f26d45}} 
+\index{VAbstractApplication@{VAbstractApplication}!IsAppInGUIMode@{IsAppInGUIMode}}
+\index{IsAppInGUIMode@{IsAppInGUIMode}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{IsAppInGUIMode()}{IsAppInGUIMode()}}
+{\footnotesize\ttfamily virtual bool VAbstract\+Application\+::\+Is\+App\+In\+GUIMode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_test_v_application_ad7b17e91dcf3d018f04f6d1ec175e626}{Test\+VApplication}}, \mbox{\hyperlink{class_v_application_a91ca072c635fcbe3e39e7f3847006e6d}{VApplication}}, and \mbox{\hyperlink{class_m_application_a3291617bc3706e5c2ebc2fc8eb1cb916}{MApplication}}.
+
+\mbox{\Hypertarget{class_v_abstract_application_a92886d256c5e9be89659da9dcc191107}\label{class_v_abstract_application_a92886d256c5e9be89659da9dcc191107}} 
+\index{VAbstractApplication@{VAbstractApplication}!loadTranslations@{loadTranslations}}
+\index{loadTranslations@{loadTranslations}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{loadTranslations()}{loadTranslations()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::load\+Translations (\begin{DoxyParamCaption}\item[{const QString \&}]{locale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}\label{class_v_abstract_application_a63c2326cbf6b742e49a9005a60d29206}} 
+\index{VAbstractApplication@{VAbstractApplication}!LocaleToString@{LocaleToString}}
+\index{LocaleToString@{LocaleToString}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{LocaleToString()}{LocaleToString()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+QString VAbstract\+Application\+::\+Locale\+To\+String (\begin{DoxyParamCaption}\item[{const T \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}\label{class_v_abstract_application_af3c76aca6f3b67cc999bf00ef21bed68}} 
+\index{VAbstractApplication@{VAbstractApplication}!OpenSettings@{OpenSettings}}
+\index{OpenSettings@{OpenSettings}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{OpenSettings()}{OpenSettings()}}
+{\footnotesize\ttfamily virtual void VAbstract\+Application\+::\+Open\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_test_v_application_a3c27e9e7c084e7aa5459c5ee392792d5}{Test\+VApplication}}, \mbox{\hyperlink{class_v_application_a160e8c7c94afa9edc747f6bbdca1e1f1}{VApplication}}, and \mbox{\hyperlink{class_m_application_a39c0c4ae690f667f2d46d8dc263460fc}{MApplication}}.
+
+\mbox{\Hypertarget{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}\label{class_v_abstract_application_ab354e58700c474ae6d0ea167419e1c9c}} 
+\index{VAbstractApplication@{VAbstractApplication}!patternType@{patternType}}
+\index{patternType@{patternType}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{patternType()}{patternType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} VAbstract\+Application\+::pattern\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}\label{class_v_abstract_application_ad4fb122e68296fcc616f36f75e67fc1e}} 
+\index{VAbstractApplication@{VAbstractApplication}!patternUnit@{patternUnit}}
+\index{patternUnit@{patternUnit}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{patternUnit()}{patternUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} VAbstract\+Application\+::pattern\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a12b9545d6469461f81797e73dd65aae8}\label{class_v_abstract_application_a12b9545d6469461f81797e73dd65aae8}} 
+\index{VAbstractApplication@{VAbstractApplication}!patternUnitP@{patternUnitP}}
+\index{patternUnitP@{patternUnitP}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{patternUnitP()}{patternUnitP()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} $\ast$ VAbstract\+Application\+::pattern\+UnitP (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_aebdbce178306c330a0e33b3a1107c1fb}\label{class_v_abstract_application_aebdbce178306c330a0e33b3a1107c1fb}} 
+\index{VAbstractApplication@{VAbstractApplication}!setCurrentData@{setCurrentData}}
+\index{setCurrentData@{setCurrentData}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setCurrentData()}{setCurrentData()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Current\+Data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a0dfd5d5f8049b62a35c870ea3521b616}\label{class_v_abstract_application_a0dfd5d5f8049b62a35c870ea3521b616}} 
+\index{VAbstractApplication@{VAbstractApplication}!setCurrentDocument@{setCurrentDocument}}
+\index{setCurrentDocument@{setCurrentDocument}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setCurrentDocument()}{setCurrentDocument()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Current\+Document (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a2f8427be7b244fd1d1f16ede1bd1dd0a}\label{class_v_abstract_application_a2f8427be7b244fd1d1f16ede1bd1dd0a}} 
+\index{VAbstractApplication@{VAbstractApplication}!setCurrentScene@{setCurrentScene}}
+\index{setCurrentScene@{setCurrentScene}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setCurrentScene()}{setCurrentScene()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Current\+Scene (\begin{DoxyParamCaption}\item[{QGraphics\+Scene $\ast$$\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}\label{class_v_abstract_application_ac2a1a4070b6b686d62266592bc45d385}} 
+\index{VAbstractApplication@{VAbstractApplication}!setFilePath@{setFilePath}}
+\index{setFilePath@{setFilePath}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setFilePath()}{setFilePath()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+File\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a10d1e05f0f266507a37c5fc497d1203b}\label{class_v_abstract_application_a10d1e05f0f266507a37c5fc497d1203b}} 
+\index{VAbstractApplication@{VAbstractApplication}!setMainWindow@{setMainWindow}}
+\index{setMainWindow@{setMainWindow}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setMainWindow()}{setMainWindow()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a311fbafead9e7563ac189b123b1513ba}\label{class_v_abstract_application_a311fbafead9e7563ac189b123b1513ba}} 
+\index{VAbstractApplication@{VAbstractApplication}!setOpeningPattern@{setOpeningPattern}}
+\index{setOpeningPattern@{setOpeningPattern}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setOpeningPattern()}{setOpeningPattern()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Opening\+Pattern (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_ab6ab93b0a13844b1d56d9050834e9de2}\label{class_v_abstract_application_ab6ab93b0a13844b1d56d9050834e9de2}} 
+\index{VAbstractApplication@{VAbstractApplication}!setPatternType@{setPatternType}}
+\index{setPatternType@{setPatternType}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setPatternType()}{setPatternType()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Pattern\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} \&}]{pattern\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_a2d5a5eb9c0102caf4176fd5542c2bba7}\label{class_v_abstract_application_a2d5a5eb9c0102caf4176fd5542c2bba7}} 
+\index{VAbstractApplication@{VAbstractApplication}!setPatternUnit@{setPatternUnit}}
+\index{setPatternUnit@{setPatternUnit}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setPatternUnit()}{setPatternUnit()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Pattern\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} \&}]{pattern\+Unit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_ae268ff4b92ec50ceeb624ede966ad2a6}\label{class_v_abstract_application_ae268ff4b92ec50ceeb624ede966ad2a6}} 
+\index{VAbstractApplication@{VAbstractApplication}!setSceneView@{setSceneView}}
+\index{setSceneView@{setSceneView}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{setSceneView()}{setSceneView()}}
+{\footnotesize\ttfamily void VAbstract\+Application\+::set\+Scene\+View (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}} $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_abstract_application_aaf7f1160ef591e625cb67d208c6eb6c8}\label{class_v_abstract_application_aaf7f1160ef591e625cb67d208c6eb6c8}} 
+\index{VAbstractApplication@{VAbstractApplication}!Settings@{Settings}}
+\index{Settings@{Settings}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{Settings()}{Settings()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}} $\ast$ VAbstract\+Application\+::\+Settings (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get\+Settings hide settings constructor. 
+
+\begin{DoxyReturn}{Returns}
+pointer to class for acssesing to settings in ini file. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_abstract_application_a82a68e4e4625193cb2cb439325ab8699}\label{class_v_abstract_application_a82a68e4e4625193cb2cb439325ab8699}} 
+\index{VAbstractApplication@{VAbstractApplication}!toPixel@{toPixel}}
+\index{toPixel@{toPixel}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{toPixel()}{toPixel()}}
+{\footnotesize\ttfamily double VAbstract\+Application\+::to\+Pixel (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_abstract_application_a7f8f1033b717fb83f76d40aea526db87}\label{class_v_abstract_application_a7f8f1033b717fb83f76d40aea526db87}} 
+\index{VAbstractApplication@{VAbstractApplication}!translationsPath@{translationsPath}}
+\index{translationsPath@{translationsPath}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{translationsPath()}{translationsPath()}}
+{\footnotesize\ttfamily QString VAbstract\+Application\+::translations\+Path (\begin{DoxyParamCaption}\item[{const QString \&}]{locale = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+
+
+translations\+Path return path to the root directory that contains QM files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em locale} & historic, not used \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+path to a directory that contains QM files, default from CONFIG+=embed\+\_\+translations as set in translations.\+pri 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}\label{class_v_abstract_application_a4f3cfdba4c0321560ec5c1445a67b9cb}} 
+\index{VAbstractApplication@{VAbstractApplication}!TrVars@{TrVars}}
+\index{TrVars@{TrVars}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{TrVars()}{TrVars()}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{class_v_translate_vars}{VTranslate\+Vars}} $\ast$ VAbstract\+Application\+::\+Tr\+Vars (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_test_v_application_ae803f45dede532ee8da2960432f8db2a}{Test\+VApplication}}, \mbox{\hyperlink{class_v_application_afa8c7ccbb5d9679c22ae7efabe49f5f2}{VApplication}}, and \mbox{\hyperlink{class_m_application_a8c640d379eefe7fa1c01b70252d5e5b9}{MApplication}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_abstract_application_a2e09cc95b39f6b8d057dc9c15b57f64a}\label{class_v_abstract_application_a2e09cc95b39f6b8d057dc9c15b57f64a}} 
+\index{VAbstractApplication@{VAbstractApplication}!\_patternType@{\_patternType}}
+\index{\_patternType@{\_patternType}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{\_patternType}{\_patternType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_a55ff83aa1faba5d2fcc34767a5502386}{Measurements\+Type}} VAbstract\+Application\+::\+\_\+pattern\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a0c3f2f86e53faf19f81c5748127fc6be}\label{class_v_abstract_application_a0c3f2f86e53faf19f81c5748127fc6be}} 
+\index{VAbstractApplication@{VAbstractApplication}!\_patternUnit@{\_patternUnit}}
+\index{\_patternUnit@{\_patternUnit}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{\_patternUnit}{\_patternUnit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{def_8h_aa5a23406ae0e7d969b980e50c4e94889}{Unit}} VAbstract\+Application\+::\+\_\+pattern\+Unit\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a6f59fff51e1dd866f7366475dedfb449}\label{class_v_abstract_application_a6f59fff51e1dd866f7366475dedfb449}} 
+\index{VAbstractApplication@{VAbstractApplication}!appTranslator@{appTranslator}}
+\index{appTranslator@{appTranslator}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{appTranslator}{appTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ VAbstract\+Application\+::app\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a52285ac28a06f9adb5420456333fbdf1}\label{class_v_abstract_application_a52285ac28a06f9adb5420456333fbdf1}} 
+\index{VAbstractApplication@{VAbstractApplication}!currentScene@{currentScene}}
+\index{currentScene@{currentScene}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{currentScene}{currentScene}}
+{\footnotesize\ttfamily QGraphics\+Scene$\ast$$\ast$ VAbstract\+Application\+::current\+Scene\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}\label{class_v_abstract_application_a226cf6b25116f6408e94fe87d53e09d7}} 
+\index{VAbstractApplication@{VAbstractApplication}!data@{data}}
+\index{data@{data}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}}$\ast$ VAbstract\+Application\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}\label{class_v_abstract_application_a83712518dcd81978d3f54ef8cb77bf7f}} 
+\index{VAbstractApplication@{VAbstractApplication}!doc@{doc}}
+\index{doc@{doc}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{doc}{doc}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}}$\ast$ VAbstract\+Application\+::doc\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a09295c357a27ac2abbc72bceb293d8f4}\label{class_v_abstract_application_a09295c357a27ac2abbc72bceb293d8f4}} 
+\index{VAbstractApplication@{VAbstractApplication}!mainWindow@{mainWindow}}
+\index{mainWindow@{mainWindow}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{mainWindow}{mainWindow}}
+{\footnotesize\ttfamily QWidget$\ast$ VAbstract\+Application\+::main\+Window\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+main\+Window pointer to main window. Usefull if need create modal dialog. Without pointer to main window modality doesn\textquotesingle{}t work. 
+
+\mbox{\Hypertarget{class_v_abstract_application_a0d83297b63dae585ae44f452a4752ef4}\label{class_v_abstract_application_a0d83297b63dae585ae44f452a4752ef4}} 
+\index{VAbstractApplication@{VAbstractApplication}!openingPattern@{openingPattern}}
+\index{openingPattern@{openingPattern}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{openingPattern}{openingPattern}}
+{\footnotesize\ttfamily bool VAbstract\+Application\+::opening\+Pattern\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+opening\+Pattern true when we opening pattern. If something will be wrong in formula this help understand if we can allow user use Undo option. 
+
+\mbox{\Hypertarget{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}\label{class_v_abstract_application_ae40bd06508a5f0b1e485637b59cd3c8d}} 
+\index{VAbstractApplication@{VAbstractApplication}!patternFilePath@{patternFilePath}}
+\index{patternFilePath@{patternFilePath}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{patternFilePath}{patternFilePath}}
+{\footnotesize\ttfamily QString VAbstract\+Application\+::pattern\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a57da31630cdb4ed4ba90f46275dc21fc}\label{class_v_abstract_application_a57da31630cdb4ed4ba90f46275dc21fc}} 
+\index{VAbstractApplication@{VAbstractApplication}!pmsTranslator@{pmsTranslator}}
+\index{pmsTranslator@{pmsTranslator}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{pmsTranslator}{pmsTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ VAbstract\+Application\+::pms\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a0eba654b3a36e19541d71b5bf8f79856}\label{class_v_abstract_application_a0eba654b3a36e19541d71b5bf8f79856}} 
+\index{VAbstractApplication@{VAbstractApplication}!qtBaseTranslator@{qtBaseTranslator}}
+\index{qtBaseTranslator@{qtBaseTranslator}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{qtBaseTranslator}{qtBaseTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ VAbstract\+Application\+::qt\+Base\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a788c21e17e61da37d8640b8b528c144d}\label{class_v_abstract_application_a788c21e17e61da37d8640b8b528c144d}} 
+\index{VAbstractApplication@{VAbstractApplication}!qtTranslator@{qtTranslator}}
+\index{qtTranslator@{qtTranslator}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{qtTranslator}{qtTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ VAbstract\+Application\+::qt\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a8284d973270795306e00c450aaca6700}\label{class_v_abstract_application_a8284d973270795306e00c450aaca6700}} 
+\index{VAbstractApplication@{VAbstractApplication}!qtxmlTranslator@{qtxmlTranslator}}
+\index{qtxmlTranslator@{qtxmlTranslator}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{qtxmlTranslator}{qtxmlTranslator}}
+{\footnotesize\ttfamily QPointer$<$QTranslator$>$ VAbstract\+Application\+::qtxml\+Translator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a21845de2391914691b5978a4f3a3cf35}\label{class_v_abstract_application_a21845de2391914691b5978a4f3a3cf35}} 
+\index{VAbstractApplication@{VAbstractApplication}!sceneView@{sceneView}}
+\index{sceneView@{sceneView}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{sceneView}{sceneView}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_main_graphics_view}{VMain\+Graphics\+View}}$\ast$ VAbstract\+Application\+::scene\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_abstract_application_a50de82036e454190206354a81bd24589}\label{class_v_abstract_application_a50de82036e454190206354a81bd24589}} 
+\index{VAbstractApplication@{VAbstractApplication}!settings@{settings}}
+\index{settings@{settings}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{settings}{settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_common_settings}{VCommon\+Settings}}$\ast$ VAbstract\+Application\+::settings\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+settings pointer to settings. Help hide constructor creation settings. Make make code more readable. 
+
+\mbox{\Hypertarget{class_v_abstract_application_aa76510ae070b475c90495d3606ecf1c6}\label{class_v_abstract_application_aa76510ae070b475c90495d3606ecf1c6}} 
+\index{VAbstractApplication@{VAbstractApplication}!undoStack@{undoStack}}
+\index{undoStack@{undoStack}!VAbstractApplication@{VAbstractApplication}}
+\doxysubsubsection{\texorpdfstring{undoStack}{undoStack}}
+{\footnotesize\ttfamily QUndo\+Stack$\ast$ VAbstract\+Application\+::undo\+Stack\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/\mbox{\hyperlink{vabstractapplication_8h}{vabstractapplication.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vmisc/\mbox{\hyperlink{vabstractapplication_8cpp}{vabstractapplication.\+cpp}}\end{DoxyCompactItemize}

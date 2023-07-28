@@ -1,0 +1,116 @@
+\hypertarget{vpiecepath__p_8h_source}{}\doxysection{vpiecepath\+\_\+p.\+h}
+\label{vpiecepath__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/vpiecepath\_p.h@{D:/Github/Seamly2D/src/libs/vpatterndb/vpiecepath\_p.h}}
+\mbox{\hyperlink{vpiecepath__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vpiecepath\_p.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 11,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 22\ 11,\ 2016}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VPIECEPATH\_P\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VPIECEPATH\_P\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/diagnostic.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpiecenode_8h}{vpiecenode.h}}"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00063\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00064\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ class\ \mbox{\hyperlink{class_v_piece_path_data}{VPiecePathData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_a10dee62dd92dd5571e577c660ff88201}{VPiecePathData}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ :\ m\_nodes()}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ ,\ m\_type(\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{PiecePathType}}::\mbox{\hyperlink{vmeasurements_8h_abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e}{Unknown}})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ ,\ m\_name()}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ ,\ m\_penType(Qt::SolidLine)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ ,\ m\_cut(false)}
+\DoxyCodeLine{00075\ \ \ \ \ \{\}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_piece_path_data_a91eb038ce73873649bb63bb61cd4936d}{VPiecePathData}}(\mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{PiecePathType}}\ type)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ :\ m\_nodes()}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ ,\ m\_type(type)}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ ,\ m\_name()}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ ,\ m\_penType(Qt::SolidLine)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ ,\ m\_cut(false)}
+\DoxyCodeLine{00083\ \ \ \ \ \{\}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_ab87bad1e3d3dc4250a06bddae0019edb}{VPiecePathData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path_data}{VPiecePathData}}\ \&path)}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ :\ QSharedData(path)}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ ,\ m\_nodes(path.m\_nodes)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ ,\ m\_type(path.m\_type)}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ ,\ m\_penType(path.m\_penType)}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ ,\ m\_cut(path.m\_cut)}
+\DoxyCodeLine{00091\ \ \ \ \ \{\}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data}{\string~VPiecePathData}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \mbox{\hyperlink{class_v_piece_path_data_a0669b5c856237e60c5546d00746eced4}{m\_nodes}};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{def_8h_a88e60e344acff17e2af5630c0aa28c2c}{PiecePathType}}\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_a3e5453ab4f32137e8f1a8cf51064628b}{m\_type}};}
+\DoxyCodeLine{00097\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_a39f3bc1b6015c694282ecf27d753196a}{m\_name}};}
+\DoxyCodeLine{00098\ \ \ \ \ Qt::PenStyle\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_aafef857a8ea3853a315f1a934494897b}{m\_penType}};}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data_a3f234ccd27507c7365a9f844fbce53f7}{m\_cut}};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00102\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path_data}{VPiecePathData}}\ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_path_data_a47b0abdeecc288985b52693f0a4466e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path_data}{VPiecePathData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \mbox{\hyperlink{class_v_piece_path_data_a8a3dbe71a8b7293d6e135c5607bf0b3f}{VPiecePathData::\string~VPiecePathData}}()}
+\DoxyCodeLine{00106\ \{\}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPIECEPATH\_P\_H}}
+
+\end{DoxyCode}

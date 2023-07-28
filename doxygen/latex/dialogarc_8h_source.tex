@@ -1,0 +1,161 @@
+\hypertarget{dialogarc_8h_source}{}\doxysection{dialogarc.\+h}
+\label{dialogarc_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogarc.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/dialogarc.h}}
+\mbox{\hyperlink{dialogarc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ @file\ \ \ dialogarc.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ 21\ Mar,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Seamly2D\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ program\ to\ create\ and\ model\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017-\/2023\ Seamly2D\ project}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *****************************************************************************/}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ @file\ \ \ dialogarc.h}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **\ \ @date\ \ \ November\ 15,\ 2013}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#ifndef\ DIALOGARC\_H}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DIALOGARC\_H}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dialogtool_8h}{dialogtool.h}}"{}}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ "{}../vgeometry/varc.h"{}}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00061\ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_arc}{DialogArc}};}
+\DoxyCodeLine{00063\ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_arc}{DialogArc}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_dialog_arc}{DialogArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_dialog_arc_a516d2f4ecb003e56e03592bff8b46140}{\string~DialogArc}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \mbox{\hyperlink{class_v_arc}{VArc}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a04444c1f660fc8d62fd7014a097bdcb7}{getArc}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_aa3d3b4a9314c55995880f8c484ded263}{setArc}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_arc}{VArc}}\ \&arc);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ quint32\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a740d5c3d58f5768020ff15db4b81dfb4}{getCenter}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ade7fce1ccefd289f2d30fb9a7b256992}{setCenter}}(\textcolor{keyword}{const}\ quint32\ \&value);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a14122b84dd4935fc2e0e94a1d49d37e0}{getRadius}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a957351d79e48f5a4320e12411496cb57}{setRadius}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a16caf1ad4e4af703c8982d3d822165cf}{getF1}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a24cc446e6977382f5425e5c28d1db1e8}{setF1}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_af9ae2df4d41621b4edbd7dc76381af1a}{getF2}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a8aa50aa84575f6f3037ec7cca6db2175}{setF2}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a57fff0b01edb010f18acc60aa02ddc58}{getPenStyle}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a6a2569a93c3de14ccc221269d8b063c1}{setPenStyle}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a023b35a95258ef6e26efe79794f18c1e}{getLineWeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ab15c0432b9dfce2bf536824af4742c5c}{setLineWeight}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a3581e7358f4b8940c61d8bad4324974d}{getLineColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a119ed5adbd0aac3f528bf39df63e1732}{setLineColor}}(\textcolor{keyword}{const}\ QString\ \&value);}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_dialog_arc_a72eca0577f708e6cb494de869f39993b}{ChosenObject}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ae8bbeb8cc941d7434c7fbefb98e12ef7}{DeployFormulaTextEdit}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a5f758b09b1d02cd1fbd2ea29fd51454b}{DeployF1TextEdit}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a7db4da9fa77c885cc7ccdc4691f24ad0}{DeployF2TextEdit}}();}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ad567e32054b546e06c82a531c7d1a93c}{RadiusChanged}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ac75820a4b9a2a272ec611d57bc11f1dc}{F1Changed}}();}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a8dce9590617b0fa4e8ea33279b832e8f}{F2Changed}}();}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a78c91fc943b2bf7e01691c350cfd88e5}{FXRadius}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a8644c6d02a4271c1ce56f33f25aef252}{FXF1}}();}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a2bdafbc2c710ff80eb2dab94e07dc0c0}{FXF2}}();}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a0a7eb1fa6df4d1d4016a50cdbae5bb92}{pointNameChanged}}();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_dialog_arc_ad5921e4254d08a6df7db404daec569ff}{CheckState}}()\ Q\_DECL\_FINAL;}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_dialog_arc_aabe00326bf082baedee03417df94f59c}{ShowVisualization}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_dialog_arc_a619e85cf0e97e67ab9eedfacd253458b}{SaveData}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{class_dialog_arc_a605644ff88a0b209ab95874a7791ad38}{closeEvent}}(QCloseEvent\ *event)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00126\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_dialog_arc}{DialogArc}})}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ }
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_dialog_arc}{DialogArc}}\ *\mbox{\hyperlink{class_dialog_arc_a202bbe5b697a4ccc734f3c01b841a52c}{ui}};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a1f6c2d8f506f583025867865cf1f79af}{flagRadius}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a669bb5732f3c4bdf07e0af3648433e4c}{flagF1}};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a09fdc98963f6b86d4decfd9c02af25c6}{flagF2}};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00141\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_arc_ac62e35da2c47eb624532254177871ced}{timerRadius}};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00144\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_arc_aa03978816a626e122b134f3df11e1b5c}{timerF1}};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00147\ \ \ \ \ QTimer\ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_dialog_arc_ac1f75587b0b889339c8a94e1e2db0a23}{timerF2}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00150\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_aee5630e086acb64c9406e149837eb636}{radius}};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00153\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a0280a8098f5a5923893f6a5eec60e94b}{f1}};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00156\ \ \ \ \ QString\ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_af736601eac435bed3b7df614f4e745fe}{f2}};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_ad03fe218dcc09de190eb4853909d2b6f}{formulaBaseHeight}};}
+\DoxyCodeLine{00160\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_af007a131d4bab6bca0f46e8923d1f5b7}{formulaBaseHeightF1}};}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_aa01539a83067fb84448afc588b722e37}{formulaBaseHeightF2}};}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_af3e2198f7274488e44a6007d3342014e}{angleF1}};}
+\DoxyCodeLine{00164\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a9f58ac7c1f13153e92e9215e3ac8fcfe}{angleF2}};}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_v_arc}{VArc}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a881228a5b07f8038ca07c154ebb2f16e}{m\_arc}};}
+\DoxyCodeLine{00166\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a544fe885455257f1b9c774cad68ef1f9}{m\_Id}};}
+\DoxyCodeLine{00167\ \ \ \ \ qint32\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_acbeb0b49432830a71ce0d6fe4ff71b4d}{newDuplicate}};}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00169\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a3fbf81f9e834324df1d20a3f4ab36fb9}{EvalRadius}}();}
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_a0f8ac0f8a1442ceb09ebaf3ce5cd38b1}{EvalF}}();}
+\DoxyCodeLine{00171\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_dialog_arc_aee7d97f56e838bcb7841ad8067d2cdc8}{CheckAngles}}();}
+\DoxyCodeLine{00172\ \};}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DIALOGARC\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,87 @@
+\hypertarget{qmuparsererror_8h}{}\doxysection{D\+:/\+Github/\+Seamly2\+D/src/libs/qmuparser/qmuparsererror.h File Reference}
+\label{qmuparsererror_8h}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsererror.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsererror.h}}
+
+
+This file defines the error class used by the parser.  
+
+
+{\ttfamily \#include $<$qcompilerdetection.\+h$>$}\newline
+{\ttfamily \#include $<$QCore\+Application$>$}\newline
+{\ttfamily \#include $<$QException$>$}\newline
+{\ttfamily \#include $<$QMap$>$}\newline
+{\ttfamily \#include $<$QString$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include $<$Qt\+Global$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include \char`\"{}qmuparserdef.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qmutranslation.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_error_msg}{qmu\+::\+Qmu\+Parser\+Error\+Msg}}
+\begin{DoxyCompactList}\small\item\em A class that handles the error messages. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{qmu\+::\+Qmu\+Parser\+Error}}
+\begin{DoxyCompactList}\small\item\em Error class of the parser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceqmu}{qmu}}
+\begin{DoxyCompactList}\small\item\em Namespace for mathematical applications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7}{qmu\+::\+EError\+Codes}} \{ \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a39beffdda99afb51309b127fc92cacee}{qmu\+::ec\+UNEXPECTED\+\_\+\+OPERATOR}} = 0
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c7f33035d93a51081e32641e09d9794}{qmu\+::ec\+UNASSIGNABLE\+\_\+\+TOKEN}} = 1
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6efe475581a0b58312bd2983d5c0f1e1}{qmu\+::ec\+UNEXPECTED\+\_\+\+EOF}} = 2
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c8fdb374f8c031a17cc041cb1db1b44}{qmu\+::ec\+UNEXPECTED\+\_\+\+ARG\+\_\+\+SEP}} = 3
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9b65abb5eca21f59be7e59e2a8a8d0cc}{qmu\+::ec\+UNEXPECTED\+\_\+\+ARG}} = 4
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad679dfa31262d0d9ad99fe0e4f95db9c}{qmu\+::ec\+UNEXPECTED\+\_\+\+VAL}} = 5
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad430edd7ca97fff68971649ec8f57f57}{qmu\+::ec\+UNEXPECTED\+\_\+\+VAR}} = 6
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ac666593b660f72f5c1d416f0bdccb5ab}{qmu\+::ec\+UNEXPECTED\+\_\+\+PARENS}} = 7
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a68544c2f71f449bc78c02e127abc6da7}{qmu\+::ec\+UNEXPECTED\+\_\+\+STR}} = 8
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7829c9b0000187865c69bdc9b3abc652}{qmu\+::ec\+STRING\+\_\+\+EXPECTED}} = 9
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}{qmu\+::ec\+VAL\+\_\+\+EXPECTED}} = 10
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a324ba20c1bbdc353348126f4249d49b0}{qmu\+::ec\+MISSING\+\_\+\+PARENS}} = 11
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8b1d1113d0289b0a16118f7c7279a25e}{qmu\+::ec\+UNEXPECTED\+\_\+\+FUN}} = 12
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ae9c3119a29913fe79760f988d4bb0304}{qmu\+::ec\+UNTERMINATED\+\_\+\+STRING}} = 13
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab261c4a8c03763f3d7f3c78b0c6b7b51}{qmu\+::ec\+TOO\+\_\+\+MANY\+\_\+\+PARAMS}} = 14
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2b981b97792a8f3481583f736c41f5c6}{qmu\+::ec\+TOO\+\_\+\+FEW\+\_\+\+PARAMS}} = 15
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a41236d0a7ee64937f77eab322cea78cf}{qmu\+::ec\+OPRT\+\_\+\+TYPE\+\_\+\+CONFLICT}} = 16
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a9fb56a155841aa4f5060f2ec72c5a7e0}{qmu\+::ec\+STR\+\_\+\+RESULT}} = 17
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a486683e3a93bf9bdde7ff7b21423c5ca}{qmu\+::ec\+INVALID\+\_\+\+NAME}} = 18
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad28b986862287dc5016dcb93f116edfe}{qmu\+::ec\+INVALID\+\_\+\+BINOP\+\_\+\+IDENT}} = 19
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a2826d81c0ead9d8e6c0cf2865805dc}{qmu\+::ec\+INVALID\+\_\+\+INFIX\+\_\+\+IDENT}} = 20
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aac6608764ab31a8eba0027c7395c2bae}{qmu\+::ec\+INVALID\+\_\+\+POSTFIX\+\_\+\+IDENT}} = 21
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6a721284431db71fe6b6b57e5348758a}{qmu\+::ec\+BUILTIN\+\_\+\+OVERLOAD}} = 22
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a7445c66050c72d42713e6f3e1f26bda1}{qmu\+::ec\+INVALID\+\_\+\+FUN\+\_\+\+PTR}} = 23
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad8e712064ad91707afadeda05b632e13}{qmu\+::ec\+INVALID\+\_\+\+VAR\+\_\+\+PTR}} = 24
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7aaa7a0a0f5a849e15df140c6f9e76bdfd}{qmu\+::ec\+EMPTY\+\_\+\+EXPRESSION}} = 25
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a797623a60fcdcd0e199f7164a352029e}{qmu\+::ec\+NAME\+\_\+\+CONFLICT}} = 26
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ab62e0fd43daf51a87476b910ef3855e1}{qmu\+::ec\+OPT\+\_\+\+PRI}} = 27
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a1f908341a6c6baad4f886cf897c5a9a8}{qmu\+::ec\+DOMAIN\+\_\+\+ERROR}} = 28
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af8c2e506d9713f8aff37f6e5562cf7a1}{qmu\+::ec\+DIV\+\_\+\+BY\+\_\+\+ZERO}} = 29
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a6470195ead89dfbe323bdad3cda6e7c4}{qmu\+::ec\+GENERIC}} = 30
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a4c55b714057e0f2c1aeb1c14aa5d34b7}{qmu\+::ec\+LOCALE}} = 31
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad4db650a7bb1fb5fd6f6f8de3060dad1}{qmu\+::ec\+UNEXPECTED\+\_\+\+CONDITIONAL}} = 32
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a8c158c1d93d2152030b8d2239fff5cc3}{qmu\+::ec\+MISSING\+\_\+\+ELSE\+\_\+\+CLAUSE}} = 33
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7af915de306b6530f93f3a92a1377f6206}{qmu\+::ec\+MISPLACED\+\_\+\+COLON}} = 34
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{qmu\+::ec\+INTERNAL\+\_\+\+ERROR}} = 35
+, \newline
+\mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7afcb30a1f424d206fea7aedd3a3985c58}{qmu\+::ec\+COUNT}}
+, \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a2369b91ec2436b7e1ff32d12a2c868b0}{qmu\+::ec\+UNDEFINED}} = -\/1
+ \}
+\begin{DoxyCompactList}\small\item\em Error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file defines the error class used by the parser. 
+

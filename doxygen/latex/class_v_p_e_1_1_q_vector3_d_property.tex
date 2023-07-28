@@ -1,0 +1,290 @@
+\hypertarget{class_v_p_e_1_1_q_vector3_d_property}{}\doxysection{VPE\+::QVector3\+DProperty Class Reference}
+\label{class_v_p_e_1_1_q_vector3_d_property}\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+
+
+{\ttfamily \#include $<$vvector3dproperty.\+h$>$}
+
+Inheritance diagram for VPE\+::QVector3\+DProperty\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_v_p_e_1_1_q_vector3_d_property}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ad237388fa78a00d099691ea1f1edce5b}{QVector3\+DProperty}} (const QString \&name)
+\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a20fc144ce1c7e7dd4acf0a91f70fc77c}{$\sim$\+QVector3\+DProperty}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ae7b34671fa30cbbd807500968a08859c}{data}} (int column=\mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual Qt\+::\+Item\+Flags \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a4487c0545230aafa146bbf670e8251df}{flags}} (int column=\mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns item flags. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}} \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a1c3311e68d41fed27a052f0aaa330fec}{get\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Vector3d. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ac8185d94aee93a6a9eff9b1510cc803a}{set\+Vector}} (const \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}} \&vect)
+\begin{DoxyCompactList}\small\item\em Sets the Vector3d. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_aeb1d2a84ee489c93fee6a3d36ad69dac}{set\+Vector}} (double x, double y, double z)
+\begin{DoxyCompactList}\small\item\em Sets the Vector3d. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_adf63dd496007e2872314e559d1eec73e}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_ad23e04057e6732606564581d2226eec4}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$container=NULL) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a47f490e4caa408edc80c16cd56748e29}{set\+Value}} (const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_q_vector3_d_property_a78bbd4420843c2895594b1fecbb178a9}{get\+Value}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Returns the value of the property as a QVariant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_ad0e928b4f27279a3fbf7aed0503318e4}{VProperty}} (const QString \&name, QVariant\+::\+Type \mbox{\hyperlink{class_v_p_e_1_1_v_property_af09d515d6effc7d5e3663ad3bf46662a}{type}}=QVariant\+::\+String)
+\begin{DoxyCompactList}\small\item\em Standard constructor, takes a name and a parent property as argument. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property_ad471fe062a3e99b4166d28cb40da07ca}{$\sim$\+VProperty}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_p_e_1_1_v_property_af09d515d6effc7d5e3663ad3bf46662a}{type}} () const
+\begin{DoxyCompactList}\small\item\em Returns a string containing the type of the property. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_v_property_a21a184d546b92bb2c553ebf7d9d58448}{data}} (int column=\mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}, int role=Qt\+::\+Display\+Role) const
+\begin{DoxyCompactList}\small\item\em Get the data how it should be displayed. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_a1804ba55faa0ee9bd0852041db81997b}{set\+Data}} (const QVariant \&\mbox{\hyperlink{class_v_p_e_1_1_v_property_a21a184d546b92bb2c553ebf7d9d58448}{data}}, int role=Qt\+::\+Edit\+Role)
+\item 
+virtual bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_aa37e125ce2ac7dbf15db569b6d908e48}{paint}} (QPainter $\ast$, const QStyle\+Option\+View\+Item \&, const QModel\+Index \&, const QAbstract\+Item\+Delegate $\ast$) const
+\item 
+virtual QWidget $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_aea7526e6641c9cb369cc8234881df935}{create\+Editor}} (QWidget $\ast$parent, const QStyle\+Option\+View\+Item \&, const QAbstract\+Item\+Delegate $\ast$)
+\begin{DoxyCompactList}\small\item\em Returns an editor widget, or NULL if it doesn\textquotesingle{}t supply one. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_a5f6e6bc0d388b5499ae585b7c9d46fcf}{set\+Editor\+Data}} (QWidget $\ast$editor)
+\begin{DoxyCompactList}\small\item\em Sets the property\textquotesingle{}s data to the editor (returns false, if the standard delegate should do that) \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_v_property_a884293b0d13de6f76c3109b8f71a61e0}{get\+Editor\+Data}} (const QWidget $\ast$editor) const
+\begin{DoxyCompactList}\small\item\em Gets the data from the widget. \end{DoxyCompactList}\item 
+virtual Qt\+::\+Item\+Flags \mbox{\hyperlink{class_v_p_e_1_1_v_property_a11c4d64c0bcd4c2dd4838d77e9c734e1}{flags}} (int column=\mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}) const
+\begin{DoxyCompactList}\small\item\em Returns item flags. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a67c7322abd6f7f0306ecdf56ffb0f65d}{set\+Value}} (const QVariant \&value)
+\begin{DoxyCompactList}\small\item\em Sets the value of the property. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_v_property_a2f7624cf6c5edf40eb7543dd7479d7d0}{get\+Value}} () const
+\begin{DoxyCompactList}\small\item\em Returns the value of the property as a QVariant. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_p_e_1_1_v_property_a78458194307bcd6688824f25c8b63f23}{serialize}} () const
+\begin{DoxyCompactList}\small\item\em Serializes the value to a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_af2230aadd4306126ff8b958410bd8565}{deserialize}} (const QString \&value)
+\begin{DoxyCompactList}\small\item\em Deserializes the value from a string. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_aec0b12a679fb4bf96d893156107dd515}{set\+Name}} (const QString \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the property. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_p_e_1_1_v_property_a459993e7f8dc406a339ea1f58929182d}{get\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the property. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a47c67680cc37a6c2ceb6bb64644ff21f}{set\+Description}} (const QString \&desc)
+\begin{DoxyCompactList}\small\item\em Sets the name of the property. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_p_e_1_1_v_property_a6b5523c1ba6bb2761f22d40545f5b54f}{get\+Description}} () const
+\begin{DoxyCompactList}\small\item\em Gets the name of the property. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_v_p_e_1_1_v_property_a8bcc889ba3a81eabeb715b52a413217b}{add\+Child}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Adds a child to this property. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ $>$ \& \mbox{\hyperlink{class_v_p_e_1_1_v_property_aed4196e24866810780632a48e54d6678}{get\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the list of children. \end{DoxyCompactList}\item 
+virtual const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ $>$ \& \mbox{\hyperlink{class_v_p_e_1_1_v_property_ac919f2512380beddf2807fef77293046}{get\+Children}} () const
+\begin{DoxyCompactList}\small\item\em Returns a reference to the list of children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_ac56e45b484d4781b0295fc3fe7bd0298}{get\+Child}} (int row) const
+\begin{DoxyCompactList}\small\item\em Returns the child at a certain row. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_v_p_e_1_1_v_property_a33e721b65fd62ea90a435657a11b8d8a}{get\+Row\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Gets the number of children. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a7991ef43b542111843aeb737dfdae88d}{get\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Gets the parent of this property. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_aea3c4ee01edc46205b714d100bc46312}{set\+Parent}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Sets the parent of this property. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a3a54216304fd6efec2f06dbe94e8a8bf}{remove\+Child}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$child)
+\begin{DoxyCompactList}\small\item\em Removes a child from the children list, doesn\textquotesingle{}t delete the child! \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_v_p_e_1_1_v_property_a946aa63ed0ebfd3b085b3b68a3a5de22}{get\+Child\+Row}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$child) const
+\begin{DoxyCompactList}\small\item\em Returns the row the child has. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_a21f0551a09fc6bb1987bacd78c4231bb}{get\+Update\+Parent}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the views have to update the parent of this property if it changes. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_v_p_e_1_1_v_property_aca74609f196ca5a7d47467924907daf8}{get\+Update\+Children}} () const
+\begin{DoxyCompactList}\small\item\em Returns whether the views have to update the children of this property if it changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a060f8b1569e56cee1f4cbed12bec0a36}{set\+Update\+Behaviour}} (bool update\+\_\+parent, bool update\+\_\+children)
+\begin{DoxyCompactList}\small\item\em Sets whether the views should update Parents or children after this property changes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_abc8576bf1c7b0c0cf5de7e130787a024}{set\+Settings}} (const \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QVariant $>$ \&settings)
+\item 
+virtual \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QVariant $>$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_ab199cd40c8448abe4322ec64d1a07125}{get\+Settings}} () const
+\begin{DoxyCompactList}\small\item\em Get the settings. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a2d77360aac7fb51de49a7496560c7c14}{set\+Setting}} (const QString \&key, const QVariant \&value)
+\begin{DoxyCompactList}\small\item\em Sets the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual QVariant \mbox{\hyperlink{class_v_p_e_1_1_v_property_ab1f0fc69ebab910f4ee7eddf2242058a}{get\+Setting}} (const QString \&key) const
+\begin{DoxyCompactList}\small\item\em Get the settings. This function has to be implemented in a subclass in order to have an effect. \end{DoxyCompactList}\item 
+virtual QString\+List \mbox{\hyperlink{class_v_p_e_1_1_v_property_a38b6acecc6f92d38af104a111d6aa63f}{get\+Setting\+Keys}} () const
+\begin{DoxyCompactList}\small\item\em Returns the list of keys of the property\textquotesingle{}s settings. \end{DoxyCompactList}\item 
+virtual Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a03865ea193d5465fea60bb7f29ca02bf}{clone}} (bool include\+\_\+children=true, \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$container=nullptr) const
+\item 
+\mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}} \mbox{\hyperlink{class_v_p_e_1_1_v_property_ab48578a3d72bd50fceb1c88e72d05bff}{property\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a6e7f1929cbf470f02cf50bedc97bf639}{set\+Property\+Type}} (const \mbox{\hyperlink{namespace_v_p_e_a46160b96cc9be71599e98b85a4093aca}{Property}} \&\mbox{\hyperlink{class_v_p_e_1_1_v_property_af09d515d6effc7d5e3663ad3bf46662a}{type}})
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_aa2b60b3d17dd17d49fae36895ee08027}{update\+Parent}} (const QVariant \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118}{DPC\+\_\+\+Display\+Column}} \{ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}} = 0
+, \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118ac2ce2d3414fd6703cd53556ecc6c3491}{DPC\+\_\+\+Data}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a9072be10ae8867cac7690c46c7fcab2a}{child\+Value\+Changed}} (const QVariant \&value, int type\+For\+Parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_p_e_1_1_v_property_a2e393404d3237bb9e624358b4cb60cb0}{child\+Changed}} (const QVariant \&value, int type\+For\+Parent)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_a2bdb3963ea4794f4481a9afe396535de}{VProperty}} (\mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VProperty\+Private}} $\ast$d)
+\begin{DoxyCompactList}\small\item\em Protected constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_p_e_1_1_v_property_private}{VProperty\+Private}} $\ast$ \mbox{\hyperlink{class_v_p_e_1_1_v_property_a1ae87c00ca610ac410451601af193a18}{d\+\_\+ptr}}
+\begin{DoxyCompactList}\small\item\em The protected structure holding the member variables (to assure binary compatibility) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_ad237388fa78a00d099691ea1f1edce5b}\label{class_v_p_e_1_1_q_vector3_d_property_ad237388fa78a00d099691ea1f1edce5b}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!QVector3DProperty@{QVector3DProperty}}
+\index{QVector3DProperty@{QVector3DProperty}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{QVector3DProperty()}{QVector3DProperty()}}
+{\footnotesize\ttfamily VPE\+::\+QVector3\+DProperty\+::\+QVector3\+DProperty (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_a20fc144ce1c7e7dd4acf0a91f70fc77c}\label{class_v_p_e_1_1_q_vector3_d_property_a20fc144ce1c7e7dd4acf0a91f70fc77c}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!````~QVector3DProperty@{$\sim$QVector3DProperty}}
+\index{````~QVector3DProperty@{$\sim$QVector3DProperty}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{$\sim$QVector3DProperty()}{~QVector3DProperty()}}
+{\footnotesize\ttfamily virtual VPE\+::\+QVector3\+DProperty\+::$\sim$\+QVector3\+DProperty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_ad23e04057e6732606564581d2226eec4}\label{class_v_p_e_1_1_q_vector3_d_property_ad23e04057e6732606564581d2226eec4}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!clone@{clone}}
+\index{clone@{clone}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VPE\+::\+VProperty}} $\ast$ VPE\+::\+QVector3\+DProperty\+::clone (\begin{DoxyParamCaption}\item[{bool}]{include\+\_\+children = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} $\ast$}]{container = {\ttfamily NULL} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Clones this property 
+\begin{DoxyParams}{Parameters}
+{\em include\+\_\+children} & Indicates whether to also clone the children \\
+\hline
+{\em container} & If a property is being passed here, no new \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}} is being created but instead it is tried to fill all the data into container. This can also be used when subclassing this function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the newly created property (or container, if it was not NULL) 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_a03865ea193d5465fea60bb7f29ca02bf}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_ae7b34671fa30cbbd807500968a08859c}\label{class_v_p_e_1_1_q_vector3_d_property_ae7b34671fa30cbbd807500968a08859c}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!data@{data}}
+\index{data@{data}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{data()}{data()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+QVector3\+DProperty\+::data (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}},  }\item[{int}]{role = {\ttfamily Qt\+:\+:DisplayRole} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the data how it should be displayed. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_a21a184d546b92bb2c553ebf7d9d58448}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_a4487c0545230aafa146bbf670e8251df}\label{class_v_p_e_1_1_q_vector3_d_property_a4487c0545230aafa146bbf670e8251df}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!flags@{flags}}
+\index{flags@{flags}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily Qt\+::\+Item\+Flags VPE\+::\+QVector3\+DProperty\+::flags (\begin{DoxyParamCaption}\item[{int}]{column = {\ttfamily \mbox{\hyperlink{class_v_p_e_1_1_v_property_a585b1bfba36ba0a9c101ff830e85f118a63b8893ea4b7cb2a5b379047962d0694}{DPC\+\_\+\+Name}}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns item flags. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_a11c4d64c0bcd4c2dd4838d77e9c734e1}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_a78bbd4420843c2895594b1fecbb178a9}\label{class_v_p_e_1_1_q_vector3_d_property_a78bbd4420843c2895594b1fecbb178a9}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!getValue@{getValue}}
+\index{getValue@{getValue}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily QVariant VPE\+::\+QVector3\+DProperty\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the value of the property as a QVariant. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_a2f7624cf6c5edf40eb7543dd7479d7d0}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_a1c3311e68d41fed27a052f0aaa330fec}\label{class_v_p_e_1_1_q_vector3_d_property_a1c3311e68d41fed27a052f0aaa330fec}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!getVector@{getVector}}
+\index{getVector@{getVector}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{getVector()}{getVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{VPE\+::\+Vector3D}} VPE\+::\+QVector3\+DProperty\+::get\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the Vector3d. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_a47f490e4caa408edc80c16cd56748e29}\label{class_v_p_e_1_1_q_vector3_d_property_a47f490e4caa408edc80c16cd56748e29}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!setValue@{setValue}}
+\index{setValue@{setValue}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily void VPE\+::\+QVector3\+DProperty\+::set\+Value (\begin{DoxyParamCaption}\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the value of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_a67c7322abd6f7f0306ecdf56ffb0f65d}{VPE\+::\+VProperty}}.
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_ac8185d94aee93a6a9eff9b1510cc803a}\label{class_v_p_e_1_1_q_vector3_d_property_ac8185d94aee93a6a9eff9b1510cc803a}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!setVector@{setVector}}
+\index{setVector@{setVector}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{setVector()}{setVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void VPE\+::\+QVector3\+DProperty\+::set\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_v_p_e_1_1_vector3_d}{Vector3D}} \&}]{vect }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the Vector3d. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_aeb1d2a84ee489c93fee6a3d36ad69dac}\label{class_v_p_e_1_1_q_vector3_d_property_aeb1d2a84ee489c93fee6a3d36ad69dac}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!setVector@{setVector}}
+\index{setVector@{setVector}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{setVector()}{setVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void VPE\+::\+QVector3\+DProperty\+::set\+Vector (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y,  }\item[{double}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sets the Vector3d. 
+
+\mbox{\Hypertarget{class_v_p_e_1_1_q_vector3_d_property_adf63dd496007e2872314e559d1eec73e}\label{class_v_p_e_1_1_q_vector3_d_property_adf63dd496007e2872314e559d1eec73e}} 
+\index{VPE::QVector3DProperty@{VPE::QVector3DProperty}!type@{type}}
+\index{type@{type}!VPE::QVector3DProperty@{VPE::QVector3DProperty}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily QString VPE\+::\+QVector3\+DProperty\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a string containing the type of the property. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_p_e_1_1_v_property_af09d515d6effc7d5e3663ad3bf46662a}{VPE\+::\+VProperty}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/plugins/\+Vector3d/\mbox{\hyperlink{vvector3dproperty_8h}{vvector3dproperty.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/plugins/\+Vector3d/\mbox{\hyperlink{vvector3dproperty_8cpp}{vvector3dproperty.\+cpp}}\end{DoxyCompactItemize}

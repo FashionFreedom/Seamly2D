@@ -1,0 +1,70 @@
+\hypertarget{vpropertytreeview_8h_source}{}\doxysection{vpropertytreeview.\+h}
+\label{vpropertytreeview_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertytreeview.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/vpropertytreeview.h}}
+\mbox{\hyperlink{vpropertytreeview_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vpropertytreeview.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VPROPERTYTREEVIEW\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VPROPERTYTREEVIEW\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QTreeView>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{keyword}{class\ }VPropertyDelegate;}
+\DoxyCodeLine{00035\ \textcolor{keyword}{class\ }VPropertyModel;}
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }VPropertyTreeViewPrivate;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view}{VPropertyTreeView}}\ :\ \textcolor{keyword}{public}\ QTreeView}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view}{VPropertyTreeView}}(QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view}{VPropertyTreeView}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property_model}{VPropertyModel}}*\ model,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_a7bf8320008011a245156d59e0623beed}{\string~VPropertyTreeView}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_a3974d24e3e6dafd9f88245a3b9c77a4a}{setRowHeight}}(\textcolor{keywordtype}{int}\ height\ =\ 0,\ \textcolor{keywordtype}{bool}\ add\_to\_standard\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_ab10a51197631bc9396d1b1e29ba9c6e4}{init}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00061\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view}{VPropertyTreeView}}(\mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_private}{VPropertyTreeViewPrivate}}*\ d,\ \textcolor{keywordtype}{bool}\ init\_,\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_private}{VPropertyTreeViewPrivate}}*\ \mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view_aff303724791c9ce524727f14a1075059}{d\_ptr}};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00067\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_v_property_tree_view}{VPropertyTreeView}})}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPROPERTYTREEVIEWEEVIEW\_H}}
+
+\end{DoxyCode}

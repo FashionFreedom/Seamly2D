@@ -1,0 +1,134 @@
+\hypertarget{vdxfengine_8h_source}{}\doxysection{vdxfengine.\+h}
+\label{vdxfengine_8h_source}\index{D:/Github/Seamly2D/src/libs/vdxf/vdxfengine.h@{D:/Github/Seamly2D/src/libs/vdxf/vdxfengine.h}}
+\mbox{\hyperlink{vdxfengine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vdxfengine.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ Valentina\ Zhuravska\ <zhuravska19(at)gmail.com>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 8,\ 2015}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#ifndef\ VDXFENGINE\_H}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ VDXFENGINE\_H}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QMatrix>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QPaintEngine>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QRectF>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <QSize>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dxfdef_8h}{dxfdef.h}}"{}}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{drw__base_8h}{libdxfrw/drw\_base.h}}"{}}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }QTextStream;}
+\DoxyCodeLine{00047\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__iface}{dx\_iface}};}
+\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_r_w___text}{DRW\_Text}};}
+\DoxyCodeLine{00049\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}};}
+\DoxyCodeLine{00050\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}};}
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_dxf_engine}{VDxfEngine}}\ :\ \textcolor{keyword}{public}\ QPaintEngine}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_dxf_paint_device}{VDxfPaintDevice}};}
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00057\ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a800147f662c8067e40e88689d34e9699}{VDxfEngine}}();}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_dxf_engine_aa6b79ed5488e4c35e190015c43d5f4a5}{\string~VDxfEngine}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_engine_a0aab4b00e6bc819b3ba818e16bd545f8}{begin}}(QPaintDevice\ *pdev)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_engine_a82e69d5f37f42e34370b641134f6681b}{end}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00062\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_ac34d16cb523840e547d6a58af0686dc7}{updateState}}(const\ QPaintEngineState\ \&state)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00063\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_abc831bfdbcffb4106397bd55381f4fa4}{drawPath}}(const\ QPainterPath\ \&path)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00064\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a16988786fc865a7afd7229918575b7d9}{drawLines}}(const\ QLineF\ *\ lines,\ \textcolor{keywordtype}{int}\ lineCount)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00065\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a16988786fc865a7afd7229918575b7d9}{drawLines}}(const\ QLine\ *\ lines,\ \textcolor{keywordtype}{int}\ lineCount)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00066\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a44cbfbb4da611046da53b674a30e2297}{drawPolygon}}(const\ QPointF\ *points,\ \textcolor{keywordtype}{int}\ pointCount,\ PolygonDrawMode\ mode)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00067\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a44cbfbb4da611046da53b674a30e2297}{drawPolygon}}(const\ QPoint\ *points,\ \textcolor{keywordtype}{int}\ pointCount,\ PolygonDrawMode\ mode)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00068\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a5df7a23e88ea479ed9b8782f4fd93f91}{drawEllipse}}(const\ QRectF\ \&\ rect)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00069\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a5df7a23e88ea479ed9b8782f4fd93f91}{drawEllipse}}(const\ QRect\ \&\ rect)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00070\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a393c4e4e354394757d924d6ca18c84f0}{drawTextItem}}(const\ QPointF\ \&\ p,\ const\ QTextItem\ \&\ textItem)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00071\ \ \ \ \ virtual\ Type\ \mbox{\hyperlink{class_v_dxf_engine_af1c0efa0d7fe1ea8111c188d41273743}{type}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00072\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a12dd43408751ea5643f3c211a5fcdefb}{drawPixmap}}(const\ QRectF\ \&r,\ const\ QPixmap\ \&pm,\ const\ QRectF\ \&sr)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ QSize\ \mbox{\hyperlink{class_v_dxf_engine_a8de808994997a4dcbb242d3f3cd17aea}{getSize}}()\ const;}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a7eaec96a4c04a0acc933119b4124515d}{setSize}}(const\ QSize\ \&value);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_dxf_engine_a1ae5bfa36e82dcbeaac331e3b6ccb136}{getResolution}}()\ const;}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \mbox{\hyperlink{class_v_dxf_engine_aad26a240bd94aaec7862f78d7ca32270}{setResolution}}(\textcolor{keywordtype}{double}\ value);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_dxf_engine_a1f41aacfbeb5a9675f3a2e114889b484}{getFileName}}()\ const;}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_ad7625c794c7b8a8910d6fcbdc15369cd}{setFileName}}(const\ QString\ \&value);}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{namespace_d_r_w}{DRW}}::Version\ \mbox{\hyperlink{class_v_dxf_engine_aa8d4edd46df74f7dab8f53aea728f505}{GetVersion}}()\ const;}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_acc069c048f30926cf124d06ba8e2bbed}{SetVersion}}(\mbox{\hyperlink{namespace_d_r_w}{DRW}}::Version\ version);}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a72aeba49f5229202d9ed93a117399544}{SetBinaryFormat}}(\textcolor{keywordtype}{bool}\ binary);}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_engine_a6efc7e45591aa2a4d3c2859f5fe9eede}{IsBinaryFormat}}()\ const;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ std::\textcolor{keywordtype}{string}\ \mbox{\hyperlink{class_v_dxf_engine_a1dc57e9692cd7ab5466df69edd51fff0}{getPenStyle}}();}
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_dxf_engine_a1ee81740b6ed9eb9156a1f6c3556272c}{getPenColor}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a09437439f2e6d15080a846d1d4c8c46e}{setMeasurement}}(const\ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ \&var);}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_ac963f66b03ffa32cb348b410731e792f}{setInsunits}}(const\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ \&var);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ private:}
+\DoxyCodeLine{00096\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_dxf_engine}{VDxfEngine}})}
+\DoxyCodeLine{00097\ \ \ \ \ QSize\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a8065f518831c2960e11811b796db8d84}{size}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{double}\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a04b4adc493e543542ba84adbaef954d6}{resolution}};}
+\DoxyCodeLine{00099\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a31bfd9604273698d370d70690bd1ee87}{fileName}};}
+\DoxyCodeLine{00100\ \ \ \ \ \mbox{\hyperlink{namespace_d_r_w}{DRW}}::Version\ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a5a63ef5802868f6b599af06fd6efc25c}{m\_version}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a38afe93cb78dd28e4369749614c1a52d}{m\_binary}};}
+\DoxyCodeLine{00102\ \ \ \ \ QTransform\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_dxf_engine_a95ae747a7b2aa780bdeed29d3ebb5357}{transform}};}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{classdx__iface}{dx\_iface}}>\ \mbox{\hyperlink{class_v_dxf_engine_a0debdc8eeb3f4902e4ada89113fb7930}{input}};}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{dxfdef_8h_a3dd1db4b7a6f61c5d2004d1580acec27}{VarMeasurement}}\ \mbox{\hyperlink{class_v_dxf_engine_a7c737a8e38b7561ad6c7e323ff410663}{varMeasurement}};}
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ \mbox{\hyperlink{class_v_dxf_engine_af1e065cc637bf9a1439a846f293b3f59}{varInsunits}};}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{class_d_r_w___text}{DRW\_Text}}\ *\mbox{\hyperlink{class_v_dxf_engine_aa1d271015fe969ccaef703f276c9f984}{textBuffer}};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ Q\_REQUIRED\_RESULT\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_dxf_engine_a667087f8113c399acf20919ce16289d4}{FromPixel}}(\textcolor{keywordtype}{double}\ pix,\ const\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ \&unit)\ const;}
+\DoxyCodeLine{00109\ \ \ \ \ Q\_REQUIRED\_RESULT\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_dxf_engine_abf528d92ab1e5cf2b437349045e920a8}{ToPixel}}(\textcolor{keywordtype}{double}\ val,\ const\ \mbox{\hyperlink{dxfdef_8h_a76a334d2cdefeb4fca03969a8d1acbe8}{VarInsunits}}\ \&unit)\ const;}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_dxf_engine_a6e64211dabeb86576cca981aff41a30d}{ExportToAAMA}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}>\ \&details);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a3829f1344ef540379b614ef79d2352fd}{ExportAAMAOutline}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_ab1252a7c7cca4b45d6992fd8061f0bbf}{ExportAAMADraw}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a5a4104922dc7b2a9c3af28da923be145}{ExportAAMAIntcut}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_aa2084857a315a0df34526b519b28839d}{ExportAAMANotch}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a897bfd9c60d56146e9068df58250f58b}{ExportAAMAGrainline}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_ac7da41ae448f5a20827902048a93bb4e}{ExportAAMAText}}(\mbox{\hyperlink{classdx__iface_block}{dx\_ifaceBlock}}\ *detailBlock,\ const\ \mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}\ \&detail);}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_dxf_engine_a6431276b91eb2065053763cb14592c03}{ExportAAMAGlobalText}}(const\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{classdx__iface}{dx\_iface}}>\ \&\mbox{\hyperlink{class_v_dxf_engine_a0debdc8eeb3f4902e4ada89113fb7930}{input}},\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{class_v_layout_piece}{VLayoutPiece}}>\ \&details);}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ Q\_REQUIRED\_RESULT\ \mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}\ *\mbox{\hyperlink{class_v_dxf_engine_aa406af3b9e95e6f27da061b909fbc955}{AAMAPolygon}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<QPointF>\ \&polygon,\ const\ QString\ \&layer,\ \textcolor{keywordtype}{bool}\ forceClosed);}
+\DoxyCodeLine{00121\ \ \ \ \ Q\_REQUIRED\_RESULT\ \mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}\ *\mbox{\hyperlink{class_v_dxf_engine_afbf3ccc1ce1ad5cce42b46a15412fece}{AAMALine}}(const\ QLineF\ \&line,\ const\ QString\ \&layer);}
+\DoxyCodeLine{00122\ \ \ \ \ Q\_REQUIRED\_RESULT\ \mbox{\hyperlink{class_d_r_w___entity}{DRW\_Entity}}\ *\mbox{\hyperlink{class_v_dxf_engine_a404692e3fa0a39c022fd382ea28aaaff}{AAMAText}}(const\ QPointF\ \&pos,\ const\ QString\ \&text,\ const\ QString\ \&layer);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ template<class\ P,\ class\ V>}
+\DoxyCodeLine{00125\ \ \ \ \ Q\_REQUIRED\_RESULT\ P\ *\mbox{\hyperlink{class_v_dxf_engine_aa4b7e5de74d5b667c7dc5ddb47a8f9bb}{CreateAAMAPolygon}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<QPointF>\ \&polygon,\ const\ QString\ \&layer,\ \textcolor{keywordtype}{bool}\ forceClosed);}
+\DoxyCodeLine{00126\ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VDXFENGINE\_H}}
+
+\end{DoxyCode}

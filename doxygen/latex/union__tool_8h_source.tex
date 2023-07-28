@@ -1,0 +1,157 @@
+\hypertarget{union__tool_8h_source}{}\doxysection{union\+\_\+tool.\+h}
+\label{union__tool_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/union\_tool.h@{D:/Github/Seamly2D/src/libs/vtools/tools/union\_tool.h}}
+\mbox{\hyperlink{union__tool_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ union\_tool.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Dec\ 27,\ 2022}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2022\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ vtooluniondetails.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 26\ 12,\ 2013}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ UNION\_TOOL\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ UNION\_TOOL\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QDomElement>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QDomNode>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QPointF>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vabstracttool_8h}{vabstracttool.h}}"{}}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#include\ "{}../ifc/ifcdef.h"{}}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#include\ "{}../ifc/xml/vabstractpattern.h"{}}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#include\ "{}../vmisc/def.h"{}}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#include\ "{}../vpatterndb/vpiece.h"{}}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dialog_tool}{DialogTool}};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_union_tool_init_data}{UnionToolInitData}}}
+\DoxyCodeLine{00075\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a1d17e0f5f1d70ca455adb8503c288cbe}{UnionToolInitData}}()}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{struct_union_tool_init_data_adb9dbc30ae3415b5af5f3b8b266bbd2d}{piece1\_Id}}(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}),}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a81379b513b41b02e9b2535de9ee2d244}{piece2\_Id}}(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}),}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a7ec74ef180537935c89c34f176ab5682}{piece1\_Index}}(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}),}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_af311fdadcf21e11805ca1ac25d16c65c}{piece2\_Index}}(\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}),}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a8b91ad3cd3f39737585eb016af081035}{scene}}(nullptr),}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a13a9ddf409461b59bff5383c17459c60}{doc}}(nullptr),}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a726c5f3c1b29a91327cf9b86022e3bbc}{data}}(nullptr),}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a30255ae98b4fee8dae46c236e70d646b}{parse}}(\mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}::\mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202aed73e6ca0421aba7b2a904510d597785}{FullParse}}),}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a0ad479f820f34f283090bb39d5e91243}{typeCreation}}(\mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}::\mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820a34fdc781f6a322fcd6c512fea9164952}{FromFile}}),}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_union_tool_init_data_a6373d932dbc576aae2d4e56a1c1ab9b6}{retainPieces}}(false)}
+\DoxyCodeLine{00087\ \ \ \ \ \{\}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_union_tool_init_data_adb9dbc30ae3415b5af5f3b8b266bbd2d}{piece1\_Id}};}
+\DoxyCodeLine{00090\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_union_tool_init_data_a81379b513b41b02e9b2535de9ee2d244}{piece2\_Id}};}
+\DoxyCodeLine{00091\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_union_tool_init_data_a7ec74ef180537935c89c34f176ab5682}{piece1\_Index}};}
+\DoxyCodeLine{00092\ \ \ \ \ quint32\ \mbox{\hyperlink{struct_union_tool_init_data_af311fdadcf21e11805ca1ac25d16c65c}{piece2\_Index}};}
+\DoxyCodeLine{00093\ \ \ \ \ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *\mbox{\hyperlink{struct_union_tool_init_data_a8b91ad3cd3f39737585eb016af081035}{scene}};}
+\DoxyCodeLine{00094\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{struct_union_tool_init_data_a13a9ddf409461b59bff5383c17459c60}{doc}};}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{struct_union_tool_init_data_a726c5f3c1b29a91327cf9b86022e3bbc}{data}};}
+\DoxyCodeLine{00096\ \ \ \ \ \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}}\ \mbox{\hyperlink{struct_union_tool_init_data_a30255ae98b4fee8dae46c236e70d646b}{parse}};}
+\DoxyCodeLine{00097\ \ \ \ \ \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}}\ \mbox{\hyperlink{struct_union_tool_init_data_a0ad479f820f34f283090bb39d5e91243}{typeCreation}};}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{struct_union_tool_init_data_a6373d932dbc576aae2d4e56a1c1ab9b6}{retainPieces}};}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00104\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_union_tool}{UnionTool}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_tool}{VAbstractTool}}}
+\DoxyCodeLine{00105\ \{}
+\DoxyCodeLine{00106\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00107\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_union_tool}{UnionTool}}\ *\mbox{\hyperlink{class_union_tool_aa2ffc939ac1b61ecfa7b0c64b531094a}{Create}}(\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer<DialogTool>}}\ dialog,\ \mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}});}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_union_tool}{UnionTool}}\ *\mbox{\hyperlink{class_union_tool_aa2ffc939ac1b61ecfa7b0c64b531094a}{Create}}(\textcolor{keyword}{const}\ quint32\ \_id,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_union_tool_init_data}{UnionToolInitData}}\ \&initData);}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a8e85500233f56be31639873deba5624f}{ToolType}};}
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a8373f45cb0047218f7bbedb3deabfc02}{TagUnionPiece}};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a3584079e320dec2433f08bd8c92cb7f6}{TagNode}};}
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a95250857525438210b8e6aa8093e1821}{TagChildren}};}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a6da8aa192e5741047976d74d6f192258}{TagChild}};}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_adeca176b6c8416f80eda3ae5546f79b1}{AttrIndexD1}};}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a173b25dbec77f41cffeed72b5e7dfa80}{AttrIndexD2}};}
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_ab58bf790cff9ea601046701a869f7ec4}{AttrIdObject}};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_ae1c8d0894ad7461db745ec2ba895ff00}{AttrNodeType}};}
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_a51fc774bfd24de24df6012581879f5f4}{NodeTypeContour}};}
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ QString\ \mbox{\hyperlink{class_union_tool_aa6814c24495c19ebf6041eb051c47fa7}{NodeTypeModeling}};}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_union_tool_a4350345a242281056e1be92cb0b63df6}{getTagName}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00125\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a30254639af8a40138fde5f34708bce3a}{ShowVisualization}}(\textcolor{keywordtype}{bool}\ show)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00126\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a2945710454ca0d66a408ef1e6d9e2090}{incrementReferens}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00127\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a2dc807b02c33b34615e3cfdc49fd0693}{decrementReferens}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00128\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a8430b56d90d4253d9e93e0fa05c6d981}{GroupVisibility}}(quint32\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ public\ slots:}
+\DoxyCodeLine{00134\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a28a89a7098e192b808cbca98a2eec7ce}{FullUpdateFromFile}}\ ()\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a87b2326ae81e7716780a2d5ae46ce4b8}{AllowHover}}(\textcolor{keywordtype}{bool})\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_ae2d3f94af6ac7f691ecce63d757ddad3}{AllowSelecting}}(\textcolor{keywordtype}{bool})\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_a5e69f419e726121700c97e523c21c09d}{AddToFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00140\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_union_tool_aa01ae4d7363377c5351f0c6733372b40}{SetVisualization}}()\ Q\_DECL\_OVERRIDE\ \{\}}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00143\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_union_tool}{UnionTool}})}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ quint32\ \mbox{\hyperlink{class_union_tool_a3b1a740869b5757f5684e03090c71ff2}{piece1\_Id}};\ \ \ \ }
+\DoxyCodeLine{00146\ \ \ \ \ quint32\ \mbox{\hyperlink{class_union_tool_acbde4b3a8fc7188ee18d02ee1ab7a90d}{piece2\_Id}};\ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ quint32\ \mbox{\hyperlink{class_union_tool_aba3d371cfa28fc301ffdfe29c674f99b}{piece1\_Index}};\ }
+\DoxyCodeLine{00148\ \ \ \ \ quint32\ \mbox{\hyperlink{class_union_tool_a31f70dddafadb0bb753dd815c27b501b}{piece2\_Index}};\ }
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{class_union_tool}{UnionTool}}(quint32\ \textcolor{keywordtype}{id},\ const\ \mbox{\hyperlink{struct_union_tool_init_data}{UnionToolInitData}}\ \&initData,\ QObject\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_tool_a82b6aece3d89deaf625afa573ec67fb4}{addPiece}}(QDomElement\ \&domElement,\ const\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&d)\ const;}
+\DoxyCodeLine{00153\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_union_tool_a47a03975467f9ce1756b683555a47cfb}{AddToModeling}}(const\ QDomElement\ \&domElement);}
+\DoxyCodeLine{00154\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \mbox{\hyperlink{class_union_tool_a26e1c89bc80ccc45a9d70f792978046c}{GetReferenceObjects}}()\ const;}
+\DoxyCodeLine{00155\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \mbox{\hyperlink{class_union_tool_a98038767c625e6a5543f0cf1b3706a5f}{ReferenceObjects}}(const\ QDomElement\ \&root,\ const\ QString\ \&tag,\ const\ QString\ \&attribute)\ const;}
+\DoxyCodeLine{00156\ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ UNION\_TOOL\_H}}
+
+\end{DoxyCode}

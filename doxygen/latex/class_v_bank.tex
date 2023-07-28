@@ -1,0 +1,286 @@
+\hypertarget{class_v_bank}{}\doxysection{VBank Class Reference}
+\label{class_v_bank}\index{VBank@{VBank}}
+
+
+{\ttfamily \#include $<$vbank.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_bank_a425fc08853750853df87a74d37a98f39}{VBank}} ()
+\item 
+qreal \mbox{\hyperlink{class_v_bank_a76b0977ee7e425becd5f57f239dbbde1}{Get\+Layout\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_bank_a233e849d183fed5cb9c06eaed6423ed9}{Set\+Layout\+Width}} (const qreal \&value)
+\item 
+void \mbox{\hyperlink{class_v_bank_a61eceab82bb1d4cb45c8a073c3a5bb5f}{set\+Pieces}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&\mbox{\hyperlink{class_v_bank_a20daf75400a95e9f702196b16f646a9a}{pieces}})
+\item 
+int \mbox{\hyperlink{class_v_bank_a99b8a9a1216ea864ef69e919f3b3a31e}{Get\+Tiket}} ()
+\item 
+\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \mbox{\hyperlink{class_v_bank_a486d27fd2e5017043abd8b8ea15ff272}{get\+Piece}} (int i) const
+\item 
+void \mbox{\hyperlink{class_v_bank_a9ac08dcef9d85fe934ddb1b03565409d}{Arranged}} (int i)
+\item 
+void \mbox{\hyperlink{class_v_bank_af89e71ded4a685ce67255d81fb44dc06}{Not\+Arranged}} (int i)
+\item 
+bool \mbox{\hyperlink{class_v_bank_af7f64d6acacd4796950111cd359b4263}{Prepare}} ()
+\item 
+void \mbox{\hyperlink{class_v_bank_ab283f176f5458be7604810f4084edb79}{Reset}} ()
+\item 
+void \mbox{\hyperlink{class_v_bank_a1d10e2574be062bdf3e803081ab765af}{Set\+Case\+Type}} (\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} \mbox{\hyperlink{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}{case\+Type}})
+\item 
+int \mbox{\hyperlink{class_v_bank_a33dae91b8bc99feab8cbccbc8a3c0611}{all\+Piece\+Count}} () const
+\item 
+int \mbox{\hyperlink{class_v_bank_a0d34a67a1bd4252af8f55df2efac2691}{Left\+Arrange}} () const
+\item 
+int \mbox{\hyperlink{class_v_bank_a30ae9127d046dc96382687eb568ee756}{Arranged\+Count}} () const
+\item 
+qreal \mbox{\hyperlink{class_v_bank_ad255d3eef3cdd7e514f03173c576d4bf}{Get\+Biggest\+Diagonal}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_bank_a7aa1fc1438a93807ea21644599f9c939}{Prepare\+Group}} ()
+\item 
+void \mbox{\hyperlink{class_v_bank_a07ecc43d9f073c589d9302c6dcd76d62}{Prepare\+Three\+Groups}} ()
+\item 
+void \mbox{\hyperlink{class_v_bank_ac6cd8b1a8b09bc6371607f21a92b75fb}{Prepare\+Two\+Groups}} ()
+\item 
+void \mbox{\hyperlink{class_v_bank_a86c858959b4bd6ee0f46723dc2e8cc22}{Prepare\+Desc\+Group}} ()
+\item 
+int \mbox{\hyperlink{class_v_bank_a2e679eb731c12aada40a3a9b0eccdb69}{Get\+Next\+Three\+Groups}} () const
+\item 
+int \mbox{\hyperlink{class_v_bank_ad8271077836d31e4014bf4c6aec38bf6}{Get\+Next\+Two\+Groups}} () const
+\item 
+int \mbox{\hyperlink{class_v_bank_adce914f2ba6a9e0e030e828eb84533f5}{Get\+Next\+Desc\+Group}} () const
+\item 
+void \mbox{\hyperlink{class_v_bank_af9e3d34b3cdf1a446d70dd3f8a0382eb}{Sq\+Max\+Min}} (qint64 \&s\+Max, qint64 \&s\+Min) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \mbox{\hyperlink{class_v_bank_a20daf75400a95e9f702196b16f646a9a}{pieces}}
+\item 
+\mbox{\hyperlink{class_q_hash}{QHash}}$<$ int, qint64 $>$ \mbox{\hyperlink{class_v_bank_a79c53474ac5759d117ecb704e315aee5}{unsorted}}
+\item 
+\mbox{\hyperlink{class_q_hash}{QHash}}$<$ int, qint64 $>$ \mbox{\hyperlink{class_v_bank_a660d7cea567e034752bb05d2b16b6fcf}{big}}
+\item 
+\mbox{\hyperlink{class_q_hash}{QHash}}$<$ int, qint64 $>$ \mbox{\hyperlink{class_v_bank_a52b137cf7bfc04efe42f72e1a82bbbde}{middle}}
+\item 
+\mbox{\hyperlink{class_q_hash}{QHash}}$<$ int, qint64 $>$ \mbox{\hyperlink{class_v_bank_ab4556f33091dcb1fe4db3ba6fa3c2d53}{small}}
+\item 
+qreal \mbox{\hyperlink{class_v_bank_a7eb7e725afeb04c9a6dc963dad0608b1}{layout\+Width}}
+\item 
+\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} \mbox{\hyperlink{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}{case\+Type}}
+\item 
+bool \mbox{\hyperlink{class_v_bank_a097ab3759e90c4798be24182ed9dfd17}{prepare}}
+\item 
+qreal \mbox{\hyperlink{class_v_bank_aa4cec4355ae3a7b63ed91c9354b36c85}{diagonal}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_bank_a425fc08853750853df87a74d37a98f39}\label{class_v_bank_a425fc08853750853df87a74d37a98f39}} 
+\index{VBank@{VBank}!VBank@{VBank}}
+\index{VBank@{VBank}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{VBank()}{VBank()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH QT\+\_\+\+WARNING\+\_\+\+POP VBank\+::\+VBank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_bank_a33dae91b8bc99feab8cbccbc8a3c0611}\label{class_v_bank_a33dae91b8bc99feab8cbccbc8a3c0611}} 
+\index{VBank@{VBank}!allPieceCount@{allPieceCount}}
+\index{allPieceCount@{allPieceCount}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{allPieceCount()}{allPieceCount()}}
+{\footnotesize\ttfamily int VBank\+::all\+Piece\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_a9ac08dcef9d85fe934ddb1b03565409d}\label{class_v_bank_a9ac08dcef9d85fe934ddb1b03565409d}} 
+\index{VBank@{VBank}!Arranged@{Arranged}}
+\index{Arranged@{Arranged}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{Arranged()}{Arranged()}}
+{\footnotesize\ttfamily void VBank\+::\+Arranged (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a30ae9127d046dc96382687eb568ee756}\label{class_v_bank_a30ae9127d046dc96382687eb568ee756}} 
+\index{VBank@{VBank}!ArrangedCount@{ArrangedCount}}
+\index{ArrangedCount@{ArrangedCount}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{ArrangedCount()}{ArrangedCount()}}
+{\footnotesize\ttfamily int VBank\+::\+Arranged\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_ad255d3eef3cdd7e514f03173c576d4bf}\label{class_v_bank_ad255d3eef3cdd7e514f03173c576d4bf}} 
+\index{VBank@{VBank}!GetBiggestDiagonal@{GetBiggestDiagonal}}
+\index{GetBiggestDiagonal@{GetBiggestDiagonal}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetBiggestDiagonal()}{GetBiggestDiagonal()}}
+{\footnotesize\ttfamily qreal VBank\+::\+Get\+Biggest\+Diagonal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_a76b0977ee7e425becd5f57f239dbbde1}\label{class_v_bank_a76b0977ee7e425becd5f57f239dbbde1}} 
+\index{VBank@{VBank}!GetLayoutWidth@{GetLayoutWidth}}
+\index{GetLayoutWidth@{GetLayoutWidth}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetLayoutWidth()}{GetLayoutWidth()}}
+{\footnotesize\ttfamily qreal VBank\+::\+Get\+Layout\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_adce914f2ba6a9e0e030e828eb84533f5}\label{class_v_bank_adce914f2ba6a9e0e030e828eb84533f5}} 
+\index{VBank@{VBank}!GetNextDescGroup@{GetNextDescGroup}}
+\index{GetNextDescGroup@{GetNextDescGroup}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetNextDescGroup()}{GetNextDescGroup()}}
+{\footnotesize\ttfamily int VBank\+::\+Get\+Next\+Desc\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a2e679eb731c12aada40a3a9b0eccdb69}\label{class_v_bank_a2e679eb731c12aada40a3a9b0eccdb69}} 
+\index{VBank@{VBank}!GetNextThreeGroups@{GetNextThreeGroups}}
+\index{GetNextThreeGroups@{GetNextThreeGroups}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetNextThreeGroups()}{GetNextThreeGroups()}}
+{\footnotesize\ttfamily int VBank\+::\+Get\+Next\+Three\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_ad8271077836d31e4014bf4c6aec38bf6}\label{class_v_bank_ad8271077836d31e4014bf4c6aec38bf6}} 
+\index{VBank@{VBank}!GetNextTwoGroups@{GetNextTwoGroups}}
+\index{GetNextTwoGroups@{GetNextTwoGroups}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetNextTwoGroups()}{GetNextTwoGroups()}}
+{\footnotesize\ttfamily int VBank\+::\+Get\+Next\+Two\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a486d27fd2e5017043abd8b8ea15ff272}\label{class_v_bank_a486d27fd2e5017043abd8b8ea15ff272}} 
+\index{VBank@{VBank}!getPiece@{getPiece}}
+\index{getPiece@{getPiece}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{getPiece()}{getPiece()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} VBank\+::get\+Piece (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_a99b8a9a1216ea864ef69e919f3b3a31e}\label{class_v_bank_a99b8a9a1216ea864ef69e919f3b3a31e}} 
+\index{VBank@{VBank}!GetTiket@{GetTiket}}
+\index{GetTiket@{GetTiket}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{GetTiket()}{GetTiket()}}
+{\footnotesize\ttfamily int VBank\+::\+Get\+Tiket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a0d34a67a1bd4252af8f55df2efac2691}\label{class_v_bank_a0d34a67a1bd4252af8f55df2efac2691}} 
+\index{VBank@{VBank}!LeftArrange@{LeftArrange}}
+\index{LeftArrange@{LeftArrange}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{LeftArrange()}{LeftArrange()}}
+{\footnotesize\ttfamily int VBank\+::\+Left\+Arrange (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_bank_af89e71ded4a685ce67255d81fb44dc06}\label{class_v_bank_af89e71ded4a685ce67255d81fb44dc06}} 
+\index{VBank@{VBank}!NotArranged@{NotArranged}}
+\index{NotArranged@{NotArranged}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{NotArranged()}{NotArranged()}}
+{\footnotesize\ttfamily void VBank\+::\+Not\+Arranged (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_af7f64d6acacd4796950111cd359b4263}\label{class_v_bank_af7f64d6acacd4796950111cd359b4263}} 
+\index{VBank@{VBank}!Prepare@{Prepare}}
+\index{Prepare@{Prepare}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{Prepare()}{Prepare()}}
+{\footnotesize\ttfamily bool VBank\+::\+Prepare (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a86c858959b4bd6ee0f46723dc2e8cc22}\label{class_v_bank_a86c858959b4bd6ee0f46723dc2e8cc22}} 
+\index{VBank@{VBank}!PrepareDescGroup@{PrepareDescGroup}}
+\index{PrepareDescGroup@{PrepareDescGroup}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{PrepareDescGroup()}{PrepareDescGroup()}}
+{\footnotesize\ttfamily void VBank\+::\+Prepare\+Desc\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a7aa1fc1438a93807ea21644599f9c939}\label{class_v_bank_a7aa1fc1438a93807ea21644599f9c939}} 
+\index{VBank@{VBank}!PrepareGroup@{PrepareGroup}}
+\index{PrepareGroup@{PrepareGroup}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{PrepareGroup()}{PrepareGroup()}}
+{\footnotesize\ttfamily void VBank\+::\+Prepare\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a07ecc43d9f073c589d9302c6dcd76d62}\label{class_v_bank_a07ecc43d9f073c589d9302c6dcd76d62}} 
+\index{VBank@{VBank}!PrepareThreeGroups@{PrepareThreeGroups}}
+\index{PrepareThreeGroups@{PrepareThreeGroups}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{PrepareThreeGroups()}{PrepareThreeGroups()}}
+{\footnotesize\ttfamily void VBank\+::\+Prepare\+Three\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_ac6cd8b1a8b09bc6371607f21a92b75fb}\label{class_v_bank_ac6cd8b1a8b09bc6371607f21a92b75fb}} 
+\index{VBank@{VBank}!PrepareTwoGroups@{PrepareTwoGroups}}
+\index{PrepareTwoGroups@{PrepareTwoGroups}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{PrepareTwoGroups()}{PrepareTwoGroups()}}
+{\footnotesize\ttfamily void VBank\+::\+Prepare\+Two\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_ab283f176f5458be7604810f4084edb79}\label{class_v_bank_ab283f176f5458be7604810f4084edb79}} 
+\index{VBank@{VBank}!Reset@{Reset}}
+\index{Reset@{Reset}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{Reset()}{Reset()}}
+{\footnotesize\ttfamily void VBank\+::\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a1d10e2574be062bdf3e803081ab765af}\label{class_v_bank_a1d10e2574be062bdf3e803081ab765af}} 
+\index{VBank@{VBank}!SetCaseType@{SetCaseType}}
+\index{SetCaseType@{SetCaseType}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{SetCaseType()}{SetCaseType()}}
+{\footnotesize\ttfamily void VBank\+::\+Set\+Case\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}}}]{case\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a233e849d183fed5cb9c06eaed6423ed9}\label{class_v_bank_a233e849d183fed5cb9c06eaed6423ed9}} 
+\index{VBank@{VBank}!SetLayoutWidth@{SetLayoutWidth}}
+\index{SetLayoutWidth@{SetLayoutWidth}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{SetLayoutWidth()}{SetLayoutWidth()}}
+{\footnotesize\ttfamily void VBank\+::\+Set\+Layout\+Width (\begin{DoxyParamCaption}\item[{const qreal \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_a61eceab82bb1d4cb45c8a073c3a5bb5f}\label{class_v_bank_a61eceab82bb1d4cb45c8a073c3a5bb5f}} 
+\index{VBank@{VBank}!setPieces@{setPieces}}
+\index{setPieces@{setPieces}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{setPieces()}{setPieces()}}
+{\footnotesize\ttfamily void VBank\+::set\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_bank_af9e3d34b3cdf1a446d70dd3f8a0382eb}\label{class_v_bank_af9e3d34b3cdf1a446d70dd3f8a0382eb}} 
+\index{VBank@{VBank}!SqMaxMin@{SqMaxMin}}
+\index{SqMaxMin@{SqMaxMin}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{SqMaxMin()}{SqMaxMin()}}
+{\footnotesize\ttfamily void VBank\+::\+Sq\+Max\+Min (\begin{DoxyParamCaption}\item[{qint64 \&}]{s\+Max,  }\item[{qint64 \&}]{s\+Min }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_bank_a660d7cea567e034752bb05d2b16b6fcf}\label{class_v_bank_a660d7cea567e034752bb05d2b16b6fcf}} 
+\index{VBank@{VBank}!big@{big}}
+\index{big@{big}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{big}{big}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_hash}{QHash}}$<$int, qint64$>$ VBank\+::big\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}\label{class_v_bank_af6c4b2444a98addf47bdff8cdaa17995}} 
+\index{VBank@{VBank}!caseType@{caseType}}
+\index{caseType@{caseType}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{caseType}{caseType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{vbank_8h_a70dfa19a81760e9220d7385ab0c7ae8e}{Cases}} VBank\+::case\+Type\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_aa4cec4355ae3a7b63ed91c9354b36c85}\label{class_v_bank_aa4cec4355ae3a7b63ed91c9354b36c85}} 
+\index{VBank@{VBank}!diagonal@{diagonal}}
+\index{diagonal@{diagonal}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{diagonal}{diagonal}}
+{\footnotesize\ttfamily qreal VBank\+::diagonal\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a7eb7e725afeb04c9a6dc963dad0608b1}\label{class_v_bank_a7eb7e725afeb04c9a6dc963dad0608b1}} 
+\index{VBank@{VBank}!layoutWidth@{layoutWidth}}
+\index{layoutWidth@{layoutWidth}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{layoutWidth}{layoutWidth}}
+{\footnotesize\ttfamily qreal VBank\+::layout\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a52b137cf7bfc04efe42f72e1a82bbbde}\label{class_v_bank_a52b137cf7bfc04efe42f72e1a82bbbde}} 
+\index{VBank@{VBank}!middle@{middle}}
+\index{middle@{middle}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{middle}{middle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_hash}{QHash}}$<$int, qint64$>$ VBank\+::middle\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a20daf75400a95e9f702196b16f646a9a}\label{class_v_bank_a20daf75400a95e9f702196b16f646a9a}} 
+\index{VBank@{VBank}!pieces@{pieces}}
+\index{pieces@{pieces}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{pieces}{pieces}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$\mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}}$>$ VBank\+::pieces\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a097ab3759e90c4798be24182ed9dfd17}\label{class_v_bank_a097ab3759e90c4798be24182ed9dfd17}} 
+\index{VBank@{VBank}!prepare@{prepare}}
+\index{prepare@{prepare}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{prepare}{prepare}}
+{\footnotesize\ttfamily bool VBank\+::prepare\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_ab4556f33091dcb1fe4db3ba6fa3c2d53}\label{class_v_bank_ab4556f33091dcb1fe4db3ba6fa3c2d53}} 
+\index{VBank@{VBank}!small@{small}}
+\index{small@{small}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{small}{small}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_hash}{QHash}}$<$int, qint64$>$ VBank\+::small\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_bank_a79c53474ac5759d117ecb704e315aee5}\label{class_v_bank_a79c53474ac5759d117ecb704e315aee5}} 
+\index{VBank@{VBank}!unsorted@{unsorted}}
+\index{unsorted@{unsorted}!VBank@{VBank}}
+\doxysubsubsection{\texorpdfstring{unsorted}{unsorted}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_hash}{QHash}}$<$int, qint64$>$ VBank\+::unsorted\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vbank_8h}{vbank.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vbank_8cpp}{vbank.\+cpp}}\end{DoxyCompactItemize}

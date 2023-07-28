@@ -1,0 +1,79 @@
+\hypertarget{addtogroup__dialog_8h_source}{}\doxysection{addtogroup\+\_\+dialog.\+h}
+\label{addtogroup__dialog_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/addtogroup\_dialog.h@{D:/Github/Seamly2D/src/libs/vtools/dialogs/tools/addtogroup\_dialog.h}}
+\mbox{\hyperlink{addtogroup__dialog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ addtogroup\_dialog.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Mar\ 14,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#ifndef\ ADD\_TO\_GROUP\_DIALOG\_H}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ ADD\_TO\_GROUP\_DIALOG\_H}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ "{}../tools/dialogtool.h"{}}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QDialog>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <QSound>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_ui}{Ui}}}
+\DoxyCodeLine{00042\ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_to_group_dialog}{AddToGroupDialog}};}
+\DoxyCodeLine{00044\ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_add_to_group_dialog}{AddToGroupDialog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_dialog_tool}{DialogTool}}}
+\DoxyCodeLine{00047\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog}{AddToGroupDialog}}(\mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_dialog_tool_a9967c0ad705d6aaed0ad5ce9bca17fa3}{data}},\ \textcolor{keyword}{const}\ quint32\ \&\mbox{\hyperlink{class_dialog_tool_a842caadb309f07a7c5b12497389297c3}{toolId}},\ QWidget\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_af43ea6adf67ecb3a896559ba178f0ff7}{\string~AddToGroupDialog}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a98acaf8af3189c4edcf0dbaac9e822f9}{fillNameBox}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a8972a64037697235eb1ed70fe243e000}{getName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap<quint32,\ quint32>}}\ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a7c014b729406c856a6f317f71fea26ce}{getGroupData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a47720c76f22bdc9cb8107067bfee6cfc}{ShowDialog}}(\textcolor{keywordtype}{bool}\ click)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a51616f0ae02f6559842d5bc51c3bd331}{SelectedObject}}(\textcolor{keywordtype}{bool}\ selected,\ quint32\ \textcolor{keywordtype}{object},\ quint32\ tool)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_add_to_group_dialog}{AddToGroupDialog}})}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{namespace_ui}{Ui}}::\mbox{\hyperlink{class_add_to_group_dialog}{AddToGroupDialog}}\ \ \ \ \ *\mbox{\hyperlink{class_add_to_group_dialog_aa683f76feef46aedff4d9eadceab4261}{ui}};}
+\DoxyCodeLine{00068\ \ \ \ \ \mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_add_to_group_dialog_a2dcae19cc5ad35552bf0cb74470d4e06}{m\_doc}};}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ quint32>\ \ \ \ \mbox{\hyperlink{class_add_to_group_dialog_a8cba0051056d5266e7ff6dc980420ca5}{m\_groupData}};}
+\DoxyCodeLine{00070\ \ \ \ \ QSound\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *\mbox{\hyperlink{class_add_to_group_dialog_a9668ae4db4973be5f4528400d9ae79ee}{m\_beep}};}
+\DoxyCodeLine{00071\ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ADD\_TO\_GROUP\_DIALOG\_H}}
+
+\end{DoxyCode}

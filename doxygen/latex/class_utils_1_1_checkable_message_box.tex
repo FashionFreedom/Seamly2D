@@ -1,0 +1,398 @@
+\hypertarget{class_utils_1_1_checkable_message_box}{}\doxysection{Utils\+::Checkable\+Message\+Box Class Reference}
+\label{class_utils_1_1_checkable_message_box}\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+
+
+The \mbox{\hyperlink{class_utils_1_1_checkable_message_box}{Checkable\+Message\+Box}} class implements a message box suitable for questions with a \char`\"{}\+Do not ask me again\char`\"{} checkbox.  
+
+
+
+
+{\ttfamily \#include $<$checkablemessagebox.\+h$>$}
+
+Inheritance diagram for Utils\+::Checkable\+Message\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_utils_1_1_checkable_message_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a8aeacdf27f60a7d5df576830a2961f9d}{Checkable\+Message\+Box}} (QWidget $\ast$parent)
+\item 
+virtual \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2ee8d0c7bf748f157e52aeb5dfa35f18}{$\sim$\+Checkable\+Message\+Box}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3c14dd7f93c5cdc9ce1702158a114224}{text}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7d5fad3765d806b6f123092a981fd3d8}{set\+Text}} (const QString \&)
+\item 
+bool \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a4456da15b9ad251ab6a619a887108663}{is\+Checked}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7e33fe6bbc0aada5a8cd676d3c45cb27}{set\+Checked}} (bool s)
+\item 
+QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2ef145d474e0fa50ca746bda8b13b4e3}{check\+Box\+Text}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a61df735b4b31dbafba41a08706d3acb9}{set\+Check\+Box\+Text}} (const QString \&)
+\item 
+bool \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a90bf592ae410af4e18ab0e62535fc5e1}{is\+Check\+Box\+Visible}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a8646da61cda7c5c001c425aac8a4f00f}{set\+Check\+Box\+Visible}} (bool)
+\item 
+QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_aa0fc50eb6dbd87473f18ae4a7a8dbb3d}{standard\+Buttons}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3b0d5dff93907b3a77900b0754be2fbf}{set\+Standard\+Buttons}} (QDialog\+Button\+Box\+::\+Standard\+Buttons s)
+\item 
+QPush\+Button $\ast$ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a167b133bb3f397e74774ad71030e56fd}{button}} (QDialog\+Button\+Box\+::\+Standard\+Button b) const
+\item 
+QPush\+Button $\ast$ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_acb6c73c7d8b52d4e4a1facfa59530e8a}{add\+Button}} (const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}, QDialog\+Button\+Box\+::\+Button\+Role role)
+\item 
+QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ad24df520afe1ac6e7b270c9471623d5a}{default\+Button}} () const
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ad5b6b948af48813620a34c67026bd0ab}{set\+Default\+Button}} (QDialog\+Button\+Box\+::\+Standard\+Button s)
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a93343c79b51e90e9fdc244687f693286}{set\+Icon\+Pixmap}} (const QPixmap \&p)
+\item 
+QAbstract\+Button $\ast$ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_acc2c7e9ae07efb8361976ccab5bab9e2}{clicked\+Button}} () const
+\item 
+QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a56e5c6b510a9b4b1914032336a7e98ae}{clicked\+Standard\+Button}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab06a80f3d8dab0a2c5f5957dfe2409fc}{question}} (QWidget $\ast$parent, const QString \&title, const QString \&question, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{check\+Box\+Text}}, bool $\ast$check\+Box\+Setting, QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}=QDialog\+Button\+Box\+::\+Yes$\vert$QDialog\+Button\+Box\+::\+No, QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}=QDialog\+Button\+Box\+::\+No)
+\item 
+static QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_af07a2d0561f13e57a7308a5a63cc813f}{information}} (QWidget $\ast$parent, const QString \&title, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{check\+Box\+Text}}, bool $\ast$check\+Box\+Setting, QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}=QDialog\+Button\+Box\+::\+Ok, QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}=QDialog\+Button\+Box\+::\+No\+Button)
+\item 
+static QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}{do\+Not\+Ask\+Again\+Question}} (QWidget $\ast$parent, const QString \&title, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}, QSettings $\ast$settings, const QString \&settings\+Sub\+Key, QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}=QDialog\+Button\+Box\+::\+Yes$\vert$QDialog\+Button\+Box\+::\+No, QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}=QDialog\+Button\+Box\+::\+No, QDialog\+Button\+Box\+::\+Standard\+Button accept\+Button=QDialog\+Button\+Box\+::\+Yes)
+\item 
+static QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a5861f131d692e2feac308d17b5e592b7}{do\+Not\+Show\+Again\+Information}} (QWidget $\ast$parent, const QString \&title, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}, QSettings $\ast$settings, const QString \&settings\+Sub\+Key, QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}=QDialog\+Button\+Box\+::\+Ok, QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}=QDialog\+Button\+Box\+::\+No\+Button)
+\item 
+static QMessage\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a0bb1ba3ba531e124dfb8d1b129755c47}{dialog\+Button\+Box\+To\+Message\+Box\+Button}} (QDialog\+Button\+Box\+::\+Standard\+Button)
+\item 
+static void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a4c22796e151bd816f7dc803061417916}{reset\+All\+Do\+Not\+Ask\+Again\+Questions}} (QSettings $\ast$settings)
+\item 
+static bool \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a7a3c1115b571076c57b6d4d046c745e8}{has\+Suppressed\+Questions}} (QSettings $\ast$settings)
+\item 
+static QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a9f576b828427a97c9cfded6267f2f572}{msg\+Do\+Not\+Ask\+Again}} ()
+\item 
+static QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a0dd369e6bed1e766557d1a2ce39cc749}{msg\+Do\+Not\+Show\+Again}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}
+\item 
+bool \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}{is\+Checked}}
+\item 
+QString \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}{check\+Box\+Text}}
+\item 
+QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}
+\item 
+QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{Do\+Not\+Ask\+Again\+Type}} \{ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4ac9d8ebab17a85be5d019f60d75e63f04}{Question}}
+, \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882}{Information}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3b30c0a23550d6876a886cd61e795745}{slot\+Clicked}} (QAbstract\+Button $\ast$b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a890828ad9e67d7cb9719b09ea2ade8fb}{ask\+Again}} (QSettings $\ast$settings, const QString \&settings\+Sub\+Key)
+\item 
+static void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a76a2635d6a92eefd6ee1a406c5b6d1c2}{init\+Do\+Not\+Ask\+Again\+Message\+Box}} (\mbox{\hyperlink{class_utils_1_1_checkable_message_box}{Checkable\+Message\+Box}} \&message\+Box, const QString \&title, const QString \&\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}{text}}, QDialog\+Button\+Box\+::\+Standard\+Buttons \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}{buttons}}, QDialog\+Button\+Box\+::\+Standard\+Button \mbox{\hyperlink{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}{default\+Button}}, \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{Do\+Not\+Ask\+Again\+Type}} type)
+\item 
+static void \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a43a769fd83f490b7f6ec48a4a2fee2c7}{do\+Not\+Ask\+Again}} (QSettings $\ast$settings, const QString \&settings\+Sub\+Key)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_utils_1_1_checkable_message_box_private}{Checkable\+Message\+Box\+Private}} $\ast$ \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a10ef53918a28c68ba6ece6e76aaf4a66}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_utils_1_1_checkable_message_box}{Checkable\+Message\+Box}} class implements a message box suitable for questions with a \char`\"{}\+Do not ask me again\char`\"{} checkbox. 
+
+Emulates the QMessage\+Box API with static conveniences. The message label can open external URLs. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}\label{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!DoNotAskAgainType@{DoNotAskAgainType}}
+\index{DoNotAskAgainType@{DoNotAskAgainType}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{DoNotAskAgainType}{DoNotAskAgainType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{Utils\+::\+Checkable\+Message\+Box\+::\+Do\+Not\+Ask\+Again\+Type}}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Question@{Question}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!Question@{Question}}}\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4ac9d8ebab17a85be5d019f60d75e63f04}\label{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4ac9d8ebab17a85be5d019f60d75e63f04}} 
+Question&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Information@{Information}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!Information@{Information}}}\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882}\label{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4af76ff5d16bc77ee1bda33b7cb39d3882}} 
+Information&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a8aeacdf27f60a7d5df576830a2961f9d}\label{class_utils_1_1_checkable_message_box_a8aeacdf27f60a7d5df576830a2961f9d}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!CheckableMessageBox@{CheckableMessageBox}}
+\index{CheckableMessageBox@{CheckableMessageBox}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{CheckableMessageBox()}{CheckableMessageBox()}}
+{\footnotesize\ttfamily Utils\+::\+Checkable\+Message\+Box\+::\+Checkable\+Message\+Box (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a2ee8d0c7bf748f157e52aeb5dfa35f18}\label{class_utils_1_1_checkable_message_box_a2ee8d0c7bf748f157e52aeb5dfa35f18}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!````~CheckableMessageBox@{$\sim$CheckableMessageBox}}
+\index{````~CheckableMessageBox@{$\sim$CheckableMessageBox}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{$\sim$CheckableMessageBox()}{~CheckableMessageBox()}}
+{\footnotesize\ttfamily Utils\+::\+Checkable\+Message\+Box\+::$\sim$\+Checkable\+Message\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_acb6c73c7d8b52d4e4a1facfa59530e8a}\label{class_utils_1_1_checkable_message_box_acb6c73c7d8b52d4e4a1facfa59530e8a}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!addButton@{addButton}}
+\index{addButton@{addButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{addButton()}{addButton()}}
+{\footnotesize\ttfamily QPush\+Button $\ast$ Utils\+::\+Checkable\+Message\+Box\+::add\+Button (\begin{DoxyParamCaption}\item[{const QString \&}]{text,  }\item[{QDialog\+Button\+Box\+::\+Button\+Role}]{role }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a890828ad9e67d7cb9719b09ea2ade8fb}\label{class_utils_1_1_checkable_message_box_a890828ad9e67d7cb9719b09ea2ade8fb}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!askAgain@{askAgain}}
+\index{askAgain@{askAgain}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{askAgain()}{askAgain()}}
+{\footnotesize\ttfamily bool Utils\+::\+Checkable\+Message\+Box\+::ask\+Again (\begin{DoxyParamCaption}\item[{QSettings $\ast$}]{settings,  }\item[{const QString \&}]{settings\+Sub\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a167b133bb3f397e74774ad71030e56fd}\label{class_utils_1_1_checkable_message_box_a167b133bb3f397e74774ad71030e56fd}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!button@{button}}
+\index{button@{button}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{button()}{button()}}
+{\footnotesize\ttfamily QPush\+Button $\ast$ Utils\+::\+Checkable\+Message\+Box\+::button (\begin{DoxyParamCaption}\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{b }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a2ef145d474e0fa50ca746bda8b13b4e3}\label{class_utils_1_1_checkable_message_box_a2ef145d474e0fa50ca746bda8b13b4e3}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!checkBoxText@{checkBoxText}}
+\index{checkBoxText@{checkBoxText}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{checkBoxText()}{checkBoxText()}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::check\+Box\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_acc2c7e9ae07efb8361976ccab5bab9e2}\label{class_utils_1_1_checkable_message_box_acc2c7e9ae07efb8361976ccab5bab9e2}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!clickedButton@{clickedButton}}
+\index{clickedButton@{clickedButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{clickedButton()}{clickedButton()}}
+{\footnotesize\ttfamily QAbstract\+Button $\ast$ Utils\+::\+Checkable\+Message\+Box\+::clicked\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a56e5c6b510a9b4b1914032336a7e98ae}\label{class_utils_1_1_checkable_message_box_a56e5c6b510a9b4b1914032336a7e98ae}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!clickedStandardButton@{clickedStandardButton}}
+\index{clickedStandardButton@{clickedStandardButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{clickedStandardButton()}{clickedStandardButton()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::clicked\+Standard\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_ad24df520afe1ac6e7b270c9471623d5a}\label{class_utils_1_1_checkable_message_box_ad24df520afe1ac6e7b270c9471623d5a}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!defaultButton@{defaultButton}}
+\index{defaultButton@{defaultButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{defaultButton()}{defaultButton()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::default\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a0bb1ba3ba531e124dfb8d1b129755c47}\label{class_utils_1_1_checkable_message_box_a0bb1ba3ba531e124dfb8d1b129755c47}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!dialogButtonBoxToMessageBoxButton@{dialogButtonBoxToMessageBoxButton}}
+\index{dialogButtonBoxToMessageBoxButton@{dialogButtonBoxToMessageBoxButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{dialogButtonBoxToMessageBoxButton()}{dialogButtonBoxToMessageBoxButton()}}
+{\footnotesize\ttfamily QMessage\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::dialog\+Button\+Box\+To\+Message\+Box\+Button (\begin{DoxyParamCaption}\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{db }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a43a769fd83f490b7f6ec48a4a2fee2c7}\label{class_utils_1_1_checkable_message_box_a43a769fd83f490b7f6ec48a4a2fee2c7}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!doNotAskAgain@{doNotAskAgain}}
+\index{doNotAskAgain@{doNotAskAgain}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{doNotAskAgain()}{doNotAskAgain()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::do\+Not\+Ask\+Again (\begin{DoxyParamCaption}\item[{QSettings $\ast$}]{settings,  }\item[{const QString \&}]{settings\+Sub\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}\label{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!doNotAskAgainQuestion@{doNotAskAgainQuestion}}
+\index{doNotAskAgainQuestion@{doNotAskAgainQuestion}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{doNotAskAgainQuestion()}{doNotAskAgainQuestion()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::do\+Not\+Ask\+Again\+Question (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QString \&}]{title,  }\item[{const QString \&}]{text,  }\item[{QSettings $\ast$}]{settings,  }\item[{const QString \&}]{settings\+Sub\+Key,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{buttons = {\ttfamily QDialogButtonBox\+:\+:Yes$\vert$QDialogButtonBox\+:\+:No},  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{default\+Button = {\ttfamily QDialogButtonBox\+:\+:No},  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{accept\+Button = {\ttfamily QDialogButtonBox\+:\+:Yes} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Shows a message box with given {\itshape title} and {\itshape text}, and a \textbackslash{}gui \{Do not ask again\} check box. If the user checks the check box and accepts the dialog with the {\itshape accept\+Button}, further invocations of this function with the same {\itshape settings} and {\itshape settings\+Sub\+Key} will not show the dialog, but instantly return {\itshape accept\+Button}.
+
+Returns the clicked button, or QDialog\+Button\+Box\+::\+No\+Button if the user rejects the dialog with the escape key, or {\itshape accept\+Button} if the dialog is suppressed. \mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a5861f131d692e2feac308d17b5e592b7}\label{class_utils_1_1_checkable_message_box_a5861f131d692e2feac308d17b5e592b7}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!doNotShowAgainInformation@{doNotShowAgainInformation}}
+\index{doNotShowAgainInformation@{doNotShowAgainInformation}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{doNotShowAgainInformation()}{doNotShowAgainInformation()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::do\+Not\+Show\+Again\+Information (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QString \&}]{title,  }\item[{const QString \&}]{text,  }\item[{QSettings $\ast$}]{settings,  }\item[{const QString \&}]{settings\+Sub\+Key,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{buttons = {\ttfamily QDialogButtonBox\+:\+:Ok},  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{default\+Button = {\ttfamily QDialogButtonBox\+:\+:NoButton} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Shows a message box with given {\itshape title} and {\itshape text}, and a \textbackslash{}gui \{Do not show again\} check box. If the user checks the check box and quits the dialog, further invocations of this function with the same {\itshape settings} and {\itshape settings\+Sub\+Key} will not show the dialog, but instantly return.
+
+Returns the clicked button, or QDialog\+Button\+Box\+::\+No\+Button if the user rejects the dialog with the escape key, or {\itshape default\+Button} if the dialog is suppressed. \mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a7a3c1115b571076c57b6d4d046c745e8}\label{class_utils_1_1_checkable_message_box_a7a3c1115b571076c57b6d4d046c745e8}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!hasSuppressedQuestions@{hasSuppressedQuestions}}
+\index{hasSuppressedQuestions@{hasSuppressedQuestions}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{hasSuppressedQuestions()}{hasSuppressedQuestions()}}
+{\footnotesize\ttfamily bool Utils\+::\+Checkable\+Message\+Box\+::has\+Suppressed\+Questions (\begin{DoxyParamCaption}\item[{QSettings $\ast$}]{settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns whether any message boxes from \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}{do\+Not\+Ask\+Again\+Question()}} are suppressed in the {\itshape settings}. \mbox{\Hypertarget{class_utils_1_1_checkable_message_box_af07a2d0561f13e57a7308a5a63cc813f}\label{class_utils_1_1_checkable_message_box_af07a2d0561f13e57a7308a5a63cc813f}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!information@{information}}
+\index{information@{information}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{information()}{information()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::information (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QString \&}]{title,  }\item[{const QString \&}]{text,  }\item[{const QString \&}]{check\+Box\+Text,  }\item[{bool $\ast$}]{check\+Box\+Setting,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{buttons = {\ttfamily QDialogButtonBox\+:\+:Ok},  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{default\+Button = {\ttfamily QDialogButtonBox\+:\+:NoButton} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a76a2635d6a92eefd6ee1a406c5b6d1c2}\label{class_utils_1_1_checkable_message_box_a76a2635d6a92eefd6ee1a406c5b6d1c2}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!initDoNotAskAgainMessageBox@{initDoNotAskAgainMessageBox}}
+\index{initDoNotAskAgainMessageBox@{initDoNotAskAgainMessageBox}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{initDoNotAskAgainMessageBox()}{initDoNotAskAgainMessageBox()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::init\+Do\+Not\+Ask\+Again\+Message\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_utils_1_1_checkable_message_box}{Checkable\+Message\+Box}} \&}]{message\+Box,  }\item[{const QString \&}]{title,  }\item[{const QString \&}]{text,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{buttons,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{default\+Button,  }\item[{\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a3704f2110d227cfa444af687b6f086b4}{Do\+Not\+Ask\+Again\+Type}}}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a90bf592ae410af4e18ab0e62535fc5e1}\label{class_utils_1_1_checkable_message_box_a90bf592ae410af4e18ab0e62535fc5e1}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!isCheckBoxVisible@{isCheckBoxVisible}}
+\index{isCheckBoxVisible@{isCheckBoxVisible}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{isCheckBoxVisible()}{isCheckBoxVisible()}}
+{\footnotesize\ttfamily bool Utils\+::\+Checkable\+Message\+Box\+::is\+Check\+Box\+Visible (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a4456da15b9ad251ab6a619a887108663}\label{class_utils_1_1_checkable_message_box_a4456da15b9ad251ab6a619a887108663}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!isChecked@{isChecked}}
+\index{isChecked@{isChecked}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{isChecked()}{isChecked()}}
+{\footnotesize\ttfamily bool Utils\+::\+Checkable\+Message\+Box\+::is\+Checked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a9f576b828427a97c9cfded6267f2f572}\label{class_utils_1_1_checkable_message_box_a9f576b828427a97c9cfded6267f2f572}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!msgDoNotAskAgain@{msgDoNotAskAgain}}
+\index{msgDoNotAskAgain@{msgDoNotAskAgain}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{msgDoNotAskAgain()}{msgDoNotAskAgain()}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::msg\+Do\+Not\+Ask\+Again (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the standard \textbackslash{}gui \{Do not ask again\} check box text. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}{do\+Not\+Ask\+Again\+Question()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a0dd369e6bed1e766557d1a2ce39cc749}\label{class_utils_1_1_checkable_message_box_a0dd369e6bed1e766557d1a2ce39cc749}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!msgDoNotShowAgain@{msgDoNotShowAgain}}
+\index{msgDoNotShowAgain@{msgDoNotShowAgain}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{msgDoNotShowAgain()}{msgDoNotShowAgain()}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::msg\+Do\+Not\+Show\+Again (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Returns the standard \textbackslash{}gui \{Do not show again\} check box text. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_utils_1_1_checkable_message_box_a5861f131d692e2feac308d17b5e592b7}{do\+Not\+Show\+Again\+Information()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_ab06a80f3d8dab0a2c5f5957dfe2409fc}\label{class_utils_1_1_checkable_message_box_ab06a80f3d8dab0a2c5f5957dfe2409fc}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!question@{question}}
+\index{question@{question}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{question()}{question()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::question (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent,  }\item[{const QString \&}]{title,  }\item[{const QString \&}]{question,  }\item[{const QString \&}]{check\+Box\+Text,  }\item[{bool $\ast$}]{check\+Box\+Setting,  }\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{buttons = {\ttfamily QDialogButtonBox\+:\+:Yes$\vert$QDialogButtonBox\+:\+:No},  }\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{default\+Button = {\ttfamily QDialogButtonBox\+:\+:No} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a4c22796e151bd816f7dc803061417916}\label{class_utils_1_1_checkable_message_box_a4c22796e151bd816f7dc803061417916}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!resetAllDoNotAskAgainQuestions@{resetAllDoNotAskAgainQuestions}}
+\index{resetAllDoNotAskAgainQuestions@{resetAllDoNotAskAgainQuestions}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{resetAllDoNotAskAgainQuestions()}{resetAllDoNotAskAgainQuestions()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::reset\+All\+Do\+Not\+Ask\+Again\+Questions (\begin{DoxyParamCaption}\item[{QSettings $\ast$}]{settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Resets all suppression settings for \mbox{\hyperlink{class_utils_1_1_checkable_message_box_a03f27a7b0bcdf1453de4d3972e283dc8}{do\+Not\+Ask\+Again\+Question()}} found in {\itshape settings}, so all these message boxes are shown again. \mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a61df735b4b31dbafba41a08706d3acb9}\label{class_utils_1_1_checkable_message_box_a61df735b4b31dbafba41a08706d3acb9}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setCheckBoxText@{setCheckBoxText}}
+\index{setCheckBoxText@{setCheckBoxText}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setCheckBoxText()}{setCheckBoxText()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Check\+Box\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a8646da61cda7c5c001c425aac8a4f00f}\label{class_utils_1_1_checkable_message_box_a8646da61cda7c5c001c425aac8a4f00f}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setCheckBoxVisible@{setCheckBoxVisible}}
+\index{setCheckBoxVisible@{setCheckBoxVisible}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setCheckBoxVisible()}{setCheckBoxVisible()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Check\+Box\+Visible (\begin{DoxyParamCaption}\item[{bool}]{v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a7e33fe6bbc0aada5a8cd676d3c45cb27}\label{class_utils_1_1_checkable_message_box_a7e33fe6bbc0aada5a8cd676d3c45cb27}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setChecked@{setChecked}}
+\index{setChecked@{setChecked}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setChecked()}{setChecked()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Checked (\begin{DoxyParamCaption}\item[{bool}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_ad5b6b948af48813620a34c67026bd0ab}\label{class_utils_1_1_checkable_message_box_ad5b6b948af48813620a34c67026bd0ab}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setDefaultButton@{setDefaultButton}}
+\index{setDefaultButton@{setDefaultButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setDefaultButton()}{setDefaultButton()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Default\+Button (\begin{DoxyParamCaption}\item[{QDialog\+Button\+Box\+::\+Standard\+Button}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a93343c79b51e90e9fdc244687f693286}\label{class_utils_1_1_checkable_message_box_a93343c79b51e90e9fdc244687f693286}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setIconPixmap@{setIconPixmap}}
+\index{setIconPixmap@{setIconPixmap}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setIconPixmap()}{setIconPixmap()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Icon\+Pixmap (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3b0d5dff93907b3a77900b0754be2fbf}\label{class_utils_1_1_checkable_message_box_a3b0d5dff93907b3a77900b0754be2fbf}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setStandardButtons@{setStandardButtons}}
+\index{setStandardButtons@{setStandardButtons}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setStandardButtons()}{setStandardButtons()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Standard\+Buttons (\begin{DoxyParamCaption}\item[{QDialog\+Button\+Box\+::\+Standard\+Buttons}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a7d5fad3765d806b6f123092a981fd3d8}\label{class_utils_1_1_checkable_message_box_a7d5fad3765d806b6f123092a981fd3d8}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!setText@{setText}}
+\index{setText@{setText}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{setText()}{setText()}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::set\+Text (\begin{DoxyParamCaption}\item[{const QString \&}]{t }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3b30c0a23550d6876a886cd61e795745}\label{class_utils_1_1_checkable_message_box_a3b30c0a23550d6876a886cd61e795745}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!slotClicked@{slotClicked}}
+\index{slotClicked@{slotClicked}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{slotClicked}{slotClicked}}
+{\footnotesize\ttfamily void Utils\+::\+Checkable\+Message\+Box\+::slot\+Clicked (\begin{DoxyParamCaption}\item[{QAbstract\+Button $\ast$}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_aa0fc50eb6dbd87473f18ae4a7a8dbb3d}\label{class_utils_1_1_checkable_message_box_aa0fc50eb6dbd87473f18ae4a7a8dbb3d}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!standardButtons@{standardButtons}}
+\index{standardButtons@{standardButtons}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{standardButtons()}{standardButtons()}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Buttons Utils\+::\+Checkable\+Message\+Box\+::standard\+Buttons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a3c14dd7f93c5cdc9ce1702158a114224}\label{class_utils_1_1_checkable_message_box_a3c14dd7f93c5cdc9ce1702158a114224}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!text@{text}}
+\index{text@{text}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a10ef53918a28c68ba6ece6e76aaf4a66}\label{class_utils_1_1_checkable_message_box_a10ef53918a28c68ba6ece6e76aaf4a66}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!d@{d}}
+\index{d@{d}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_utils_1_1_checkable_message_box_private}{Checkable\+Message\+Box\+Private}}$\ast$ Utils\+::\+Checkable\+Message\+Box\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}\label{class_utils_1_1_checkable_message_box_a130bcf930f0446f5129b81504ce70e82}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!buttons@{buttons}}
+\index{buttons@{buttons}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{buttons}{buttons}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Buttons Utils\+::\+Checkable\+Message\+Box\+::buttons\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}\label{class_utils_1_1_checkable_message_box_a47682e1634b9d1806e19abc75a3d13dc}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!checkBoxText@{checkBoxText}}
+\index{checkBoxText@{checkBoxText}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{checkBoxText}{checkBoxText}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::check\+Box\+Text\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}\label{class_utils_1_1_checkable_message_box_ab3ac6c8016a1f22d503293af7434db0f}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!defaultButton@{defaultButton}}
+\index{defaultButton@{defaultButton}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{defaultButton}{defaultButton}}
+{\footnotesize\ttfamily QDialog\+Button\+Box\+::\+Standard\+Button Utils\+::\+Checkable\+Message\+Box\+::default\+Button\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}\label{class_utils_1_1_checkable_message_box_a344ff6c020a0351070685083aba8c3ab}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!isChecked@{isChecked}}
+\index{isChecked@{isChecked}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{isChecked}{isChecked}}
+{\footnotesize\ttfamily bool Utils\+::\+Checkable\+Message\+Box\+::is\+Checked\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\mbox{\Hypertarget{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}\label{class_utils_1_1_checkable_message_box_a2fa5240368beedd12fb217a593410aae}} 
+\index{Utils::CheckableMessageBox@{Utils::CheckableMessageBox}!text@{text}}
+\index{text@{text}!Utils::CheckableMessageBox@{Utils::CheckableMessageBox}}
+\doxysubsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily QString Utils\+::\+Checkable\+Message\+Box\+::text\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{checkablemessagebox_8h}{checkablemessagebox.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vpropertyexplorer/\mbox{\hyperlink{checkablemessagebox_8cpp}{checkablemessagebox.\+cpp}}\end{DoxyCompactItemize}

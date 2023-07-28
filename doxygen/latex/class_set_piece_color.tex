@@ -1,0 +1,192 @@
+\hypertarget{class_set_piece_color}{}\doxysection{Set\+Piece\+Color Class Reference}
+\label{class_set_piece_color}\index{SetPieceColor@{SetPieceColor}}
+
+
+{\ttfamily \#include $<$set\+\_\+piece\+\_\+color.\+h$>$}
+
+Inheritance diagram for Set\+Piece\+Color\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_set_piece_color}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_set_piece_color_a34bf9b4c8cd5148abfdfedd8a05d3b80}{update\+List}} (quint32 \mbox{\hyperlink{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}{m\+\_\+id}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a2299d32271db3d52292a1925286d24af}{Clear\+Scene}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a094c62c977f31edfaa0c349967868674}{Need\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a8cc3ffd49a680ee76b8adc82a22246d1}{Need\+Lite\+Parsing}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_set_piece_color_ac9a7127eb35be63bd0b010808b89a1fd}{Set\+Piece\+Color}} (quint32 \mbox{\hyperlink{class_set_piece_color_a1dab5917533c7454e4d2fe37df1ecba8}{id}}, QString color, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$data, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_set_piece_color_a99608abb0c2c5c177cdcf5edee5e628a}{$\sim$\+Set\+Piece\+Color}} ()
+\item 
+virtual void \mbox{\hyperlink{class_set_piece_color_a5f165ea6b5ec5ab0455c3cf8f03a7a80}{undo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_set_piece_color_ab5793000d261bdcaa701c0c42e6b7c18}{redo}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual int \mbox{\hyperlink{class_set_piece_color_a1dab5917533c7454e4d2fe37df1ecba8}{id}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_set_piece_color_aa335bd09b1933f70674ff43d3395c1ce}{getpiece\+Id}} () const
+\item 
+QString \mbox{\hyperlink{class_set_piece_color_a8d233a17e629698017f8dd679c344475}{get\+Color}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_undo_command_ae05b648003d0713d8df920d27beecc31}{VUndo\+Command}} (const QDom\+Element \&\mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}, QUndo\+Command $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_undo_command_a6ef94be960a421dc3b467b8e9a99da30}{$\sim$\+VUndo\+Command}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_set_piece_color_ae4c4e60d23a6a9df784002c63e3b31f5}{do\+Cmd}} (QString color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+quint32 \mbox{\hyperlink{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}{m\+\_\+id}}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_set_piece_color_a72f2c9fe2ba3dd2deb7426e18c776e05}{m\+\_\+data}}
+\item 
+QString \mbox{\hyperlink{class_set_piece_color_a01a1797bab5a768cc5d366a25336fb02}{m\+\_\+old\+Color}}
+\item 
+QString \mbox{\hyperlink{class_set_piece_color_a666cbb12f0ab9146b93c5f9409df1e38}{m\+\_\+new\+Color}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_undo_command_a0a8026a7dc4404ffb21fdfb246f9e639}{Redo\+Full\+Parsing}} ()
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ae2fda5948231d1ec2b9311022b0eac2d}{Undo\+Delete\+After\+Sibling}} (QDom\+Node \&parent\+Node, const quint32 \&sibling\+Id) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_abcd78b0507f21799cb484a7653eebe55}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a1c683bdf5029f9dfec7de8c4cd240e11}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ quint32 $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_adb49a8d6aa4e147e70877444fccb0e59}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a15e994d6a0d182b2dd87c846a8486c4c}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{struct_custom_s_a_record}{Custom\+SARecord}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_a5318a0eba58e106436442ce588fac2c0}{Increment\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+void \mbox{\hyperlink{class_v_undo_command_ad7e9126fb7c36354fcc5374f1ee430e8}{Decrement\+References}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \&nodes) const
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_aeba2ad4dc73ad4dd63da12477b4fad34}{get\+Destination\+Object}} (quint32 id\+Tool, quint32 id\+Point) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_undo_command}{VUndo\+Command}}}
+\begin{DoxyCompactItemize}
+\item 
+QDom\+Element \mbox{\hyperlink{class_v_undo_command_a423b6883cd5530468807f00ee131c3a2}{xml}}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_undo_command_a59f91873c1db4adde66d943abc043fa0}{doc}}
+\item 
+quint32 \mbox{\hyperlink{class_v_undo_command_af6db4e8675af953b970e1f1b304ff0c0}{node\+Id}}
+\item 
+bool \mbox{\hyperlink{class_v_undo_command_a2845877511f1ab2094a6df6f909709de}{redo\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_set_piece_color_ac9a7127eb35be63bd0b010808b89a1fd}\label{class_set_piece_color_ac9a7127eb35be63bd0b010808b89a1fd}} 
+\index{SetPieceColor@{SetPieceColor}!SetPieceColor@{SetPieceColor}}
+\index{SetPieceColor@{SetPieceColor}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{SetPieceColor()}{SetPieceColor()}}
+{\footnotesize\ttfamily Set\+Piece\+Color\+::\+Set\+Piece\+Color (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{QString}]{color,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{QUndo\+Command $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_set_piece_color_a99608abb0c2c5c177cdcf5edee5e628a}\label{class_set_piece_color_a99608abb0c2c5c177cdcf5edee5e628a}} 
+\index{SetPieceColor@{SetPieceColor}!````~SetPieceColor@{$\sim$SetPieceColor}}
+\index{````~SetPieceColor@{$\sim$SetPieceColor}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{$\sim$SetPieceColor()}{~SetPieceColor()}}
+{\footnotesize\ttfamily Set\+Piece\+Color\+::$\sim$\+Set\+Piece\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_set_piece_color_ae4c4e60d23a6a9df784002c63e3b31f5}\label{class_set_piece_color_ae4c4e60d23a6a9df784002c63e3b31f5}} 
+\index{SetPieceColor@{SetPieceColor}!doCmd@{doCmd}}
+\index{doCmd@{doCmd}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{doCmd()}{doCmd()}}
+{\footnotesize\ttfamily void Set\+Piece\+Color\+::do\+Cmd (\begin{DoxyParamCaption}\item[{QString}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_set_piece_color_a8d233a17e629698017f8dd679c344475}\label{class_set_piece_color_a8d233a17e629698017f8dd679c344475}} 
+\index{SetPieceColor@{SetPieceColor}!getColor@{getColor}}
+\index{getColor@{getColor}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{getColor()}{getColor()}}
+{\footnotesize\ttfamily QString Set\+Piece\+Color\+::get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_set_piece_color_aa335bd09b1933f70674ff43d3395c1ce}\label{class_set_piece_color_aa335bd09b1933f70674ff43d3395c1ce}} 
+\index{SetPieceColor@{SetPieceColor}!getpieceId@{getpieceId}}
+\index{getpieceId@{getpieceId}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{getpieceId()}{getpieceId()}}
+{\footnotesize\ttfamily quint32 Set\+Piece\+Color\+::getpiece\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_set_piece_color_a1dab5917533c7454e4d2fe37df1ecba8}\label{class_set_piece_color_a1dab5917533c7454e4d2fe37df1ecba8}} 
+\index{SetPieceColor@{SetPieceColor}!id@{id}}
+\index{id@{id}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{id()}{id()}}
+{\footnotesize\ttfamily int Set\+Piece\+Color\+::id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_set_piece_color_ab5793000d261bdcaa701c0c42e6b7c18}\label{class_set_piece_color_ab5793000d261bdcaa701c0c42e6b7c18}} 
+\index{SetPieceColor@{SetPieceColor}!redo@{redo}}
+\index{redo@{redo}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{redo()}{redo()}}
+{\footnotesize\ttfamily void Set\+Piece\+Color\+::redo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_set_piece_color_a5f165ea6b5ec5ab0455c3cf8f03a7a80}\label{class_set_piece_color_a5f165ea6b5ec5ab0455c3cf8f03a7a80}} 
+\index{SetPieceColor@{SetPieceColor}!undo@{undo}}
+\index{undo@{undo}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{undo()}{undo()}}
+{\footnotesize\ttfamily void Set\+Piece\+Color\+::undo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_set_piece_color_a34bf9b4c8cd5148abfdfedd8a05d3b80}\label{class_set_piece_color_a34bf9b4c8cd5148abfdfedd8a05d3b80}} 
+\index{SetPieceColor@{SetPieceColor}!updateList@{updateList}}
+\index{updateList@{updateList}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{updateList}{updateList}}
+{\footnotesize\ttfamily void Set\+Piece\+Color\+::update\+List (\begin{DoxyParamCaption}\item[{quint32}]{m\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_set_piece_color_a72f2c9fe2ba3dd2deb7426e18c776e05}\label{class_set_piece_color_a72f2c9fe2ba3dd2deb7426e18c776e05}} 
+\index{SetPieceColor@{SetPieceColor}!m\_data@{m\_data}}
+\index{m\_data@{m\_data}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{m\_data}{m\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_container}{VContainer}}$\ast$ Set\+Piece\+Color\+::m\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}\label{class_set_piece_color_adfa09c2f5c764ce6b997d5430fddd2e4}} 
+\index{SetPieceColor@{SetPieceColor}!m\_id@{m\_id}}
+\index{m\_id@{m\_id}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{m\_id}{m\_id}}
+{\footnotesize\ttfamily quint32 Set\+Piece\+Color\+::m\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_set_piece_color_a666cbb12f0ab9146b93c5f9409df1e38}\label{class_set_piece_color_a666cbb12f0ab9146b93c5f9409df1e38}} 
+\index{SetPieceColor@{SetPieceColor}!m\_newColor@{m\_newColor}}
+\index{m\_newColor@{m\_newColor}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{m\_newColor}{m\_newColor}}
+{\footnotesize\ttfamily QString Set\+Piece\+Color\+::m\+\_\+new\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_set_piece_color_a01a1797bab5a768cc5d366a25336fb02}\label{class_set_piece_color_a01a1797bab5a768cc5d366a25336fb02}} 
+\index{SetPieceColor@{SetPieceColor}!m\_oldColor@{m\_oldColor}}
+\index{m\_oldColor@{m\_oldColor}!SetPieceColor@{SetPieceColor}}
+\doxysubsubsection{\texorpdfstring{m\_oldColor}{m\_oldColor}}
+{\footnotesize\ttfamily QString Set\+Piece\+Color\+::m\+\_\+old\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{set__piece__color_8h}{set\+\_\+piece\+\_\+color.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/undocommands/\mbox{\hyperlink{set__piece__color_8cpp}{set\+\_\+piece\+\_\+color.\+cpp}}\end{DoxyCompactItemize}

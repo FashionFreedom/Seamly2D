@@ -1,0 +1,105 @@
+\hypertarget{abstracttest_8h_source}{}\doxysection{abstracttest.\+h}
+\label{abstracttest_8h_source}\index{D:/Github/Seamly2D/src/libs/vtest/abstracttest.h@{D:/Github/Seamly2D/src/libs/vtest/abstracttest.h}}
+\mbox{\hyperlink{abstracttest_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ abstracttest.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 7\ 5,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ ABSTRACTTEST\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ ABSTRACTTEST\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_vector}{QVector}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#ifdef\ Q\_CC\_MSVC}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <ciso646>}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ Q\_CC\_MSVC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ V\_UNUSED\ \_\_attribute\_\_\ ((unused))}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ V\_UNUSED}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ Return\ codes\ for\ testing\ run\ application}}
+\DoxyCodeLine{00072\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{abstracttest_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ TST\_EX\_BIN\ =\ -\/1;\ \ \ \ \ \ \textcolor{comment}{//\ Can't\ find\ binary.}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{abstracttest_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ TST\_EX\_FINISH\_TIME\_OUT\ =\ -\/2;\ \textcolor{comment}{//\ The\ operation\ timed\ out\ or\ an\ error\ occurred.}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{abstracttest_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ TST\_EX\_START\_TIME\_OUT\ =\ -\/3;\ \textcolor{comment}{//\ The\ operation\ timed\ out\ or\ an\ error\ occurred.}}
+\DoxyCodeLine{00075\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{abstracttest_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ TST\_EX\_CRASH\ =\ -\/4;\ \ \ \ \textcolor{comment}{//\ Program\ crashed.}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#undef\ V\_UNUSED}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{abstracttest_8h_afedab7240f96815528593a589a88bc28}{ErrorState}}\ \{\mbox{\hyperlink{abstracttest_8h_afedab7240f96815528593a589a88bc28ab8d7b296b0b6ebf043795892b268442c}{ErrorLoad}}\ =\ 0,\ \mbox{\hyperlink{abstracttest_8h_afedab7240f96815528593a589a88bc28a707e2b530cdbf1cb84fdf292ebae20b6}{ErrorInstall}},\ \mbox{\hyperlink{abstracttest_8h_afedab7240f96815528593a589a88bc28aa99720bb50d7e0374945efdc76b017a4}{ErrorSize}},\ \mbox{\hyperlink{abstracttest_8h_afedab7240f96815528593a589a88bc28aef9104c292609ba6db320509be8fe27f}{NoError}}\};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_abstract_test}{AbstractTest}}\ :\ \textcolor{keyword}{public}\ QObject}
+\DoxyCodeLine{00082\ \{}
+\DoxyCodeLine{00083\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00084\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_abstract_test}{AbstractTest}}(QObject\ *parent\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_test_add1a646393948a60b1bae3786e69e4b4}{Comparison}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&ekv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&ekvOrig)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_abstract_test_add1a646393948a60b1bae3786e69e4b4}{Comparison}}(\textcolor{keyword}{const}\ QPointF\ \&result,\ \textcolor{keyword}{const}\ QPointF\ \&expected,\ qreal\ testAccuracy)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ QString\ \mbox{\hyperlink{class_abstract_test_adb56c309c296b1355e77655495b99b83}{Seamly2DPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ \ \ \ \ QString\ \mbox{\hyperlink{class_abstract_test_acda320299a4fadcd7b47c24c8c2e7ce4}{SeamlyMePath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00093\ \ \ \ \ QString\ \mbox{\hyperlink{class_abstract_test_a0a85eee89562fee8237f3bf4b562f22b}{TranslationsPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_abstract_test_a0dd69a8dc733a63a6a4237eaddb5f5a9}{Run}}(\textcolor{keywordtype}{int}\ exit,\ \textcolor{keyword}{const}\ QString\ \&program,\ \textcolor{keyword}{const}\ QStringList\ \&arguments,\ QString\ \&error,\ \textcolor{keywordtype}{int}\ msecs\ =\ 120000);}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_abstract_test_a167b04c6ee14b0b6609f78c5c23b8c08}{CopyRecursively}}(\textcolor{keyword}{const}\ QString\ \&srcFilePath,\ \textcolor{keyword}{const}\ QString\ \&tgtFilePath)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ ABSTRACTTEST\_H}}
+
+\end{DoxyCode}

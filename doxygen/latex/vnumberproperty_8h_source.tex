@@ -1,0 +1,118 @@
+\hypertarget{vnumberproperty_8h_source}{}\doxysection{vnumberproperty.\+h}
+\label{vnumberproperty_8h_source}\index{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vnumberproperty.h@{D:/Github/Seamly2D/src/libs/vpropertyexplorer/plugins/vnumberproperty.h}}
+\mbox{\hyperlink{vnumberproperty_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @file\ \ \ vnumberproperty.h}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @author\ hedgeware\ <internal(at)hedgeware.net>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ @date}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ All\ rights\ reserved.\ This\ program\ and\ the\ accompanying\ materials}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ are\ made\ available\ under\ the\ terms\ of\ the\ GNU\ Lesser\ General\ Public\ License}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ (LGPL)\ version\ 2.1\ which\ accompanies\ this\ distribution,\ and\ is\ available\ at}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ http://www.gnu.org/licenses/lgpl-\/2.1.html}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ This\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ See\ the\ GNU}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ Lesser\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ VNUMBERPROPERTY\_H}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ VNUMBERPROPERTY\_H}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <QStringList>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <QStyleOptionViewItem>}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ <QVariant>}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}../vproperty.h"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_v_p_e}{VPE}}}
+\DoxyCodeLine{00038\ \{}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_spinbox_property}{SpinboxProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property}{SpinboxProperty}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QVariant>}}\ \&settings);}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property}{SpinboxProperty}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ QWidget\ *\mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a4fcc92b399fd0e9a719904b397c1d825}{createEditor}}(QWidget\ *parent,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\ \&options,}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QAbstractItemDelegate\ *delegate)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a8d45bd0d42e0a054758727d894aa007a}{getEditorData}}(\textcolor{keyword}{const}\ QWidget\ *editor)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a41483b533d9107e25efab949b8277ec1}{setSetting}}(\textcolor{keyword}{const}\ QString\ \&key,\ \textcolor{keyword}{const}\ QVariant\ \&value)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_ac602228d9a9ec95362809065b31b5ae3}{getSetting}}(\textcolor{keyword}{const}\ QString\ \&key)\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a369b73d1bed0899764f9b29341a87176}{getSettingKeys}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_ae1dafd6c45f3f79d33f72468cdb1df39}{type}}()\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00081\ \ \ \ \ Q\_REQUIRED\_RESULT\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *\mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_ac777b8a4778a27d71e3cd8fe00bf0407}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ \textcolor{keyword}{true},}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *container\ =\ \textcolor{keyword}{nullptr})\ \textcolor{keyword}{const}\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_afe6f21182929a5d46e51ce0f4aecb5bf}{valueChanged}}(\textcolor{keywordtype}{int}\ i);}
+\DoxyCodeLine{00085\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a7835ec668f1fd908174f298776e64888}{minValue}},\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a34d1460ffe4fa88029660760ba8cb749}{maxValue}},\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a1ea2f7953f663b805ebe9fdc482790eb}{singleStep}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a75cad8079ffeee6f58bd9d8ccd7f5418}{StandardMin}};\textcolor{comment}{//\ =\ -\/1000000;}}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property_a8228b1cbdd4174868b6bcfe50ab8fcf8}{StandardMax}};\textcolor{comment}{//\ =\ 1000000;}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_spinbox_property}{SpinboxProperty}})}
+\DoxyCodeLine{00093\ \};}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00097\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property}{DoubleSpinboxProperty}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_p_e_1_1_spinbox_property}{SpinboxProperty}}}
+\DoxyCodeLine{00098\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ \ \ \ \ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property}{DoubleSpinboxProperty}}(\textcolor{keyword}{const}\ QString\ \&name,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_map}{QMap<QString,\ QVariant>}}\ \&settings);}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property}{DoubleSpinboxProperty}}(\textcolor{keyword}{const}\ QString\ \&name);}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keyword}{virtual}\ QWidget\ *\mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a4fae726adcac4f0cb302d18495aa9bfb}{createEditor}}(QWidget\ *parent,\ \textcolor{keyword}{const}\ QStyleOptionViewItem\ \&options,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QAbstractItemDelegate\ *delegate);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a27db586774c380d75e3c5d137eca4caf}{getEditorData}}(\textcolor{keyword}{const}\ QWidget\ *editor)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a9a2cf896d90bd99688d359eaf412717f}{setSetting}}(\textcolor{keyword}{const}\ QString\ \&key,\ \textcolor{keyword}{const}\ QVariant\ \&value);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keyword}{virtual}\ QVariant\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a80a4b68298be4f51757ea09da71258b6}{getSetting}}(\textcolor{keyword}{const}\ QString\ \&key)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keyword}{virtual}\ QStringList\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_af864a616195a93e5859a736870db5d7e}{getSettingKeys}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keyword}{virtual}\ QString\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a125296e3238ee7d19db723108f39144e}{type}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *\mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a38807dee4d5b9d3e4d8cef743abe7424}{clone}}(\textcolor{keywordtype}{bool}\ include\_children\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{class_v_p_e_1_1_v_property}{VProperty}}\ *container\ =\ NULL)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a0180f5e882d014b74286bfbc79989c0c}{Precision}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property_a8ee2eba69baa743f806343bcbd84ada7}{StandardPrecision}};\textcolor{comment}{//\ =\ 5;}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00145\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_p_e_1_1_double_spinbox_property}{DoubleSpinboxProperty}})}
+\DoxyCodeLine{00146\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VNUMBERPROPERTY\_H}}
+
+\end{DoxyCode}

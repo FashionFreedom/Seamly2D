@@ -1,0 +1,231 @@
+\hypertarget{vspline__p_8h_source}{}\doxysection{vspline\+\_\+p.\+h}
+\label{vspline__p_8h_source}\index{D:/Github/Seamly2D/src/libs/vgeometry/vspline\_p.h@{D:/Github/Seamly2D/src/libs/vgeometry/vspline\_p.h}}
+\mbox{\hyperlink{vspline__p_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vspline\_p.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 20\ 8,\ 2014}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013-\/2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VSPLINE\_P\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VSPLINE\_P\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QSharedData>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QLineF>}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{vpointf_8h}{vpointf.h}}"{}}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vabstractapplication.h"{}}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ "{}../vmisc/vmath.h"{}}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ QT\_WARNING\_PUSH}
+\DoxyCodeLine{00063\ QT\_WARNING\_DISABLE\_GCC(\textcolor{stringliteral}{"{}-\/Weffc++"{}})}
+\DoxyCodeLine{00064\ QT\_WARNING\_DISABLE\_GCC("{}-\/Wnon-\/virtual-\/dtor"{})}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ class\ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}\ :\ public\ QSharedData}
+\DoxyCodeLine{00067\ \{}
+\DoxyCodeLine{00068\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00069\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}\ \&spline);}
+\DoxyCodeLine{00071\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4,\ qreal\ angle1,\ qreal\ angle2,\ qreal\ kAsm1,\ qreal\ kAsm2,\ qreal\ kCurve);}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ QPointF\ p2,\ QPointF\ p3,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4);}
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4,\ qreal\ angle1,\ \textcolor{keyword}{const}\ QString\ \&angle1F,\ qreal\ angle2,\ \textcolor{keyword}{const}\ QString\ \&angle2F,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ c1Length,\ \textcolor{keyword}{const}\ QString\ \&c1LengthF,\ qreal\ c2Length,\ \textcolor{keyword}{const}\ QString\ \&c2LengthF);}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_v_spline_data}{\string~VSplineData}}();}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keyword}{static}\ qreal\ GetL(\textcolor{keyword}{const}\ QPointF\ \&p1,\ \textcolor{keyword}{const}\ QPointF\ \&p4,\ qreal\ kCurve);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}};}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \ \ \ \ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ \mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_spline_data_ade3cdb61e12f671267ec44d3c17318b9}{angle1}};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_spline_data_a28114bd61de08b69a78ca478c9d79e98}{angle1F}};}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_spline_data_a481ae3f743cd57ea689a858c17732eef}{angle2}};}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_spline_data_acb951c9d12ef8b473d1df9c4a0b8b87d}{angle2F}};}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_spline_data_a959f21c22d33cdbc555e69fee148b098}{c1Length}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00101\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_spline_data_aa09461894b60a16ee5319276d653b583}{c1LengthF}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_spline_data_a9858cca0eeee816f953182148349db4d}{c2Length}};}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \ \ \ \ QString\ \mbox{\hyperlink{class_v_spline_data_adb3babe824d0262150c4ebf784f82d8d}{c2LengthF}};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ \ \ \ \ qreal\ \ \ \mbox{\hyperlink{class_v_spline_data_a99fc27d0338bcbeb3ecdd1c87da12372}{kCurve}};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}\ \&\mbox{\hyperlink{class_v_spline_data_ad152ab789e3b61d63e98f71617fdd8d6}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}\ \&)\ Q\_DECL\_EQ\_DELETE;}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00117\ \mbox{\hyperlink{class_v_spline_data_a0acbfd245da00604e3b090c7b92fda3f}{VSplineData::VSplineData}}()}
+\DoxyCodeLine{00118\ \ \ \ \ :\ p1(),}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ p4(),}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ angle1(0),}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ angle1F(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ angle2(0),}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ angle2F(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ c1Length(0),}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ c1LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ c2Length(0),}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ c2LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ kCurve(1)}
+\DoxyCodeLine{00129\ \{\}}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00132\ \mbox{\hyperlink{class_v_spline_data_a0acbfd245da00604e3b090c7b92fda3f}{VSplineData::VSplineData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_spline_data}{VSplineData}}\ \&spline)}
+\DoxyCodeLine{00133\ \ \ \ \ :\ QSharedData(spline),}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ p1(spline.p1),}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ p4(spline.p4),}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ angle1(spline.angle1),}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ angle1F(spline.angle1F),}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ angle2(spline.angle2),}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ angle2F(spline.angle2F),}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ c1Length(spline.c1Length),}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ c1LengthF(spline.c1LengthF),}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ c2Length(spline.c2Length),}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ c2LengthF(spline.c2LengthF),}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ kCurve(spline.kCurve)}
+\DoxyCodeLine{00145\ \{\}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00148\ \mbox{\hyperlink{class_v_spline_data_a0acbfd245da00604e3b090c7b92fda3f}{VSplineData::VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4,\ qreal\ angle1,\ qreal\ angle2,\ qreal\ kAsm1,\ qreal\ kAsm2,\ qreal\ kCurve)}
+\DoxyCodeLine{00149\ \ \ \ \ :\ p1(p1),}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ p4(p4),}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ angle1(angle1),}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ angle1F(QString().number(angle1)),}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ angle2(angle2),}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ angle2F(QString().number(angle2)),}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ c1Length(0),}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ c1LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ c2Length(0),}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ c2LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ kCurve(kCurve)}
+\DoxyCodeLine{00160\ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ L\ =\ \mbox{\hyperlink{class_v_spline_data_a0d8c2dd8d90c2080b0f1e97a01a003c1}{GetL}}(\textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(\mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}),\ \textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(\mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}),\ \mbox{\hyperlink{class_v_spline_data_a99fc27d0338bcbeb3ecdd1c87da12372}{kCurve}});}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ QLineF\ p1p2(\mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}.\mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}}(),\ \mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}.\mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}}(),\ \mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}.\mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}}()\ +\ L\ *\ kAsm1,\ \mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}.\mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}}());}
+\DoxyCodeLine{00164\ \ \ \ \ p1p2.setAngle(\mbox{\hyperlink{class_v_spline_data_ade3cdb61e12f671267ec44d3c17318b9}{angle1}});}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a959f21c22d33cdbc555e69fee148b098}{c1Length}}\ =\ p1p2.length();}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_aa09461894b60a16ee5319276d653b583}{c1LengthF}}\ =\ QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(\mbox{\hyperlink{class_v_spline_data_a959f21c22d33cdbc555e69fee148b098}{c1Length}}));}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ QLineF\ p4p3(\mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}.\mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}}(),\ \mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}.\mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}}(),\ \mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}.\mbox{\hyperlink{class_v_point_f_afd0c99a6d66fd913b5691c2384d713a5}{x}}()\ +\ L\ *\ kAsm2,\ \mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}.\mbox{\hyperlink{class_v_point_f_ac93f3b1b9d223fc05a43c8346114a3bc}{y}}());}
+\DoxyCodeLine{00169\ \ \ \ \ p4p3.setAngle(\mbox{\hyperlink{class_v_spline_data_a481ae3f743cd57ea689a858c17732eef}{angle2}});}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a9858cca0eeee816f953182148349db4d}{c2Length}}\ =\ p4p3.length();}
+\DoxyCodeLine{00171\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_adb3babe824d0262150c4ebf784f82d8d}{c2LengthF}}\ =\ QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(\mbox{\hyperlink{class_v_spline_data_a9858cca0eeee816f953182148349db4d}{c2Length}}));}
+\DoxyCodeLine{00172\ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00175\ \mbox{\hyperlink{class_v_spline_data_a0acbfd245da00604e3b090c7b92fda3f}{VSplineData::VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ QPointF\ p2,\ QPointF\ p3,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4)}
+\DoxyCodeLine{00176\ \ \ \ \ :\ p1(p1),}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ p4(p4),}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ angle1(0),}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ angle1F(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ angle2(0),}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ angle2F(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ c1Length(0),}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ c1LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ c2Length(0),}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ c2LengthF(\textcolor{stringliteral}{"{}0"{}}),}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ kCurve(1)}
+\DoxyCodeLine{00187\ \{}
+\DoxyCodeLine{00188\ \ \ \ \ QLineF\ p1p2(\textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(\mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}}),\ \textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(p2));}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_ade3cdb61e12f671267ec44d3c17318b9}{angle1}}\ =\ p1p2.angle();}
+\DoxyCodeLine{00191\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a28114bd61de08b69a78ca478c9d79e98}{angle1F}}\ =\ QString().number(\mbox{\hyperlink{class_v_spline_data_ade3cdb61e12f671267ec44d3c17318b9}{angle1}});}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a959f21c22d33cdbc555e69fee148b098}{c1Length}}\ =\ p1p2.length();}
+\DoxyCodeLine{00194\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_aa09461894b60a16ee5319276d653b583}{c1LengthF}}\ =\ QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(\mbox{\hyperlink{class_v_spline_data_a959f21c22d33cdbc555e69fee148b098}{c1Length}}));}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \ \ \ \ QLineF\ p4p3(\textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(\mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}),\ \textcolor{keyword}{static\_cast<}QPointF\textcolor{keyword}{>}(p3));}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a481ae3f743cd57ea689a858c17732eef}{angle2}}\ =\ p4p3.angle();}
+\DoxyCodeLine{00199\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_acb951c9d12ef8b473d1df9c4a0b8b87d}{angle2F}}\ =\ QString().number(\mbox{\hyperlink{class_v_spline_data_a481ae3f743cd57ea689a858c17732eef}{angle2}});}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_a9858cca0eeee816f953182148349db4d}{c2Length}}\ =\ p4p3.length();}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{class_v_spline_data_adb3babe824d0262150c4ebf784f82d8d}{c2LengthF}}\ =\ QString().number(\mbox{\hyperlink{vapplication_8h_af3bf03a2bf98820de7ae03bef13c7d07}{qApp}}-\/>fromPixel(\mbox{\hyperlink{class_v_spline_data_a9858cca0eeee816f953182148349db4d}{c2Length}}));}
+\DoxyCodeLine{00203\ \}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00206\ \mbox{\hyperlink{class_v_spline_data_a0acbfd245da00604e3b090c7b92fda3f}{VSplineData::VSplineData}}(\mbox{\hyperlink{class_v_point_f}{VPointF}}\ p1,\ \mbox{\hyperlink{class_v_point_f}{VPointF}}\ p4,\ qreal\ angle1,\ \textcolor{keyword}{const}\ QString\ \&angle1F,\ qreal\ angle2,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QString\ \&angle2F,\ qreal\ c1Length,\ \textcolor{keyword}{const}\ QString\ \&c1LengthF,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ qreal\ c2Length,\ \textcolor{keyword}{const}\ QString\ \&c2LengthF)}
+\DoxyCodeLine{00209\ \ \ \ \ :\ p1(p1),}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ p4(p4),}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ angle1(angle1),}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ angle1F(angle1F),}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ angle2(angle2),}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ angle2F(angle2F),}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ c1Length(c1Length),}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ c1LengthF(c1LengthF),}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ c2Length(c2Length),}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ c2LengthF(c2LengthF),}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ kCurve(1)}
+\DoxyCodeLine{00220\ \{\}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00223\ \mbox{\hyperlink{class_v_spline_data_a67bf83a8112e5494b8b697cd0c5916e2}{VSplineData::\string~VSplineData}}()}
+\DoxyCodeLine{00224\ \{\}}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00227\ qreal\ \mbox{\hyperlink{class_v_spline_data_a0d8c2dd8d90c2080b0f1e97a01a003c1}{VSplineData::GetL}}(\textcolor{keyword}{const}\ QPointF\ \&p1,\ \textcolor{keyword}{const}\ QPointF\ \&p4,\ qreal\ kCurve)}
+\DoxyCodeLine{00228\ \{}
+\DoxyCodeLine{00229\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ qreal\ angle\ =\ 90;}
+\DoxyCodeLine{00230\ \ \ \ \ \textcolor{keyword}{const}\ qreal\ radius\ =\ QLineF(\mbox{\hyperlink{class_v_spline_data_a1d3df8ca72c0480dbadaf3c99831e4e9}{p1}},\ \mbox{\hyperlink{class_v_spline_data_ad6142b06fa9e2e648dc51823edbd1977}{p4}}).length()/M\_SQRT2;}
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_v_spline_data_a99fc27d0338bcbeb3ecdd1c87da12372}{kCurve}}\ *\ radius\ *\ 4\ /\ 3\ *\ qTan(\ angle\ *\ M\_PI\_4\ /\ 180.0\ );}
+\DoxyCodeLine{00232\ \}}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \mbox{\hyperlink{namespace_q_t___w_a_r_n_i_n_g___p_o_p}{QT\_WARNING\_POP}}}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VSPLINE\_P\_H}}
+
+\end{DoxyCode}

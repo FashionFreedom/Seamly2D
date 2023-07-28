@@ -1,0 +1,347 @@
+\hypertarget{qmuparsertoken_8h_source}{}\doxysection{qmuparsertoken.\+h}
+\label{qmuparsertoken_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsertoken.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparsertoken.h}}
+\mbox{\hyperlink{qmuparsertoken_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPARSERTOKEN\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPARSERTOKEN\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparsererror_8h}{qmuparsererror.h}}"{}}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparsercallback_8h}{qmuparsercallback.h}}"{}}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00039\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TBase,\ \textcolor{keyword}{typename}\ TString>}
+\DoxyCodeLine{00058\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}}
+\DoxyCodeLine{00059\ \{}
+\DoxyCodeLine{00060\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00069\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aa84fe95d4c04d7e2f43df2af761a75cd}{QmuParserToken}}()}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ (\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}{cmUNKNOWN}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ (\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{tpVOID}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ (\ nullptr\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ (\ -\/1\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}(),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}}(),}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}}(),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}()}
+\DoxyCodeLine{00072\ \ \ \ \ \{\}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00083\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ad5148705230119e87bd9cb0a1cbda015}{QmuParserToken}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\ \&a\_Tok\ )}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ (\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ (\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ (\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ (\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ ),}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}(\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ ),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}}(a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}}),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}}(a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}}),\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}()}
+\DoxyCodeLine{00086\ \ \ \ \ \{}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ae3960b50d343781e48966e57d473066d}{Assign}}\ (\ a\_Tok\ );}
+\DoxyCodeLine{00088\ \ \ \ \ \}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00098\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a4a16feb86d5af7f9cf725f1e79e4fa56}{operator=\ }}(\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\ \&a\_Tok\ )}
+\DoxyCodeLine{00099\ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \&a\_Tok\ ==\ \textcolor{keyword}{this}\ )}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ae3960b50d343781e48966e57d473066d}{Assign}}\ (\ a\_Tok\ );}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00106\ \ \ \ \ \}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00114\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ae3960b50d343781e48966e57d473066d}{Assign}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\ \&a\_Tok\ )}
+\DoxyCodeLine{00115\ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}};}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}};}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}};}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}};}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}}\ =\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}};}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ create\ new\ callback\ object\ if\ a\_Tok\ has\ one}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.reset\ (\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ ?\ a\_Tok.\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>Clone()\ :\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00125\ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00139\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a55fb43ff4005cd3efc51357ac8eaaa29}{Set}}\ (\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ a\_iType,\ \textcolor{keyword}{const}\ TString\ \&a\_strTok\ =\ TString()\ )}
+\DoxyCodeLine{00140\ \ \ \ \ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ following\ types\ cant\ be\ set\ this\ way,\ they\ have\ special\ Set\ functions}}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ assert\ (\ a\_iType\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cmVAR}}\ );}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ assert\ (\ a\_iType\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{cmVAL}}\ );}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ assert\ (\ a\_iType\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}{cmFUNC}}\ );}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ a\_iType;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{tpVOID}};}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_strTok;}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ -\/1;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00153\ \ \ \ \ \}}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00159\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ab58b29f81ac1a9fa4b97d4c6a9ee654f}{Set}}\ (\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_callback}{QmuParserCallback}}\ \&a\_pCallback,\ \textcolor{keyword}{const}\ TString\ \&a\_sTok\ )}
+\DoxyCodeLine{00160\ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ assert\ (\ a\_pCallback.\mbox{\hyperlink{classqmu_1_1_qmu_parser_callback_ae3f5f57d90d0a9e9679b76df880a2577}{GetAddr}}()\ );}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ a\_pCallback.\mbox{\hyperlink{classqmu_1_1_qmu_parser_callback_ac1bf463486d7b68aef1769cb80302f3e}{GetCode}}();}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{tpVOID}};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_sTok;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.reset\ (\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_callback}{QmuParserCallback}}\ (\ a\_pCallback\ )\ );}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ -\/1;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00172\ \ \ \ \ \}}
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00181\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ae3800f57b25e912c88d3a261c77970b8}{SetVal}}\ (\ TBase\ a\_fVal,\ \textcolor{keyword}{const}\ TString\ \&a\_strTok\ =\ TString()\ )}
+\DoxyCodeLine{00182\ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{cmVAL}};}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}{tpDBL}};}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}}\ =\ a\_fVal;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_strTok;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ -\/1;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.reset\ (\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00202\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_acc4063666fbd8fa0fec59b01e59ce25b}{SetVar}}\ (\ TBase\ *a\_pVar,\ \textcolor{keyword}{const}\ TString\ \&a\_strTok\ )}
+\DoxyCodeLine{00203\ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cmVAR}};}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}{tpDBL}};}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_strTok;}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ -\/1;}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keywordtype}{void}*\textcolor{keyword}{>}\ (\ a\_pVar\ );}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.reset\ (\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00211\ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00220\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token}{QmuParserToken}}\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aba6d388e872b2bada3ca692ce993bb07}{SetString}}\ (\ \textcolor{keyword}{const}\ TString\ \&a\_strTok,\ \textcolor{keywordtype}{int}\ a\_iSize\ )}
+\DoxyCodeLine{00221\ \ \ \ \ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ =\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cmSTRING}};}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}}\ =\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}{tpSTR}};}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}}\ =\ a\_strTok;}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ a\_iSize;}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.reset\ (\ \textcolor{keyword}{nullptr}\ );}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00230\ \ \ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00240\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a461c5c06f1bd565c0874258939aa9e12}{SetIdx}}\ (\ \textcolor{keywordtype}{int}\ a\_iIdx\ )}
+\DoxyCodeLine{00241\ \ \ \ \ \{}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cmSTRING}}\ ||\ a\_iIdx\ <\ 0\ )}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ =\ a\_iIdx;}
+\DoxyCodeLine{00248\ \ \ \ \ \}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00259\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a7dc26b27dcde6b2938ec639e9c3cde3b}{GetIdx}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00260\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}}\ <\ 0\ ||\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cmSTRING}}\ )}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}};}
+\DoxyCodeLine{00267\ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00276\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a5bf2549ff60ce866f08975de85e9090f}{GetCode}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00277\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ )}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetCode();}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}};}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ \ \ \ \ \}}
+\DoxyCodeLine{00287\ }
+\DoxyCodeLine{00288\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00289\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{ETypeCode}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a02a9b061a62820467c241a7b8d69a853}{GetType}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00290\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ )}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetType();}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}};}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ \ \ \ \ \}}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00302\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0107bd53e8b9d12ff8a7d04b3344b26e}{GetPri}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00303\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetCode()\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{cmOPRT\_BIN}}\ \&\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetCode()\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}{cmOPRT\_INFIX}}\ )}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetPri();}
+\DoxyCodeLine{00315\ \ \ \ \ \}}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00318\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprtAssociativity}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a1d7401f2a2b42e9b27acc786cc3034d7}{GetAssociativity}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00319\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ ==\ \textcolor{keyword}{nullptr}\ ||\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetCode()\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{cmOPRT\_BIN}}\ )}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00324\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetAssociativity();}
+\DoxyCodeLine{00326\ \ \ \ \ \}}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00329\ \ \ \ \ \textcolor{keyword}{template}\ <\ \textcolor{keyword}{class}\ FunctionPtr\ >}
+\DoxyCodeLine{00330\ \ \ \ \ \textcolor{keyword}{static}\ FunctionPtr\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a71d9646bc92e9edbee737c9e5258fa6a}{union\_cast}}(\ \textcolor{keywordtype}{void}*\ objectPtr\ )}
+\DoxyCodeLine{00331\ \ \ \ \ \{}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union}}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}*\ obj;}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ FunctionPtr\ func;}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \}\ var;}
+\DoxyCodeLine{00337\ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ cppcheck-\/suppress\ duplicateExpression}}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ Q\_STATIC\_ASSERT\_X(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}\ *)\ ==\ \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{void}\ (*)(\textcolor{keywordtype}{void})),}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}object\ pointer\ and\ function\ pointer\ sizes\ must\ equal"{}});}
+\DoxyCodeLine{00341\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ var.obj\ =\ objectPtr;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ var.func;}
+\DoxyCodeLine{00344\ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00361\ \textcolor{comment}{}\ \ \ \ \mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a3363a3b786a772bf3a6569d8dae3ccb6}{GetFuncAddr}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00362\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (\ union\_cast<generic\_fun\_type>(\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ )\ )\ ?}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ union\_cast<generic\_fun\_type>(\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetAddr()\ )\ :\ union\_cast<generic\_fun\_type>(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00365\ \ \ \ \ \}}
+\DoxyCodeLine{00366\ }
+\DoxyCodeLine{00367\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00374\ \textcolor{comment}{}\ \ \ \ TBase\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_ae49ab47e86ef7d64ee8ffce8a0eab189}{GetVal}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00375\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ )}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{cmVAL}}:}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}};}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cmVAR}}:}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\ (\ \textcolor{keyword}{reinterpret\_cast<}TBase*\textcolor{keyword}{>}(\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}})\ );}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}{cmLE}}:}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}{cmGE}}:}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}{cmNEQ}}:}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}{cmEQ}}:}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}{cmLT}}:}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}{cmGT}}:}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}{cmADD}}:}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}{cmSUB}}:}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}{cmMUL}}:}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}{cmDIV}}:}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}{cmPOW}}:}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}{cmLAND}}:}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}{cmLOR}}:}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}{cmASSIGN}}:}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}{cmBO}}:}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}{cmBC}}:}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}{cmIF}}:}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}{cmELSE}}:}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}{cmENDIF}}:}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}{cmARG\_SEP}}:}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}{cmVARPOW2}}:}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}{cmVARPOW3}}:}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}{cmVARPOW4}}:}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}{cmVARMUL}}:}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}{cmPOW2}}:}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}{cmFUNC}}:}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}{cmFUNC\_STR}}:}
+\DoxyCodeLine{00409\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}{cmFUNC\_BULK}}:}
+\DoxyCodeLine{00410\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{cmOPRT\_BIN}}:}
+\DoxyCodeLine{00411\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}{cmOPRT\_POSTFIX}}:}
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}{cmOPRT\_INFIX}}:}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}{cmEND}}:}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}{cmUNKNOWN}}:}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cmSTRING}}:}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7a83c0ffe096f5ba33c3665399fe1c4621}{ecVAL\_EXPECTED}}\ );}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00419\ \ \ \ \ \}}
+\DoxyCodeLine{00420\ }
+\DoxyCodeLine{00421\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00428\ \textcolor{comment}{}\ \ \ \ TBase*\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a487d2ca43aeadc9a97ad9d2ea745e6f4}{GetVar}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00429\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}}\ !=\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cmVAR}}\ )}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00434\ }
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{reinterpret\_cast<}TBase*\textcolor{keyword}{>}(\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}}\ );}
+\DoxyCodeLine{00436\ \ \ \ \ \}}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00438\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00444\ \textcolor{comment}{}\ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a9421bb0ad995f1ade30a50200f4f35ec}{GetArgCount}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00445\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ assert\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}.get()\ );}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetAddr()\ ==\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_error}{QmuParserError}}\ (\ \mbox{\hyperlink{namespaceqmu_a530c023abef015ddf300e34470b7b4b7ad39012fa87e728daf0d0b16112d75b21}{ecINTERNAL\_ERROR}}\ );}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00452\ }
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}}-\/>GetArgc();}
+\DoxyCodeLine{00454\ \ \ \ \ \}}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \ \ \ \ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00466\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{const}\ TString\&\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa3e482443469c4c1619d80c9d2eca37}{GetAsString}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00467\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}};}
+\DoxyCodeLine{00469\ \ \ \ \ \}}
+\DoxyCodeLine{00470\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00471\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}\ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a201e0ce8da37972e76994c6f0b76ba7d}{m\_iCode}};\ \ }
+\DoxyCodeLine{00472\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{ETypeCode}}\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_af6d6b6b0715df5ecec22728aaa0594bd}{m\_iType}};}
+\DoxyCodeLine{00473\ \ \ \ \ \textcolor{keywordtype}{void}\ \ *\mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a0b10604eedae84d80f2070bceb8935e8}{m\_pTok}};\ \ \ \ \ \ }
+\DoxyCodeLine{00474\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8a5ed7ff51c886899777ea42e856c904}{m\_iIdx}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00475\ \ \ \ \ TString\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a939dd81cf4ce0fa69881e0c11902d911}{m\_strTok}};\ \ \ }
+\DoxyCodeLine{00476\ \ \ \ \ TString\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_aaa074bb7a341c32a12f5b58357f8d7e3}{m\_strVal}};\ \ \ }
+\DoxyCodeLine{00477\ \ \ \ \ qreal\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a780fe3320026640b73916b9fe89a13a9}{m\_fVal}};\ \ }
+\DoxyCodeLine{00478\ \ \ \ \ std::unique\_ptr<QmuParserCallback>\ \mbox{\hyperlink{classqmu_1_1_qmu_parser_token_a8d494d6652dd72c409327823a74588b0}{m\_pCallback}};}
+\DoxyCodeLine{00479\ \};}
+\DoxyCodeLine{00480\ \}\ \textcolor{comment}{//\ namespace\ qmu}}
+\DoxyCodeLine{00481\ }
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

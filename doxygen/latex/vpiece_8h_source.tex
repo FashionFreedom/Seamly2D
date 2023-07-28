@@ -1,0 +1,219 @@
+\hypertarget{vpiece_8h_source}{}\doxysection{vpiece.\+h}
+\label{vpiece_8h_source}\index{D:/Github/Seamly2D/src/libs/vpatterndb/vpiece.h@{D:/Github/Seamly2D/src/libs/vpatterndb/vpiece.h}}
+\mbox{\hyperlink{vpiece_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **\ \ @file\ \ \ vpiece.h}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ @author\ Douglas\ S\ Caskey}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **\ \ @date\ \ \ Jan\ 3,\ 2023}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2017\ -\/\ 2023\ Seamly,\ LLC}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ https://github.com/fashionfreedom/seamly2d}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ if\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ **************************************************************************/}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{/************************************************************************}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @file\ \ \ vpiece.h}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **\ \ @date\ \ \ 3\ 11,\ 2016}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentina\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Valentina\ project}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **\ \ <https://bitbucket.org/dismine/valentina>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ Valentina\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ Valentina\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **\ \ along\ with\ Valentina.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#ifndef\ VPIECE\_H}}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ VPIECE\_H}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QLineF>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QSharedDataPointer>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QSharedPointer>}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ "{}../vlayout/vabstractpiece.h"{}}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_notch_data}{NotchData}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ QLineF\ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_aa64b51d933720d547eee6cb97e9e9819}{line}}\ \{\};}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{def_8h_a0caf9d3130a2202ad0e8c90233960a0c}{NotchType}}\ \ \ \ \mbox{\hyperlink{struct_notch_data_aa7495a4992333fc122a06dfef61f3e4e}{type}}\ \{\};}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{def_8h_a5b666b3acf56b84f9f3fadeef9d571b4}{NotchSubType}}\ \mbox{\hyperlink{struct_notch_data_ac720e8ec504329e7bf51458c6fc2404c}{subType}}\ \{\};}
+\DoxyCodeLine{00068\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_a276863493d9a7cb4b8f9bc56ccfe4fb5}{length}}\ \{\};}
+\DoxyCodeLine{00069\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_a53f1edf7851764ec98f9f598cdcc949b}{width}}\ \{\};}
+\DoxyCodeLine{00070\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_a5f0a51a14875e42e3026965bac6e4808}{angle}}\ \{\};}
+\DoxyCodeLine{00071\ \ \ \ \ qreal\ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_ab1ab76f7386b511449b1b052f3759f14}{offset}}\ \{\};}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_notch_data_a81492a3d9a1e935cc0a03d3a91c75556}{count}}\ \{\};}
+\DoxyCodeLine{00073\ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_data}{VPieceData}};}
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_node}{VPieceNode}};}
+\DoxyCodeLine{00077\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_vector}{QVector}};}
+\DoxyCodeLine{00078\ \textcolor{keyword}{template}\ <\textcolor{keyword}{class}\ T>\textcolor{keyword}{class\ }\mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}};}
+\DoxyCodeLine{00079\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_path}{VPiecePath}};}
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_pattern_label_data}{VPatternLabelData}};}
+\DoxyCodeLine{00081\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}};}
+\DoxyCodeLine{00082\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}};}
+\DoxyCodeLine{00083\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_container}{VContainer}};}
+\DoxyCodeLine{00084\ \textcolor{keyword}{class\ }QPainterPath;}
+\DoxyCodeLine{00085\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_point_f}{VPointF}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_piece}{VPiece}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_abstract_piece}{VAbstractPiece}}}
+\DoxyCodeLine{00088\ \{}
+\DoxyCodeLine{00089\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a9d02c261801066d9ffccfbef27fe3876}{VPiece}}();}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a9d02c261801066d9ffccfbef27fe3876}{VPiece}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a632aa6567b35565cd04b60de97c69028}{\string~VPiece}}();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_a66dca1f56a1f0448e07981c3671ba14a}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#ifdef\ Q\_COMPILER\_RVALUE\_REFS}}
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_a66dca1f56a1f0448e07981c3671ba14a}{operator=}}(\mbox{\hyperlink{class_v_piece}{VPiece}}\ \&\&piece)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a3edb9b2b52587180960a07cc2551156b}{Swap}}(\mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ Q\_DECL\_NOTHROW;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_afee4dd59c910226b135f53b95eeeff64}{GetPath}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_afee4dd59c910226b135f53b95eeeff64}{GetPath}}();}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a55c9a1c2b96e1f55cc0bb04aecf97d64}{SetPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_path}{VPiecePath}}\ \&path);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_abe6acc56fd08a258b4f1f826735ff415}{MainPathPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VPointF>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a84f3eb9ca46ef0775d8cc60170c24bff}{MainPathNodePoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \textcolor{keywordtype}{bool}\ showExcluded\ =\ \textcolor{keyword}{false})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a695e4e432618d9ebb60024bb76e77739}{SeamAllowancePoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a3b4c8790f6f0062086e7095f9f7b52e3}{createNotchLines}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance\ =\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ QPainterPath\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a76713a14a629f0b82f26ede22cdddfb3}{MainPathPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00114\ \ \ \ \ QPainterPath\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a083068e3f14363a24d1200dbcfe6d9a8}{SeamAllowancePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00115\ \ \ \ \ QPainterPath\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a083068e3f14363a24d1200dbcfe6d9a8}{SeamAllowancePath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&points)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ QPainterPath\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a43910cc4bfdf56c903e26144e911b9f3}{getNotchesPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance\ =\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a44e9c85ae75330204c4f64730693e094}{isInLayout}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a5b96f01d9b5bad37ce7f3a5e58bf75d7}{SetInLayout}}(\textcolor{keywordtype}{bool}\ inLayout);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}{isLocked}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a05e2eb1a5a6470981141bd3d8fdae515}{setIsLocked}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_v_piece_afe2d7f07bfa15a28e396bb5b80efbcc3}{isLocked}});}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_ad4f0f9998c377c531fa40c9a01e0eb0e}{IsUnited}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_ab73271a2197d96a782769b6858548321}{SetUnited}}(\textcolor{keywordtype}{bool}\ united);}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a2ac014baad5b629c4bed7a193c33a106}{getSeamAllowanceWidthFormula}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_aa0939a481a8e68fde162e017c25492b2}{setSeamAllowanceWidthFormula}}(\textcolor{keyword}{const}\ QString\ \&formula,\ qreal\ value);}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a45f8730b44dea91f5a3f0354cb209a8c}{GetInternalPaths}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_a45f8730b44dea91f5a3f0354cb209a8c}{GetInternalPaths}}();}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_aa1e564b9e6ab7581431f88e5f41eb9c0}{SetInternalPaths}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&iPaths);}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \ \mbox{\hyperlink{class_v_piece_a17cbfead7f305d471c3961405d672804}{GetCustomSARecords}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \ \&\mbox{\hyperlink{class_v_piece_a17cbfead7f305d471c3961405d672804}{GetCustomSARecords}}();}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a8d0ada81223a2ee5f2c3040283555afe}{SetCustomSARecords}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \&records);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a60f7c94fd9d23b8f59fbbf67af20ef8e}{getAnchors}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \&\mbox{\hyperlink{class_v_piece_a60f7c94fd9d23b8f59fbbf67af20ef8e}{getAnchors}}();}
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a68d27cdab3714904d965db2c263463f8}{setAnchors}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \&anchors);}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a85ff9c8d58ab81997d1f292c29860750}{MissingNodes}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00144\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_afb101b0db6f4150be25de40c3ebc1909}{MissingCSAPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00145\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a7b3346f5cbebff66dd4e8f908ba4d62b}{MissingInternalPaths}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<quint32>}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a5eea73b258c21152bea952b62fdcb27a}{missingAnchors}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece}{VPiece}}\ \&piece)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a84ef5d6f411e53506b166308b312f6f5}{SetPatternPieceData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}}\ \&data);}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}}\&\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a160098d4ad976226313e93df07e4afce}{GetPatternPieceData}}();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_piece_label_data}{VPieceLabelData}}\&\ \ \ \mbox{\hyperlink{class_v_piece_a160098d4ad976226313e93df07e4afce}{GetPatternPieceData}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_adb7a5569f95c6dd8e5e06b0d760bdb05}{SetPatternInfo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_pattern_label_data}{VPatternLabelData}}\ \&info);}
+\DoxyCodeLine{00153\ \ \ \ \ \mbox{\hyperlink{class_v_pattern_label_data}{VPatternLabelData}}\&\ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_ae6ff206d2922365cc5b3e9c5d38df806}{GetPatternInfo}}();}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_pattern_label_data}{VPatternLabelData}}\ \&\mbox{\hyperlink{class_v_piece_ae6ff206d2922365cc5b3e9c5d38df806}{GetPatternInfo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \ \ \ \ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\&\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_adcfb004220f50478cef56553c90d0ee9}{GetGrainlineGeometry}}();}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_grainline_data}{VGrainlineData}}\&\ \ \ \ \mbox{\hyperlink{class_v_piece_adcfb004220f50478cef56553c90d0ee9}{GetGrainlineGeometry}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00160\ \ \ \ \ QSharedDataPointer<VPieceData>\ \mbox{\hyperlink{class_v_piece_a32c421ed27fffaa7202d43f134ae371c}{d}};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a13d0a2894f1750b9e9d40bb6d63c711a}{GetUnitedPath}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \ \mbox{\hyperlink{class_v_piece_acdb94745d64fa25e866ce9d3c3522dd2}{GetValidRecords}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \ \mbox{\hyperlink{class_v_piece_a00345893532d429e86751b5fdf348833}{FilterRecords}}(\mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ records)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<VSAPoint>}}\ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a3c335179471d5593f4db890a4b501551}{getNodeSAPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ index,}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a199dce5fb3c7b2a9897c588290ab4720}{getNotchSAPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ index,}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a1d413acab729c68ff3ae4fd338dcc836}{getNotchPreviousSAPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ index,}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&notchSAPoint,}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_af0a834171d8ebc1d74e19aac48b9483a}{getNextNotchSAPoints}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ index,}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&notchSAPoint,}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a1453a75e11555462e919fab9e153fd7e}{getSeamNotchSAPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&previousSAPoint,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&notchSAPoint,}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&nextSAPoint,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,}
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QPointF\ \&point)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a0edbfb5c857e9f256dd762413eb6a35e}{isNotchVisible}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ notchIndex)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a50246c6ac8e6deab7187f705e4e71ad4}{createNotch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keywordtype}{int}\ previousIndex,\ \textcolor{keywordtype}{int}\ notchIndex,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ nextIndex,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&pathPoints\ =\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_ab309d0f2d7d5c903ec67b45540223a00}{createSeamAllowanceNotch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&previousSAPoint,}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&notchSAPoint,\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&nextSAPoint,}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \textcolor{keywordtype}{int}\ notchIndex,}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&pathPoints\ =\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}())\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a44aa80c114b482114906920a9c0ead3b}{createBuiltInSaNotch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<VPieceNode>}}\ \&path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&previousSAPoint,}
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&notchSAPoint,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_s_a_point}{VSAPoint}}\ \&nextSAPoint,}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *data,\ \textcolor{keywordtype}{int}\ notchIndex,}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&pathPoints)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a75476252eaf5c2b57280cdc51328389b}{IsCSAStart}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<CustomSARecord>}}\ \&records,\ quint32\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a50b30a664808e28ff04ca7c29a2d5c5c}{createSlitNotch}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00201\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a4ea821b935b8d748dc91b17174d42678}{createTNotch}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&pathPoints)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00202\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_aa9b87b2b5aaaa2e0ac826be7c040aedf}{createUNotch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00203\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a96e7a404e41a2b3b51cb089fb67641c9}{createVInternalNotch}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&pathPoints)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00204\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a6d478cdc5edc2184aee84a7605bc3b0e}{createVExternalNotch}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00205\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_adb76c43ea5dcbf0a3a7e5287ff0d77a6}{createCastleNotch}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00206\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_a7891c795349eaa692aa8c65316fc60da}{createDiamondNotch}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00207\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector<QLineF>}}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_ae52c6d187f519b6e74b5b4360979b313}{createNotches}}(\mbox{\hyperlink{struct_notch_data}{NotchData}}\ notchData,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00208\ \ \ \ \ QLineF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_piece_abb3d5e5af8b36ece0249f5e9a8fd2bb3}{findIntersection}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_q_vector}{QVector<QPointF>}}\ \&seamAllowance,\ \textcolor{keyword}{const}\ QLineF\ \&line)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00209\ \};}
+\DoxyCodeLine{00210\ }
+\DoxyCodeLine{00211\ \mbox{\hyperlink{vpiece_8h_af3aeb409daa1c4545b5778a6371af440}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{class_v_piece}{VPiece}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VPIECE\_H}}
+
+\end{DoxyCode}

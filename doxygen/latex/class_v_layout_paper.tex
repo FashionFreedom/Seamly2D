@@ -1,0 +1,278 @@
+\hypertarget{class_v_layout_paper}{}\doxysection{VLayout\+Paper Class Reference}
+\label{class_v_layout_paper}\index{VLayoutPaper@{VLayoutPaper}}
+
+
+{\ttfamily \#include $<$vlayoutpaper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_layout_paper_a3581cfc05de58f4ac9da551174676d18}{VLayout\+Paper}} ()
+\item 
+\mbox{\hyperlink{class_v_layout_paper_ad2bd48b5ca9f6d4ca81bdeef3951d044}{VLayout\+Paper}} (int height, int width)
+\item 
+\mbox{\hyperlink{class_v_layout_paper_ac17df13c181f297d9f532020abac75f8}{VLayout\+Paper}} (const \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&paper)
+\item 
+\mbox{\hyperlink{class_v_layout_paper_aaa2bfd5d6493457a65aa24b3f7a655e7}{$\sim$\+VLayout\+Paper}} ()
+\item 
+\mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \& \mbox{\hyperlink{class_v_layout_paper_a013011412cb7b92055da511b6a89fd85}{operator=}} (const \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&paper)
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a3df8d400182dff73c8d1bf554eef5088}{Swap}} (\mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&paper) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+int \mbox{\hyperlink{class_v_layout_paper_a78c221cd698d1078868433a57c6fc93b}{Get\+Height}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a8e591bff3ac834da94530dbb28f8f7f6}{Set\+Height}} (int height)
+\item 
+int \mbox{\hyperlink{class_v_layout_paper_aaa42c0b4daea7b39d5d64172a7113106}{Get\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a70f95fce75bda823e5ed050b6e8e363b}{Set\+Width}} (int width)
+\item 
+qreal \mbox{\hyperlink{class_v_layout_paper_ad59c799b1c2882d1a7f38b78818b929e}{Get\+Layout\+Width}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_ac72e8e9b3801744f1672999722bce662}{Set\+Layout\+Width}} (qreal width)
+\item 
+quint32 \mbox{\hyperlink{class_v_layout_paper_a2850fd90cd70318f386b980bdb4866d3}{Get\+Shift}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a4281ebe17960d3990b052edd42467d59}{Set\+Shift}} (quint32 shift)
+\item 
+bool \mbox{\hyperlink{class_v_layout_paper_ac94b52f202cf8923b0cb234f35a70017}{Get\+Rotate}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a4aea93e4e0c86c384dfb30eedd3fe8df}{Set\+Rotate}} (bool value)
+\item 
+int \mbox{\hyperlink{class_v_layout_paper_aac6a2fb40e80c23d7101d442a2b09314}{Get\+Rotation\+Increase}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a3678c967846fcd9c33afeafa95df56f5}{Set\+Rotation\+Increase}} (int value)
+\item 
+bool \mbox{\hyperlink{class_v_layout_paper_ad0214506429dffde426f8e4f43c3a1f7}{Is\+Save\+Length}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a479ed271be35b195283d9e23d9ee75b2}{Set\+Save\+Length}} (bool value)
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a92c5a5d92661cfb913d63fab7f2c42a8}{Set\+Paper\+Index}} (quint32 index)
+\item 
+bool \mbox{\hyperlink{class_v_layout_paper_a1514f11bcb378ab8ba27c0b3ed9195df}{arrange\+Piece}} (const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&piece, std\+::atomic\+\_\+bool \&stop)
+\item 
+int \mbox{\hyperlink{class_v_layout_paper_a600d8492130064a15e25ec99275aabb4}{Count}} () const
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT QGraphics\+Rect\+Item $\ast$ \mbox{\hyperlink{class_v_layout_paper_ad96e39b5a46911eba28631b37ca53f41}{Get\+Paper\+Item}} (bool auto\+Crop, bool text\+As\+Paths) const
+\item 
+Q\+\_\+\+REQUIRED\+\_\+\+RESULT \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ \mbox{\hyperlink{class_v_layout_paper_aca0c203962c57b6239835da55b4daa3a}{get\+Piece\+Items}} (bool text\+As\+Paths) const
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \mbox{\hyperlink{class_v_layout_paper_a81c0035e65c214a4742f164d6ea9df91}{get\+Pieces}} () const
+\item 
+void \mbox{\hyperlink{class_v_layout_paper_a21f686a78317c7c032affc4a35fc96e1}{set\+Pieces}} (const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&pieces)
+\item 
+QRectF \mbox{\hyperlink{class_v_layout_paper_a46bc841795ed61dac0a91805ec99ee90}{pieces\+Bounding\+Rect}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_v_layout_paper_a94231f8e1f6c97617e8d06e04fc32a93}{Add\+To\+Sheet}} (const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&piece, std\+::atomic\+\_\+bool \&stop)
+\item 
+bool \mbox{\hyperlink{class_v_layout_paper_a31d663c00d8494201f0f92933ce735cb}{Save\+Result}} (const \mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \&best\+Result, const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&piece)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_layout_paper_data}{VLayout\+Paper\+Data}} $>$ \mbox{\hyperlink{class_v_layout_paper_af648ccb1a818d71c43fc81f3ce2de801}{d}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_layout_paper_a3581cfc05de58f4ac9da551174676d18}\label{class_v_layout_paper_a3581cfc05de58f4ac9da551174676d18}} 
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{VLayoutPaper()}{VLayoutPaper()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily VLayout\+Paper\+::\+VLayout\+Paper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_ad2bd48b5ca9f6d4ca81bdeef3951d044}\label{class_v_layout_paper_ad2bd48b5ca9f6d4ca81bdeef3951d044}} 
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{VLayoutPaper()}{VLayoutPaper()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily VLayout\+Paper\+::\+VLayout\+Paper (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_ac17df13c181f297d9f532020abac75f8}\label{class_v_layout_paper_ac17df13c181f297d9f532020abac75f8}} 
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\index{VLayoutPaper@{VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{VLayoutPaper()}{VLayoutPaper()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily VLayout\+Paper\+::\+VLayout\+Paper (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&}]{paper }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_aaa2bfd5d6493457a65aa24b3f7a655e7}\label{class_v_layout_paper_aaa2bfd5d6493457a65aa24b3f7a655e7}} 
+\index{VLayoutPaper@{VLayoutPaper}!````~VLayoutPaper@{$\sim$VLayoutPaper}}
+\index{````~VLayoutPaper@{$\sim$VLayoutPaper}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{$\sim$VLayoutPaper()}{~VLayoutPaper()}}
+{\footnotesize\ttfamily VLayout\+Paper\+::$\sim$\+VLayout\+Paper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_layout_paper_a94231f8e1f6c97617e8d06e04fc32a93}\label{class_v_layout_paper_a94231f8e1f6c97617e8d06e04fc32a93}} 
+\index{VLayoutPaper@{VLayoutPaper}!AddToSheet@{AddToSheet}}
+\index{AddToSheet@{AddToSheet}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{AddToSheet()}{AddToSheet()}}
+{\footnotesize\ttfamily bool VLayout\+Paper\+::\+Add\+To\+Sheet (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{std\+::atomic\+\_\+bool \&}]{stop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_paper_a1514f11bcb378ab8ba27c0b3ed9195df}\label{class_v_layout_paper_a1514f11bcb378ab8ba27c0b3ed9195df}} 
+\index{VLayoutPaper@{VLayoutPaper}!arrangePiece@{arrangePiece}}
+\index{arrangePiece@{arrangePiece}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{arrangePiece()}{arrangePiece()}}
+{\footnotesize\ttfamily bool VLayout\+Paper\+::arrange\+Piece (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece,  }\item[{std\+::atomic\+\_\+bool \&}]{stop }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a600d8492130064a15e25ec99275aabb4}\label{class_v_layout_paper_a600d8492130064a15e25ec99275aabb4}} 
+\index{VLayoutPaper@{VLayoutPaper}!Count@{Count}}
+\index{Count@{Count}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{Count()}{Count()}}
+{\footnotesize\ttfamily int VLayout\+Paper\+::\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_a78c221cd698d1078868433a57c6fc93b}\label{class_v_layout_paper_a78c221cd698d1078868433a57c6fc93b}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetHeight@{GetHeight}}
+\index{GetHeight@{GetHeight}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetHeight()}{GetHeight()}}
+{\footnotesize\ttfamily int VLayout\+Paper\+::\+Get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_ad59c799b1c2882d1a7f38b78818b929e}\label{class_v_layout_paper_ad59c799b1c2882d1a7f38b78818b929e}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetLayoutWidth@{GetLayoutWidth}}
+\index{GetLayoutWidth@{GetLayoutWidth}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetLayoutWidth()}{GetLayoutWidth()}}
+{\footnotesize\ttfamily qreal VLayout\+Paper\+::\+Get\+Layout\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_ad96e39b5a46911eba28631b37ca53f41}\label{class_v_layout_paper_ad96e39b5a46911eba28631b37ca53f41}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetPaperItem@{GetPaperItem}}
+\index{GetPaperItem@{GetPaperItem}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetPaperItem()}{GetPaperItem()}}
+{\footnotesize\ttfamily QGraphics\+Rect\+Item $\ast$ VLayout\+Paper\+::\+Get\+Paper\+Item (\begin{DoxyParamCaption}\item[{bool}]{auto\+Crop,  }\item[{bool}]{text\+As\+Paths }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_aca0c203962c57b6239835da55b4daa3a}\label{class_v_layout_paper_aca0c203962c57b6239835da55b4daa3a}} 
+\index{VLayoutPaper@{VLayoutPaper}!getPieceItems@{getPieceItems}}
+\index{getPieceItems@{getPieceItems}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{getPieceItems()}{getPieceItems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_list}{QList}}$<$ QGraphics\+Item $\ast$ $>$ VLayout\+Paper\+::get\+Piece\+Items (\begin{DoxyParamCaption}\item[{bool}]{text\+As\+Paths }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_a81c0035e65c214a4742f164d6ea9df91}\label{class_v_layout_paper_a81c0035e65c214a4742f164d6ea9df91}} 
+\index{VLayoutPaper@{VLayoutPaper}!getPieces@{getPieces}}
+\index{getPieces@{getPieces}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{getPieces()}{getPieces()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ VLayout\+Paper\+::get\+Pieces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_ac94b52f202cf8923b0cb234f35a70017}\label{class_v_layout_paper_ac94b52f202cf8923b0cb234f35a70017}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetRotate@{GetRotate}}
+\index{GetRotate@{GetRotate}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetRotate()}{GetRotate()}}
+{\footnotesize\ttfamily bool VLayout\+Paper\+::\+Get\+Rotate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_aac6a2fb40e80c23d7101d442a2b09314}\label{class_v_layout_paper_aac6a2fb40e80c23d7101d442a2b09314}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetRotationIncrease@{GetRotationIncrease}}
+\index{GetRotationIncrease@{GetRotationIncrease}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetRotationIncrease()}{GetRotationIncrease()}}
+{\footnotesize\ttfamily int VLayout\+Paper\+::\+Get\+Rotation\+Increase (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_a2850fd90cd70318f386b980bdb4866d3}\label{class_v_layout_paper_a2850fd90cd70318f386b980bdb4866d3}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetShift@{GetShift}}
+\index{GetShift@{GetShift}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetShift()}{GetShift()}}
+{\footnotesize\ttfamily quint32 VLayout\+Paper\+::\+Get\+Shift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_aaa42c0b4daea7b39d5d64172a7113106}\label{class_v_layout_paper_aaa42c0b4daea7b39d5d64172a7113106}} 
+\index{VLayoutPaper@{VLayoutPaper}!GetWidth@{GetWidth}}
+\index{GetWidth@{GetWidth}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{GetWidth()}{GetWidth()}}
+{\footnotesize\ttfamily int VLayout\+Paper\+::\+Get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_ad0214506429dffde426f8e4f43c3a1f7}\label{class_v_layout_paper_ad0214506429dffde426f8e4f43c3a1f7}} 
+\index{VLayoutPaper@{VLayoutPaper}!IsSaveLength@{IsSaveLength}}
+\index{IsSaveLength@{IsSaveLength}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{IsSaveLength()}{IsSaveLength()}}
+{\footnotesize\ttfamily bool VLayout\+Paper\+::\+Is\+Save\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_a013011412cb7b92055da511b6a89fd85}\label{class_v_layout_paper_a013011412cb7b92055da511b6a89fd85}} 
+\index{VLayoutPaper@{VLayoutPaper}!operator=@{operator=}}
+\index{operator=@{operator=}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \& VLayout\+Paper\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&}]{paper }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a46bc841795ed61dac0a91805ec99ee90}\label{class_v_layout_paper_a46bc841795ed61dac0a91805ec99ee90}} 
+\index{VLayoutPaper@{VLayoutPaper}!piecesBoundingRect@{piecesBoundingRect}}
+\index{piecesBoundingRect@{piecesBoundingRect}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{piecesBoundingRect()}{piecesBoundingRect()}}
+{\footnotesize\ttfamily QRectF VLayout\+Paper\+::pieces\+Bounding\+Rect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_layout_paper_a31d663c00d8494201f0f92933ce735cb}\label{class_v_layout_paper_a31d663c00d8494201f0f92933ce735cb}} 
+\index{VLayoutPaper@{VLayoutPaper}!SaveResult@{SaveResult}}
+\index{SaveResult@{SaveResult}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SaveResult()}{SaveResult()}}
+{\footnotesize\ttfamily bool VLayout\+Paper\+::\+Save\+Result (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_best_square}{VBest\+Square}} \&}]{best\+Result,  }\item[{const \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} \&}]{piece }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_layout_paper_a8e591bff3ac834da94530dbb28f8f7f6}\label{class_v_layout_paper_a8e591bff3ac834da94530dbb28f8f7f6}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetHeight@{SetHeight}}
+\index{SetHeight@{SetHeight}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetHeight()}{SetHeight()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_ac72e8e9b3801744f1672999722bce662}\label{class_v_layout_paper_ac72e8e9b3801744f1672999722bce662}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetLayoutWidth@{SetLayoutWidth}}
+\index{SetLayoutWidth@{SetLayoutWidth}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetLayoutWidth()}{SetLayoutWidth()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Layout\+Width (\begin{DoxyParamCaption}\item[{qreal}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a92c5a5d92661cfb913d63fab7f2c42a8}\label{class_v_layout_paper_a92c5a5d92661cfb913d63fab7f2c42a8}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetPaperIndex@{SetPaperIndex}}
+\index{SetPaperIndex@{SetPaperIndex}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetPaperIndex()}{SetPaperIndex()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Paper\+Index (\begin{DoxyParamCaption}\item[{quint32}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a21f686a78317c7c032affc4a35fc96e1}\label{class_v_layout_paper_a21f686a78317c7c032affc4a35fc96e1}} 
+\index{VLayoutPaper@{VLayoutPaper}!setPieces@{setPieces}}
+\index{setPieces@{setPieces}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{setPieces()}{setPieces()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::set\+Pieces (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_q_list}{QList}}$<$ \mbox{\hyperlink{class_v_layout_piece}{VLayout\+Piece}} $>$ \&}]{pieces }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a4aea93e4e0c86c384dfb30eedd3fe8df}\label{class_v_layout_paper_a4aea93e4e0c86c384dfb30eedd3fe8df}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetRotate@{SetRotate}}
+\index{SetRotate@{SetRotate}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetRotate()}{SetRotate()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Rotate (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a3678c967846fcd9c33afeafa95df56f5}\label{class_v_layout_paper_a3678c967846fcd9c33afeafa95df56f5}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetRotationIncrease@{SetRotationIncrease}}
+\index{SetRotationIncrease@{SetRotationIncrease}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetRotationIncrease()}{SetRotationIncrease()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Rotation\+Increase (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a479ed271be35b195283d9e23d9ee75b2}\label{class_v_layout_paper_a479ed271be35b195283d9e23d9ee75b2}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetSaveLength@{SetSaveLength}}
+\index{SetSaveLength@{SetSaveLength}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetSaveLength()}{SetSaveLength()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Save\+Length (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a4281ebe17960d3990b052edd42467d59}\label{class_v_layout_paper_a4281ebe17960d3990b052edd42467d59}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetShift@{SetShift}}
+\index{SetShift@{SetShift}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetShift()}{SetShift()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Shift (\begin{DoxyParamCaption}\item[{quint32}]{shift }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a70f95fce75bda823e5ed050b6e8e363b}\label{class_v_layout_paper_a70f95fce75bda823e5ed050b6e8e363b}} 
+\index{VLayoutPaper@{VLayoutPaper}!SetWidth@{SetWidth}}
+\index{SetWidth@{SetWidth}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{SetWidth()}{SetWidth()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Set\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_layout_paper_a3df8d400182dff73c8d1bf554eef5088}\label{class_v_layout_paper_a3df8d400182dff73c8d1bf554eef5088}} 
+\index{VLayoutPaper@{VLayoutPaper}!Swap@{Swap}}
+\index{Swap@{Swap}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VLayout\+Paper\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_layout_paper}{VLayout\+Paper}} \&}]{paper }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_layout_paper_af648ccb1a818d71c43fc81f3ce2de801}\label{class_v_layout_paper_af648ccb1a818d71c43fc81f3ce2de801}} 
+\index{VLayoutPaper@{VLayoutPaper}!d@{d}}
+\index{d@{d}!VLayoutPaper@{VLayoutPaper}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_layout_paper_data}{VLayout\+Paper\+Data}}$>$ VLayout\+Paper\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vlayoutpaper_8h}{vlayoutpaper.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vlayout/\mbox{\hyperlink{vlayoutpaper_8cpp}{vlayoutpaper.\+cpp}}\end{DoxyCompactItemize}

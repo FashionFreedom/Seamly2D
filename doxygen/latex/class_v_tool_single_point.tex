@@ -1,0 +1,774 @@
+\hypertarget{class_v_tool_single_point}{}\doxysection{VTool\+Single\+Point Class Reference}
+\label{class_v_tool_single_point}\index{VToolSinglePoint@{VToolSinglePoint}}
+
+
+The \mbox{\hyperlink{class_v_tool_single_point}{VTool\+Single\+Point}} class parent for all tools what create points.  
+
+
+
+
+{\ttfamily \#include $<$vtoolsinglepoint.\+h$>$}
+
+Inheritance diagram for VTool\+Single\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_v_tool_single_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_tool_single_point_acad9e639d51055f27e171107b8078507a99d35f51844bf8cedff66fa1ede7ead8}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Tool\+::Single\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_a0ee076f09229701d3aa659e09a098d74}{pointname\+Changed\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em pointname\+Changed\+Position handle change position point text. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a084116afbeb5f639306ce8f16e9c1db3}{Disable}} (bool disable, const QString \&draft\+Block\+Name) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a15592b7a5d11309bd71058992428468c}{Enable\+Tool\+Move}} (bool move) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_af5144077dc4228e070ceff9833685a59}{point\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_a3f9ba6e07492adc29120495bb1c6d1e4}{point\+Selected}} (bool selected)
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a3aaa5b2fb2e6cb11f57bb72fbb55ef1d}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a646249c6fcfbb679e977b8ccfa9cab9a}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a1e1984b35f5686ee9419bb98462aecd5}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_abef8d94d20ba2a92671a272d37aec16d}{allow\+Text\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_acc97af78fd88dd97b40f2881b374a020}{allow\+Text\+Selectable}} (bool enabled)
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a9629e2b75ae2a068f19a56bd40512a50}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&\mbox{\hyperlink{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}{type}}) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_point}{VAbstract\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_point_aea25c42d1eab06cafb873a02bbab2d4b}{Show\+Tool}} (quint32 id, bool enable) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_point_a09d2a74b337ab34734d721d33bb90a77}{delete\+Point}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_ac690669e1b70895f191733e64497f354}{Show\+Tool}} (quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Tool highlight tool. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a09dbe005f06f91fc5016c561503bea17}{active\+Block\+Changed}} (const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em active\+Block\+Changed disable or enable context menu after change active draft block. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_ad07928abc33a19035966d21bc4a36db1}{block\+Name\+Changed}} (const QString \&old\+Name, const QString \&new\+Name)
+\begin{DoxyCompactList}\small\item\em block\+Name\+Changed save new name active draft block. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aca2af1e53b9b874b3a7be74c27f29d21}{Enable\+Tool\+Move}} (bool move)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9bda0364ec296d786a90d2aceb6bb3c8}{Disable}} (bool disable, const QString \&draft\+Block\+Name)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a81672530a07165cd6262e7a10e815900}{pieces\+Mode}} (bool mode)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_af9b3bf3bcbcfa2ed5a0f570e5c607627}{Full\+Update\+From\+Gui\+Ok}} (int result)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Ok refresh tool data after change in options. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_interactive_tool_aae1bd5db994fa4e01b7f24944ae89416}{Full\+Update\+From\+Gui\+Apply}} ()
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+Gui\+Apply refresh tool data after change in options but do not delete dialog. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2c046b690ce16eb362a17c99b8dda223}{Full\+Update\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a7b15b7bc134aa340d45083017c29b8a9}{Allow\+Hover}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a3122ee94213c72455fa293f4e37e42d2}{Allow\+Selecting}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae6776c165682947d2158bcad167fba89}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_tool_single_point_a8cdcae1b411fe4873fec3a32c2c67d04}{VTool\+Single\+Point}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_tool_single_point}{VTool\+Single\+Point}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_tool_single_point_abb7a66c55046b19ec2f7831ef251e256}{$\sim$\+VTool\+Single\+Point}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual int \mbox{\hyperlink{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}{name}} () const
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_a8c4b5d6116e06faf934d6037de77ebde}{set\+Name}} (const QString \&\mbox{\hyperlink{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}{name}})
+\item 
+void \mbox{\hyperlink{class_v_tool_single_point_ac5a60ed790f52beeb7af83a8d67906d5}{Set\+Enabled}} (bool enabled)
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_ae2125c5ac20e2fd2b78cfdf59de39b17}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual bool \mbox{\hyperlink{class_v_tool_single_point_ab4df6679e9abb658a7cc959e368dcf29}{is\+Point\+Name\+Visible}} (quint32 id) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_adf1edd24f9cb60e4ed2a6b335ee7ed78}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a5b2fae5472dbf3ec77d414f440f491d5}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_point}{VAbstract\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_point_ad96e7ac2f2daa93b374442e86c699803}{VAbstract\+Point}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_point_a58248b2ddb095e57def708235f8d42c2}{$\sim$\+VAbstract\+Point}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_point_a206a2792549403683349da708436f5bc}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_point_aefd4e1d106d6144af0ddc5736219fc27}{Show\+Tool\+Visualization}} (bool show)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_draw_tool_a53337331770ec1b94109b18778f7c115}{VDraw\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_draw_tool_ac202a99678c86c9e5ce215cb14215972}{$\sim$\+VDraw\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_af6d5ab19af2fd9a5aecff46054634f56}{get\+Line\+Type}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a56a7a2446cb894c43b2922ec436724f4}{set\+Line\+Type}} (const QString \&value)
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_ac887c6ccdbf647bf9adf3d49976b37f6}{get\+Line\+Weight}} () const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a9644b27028de70beabe61411cd47fe77}{set\+Line\+Weight}} (const QString \&value)
+\item 
+virtual bool \mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{is\+Point\+Name\+Visible}} (quint32 id) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_interactive_tool_abe7c4ba7a7bbccc369663a8fca6d085a}{VInteractive\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_interactive_tool_ac4b82e4601a204eb28d402f6229a7beb}{$\sim$\+VInteractive\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+void \mbox{\hyperlink{class_v_interactive_tool_a2b3dd25afc73662182cf9e30121c5d1e}{Dialog\+Link\+Destroy}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool_a70b99e9c5f5de0524b2feddaa2e8f660}{VAbstract\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} container. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_tool_ad7b86091cf994df352cc6f2dc8ca7d6a}{$\sim$\+VAbstract\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return pointer to data container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{class_v_abstract_tool_abcd2a5c12d31e607ad69c3f97db87c41}{Points\+List}} () const
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{get\+Tag\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{Show\+Visualization}} (bool show)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}{VScene\+Point}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}{$\sim$\+VScene\+Point}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\item 
+void \mbox{\hyperlink{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}{refresh\+Leader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_acd3f0d8d8df4904bee7d2b68de273e85}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a5038c882d4d8a780412d22c9e5d560af}{update\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em update\+Point\+Name\+Position save new position text to the pattern file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_af32c7b8b0d752a1410721e4dccde7b5e}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a2e991c0c19294b42cff934888b5a6da5}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em mouse\+Release\+Event handle mouse release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_abe5baf59c4fe740e9ca6b0349a985645}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QVariant \mbox{\hyperlink{class_v_tool_single_point_ae9a4b8548e1dce4db3b0a915da9ff075}{item\+Change}} (Graphics\+Item\+Change change, const QVariant \&value) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em item\+Change hadle item change. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a624767d8ec6d8c6d7247749274f0d87c}{key\+Release\+Event}} (QKey\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em key\+Release\+Event handle key release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a67ed7edb23595288e31136e0c8bf898b}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_tool_single_point_a768712ef8d8b98350d1af66ebee6e63e}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_point}{VAbstract\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_point_a763bd22f7f16d3afb9a2217a91351861}{Set\+Point\+Name}} (quint32 id, const QString \&name)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_point_a0e0f8e1154c77deaaaea4443390bfa68}{update\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_ab733cab6a6e0adf8ce855d940569609e}{Add\+To\+Calculation}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em type\+Line line weight. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a848ccba4186a230fc878c980eaa997b7}{add\+Dependence}} (\mbox{\hyperlink{class_q_list}{QList}}$<$ quint32 $>$ \&list, quint32 object\+Id) const
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a66af579b9966ded44ec5c4125d92fb7a}{Save\+Dialog}} (QDom\+Element \&dom\+Element)=0
+\begin{DoxyCompactList}\small\item\em Save\+Dialog save options into file after change in dialog. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7778e118d271973dda83bca13160bd9d}{Save\+Dialog\+Change}} () Q\+\_\+\+DECL\+\_\+\+FINAL
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_acce4d75b32a39d5c61b1b2c176e0b04b}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_draw_tool_a9c7b3d926c134187a07d6e0ff5dfb121}{Save\+Option}} (\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{Save\+Options}} (QDom\+Element \&tag, \mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&obj)
+\item 
+virtual QString \mbox{\hyperlink{class_v_draw_tool_a3c5e34e70a32b885d9a8863deb7e1e2f}{make\+Tool\+Tip}} () const
+\item 
+bool \mbox{\hyperlink{class_v_draw_tool_ae006cda8f5d3c9aaa046c3f25a335b71}{Correct\+Disable}} (bool disable, const QString \&draft\+Block\+Name) const
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_afd9537e0d08fb3535dd43bcec05c36df}{Read\+Attributes}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a95795603f1fa62ffacc4fb5fb8fae984}{Read\+Tool\+Attributes}} (const QDom\+Element \&dom\+Element)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{update\+Point\+Name\+Visibility}} (quint32 id, bool visible)
+\item 
+{\footnotesize template$<$typename Dialog $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a35093cb5d7fdb567bc890a430f4ef127}{Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 item\+Id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \&show\+Remove=\mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Remove\+Option\+::\+Enable}}, const \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \&ref=\mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Referens\+::\+Follow}})
+\begin{DoxyCompactList}\small\item\em Context\+Menu show context menu for tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $>$ }\\void \mbox{\hyperlink{class_v_draw_tool_a2acc6d7de039caa5dca7fae23e4299d4}{Show\+Item}} (\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25a7d74f3b92b19da5e606d737d339a9679}{Item}} $\ast$item, quint32 id, bool enable)
+\begin{DoxyCompactList}\small\item\em Show\+Item highlight tool. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\QString \mbox{\hyperlink{class_v_draw_tool_a8bc2ba71779fada9a5686dca0a47226d}{Object\+Name}} (quint32 id) const
+\begin{DoxyCompactList}\small\item\em Object\+Name get object (point, curve, arc) name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_ad039d030b4cc44b00004133f138a61c2}{set\+Dialog}} ()
+\begin{DoxyCompactList}\small\item\em set\+Dialog set dialog when user want change tool option. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_interactive_tool_a0cc935f9208f6decc289a875e550b6c0}{Save\+Dialog\+Change}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{Add\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_adb481734d9b7052cdcd3b5d112df18e0}{Refresh\+Data\+In\+File}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a78a11cab1da83de526158893aa5b212a}{Remove\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a4c7fb8ceeaefd964fa11577b688a7ec1}{delete\+Tool}} (bool ask=true)
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_tool_a29f253e0480640a6e6a423345132fc80}{Add\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{Set\+Visualization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a981e6bae05ffb564bfac034ccff918da}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_draw_tool_aed2b9c93350448d2f5be2e3a8763c5d1}{Changed\+Tool\+Selection}} (bool selected, quint32 object, quint32 tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a63a8130db67b2ecfca1dcac01e5a3b09}{tool\+Has\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em tool\+Has\+Changes emit if tool create change that need save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a92725224cd297bc5c878c3eea25f376b}{chosen\+Tool}} (quint32 id, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} type)
+\begin{DoxyCompactList}\small\item\em chosen\+Tool emit if object was clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_acd11c60a16d75bad927b93ae25f7bae9}{Lite\+Update\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+Tree emit if need reparse pattern file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a7727b48eed40340db6bd1688cafb4592}{Tool\+Tip}} (const QString \&tool\+Tip)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_tool_ad0bfc359f78eb591511452ce58b33c66}{Check\+Formula}} (const quint32 \&tool\+Id, QString \&formula, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Check\+Formula check formula. \end{DoxyCompactList}\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_a92535ec97f566be641640d0aac73406b}{Colors}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aab1175fc0f86a9e52da9d145195b3b86}{Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aa881e27f598b21107b5a0e476d98b0a6}{support\+Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_afc244270d10e1bd14d3151d9fba3f893}{background\+Colors\+List}} ()
+\item 
+static QPixmap \mbox{\hyperlink{class_v_abstract_tool_ae07b095b26ee07e932e5db9976d75252}{create\+Color\+Icon}} (const int w, const int h, const QString \&color)
+\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_ab641d32d6545e0b24b45df643bff1a67}{fills}} ()
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_ab1112692b84f354bf0d2c60ed2056fa5}{Add\+Record}} (const quint32 id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tool\+Type, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\begin{DoxyCompactList}\small\item\em Add\+Record add record about tool in history. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a08c03ebfcbbcfbc4f7433de128a5a3d5}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_addcb4bd6032101ed1cd28c43e2f8bb8d}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static quint32 \mbox{\hyperlink{class_v_abstract_tool_a1771c54e6b0d1f94e9346650e8e1e1a9}{Create\+Node}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\begin{DoxyCompactList}\small\item\em Create\+Node create new node for detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\+\_\+suppress\+Context\+Menu}} = false
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_tool_a0c69b5e6f0c973457eebb1759b285e79}{Attr\+In\+Use}} = QString\+Literal(\char`\"{}in\+Use\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04e}{Remove\+Option}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04eabcfaccebf745acfd5e75351095a5394a}{Disable}} = false
+, \mbox{\hyperlink{class_v_draw_tool_aa261a054fa2833a8dc61ddb80ca1c04ea2faec1f9f8cc7f8f40d521c4dd574f49}{Enable}} = true
+ \}
+\item 
+enum class \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2}{Referens}} \+: bool \{ \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2a3903aab323863bd2e9b68218a7a65ebd}{Follow}} = true
+, \mbox{\hyperlink{class_v_draw_tool_a69bf2b95d209765b25d9ea6931ad34a2afd038fc7f319e48f3115d92bf5bdbef9}{Ignore}} = false
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Slots inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_draw_tool_a2359885bc609e5271e4f26f96b934bd6}{show\+Context\+Menu}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event, quint32 id=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}})=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_point}{VAbstract\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_abstract_point_a6c0d5eaa87b12506b0e88991c6e97ee7}{Init\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static void \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{Init\+Draw\+Tool\+Connections}} (\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, T $\ast$tool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_tool_aa852f252dc5e5cd7aeefb08e57fb15ef}{Confirm\+Deletion}} ()
+\item 
+static QDom\+Element \mbox{\hyperlink{class_v_abstract_tool_a649bbf0925c735e77bf9fab29236c599}{Add\+SANode}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, const QString \&tag\+Name, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a821ab22da8243998dcc7b0ea051e2a6d}{Add\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a6364648b0ecc8434d91e8edda185e61a}{Prepare\+Nodes}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static quint32 \mbox{\hyperlink{class_v_abstract_tool_ad94d663a3861710c44e6ca293e0440cb}{Prepare\+Node}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_draw_tool}{VDraw\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a5fe3497e54ee5a03e2020d304f66ba5c}{active\+Block\+Name}}
+\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a927d04c8e0f256814877fb3c7e9c6148}{m\+\_\+line\+Type}}
+\begin{DoxyCompactList}\small\item\em active\+Block\+Name name of tool\textquotesingle{}s pattern peace. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_draw_tool_a368b1ce58fe6f457981b8de5e34bfbaf}{m\+\_\+line\+Weight}}
+\begin{DoxyCompactList}\small\item\em type\+Line line type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_interactive_tool}{VInteractive\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_dialog_tool}{Dialog\+Tool}} $>$ \mbox{\hyperlink{class_v_interactive_tool_af661a7de516c1936b7cb9c2aff9e78b8}{m\+\_\+dialog}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+dialog tool\textquotesingle{}s dialog options. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+const quint32 \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_tool_aecd87c3d6c77ffa2a70d0377d0cca30b}{selection\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}{m\+\_\+point\+Name}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}{m\+\_\+point\+Leader}}
+\begin{DoxyCompactList}\small\item\em name\+Point point text. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}{m\+\_\+point\+Color}}
+\begin{DoxyCompactList}\small\item\em pointL line that we see if Text is moved too away from point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+point\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_tool_single_point}{VTool\+Single\+Point}} class parent for all tools what create points. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_tool_single_point_acad9e639d51055f27e171107b8078507}\label{class_v_tool_single_point_acad9e639d51055f27e171107b8078507}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VToolSinglePoint@{VToolSinglePoint}}\index{VToolSinglePoint@{VToolSinglePoint}!Type@{Type}}}\mbox{\Hypertarget{class_v_tool_single_point_acad9e639d51055f27e171107b8078507a99d35f51844bf8cedff66fa1ede7ead8}\label{class_v_tool_single_point_acad9e639d51055f27e171107b8078507a99d35f51844bf8cedff66fa1ede7ead8}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_tool_single_point_a8cdcae1b411fe4873fec3a32c2c67d04}\label{class_v_tool_single_point_a8cdcae1b411fe4873fec3a32c2c67d04}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!VToolSinglePoint@{VToolSinglePoint}}
+\index{VToolSinglePoint@{VToolSinglePoint}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{VToolSinglePoint()}{VToolSinglePoint()}}
+{\footnotesize\ttfamily QT\+\_\+\+WARNING\+\_\+\+PUSH QT\+\_\+\+WARNING\+\_\+\+POP VTool\+Single\+Point\+::\+VTool\+Single\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{const QColor \&}]{line\+Color,  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_tool_single_point}{VTool\+Single\+Point}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_single_point_abb7a66c55046b19ec2f7831ef251e256}\label{class_v_tool_single_point_abb7a66c55046b19ec2f7831ef251e256}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!````~VToolSinglePoint@{$\sim$VToolSinglePoint}}
+\index{````~VToolSinglePoint@{$\sim$VToolSinglePoint}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{$\sim$VToolSinglePoint()}{~VToolSinglePoint()}}
+{\footnotesize\ttfamily virtual VTool\+Single\+Point\+::$\sim$\+VTool\+Single\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_tool_single_point_a646249c6fcfbb679e977b8ccfa9cab9a}\label{class_v_tool_single_point_a646249c6fcfbb679e977b8ccfa9cab9a}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a1e1984b35f5686ee9419bb98462aecd5}\label{class_v_tool_single_point_a1e1984b35f5686ee9419bb98462aecd5}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_abef8d94d20ba2a92671a272d37aec16d}\label{class_v_tool_single_point_abef8d94d20ba2a92671a272d37aec16d}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!allowTextHover@{allowTextHover}}
+\index{allowTextHover@{allowTextHover}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextHover}{allowTextHover}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::allow\+Text\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_acc97af78fd88dd97b40f2881b374a020}\label{class_v_tool_single_point_acc97af78fd88dd97b40f2881b374a020}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!allowTextSelectable@{allowTextSelectable}}
+\index{allowTextSelectable@{allowTextSelectable}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextSelectable}{allowTextSelectable}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::allow\+Text\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a67ed7edb23595288e31136e0c8bf898b}\label{class_v_tool_single_point_a67ed7edb23595288e31136e0c8bf898b}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a084116afbeb5f639306ce8f16e9c1db3}\label{class_v_tool_single_point_a084116afbeb5f639306ce8f16e9c1db3}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!Disable@{Disable}}
+\index{Disable@{Disable}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{Disable}{Disable}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Disable (\begin{DoxyParamCaption}\item[{bool}]{disable,  }\item[{const QString \&}]{draft\+Block\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a15592b7a5d11309bd71058992428468c}\label{class_v_tool_single_point_a15592b7a5d11309bd71058992428468c}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a3aaa5b2fb2e6cb11f57bb72fbb55ef1d}\label{class_v_tool_single_point_a3aaa5b2fb2e6cb11f57bb72fbb55ef1d}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+Full\+Update\+From\+File update tool data form file. 
+
+\mbox{\Hypertarget{class_v_tool_single_point_ae2125c5ac20e2fd2b78cfdf59de39b17}\label{class_v_tool_single_point_ae2125c5ac20e2fd2b78cfdf59de39b17}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!GroupVisibility@{GroupVisibility}}
+\index{GroupVisibility@{GroupVisibility}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{GroupVisibility()}{GroupVisibility()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Group\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{object,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{VData\+Tool}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_abe5baf59c4fe740e9ca6b0349a985645}\label{class_v_tool_single_point_abe5baf59c4fe740e9ca6b0349a985645}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{VScene\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_double_line_point_tool_a658a226dd3f552bd5a59bbe6afe65777}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_line_point_ad4c0a43fbec1251b9f7fb53c25bf99cd}{VTool\+Line\+Point}}, and \mbox{\hyperlink{class_v_tool_base_point_a2b6d15724349b06fd75d4099af5a390a}{VTool\+Base\+Point}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_ab4df6679e9abb658a7cc959e368dcf29}\label{class_v_tool_single_point_ab4df6679e9abb658a7cc959e368dcf29}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!isPointNameVisible@{isPointNameVisible}}
+\index{isPointNameVisible@{isPointNameVisible}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{isPointNameVisible()}{isPointNameVisible()}}
+{\footnotesize\ttfamily bool VTool\+Single\+Point\+::is\+Point\+Name\+Visible (\begin{DoxyParamCaption}\item[{quint32}]{id }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_a1d47f790e9cddac2a8c2c517f7d99596}{VDraw\+Tool}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_ae9a4b8548e1dce4db3b0a915da9ff075}\label{class_v_tool_single_point_ae9a4b8548e1dce4db3b0a915da9ff075}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!itemChange@{itemChange}}
+\index{itemChange@{itemChange}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{itemChange()}{itemChange()}}
+{\footnotesize\ttfamily QVariant VTool\+Single\+Point\+::item\+Change (\begin{DoxyParamCaption}\item[{Graphics\+Item\+Change}]{change,  }\item[{const QVariant \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+item\+Change hadle item change. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em change} & change. \\
+\hline
+{\em value} & value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_base_point_a0a57a150a6e617a2476105269109b4be}{VTool\+Base\+Point}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_a624767d8ec6d8c6d7247749274f0d87c}\label{class_v_tool_single_point_a624767d8ec6d8c6d7247749274f0d87c}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!keyReleaseEvent@{keyReleaseEvent}}
+\index{keyReleaseEvent@{keyReleaseEvent}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{keyReleaseEvent()}{keyReleaseEvent()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::key\+Release\+Event (\begin{DoxyParamCaption}\item[{QKey\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+key\+Release\+Event handle key release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & key release event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_single_point_af32c7b8b0d752a1410721e4dccde7b5e}\label{class_v_tool_single_point_af32c7b8b0d752a1410721e4dccde7b5e}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_base_point_ac2e17fae61a3a40a44f88f2b954c3b22}{VTool\+Base\+Point}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_a2e991c0c19294b42cff934888b5a6da5}\label{class_v_tool_single_point_a2e991c0c19294b42cff934888b5a6da5}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+mouse\+Release\+Event handle mouse release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & mouse release event. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_v_tool_base_point_a2c30382d0679c5217494f8eaa2f259ff}{VTool\+Base\+Point}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}\label{class_v_tool_single_point_a5abed11b2a556d9d6767cabf6d36376a}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!name@{name}}
+\index{name@{name}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily QString VTool\+Single\+Point\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_tool_single_point_af5144077dc4228e070ceff9833685a59}\label{class_v_tool_single_point_af5144077dc4228e070ceff9833685a59}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!pointChosen@{pointChosen}}
+\index{pointChosen@{pointChosen}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{pointChosen}{pointChosen}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::point\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a0ee076f09229701d3aa659e09a098d74}\label{class_v_tool_single_point_a0ee076f09229701d3aa659e09a098d74}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!pointnameChangedPosition@{pointnameChangedPosition}}
+\index{pointnameChangedPosition@{pointnameChangedPosition}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{pointnameChangedPosition}{pointnameChangedPosition}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::pointname\+Changed\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+pointname\+Changed\+Position handle change position point text. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & new position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_tool_single_point_a3f9ba6e07492adc29120495bb1c6d1e4}\label{class_v_tool_single_point_a3f9ba6e07492adc29120495bb1c6d1e4}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!pointSelected@{pointSelected}}
+\index{pointSelected@{pointSelected}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{pointSelected}{pointSelected}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::point\+Selected (\begin{DoxyParamCaption}\item[{bool}]{selected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a768712ef8d8b98350d1af66ebee6e63e}\label{class_v_tool_single_point_a768712ef8d8b98350d1af66ebee6e63e}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!SaveOptions@{SaveOptions}}
+\index{SaveOptions@{SaveOptions}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{SaveOptions()}{SaveOptions()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Save\+Options (\begin{DoxyParamCaption}\item[{QDom\+Element \&}]{tag,  }\item[{\mbox{\hyperlink{class_q_shared_pointer}{QShared\+Pointer}}$<$ \mbox{\hyperlink{class_v_g_object}{VGObject}} $>$ \&}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_a7d08276443940981864477fe86f28090}{VDraw\+Tool}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_intersect_circles_tool_a3cb3973bb18f692b1de77e0a0370e5fb}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a1213ca7c848b1a93f31626aaf15c81f9}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_a96db1de2a80484e6270d2a33c2ae53ee}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_arc_a9c2075ef08e504637563c2dec1627860}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_a754ccf9917a467d3358654cfc4eed4c6}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_a6ca6bc497e3c03d02b0fddbd7668cc8d}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_double_line_point_tool_ad62446eed1c102eb66294842da699adc}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_along_line_a26a25d024d5fd574c03780f7df68016b}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_a277cfa4f6d3938cf0b58e4a6920db0e8}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_a2871a007b2cb24fab07bf3a0df742a59}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_a5ac37adae45ae8012c50cccd60eeb0de}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_a4ffec38cb3c52b551822bbabfbf8a1fc}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a38ba19d8f4708d6872999c05a5e6dbd3}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_line_point_aeb690c0edbb55cb5e2e61fdd7e906a4c}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_normal_a40600a9dcfa862541312d85671370850}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_a8cd0eb2ffe53f5f991f335512aee10d0}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_a13e98b687f6b9a993ce801dcffa6b680}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_a653ae24b93310820607723db0d04f401}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_ab252276d3d826c69509ebeca7baba0ef}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_a40377e82aa08b12d311d6b5f723273f2}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_adc3c944d893fc3e308a8dd75a00ee06b}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a032c3cd3e3afa7238777e61e14d667b2}{VTool\+Point\+Of\+Intersection\+Curves}}, and \mbox{\hyperlink{class_v_tool_triangle_a0130f55bbb0b46acb7d43aa506aa794b}{VTool\+Triangle}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_ac5a60ed790f52beeb7af83a8d67906d5}\label{class_v_tool_single_point_ac5a60ed790f52beeb7af83a8d67906d5}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!SetEnabled@{SetEnabled}}
+\index{SetEnabled@{SetEnabled}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{SetEnabled()}{SetEnabled()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Set\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a8c4b5d6116e06faf934d6037de77ebde}\label{class_v_tool_single_point_a8c4b5d6116e06faf934d6037de77ebde}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!setName@{setName}}
+\index{setName@{setName}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::set\+Name (\begin{DoxyParamCaption}\item[{const QString \&}]{name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a5b2fae5472dbf3ec77d414f440f491d5}\label{class_v_tool_single_point_a5b2fae5472dbf3ec77d414f440f491d5}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!setPointNamePosition@{setPointNamePosition}}
+\index{setPointNamePosition@{setPointNamePosition}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNamePosition()}{setPointNamePosition()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::set\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_adf1edd24f9cb60e4ed2a6b335ee7ed78}\label{class_v_tool_single_point_adf1edd24f9cb60e4ed2a6b335ee7ed78}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!setPointNameVisiblity@{setPointNameVisiblity}}
+\index{setPointNameVisiblity@{setPointNameVisiblity}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNameVisiblity()}{setPointNameVisiblity()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::set\+Point\+Name\+Visiblity (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_a9629e2b75ae2a068f19a56bd40512a50}\label{class_v_tool_single_point_a9629e2b75ae2a068f19a56bd40512a50}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!ToolSelectionType@{ToolSelectionType}}
+\index{ToolSelectionType@{ToolSelectionType}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{ToolSelectionType}{ToolSelectionType}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::\+Tool\+Selection\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}\label{class_v_tool_single_point_a6eccae4469cb594716c86dc5011b99eb}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!type@{type}}
+\index{type@{type}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VTool\+Single\+Point\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{VScene\+Point}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{class_intersect_circles_tool_a4e9896c841cd81a033b6df9032f2c3b4}{Intersect\+Circles\+Tool}}, \mbox{\hyperlink{class_intersect_circle_tangent_tool_a2b3cc99067a0e0aa5ee1a6e361e84702}{Intersect\+Circle\+Tangent\+Tool}}, \mbox{\hyperlink{class_point_intersect_x_y_tool_a0e301cd666bf50767a1605b443708c64}{Point\+Intersect\+XYTool}}, \mbox{\hyperlink{class_v_tool_cut_a16c23c0f4772aafa2bc288b37c1612eb}{VTool\+Cut}}, \mbox{\hyperlink{class_v_tool_cut_arc_a7c1e634d8c0b02f28618bace60fee4f1}{VTool\+Cut\+Arc}}, \mbox{\hyperlink{class_v_tool_cut_spline_ae270bee43b25c04574f7799753830640}{VTool\+Cut\+Spline}}, \mbox{\hyperlink{class_v_tool_cut_spline_path_a044cdeb5e1cf2eee0f51a898f90cbb35}{VTool\+Cut\+Spline\+Path}}, \mbox{\hyperlink{class_double_line_point_tool_a26662892d338ff3d620fdb60f51c709d}{Double\+Line\+Point\+Tool}}, \mbox{\hyperlink{class_v_tool_along_line_a7de076d1d6902a40d40f25026037dfc4}{VTool\+Along\+Line}}, \mbox{\hyperlink{class_v_tool_bisector_a69538b9018fd514789a774b71296b7b8}{VTool\+Bisector}}, \mbox{\hyperlink{class_v_tool_curve_intersect_axis_a3d15c0a5b3cdd85dbbac1236857e0235}{VTool\+Curve\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_end_line_aa18524e406654a1fc3995b9efb35ab8e}{VTool\+End\+Line}}, \mbox{\hyperlink{class_v_tool_height_ab0f6ca87a28362cc3b6d235f760f0fab}{VTool\+Height}}, \mbox{\hyperlink{class_v_tool_line_intersect_axis_a39a3fee31fabea3322c99348ac7dda4e}{VTool\+Line\+Intersect\+Axis}}, \mbox{\hyperlink{class_v_tool_line_point_ad22cd5cd868ad0481b2a3b6cbab589db}{VTool\+Line\+Point}}, \mbox{\hyperlink{class_v_tool_normal_a0cb98e9419be876651a00cc2857a0839}{VTool\+Normal}}, \mbox{\hyperlink{class_v_tool_shoulder_point_ab1d193edf6a5cd51d0f01ba069f55b6e}{VTool\+Shoulder\+Point}}, \mbox{\hyperlink{class_v_tool_base_point_addfe11668a4210dafc67b9bb27bbfaaf}{VTool\+Base\+Point}}, \mbox{\hyperlink{class_v_tool_line_intersect_ad25065d261df137c8b027e09b214521d}{VTool\+Line\+Intersect}}, \mbox{\hyperlink{class_v_tool_point_from_arc_and_tangent_a093d7f941957c21de8c6ad3c8c2625ed}{VTool\+Point\+From\+Arc\+And\+Tangent}}, \mbox{\hyperlink{class_v_tool_point_of_contact_ad561d223bc82f2392ff72b49e7dd4cd0}{VTool\+Point\+Of\+Contact}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_arcs_af9f07ed3229b3eac4ec226244259a3d1}{VTool\+Point\+Of\+Intersection\+Arcs}}, \mbox{\hyperlink{class_v_tool_point_of_intersection_curves_a8e02568af6a030fe466ff03e83eecbca}{VTool\+Point\+Of\+Intersection\+Curves}}, and \mbox{\hyperlink{class_v_tool_triangle_a8831309638105834dd2d87d87c68ee56}{VTool\+Triangle}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_a5038c882d4d8a780412d22c9e5d560af}\label{class_v_tool_single_point_a5038c882d4d8a780412d22c9e5d560af}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!updatePointNamePosition@{updatePointNamePosition}}
+\index{updatePointNamePosition@{updatePointNamePosition}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{updatePointNamePosition()}{updatePointNamePosition()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::update\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+update\+Point\+Name\+Position save new position text to the pattern file. 
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_point_a0e0f8e1154c77deaaaea4443390bfa68}{VAbstract\+Point}}.
+
+\mbox{\Hypertarget{class_v_tool_single_point_acd3f0d8d8df4904bee7d2b68de273e85}\label{class_v_tool_single_point_acd3f0d8d8df4904bee7d2b68de273e85}} 
+\index{VToolSinglePoint@{VToolSinglePoint}!updatePointNameVisibility@{updatePointNameVisibility}}
+\index{updatePointNameVisibility@{updatePointNameVisibility}!VToolSinglePoint@{VToolSinglePoint}}
+\doxysubsubsection{\texorpdfstring{updatePointNameVisibility()}{updatePointNameVisibility()}}
+{\footnotesize\ttfamily void VTool\+Single\+Point\+::update\+Point\+Name\+Visibility (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_draw_tool_aa4e017c45f376a3d7b570138fb546109}{VDraw\+Tool}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtoolsinglepoint_8h}{vtoolsinglepoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/draw\+Tools/toolpoint/toolsinglepoint/\mbox{\hyperlink{vtoolsinglepoint_8cpp}{vtoolsinglepoint.\+cpp}}\end{DoxyCompactItemize}

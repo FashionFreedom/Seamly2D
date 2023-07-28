@@ -1,0 +1,134 @@
+\hypertarget{class_d_r_w___text_codec}{}\doxysection{DRW\+\_\+\+Text\+Codec Class Reference}
+\label{class_d_r_w___text_codec}\index{DRW\_TextCodec@{DRW\_TextCodec}}
+
+
+{\ttfamily \#include $<$drw\+\_\+textcodec.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___text_codec_a4b282b68e0c198d9e4130d2b4222c98b}{DRW\+\_\+\+Text\+Codec}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___text_codec_abba7567a1e4ac13328ac58ac6fc2f809}{from\+Utf8}} (const std\+::string \&s)
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}{to\+Utf8}} (const std\+::string \&s)
+\item 
+int \mbox{\hyperlink{class_d_r_w___text_codec_a268cb7f2caf0f9820d177c935ea8010d}{get\+Version}} () const
+\item 
+void \mbox{\hyperlink{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}{set\+Version}} (std\+::string $\ast$v, bool dxf\+Format)
+\item 
+void \mbox{\hyperlink{class_d_r_w___text_codec_adb4af4a57e94fe3a4261a27f94d319b8}{set\+Version}} (int v, bool dxf\+Format)
+\item 
+void \mbox{\hyperlink{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}{set\+Code\+Page}} (const std\+::string $\ast$c, bool dxf\+Format)
+\item 
+void \mbox{\hyperlink{class_d_r_w___text_codec_a53a9aa4c3faa66a172213e58270bbbd8}{set\+Code\+Page}} (const std\+::string \&c, bool dxf\+Format)
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}{get\+Code\+Page}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___text_codec_a8358262a1931afd697a142c5aed52b0e}{correct\+Code\+Page}} (const std\+::string \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_d_r_w___text_codec_a19e5deb2aa7fd1c15400f0e4045d2dbf}{version}}
+\item 
+std\+::string \mbox{\hyperlink{class_d_r_w___text_codec_a1e82fb98ff086151393eb6e80b12b173}{cp}}
+\item 
+QText\+Codec $\ast$ \mbox{\hyperlink{class_d_r_w___text_codec_a263acfc2f6d694a69b614834d6efafe7}{conv}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___text_codec_a4b282b68e0c198d9e4130d2b4222c98b}\label{class_d_r_w___text_codec_a4b282b68e0c198d9e4130d2b4222c98b}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!DRW\_TextCodec@{DRW\_TextCodec}}
+\index{DRW\_TextCodec@{DRW\_TextCodec}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{DRW\_TextCodec()}{DRW\_TextCodec()}}
+{\footnotesize\ttfamily DRW\+\_\+\+Text\+Codec\+::\+DRW\+\_\+\+Text\+Codec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___text_codec_a8358262a1931afd697a142c5aed52b0e}\label{class_d_r_w___text_codec_a8358262a1931afd697a142c5aed52b0e}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!correctCodePage@{correctCodePage}}
+\index{correctCodePage@{correctCodePage}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{correctCodePage()}{correctCodePage()}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Text\+Codec\+::correct\+Code\+Page (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_abba7567a1e4ac13328ac58ac6fc2f809}\label{class_d_r_w___text_codec_abba7567a1e4ac13328ac58ac6fc2f809}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!fromUtf8@{fromUtf8}}
+\index{fromUtf8@{fromUtf8}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{fromUtf8()}{fromUtf8()}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Text\+Codec\+::from\+Utf8 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}\label{class_d_r_w___text_codec_a1583b818d14252872576db5c65332e92}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!getCodePage@{getCodePage}}
+\index{getCodePage@{getCodePage}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{getCodePage()}{getCodePage()}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Text\+Codec\+::get\+Code\+Page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a268cb7f2caf0f9820d177c935ea8010d}\label{class_d_r_w___text_codec_a268cb7f2caf0f9820d177c935ea8010d}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{getVersion()}{getVersion()}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Text\+Codec\+::get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a53a9aa4c3faa66a172213e58270bbbd8}\label{class_d_r_w___text_codec_a53a9aa4c3faa66a172213e58270bbbd8}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!setCodePage@{setCodePage}}
+\index{setCodePage@{setCodePage}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{setCodePage()}{setCodePage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Text\+Codec\+::set\+Code\+Page (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{c,  }\item[{bool}]{dxf\+Format }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}\label{class_d_r_w___text_codec_a39e29bcd7744c67435f59e6a1744f1f0}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!setCodePage@{setCodePage}}
+\index{setCodePage@{setCodePage}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{setCodePage()}{setCodePage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Text\+Codec\+::set\+Code\+Page (\begin{DoxyParamCaption}\item[{const std\+::string $\ast$}]{c,  }\item[{bool}]{dxf\+Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_adb4af4a57e94fe3a4261a27f94d319b8}\label{class_d_r_w___text_codec_adb4af4a57e94fe3a4261a27f94d319b8}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!setVersion@{setVersion}}
+\index{setVersion@{setVersion}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{setVersion()}{setVersion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Text\+Codec\+::set\+Version (\begin{DoxyParamCaption}\item[{int}]{v,  }\item[{bool}]{dxf\+Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}\label{class_d_r_w___text_codec_a0f1b0faf79ef07b70082d37afdbe725a}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!setVersion@{setVersion}}
+\index{setVersion@{setVersion}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{setVersion()}{setVersion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Text\+Codec\+::set\+Version (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{v,  }\item[{bool}]{dxf\+Format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}\label{class_d_r_w___text_codec_ab14901875ff957caa665ba9b9f43d769}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!toUtf8@{toUtf8}}
+\index{toUtf8@{toUtf8}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{toUtf8()}{toUtf8()}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Text\+Codec\+::to\+Utf8 (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___text_codec_a263acfc2f6d694a69b614834d6efafe7}\label{class_d_r_w___text_codec_a263acfc2f6d694a69b614834d6efafe7}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!conv@{conv}}
+\index{conv@{conv}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{conv}{conv}}
+{\footnotesize\ttfamily QText\+Codec$\ast$ DRW\+\_\+\+Text\+Codec\+::conv\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a1e82fb98ff086151393eb6e80b12b173}\label{class_d_r_w___text_codec_a1e82fb98ff086151393eb6e80b12b173}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!cp@{cp}}
+\index{cp@{cp}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{cp}{cp}}
+{\footnotesize\ttfamily std\+::string DRW\+\_\+\+Text\+Codec\+::cp\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___text_codec_a19e5deb2aa7fd1c15400f0e4045d2dbf}\label{class_d_r_w___text_codec_a19e5deb2aa7fd1c15400f0e4045d2dbf}} 
+\index{DRW\_TextCodec@{DRW\_TextCodec}!version@{version}}
+\index{version@{version}!DRW\_TextCodec@{DRW\_TextCodec}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Text\+Codec\+::version\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/intern/\mbox{\hyperlink{drw__textcodec_8h}{drw\+\_\+textcodec.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/intern/\mbox{\hyperlink{drw__textcodec_8cpp}{drw\+\_\+textcodec.\+cpp}}\end{DoxyCompactItemize}

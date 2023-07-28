@@ -1,0 +1,612 @@
+\hypertarget{class_v_node_point}{}\doxysection{VNode\+Point Class Reference}
+\label{class_v_node_point}\index{VNodePoint@{VNodePoint}}
+
+
+The \mbox{\hyperlink{class_v_node_point}{VNode\+Point}} class point detail node.  
+
+
+
+
+{\ttfamily \#include $<$vnodepoint.\+h$>$}
+
+Inheritance diagram for VNode\+Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_v_node_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_node_point_a9b29c4cb441ed1b88fc847950d37b628ab766de3ca29477128d6b2a007fc9854a}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Tool\+::Node\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Types inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{class_v_scene_point_aee1436dd3205e4a4c00d605d12a7d9eea331db2e06f284dbff366179370aaad34}{Type}} = User\+Type + static\+\_\+cast\texorpdfstring{$<$}{<}int\texorpdfstring{$>$}{>}(Vis\+::Scene\+Point)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_adb7c2c7745630303dc02e61415f49bc9}{Full\+Update\+From\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em show\+Context\+Menu emit when need show tool context menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_point_ad31b77e34ba05e15263909fce9e09994}{name\+Changed\+Position}} (const QPointF \&pos)
+\begin{DoxyCompactList}\small\item\em name\+Changed\+Position point name change position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_node_point_a16d1135d82574288c40b7efaf51aaa25}{point\+Chosen}} ()
+\item 
+void \mbox{\hyperlink{class_v_node_point_af9c2f649e2acb97ea5274a0bb446e70d}{Enable\+Tool\+Move}} (bool move)
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_acde02435b7884c54494bbcc6b8fc44eb}{Allow\+Hover}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_afb3fe9bbc1b682d3215aed6f909cc394}{Allow\+Selecting}} (bool enabled) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_node_point_a67436ed42759c6b46f036efcde049261}{allow\+Text\+Hover}} (bool enabled)
+\item 
+void \mbox{\hyperlink{class_v_node_point_a8f338c1775e75479cd5c8707892db3dc}{allow\+Text\+Selectable}} (bool enabled)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Slots inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2c046b690ce16eb362a17c99b8dda223}{Full\+Update\+From\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Full\+Update\+From\+File update tool data form file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a7b15b7bc134aa340d45083017c29b8a9}{Allow\+Hover}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a3122ee94213c72455fa293f4e37e42d2}{Allow\+Selecting}} (bool enabled)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae6776c165682947d2158bcad167fba89}{Tool\+Selection\+Type}} (const \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \&type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \mbox{\hyperlink{class_v_node_point_a654158cad5b8d660178b1861d1c54e9e}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QString \mbox{\hyperlink{class_v_node_point_a90bc335f65e629f08798b09c14285045}{get\+Tag\+Name}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a42e4b8a8749ad1460ab161bf28bcaea6}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em set\+Point\+Name\+Position change name text position. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a34f04c632f868a79b829008f7a08747f}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_node}{VAbstract\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_node_a70b154d2540b78ca2aec6c8ada2ce7b0}{VAbstract\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, const quint32 \&id, const quint32 \&\mbox{\hyperlink{class_v_abstract_node_a9a7b722b784e9af5841ddbdab93ad7fe}{id\+Node}}, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{class_v_abstract_node_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_node}{VAbstract\+Node}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_node_ab8531c21aeb1c1dabcd1dc42066b74d7}{$\sim$\+VAbstract\+Node}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_a65df18e9f6bf4e78d7af11ae701d8fd9}{Show\+Visualization}} (bool show) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_a762966d68cbb8e65a6822794347fa4c4}{increment\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_ae1b128d8c45545bdbc73f7615f6b15d3}{decrement\+Referens}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement reference for all parent objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \mbox{\hyperlink{class_v_abstract_node_a440a4eb726f91d2397476880a21bd8e2}{Get\+Parent\+Type}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_node_add551b448b7e438918e0a1a3dc03eda3}{Set\+Parent\+Type}} (const \mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \&value)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_ae0d0f0405089cae06015303e57533399}{Group\+Visibility}} (quint32 object, bool visible) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+bool \mbox{\hyperlink{class_v_abstract_node_abd93c138b73cafa6b6aeca2edea6ad40}{Is\+Exluded}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_node_a2d887cfb63bedf3d644beaff1ab771d9}{Set\+Exluded}} (bool exluded)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_tool_a70b99e9c5f5de0524b2feddaa2e8f660}{VAbstract\+Tool}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}} container. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_abstract_tool_ad7b86091cf994df352cc6f2dc8ca7d6a}{$\sim$\+VAbstract\+Tool}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_tool_ac6aac671e1349f2e345750afcdce6d2a}{get\+Id}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id return object id. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a6cdffb493ea541504585c2211167b6e1}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return pointer to data container. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, quint32 $>$ \mbox{\hyperlink{class_v_abstract_tool_abcd2a5c12d31e607ad69c3f97db87c41}{Points\+List}} () const
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{get\+Tag\+Name}} () const =0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a962d59cd7f28b2b5bd74631ba4deea95}{Show\+Visualization}} (bool show)=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{set\+Point\+Name\+Position}} (quint32 id, const QPointF \&pos)
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{set\+Point\+Name\+Visiblity}} (quint32 id, bool visible)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_data_tool_ac969e0bf9af1657e19b04c41d7f21798}{VData\+Tool}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}} constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_data_tool_a5777424bd4fa2203677991a259507ceb}{$\sim$\+VData\+Tool}} () Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DEFAULT
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_abfa6162c26d75b27b9cc4b7e423afa6e}{get\+Data}} () const
+\begin{DoxyCompactList}\small\item\em get\+Data return data container. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_data_tool_ab67efbed3adb787c5e85e64dfc59158b}{set\+Data}} (const \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$value)
+\begin{DoxyCompactList}\small\item\em set\+Data set data container. \end{DoxyCompactList}\item 
+virtual quint32 \mbox{\hyperlink{class_v_data_tool_aec86772b06c818b523c28cb17b0441bc}{referens}} () const
+\begin{DoxyCompactList}\small\item\em referens return count of referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ad845b82027866a5fda15de7fd677f270}{increment\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em increment\+Referens increment referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_a1e2948eda3b98034419d51c2a0768316}{decrement\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em decrement\+Referens decrement referens. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_data_tool_ae3bb90c0dab37cd645d68df449fc0c23}{Group\+Visibility}} (quint32 object, bool visible)=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_scene_point_a1bee558a60b35dae4cd779d52d0c0858}{VScene\+Point}} (const QColor \&line\+Color, QGraphics\+Item $\ast$parent=nullptr)
+\item 
+virtual \mbox{\hyperlink{class_v_scene_point_a600956e5bb507462d812e6880aa6eed4}{$\sim$\+VScene\+Point}} ()=default
+\item 
+virtual int \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{type}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ae5b1b5d13169a84266a96f9195095ff7}{paint}} (QPainter $\ast$painter, const QStyle\+Option\+Graphics\+Item $\ast$option, QWidget $\ast$widget=nullptr) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_afcbdc1a96a13be19de332220904060b1}{refresh\+Point\+Geometry}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&point)
+\item 
+void \mbox{\hyperlink{class_v_scene_point_aab8d2c73a0f96773517c421a1353965a}{refresh\+Leader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_v_node_point_a72fe3ef1bd7edae3612aeb78fef11b27}{Create}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, quint32 id, quint32 id\+Point, const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{class_v_abstract_node_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0)
+\begin{DoxyCompactList}\small\item\em Create help create tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_tool_ad0bfc359f78eb591511452ce58b33c66}{Check\+Formula}} (const quint32 \&tool\+Id, QString \&formula, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\begin{DoxyCompactList}\small\item\em Check\+Formula check formula. \end{DoxyCompactList}\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_a92535ec97f566be641640d0aac73406b}{Colors}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aab1175fc0f86a9e52da9d145195b3b86}{Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_aa881e27f598b21107b5a0e476d98b0a6}{support\+Colors\+List}} ()
+\item 
+static \mbox{\hyperlink{class_q_map}{QMap}}$<$ QString, QString $>$ \mbox{\hyperlink{class_v_abstract_tool_afc244270d10e1bd14d3151d9fba3f893}{background\+Colors\+List}} ()
+\item 
+static QPixmap \mbox{\hyperlink{class_v_abstract_tool_ae07b095b26ee07e932e5db9976d75252}{create\+Color\+Icon}} (const int w, const int h, const QString \&color)
+\item 
+static const QString\+List \mbox{\hyperlink{class_v_abstract_tool_ab641d32d6545e0b24b45df643bff1a67}{fills}} ()
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_ab1112692b84f354bf0d2c60ed2056fa5}{Add\+Record}} (const quint32 id, const \mbox{\hyperlink{def_8h_ab8460ab56e3e92e57d3ed3b717492395}{Tool}} \&tool\+Type, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}})
+\begin{DoxyCompactList}\small\item\em Add\+Record add record about tool in history. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a08c03ebfcbbcfbc4f7433de128a5a3d5}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_addcb4bd6032101ed1cd28c43e2f8bb8d}{Add\+Nodes}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece}{VPiece}} \&piece)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static quint32 \mbox{\hyperlink{class_v_abstract_tool_a1771c54e6b0d1f94e9346650e8e1e1a9}{Create\+Node}} (\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id)
+\begin{DoxyCompactList}\small\item\em Create\+Node create new node for detail. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_v_node_point_a44e84699d85383415890fddabd90c445}{Tool\+Type}} = QString\+Literal(\char`\"{}modeling\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_node}{VAbstract\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_node_a20f6b9dd538fc932428eb6a1bc212acb}{Attr\+Id\+Tool}} = QString\+Literal(\char`\"{}id\+Tool\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_tool_a5da01b597cf41267a15ef5c6aeac9548}{m\+\_\+suppress\+Context\+Menu}} = false
+\item 
+static const QString \mbox{\hyperlink{class_v_abstract_tool_a0c69b5e6f0c973457eebb1759b285e79}{Attr\+In\+Use}} = QString\+Literal(\char`\"{}in\+Use\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a0bfa0050c7260f0ad85914b48576fe04}{Add\+To\+File}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a8c53360263c385285a2d9b972b1ac147}{mouse\+Press\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_ac7b919e267064b4b1de0a771d7a30e2e}{mouse\+Release\+Event}} (QGraphics\+Scene\+Mouse\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em mouse\+Release\+Event handle mouse release events. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a65d141217011fa1f089545c534b19a96}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) override
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a372675a08ae7bd1ac8cc761b7a599dd5}{Show\+Node}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a93ca2a757057e243e9a3e7160636d917}{Hide\+Node}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_node_point_a11e976dd2063d038b62865d8367a6b54}{context\+Menu\+Event}} (QGraphics\+Scene\+Context\+Menu\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_node}{VAbstract\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_node_ab85af0aa996ac58f85ba89e05f87bd07}{Add\+To\+Modeling}} (const QDom\+Element \&dom\+Element)
+\begin{DoxyCompactList}\small\item\em Add\+To\+Modeling add tag to modeling tag current pattern peace. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_aa12fbba186be79e96ce06a07e196d74f}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_ab1cf705816a368f000361b514ff02984}{Set\+Visualization}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_a7acfaacf2d09da85ac282ca33393005d}{Show\+Node}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_node_a0efb37bc43a2bc4a1728dea922d774e8}{Hide\+Node}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{Add\+To\+File}} ()=0
+\begin{DoxyCompactList}\small\item\em Add\+To\+File add tag with Information about tool into file. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_adb481734d9b7052cdcd3b5d112df18e0}{Refresh\+Data\+In\+File}} ()
+\begin{DoxyCompactList}\small\item\em Refresh\+Data\+In\+File refresh attributes in file. If attributes don\textquotesingle{}t exist create them. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a78a11cab1da83de526158893aa5b212a}{Remove\+Referens}} ()
+\begin{DoxyCompactList}\small\item\em Remove\+Referens decrement value of reference. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a4c7fb8ceeaefd964fa11577b688a7ec1}{delete\+Tool}} (bool ask=true)
+\begin{DoxyCompactList}\small\item\em delete\+Tool full delete object form scene and file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_v_abstract_tool_a29f253e0480640a6e6a423345132fc80}{Add\+Visualization}} ()
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{Set\+Visualization}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_tool_a981e6bae05ffb564bfac034ccff918da}{Tool\+Creation}} (const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{hover\+Enter\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual void \mbox{\hyperlink{class_v_scene_point_ab6573c7be0882c18b7e0e181f2cb9015}{hover\+Leave\+Event}} (QGraphics\+Scene\+Hover\+Event $\ast$event) Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a8f46d5cea1f11223a4617c2dbee7f063}{set\+Only\+Point}} (bool value)
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_a851350e309710a93c75cf986a4e457e3}{is\+Only\+Point}} () const
+\item 
+void \mbox{\hyperlink{class_v_scene_point_a3c8c48f7f811dc20711c6331be7154b6}{set\+Point\+Color}} (const QString \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_node_point_a3b7a19cc97966a7b067b40807c0d30b7}{VNode\+Point}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}, quint32 id, quint32 id\+Point, const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&type\+Creation, const QString \&block\+Name=QString(), const quint32 \&\mbox{\hyperlink{class_v_abstract_node_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}=0, QObject $\ast$qo\+Parent=nullptr, QGraphics\+Item $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_node_point}{VNode\+Point}} constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Signals inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a63a8130db67b2ecfca1dcac01e5a3b09}{tool\+Has\+Changes}} ()
+\begin{DoxyCompactList}\small\item\em tool\+Has\+Changes emit if tool create change that need save. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a92725224cd297bc5c878c3eea25f376b}{chosen\+Tool}} (quint32 id, \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{Scene\+Object}} type)
+\begin{DoxyCompactList}\small\item\em chosen\+Tool emit if object was clicked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_acd11c60a16d75bad927b93ae25f7bae9}{Lite\+Update\+Tree}} (const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&parse)
+\begin{DoxyCompactList}\small\item\em Full\+Update\+Tree emit if need reparse pattern file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_tool_a7727b48eed40340db6bd1688cafb4592}{Tool\+Tip}} (const QString \&tool\+Tip)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_v_abstract_tool_aa852f252dc5e5cd7aeefb08e57fb15ef}{Confirm\+Deletion}} ()
+\item 
+static QDom\+Element \mbox{\hyperlink{class_v_abstract_tool_a649bbf0925c735e77bf9fab29236c599}{Add\+SANode}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, const QString \&tag\+Name, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static void \mbox{\hyperlink{class_v_abstract_tool_a821ab22da8243998dcc7b0ea051e2a6d}{Add\+Node}} (\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, QDom\+Element \&dom\+Element, const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a6364648b0ecc8434d91e8edda185e61a}{Prepare\+Nodes}} (const \mbox{\hyperlink{class_v_piece_path}{VPiece\+Path}} \&path, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\item 
+static quint32 \mbox{\hyperlink{class_v_abstract_tool_ad94d663a3861710c44e6ca293e0440cb}{Prepare\+Node}} (const \mbox{\hyperlink{class_v_piece_node}{VPiece\+Node}} \&node, \mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$scene, \mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}, \mbox{\hyperlink{class_v_container}{VContainer}} $\ast$\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_node}{VAbstract\+Node}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{vabstractnode_8h_a9dee9d00fa02343fa254019d71bceb25}{Parent\+Type}} \mbox{\hyperlink{class_v_abstract_node_a201252bad756a36aef9fd4696524612b}{parent\+Type}}
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_node_a9a7b722b784e9af5841ddbdab93ad7fe}{id\+Node}}
+\begin{DoxyCompactList}\small\item\em id\+Nodenode id. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_abstract_node_a2cecc6036115efe25d8054a1c71252c7}{id\+Tool}}
+\begin{DoxyCompactList}\small\item\em id\+Tool id tool. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_abstract_node_a31b0c1cef193038037155a8bf7e78fd5}{m\+\_\+block\+Name}}
+\item 
+bool \mbox{\hyperlink{class_v_abstract_node_a1c5ee04f20dca7cb64bd7ef2620e1fb0}{m\+\_\+exluded}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_abstract_tool}{VAbstract\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$ \mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}}
+\begin{DoxyCompactList}\small\item\em doc dom document container \end{DoxyCompactList}\item 
+const quint32 \mbox{\hyperlink{class_v_abstract_tool_ad0e7c20a6f5a3c5836a09dfc8aac0019}{m\+\_\+id}}
+\begin{DoxyCompactList}\small\item\em id object id. \end{DoxyCompactList}\item 
+QPointer$<$ \mbox{\hyperlink{class_visualization}{Visualization}} $>$ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}
+\item 
+\mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{Selection\+Type}} \mbox{\hyperlink{class_v_abstract_tool_aecd87c3d6c77ffa2a70d0377d0cca30b}{selection\+Type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_data_tool}{VData\+Tool}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_container}{VContainer}} \mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}}
+\begin{DoxyCompactList}\small\item\em data container with data \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_data_tool_a40badacf10d985708aea80fea513fff1}{\+\_\+referens}}
+\begin{DoxyCompactList}\small\item\em \+\_\+referens keep count tools what use this tool. If value more than 1 you can\textquotesingle{}t delete tool. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_v_scene_point}{VScene\+Point}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_graphics_simple_text_item}{VGraphics\+Simple\+Text\+Item}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a071738a64d8c893cff0b190c5407f875}{m\+\_\+point\+Name}}
+\item 
+\mbox{\hyperlink{class_v_scaled_line}{VScaled\+Line}} $\ast$ \mbox{\hyperlink{class_v_scene_point_a83a48feac9290eac352fd16985a39ceb}{m\+\_\+point\+Leader}}
+\begin{DoxyCompactList}\small\item\em name\+Point point text. \end{DoxyCompactList}\item 
+QColor \mbox{\hyperlink{class_v_scene_point_a3c59bdd47315d8c6bd9186263815d678}{m\+\_\+point\+Color}}
+\begin{DoxyCompactList}\small\item\em pointL line that we see if Text is moved too away from point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_a102c2373ffd36d7ea345c6ba486b8a5d}{m\+\_\+only\+Point}}
+\begin{DoxyCompactList}\small\item\em m\+\_\+point\+Color color of point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_v_scene_point_ad9457075e5a15cafc50515d30d909955}{m\+\_\+is\+Hovered}}
+\item 
+bool \mbox{\hyperlink{class_v_scene_point_ab175a623986615d02b06fa403260ab2e}{m\+\_\+show\+Point\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_v_node_point}{VNode\+Point}} class point detail node. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_v_node_point_a9b29c4cb441ed1b88fc847950d37b628}\label{class_v_node_point_a9b29c4cb441ed1b88fc847950d37b628}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type@{Type}!VNodePoint@{VNodePoint}}\index{VNodePoint@{VNodePoint}!Type@{Type}}}\mbox{\Hypertarget{class_v_node_point_a9b29c4cb441ed1b88fc847950d37b628ab766de3ca29477128d6b2a007fc9854a}\label{class_v_node_point_a9b29c4cb441ed1b88fc847950d37b628ab766de3ca29477128d6b2a007fc9854a}} 
+Type&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_node_point_a3b7a19cc97966a7b067b40807c0d30b7}\label{class_v_node_point_a3b7a19cc97966a7b067b40807c0d30b7}} 
+\index{VNodePoint@{VNodePoint}!VNodePoint@{VNodePoint}}
+\index{VNodePoint@{VNodePoint}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{VNodePoint()}{VNodePoint()}}
+{\footnotesize\ttfamily VNode\+Point\+::\+VNode\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{quint32}]{id,  }\item[{quint32}]{id\+Point,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()},  }\item[{const quint32 \&}]{id\+Tool = {\ttfamily 0},  }\item[{QObject $\ast$}]{qo\+Parent = {\ttfamily nullptr},  }\item[{QGraphics\+Item $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_v_node_point}{VNode\+Point}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em id\+Point} & object id in container\+Point. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em id\+Tool} & tool id. \\
+\hline
+{\em qo\+Parent} & QObject parent \\
+\hline
+{\em parent} & parent object. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_node_point_a0bfa0050c7260f0ad85914b48576fe04}\label{class_v_node_point_a0bfa0050c7260f0ad85914b48576fe04}} 
+\index{VNodePoint@{VNodePoint}!AddToFile@{AddToFile}}
+\index{AddToFile@{AddToFile}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{AddToFile()}{AddToFile()}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Add\+To\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Add\+To\+File add tag with Information about tool into file. 
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a1ec354c69a9e0bc7474a60ff76dd36ac}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_node_point_acde02435b7884c54494bbcc6b8fc44eb}\label{class_v_node_point_acde02435b7884c54494bbcc6b8fc44eb}} 
+\index{VNodePoint@{VNodePoint}!AllowHover@{AllowHover}}
+\index{AllowHover@{AllowHover}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{AllowHover}{AllowHover}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Allow\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_afb3fe9bbc1b682d3215aed6f909cc394}\label{class_v_node_point_afb3fe9bbc1b682d3215aed6f909cc394}} 
+\index{VNodePoint@{VNodePoint}!AllowSelecting@{AllowSelecting}}
+\index{AllowSelecting@{AllowSelecting}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{AllowSelecting}{AllowSelecting}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Allow\+Selecting (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_a67436ed42759c6b46f036efcde049261}\label{class_v_node_point_a67436ed42759c6b46f036efcde049261}} 
+\index{VNodePoint@{VNodePoint}!allowTextHover@{allowTextHover}}
+\index{allowTextHover@{allowTextHover}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextHover}{allowTextHover}}
+{\footnotesize\ttfamily void VNode\+Point\+::allow\+Text\+Hover (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_a8f338c1775e75479cd5c8707892db3dc}\label{class_v_node_point_a8f338c1775e75479cd5c8707892db3dc}} 
+\index{VNodePoint@{VNodePoint}!allowTextSelectable@{allowTextSelectable}}
+\index{allowTextSelectable@{allowTextSelectable}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{allowTextSelectable}{allowTextSelectable}}
+{\footnotesize\ttfamily void VNode\+Point\+::allow\+Text\+Selectable (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_a11e976dd2063d038b62865d8367a6b54}\label{class_v_node_point_a11e976dd2063d038b62865d8367a6b54}} 
+\index{VNodePoint@{VNodePoint}!contextMenuEvent@{contextMenuEvent}}
+\index{contextMenuEvent@{contextMenuEvent}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{contextMenuEvent()}{contextMenuEvent()}}
+{\footnotesize\ttfamily void VNode\+Point\+::context\+Menu\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Context\+Menu\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_node_point_a72fe3ef1bd7edae3612aeb78fef11b27}\label{class_v_node_point_a72fe3ef1bd7edae3612aeb78fef11b27}} 
+\index{VNodePoint@{VNodePoint}!Create@{Create}}
+\index{Create@{Create}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_abstract_pattern}{VAbstract\+Pattern}} $\ast$}]{doc,  }\item[{\mbox{\hyperlink{class_v_container}{VContainer}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{class_v_main_graphics_scene}{VMain\+Graphics\+Scene}} $\ast$}]{scene,  }\item[{quint32}]{id,  }\item[{quint32}]{id\+Point,  }\item[{const \mbox{\hyperlink{vabstractpattern_8h_a3a0d470ad581388370a4d6fd71b8d202}{Document}} \&}]{parse,  }\item[{const \mbox{\hyperlink{def_8h_abb74e322e1c4daef3e3ff32f5f7be820}{Source}} \&}]{type\+Creation,  }\item[{const QString \&}]{block\+Name = {\ttfamily QString()},  }\item[{const quint32 \&}]{id\+Tool = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create help create tool. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em doc} & dom document container. \\
+\hline
+{\em data} & container with variables. \\
+\hline
+{\em id} & object id in container. \\
+\hline
+{\em id\+Point} & object id in container\+Point. \\
+\hline
+{\em parse} & parser file mode. \\
+\hline
+{\em type\+Creation} & way we create this tool. \\
+\hline
+{\em id\+Tool} & tool id. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_point_af9c2f649e2acb97ea5274a0bb446e70d}\label{class_v_node_point_af9c2f649e2acb97ea5274a0bb446e70d}} 
+\index{VNodePoint@{VNodePoint}!EnableToolMove@{EnableToolMove}}
+\index{EnableToolMove@{EnableToolMove}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{EnableToolMove}{EnableToolMove}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Enable\+Tool\+Move (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_adb7c2c7745630303dc02e61415f49bc9}\label{class_v_node_point_adb7c2c7745630303dc02e61415f49bc9}} 
+\index{VNodePoint@{VNodePoint}!FullUpdateFromFile@{FullUpdateFromFile}}
+\index{FullUpdateFromFile@{FullUpdateFromFile}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{FullUpdateFromFile}{FullUpdateFromFile}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Full\+Update\+From\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}
+
+
+
+show\+Context\+Menu emit when need show tool context menu. 
+
+Full\+Update\+From\+File update tool data form file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & context menu event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_point_a90bc335f65e629f08798b09c14285045}\label{class_v_node_point_a90bc335f65e629f08798b09c14285045}} 
+\index{VNodePoint@{VNodePoint}!getTagName@{getTagName}}
+\index{getTagName@{getTagName}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{getTagName()}{getTagName()}}
+{\footnotesize\ttfamily QString VNode\+Point\+::get\+Tag\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_tool_a93c63a02a83296dc12774c236caea755}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_node_point_a93ca2a757057e243e9a3e7160636d917}\label{class_v_node_point_a93ca2a757057e243e9a3e7160636d917}} 
+\index{VNodePoint@{VNodePoint}!HideNode@{HideNode}}
+\index{HideNode@{HideNode}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{HideNode()}{HideNode()}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Hide\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_node_a0efb37bc43a2bc4a1728dea922d774e8}{VAbstract\+Node}}.
+
+\mbox{\Hypertarget{class_v_node_point_a65d141217011fa1f089545c534b19a96}\label{class_v_node_point_a65d141217011fa1f089545c534b19a96}} 
+\index{VNodePoint@{VNodePoint}!hoverEnterEvent@{hoverEnterEvent}}
+\index{hoverEnterEvent@{hoverEnterEvent}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{hoverEnterEvent()}{hoverEnterEvent()}}
+{\footnotesize\ttfamily void VNode\+Point\+::hover\+Enter\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Hover\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_a12ba6462486274bd6c4399ba53428296}{VScene\+Point}}.
+
+\mbox{\Hypertarget{class_v_node_point_a8c53360263c385285a2d9b972b1ac147}\label{class_v_node_point_a8c53360263c385285a2d9b972b1ac147}} 
+\index{VNodePoint@{VNodePoint}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void VNode\+Point\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_v_node_point_ac7b919e267064b4b1de0a771d7a30e2e}\label{class_v_node_point_ac7b919e267064b4b1de0a771d7a30e2e}} 
+\index{VNodePoint@{VNodePoint}!mouseReleaseEvent@{mouseReleaseEvent}}
+\index{mouseReleaseEvent@{mouseReleaseEvent}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{mouseReleaseEvent()}{mouseReleaseEvent()}}
+{\footnotesize\ttfamily void VNode\+Point\+::mouse\+Release\+Event (\begin{DoxyParamCaption}\item[{QGraphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+mouse\+Release\+Event handle mouse release events. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & mouse release event. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_point_ad31b77e34ba05e15263909fce9e09994}\label{class_v_node_point_ad31b77e34ba05e15263909fce9e09994}} 
+\index{VNodePoint@{VNodePoint}!nameChangedPosition@{nameChangedPosition}}
+\index{nameChangedPosition@{nameChangedPosition}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{nameChangedPosition}{nameChangedPosition}}
+{\footnotesize\ttfamily void VNode\+Point\+::name\+Changed\+Position (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+name\+Changed\+Position point name change position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & new position. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_node_point_a16d1135d82574288c40b7efaf51aaa25}\label{class_v_node_point_a16d1135d82574288c40b7efaf51aaa25}} 
+\index{VNodePoint@{VNodePoint}!pointChosen@{pointChosen}}
+\index{pointChosen@{pointChosen}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{pointChosen}{pointChosen}}
+{\footnotesize\ttfamily void VNode\+Point\+::point\+Chosen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{class_v_node_point_a42e4b8a8749ad1460ab161bf28bcaea6}\label{class_v_node_point_a42e4b8a8749ad1460ab161bf28bcaea6}} 
+\index{VNodePoint@{VNodePoint}!setPointNamePosition@{setPointNamePosition}}
+\index{setPointNamePosition@{setPointNamePosition}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNamePosition()}{setPointNamePosition()}}
+{\footnotesize\ttfamily void VNode\+Point\+::set\+Point\+Name\+Position (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{const QPointF \&}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+set\+Point\+Name\+Position change name text position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & new position. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_v_abstract_tool_a2993df3110cfbac96c8bf5a6799cc585}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_node_point_a34f04c632f868a79b829008f7a08747f}\label{class_v_node_point_a34f04c632f868a79b829008f7a08747f}} 
+\index{VNodePoint@{VNodePoint}!setPointNameVisiblity@{setPointNameVisiblity}}
+\index{setPointNameVisiblity@{setPointNameVisiblity}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{setPointNameVisiblity()}{setPointNameVisiblity()}}
+{\footnotesize\ttfamily void VNode\+Point\+::set\+Point\+Name\+Visiblity (\begin{DoxyParamCaption}\item[{quint32}]{id,  }\item[{bool}]{visible }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_abstract_tool_af5b3153cb7a4e3023328961be332bcca}{VAbstract\+Tool}}.
+
+\mbox{\Hypertarget{class_v_node_point_a372675a08ae7bd1ac8cc761b7a599dd5}\label{class_v_node_point_a372675a08ae7bd1ac8cc761b7a599dd5}} 
+\index{VNodePoint@{VNodePoint}!ShowNode@{ShowNode}}
+\index{ShowNode@{ShowNode}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{ShowNode()}{ShowNode()}}
+{\footnotesize\ttfamily void VNode\+Point\+::\+Show\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_node_a7acfaacf2d09da85ac282ca33393005d}{VAbstract\+Node}}.
+
+\mbox{\Hypertarget{class_v_node_point_a654158cad5b8d660178b1861d1c54e9e}\label{class_v_node_point_a654158cad5b8d660178b1861d1c54e9e}} 
+\index{VNodePoint@{VNodePoint}!type@{type}}
+\index{type@{type}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual int VNode\+Point\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_v_scene_point_acb16253edb0cdbfa7e9c7caa2e112bdb}{VScene\+Point}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_node_point_a44e84699d85383415890fddabd90c445}\label{class_v_node_point_a44e84699d85383415890fddabd90c445}} 
+\index{VNodePoint@{VNodePoint}!ToolType@{ToolType}}
+\index{ToolType@{ToolType}!VNodePoint@{VNodePoint}}
+\doxysubsubsection{\texorpdfstring{ToolType}{ToolType}}
+{\footnotesize\ttfamily const QString VNode\+Point\+::\+Tool\+Type = QString\+Literal(\char`\"{}modeling\char`\"{})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{vnodepoint_8h}{vnodepoint.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vtools/tools/node\+Details/\mbox{\hyperlink{vnodepoint_8cpp}{vnodepoint.\+cpp}}\end{DoxyCompactItemize}

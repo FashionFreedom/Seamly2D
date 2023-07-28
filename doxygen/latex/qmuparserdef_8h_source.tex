@@ -1,0 +1,256 @@
+\hypertarget{qmuparserdef_8h_source}{}\doxysection{qmuparserdef.\+h}
+\label{qmuparserdef_8h_source}\index{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserdef.h@{D:/Github/Seamly2D/src/libs/qmuparser/qmuparserdef.h}}
+\mbox{\hyperlink{qmuparserdef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2013\ Ingo\ Berg}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ **\ \ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy\ of\ this}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ **\ \ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ **\ \ without\ restriction,\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **\ \ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,\ and\ to}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all\ copies\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ DAMAGES\ OR\ OTHER\ LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **\ \ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ ******************************************************************************************************/}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#ifndef\ QMUPDEF\_H}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ QMUPDEF\_H}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <locale>}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{qmuparserfixes_8h}{qmuparserfixes.h}}"{}}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ QMUP\_VERSION\ "{}2.5.0"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ QMUP\_VERSION\_DATE\ "{}20170101;\ GC"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ QMUP\_CHARS\ "{}abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{//\ Detect\ whether\ the\ compiler\ supports\ C++11\ noexcept\ exception\ specifications.}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#\ \ if\ \ \ defined(\_\_clang\_\_)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#\ \ \ \ if\ \_\_has\_feature(cxx\_noexcept)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#\ \ \ \ \ \ define\ QMUP\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ Clang\ 3.0\ and\ above\ have\ noexcept}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#\ \ elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#\ \ \ \ if\ (\_\_GNUC\_\_\ >\ 4\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 6))\ \&\&\ defined(\_\_GXX\_EXPERIMENTAL\_CXX0X\_\_)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#\ \ \ \ \ \ define\ QMUP\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ GCC\ 4.7\ and\ following\ have\ noexcept}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#\ \ \ \ endif}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#\ \ elif\ defined(\_MSC\_FULL\_VER)\ \&\&\ \_MSC\_FULL\_VER\ >=\ 190023026}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#\ \ \ \ define\ QMUP\_NOEXCEPT\_EXPR(x)\ noexcept(x)\ }\textcolor{comment}{//\ Visual\ Studio\ 2015\ and\ following\ have\ noexcept}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#\ \ else}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#\ \ \ \ define\ QMUP\_NOEXCEPT\_EXPR(x)}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#\ \ endif}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#ifndef\ \_\_has\_cpp\_attribute}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#\ define\ \_\_has\_cpp\_attribute(x)\ 0}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#if\ \_\_cplusplus\ >\ 201402L\ \&\&\ \_\_has\_cpp\_attribute(fallthrough)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#\ \ \ define\ QMUP\_FALLTHROUGH\ [[fallthrough]];}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#elif\ defined(Q\_CC\_CLANG)\ \&\&\ \_\_cplusplus\ >=\ 201103L}}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{comment}{/*\ clang's\ fallthrough\ annotations\ are\ only\ available\ starting\ in\ C++11.\ */}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#\ \ \ define\ QMUP\_FALLTHROUGH\ [[clang::fallthrough]];}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#elif\ defined(Q\_CC\_MSVC)}}
+\DoxyCodeLine{00065\ \ \ \ \textcolor{comment}{/*}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ *\ MSVC's\ \_\_fallthrough\ annotations\ are\ checked\ by\ /analyze\ (Code\ Analysis):}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ \ \ \ *\ https://msdn.microsoft.com/en-\/us/library/ms235402\%28VS.80\%29.aspx}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ \ \ \ */}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#\ \ \ include\ <sal.h>}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#\ \ \ define\ QMUP\_FALLTHROUGH\ \_\_fallthrough;}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#elif\ defined(Q\_CC\_GNU)\ \&\&\ (\_\_GNUC\_\_\ >=\ 7)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#\ \ \ define\ QMUP\_FALLTHROUGH\ [[gnu::fallthrough]];}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#\ \ \ define\ QMUP\_FALLTHROUGH}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{//\#define\ QMUP\_MATH\_EXCEPTIONS}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{//\#define\ QMUP\_USE\_OPENMP}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ QMUP\_STRING\_TYPE\ std::wstring}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{class\ }QLocale;}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceqmu}{qmu}}}
+\DoxyCodeLine{00092\ \{}
+\DoxyCodeLine{00093\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00098\ \textcolor{comment}{}\textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5}{ECmdCode}}}
+\DoxyCodeLine{00099\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{comment}{//\ The\ following\ are\ codes\ for\ built\ in\ binary\ operators}}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{comment}{//\ apart\ from\ built\ in\ operators\ the\ user\ has\ the\ opportunity\ to}}
+\DoxyCodeLine{00102\ \ \ \ \ \textcolor{comment}{//\ add\ user\ defined\ operators.}}
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1ade66d00d8c1dc5973d22f455e8e765}{cmLE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 0,\ \ \ }
+\DoxyCodeLine{00104\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a548afbd3fef2b77d2cc6b4b64ebdef12}{cmGE}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 1,\ \ \ }
+\DoxyCodeLine{00105\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac54c4b3b82a169ee961b58daca1cbbcb}{cmNEQ}}\ \ \ \ \ \ \ \ \ \ \ =\ 2,\ \ \ }
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a71b9f030fb15e19c9f46483bfc331b54}{cmEQ}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 3,\ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a48c71fe5a186aa7f25cd09a60442d2f7}{cmLT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 4,\ \ \ }
+\DoxyCodeLine{00108\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a34527f517a78ec21f3c46d3332aa7274}{cmGT}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 5,\ \ \ }
+\DoxyCodeLine{00109\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a556caa7db2bb1e83ddf8bd0b25b2d877}{cmADD}}\ \ \ \ \ \ \ \ \ \ \ =\ 6,\ \ \ }
+\DoxyCodeLine{00110\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1de2fe738e50f3225bf0c5be515681d5}{cmSUB}}\ \ \ \ \ \ \ \ \ \ \ =\ 7,\ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a4b5584c317289c257f86979cea561ea8}{cmMUL}}\ \ \ \ \ \ \ \ \ \ \ =\ 8,\ \ \ }
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aeb827edfb7916bb10d6a8894e539929a}{cmDIV}}\ \ \ \ \ \ \ \ \ \ \ =\ 9,\ \ \ }
+\DoxyCodeLine{00113\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5aa7be9a0a4acbb51134d9e8a3e53499eb}{cmPOW}}\ \ \ \ \ \ \ \ \ \ \ =\ 10,\ \ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a29b7b5d7eddde1a94ed8ec907d4b3e57}{cmLAND}}\ \ \ \ \ \ \ \ \ \ =\ 11,}
+\DoxyCodeLine{00115\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac108c01d641eb45ff5f8d18548e63544}{cmLOR}}\ \ \ \ \ \ \ \ \ \ \ =\ 12,}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a55b31516960df3ea4c149b8a24ae10d7}{cmASSIGN}}\ \ \ \ \ \ \ \ =\ 13,\ \ }
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af6a112712734d1da22f2f90905cc3650}{cmBO}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 14,\ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a12aa805f90b9e454d2d93b57d5121edb}{cmBC}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 15,\ \ }
+\DoxyCodeLine{00119\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5acc81fbf6c35543a5a9bb4721b008f0d2}{cmIF}}\ \ \ \ \ \ \ \ \ \ \ \ =\ 16,\ \ }
+\DoxyCodeLine{00120\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a63e7cc14bbb18933e9a7abe91ce9ef88}{cmELSE}}\ \ \ \ \ \ \ \ \ \ =\ 17,\ \ }
+\DoxyCodeLine{00121\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a5ae47cabb9a3094513b52ed81ea68958}{cmENDIF}}\ \ \ \ \ \ \ \ \ =\ 18,\ \ }
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a932b5bf81230b532091f264b66c25a8d}{cmARG\_SEP}}\ \ \ \ \ \ \ =\ 19,\ \ }
+\DoxyCodeLine{00123\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5af04b12f8a5ac6f31fd53aba31423a387}{cmVAR}}\ \ \ \ \ \ \ \ \ \ \ =\ 20,\ \ }
+\DoxyCodeLine{00124\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ad4b8089f3c85a5cfb5dc105e9552eaf7}{cmVAL}}\ \ \ \ \ \ \ \ \ \ \ =\ 21,\ \ }
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{comment}{//\ For\ optimization\ purposes}}
+\DoxyCodeLine{00127\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac593445b91aacf0a89fee856474a5b14}{cmVARPOW2}},}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a50251f50fe026cccb44e76968e36e9b6}{cmVARPOW3}},}
+\DoxyCodeLine{00129\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a0506a0ac58fe42785428c47f76f18556}{cmVARPOW4}},}
+\DoxyCodeLine{00130\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a39971259fbcde021aaa807c301b5759e}{cmVARMUL}},}
+\DoxyCodeLine{00131\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a92a490c3fb0c538450834af3259253df}{cmPOW2}},}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ operators\ and\ functions}}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3941f6dba921caa34b35f542bbb4f488}{cmFUNC}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00135\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a417f7a23bcb616a136dd2d8a01883fbc}{cmFUNC\_STR}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a784529320b5ab29b0d16c461c1f4a495}{cmFUNC\_BULK}},\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a36eac8b70f8958cf1ca021fb08bc1631}{cmSTRING}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ac77ef76d49187166a1c15c95a08fc4c2}{cmOPRT\_BIN}},\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5ae8d26b4cf88748d0f7db45142d69ccf3}{cmOPRT\_POSTFIX}},\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a125fbc15b311a2e5b6eec867bbc96bfa}{cmOPRT\_INFIX}},\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a3ca3d5403468e24440d072f8a061012b}{cmEND}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_a89ca38db50308c90192aefdcf93d9fc5a1b4549ec9fa4a815b3117addf0c7f349}{cmUNKNOWN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ \};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00148\ \textcolor{comment}{}\textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2}{ETypeCode}}}
+\DoxyCodeLine{00149\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2aaa07af226db85e39a883d9503e206cce}{tpSTR}}\ \ =\ 0,\ \ \ \ \ }
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a8e3d19ac1b48403795aa42b27e2e0fe2}{tpDBL}}\ \ =\ 1,\ \ \ \ \ }
+\DoxyCodeLine{00152\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_af10feebbbc72442f8f3ef8102497b6f2a15f1d25f0d4c7138bbec7b6d23bbddbf}{tpVOID}}\ =\ 2\ \ \ \ \ \ }
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00156\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bc}{EParserVersionInfo}}}
+\DoxyCodeLine{00157\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca45e93ce2c6838f817e8d5adf2f3b8dec}{pviBRIEF}},}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_aaaa159bd6c609241fbb10f26a9ec10bca12ebc411d83b4e54456404e7987e3e03}{pviFULL}}}
+\DoxyCodeLine{00160\ \};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00164\ \textcolor{comment}{}\textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563c}{EOprtAssociativity}}}
+\DoxyCodeLine{00165\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caafa6b844b56c8ab7384ae9c246feacef}{oaLEFT}}\ \ =\ 0,}
+\DoxyCodeLine{00167\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563caff04cec584520d3215d723aa85110fd5}{oaRIGHT}}\ =\ 1,}
+\DoxyCodeLine{00168\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_ab18cd5836bb9de744b95b05da221563ca075fd5295bd303abfb0a1773face9acf}{oaNONE}}\ \ =\ 2}
+\DoxyCodeLine{00169\ \};}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00173\ \textcolor{comment}{}\textcolor{keyword}{enum}\ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8}{EOprtPrecedence}}}
+\DoxyCodeLine{00174\ \{}
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{comment}{//\ binary\ operators}}
+\DoxyCodeLine{00176\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0f9a9444fb69e6aa9db6667c968fcb15}{prLOR}}\ \ \ \ \ =\ 1,}
+\DoxyCodeLine{00177\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0a043fc2dd73b912246d658e5fb18d43}{prLAND}}\ \ \ \ =\ 2,}
+\DoxyCodeLine{00178\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a0e1fdba556dc0cbc0b2763d13927a8e8}{prLOGIC}}\ \ \ =\ 3,\ \ }
+\DoxyCodeLine{00179\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a5c092eaa85ec73555611b384ede7a9dd}{prCMP}}\ \ \ \ \ =\ 4,\ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a118481b77676ee56c8db31df3773da2a}{prADD\_SUB}}\ =\ 5,\ \ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8ae948d8b7a449d6a594caaf049e5b00e0}{prMUL\_DIV}}\ =\ 6,\ \ }
+\DoxyCodeLine{00182\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a076260b88357b292901a87cbf087be53}{prPOW}}\ \ \ \ \ =\ 7,\ \ }
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \ \ \ \ \textcolor{comment}{//\ infix\ operators}}
+\DoxyCodeLine{00185\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8aca13ee266ba2c92b0cfb812e5b267aa1}{prINFIX}}\ \ \ =\ 6,\ }
+\DoxyCodeLine{00186\ \ \ \ \ \mbox{\hyperlink{namespaceqmu_acaa263a8aa528f88f6a222d99abbfdd8a2d038cf11d2e96ecb3d7995ed46de415}{prPOSTFIX}}\ =\ 6\ \ }
+\DoxyCodeLine{00187\ \};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00190\ \textcolor{comment}{//\ basic\ types}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00196\ \textcolor{keyword}{typedef}\ \mbox{\hyperlink{qmuparserdef_8h_aa032ae0d77a49d665ae696600285dd47}{QMUP\_STRING\_TYPE}}\ \mbox{\hyperlink{namespaceqmu_aa0c67e58337b28ea81319807f5f4610c}{string\_type}};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00202\ \textcolor{keyword}{typedef}\ string\_type::value\_type\ \mbox{\hyperlink{namespaceqmu_a216c409acb987b16340bfe4f5edd60f1}{char\_type}};}
+\DoxyCodeLine{00203\ }
+\DoxyCodeLine{00205\ \textcolor{keyword}{typedef}\ std::basic\_stringstream\ <\ char\_type,\ std::char\_traits<char\_type>,\ std::allocator<char\_type>\ >\ \mbox{\hyperlink{namespaceqmu_ac218393b9efe35e0d47f6a834dccab1b}{stringstream\_type}};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{comment}{//\ Data\ container\ types}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00210\ \textcolor{keyword}{typedef}\ std::map<QString,\ qreal*>\ \mbox{\hyperlink{namespaceqmu_af7753c1666d7bdebad742ebd263169e7}{varmap\_type}};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00213\ \textcolor{keyword}{typedef}\ std::map<QString,\ qreal>\ \mbox{\hyperlink{namespaceqmu_a96a97b8d2e526c219e22497b36ca2d85}{valmap\_type}};}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00216\ \textcolor{keyword}{typedef}\ std::map<QString,\ int>\ \mbox{\hyperlink{namespaceqmu_a12f57318899b4620cf7ea6106298ed39}{strmap\_type}};}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00218\ \textcolor{comment}{//\ Parser\ callbacks}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00221\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_acd15e1e214c80cddfe79a5af19885858}{generic\_fun\_type}}\ )\ ();}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00224\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a856810e705b6638e2e224df1a251fa16}{fun\_type0}}\ )\ ();}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00227\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_af1467daf91600a063fe199df73e49520}{fun\_type1}}\ )\ (\ qreal\ );}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_aadc5863cabb3c4b2b3b8bf459a6a0fed}{fun\_type2}}\ )\ (\ qreal,\ qreal\ );}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00233\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_abbab00fd89ac8a2da37ce7d2967571ba}{fun\_type3}}\ )\ (\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00236\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_acc5f2f5a075c0e89e2bd5f2e26d492ef}{fun\_type4}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a9937160e08609bc544e14765025770fd}{fun\_type5}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00242\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_aaad2f7a24195cc21070a39a77523ea43}{fun\_type6}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a61b12af0083a97a3b03c79c0858cf0ce}{fun\_type7}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00248\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a22c12ce3b785ca34fe7641a181b342c8}{fun\_type8}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00251\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a56c962afb0219556e86308cd861edda3}{fun\_type9}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00254\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a50b8452865cb745a9da2f4aa147469ca}{fun\_type10}}\ )\ (\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00257\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_ab345e0ad1f32adb507926310276656e5}{bulkfun\_type0}}\ )\ (\ int,\ int\ );}
+\DoxyCodeLine{00258\ }
+\DoxyCodeLine{00260\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a92e5c3a267c5911e704ca37940000c05}{bulkfun\_type1}}\ )\ (\ int,\ int,\ qreal\ );}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00263\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_af20d7b9af9d552b05bce9b5f097643e4}{bulkfun\_type2}}\ )\ (\ int,\ int,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00264\ }
+\DoxyCodeLine{00266\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_accf421ab9da567d0a09097da949aab37}{bulkfun\_type3}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00267\ }
+\DoxyCodeLine{00269\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a52d56880710aa1876e3d0224ff88c307}{bulkfun\_type4}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00272\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_ab8ba891f9b9aaa685826be34760c2ce7}{bulkfun\_type5}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00275\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a560fffc4cf20fe4f8fc5bd60226fcb8f}{bulkfun\_type6}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00276\ }
+\DoxyCodeLine{00278\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a7150bf79fe19c9617ab58acb75591e2f}{bulkfun\_type7}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00281\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a701cf679a8834fce8751050970e74a2c}{bulkfun\_type8}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a832d7bb132c3bd4b70d67618651d24fb}{bulkfun\_type9}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00287\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_aae60889d81393f7161da314871e7cceb}{bulkfun\_type10}}\ )\ (\ int,\ int,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00288\ }
+\DoxyCodeLine{00290\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_abeea51e1b81fbfc9ea2a65ac530f0b11}{multfun\_type}}\ )\ (\ \textcolor{keyword}{const}\ qreal*,\ int\ );}
+\DoxyCodeLine{00291\ }
+\DoxyCodeLine{00293\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_a08d73a4d1e185a7df46ce2267e52bf5d}{strfun\_type1}}\ )\ (\ \textcolor{keyword}{const}\ QString\ \&\ );}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_af9c9650ca886118d83f2f82118c98652}{strfun\_type2}}\ )\ (\ \textcolor{keyword}{const}\ QString\ \&,\ qreal\ );}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00299\ \textcolor{keyword}{typedef}\ qreal\ (\ *\mbox{\hyperlink{namespaceqmu_aaa596a2c4e3fd0a31ed23f988d893c49}{strfun\_type3}}\ )\ (\ \textcolor{keyword}{const}\ QString\ \&,\ qreal,\ qreal\ );}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00302\ \textcolor{keyword}{typedef}\ int\ (\ *\mbox{\hyperlink{namespaceqmu_aace075fccb5ec371594b4ff26fc47d51}{identfun\_type}}\ )\ (\ \textcolor{keyword}{const}\ QString\ \&sExpr,\ \textcolor{keywordtype}{int}\ *nPos,\ qreal\ *fVal,\ \textcolor{keyword}{const}\ QLocale\ \&locale,}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ QChar\ \&decimal,\ \textcolor{keyword}{const}\ QChar\ \&thousand\ );}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00306\ \textcolor{keyword}{typedef}\ qreal*\ (\ *facfun\_type\ )\ (\ \textcolor{keyword}{const}\ QString\ \&,\ \textcolor{keywordtype}{void}*\ );}
+\DoxyCodeLine{00307\ \}\ \textcolor{comment}{//\ end\ of\ namespace}}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

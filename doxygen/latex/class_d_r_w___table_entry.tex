@@ -1,0 +1,166 @@
+\hypertarget{class_d_r_w___table_entry}{}\doxysection{DRW\+\_\+\+Table\+Entry Class Reference}
+\label{class_d_r_w___table_entry}\index{DRW\_TableEntry@{DRW\_TableEntry}}
+
+
+Base class for tables entries.  
+
+
+
+
+{\ttfamily \#include $<$drw\+\_\+objects.\+h$>$}
+
+Inheritance diagram for DRW\+\_\+\+Table\+Entry\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=9.000000cm]{class_d_r_w___table_entry}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}{DRW\+\_\+\+Table\+Entry}} ()
+\item 
+virtual \mbox{\hyperlink{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}{$\sim$\+DRW\+\_\+\+Table\+Entry}} ()
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}{DRW\+\_\+\+Table\+Entry}} (const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&e)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespace_d_r_w_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}} \mbox{\hyperlink{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}{t\+Type}}
+\item 
+\mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} \mbox{\hyperlink{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}{handle}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}{parent\+Handle}}
+\item 
+\mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} \mbox{\hyperlink{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}{name}}
+\item 
+int \mbox{\hyperlink{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}{flags}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ $>$ \mbox{\hyperlink{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}{ext\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}{parse\+Code}} (int code, \mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$reader)
+\begin{DoxyCompactList}\small\item\em Base class for tables entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}{reset}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \& \mbox{\hyperlink{class_d_r_w___table_entry_a08ab01d88821c4a1ad12700ae619a26a}{operator=}} (const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&) Q\+\_\+\+DECL\+\_\+\+EQ\+\_\+\+DELETE
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}} $\ast$ \mbox{\hyperlink{class_d_r_w___table_entry_a6eae5e8d4c0f9834a7a2ffed8a7c6e2c}{curr}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for tables entries. 
+
+Base class for tables entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}\label{class_d_r_w___table_entry_ad5d4d2ba9bf767a5ffd7bd3158160959}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!DRW\_TableEntry@{DRW\_TableEntry}}
+\index{DRW\_TableEntry@{DRW\_TableEntry}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{DRW\_TableEntry()}{DRW\_TableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Table\+Entry\+::\+DRW\+\_\+\+Table\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}\label{class_d_r_w___table_entry_abece80dc649068ee1efc4fc287dbc6c8}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!````~DRW\_TableEntry@{$\sim$DRW\_TableEntry}}
+\index{````~DRW\_TableEntry@{$\sim$DRW\_TableEntry}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{$\sim$DRW\_TableEntry()}{~DRW\_TableEntry()}}
+{\footnotesize\ttfamily virtual DRW\+\_\+\+Table\+Entry\+::$\sim$\+DRW\+\_\+\+Table\+Entry (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}\label{class_d_r_w___table_entry_ab86af5abda12d7c39ebdadeaff403d5f}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!DRW\_TableEntry@{DRW\_TableEntry}}
+\index{DRW\_TableEntry@{DRW\_TableEntry}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{DRW\_TableEntry()}{DRW\_TableEntry()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily DRW\+\_\+\+Table\+Entry\+::\+DRW\+\_\+\+Table\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_d_r_w___table_entry_a08ab01d88821c4a1ad12700ae619a26a}\label{class_d_r_w___table_entry_a08ab01d88821c4a1ad12700ae619a26a}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!operator=@{operator=}}
+\index{operator=@{operator=}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \& DRW\+\_\+\+Table\+Entry\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_d_r_w___table_entry}{DRW\+\_\+\+Table\+Entry}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}\label{class_d_r_w___table_entry_ae342918d8e3005bd640762de9d52dbde}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!parseCode@{parseCode}}
+\index{parseCode@{parseCode}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{parseCode()}{parseCode()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Table\+Entry\+::parse\+Code (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\mbox{\hyperlink{classdxf_reader}{dxf\+Reader}} $\ast$}]{reader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Base class for tables entries. 
+
+Base class for tables entries \begin{DoxyAuthor}{Author}
+Rallaz 
+\end{DoxyAuthor}
+\mbox{\Hypertarget{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}\label{class_d_r_w___table_entry_a825d55285d103ad385f9a82b98b61eba}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!reset@{reset}}
+\index{reset@{reset}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void DRW\+\_\+\+Table\+Entry\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_d_r_w___table_entry_a6eae5e8d4c0f9834a7a2ffed8a7c6e2c}\label{class_d_r_w___table_entry_a6eae5e8d4c0f9834a7a2ffed8a7c6e2c}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!curr@{curr}}
+\index{curr@{curr}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{curr}{curr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}}$\ast$ DRW\+\_\+\+Table\+Entry\+::curr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}\label{class_d_r_w___table_entry_a7c52eb20d6488053e7193ea76b350240}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!extData@{extData}}
+\index{extData@{extData}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{extData}{extData}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_d_r_w___variant}{DRW\+\_\+\+Variant}}$\ast$$>$ DRW\+\_\+\+Table\+Entry\+::ext\+Data}
+
+FIFO list of extended data, codes 1000 to 1071 \mbox{\Hypertarget{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}\label{class_d_r_w___table_entry_a45931e761e264e52857687067029e6a8}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!flags@{flags}}
+\index{flags@{flags}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Table\+Entry\+::flags}
+
+Flags relevant to entry, code 70 \mbox{\Hypertarget{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}\label{class_d_r_w___table_entry_a0bea6e7a7b60c6c022ed449b3458d9fb}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!handle@{handle}}
+\index{handle@{handle}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{handle}{handle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_a64d3a01f65d5e7576c9ab440941717ba}{duint32}} DRW\+\_\+\+Table\+Entry\+::handle}
+
+entity identifier, code 5 \mbox{\Hypertarget{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}\label{class_d_r_w___table_entry_a854ab48893457e607ac13425304415b4}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!name@{name}}
+\index{name@{name}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily \mbox{\hyperlink{drw__base_8h_ab0cade62946b216dd846106dc2d65e39}{UTF8\+STRING}} DRW\+\_\+\+Table\+Entry\+::name}
+
+entry name, code 2 \mbox{\Hypertarget{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}\label{class_d_r_w___table_entry_a02cbd250c6960bf07f422dce7f75c2e2}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!parentHandle@{parentHandle}}
+\index{parentHandle@{parentHandle}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{parentHandle}{parentHandle}}
+{\footnotesize\ttfamily int DRW\+\_\+\+Table\+Entry\+::parent\+Handle}
+
+Soft-\/pointer ID/handle to owner object, code 330 \mbox{\Hypertarget{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}\label{class_d_r_w___table_entry_a4ceb84db2231dcc1c3070e5825966a0d}} 
+\index{DRW\_TableEntry@{DRW\_TableEntry}!tType@{tType}}
+\index{tType@{tType}!DRW\_TableEntry@{DRW\_TableEntry}}
+\doxysubsubsection{\texorpdfstring{tType}{tType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespace_d_r_w_a3349c66d5ed2c0f8ae7c6fc02072e4d5}{DRW\+::\+TTYPE}} DRW\+\_\+\+Table\+Entry\+::t\+Type}
+
+enum\+: entity type, code 0 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8h}{drw\+\_\+objects.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vdxf/libdxfrw/\mbox{\hyperlink{drw__objects_8cpp}{drw\+\_\+objects.\+cpp}}\end{DoxyCompactItemize}

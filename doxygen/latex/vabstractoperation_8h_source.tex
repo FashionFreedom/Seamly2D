@@ -1,0 +1,254 @@
+\hypertarget{vabstractoperation_8h_source}{}\doxysection{vabstractoperation.\+h}
+\label{vabstractoperation_8h_source}\index{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/operation/vabstractoperation.h@{D:/Github/Seamly2D/src/libs/vtools/tools/drawTools/operation/vabstractoperation.h}}
+\mbox{\hyperlink{vabstractoperation_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 12\ 9,\ 2016}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2016\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VABSTRACTOPERATION\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VABSTRACTOPERATION\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QtGlobal>}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#include\ <qcompilerdetection.h>}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#include\ <QMap>}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#include\ <QMetaObject>}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#include\ <QObject>}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#include\ <QString>}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#include\ <QVector>}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ <QGraphicsLineItem>}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#include\ "{}../vdrawtool.h"{}}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vsimplecurve.h"{}}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#include\ "{}../vwidgets/vsimplepoint.h"{}}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_source_item}{SourceItem}}}
+\DoxyCodeLine{00069\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ quint32\ \textcolor{keywordtype}{id}\{\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\_ID}}\};}
+\DoxyCodeLine{00071\ \ \ \ \ QString\ \mbox{\hyperlink{struct_source_item_acbdcf1e0efb9941f3944f491a573ed0a}{alias}}\{QString()\};}
+\DoxyCodeLine{00072\ \ \ \ \ QString\ \mbox{\hyperlink{struct_source_item_a712a2194ff47d3c1661d9c3268e7e1b8}{lineType}}\{\textcolor{stringliteral}{"{}solidLine"{}}\};}
+\DoxyCodeLine{00073\ \ \ \ \ QString\ \mbox{\hyperlink{struct_source_item_ab4051ddf7906eee02320acbb103d735c}{lineWidth}}\{\textcolor{stringliteral}{"{}1.00"{}}\};}
+\DoxyCodeLine{00074\ \ \ \ \ QString\ \mbox{\hyperlink{struct_source_item_a56eb318c4f3c385757975f3ebb86493a}{color}}\{\textcolor{stringliteral}{"{}black"{}}\};}
+\DoxyCodeLine{00075\ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ Q\_DECLARE\_METATYPE(\mbox{\hyperlink{struct_source_item}{SourceItem}})}
+\DoxyCodeLine{00078\ \mbox{\hyperlink{vabstractoperation_8h_a7e4314c1af29842420dc251123deb1a3}{Q\_DECLARE\_TYPEINFO}}(\mbox{\hyperlink{struct_source_item}{SourceItem}},\ Q\_MOVABLE\_TYPE);}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \mbox{\hyperlink{class_q_vector}{QVector}}<quint32>\ \ \ \ \ \mbox{\hyperlink{vabstractoperation_8h_af21d58a08c40db5aed655f8882e6cef6}{sourceToObjects}}(const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_source_item}{SourceItem}}>\ \&source);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ struct\ \mbox{\hyperlink{struct_destination_item}{DestinationItem}}}
+\DoxyCodeLine{00083\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ quint32\ \textcolor{keywordtype}{id}\{0\};}
+\DoxyCodeLine{00085\ \ \ \ \ qreal\ mx\{1\};}
+\DoxyCodeLine{00086\ \ \ \ \ qreal\ my\{1\};}
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ showPointName\{\textcolor{keyword}{true}\};}
+\DoxyCodeLine{00088\ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{//\ FIXME.\ I\ don't\ know\ how\ to\ use\ QGraphicsItem\ properly,\ so\ just\ took\ first\ available\ finished\ class.}}
+\DoxyCodeLine{00091\ \textcolor{comment}{//\ QGraphicsItem\ itself\ produce\ case\ where\ clicking\ on\ empty\ space\ produce\ call\ to\ QGraphicsItem.}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ And\ i\ don't\ know\ how\ to\ fix\ it.}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_v_abstract_operation}{VAbstractOperation}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_v_draw_tool}{VDrawTool}},\ \textcolor{keyword}{public}\ QGraphicsLineItem}
+\DoxyCodeLine{00094\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ Fix\ warning\ "{}Class\ implements\ the\ interface\ QGraphicsItem\ but\ does\ not\ list\ it}}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{comment}{//\ in\ Q\_INTERFACES.\ qobject\_cast\ to\ QGraphicsItem\ will\ not\ work!"{}}}
+\DoxyCodeLine{00098\ \ \ \ \ Q\_INTERFACES(QGraphicsItem)}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{virtual}\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a11d3eb1b736f458392684e32d64d721c}{\string~VAbstractOperation}}()\ Q\_DECL\_EQ\_DEFAULT;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_operation_a50fe4cc317215b1cb13db158bf8e61f4}{TagItem}};}
+\DoxyCodeLine{00104\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_operation_acb0723a66b1755ffce7ede29a24aa66e}{TagSource}};}
+\DoxyCodeLine{00105\ \ \ \ \ static\ const\ QString\ \mbox{\hyperlink{class_v_abstract_operation_a3756aa9875a51ebaf78f90ee5113a7c2}{TagDestination}};}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ virtual\ QString\ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ae6811501562ef2fbc96215fe92f0c935}{getTagName}}()\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a5ecb225f6a0748691cc5719e679ffb67}{Suffix}}()\ const;}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a90e22eb5f0db615248ace4b97827d816}{setSuffix}}(const\ QString\ \&\mbox{\hyperlink{class_v_abstract_operation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a9d1896119c335b5e127aeaaa936a8cf8}{GroupVisibility}}(quint32\ \textcolor{keywordtype}{object},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00113\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a3adbb087f483750c51f717355c362a0f}{paint}}(QPainter\ *painter,\ const\ QStyleOptionGraphicsItem\ *option,\ QWidget\ *widget)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ virtual\ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ad73e132904ef1e840e8135329acb825c}{isPointNameVisible}}(quint32\ \textcolor{keywordtype}{id})\ const\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00116\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ad3f720c1c31edf913c95653697b0d72a}{setPointNameVisiblity}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a274c7b952f9c4f39fd357cf90c2f0c12}{setPointNamePosition}}(quint32\ \textcolor{keywordtype}{id},\ const\ QPointF\ \&pos)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a69af12f2a15653bbb7cbb47e796448d5}{ExtractData}}(const\ QDomElement\ \&domElement,\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_source_item}{SourceItem}}>\ \&\mbox{\hyperlink{class_v_abstract_operation_a32ebf1e51b611edcfea02644f4e00b38}{source}},}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_destination_item}{DestinationItem}}>\ \&\mbox{\hyperlink{class_v_abstract_operation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ public\ slots:}
+\DoxyCodeLine{00124\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a081ff794ffcb84697f6e9f894e2f1418}{FullUpdateFromFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a03b6e0b4b292010a10e9d5536fc20d05}{AllowHover}}(\textcolor{keywordtype}{bool}\ enabled)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00127\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a78a51fae11f13996cdb1c57927ee27b8}{AllowSelecting}}(\textcolor{keywordtype}{bool}\ enabled)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00128\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ac09e475132898fb05d842076374d8e8a}{EnableToolMove}}(\textcolor{keywordtype}{bool}\ move)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ab01bad83d9a61a8ae580ae94ca7f2d65}{AllowPointHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a683d226e956e6d793819f01d5525e94a}{AllowPointSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a97538719c3a7addfbd296655435fd6d8}{AllowPointLabelHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a62e377a88133ed2d502268cfeb7e3472}{AllowPointLabelSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_aa11d2b45aea2684f7770320120dbd03c}{AllowSplineHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00137\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_aef335d89e0c63bf9f0e417ab40c2e16f}{AllowSplineSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a854a0877266cc8114dddafba966ac495}{AllowSplinePathHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ad4d78046c829eda69bd837a31aae8377}{AllowSplinePathSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a452ac57cee944d64fbcbeca9e43c0cb8}{AllowArcHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a00bb3cd6f1581d472cd7633461c4f903}{AllowArcSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_af9853eeddc968b7fbc4b0aec079db200}{AllowElArcHover}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a3260c8913efcb469c9a68243aa0fdfcf}{AllowElArcSelecting}}(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a0faca8af234d1e3926aac6dcb6b5ca1a}{ToolSelectionType}}(const\ \mbox{\hyperlink{def_8h_ab8c951c98d26f226ee3fd55d9e80a241}{SelectionType}}\ \&type)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00149\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a7bdde26e2001ec7a55513da0f43aa6ed}{Disable}}(\textcolor{keywordtype}{bool}\ disable,\ const\ QString\ \&draftBlockName)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a828d50958e48bbacb9d9b2e79e182142}{ObjectSelected}}(\textcolor{keywordtype}{bool}\ selected,\ quint32\ objId);}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_abcb9513c6905562264a95a19b310be51}{deletePoint}}();}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a438b93dc4f74e7133d35c26f8d9c69f8}{pointNamePositionChanged}}(const\ QPointF\ \&pos,\ quint32\ labelId);}
+\DoxyCodeLine{00153\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ad649087b44b61abc1fd96aa25e8ebc32}{updatePointNameVisibility}}(quint32\ \textcolor{keywordtype}{id},\ \textcolor{keywordtype}{bool}\ visible)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ protected:}
+\DoxyCodeLine{00157\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}};}
+\DoxyCodeLine{00158\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_source_item}{SourceItem}}>\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a32ebf1e51b611edcfea02644f4e00b38}{source}};}
+\DoxyCodeLine{00159\ \ \ \ \ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_destination_item}{DestinationItem}}>\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}};}
+\DoxyCodeLine{00160\ \ \ \ \ \mbox{\hyperlink{class_q_map}{QMap}}<quint32,\ \mbox{\hyperlink{class_v_abstract_simple}{VAbstractSimple}}\ *>\ \mbox{\hyperlink{class_v_abstract_operation_a158c102f9fd61a3209edcfecd7af04db}{operatedObjects}};}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation}{VAbstractOperation}}(\mbox{\hyperlink{class_v_abstract_pattern}{VAbstractPattern}}\ *\mbox{\hyperlink{class_v_abstract_tool_a1450602260f8910092f2b3eeba8caaf1}{doc}},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ quint32\ \textcolor{keywordtype}{id},}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ QString\ \&\mbox{\hyperlink{class_v_abstract_operation_a8014c2b8b09588353ae8f1e5290ab57f}{suffix}},\ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_source_item}{SourceItem}}>\ \&\mbox{\hyperlink{class_v_abstract_operation_a32ebf1e51b611edcfea02644f4e00b38}{source}},}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ const\ \mbox{\hyperlink{class_q_vector}{QVector}}<\mbox{\hyperlink{struct_destination_item}{DestinationItem}}>\ \&\mbox{\hyperlink{class_v_abstract_operation_ac236d46103710e9fdb8d7cd4c92b83fe}{destination}},}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ QGraphicsItem\ *parent\ =\ \textcolor{keywordtype}{nullptr});}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a3488839503157457a43266614ac8502a}{AddToFile}}()\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00168\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a90699b27c2b71ae695661c98f1125ece}{ReadToolAttributes}}(const\ QDomElement\ \&domElement)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00169\ \ \ \ \ virtual\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a0ac2d9f9cc3218f3736d621ff7145f40}{SaveOptions}}(QDomElement\ \&tag,\ \mbox{\hyperlink{class_q_shared_pointer}{QSharedPointer}}<\mbox{\hyperlink{class_v_g_object}{VGObject}}>\ \&obj)\ Q\_DECL\_OVERRIDE;}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \textcolor{comment}{//virtual\ void\ \ \ \ \ \ \ \ \ updatePointNameVisibility(quint32\ id,\ bool\ visible)\ Q\_DECL\_OVERRIDE;}}
+\DoxyCodeLine{00173\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a23bec697d687ee362e8a0ad2bddda052}{updatePointNamePosition}}(quint32\ \textcolor{keywordtype}{id},\ const\ QPointF\ \&pos);}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a5c2e51bad743404e2441ce70556254dc}{SaveSourceDestination}}(QDomElement\ \&tag);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00178\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a840a25bafb09b44bd517f0f464297c7e}{ShowToolVisualization}}(\textcolor{keywordtype}{bool}\ show);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_af557ca3465b2a72087d3ccee5d32f0b1}{InitCurve}}(quint32\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{class_v_container}{VContainer}}\ *\mbox{\hyperlink{class_v_data_tool_ae5821c7d864b5495e5e6d9868f516137}{data}},\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ curveType,\ \mbox{\hyperlink{def_8h_a74373d9b05edd25d6786a07d0130a2af}{SceneObject}}\ sceneType);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ template\ <typename\ T>}
+\DoxyCodeLine{00183\ \ \ \ \ static\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a45bbe90a890d74868ab602472b6c6a79}{initOperationToolConnections}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ T\ *tool);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a87dae16379a82f7e7ec456b6677b6c22}{InitOperatedObjects}}();}
+\DoxyCodeLine{00186\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_aa85e5cc38ba47f9be4ec0a0c20ccb9b5}{complexPointToolTip}}(quint32\ itemId)\ const;}
+\DoxyCodeLine{00187\ \ \ \ \ QString\ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_ad8bb6b3321ee60ad5860adf92343c16d}{complexCurveToolTip}}(quint32\ itemId)\ const;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ private:}
+\DoxyCodeLine{00190\ \ \ \ \ Q\_DISABLE\_COPY(\mbox{\hyperlink{class_v_abstract_operation}{VAbstractOperation}})}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_adf817b79fa39252b3bfa6de2fd987fbc}{AllowCurveHover}}(\textcolor{keywordtype}{bool}\ enabled,\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ type);}
+\DoxyCodeLine{00193\ \ \ \ \ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_operation_a77f4fc36571f724a0ce956f8cdd957f3}{AllowCurveSelecting}}(\textcolor{keywordtype}{bool}\ enabled,\ \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}}\ type);}
+\DoxyCodeLine{00194\ \};}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00196\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00197\ template\ <typename\ T>}
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_abstract_operation}{VAbstractOperation}}::\mbox{\hyperlink{class_v_abstract_operation_a840a25bafb09b44bd517f0f464297c7e}{ShowToolVisualization}}(\textcolor{keywordtype}{bool}\ show)}
+\DoxyCodeLine{00199\ \{}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordflow}{if}\ (show)}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}.isNull())}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ AddVisualization<T>();}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_v_abstract_tool_ae0f2dd6754377053294a98097b3c89ba}{SetVisualization}}();}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (T\ *visual\ =\ qobject\_cast<T\ *>(\mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}}))}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ visual-\/>show();}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00216\ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ \mbox{\hyperlink{class_v_abstract_tool_a29a9f6531c76793ff6f079def1160c06}{vis}};}
+\DoxyCodeLine{00218\ \ \ \ \ \}}
+\DoxyCodeLine{00219\ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00222\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00223\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_v_abstract_operation_a45bbe90a890d74868ab602472b6c6a79}{VAbstractOperation::initOperationToolConnections}}(\mbox{\hyperlink{class_v_main_graphics_scene}{VMainGraphicsScene}}\ *scene,\ T\ *tool)}
+\DoxyCodeLine{00224\ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(scene\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00226\ \ \ \ \ \mbox{\hyperlink{def_8h_a0f58c1b57bda3c300da3e175201e543c}{SCASSERT}}(tool\ !=\ \textcolor{keyword}{nullptr})}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00228\ \ \ \ \ \mbox{\hyperlink{class_v_draw_tool_a6d590439bfc06504ba7f7aa0cda0fed5}{InitDrawToolConnections}}(scene,\ tool);}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00230\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a52fc497e2db6da1bc3155577c591b696}{VMainGraphicsScene::EnablePointItemHover}},\ \ \ \ \ \ \ \ \ \ tool,\ \&T::AllowPointHover);}
+\DoxyCodeLine{00231\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a1affc6f2e15094225104869a08a32e88}{VMainGraphicsScene::EnablePointItemSelection}},\ \ \ \ \ \ tool,\ \&T::AllowPointSelecting);}
+\DoxyCodeLine{00232\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a6fd8d9398794d8c8d3bc08f555d1fa72}{VMainGraphicsScene::enableTextItemHover}},\ \ \ \ \ \ \ \ \ \ \ tool,\ \&T::AllowPointLabelHover);}
+\DoxyCodeLine{00233\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a2a0a7de6ef4ec857e620a28f68122326}{VMainGraphicsScene::enableTextItemSelection}},\ \ \ \ \ \ \ tool,\ \&T::AllowPointLabelSelecting);}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_ada33ba877c771ed73f56c1e59f42ed92}{VMainGraphicsScene::EnableSplineItemHover}},\ \ \ \ \ \ \ \ \ tool,\ \&T::AllowSplineHover);}
+\DoxyCodeLine{00236\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a317aea467fd5e7a36b4c3537cd2ebcf0}{VMainGraphicsScene::EnableSplineItemSelection}},\ \ \ \ \ tool,\ \&T::AllowSplineSelecting);}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a05746c1d15375a7c3a219c183064cd21}{VMainGraphicsScene::EnableSplinePathItemHover}},\ \ \ \ \ tool,\ \&T::AllowSplinePathHover);}
+\DoxyCodeLine{00239\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_add671f0587ddf3c1202ea36f396baa52}{VMainGraphicsScene::EnableSplinePathItemSelection}},\ tool,\ \&T::AllowSplinePathSelecting);}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00241\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a19a01efc8514aa968692f146ba464006}{VMainGraphicsScene::EnableArcItemHover}},\ \ \ \ \ \ \ \ \ \ \ \ tool,\ \&T::AllowArcHover);}
+\DoxyCodeLine{00242\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a686042c96f27e96bfe6b2159964bc85d}{VMainGraphicsScene::EnableArcItemSelection}},\ \ \ \ \ \ \ \ tool,\ \&T::AllowArcSelecting);}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a1b8cd52f554e6fb740cded1d9f16234c}{VMainGraphicsScene::EnableElArcItemHover}},\ \ \ \ \ \ \ \ \ \ tool,\ \&T::AllowElArcHover);}
+\DoxyCodeLine{00245\ \ \ \ \ QObject::connect(scene,\ \&\mbox{\hyperlink{class_v_main_graphics_scene_a84db6ba11b5dfdde3767cc08eb267bd7}{VMainGraphicsScene::EnableElArcItemSelection}},\ \ \ \ \ \ tool,\ \&T::AllowElArcSelecting);}
+\DoxyCodeLine{00246\ \}}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VABSTRACTOPERATION\_H}}
+
+\end{DoxyCode}

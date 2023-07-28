@@ -1,0 +1,908 @@
+\hypertarget{class_v_spline}{}\doxysection{VSpline Class Reference}
+\label{class_v_spline}\index{VSpline@{VSpline}}
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} class that implements the spline.  
+
+
+
+
+{\ttfamily \#include $<$vspline.\+h$>$}
+
+Inheritance diagram for VSpline\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_v_spline}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_spline_a50fbd6d37b78bd0e73cdcebf29355ddf}{VSpline}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline}{VSpline}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_spline_a5f21318c0cfeb000d19af0aa6c59476d}{VSpline}} (const \mbox{\hyperlink{class_v_spline}{VSpline}} \&spline)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline}{VSpline}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_spline_abc54670ba5296597874aa39c0e11ab29}{VSpline}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p1, const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p4, qreal angle1, qreal angle2, qreal k\+Asm1, qreal k\+Asm2, qreal k\+Curve, quint32 id\+Object=0, \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline}{VSpline}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_spline_ace181a450c39369c82667f23ff52d61c}{VSpline}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p1, const QPointF \&p2, const QPointF \&p3, const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p4, quint32 id\+Object=0, \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline}{VSpline}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_spline_ae7a1c1906c5d9fd7c37151879c9eeabe}{VSpline}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p1, const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p4, qreal angle1, const QString \&angle1\+Formula, qreal angle2, const QString \&angle2\+Formula, qreal c1\+Length, const QString \&c1\+Length\+Formula, qreal c2\+Length, const QString \&c2\+Length\+Formula, quint32 id\+Object=0, \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline}{VSpline}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_spline}{VSpline}} \mbox{\hyperlink{class_v_spline_a1a8b8b00466efd22a7c3e4262c05a615}{Rotate}} (const QPointF \&origin\+Point, qreal degrees, const QString \&prefix=QString()) const
+\item 
+\mbox{\hyperlink{class_v_spline}{VSpline}} \mbox{\hyperlink{class_v_spline_a6c1dc88b5feeafc9876f1c49c94cbdbf}{Flip}} (const QLineF \&axis, const QString \&prefix=QString()) const
+\item 
+\mbox{\hyperlink{class_v_spline}{VSpline}} \mbox{\hyperlink{class_v_spline_ac67dd33551a5afcdbc038257ba266f2a}{Move}} (qreal length, qreal angle, const QString \&prefix=QString()) const
+\item 
+virtual \mbox{\hyperlink{class_v_spline_a61be49e4eeb4613c091f1b6707a0940b}{$\sim$\+VSpline}} ()
+\item 
+\mbox{\hyperlink{class_v_spline}{VSpline}} \& \mbox{\hyperlink{class_v_spline_a549938ad2736ad4d75b47460785837a0}{operator=}} (const \mbox{\hyperlink{class_v_spline}{VSpline}} \&spline)
+\item 
+void \mbox{\hyperlink{class_v_spline_ab8b9313a5d0d5363d143281c9d82f599}{Swap}} (\mbox{\hyperlink{class_v_spline}{VSpline}} \&spline) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_spline_a74ed61017732efce34e150c53c3dc043}{Get\+P1}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+P1 return first spline point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_spline_a634354a052215bad9dfb5fc9c43b9ea7}{Set\+P1}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p)
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_spline_a7bbb4cecb3a59b49eda657bcf602bf50}{Get\+P2}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+P2 return first control point. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_spline_ac1068b0a4b15f72c30e106126585cf21}{Get\+P3}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+P3 return second control point. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_spline_a2f557ddbcfd97242dc1f3775f569fdb4}{Get\+P4}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+P4 return last spline point. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_spline_a300f53b950784afa26e57c7b727c5794}{Set\+P4}} (const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&p)
+\item 
+virtual qreal \mbox{\hyperlink{class_v_spline_a54fd121ab6945727c63114ebf2037b79}{Get\+Start\+Angle}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+Angle1 return first angle control line. \end{DoxyCompactList}\item 
+virtual qreal \mbox{\hyperlink{class_v_spline_add9aaf30fd8f8c546691b89d059e75fb}{Get\+End\+Angle}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+Angle2 return second angle control line. \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{class_v_spline_a80a38b1a78329c4209a6f62eca5f923e}{Get\+Start\+Angle\+Formula}} () const
+\item 
+QString \mbox{\hyperlink{class_v_spline_a9e2f07b11a0c5a0ff1f476df61f18a4b}{Get\+End\+Angle\+Formula}} () const
+\item 
+void \mbox{\hyperlink{class_v_spline_ad2d57da43a80759adbae6d9bc4f11668}{Set\+Start\+Angle}} (qreal angle, const QString \&formula)
+\item 
+void \mbox{\hyperlink{class_v_spline_ae20ed844c9bf04c31b2177adf563ed98}{Set\+End\+Angle}} (qreal angle, const QString \&formula)
+\item 
+virtual qreal \mbox{\hyperlink{class_v_spline_aa7a818f79b40c9a00deaf0f588f29dc7}{Get\+C1\+Length}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual qreal \mbox{\hyperlink{class_v_spline_a2ac55a090af7095cd9ca12d5088d5d66}{Get\+C2\+Length}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+QString \mbox{\hyperlink{class_v_spline_a44290488476800dd62d217e7fc9f6e58}{Get\+C1\+Length\+Formula}} () const
+\item 
+QString \mbox{\hyperlink{class_v_spline_ac30c97e696947f5d1609b7424bcc8ecc}{Get\+C2\+Length\+Formula}} () const
+\item 
+void \mbox{\hyperlink{class_v_spline_a3d9ce27fa6952133b74c806bfb406ae3}{Set\+C1\+Length}} (qreal length, const QString \&formula)
+\item 
+void \mbox{\hyperlink{class_v_spline_a53a31cdec486b8094f9add548e08521d}{Set\+C2\+Length}} (qreal length, const QString \&formula)
+\item 
+virtual qreal \mbox{\hyperlink{class_v_spline_a08a756ba3d3a6ca99fd17b534d47d383}{Get\+Length}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+Length return length of spline. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_spline_a9ee358807b91dabca90a670f5c718c44}{Get\+Kasm1}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Kasm1 return coefficient of length first control line. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_spline_af8b4544953df807429cf9b0423aeb379}{Get\+Kasm2}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Kasm2 return coefficient of length second control line. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_spline_a516ced12a83d0ff9e02e37c606755801}{Get\+Kcurve}} () const
+\begin{DoxyCompactList}\small\item\em Get\+Kcurve return coefficient of curvature spline. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_v_spline_a0042c581021a9c930b08c05a97fc4e4a}{Cut\+Spline}} (qreal length, \mbox{\hyperlink{class_v_spline}{VSpline}} \&spl1, \mbox{\hyperlink{class_v_spline}{VSpline}} \&spl2) const
+\item 
+virtual \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_spline_ad3c62960c23928a9ab7265fd8774f5a5}{get\+Points}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\begin{DoxyCompactList}\small\item\em Get\+Points return list with spline points. \end{DoxyCompactList}\item 
+qreal \mbox{\hyperlink{class_v_spline_a6688d7e49f9277039cfeed357a62268d}{ParamT}} (const QPointF \&p\+Bt) const
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_spline_a6688d7e49f9277039cfeed357a62268d}{VSpline\+::\+ParamT}} calculate t coeffient that reprezent point on curve. \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_v_spline_aa357988e7d0c8686a329225ec03ec794}{Cut\+Spline}} (qreal length, QPointF \&spl1p2, QPointF \&spl1p3, QPointF \&spl2p2, QPointF \&spl2p3) const
+\begin{DoxyCompactList}\small\item\em Cut\+Spline cut spline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_cubic_bezier_a7abb30f775126bce3f87e0a9edacf73a}{VAbstract\+Cubic\+Bezier}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\item 
+\mbox{\hyperlink{class_v_abstract_cubic_bezier_a6821a8cd9c8e88b40873bc3cbb07086a}{VAbstract\+Cubic\+Bezier}} (const \mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}} \&curve)
+\item 
+\mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}} \& \mbox{\hyperlink{class_v_abstract_cubic_bezier_a1b2d6c7b854a6ee08d874e4307bd1ece}{operator=}} (const \mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}} \&curve)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_cubic_bezier_aec748525f5d01ae99a106aec4f507776}{$\sim$\+VAbstract\+Cubic\+Bezier}} ()
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_abstract_cubic_bezier_a278f808b16778d6a9cf53d3559de5a0e}{Get\+P1}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa7fe08f15b79fefe316de0903b9f45aa}{Get\+P2}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_abstract_cubic_bezier_a80da5defeb82d04a07a1d3bcc0150bb8}{Get\+P3}} () const =0
+\item 
+virtual \mbox{\hyperlink{class_v_point_f}{VPointF}} \mbox{\hyperlink{class_v_abstract_cubic_bezier_ae2c54b1599c35358b3ebe6beff43111f}{Get\+P4}} () const =0
+\item 
+QPointF \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa357988e7d0c8686a329225ec03ec794}{Cut\+Spline}} (qreal length, QPointF \&spl1p2, QPointF \&spl1p3, QPointF \&spl2p2, QPointF \&spl2p3) const
+\begin{DoxyCompactList}\small\item\em Cut\+Spline cut spline. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_cubic_bezier_ae09d801797845306273a65ad5b0b0dca}{Name\+For\+History}} (const QString \&tool\+Name) const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_cubic_bezier_a82ebd5a0d5100ac69418c01fa89ff84e}{Get\+ParmT}} (qreal length) const
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_cubic_bezier_a44b9e4905deaa22da9437a5f2112e944}{LengthT}} (qreal t) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_bezier_ad6da9b14ee6e6d36311e47751b992271}{VAbstract\+Bezier}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\item 
+\mbox{\hyperlink{class_v_abstract_bezier_aedf4a48ee6e6082ae541b91426b1a17f}{VAbstract\+Bezier}} (const \mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}} \&curve)
+\item 
+\mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}} \& \mbox{\hyperlink{class_v_abstract_bezier_a75fce9c9e6d26d6d37727dcfd1ce7495}{operator=}} (const \mbox{\hyperlink{class_v_abstract_bezier}{VAbstract\+Bezier}} \&curve)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_bezier_a882403506b8b351a4210f0b3659b22ee}{$\sim$\+VAbstract\+Bezier}} ()
+\item 
+virtual qreal \mbox{\hyperlink{class_v_abstract_bezier_a8c3423be80a9c7d7e1b813984912f2cf}{Get\+C1\+Length}} () const =0
+\item 
+virtual qreal \mbox{\hyperlink{class_v_abstract_bezier_a6ff25839cdd90bd7823e6c0dae997751}{Get\+C2\+Length}} () const =0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_abstract_curve_ad835d65a304cf632107a25bac5a90264}{VAbstract\+Curve}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=\mbox{\hyperlink{ifcdef_8h_a59d6223ecf7b4cea9bdae1e3db83c5ff}{NULL\+\_\+\+ID}}, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\item 
+\mbox{\hyperlink{class_v_abstract_curve_aca9c2638a83f769da4da2718d05b8939}{VAbstract\+Curve}} (const \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} \&curve)
+\item 
+virtual \mbox{\hyperlink{class_v_abstract_curve_a2b29c50a680b4ee96a7a69d6f297bc45}{$\sim$\+VAbstract\+Curve}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+\mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} \& \mbox{\hyperlink{class_v_abstract_curve_a62d07e31d603007ec98efb25a481a037}{operator=}} (const \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} \&curve)
+\item 
+void \mbox{\hyperlink{class_v_abstract_curve_abbf277b50160aec019beacd3e5c8ae23}{Swap}} (\mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}} \&curve) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+virtual \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_curve_a5c3d65541c4e36c16885d6f48df0e672}{get\+Points}} () const =0
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_curve_ae7ff9de9e8dfe79fd6844f1ad89c8fe4}{Get\+Segment\+Points}} (const QPointF \&begin, const QPointF \&end, bool reverse=false) const
+\item 
+virtual QPainter\+Path \mbox{\hyperlink{class_v_abstract_curve_ac36e029e368e2c4dabb6f7ae61a4d725}{Get\+Path}} () const
+\item 
+virtual qreal \mbox{\hyperlink{class_v_abstract_curve_aeaa28efd8cdaa6c8df14dea9e20caa84}{Get\+Length}} () const =0
+\item 
+qreal \mbox{\hyperlink{class_v_abstract_curve_ad189c63cf644865240b2c200c9450f19}{Get\+Length\+By\+Point}} (const QPointF \&point) const
+\item 
+virtual \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_curve_a2da2f37f84c53206194a8eef06932918}{Intersect\+Line}} (const QLineF \&line) const
+\begin{DoxyCompactList}\small\item\em Intersect\+Line return list of points for real intersection with line. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_v_abstract_curve_a9e2dad7ce0d3fa6f810df77220beea4c}{Is\+Intersect\+Line}} (const QLineF \&line) const
+\item 
+bool \mbox{\hyperlink{class_v_abstract_curve_a3b7538aab0c072229bff8590b61d7d4f}{is\+Point\+On\+Curve}} (const QPointF \&p) const
+\item 
+virtual qreal \mbox{\hyperlink{class_v_abstract_curve_a6595c8b68d9439dc244d978b23d08ef0}{Get\+Start\+Angle}} () const =0
+\item 
+virtual qreal \mbox{\hyperlink{class_v_abstract_curve_a1256a0bd9fd6d262e5b62e5bf04dde63}{Get\+End\+Angle}} () const =0
+\item 
+quint32 \mbox{\hyperlink{class_v_abstract_curve_aa9a0a12abba8ba2fa6a58ed3748f94ae}{Get\+Duplicate}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_curve_a20278c901fc52aad20ea2d5d7ff9c28b}{Set\+Duplicate}} (quint32 number)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_curve_acbd25f3ba15d540f70a484089b069c1f}{get\+Line\+Color}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_curve_a7a336e7a2d94774dbb6af5ee615d4590}{set\+Line\+Color}} (const QString \&color)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_curve_aa5bb27460f8cebf1d322ea7ca6184512}{Get\+Pen\+Style}} () const
+\item 
+void \mbox{\hyperlink{class_v_abstract_curve_a3f206665041415e095cebf9548cfd187}{Set\+Pen\+Style}} (const QString \&pen\+Style)
+\item 
+QString \mbox{\hyperlink{class_v_abstract_curve_a19b9bd53186d2cbd96aedb621b25cd56}{get\+Line\+Weight}} () const
+\begin{DoxyCompactList}\small\item\em get\+Line\+Weight return weight of the lines \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_abstract_curve_aa47205333a5e90bfe50aabe40044ef62}{set\+Line\+Weight}} (const QString \&line\+Weight)
+\begin{DoxyCompactList}\small\item\em set\+Line\+Weight set weight of the lines \end{DoxyCompactList}\item 
+QPointF \mbox{\hyperlink{class_v_abstract_curve_af949cec394cf58849a3f4187ab107c02}{get\+First\+Point}} ()
+\item 
+QPointF \mbox{\hyperlink{class_v_abstract_curve_a1923048ce52373c7dd3e1d568d9a17d7}{get\+Last\+Point}} ()
+\item 
+virtual QString \mbox{\hyperlink{class_v_abstract_curve_a9e66a5ba91def402a81fbeb5e3535780}{Name\+For\+History}} (const QString \&tool\+Name) const =0
+\item 
+virtual \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \mbox{\hyperlink{class_v_abstract_curve_a26ccfec5b5a94a07205945a3e56e9d80}{Direction\+Arrows}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_v_g_object_a290ccb753f6a061bbb263d6c2879dfdf}{VGObject}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_g_object_af54a936c1fcd8431e88ed25e9a473027}{VGObject}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type, const quint32 \&id\+Object=0, const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&mode=Draw\+::\+Calculation)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_v_g_object_a5b3e92a581ef188fa7dd2977f3c5c3e8}{VGObject}} (const \mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_v_g_object}{VGObject}} copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_v_g_object_a86f1f3ecec079f581b615ef4c5ab2498}{$\sim$\+VGObject}} ()
+\item 
+\mbox{\hyperlink{class_v_g_object}{VGObject}} \& \mbox{\hyperlink{class_v_g_object_a3ffc95524099af4edd57b017863fed61}{operator=}} (const \mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj)
+\begin{DoxyCompactList}\small\item\em operator = assignment operator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_ab487dac4a019d27636e498278363f03b}{Swap}} (\mbox{\hyperlink{class_v_g_object}{VGObject}} \&obj) Q\+\_\+\+DECL\+\_\+\+NOTHROW
+\item 
+quint32 \mbox{\hyperlink{class_v_g_object_ab615b0fb0db689f92cd9c562329cc52b}{get\+Id\+Object}} () const
+\begin{DoxyCompactList}\small\item\em get\+Id\+Object return parent id. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a1a0486d2fe696c580a1c4d31c7097eb0}{set\+Id\+Object}} (const quint32 \&value)
+\begin{DoxyCompactList}\small\item\em set\+Id\+Object set parent id. \end{DoxyCompactList}\item 
+virtual QString \mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}} () const
+\begin{DoxyCompactList}\small\item\em name return name graphical object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_ac52a0bdf810d43fb282f65a58933ea75}{set\+Name}} (const QString \&\mbox{\hyperlink{class_v_g_object_a3015e9c2e0dda69cd4a81e1f25dc1263}{name}})
+\begin{DoxyCompactList}\small\item\em set\+Name set name graphical object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \mbox{\hyperlink{class_v_g_object_adb3c731522d5eb353f32ded63c2f3d0a}{get\+Mode}} () const
+\begin{DoxyCompactList}\small\item\em get\+Mode return mode creation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a1246f01103985c75f71698e60ddcccfa}{set\+Mode}} (const \mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}} \&value)
+\begin{DoxyCompactList}\small\item\em set\+Mode set mode creation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \mbox{\hyperlink{class_v_g_object_a0af4987353bc1def71cfbd2087824764}{get\+Type}} () const
+\begin{DoxyCompactList}\small\item\em get\+Type return object type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_v_g_object_a163fca66a2e581abc8a6511156bc766e}{set\+Type}} (const \mbox{\hyperlink{vgeometrydef_8h_a6bf870a878c696639c3936fa7e9729b9}{GOType}} \&type)
+\item 
+quint32 \mbox{\hyperlink{class_v_g_object_adc4efb22ae87dbb029f586f0bc2a074c}{id}} () const
+\begin{DoxyCompactList}\small\item\em id return id object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_v_g_object_ae7856ac9f6974ee8e0c517f6887bd15b}{set\+Id}} (const quint32 \&\mbox{\hyperlink{class_v_g_object_adc4efb22ae87dbb029f586f0bc2a074c}{id}})
+\begin{DoxyCompactList}\small\item\em set\+Id set id object. \end{DoxyCompactList}\item 
+quint32 \mbox{\hyperlink{class_v_g_object_af594a1eb7fb163a99194f5d5b02ffcf7}{get\+Id\+Tool}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_spline_a9f202f0081c9af0b62bb7a3d594fe863}{Spline\+Points}} (const QPointF \&p1, const QPointF \&p4, qreal angle1, qreal angle2, qreal k\+Asm1, qreal k\+Asm2, qreal k\+Curve)
+\begin{DoxyCompactList}\small\item\em Spline\+Points return list with spline points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_curve_af9fe3eb5d8107c14439457e011f362f4}{Get\+Segment\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points, const QPointF \&begin, const QPointF \&end, bool reverse=false)
+\item 
+static bool \mbox{\hyperlink{class_v_abstract_curve_ad85b584734fec457d814e1f393112281}{is\+Point\+On\+Curve}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points, const QPointF \&p)
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_curve_a3cef373a0a183221cae5045a9de40c15}{Path\+Length}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&path)
+\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_curve_add4dbdfb3f8927551ef426172dbfc9b5}{Curve\+Intersect\+Line}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&points, const QLineF \&line)
+\item 
+static QPainter\+Path \mbox{\hyperlink{class_v_abstract_curve_ae315ec3607fae6594d44d988b6045040}{Show\+Direction}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ \mbox{\hyperlink{vabstractcurve_8h_aa508535fe35f6c21c132b151708b8542}{Direction\+Arrow}} $>$ \&arrows, qreal width)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_aab2d01aac093c13430d5119abbd52764}{Build\+Line}} (const QPointF \&p1, const qreal \&length, const qreal \&angle)
+\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_a7e896d2c79a25c2e50df967c6a8b597b}{Build\+Ray}} (const QPointF \&first\+Point, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_a1e04049160703519875f9647f238eb9c}{Build\+Axis}} (const QPointF \&p, const qreal \&angle, const QRectF \&sc\+Rect)
+\item 
+static QLineF \mbox{\hyperlink{class_v_g_object_a1ef91cb41647e4bd5a93da616ed5e645}{Build\+Axis}} (const QPointF \&p1, const QPointF \&p2, const QRectF \&sc\+Rect)
+\item 
+static int \mbox{\hyperlink{class_v_g_object_af4b00190bf3d6d98addbe0c998cd3959}{Contact\+Points}} (const QPointF \&p, const QPointF \&center, qreal radius, QPointF \&p1, QPointF \&p2)
+\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_ac313f36a13cd183209097a0a780baceb}{Line\+Intersect\+Rect}} (const QRectF \&rec, const QLineF \&line)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Rect find point intersection line and rect. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_v_g_object_a503181efc48d49b416daca9480c15793}{Intersection\+Circles}} (const QPointF \&c1, double r1, const QPointF \&c2, double r2, QPointF \&p1, QPointF \&p2)
+\item 
+static qint32 \mbox{\hyperlink{class_v_g_object_a26474388e3837e3984bf52543aede141}{Line\+Intersect\+Circle}} (const QPointF \&center, qreal radius, const QLineF \&line, QPointF \&p1, QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Line\+Intersect\+Circle find point intersection line and circle. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_a2c4ba515566c606663ce28ca67e01933}{Closest\+Point}} (const QLineF \&line, const QPointF \&point)
+\begin{DoxyCompactList}\small\item\em Closest\+Point find point projection of point onto line. \end{DoxyCompactList}\item 
+static QPointF \mbox{\hyperlink{class_v_g_object_ae9510ae75f41b950483054e74ece64fc}{add\+Vector}} (const QPointF \&p, const QPointF \&p1, const QPointF \&p2, qreal k)
+\item 
+static void \mbox{\hyperlink{class_v_g_object_a502259e60c007a3ad11a738151aa1c0b}{Line\+Coefficients}} (const QLineF \&line, qreal $\ast$a, qreal $\ast$b, qreal $\ast$c)
+\begin{DoxyCompactList}\small\item\em Line\+Coefficients coefficient for equation of segment. Segment equestion ax+by+c=0. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_g_object_a040e4a0f193e1330e9caa4dd8dcc1201}{Is\+Point\+On\+Line\+Segment}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Line\+Segment Check if the point is on the line segment. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_v_g_object_a6c36e7396fa9c367730c07453280a413}{Is\+Point\+On\+Linevia\+PDP}} (const QPointF \&t, const QPointF \&p1, const QPointF \&p2)
+\begin{DoxyCompactList}\small\item\em Is\+Point\+On\+Linevia\+PDP use the perp dot product (PDP) way. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \mbox{\hyperlink{class_v_g_object_a61329d34b5ecd0118974ba1f38803b47}{Get\+Reverse\+Points}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ T $>$ \&points)
+\begin{DoxyCompactList}\small\item\em Get\+Reverse\+Point return revers container of points. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_v_g_object_aea5059e80866ae47eaa7f31acb72c486}{Get\+Length\+Contour}} (const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&contour, const \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \&new\+Points)
+\begin{DoxyCompactList}\small\item\em Get\+Length\+Contour return length of contour. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual QPointF \mbox{\hyperlink{class_v_spline_aef6a28e06ac0b8253945fb202de2b605}{Get\+Control\+Point1}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPointF \mbox{\hyperlink{class_v_spline_a1b9a902e315c9956e4fbb7330acc0d26}{Get\+Control\+Point2}} () const Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_cubic_bezier_a6a9bc53024b0a1bfac7351d5b3ad1b01}{Create\+Name}} () Q\+\_\+\+DECL\+\_\+\+OVERRIDE
+\item 
+virtual QPointF \mbox{\hyperlink{class_v_abstract_cubic_bezier_ac4f098ca3e5ac1bacdf251d689a7963f}{Get\+Control\+Point1}} () const =0
+\item 
+virtual QPointF \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa626096d0a567d677963f9160e9e9a1d}{Get\+Control\+Point2}} () const =0
+\end{DoxyCompactItemize}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_v_abstract_curve_a7a1530d69c09d90f28a5b76f3b0374b9}{Create\+Name}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ \mbox{\hyperlink{class_v_spline_acba2fbfb3cfce4f18e45f31499eb9fe3}{CalcT}} (qreal curve\+Coord1, qreal curve\+Coord2, qreal curve\+Coord3, qreal curve\+Coord4, qreal point\+Coord) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static qint32 \mbox{\hyperlink{class_v_spline_a24d769662e7f9060114c0948fd19d7aa}{Cubic}} (\mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ \&x, qreal a, qreal b, qreal c)
+\begin{DoxyCompactList}\small\item\em Cubic Cubic equation solution. Real coefficients case. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_v_spline_af3bbf2c9f25f6c180376b8f7f54a82e8}{Sign}} (long double ld)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QShared\+Data\+Pointer$<$ \mbox{\hyperlink{class_v_spline_data}{VSpline\+Data}} $>$ \mbox{\hyperlink{class_v_spline_aec56873bbfe372febb7d7758b2f84ce4}{d}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_abstract_curve}{VAbstract\+Curve}}}
+\begin{DoxyCompactItemize}
+\item 
+static const qreal \mbox{\hyperlink{class_v_abstract_curve_ac778fbee0dbd3b765987d14508daa35f}{length\+Curve\+Direction\+Arrow}} = 14
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{class_v_g_object_af893a07c68c71231b5eaeceda31ad368}{accuracy\+Point\+On\+Line}} = (0.\+1555 / 25.\+4) $\ast$ 96.\+0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_abstract_cubic_bezier}{VAbstract\+Cubic\+Bezier}}}
+\begin{DoxyCompactItemize}
+\item 
+static qreal \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa3ea9835bb76c41c98d033cf350e31b1}{Calc\+Sq\+Distance}} (qreal x1, qreal y1, qreal x2, qreal y2)
+\begin{DoxyCompactList}\small\item\em Calc\+Sq\+Distance calculate squared distance. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_v_abstract_cubic_bezier_ad7ecdd5b74c1e2468b0a9a20d3cbafc0}{Point\+Bezier\+\_\+r}} (qreal x1, qreal y1, qreal x2, qreal y2, qreal x3, qreal y3, qreal x4, qreal y4, qint16 level, \mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ \&px, \mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ \&py)
+\begin{DoxyCompactList}\small\item\em Point\+Bezier\+\_\+r find spline point using four point of spline. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa86affaf553069238c7b3a54926668d3}{Get\+Cubic\+Bezier\+Points}} (const QPointF \&p1, const QPointF \&p2, const QPointF \&p3, const QPointF \&p4)
+\begin{DoxyCompactList}\small\item\em Get\+Cubic\+Bezier\+Points return list with cubic bezier curve points. \end{DoxyCompactList}\item 
+static qreal \mbox{\hyperlink{class_v_abstract_cubic_bezier_a68a6dd911bd8ba0fc0b78efc450c5d4f}{Length\+Bezier}} (const QPointF \&p1, const QPointF \&p2, const QPointF \&p3, const QPointF \&p4)
+\begin{DoxyCompactList}\small\item\em Length\+Bezier return spline length using 4 spline point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{class_v_g_object}{VGObject}}}
+\begin{DoxyCompactItemize}
+\item 
+static QTransform \mbox{\hyperlink{class_v_g_object_a4a0e1a72e7f0a197c5e4e24336350e4f}{flip\+Transform}} (const QLineF \&axis)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_v_spline}{VSpline}} class that implements the spline. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_spline_a50fbd6d37b78bd0e73cdcebf29355ddf}\label{class_v_spline_a50fbd6d37b78bd0e73cdcebf29355ddf}} 
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{VSpline()}{VSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily VSpline\+::\+VSpline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} default constructor. 
+
+\mbox{\Hypertarget{class_v_spline_a5f21318c0cfeb000d19af0aa6c59476d}\label{class_v_spline_a5f21318c0cfeb000d19af0aa6c59476d}} 
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{VSpline()}{VSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily VSpline\+::\+VSpline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spline }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em spline} & spline from which the copy. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_spline_abc54670ba5296597874aa39c0e11ab29}\label{class_v_spline_abc54670ba5296597874aa39c0e11ab29}} 
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{VSpline()}{VSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily VSpline\+::\+VSpline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p4,  }\item[{qreal}]{angle1,  }\item[{qreal}]{angle2,  }\item[{qreal}]{k\+Asm1,  }\item[{qreal}]{k\+Asm2,  }\item[{qreal}]{k\+Curve,  }\item[{quint32}]{id\+Object = {\ttfamily 0},  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}}]{mode = {\ttfamily Draw\+:\+:Calculation} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first point spline. \\
+\hline
+{\em p4} & last point spline. \\
+\hline
+{\em angle1} & angle from first point to first control point. \\
+\hline
+{\em angle2} & angle from second point to second control point. \\
+\hline
+{\em k\+Curve} & coefficient of curvature spline. \\
+\hline
+{\em k\+Asm1} & coefficient of length first control line. \\
+\hline
+{\em k\+Asm2} & coefficient of length second control line. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_spline_ace181a450c39369c82667f23ff52d61c}\label{class_v_spline_ace181a450c39369c82667f23ff52d61c}} 
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{VSpline()}{VSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily VSpline\+::\+VSpline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p1,  }\item[{const QPointF \&}]{p2,  }\item[{const QPointF \&}]{p3,  }\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p4,  }\item[{quint32}]{id\+Object = {\ttfamily 0},  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}}]{mode = {\ttfamily Draw\+:\+:Calculation} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first point spline. \\
+\hline
+{\em p2} & first control point. \\
+\hline
+{\em p3} & second control point. \\
+\hline
+{\em p4} & second point spline. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_spline_ae7a1c1906c5d9fd7c37151879c9eeabe}\label{class_v_spline_ae7a1c1906c5d9fd7c37151879c9eeabe}} 
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\index{VSpline@{VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{VSpline()}{VSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily VSpline\+::\+VSpline (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p1,  }\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p4,  }\item[{qreal}]{angle1,  }\item[{const QString \&}]{angle1\+Formula,  }\item[{qreal}]{angle2,  }\item[{const QString \&}]{angle2\+Formula,  }\item[{qreal}]{c1\+Length,  }\item[{const QString \&}]{c1\+Length\+Formula,  }\item[{qreal}]{c2\+Length,  }\item[{const QString \&}]{c2\+Length\+Formula,  }\item[{quint32}]{id\+Object = {\ttfamily 0},  }\item[{\mbox{\hyperlink{vgeometrydef_8h_a85a66cf8eff1eceb62457cf1931ddf1a}{Draw}}}]{mode = {\ttfamily Draw\+:\+:Calculation} }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_v_spline}{VSpline}} constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first point spline. \\
+\hline
+{\em p4} & first control point. \\
+\hline
+{\em angle1} & angle from first point to first control point. \\
+\hline
+{\em angle1\+Formula} & formula angle from first point to first control point. \\
+\hline
+{\em angle2} & angle from second point to second control point. \\
+\hline
+{\em angle2\+Formula} & formula angle from second point to second control point. \\
+\hline
+{\em c1\+Length} & length from first point to first control point. \\
+\hline
+{\em c1\+Length\+Formula} & formula length from first point to first control point. \\
+\hline
+{\em c2\+Length} & length from second point to first control point. \\
+\hline
+{\em c2\+Length\+Formula} & formula length from second point to first control point. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_v_spline_a61be49e4eeb4613c091f1b6707a0940b}\label{class_v_spline_a61be49e4eeb4613c091f1b6707a0940b}} 
+\index{VSpline@{VSpline}!````~VSpline@{$\sim$VSpline}}
+\index{````~VSpline@{$\sim$VSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{$\sim$VSpline()}{~VSpline()}}
+{\footnotesize\ttfamily VSpline\+::$\sim$\+VSpline (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_spline_acba2fbfb3cfce4f18e45f31499eb9fe3}\label{class_v_spline_acba2fbfb3cfce4f18e45f31499eb9fe3}} 
+\index{VSpline@{VSpline}!CalcT@{CalcT}}
+\index{CalcT@{CalcT}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{CalcT()}{CalcT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ VSpline\+::\+CalcT (\begin{DoxyParamCaption}\item[{qreal}]{curve\+Coord1,  }\item[{qreal}]{curve\+Coord2,  }\item[{qreal}]{curve\+Coord3,  }\item[{qreal}]{curve\+Coord4,  }\item[{qreal}]{point\+Coord }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_spline_a24d769662e7f9060114c0948fd19d7aa}\label{class_v_spline_a24d769662e7f9060114c0948fd19d7aa}} 
+\index{VSpline@{VSpline}!Cubic@{Cubic}}
+\index{Cubic@{Cubic}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Cubic()}{Cubic()}}
+{\footnotesize\ttfamily qint32 VSpline\+::\+Cubic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_q_vector}{QVector}}$<$ qreal $>$ \&}]{x,  }\item[{qreal}]{a,  }\item[{qreal}]{b,  }\item[{qreal}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Cubic Cubic equation solution. Real coefficients case. 
+
+This method use method Vieta-\/\+Cardano for eval cubic equations. Cubic equation write in form x3+a$\ast$x2+b$\ast$x+c=0.
+
+Output\+: 3 real roots -\/\texorpdfstring{$>$}{>} then x is filled with them; 1 real + 2 complex -\/\texorpdfstring{$>$}{>} x\mbox{[}0\mbox{]} is real, x\mbox{[}1\mbox{]} is real part of complex roots, x\mbox{[}2\mbox{]} -\/ non-\/negative imaginary part.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & solution array (size 3). \\
+\hline
+{\em a} & coefficient \\
+\hline
+{\em b} & coefficient \\
+\hline
+{\em c} & coefficient \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+3 -\/ 3 real roots; 1 -\/ 1 real root + 2 complex; 2 -\/ 1 real root + complex roots imaginary part is zero (i.\+e. 2 real roots). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_aa357988e7d0c8686a329225ec03ec794}\label{class_v_spline_aa357988e7d0c8686a329225ec03ec794}} 
+\index{VSpline@{VSpline}!CutSpline@{CutSpline}}
+\index{CutSpline@{CutSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{CutSpline()}{CutSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily QPointF VAbstract\+Cubic\+Bezier\+::\+Cut\+Spline (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{QPointF \&}]{spl1p2,  }\item[{QPointF \&}]{spl1p3,  }\item[{QPointF \&}]{spl2p2,  }\item[{QPointF \&}]{spl2p3 }\end{DoxyParamCaption}) const}
+
+
+
+Cut\+Spline cut spline. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & length first spline \\
+\hline
+{\em spl1p2} & second point of first spline \\
+\hline
+{\em spl1p3} & third point of first spline \\
+\hline
+{\em spl2p2} & second point of second spline \\
+\hline
+{\em spl2p3} & third point of second spline \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+point of cutting. This point is forth point of first spline and first point of second spline. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_a0042c581021a9c930b08c05a97fc4e4a}\label{class_v_spline_a0042c581021a9c930b08c05a97fc4e4a}} 
+\index{VSpline@{VSpline}!CutSpline@{CutSpline}}
+\index{CutSpline@{CutSpline}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{CutSpline()}{CutSpline()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily QPointF VSpline\+::\+Cut\+Spline (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{\mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spl1,  }\item[{\mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spl2 }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_a6c1dc88b5feeafc9876f1c49c94cbdbf}\label{class_v_spline_a6c1dc88b5feeafc9876f1c49c94cbdbf}} 
+\index{VSpline@{VSpline}!Flip@{Flip}}
+\index{Flip@{Flip}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Flip()}{Flip()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline}{VSpline}} VSpline\+::\+Flip (\begin{DoxyParamCaption}\item[{const QLineF \&}]{axis,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_aa7a818f79b40c9a00deaf0f588f29dc7}\label{class_v_spline_aa7a818f79b40c9a00deaf0f588f29dc7}} 
+\index{VSpline@{VSpline}!GetC1Length@{GetC1Length}}
+\index{GetC1Length@{GetC1Length}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetC1Length()}{GetC1Length()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+C1\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_bezier_a8c3423be80a9c7d7e1b813984912f2cf}{VAbstract\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_a44290488476800dd62d217e7fc9f6e58}\label{class_v_spline_a44290488476800dd62d217e7fc9f6e58}} 
+\index{VSpline@{VSpline}!GetC1LengthFormula@{GetC1LengthFormula}}
+\index{GetC1LengthFormula@{GetC1LengthFormula}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetC1LengthFormula()}{GetC1LengthFormula()}}
+{\footnotesize\ttfamily QString VSpline\+::\+Get\+C1\+Length\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_a2ac55a090af7095cd9ca12d5088d5d66}\label{class_v_spline_a2ac55a090af7095cd9ca12d5088d5d66}} 
+\index{VSpline@{VSpline}!GetC2Length@{GetC2Length}}
+\index{GetC2Length@{GetC2Length}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetC2Length()}{GetC2Length()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+C2\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_bezier_a6ff25839cdd90bd7823e6c0dae997751}{VAbstract\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_ac30c97e696947f5d1609b7424bcc8ecc}\label{class_v_spline_ac30c97e696947f5d1609b7424bcc8ecc}} 
+\index{VSpline@{VSpline}!GetC2LengthFormula@{GetC2LengthFormula}}
+\index{GetC2LengthFormula@{GetC2LengthFormula}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetC2LengthFormula()}{GetC2LengthFormula()}}
+{\footnotesize\ttfamily QString VSpline\+::\+Get\+C2\+Length\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_aef6a28e06ac0b8253945fb202de2b605}\label{class_v_spline_aef6a28e06ac0b8253945fb202de2b605}} 
+\index{VSpline@{VSpline}!GetControlPoint1@{GetControlPoint1}}
+\index{GetControlPoint1@{GetControlPoint1}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetControlPoint1()}{GetControlPoint1()}}
+{\footnotesize\ttfamily QPointF VSpline\+::\+Get\+Control\+Point1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_ac4f098ca3e5ac1bacdf251d689a7963f}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_a1b9a902e315c9956e4fbb7330acc0d26}\label{class_v_spline_a1b9a902e315c9956e4fbb7330acc0d26}} 
+\index{VSpline@{VSpline}!GetControlPoint2@{GetControlPoint2}}
+\index{GetControlPoint2@{GetControlPoint2}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetControlPoint2()}{GetControlPoint2()}}
+{\footnotesize\ttfamily QPointF VSpline\+::\+Get\+Control\+Point2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa626096d0a567d677963f9160e9e9a1d}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_add9aaf30fd8f8c546691b89d059e75fb}\label{class_v_spline_add9aaf30fd8f8c546691b89d059e75fb}} 
+\index{VSpline@{VSpline}!GetEndAngle@{GetEndAngle}}
+\index{GetEndAngle@{GetEndAngle}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetEndAngle()}{GetEndAngle()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+End\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+Angle2 return second angle control line. 
+
+\begin{DoxyReturn}{Returns}
+angle. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_curve_a1256a0bd9fd6d262e5b62e5bf04dde63}{VAbstract\+Curve}}.
+
+\mbox{\Hypertarget{class_v_spline_a9e2f07b11a0c5a0ff1f476df61f18a4b}\label{class_v_spline_a9e2f07b11a0c5a0ff1f476df61f18a4b}} 
+\index{VSpline@{VSpline}!GetEndAngleFormula@{GetEndAngleFormula}}
+\index{GetEndAngleFormula@{GetEndAngleFormula}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetEndAngleFormula()}{GetEndAngleFormula()}}
+{\footnotesize\ttfamily QString VSpline\+::\+Get\+End\+Angle\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_a9ee358807b91dabca90a670f5c718c44}\label{class_v_spline_a9ee358807b91dabca90a670f5c718c44}} 
+\index{VSpline@{VSpline}!GetKasm1@{GetKasm1}}
+\index{GetKasm1@{GetKasm1}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetKasm1()}{GetKasm1()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+Kasm1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Kasm1 return coefficient of length first control line. 
+
+\begin{DoxyReturn}{Returns}
+coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_af8b4544953df807429cf9b0423aeb379}\label{class_v_spline_af8b4544953df807429cf9b0423aeb379}} 
+\index{VSpline@{VSpline}!GetKasm2@{GetKasm2}}
+\index{GetKasm2@{GetKasm2}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetKasm2()}{GetKasm2()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+Kasm2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Kasm2 return coefficient of length second control line. 
+
+\begin{DoxyReturn}{Returns}
+coefficient. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_a516ced12a83d0ff9e02e37c606755801}\label{class_v_spline_a516ced12a83d0ff9e02e37c606755801}} 
+\index{VSpline@{VSpline}!GetKcurve@{GetKcurve}}
+\index{GetKcurve@{GetKcurve}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetKcurve()}{GetKcurve()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+Kcurve (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get\+Kcurve return coefficient of curvature spline. 
+
+\begin{DoxyReturn}{Returns}
+coefficient 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_a08a756ba3d3a6ca99fd17b534d47d383}\label{class_v_spline_a08a756ba3d3a6ca99fd17b534d47d383}} 
+\index{VSpline@{VSpline}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetLength()}{GetLength()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+Length return length of spline. 
+
+\begin{DoxyReturn}{Returns}
+length. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_curve_aeaa28efd8cdaa6c8df14dea9e20caa84}{VAbstract\+Curve}}.
+
+\mbox{\Hypertarget{class_v_spline_a74ed61017732efce34e150c53c3dc043}\label{class_v_spline_a74ed61017732efce34e150c53c3dc043}} 
+\index{VSpline@{VSpline}!GetP1@{GetP1}}
+\index{GetP1@{GetP1}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetP1()}{GetP1()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VSpline\+::\+Get\+P1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+P1 return first spline point. 
+
+\begin{DoxyReturn}{Returns}
+first point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_a278f808b16778d6a9cf53d3559de5a0e}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_a7bbb4cecb3a59b49eda657bcf602bf50}\label{class_v_spline_a7bbb4cecb3a59b49eda657bcf602bf50}} 
+\index{VSpline@{VSpline}!GetP2@{GetP2}}
+\index{GetP2@{GetP2}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetP2()}{GetP2()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VSpline\+::\+Get\+P2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+P2 return first control point. 
+
+\begin{DoxyReturn}{Returns}
+first control point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_aa7fe08f15b79fefe316de0903b9f45aa}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_ac1068b0a4b15f72c30e106126585cf21}\label{class_v_spline_ac1068b0a4b15f72c30e106126585cf21}} 
+\index{VSpline@{VSpline}!GetP3@{GetP3}}
+\index{GetP3@{GetP3}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetP3()}{GetP3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VSpline\+::\+Get\+P3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+P3 return second control point. 
+
+\begin{DoxyReturn}{Returns}
+second control point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_a80da5defeb82d04a07a1d3bcc0150bb8}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_a2f557ddbcfd97242dc1f3775f569fdb4}\label{class_v_spline_a2f557ddbcfd97242dc1f3775f569fdb4}} 
+\index{VSpline@{VSpline}!GetP4@{GetP4}}
+\index{GetP4@{GetP4}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetP4()}{GetP4()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_point_f}{VPointF}} VSpline\+::\+Get\+P4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+P4 return last spline point. 
+
+\begin{DoxyReturn}{Returns}
+остання точка сплайну. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_cubic_bezier_ae2c54b1599c35358b3ebe6beff43111f}{VAbstract\+Cubic\+Bezier}}.
+
+\mbox{\Hypertarget{class_v_spline_ad3c62960c23928a9ab7265fd8774f5a5}\label{class_v_spline_ad3c62960c23928a9ab7265fd8774f5a5}} 
+\index{VSpline@{VSpline}!getPoints@{getPoints}}
+\index{getPoints@{getPoints}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{getPoints()}{getPoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VSpline\+::get\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+Points return list with spline points. 
+
+\begin{DoxyReturn}{Returns}
+list of points. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_curve_a5c3d65541c4e36c16885d6f48df0e672}{VAbstract\+Curve}}.
+
+\mbox{\Hypertarget{class_v_spline_a54fd121ab6945727c63114ebf2037b79}\label{class_v_spline_a54fd121ab6945727c63114ebf2037b79}} 
+\index{VSpline@{VSpline}!GetStartAngle@{GetStartAngle}}
+\index{GetStartAngle@{GetStartAngle}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetStartAngle()}{GetStartAngle()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+Get\+Start\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get\+Angle1 return first angle control line. 
+
+\begin{DoxyReturn}{Returns}
+angle. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_v_abstract_curve_a6595c8b68d9439dc244d978b23d08ef0}{VAbstract\+Curve}}.
+
+\mbox{\Hypertarget{class_v_spline_a80a38b1a78329c4209a6f62eca5f923e}\label{class_v_spline_a80a38b1a78329c4209a6f62eca5f923e}} 
+\index{VSpline@{VSpline}!GetStartAngleFormula@{GetStartAngleFormula}}
+\index{GetStartAngleFormula@{GetStartAngleFormula}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{GetStartAngleFormula()}{GetStartAngleFormula()}}
+{\footnotesize\ttfamily QString VSpline\+::\+Get\+Start\+Angle\+Formula (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_ac67dd33551a5afcdbc038257ba266f2a}\label{class_v_spline_ac67dd33551a5afcdbc038257ba266f2a}} 
+\index{VSpline@{VSpline}!Move@{Move}}
+\index{Move@{Move}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline}{VSpline}} VSpline\+::\+Move (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{qreal}]{angle,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_a549938ad2736ad4d75b47460785837a0}\label{class_v_spline_a549938ad2736ad4d75b47460785837a0}} 
+\index{VSpline@{VSpline}!operator=@{operator=}}
+\index{operator=@{operator=}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline}{VSpline}} \& VSpline\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spline }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_a6688d7e49f9277039cfeed357a62268d}\label{class_v_spline_a6688d7e49f9277039cfeed357a62268d}} 
+\index{VSpline@{VSpline}!ParamT@{ParamT}}
+\index{ParamT@{ParamT}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{ParamT()}{ParamT()}}
+{\footnotesize\ttfamily qreal VSpline\+::\+ParamT (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p\+Bt }\end{DoxyParamCaption}) const}
+
+
+
+\mbox{\hyperlink{class_v_spline_a6688d7e49f9277039cfeed357a62268d}{VSpline\+::\+ParamT}} calculate t coeffient that reprezent point on curve. 
+
+Each point that belongs to Cubic Bézier curve can be shown by coefficient in interval \mbox{[}0; 1\mbox{]}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Bt} & point on curve \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+t coeffient that reprezent this point on curve. Return -\/1 if point doesn\textquotesingle{}t belongs to curve. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_a1a8b8b00466efd22a7c3e4262c05a615}\label{class_v_spline_a1a8b8b00466efd22a7c3e4262c05a615}} 
+\index{VSpline@{VSpline}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Rotate()}{Rotate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_v_spline}{VSpline}} VSpline\+::\+Rotate (\begin{DoxyParamCaption}\item[{const QPointF \&}]{origin\+Point,  }\item[{qreal}]{degrees,  }\item[{const QString \&}]{prefix = {\ttfamily QString()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_v_spline_a3d9ce27fa6952133b74c806bfb406ae3}\label{class_v_spline_a3d9ce27fa6952133b74c806bfb406ae3}} 
+\index{VSpline@{VSpline}!SetC1Length@{SetC1Length}}
+\index{SetC1Length@{SetC1Length}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetC1Length()}{SetC1Length()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+C1\+Length (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{const QString \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_a53a31cdec486b8094f9add548e08521d}\label{class_v_spline_a53a31cdec486b8094f9add548e08521d}} 
+\index{VSpline@{VSpline}!SetC2Length@{SetC2Length}}
+\index{SetC2Length@{SetC2Length}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetC2Length()}{SetC2Length()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+C2\+Length (\begin{DoxyParamCaption}\item[{qreal}]{length,  }\item[{const QString \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_ae20ed844c9bf04c31b2177adf563ed98}\label{class_v_spline_ae20ed844c9bf04c31b2177adf563ed98}} 
+\index{VSpline@{VSpline}!SetEndAngle@{SetEndAngle}}
+\index{SetEndAngle@{SetEndAngle}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetEndAngle()}{SetEndAngle()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+End\+Angle (\begin{DoxyParamCaption}\item[{qreal}]{angle,  }\item[{const QString \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_a634354a052215bad9dfb5fc9c43b9ea7}\label{class_v_spline_a634354a052215bad9dfb5fc9c43b9ea7}} 
+\index{VSpline@{VSpline}!SetP1@{SetP1}}
+\index{SetP1@{SetP1}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetP1()}{SetP1()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+P1 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_a300f53b950784afa26e57c7b727c5794}\label{class_v_spline_a300f53b950784afa26e57c7b727c5794}} 
+\index{VSpline@{VSpline}!SetP4@{SetP4}}
+\index{SetP4@{SetP4}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetP4()}{SetP4()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+P4 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_v_point_f}{VPointF}} \&}]{p }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_ad2d57da43a80759adbae6d9bc4f11668}\label{class_v_spline_ad2d57da43a80759adbae6d9bc4f11668}} 
+\index{VSpline@{VSpline}!SetStartAngle@{SetStartAngle}}
+\index{SetStartAngle@{SetStartAngle}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SetStartAngle()}{SetStartAngle()}}
+{\footnotesize\ttfamily void VSpline\+::\+Set\+Start\+Angle (\begin{DoxyParamCaption}\item[{qreal}]{angle,  }\item[{const QString \&}]{formula }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_v_spline_af3bbf2c9f25f6c180376b8f7f54a82e8}\label{class_v_spline_af3bbf2c9f25f6c180376b8f7f54a82e8}} 
+\index{VSpline@{VSpline}!Sign@{Sign}}
+\index{Sign@{Sign}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Sign()}{Sign()}}
+{\footnotesize\ttfamily int VSpline\+::\+Sign (\begin{DoxyParamCaption}\item[{long double}]{ld }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_v_spline_a9f202f0081c9af0b62bb7a3d594fe863}\label{class_v_spline_a9f202f0081c9af0b62bb7a3d594fe863}} 
+\index{VSpline@{VSpline}!SplinePoints@{SplinePoints}}
+\index{SplinePoints@{SplinePoints}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{SplinePoints()}{SplinePoints()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_vector}{QVector}}$<$ QPointF $>$ VSpline\+::\+Spline\+Points (\begin{DoxyParamCaption}\item[{const QPointF \&}]{p1,  }\item[{const QPointF \&}]{p4,  }\item[{qreal}]{angle1,  }\item[{qreal}]{angle2,  }\item[{qreal}]{k\+Asm1,  }\item[{qreal}]{k\+Asm2,  }\item[{qreal}]{k\+Curve }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Spline\+Points return list with spline points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & first spline point. \\
+\hline
+{\em p4} & last spline point. \\
+\hline
+{\em angle1} & angle from first point to first control point. \\
+\hline
+{\em angle2} & angle from second point to second control point. \\
+\hline
+{\em k\+Asm1} & coefficient of length first control line. \\
+\hline
+{\em k\+Asm2} & coefficient of length second control line. \\
+\hline
+{\em k\+Curve} & coefficient of curvature spline. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+list with spline points. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_v_spline_ab8b9313a5d0d5363d143281c9d82f599}\label{class_v_spline_ab8b9313a5d0d5363d143281c9d82f599}} 
+\index{VSpline@{VSpline}!Swap@{Swap}}
+\index{Swap@{Swap}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{Swap()}{Swap()}}
+{\footnotesize\ttfamily void VSpline\+::\+Swap (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_v_spline}{VSpline}} \&}]{spline }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_spline_aec56873bbfe372febb7d7758b2f84ce4}\label{class_v_spline_aec56873bbfe372febb7d7758b2f84ce4}} 
+\index{VSpline@{VSpline}!d@{d}}
+\index{d@{d}!VSpline@{VSpline}}
+\doxysubsubsection{\texorpdfstring{d}{d}}
+{\footnotesize\ttfamily QShared\+Data\+Pointer$<$\mbox{\hyperlink{class_v_spline_data}{VSpline\+Data}}$>$ VSpline\+::d\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vspline_8h}{vspline.\+h}}\item 
+D\+:/\+Github/\+Seamly2\+D/src/libs/vgeometry/\mbox{\hyperlink{vspline_8cpp}{vspline.\+cpp}}\end{DoxyCompactItemize}

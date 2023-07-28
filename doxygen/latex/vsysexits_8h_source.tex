@@ -1,0 +1,127 @@
+\hypertarget{vsysexits_8h_source}{}\doxysection{vsysexits.\+h}
+\label{vsysexits_8h_source}\index{D:/Github/Seamly2D/src/libs/vmisc/vsysexits.h@{D:/Github/Seamly2D/src/libs/vmisc/vsysexits.h}}
+\mbox{\hyperlink{vsysexits_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ \ Copyright\ (C)\ 2017\ \ Seamly,\ LLC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \ \ https://github.com/fashionfreedom/seamly2d\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ *}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ ***************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ **************************************************************************}}
+\DoxyCodeLine{00023\ \textcolor{comment}{}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ ************************************************************************}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ **\ \ @file\ \ \ vsysexits.h}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ **\ \ @author\ Roman\ Telezhynskyi\ <dismine(at)gmail.com>}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ **\ \ @date\ \ \ 28\ 9,\ 2015}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00030\ \textcolor{comment}{\ **\ \ @brief}}
+\DoxyCodeLine{00031\ \textcolor{comment}{\ **\ \ @copyright}}
+\DoxyCodeLine{00032\ \textcolor{comment}{\ **\ \ This\ source\ code\ is\ part\ of\ the\ Valentine\ project,\ a\ pattern\ making}}
+\DoxyCodeLine{00033\ \textcolor{comment}{\ **\ \ program,\ whose\ allow\ create\ and\ modeling\ patterns\ of\ clothing.}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ **\ \ Copyright\ (C)\ 2015\ Seamly2D\ project}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ **\ \ <https://github.com/fashionfreedom/seamly2d>\ All\ Rights\ Reserved.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ **\ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ **\ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ **\ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ **\ \ Seamly2D\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ **\ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{00044\ \textcolor{comment}{\ **\ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ **\ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ **\ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{00048\ \textcolor{comment}{\ **\ \ along\ with\ Seamly2D.\ \ If\ not,\ see\ <http://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{00049\ \textcolor{comment}{\ **}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *************************************************************************/}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#ifndef\ VSYSEXITS\_H}}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ VSYSEXITS\_H}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#include\ <QTextStream>}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#ifdef\ \_\_GNUC\_\_}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ V\_UNUSED\ \_\_attribute\_\_\ ((unused))}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ V\_UNUSED}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_OK\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Indicate\ the\ successful\ exit.*/}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_USAGE\ =\ 64;\ \ \ \ \ \ \ \textcolor{comment}{/*The\ command\ was\ used\ incorrectly,\ e.g.,\ with\ the\ wrong\ number\ of}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ arguments,\ a\ bad\ flag,\ a\ bad\ syntax\ in\ a\ parameter,\ or\ whatever.*/}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_DATAERR\ =\ 65;\ \ \ \ \ \textcolor{comment}{/*The\ input\ data\ was\ incorrect\ in\ some\ way.\ \ This\ should\ only\ be\ }}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ used\ for\ user's\ data\ and\ not\ system\ files.*/}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_NOINPUT\ =\ 66;\ \ \ \ \ \textcolor{comment}{/*An\ input\ file\ (not\ a\ system\ file)\ did\ not\ exist\ or\ was\ not\ }}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ readable.*/}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_UNAVAILABLE\ =\ 69;\ \textcolor{comment}{/*A\ service\ is\ unavailable.\ \ This\ can\ occur\ if\ a\ support\ program\ or\ }}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ file\ does\ not\ exist.\ \ This\ can\ also\ be\ used\ as\ a\ catchall\ message\ }}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ when\ something\ you\ wanted\ to\ do\ doesn't\ work,\ but\ you\ don't\ know\ }}
+\DoxyCodeLine{00077\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ why.*/}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_SOFTWARE\ =\ 70;\ \ \ \ \textcolor{comment}{/*An\ internal\ software\ error\ has\ been\ detected.\ \ This\ should\ be\ }}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ limited\ to\ nonoperating\ operating\ system\ related\ errors\ as\ }}
+\DoxyCodeLine{00081\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ possible.*/}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_OSERR\ =\ 71;\ \ \ \ \ \ \ \textcolor{comment}{/*An\ operating\ system\ error\ has\ been\ detected.\ \ This\ is\ intended\ to\ be}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ used\ for\ such\ things\ as\ ``cannot\ fork'',\ ``cannot\ create\ pipe'',\ or\ }}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ like.\ It\ includes\ things\ like\ getuid\ returning\ a\ user\ that\ does\ }}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ not\ exist\ in\ the\ passwd\ file.*/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_OSFILE\ =\ 72;\ \ \ \ \ \ \textcolor{comment}{/*Some\ system\ file\ (e.g.,\ /etc/passwd,\ /var/run/utmp,\ etc.)\ does\ not\ }}
+\DoxyCodeLine{00089\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ exist,\ cannot\ be\ opened,\ or\ has\ some\ sort\ of\ error\ (e.g.,\ syntax\ }}
+\DoxyCodeLine{00090\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ error).*/}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_CANTCREAT\ =\ 73;\ \ \ \textcolor{comment}{/*A\ (user\ specified)\ output\ file\ cannot\ be\ created.*/}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_IOERR\ =\ 74;\ \ \ \ \ \ \ \textcolor{comment}{/*An\ error\ occurred\ while\ doing\ I/O\ on\ some\ file.*/}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_NOPERM\ =\ 77;\ \ \ \ \ \ \textcolor{comment}{/*You\ did\ not\ have\ sufficient\ permission\ to\ perform\ the\ operation.\ }}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ This\ is\ not\ intended\ for\ file\ system\ problems,\ which\ should\ use}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ EX\_NOINPUT\ or\ EX\_CANTCREAT,\ but\ rather\ for\ higher\ level\ }}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ permissions.*/}}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \mbox{\hyperlink{vsysexits_8h_abdba63e3bffa4a1066d6f3e761ee4a0d}{V\_UNUSED}}\ V\_EX\_CONFIG\ =\ 78;\ \ \ \ \ \ \textcolor{comment}{/*Something\ was\ found\ in\ an\ unconfigured\ or\ misconfigured\ state.*/}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#undef\ V\_UNUSED}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00106\ \textcolor{keyword}{inline}\ QTextStream\&\ \mbox{\hyperlink{vsysexits_8h_a433979e682adb771b00a5842c2886354}{vStdErr}}()}
+\DoxyCodeLine{00107\ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \textcolor{keyword}{static}\ QTextStream\ ts(\ stderr\ );}
+\DoxyCodeLine{00109\ \ \ \ \ ts.flush();}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordflow}{return}\ ts;}
+\DoxyCodeLine{00111\ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00114\ \textcolor{keyword}{inline}\ QTextStream\&\ \mbox{\hyperlink{vsysexits_8h_a903ef22c3600f0bcb22e75f868018f77}{vStdOut}}()}
+\DoxyCodeLine{00115\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \textcolor{keyword}{static}\ QTextStream\ ts(\ stdout\ );}
+\DoxyCodeLine{00117\ \ \ \ \ ts.flush();}
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordflow}{return}\ ts;}
+\DoxyCodeLine{00119\ \}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ VSYSEXITS\_H}}
+
+\end{DoxyCode}
