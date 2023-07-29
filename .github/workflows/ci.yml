@@ -343,21 +343,3 @@ jobs:
             Seamly2D-macos.zip
             Seamly2D-windows.zip
             Seamly2D-win32.zip
-
-  document:
-    # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
-    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Doxygen GitHub Pages Deploy Action
-        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          # folder where docs are built, must match OUTPUT_DIRECTORY in Doxyfile + html
-          folder: docs/html
-          config_file: Doxyfile
-          # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
-          target_folder: docs/
-

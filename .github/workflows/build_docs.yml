@@ -1,0 +1,43 @@
+# This workflow generates the Doxygen documentation
+name: Doxygen Action
+
+# Controls when the action will run. There’s no way to specify that a workflow should be
+# triggered when a pull request is merged. However, because a merged pull request always
+# results in a push, we can use a push event to develop to accomplish our goal.
+on:
+  workflow_dispatch:
+    push:
+      branches:
+      - develop
+      pull_request:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build_documents"
+  build_documents:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v3
+
+    # Build the HTML documentation
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@v1.1.0
+      with:
+        # Path to Doxyfile
+        doxyfile-path: "./Doxyfile" # default is ./Doxyfile
+        # Working directory
+        working-directory: "." # default is .
+
+    # Deploy the HTML documentation to GitHub Pages
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        allow_empty_commit: false
+        publish_branch: gh-pages
+        publish_dir: ./docs/html/
+        enable_jekyll: true
