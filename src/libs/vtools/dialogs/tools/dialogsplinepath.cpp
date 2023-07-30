@@ -75,7 +75,7 @@
 #include "../../visualization/path/vistoolsplinepath.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmuparsererror.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/../ifc/ifcdef.h"
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vsplinepoint.h"
@@ -123,7 +123,7 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     ui->plainTextEditLength1F->installEventFilter(this);
     ui->plainTextEditLength2F->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     ok_Button->setEnabled(false);
 
     FillComboBoxPoints(ui->comboBoxPoint);
@@ -545,7 +545,7 @@ void DialogSplinePath::Length2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle1()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first control point angle"));
 
     QString angle1F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditAngle1F->toPlainText().replace("\n", " "),
@@ -570,7 +570,7 @@ void DialogSplinePath::FXAngle1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle2()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second control point angle"));
 
     QString angle2F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditAngle2F->toPlainText().replace("\n", " "),
@@ -595,7 +595,7 @@ void DialogSplinePath::FXAngle2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength1()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first control point length"));
 
     QString length1F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditLength1F->toPlainText().replace("\n", " "),
@@ -620,7 +620,7 @@ void DialogSplinePath::FXLength1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength2()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second control point length"));
 
     QString length2F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditLength2F->toPlainText().replace("\n", " "),

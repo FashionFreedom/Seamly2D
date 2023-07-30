@@ -76,7 +76,7 @@
 #include "../../visualization/line/vistoollineintersectaxis.h"
 #include "../../visualization/visualization.h"
 #include "../ifc/xml/vabstractpattern.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialoglineintersectaxis.h"
@@ -95,13 +95,13 @@ DialogLineIntersectAxis::DialogLineIntersectAxis(const VContainer *data, const q
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeightAngle = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
@@ -416,7 +416,7 @@ void DialogLineIntersectAxis::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogLineIntersectAxis::FXAngle()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);

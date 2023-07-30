@@ -366,14 +366,6 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 1/16 = .0625&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 3/16 = .1875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; 5/16 = .3125&lt;/span&gt;&lt;/p&gt;
@@ -382,6 +374,14 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2085,7 +2085,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogEditWrongFormula</name>
     <message>
         <source>Edit formula</source>
-        <translation>Редактировать формулу</translation>
+        <translation type="vanished">Редактировать формулу</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -2093,7 +2093,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation>Вставить переменную в формулу</translation>
+        <translation type="vanished">Вставить переменную в формулу</translation>
     </message>
     <message>
         <source>Value of first angle</source>
@@ -2101,11 +2101,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показать полный расчет в окне сообщения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;р&gt;Показать полный расчет в окне сообщения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Input data</source>
-        <translation>Входные данные</translation>
+        <translation type="vanished">Входные данные</translation>
     </message>
     <message>
         <source>Size and height</source>
@@ -2113,7 +2113,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Measurements</source>
-        <translation>Мерки</translation>
+        <translation type="vanished">Мерки</translation>
     </message>
     <message>
         <source>Increments</source>
@@ -2137,7 +2137,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Hide empty measurements</source>
-        <translation>Спрятать пустые мерки</translation>
+        <translation type="vanished">Спрятать пустые мерки</translation>
     </message>
     <message>
         <source>Double click for add to formula</source>
@@ -2153,7 +2153,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line length</source>
-        <translation>Длина линии</translation>
+        <translation type="vanished">Длина линии</translation>
     </message>
     <message>
         <source>Arc length</source>
@@ -2161,11 +2161,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve length</source>
-        <translation>Длина кривой</translation>
+        <translation type="vanished">Длина кривой</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation>Угол линии</translation>
+        <translation type="vanished">Угол линии</translation>
     </message>
     <message>
         <source>Radius of arcs</source>
@@ -2181,7 +2181,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc radius</source>
-        <translation>Радиус дуги</translation>
+        <translation type="vanished">Радиус дуги</translation>
     </message>
     <message>
         <source>Arc angle</source>
@@ -2189,31 +2189,31 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve angle</source>
-        <translation>Угол кривой</translation>
+        <translation type="vanished">Угол кривой</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation>Формула:</translation>
+        <translation type="vanished">Формула:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation>Значение</translation>
+        <translation type="vanished">Значение</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation>Расчёт</translation>
+        <translation type="vanished">Расчёт</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation>Название</translation>
+        <translation type="vanished">Название</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Полное название</translation>
+        <translation type="vanished">Полное название</translation>
     </message>
     <message>
         <source>Functions</source>
-        <translation>Функции</translation>
+        <translation type="vanished">Функции</translation>
     </message>
     <message>
         <source>Lengths to control points</source>
@@ -2221,43 +2221,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation>Фильтр списка по ключевому слову</translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom Variable</source>
-        <translation type="unfinished"></translation>
+        <translation type="vanished">Фильтр списка по ключевому слову</translation>
     </message>
 </context>
 <context>
@@ -3723,13 +3687,13 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
+        <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Millimeters</source>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7351,6 +7315,125 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>EditFormulaDialog</name>
+    <message>
+        <source>Edit formula</source>
+        <translation type="unfinished">Редактировать формулу</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Мерки</translation>
+    </message>
+    <message>
+        <source>Custom Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Control Point Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radii</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished">Функции</translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation type="unfinished">Формула:</translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Значение</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Расчёт</translation>
+    </message>
+    <message>
+        <source>Clear formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to original formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert variable into formula</source>
+        <translation type="unfinished">Вставить переменную в формулу</translation>
+    </message>
+    <message>
+        <source>Hides measurement variables that have no value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide empty measurements</source>
+        <translation type="unfinished">Спрятать пустые мерки</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Full name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter variable list by keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation type="unfinished">Фильтр списка по ключевому слову</translation>
+    </message>
+    <message>
+        <source>Measurement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line length</source>
+        <translation type="unfinished">Длина линии</translation>
+    </message>
+    <message>
+        <source>Curve length</source>
+        <translation type="unfinished">Длина кривой</translation>
+    </message>
+    <message>
+        <source>Line Angle</source>
+        <translation type="unfinished">Угол линии</translation>
+    </message>
+    <message>
+        <source>Arc radius</source>
+        <translation type="unfinished">Радиус дуги</translation>
+    </message>
+    <message>
+        <source>Curve angle</source>
+        <translation type="unfinished">Угол кривой</translation>
+    </message>
+</context>
+<context>
     <name>EditGroupDialog</name>
     <message>
         <source>Add Group</source>
@@ -7803,12 +7886,6 @@ Apply settings anyway?</source>
         <translation>Информация</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to open file
 %1
 for writing</source>
@@ -7829,6 +7906,12 @@ for writing</source>
     <message>
         <source>A new release %1 is available.
 Do you want to download it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -7943,10 +8026,6 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group color and name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8111,6 +8190,18 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Remove Group Object</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11422,6 +11513,18 @@ Do you want to save your changes?</source>
         <source>Failed to lock. File with this name is opened in another window.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>untitled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -13919,6 +14022,10 @@ Do you want to save your changes?</source>
         <source>No Pen</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QSaveFile</name>
@@ -14631,7 +14738,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>measurements</source>
-        <translation>мерки</translation>
+        <translation type="vanished">мерки</translation>
     </message>
     <message>
         <source>Individual measurements (*.vit)</source>
@@ -14687,7 +14794,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>untitled</source>
-        <translation type="vanished">безымянный</translation>
+        <translation>безымянный</translation>
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
@@ -15080,6 +15187,14 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -19345,12 +19460,12 @@ Do you want to save your changes?</source>
     <message>
         <source>sinh</source>
         <comment>hyperbolic sine function</comment>
-        <translation>sinh</translation>
+        <translation type="vanished">sinh</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>hyperbolic cosine</comment>
-        <translation>cosh</translation>
+        <translation type="vanished">cosh</translation>
     </message>
     <message>
         <source>tanh</source>
@@ -19375,72 +19490,72 @@ Do you want to save your changes?</source>
     <message>
         <source>log2</source>
         <comment>logarithm to the base 2</comment>
-        <translation>log2</translation>
+        <translation type="vanished">log2</translation>
     </message>
     <message>
         <source>log10</source>
         <comment>logarithm to the base 10</comment>
-        <translation>log10</translation>
+        <translation type="vanished">log10</translation>
     </message>
     <message>
         <source>log</source>
         <comment>logarithm to the base 10</comment>
-        <translation>log</translation>
+        <translation type="vanished">log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>logarithm to base e (2.71828...)</comment>
-        <translation>ln</translation>
+        <translation type="vanished">ln</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>e raised to the power of x</comment>
-        <translation>exp</translation>
+        <translation type="vanished">exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>square root of a value</comment>
-        <translation>sqrt</translation>
+        <translation type="vanished">sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>sign function -1 if x&lt;0; 1 if x&gt;0</comment>
-        <translation>sign</translation>
+        <translation type="vanished">sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>round to nearest integer</comment>
-        <translation>rint</translation>
+        <translation type="vanished">rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>absolute value</comment>
-        <translation>abs</translation>
+        <translation type="vanished">abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>min of all arguments</comment>
-        <translation>min</translation>
+        <translation type="vanished">min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>max of all arguments</comment>
-        <translation>max</translation>
+        <translation type="vanished">max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>sum of all arguments</comment>
-        <translation>sum</translation>
+        <translation type="vanished">sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>mean value of all arguments</comment>
-        <translation>avg</translation>
+        <translation type="vanished">avg</translation>
     </message>
     <message>
         <source>fmod</source>
         <comment>Returns the floating-point remainder of numer/denom (rounded towards zero)</comment>
-        <translation>fmod</translation>
+        <translation type="vanished">fmod</translation>
     </message>
     <message>
         <source>cm</source>
@@ -19570,22 +19685,22 @@ Do you want to save your changes?</source>
     <message>
         <source>degTorad</source>
         <comment>converts degrees to radian</comment>
-        <translation>градКрад</translation>
+        <translation type="vanished">градКрад</translation>
     </message>
     <message>
         <source>radTodeg</source>
         <comment>converts radian to degrees</comment>
-        <translation>радКград</translation>
+        <translation type="vanished">радКград</translation>
     </message>
     <message>
         <source>sin</source>
         <comment>sine function working with radians</comment>
-        <translation>sin</translation>
+        <translation type="vanished">sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>cosine function working with radians</comment>
-        <translation>cos</translation>
+        <translation type="vanished">cos</translation>
     </message>
     <message>
         <source>tan</source>
@@ -19610,12 +19725,12 @@ Do you want to save your changes?</source>
     <message>
         <source>sinD</source>
         <comment>sine function working with degrees</comment>
-        <translation>sinГ</translation>
+        <translation type="vanished">sinГ</translation>
     </message>
     <message>
         <source>cosD</source>
         <comment>cosine function working with degrees</comment>
-        <translation>cosГ</translation>
+        <translation type="vanished">cosГ</translation>
     </message>
     <message>
         <source>tanD</source>
@@ -19800,62 +19915,266 @@ Do you want to save your changes?</source>
     <message>
         <source>tan</source>
         <comment>tangent function working with radians</comment>
-        <translation type="unfinished">tan</translation>
+        <translation type="obsolete">tan</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>inverse sine function working with radians</comment>
-        <translation type="unfinished">asin</translation>
+        <translation type="obsolete">asin</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>inverse cosine function working with radians</comment>
-        <translation type="unfinished">acos</translation>
+        <translation type="obsolete">acos</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>inverse tangent function working with radians</comment>
-        <translation type="unfinished">atan</translation>
+        <translation type="obsolete">atan</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>hyperbolic tangent function</comment>
-        <translation type="unfinished">tanh</translation>
+        <translation type="obsolete">tanh</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>inverse hyperbolic sine function</comment>
-        <translation type="unfinished">asibh</translation>
+        <translation type="obsolete">asibh</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>inverse hyperbolic cosine function</comment>
-        <translation type="unfinished">acosh</translation>
+        <translation type="obsolete">acosh</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>inverse hyperbolic tangent function</comment>
-        <translation type="unfinished">atanh</translation>
+        <translation type="obsolete">atanh</translation>
     </message>
     <message>
         <source>tanD</source>
         <comment>tangent function working with degrees</comment>
-        <translation type="unfinished">tanГ</translation>
+        <translation type="obsolete">tanГ</translation>
     </message>
     <message>
         <source>asinD</source>
         <comment>inverse sine function working with degrees</comment>
-        <translation type="unfinished">asinГ</translation>
+        <translation type="obsolete">asinГ</translation>
     </message>
     <message>
         <source>acosD</source>
         <comment>inverse cosine function working with degrees</comment>
-        <translation type="unfinished">acosГ</translation>
+        <translation type="obsolete">acosГ</translation>
     </message>
     <message>
         <source>atanD</source>
         <comment>inverse tangent function working with degrees</comment>
+        <translation type="obsolete">atanГ</translation>
+    </message>
+    <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees)</comment>
+        <translation type="unfinished">градКрад</translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)</comment>
+        <translation type="unfinished">радКград</translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians)</comment>
+        <translation type="unfinished">sin</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians)</comment>
+        <translation type="unfinished">cos</translation>
+    </message>
+    <message>
+        <source>tan</source>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)</comment>
+        <translation type="unfinished">tan</translation>
+    </message>
+    <message>
+        <source>asin</source>
+        <comment>Inverse sine function working with radians
+Usage: asin(x)</comment>
+        <translation type="unfinished">asin</translation>
+    </message>
+    <message>
+        <source>acos</source>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x)</comment>
+        <translation type="unfinished">acos</translation>
+    </message>
+    <message>
+        <source>atan</source>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x)</comment>
+        <translation type="unfinished">atan</translation>
+    </message>
+    <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(angle θ in radians)</comment>
+        <translation type="unfinished">sinh</translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(angle θ in radians)</comment>
+        <translation type="unfinished">cosh</translation>
+    </message>
+    <message>
+        <source>tanh</source>
+        <comment>Hyperbolic tangent function
+Usage: tanh(angle θ in radians)</comment>
+        <translation type="unfinished">tanh</translation>
+    </message>
+    <message>
+        <source>asinh</source>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)</comment>
+        <translation type="unfinished">asibh</translation>
+    </message>
+    <message>
+        <source>acosh</source>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x)</comment>
+        <translation type="unfinished">acosh</translation>
+    </message>
+    <message>
+        <source>atanh</source>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x)</comment>
+        <translation type="unfinished">atanh</translation>
+    </message>
+    <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees)</comment>
+        <translation type="unfinished">sinГ</translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees)</comment>
+        <translation type="unfinished">cosГ</translation>
+    </message>
+    <message>
+        <source>tanD</source>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)</comment>
+        <translation type="unfinished">tanГ</translation>
+    </message>
+    <message>
+        <source>asinD</source>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x)</comment>
+        <translation type="unfinished">asinГ</translation>
+    </message>
+    <message>
+        <source>acosD</source>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x)</comment>
+        <translation type="unfinished">acosГ</translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
         <translation type="unfinished">atanГ</translation>
+    </message>
+    <message>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x)</comment>
+        <translation type="unfinished">log2</translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
+        <translation type="unfinished">log10</translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x)</comment>
+        <translation type="unfinished">log</translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x)</comment>
+        <translation type="unfinished">ln</translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
+        <translation type="unfinished">exp</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x)</comment>
+        <translation type="unfinished">sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x)</comment>
+        <translation type="unfinished">sign</translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(float x)</comment>
+        <translation type="unfinished">rint</translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x)</comment>
+        <translation type="unfinished">abs</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">max</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">sum</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)</comment>
+        <translation type="unfinished">fmod</translation>
     </message>
 </context>
 <context>

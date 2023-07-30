@@ -154,11 +154,11 @@ private slots:
     void zoomScaleChanged(qreal scale);
     void MouseMove(const QPointF &scenePos);
     void Clear();
-    void PatternChangesWereSaved(bool saved);
+    void patternChangesWereSaved(bool saved);
     void LastUsedTool();
-    void FullParseFile();
-    void SetEnabledGUI(bool enabled);
-    void GlobalchangeDraftBlock(const QString &patternPiece);
+    void fullParseFile();
+    void setGuiEnabled(bool enabled);
+    void changeDraftBlockGlobally(const QString &patternPiece);
     void ToolBarStyles();
     void resetOrigins();
     void showLayoutPages(int index);
@@ -359,8 +359,8 @@ private:
 
     void                              CancelTool();
 
-    void               SetEnableWidgets(bool enable);
-    void               setEnableTools(bool enable);
+    void               setWidgetsEnabled(bool enable);
+    void               setToolsEnabled(bool enable);
     void               SetLayoutModeActions();
 
     void               SaveCurrentScene();

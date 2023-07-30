@@ -72,7 +72,7 @@
 #include "../vmisc/qxtcsvmodel.h"
 #include "vlitepattern.h"
 #include "../qmuparser/qmudef.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 #include "version.h"
 #include "mapplication.h" // Should be last because of definning qApp
 
@@ -1435,7 +1435,7 @@ void TMainWindow::Fx()
 		return;
 	}
 
-	DialogEditWrongFormula *dialog = new DialogEditWrongFormula(meash->GetData(), NULL_ID, this);
+	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, this);
 	dialog->setWindowTitle(tr("Edit measurement"));
 	dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
 														  true));
@@ -1672,17 +1672,17 @@ void TMainWindow::ShowNewMData(bool fresh)
 		// Don't block all signal for QLineEdit. Need for correct handle with clear button.
 		disconnect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
 		ui->plainTextEditDescription->blockSignals(true);
-		if (meash->IsCustom())
+		if (meash->isCustom())
 		{
 			ui->plainTextEditDescription->setPlainText(meash->GetDescription());
-			ui->lineEditFullName->setText(meash->GetGuiText());
+			ui->lineEditFullName->setText(meash->getGuiText());
 			ui->lineEditName->setText(ClearCustomName(meash->GetName()));
 		}
 		else
 		{
 			//Show known
 			ui->plainTextEditDescription->setPlainText(qApp->TrVars()->Description(meash->GetName()));
-			ui->lineEditFullName->setText(qApp->TrVars()->GuiText(meash->GetName()));
+			ui->lineEditFullName->setText(qApp->TrVars()->guiText(meash->GetName()));
 			ui->lineEditName->setText(nameField->text());
 		}
 		connect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
@@ -1762,7 +1762,7 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	{
 		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
 										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->GuiText(name)));
+										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->guiText(name)));
 	}
 	// This part is very ugly, can't find better way to resize dockWidget.
 	ui->labelDiagram->adjustSize();
@@ -1833,7 +1833,7 @@ void TMainWindow::SaveMName(const QString &text)
 
 	QString newName = text;
 
-	if (meash->IsCustom())
+	if (meash->isCustom())
 	{
 		newName.isEmpty() ? newName = GetCustomName() : newName = CustomMSign + newName;
 
@@ -2069,7 +2069,7 @@ void TMainWindow::SaveMFullName()
 		return;
 	}
 
-	if (meash->IsCustom())
+	if (meash->isCustom())
 	{
 		individualMeasurements->SetMFullName(nameField->data(Qt::UserRole).toString(), ui->lineEditFullName->text());
 
@@ -2626,16 +2626,16 @@ void TMainWindow::RefreshTable(bool freshCall)
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
-			if (meash->IsCustom())
+			if (meash->isCustom())
 			{
                 AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
-				AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
+				AddCell(meash->getGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
 			{
 
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*meash->GetValue(), mUnit, pUnit);
@@ -2661,15 +2661,15 @@ void TMainWindow::RefreshTable(bool freshCall)
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
-			if (meash->IsCustom())
+			if (meash->isCustom())
 			{
 				AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(meash->getGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
 			{
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*data->DataVariables()->value(meash->GetName())->GetValue(), mUnit,
