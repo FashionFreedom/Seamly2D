@@ -10,6 +10,8 @@
   - Releases:
     -[CI](ci.yml) - The release build can also be triggered manually to create a release independent of the weekly schedule (eg. if an important bug is fixed and should be available as a release during the week).
 
+    -[CI](build_docs.yml) - The documents build can also be triggered manually independent of the weekly schedule.
+
 ---
 ## External Github Actions
 - [Install Qt](https://github.com/marketplace/actions/install-qt). Referenced as `jurplel/install-qt-action`, installs the Qt platform across all the three different runners (ubuntu-18.04, macos-latest, windows-latest) consistently. Internally it uses the [aqtinstall](https://github.com/miurahr/aqtinstall/) installer written in Python. Worth knowing if those errors propagate up through the GitHub action.

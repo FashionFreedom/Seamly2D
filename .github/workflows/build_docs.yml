@@ -1,15 +1,9 @@
 # This workflow generates the Doxygen documentation
-name: Doxygen Action
+name: Build Doxygen Docs Action
 
-# Controls when the action will run. There’s no way to specify that a workflow should be
-# triggered when a pull request is merged. However, because a merged pull request always
-# results in a push, we can use a push event to develop to accomplish our goal.
+# Controls when the action will run.
 on:
   workflow_dispatch:
-    push:
-      branches:
-      - develop
-      pull_request:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
