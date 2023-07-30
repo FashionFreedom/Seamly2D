@@ -1,0 +1,362 @@
+name: CI
+
+# for a description, see README.md in this folder
+
+on:
+  schedule:
+    - cron: '30 1 * * MON'
+  workflow_dispatch:
+  push:
+    branches:
+    - develop
+    - test
+  pull_request:
+
+permissions:
+  contents: write
+
+env:
+  QT_VERSION: '5.15.2' # quotes required or YAML parser will interpret as float
+
+jobs:
+
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version_number: ${{ steps.create-version.outputs.version_number }}
+
+    # The version number is YYYY.MM.DD.hhmm to create simple, easy-to-read "rolling release" versioning
+    # for pull requests before merge keep a static version number
+    steps:
+      - name: create version number
+        id: create-version
+        run: |
+          if [ $GITHUB_EVENT_NAME = 'schedule' ] || [ $GITHUB_EVENT_NAME = 'workflow_dispatch' ] || [ $GITHUB_EVENT_NAME = 'push' ] ; then
+            echo "version_number=$(date +%Y.%-m.%-d.%-H%M)" >> $GITHUB_OUTPUT
+          else
+            echo "version_number=0.6.0.1" >> $GITHUB_OUTPUT
+          fi
+
+  linux:
+    name: 'Linux: Build AppImage'
+    runs-on: ubuntu-20.04  # build on the oldest supported LTS so that resulting binaries are compatible with older and newer Linux releases
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: install appimage dependencies
+        run: |
+          sudo apt update && sudo apt install -y libfuse2
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -O /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-x86_64.AppImage
+          sudo wget -q https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage -O /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+          sudo chmod +x /usr/local/bin/linuxdeploy-plugin-qt-x86_64.AppImage
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+
+      - name: update version
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: build Seamly2D appimage
+        env:
+          OUTPUT: Seamly2D-x86_64.AppImage  # linuxdeploy-x86_64.AppImage uses this env var as name for AppImage
+        run: |
+          qmake -config release CONFIG+=noTests
+          make -j$(nproc)
+          make INSTALL_ROOT=`pwd`/AppDir install
+          # install poppler-utils for pdftops, gstreamer1.0-plugins-base for QtMultimedia, libxkbcommon for Qt xcb
+          sudo apt update && sudo apt install -y poppler-utils gstreamer1.0-plugins-base libxkbcommon-x11-0
+          cp /usr/bin/pdftops AppDir/usr/bin
+          mkdir -p AppDir/usr/share/X11/xkb
+          cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
+          linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-x86_64.AppImage
+          path: Seamly2D-x86_64.AppImage
+          if-no-files-found: error
+
+  linux-test:
+    if: github.event_name == 'pull_request'
+    name: 'Linux: Run unit tests'
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+
+      - name: build Seamly2D & SeamlyMe for tests
+        run: |
+          qmake Seamly2D.pro
+          make -j$(nproc)
+
+      - name: install test dependencies
+        # xvfb use to test built application within a framebuffer
+        run: |
+          sudo apt update
+          sudo apt install -y xvfb libxkbcommon-x11-0
+
+      - name: run Seamly2D tests
+        run: |
+          xvfb-run -a make check
+
+  macos:
+    name: 'macOS: Build'
+    runs-on: macos-latest
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+
+      - name: update version
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: setup signing and notarization
+        env:
+          KEYCHAIN_FILE: ~/seamly2d.keychain
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        if: ${{ env.APPLE_SIGN_IDENTITY }}
+        run: |
+          security create-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security unlock-keychain -p ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          security set-keychain-settings $KEYCHAIN_FILE
+          security list-keychains -d user -s $KEYCHAIN_FILE
+          echo '${{ secrets.apple_sign_certificate }}' | base64 -d -o ~/seamly2d.p12
+          security import ~/seamly2d.p12 -k $KEYCHAIN_FILE -T /usr/bin/codesign -P ${{ secrets.apple_sign_certificate_password }}
+          security set-key-partition-list -S apple-tool:,apple: -s -k ${{ secrets.apple_keychain_password }} $KEYCHAIN_FILE
+          echo "APPLE_SIGN_IDENTITY=${{ secrets.apple_sign_identity }}" >> $GITHUB_ENV
+
+          mkdir -p ~/private_keys/
+          echo '${{ secrets.apple_notarize_key_content }}' > ~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8
+          echo "APPLE_NOTARIZE_KEY=~/private_keys/AuthKey_${{ secrets.apple_notarize_key_id }}.p8" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_KEY_ID=${{ secrets.apple_notarize_key_id }}" >> $GITHUB_ENV
+          echo "APPLE_NOTARIZE_ISSUER_ID=${{ secrets.apple_notarize_issuer_id }}" >> $GITHUB_ENV
+
+      - name: make Seamly2D for macos
+        env:
+          APPLE_SIGN_IDENTITY: ${{ secrets.apple_sign_identity }}
+        run: |
+          # run signing part if secrets are available (main builds), otherwise (3rd party PRs etc) skip
+          if [ -n "$APPLE_SIGN_IDENTITY" ] ; then
+            qmake Seamly2D.pro -config release CONFIG+=noTests CONFIG+=macSign
+          else
+            qmake Seamly2D.pro -config release CONFIG+=noTests
+          fi
+          make -j$(sysctl -n hw.logicalcpu)
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-macos.zip
+          path: out/Seamly2D-macos.zip
+          if-no-files-found: error
+
+  windows:
+    name: 'Windows 64-Bit: Build'
+    runs-on: windows-latest
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ilammy/msvc-dev-cmd@v1
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          cache: true
+
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
+
+      - name: create seamly2d-installer.exe
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
+      - name: pack installer file into .zip
+        run: |
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
+          copy Seamly2D-windows.zip ..\Seamly2D\
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-windows.zip
+          path: Seamly2D-windows.zip
+          if-no-files-found: error
+
+  win32:
+    name: 'Windows 32-Bit: Build'
+    runs-on: windows-latest
+    needs: version
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: ilammy/msvc-dev-cmd@v1
+        with:
+          arch: amd64_x86
+
+      - uses: jurplel/install-qt-action@v3
+        with:
+          version: ${{ env.QT_VERSION }}
+          arch: win32_msvc2019
+          cache: true
+
+      - name: update version
+        shell: bash
+        run: |
+          ./scripts/version.sh ${VERSION_NUMBER}
+
+      - name: make seamly2d.exe and seamlyme.exe
+        run: |
+          qmake.exe Seamly2D.pro -config release CONFIG+=noTests
+          nmake
+
+      - name: create seamly2d-installer.exe
+        # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
+        # uses parameters in seamly2d-installer.nsi to create the installer exe
+        run: |
+          mkdir ..\windows-build
+          Copy-Item -Path 'src\app\seamly2d\bin\*' -Destination ..\windows-build -Recurse
+          Copy-Item -Path 'src\app\seamlyme\bin\*' -Destination ..\windows-build -Recurse -Force
+          Copy-Item -Path dist\seamly2d-installer.nsi -Destination ..\windows-build
+          cd ..\windows-build\
+          & 'C:\Program Files (x86)\NSIS\makensis.exe' seamly2d-installer.nsi
+
+      - name: setup signing
+        id: setup_signing
+        uses: timheuer/base64-to-file@v1.2
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        with:
+          encodedString: ${{ secrets.pfx_base64 }}
+          fileName: seamly2d.pfx
+
+      - name: sign installer
+        env:
+          PFX_BASE64: ${{ secrets.pfx_base64 }}
+        if: ${{ env.PFX_BASE64 }}
+        run: |
+          cd ..\windows-build\
+          SignTool sign /fd SHA256 /f ${{ steps.setup_signing.outputs.filePath }} /p ${{ secrets.pfx_password }} /t http://timestamp.sectigo.com Seamly2D-installer.exe
+
+      - name: pack installer file into .zip
+        run: |
+          cd ..\windows-build\
+          C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
+          copy Seamly2D-win32.zip ..\Seamly2D\
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: Seamly2D-win32.zip
+          path: Seamly2D-win32.zip
+          if-no-files-found: error
+
+  publish:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    needs: [version, windows, win32, linux, macos]
+    env:
+      VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
+
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: Seamly2D-x86_64.AppImage
+      - uses: actions/download-artifact@v3
+        with:
+          name: Seamly2D-macos.zip
+      - uses: actions/download-artifact@v3
+        with:
+          name: Seamly2D-windows.zip
+      - uses: actions/download-artifact@v3
+        with:
+          name: Seamly2D-win32.zip
+      - uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ env.VERSION_NUMBER }}
+          name: ${{ env.VERSION_NUMBER }}
+          generate_release_notes: true
+          fail_on_unmatched_files: true
+          # push event is triggered after pull request is merged, and in these cases mark as prerelease
+          # all other (schedule and manual) are not marked as prerelease
+          prerelease: ${{ github.event_name == 'push' }}
+          files: |
+            Seamly2D-x86_64.AppImage
+            Seamly2D-macos.zip
+            Seamly2D-windows.zip
+            Seamly2D-win32.zip
+
+  document:
+    # Deploy Doxygen documentation for scheduled releases (schedule) and manual releases (workflow_dispatch) and pre-releases (push)
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Doxygen GitHub Pages Deploy Action
+        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          # folder where docs are built, must match OUTPUT_DIRECTORY in Doxyfile + html
+          folder: docs/html
+          config_file: Doxyfile
+          # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
+          target_folder: docs/
