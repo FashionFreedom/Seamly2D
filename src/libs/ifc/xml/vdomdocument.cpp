@@ -659,7 +659,22 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     domParser->setExitOnFirstFatalError(true);
     domParser->setErrorHandler(handler);
 
+#ifdef Q_OS_WIN32
+    QFile patternFile(fileName);
+    if (patternFile.open(QIODevice::ReadOnly) == false)
+    {
+        const QString errorMsg(tr("Can't open schema file %1:\n%2.").arg(schema).arg(fileSchema.errorString()));
+        throw VException(errorMsg);
+    }
+
+    QTextStream patternIn(&patternFile);
+    std::string xmlString = patternIn.readAll().toStdString();
+    xercesc::MemBufInputSource inputBuffer((XMLByte*)xmlString.c_str(), xmlString.size(), "/input.xml");
+
+    domParser->parse(inputBuffer);
+#else
     domParser->parse(xercesc::XMLString::transcode(fileName.toStdString().c_str()));
+#endif
     if (domParser->getErrorCount() != 0) {
         const QString errorMsg(tr("Validation error file %1").arg(fileName));
         throw VException(errorMsg);
