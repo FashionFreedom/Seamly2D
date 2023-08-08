@@ -659,7 +659,8 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     domParser->setExitOnFirstFatalError(true);
     domParser->setErrorHandler(handler);
 
-#ifdef Q_OS_WIN32
+    // While Xerces can open files directly, on Windows it can not open QT's temp files.
+    // That's why we first read the file using QTextStream instead.
     QFile patternFile(fileName);
     if (patternFile.open(QIODevice::ReadOnly) == false)
     {
@@ -672,9 +673,6 @@ void VDomDocument::ValidateXML(const QString &schema, const QString &fileName)
     xercesc::MemBufInputSource inputBuffer((XMLByte*)xmlString.c_str(), xmlString.size(), "/input.xml");
 
     domParser->parse(inputBuffer);
-#else
-    domParser->parse(xercesc::XMLString::transcode(fileName.toStdString().c_str()));
-#endif
     if (domParser->getErrorCount() != 0) {
         const QString errorMsg(tr("Validation error file %1").arg(fileName));
         throw VException(errorMsg);
