@@ -74,179 +74,6 @@
     </message>
 </context>
 <context>
-    <name>CommunityPage</name>
-    <message>
-        <source>Server</source>
-        <translation type="vanished">Palvelin</translation>
-    </message>
-    <message>
-        <source>Server name/IP</source>
-        <translation type="vanished">Palvelimen nimi/IP</translation>
-    </message>
-    <message>
-        <source>Secure connection</source>
-        <translation type="vanished">Suojattu yhteys</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation type="vanished">Välittävän palvelimen asetukset</translation>
-    </message>
-    <message>
-        <source>Use Proxy</source>
-        <translation type="vanished">Käyttäjä välittäjäpalvelinta</translation>
-    </message>
-    <message>
-        <source>Proxy address</source>
-        <translation type="vanished">Välittäjäpalvelimen osoite</translation>
-    </message>
-    <message>
-        <source>Proxy port</source>
-        <translation type="vanished">Välittäjäpalvelimen portti</translation>
-    </message>
-    <message>
-        <source>Proxy user</source>
-        <translation type="vanished">Välittäjäpalvelimen käyttäjätunnus</translation>
-    </message>
-    <message>
-        <source>Proxy pass</source>
-        <translation type="vanished">Välittäjäpalvelimen salasana</translation>
-    </message>
-    <message>
-        <source>User settings</source>
-        <translation type="vanished">Käyttäjän asetukset</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">Käyttäjätunnus</translation>
-    </message>
-    <message>
-        <source>Save password</source>
-        <translation type="vanished">Tallenna salasana</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">Salasana</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Toteuta</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Peru</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">%Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Konfigurointi dialogi</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="vanished">Kaava</translation>
-    </message>
-    <message>
-        <source>Community</source>
-        <translation type="vanished">Yhteisö</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">Polut</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigurationPage</name>
-    <message>
-        <source>Setup user interface language updated and will be used the next time start</source>
-        <translation type="vanished">Asetusten käyttöliittymän kieli päivitetty. Päivitys otetaan käyttöön uudelleen käynnistyksen jälkeen.</translation>
-    </message>
-    <message>
-        <source>Default unit updated and will be used the next pattern creation</source>
-        <translation type="vanished">Oletusarvoinen yksikkö päivitetty ja otetaan käyttöön seuraavan kaavan luonnin yhteydessä</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Tallenna</translation>
-    </message>
-    <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="vanished">Tallenna automaattisesti muokattu kaava</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="vanished">min</translation>
-    </message>
-    <message>
-        <source>Interval:</source>
-        <translation type="vanished">Väli:</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kieli</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">GUI kieli</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">Desimaalierotin osat</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">Käyttäen käyttöjärjestelmä asetusta (%1)</translation>
-    </message>
-    <message>
-        <source>Default unit</source>
-        <translation type="vanished">Oletusarvoinen mittayksikkö</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="vanished">senttimetriä</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">millimetriä</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="vanished">tuumaa</translation>
-    </message>
-    <message>
-        <source>Label language</source>
-        <translation type="vanished">Nimilappujen kieli</translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="vanished">Lähetä kaatumisraportteja</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="vanished">Lähetä kaatumisraportteja (suositus)</translation>
-    </message>
-    <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">Seamly2D kerää tietoa jokaisesta ohjelman kaatumisesta. Ohjelma ei kerää henkilökohtaisia tietoja. Lisätietoa kerätystä  &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;tiedosta. &lt;/a&gt; </translation>
-    </message>
-    <message>
-        <source>Pattern Editing</source>
-        <translation type="vanished">Kaavan muuttaminen</translation>
-    </message>
-    <message>
-        <source>Confirm item deletion</source>
-        <translation type="vanished">Varmista kohdan poistaminen</translation>
-    </message>
-</context>
-<context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
@@ -319,10 +146,6 @@ p, li { white-space: pre-wrap; }
         <translation>Avustajat</translation>
     </message>
     <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Käännetty %3 klo %4</translation>
-    </message>
-    <message>
         <source>Web site : %1</source>
         <translation>Kotisivu: %1</translation>
     </message>
@@ -391,81 +214,14 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogAboutTape</name>
-    <message>
-        <source>Build revision:</source>
-        <translation type="vanished">Käännös versio:</translation>
-    </message>
-    <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Käännetty %3 klo %4</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation type="vanished">Kotisivu: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation type="vanished">Oletus selaimen aukaiseminen epäonnistui</translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation type="obsolete">Käännetty %3 klo %2 {1 ?}</translation>
-    </message>
-</context>
-<context>
     <name>DialogAlongLine</name>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -547,44 +303,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArc</name>
     <message>
-        <source>Arc</source>
-        <translation type="vanished">Kaari</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Säteen arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Ensimmäinen kulma</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Ensimmäisen kulman arvo</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">Toinen kulma</translation>
-    </message>
-    <message>
-        <source>Value of second angle</source>
-        <translation type="vanished">Toisen kulma arvo</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">Keskipiste</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
     </message>
     <message>
         <source>Error</source>
@@ -597,10 +317,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Angles equal</source>
         <translation>Yhtäsuuret kulmat</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -691,44 +407,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Säteen arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Ensimmäinen kulma</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Ensimmäisen kulman arvo</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Arc length</source>
-        <translation type="vanished">Kaaren pituus</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">Keskipiste</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -823,52 +503,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Kulman ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Kulman toinen piste</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">Kolmas piste</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">Kulman kolmas piste</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Näytä viiva toisesta pisteestä tähän pisteeseen</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -877,14 +513,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select third point of angle</source>
         <translation>Valitse kulman kolmas piste</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Piste puolikasta pitkin</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1072,52 +700,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>Angle</source>
-        <translation type="vanished">Kulma</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Kulman arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Axis point</source>
-        <translation type="vanished">Akselipiste</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Käyrä</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation>Valitse Akselipiste</translation>
-    </message>
-    <message>
-        <source>Point intersect curve and axis</source>
-        <translation type="vanished">Käyrän ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Axis Point</source>
-        <translation type="vanished">Akselipiste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1192,36 +780,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Kaari</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Segment an arc</source>
-        <translation type="vanished">Kaaren segmentti</translation>
-    </message>
-    <message>
-        <source>Selected arc</source>
-        <translation type="vanished">Valitse kaari</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1275,36 +835,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Käyrä</translation>
-    </message>
-    <message>
-        <source>Selected curve</source>
-        <translation type="vanished">Valitse käyrä</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Segmenting a simple curve</source>
-        <translation type="vanished">Jaa segmentteihin yksinkertainen käyrä</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1358,36 +890,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Käyrä</translation>
-    </message>
-    <message>
-        <source>Selected curve path</source>
-        <translation type="vanished">Valitse käyräpolku</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Segment a curved path</source>
-        <translation type="vanished">Jaa käyrä segmentteihin</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1455,179 +959,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>&lt;empty&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogDetail</name>
-    <message>
-        <source>Detail</source>
-        <translation type="vanished">Yksityiskohta</translation>
-    </message>
-    <message>
-        <source>Bias X</source>
-        <translation type="vanished">Vinouma X</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation type="vanished">cm</translation>
-    </message>
-    <message>
-        <source>Bias Y</source>
-        <translation type="vanished">Vinouma Y</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
-    <message>
-        <source>Name of detail</source>
-        <translation type="vanished">Yksityiskohdan nimi</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="vanished">Saumavara</translation>
-    </message>
-    <message>
-        <source>Width</source>
-        <translation type="vanished">Leveys</translation>
-    </message>
-    <message>
-        <source>Closed</source>
-        <translation type="vanished">Suljettu</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Poista</translation>
-    </message>
-    <message>
-        <source>Got wrong scene object. Ignore.</source>
-        <translation type="vanished">Väärä kohde. Älä välitä.</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="vanished">Käännä päinvastoin</translation>
-    </message>
-    <message>
-        <source>Seam allowance tool</source>
-        <translation type="vanished">Saumavara työkalu</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="vanished">Leveys:</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditLabel</name>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Muokkaa</translation>
-    </message>
-    <message>
-        <source>Could not save file</source>
-        <translation type="obsolete">Tiedostoa ei voitu tallentaa</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation type="obsolete">Tiedostovirhe.</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="obsolete">Koko</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="obsolete">Pituus</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditWrongFormula</name>
-    <message>
-        <source>Edit formula</source>
-        <translation type="vanished">Muuta matemaattista kaavaa</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Matemaattinen kaava</translation>
-    </message>
-    <message>
-        <source>Insert variable into formula</source>
-        <translation type="vanished">Lisää muuttuja kaavaan</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Ensimmäisen kulman arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Input data</source>
-        <translation type="vanished">Lisää dataa</translation>
-    </message>
-    <message>
-        <source>Size and height</source>
-        <translation type="vanished">Koko ja korkeus</translation>
-    </message>
-    <message>
-        <source>Measurements</source>
-        <translation type="vanished">Mitat</translation>
-    </message>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">Lisäys</translation>
-    </message>
-    <message>
-        <source>Length of lines</source>
-        <translation type="vanished">Viivan pituus</translation>
-    </message>
-    <message>
-        <source>Length of arcs</source>
-        <translation type="vanished">Kaarenpituus</translation>
-    </message>
-    <message>
-        <source>Length of curves</source>
-        <translation type="vanished">Polun pituus</translation>
-    </message>
-    <message>
-        <source>Angle of lines</source>
-        <translation type="vanished">Viivojen kulma</translation>
-    </message>
-    <message>
-        <source>Hide empty measurements</source>
-        <translation type="vanished">Piilota tyhjät mittaukset</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="vanished">Koko</translation>
-    </message>
-    <message>
-        <source>Line length</source>
-        <translation type="vanished">Viivan pituus</translation>
-    </message>
-    <message>
-        <source>Arc length</source>
-        <translation type="vanished">Kaaren pituus</translation>
-    </message>
-    <message>
-        <source>Curve length</source>
-        <translation type="vanished">Käyrän pituus</translation>
-    </message>
-    <message>
-        <source>Line Angle</source>
-        <translation type="vanished">Viiva kulma</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="obsolete">Nimi</translation>
     </message>
 </context>
 <context>
@@ -1756,52 +1087,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Kulma</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Kulman arvo</translation>
-    </message>
-    <message>
-        <source>Base point</source>
-        <translation type="vanished">Alkupiste</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1923,48 +1210,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Base point</source>
-        <translation type="vanished">Alkupiste</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to our point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Valitse viivan ensimmäinen piste</translation>
     </message>
     <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Kohtisuorapiste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation type="vanished">Alkupiste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Base point:</source>
@@ -2013,184 +1264,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogHistory</name>
-    <message>
-        <source>History</source>
-        <translation type="vanished">Historia</translation>
-    </message>
-    <message>
-        <source>Tool</source>
-        <translation type="vanished">Työkalu</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create record.</source>
-        <translation type="vanished">Ohjelma ei pystynyt luomaan tietuetta.</translation>
-    </message>
-    <message>
-        <source>%1 - Base point</source>
-        <translation type="vanished">%1 - Alkupiste</translation>
-    </message>
-    <message>
-        <source>%1_%2 - Line from point %1 to point %2</source>
-        <translation type="vanished">%1_%2 - Viiva pisteestä %1 pisteeseen %2</translation>
-    </message>
-    <message>
-        <source>%3 - Point along line %1_%2</source>
-        <translation type="vanished">%3 - Piste viivaa %1_%2 pitkin</translation>
-    </message>
-    <message>
-        <source>%1 - Point of shoulder</source>
-        <translation type="vanished">%1 - Olkapääpiste</translation>
-    </message>
-    <message>
-        <source>%3 - normal to line %1_%2</source>
-        <translation type="vanished">%3 - normaali viivaan %1_%2</translation>
-    </message>
-    <message>
-        <source>%4 - bisector of angle %1_%2_%3</source>
-        <translation type="vanished">%4 - puolikkaan kulma %1_%2_%3</translation>
-    </message>
-    <message>
-        <source>%5 - intersection of lines %1_%2 and %3_%4</source>
-        <translation type="vanished">%5 - viivojen leikkaus %1_%2 and %3_%4</translation>
-    </message>
-    <message>
-        <source>Curve %1_%2</source>
-        <translation type="vanished">Käyrä %1_%2</translation>
-    </message>
-    <message>
-        <source>Arc with center in point %1</source>
-        <translation type="vanished">Kaari jonka keskipiste on %1</translation>
-    </message>
-    <message>
-        <source>Curve point %1</source>
-        <translation type="vanished">Käyrän piste %1</translation>
-    </message>
-    <message>
-        <source>%4 - point of contact of arc with the center in point %1 and line %2_%3</source>
-        <translation type="vanished">%4 - Kaaren, jonka keskipiste on %1, kontaktipiste viivan %2_%3 kanssa</translation>
-    </message>
-    <message>
-        <source>Point of perpendicular from point %1 to line %2_%3</source>
-        <translation type="vanished">Kohtisuora viiva pisteestä %1 viivaan %2_%3</translation>
-    </message>
-    <message>
-        <source>Triangle: axis %1_%2, points %3 and %4</source>
-        <translation type="vanished">Kolmio: akseli %1_%2, pisteissä %3 ja %4</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection %2 and %3</source>
-        <translation type="vanished">%1 - leikkauspiste %2 ja %3</translation>
-    </message>
-    <message>
-        <source>%1 - cut arc with center %2</source>
-        <translation type="vanished">%1 - leikkaa kaari keskipisteessä %2</translation>
-    </message>
-    <message>
-        <source>%1 - cut curve %2_%3</source>
-        <translation type="vanished">%1 - Leikkaa käyrä %2_%3</translation>
-    </message>
-    <message>
-        <source>%1 - cut curve path %2</source>
-        <translation type="vanished">%1 - Leikkaa käyrän polku %2</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection line %2_%3 and axis through point %4</source>
-        <translation type="vanished">%1 - viivan %2_%3 ja akselin %4</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection curve and axis through point %2</source>
-        <translation type="vanished">%1 - käyrän ja akselin leikkaus pisteessä %2</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="obsolete">Käyrä</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="obsolete">Kaari</translation>
-    </message>
-</context>
-<context>
-    <name>DialogIncrements</name>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">Lisäys</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Nimi</translation>
-    </message>
-    <message>
-        <source>The calculated value</source>
-        <translation type="vanished">Laskettu arvo</translation>
-    </message>
-    <message>
-        <source>Lines</source>
-        <translation type="vanished">Viivat</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation type="vanished">Viiva</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Käyrä</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Kaari</translation>
-    </message>
-    <message>
-        <source>Tables of Variables</source>
-        <translation type="vanished">Muuttujien taulukko</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Kulma</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Matemaattinen kaava</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation type="vanished">Yksityiskohdat</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Nmi:</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Virhe</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation type="vanished">Tyhjä sarake</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation type="vanished">Jäsentämis virhe: %1</translation>
     </message>
 </context>
 <context>
@@ -2475,10 +1548,6 @@ p, li { white-space: pre-wrap; }
         <translation>Ei voitu luoda dataa somittelun luomiseen</translation>
     </message>
     <message>
-        <source>Several workpieces left not arranged, but none of them match for paper</source>
-        <translation type="vanished">Useita osia ei voitu järjestää koska ne ei mahdu paperille</translation>
-    </message>
-    <message>
         <source>Create a Layout</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2497,10 +1566,6 @@ p, li { white-space: pre-wrap; }
 </context>
 <context>
     <name>DialogLayoutSettings</name>
-    <message>
-        <source>Paper size</source>
-        <translation type="vanished">Paperin koko</translation>
-    </message>
     <message>
         <source>Templates:</source>
         <translation>Mallit:</translation>
@@ -2526,18 +1591,6 @@ p, li { white-space: pre-wrap; }
         <translation>aste</translation>
     </message>
     <message>
-        <source>Creation options</source>
-        <translation type="vanished">Luomisasetukset</translation>
-    </message>
-    <message>
-        <source>Shift length:</source>
-        <translation type="vanished">Siirron pituus:</translation>
-    </message>
-    <message>
-        <source>Principle of choosing the next workpiece</source>
-        <translation type="vanished">Seuraavan kaavan valintaperiaate</translation>
-    </message>
-    <message>
         <source>Three groups: big, middle, small</source>
         <translation>Kolme ryhmää: iso, keskikokoinen, pieni</translation>
     </message>
@@ -2550,10 +1603,6 @@ p, li { white-space: pre-wrap; }
         <translation>Laskeva alue</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Millimetriä</translation>
-    </message>
-    <message>
         <source>Centimeters</source>
         <translation>Senttimetriä</translation>
     </message>
@@ -2564,10 +1613,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Pixels</source>
         <translation>Pikseliä</translation>
-    </message>
-    <message>
-        <source>Create a layout</source>
-        <translation type="vanished">Luo sommittelu</translation>
     </message>
     <message>
         <source>Auto crop unused length</source>
@@ -2723,32 +1768,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLine</name>
     <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
         <source>Select second point</source>
         <translation>Valitse toinen piste</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Pisteiden välinen viiva</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2794,20 +1815,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersect</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
         <source>First line</source>
         <translation>Ensimmäinen viiva</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
     </message>
     <message>
         <source>Second line</source>
@@ -2824,10 +1833,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point of second line</source>
         <translation>Valitse toisen viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Viivojen leikkauspiste</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2861,44 +1866,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <source>Angle</source>
-        <translation type="vanished">Kulma</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Kulman arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Axis point</source>
-        <translation type="vanished">Akselipiste</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>First line point</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second line point</source>
-        <translation type="vanished">Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -2909,20 +1882,12 @@ Apply settings anyway?</source>
         <translation>Valitse Akselipiste</translation>
     </message>
     <message>
-        <source>Point intersect line and axis</source>
-        <translation type="vanished">Viivan ja akselin leikkauspiste</translation>
-    </message>
-    <message>
         <source>Axis Point</source>
         <translation>Akselipiste</translation>
     </message>
     <message>
         <source>Second point of line</source>
         <translation>Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -3110,10 +2075,6 @@ Apply settings anyway?</source>
         <translation type="unfinished">Arvo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Length:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3202,10 +2163,6 @@ Apply settings anyway?</source>
         <translation>Senttimetriä</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Millimetriä</translation>
-    </message>
-    <message>
         <source>Inches</source>
         <translation>Tuumaa</translation>
     </message>
@@ -3221,24 +2178,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNewPattern</name>
     <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Yksilölliset mitat</translation>
-    </message>
-    <message>
-        <source>Pattern piece name</source>
-        <translation type="vanished">Kaavan osan nimi</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation>Mittayksiköt:</translation>
     </message>
     <message>
         <source>Centimeters</source>
         <translation>Senttimetriä</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Millimetriä</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -3268,60 +2213,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
-        <source>Additional angle degrees</source>
-        <translation type="vanished">Kulman lisäasteet</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Piste kohtisuoraa pitkin</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -3407,24 +2304,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPatternProperties</name>
     <message>
-        <source>Pattern properties</source>
-        <translation type="vanished">Kaavan asetukset</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="vanished">Kuvaus</translation>
-    </message>
-    <message>
-        <source>Author name</source>
-        <translation type="vanished">Tekijän nimi</translation>
-    </message>
-    <message>
         <source>Pattern description</source>
         <translation>Kaavan kuvaus</translation>
-    </message>
-    <message>
-        <source>For technical notes.</source>
-        <translation type="vanished">Muistiinpanoja.</translation>
     </message>
     <message>
         <source>Heights and Sizes</source>
@@ -3588,193 +2469,7 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPatternXmlEdit</name>
-    <message>
-        <source>XML Editor</source>
-        <translation type="vanished">XML editori</translation>
-    </message>
-    <message>
-        <source>Value :</source>
-        <translation type="vanished">Arvo: </translation>
-    </message>
-    <message>
-        <source>Name :</source>
-        <translation type="vanished">Nimi :</translation>
-    </message>
-    <message>
-        <source>&lt;No selection&gt;</source>
-        <translation type="vanished">&lt;No selection&gt;</translation>
-    </message>
-    <message>
-        <source>Type : </source>
-        <translation type="vanished">Tyyppi :</translation>
-    </message>
-    <message>
-        <source>Add  attribute</source>
-        <translation type="vanished">Lisää attribuutti</translation>
-    </message>
-    <message>
-        <source>Remove attribute</source>
-        <translation type="vanished">Poista attribuutti</translation>
-    </message>
-    <message>
-        <source>Remove node</source>
-        <translation type="vanished">Poista solmu</translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation type="vanished">Aseta</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Peruuta</translation>
-    </message>
-    <message>
-        <source>Apply changes</source>
-        <translation type="vanished">Lisää muutokset</translation>
-    </message>
-    <message>
-        <source>Undo last</source>
-        <translation type="vanished">Peru edellinen</translation>
-    </message>
-    <message>
-        <source>Immediate apply</source>
-        <translation type="vanished">Lisää heti</translation>
-    </message>
-    <message>
-        <source>Base selection</source>
-        <translation type="vanished">Alku valista</translation>
-    </message>
-    <message>
-        <source>All pattern pieces</source>
-        <translation type="vanished">Kaikki kaavan osat</translation>
-    </message>
-    <message>
-        <source>No changes</source>
-        <translation type="vanished">Ei muutoksia</translation>
-    </message>
-    <message>
-        <source>Cannot delete previously created node</source>
-        <translation type="vanished">Edellistä solmua ei voitu poistaa</translation>
-    </message>
-    <message>
-        <source>No changes left</source>
-        <translation type="vanished">Ei muutoksia jäljellä</translation>
-    </message>
-    <message>
-        <source>Cannot undo change</source>
-        <translation type="vanished">Ei voi perua muutosta</translation>
-    </message>
-    <message>
-        <source>&lt;no value&gt;</source>
-        <translation type="vanished">&lt;ei arvoa&gt;</translation>
-    </message>
-    <message>
-        <source>Unchanged</source>
-        <translation type="vanished">Ei muutettu</translation>
-    </message>
-    <message>
-        <source>Cannot delete previously created attribute</source>
-        <translation type="vanished">Edellistä attribuuttia ei voitu poistaa</translation>
-    </message>
-    <message>
-        <source>Node Name</source>
-        <translation type="vanished">Solmun nimi</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="vanished">Nmi:</translation>
-    </message>
-    <message>
-        <source>Node Value (may be empty)</source>
-        <translation type="vanished">Solmun arvo (voi olla tyhjä)</translation>
-    </message>
-    <message>
-        <source>Value:</source>
-        <translation type="vanished">Arvo:</translation>
-    </message>
-    <message>
-        <source>Attribute Name</source>
-        <translation type="vanished">Attribuutin nimi</translation>
-    </message>
-    <message>
-        <source>Attribute Value</source>
-        <translation type="vanished">Attribuutin arvo</translation>
-    </message>
-    <message>
-        <source>No selection</source>
-        <translation type="vanished">Ei valintaa</translation>
-    </message>
-    <message>
-        <source>Root node</source>
-        <translation type="vanished">Juurisolmu</translation>
-    </message>
-    <message>
-        <source>Node</source>
-        <translation type="vanished">Solmu</translation>
-    </message>
-    <message>
-        <source>Attribute</source>
-        <translation type="vanished">Attribuutti</translation>
-    </message>
-</context>
-<context>
-    <name>DialogPiecePath</name>
-    <message>
-        <source>Path</source>
-        <translation type="obsolete">Polku</translation>
-    </message>
-    <message>
-        <source>Name:</source>
-        <translation type="obsolete">Nmi:</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Saumavara</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Leveys:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="obsolete">Oletus</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="obsolete">Käännä päinvastoin</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Poista</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">Kulma</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointFromArcAndTangent</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pisteen nimi</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Kaari</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
-    </message>
     <message>
         <source>Select an arc</source>
         <translation type="unfinished"></translation>
@@ -3813,77 +2508,18 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointFromCircleAndTangent</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pisteen nimi</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Virhe</translation>
-    </message>
-    <message>
-        <source>Radius can&apos;t be negative</source>
-        <translation type="vanished">Säde ei voi olla negatiivinen</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfContact</name>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Säteen arvo</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Center of arc</source>
-        <translation type="vanished">Kaaren keskipiste</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
         <translation>Valitse kaaren keskipiste</translation>
     </message>
     <message>
-        <source>Top of the line</source>
-        <translation type="vanished">Viivan yläosa</translation>
-    </message>
-    <message>
-        <source>End of the line</source>
-        <translation type="vanished">Viiva päätepiste</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Point at intersection of arc and line</source>
-        <translation type="vanished">Kaaren ja viivan leikkauspiste</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -3943,46 +2579,7 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointOfIntersection</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Kulman ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Kulman toinen piste</translation>
-    </message>
-    <message>
-        <source>Point from X and Y of two other points</source>
-        <translation type="vanished">Piste kahdesta muusta pisteestä</translation>
-    </message>
-    <message>
-        <source>X: vertical point</source>
-        <translation type="vanished">X: pystysuora piste</translation>
-    </message>
-    <message>
-        <source>Y: horizontal point</source>
-        <translation type="vanished">Y: vaakasuora piste</translation>
-    </message>
-    <message>
-        <source>Select point for Y value (horizontal)</source>
-        <translation type="vanished">Valitse piste Y arvolle (vaakasuora)</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionArcs</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pisteen nimi</translation>
-    </message>
-    <message>
-        <source>Selected arc</source>
-        <translation type="vanished">Valitse kaari</translation>
-    </message>
     <message>
         <source>Select second an arc</source>
         <translation type="unfinished"></translation>
@@ -4018,33 +2615,6 @@ Apply settings anyway?</source>
     <message>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogPointOfIntersectionCircles</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pisteen nimi</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Virhe</translation>
-    </message>
-    <message>
-        <source>Radius can&apos;t be negative</source>
-        <translation type="vanished">Säde ei voi olla negatiivinen</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
     </message>
 </context>
 <context>
@@ -4093,20 +2663,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPreferences</name>
     <message>
-        <source>Preferences</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
         <source>Pattern</source>
         <translation type="unfinished">Kaava</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Polut</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -4144,10 +2702,6 @@ Apply settings anyway?</source>
         <translation type="unfinished">Arvo</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Suffix:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4182,75 +2736,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogSaveLAyout</name>
-    <message>
-        <source>Path:</source>
-        <translation type="vanished">Polku:</translation>
-    </message>
-</context>
-<context>
-    <name>DialogSaveLayout</name>
-    <message>
-        <source>Name conflict</source>
-        <translation type="vanished">Nimikonflikti</translation>
-    </message>
-    <message>
-        <source>Svg files (*.svg)</source>
-        <translation type="vanished">Svg tiedostot (*.svg)</translation>
-    </message>
-    <message>
-        <source>PDF files (*.pdf)</source>
-        <translation type="vanished">PDF tiedostot (*.pdf)</translation>
-    </message>
-    <message>
-        <source>Images (*.png)</source>
-        <translation type="vanished">Kuvat (*.png)</translation>
-    </message>
-    <message>
-        <source>Wavefront OBJ (*.obj)</source>
-        <translation type="vanished">Wavefront OBJ (*.obj)</translation>
-    </message>
-    <message>
-        <source>PS files (*.ps)</source>
-        <translation type="vanished">PS tiedostot (*.ps)</translation>
-    </message>
-    <message>
-        <source>EPS files (*.eps)</source>
-        <translation type="vanished">EPS tiedostot (*.eps)</translation>
-    </message>
-</context>
-<context>
-    <name>DialogSeamAllowance</name>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="obsolete">Käännä päinvastoin</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Poista</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation type="obsolete">Jäsentämis virhe: %1</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Virhe</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Polut</translation>
-    </message>
-</context>
-<context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
@@ -4268,40 +2753,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Pituuden arvo</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">Kolmas piste</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Show line from first point to our point</source>
-        <translation type="vanished">Näytä viiva ensimmäisestä pisteestä tähän pisteeseen</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -4310,14 +2763,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point of line</source>
         <translation>Valitse viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Olkapään erityispiste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -4395,28 +2840,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogSinglePoint</name>
     <message>
-        <source>Single point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
         <source>Coordinates on the sheet</source>
         <translation>Arkin koordinaatit</translation>
     </message>
     <message>
         <source>Coordinates</source>
         <translation>Koordinaatit</translation>
-    </message>
-    <message>
-        <source>Y coordinate</source>
-        <translation type="vanished">Y koordinaatti</translation>
-    </message>
-    <message>
-        <source>X coordinate</source>
-        <translation type="vanished">X koordinaatti</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
     </message>
     <message>
         <source>Base Point</source>
@@ -4454,40 +2883,12 @@ Apply settings anyway?</source>
         <translation>Ensimmäinen piste</translation>
     </message>
     <message>
-        <source>Length ratio of the first control point</source>
-        <translation type="vanished">Ensimmäisen kontrollipisteen pituussuhde</translation>
-    </message>
-    <message>
-        <source>The angle of the first control point</source>
-        <translation type="vanished">Ensimmäisen kontrollipisteen kulma</translation>
-    </message>
-    <message>
         <source>Second point</source>
         <translation>Toinen piste</translation>
     </message>
     <message>
-        <source>Length ratio of the second control point</source>
-        <translation type="vanished">Toisen kontrollipisteen pituussuhde</translation>
-    </message>
-    <message>
-        <source>The angle of the second control point</source>
-        <translation type="vanished">Toisen kontrollipisteen kulma</translation>
-    </message>
-    <message>
-        <source>Coefficient of curvature of the curve</source>
-        <translation type="vanished">Käyrän kaarevuuden kerroin</translation>
-    </message>
-    <message>
         <source>Select last point of curve</source>
         <translation>Valitse käyrän viimeinen piste</translation>
-    </message>
-    <message>
-        <source>Simple curve</source>
-        <translation type="vanished">Yksinkertainen käyrä</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -4585,44 +2986,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogSplinePath</name>
     <message>
-        <source>Curved path</source>
-        <translation type="vanished">Mutkikas käyrä</translation>
-    </message>
-    <message>
-        <source>Point of curve</source>
-        <translation type="vanished">Käyrän piste</translation>
-    </message>
-    <message>
-        <source>Length ratio of the first control point</source>
-        <translation type="vanished">Ensimmäisen kontrollipisteen pituussuhde</translation>
-    </message>
-    <message>
-        <source>The angle of the first control point</source>
-        <translation type="vanished">Ensimmäisen kontrollipisteen kulma</translation>
-    </message>
-    <message>
-        <source>Length ratio of the second control point</source>
-        <translation type="vanished">Toisen kontrollipisteen pituussuhde</translation>
-    </message>
-    <message>
-        <source>The angle of the second control point</source>
-        <translation type="vanished">Toisen kontrollipisteen kulma</translation>
-    </message>
-    <message>
         <source>List of points</source>
         <translation>Lista pisteistä</translation>
     </message>
     <message>
-        <source>Coefficient of curvature of the curve</source>
-        <translation type="vanished">Käyrän kaarevuuden kerroin</translation>
-    </message>
-    <message>
         <source>Select point of curve path</source>
         <translation>Valitse käyrän piste</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -4734,21 +3103,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogTapePreferences</name>
-    <message>
-        <source>Preferences</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Polut</translation>
-    </message>
-</context>
-<context>
     <name>DialogTool</name>
     <message>
         <source>Error</source>
@@ -4761,10 +3115,6 @@ Apply settings anyway?</source>
     <message>
         <source>Value can&apos;t be 0</source>
         <translation>Arvo ei voi olla 0</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
@@ -4834,30 +3184,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogTriangle</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>First point of axis</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of axis</source>
-        <translation type="vanished">Viivan toinen piste</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
-    </message>
-    <message>
         <source>Select second point of axis</source>
         <translation>Valitse akselin toinen piste</translation>
     </message>
@@ -4868,22 +3194,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point</source>
         <translation>Valitse toinen piste</translation>
-    </message>
-    <message>
-        <source>Triangle tool</source>
-        <translation type="vanished">Kolmio työkalu</translation>
-    </message>
-    <message>
-        <source>First point of the axis</source>
-        <translation type="vanished">Akselin ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of the axis</source>
-        <translation type="vanished">Akselin toinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Viivan toinen piste</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -4924,22 +3234,6 @@ Apply settings anyway?</source>
 </context>
 <context>
     <name>DialogTrueDarts</name>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Kulman ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Kulman toinen piste</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">Kulman kolmas piste</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Näytä viiva toisesta pisteestä tähän pisteeseen</translation>
-    </message>
     <message>
         <source>Select the second base point</source>
         <translation type="unfinished"></translation>
@@ -5008,10 +3302,6 @@ Apply settings anyway?</source>
         <translation>Virheellinen matemaattinen kaava</translation>
     </message>
     <message>
-        <source>Error while calculation formula. You can try undo last operation or fix broken formula.</source>
-        <translation type="vanished">Virhe kaava laskemisessa. Yritä perua viimeisin komento tai korjaa matemaattinen kaava</translation>
-    </message>
-    <message>
         <source>&amp;Undo</source>
         <translation>&amp;Peru</translation>
     </message>
@@ -5026,41 +3316,6 @@ Apply settings anyway?</source>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogUnionDetails</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want union details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Haluatko todella unionin yksityiskohdat?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Union tool</source>
-        <translation type="vanished">Unioni työkalu</translation>
-    </message>
-    <message>
-        <source>Select a first point</source>
-        <translation type="vanished">Valitse ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Workpiece should have at least two points and three objects</source>
-        <translation type="vanished">Työssä pitäisi olla ainakin kaksi pistettä ja kolme objektia</translation>
-    </message>
-    <message>
-        <source>Select a second point</source>
-        <translation type="vanished">Valitse toinen piste</translation>
-    </message>
-    <message>
-        <source>Select a unique point</source>
-        <translation type="vanished">Valitse yksikäsitteinen piste</translation>
-    </message>
-    <message>
-        <source>Select a detail</source>
-        <translation type="vanished">Valitse yksityiskohta</translation>
-    </message>
-    <message>
-        <source>Select a point on edge</source>
-        <translation type="vanished">Valitse reunapiste</translation>
     </message>
 </context>
 <context>
@@ -5800,17 +4055,6 @@ Possibly the file is already being downloaded.</source>
     </message>
 </context>
 <context>
-    <name>GrainlineTab</name>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-</context>
-<context>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
@@ -6531,25 +4775,6 @@ Possibly the file is already being downloaded.</source>
     </message>
 </context>
 <context>
-    <name>LabelsTab</name>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Leveys:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation type="obsolete">Korkeus:</translation>
-    </message>
-</context>
-<context>
     <name>MApplication</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
@@ -6663,40 +4888,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Piste</translation>
     </message>
     <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Piste kohtisuoraa pitkin</translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Kohtisuorapiste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Piste puolikasta pitkin</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
         <source>Tools for creating lines.</source>
         <translation>Työkaluja viivojen luomiseen.</translation>
     </message>
     <message>
         <source>Line</source>
         <translation>Viiva</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Pisteiden välinen viiva</translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Viivojen leikkauspiste</translation>
     </message>
     <message>
         <source>Tools for creating curves.</source>
@@ -6715,14 +4912,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Kaari</translation>
     </message>
     <message>
-        <source>Tools for creating details.</source>
-        <translation type="vanished">Työkaluja yksityiskohtien luomiseen.</translation>
-    </message>
-    <message>
-        <source>Detail</source>
-        <translation type="vanished">Yksityiskohta</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>&amp;Tiedosto</translation>
     </message>
@@ -6731,40 +4920,8 @@ Possibly the file is already being downloaded.</source>
         <translation>&amp;Apua</translation>
     </message>
     <message>
-        <source>&amp;Pattern piece</source>
-        <translation type="vanished">&amp;Kaavan osa</translation>
-    </message>
-    <message>
         <source>Measurements</source>
         <translation>Mitat</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="vanished">Ikkuna</translation>
-    </message>
-    <message>
-        <source>Toolbar files</source>
-        <translation type="vanished">Tiedostojen työkalupalkki</translation>
-    </message>
-    <message>
-        <source>ToolBar modes</source>
-        <translation type="vanished">Moodien työkalupalkki</translation>
-    </message>
-    <message>
-        <source>Toolbar pattern</source>
-        <translation type="vanished">Kaava työkalupalkki</translation>
-    </message>
-    <message>
-        <source>Toolbar options</source>
-        <translation type="vanished">Asetus työkalupalkki</translation>
-    </message>
-    <message>
-        <source>Toolbar tools</source>
-        <translation type="vanished">Työkalujen työkalupalkki</translation>
-    </message>
-    <message>
-        <source>Tool options</source>
-        <translation type="vanished">Työkalu asetukset</translation>
     </message>
     <message>
         <source>New</source>
@@ -6811,36 +4968,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Tallenna tallentamaton kaava</translation>
     </message>
     <message>
-        <source>Draw</source>
-        <translation type="vanished">Piirrä</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Yksityiskohdat</translation>
     </message>
     <message>
         <source>Pointer tools</source>
         <translation>Osointin työkalut</translation>
-    </message>
-    <message>
-        <source>New pattern piece</source>
-        <translation type="vanished">Uusi kaavan osa</translation>
-    </message>
-    <message>
-        <source>Add new pattern piece</source>
-        <translation type="vanished">Lisää uusi kaavan osa</translation>
-    </message>
-    <message>
-        <source>Change the label of pattern piece</source>
-        <translation type="vanished">Muuta kaavan nimeä</translation>
-    </message>
-    <message>
-        <source>Table of variables</source>
-        <translation type="vanished">Muuttujien taulukko</translation>
-    </message>
-    <message>
-        <source>Tables of variables</source>
-        <translation type="vanished">Muuttujien taulukko</translation>
     </message>
     <message>
         <source>History</source>
@@ -6859,164 +4992,24 @@ Possibly the file is already being downloaded.</source>
         <translation>L&amp;opeta</translation>
     </message>
     <message>
-        <source>Exit the application</source>
-        <translation type="vanished">Lopeta ohjelma</translation>
-    </message>
-    <message>
         <source>Preferences</source>
         <translation>Asetukset</translation>
-    </message>
-    <message>
-        <source>Pattern properties</source>
-        <translation type="vanished">Kaavan asetukset</translation>
-    </message>
-    <message>
-        <source>Zoom in</source>
-        <translation type="vanished">Tarkenna</translation>
-    </message>
-    <message>
-        <source>zoom in</source>
-        <translation type="vanished">tarkenna</translation>
-    </message>
-    <message>
-        <source>Zoom out</source>
-        <translation type="vanished">Loitonna</translation>
-    </message>
-    <message>
-        <source>Edit pattern XML code</source>
-        <translation type="vanished">Muuta kaavan XML koodia</translation>
-    </message>
-    <message>
-        <source>Original zoom </source>
-        <translation type="vanished">Alkuperäinen tarkennus</translation>
-    </message>
-    <message>
-        <source>Original Zoom </source>
-        <translation type="vanished">Alkuperäinen tarkennus</translation>
-    </message>
-    <message>
-        <source>Zoom fit best</source>
-        <translation type="vanished">Tarkenna sopivasti</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="vanished">Lopeta</translation>
-    </message>
-    <message>
-        <source>Stop using tool</source>
-        <translation type="vanished">Lopeta työkalun käyttö</translation>
-    </message>
-    <message>
-        <source>Repot Bug...</source>
-        <translation type="vanished">Ilmoita ohjelmistovirheestä...</translation>
     </message>
     <message>
         <source>Report bug</source>
         <translation>Ilmoita ohjelmistovirheestä</translation>
     </message>
     <message>
-        <source>Close window</source>
-        <translation type="vanished">Sulje ikkuna</translation>
-    </message>
-    <message>
-        <source>Online help</source>
-        <translation type="vanished">Online apua</translation>
-    </message>
-    <message>
         <source>Show online help</source>
         <translation>Näytä online apu</translation>
-    </message>
-    <message>
-        <source>Pattern piece %1</source>
-        <translation type="vanished">Kaavan osa %1</translation>
-    </message>
-    <message>
-        <source>Select point</source>
-        <translation type="vanished">Valitse piste</translation>
-    </message>
-    <message>
-        <source>Select first point</source>
-        <translation type="vanished">Valitse ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Select first point of line</source>
-        <translation type="vanished">Valitse viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Select first point of angle</source>
-        <translation type="vanished">Valitse kulman ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Select first point of first line</source>
-        <translation type="vanished">Valitse ensimmäisen viivan ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Select first point curve</source>
-        <translation type="vanished">Valitse ensimmäinen käyrän piste</translation>
-    </message>
-    <message>
-        <source>Select simple curve</source>
-        <translation type="vanished">Valitse yksinkertainen käyrä</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Valitse kaaren keskipiste</translation>
-    </message>
-    <message>
-        <source>Select point of curve path</source>
-        <translation type="vanished">Valitse käyrän piste</translation>
-    </message>
-    <message>
-        <source>Select curve path</source>
-        <translation type="vanished">Valitse käyräpolku</translation>
-    </message>
-    <message>
-        <source>Select points, arcs, curves clockwise.</source>
-        <translation type="vanished">Valitse pisteet, kaaret, käyrät myötäpäivään.</translation>
-    </message>
-    <message>
-        <source>Select base point</source>
-        <translation type="vanished">Valitse alkupiste</translation>
-    </message>
-    <message>
-        <source>Select first point of axis</source>
-        <translation type="vanished">Valitse akselin ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Select detail</source>
-        <translation type="vanished">Valitse yksityiskohta</translation>
-    </message>
-    <message>
-        <source>Select arc</source>
-        <translation type="vanished">Valitse kaari</translation>
-    </message>
-    <message>
-        <source>Select curve</source>
-        <translation type="vanished">Valitse käyrä</translation>
     </message>
     <message>
         <source>About Qt</source>
         <translation>Tietoja Qt:stä</translation>
     </message>
     <message>
-        <source>Height: </source>
-        <translation type="vanished">Pituus:</translation>
-    </message>
-    <message>
-        <source>Size: </source>
-        <translation type="vanished">Koko:</translation>
-    </message>
-    <message>
-        <source>Pattern Piece: </source>
-        <translation type="vanished">Kaavan osa:</translation>
-    </message>
-    <message>
         <source>Pattern files (*.val)</source>
         <translation>Kaava tiedostot (*.val)</translation>
-    </message>
-    <message>
-        <source>pattern</source>
-        <translation type="vanished">kaava</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -7077,24 +5070,12 @@ Haluatko tallentaa muutokset?</translation>
         <translation>&amp;Tee uudelleen</translation>
     </message>
     <message>
-        <source>Pattern piece:</source>
-        <translation type="vanished">Kaavan osa:</translation>
-    </message>
-    <message>
-        <source>Enter a new label for the pattern piece.</source>
-        <translation type="vanished">Syötä uusi nimi kaavan osalle.</translation>
-    </message>
-    <message>
         <source>This file already opened in another window.</source>
         <translation>Tämä tiedosto on jo avattu toiseen ikkunaan.</translation>
     </message>
     <message>
         <source>Wrong units.</source>
         <translation>Väärät yksiköt.</translation>
-    </message>
-    <message>
-        <source>Application doesn&apos;t support standard table with inches.</source>
-        <translation type="vanished">Ohjelma ei tue standardi tauluja tuuma koossa.</translation>
     </message>
     <message>
         <source>File error.</source>
@@ -7113,86 +5094,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Avaa uudelleen tiedosto.</translation>
     </message>
     <message>
-        <source>Standard measurements (*.vst)</source>
-        <translation type="vanished">Standardi mitat (*.vst)</translation>
-    </message>
-    <message>
-        <source>Individual measurements (*.vit)</source>
-        <translation type="vanished">Yksilölliset mitat (*.vit)</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Valitse olkapään erityispiste</translation>
-    </message>
-    <message>
-        <source>Triangle tool</source>
-        <translation type="vanished">Kolmio työkalu</translation>
-    </message>
-    <message>
-        <source>Point at intersection of arc and line</source>
-        <translation type="vanished">Kaaren ja viivan leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Point from X and Y of two other points</source>
-        <translation type="vanished">Piste kahdesta muusta pisteestä</translation>
-    </message>
-    <message>
-        <source>Point intersect line and axis</source>
-        <translation type="vanished">Viivan ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Simple curve</source>
-        <translation type="vanished">Yksinkertainen käyrä</translation>
-    </message>
-    <message>
-        <source>Curved path</source>
-        <translation type="vanished">Mutkikas käyrä</translation>
-    </message>
-    <message>
-        <source>Segmenting a simple curve</source>
-        <translation type="vanished">Jaa segmentteihin yksinkertainen käyrä</translation>
-    </message>
-    <message>
-        <source>Segment a curved path</source>
-        <translation type="vanished">Jaa käyrä segmentteihin</translation>
-    </message>
-    <message>
-        <source>Point intersect curve and axis</source>
-        <translation type="vanished">Kaaren ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Segment an arc</source>
-        <translation type="vanished">Kaaren segmentti</translation>
-    </message>
-    <message>
-        <source>Point intersect arc and axis</source>
-        <translation type="vanished">Kaaren ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Seam allowance tool</source>
-        <translation type="vanished">Saumavara työkalu</translation>
-    </message>
-    <message>
-        <source>Union tool</source>
-        <translation type="vanished">Unioni työkalu</translation>
-    </message>
-    <message>
-        <source>toolBar</source>
-        <translation type="vanished">työkalupalkki</translation>
-    </message>
-    <message>
-        <source>Last Tool</source>
-        <translation type="vanished">Viimeisin työkalu</translation>
-    </message>
-    <message>
-        <source>Activate last used tool again</source>
-        <translation type="vanished">Aktivoi viimeksi käytetty työkalu uudestaan</translation>
-    </message>
-    <message>
-        <source>Select point for X value (vertical)</source>
-        <translation type="vanished">Valitse piste arvolle X (pystysuora)</translation>
-    </message>
-    <message>
         <source>Pointer</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7203,10 +5104,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Settings</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Layout pages</source>
-        <translation type="vanished">Sommittelu sivut</translation>
     </message>
     <message>
         <source>Print</source>
@@ -9008,10 +6905,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Ei voitu luoda dataa somittelun luomiseen</translation>
     </message>
     <message>
-        <source>Several workpieces left not arranged, but none of them match for paper</source>
-        <translation type="vanished">Useita osia ei voitu järjestää koska ne ei mahdu paperille</translation>
-    </message>
-    <message>
         <source>Can&apos;t open printer %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9226,102 +7119,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>move spline path</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>NotchesTab</name>
-    <message>
-        <source>Type</source>
-        <translation type="obsolete">Tyyppi</translation>
-    </message>
-</context>
-<context>
-    <name>PathPage</name>
-    <message>
-        <source>Open Directory</source>
-        <translation type="vanished">Avaa kansio</translation>
-    </message>
-    <message>
-        <source>Path that use Seamly2D</source>
-        <translation type="vanished">Seamly2Dn käyttämä polku</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="vanished">Oletus</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="vanished">Muokkaa</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="vanished">Tyyppi</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="vanished">Polku</translation>
-    </message>
-    <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Yksilölliset mitat</translation>
-    </message>
-    <message>
-        <source>Patterns</source>
-        <translation type="vanished">Kaavat</translation>
-    </message>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">Standardi mitat</translation>
-    </message>
-    <message>
-        <source>Layout</source>
-        <translation type="vanished">Sommittelu</translation>
-    </message>
-</context>
-<context>
-    <name>PathsTab</name>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Saumavara</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="obsolete">Oletus</translation>
-    </message>
-</context>
-<context>
-    <name>PatternPage</name>
-    <message>
-        <source>User</source>
-        <translation type="vanished">Käyttäjä</translation>
-    </message>
-    <message>
-        <source>User name</source>
-        <translation type="vanished">Käyttäjätunnus</translation>
-    </message>
-    <message>
-        <source>Graphical output</source>
-        <translation type="vanished">Graafinen tulos</translation>
-    </message>
-    <message>
-        <source>Use antialiasing</source>
-        <translation type="vanished">Käytä pehmennystä</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation type="vanished">Peru</translation>
-    </message>
-    <message>
-        <source>Count steps (0 - no limit)</source>
-        <translation type="vanished">Laske vaiheet (0 - ei rajaa)</translation>
     </message>
 </context>
 <context>
@@ -10223,16 +8020,8 @@ Haluatko tallentaa muutokset?</translation>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="obsolete">Tallenna automaattisesti muokattu kaava</translation>
-    </message>
-    <message>
         <source>Interval:</source>
         <translation type="unfinished">Väli:</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="obsolete">min</translation>
     </message>
     <message>
         <source>Language</source>
@@ -10261,14 +8050,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Book:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="obsolete">Lähetä kaatumisraportteja</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="obsolete">Lähetä kaatumisraportteja (suositus)</translation>
     </message>
     <message>
         <source>With OS options</source>
@@ -10832,18 +8613,6 @@ Haluatko tallentaa muutokset?</translation>
 </context>
 <context>
     <name>PreferencesPatternPage</name>
-    <message>
-        <source>Graphical output</source>
-        <translation type="obsolete">Graafinen tulos</translation>
-    </message>
-    <message>
-        <source>Use antialiasing</source>
-        <translation type="obsolete">Käytä pehmennystä</translation>
-    </message>
-    <message>
-        <source>Undo</source>
-        <translation type="obsolete">Peru</translation>
-    </message>
     <message>
         <source>Forbid flipping</source>
         <translation type="unfinished"></translation>
@@ -11835,14 +9604,6 @@ Haluatko tallentaa muutokset?</translation>
         <translation>Tiedostoa ei voitu tallentaa</translation>
     </message>
     <message>
-        <source>Individual measurements (*.vit)</source>
-        <translation type="vanished">Yksilölliset mitat (*.vit)</translation>
-    </message>
-    <message>
-        <source>Standard measurements (*.vst)</source>
-        <translation type="vanished">Standardi mitat (*.vst)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Talenna nimellä</translation>
     </message>
@@ -11865,18 +9626,6 @@ Haluatko tallentaa muutokset?</translation>
     <message>
         <source>Parser error: %1</source>
         <translation>Jäsentämis virhe: %1</translation>
-    </message>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">Standardi mitat</translation>
-    </message>
-    <message>
-        <source>Height: </source>
-        <translation type="vanished">Pituus:</translation>
-    </message>
-    <message>
-        <source>Size: </source>
-        <translation type="vanished">Koko:</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -12224,181 +9973,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>TabGrainline</name>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>TabLabels</name>
-    <message>
-        <source>Detail</source>
-        <translation type="obsolete">Yksityiskohta</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Leveys:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation type="obsolete">Korkeus:</translation>
-    </message>
-</context>
-<context>
-    <name>TabPassmarks</name>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">Kulma</translation>
-    </message>
-</context>
-<context>
-    <name>TabPaths</name>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Saumavara</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Leveys:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Arvo</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Näytä koko laskenta ikkunassa&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="obsolete">Oletus</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Toteuta</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;Peru</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Konfigurointi dialogi</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">Polut</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Kieli</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">GUI kieli</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">Desimaalierotin osat</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">Käyttäen käyttöjärjestelmä asetusta (%1)</translation>
-    </message>
-</context>
-<context>
-    <name>TapePathPage</name>
-    <message>
-        <source>Open Directory</source>
-        <translation type="vanished">Avaa kansio</translation>
-    </message>
-    <message>
-        <source>Path that use Seamly2D</source>
-        <translation type="vanished">Seamly2Dn käyttämä polku</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="vanished">Oletus</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="vanished">Muokkaa</translation>
-    </message>
-    <message>
-        <source>Type</source>
-        <translation type="vanished">Tyyppi</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="vanished">Polku</translation>
-    </message>
-    <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Yksilölliset mitat</translation>
-    </message>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">Standardi mitat</translation>
-    </message>
-</context>
-<context>
-    <name>TapePreferencesConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Kieli</translation>
-    </message>
-</context>
-<context>
-    <name>TapePreferencesPathPage</name>
-    <message>
-        <source>Type</source>
-        <translation type="obsolete">Tyyppi</translation>
-    </message>
-    <message>
-        <source>Path</source>
-        <translation type="obsolete">Polku</translation>
-    </message>
-    <message>
-        <source>Default</source>
-        <translation type="obsolete">Oletus</translation>
-    </message>
-    <message>
-        <source>Edit</source>
-        <translation type="obsolete">Muokkaa</translation>
-    </message>
-    <message>
-        <source>Open Directory</source>
-        <translation type="obsolete">Avaa kansio</translation>
-    </message>
-</context>
-<context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
@@ -12623,10 +10197,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VAbstractPieceData</name>
     <message>
-        <source>Detail</source>
-        <translation type="obsolete">Yksityiskohta</translation>
-    </message>
-    <message>
         <source>Piece</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12644,34 +10214,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VAbstractTool</name>
-    <message>
-        <source>black</source>
-        <translation type="vanished">musta</translation>
-    </message>
-    <message>
-        <source>green</source>
-        <translation type="vanished">vihreä</translation>
-    </message>
-    <message>
-        <source>blue</source>
-        <translation type="vanished">sininen</translation>
-    </message>
-    <message>
-        <source>dark red</source>
-        <translation type="vanished">tummanpunainen</translation>
-    </message>
-    <message>
-        <source>dark green</source>
-        <translation type="vanished">tummanvihreä</translation>
-    </message>
-    <message>
-        <source>dark blue</source>
-        <translation type="vanished">tummansininen</translation>
-    </message>
-    <message>
-        <source>yellow</source>
-        <translation type="vanished">keltainen</translation>
-    </message>
     <message>
         <source>Confirm deletion</source>
         <translation>Varmista poistaminen</translation>
@@ -13255,22 +10797,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VDomDocument</name>
     <message>
-        <source>Can&apos;t convert toUInt parameter</source>
-        <translation type="vanished">Ei voi muuntaa toUInt parametriä</translation>
-    </message>
-    <message>
-        <source>Can&apos;t convert toBool parameter</source>
-        <translation type="vanished">Ei voi muuntaa toBool parametriä</translation>
-    </message>
-    <message>
-        <source>Got empty parameter</source>
-        <translation type="vanished">Tyhjä parametri</translation>
-    </message>
-    <message>
-        <source>Can&apos;t convert toDouble parameter</source>
-        <translation type="vanished">Ei voinut muuntaa toDouble parametriä</translation>
-    </message>
-    <message>
         <source>Can&apos;t open file %1:
 %2.</source>
         <translation>Tiedostoa %1 ei voitu avata:
@@ -13281,10 +10807,6 @@ Do you want to save your changes?</source>
 %2.</source>
         <translation>Skeematiedostoa %1 ei voitu avata.
 %2.</translation>
-    </message>
-    <message>
-        <source>Could not load schema file.</source>
-        <translation type="vanished">Skeematiedostoa ei voitu avata.</translation>
     </message>
     <message>
         <source>Validation error file %3 in line %1 column %2</source>
@@ -13299,20 +10821,8 @@ Do you want to save your changes?</source>
         <translation>Solmua ei voitu palauttaa</translation>
     </message>
     <message>
-        <source>Got wrong parameter id. Need only id &gt; 0.</source>
-        <translation type="vanished">Väärä parametri id. Täytyy olla id &gt; 0.</translation>
-    </message>
-    <message>
         <source>This id is not unique.</source>
         <translation>Tämä id ei ole yksikäsitteinen.</translation>
-    </message>
-    <message>
-        <source>Could not copy temp file to document file</source>
-        <translation type="vanished">Tilapäistiedostoa ei voitu kopioida dokumenttiin</translation>
-    </message>
-    <message>
-        <source>Could not remove document file</source>
-        <translation type="vanished">Dokumenttitiedostoa ei voitu poistaa</translation>
     </message>
     <message>
         <source>Could not load schema file &apos;%1&apos;.</source>
@@ -13329,14 +10839,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VDrawTool</name>
-    <message>
-        <source>Edit wrong formula</source>
-        <translation type="vanished">Muutit väärää kaavaa</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
     <message>
         <source>Delete</source>
         <translation>Poista</translation>
@@ -13374,14 +10876,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VFormulaProperty</name>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Arvo</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Matemaattinen kaava</translation>
-    </message>
     <message>
         <source>Formula:</source>
         <translation type="unfinished"></translation>
@@ -13437,10 +10931,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VPattern</name>
     <message>
-        <source>Error no unique id.</source>
-        <translation type="vanished">Virhe: id ei ole yksikäsitteinen.</translation>
-    </message>
-    <message>
         <source>Error parsing file.</source>
         <translation>Virhe tiedoston jäsennyksessä.</translation>
     </message>
@@ -13459,10 +10949,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Error parsing file (std::bad_alloc).</source>
         <translation>Virhe tiedoston (std::bad_alloc) jäsennyksessä.</translation>
-    </message>
-    <message>
-        <source>Error creating or updating detail</source>
-        <translation type="vanished">Virhe luodessa tai päivittäessä yksityiskohtaa</translation>
     </message>
     <message>
         <source>Error creating or updating single point</source>
@@ -13489,10 +10975,6 @@ Do you want to save your changes?</source>
         <translation>Virhe luodessa tai päivittäessä jakopiste</translation>
     </message>
     <message>
-        <source>Error creating or updating point of lineintersection</source>
-        <translation type="vanished">Virhe luodessa tai päivittäessä viivojen leikkaus</translation>
-    </message>
-    <message>
         <source>Error creating or updating point of contact</source>
         <translation>Virhe luodessa tai päivittäessä kontaktipiste</translation>
     </message>
@@ -13507,10 +10989,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Error creating or updating triangle</source>
         <translation>Virhe luodessa tai päivittäessä kolmio</translation>
-    </message>
-    <message>
-        <source>Error creating or updating point of intersection</source>
-        <translation type="vanished">Virhe luodessa tai päivittäessä leikkauspiste</translation>
     </message>
     <message>
         <source>Error creating or updating cut spline point</source>
@@ -13559,10 +11037,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Error creating or updating modeling arc</source>
         <translation>Virhe luodessa tai päivittäessä mallinnuskaarta</translation>
-    </message>
-    <message>
-        <source>Error creating or updating union details</source>
-        <translation type="vanished">Virhe luodessa tai päivittäessä unioni yksityiskohtaa</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
@@ -13657,10 +11131,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Detail</source>
-        <translation type="obsolete">Yksityiskohta</translation>
-    </message>
-    <message>
         <source>Unnamed path</source>
         <translation type="unfinished"></translation>
     </message>
@@ -13706,17 +11176,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VPatternConverter</name>
-    <message>
-        <source>Unexpected version &quot;%1&quot;.</source>
-        <translation type="vanished">Yllättävä versio &quot;%1&quot;.</translation>
-    </message>
-    <message>
-        <source>Error restoring backup file: %1.</source>
-        <translation type="vanished">Virhe palauttaessa varmuuskopio tiedostoa: %1.</translation>
-    </message>
-</context>
-<context>
     <name>VPoster</name>
     <message>
         <source>Grid ( %1 , %2 )</source>
@@ -13752,10 +11211,6 @@ Do you want to save your changes?</source>
         <source>This spline does not exist.</source>
         <translation>Tämä splini ei ole olemassa.</translation>
     </message>
-    <message>
-        <source>Can&apos;t cut spline path with one point</source>
-        <translation type="vanished">Slinipolkua ei voi leikata yhdellä pisteellä</translation>
-    </message>
 </context>
 <context>
     <name>VToolAlongLine</name>
@@ -13774,14 +11229,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Pituus</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Säde</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -13805,14 +11252,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArcWithLength</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Pituus</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Säde</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -13858,13 +11297,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolCut</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Pituus</translation>
     </message>
 </context>
 <context>
@@ -13925,17 +11357,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VToolDetail</name>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Asetukset</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Poista</translation>
-    </message>
-</context>
-<context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
@@ -13944,14 +11365,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Pituus</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Säde</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -14090,138 +11503,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Base point</source>
         <translation>Alkupiste</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Pistenimilappu</translation>
-    </message>
-    <message>
-        <source>Position</source>
-        <translation type="vanished">Sijainti</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Line type</source>
-        <translation type="vanished">Viivan tyyppi</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Pituus</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Kulma</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Piste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Kaari</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Säde</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Ensimmäinen kulma</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">Toinen kulma</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Piste puolikasta pitkin</translation>
-    </message>
-    <message>
-        <source>Cut arc tool</source>
-        <translation type="vanished">Leikkaa kaari työkalu</translation>
-    </message>
-    <message>
-        <source>Tool for segmenting a curve</source>
-        <translation type="vanished">Työkalu käyrän segmentointiin</translation>
-    </message>
-    <message>
-        <source>Tool segment a pathed curve</source>
-        <translation type="vanished">Työkalu polun segmentointiin</translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Kohtisuorapiste viivaa pitkin</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Pisteiden välinen viiva</translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Viivojen leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Piste kohtisuoraa pitkin</translation>
-    </message>
-    <message>
-        <source>Additional angle degrees</source>
-        <translation type="vanished">Kulman lisäasteet</translation>
-    </message>
-    <message>
-        <source>Point at intersection of arc and line</source>
-        <translation type="vanished">Kaaren ja viivan leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Tool to make point from x &amp; y of two other points</source>
-        <translation type="vanished">Luo piste kahdesta muusta pisteestä</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Olkapään erityispiste</translation>
-    </message>
-    <message>
-        <source>Curve tool</source>
-        <translation type="vanished">Käyrä työkalu</translation>
-    </message>
-    <message>
-        <source>Curve factor</source>
-        <translation type="vanished">Käyrän kerroin</translation>
-    </message>
-    <message>
-        <source>Tool for path curve</source>
-        <translation type="vanished">Työkalu käyrälle</translation>
-    </message>
-    <message>
-        <source>Tool triangle</source>
-        <translation type="vanished">Kolmiotyökalu</translation>
-    </message>
-    <message>
-        <source>Point intersection line and axis</source>
-        <translation type="vanished">Viivan ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Viivan väri</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Väri</translation>
-    </message>
-    <message>
-        <source>Point intersection curve and axis</source>
-        <translation type="vanished">Käyrän ja akselin leikkauspiste</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Ensimmäinen piste</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Toinen piste</translation>
     </message>
     <message>
         <source>True darts</source>
@@ -14673,17 +11954,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Rotation angle</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolSeamAllowance</name>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Poista</translation>
     </message>
 </context>
 <context>
@@ -15519,156 +12789,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>Left symbol _ in name</comment>
-        <translation type="vanished">Viiva_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>Left symbol _ in name</comment>
-        <translation type="vanished">KulmaViiva_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>Left symbol _ in name</comment>
-        <translation type="vanished">Kaari_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>Left symbol _ in name</comment>
-        <translation type="vanished">Spl_</translation>
-    </message>
-    <message>
-        <source>SplPath</source>
-        <comment>Do not add symbol _ to the end of name</comment>
-        <translation type="vanished">SplPath</translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>sine function</comment>
-        <translation type="vanished">sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>cosine function</comment>
-        <translation type="vanished">cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>tangens function</comment>
-        <translation type="vanished">tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>arcus sine function</comment>
-        <translation type="vanished">asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>arcus cosine function</comment>
-        <translation type="vanished">acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>arcus tangens function</comment>
-        <translation type="vanished">atan</translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>hyperbolic sine function</comment>
-        <translation type="vanished">sinh</translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>hyperbolic cosine</comment>
-        <translation type="vanished">cosh</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>hyperbolic tangens function</comment>
-        <translation type="vanished">tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>hyperbolic arcus sine function</comment>
-        <translation type="vanished">asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>hyperbolic arcus tangens function</comment>
-        <translation type="vanished">acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>hyperbolic arcur tangens function</comment>
-        <translation type="vanished">atanh</translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>logarithm to the base 2</comment>
-        <translation type="vanished">log2</translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>logarithm to the base 10</comment>
-        <translation type="vanished">log10</translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>logarithm to the base 10</comment>
-        <translation type="vanished">log</translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>logarithm to base e (2.71828...)</comment>
-        <translation type="vanished">ln</translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>e raised to the power of x</comment>
-        <translation type="vanished">exp</translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>square root of a value</comment>
-        <translation type="vanished">sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>sign function -1 if x&lt;0; 1 if x&gt;0</comment>
-        <translation type="vanished">sign</translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>round to nearest integer</comment>
-        <translation type="vanished">rint</translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>absolute value</comment>
-        <translation type="vanished">abs</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>min of all arguments</comment>
-        <translation type="vanished">min</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>max of all arguments</comment>
-        <translation type="vanished">max</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>sum of all arguments</comment>
-        <translation type="vanished">sum</translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>mean value of all arguments</comment>
-        <translation type="vanished">avg</translation>
-    </message>
-    <message>
         <source>cm</source>
         <comment>centimeter</comment>
         <translation>cm</translation>
@@ -15754,11 +12874,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>acosh</source>
-        <comment>hyperbolic arcus cosine function</comment>
-        <translation type="obsolete">acosh</translation>
-    </message>
-    <message>
         <source>size</source>
         <comment>placeholder</comment>
         <translation type="unfinished"></translation>
@@ -15792,36 +12907,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>sine function working with radians</comment>
-        <translation type="obsolete">sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>cosine function working with radians</comment>
-        <translation type="obsolete">cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>tangens function working with radians</comment>
-        <translation type="obsolete">tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>arcus sine function working with radians</comment>
-        <translation type="obsolete">asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>arcus cosine function working with radians</comment>
-        <translation type="obsolete">acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>arcus tangens function working with radians</comment>
-        <translation type="obsolete">atan</translation>
     </message>
     <message>
         <source>M_</source>
@@ -15977,46 +13062,6 @@ Do you want to save your changes?</source>
         <source>Variable_</source>
         <comment>Left symbol _ in the name</comment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>tangent function working with radians</comment>
-        <translation type="obsolete">tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>inverse sine function working with radians</comment>
-        <translation type="obsolete">asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>inverse cosine function working with radians</comment>
-        <translation type="obsolete">acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>inverse tangent function working with radians</comment>
-        <translation type="obsolete">atan</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>hyperbolic tangent function</comment>
-        <translation type="obsolete">tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>inverse hyperbolic sine function</comment>
-        <translation type="obsolete">asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>inverse hyperbolic cosine function</comment>
-        <translation type="obsolete">acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>inverse hyperbolic tangent function</comment>
-        <translation type="obsolete">atanh</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -16224,35 +13269,6 @@ Usage: fmod(x; y)</comment>
     </message>
 </context>
 <context>
-    <name>VVITConverter</name>
-    <message>
-        <source>Unexpected version &quot;%1&quot;.</source>
-        <translation type="vanished">Yllättävä versio &quot;%1&quot;.</translation>
-    </message>
-    <message>
-        <source>Error restoring backup file: %1.</source>
-        <translation type="vanished">Virhe palauttaessa varmuuskopio tiedostoa: %1.</translation>
-    </message>
-</context>
-<context>
-    <name>VVSTConverter</name>
-    <message>
-        <source>Unexpected version &quot;%1&quot;.</source>
-        <translation type="vanished">Yllättävä versio &quot;%1&quot;.</translation>
-    </message>
-    <message>
-        <source>Error restoring backup file: %1.</source>
-        <translation type="vanished">Virhe palauttaessa varmuuskopio tiedostoa: %1.</translation>
-    </message>
-</context>
-<context>
-    <name>VWidgetGroups</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Poista</translation>
-    </message>
-</context>
-<context>
     <name>VisToolCubicBezierPath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points</source>
@@ -16270,10 +13286,6 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>VisToolCurveIntersectAxis</name>
     <message>
-        <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°; &lt;b&gt;Shift&lt;/b&gt; - sticking angle, &lt;b&gt;Enter&lt;/b&gt; - finish creation</source>
-        <translation type="vanished">&lt;b&gt;Leikkauskäyrä ja akseli&lt;/b&gt;: kulma = %1°; &lt;b&gt;Siirto&lt;/b&gt; - kulma, &lt;b&gt;Enter&lt;/b&gt; - Hyväksy luonti</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
         <translation type="unfinished"></translation>
     </message>
@@ -16281,20 +13293,12 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>VisToolEndLine</name>
     <message>
-        <source>&lt;b&gt;Point at distance and angle&lt;/b&gt;: angle = %1°; &lt;b&gt;Shift&lt;/b&gt; - sticking angle, &lt;b&gt;Enter&lt;/b&gt; - finish creation</source>
-        <translation type="vanished">&lt;b&gt;Piste etäisyydellä ja kulmassa&lt;/b&gt;: kulma = %1°; &lt;b&gt;Siirto&lt;/b&gt; - kulma, &lt;b&gt;Enter&lt;/b&gt; - Hyväksy luonti</translation>
-    </message>
-    <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
-    <message>
-        <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°; &lt;b&gt;Shift&lt;/b&gt; - sticking angle, &lt;b&gt;Enter&lt;/b&gt; - finish creation</source>
-        <translation type="vanished">&lt;b&gt;Leikkausviiva ja akseli&lt;/b&gt;: kulma = %1°; &lt;b&gt;Siirto&lt;/b&gt; - kulma, &lt;b&gt;Enter&lt;/b&gt; - Hyväksy luonti</translation>
-    </message>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
         <translation type="unfinished"></translation>
@@ -16330,10 +13334,6 @@ Usage: fmod(x; y)</comment>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
         <translation>&lt;b&gt;Käyräpolku&lt;/b&gt;: valitse ainakin kolme pistettä</translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, &lt;b&gt;Enter&lt;/b&gt; - finish creation</source>
-        <translation type="vanished">&lt;b&gt;Käyräpolku&lt;/b&gt;: Valitse ainakin kolme pistettä, &lt;b&gt;Enter&lt;/b&gt; - Hyväksy luonti</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
