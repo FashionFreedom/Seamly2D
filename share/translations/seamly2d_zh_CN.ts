@@ -74,183 +74,6 @@
     </message>
 </context>
 <context>
-    <name>CommunityPage</name>
-    <message>
-        <source>Server</source>
-        <translation type="vanished">服务器</translation>
-    </message>
-    <message>
-        <source>Server name/IP</source>
-        <translation type="vanished">服务器名/IP地址</translation>
-    </message>
-    <message>
-        <source>Secure connection</source>
-        <translation type="vanished">安全连接</translation>
-    </message>
-    <message>
-        <source>Proxy settings</source>
-        <translation type="vanished">代理设置</translation>
-    </message>
-    <message>
-        <source>Use Proxy</source>
-        <translation type="vanished">使用代理</translation>
-    </message>
-    <message>
-        <source>Proxy address</source>
-        <translation type="vanished">代理地址</translation>
-    </message>
-    <message>
-        <source>Proxy port</source>
-        <translation type="vanished">代理端口</translation>
-    </message>
-    <message>
-        <source>Proxy user</source>
-        <translation type="vanished">代理用户</translation>
-    </message>
-    <message>
-        <source>User settings</source>
-        <translation type="vanished">用户设置</translation>
-    </message>
-    <message>
-        <source>User Name</source>
-        <translation type="vanished">用户名</translation>
-    </message>
-    <message>
-        <source>Save password</source>
-        <translation type="vanished">保存密码</translation>
-    </message>
-    <message>
-        <source>Password</source>
-        <translation type="vanished">密码</translation>
-    </message>
-    <message>
-        <source>Server name/IP:</source>
-        <translation type="vanished">服务器名/IP:</translation>
-    </message>
-    <message>
-        <source>Proxy address:</source>
-        <translation type="vanished">代理地址：</translation>
-    </message>
-    <message>
-        <source>Proxy port:</source>
-        <translation type="vanished">代理端口：</translation>
-    </message>
-    <message>
-        <source>Proxy user:</source>
-        <translation type="vanished">代理用户：</translation>
-    </message>
-    <message>
-        <source>User Name:</source>
-        <translation type="vanished">用户名:</translation>
-    </message>
-    <message>
-        <source>Password:</source>
-        <translation type="vanished">密码:</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">应用</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">＆取消</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">＆确定</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">配置窗口</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">配置窗口</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="vanished">样板</translation>
-    </message>
-    <message>
-        <source>Community</source>
-        <translation type="vanished">社区</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">路径</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigurationPage</name>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">保存</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="vanished">最小值</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">语言</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">GUI 语言</translation>
-    </message>
-    <message>
-        <source>Default unit</source>
-        <translation type="vanished">默认单位</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="vanished">公分</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">毫米</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="vanished">英寸</translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="vanished">发送软件崩溃报告</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="vanished">发送软件崩溃报告(推荐)</translation>
-    </message>
-    <message>
-        <source>Pattern Editing</source>
-        <translation type="vanished">样板修改</translation>
-    </message>
-    <message>
-        <source>Confirm item deletion</source>
-        <translation type="vanished">确认删除</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="vanished">工具栏</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="vanished">GUI语言:</translation>
-    </message>
-    <message>
-        <source>Default unit:</source>
-        <translation type="vanished">默认单位:</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="vanished">作者:</translation>
-    </message>
-</context>
-<context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
@@ -292,13 +115,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>delete tool</source>
         <translation>删除工具</translation>
-    </message>
-</context>
-<context>
-    <name>DeleteDetail</name>
-    <message>
-        <source>delete tool</source>
-        <translation type="vanished">删除工具</translation>
     </message>
 </context>
 <context>
@@ -400,32 +216,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -462,14 +258,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Second point of the line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -531,10 +319,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
-    </message>
-    <message>
         <source>Edit radius</source>
         <translation type="unfinished"></translation>
     </message>
@@ -557,10 +341,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calulation</source>
-        <translation type="vanished">打算</translation>
     </message>
     <message>
         <source>First angle:</source>
@@ -629,14 +409,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -731,24 +503,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -757,10 +513,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select third point of angle</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -793,14 +545,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Third point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -960,16 +704,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -988,24 +724,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Curve:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1056,16 +780,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1090,10 +806,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Arc:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
@@ -1123,16 +835,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1157,10 +861,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Curve:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
@@ -1190,16 +890,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1224,10 +916,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Curve:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">颜色:</translation>
     </message>
     <message>
         <source>Point - On Spline</source>
@@ -1274,51 +962,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogDetail</name>
-    <message>
-        <source>Width</source>
-        <translation type="vanished">宽度</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">删除</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="vanished">宽度:</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditLabel</name>
-    <message>
-        <source>Size</source>
-        <translation type="obsolete">尺码</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="obsolete">高度</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditWrongFormula</name>
-    <message>
-        <source>Measurements</source>
-        <translation type="vanished">尺寸</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="vanished">高度</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="vanished">尺码</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
-    </message>
-</context>
-<context>
     <name>DialogEllipticalArc</name>
     <message>
         <source>Radius1:</source>
@@ -1347,10 +990,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>First angle:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
     </message>
     <message>
         <source>Second angle:</source>
@@ -1448,20 +1087,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1494,14 +1121,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Base point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1591,10 +1210,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1603,20 +1218,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
-    </message>
-    <message>
         <source>Base point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1661,36 +1264,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogHistory</name>
-    <message>
-        <source>Tool</source>
-        <translation type="vanished">工具</translation>
-    </message>
-</context>
-<context>
-    <name>DialogIncrements</name>
-    <message>
-        <source>Lines</source>
-        <translation type="vanished">线</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation type="vanished">线</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">错误</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
     </message>
 </context>
 <context>
@@ -1994,10 +1567,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLayoutSettings</name>
     <message>
-        <source>Paper size</source>
-        <translation type="vanished">纸页尺寸</translation>
-    </message>
-    <message>
         <source>Templates:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2032,10 +1601,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Descending area</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">毫米</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -2203,24 +1768,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLine</name>
     <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select second point</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2229,14 +1778,6 @@ Apply settings anyway?</source>
     <message>
         <source>Second point:</source>
         <translation>第二点:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2276,14 +1817,6 @@ Apply settings anyway?</source>
     <message>
         <source>First line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
     </message>
     <message>
         <source>Second line</source>
@@ -2341,10 +1874,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2359,10 +1888,6 @@ Apply settings anyway?</source>
     <message>
         <source>Second point of line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -2381,20 +1906,8 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2650,10 +2163,6 @@ Apply settings anyway?</source>
         <translation>公分</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">毫米</translation>
-    </message>
-    <message>
         <source>Inches</source>
         <translation>英寸</translation>
     </message>
@@ -2675,10 +2184,6 @@ Apply settings anyway?</source>
     <message>
         <source>Centimeters</source>
         <translation>公分</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">毫米</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -2708,32 +2213,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -2762,14 +2247,6 @@ Apply settings anyway?</source>
     <message>
         <source>Second point:</source>
         <translation>第二点:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2992,25 +2469,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPiecePath</name>
-    <message>
-        <source>Type:</source>
-        <translation type="obsolete">类型:</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">宽度:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">删除</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Select an arc</source>
@@ -3047,21 +2505,6 @@ Apply settings anyway?</source>
     <message>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogPointFromCircleAndTangent</name>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">错误</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation type="vanished">半径:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
     </message>
 </context>
 <context>
@@ -3175,17 +2618,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPointOfIntersectionCircles</name>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">错误</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">打算</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointOfIntersectionCurves</name>
     <message>
         <source>First curve:</source>
@@ -3231,16 +2663,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogPreferences</name>
     <message>
-        <source>Configuration</source>
-        <translation type="vanished">配置</translation>
-    </message>
-    <message>
         <source>Pattern</source>
         <translation type="unfinished">样板</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">路径</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -3286,10 +2710,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-    <message>
         <source>Selection</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3316,40 +2736,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogSaveLayout</name>
-    <message>
-        <source>PS files (*.ps)</source>
-        <translation type="vanished">PS文件(*.ps)</translation>
-    </message>
-    <message>
-        <source>EPS files (*.eps)</source>
-        <translation type="vanished">EPS文件(*.eps)</translation>
-    </message>
-    <message>
-        <source>DXF files (*.dxf)</source>
-        <translation type="vanished">DXF文件(*.dxf)</translation>
-    </message>
-</context>
-<context>
-    <name>DialogSeamAllowance</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">删除</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">错误</translation>
-    </message>
-    <message>
-        <source>Edit length</source>
-        <translation type="obsolete">修长度</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">路径</translation>
-    </message>
-</context>
-<context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
@@ -3367,24 +2753,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">线类型</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -3393,10 +2763,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point of line</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -3429,14 +2795,6 @@ Apply settings anyway?</source>
     <message>
         <source>Third point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">线类型:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">线颜色:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3531,10 +2889,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select last point of curve</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -3638,10 +2992,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select point of curve path</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -3753,17 +3103,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogTapePreferences</name>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">配置</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">路径</translation>
-    </message>
-</context>
-<context>
     <name>DialogTool</name>
     <message>
         <source>Error</source>
@@ -3844,14 +3183,6 @@ Apply settings anyway?</source>
 </context>
 <context>
     <name>DialogTriangle</name>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
     <message>
         <source>Select second point of axis</source>
         <translation type="unfinished"></translation>
@@ -4724,17 +4055,6 @@ Possibly the file is already being downloaded.</source>
     </message>
 </context>
 <context>
-    <name>GrainlineTab</name>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="obsolete">长度:</translation>
-    </message>
-</context>
-<context>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
@@ -5452,17 +4772,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Intersect Circles</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>LabelsTab</name>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">宽度:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
     </message>
 </context>
 <context>
@@ -7812,38 +7121,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>NotchesTab</name>
-    <message>
-        <source>Length:</source>
-        <translation type="obsolete">长度:</translation>
-    </message>
-</context>
-<context>
-    <name>PathPage</name>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">标准尺寸</translation>
-    </message>
-    <message>
-        <source>Templates</source>
-        <translation type="vanished">草稿</translation>
-    </message>
-</context>
-<context>
-    <name>PathsTab</name>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-</context>
-<context>
-    <name>PatternPage</name>
-    <message>
-        <source>User name:</source>
-        <translation type="vanished">用户名:</translation>
-    </message>
-</context>
-<context>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
@@ -8742,16 +8019,8 @@ Do you want to save your changes?</source>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <source>Save</source>
-        <translation type="obsolete">保存</translation>
-    </message>
-    <message>
         <source>Interval:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="obsolete">最小值</translation>
     </message>
     <message>
         <source>Language</source>
@@ -8782,18 +8051,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Send crash reports</source>
-        <translation type="vanished">发送崩溃报告</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="vanished">发送软件崩溃报告（推荐）</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="obsolete">工具栏</translation>
-    </message>
-    <message>
         <source>With OS options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8804,10 +8061,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Centimeters</source>
         <translation type="unfinished">公分</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="obsolete">毫米</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -10250,10 +9503,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>yyyy-MM-dd</source>
-        <translation type="vanished">年年年年-月月-日日</translation>
-    </message>
-    <message>
         <source>Email:</source>
         <translation>邮箱:</translation>
     </message>
@@ -10376,10 +9625,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Parser error: %1</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">标准尺寸</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -10727,115 +9972,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>TabGrainline</name>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="obsolete">长度:</translation>
-    </message>
-</context>
-<context>
-    <name>TabLabels</name>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">宽度:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-</context>
-<context>
-    <name>TabPaths</name>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">宽度:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">打算</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">应用</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp;取消</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">＆确定</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">配置窗口</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">配置</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">路径</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">语言</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">GUI 语言</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="vanished">作者:</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="vanished">GUI语言:</translation>
-    </message>
-</context>
-<context>
-    <name>TapePathPage</name>
-    <message>
-        <source>Standard measurements</source>
-        <translation type="vanished">标准尺寸</translation>
-    </message>
-    <message>
-        <source>Templates</source>
-        <translation type="vanished">草稿</translation>
-    </message>
-</context>
-<context>
-    <name>TapePreferencesConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">语言</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="vanished">GUI语言:</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="obsolete">作者:</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="obsolete">工具栏</translation>
-    </message>
-</context>
-<context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
@@ -11077,34 +10213,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VAbstractTool</name>
-    <message>
-        <source>black</source>
-        <translation type="vanished">黑色</translation>
-    </message>
-    <message>
-        <source>green</source>
-        <translation type="vanished">绿色</translation>
-    </message>
-    <message>
-        <source>blue</source>
-        <translation type="vanished">蓝色</translation>
-    </message>
-    <message>
-        <source>dark red</source>
-        <translation type="vanished">深红</translation>
-    </message>
-    <message>
-        <source>dark green</source>
-        <translation type="vanished">深绿</translation>
-    </message>
-    <message>
-        <source>dark blue</source>
-        <translation type="vanished">深蓝</translation>
-    </message>
-    <message>
-        <source>yellow</source>
-        <translation type="vanished">黄色</translation>
-    </message>
     <message>
         <source>Confirm deletion</source>
         <translation type="unfinished"></translation>
@@ -12119,10 +11227,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VToolArc</name>
     <message>
-        <source>Length</source>
-        <translation type="obsolete">长度</translation>
-    </message>
-    <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12145,10 +11249,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArcWithLength</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">长度</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -12194,13 +11294,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolCut</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">长度</translation>
     </message>
 </context>
 <context>
@@ -12261,13 +11354,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VToolDetail</name>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">删除</translation>
-    </message>
-</context>
-<context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
@@ -12276,10 +11362,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">长度</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -12420,36 +11502,12 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Length</source>
-        <translation type="vanished">长度</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">线颜色</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">颜色</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">第一点</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">第二点</translation>
-    </message>
-    <message>
         <source>True darts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Base point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="obsolete">线颜色:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -12893,13 +11951,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Rotation angle</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolSeamAllowance</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">删除</translation>
     </message>
 </context>
 <context>
@@ -13735,21 +12786,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>min</source>
-        <comment>min of all arguments</comment>
-        <translation type="vanished">最小值</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>max of all arguments</comment>
-        <translation type="vanished">最大值</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>sum of all arguments</comment>
-        <translation type="vanished">总共</translation>
-    </message>
-    <message>
         <source>cm</source>
         <comment>centimeter</comment>
         <translation type="unfinished"></translation>
@@ -14230,13 +13266,6 @@ Usage: fmod(x; y)</comment>
     </message>
 </context>
 <context>
-    <name>VWidgetGroups</name>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">删除</translation>
-    </message>
-</context>
-<context>
     <name>VisToolCubicBezierPath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points</source>
@@ -14335,14 +13364,6 @@ Usage: fmod(x; y)</comment>
         <translation>信息:</translation>
     </message>
     <message>
-        <source>Warning.</source>
-        <translation type="vanished">警告.</translation>
-    </message>
-    <message>
-        <source>Information.</source>
-        <translation type="vanished">信息.</translation>
-    </message>
-    <message>
         <source>Warning</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14380,14 +13401,6 @@ Usage: fmod(x; y)</comment>
     <message>
         <source>INFO:</source>
         <translation>信息:</translation>
-    </message>
-    <message>
-        <source>Warning.</source>
-        <translation type="vanished">警告.</translation>
-    </message>
-    <message>
-        <source>Information.</source>
-        <translation type="vanished">信息.</translation>
     </message>
     <message>
         <source>Warning</source>
