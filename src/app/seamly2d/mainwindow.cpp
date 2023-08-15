@@ -5880,7 +5880,7 @@ void MainWindow::CreateActions()
     connect(ui->forum_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Opening forum");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.net/")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.io/")));
     });
 
     connect(ui->reportBug_Action, &QAction::triggered, this, []()
