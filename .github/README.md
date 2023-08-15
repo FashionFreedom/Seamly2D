@@ -6,8 +6,8 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/fashionfreedom/seamly2d?style=flat-square&logo=github)](https://github.com/FashionFreedom/Seamly2D/graphs/contributors)
 [![GitHub](https://img.shields.io/github/license/fashionfreedom/seamly2d?color=blue&style=flat-square&logo=creativecommons)](../LICENSE)
 ![GitHub language count](https://img.shields.io/github/languages/count/fashionfreedom/seamly2d?style=flat-square&logo=github)
-[![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.net&logo=wordpress)](https://seamly.net/)
-[![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.net&style=flat-square&logo=discourse)](https://forum.seamly.net/)
+[![Website](https://img.shields.io/website?down_message=Down&style=flat-square&up_color=brightgreen&up_message=Up&url=https%3A%2F%2Fseamly.io&logo=wordpress)](https://seamly.io/)
+[![Forum posts](https://img.shields.io/discourse/posts?server=https%3A%2F%2Fforum.seamly.io&style=flat-square&logo=discourse)](https://forum.seamly.io/)
 ![GitHub Repo stars](https://img.shields.io/github/stars/fashionfreedom/seamly2d?style=social)  
 [![Qt](img/Built_with_Qt_RGB_logo_vertical_transparent_60x65px.png)](https://qt.io)
 
@@ -19,7 +19,7 @@ Unlike other pattern design software, Seamly2D allows designers to have complete
 
 Seamly2D is open source software released under the GPLv3+ license.  Seamly2D is available for Windows, MacOS, and Linux.  
 
-Learn more about Seamly2D by joining our friendly, active user [forum](https://forum.seamly.net) and reading our [Code of Conduct](CODE_OF_CONDUCT.md). On our forum you may post questions about patternmaking and Seamly2D in any language you choose, as sewing terms are rich with idioms that are not always translatable word-for-word.
+Learn more about Seamly2D by joining our friendly, active user [forum](https://forum.seamly.io) and reading our [Code of Conduct](CODE_OF_CONDUCT.md). On our forum you may post questions about patternmaking and Seamly2D in any language you choose, as sewing terms are rich with idioms that are not always translatable word-for-word.
 
 ## Supported platforms:  
    * Windows 10 & 11 (32-bit and 64-bit)
@@ -34,9 +34,9 @@ Learn more about Seamly2D by joining our friendly, active user [forum](https://f
 
 ___________________________________________________
 ## Seamly2D Community Resources:
-   * [Website and downloads](https://seamly.net) - _current_  
-   * [User Forum](https://forum.seamly.net/) - _current_
-   * [User Wiki Manual](https://wiki.seamly.net) - _needs updating_
+   * [Website and downloads](https://seamly.io) - _current_  
+   * [User Forum](https://forum.seamly.io/) - _current_
+   * [User Wiki Manual](https://wiki.seamly.io) - _needs updating_
 ___________________________________________________
 
 ## Seamly2D Developer Resources:
