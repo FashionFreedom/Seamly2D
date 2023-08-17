@@ -134,23 +134,23 @@ $(document).ready(function(){initNavTree('d9/de4/qmudef_8h_source.html','../../'
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">    #include &lt;ciso646&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* Q_CC_MSVC */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#acf47c8ad7cf93e1e0d8dfabd52e9e45d">   38</a></span>&#160;<span class="preprocessor">#define INIT_LOCALE_VARIABLES(locale)                          \</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">const QChar positiveSign   = (locale).positiveSign();          \</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">const QChar negativeSign   = (locale).negativeSign();          \</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">const QChar sign0          = (locale).toString(0).at(0);       \</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">const QChar sign1          = (locale).toString(1).at(0);       \</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">const QChar sign2          = (locale).toString(2).at(0);       \</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">const QChar sign3          = (locale).toString(3).at(0);       \</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">const QChar sign4          = (locale).toString(4).at(0);       \</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">const QChar sign5          = (locale).toString(5).at(0);       \</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">const QChar sign6          = (locale).toString(6).at(0);       \</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">const QChar sign7          = (locale).toString(7).at(0);       \</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">const QChar sign8          = (locale).toString(8).at(0);       \</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">const QChar sign9          = (locale).toString(9).at(0);       \</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">const QChar expUpper       = (locale).exponential().toUpper(); \</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">const QChar expLower       = (locale).exponential().toLower(); \</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">const QChar decimalPoint   = (locale).decimalPoint();          \</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">const QChar groupSeparator = (locale).groupSeparator()         \</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d9/de4/qmudef_8h.html#acf47c8ad7cf93e1e0d8dfabd52e9e45d">   38</a></span>&#160;<span class="preprocessor">#define INIT_LOCALE_VARIABLES(locale)                             \</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">const QChar positiveSign   = (locale).positiveSign()[0];          \</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">const QChar negativeSign   = (locale).negativeSign()[0];          \</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">const QChar sign0          = (locale).toString(0).at(0);          \</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">const QChar sign1          = (locale).toString(1).at(0);          \</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">const QChar sign2          = (locale).toString(2).at(0);          \</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">const QChar sign3          = (locale).toString(3).at(0);          \</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">const QChar sign4          = (locale).toString(4).at(0);          \</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">const QChar sign5          = (locale).toString(5).at(0);          \</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">const QChar sign6          = (locale).toString(6).at(0);          \</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">const QChar sign7          = (locale).toString(7).at(0);          \</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">const QChar sign8          = (locale).toString(8).at(0);          \</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">const QChar sign9          = (locale).toString(9).at(0);          \</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">const QChar expUpper       = (locale).exponential().toUpper()[0]; \</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">const QChar expLower       = (locale).exponential().toLower()[0]; \</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">const QChar decimalPoint   = (locale).decimalPoint()[0];          \</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">const QChar groupSeparator = (locale).groupSeparator()[0]         \</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span> </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;QString <a class="code" href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('d9/de4/qmudef_8h_source.html','../../'
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                                   <span class="keyword">const</span> QChar &amp;thousand);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// QMUDEF_H</span></div>
-<div class="ttc" id="anamespaceQT__WARNING__POP_html"><div class="ttname"><a href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9f/union__tool_8cpp_source.html#l00126">union_tool.cpp:127</a></div></div>
+<div class="ttc" id="anamespaceQT__WARNING__POP_html"><div class="ttname"><a href="../../dd/db0/namespaceQT__WARNING__POP.html">QT_WARNING_POP</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d9f/union__tool_8cpp_source.html#l00124">union_tool.cpp:125</a></div></div>
 <div class="ttc" id="aqmudef_8h_html_a0e9b14da123c7eb60aaa7cfff6086a2e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a0e9b14da123c7eb60aaa7cfff6086a2e">NameRegExp</a></div><div class="ttdeci">QString NameRegExp()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00281">qmudef.cpp:281</a></div></div>
 <div class="ttc" id="aqmudef_8h_html_a6249678646f618960f3d7578fab1a50e"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a6249678646f618960f3d7578fab1a50e">QmuFuzzyComparePossibleNulls</a></div><div class="ttdeci">QT_WARNING_POP static Q_REQUIRED_RESULT bool QmuFuzzyComparePossibleNulls(double p1, double p2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de4/qmudef_8h_source.html#l00061">qmudef.h:61</a></div></div>
 <div class="ttc" id="aqmudef_8h_html_a664390df11653050bb081955cd3fc653"><div class="ttname"><a href="../../d9/de4/qmudef_8h.html#a664390df11653050bb081955cd3fc653">ReadVal</a></div><div class="ttdeci">int ReadVal(const QString &amp;formula, qreal &amp;val, const QLocale &amp;locale, const QChar &amp;decimal, const QChar &amp;thousand)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d51/qmudef_8cpp_source.html#l00170">qmudef.cpp:170</a></div></div>

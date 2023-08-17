@@ -16,6 +16,9 @@ var hierarchy =
       [ "dx_iface", "de/d1b/classdx__iface.html", null ]
     ] ],
     [ "dx_data", "d8/db3/classdx__data.html", null ],
+    [ "xercesc::ErrorHandler", null, [
+      [ "CErrorHandler", "db/d94/classCErrorHandler.html", null ]
+    ] ],
     [ "face_s", "d3/d07/structface__s.html", null ],
     [ "GroupAttributes", "d8/d6b/structGroupAttributes.html", null ],
     [ "halfedge_s", "d3/d38/structhalfedge__s.html", null ],
@@ -29,9 +32,6 @@ var hierarchy =
     [ "PosterData", "d1/dd2/structPosterData.html", null ],
     [ "QAbstractItemModel", null, [
       [ "VPE::VPropertyModel", "d5/d47/classVPE_1_1VPropertyModel.html", null ]
-    ] ],
-    [ "QAbstractMessageHandler", null, [
-      [ "MessageHandler", "df/df2/classMessageHandler.html", null ]
     ] ],
     [ "QAbstractTableModel", null, [
       [ "QxtCsvModel", "de/db3/classQxtCsvModel.html", null ]
@@ -552,37 +552,6 @@ var hierarchy =
     [ "QUndoCommand", null, [
       [ "VUndoCommand", "de/d04/classVUndoCommand.html", null ]
     ] ],
-    [ "QVector< T >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< bool >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< CustomSARecord >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< DestinationItem >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QGraphicsItem * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QLineF >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QObject * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QPair< QLineF, QLineF > >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QPair< QString, QString > >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QPointF >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< qreal >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QString >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< quint32 >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< QVector< VLayoutPiece > >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< SourceItem >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< SToken >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< testfun_type >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VControlPointSpline * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VCurvePathItem * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VDataTool * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VLabelTemplateLine >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VLayoutPaper >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VLayoutPiece >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VLayoutPiecePath >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VPieceNode >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VPointF >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VScaledEllipse * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VScaledLine * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VSimplePoint * >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VSplinePoint >", "d5/dc2/classQVector.html", null ],
-    [ "QVector< VToolRecord >", "d5/dc2/classQVector.html", null ],
     [ "QWidget", null, [
       [ "CalculatorUtil", "d7/deb/classCalculatorUtil.html", null ],
       [ "GroupsWidget", "dc/d83/classGroupsWidget.html", null ],

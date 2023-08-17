@@ -108,13 +108,10 @@ $(document).ready(function(){initNavTree('d4/d11/vcommonsettings_8cpp.html','../
 <code>#include &lt;QFont&gt;</code><br />
 <code>#include &lt;QLocale&gt;</code><br />
 <code>#include &lt;QMessageLogger&gt;</code><br />
-<code>#include &lt;QSound&gt;</code><br />
-<code>#include &lt;QStaticStringData&gt;</code><br />
-<code>#include &lt;QStringData&gt;</code><br />
-<code>#include &lt;QStringDataPtr&gt;</code><br />
+<code>#include &lt;QString&gt;</code><br />
 <code>#include &lt;QVariant&gt;</code><br />
 <code>#include &lt;QtDebug&gt;</code><br />
-<code>#include &lt;QTextCodec&gt;</code><br />
+<code>#include &lt;QtCore5Compat/QTextCodec&gt;</code><br />
 <code>#include &quot;<a class="el" href="../../d3/da5/ifcdef_8h_source.html">../ifc/ifcdef.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../d4/da4/def_8h_source.html">../vmisc/def.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="../../db/db3/vmath_8h_source.html">../vmisc/vmath.h</a>&quot;</code><br />
@@ -414,9 +411,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00227">227</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00224">224</a> of file <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html">vcommonsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01408">VCommonSettings::GetCSVCodec()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01442">VCommonSettings::GetCSVSeparator()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01388">VCommonSettings::GetCSVWithHeader()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01270">VCommonSettings::GetDateOfLastRemind()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01255">VCommonSettings::GetLatestSkippedVersion()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00400">VCommonSettings::GetPathIndividualMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00421">VCommonSettings::GetPathMultisizeMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00442">VCommonSettings::GetPathTemplate()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01401">VCommonSettings::SetCSVCodec()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01421">VCommonSettings::SetCSVSeparator()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01381">VCommonSettings::SetCSVWithHeader()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01277">VCommonSettings::SetDateOfLastRemind()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01262">VCommonSettings::SetLatestSkippedVersion()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00407">VCommonSettings::SetPathIndividualMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00428">VCommonSettings::SetPathMultisizeMeasurements()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00449">VCommonSettings::SetPathTemplate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01405">VCommonSettings::GetCSVCodec()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01439">VCommonSettings::GetCSVSeparator()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01385">VCommonSettings::GetCSVWithHeader()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01267">VCommonSettings::GetDateOfLastRemind()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01252">VCommonSettings::GetLatestSkippedVersion()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00397">VCommonSettings::GetPathIndividualMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00418">VCommonSettings::GetPathMultisizeMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00439">VCommonSettings::GetPathTemplate()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01398">VCommonSettings::SetCSVCodec()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01418">VCommonSettings::SetCSVSeparator()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01378">VCommonSettings::SetCSVWithHeader()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01274">VCommonSettings::SetDateOfLastRemind()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l01259">VCommonSettings::SetLatestSkippedVersion()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00404">VCommonSettings::SetPathIndividualMeasurements()</a>, <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00425">VCommonSettings::SetPathMultisizeMeasurements()</a>, and <a class="el" href="../../d4/d11/vcommonsettings_8cpp_source.html#l00446">VCommonSettings::SetPathTemplate()</a>.</p>
 
 </div>
 </div>
