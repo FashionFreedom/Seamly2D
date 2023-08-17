@@ -461,6 +461,7 @@ Q_REQUIRED_RESULT QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &
 void InitLanguages(QComboBox *combobox);
 Q_REQUIRED_RESULT QStringList SupportedLocales();
 
+QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);
 Q_REQUIRED_RESULT QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath);
@@ -645,4 +646,6 @@ inline QList<T> convertToList(const C<T> &set)
 {
     return QList<T>(set.begin(), set.end());
 }
+
+
 #endif // DEF_H

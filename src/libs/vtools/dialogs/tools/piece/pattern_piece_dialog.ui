@@ -65,7 +65,6 @@
         <string notr="true">color: rgb(255, 255, 255);
 alternate-background-color:rgb(230, 230, 230);
 selection-color: rgb(230, 230, 230);
-selection-background-color: rgb(230, 230, 230);
 background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(200, 200, 200, 255));
 
 QListWidget::item:selected {
@@ -305,7 +304,7 @@ QListWidget::item:selected {
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>3</number>
        </property>
        <widget class="QWidget" name="properties_Page">
         <layout class="QVBoxLayout" name="verticalLayout_19">
@@ -326,7 +325,6 @@ QListWidget::item:selected {
            <property name="font">
             <font>
              <pointsize>9</pointsize>
-             <weight>50</weight>
              <bold>false</bold>
             </font>
            </property>
@@ -347,7 +345,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -370,7 +367,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -400,7 +396,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -423,7 +418,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -450,7 +444,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -479,7 +472,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -509,7 +501,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -526,7 +517,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -563,7 +553,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -621,7 +610,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -679,7 +667,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -747,7 +734,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -805,7 +791,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -828,7 +813,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -850,7 +834,6 @@ QListWidget::item:selected {
            <property name="font">
             <font>
              <pointsize>9</pointsize>
-             <weight>50</weight>
              <bold>false</bold>
             </font>
            </property>
@@ -893,7 +876,6 @@ QListWidget::item:selected {
                 <property name="font">
                  <font>
                   <pointsize>9</pointsize>
-                  <weight>50</weight>
                   <bold>false</bold>
                  </font>
                 </property>
@@ -1058,7 +1040,6 @@ QListWidget::item:selected {
            <property name="font">
             <font>
              <pointsize>9</pointsize>
-             <weight>50</weight>
              <bold>false</bold>
             </font>
            </property>
@@ -1104,7 +1085,7 @@ QListWidget::item:selected {
               <widget class="QListWidget" name="mainPath_ListWidget">
                <property name="font">
                 <font>
-                 <weight>75</weight>
+                 <pointsize>9</pointsize>
                  <bold>true</bold>
                 </font>
                </property>
@@ -1241,7 +1222,6 @@ QListWidget::item:selected {
                <property name="font">
                 <font>
                  <pointsize>9</pointsize>
-                 <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
@@ -2353,7 +2333,7 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="pieceLabel_Tab">
             <attribute name="icon">
@@ -4079,7 +4059,7 @@ QListWidget::item:selected {
               </property>
               <property name="font">
                <font>
-                <weight>75</weight>
+                <pointsize>9</pointsize>
                 <bold>true</bold>
                </font>
               </property>
@@ -4765,8 +4745,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>292</width>
-              <height>559</height>
+              <width>232</width>
+              <height>550</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">

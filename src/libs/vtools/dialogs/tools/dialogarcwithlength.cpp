@@ -57,7 +57,7 @@
 #include <Qt>
 
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vtranslatevars.h"
@@ -111,7 +111,7 @@ DialogArcWithLength::DialogArcWithLength(const VContainer *data, const quint32 &
     timerLength = new QTimer(this);
     connect(timerLength, &QTimer::timeout, this, &DialogArcWithLength::Length);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->centerPoint_ComboBox);
 
@@ -370,7 +370,7 @@ void DialogArcWithLength::LengthChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -384,7 +384,7 @@ void DialogArcWithLength::FXRadius()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXF1()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit the first angle"));
     dialog->SetFormula(GetF1());
     dialog->setPostfix(degreeSymbol);
@@ -398,7 +398,7 @@ void DialogArcWithLength::FXF1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogArcWithLength::FXLength()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit the arc length"));
     dialog->SetFormula(GetLength());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

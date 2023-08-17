@@ -49,6 +49,11 @@
  **
  *************************************************************************/
 
+/*
+ * @brief entry point of SeamlyMe application
+ * @return non-zero value is code of the error
+ */
+
 #include "tmainwindow.h"
 #include "mapplication.h"
 

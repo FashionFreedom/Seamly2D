@@ -219,10 +219,15 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     SetLabelComboBox(VApplication::LabelLanguages());
 
     index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    if (index == -1)
+    {
+        index = ui->labelCombo->findData("en");
+    }
     if (index != -1)
     {
         ui->labelCombo->setCurrentIndex(index);
     }
+
     connect(ui->labelCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
         m_labelLangChanged = true;
@@ -343,7 +348,9 @@ void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
     for (int i = 0; i < list.size(); ++i)
     {
         QLocale loc = QLocale(list.at(i));
-        ui->labelCombo->addItem(loc.nativeLanguageName(), list.at(i));
+        QString country = QLocale::countryToString(loc.country());
+        QIcon ico(QString("%1/%2.png").arg(":/flags").arg(country));
+        ui->labelCombo->addItem(ico, loc.nativeLanguageName(), list.at(i));
     }
 }
 

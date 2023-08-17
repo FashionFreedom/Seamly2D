@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   groups_widget.h
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   11 Jun, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -118,6 +118,7 @@ private:
     quint32           attrUInt(const QDomElement &domElement, const QString &name);
     QString           getObjName(quint32 id);
     void              splitterMoved(int pos, int index);
+    void              headerClicked(int index);
 };
 
 #endif // GROUPS_WIDGET_H

@@ -84,7 +84,7 @@ UnionDialog::UnionDialog(const VContainer *data, const quint32 &toolId, QWidget 
     m_beep->setSource(QUrl(qApp->Settings()->getSelectionSound()));
 
     ui->setupUi(this);
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

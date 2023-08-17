@@ -81,7 +81,7 @@ DialogLine::DialogLine(const VContainer *data, const quint32 &toolId, QWidget *p
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
 
     FillComboBoxPoints(ui->comboBoxFirstPoint);
