@@ -206,13 +206,6 @@ win32 {
         openssl_path += $${PWD}/$$DIR
     }
     copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
-
-    for(DIR, INSTALL_XERCES) {
-        #add these absolute paths to a variable which
-        #ends up as 'mkcommands = path1 path2 path3 ...'
-        openssl_path += $${PWD}/$$DIR
-    }
-    copyToDestdir($$openssl_path, $$shell_path($${OUT_PWD}/$$DESTDIR))
 }
 
 # When the GNU linker sees a library, it discards all symbols that it doesn't need.
@@ -337,9 +330,10 @@ win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DE
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
 # xerces library
-win32: LIBS += -L$$PWD/../../../extern/xerces-c/lib/ -lxerces-c_3D
-macx: LIBS += -L/usr/local/lib -lxerces-c-3.2
-else:unix|win32-g++: LIBS += -lxerces-c-3.2
+macx: LIBS += -L$${PWD}/../../libs/xerces-c/macx/lib -lxerces-c
+else:unix: LIBS += -lxerces-c
+win32:!win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/msvc/lib -lxerces-c_3
+win32-g++: LIBS += -L$${PWD}/../../libs/xerces-c/mingw/lib -lxerces-c
 
 macx{
     APPLE_SIGN_IDENTITY_UNQUOTED = $(APPLE_SIGN_IDENTITY)

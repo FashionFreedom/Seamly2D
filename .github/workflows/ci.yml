@@ -138,10 +138,6 @@ jobs:
           cache: true
           modules: qt5compat qtmultimedia
 
-      - name: install build dependencies
-        run: |
-          brew install xerces-c
-
       - name: update version
         run: |
           ./scripts/version.sh ${VERSION_NUMBER}

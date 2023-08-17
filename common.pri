@@ -13,8 +13,6 @@ win32{
     QMAKE_INSTALL_PROGRAM = xcopy /y
 
     VCOPY = $$QMAKE_COPY /D
-
-    INSTALL_XERCES += ../../../extern/xerces-c/lib/xerces-c_3_2D.dll
 }
 
 unix{
