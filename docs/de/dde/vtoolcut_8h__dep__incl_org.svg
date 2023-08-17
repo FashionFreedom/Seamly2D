@@ -78,25 +78,7 @@
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
-<g id="a_node7"><a xlink:href="../../d7/dea/vtoolcutspline_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="506.5,-156.5 506.5,-208.5 635.5,-208.5 635.5,-156.5 506.5,-156.5"/>
-<text text-anchor="start" x="514.5" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="514.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
-<text text-anchor="start" x="514.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toolcut</text>
-<text text-anchor="middle" x="571" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolcutspline.h</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge7" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M571,-235.19C571,-226.28 571,-216.9 571,-208.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="567.5,-235.34 571,-245.34 574.5,-235.34 567.5,-235.34"/>
-</g>
-<!-- Node8 -->
-<g id="node8" class="node">
-<title>Node8</title>
-<g id="a_node8"><a xlink:href="../../da/dae/vtoolcutspline_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_node7"><a xlink:href="../../da/dae/vtoolcutspline_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="653.5,-67.5 653.5,-119.5 782.5,-119.5 782.5,-67.5 653.5,-67.5"/>
 <text text-anchor="start" x="661.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
 <text text-anchor="start" x="661.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
@@ -105,11 +87,29 @@
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node8 -->
-<g id="edge10" class="edge">
-<title>Node1&#45;&gt;Node8</title>
+<!-- Node1&#45;&gt;Node7 -->
+<g id="edge7" class="edge">
+<title>Node1&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M645.63,-259.55C702.54,-249.49 774.1,-232.56 792,-209 806.25,-190.24 802.01,-177.33 792,-156 785.19,-141.48 773.08,-129.2 760.6,-119.53"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="644.81,-256.14 635.55,-261.28 646,-263.03 644.81,-256.14"/>
+</g>
+<!-- Node8 -->
+<g id="node8" class="node">
+<title>Node8</title>
+<g id="a_node8"><a xlink:href="../../d7/dea/vtoolcutspline_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="506.5,-156.5 506.5,-208.5 635.5,-208.5 635.5,-156.5 506.5,-156.5"/>
+<text text-anchor="start" x="514.5" y="-196.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="514.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
+<text text-anchor="start" x="514.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/toolcut</text>
+<text text-anchor="middle" x="571" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtoolcutspline.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge8" class="edge">
+<title>Node1&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M571,-235.19C571,-226.28 571,-216.9 571,-208.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="567.5,-235.34 571,-245.34 574.5,-235.34 567.5,-235.34"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
@@ -185,15 +185,15 @@
 <path fill="none" stroke="midnightblue" d="M571,-68.09C571,-55.76 571,-41.22 571,-30.73"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="567.5,-68.2 571,-78.2 574.5,-68.21 567.5,-68.2"/>
 </g>
-<!-- Node7&#45;&gt;Node4 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node4</title>
+<!-- Node8&#45;&gt;Node4 -->
+<g id="edge9" class="edge">
+<title>Node8&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M571,-146.15C571,-133.05 571,-118.93 571,-108.77"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="567.5,-146.34 571,-156.34 574.5,-146.34 567.5,-146.34"/>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge9" class="edge">
-<title>Node7&#45;&gt;Node8</title>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge10" class="edge">
+<title>Node8&#45;&gt;Node7</title>
 <path fill="none" stroke="midnightblue" d="M622.42,-151.07C639.79,-140.79 658.98,-129.43 675.58,-119.61"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="620.34,-148.23 613.52,-156.34 623.91,-154.25 620.34,-148.23"/>
 </g>

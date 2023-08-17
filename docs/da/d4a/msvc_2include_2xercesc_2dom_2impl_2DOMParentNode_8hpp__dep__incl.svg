@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1231;
+var viewWidth = 1250;
 var viewHeight = 284;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,227 +54,227 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/libs/xerces&#45;c/msvc/include/xercesc/dom/impl/DOMParentNode.hpp</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-280 1227.46,-280 1227.46,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-280 1245.5,-280 1245.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="480.46,-234.5 480.46,-275.5 624.46,-275.5 624.46,-234.5 480.46,-234.5"/>
-<text text-anchor="start" x="488.46" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="488.46" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="552.46" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMParentNode.hpp</text>
+<polygon fill="#bfbfbf" stroke="black" points="498.5,-234.5 498.5,-275.5 642.5,-275.5 642.5,-234.5 498.5,-234.5"/>
+<text text-anchor="start" x="506.5" y="-263.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="506.5" y="-252.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="570.5" y="-241.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMParentNode.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../de/d08/msvc_2include_2xercesc_2dom_2impl_2DOMAttrImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="158.46,-78.5 158.46,-119.5 302.46,-119.5 302.46,-78.5 158.46,-78.5"/>
-<text text-anchor="start" x="166.46" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="166.46" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="230.46" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMAttrImpl.hpp</text>
+<g id="a_node2"><a xlink:href="../../d3/d3c/msvc_2include_2xercesc_2dom_2impl_2DOMCDATASectionImpl_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-156.5 0,-197.5 155,-197.5 155,-156.5 0,-156.5"/>
+<text text-anchor="start" x="8" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="8" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="77.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCDATASectionImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M470.09,-251.43C326.24,-246.09 41.57,-231.38 11.46,-198 -36.24,-145.1 77.5,-119.15 158.29,-107.74"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="470.08,-254.93 480.2,-251.8 470.34,-247.94 470.08,-254.93"/>
+<path fill="none" stroke="midnightblue" d="M488,-244.32C406.72,-234.35 279.17,-217.55 169.5,-198 164.83,-197.17 160.04,-196.27 155.22,-195.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="487.81,-247.83 498.16,-245.56 488.66,-240.88 487.81,-247.83"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d3/d3c/msvc_2include_2xercesc_2dom_2impl_2DOMCDATASectionImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="20.96,-156.5 20.96,-197.5 175.96,-197.5 175.96,-156.5 20.96,-156.5"/>
-<text text-anchor="start" x="28.96" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="28.96" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="98.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCDATASectionImpl.hpp</text>
+<!-- Node3 -->
+<g id="node3" class="node">
+<title>Node3</title>
+<g id="a_node3"><a xlink:href="../../de/d08/msvc_2include_2xercesc_2dom_2impl_2DOMAttrImpl_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="262.5,-78.5 262.5,-119.5 406.5,-119.5 406.5,-78.5 262.5,-78.5"/>
+<text text-anchor="start" x="270.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="270.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="334.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMAttrImpl.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M469.96,-243.31C395.17,-233.17 282.05,-216.74 184.46,-198 181.75,-197.48 179,-196.93 176.22,-196.37"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="469.88,-246.83 480.25,-244.7 470.81,-239.89 469.88,-246.83"/>
+<!-- Node1&#45;&gt;Node3 -->
+<g id="edge2" class="edge">
+<title>Node1&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M488.38,-253.46C391.38,-250.87 238.6,-240.01 202.5,-198 190.33,-183.84 192.2,-171.56 202.5,-156 216.24,-135.24 239.39,-122.16 262.5,-113.92"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="488.38,-256.96 498.46,-253.7 488.55,-249.96 488.38,-256.96"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../df/d65/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentFragmentImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="193.96,-156.5 193.96,-197.5 376.96,-197.5 376.96,-156.5 193.96,-156.5"/>
-<text text-anchor="start" x="201.96" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="201.96" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="285.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentFragmentImpl.hpp</text>
+<polygon fill="white" stroke="black" points="212,-156.5 212,-197.5 395,-197.5 395,-156.5 212,-156.5"/>
+<text text-anchor="start" x="220" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="220" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="303.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentFragmentImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M473.7,-231.58C435.7,-220.76 390.55,-207.91 353.99,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="473.13,-235.06 483.7,-234.43 475.04,-228.32 473.13,-235.06"/>
+<path fill="none" stroke="midnightblue" d="M491.74,-231.58C453.74,-220.76 408.58,-207.91 372.03,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="491.16,-235.06 501.74,-234.43 493.08,-228.32 491.16,-235.06"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d2/d5e/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="395.46,-156.5 395.46,-197.5 539.46,-197.5 539.46,-156.5 395.46,-156.5"/>
-<text text-anchor="start" x="403.46" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="403.46" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="467.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentImpl.hpp</text>
+<polygon fill="white" stroke="black" points="413.5,-156.5 413.5,-197.5 557.5,-197.5 557.5,-156.5 413.5,-156.5"/>
+<text text-anchor="start" x="421.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="421.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="485.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M522.81,-227.49C511.78,-217.63 499.48,-206.63 489.28,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="520.79,-230.37 530.57,-234.43 525.45,-225.15 520.79,-230.37"/>
+<path fill="none" stroke="midnightblue" d="M540.85,-227.49C529.82,-217.63 517.52,-206.63 507.32,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="538.82,-230.37 548.61,-234.43 543.49,-225.15 538.82,-230.37"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../de/de5/msvc_2include_2xercesc_2dom_2impl_2DOMDocumentTypeImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="557.96,-156.5 557.96,-197.5 716.96,-197.5 716.96,-156.5 557.96,-156.5"/>
-<text text-anchor="start" x="565.96" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="565.96" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="637.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentTypeImpl.hpp</text>
+<polygon fill="white" stroke="black" points="576,-156.5 576,-197.5 735,-197.5 735,-156.5 576,-156.5"/>
+<text text-anchor="start" x="584" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="584" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="655.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMDocumentTypeImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M582.11,-227.49C593.14,-217.63 605.44,-206.63 615.65,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="579.47,-225.15 574.35,-234.43 584.14,-230.37 579.47,-225.15"/>
+<path fill="none" stroke="midnightblue" d="M600.15,-227.49C611.18,-217.63 623.48,-206.63 633.68,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="597.51,-225.15 592.39,-234.43 602.18,-230.37 597.51,-225.15"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../d4/dff/msvc_2include_2xercesc_2dom_2impl_2DOMElementImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="735.46,-156.5 735.46,-197.5 879.46,-197.5 879.46,-156.5 735.46,-156.5"/>
-<text text-anchor="start" x="743.46" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="743.46" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="807.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMElementImpl.hpp</text>
+<polygon fill="white" stroke="black" points="753.5,-156.5 753.5,-197.5 897.5,-197.5 897.5,-156.5 753.5,-156.5"/>
+<text text-anchor="start" x="761.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="761.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="825.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMElementImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M628.15,-231.44C664.34,-220.66 707.25,-207.87 742.02,-197.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="626.71,-228.22 618.13,-234.43 628.71,-234.93 626.71,-228.22"/>
+<path fill="none" stroke="midnightblue" d="M646.19,-231.44C682.38,-220.66 725.29,-207.87 760.05,-197.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="644.75,-228.22 636.17,-234.43 646.75,-234.93 644.75,-228.22"/>
 </g>
 <!-- Node12 -->
 <g id="node12" class="node">
 <title>Node12</title>
 <g id="a_node12"><a xlink:href="../../dc/d29/msvc_2include_2xercesc_2dom_2impl_2DOMEntityImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="897.46,-156.5 897.46,-197.5 1041.46,-197.5 1041.46,-156.5 897.46,-156.5"/>
-<text text-anchor="start" x="905.46" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="905.46" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="969.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMEntityImpl.hpp</text>
+<polygon fill="white" stroke="black" points="915.5,-156.5 915.5,-197.5 1059.5,-197.5 1059.5,-156.5 915.5,-156.5"/>
+<text text-anchor="start" x="923.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="923.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="987.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMEntityImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node12 -->
 <g id="edge12" class="edge">
 <title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M634.78,-242.09C703.01,-231.78 802.39,-215.77 888.46,-198 891.3,-197.41 894.19,-196.8 897.1,-196.16"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="633.9,-238.68 624.53,-243.63 634.94,-245.6 633.9,-238.68"/>
+<path fill="none" stroke="midnightblue" d="M652.82,-242.09C721.05,-231.78 820.42,-215.77 906.5,-198 909.34,-197.41 912.23,-196.8 915.14,-196.16"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="651.94,-238.68 642.57,-243.63 652.98,-245.6 651.94,-238.68"/>
 </g>
 <!-- Node13 -->
 <g id="node13" class="node">
 <title>Node13</title>
 <g id="a_node13"><a xlink:href="../../dc/dba/msvc_2include_2xercesc_2dom_2impl_2DOMEntityReferenceImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1059.46,-156.5 1059.46,-197.5 1223.46,-197.5 1223.46,-156.5 1059.46,-156.5"/>
-<text text-anchor="start" x="1067.46" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="1067.46" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="1141.46" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMEntityReferenceImpl.hpp</text>
+<polygon fill="white" stroke="black" points="1077.5,-156.5 1077.5,-197.5 1241.5,-197.5 1241.5,-156.5 1077.5,-156.5"/>
+<text text-anchor="start" x="1085.5" y="-185.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="1085.5" y="-174.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="1159.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMEntityReferenceImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node13 -->
 <g id="edge13" class="edge">
 <title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M634.78,-247.39C733.82,-238.84 904.97,-222.1 1050.46,-198 1053.33,-197.52 1056.25,-197.02 1059.2,-196.48"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="634.2,-243.93 624.54,-248.27 634.8,-250.91 634.2,-243.93"/>
+<path fill="none" stroke="midnightblue" d="M652.81,-247.39C751.86,-238.84 923.01,-222.1 1068.5,-198 1071.37,-197.52 1074.29,-197.02 1077.23,-196.48"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="652.24,-243.93 642.57,-248.27 652.84,-250.91 652.24,-243.93"/>
 </g>
-<!-- Node3 -->
-<g id="node3" class="node">
-<title>Node3</title>
-<g id="a_node3"><a xlink:href="../../de/d6a/msvc_2include_2xercesc_2dom_2impl_2DOMAttrNSImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="158.46,-0.5 158.46,-41.5 302.46,-41.5 302.46,-0.5 158.46,-0.5"/>
-<text text-anchor="start" x="166.46" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="166.46" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="230.46" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMAttrNSImpl.hpp</text>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="../../de/d6a/msvc_2include_2xercesc_2dom_2impl_2DOMAttrNSImpl_8hpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="262.5,-0.5 262.5,-41.5 406.5,-41.5 406.5,-0.5 262.5,-0.5"/>
+<text text-anchor="start" x="270.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="270.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="334.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMAttrNSImpl.hpp</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
-<title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M230.46,-68.3C230.46,-59.3 230.46,-49.65 230.46,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="226.96,-68.43 230.46,-78.43 233.96,-68.43 226.96,-68.43"/>
+<!-- Node3&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node3&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M334.5,-68.3C334.5,-59.3 334.5,-49.65 334.5,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="331,-68.43 334.5,-78.43 338,-68.43 331,-68.43"/>
 </g>
-<!-- Node6&#45;&gt;Node2 -->
+<!-- Node6&#45;&gt;Node3 -->
 <g id="edge6" class="edge">
-<title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M396.69,-153.3C363.14,-142.55 323.46,-129.82 291.29,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="395.84,-156.71 406.43,-156.43 397.98,-150.04 395.84,-156.71"/>
+<title>Node6&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M437.63,-151.91C416.87,-141.46 392.87,-129.38 373.25,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="436.11,-155.06 446.61,-156.43 439.25,-148.81 436.11,-155.06"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="../../dd/d8d/msvc_2include_2xercesc_2dom_2impl_2DOMCasts_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="654.46,-78.5 654.46,-119.5 798.46,-119.5 798.46,-78.5 654.46,-78.5"/>
-<text text-anchor="start" x="662.46" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="662.46" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="726.46" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
+<polygon fill="white" stroke="black" points="672.5,-78.5 672.5,-119.5 816.5,-119.5 816.5,-78.5 672.5,-78.5"/>
+<text text-anchor="start" x="680.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="680.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="744.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMCasts.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node9 -->
 <g id="edge9" class="edge">
 <title>Node8&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M779.21,-149.49C768.7,-139.63 756.97,-128.63 747.25,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="776.92,-152.14 786.6,-156.43 781.71,-147.03 776.92,-152.14"/>
+<path fill="none" stroke="midnightblue" d="M797.25,-149.49C786.74,-139.63 775.01,-128.63 765.29,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="794.95,-152.14 804.64,-156.43 799.74,-147.03 794.95,-152.14"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
 <g id="a_node10"><a xlink:href="../../d4/da4/msvc_2include_2xercesc_2dom_2impl_2DOMElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="816.46,-78.5 816.46,-119.5 960.46,-119.5 960.46,-78.5 816.46,-78.5"/>
-<text text-anchor="start" x="824.46" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="824.46" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="888.46" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMElementNSImpl.hpp</text>
+<polygon fill="white" stroke="black" points="834.5,-78.5 834.5,-119.5 978.5,-119.5 978.5,-78.5 834.5,-78.5"/>
+<text text-anchor="start" x="842.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="842.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="906.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/DOMElementNSImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node10 -->
 <g id="edge10" class="edge">
 <title>Node8&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M835.71,-149.49C846.23,-139.63 857.95,-128.63 867.67,-119.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="833.22,-147.03 828.32,-156.43 838.01,-152.14 833.22,-147.03"/>
+<path fill="none" stroke="midnightblue" d="M853.75,-149.49C864.26,-139.63 875.99,-128.63 885.71,-119.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="851.26,-147.03 846.36,-156.43 856.05,-152.14 851.26,-147.03"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
 <g id="a_node11"><a xlink:href="../../db/d0c/msvc_2include_2xercesc_2dom_2impl_2XSDElementNSImpl_8hpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="816.46,-0.5 816.46,-41.5 960.46,-41.5 960.46,-0.5 816.46,-0.5"/>
-<text text-anchor="start" x="824.46" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
-<text text-anchor="start" x="824.46" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
-<text text-anchor="middle" x="888.46" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/XSDElementNSImpl.hpp</text>
+<polygon fill="white" stroke="black" points="834.5,-0.5 834.5,-41.5 978.5,-41.5 978.5,-0.5 834.5,-0.5"/>
+<text text-anchor="start" x="842.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/xerces&#45;c/msvc</text>
+<text text-anchor="start" x="842.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/include/xercesc/dom/impl</text>
+<text text-anchor="middle" x="906.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/XSDElementNSImpl.hpp</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node11 -->
 <g id="edge11" class="edge">
 <title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M888.46,-68.3C888.46,-59.3 888.46,-49.65 888.46,-41.51"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="884.96,-68.43 888.46,-78.43 891.96,-68.43 884.96,-68.43"/>
+<path fill="none" stroke="midnightblue" d="M906.5,-68.3C906.5,-59.3 906.5,-49.65 906.5,-41.51"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="903,-68.43 906.5,-78.43 910,-68.43 903,-68.43"/>
 </g>
 </g>
 </svg>
