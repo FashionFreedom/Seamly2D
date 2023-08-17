@@ -1,0 +1,27 @@
+var classDOMNormalizer_1_1InScopeNamespaces_1_1Scope =
+[
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ae0eaee13ff2f98bc9e805448ec6b06e7", null ],
+    [ "~Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14bb5a905681c9aa6ca744f08513c02a", null ],
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ad117a38c07248df6ec2319c13b60e333", null ],
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ae0eaee13ff2f98bc9e805448ec6b06e7", null ],
+    [ "~Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14bb5a905681c9aa6ca744f08513c02a", null ],
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ad117a38c07248df6ec2319c13b60e333", null ],
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ae0eaee13ff2f98bc9e805448ec6b06e7", null ],
+    [ "~Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14bb5a905681c9aa6ca744f08513c02a", null ],
+    [ "Scope", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#ad117a38c07248df6ec2319c13b60e333", null ],
+    [ "addOrChangeBinding", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a55baff0bd436d6a449c4f519b3dc8b53", null ],
+    [ "addOrChangeBinding", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a55baff0bd436d6a449c4f519b3dc8b53", null ],
+    [ "addOrChangeBinding", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a55baff0bd436d6a449c4f519b3dc8b53", null ],
+    [ "getPrefix", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a31160016f7b17759b0824033fb6358ee", null ],
+    [ "getPrefix", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a31160016f7b17759b0824033fb6358ee", null ],
+    [ "getPrefix", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a31160016f7b17759b0824033fb6358ee", null ],
+    [ "getUri", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14ecf6dfa973c834bbb93819593ea3b8", null ],
+    [ "getUri", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14ecf6dfa973c834bbb93819593ea3b8", null ],
+    [ "getUri", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a14ecf6dfa973c834bbb93819593ea3b8", null ],
+    [ "operator=", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a4ebe7720647072ec2f12b3df377559f2", null ],
+    [ "operator=", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a4ebe7720647072ec2f12b3df377559f2", null ],
+    [ "operator=", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a4ebe7720647072ec2f12b3df377559f2", null ],
+    [ "fBaseScopeWithBindings", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a2e0aafbf0b2a12218d2f8e81bf10c1d0", null ],
+    [ "fPrefixHash", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#aed59af4bc2d39dbd8a64b2e2a931aca4", null ],
+    [ "fUriHash", "d8/dd1/classDOMNormalizer_1_1InScopeNamespaces_1_1Scope.html#a27f339968fbec034a9d96dea4212b057", null ]
+];

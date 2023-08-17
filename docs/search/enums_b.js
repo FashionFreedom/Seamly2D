@@ -1,7 +1,12 @@
 var searchData=
 [
-  ['nodedetail_17887',['NodeDetail',['../d4/da4/def_8h.html#a136551301e3a6163c0233081fe424653',1,'def.h']]],
-  ['nodeusage_17888',['NodeUsage',['../d4/da4/def_8h.html#ae9cd89aeb9b330f44aadd560b61a3473',1,'def.h']]],
-  ['notchsubtype_17889',['NotchSubType',['../d4/da4/def_8h.html#a5b666b3acf56b84f9f3fadeef9d571b4',1,'def.h']]],
-  ['notchtype_17890',['NotchType',['../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0c',1,'def.h']]]
+  ['namespace_5fconstraint_31818',['NAMESPACE_CONSTRAINT',['../d1/d2f/classXSWildcard.html#acc3a6c061271f221ae2163a76ed50d00',1,'XSWildcard::NAMESPACE_CONSTRAINT()'],['../d1/d2f/classXSWildcard.html#acc3a6c061271f221ae2163a76ed50d00',1,'XSWildcard::NAMESPACE_CONSTRAINT()'],['../d1/d2f/classXSWildcard.html#acc3a6c061271f221ae2163a76ed50d00',1,'XSWildcard::NAMESPACE_CONSTRAINT()']]],
+  ['nodedetail_31819',['NodeDetail',['../d4/da4/def_8h.html#a136551301e3a6163c0233081fe424653',1,'def.h']]],
+  ['nodeobjecttype_31820',['NodeObjectType',['../d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1',1,'DOMMemoryManager::NodeObjectType()'],['../d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1',1,'DOMMemoryManager::NodeObjectType()'],['../d5/d82/classDOMMemoryManager.html#a204df2f42dde53d6b6c30c3ca46e27b1',1,'DOMMemoryManager::NodeObjectType()']]],
+  ['nodetype_31821',['NodeType',['../de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8',1,'XercesNodeTest::NodeType()'],['../d4/d94/classDOMNode.html#a6237ede96be83ff729807688e4f638c5',1,'DOMNode::NodeType()'],['../de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8',1,'XercesNodeTest::NodeType()'],['../d4/d94/classDOMNode.html#a6237ede96be83ff729807688e4f638c5',1,'DOMNode::NodeType()'],['../de/dc5/classXercesNodeTest.html#af90b1530dc5bef7c1595e08617bda9a8',1,'XercesNodeTest::NodeType()'],['../d4/d94/classDOMNode.html#a6237ede96be83ff729807688e4f638c5',1,'DOMNode::NodeType()']]],
+  ['nodetypes_31822',['NodeTypes',['../dd/d17/classContentSpecNode.html#a3f53dbb1a9eca6b60c643986bbff9dcb',1,'ContentSpecNode::NodeTypes()'],['../dd/d17/classContentSpecNode.html#a3f53dbb1a9eca6b60c643986bbff9dcb',1,'ContentSpecNode::NodeTypes()'],['../dd/d17/classContentSpecNode.html#a3f53dbb1a9eca6b60c643986bbff9dcb',1,'ContentSpecNode::NodeTypes()']]],
+  ['nodeusage_31823',['NodeUsage',['../d4/da4/def_8h.html#ae9cd89aeb9b330f44aadd560b61a3473',1,'def.h']]],
+  ['notchsubtype_31824',['NotchSubType',['../d4/da4/def_8h.html#a5b666b3acf56b84f9f3fadeef9d571b4',1,'def.h']]],
+  ['notchtype_31825',['NotchType',['../d4/da4/def_8h.html#a0caf9d3130a2202ad0e8c90233960a0c',1,'def.h']]],
+  ['numbertype_31826',['NumberType',['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()'],['../d5/d4b/classXMLNumber.html#a5c61954fb1fcef027fed8dccc826f8eb',1,'XMLNumber::NumberType()']]]
 ];
