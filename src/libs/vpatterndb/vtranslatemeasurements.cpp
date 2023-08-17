@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   vtranslatemeasurements.cpp
+**  @author DSCaskey <dscaskey@gmail.com>
+**  @date  5 Jun, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtranslatemeasurements.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +33,22 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -56,11 +59,11 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VTranslateMeasurements::VTranslateMeasurements()
-    :measurements(QMap<QString, qmu::QmuTranslation>()),
-      guiTexts(QMap<QString, qmu::QmuTranslation>()),
-      descriptions(QMap<QString, qmu::QmuTranslation>()),
-      numbers(QMap<QString, QString>()),
-      formulas(QMap<QString, QString>())
+    : m_measurements(QMap<QString, qmu::QmuTranslation>())
+    , m_guiTexts(QMap<QString, qmu::QmuTranslation>())
+    , m_descriptions(QMap<QString, qmu::QmuTranslation>())
+    , m_numbers(QMap<QString, QString>())
+    , m_formulas(QMap<QString, QString>())
 {
     InitMeasurements();
 }
@@ -81,8 +84,8 @@ VTranslateMeasurements::~VTranslateMeasurements()
 bool VTranslateMeasurements::MeasurementsFromUser(QString &newFormula, int position, const QString &token,
                                                   int &bias) const
 {
-    QMap<QString, qmu::QmuTranslation>::const_iterator i = measurements.constBegin();
-    while (i != measurements.constEnd())
+    QMap<QString, qmu::QmuTranslation>::const_iterator i = m_measurements.constBegin();
+    while (i != m_measurements.constEnd())
     {
         if (token == i.value().translate())
         {
@@ -98,9 +101,9 @@ bool VTranslateMeasurements::MeasurementsFromUser(QString &newFormula, int posit
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateMeasurements::MToUser(const QString &measurement) const
 {
-    if (measurements.contains(measurement))
+    if (m_measurements.contains(measurement))
     {
-        return measurements.value(measurement).translate();
+        return m_measurements.value(measurement).translate();
     }
     else
     {
@@ -111,9 +114,9 @@ QString VTranslateMeasurements::MToUser(const QString &measurement) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateMeasurements::MNumber(const QString &measurement) const
 {
-    if (numbers.contains(measurement))
+    if (m_numbers.contains(measurement))
     {
-        return numbers.value(measurement);
+        return m_numbers.value(measurement);
     }
     else
     {
@@ -124,15 +127,15 @@ QString VTranslateMeasurements::MNumber(const QString &measurement) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateMeasurements::MFormula(const QString &measurement) const
 {
-    return formulas.value(measurement);
+    return m_formulas.value(measurement);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VTranslateMeasurements::GuiText(const QString &measurement) const
+QString VTranslateMeasurements::guiText(const QString &measurement) const
 {
-    if (guiTexts.contains(measurement))
+    if (m_guiTexts.contains(measurement))
     {
-        return guiTexts.value(measurement).translate();
+        return m_guiTexts.value(measurement).translate();
     }
     else
     {
@@ -143,9 +146,9 @@ QString VTranslateMeasurements::GuiText(const QString &measurement) const
 //---------------------------------------------------------------------------------------------------------------------
 QString VTranslateMeasurements::Description(const QString &measurement) const
 {
-    if (descriptions.contains(measurement))
+    if (m_descriptions.contains(measurement))
     {
-        return descriptions.value(measurement).translate();
+        return m_descriptions.value(measurement).translate();
     }
     else
     {
@@ -156,11 +159,11 @@ QString VTranslateMeasurements::Description(const QString &measurement) const
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateMeasurements::Retranslate()
 {
-    measurements.clear();
-    guiTexts.clear();
-    descriptions.clear();
-    numbers.clear();
-    formulas.clear();
+    m_measurements.clear();
+    m_guiTexts.clear();
+    m_descriptions.clear();
+    m_numbers.clear();
+    m_formulas.clear();
     InitMeasurements();
 }
 
@@ -191,11 +194,11 @@ void VTranslateMeasurements::InitMeasurement(const QString &name, const qmu::Qmu
                                              const qmu::QmuTranslation &g, const qmu::QmuTranslation &d,
                                              const QString &number, const QString &formula)
 {
-    measurements.insert(name, m);
-    guiTexts.insert(name, g);
-    descriptions.insert(name, d);
-    numbers.insert(name, number);
-    formulas.insert(name, formula);
+    m_measurements.insert(name, m);
+    m_guiTexts.insert(name, g);
+    m_descriptions.insert(name, d);
+    m_numbers.insert(name, number);
+    m_formulas.insert(name, formula);
 }
 
 #define translate(context, source, disambiguation) qmu::QmuTranslation::translate((context), (source), (disambiguation))

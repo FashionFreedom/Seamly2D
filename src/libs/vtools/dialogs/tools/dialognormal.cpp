@@ -68,7 +68,7 @@
 #include "../../visualization/visualization.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialognormal.h"
@@ -91,13 +91,13 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
@@ -164,7 +164,7 @@ void DialogNormal::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::FXLength()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));

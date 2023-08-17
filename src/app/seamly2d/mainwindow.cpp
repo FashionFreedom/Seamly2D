@@ -187,20 +187,20 @@ MainWindow::MainWindow(QWidget *parent)
     InitScenes();
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
-    connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
-    connect(doc, &VPattern::UndoCommand, this, &MainWindow::FullParseFile);
-    connect(doc, &VPattern::SetEnabledGUI, this, &MainWindow::SetEnabledGUI);
+    connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
+    connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
+    connect(doc, &VPattern::setGuiEnabled, this, &MainWindow::setGuiEnabled);
     connect(doc, &VPattern::CheckLayout, this, [this]()
     {
         if (pattern->DataPieces()->count() == 0)
         {
-            if(not ui->showDraftMode->isChecked())
+            if(!ui->showDraftMode->isChecked())
             {
                 showDraftMode(true);
             }
         }
     });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
     connect(doc, &VPattern::CheckLayout, this, [&](){
         this->updateZoomToPointComboBox(draftPointNamesList());
     });
@@ -220,7 +220,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     initToolsToolBar();
 
-    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::PatternChangesWereSaved);
+    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
 
     InitAutoSave();
 
@@ -240,7 +240,7 @@ MainWindow::MainWindow(QWidget *parent)
         if (old == nullptr && isAncestorOf(now) == true)
         {// focus IN
             static bool asking = false;
-            if (not asking && mChanges && not mChangesAsked)
+            if (!asking && mChanges && not mChangesAsked)
             {
                 asking = true;
                 mChangesAsked = true;
@@ -321,11 +321,11 @@ void MainWindow::addDraftBlock(const QString &blockName)
                                          Source::FromGui);
     ui->view->itemClicked(spoint);
 
-    setEnableTools(true);
-    SetEnableWidgets(true);
+    setToolsEnabled(true);
+    setWidgetsEnabled(true);
 
     const qint32 index = draftBlockComboBox->findText(blockName);
-    if ( index != -1 )
+    if (index != -1)
     { // -1 for not found
         draftBlockComboBox->setCurrentIndex(index);
     }
@@ -455,7 +455,7 @@ QSharedPointer<VMeasurements> MainWindow::OpenMeasurementFile(const QString &pat
             measurements->setXMLContent(converter.Convert());// Read again after conversion
         }
 
-        if (not measurements->IsDefinedKnownNamesValid())
+        if (!measurements->IsDefinedKnownNamesValid())
         {
             VException e(tr("Measurement file contains invalid known measurement(s)."));
             throw e;
@@ -470,7 +470,7 @@ QSharedPointer<VMeasurements> MainWindow::OpenMeasurementFile(const QString &pat
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Wrong units.")),
                           qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
                 measurements->clear();
-                if (not VApplication::IsGUIMode())
+                if (!VApplication::IsGUIMode())
                 {
                     qApp->exit(V_EX_DATAERR);
                 }
@@ -483,7 +483,7 @@ QSharedPointer<VMeasurements> MainWindow::OpenMeasurementFile(const QString &pat
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
         measurements->clear();
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -519,7 +519,7 @@ bool MainWindow::LoadMeasurements(const QString &path)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -557,7 +557,7 @@ bool MainWindow::UpdateMeasurements(const QString &path, int size, int height)
     if (qApp->patternType() != measurements->Type())
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Measurement files types have not match.")));
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_DATAERR);
         }
@@ -573,7 +573,7 @@ bool MainWindow::UpdateMeasurements(const QString &path, int size, int height)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -603,7 +603,7 @@ void MainWindow::CheckRequiredMeasurements(const VMeasurements *measurements)
     auto docMeasurements = doc->ListMeasurements();
     const QSet<QString> match = QSet<QString>(docMeasurements.begin(), docMeasurements.end()).
                                     subtract(QSet<QString>(tempMeasurements.begin(), tempMeasurements.end()));
-    if (not match.isEmpty())
+    if (!match.isEmpty())
     {
 		QList<QString> list = match.values();
         for (int i = 0; i < list.size(); ++i)
@@ -723,7 +723,7 @@ void MainWindow::SetToolButtonWithApply(bool checked, Tool t, const QString &cur
 template <typename DrawTool>
 void MainWindow::ClosedDialog(int result)
 {
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     if (result == QDialog::Accepted)
     {
         VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(currentScene);
@@ -744,7 +744,7 @@ void MainWindow::ClosedDialog(int result)
 template <typename DrawTool>
 void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
 {
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
     if (result == QDialog::Accepted)
     {
         ApplyDialog<DrawTool>(scene);
@@ -777,7 +777,7 @@ void MainWindow::ClosedDialogWithApply(int result, VMainGraphicsScene *scene)
 template <typename DrawTool>
 void MainWindow::ApplyDialog(VMainGraphicsScene *scene)
 {
-    SCASSERT(not dialogTool.isNull())
+    SCASSERT(!dialogTool.isNull())
 
     // Only create tool if not already created with apply
     if (dialogTool->GetAssociatedTool() == nullptr)
@@ -1702,10 +1702,10 @@ void MainWindow::addSelectedItemsToGroup()
  * @brief showEvent handle after show window.
  * @param event show event.
  */
-void MainWindow::showEvent( QShowEvent *event )
+void MainWindow::showEvent(QShowEvent *event)
 {
-    QMainWindow::showEvent( event );
-    if ( event->spontaneous() )
+    QMainWindow::showEvent(event);
+    if (event->spontaneous())
     {
         return;
     }
@@ -1791,7 +1791,7 @@ void MainWindow::PrepareSceneList()
         ui->listWidget->addItem(item);
     }
 
-    if (not scenes.isEmpty())
+    if (!scenes.isEmpty())
     {
         ui->listWidget->setCurrentRow(0);
         SetLayoutModeActions();
@@ -1874,7 +1874,7 @@ void MainWindow::LoadIndividual()
 
     bool usedNotExistedDir = false;
     QDir directory(path);
-    if (not directory.exists())
+    if (!directory.exists())
     {
         usedNotExistedDir = directory.mkpath(".");
     }
@@ -1882,18 +1882,18 @@ void MainWindow::LoadIndividual()
     const QString mPath = QFileDialog::getOpenFileName(this, tr("Open file"), path, filter, nullptr,
                                                        QFileDialog::DontUseNativeDialog);
 
-    if (not mPath.isEmpty())
+    if (!mPath.isEmpty())
     {
         if (LoadMeasurements(mPath))
         {
-            if (not doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty())
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
             ui->unloadMeasurements_Action->setEnabled(true);
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
-            PatternChangesWereSaved(false);
+            patternChangesWereSaved(false);
             ui->editCurrent_Action->setEnabled(true);
             helpLabel->setText(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
@@ -1920,29 +1920,29 @@ void MainWindow::LoadMultisize()
     const QString mPath = QFileDialog::getOpenFileName(this, tr("Open file"), path, filter, nullptr,
                                                        QFileDialog::DontUseNativeDialog);
 
-    if (not mPath.isEmpty())
+    if (!mPath.isEmpty())
     {
         QString hText;
-        if (not gradationHeights.isNull())
+        if (!gradationHeights.isNull())
         {
             hText = gradationHeights->currentText();
         }
         QString sText;
-        if (not gradationSizes.isNull())
+        if (!gradationSizes.isNull())
         {
             sText = gradationSizes->currentText();
         }
 
         if(LoadMeasurements(mPath))
         {
-            if (not doc->MPath().isEmpty())
+            if (!doc->MPath().isEmpty())
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
             ui->unloadMeasurements_Action->setEnabled(true);
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
-            PatternChangesWereSaved(false);
+            patternChangesWereSaved(false);
             ui->editCurrent_Action->setEnabled(true);
             helpLabel->setText(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
@@ -1951,12 +1951,12 @@ void MainWindow::LoadMultisize()
 
             if (qApp->patternType() == MeasurementsType::Multisize)
             {
-                if (not hText.isEmpty() && not gradationHeights.isNull())
+                if (!hText.isEmpty() && not gradationHeights.isNull())
                 {
                     gradationHeights->setCurrentText(hText);
                 }
 
-                if (not sText.isEmpty() && not gradationSizes.isNull())
+                if (!sText.isEmpty() && not gradationSizes.isNull())
                 {
                     gradationSizes->setCurrentText(sText);
                 }
@@ -1984,7 +1984,7 @@ void MainWindow::UnloadMeasurements()
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
         emit doc->UpdatePatternLabel();
-        PatternChangesWereSaved(false);
+        patternChangesWereSaved(false);
         ui->editCurrent_Action->setEnabled(false);
         ui->unloadMeasurements_Action->setDisabled(true);
         helpLabel->setText(tr("Measurements unloaded"));
@@ -2001,7 +2001,7 @@ void MainWindow::UnloadMeasurements()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::ShowMeasurements()
 {
-    if (not doc->MPath().isEmpty())
+    if (!doc->MPath().isEmpty())
     {
         const QString absoluteMPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
 
@@ -2078,7 +2078,7 @@ void MainWindow::SyncMeasurements()
         const QString path = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
         if(UpdateMeasurements(path, static_cast<int>(VContainer::size()), static_cast<int>(VContainer::height())))
         {
-            if (not watcher->files().contains(path))
+            if (!watcher->files().contains(path))
             {
                 watcher->addPath(path);
             }
@@ -2295,6 +2295,7 @@ void MainWindow::initDraftToolBar()
         }
         RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, draftBlockComboBox);
         qApp->getUndoStack()->push(draftBlock);
+        fullParseFile();
     });
 }
 
@@ -3137,7 +3138,7 @@ void MainWindow::CancelTool()
     ui->zoomToArea_Action->setChecked(false);      //Disable Zoom to Area
     ui->view->zoomToAreaEnabled(false);
 
-    switch ( currentTool )
+    switch (currentTool)
     {
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(false);
@@ -3470,8 +3471,8 @@ void MainWindow::showDraftMode(bool checked)
         draftBlockComboBox->setCurrentIndex(currentBlockIndex); //restore current draft block
         drawMode = true;
 
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
 
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
         draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
@@ -3527,7 +3528,7 @@ void MainWindow::showPieceMode(bool checked)
         ui->pieceMode_Action->setChecked(true);
         ui->layoutMode_Action->setChecked(false);
 
-        if(not qApp->getOpeningPattern())
+        if(!qApp->getOpeningPattern())
         {
             if (pattern->DataPieces()->count() == 0)
             {
@@ -3554,8 +3555,8 @@ void MainWindow::showPieceMode(bool checked)
             currentToolBoxIndex = ui->piece_ToolBox->currentIndex();
         }
         mode = Draw::Modeling;
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
 
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
 
@@ -3608,7 +3609,7 @@ void MainWindow::showLayoutMode(bool checked)
         ui->layoutMode_Action->setChecked(true);
 
         QHash<quint32, VPiece> pieces;
-        if(not qApp->getOpeningPattern())
+        if(!qApp->getOpeningPattern())
         {
             const QHash<quint32, VPiece> *allPieces = pattern->DataPieces();
             if (allPieces->count() == 0)
@@ -3671,8 +3672,8 @@ void MainWindow::showLayoutMode(bool checked)
             currentToolBoxIndex = ui->layout_ToolBox->currentIndex();
         }
         mode = Draw::Layout;
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
         ui->layout_ToolBox->setCurrentIndex(ui->layout_ToolBox->indexOf(ui->layout_Page));
 
         mouseCoordinates->updateCoordinates(QPointF());
@@ -3956,7 +3957,7 @@ void MainWindow::Clear()
     setCurrentFile(QString());
     pattern->Clear();
     qCDebug(vMainWindow, "Clearing pattern.");
-    if (not qApp->getFilePath().isEmpty() && not doc->MPath().isEmpty())
+    if (!qApp->getFilePath().isEmpty() && not doc->MPath().isEmpty())
     {
         watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
     }
@@ -4014,7 +4015,7 @@ void MainWindow::Clear()
     ui->unloadMeasurements_Action->setEnabled(false);
     ui->editCurrent_Action->setEnabled(false);
 
-    setEnableTools(false);
+    setToolsEnabled(false);
     qApp->setPatternUnit(Unit::Cm);
     qApp->setPatternType(MeasurementsType::Unknown);
 
@@ -4048,14 +4049,14 @@ void MainWindow::FileClosedCorrect()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::FullParseFile()
+void MainWindow::fullParseFile()
 {
     qCDebug(vMainWindow, "Full parsing file");
 
     toolProperties->clearPropertyBrowser();
     try
     {
-        SetEnabledGUI(true);
+        setGuiEnabled(true);
         doc->Parse(Document::FullParse);
     }
     catch (const VExceptionUndo &e)
@@ -4070,8 +4071,8 @@ void MainWindow::FullParseFile()
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                                qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4081,8 +4082,8 @@ void MainWindow::FullParseFile()
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                                qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4092,8 +4093,8 @@ void MainWindow::FullParseFile()
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                                qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4103,8 +4104,8 @@ void MainWindow::FullParseFile()
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                                qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4114,8 +4115,8 @@ void MainWindow::FullParseFile()
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                                qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4124,18 +4125,18 @@ void MainWindow::FullParseFile()
     catch (const std::bad_alloc &)
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
 
-    QString patternPiece;
+    QString draftBlock;
     if (draftBlockComboBox->currentIndex() != -1)
     {
-        patternPiece = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
+        draftBlock = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
     }
     draftBlockComboBox->blockSignals(true);
     draftBlockComboBox->clear();
@@ -4144,14 +4145,14 @@ void MainWindow::FullParseFile()
     draftBlockNames.sort();
     draftBlockComboBox->addItems(draftBlockNames);
 
-    if (not drawMode)
+    if (!drawMode)
     {
         draftBlockComboBox->setCurrentIndex(draftBlockComboBox->count()-1);
     }
     else
     {
-        const qint32 index = draftBlockComboBox->findText(patternPiece);
-        if ( index != -1 )
+        const qint32 index = draftBlockComboBox->findText(draftBlock);
+        if (index != -1)
         {
             draftBlockComboBox->setCurrentIndex(index);
         }
@@ -4159,9 +4160,9 @@ void MainWindow::FullParseFile()
     draftBlockComboBox->blockSignals(false);
     ui->patternPreferences_Action->setEnabled(true);
 
-    GlobalchangeDraftBlock(patternPiece);
+    changeDraftBlockGlobally(draftBlock);
 
-    setEnableTools(draftBlockComboBox->count() > 0);
+    setToolsEnabled(draftBlockComboBox->count() > 0);
     patternPiecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
@@ -4169,14 +4170,17 @@ void MainWindow::FullParseFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
+void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
 {
-    const qint32 index = draftBlockComboBox->findText(patternPiece);
+    const qint32 index = draftBlockComboBox->findText(draftBlock);
     try
     {
-        if ( index != -1 )
+        if (index != -1)
         { // -1 for not found
             changeDraftBlock(index, false);
+            draftBlockComboBox->blockSignals(true);
+            draftBlockComboBox->setCurrentIndex(index);
+            draftBlockComboBox->blockSignals(false);
         }
         else
         {
@@ -4187,8 +4191,8 @@ void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Bad id.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4198,8 +4202,8 @@ void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
-        SetEnabledGUI(false);
-        if (not VApplication::IsGUIMode())
+        setGuiEnabled(false);
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4208,7 +4212,7 @@ void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::SetEnabledGUI(bool enabled)
+void MainWindow::setGuiEnabled(bool enabled)
 {
     if (guiEnabled != enabled)
     {
@@ -4217,11 +4221,11 @@ void MainWindow::SetEnabledGUI(bool enabled)
             handleArrowTool(true);
             qApp->getUndoStack()->clear();
         }
-        SetEnableWidgets(enabled);
+        setWidgetsEnabled(enabled);
 
         guiEnabled = enabled;
 
-        setEnableTools(enabled);
+        setToolsEnabled(enabled);
         ui->statusBar->setEnabled(enabled);
     #ifndef QT_NO_CURSOR
         QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
@@ -4231,10 +4235,10 @@ void MainWindow::SetEnabledGUI(bool enabled)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetEnableWidgets enable action button.
+ * @brief setWidgetsEnabled enable action button.
  * @param enable enable value.
  */
-void MainWindow::SetEnableWidgets(bool enable)
+void MainWindow::setWidgetsEnabled(bool enable)
 {
     const bool draftStage = (mode == Draw::Calculation);
     const bool pieceStage = (mode == Draw::Modeling);
@@ -4313,7 +4317,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
-    draftScene->SetDisableTools(!enable, doc->getActiveDraftBlockName());
+    draftScene->setToolsDisabled(!enable, doc->getActiveDraftBlockName());
     ui->view->setEnabled(enable);
 }
 
@@ -4416,7 +4420,7 @@ void MainWindow::New()
 /**
  * @brief haveChange enable action save if we have unsaved change.
  */
-void MainWindow::PatternChangesWereSaved(bool saved)
+void MainWindow::patternChangesWereSaved(bool saved)
 {
     if (guiEnabled)
     {
@@ -4530,10 +4534,10 @@ void MainWindow::SetDefaultSize()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief setEnableTools enable button.
+ * @brief setToolsEnabled enable button.
  * @param enable enable value.
  */
-void MainWindow::setEnableTools(bool enable)
+void MainWindow::setToolsEnabled(bool enable)
 {
     bool draftTools = false;
     bool pieceTools = false;
@@ -4734,7 +4738,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     QFileInfo tempInfo(fileName);
 
     const QString mPath = AbsoluteMPath(qApp->getFilePath(), doc->MPath());
-    if (not mPath.isEmpty() && qApp->getFilePath() != fileName)
+    if (!mPath.isEmpty() && qApp->getFilePath() != fileName)
     {
         doc->SetMPath(RelativeMPath(fileName, mPath));
     }
@@ -4747,7 +4751,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
             setCurrentFile(fileName);
             helpLabel->setText(tr("File saved"));
             qCDebug(vMainWindow, "File %s saved.", qUtf8Printable(fileName));
-            PatternChangesWereSaved(result);
+            patternChangesWereSaved(result);
         }
     }
     else
@@ -4793,7 +4797,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
     emit doc->UpdatePatternLabel();
     qApp->getUndoStack()->setClean();
 
-    if (not qApp->getFilePath().isEmpty() && VApplication::IsGUIMode())
+    if (!qApp->getFilePath().isEmpty() && VApplication::IsGUIMode())
     {
         qCDebug(vMainWindow, "Updating recent file list.");
         VSettings *settings = qApp->Seamly2DSettings();
@@ -5037,7 +5041,7 @@ void MainWindow::LastUsedTool()
         return;
     }
 
-    switch ( lastUsedTool )
+    switch (lastUsedTool)
     {
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(true);
@@ -5348,7 +5352,7 @@ void MainWindow::CreateActions()
             if (QAction *action = qobject_cast<QAction*>(sender()))
             {
                 const QString filePath = action->data().toString();
-                if (not filePath.isEmpty())
+                if (!filePath.isEmpty())
                 {
                     LoadPattern(filePath);
                 }
@@ -5933,7 +5937,7 @@ void MainWindow::InitAutoSave()
 QString MainWindow::createDraftBlockName(const QString &text)
 {
     QInputDialog *dialog = new QInputDialog(this);
-    dialog->setInputMode( QInputDialog::TextInput );
+    dialog->setInputMode(QInputDialog::TextInput);
     dialog->setLabelText(tr("Name:"));
     dialog->setTextEchoMode(QLineEdit::Normal);
     dialog->setWindowTitle(tr("Draft block."));
@@ -6041,7 +6045,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
         Clear();
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -6057,7 +6061,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     }
     else
     {
-        if (not IgnoreLocking(lock->GetLockError(), fileName))
+        if (!IgnoreLocking(lock->GetLockError(), fileName))
         {
             return false;
         }
@@ -6081,7 +6085,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         qApp->setPatternUnit(doc->MUnit());
         const QString path = AbsoluteMPath(fileName, doc->MPath());
 
-        if (not path.isEmpty())
+        if (!path.isEmpty())
         {
             // Check if exist
             const QString newPath = CheckPathToMeasurements(fileName, path);
@@ -6091,20 +6095,20 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                 Clear();
                 qCCritical(vMainWindow, "%s", qUtf8Printable(tr("The measurements file '%1' could not be found.")
                                                              .arg(path)));
-                if (not VApplication::IsGUIMode())
+                if (!VApplication::IsGUIMode())
                 {
                     qApp->exit(V_EX_NOINPUT);
                 }
                 return false;
             }
 
-            if (not LoadMeasurements(newPath))
+            if (!LoadMeasurements(newPath))
             {
                 qCCritical(vMainWindow, "%s", qUtf8Printable(tr("The measurements file '%1' could not be found.")
                                                              .arg(newPath)));
                 qApp->setOpeningPattern();// End opening file
                 Clear();
-                if (not VApplication::IsGUIMode())
+                if (!VApplication::IsGUIMode())
                 {
                     qApp->exit(V_EX_NOINPUT);
                 }
@@ -6129,19 +6133,19 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                    qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
         qApp->setOpeningPattern();// End opening file
         Clear();
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return false;
     }
 
-    FullParseFile();
+    fullParseFile();
 
     if (guiEnabled)
     { // No errors occurred
         patternReadOnly = doc->IsReadOnly();
-        SetEnableWidgets(true);
+        setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
         qCDebug(vMainWindow, "File loaded.");
@@ -6650,7 +6654,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 
                     bool usedNotExistedDir = false;
                     QDir directory(path);
-                    if (not directory.exists())
+                    if (!directory.exists())
                     {
                         usedNotExistedDir = directory.mkpath(".");
                     }
@@ -6674,7 +6678,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 
                     bool usedNotExistedDir = false;
                     QDir directory(path);
-                    if (not directory.exists())
+                    if (!directory.exists())
                     {
                         usedNotExistedDir = directory.mkpath(".");
                     }
@@ -6719,7 +6723,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
                         measurements->setXMLContent(converter.Convert());// Read again after conversion
                     }
 
-                    if (not measurements->IsDefinedKnownNamesValid())
+                    if (!measurements->IsDefinedKnownNamesValid())
                     {
                         VException e(tr("Measurement file contains invalid known measurement(s)."));
                         throw e;
@@ -6729,7 +6733,7 @@ QString MainWindow::CheckPathToMeasurements(const QString &patternPath, const QS
 
                     qApp->setPatternType(patternType);
                     doc->SetMPath(RelativeMPath(patternPath, mPath));
-                    PatternChangesWereSaved(false);
+                    patternChangesWereSaved(false);
                     return mPath;
                 }
             }
@@ -6762,7 +6766,7 @@ void MainWindow::changeDraftBlock(int index, bool zoomBestFit)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::EndVisualization(bool click)
 {
-    if (not dialogTool.isNull())
+    if (!dialogTool.isNull())
     {
         dialogTool->ShowDialog(click);
     }
@@ -6782,7 +6786,7 @@ void MainWindow::zoomFirstShow()
         showPieceMode(true);
         ui->view->zoomToFit();
     }
-    if (not ui->showDraftMode->isChecked())
+    if (!ui->showDraftMode->isChecked())
     {
         showDraftMode(true);
     }
@@ -6797,7 +6801,7 @@ void MainWindow::zoomFirstShow()
         ui->view->zoomToFit();
     }
 
-    if (not ui->showDraftMode->isChecked())
+    if (!ui->showDraftMode->isChecked())
     {
         showDraftMode(true);
     }
@@ -6807,7 +6811,7 @@ void MainWindow::zoomFirstShow()
 void MainWindow::DoExport(const VCommandLinePtr &expParams)
 {
     const QHash<quint32, VPiece> *pieces = pattern->DataPieces();
-    if(not qApp->getOpeningPattern())
+    if(!qApp->getOpeningPattern())
     {
         if (pieces->count() == 0)
         {
@@ -6873,7 +6877,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::SetSize(const QString &text)
 {
-    if (not VApplication::IsGUIMode())
+    if (!VApplication::IsGUIMode())
     {
         if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
@@ -6916,7 +6920,7 @@ bool MainWindow::SetSize(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::SetHeight(const QString &text)
 {
-    if (not VApplication::IsGUIMode())
+    if (!VApplication::IsGUIMode())
     {
         if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
@@ -6982,7 +6986,7 @@ void MainWindow::ProcessCMD()
     {
         const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->OptMeasurePath());
 
-        if (not loaded && not VApplication::IsGUIMode())
+        if (!loaded && not VApplication::IsGUIMode())
         {
             return; // process only one input file
         }
@@ -7002,7 +7006,7 @@ void MainWindow::ProcessCMD()
             }
         }
 
-        if (not cmd->IsTestModeEnabled())
+        if (!cmd->IsTestModeEnabled())
         {
             if (cmd->IsExportEnabled())
             {
@@ -7021,7 +7025,7 @@ void MainWindow::ProcessCMD()
         }
     }
 
-    if (not VApplication::IsGUIMode())
+    if (!VApplication::IsGUIMode())
     {
         qApp->exit(V_EX_OK);// close program after processing in console mode
     }
@@ -7031,7 +7035,7 @@ void MainWindow::ProcessCMD()
 QString MainWindow::GetPatternFileName()
 {
     QString shownName = tr("untitled.val");
-    if(not qApp->getFilePath().isEmpty())
+    if(!qApp->getFilePath().isEmpty())
     {
         shownName = qApp->getFilePath();
     }
@@ -7186,7 +7190,7 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
         qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
         qCDebug(vMainWindow, "Error type: %d", error);
         Clear();
-        if (not VApplication::IsGUIMode())
+        if (!VApplication::IsGUIMode())
         {
             switch(error)
             {

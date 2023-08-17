@@ -57,7 +57,7 @@
 #include "../qmuparser/qmutokenparser.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/calculator.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 
 #include <QFileDialog>
 #include <QDir>
@@ -845,7 +845,7 @@ void DialogVariables::Fx()
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
     QSharedPointer<VIncrement> variable = data->GetVariable<VIncrement>(name->text());
 
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(variable->GetData(), NULL_ID, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
     dialog->setWindowTitle(tr("Edit variable"));
     dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
                                                           qApp->Settings()->GetOsSeparator()));

@@ -89,7 +89,7 @@ public:
 
     virtual void Retranslate() Q_DECL_OVERRIDE;
 
-    QMap<QString, qmu::QmuTranslation> GetFunctions() const;
+    QMap<QString, qmu::QmuTranslation> getFunctions() const;
 
     static void BiasTokens(int position, int bias, QMap<int, QString> &tokens);
 

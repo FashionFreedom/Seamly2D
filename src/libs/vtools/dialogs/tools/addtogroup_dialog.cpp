@@ -52,7 +52,7 @@ AddToGroupDialog::AddToGroupDialog(VContainer *data, const quint32 &toolId, QWid
 
     fillNameBox();
 
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

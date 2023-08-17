@@ -94,7 +94,7 @@ DialogMirrorByLine::DialogMirrorByLine(const VContainer *data, const quint32 &to
 
     ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByLineSuffix()));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->firstLinePoint_ComboBox);
     FillComboBoxPoints(ui->secondLinePoint_ComboBox);
