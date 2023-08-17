@@ -452,7 +452,7 @@ signals:
     void           ShowTool(quint32 id, bool enable);
     void           ClearMainWindow();
     void           UndoCommand();
-    void           SetEnabledGUI(bool enabled);
+    void           setGuiEnabled(bool enabled);
     void           CheckLayout();
     void           UpdateInLayoutList(quint32 id);
     void           showPiece(quint32 id);

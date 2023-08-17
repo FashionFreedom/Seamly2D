@@ -76,7 +76,7 @@ DialogPointFromArcAndTangent::DialogPointFromArcAndTangent(const VContainer *dat
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxTangentPoint);

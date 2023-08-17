@@ -294,7 +294,7 @@ void VMainGraphicsScene::swapTransforms()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMainGraphicsScene::SetDisableTools(bool disable, const QString &draftBlockName)
+void VMainGraphicsScene::setToolsDisabled(bool disable, const QString &draftBlockName)
 {
     emit DisableItem(disable, draftBlockName);
 }

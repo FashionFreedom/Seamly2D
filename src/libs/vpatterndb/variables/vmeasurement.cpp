@@ -278,10 +278,10 @@ void VMeasurement::ListValue(QStringList &list, qreal value, Unit patternUnit)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetGuiText measurement name for tooltip
+ * @brief getGuiText measurement name for tooltip
  * @return measurement name
  */
-QString VMeasurement::GetGuiText() const
+QString VMeasurement::getGuiText() const
 {
     return d->gui_text;
 }
@@ -305,7 +305,7 @@ QString VMeasurement::GetFormula() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::IsCustom() const
+bool VMeasurement::isCustom() const
 {
     return GetName().indexOf(CustomMSign) == 0;
 }
@@ -323,7 +323,7 @@ bool VMeasurement::IsFormulaOk() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::IsNotUsed() const
+bool VMeasurement::isNotUsed() const
 {
     return qFuzzyIsNull(d->base) && qFuzzyIsNull(d->ksize) && qFuzzyIsNull(d->kheight);
 }

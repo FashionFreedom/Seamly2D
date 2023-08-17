@@ -90,19 +90,19 @@ public:
 
 	void Swap(VMeasurement &m) Q_DECL_NOTHROW;
 
-    QString GetGuiText() const;
+    QString getGuiText() const;
 
     QString TagName() const;
     void    setTagName(const QString &tagName);
 
     QString GetFormula() const;
 
-    bool    IsCustom() const;
+    bool    isCustom() const;
 
     int     Index() const;
     bool    IsFormulaOk() const;
 
-    virtual bool IsNotUsed() const Q_DECL_OVERRIDE;
+    virtual bool isNotUsed() const Q_DECL_OVERRIDE;
 
     virtual qreal  GetValue() const Q_DECL_OVERRIDE;
     virtual qreal* GetValue() Q_DECL_OVERRIDE;

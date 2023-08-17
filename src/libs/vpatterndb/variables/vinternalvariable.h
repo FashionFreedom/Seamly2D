@@ -87,7 +87,7 @@ public:
 
     virtual bool Filter(quint32 id);
 
-    virtual bool IsNotUsed() const;
+    virtual bool isNotUsed() const;
 protected:
     void SetValue(const qreal &value);
 private:

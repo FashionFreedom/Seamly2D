@@ -208,7 +208,7 @@ void SetItemOverrideCursor(QGraphicsItem *item, const QString &pixmapPath, int h
 
     QPixmap pixmap;
 
-    if (not QPixmapCache::find(pixmapPath, &pixmap))
+    if (!QPixmapCache::find(pixmapPath, &pixmap))
     {
         pixmap = QPixmap(pixmapPath);
         QPixmapCache::insert(pixmapPath, pixmap);
@@ -389,6 +389,17 @@ QStringList SupportedLocales()
 QString strippedName(const QString &fullFileName)
 {
     return QFileInfo(fullFileName).fileName();
+}
+
+/**
+ * @brief makeHeaderName make a 1 char tablewidgetitem header name based on a translated string.
+ * @param name full name of header item.
+ * @return 1 char name.
+ */
+QString makeHeaderName(const QString &name)
+{
+    QString headerStr = QObject::tr("%1").arg(name);
+    return headerStr.left(1).toUpper();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -733,19 +744,24 @@ void InitLanguages(QComboBox *combobox)
         locale.truncate(locale.lastIndexOf('.'));  // "seamly2d_de_De"
         locale.remove(0, locale.indexOf('_') + 1); // "de_De"
 
-        if (not englishUS)
+        if (!englishUS)
         {
-            englishUS = (en_US == locale);
+            englishUS = (locale == en_US);
         }
 
         QLocale loc = QLocale(locale);
         QString lang = loc.nativeLanguageName();
-        QIcon ico(QString("%1/%2.png").arg(":/flags").arg(QLocale::countryToString(loc.country())));
+        QString country = QLocale::countryToString(loc.country());
+        if (country == QLatin1String("Czechia"))
+        {
+            country = QLatin1String("CzechRepublic");
+        }
+        QIcon ico(QString("://flags/%1.png").arg(country));
 
         combobox->addItem(ico, lang, locale);
     }
 
-    if (combobox->count() == 0 || not englishUS)
+    if (combobox->count() == 0 || !englishUS)
     {
         // English language is internal and doens't have own *.qm file.
         QIcon ico(QString(":/flags/United States.png"));
@@ -758,5 +774,9 @@ void InitLanguages(QComboBox *combobox)
     if (index != -1)
     {
         combobox->setCurrentIndex(index);
+    }
+    else
+    {
+        combobox->setCurrentIndex(combobox->findData(en_US));
     }
 }
