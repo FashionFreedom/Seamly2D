@@ -284,7 +284,7 @@ jobs:
         run: |
           export "PATH=/d/a/Seamly2D/Qt/Tools/mingw1120_64/bin:$PATH"
           qmake.exe Seamly2D.pro -config release CONFIG+=noTests
-          mingw32-make
+          mingw32-make -j
 
       - name: create seamly2d-installer.exe
         # copy seamly2d and seamlyme directory trees prepared by windeployqt and create installer
