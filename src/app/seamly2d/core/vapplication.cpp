@@ -75,6 +75,8 @@
 #include <QThread>
 #include <QDateTime>
 #include <QIcon>
+#include <QJsonObject>
+#include <QJsonValue>
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_CLANG("-Wmissing-prototypes")
