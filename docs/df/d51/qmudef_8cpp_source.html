@@ -337,8 +337,8 @@ $(document).ready(function(){initNavTree('df/d51/qmudef_8cpp_source.html','../..
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        {</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            <span class="comment">// Convert to C locale</span></div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            QLocale cLocale(QLocale::C);</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keyword">const</span> QChar cDecimal = cLocale.decimalPoint()[0];</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> QChar cThousand = cLocale.groupSeparator()[0];</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keyword">const</span> QChar cDecimal = cLocale.decimalPoint();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> QChar cThousand = cLocale.groupSeparator();</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            <span class="keywordflow">if</span> (locale != cLocale &amp;&amp; (cDecimal != decimal || cThousand != thousand))</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            {</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <span class="keywordflow">if</span> (decimal == cThousand)</div>

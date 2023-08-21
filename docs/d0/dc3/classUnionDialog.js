@@ -13,7 +13,7 @@ var classUnionDialog =
     [ "retainPieces", "d0/dc3/classUnionDialog.html#a7bfd430920918bbfa7b97797fe44a17e", null ],
     [ "d1", "d0/dc3/classUnionDialog.html#aa1404d8933fc57b4ec610ea7724387a1", null ],
     [ "d2", "d0/dc3/classUnionDialog.html#abf426ee427b51d56a0f2bb1bc8fe95f1", null ],
-    [ "m_beep", "d0/dc3/classUnionDialog.html#af9b10638df0080c0407edbf120471c16", null ],
+    [ "m_beep", "d0/dc3/classUnionDialog.html#a5c67af9c94ab65ea0bb0af2aa45a5e4d", null ],
     [ "numberD", "d0/dc3/classUnionDialog.html#a3db03871b1f4d700120d4b3c0d08422c", null ],
     [ "numberP", "d0/dc3/classUnionDialog.html#a172c21bafdd0d977b9a180ffa087b72c", null ],
     [ "p1", "d0/dc3/classUnionDialog.html#aa63a5a4a544366a988f9f866a2b297e2", null ],
