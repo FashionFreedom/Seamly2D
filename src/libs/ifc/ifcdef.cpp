@@ -58,12 +58,14 @@
 #include <QBrush>
 #include <QIcon>
 #include <QMap>
+#include <Qobject>
 #include <QPainter>
 #include <QPen>
 #include <QPixmap>
 #include <QStaticStringData>
 #include <QStringData>
 #include <QStringDataPtr>
+
 
 #include "../vmisc/diagnostic.h"
 
