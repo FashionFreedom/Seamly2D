@@ -169,28 +169,21 @@ $(document).ready(function(){initNavTree('db/de0/app_2seamlyme_2main_8cpp_source
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    QT_REQUIRE_VERSION(argc, argv, <span class="stringliteral">&quot;5.15.2&quot;</span>);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// On macOS, correct WebView / QtQuick compositing and stacking requires running</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Qt in layer-backed mode, which again requires rendering on the Gui thread.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    qWarning(<span class="stringliteral">&quot;SeamlyME: Setting QT_MAC_WANTS_LAYER=1 and QSG_RENDER_LOOP=basic&quot;</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    qputenv(<span class="stringliteral">&quot;QT_MAC_WANTS_LAYER&quot;</span>, <span class="stringliteral">&quot;1&quot;</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifndef Q_OS_MAC </span><span class="comment">// supports natively</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d6/d0b/def_8cpp.html#a1a1ecd7b9352a026b0a07b101a539a95">InitHighDpiScaling</a>(argc, argv);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//Q_OS_MAC</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="../../da/d04/classMApplication.html">MApplication</a> app(argc, argv);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    app.<a class="code" href="../../da/d04/classMApplication.html#a84d41243c695c62d17b54285b91e9f74">InitOptions</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifndef Q_OS_MAC </span><span class="comment">// supports natively</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d6/d0b/def_8cpp.html#a1a1ecd7b9352a026b0a07b101a539a95">InitHighDpiScaling</a>(argc, argv);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif </span><span class="comment">//Q_OS_MAC</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../da/d04/classMApplication.html">MApplication</a> app(argc, argv);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    app.<a class="code" href="../../da/d04/classMApplication.html#a84d41243c695c62d17b54285b91e9f74">InitOptions</a>();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    QTimer::singleShot(0, &amp;app, SLOT(ProcessCMD()));</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> app.exec();</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QTimer::singleShot(0, &amp;app, SLOT(ProcessCMD()));</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> app.exec();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="ttc" id="aapp_2seamly2d_2main_8cpp_html_a0ddf1224851353fc92bfbff6f499fa97"><div class="ttname"><a href="../../dc/d14/app_2seamly2d_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a></div><div class="ttdeci">int main(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d14/app_2seamly2d_2main_8cpp_source.html#l00067">main.cpp:67</a></div></div>
 <div class="ttc" id="aclassMApplication_html"><div class="ttname"><a href="../../da/d04/classMApplication.html">MApplication</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/da4/mapplication_8h_source.html#l00072">mapplication.h:73</a></div></div>
 <div class="ttc" id="aclassMApplication_html_a84d41243c695c62d17b54285b91e9f74"><div class="ttname"><a href="../../da/d04/classMApplication.html#a84d41243c695c62d17b54285b91e9f74">MApplication::InitOptions</a></div><div class="ttdeci">void InitOptions()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dfb/mapplication_8cpp_source.html#l00396">mapplication.cpp:396</a></div></div>
-<div class="ttc" id="adef_8cpp_html_a1a1ecd7b9352a026b0a07b101a539a95"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a1a1ecd7b9352a026b0a07b101a539a95">InitHighDpiScaling</a></div><div class="ttdeci">void InitHighDpiScaling(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00551">def.cpp:551</a></div></div>
+<div class="ttc" id="adef_8cpp_html_a1a1ecd7b9352a026b0a07b101a539a95"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#a1a1ecd7b9352a026b0a07b101a539a95">InitHighDpiScaling</a></div><div class="ttdeci">void InitHighDpiScaling(int argc, char *argv[])</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00549">def.cpp:549</a></div></div>
 <div class="ttc" id="amapplication_8h_html"><div class="ttname"><a href="../../df/da4/mapplication_8h.html">mapplication.h</a></div></div>
 <div class="ttc" id="atmainwindow_8h_html"><div class="ttname"><a href="../../dc/dc0/tmainwindow_8h.html">tmainwindow.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

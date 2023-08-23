@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 857;
+var viewWidth = 697;
 var viewHeight = 1460;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,23 +54,23 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>PatternPieceVisual</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1456 853,-1456 853,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1456 693,-1456 693,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="461,-0.5 461,-123.5 595,-123.5 595,-0.5 461,-0.5"/>
-<text text-anchor="middle" x="528" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">PatternPieceVisual</text>
-<polyline fill="none" stroke="black" points="461,-104.5 595,-104.5 "/>
-<text text-anchor="middle" x="528" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="461,-85.5 595,-85.5 "/>
-<text text-anchor="start" x="469" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternPieceVisual()</text>
-<text text-anchor="start" x="469" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PatternPieceVisual()</text>
-<text text-anchor="start" x="469" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
-<text text-anchor="start" x="469" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPiece()</text>
-<text text-anchor="start" x="469" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="469" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetPoint()</text>
-<text text-anchor="start" x="469" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; HideAllItems()</text>
+<polygon fill="#bfbfbf" stroke="black" points="414,-0.5 414,-123.5 548,-123.5 548,-0.5 414,-0.5"/>
+<text text-anchor="middle" x="481" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">PatternPieceVisual</text>
+<polyline fill="none" stroke="black" points="414,-104.5 548,-104.5 "/>
+<text text-anchor="start" x="422" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_points</text>
+<polyline fill="none" stroke="black" points="414,-85.5 548,-85.5 "/>
+<text text-anchor="start" x="422" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternPieceVisual()</text>
+<text text-anchor="start" x="422" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PatternPieceVisual()</text>
+<text text-anchor="start" x="422" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RefreshGeometry()</text>
+<text text-anchor="start" x="422" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPiece()</text>
+<text text-anchor="start" x="422" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="422" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetPoint()</text>
+<text text-anchor="start" x="422" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; HideAllItems()</text>
 </a>
 </g>
 </g>
@@ -78,25 +78,25 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../db/d76/classVisPath.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="271.5,-276 271.5,-388 368.5,-388 368.5,-276 271.5,-276"/>
-<text text-anchor="middle" x="320" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">VisPath</text>
-<polyline fill="none" stroke="black" points="271.5,-369 368.5,-369 "/>
-<text text-anchor="middle" x="320" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="271.5,-350 368.5,-350 "/>
-<text text-anchor="start" x="279.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisPath()</text>
-<text text-anchor="start" x="279.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisPath()</text>
-<text text-anchor="start" x="279.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="279.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
-<text text-anchor="start" x="279.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
-<text text-anchor="start" x="279.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00"># GetPoint()</text>
+<polygon fill="white" stroke="black" points="269.5,-276 269.5,-388 366.5,-388 366.5,-276 269.5,-276"/>
+<text text-anchor="middle" x="318" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">VisPath</text>
+<polyline fill="none" stroke="black" points="269.5,-369 366.5,-369 "/>
+<text text-anchor="middle" x="318" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="269.5,-350 366.5,-350 "/>
+<text text-anchor="start" x="277.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ VisPath()</text>
+<text text-anchor="start" x="277.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VisPath()</text>
+<text text-anchor="start" x="277.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="277.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00"># initPen()</text>
+<text text-anchor="start" x="277.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00"># AddOnScene()</text>
+<text text-anchor="start" x="277.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00"># GetPoint()</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M336.41,-266.18C345.45,-238.52 358.65,-206.94 377,-182 399.55,-151.35 431.96,-124.4 460.98,-103.93"/>
-<polygon fill="none" stroke="midnightblue" points="333.05,-265.2 333.38,-275.79 339.73,-267.3 333.05,-265.2"/>
+<path fill="none" stroke="midnightblue" d="M346.25,-266.58C358.83,-239.8 374.53,-208.78 391,-182 403.08,-162.36 417.64,-142 431.49,-123.78"/>
+<polygon fill="none" stroke="midnightblue" points="342.97,-265.33 341.93,-275.87 349.32,-268.28 342.97,-265.33"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -150,8 +150,8 @@ var sectionId = 'dynsection-1';
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M228.64,-574.27C253.89,-507.59 281.06,-435.83 299.15,-388.06"/>
-<polygon fill="none" stroke="midnightblue" points="225.36,-573.05 225.1,-583.64 231.91,-575.53 225.36,-573.05"/>
+<path fill="none" stroke="midnightblue" d="M228.58,-560.68C233.74,-546.55 238.91,-532.53 244,-519 260.63,-474.76 280.47,-425.03 295.42,-388.13"/>
+<polygon fill="none" stroke="midnightblue" points="225.15,-559.88 225.02,-570.48 231.73,-562.27 225.15,-559.88"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -230,27 +230,28 @@ var sectionId = 'dynsection-1';
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d3/d85/classVCurvePathItem.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="334.5,-679 334.5,-813 463.5,-813 463.5,-679 334.5,-679"/>
-<text text-anchor="middle" x="399" y="-801" font-family="Helvetica,sans-Serif" font-size="10.00">VCurvePathItem</text>
-<polyline fill="none" stroke="black" points="334.5,-794 463.5,-794 "/>
-<text text-anchor="middle" x="399" y="-782" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="334.5,-775 463.5,-775 "/>
-<text text-anchor="start" x="342.5" y="-763" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurvePathItem()</text>
-<text text-anchor="start" x="342.5" y="-752" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurvePathItem()</text>
-<text text-anchor="start" x="342.5" y="-741" font-family="Helvetica,sans-Serif" font-size="10.00">+ shape()</text>
-<text text-anchor="start" x="342.5" y="-730" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="342.5" y="-719" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="342.5" y="-708" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDirectionArrows()</text>
-<text text-anchor="start" x="342.5" y="-697" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPoints()</text>
-<text text-anchor="start" x="342.5" y="-686" font-family="Helvetica,sans-Serif" font-size="10.00"># ScalePenWidth()</text>
+<polygon fill="white" stroke="black" points="253.5,-673.5 253.5,-818.5 382.5,-818.5 382.5,-673.5 253.5,-673.5"/>
+<text text-anchor="middle" x="318" y="-806.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCurvePathItem</text>
+<polyline fill="none" stroke="black" points="253.5,-799.5 382.5,-799.5 "/>
+<text text-anchor="start" x="261.5" y="-787.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_directionArrows</text>
+<text text-anchor="start" x="261.5" y="-776.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_points</text>
+<polyline fill="none" stroke="black" points="253.5,-769.5 382.5,-769.5 "/>
+<text text-anchor="start" x="261.5" y="-757.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurvePathItem()</text>
+<text text-anchor="start" x="261.5" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurvePathItem()</text>
+<text text-anchor="start" x="261.5" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ shape()</text>
+<text text-anchor="start" x="261.5" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="261.5" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="261.5" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDirectionArrows()</text>
+<text text-anchor="start" x="261.5" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPoints()</text>
+<text text-anchor="start" x="261.5" y="-680.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ScalePenWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node6&#45;&gt;Node2 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M384.35,-668.62C368.75,-587.21 344.42,-460.33 330.57,-388.14"/>
-<polygon fill="none" stroke="midnightblue" points="380.99,-669.64 386.31,-678.81 387.86,-668.32 380.99,-669.64"/>
+<path fill="none" stroke="midnightblue" d="M318,-663.01C318,-581.48 318,-458.68 318,-388.14"/>
+<polygon fill="none" stroke="midnightblue" points="314.5,-663.24 318,-673.24 321.5,-663.24 314.5,-663.24"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -268,212 +269,151 @@ var sectionId = 'dynsection-1';
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M332.54,-1197.43C344.71,-1114.97 373.89,-917.19 389.22,-813.3"/>
-<polygon fill="none" stroke="midnightblue" points="329.07,-1196.96 331.08,-1207.36 336,-1197.98 329.07,-1196.96"/>
+<path fill="none" stroke="midnightblue" d="M326.3,-1197.11C324.8,-1115.83 321.26,-923.64 319.32,-818.6"/>
+<polygon fill="none" stroke="midnightblue" points="322.81,-1197.43 326.49,-1207.36 329.81,-1197.3 322.81,-1197.43"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="400,-1202 400,-1270 540,-1270 540,-1202 400,-1202"/>
-<text text-anchor="start" x="408" y="-1258" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QPair&lt; QLineF,</text>
-<text text-anchor="middle" x="470" y="-1247" font-family="Helvetica,sans-Serif" font-size="10.00"> QLineF &gt; &gt;</text>
-<polyline fill="none" stroke="black" points="400,-1240 540,-1240 "/>
-<text text-anchor="middle" x="470" y="-1228" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="400,-1221 540,-1221 "/>
-<text text-anchor="middle" x="470" y="-1209" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node8"><a xlink:href="../../d0/dab/classVPiece.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="400.5,-182.5 400.5,-481.5 561.5,-481.5 561.5,-182.5 400.5,-182.5"/>
+<text text-anchor="middle" x="481" y="-469.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPiece</text>
+<polyline fill="none" stroke="black" points="400.5,-462.5 561.5,-462.5 "/>
+<text text-anchor="start" x="408.5" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="400.5,-443.5 561.5,-443.5 "/>
+<text text-anchor="start" x="408.5" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPiece()</text>
+<text text-anchor="start" x="408.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPiece()</text>
+<text text-anchor="start" x="408.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPiece()</text>
+<text text-anchor="start" x="408.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="408.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="408.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPath()</text>
+<text text-anchor="start" x="408.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPath()</text>
+<text text-anchor="start" x="408.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPath()</text>
+<text text-anchor="start" x="408.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainPathPoints()</text>
+<text text-anchor="start" x="408.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainPathNodePoints()</text>
+<text text-anchor="start" x="408.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
+<text text-anchor="start" x="408.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetUnitedPath()</text>
+<text text-anchor="start" x="408.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetValidRecords()</text>
+<text text-anchor="start" x="408.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FilterRecords()</text>
+<text text-anchor="start" x="408.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNodeSAPoints()</text>
+<text text-anchor="start" x="408.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNotchSAPoint()</text>
+<text text-anchor="start" x="408.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNotchPreviousSAPoints()</text>
+<text text-anchor="start" x="408.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNextNotchSAPoints()</text>
+<text text-anchor="start" x="408.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getSeamNotchSAPoint()</text>
+<text text-anchor="start" x="408.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isNotchVisible()</text>
+<text text-anchor="start" x="408.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createNotch()</text>
+<text text-anchor="start" x="408.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
+<text text-anchor="start" x="408.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsCSAStart()</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node6 -->
+<!-- Node8&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
-<title>Node8&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M465.18,-1201.84C454.03,-1125.21 426.22,-934.09 410.43,-825.55"/>
-<polygon fill="none" stroke="#404040" points="410.39,-825.25 405.56,-819.89 408.66,-813.38 413.48,-818.74 410.39,-825.25"/>
-<text text-anchor="middle" x="484.5" y="-994" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_directionArrows</text>
+<title>Node8&#45;&gt;Node1</title>
+<path fill="none" stroke="#404040" d="M481,-182.5C481,-166.27 481,-150.33 481,-135.64"/>
+<polygon fill="none" stroke="#404040" points="481,-135.62 477,-129.62 481,-123.62 485,-129.62 481,-135.62"/>
+<text text-anchor="middle" x="505.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_piece</text>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
-<g id="a_node9"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="558,-1207.5 558,-1264.5 674,-1264.5 674,-1207.5 558,-1207.5"/>
-<text text-anchor="middle" x="616" y="-1252.5" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; QPointF &gt;</text>
-<polyline fill="none" stroke="black" points="558,-1245.5 674,-1245.5 "/>
-<text text-anchor="middle" x="616" y="-1233.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="558,-1226.5 674,-1226.5 "/>
-<text text-anchor="middle" x="616" y="-1214.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node9"><a xlink:href="../../dd/dfe/classVAbstractPiece.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="401,-519.5 401,-972.5 561,-972.5 561,-519.5 401,-519.5"/>
+<text text-anchor="middle" x="481" y="-960.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPiece</text>
+<polyline fill="none" stroke="black" points="401,-953.5 561,-953.5 "/>
+<text text-anchor="start" x="409" y="-941.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="401,-934.5 561,-934.5 "/>
+<text text-anchor="start" x="409" y="-922.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPiece()</text>
+<text text-anchor="start" x="409" y="-911.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPiece()</text>
+<text text-anchor="start" x="409" y="-900.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPiece()</text>
+<text text-anchor="start" x="409" y="-889.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="409" y="-878.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="409" y="-867.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
+<text text-anchor="start" x="409" y="-856.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
+<text text-anchor="start" x="409" y="-845.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getColor()</text>
+<text text-anchor="start" x="409" y="-834.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setColor()</text>
+<text text-anchor="start" x="409" y="-823.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFill()</text>
+<text text-anchor="start" x="409" y="-812.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 17 more...</text>
+<text text-anchor="start" x="409" y="-801.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Equidistant()</text>
+<text text-anchor="start" x="409" y="-790.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sumTrapezoids()</text>
+<text text-anchor="start" x="409" y="-779.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isClockwise()</text>
+<text text-anchor="start" x="409" y="-768.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CheckLoops()</text>
+<text text-anchor="start" x="409" y="-757.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EkvPoint()</text>
+<text text-anchor="start" x="409" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createParallelLine()</text>
+<text text-anchor="start" x="409" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createParallelLine()</text>
+<text text-anchor="start" x="409" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CorrectEquidistantPoints()</text>
+<text text-anchor="start" x="409" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveDublicates()</text>
+<text text-anchor="start" x="409" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxLocalSA()</text>
+<text text-anchor="start" x="409" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsEkvPointOnLine()</text>
+<text text-anchor="start" x="409" y="-680.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsEkvPointOnLine()</text>
+<text text-anchor="start" x="409" y="-669.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckIntersection()</text>
+<text text-anchor="start" x="409" y="-658.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParallelCrossPoint()</text>
+<text text-anchor="start" x="409" y="-647.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Crossing()</text>
+<text text-anchor="start" x="409" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SubPath()</text>
+<text text-anchor="start" x="409" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PointPosition()</text>
+<text text-anchor="start" x="409" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByLength()</text>
+<text text-anchor="start" x="409" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByIntersection()</text>
+<text text-anchor="start" x="409" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByFirstSymmetry()</text>
+<text text-anchor="start" x="409" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBySecondSymmetry()</text>
+<text text-anchor="start" x="409" y="-570.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByFirstRightAngle()</text>
+<text text-anchor="start" x="409" y="-559.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBySecondRightAngle()</text>
+<text text-anchor="start" x="409" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SingleParallelPoint()</text>
+<text text-anchor="start" x="409" y="-537.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; BisectorLine()</text>
+<text text-anchor="start" x="409" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBetweenBisectors()</text>
 </a>
 </g>
 </g>
-<!-- Node9&#45;&gt;Node6 -->
+<!-- Node9&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
-<title>Node9&#45;&gt;Node6</title>
-<path fill="none" stroke="#404040" d="M607.96,-1207.34C595.89,-1166.23 572.02,-1086.71 549,-1020 524.77,-949.79 483.36,-876.34 450.19,-823.33"/>
-<polygon fill="none" stroke="#404040" points="450.07,-823.15 443.49,-820.22 443.67,-813.01 450.25,-815.95 450.07,-823.15"/>
-<text text-anchor="middle" x="567" y="-994" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_points</text>
+<title>Node9&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M481,-509.27C481,-499.95 481,-490.71 481,-481.63"/>
+<polygon fill="none" stroke="midnightblue" points="477.5,-509.41 481,-519.41 484.5,-509.41 477.5,-509.41"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d5/dc2/classQVector.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="386.5,-303.5 386.5,-360.5 543.5,-360.5 543.5,-303.5 386.5,-303.5"/>
-<text text-anchor="middle" x="465" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">QVector&lt; VScaledEllipse * &gt;</text>
-<polyline fill="none" stroke="black" points="386.5,-341.5 543.5,-341.5 "/>
-<text text-anchor="middle" x="465" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="386.5,-322.5 543.5,-322.5 "/>
-<text text-anchor="middle" x="465" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<g id="a_node10"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="580.5,-270.5 580.5,-393.5 687.5,-393.5 687.5,-270.5 580.5,-270.5"/>
+<text text-anchor="middle" x="634" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
+<polyline fill="none" stroke="black" points="580.5,-374.5 687.5,-374.5 "/>
+<text text-anchor="start" x="588.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
+<polyline fill="none" stroke="black" points="580.5,-355.5 687.5,-355.5 "/>
+<text text-anchor="start" x="588.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="588.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
+<text text-anchor="start" x="588.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
+<text text-anchor="start" x="588.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
+<text text-anchor="start" x="588.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
+<text text-anchor="start" x="588.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
+<text text-anchor="start" x="588.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
 </a>
 </g>
 </g>
 <!-- Node10&#45;&gt;Node1 -->
 <g id="edge9" class="edge">
 <title>Node10&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M471.5,-303.33C480.73,-264.08 497.94,-190.87 510.95,-135.52"/>
-<polygon fill="none" stroke="#404040" points="511,-135.33 508.48,-128.57 513.74,-123.65 516.26,-130.4 511,-135.33"/>
-<text text-anchor="middle" x="536" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_points</text>
+<path fill="none" stroke="#404040" d="M611.74,-270.34C600.63,-242.66 586.13,-209.91 570,-182 560.63,-165.78 549.42,-149.19 538.16,-133.75"/>
+<polygon fill="none" stroke="#404040" points="537.92,-133.42 531.13,-130.98 530.77,-123.78 537.56,-126.22 537.92,-133.42"/>
+<text text-anchor="middle" x="581" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_line1</text>
+<text text-anchor="middle" x="581" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;m_line2</text>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d0/dab/classVPiece.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="561.5,-182.5 561.5,-481.5 722.5,-481.5 722.5,-182.5 561.5,-182.5"/>
-<text text-anchor="middle" x="642" y="-469.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPiece</text>
-<polyline fill="none" stroke="black" points="561.5,-462.5 722.5,-462.5 "/>
-<text text-anchor="start" x="569.5" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="561.5,-443.5 722.5,-443.5 "/>
-<text text-anchor="start" x="569.5" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPiece()</text>
-<text text-anchor="start" x="569.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPiece()</text>
-<text text-anchor="start" x="569.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPiece()</text>
-<text text-anchor="start" x="569.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="569.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="569.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPath()</text>
-<text text-anchor="start" x="569.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPath()</text>
-<text text-anchor="start" x="569.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPath()</text>
-<text text-anchor="start" x="569.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainPathPoints()</text>
-<text text-anchor="start" x="569.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainPathNodePoints()</text>
-<text text-anchor="start" x="569.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 35 more...</text>
-<text text-anchor="start" x="569.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetUnitedPath()</text>
-<text text-anchor="start" x="569.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetValidRecords()</text>
-<text text-anchor="start" x="569.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FilterRecords()</text>
-<text text-anchor="start" x="569.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNodeSAPoints()</text>
-<text text-anchor="start" x="569.5" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNotchSAPoint()</text>
-<text text-anchor="start" x="569.5" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNotchPreviousSAPoints()</text>
-<text text-anchor="start" x="569.5" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getNextNotchSAPoints()</text>
-<text text-anchor="start" x="569.5" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getSeamNotchSAPoint()</text>
-<text text-anchor="start" x="569.5" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isNotchVisible()</text>
-<text text-anchor="start" x="569.5" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; createNotch()</text>
-<text text-anchor="start" x="569.5" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
-<text text-anchor="start" x="569.5" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; IsCSAStart()</text>
+<g id="a_node11"><a xlink:title=" ">
+<polygon fill="white" stroke="#bfbfbf" points="579,-717.5 579,-774.5 689,-774.5 689,-717.5 579,-717.5"/>
+<text text-anchor="middle" x="634" y="-762.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
+<polyline fill="none" stroke="#bfbfbf" points="579,-755.5 689,-755.5 "/>
+<text text-anchor="middle" x="634" y="-743.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="579,-736.5 689,-736.5 "/>
+<text text-anchor="middle" x="634" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
-<!-- Node11&#45;&gt;Node1 -->
+<!-- Node11&#45;&gt;Node10 -->
 <g id="edge10" class="edge">
-<title>Node11&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M583.28,-182.3C577.56,-168.63 571.74,-155.02 566,-142 564.93,-139.57 563.82,-137.1 562.7,-134.61"/>
-<polygon fill="none" stroke="#404040" points="562.66,-134.53 556.53,-130.75 557.66,-123.63 563.8,-127.41 562.66,-134.53"/>
-<text text-anchor="middle" x="599.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_piece</text>
-</g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="../../dd/dfe/classVAbstractPiece.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="561,-519.5 561,-972.5 721,-972.5 721,-519.5 561,-519.5"/>
-<text text-anchor="middle" x="641" y="-960.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractPiece</text>
-<polyline fill="none" stroke="black" points="561,-953.5 721,-953.5 "/>
-<text text-anchor="start" x="569" y="-941.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="561,-934.5 721,-934.5 "/>
-<text text-anchor="start" x="569" y="-922.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPiece()</text>
-<text text-anchor="start" x="569" y="-911.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractPiece()</text>
-<text text-anchor="start" x="569" y="-900.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPiece()</text>
-<text text-anchor="start" x="569" y="-889.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="569" y="-878.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="569" y="-867.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
-<text text-anchor="start" x="569" y="-856.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
-<text text-anchor="start" x="569" y="-845.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getColor()</text>
-<text text-anchor="start" x="569" y="-834.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setColor()</text>
-<text text-anchor="start" x="569" y="-823.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFill()</text>
-<text text-anchor="start" x="569" y="-812.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 17 more...</text>
-<text text-anchor="start" x="569" y="-801.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Equidistant()</text>
-<text text-anchor="start" x="569" y="-790.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ sumTrapezoids()</text>
-<text text-anchor="start" x="569" y="-779.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isClockwise()</text>
-<text text-anchor="start" x="569" y="-768.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CheckLoops()</text>
-<text text-anchor="start" x="569" y="-757.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EkvPoint()</text>
-<text text-anchor="start" x="569" y="-746.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createParallelLine()</text>
-<text text-anchor="start" x="569" y="-735.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ createParallelLine()</text>
-<text text-anchor="start" x="569" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CorrectEquidistantPoints()</text>
-<text text-anchor="start" x="569" y="-713.5" font-family="Helvetica,sans-Serif" font-size="10.00"># RemoveDublicates()</text>
-<text text-anchor="start" x="569" y="-702.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxLocalSA()</text>
-<text text-anchor="start" x="569" y="-691.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsEkvPointOnLine()</text>
-<text text-anchor="start" x="569" y="-680.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsEkvPointOnLine()</text>
-<text text-anchor="start" x="569" y="-669.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckIntersection()</text>
-<text text-anchor="start" x="569" y="-658.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ParallelCrossPoint()</text>
-<text text-anchor="start" x="569" y="-647.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Crossing()</text>
-<text text-anchor="start" x="569" y="-636.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SubPath()</text>
-<text text-anchor="start" x="569" y="-625.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PointPosition()</text>
-<text text-anchor="start" x="569" y="-614.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByLength()</text>
-<text text-anchor="start" x="569" y="-603.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByIntersection()</text>
-<text text-anchor="start" x="569" y="-592.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByFirstSymmetry()</text>
-<text text-anchor="start" x="569" y="-581.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBySecondSymmetry()</text>
-<text text-anchor="start" x="569" y="-570.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleByFirstRightAngle()</text>
-<text text-anchor="start" x="569" y="-559.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBySecondRightAngle()</text>
-<text text-anchor="start" x="569" y="-548.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SingleParallelPoint()</text>
-<text text-anchor="start" x="569" y="-537.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; BisectorLine()</text>
-<text text-anchor="start" x="569" y="-526.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AngleBetweenBisectors()</text>
-</a>
-</g>
-</g>
-<!-- Node12&#45;&gt;Node11 -->
-<g id="edge11" class="edge">
-<title>Node12&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M641.57,-509.27C641.59,-499.95 641.62,-490.71 641.64,-481.63"/>
-<polygon fill="none" stroke="midnightblue" points="638.07,-509.4 641.55,-519.41 645.07,-509.42 638.07,-509.4"/>
-</g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="../../dd/da2/classVScaledLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="740.5,-270.5 740.5,-393.5 847.5,-393.5 847.5,-270.5 740.5,-270.5"/>
-<text text-anchor="middle" x="794" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">VScaledLine</text>
-<polyline fill="none" stroke="black" points="740.5,-374.5 847.5,-374.5 "/>
-<text text-anchor="start" x="748.5" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; basicWidth</text>
-<polyline fill="none" stroke="black" points="740.5,-355.5 847.5,-355.5 "/>
-<text text-anchor="start" x="748.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="748.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VScaledLine()</text>
-<text text-anchor="start" x="748.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VScaledLine()</text>
-<text text-anchor="start" x="748.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ type()</text>
-<text text-anchor="start" x="748.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ paint()</text>
-<text text-anchor="start" x="748.5" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetBasicWidth()</text>
-<text text-anchor="start" x="748.5" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBasicWidth()</text>
-</a>
-</g>
-</g>
-<!-- Node13&#45;&gt;Node1 -->
-<g id="edge12" class="edge">
-<title>Node13&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M778.12,-270.24C768.21,-241.08 753.05,-207.12 731,-182 697.24,-143.53 647.89,-114.21 606.31,-94.3"/>
-<polygon fill="none" stroke="#404040" points="606.23,-94.26 599.1,-95.35 595.36,-89.18 602.49,-88.1 606.23,-94.26"/>
-<text text-anchor="middle" x="737" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_line1</text>
-<text text-anchor="middle" x="737" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;m_line2</text>
-</g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="739,-717.5 739,-774.5 849,-774.5 849,-717.5 739,-717.5"/>
-<text text-anchor="middle" x="794" y="-762.5" font-family="Helvetica,sans-Serif" font-size="10.00">QGraphicsLineItem</text>
-<polyline fill="none" stroke="#bfbfbf" points="739,-755.5 849,-755.5 "/>
-<text text-anchor="middle" x="794" y="-743.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="739,-736.5 849,-736.5 "/>
-<text text-anchor="middle" x="794" y="-724.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-</a>
-</g>
-</g>
-<!-- Node14&#45;&gt;Node13 -->
-<g id="edge13" class="edge">
-<title>Node14&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M794,-706.98C794,-635.32 794,-479.77 794,-393.57"/>
-<polygon fill="none" stroke="midnightblue" points="790.5,-707.33 794,-717.33 797.5,-707.33 790.5,-707.33"/>
+<title>Node11&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M634,-706.98C634,-635.32 634,-479.77 634,-393.57"/>
+<polygon fill="none" stroke="midnightblue" points="630.5,-707.33 634,-717.33 637.5,-707.33 630.5,-707.33"/>
 </g>
 </g>
 </svg>

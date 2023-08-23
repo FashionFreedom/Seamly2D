@@ -157,7 +157,7 @@ var classPatternPieceDialog =
     [ "m_afterWidthFormula", "d5/d41/classPatternPieceDialog.html#a735704111752a573ff846207710cffe9", null ],
     [ "m_anchorPoints", "d5/d41/classPatternPieceDialog.html#a2c8540f673dd04e3b85fd525e6645acc", null ],
     [ "m_bAddMode", "d5/d41/classPatternPieceDialog.html#afaf76ec7ad21bfcb38fcb28094002131", null ],
-    [ "m_beep", "d5/d41/classPatternPieceDialog.html#a35a477898406e1c768fd4a6a1522f26a", null ],
+    [ "m_beep", "d5/d41/classPatternPieceDialog.html#a5ab8a71cdd45cabf582474664337f618", null ],
     [ "m_beforeWidthFormula", "d5/d41/classPatternPieceDialog.html#ac3eb282ea4b12dc553e8dd8513bd8e25", null ],
     [ "m_dialog", "d5/d41/classPatternPieceDialog.html#a2e9d0b2ccd9f42de606b36ca8c6b307c", null ],
     [ "m_inLayout", "d5/d41/classPatternPieceDialog.html#aa376688ccd5cde7cdbf0ea28250e1ebe", null ],
