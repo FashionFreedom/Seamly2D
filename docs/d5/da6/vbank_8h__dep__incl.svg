@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 6268;
+var viewWidth = 6201;
 var viewHeight = 341;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,7 +54,7 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/libs/vlayout/vbank.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-337 6263.5,-337 6263.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-337 6197,-337 6197,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -232,18 +232,18 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M2783.94,-259.27C3229.18,-229.85 4986.33,-113.27 5103,-98 5105.76,-97.64 5108.57,-97.24 5111.41,-96.81"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2783.41,-255.8 2773.66,-259.95 2783.87,-262.79 2783.41,-255.8"/>
 </g>
-<!-- Node37 -->
-<g id="node33" class="node">
-<title>Node37</title>
-<g id="a_node33"><a xlink:href="../../d1/d90/vgrainlineitem_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node38 -->
+<g id="node34" class="node">
+<title>Node38</title>
+<g id="a_node34"><a xlink:href="../../d1/d90/vgrainlineitem_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="5262.5,-73 5262.5,-92 5455.5,-92 5455.5,-73 5262.5,-73"/>
 <text text-anchor="middle" x="5359" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vwidgets/vgrainlineitem.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node5&#45;&gt;Node37 -->
+<!-- Node5&#45;&gt;Node38 -->
 <g id="edge58" class="edge">
-<title>Node5&#45;&gt;Node37</title>
+<title>Node5&#45;&gt;Node38</title>
 <path fill="none" stroke="midnightblue" d="M2783.84,-260.99C2943.81,-253.03 3263.74,-236.8 3535,-221 3925.8,-198.24 4023.54,-193.01 4414,-165 4460.69,-161.65 5207.46,-103.07 5254,-98 5269.55,-96.31 5286.35,-94.14 5301.85,-92"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2783.35,-257.51 2773.54,-261.5 2783.7,-264.5 2783.35,-257.51"/>
 </g>
@@ -672,26 +672,26 @@ var sectionId = 'dynsection-1';
 <path fill="none" stroke="midnightblue" d="M2871.65,-138.35C2952.83,-125.6 3090.65,-103.96 3166.66,-92.03"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="2870.89,-134.93 2861.55,-139.94 2871.97,-141.84 2870.89,-134.93"/>
 </g>
-<!-- Node8&#45;&gt;Node37 -->
-<g id="edge35" class="edge">
-<title>Node8&#45;&gt;Node37</title>
-<path fill="none" stroke="midnightblue" d="M2914.87,-147.95C3325.28,-145.59 4789.55,-134.74 5254,-98 5271.06,-96.65 5289.58,-94.37 5306.25,-92.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2914.77,-144.45 2904.79,-148.01 2914.81,-151.45 2914.77,-144.45"/>
-</g>
-<!-- Node38 -->
-<g id="node34" class="node">
-<title>Node38</title>
-<g id="a_node34"><a xlink:href="../../de/d45/vcontrolpointspline_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node37 -->
+<g id="node33" class="node">
+<title>Node37</title>
+<g id="a_node33"><a xlink:href="../../de/d45/vcontrolpointspline_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="3353.5,-73 3353.5,-92 3568.5,-92 3568.5,-73 3353.5,-73"/>
 <text text-anchor="middle" x="3461" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vwidgets/vcontrolpointspline.cpp</text>
 </a>
 </g>
 </g>
+<!-- Node8&#45;&gt;Node37 -->
+<g id="edge35" class="edge">
+<title>Node8&#45;&gt;Node37</title>
+<path fill="none" stroke="midnightblue" d="M2914.76,-139.37C3023.45,-129.92 3196.01,-114.3 3345,-98 3361.44,-96.2 3379.17,-94.08 3395.7,-92.02"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2914.43,-135.88 2904.77,-140.23 2915.04,-142.86 2914.43,-135.88"/>
+</g>
 <!-- Node8&#45;&gt;Node38 -->
 <g id="edge36" class="edge">
 <title>Node8&#45;&gt;Node38</title>
-<path fill="none" stroke="midnightblue" d="M2914.76,-139.37C3023.45,-129.92 3196.01,-114.3 3345,-98 3361.44,-96.2 3379.17,-94.08 3395.7,-92.02"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="2914.43,-135.88 2904.77,-140.23 2915.04,-142.86 2914.43,-135.88"/>
+<path fill="none" stroke="midnightblue" d="M2914.87,-147.95C3325.28,-145.59 4789.55,-134.74 5254,-98 5271.06,-96.65 5289.58,-94.37 5306.25,-92.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="2914.77,-144.45 2904.79,-148.01 2914.81,-151.45 2914.77,-144.45"/>
 </g>
 <!-- Node39 -->
 <g id="node35" class="node">
@@ -886,18 +886,18 @@ var sectionId = 'dynsection-1';
 <!-- Node53 -->
 <g id="node49" class="node">
 <title>Node53</title>
-<g id="a_node49"><a xlink:href="../../d2/d2d/preferencesconfigurationpage_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="6012.5,-67.5 6012.5,-97.5 6259.5,-97.5 6259.5,-67.5 6012.5,-67.5"/>
-<text text-anchor="start" x="6020.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/dialogs</text>
-<text text-anchor="middle" x="6136" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/configpages/preferencesconfigurationpage.cpp</text>
+<g id="a_node49"><a xlink:href="../../d2/d00/vtooloptionspropertybrowser_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="6013,-67.5 6013,-97.5 6193,-97.5 6193,-67.5 6013,-67.5"/>
+<text text-anchor="start" x="6021" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamly2d/core</text>
+<text text-anchor="middle" x="6103" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vtooloptionspropertybrowser.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node50&#45;&gt;Node53 -->
 <g id="edge51" class="edge">
 <title>Node50&#45;&gt;Node53</title>
-<path fill="none" stroke="midnightblue" d="M5845.85,-133.87C5921.33,-119.89 5996.19,-106.97 6051.86,-97.55"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="5844.88,-130.49 5835.68,-135.76 5846.15,-137.37 5844.88,-130.49"/>
+<path fill="none" stroke="midnightblue" d="M5845.83,-133.84C5914.46,-120.31 5981.65,-107.17 6030.98,-97.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="5844.83,-130.47 5835.7,-135.84 5846.19,-137.34 5844.83,-130.47"/>
 </g>
 </g>
 </svg>

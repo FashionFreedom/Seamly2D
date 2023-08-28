@@ -13,6 +13,5 @@ var dir_87a455bccb09a92130c26a11a880c98a =
     [ "vpropertyexplorer", "dir_6a19f0209385bcdd20d39cdd0b14d14d.html", "dir_6a19f0209385bcdd20d39cdd0b14d14d" ],
     [ "vtest", "dir_bbdde70cfc8366bff48eedf17dbef7e5.html", "dir_bbdde70cfc8366bff48eedf17dbef7e5" ],
     [ "vtools", "dir_32a5fa251366cb688c6c63d2ec2cfdfb.html", "dir_32a5fa251366cb688c6c63d2ec2cfdfb" ],
-    [ "vwidgets", "dir_fa16871e366acf28eec42e1eb99c66a0.html", "dir_fa16871e366acf28eec42e1eb99c66a0" ],
-    [ "xerces-c", "dir_f82c2f8c9af090eedd4c6da59849f8ba.html", "dir_f82c2f8c9af090eedd4c6da59849f8ba" ]
+    [ "vwidgets", "dir_fa16871e366acf28eec42e1eb99c66a0.html", "dir_fa16871e366acf28eec42e1eb99c66a0" ]
 ];

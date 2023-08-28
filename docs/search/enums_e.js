@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['quoteoption_31845',['QuoteOption',['../de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31',1,'QxtCsvModel']]]
+  ['referens_17967',['Referens',['../d2/df2/classVDrawTool.html#a69bf2b95d209765b25d9ea6931ad34a2',1,'VDrawTool']]],
+  ['removeoption_17968',['RemoveOption',['../d2/df2/classVDrawTool.html#aa261a054fa2833a8dc61ddb80ca1c04e',1,'VDrawTool']]]
 ];

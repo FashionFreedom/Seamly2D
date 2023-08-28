@@ -673,10 +673,10 @@ $(document).ready(function(){initNavTree('da/d37/vgobject_8cpp_source.html','../
 <div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;<span class="comment"> * @return length length of contour.</span></div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="comment">// cppcheck-suppress unusedFunction</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno"><a class="line" href="../../d1/de7/classVGObject.html#aea5059e80866ae47eaa7f31acb72c486">  577</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/de7/classVGObject.html#aea5059e80866ae47eaa7f31acb72c486">VGObject::GetLengthContour</a>(<span class="keyword">const</span> QVector&lt;QPointF&gt; &amp;contour, <span class="keyword">const</span> QVector&lt;QPointF&gt; &amp;newPoints)</div>
+<div class="line"><a name="l00577"></a><span class="lineno"><a class="line" href="../../d1/de7/classVGObject.html#aea5059e80866ae47eaa7f31acb72c486">  577</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/de7/classVGObject.html#aea5059e80866ae47eaa7f31acb72c486">VGObject::GetLengthContour</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> &amp;contour, <span class="keyword">const</span> <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> &amp;newPoints)</div>
 <div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;{</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    qreal length = 0;</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    QVector&lt;QPointF&gt; points;</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;QPointF&gt;</a> points;</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    points &lt;&lt; contour &lt;&lt; newPoints;</div>
 <div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="keywordflow">for</span> (qint32 i = 0; i &lt; points.size()-1; ++i)</div>
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    {</div>
@@ -721,6 +721,7 @@ $(document).ready(function(){initNavTree('da/d37/vgobject_8cpp_source.html','../
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keywordflow">return</span> transform;</div>
 <div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;}</div>
+<div class="ttc" id="aclassQVector_html"><div class="ttname"><a href="../../d5/dc2/classQVector.html">QVector&lt; QPointF &gt;</a></div></div>
 <div class="ttc" id="aclassVGObjectData_html"><div class="ttname"><a href="../../df/dd9/classVGObjectData.html">VGObjectData</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d69/vgobject__p_8h_source.html#l00064">vgobject_p.h:65</a></div></div>
 <div class="ttc" id="aclassVGObject_html"><div class="ttname"><a href="../../d1/de7/classVGObject.html">VGObject</a></div><div class="ttdoc">The VGObject class keep information graphical objects.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d07/vgobject_8h_source.html#l00073">vgobject.h:74</a></div></div>
 <div class="ttc" id="aclassVGObject_html_a040e4a0f193e1330e9caa4dd8dcc1201"><div class="ttname"><a href="../../d1/de7/classVGObject.html#a040e4a0f193e1330e9caa4dd8dcc1201">VGObject::IsPointOnLineSegment</a></div><div class="ttdeci">static bool IsPointOnLineSegment(const QPointF &amp;t, const QPointF &amp;p1, const QPointF &amp;p2)</div><div class="ttdoc">IsPointOnLineSegment Check if the point is on the line segment.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d37/vgobject_8cpp_source.html#l00484">vgobject.cpp:484</a></div></div>
