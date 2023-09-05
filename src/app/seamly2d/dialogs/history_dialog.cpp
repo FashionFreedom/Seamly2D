@@ -71,6 +71,8 @@
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QDebug>
+#include <QGuiApplication>
+#include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -89,6 +91,9 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint | Qt::WindowMaximizeButtonHint) & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->find_LineEdit->installEventFilter(this);
 
@@ -217,7 +222,7 @@ void HistoryDialog::fillTable()
 
             {
                 QTableWidgetItem *item = new QTableWidgetItem(QString().setNum(rowData.id));
-                item->setTextAlignment(Qt::AlignRight);
+                item->setTextAlignment(Qt::AlignHCenter);
                 item->setSizeHint(QSize(80, 24));
                 item->setData(Qt::UserRole, rowData.id);
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);

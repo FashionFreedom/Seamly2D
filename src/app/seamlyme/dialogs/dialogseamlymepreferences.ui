@@ -101,6 +101,9 @@
          <height>0</height>
         </size>
        </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
        <widget class="QWidget" name="page_2"/>
       </widget>
      </item>

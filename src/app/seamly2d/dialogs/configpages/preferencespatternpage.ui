@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>100</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -100,6 +100,7 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="title">
@@ -219,6 +220,7 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="title">
@@ -274,6 +276,11 @@
          <width>0</width>
          <height>150</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
        </property>
        <property name="title">
         <string>Attributes</string>
@@ -644,6 +651,7 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
+       <bold>true</bold>
       </font>
      </property>
      <property name="title">
@@ -947,6 +955,7 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
+       <bold>true</bold>
       </font>
      </property>
      <property name="title">
@@ -958,7 +967,7 @@
         <x>20</x>
         <y>20</y>
         <width>334</width>
-        <height>22</height>
+        <height>26</height>
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
@@ -966,7 +975,7 @@
         <widget class="QLabel" name="defaultSeamAllowance_Label">
          <property name="minimumSize">
           <size>
-           <width>80</width>
+           <width>90</width>
            <height>0</height>
           </size>
          </property>
@@ -1064,6 +1073,11 @@
        <width>0</width>
        <height>160</height>
       </size>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="title">
       <string>Paths</string>
@@ -1540,7 +1554,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>90</width>
                 <height>18</height>
                </size>
               </property>
@@ -1605,7 +1619,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>90</width>
                 <height>18</height>
                </size>
               </property>
@@ -1664,7 +1678,7 @@
              <widget class="QLabel" name="internalLineweight_Label">
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>

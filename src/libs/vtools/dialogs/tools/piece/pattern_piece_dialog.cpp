@@ -1029,8 +1029,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
 
     if (!enable)
     {
-        ui->automatic_GroupBox->setEnabled(enable);
-        ui->custom_GroupBox->setEnabled(enable);
+        ui->autoCustom_TabWidget->setEnabled(enable);
     }
     else
     {
@@ -1041,8 +1040,7 @@ void PatternPieceDialog::enableSeamAllowance(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableBuiltIn(bool enable)
 {
-    ui->automatic_GroupBox->setEnabled(!enable);
-    ui->custom_GroupBox->setEnabled(!enable);
+    ui->autoCustom_TabWidget->setEnabled(!enable);
 
     if (enable)
     {

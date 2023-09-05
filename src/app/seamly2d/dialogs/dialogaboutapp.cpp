@@ -1,3 +1,30 @@
+/******************************************************************************
+*   @file   dialogaboutapp.cpp
+**  @author Douglas S Caskey
+**  @date   3 Sep, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
+
 /************************************************************************
  **
  **  @file   dialogaboutapp.cpp
@@ -6,33 +33,37 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "dialogaboutapp.h"
 #include "ui_dialogaboutapp.h"
 #include "../version.h"
+
 #include <QDate>
 #include <QDesktopServices>
+#include <QGuiApplication>
 #include <QMessageBox>
+#include <QScreen>
 #include <QtDebug>
+
 #include "../options.h"
 #include "../core/vapplication.h"
 #include "../fervor/fvupdater.h"
@@ -44,6 +75,10 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) :
 	isInitialized(false)
 {
 	ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
 	qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 

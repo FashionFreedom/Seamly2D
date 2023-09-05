@@ -2,7 +2,7 @@
  **
  **  @file   shortcuts_dialog.h
  **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   5 11, 2022
+**  @date   3 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -33,11 +33,13 @@
 #include <QClipboard>
 #include <QFileDialog>
 #include <QFont>
+#include <QGuiApplication>
 #include <QTextDocument>
 #include <QPageLayout>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QPrintDialog>
+#include <QScreen>
 #include <QShowEvent>
 #include <QString>
 #include <QtWidgets>
@@ -52,6 +54,9 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     connect(ui->clipboard_ToolButton, &QToolButton::clicked, this, &ShortcutsDialog::copyToClipboard);
     connect(ui->printer_ToolButton,   &QToolButton::clicked, this, &ShortcutsDialog::sendToPrinter);
