@@ -133,7 +133,7 @@ QStringList VMeasurement::ListHeights(QMap<GHeights, bool> heights, Unit pattern
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -160,7 +160,7 @@ QStringList VMeasurement::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -187,7 +187,7 @@ QStringList VMeasurement::WholeListHeights(Unit patternUnit)
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -205,7 +205,7 @@ QStringList VMeasurement::WholeListSizes(Unit patternUnit)
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 

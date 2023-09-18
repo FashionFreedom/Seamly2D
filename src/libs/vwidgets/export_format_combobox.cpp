@@ -1,7 +1,7 @@
  /******************************************************************************
   *   @file   export_format_combobox.cpp
   **  @author DS Caskey
-  **  @date   Mar 15, 2022
+  **  @date   @date   17 Sep, 2023
   **
   **  @brief
   **  @copyright
@@ -192,7 +192,7 @@ bool ExportFormatCombobox::testPdf()
     }
     else
     {
-        qDebug()<<PDFTOPS<<"error"<<proc.error()<<proc.errorString();
+        qWarning() << PDFTOPS << "error" << proc.error() << proc.errorString();
     }
     return res;
 }

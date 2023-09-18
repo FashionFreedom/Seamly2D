@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   mapplication.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   mapplication.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   8 7, 2015
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -296,59 +296,59 @@ bool MApplication::notify(QObject *receiver, QEvent *event)
     {
         return QApplication::notify(receiver, event);
     }
-    catch (const VExceptionObjectError &e)
+    catch (const VExceptionObjectError &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file. Program will be terminated.")), //-V807
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error bad id. Program will be terminated.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VExceptionConversionError &e)
+    catch (const VExceptionConversionError &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value. Program will be terminated.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter. Program will be terminated.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id. Program will be terminated.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VExceptionToolWasDeleted &e)
+    catch (const VExceptionToolWasDeleted &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s",
                    qUtf8Printable("Unhadled deleting tool. Continue use object after deleting!"),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         exit(V_EX_DATAERR);
     }
-    catch (const VException &e)
+    catch (const VException &error)
     {
         qCCritical(mApp, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Something's wrong!!")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return true;
     }
     // These last two cases special. I found that we can't show here modal dialog with error message.
     // Somehow program doesn't waite untile an error dialog will be closed. But if ignore this program will hang.
-    catch (const qmu::QmuParserError &e)
+    catch (const qmu::QmuParserError &error)
     {
-        qCCritical(mApp, "%s", qUtf8Printable(tr("Parser error: %1. Program will be terminated.").arg(e.GetMsg())));
+        qCCritical(mApp, "%s", qUtf8Printable(tr("Parser error: %1. Program will be terminated.").arg(error.GetMsg())));
         exit(V_EX_DATAERR);
     }
-    catch (std::exception &e)
+    catch (std::exception &error)
     {
-        qCCritical(mApp, "%s", qUtf8Printable(tr("Exception thrown: %1. Program will be terminated.").arg(e.what())));
+        qCCritical(mApp, "%s", qUtf8Printable(tr("Exception thrown: %1. Program will be terminated.").arg(error.what())));
         exit(V_EX_SOFTWARE);
     }
     return false;
@@ -404,12 +404,12 @@ void MApplication::InitOptions()
     QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
     QDir().mkpath(settings->GetDefPathLabelTemplate());
 
-    qCDebug(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
-    qCDebug(mApp, "Build revision: %s", BUILD_REVISION);
-    qCDebug(mApp, "%s", qUtf8Printable(buildCompatibilityString()));
-    qCDebug(mApp, "Built on %s at %s", __DATE__, __TIME__);
-    qCDebug(mApp, "Command-line arguments: %s", qUtf8Printable(arguments().join(", ")));
-    qCDebug(mApp, "Process ID: %s", qUtf8Printable(QString().setNum(applicationPid())));
+    qCInfo(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
+    qCInfo(mApp, "Build revision: %s", BUILD_REVISION);
+    qCInfo(mApp, "%s", qUtf8Printable(buildCompatibilityString()));
+    qCInfo(mApp, "Built on %s at %s", __DATE__, __TIME__);
+    qCInfo(mApp, "Command-line arguments: %s", qUtf8Printable(arguments().join(", ")));
+    qCInfo(mApp, "Process ID: %s", qUtf8Printable(QString().setNum(applicationPid())));
 
     loadTranslations(QLocale().name());// By default the console version uses system locale
 
@@ -444,15 +444,15 @@ void MApplication::InitTrVars()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MApplication::event(QEvent *e)
+bool MApplication::event(QEvent *event)
 {
-    switch(e->type())
+    switch(event->type())
     {
         // In Mac OS X the QFileOpenEvent event is generated when user perform "Open With" from Finder (this event is
         // Mac specific).
         case QEvent::FileOpen:
         {
-            QFileOpenEvent *fileOpenEvent = static_cast<QFileOpenEvent *>(e);
+            QFileOpenEvent *fileOpenEvent = static_cast<QFileOpenEvent *>(event);
             const QString macFileOpen = fileOpenEvent->file();
             if(not macFileOpen.isEmpty())
             {
@@ -478,9 +478,9 @@ bool MApplication::event(QEvent *e)
         }
 #endif //defined(Q_OS_MAC)
         default:
-            return VAbstractApplication::event(e);
+            return VAbstractApplication::event(event);
     }
-    return VAbstractApplication::event(e);
+    return VAbstractApplication::event(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -638,7 +638,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         socket.connectToServer(serverName);
         if (socket.waitForConnected(1000))
         {
-            qCDebug(mApp, "Connected to the server '%s'", qUtf8Printable(serverName));
+            qCInfo(mApp, "Connected to the server '%s'", qUtf8Printable(serverName));
             QTextStream stream(&socket);
             stream << QCoreApplication::arguments().join(";;");
             stream.flush();
@@ -647,13 +647,13 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
             return;
         }
 
-        qCDebug(mApp, "Can't establish connection to the server '%s'", qUtf8Printable(serverName));
+        qCWarning(mApp, "Can't establish connection to the server '%s'", qUtf8Printable(serverName));
 
         localServer = new QLocalServer(this);
         connect(localServer, &QLocalServer::newConnection, this, &MApplication::NewLocalSocketConnection);
         if (not localServer->listen(serverName))
         {
-            qCDebug(mApp, "Can't begin to listen for incoming connections on name '%s'",
+            qCWarning(mApp, "Can't begin to listen for incoming connections on name '%s'",
                     qUtf8Printable(serverName));
             if (localServer->serverError() == QAbstractSocket::AddressInUseError)
             {

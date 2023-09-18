@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   editlabeltemplate_dialog.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 26, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -397,10 +397,10 @@ void EditLabelTemplateDialog::ImportTemplate()
         ltemplate.setXMLContent(VLabelTemplateConverter(fileName).Convert());
         SetTemplate(ltemplate.ReadLines());
     }
-    catch (VException &e)
+    catch (VException &error)
     {
-        qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")), qUtf8Printable(e.ErrorMessage()),
-                  qUtf8Printable(e.DetailedInformation()));
+        qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")), qUtf8Printable(error.ErrorMessage()),
+                  qUtf8Printable(error.DetailedInformation()));
     }
 }
 

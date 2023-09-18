@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtranslatevars.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtranslatevars.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +30,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -70,15 +71,15 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VTranslateVars::VTranslateVars()
-    :VTranslateMeasurements(),
-      PMSystemNames(QMap<QString, qmu::QmuTranslation>()),
-      PMSystemAuthors(QMap<QString, qmu::QmuTranslation>()),
-      PMSystemBooks(QMap<QString, qmu::QmuTranslation>()),
-      variables(QMap<QString, qmu::QmuTranslation>()),
-      functions(QMap<QString, qmu::QmuTranslation>()),
-      postfixOperators(QMap<QString, qmu::QmuTranslation>()),
-      placeholders(QMap<QString, qmu::QmuTranslation>()),
-      stDescriptions(QMap<QString, qmu::QmuTranslation>())
+    : VTranslateMeasurements()
+    , PMSystemNames(QMap<QString, qmu::QmuTranslation>())
+    , PMSystemAuthors(QMap<QString, qmu::QmuTranslation>())
+    , PMSystemBooks(QMap<QString, qmu::QmuTranslation>())
+    , variables(QMap<QString, qmu::QmuTranslation>())
+    , functions(QMap<QString, qmu::QmuTranslation>())
+    , postfixOperators(QMap<QString, qmu::QmuTranslation>())
+    , placeholders(QMap<QString, qmu::QmuTranslation>())
+    , stDescriptions(QMap<QString, qmu::QmuTranslation>())
 {
     InitPatternMakingSystems();
     InitVariables();
@@ -919,7 +920,7 @@ QString VTranslateVars::FormulaFromUser(const QString &formula, bool osSeparator
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qDebug()<<"Can't convert to double token"<<nValues.at(i);
+                qWarning() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 
@@ -946,9 +947,9 @@ QString VTranslateVars::TryFormulaFromUser(const QString &formula, bool osSepara
     {
         return qApp->TrVars()->FormulaFromUser(formula, osSeparator);
     }
-    catch (qmu::QmuParserError &e)// In case something bad will happen
+    catch (qmu::QmuParserError &error)// In case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return formula;
     }
 }
@@ -977,13 +978,13 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
         tokens = cal->GetTokens();// Tokens (variables, measurements)
         numbers = cal->GetNumbers();// All numbers in expression for changing decimal separator
     }
-    catch (qmu::QmuParserError &e)
+    catch (qmu::QmuParserError &error)
     {
-        qDebug() << "\nMath parser error:\n"
-                 << "--------------------------------------\n"
-                 << "Message:     " << e.GetMsg()  << "\n"
-                 << "Expression:  " << e.GetExpr() << "\n"
-                 << "--------------------------------------";
+        qWarning() << "\nMath parser error:\n"
+                   << "--------------------------------------\n"
+                   << "Message:     " << error.GetMsg()  << "\n"
+                   << "Expression:  " << error.GetExpr() << "\n"
+                   << "--------------------------------------";
         return newFormula;
     }
 
@@ -1060,7 +1061,7 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qDebug()<<"Can't convert to double token"<<nValues.at(i);
+                qWarning() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 

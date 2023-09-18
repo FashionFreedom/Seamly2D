@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   groups_widget.cpp
  **  @author Douglas S Caskey
- **  @date   11 Jun, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -763,7 +763,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
+        qWarning() << "Can't find element by id" << Q_FUNC_INFO;
         return;
     }
         try
@@ -1041,13 +1041,13 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
             return;
         }
 
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         {
             QList<quint32>itemData;
             itemData.append(objId);
             itemData.append(toolId);
 
-            qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
+            qWarning() << error.ErrorMessage() << Q_FUNC_INFO;
             QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(":/icons/win.icon.theme/16x16/status/dialog-warning.png"));
             item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
@@ -1094,11 +1094,11 @@ QString GroupsWidget::getObjName(quint32 toolId)
         const auto obj = m_data->GetGObject(toolId);
         return obj->name();
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
-        qCDebug(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
-            qUtf8Printable(e.ErrorMessage()),
-            qUtf8Printable(e.DetailedInformation()));
+        qWarning(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
+            qUtf8Printable(error.ErrorMessage()),
+            qUtf8Printable(error.DetailedInformation()));
         return QString("Unknown Object");// Return Unknown string
     }
 }

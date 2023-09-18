@@ -151,7 +151,7 @@ bool VObjEngine::begin(QPaintDevice *pdev)
 
     if (size.isValid() == false)
     {
-        qWarning()<<"VObjEngine::begin(), size is not valid";
+        qWarning() << "VObjEngine::begin(), size is not valid";
         return false;
     }
 

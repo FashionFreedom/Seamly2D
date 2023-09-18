@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vabstractconverter.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date  17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -73,15 +73,15 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractConverter::VAbstractConverter(const QString &fileName)
-    : VDomDocument(),
-      m_ver(0x0),
-      m_convertedFileName(fileName),
-      m_tmpFile()
+    : VDomDocument()
+    , m_ver(0x0)
+    , m_convertedFileName(fileName)
+    , m_tmpFile()
 {
     setXMLContent(m_convertedFileName);// Throw an exception on error
     m_ver = GetVersion(GetVersionStr());
 
-    qDebug() << "VAbstractConverter::GetVersion() = " << m_ver;
+    qInfo() << "VAbstractConverter::GetVersion() = " << m_ver;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -92,7 +92,7 @@ QString VAbstractConverter::Convert()
         return m_convertedFileName;
     }
 
-    if (not IsReadOnly())
+    if (!IsReadOnly())
     {
         ReserveFile();
     }
@@ -107,8 +107,8 @@ QString VAbstractConverter::Convert()
         throw VException(errorMsg);
     }
 
-    qDebug() << " m_ver = " << m_ver;
-    qDebug() << " MaxVer = " << MaxVer();
+    qInfo() << " m_ver = " << m_ver;
+    qInfo() << " MaxVer = " << MaxVer();
 
     m_ver < MaxVer() ? ApplyPatches() : DowngradeToCurrentMaxVersion();
 
@@ -143,7 +143,7 @@ QString VAbstractConverter::GetVersionStr() const
         const QDomElement domElement = domNode.toElement();
         if (domElement.isNull() == false)
         {
-            qDebug() << " VAbstractConverter::GetVersionStr()" << domElement.text();
+            qInfo() << " VAbstractConverter::GetVersionStr()" << domElement.text();
             return domElement.text();
         }
     }
@@ -159,21 +159,21 @@ int VAbstractConverter::GetVersion(const QString &version)
 
     bool ok = false;
     const int major = ver.at(0).toInt(&ok);
-    if (not ok)
+    if (!ok)
     {
         return 0x0;
     }
 
     ok = false;
     const int minor = ver.at(1).toInt(&ok);
-    if (not ok)
+    if (!ok)
     {
         return 0x0;
     }
 
     ok = false;
     const int patch = ver.at(2).toInt(&ok);
-    if (not ok)
+    if (!ok)
     {
         return 0x0;
     }
@@ -282,7 +282,7 @@ void VAbstractConverter::ReserveFile() const
         sequencePart = QString("_(%1)").arg(++sequenceNumber);
     } while (QFileInfo(reserveFileName).exists());
 
-    if (not SafeCopy(m_convertedFileName, reserveFileName, error))
+    if (!SafeCopy(m_convertedFileName, reserveFileName, error))
     {
 #ifdef Q_OS_WIN32
         qt_ntfs_permission_lookup++; // turn checking on
@@ -292,7 +292,7 @@ void VAbstractConverter::ReserveFile() const
         qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
 
-        if (not IsReadOnly() && isFileWritable)
+        if (!IsReadOnly() && isFileWritable)
         {
             const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
             throw VException(errorMsg);
@@ -366,7 +366,7 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
     {
         schema = XSDSchema(m_ver);
     }
-    catch(const VException &e)
+    catch(const VException &error)
     {
         if (m_ver < MinVer())
         { // Version less than minimally supported version. Can't do anything.
@@ -381,7 +381,7 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
             catch(const VException &exp)
             { // Nope, we can't.
                 Q_UNUSED(exp)
-                throw e;
+                throw error;
             }
         }
         else
@@ -402,9 +402,9 @@ void VAbstractConverter::Save()
     {
         TestUniqueId();
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         VException ex(tr("Error no unique id."));
         throw ex;
     }
@@ -415,7 +415,7 @@ void VAbstractConverter::Save()
     out.setCodec("UTF-8");
     save(out, indent);
 
-    if (not m_tmpFile.flush())
+    if (!m_tmpFile.flush())
     {
         VException e(m_tmpFile.errorString());
         throw e;

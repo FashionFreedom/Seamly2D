@@ -105,7 +105,7 @@ bool VDxfEngine::begin(QPaintDevice *pdev)
 
     if (size.isValid() == false)
     {
-        qWarning()<<"VDxfEngine::begin(), size is not valid";
+        qWarning() << "VDxfEngine::begin(), size is not valid";
         return false;
     }
 
@@ -608,7 +608,7 @@ bool VDxfEngine::ExportToAAMA(const QVector<VLayoutPiece> &details)
 {
     if (size.isValid() == false)
     {
-        qWarning()<<"VDxfEngine::begin(), size is not valid";
+        qWarning() << "VDxfEngine::begin(), size is not valid";
         return false;
     }
 
