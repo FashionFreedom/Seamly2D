@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('d9/d3a/anchorpoint__tool_8cpp_source.h
 <a href="../../d9/d3a/anchorpoint__tool_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   anchorpoint_tool.cpp</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   Jan 3, 2023</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
@@ -186,9 +186,9 @@ $(document).ready(function(){initNavTree('d9/d3a/anchorpoint__tool_8cpp_source.h
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        {</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            point = <a class="code" href="../../d5/d68/classVDataTool.html#ae5821c7d864b5495e5e6d9868f516137">data</a>-&gt;<a class="code" href="../../d2/d83/classVContainer.html#aa5ac2a3108612bcad2520613c558469c">GeometricObject</a>&lt;<a class="code" href="../../db/d57/classVPointF.html">VPointF</a>&gt;(pointId);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;e)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        { <span class="comment">// Possible case. Parent was deleted, but the node object is still here.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Q_UNUSED(e)</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            Q_UNUSED(error)</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <a class="code" href="../../d5/d68/classVDataTool.html#ae5821c7d864b5495e5e6d9868f516137">data</a>-&gt;<a class="code" href="../../d2/d83/classVContainer.html#a565c594b62d332110b3185457062c999">UpdateId</a>(<span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;<span class="comment">// Just ignore</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        }</div>

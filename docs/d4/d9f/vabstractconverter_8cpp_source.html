@@ -100,10 +100,10 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <a href="../../d4/d9f/vabstractconverter_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   vabstractconverter.cpp</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   Dec 27, 2022</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date  17 Sep, 2023</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2022 Seamly, LLC</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
@@ -172,15 +172,15 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="../../dc/d68/classVAbstractConverter.html#ac3d3813fa37c8318cb8cbdce1338bcd6">   75</a></span>&#160;<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac3d3813fa37c8318cb8cbdce1338bcd6">VAbstractConverter::VAbstractConverter</a>(<span class="keyword">const</span> QString &amp;fileName)</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    : <a class="code" href="../../d6/deb/classVDomDocument.html">VDomDocument</a>(),</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      m_ver(0x0),</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;      m_convertedFileName(fileName),</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;      m_tmpFile()</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    : <a class="code" href="../../d6/deb/classVDomDocument.html">VDomDocument</a>()</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    , m_ver(0x0)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    , m_convertedFileName(fileName)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    , m_tmpFile()</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;{</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">setXMLContent</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>);<span class="comment">// Throw an exception on error</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> = <a class="code" href="../../dc/d68/classVAbstractConverter.html#a04af3b2a1ba2a7025007c74c6c95835c">GetVersion</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#aab39aa2f7ece866f41458b1bc8188b59">GetVersionStr</a>());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;VAbstractConverter::GetVersion() = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    qInfo() &lt;&lt; <span class="stringliteral">&quot;VAbstractConverter::GetVersion() = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../dc/d68/classVAbstractConverter.html#a1cade5805a3311ad15d9b5751e0794c4">IsReadOnly</a>())</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#a1cade5805a3311ad15d9b5751e0794c4">IsReadOnly</a>())</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="../../dc/d68/classVAbstractConverter.html#a930138079bb7213d0bfcfc4e5dd29863">ReserveFile</a>();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
@@ -206,8 +206,8 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot; m_ver = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot; MaxVer = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#a7ba0322bf55f57c65b94ac330923b6d2">MaxVer</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    qInfo() &lt;&lt; <span class="stringliteral">&quot; m_ver = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    qInfo() &lt;&lt; <span class="stringliteral">&quot; MaxVer = &quot;</span> &lt;&lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#a7ba0322bf55f57c65b94ac330923b6d2">MaxVer</a>();</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#a7ba0322bf55f57c65b94ac330923b6d2">MaxVer</a>() ? <a class="code" href="../../dc/d68/classVAbstractConverter.html#ae04ccf4d6d1675286c58c4ec319c9ef9">ApplyPatches</a>() : <a class="code" href="../../dc/d68/classVAbstractConverter.html#a0f46c3e6317e94d2d453de3bc4186fe3">DowngradeToCurrentMaxVersion</a>();</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
@@ -242,7 +242,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keyword">const</span> QDomElement domElement = domNode.toElement();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        <span class="keywordflow">if</span> (domElement.isNull() == <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        {</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            qDebug() &lt;&lt; <span class="stringliteral">&quot; VAbstractConverter::GetVersionStr()&quot;</span> &lt;&lt; domElement.text();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;            qInfo() &lt;&lt; <span class="stringliteral">&quot; VAbstractConverter::GetVersionStr()&quot;</span> &lt;&lt; domElement.text();</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;            <span class="keywordflow">return</span> domElement.text();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    }</div>
@@ -258,21 +258,21 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordtype">bool</span> ok = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> major = ver.at(0).toInt(&amp;ok);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (not ok)</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (!ok)</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordflow">return</span> 0x0;</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    ok = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> minor = ver.at(1).toInt(&amp;ok);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (not ok)</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">if</span> (!ok)</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">return</span> 0x0;</div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    }</div>
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    ok = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> patch = ver.at(2).toInt(&amp;ok);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (not ok)</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (!ok)</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> 0x0;</div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
@@ -381,7 +381,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        sequencePart = QString(<span class="stringliteral">&quot;_(%1)&quot;</span>).arg(++sequenceNumber);</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    } <span class="keywordflow">while</span> (QFileInfo(reserveFileName).exists());</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">SafeCopy</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>, reserveFileName, error))</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">SafeCopy</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ad8b075a504b0375d8b4b07a437c13446">m_convertedFileName</a>, reserveFileName, error))</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    {</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#ifdef Q_OS_WIN32</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;        qt_ntfs_permission_lookup++; <span class="comment">// turn checking on</span></div>
@@ -391,7 +391,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        qt_ntfs_permission_lookup--; <span class="comment">// turn it off again</span></div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/*Q_OS_WIN32*/</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">if</span> (not <a class="code" href="../../dc/d68/classVAbstractConverter.html#a1cade5805a3311ad15d9b5751e0794c4">IsReadOnly</a>() &amp;&amp; isFileWritable)</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#a1cade5805a3311ad15d9b5751e0794c4">IsReadOnly</a>() &amp;&amp; isFileWritable)</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;            <span class="keyword">const</span> QString errorMsg(tr(<span class="stringliteral">&quot;Error creating a reserv copy: %1.&quot;</span>).arg(error));</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;            <span class="keywordflow">throw</span> <a class="code" href="../../de/d09/classVException.html">VException</a>(errorMsg);</div>
@@ -465,7 +465,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        schema = <a class="code" href="../../dc/d68/classVAbstractConverter.html#a75aabd195bb498cfe25b7e122b1701d8">XSDSchema</a>(<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a>);</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    }</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;e)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;error)</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../dc/d68/classVAbstractConverter.html#ac7802ae1c36c2bf136bfc94d65a3bea9">m_ver</a> &lt; <a class="code" href="../../dc/d68/classVAbstractConverter.html#aa19fd0110422f48c38e321bce5ff7061">MinVer</a>())</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        { <span class="comment">// Version less than minimally supported version. Can&#39;t do anything.</span></div>
@@ -480,7 +480,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/d09/classVException.html">VException</a> &amp;exp)</div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;            { <span class="comment">// Nope, we can&#39;t.</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;                Q_UNUSED(exp)</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="keywordflow">throw</span> e;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;                <span class="keywordflow">throw</span> error;</div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;            }</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        }</div>
 <div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">else</span></div>
@@ -501,9 +501,9 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    {</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        <a class="code" href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">TestUniqueId</a>();</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a> &amp;e)</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a> &amp;error)</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    {</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        Q_UNUSED(e)</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        Q_UNUSED(error)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> ex(tr(<span class="stringliteral">&quot;Error no unique id.&quot;</span>));</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <span class="keywordflow">throw</span> ex;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    }</div>
@@ -514,7 +514,7 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    out.setCodec(<span class="stringliteral">&quot;UTF-8&quot;</span>);</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    save(out, indent);</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.flush())</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.flush())</div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    {</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <a class="code" href="../../de/d09/classVException.html">VException</a> e(<a class="code" href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">m_tmpFile</a>.errorString());</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">throw</span> e;</div>
@@ -561,13 +561,13 @@ $(document).ready(function(){initNavTree('d4/d9f/vabstractconverter_8cpp_source.
 <div class="ttc" id="aclassVAbstractConverter_html_ae04ccf4d6d1675286c58c4ec319c9ef9"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#ae04ccf4d6d1675286c58c4ec319c9ef9">VAbstractConverter::ApplyPatches</a></div><div class="ttdeci">virtual void ApplyPatches()=0</div></div>
 <div class="ttc" id="aclassVAbstractConverter_html_af1c2995d6e46e2df2d36f02f8fd9dbc3"><div class="ttname"><a href="../../dc/d68/classVAbstractConverter.html#af1c2995d6e46e2df2d36f02f8fd9dbc3">VAbstractConverter::m_tmpFile</a></div><div class="ttdeci">QTemporaryFile m_tmpFile</div><div class="ttdef"><b>Definition:</b> <a href="../../df/de4/vabstractconverter_8h_source.html#l00116">vabstractconverter.h:116</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html">VDomDocument</a></div><div class="ttdoc">The VDomDocument class represents a Seamly2D document (.val file).</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00104">vdomdocument.h:105</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a49eb5f686268f8ecab6faab3ee4ae1f0"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">VDomDocument::ValidateXML</a></div><div class="ttdeci">static void ValidateXML(const QString &amp;schema, const QString &amp;fileName)</div><div class="ttdoc">ValidateXML validate xml file by xsd schema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00641">vdomdocument.cpp:641</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a8dd4b44bf243c35092c40916985f894f"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">VDomDocument::TestUniqueId</a></div><div class="ttdeci">void TestUniqueId() const</div><div class="ttdoc">TestUniqueId test exist unique id in pattern file. Each id must be unique.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00606">vdomdocument.cpp:606</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a988591c04a3fcf92472ad456a82c1e63"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a></div><div class="ttdeci">bool setTagText(const QString &amp;tag, const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00803">vdomdocument.cpp:803</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ab7e2c541d5f3b0a74e88de301223f4cd"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a></div><div class="ttdeci">static bool SafeCopy(const QString &amp;source, const QString &amp;destination, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00881">vdomdocument.cpp:881</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a49eb5f686268f8ecab6faab3ee4ae1f0"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0">VDomDocument::ValidateXML</a></div><div class="ttdeci">static void ValidateXML(const QString &amp;schema, const QString &amp;fileName)</div><div class="ttdoc">ValidateXML validate xml file by xsd schema.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00642">vdomdocument.cpp:642</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a8dd4b44bf243c35092c40916985f894f"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a8dd4b44bf243c35092c40916985f894f">VDomDocument::TestUniqueId</a></div><div class="ttdeci">void TestUniqueId() const</div><div class="ttdoc">TestUniqueId test exist unique id in pattern file. Each id must be unique.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00607">vdomdocument.cpp:607</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a988591c04a3fcf92472ad456a82c1e63"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a988591c04a3fcf92472ad456a82c1e63">VDomDocument::setTagText</a></div><div class="ttdeci">bool setTagText(const QString &amp;tag, const QString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">vdomdocument.cpp:804</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ab7e2c541d5f3b0a74e88de301223f4cd"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab7e2c541d5f3b0a74e88de301223f4cd">VDomDocument::SafeCopy</a></div><div class="ttdeci">static bool SafeCopy(const QString &amp;source, const QString &amp;destination, QString &amp;error)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00882">vdomdocument.cpp:882</a></div></div>
 <div class="ttc" id="aclassVDomDocument_html_ab8e9f3f325f6e16787f1729059fd3f14"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ab8e9f3f325f6e16787f1729059fd3f14">VDomDocument::TagVersion</a></div><div class="ttdeci">static const QString TagVersion</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/da5/vdomdocument_8h_source.html#l00115">vdomdocument.h:115</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_ad316cde19d3383a783936544c822b750"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a></div><div class="ttdeci">virtual void setXMLContent(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00702">vdomdocument.cpp:702</a></div></div>
-<div class="ttc" id="aclassVExceptionWrongId_html"><div class="ttname"><a href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a></div><div class="ttdoc">The VExceptionWrongId class for exception wrong id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d21/vexceptionwrongid_8h_source.html#l00067">vexceptionwrongid.h:68</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_ad316cde19d3383a783936544c822b750"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument::setXMLContent</a></div><div class="ttdeci">virtual void setXMLContent(const QString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00703">vdomdocument.cpp:703</a></div></div>
+<div class="ttc" id="aclassVExceptionWrongId_html"><div class="ttname"><a href="../../d9/dcf/classVExceptionWrongId.html">VExceptionWrongId</a></div><div class="ttdoc">The VExceptionWrongId class for exception wrong id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d21/vexceptionwrongid_8h_source.html#l00068">vexceptionwrongid.h:69</a></div></div>
 <div class="ttc" id="aclassVException_html"><div class="ttname"><a href="../../de/d09/classVException.html">VException</a></div><div class="ttdoc">The VException class parent for all exception. Could be use for abstract exception.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d44/vexception_8h_source.html#l00065">vexception.h:66</a></div></div>
 <div class="ttc" id="avabstractconverter_8h_html"><div class="ttname"><a href="../../df/de4/vabstractconverter_8h.html">vabstractconverter.h</a></div></div>
 <div class="ttc" id="avdomdocument_8h_html"><div class="ttname"><a href="../../d8/da5/vdomdocument_8h.html">vdomdocument.h</a></div></div>

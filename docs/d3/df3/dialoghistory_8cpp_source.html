@@ -98,47 +98,47 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 </div><!--header-->
 <div class="contents">
 <a href="../../d3/df3/dialoghistory_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   https://github.com/fashionfreedom/seamly2d                            *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ***************************************************************************</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **************************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ************************************************************************</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   dialoghistory.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **  along with Seamly2D. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **************************************************************************/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/************************************************************************</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **  @file   dialoghistory.cpp</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **  @date   November 15, 2013</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **  @brief</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentina project, a pattern making</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013-2015 Seamly2D project</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013 Valentina project</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Valentina is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Valentina is distributed in the hope that it will be useful,</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> QDomElement domElem = doc-&gt;<a class="code" href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">elementById</a>(tool.getId());</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (domElem.isElement() == <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qDebug()&lt;&lt;<span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span>&lt;&lt;Q_FUNC_INFO;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span> &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">try</span></div>
@@ -559,12 +559,12 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                return QString();</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;        }</div>
 <div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    }</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    catch (const <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;e)</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    catch (const <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    {</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        qDebug()&lt;&lt;e.ErrorMessage()&lt;&lt;Q_FUNC_INFO;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        qWarning() &lt;&lt; error.ErrorMessage() &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    }</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    qDebug()&lt;&lt;<span class="stringliteral">&quot;Can&#39;t create history record for the tool.&quot;</span>;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t create history record for the tool.&quot;</span>;</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;}</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
@@ -745,8 +745,8 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 <div class="ttc" id="aclassVContainer_html_aa5ac2a3108612bcad2520613c558469c"><div class="ttname"><a href="../../d2/d83/classVContainer.html#aa5ac2a3108612bcad2520613c558469c">VContainer::GeometricObject</a></div><div class="ttdeci">const QSharedPointer&lt; T &gt; GeometricObject(const quint32 &amp;id) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/df7/vcontainer_8h_source.html#l00266">vcontainer.h:266</a></div></div>
 <div class="ttc" id="aclassVCubicBezierPath_html"><div class="ttname"><a href="../../d7/da6/classVCubicBezierPath.html">VCubicBezierPath</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dbe/vcubicbezierpath_8h_source.html#l00065">vcubicbezierpath.h:66</a></div></div>
 <div class="ttc" id="aclassVCubicBezier_html"><div class="ttname"><a href="../../d0/dab/classVCubicBezier.html">VCubicBezier</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd5/vcubicbezier_8h_source.html#l00069">vcubicbezier.h:70</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a035e4a009f8f79f3f8e04e8aa43d56dc"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">VDomDocument::elementById</a></div><div class="ttdeci">QDomElement elementById(quint32 id, const QString &amp;tagName=QString())</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00222">vdomdocument.cpp:222</a></div></div>
-<div class="ttc" id="aclassVDomDocument_html_a14e129a4d0d66b87adb48c38e46c0f37"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">VDomDocument::GetParametrUInt</a></div><div class="ttdeci">static quint32 GetParametrUInt(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue)</div><div class="ttdoc">Returns the long long value of the given attribute. RENAME: GetParameterLongLong?</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00354">vdomdocument.cpp:354</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a035e4a009f8f79f3f8e04e8aa43d56dc"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">VDomDocument::elementById</a></div><div class="ttdeci">QDomElement elementById(quint32 id, const QString &amp;tagName=QString())</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00223">vdomdocument.cpp:223</a></div></div>
+<div class="ttc" id="aclassVDomDocument_html_a14e129a4d0d66b87adb48c38e46c0f37"><div class="ttname"><a href="../../d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37">VDomDocument::GetParametrUInt</a></div><div class="ttdeci">static quint32 GetParametrUInt(const QDomElement &amp;domElement, const QString &amp;name, const QString &amp;defValue)</div><div class="ttdoc">Returns the long long value of the given attribute. RENAME: GetParameterLongLong?</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d49/vdomdocument_8cpp_source.html#l00355">vdomdocument.cpp:355</a></div></div>
 <div class="ttc" id="aclassVEllipticalArc_html"><div class="ttname"><a href="../../d0/d14/classVEllipticalArc.html">VEllipticalArc</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/ddf/vellipticalarc_8h_source.html#l00047">vellipticalarc.h:48</a></div></div>
 <div class="ttc" id="aclassVExceptionBadId_html"><div class="ttname"><a href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a></div><div class="ttdoc">The VExceptionBadId class for exception bad id.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d13/vexceptionbadid_8h_source.html#l00065">vexceptionbadid.h:66</a></div></div>
 <div class="ttc" id="aclassVPattern_html"><div class="ttname"><a href="../../d4/d43/classVPattern.html">VPattern</a></div><div class="ttdoc">The VPattern class working with pattern file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d38/vpattern_8h_source.html#l00067">vpattern.h:68</a></div></div>

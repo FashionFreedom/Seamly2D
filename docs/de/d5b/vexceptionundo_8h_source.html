@@ -98,47 +98,47 @@ $(document).ready(function(){initNavTree('de/d5b/vexceptionundo_8h_source.html',
 </div><!--header-->
 <div class="contents">
 <a href="../../de/d5b/vexceptionundo_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   https://github.com/fashionfreedom/seamly2d                             *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ***************************************************************************</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **************************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ************************************************************************</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   vexceptionundo.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **  along with Seamly2D. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **************************************************************************/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/************************************************************************</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **  @file   vexceptionundo.h</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **  @date   23 6, 2014</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **  @brief</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentina project, a pattern making</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013-2015 Seamly2D project</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2014 Valentina project</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Valentina is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Valentina is distributed in the hope that it will be useful,</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
@@ -161,16 +161,17 @@ $(document).ready(function(){initNavTree('de/d5b/vexceptionundo_8h_source.html',
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;{</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="../../dc/d27/classVExceptionUndo.html#ae2ae4218cecfcf50d9a421594ef58376">VExceptionUndo</a>(<span class="keyword">const</span> QString &amp;<a class="code" href="../../de/d09/classVException.html#aa10bcb182661c7c4ae16f263bdbd6b2a">what</a>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../dc/d27/classVExceptionUndo.html#ae2ae4218cecfcf50d9a421594ef58376">VExceptionUndo</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d27/classVExceptionUndo.html">VExceptionUndo</a> &amp;e);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../dc/d27/classVExceptionUndo.html#ae2ae4218cecfcf50d9a421594ef58376">VExceptionUndo</a>(<span class="keyword">const</span> <a class="code" href="../../dc/d27/classVExceptionUndo.html">VExceptionUndo</a> &amp;<a class="code" href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">error</a>);</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../dc/d27/classVExceptionUndo.html#aae15359d553af77b981a02c0ef7dad97">   66</a></span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../dc/d27/classVExceptionUndo.html#aae15359d553af77b981a02c0ef7dad97">~VExceptionUndo</a>() <a class="code" href="../../d3/da5/ifcdef_8h.html#adea14202510b5e3d26a56d871e131223">V_NOEXCEPT_EXPR</a> (true) Q_DECL_EQ_DEFAULT;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// VEXCEPTIONUNDO_H</span></div>
 <div class="ttc" id="aclassVExceptionUndo_html"><div class="ttname"><a href="../../dc/d27/classVExceptionUndo.html">VExceptionUndo</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d5b/vexceptionundo_8h_source.html#l00061">vexceptionundo.h:62</a></div></div>
 <div class="ttc" id="aclassVExceptionUndo_html_aae15359d553af77b981a02c0ef7dad97"><div class="ttname"><a href="../../dc/d27/classVExceptionUndo.html#aae15359d553af77b981a02c0ef7dad97">VExceptionUndo::~VExceptionUndo</a></div><div class="ttdeci">virtual ~VExceptionUndo() Q_DECL_EQ_DEFAULT</div></div>
-<div class="ttc" id="aclassVExceptionUndo_html_ae2ae4218cecfcf50d9a421594ef58376"><div class="ttname"><a href="../../dc/d27/classVExceptionUndo.html#ae2ae4218cecfcf50d9a421594ef58376">VExceptionUndo::VExceptionUndo</a></div><div class="ttdeci">VExceptionUndo(const QString &amp;what)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d24/vexceptionundo_8cpp_source.html#l00057">vexceptionundo.cpp:57</a></div></div>
+<div class="ttc" id="aclassVExceptionUndo_html_ae2ae4218cecfcf50d9a421594ef58376"><div class="ttname"><a href="../../dc/d27/classVExceptionUndo.html#ae2ae4218cecfcf50d9a421594ef58376">VExceptionUndo::VExceptionUndo</a></div><div class="ttdeci">VExceptionUndo(const QString &amp;what)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d24/vexceptionundo_8cpp_source.html#l00058">vexceptionundo.cpp:58</a></div></div>
 <div class="ttc" id="aclassVException_html"><div class="ttname"><a href="../../de/d09/classVException.html">VException</a></div><div class="ttdoc">The VException class parent for all exception. Could be use for abstract exception.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d44/vexception_8h_source.html#l00065">vexception.h:66</a></div></div>
-<div class="ttc" id="aclassVException_html_aa10bcb182661c7c4ae16f263bdbd6b2a"><div class="ttname"><a href="../../de/d09/classVException.html#aa10bcb182661c7c4ae16f263bdbd6b2a">VException::what</a></div><div class="ttdeci">virtual const char * what() const Q_DECL_OVERRIDE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d9d/vexception_8cpp_source.html#l00161">vexception.cpp:161</a></div></div>
+<div class="ttc" id="aclassVException_html_a6a2a1fb4627830eecbec7ad04642095d"><div class="ttname"><a href="../../de/d09/classVException.html#a6a2a1fb4627830eecbec7ad04642095d">VException::error</a></div><div class="ttdeci">QString error</div><div class="ttdoc">error string with error</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d44/vexception_8h_source.html#l00088">vexception.h:88</a></div></div>
+<div class="ttc" id="aclassVException_html_aa10bcb182661c7c4ae16f263bdbd6b2a"><div class="ttname"><a href="../../de/d09/classVException.html#aa10bcb182661c7c4ae16f263bdbd6b2a">VException::what</a></div><div class="ttdeci">virtual const char * what() const Q_DECL_OVERRIDE</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d9d/vexception_8cpp_source.html#l00163">vexception.cpp:163</a></div></div>
 <div class="ttc" id="aifcdef_8h_html_adea14202510b5e3d26a56d871e131223"><div class="ttname"><a href="../../d3/da5/ifcdef_8h.html#adea14202510b5e3d26a56d871e131223">V_NOEXCEPT_EXPR</a></div><div class="ttdeci">#define V_NOEXCEPT_EXPR(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/da5/ifcdef_8h_source.html#l00091">ifcdef.h:91</a></div></div>
 <div class="ttc" id="avexception_8h_html"><div class="ttname"><a href="../../d1/d44/vexception_8h.html">vexception.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -98,47 +98,47 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 </div><!--header-->
 <div class="contents">
 <a href="../../db/dd7/dialogvariables_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/***************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *   Copyright (C) 2017  Seamly, LLC                                       *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *   https://github.com/fashionfreedom/seamly2d                            *</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *                                                                         *</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> ***************************************************************************</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **  along with Seamly2D.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **************************************************************************</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> ************************************************************************</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> **  @file   dialogvariables.cpp</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> **  @author Douglas S Caskey</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> **  @date   17 Sep, 2023</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> **  @copyright</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> **  Copyright (C) 2017 - 2023 Seamly, LLC</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> **  https://github.com/fashionfreedom/seamly2d</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> **  @brief</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> **</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> **  You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> **  along with Seamly2D. If not, see &lt;http://www.gnu.org/licenses/&gt;.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> **************************************************************************/</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/************************************************************************</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> **  @file   dialogvariables.cpp</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> **  @author Roman Telezhynskyi &lt;dismine(at)gmail.com&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> **  @date   November 15, 2013</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> **</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> **  @brief</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> **  @copyright</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentine project, a pattern making</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> **  This source code is part of the Valentina project, a pattern making</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> **  program, whose allow create and modeling patterns of clothing.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013-2015 Seamly2D project</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://github.com/fashionfreedom/seamly2d&gt; All Rights Reserved.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> **  Copyright (C) 2013 Valentina project</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> **  &lt;https://bitbucket.org/dismine/valentina&gt; All Rights Reserved.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Seamly2D is free software: you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment"> **  Valentina is free software: you can redistribute it and/or modify</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"> **  it under the terms of the GNU General Public License as published by</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"> **  the Free Software Foundation, either version 3 of the License, or</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment"> **  (at your option) any later version.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment"> **</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Seamly2D is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"> **  Valentina is distributed in the hope that it will be useful,</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"> **  but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"> **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment"> **  GNU General Public License for more details.</span></div>
@@ -315,9 +315,9 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            formula = <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;FormulaToUser(variable-&gt;GetFormula(), <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator());</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;        }</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;e)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;error)</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;        {</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            Q_UNUSED(e)</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;            Q_UNUSED(error)</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            formula = variable-&gt;GetFormula();</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        }</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
@@ -518,10 +518,10 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            label-&gt;setToolTip(tr(<span class="stringliteral">&quot;Value&quot;</span>));</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        }</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;e)</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;error)</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        {</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            label-&gt;setText(tr(<span class="stringliteral">&quot;Error&quot;</span>) + <span class="stringliteral">&quot; (&quot;</span> + postfix + <span class="stringliteral">&quot;). &quot;</span> + tr(<span class="stringliteral">&quot;Parser error: %1&quot;</span>).arg(e.<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html#aae24164b49751b5cba36eba7f9935406">GetMsg</a>()));</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            label-&gt;setToolTip(tr(<span class="stringliteral">&quot;Parser error: %1&quot;</span>).arg(e.<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html#aae24164b49751b5cba36eba7f9935406">GetMsg</a>()));</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;            label-&gt;setText(tr(<span class="stringliteral">&quot;Error&quot;</span>) + <span class="stringliteral">&quot; (&quot;</span> + postfix + <span class="stringliteral">&quot;). &quot;</span> + tr(<span class="stringliteral">&quot;Parser error: %1&quot;</span>).arg(error.<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html#aae24164b49751b5cba36eba7f9935406">GetMsg</a>()));</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            label-&gt;setToolTip(tr(<span class="stringliteral">&quot;Parser error: %1&quot;</span>).arg(error.<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html#aae24164b49751b5cba36eba7f9935406">GetMsg</a>()));</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        }</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    }</div>
@@ -915,9 +915,9 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 <div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;        <span class="keyword">const</span> QString formula = <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;FormulaFromUser(text, <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator());</div>
 <div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <a class="code" href="../../da/dd0/classDialogVariables.html#a3a31a3aa66f65d99ce8bfae8a6330156">doc</a>-&gt;<a class="code" href="../../d4/d43/classVPattern.html#a8fd1a3171ae14a2e2c08727f03b21742">SetIncrementFormula</a>(name-&gt;text(), formula);</div>
 <div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;    }</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;e) <span class="comment">// Just in case something bad will happen</span></div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;error) <span class="comment">// Just in case something bad will happen</span></div>
 <div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;    {</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        Q_UNUSED(e)</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;        Q_UNUSED(error)</div>
 <div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    }</div>
 <div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160; </div>
@@ -1075,9 +1075,9 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 <div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;        {</div>
 <div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;            variable = <a class="code" href="../../da/dd0/classDialogVariables.html#aa975d4c8d9d8a5079f0b0aaba6f19fd1">data</a>-&gt;<a class="code" href="../../d2/d83/classVContainer.html#acb7eb6721eb6fcd66ddd67a389a6bbbf">GetVariable</a>&lt;<a class="code" href="../../dd/d0c/classVIncrement.html">VIncrement</a>&gt;(name-&gt;text());</div>
 <div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;        }</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;e)</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;        <span class="keywordflow">catch</span>(<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
 <div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;        {</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            Q_UNUSED(e)</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            Q_UNUSED(error)</div>
 <div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;            <a class="code" href="../../da/dd0/classDialogVariables.html#a3b49fb481e81aa7fe83d7a9f2d91006b">enablePieces</a>(<span class="keyword">false</span>);</div>
 <div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;        }</div>
@@ -1098,9 +1098,9 @@ $(document).ready(function(){initNavTree('db/dd7/dialogvariables_8cpp_source.htm
 <div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;        {</div>
 <div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;            formula = <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;FormulaToUser(variable-&gt;GetFormula(), <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator());</div>
 <div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;        }</div>
-<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;e)</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;        <span class="keywordflow">catch</span> (<a class="code" href="../../df/ddc/classqmu_1_1QmuParserError.html">qmu::QmuParserError</a> &amp;error)</div>
 <div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;        {</div>
-<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            Q_UNUSED(e)</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;            Q_UNUSED(error)</div>
 <div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;            formula = variable-&gt;GetFormula();</div>
 <div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;        }</div>
 <div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160; </div>
