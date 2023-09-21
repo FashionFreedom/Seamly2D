@@ -106,6 +106,6 @@ bool VAbstractFloatItemData::IsVisible() const
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractFloatItemData::SetVisible(bool bVisible)
 {
-    qDebug()<<"SetVisible Selected = "<< bVisible;
+    qDebug() << "SetVisible Selected = "<< bVisible;
     d->m_bVisible = bVisible;
 }

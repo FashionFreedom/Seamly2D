@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   mainwindowsnogui.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 31, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -449,7 +449,7 @@ void MainWindowsNoGUI::ExportApparelLayout(const ExportLayoutDialog &dialog, con
             AAMADxfFile(name, DRW::AC1027, dialog.isBinaryDXFFormat(), size, pieces);
             break;
         default:
-            qDebug() << "Can't recognize file type." << Q_FUNC_INFO;
+            qWarning() << "Can't recognize file type." << Q_FUNC_INFO;
             break;
     }
 
@@ -680,7 +680,7 @@ void MainWindowsNoGUI::PrintPreviewOrigin()
 {
     if (not isPagesUniform())
     {
-        qCritical()<<tr("For previewing multipage document all sheet should have the same size.");
+        qCritical() << tr("For previewing multipage document all sheet should have the same size.");
         return;
     }
 
@@ -700,7 +700,7 @@ void MainWindowsNoGUI::PrintOrigin()
 {
     if (not isPagesUniform())
     {
-        qCritical()<<tr("For printing multipages document all sheet should have the same size.");
+        qCritical() << tr("For printing multipages document all sheet should have the same size.");
         return;
     }
 
@@ -820,7 +820,7 @@ QIcon MainWindowsNoGUI::ScenePreview(int i) const
         }
         else
         {
-            qWarning()<<"Cannot create image. Size too big";
+            qWarning() << "Cannot create image. Size too big";
         }
     }
     else
@@ -1016,7 +1016,7 @@ void MainWindowsNoGUI::exportPDF(const QString &name, QGraphicsRectItem *paper, 
     const QRectF sourceRect = paper->rect();
     const QRectF targetRect = QRectF(QPoint(0,0), QPoint(sourceRect.width(),sourceRect.height()));
     QSizeF size(FromPixel(sourceRect.width() + margins.left() + margins.right(), Unit::Mm),
-                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));    
+                FromPixel(sourceRect.height() + margins.top() + margins.bottom(), Unit::Mm));
     QPageSize pageSize(size, QPageSize::Unit::Millimeter);
     printer.setPageSize(pageSize);
 
@@ -1066,7 +1066,7 @@ void MainWindowsNoGUI::PdfTiledFile(const QString &name)
     // Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer's paper size
     if (not isTiled && not IsPagesFit(printer.pageLayout().fullRectPixels(printer.resolution()).size()))
     {
-        qWarning()<<tr("Pages will be cropped because they do not fit printer paper size.");
+        qWarning() << tr("Pages will be cropped because they do not fit printer paper size.");
     }
 
     printer.setOutputFileName(name);
@@ -1711,7 +1711,7 @@ void MainWindowsNoGUI::ExportScene(const ExportLayoutDialog &dialog, const QList
                     paper->setVisible(true);
                     break;
                 default:
-                    qDebug() << "Can't recognize file type." << Q_FUNC_INFO;
+                    qWarning() << "Can't recognize file type." << Q_FUNC_INFO;
                     break;
             }
             paper->setPen(QPen(Qt::black, 1));

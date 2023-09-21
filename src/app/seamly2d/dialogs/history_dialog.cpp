@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   historyDialog.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 11, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2015 - 2023 Seamly, LLC
@@ -278,7 +278,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
+        qWarning() << "Can't find element by id" << Q_FUNC_INFO;
         return rowData;
     }
     try
@@ -605,12 +605,12 @@ RowData HistoryDialog::record(const VToolRecord &tool)
         }
         return rowData;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
-        qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
+        qWarning() << error.ErrorMessage() << Q_FUNC_INFO;
         return rowData;
     }
-    qDebug()<<"Can't create history record for the tool.";
+    qWarning() << "Can't create history record for the tool.";
     return rowData;
 }
 

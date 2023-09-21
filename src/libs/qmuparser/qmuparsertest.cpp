@@ -1,3 +1,27 @@
+/***************************************************************************
+ **  @file   qmuparsertest.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
 /***************************************************************************************************
  **
  **  Copyright (C) 2013 Ingo Berg
@@ -54,7 +78,8 @@ int QmuParserTester::c_iCount = 0;
 
 //---------------------------------------------------------------------------------------------------------------------
 QmuParserTester::QmuParserTester(QObject *parent)
-    : QObject(parent), m_vTestFun()
+    : QObject(parent)
+    , m_vTestFun()
 {
     AddTest ( &QmuParserTester::TestNames );
     AddTest ( &QmuParserTester::TestSyntax );
@@ -1127,16 +1152,16 @@ void QmuParserTester::Run()
             iStat += ( this->*m_vTestFun[i] ) ();
         }
     }
-    catch ( QmuParserError &e )
+    catch ( QmuParserError &error)
     {
-        qWarning() << "\n" << e.GetMsg();
-        qWarning() << e.GetToken();
+        qWarning() << "\n" << error.GetMsg();
+        qWarning() << error.GetToken();
         Abort();
         return;
     }
-    catch ( std::exception &e )
+    catch ( std::exception &error)
     {
-        qWarning() << e.what();
+        qWarning() << error.what();
         Abort();
         return;
     }
@@ -1188,16 +1213,16 @@ int QmuParserTester::ThrowTest ( const QString &a_str, int a_iErrc, bool a_bFail
         p.SetExpr ( a_str );
         p.Eval();
     }
-    catch ( const qmu::QmuParserError &e )
+    catch ( const qmu::QmuParserError &error)
     {
         // output the formula in case of an failed test
-        if ( a_bFail == false || ( a_bFail == true && a_iErrc != e.GetCode() ) )
+        if ( a_bFail == false || ( a_bFail == true && a_iErrc != error.GetCode() ) )
         {
-            qWarning() << "\n  " << "Expression: " << a_str << "  Code:" << e.GetCode() << "(" << e.GetMsg() << ")"
+            qWarning() << "\n  " << "Expression: " << a_str << "  Code:" << error.GetCode() << "(" << error.GetMsg() << ")"
                      << "  Expected:" << a_iErrc;
         }
 
-        return ( a_iErrc == e.GetCode() ) ? 0 : 1;
+        return ( a_iErrc == error.GetCode() ) ? 0 : 1;
     }
 
     // if a_bFail==false no exception is expected
@@ -1250,14 +1275,14 @@ int QmuParserTester::EqnTestWithVarChange (const QString &a_str, double a_fRes1,
             throw std::runtime_error ( "incorrect result (second pass)" );
         }
     }
-    catch ( QmuParserError &e )
+    catch ( QmuParserError &error)
     {
-        qWarning() << "\n  fail: " << a_str << " (" << e.GetMsg() << ")";
+        qWarning() << "\n  fail: " << a_str << " (" << error.GetMsg() << ")";
         return 1;
     }
-    catch ( std::exception &e )
+    catch ( std::exception &error)
     {
-        qWarning() << "\n  fail: " << a_str << " (" << e.what() << ")";
+        qWarning() << "\n  fail: " << a_str << " (" << error.what() << ")";
         return 1;  // always return a failure since this exception is not expected
     }
     catch ( ... )
@@ -1395,9 +1420,9 @@ int QmuParserTester::EqnTest ( const QString &a_str, double a_fRes, bool a_fPass
             qreal *v = p2.Eval ( nNum );
             fVal[4] = v[nNum - 1];
         }
-        catch ( std::exception &e )
+        catch ( std::exception &error)
         {
-            qWarning() << "\n  " << e.what() << "\n";
+            qWarning() << "\n  " << error.what() << "\n";
         }
 
         // limited floating point accuracy requires the following test
@@ -1433,7 +1458,7 @@ QT_WARNING_POP
                      << fVal[4] << ").";
         }
     }
-    catch ( QmuParserError &e )
+    catch ( QmuParserError &error)
     {
         if ( a_fPass )
         {
@@ -1445,14 +1470,14 @@ QT_WARNING_POP
             }
             else
             {
-                qWarning() << "\n  fail: " << a_str << " (" << e.GetMsg() << ")";
+                qWarning() << "\n  fail: " << a_str << " (" << error.GetMsg() << ")";
             }
             return 1;
         }
     }
-    catch ( std::exception &e )
+    catch ( std::exception &error)
     {
-        qWarning() << "\n  fail: " << a_str << " (" << e.what() << ")";
+        qWarning() << "\n  fail: " << a_str << " (" << error.what() << ")";
         return 1;  // always return a failure since this exception is not expected
     }
     catch ( ... )
@@ -1504,11 +1529,11 @@ int QmuParserTester::EqnTestBulk(const QString &a_str, double a_fRes[4], bool a_
                        << "," << vResults[1] << "," << vResults[2] << "," << vResults[3] << "}";
         }
     }
-    catch (QmuParserError &e)
+    catch (QmuParserError &error)
     {
         if (a_fPass)
         {
-            qWarning() << "\n  fail: " << e.GetExpr() << " : " << e.GetMsg();
+            qWarning() << "\n  fail: " << error.GetExpr() << " : " << error.GetMsg();
             iRet = 1;
         }
     }

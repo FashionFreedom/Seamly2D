@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   anchorpoint_tool.cpp
  **  @author Douglas S Caskey
- **  @date   Jan 3, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -87,9 +87,9 @@ AnchorPointTool *AnchorPointTool::Create(quint32 _id, quint32 pointId, quint32 p
         {
             point = data->GeometricObject<VPointF>(pointId);
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         { // Possible case. Parent was deleted, but the node object is still here.
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             data->UpdateId(id);
             return nullptr;// Just ignore
         }
