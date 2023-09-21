@@ -100,9 +100,9 @@ void TST_VTranslateVars::TestFormulaFromUser()
     {
         result = m_trMs->FormulaFromUser(input, true);
     }
-    catch (qmu::QmuParserError &e)// In case something bad will happen
+    catch (qmu::QmuParserError &error)// In case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         result = input;
     }
 
@@ -139,9 +139,9 @@ void TST_VTranslateVars::TestFormulaToUser()
     {
         result = m_trMs->FormulaToUser(input, true);
     }
-    catch (qmu::QmuParserError &e)// In case something bad will happen
+    catch (qmu::QmuParserError &error)// In case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         result = input;
     }
 

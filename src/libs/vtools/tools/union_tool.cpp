@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   union_tool.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -32,7 +32,7 @@
  **  @copyright
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
+ **  Copyright (C) 2013-2013 Valentina project
  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
@@ -654,7 +654,7 @@ void AddNodeToNewPath(const UnionToolInitData &initData, VPiecePath &newPath, VP
             id = AddNodeSplinePath(node, initData, idTool, children, blockName, dx, dy, pRotate, angle);
             break;
         default:
-            qDebug()<<"May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
+            qWarning() << "May be wrong tool type!!! Ignoring." << Q_FUNC_INFO;
             break;
     }
 
@@ -1004,7 +1004,7 @@ void UpdatePathNode(VContainer *data, const VPieceNode &node, QVector<quint32> &
             UpdateNodeSplinePath(data, node, children, dx, dy, pRotate, angle);
             break;
         default:
-            qDebug()<<"May be wrong tool type!!! Ignoring."<<Q_FUNC_INFO;
+            qWarning() << "May be wrong tool type!!! Ignoring." << Q_FUNC_INFO;
             break;
     }
 }

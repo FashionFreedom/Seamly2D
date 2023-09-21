@@ -1,3 +1,26 @@
+/***************************************************************************
+ **  @file   qmuparserbase.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 /***************************************************************************************************
  **
  **  Copyright (C) 2013 Ingo Berg
@@ -53,9 +76,9 @@ bool QmuParserBase::g_DbgDumpStack = false;
  * When defining custom binary operators with #AddOprt(...) make sure not to choose
  * names conflicting with these definitions.
  */
-const QStringList QmuParserBase::c_DefaultOprt = QStringList()<< "<=" << ">=" << "!=" << "==" << "<"  << ">"  << "+"
-                                                              << "-"  << "*"  << "/"  << "^"  << "&&" << "||" << "="
-                                                              << "("  << ")"  << "?"  << ":";
+const QStringList QmuParserBase::c_DefaultOprt = QStringList() << "<=" << ">=" << "!=" << "==" << "<"  << ">"  << "+"
+                                                               << "-"  << "*"  << "/"  << "^"  << "&&" << "||" << "="
+                                                               << "("  << ")"  << "?"  << ":";
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -707,9 +730,9 @@ const varmap_type& QmuParserBase::GetUsedVar() const
         m_pParseFormula = &QmuParserBase::ParseString;
         m_pTokenReader->IgnoreUndefVar(false);
     }
-    catch (const QmuParserError &e)
+    catch (const QmuParserError &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         // Make sure to stay in string parse mode, dont call ReInit()
         // because it deletes the array with the used variables
         m_pParseFormula = &QmuParserBase::ParseString;
@@ -925,7 +948,7 @@ void QmuParserBase::ApplyBinOprt(QStack<token_type> &a_stOpt, QStack<token_type>
         {
             Error(ecUNEXPECTED_OPERATOR);
         }
-        
+
         token_type valTok1 = a_stVal.pop(),
                    valTok2 = a_stVal.pop(),
                    optTok  = a_stOpt.pop(),
@@ -1817,82 +1840,82 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
     QStack<token_type> stOprt(a_stOprt),
                        stVal(a_stVal);
 
-    qDebug() << "\nValue stack:\n";
+    qWarning() << "\nValue stack:\n";
     while ( stVal.empty() == false )
     {
         token_type val = stVal.pop();
         if (val.GetType()==tpSTR)
         {
-            qDebug() << " \"" << val.GetAsString() << "\" ";
+            qWarning() << " \"" << val.GetAsString() << "\" ";
         }
         else
         {
-            qDebug() << " " << val.GetVal() << " ";
+            qWarning() << " " << val.GetVal() << " ";
         }
     }
-    qDebug() << "\nOperator stack:\n";
+    qWarning() << "\nOperator stack:\n";
 
     while ( stOprt.empty() == false )
     {
         const token_type &topToken = stOprt.top();
         if (topToken.GetCode()<=cmASSIGN)
         {
-            qDebug() << "OPRT_INTRNL \"" << QmuParserBase::c_DefaultOprt[topToken.GetCode()] << "\" \n";
+            qWarning() << "OPRT_INTRNL \"" << QmuParserBase::c_DefaultOprt[topToken.GetCode()] << "\" \n";
         }
         else
         {
             switch ( topToken.GetCode())
             {
                 case cmVAR:
-                    qDebug() << "VAR\n";
+                    qWarning() << "VAR\n";
                     break;
                 case cmVAL:
-                    qDebug() << "VAL\n";
+                    qWarning() << "VAL\n";
                     break;
                 case cmFUNC:
-                    qDebug() << "FUNC \"" << topToken.GetAsString() << "\"\n";
+                    qWarning() << "FUNC \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmFUNC_BULK:
-                    qDebug() << "FUNC_BULK \"" << topToken.GetAsString() << "\"\n";
+                    qWarning() << "FUNC_BULK \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmOPRT_INFIX:
-                    qDebug() << "OPRT_INFIX \"" << topToken.GetAsString() << "\"\n";
+                    qWarning() << "OPRT_INFIX \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmOPRT_BIN:
-                    qDebug() << "OPRT_BIN \"" << topToken.GetAsString() << "\"\n";
+                    qWarning() << "OPRT_BIN \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmFUNC_STR:
-                    qDebug() << "FUNC_STR\n";
+                    qWarning() << "FUNC_STR\n";
                     break;
                 case cmEND:
-                    qDebug() << "END\n";
+                    qWarning() << "END\n";
                     break;
                 case cmUNKNOWN:
-                    qDebug() << "UNKNOWN\n";
+                    qWarning() << "UNKNOWN\n";
                     break;
                 case cmBO:
-                    qDebug() << "BRACKET \"(\"\n";
+                    qWarning() << "BRACKET \"(\"\n";
                     break;
                 case cmBC:
-                    qDebug() << "BRACKET \")\"\n";
+                    qWarning() << "BRACKET \")\"\n";
                     break;
                 case cmIF:
-                    qDebug() << "IF\n";
+                    qWarning() << "IF\n";
                     break;
                 case cmELSE:
-                    qDebug() << "ELSE\n";
+                    qWarning() << "ELSE\n";
                     break;
                 case cmENDIF:
-                    qDebug() << "ENDIF\n";
+                    qWarning() << "ENDIF\n";
                     break;
                 default:
-                    qDebug() << topToken.GetCode() << " ";
+                    qWarning() << topToken.GetCode() << " ";
                     break;
             }
         }
         stOprt.pop();
     }
-    qDebug() << Qt::dec;
+    qWarning() << Qt::dec;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

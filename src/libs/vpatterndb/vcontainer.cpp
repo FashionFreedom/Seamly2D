@@ -1,10 +1,10 @@
 /***************************************************************************
  **  @file   vcontainer.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -255,7 +255,7 @@ quint32 VContainer::getNextId()
     //But for now better to keep it as it is now.
     if (_id == UINT_MAX)
     {
-        qCritical()<<(tr("Number of free id exhausted."));
+        qCritical() << (tr("Number of free id exhausted."));
     }
     _id++;
     return _id;

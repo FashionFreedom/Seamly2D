@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   tmainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   13 May, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -343,10 +343,10 @@ bool TMainWindow::LoadFile(const QString &path)
 
 			MeasurementGUI();
 		}
-		catch (VException &e)
+		catch (VException &error)
 		{
 			qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-					   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+					   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 			ui->labelToolTip->setVisible(true);
 			ui->tabWidget->setVisible(false);
 			delete individualMeasurements;
@@ -1427,11 +1427,11 @@ void TMainWindow::Fx()
 	   // Translate to internal look.
 	   meash = data->GetVariable<VMeasurement>(nameField->data(Qt::UserRole).toString());
 	}
-	catch(const VExceptionBadId & e)
+    catch(const VExceptionBadId &error)
 	{
 		qCCritical(tMainWindow, "%s\n\n%s\n\n%s",
 				   qUtf8Printable(tr("Can't find measurement '%1'.").arg(nameField->text())),
-				   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+				   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 		return;
 	}
 
@@ -1579,10 +1579,10 @@ void TMainWindow::ImportFromPattern()
 		doc->setXMLContent(converter.Convert());
 		measurements = doc->ListMeasurements();
 	}
-	catch (VException &e)
+	catch (VException &error)
 	{
 		qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-				   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+				   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 		return;
 	}
 
@@ -1660,9 +1660,9 @@ void TMainWindow::ShowNewMData(bool fresh)
 			// Translate to internal look.
 			meash = data->GetVariable<VMeasurement>(nameField->data(Qt::UserRole).toString());
 		}
-		catch(const VExceptionBadId &e)
+		catch(const VExceptionBadId &error)
 		{
-			Q_UNUSED(e)
+			Q_UNUSED(error)
 			MFields(false);
 			return;
 		}
@@ -1723,9 +1723,9 @@ void TMainWindow::ShowNewMData(bool fresh)
 			{
 				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
 			}
-			catch (qmu::QmuParserError &e)
+			catch (qmu::QmuParserError &error)
 			{
-				Q_UNUSED(e)
+				Q_UNUSED(error)
 				formula = meash->GetFormula();
 			}
 
@@ -1823,11 +1823,11 @@ void TMainWindow::SaveMName(const QString &text)
 		// Translate to internal look.
 		meash = data->GetVariable<VMeasurement>(nameField->data(Qt::UserRole).toString());
 	}
-	catch(const VExceptionBadId &e)
+	catch(const VExceptionBadId &error)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
 				  qUtf8Printable(tr("Can't find measurement '%1'.").arg(nameField->text())),
-				  qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+				  qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 		return;
 	}
 
@@ -1902,15 +1902,15 @@ void TMainWindow::SaveMValue()
 		// Translate to internal look.
 		meash = data->GetVariable<VMeasurement>(nameField->data(Qt::UserRole).toString());
 	}
-	catch(const VExceptionBadId & e)
+    catch(const VExceptionBadId &error)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
 				  qUtf8Printable(tr("Can't find measurement '%1'.").arg(nameField->text())),
-				  qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+				  qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 		return;
 	}
 
-	if (not EvalFormula(text, true, meash->GetData(), ui->labelCalculatedValue))
+    if (!EvalFormula(text, true, meash->GetData(), ui->labelCalculatedValue))
 	{
 		return;
 	}
@@ -1920,9 +1920,9 @@ void TMainWindow::SaveMValue()
 		const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
 		individualMeasurements->SetMValue(nameField->data(Qt::UserRole).toString(), formula);
 	}
-	catch (qmu::QmuParserError &e) // Just in case something bad will happen
+	catch (qmu::QmuParserError &error) // Just in case something bad will happen
 	{
-		Q_UNUSED(e)
+		Q_UNUSED(error)
 		return;
 	}
 
@@ -2061,11 +2061,11 @@ void TMainWindow::SaveMFullName()
 		// Translate to internal look.
 		meash = data->GetVariable<VMeasurement>(nameField->data(Qt::UserRole).toString());
 	}
-	catch(const VExceptionBadId &e)
+	catch(const VExceptionBadId &error)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
 				  qUtf8Printable(tr("Can't find measurement '%1'.").arg(nameField->text())),
-				  qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+				  qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 		return;
 	}
 
@@ -2647,9 +2647,9 @@ void TMainWindow::RefreshTable(bool freshCall)
 			{
 				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
 			}
-			catch (qmu::QmuParserError &e)
+			catch (qmu::QmuParserError &error)
 			{
-				Q_UNUSED(e)
+				Q_UNUSED(error)
 				formula = meash->GetFormula();
 			}
 
@@ -2904,10 +2904,10 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 			label->setToolTip(tr("Value"));
 			return true;
 		}
-		catch (qmu::QmuParserError &e)
+		catch (qmu::QmuParserError &error)
 		{
-			label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(e.GetMsg()));
-			label->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+			label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(error.GetMsg()));
+			label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
 			return false;
 		}
 	}
@@ -3112,10 +3112,10 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 			UpdatePadlock(mIsReadOnly);
 			MeasurementGUI();
 		}
-		catch (VException &e)
+		catch (VException &error)
 		{
 			qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-					   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+					   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
 			ui->labelToolTip->setVisible(true);
 			ui->tabWidget->setVisible(false);
 			delete individualMeasurements;
@@ -3237,8 +3237,8 @@ bool TMainWindow::IgnoreLocking(int error, const QString &path)
 
 	if (answer == QMessageBox::Abort)
 	{
-		qCDebug(tMainWindow, "Failed to lock %s", qUtf8Printable(path));
-		qCDebug(tMainWindow, "Error type: %d", error);
+		qCWarning(tMainWindow, "Failed to lock %s", qUtf8Printable(path));
+		qCWarning(tMainWindow, "Error type: %d", error);
 		if (qApp->IsTestMode())
 		{
 			switch(error)

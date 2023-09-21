@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   insert_nodes_dialog.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 202
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -174,7 +174,7 @@ void InsertNodesDialog::SelectedObject(bool selected, quint32 objId, quint32 too
             }
             catch (const VExceptionBadId &)
             {
-                qDebug() << "Cannot find an object with id" << objId;
+                qWarning() << "Cannot find an object with id" << objId;
                 return;
             }
             m_beep->play();
@@ -250,7 +250,7 @@ void InsertNodesDialog::SelectedObject(bool selected, quint32 objId, quint32 too
                     break;
                 case GOType::Unknown:
                 default:
-                    qDebug() << "Ignore unknown object type.";
+                    qWarning() << "Ignore unknown object type.";
                     return;
             }
 

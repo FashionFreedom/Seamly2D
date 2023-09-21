@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   vtoolellipticalarc.cpp
  **  @author Douglas S Caskey
- **  @date   21 Mar, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -409,9 +409,9 @@ void VToolEllipticalArc::showContextMenu(QGraphicsSceneContextMenuEvent *event, 
     {
         ContextMenu<DialogEllipticalArc>(event);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

@@ -1,10 +1,10 @@
 /***************************************************************************
- **  @file   vtoolsinglepoint.cpp
+ **  @file   vtoolbasepoint.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 27, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
  **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
@@ -23,8 +23,7 @@
  **************************************************************************/
 
 /************************************************************************
- **
- **  @file   vtoolsinglepoint.cpp
+ **  @file   vtoolbasepoint.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
@@ -32,7 +31,7 @@
  **  @copyright
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Valentina project
+ **  Copyright (C) 2013 Valentina project
  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
@@ -46,7 +45,7 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -433,10 +432,10 @@ void VToolBasePoint::showContextMenu(QGraphicsSceneContextMenuEvent *event, quin
             ContextMenu<DialogSinglePoint>(event, id, RemoveOption::Disable);
         }
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
         qCDebug(vTool, "Tool was deleted. Leave method immediately.");
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
     qCDebug(vTool, "Context menu was closed. Tool was not deleted.");

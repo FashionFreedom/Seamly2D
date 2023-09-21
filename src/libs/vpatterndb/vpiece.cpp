@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   vpiece.cpp
  **  @author Douglas S Caskey
- **  @date   Jan 3, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -263,7 +263,7 @@ QVector<QPointF> VPiece::SeamAllowancePoints(const VContainer *data) const
             }
             break;
             default:
-                qDebug()<<"Get wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
+                qWarning() << "Get wrong tool type. Ignore."<< static_cast<char>(node.GetTypeTool());
                 break;
         }
     }
@@ -1035,7 +1035,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
             // After notch
             QLineF line(notchSAPoint, previousSAPoint);
             line.setAngle(line.angle() - 180.0);
-            line.setLength(40000.0); 
+            line.setLength(40000.0);
 
             QVector<QPointF> intersections = VAbstractCurve::CurveIntersectLine(seamPoints, line);
             intersections.removeOne(notchSAPoint);
@@ -1047,7 +1047,7 @@ QVector<QLineF> VPiece::createSeamAllowanceNotch(const QVector<VPieceNode> &path
                 notches += createNotches(notchData, pathPoints);
             }
         }
-        
+
 
         {
             // Before notch

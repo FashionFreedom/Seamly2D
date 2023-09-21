@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   mainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   29 Mar, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -299,7 +299,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 {
     if (doc->appendDraftBlock(blockName) == false)
     {
-        qCDebug(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
+        qCWarning(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
         return;
     }
 
@@ -480,10 +480,10 @@ QSharedPointer<VMeasurements> MainWindow::OpenMeasurementFile(const QString &pat
             }
         }
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         measurements->clear();
         if (!VApplication::IsGUIMode())
         {
@@ -506,7 +506,7 @@ bool MainWindow::LoadMeasurements(const QString &path)
 
     if (qApp->patternUnit() == Unit::Inch && measurements->Type() == MeasurementsType::Multisize)
     {
-        qWarning()<<tr("Gradation doesn't support inches");
+        qWarning() << tr("Gradation doesn't support inches");
         return false;
     }
 
@@ -517,10 +517,10 @@ bool MainWindow::LoadMeasurements(const QString &path)
         pattern->ClearVariables(VarType::Measurement);
         measurements->ReadMeasurements();
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -530,6 +530,8 @@ bool MainWindow::LoadMeasurements(const QString &path)
 
     if (measurements->Type() == MeasurementsType::Multisize)
     {
+        qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(path));
+
         VContainer::SetSize(UnitConvertor(measurements->BaseSize(), measurements->MUnit(),
                                           *measurements->GetData()->GetPatternUnit()));
         VContainer::SetHeight(UnitConvertor(measurements->BaseHeight(), measurements->MUnit(),
@@ -540,6 +542,8 @@ bool MainWindow::LoadMeasurements(const QString &path)
     }
     else if (measurements->Type() == MeasurementsType::Individual)
     {
+        qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(path));
+
         SetSizeHeightForIndividualM();
     }
 
@@ -571,10 +575,10 @@ bool MainWindow::UpdateMeasurements(const QString &path, int size, int height)
         pattern->ClearVariables(VarType::Measurement);
         measurements->ReadMeasurements();
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -1843,9 +1847,9 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
         {
             formula = qApp->TrVars()->FormulaToUser(incr->GetFormula(), qApp->Settings()->GetOsSeparator());
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             formula = incr->GetFormula();
         }
 
@@ -1892,6 +1896,9 @@ void MainWindow::LoadIndividual()
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
+
+            qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(mPath));
+
             ui->unloadMeasurements_Action->setEnabled(true);
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
@@ -1941,6 +1948,9 @@ void MainWindow::LoadMultisize()
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
+
+            qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(mPath));
+
             ui->unloadMeasurements_Action->setEnabled(true);
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), mPath));
             watcher->addPath(mPath);
@@ -3655,11 +3665,11 @@ void MainWindow::showLayoutMode(bool checked)
         {
             pieceList = preparePiecesForLayout(pieces);
         }
-        catch (VException &e)
+        catch (VException &error)
         {
             pieceList.clear();
             QMessageBox::warning(this, tr("Layout mode"),
-                                 tr("You can't use Layout mode yet.") + QLatin1String(" \n") + e.ErrorMessage(),
+                                 tr("You can't use Layout mode yet.") + QLatin1String(" \n") + error.ErrorMessage(),
                                  QMessageBox::Ok, QMessageBox::Ok);
             mode == Draw::Calculation ? showDraftMode(true) : showPieceMode(true);
             return;
@@ -4061,18 +4071,18 @@ void MainWindow::fullParseFile()
         setGuiEnabled(true);
         doc->Parse(Document::FullParse);
     }
-    catch (const VExceptionUndo &e)
+    catch (const VExceptionUndo &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         /* If user want undo last operation before undo we need finish broken redo operation. For those we post event
          * myself. Later in method customEvent call undo.*/
         QApplication::postEvent(this, new UndoEvent());
         return;
     }
-    catch (const VExceptionObjectError &e)
+    catch (const VExceptionObjectError &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
-                               qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                               qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4080,10 +4090,10 @@ void MainWindow::fullParseFile()
         }
         return;
     }
-    catch (const VExceptionConversionError &e)
+    catch (const VExceptionConversionError &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
-                               qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                               qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4091,10 +4101,10 @@ void MainWindow::fullParseFile()
         }
         return;
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
-                               qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                               qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4102,10 +4112,10 @@ void MainWindow::fullParseFile()
         }
         return;
     }
-    catch (const VExceptionWrongId &e)
+    catch (const VExceptionWrongId &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
-                               qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                               qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4113,10 +4123,10 @@ void MainWindow::fullParseFile()
         }
         return;
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
-                               qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                               qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4189,10 +4199,10 @@ void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
             changeDraftBlock(0, false);
         }
     }
-    catch (VExceptionBadId &e)
+    catch (VExceptionBadId &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Bad id.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4200,10 +4210,10 @@ void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
         }
         return;
     }
-    catch (const VExceptionEmptyParameter &e)
+    catch (const VExceptionEmptyParameter &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         setGuiEnabled(false);
         if (!VApplication::IsGUIMode())
         {
@@ -4459,7 +4469,7 @@ void MainWindow::ChangedSize(int index)
         }
         else
         {
-            qCDebug(vMainWindow, "Couldn't restore size value.");
+            qCWarning(vMainWindow, "Couldn't restore size value.");
         }
     }
 }
@@ -4489,7 +4499,7 @@ void MainWindow::ChangedHeight(int index)
         }
         else
         {
-            qCDebug(vMainWindow, "Couldn't restore height value.");
+            qCWarning(vMainWindow, "Couldn't restore height value.");
         }
     }
 }
@@ -4760,7 +4770,7 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
     {
         doc->SetMPath(mPath);
         emit doc->UpdatePatternLabel();
-        qCDebug(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
+        qCWarning(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
     }
     return result;
 }
@@ -5930,7 +5940,7 @@ void MainWindow::InitAutoSave()
     {
         const qint32 autoTime = qApp->Seamly2DSettings()->getAutosaveInterval();
         autoSaveTimer->start(autoTime*60000);
-        qCDebug(vMainWindow, "Autosaving every %d minutes.", autoTime);
+        qCInfo(vMainWindow, "Autosaving every %d minutes.", autoTime);
     }
     qApp->setAutoSaveTimer(autoSaveTimer);
 }
@@ -6002,7 +6012,7 @@ MainWindow::~MainWindow()
  */
 bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasureFile)
 {
-    qCDebug(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
+    qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
 
     //We have unsaved changes or load more then one file per time
     if (OpenNewSeamly2D(fileName))
@@ -6012,7 +6022,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (fileName.isEmpty())
     {
-        qCDebug(vMainWindow, "New loaded filename is empty.");
+        qCWarning(vMainWindow, "New loaded filename is empty.");
         Clear();
         return false;
     }
@@ -6042,10 +6052,10 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             return false; // stop continue processing
         }
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         Clear();
         if (!VApplication::IsGUIMode())
         {
@@ -6059,7 +6069,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (lock->IsLocked())
     {
-        qCDebug(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
+        qCInfo(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
     }
     else
     {
@@ -6129,10 +6139,10 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             initStatusBar();
         }
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
-                   qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                   qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         qApp->setOpeningPattern();// End opening file
         Clear();
         if (!VApplication::IsGUIMode())
@@ -6150,7 +6160,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
-        qCDebug(vMainWindow, "File loaded.");
+        qCDebug(vMainWindow, "%s", helpLabel);
 
         //Fit scene size to best size for first show
         zoomFirstShow();
@@ -6324,11 +6334,11 @@ void MainWindow::exportLayoutAs()
 
         ExportData(QVector<VLayoutPiece>(), dialog);
     }
-    catch (const VException &e)
+    catch (const VException &error)
     {
         ui->exportLayout_ToolButton->setChecked(false);
         qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("Export error.")),
-                  qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                  qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return;
     }
     ui->exportLayout_ToolButton->setChecked(false);
@@ -6366,10 +6376,10 @@ void MainWindow::exportPiecesAs()
     {
         pieceList = preparePiecesForLayout(piecesInLayout);
     }
-    catch (VException &e)
+    catch (VException &error)
     {
         QMessageBox::warning(this, tr("Export pieces"),
-                             tr("Can't export pieces.") + QLatin1String(" \n") + e.ErrorMessage(),
+                             tr("Can't export pieces.") + QLatin1String(" \n") + error.ErrorMessage(),
                              QMessageBox::Ok, QMessageBox::Ok);
         return;
     }
@@ -6387,11 +6397,11 @@ void MainWindow::exportPiecesAs()
 
         ExportData(pieceList, dialog);
     }
-    catch (const VException &e)
+    catch (const VException &error)
     {
         ui->exportPiecesAs_ToolButton->setChecked(false);
         qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("Export error.")),
-                  qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                  qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return;
     }
 
@@ -6586,7 +6596,7 @@ void MainWindow::ReopenFilesAfterCrash(QStringList &args)
                     }
                     else
                     {
-                        qCDebug(vMainWindow, "Could not copy %s%s to %s %s",
+                        qCWarning(vMainWindow, "Could not copy %s%s to %s %s",
                                 qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(autosavePrefix),
                                 qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(error));
                     }
@@ -6837,9 +6847,9 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 
             ExportData(pieceList, dialog);
         }
-        catch (const VException &e)
+        catch (const VException &error)
         {
-            qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export error.")), qUtf8Printable(e.ErrorMessage()));
+            qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export error.")), qUtf8Printable(error.ErrorMessage()));
             qApp->exit(V_EX_DATAERR);
             return;
         }
@@ -6860,9 +6870,9 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 
                 ExportData(pieceList, dialog);
             }
-            catch (const VException &e)
+            catch (const VException &error)
             {
-                qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export error.")), qUtf8Printable(e.ErrorMessage()));
+                qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export error.")), qUtf8Printable(error.ErrorMessage()));
                 qApp->exit(V_EX_DATAERR);
                 return;
             }
@@ -7189,8 +7199,8 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
 
     if (answer == QMessageBox::Abort)
     {
-        qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
-        qCDebug(vMainWindow, "Error type: %d", error);
+        qCWarning(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
+        qCWarning(vMainWindow, "Error type: %d", error);
         Clear();
         if (!VApplication::IsGUIMode())
         {

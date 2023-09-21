@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   pattern_piece_dialog.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -458,7 +458,7 @@ void PatternPieceDialog::ChosenObject(quint32 id, const SceneObject &type)
                 case (SceneObject::Piece):
                 case (SceneObject::Unknown):
                 default:
-                    qDebug() << "Invalid scene object. Ignore.";
+                    qWarning() << "Invalid scene object. Ignore.";
                     break;
             }
         }
@@ -1412,10 +1412,10 @@ void PatternPieceDialog::pathDialogClosed(int result)
             updateCurrentCustomSARecord();
             updateCurrentInternalPathRecord();
         }
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         {
             qCritical("%s\n\n%s\n\n%s", qUtf8Printable(tr("Error. Can't save piece path.")),
-                       qUtf8Printable(e.ErrorMessage()), qUtf8Printable(e.DetailedInformation()));
+                       qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         }
     }
     delete m_dialog;
@@ -1685,12 +1685,12 @@ void PatternPieceDialog::updateGrainlineValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagGrainlineAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
@@ -1767,12 +1767,12 @@ void PatternPieceDialog::updatePieceLabelValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagPieceLabelAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
@@ -1852,12 +1852,12 @@ void PatternPieceDialog::updatePatternLabelValues()
                 ChangeColor(labelText, okColor);
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             formulaValueStr = tr("Error");
             !flagPatternLabelAnchor ? ChangeColor(labelText, Qt::red) : ChangeColor(labelText, okColor);
             formulasOK[i] = false;
-            labelValue->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            labelValue->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
         }
 
         if (formulasOK[i] && formulaValueStr.isEmpty() == false)
