@@ -7199,8 +7199,8 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
 
     if (answer == QMessageBox::Abort)
     {
-        qCWarning(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
-        qCWarning(vMainWindow, "Error type: %d", error);
+        qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
+        qCDebug(vMainWindow, "Error type: %d", error);
         Clear();
         if (!VApplication::IsGUIMode())
         {

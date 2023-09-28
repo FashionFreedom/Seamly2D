@@ -544,13 +544,13 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
 
     if (draftBlockNameExists(oldName) == false)
     {
-        qWarning() << "Draft block does not exist with name" << oldName;
+        qDebug() << "Draft block does not exist with name" << oldName;
         return false;
     }
 
     if (draftBlockNameExists(newName))
     {
-        qWarning() << "Draft block already exists with name" << newName;
+        qDebug() << "Draft block already exists with name" << newName;
         return false;
     }
 
@@ -568,7 +568,7 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
     }
     else
     {
-        qWarning() << "Can't find draft block node with name" << oldName << Q_FUNC_INFO;
+        qDebug() << "Can't find draft block node with name" << oldName << Q_FUNC_INFO;
         return false;
     }
 }

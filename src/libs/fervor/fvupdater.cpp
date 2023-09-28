@@ -289,7 +289,7 @@ void FvUpdater::fileDownloadFinished(QFile *downloadedFile, QString name) {
 		QProcess proc;
 		auto	 res = proc.startDetached(QDir::toNativeSeparators(fileInfo.absoluteFilePath()), QStringList());
 		auto	 err = proc.error();
-		qWarning() << res << " " << err;
+		qDebug() << res << " " << err;
 #else
 
 		QDesktopServices::openUrl(QUrl::fromLocalFile(fileInfo.absoluteFilePath()));

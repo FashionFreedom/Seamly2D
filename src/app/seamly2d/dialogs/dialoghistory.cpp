@@ -253,7 +253,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
     const QDomElement domElem = doc->elementById(tool.getId());
     if (domElem.isElement() == false)
     {
-        qWarning() << "Can't find element by id" << Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return QString();
     }
     try
@@ -465,7 +465,7 @@ QString DialogHistory::Record(const VToolRecord &tool)
         qWarning() << error.ErrorMessage() << Q_FUNC_INFO;
         return QString();
     }
-    qWarning() << "Can't create history record for the tool.";
+    qDebug() << "Can't create history record for the tool.";
     return QString();
 }
 
