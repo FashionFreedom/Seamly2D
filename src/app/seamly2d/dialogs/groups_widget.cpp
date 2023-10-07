@@ -763,7 +763,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qWarning() << "Can't find element by id" << Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return;
     }
         try
@@ -1047,7 +1047,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
             itemData.append(objId);
             itemData.append(toolId);
 
-            qWarning() << error.ErrorMessage() << Q_FUNC_INFO;
+            qDebug() << error.ErrorMessage() << Q_FUNC_INFO;
             QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(":/icons/win.icon.theme/16x16/status/dialog-warning.png"));
             item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
@@ -1096,9 +1096,8 @@ QString GroupsWidget::getObjName(quint32 toolId)
     }
     catch (const VExceptionBadId &error)
     {
-        qWarning(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
-            qUtf8Printable(error.ErrorMessage()),
-            qUtf8Printable(error.DetailedInformation()));
+        qCDebug(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
+                qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return QString("Unknown Object");// Return Unknown string
     }
 }
