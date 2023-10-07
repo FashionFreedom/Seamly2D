@@ -192,7 +192,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> usedNotExistedDir = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QDir dir(path);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    dir.setPath(path);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (not dir.exists(path))</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span> (!dir.exists(path))</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        usedNotExistedDir = dir.mkpath(<span class="stringliteral">&quot;.&quot;</span>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
@@ -407,7 +407,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keyword">const</span> QString path = dialog.<a class="code" href="../../de/dbd/classExportLayoutDialog.html#ae8ddcf722aa88bd4f6a7ba71c2a8f846">path</a>();</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="keywordtype">bool</span> usedNotExistedDir = <a class="code" href="../../df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d">CreateLayoutPath</a>(path);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (not usedNotExistedDir)</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (!usedNotExistedDir)</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        qCritical() &lt;&lt; tr(<span class="stringliteral">&quot;Can&#39;t create a path&quot;</span>);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -498,7 +498,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="keyword">const</span> QString path = dialog.<a class="code" href="../../de/dbd/classExportLayoutDialog.html#ae8ddcf722aa88bd4f6a7ba71c2a8f846">path</a>();</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keywordtype">bool</span> usedNotExistedDir = <a class="code" href="../../df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d">CreateLayoutPath</a>(path);</div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">if</span> (not usedNotExistedDir)</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="keywordflow">if</span> (!usedNotExistedDir)</div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    {</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        qCritical() &lt;&lt; tr(<span class="stringliteral">&quot;Can&#39;t create a path&quot;</span>);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -632,7 +632,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> scale = qMin(xscale, yscale);</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160; </div>
 <div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    QPainter painter;</div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keywordflow">if</span> (not painter.begin(printer))</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keywordflow">if</span> (!painter.begin(printer))</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;    { <span class="comment">// failed to open file</span></div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        qWarning(<span class="stringliteral">&quot;failed to open file, is it writable?&quot;</span>);</div>
 <div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -697,7 +697,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160; </div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> numPages = lastPage - firstPage + 1;</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="keywordtype">int</span> copyCount = 1;</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordflow">if</span> (not printer-&gt;supportsMultipleCopies())</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keywordflow">if</span> (!printer-&gt;supportsMultipleCopies())</div>
 <div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    {</div>
 <div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;        copyCount = printer-&gt;copyCount();</div>
 <div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    }</div>
@@ -708,9 +708,9 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;        {</div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            <span class="keywordflow">if</span> (i != 0 || j != 0)</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            {</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                <span class="keywordflow">if</span> (not printer-&gt;newPage())</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                <span class="keywordflow">if</span> (!printer-&gt;newPage())</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                {</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                    qWarning(<span class="stringliteral">&quot;failed in flushing page to disk, disk full?&quot;</span>);</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                    qWarning(<span class="stringliteral">&quot;Failed in flushing page to disk, disk may be full.&quot;</span>);</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                    <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                }</div>
 <div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;            }</div>
@@ -777,7 +777,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00679"></a><span class="lineno"><a class="line" href="../../de/d1a/classMainWindowsNoGUI.html#a6fcd9603b3c912c2e65d3fc442131ff1">  679</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a6fcd9603b3c912c2e65d3fc442131ff1">MainWindowsNoGUI::PrintPreviewOrigin</a>()</div>
 <div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;{</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4efc371f1050c8d3690c9b1f4b235dd8">isPagesUniform</a>())</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4efc371f1050c8d3690c9b1f4b235dd8">isPagesUniform</a>())</div>
 <div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    {</div>
 <div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;        qCritical() &lt;&lt; tr(<span class="stringliteral">&quot;For previewing multipage document all sheet should have the same size.&quot;</span>);</div>
 <div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -797,7 +797,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00699"></a><span class="lineno"><a class="line" href="../../de/d1a/classMainWindowsNoGUI.html#aca5df983fd8e6783d122d00878c503cf">  699</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#aca5df983fd8e6783d122d00878c503cf">MainWindowsNoGUI::PrintOrigin</a>()</div>
 <div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;{</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4efc371f1050c8d3690c9b1f4b235dd8">isPagesUniform</a>())</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4efc371f1050c8d3690c9b1f4b235dd8">isPagesUniform</a>())</div>
 <div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    {</div>
 <div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        qCritical() &lt;&lt; tr(<span class="stringliteral">&quot;For printing multipages document all sheet should have the same size.&quot;</span>);</div>
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;        <span class="keywordflow">return</span>;</div>
@@ -873,7 +873,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00774"></a><span class="lineno"><a class="line" href="../../de/d1a/classMainWindowsNoGUI.html#a591ebb6ae7c50b0e9ef1be2c099b5f36">  774</a></span>&#160;<a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;VLayoutPiece&gt;</a> <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a591ebb6ae7c50b0e9ef1be2c099b5f36">MainWindowsNoGUI::preparePiecesForLayout</a>(<span class="keyword">const</span> <a class="code" href="../../da/da1/classQHash.html">QHash&lt;quint32, VPiece&gt;</a> &amp;pieces)</div>
 <div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;{</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <a class="code" href="../../d5/dc2/classQVector.html">QVector&lt;VLayoutPiece&gt;</a> <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a94419150478fdbf1348c4b9487bf1518">pieceList</a>;</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4812a2638cdda3dc94c6f20ad4bde228">pieces</a>.isEmpty())</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4812a2638cdda3dc94c6f20ad4bde228">pieces</a>.isEmpty())</div>
 <div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    {</div>
 <div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;        <a class="code" href="../../da/da1/classQHash.html">QHash&lt;quint32, VPiece&gt;::const_iterator</a> i = <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4812a2638cdda3dc94c6f20ad4bde228">pieces</a>.constBegin();</div>
 <div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;        <span class="keywordflow">while</span> (i != <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a4812a2638cdda3dc94c6f20ad4bde228">pieces</a>.constEnd())</div>
@@ -906,7 +906,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="comment">// Create the image with the exact size of the shrunk scene</span></div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;        image = QImage(QSize(<span class="keyword">static_cast&lt;</span>qint32<span class="keyword">&gt;</span>(r.width()), <span class="keyword">static_cast&lt;</span>qint32<span class="keyword">&gt;</span>(r.height())), QImage::Format_RGB32);</div>
 <div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160; </div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">if</span> (not image.isNull())</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        <span class="keywordflow">if</span> (!image.isNull())</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;        {</div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            image.fill(Qt::white);</div>
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            QPainter painter(&amp;image);</div>
@@ -1163,7 +1163,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#ac0e046cfd088a84c5ed1dd21e005ffd4">SetPrinterSettings</a>(&amp;printer, <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#aa22aa8c63b30c458a5fe33e486ae1da9a9bc1a90b8be024dee17cdc6f020ad5ab">PrintType::PrintPDF</a>);</div>
 <div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160; </div>
 <div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;    <span class="comment">// Call IsPagesFit after setting a printer settings and check if pages is not bigger than printer&#39;s paper size</span></div>
-<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a> &amp;&amp; not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a1f2c81069fc51d1c06de9872829f7300">IsPagesFit</a>(printer.pageLayout().fullRectPixels(printer.resolution()).size()))</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a> &amp;&amp; not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a1f2c81069fc51d1c06de9872829f7300">IsPagesFit</a>(printer.pageLayout().fullRectPixels(printer.resolution()).size()))</div>
 <div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    {</div>
 <div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;        qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;Pages will be cropped because they do not fit printer paper size.&quot;</span>);</div>
 <div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;    }</div>
@@ -1467,7 +1467,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;    printer-&gt;setCreator(QGuiApplication::applicationDisplayName()+<span class="stringliteral">&quot; &quot;</span>+QCoreApplication::applicationVersion());</div>
 <div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;    printer-&gt;setPageOrientation(QPageLayout::Orientation::Portrait);</div>
 <div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160; </div>
-<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a>)</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a>)</div>
 <div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    {</div>
 <div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;        QSizeF size = QSizeF(<a class="code" href="../../d6/d0b/def_8cpp.html#ace05d8de4ddacda154ba7dfca94c1542">FromPixel</a>(<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a5cdc4cc08a75a4c7f3f255ee117634d7">paperSize</a>.width(), <a class="code" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Unit::Mm</a>), <a class="code" href="../../d6/d0b/def_8cpp.html#ace05d8de4ddacda154ba7dfca94c1542">FromPixel</a>(<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a5cdc4cc08a75a4c7f3f255ee117634d7">paperSize</a>.height(), <a class="code" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Unit::Mm</a>));</div>
 <div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a09adeaece91e4bbd73b13a5b07f61538">isAutoCrop</a> || <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a394c68e77d1f8c07712525ca10ad9d1b">isUnitePages</a>)</div>
@@ -1510,7 +1510,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160; </div>
 <div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;    qreal left, top, right, bottom;</div>
 <div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160; </div>
-<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    <span class="keywordflow">if</span> (not <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a>)</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a02986023d083e3f58fb5f53bce0918c6">isTiled</a>)</div>
 <div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    {</div>
 <div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;        QMarginsF pageMargin = QMarginsF(<a class="code" href="../../d6/d0b/def_8cpp.html#af51912b634cbe7051d52891a1fd3981d">UnitConvertor</a>(<a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#ab663f823013c37df2c5562ccced1cae8">margins</a>, <a class="code" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Unit::Px</a>, <a class="code" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Unit::Mm</a>));</div>
 <div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;        left = pageMargin.left();</div>
@@ -1541,7 +1541,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;    }</div>
 <div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160; </div>
 <div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">bool</span> success = printer-&gt;setPageMargins(QMarginsF(left, top, right, bottom), QPageLayout::Millimeter);</div>
-<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;    <span class="keywordflow">if</span> (not success)</div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;    <span class="keywordflow">if</span> (!success)</div>
 <div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;    {</div>
 <div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;        qWarning() &lt;&lt; tr(<span class="stringliteral">&quot;Cannot set printer margins&quot;</span>);</div>
 <div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;    }</div>
@@ -1603,7 +1603,7 @@ $(document).ready(function(){initNavTree('d8/de8/mainwindowsnogui_8cpp_source.ht
 <div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;            <span class="comment">// Restore</span></div>
 <div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;            <a class="code" href="../../de/d1a/classMainWindowsNoGUI.html#a98bb3e38205cbd40bfc21425b15fec2c">RestorePaper</a>(i);</div>
 <div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160; </div>
-<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;            <span class="keywordflow">if</span> (not image.isGrayscale())</div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;            <span class="keywordflow">if</span> (!image.isGrayscale())</div>
 <div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;            {</div>
 <div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;            }</div>

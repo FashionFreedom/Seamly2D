@@ -352,7 +352,7 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> QDomElement domElem = doc-&gt;<a class="code" href="../../d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc">elementById</a>(tool.getId());</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span> (domElem.isElement() == <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span> &lt;&lt; Q_FUNC_INFO;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span> &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    }</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordflow">try</span></div>
@@ -564,7 +564,7 @@ $(document).ready(function(){initNavTree('d3/df3/dialoghistory_8cpp_source.html'
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;        qWarning() &lt;&lt; error.ErrorMessage() &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    }</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t create history record for the tool.&quot;</span>;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t create history record for the tool.&quot;</span>;</div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">return</span> QString();</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;}</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
