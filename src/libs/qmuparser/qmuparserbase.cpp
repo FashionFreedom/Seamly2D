@@ -1840,82 +1840,82 @@ void QmuParserBase::StackDump(const QStack<token_type> &a_stVal, const QStack<to
     QStack<token_type> stOprt(a_stOprt),
                        stVal(a_stVal);
 
-    qWarning() << "\nValue stack:\n";
+    qDebug() << "\nValue stack:\n";
     while ( stVal.empty() == false )
     {
         token_type val = stVal.pop();
         if (val.GetType()==tpSTR)
         {
-            qWarning() << " \"" << val.GetAsString() << "\" ";
+            qDebug() << " \"" << val.GetAsString() << "\" ";
         }
         else
         {
-            qWarning() << " " << val.GetVal() << " ";
+            qDebug() << " " << val.GetVal() << " ";
         }
     }
-    qWarning() << "\nOperator stack:\n";
+    qDebug() << "\nOperator stack:\n";
 
     while ( stOprt.empty() == false )
     {
         const token_type &topToken = stOprt.top();
         if (topToken.GetCode()<=cmASSIGN)
         {
-            qWarning() << "OPRT_INTRNL \"" << QmuParserBase::c_DefaultOprt[topToken.GetCode()] << "\" \n";
+            qDebug() << "OPRT_INTRNL \"" << QmuParserBase::c_DefaultOprt[topToken.GetCode()] << "\" \n";
         }
         else
         {
             switch ( topToken.GetCode())
             {
                 case cmVAR:
-                    qWarning() << "VAR\n";
+                    qDebug() << "VAR\n";
                     break;
                 case cmVAL:
-                    qWarning() << "VAL\n";
+                    qDebug() << "VAL\n";
                     break;
                 case cmFUNC:
-                    qWarning() << "FUNC \"" << topToken.GetAsString() << "\"\n";
+                    qDebug() << "FUNC \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmFUNC_BULK:
-                    qWarning() << "FUNC_BULK \"" << topToken.GetAsString() << "\"\n";
+                    qDebug() << "FUNC_BULK \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmOPRT_INFIX:
-                    qWarning() << "OPRT_INFIX \"" << topToken.GetAsString() << "\"\n";
+                    qDebug() << "OPRT_INFIX \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmOPRT_BIN:
-                    qWarning() << "OPRT_BIN \"" << topToken.GetAsString() << "\"\n";
+                    qDebug() << "OPRT_BIN \"" << topToken.GetAsString() << "\"\n";
                     break;
                 case cmFUNC_STR:
-                    qWarning() << "FUNC_STR\n";
+                    qDebug() << "FUNC_STR\n";
                     break;
                 case cmEND:
-                    qWarning() << "END\n";
+                    qDebug() << "END\n";
                     break;
                 case cmUNKNOWN:
-                    qWarning() << "UNKNOWN\n";
+                    qDebug() << "UNKNOWN\n";
                     break;
                 case cmBO:
-                    qWarning() << "BRACKET \"(\"\n";
+                    qDebug() << "BRACKET \"(\"\n";
                     break;
                 case cmBC:
-                    qWarning() << "BRACKET \")\"\n";
+                    qDebug() << "BRACKET \")\"\n";
                     break;
                 case cmIF:
-                    qWarning() << "IF\n";
+                    qDebug() << "IF\n";
                     break;
                 case cmELSE:
-                    qWarning() << "ELSE\n";
+                    qDebug() << "ELSE\n";
                     break;
                 case cmENDIF:
-                    qWarning() << "ENDIF\n";
+                    qDebug() << "ENDIF\n";
                     break;
                 default:
-                    qWarning() << topToken.GetCode() << " ";
+                    qDebug() << topToken.GetCode() << " ";
                     break;
             }
         }
         stOprt.pop();
     }
-    qWarning() << Qt::dec;
+    qDebug() << Qt::dec;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

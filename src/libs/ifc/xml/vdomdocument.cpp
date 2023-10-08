@@ -743,7 +743,7 @@ bool VDomDocument::SaveDocument(const QString &fileName, QString &error)
 {
     if (fileName.isEmpty())
     {
-        qWarning() << "Got empty file name.";
+        qDebug() << "Got empty file name.";
         return false;
     }
     bool success = false;
@@ -806,7 +806,7 @@ bool VDomDocument::setTagText(const QString &tag, const QString &text)
     const QDomNodeList nodeList = this->elementsByTagName(tag);
     if (nodeList.isEmpty())
     {
-        qWarning() << "Can't save tag " << tag << Q_FUNC_INFO;
+        qDebug() << "Can't save tag " << tag << Q_FUNC_INFO;
     }
     else
     {

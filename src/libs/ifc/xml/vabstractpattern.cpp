@@ -2722,7 +2722,7 @@ QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, qui
     }
     else
     {
-        qWarning() << "The group of id " << groupId << " doesn't exist";
+        qDebug() << "The group of id " << groupId << " doesn't exist";
     }
 
     return QDomElement();
@@ -2790,7 +2790,7 @@ QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, 
     }
     else
     {
-        qWarning() << "The group of id " << groupId << " doesn't exist";
+        qDebug() << "The group of id " << groupId << " doesn't exist";
     }
 
     return QDomElement();
@@ -2812,7 +2812,7 @@ bool VAbstractPattern::isGroupEmpty(quint32 id)
     }
     else
     {
-        qWarning() << "The group of id " << id << " doesn't exist";
+        qDebug() << "The group of id " << id << " doesn't exist";
         return true;
     }
 }
@@ -2827,7 +2827,7 @@ bool VAbstractPattern::getGroupVisibility(quint32 id)
     }
     else
     {
-        qWarning("Can't get group by id = %u.", id);
+        qDebug("Can't get group by id = %u.", id);
         return true;
     }
 }
@@ -2850,7 +2850,7 @@ void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
     }
     else
     {
-        qWarning("Can't get group by id = %u.", id);
+        qDebug("Can't get group by id = %u.", id);
     }
 }
 
@@ -2871,7 +2871,7 @@ bool VAbstractPattern::getGroupLock(quint32 id)
     }
     else
     {
-        qWarning("Can't get group by id = %u.", id);
+        qDebug("Can't get group by id = %u.", id);
         return true;
     }
 }

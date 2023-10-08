@@ -180,7 +180,7 @@ bool ExportFormatCombobox::testPdf()
     QStringList args;
 
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
-    // Seek pdftops in app bundle or near valentin.exe
+    // Seek pdftops in app bundle or near seamaly2d.exe
     proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS, QStringList());
 #else
     proc.start(PDFTOPS, QStringList()); // Seek pdftops in standard path

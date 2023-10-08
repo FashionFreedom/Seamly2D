@@ -526,7 +526,7 @@ int VCommonSettings::getAutosaveInterval() const
     int val = value(settingConfigurationAutosaveTime, 1).toInt(&ok);
     if (ok == false)
     {
-        qWarning() << "Could not convert value"<<value(settingConfigurationAutosaveTime, 1)
+        qDebug() << "Could not convert value"<<value(settingConfigurationAutosaveTime, 1)
                    << "to int. Return default value for autosave time" << 1 << "minutes.";
         val = 1;
     }
@@ -1101,7 +1101,7 @@ int VCommonSettings::GetUndoCount() const
     int val = value(settingPatternUndo, 0).toInt(&ok);
     if (ok == false)
     {
-        qWarning() << "Could not convert value"<<value(settingPatternUndo, 0)
+        qDebug() << "Could not convert value"<<value(settingPatternUndo, 0)
                    << "to int. Return default value for undo counts 0 (no limit).";
         val = 0;
     }
@@ -1497,7 +1497,7 @@ double VCommonSettings::GetDefaultSeamAllowance()
     double val = value(settingPatternDefaultSeamAllowance, -1).toDouble(&ok);
     if (ok == false)
     {
-        qWarning() <<  "Could not convert value"<<value(settingPatternDefaultSeamAllowance, 0)
+        qDebug() <<  "Could not convert value"<<value(settingPatternDefaultSeamAllowance, 0)
                    << "to real. Return default value for default seam allowance is " << defaultValue << ".";
         val = defaultValue;
     }
