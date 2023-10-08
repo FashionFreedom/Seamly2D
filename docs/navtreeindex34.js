@@ -1,6 +1,5 @@
 var NAVTREEINDEX34 =
 {
-"d9/d54/classVAbstractArc.html#acc753166626bcbf5048b5e2bc011f95d":[1,0,177,14],
 "d9/d54/classVAbstractArc.html#ae5dfd7b02c0f36bf9c7d7af9b0956606":[1,0,177,20],
 "d9/d54/classVAbstractArc.html#ae930d749a318dac397bd6cdc01ee6ba2":[1,0,177,6],
 "d9/d54/classVAbstractArc.html#afad394dead5f91806c20cbe84e00f31e":[1,0,177,15],
@@ -249,5 +248,6 @@ var NAVTREEINDEX34 =
 "d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html":[2,0,0,1,13,0,4],
 "d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[2,0,0,1,13,0,4,0],
 "d9/d92/libs_2vwidgets_2calculator_2main_8cpp_source.html":[2,0,0,1,13,0,4],
-"d9/d93/classVPieceNodeData.html":[1,0,333]
+"d9/d93/classVPieceNodeData.html":[1,0,333],
+"d9/d93/classVPieceNodeData.html#a0de715ee9eef8053c05e6cc82f8ab2b8":[1,0,333,5]
 };

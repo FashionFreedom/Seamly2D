@@ -1,6 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"d2/d0f/classVToolRotation.html#a81bec42ecc6b420fa0b6296878e3f19a":[1,0,389,21],
 "d2/d0f/classVToolRotation.html#a837468ebb863be3fdc984a612304f7a7":[1,0,389,30],
 "d2/d0f/classVToolRotation.html#a862c85b03cfe275ba5049528547b0270":[1,0,389,15],
 "d2/d0f/classVToolRotation.html#a9a69e6019e375ba9a920f3cb4f6b27fe":[1,0,389,27],
@@ -249,5 +248,6 @@ var NAVTREEINDEX6 =
 "d2/d7b/classDialogTool.html":[1,0,71],
 "d2/d7b/classDialogTool.html#a016b1091fc5d9a147a02701e69f3ae31":[1,0,71,79],
 "d2/d7b/classDialogTool.html#a0185e281fed2b396c9297363b5950fa9":[1,0,71,13],
-"d2/d7b/classDialogTool.html#a019114875b8df91da6678dbc581ea3dc":[1,0,71,24]
+"d2/d7b/classDialogTool.html#a019114875b8df91da6678dbc581ea3dc":[1,0,71,24],
+"d2/d7b/classDialogTool.html#a02478f50983ed4280041b57abf22d305":[1,0,71,3]
 };

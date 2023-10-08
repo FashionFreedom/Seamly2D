@@ -1,6 +1,5 @@
 var NAVTREEINDEX47 =
 {
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a446ba6076873087a68ccf6b26f9c4cab":[1,0,383,2],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a46a6c4c50b63fd6af4a084eafcddc88e":[1,0,383,57],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a49f0a994818d0a7f153659bdbe10014a":[1,0,383,131],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a4b4ea75f2a346a6811a88efca7e624e0":[1,0,383,46],
@@ -249,5 +248,6 @@ var NAVTREEINDEX47 =
 "dc/db7/measurements_8h.html#a3d63c45fe264b229b8d1a0c0c73f3cd6":[2,0,0,1,9,5,20],
 "dc/db7/measurements_8h.html#a4035d77fa7eeb5e4309e656aed63ae33":[2,0,0,1,9,5,253],
 "dc/db7/measurements_8h.html#a40f940e072a35ba7e494e93adc96ca14":[2,0,0,1,9,5,54],
-"dc/db7/measurements_8h.html#a41ce853287fcb7c5305e8a3a640ada2f":[2,0,0,1,9,5,257]
+"dc/db7/measurements_8h.html#a41ce853287fcb7c5305e8a3a640ada2f":[2,0,0,1,9,5,257],
+"dc/db7/measurements_8h.html#a42bcd40180af2f8d34f83090378a31b6":[2,0,0,1,9,5,12]
 };

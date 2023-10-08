@@ -1,6 +1,5 @@
 var NAVTREEINDEX5 =
 {
-"d1/dbb/classVAbstractLayoutDialog.html#a5533e41817b10ba43a248b2eb1ed2ce8":[1,0,187,0],
 "d1/dbb/classVAbstractLayoutDialog.html#a565d1cb3c667569fac1a397750ae6ed5":[1,0,187,5],
 "d1/dbb/classVAbstractLayoutDialog.html#a86853242b6016dbc651dce0da621f8b3":[1,0,187,2],
 "d1/dbb/classVAbstractLayoutDialog.html#a86853242b6016dbc651dce0da621f8b3a0c2f3adf2a48bab3adb470f4da57f3d0":[1,0,187,2,4],
@@ -249,5 +248,6 @@ var NAVTREEINDEX5 =
 "d2/d0f/classVToolRotation.html#a7c890680fc245eea9d8b0b2b6966a552":[1,0,389,10],
 "d2/d0f/classVToolRotation.html#a7e7d42d50dd9124644341adb0557b785":[1,0,389,2],
 "d2/d0f/classVToolRotation.html#a80f153c313aac5f5679642d3b8d87b64":[1,0,389,8],
-"d2/d0f/classVToolRotation.html#a8194cc7fe897f38f59c9214f4129165c":[1,0,389,18]
+"d2/d0f/classVToolRotation.html#a8194cc7fe897f38f59c9214f4129165c":[1,0,389,18],
+"d2/d0f/classVToolRotation.html#a81bec42ecc6b420fa0b6296878e3f19a":[1,0,389,21]
 };

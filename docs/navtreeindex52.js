@@ -1,6 +1,5 @@
 var NAVTREEINDEX52 =
 {
-"dd/db2/qmutranslation_8cpp.html":[2,0,0,1,2,23],
 "dd/db2/qmutranslation_8cpp_source.html":[2,0,0,1,2,23],
 "dd/db2/vsettings_8h.html":[2,0,0,1,7,24],
 "dd/db2/vsettings_8h_source.html":[2,0,0,1,7,24],
@@ -249,5 +248,6 @@ var NAVTREEINDEX52 =
 "de/d04/classVToolTrueDarts.html#ab2bbed92de21955c0e18c324ca061986":[1,0,395,5],
 "de/d04/classVToolTrueDarts.html#abb5933d38426a28d39cdb3f29c6f0e54":[1,0,395,24],
 "de/d04/classVToolTrueDarts.html#abd90c9a2e71c401e6e92438c6227d6ae":[1,0,395,1],
-"de/d04/classVToolTrueDarts.html#abe8420bf7017689ae69dde46ec7ce8a5":[1,0,395,20]
+"de/d04/classVToolTrueDarts.html#abe8420bf7017689ae69dde46ec7ce8a5":[1,0,395,20],
+"de/d04/classVToolTrueDarts.html#ac17a3fb26fb06a68b3fafca723856506":[1,0,395,10]
 };

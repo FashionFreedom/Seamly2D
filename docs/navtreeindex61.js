@@ -1,6 +1,5 @@
 var NAVTREEINDEX61 =
 {
-"df/de1/classVPiecePath.html#aa07edfea9583daf9e9e1ff6ddec0e6df":[1,0,334,27],
 "df/de1/classVPiecePath.html#aa11dc7d39175e8911befd9df89d84288":[1,0,334,24],
 "df/de1/classVPiecePath.html#aa3fd6256f610dcfd2f4e61ce990c3770":[1,0,334,0],
 "df/de1/classVPiecePath.html#aa4d2609c1aff9e8aae57b639c23dabe9":[1,0,334,17],
@@ -202,8 +201,8 @@ var NAVTREEINDEX61 =
 "dir_fa16871e366acf28eec42e1eb99c66a0.html":[2,0,0,1,13],
 "dir_fc60e5b36873c7f373d7dac5754b2278.html":[2,0,0,1,9,0],
 "files.html":[2,0],
-"functions.html":[1,3,0],
 "functions.html":[1,3,0,0],
+"functions.html":[1,3,0],
 "functions_a.html":[1,3,0,1],
 "functions_b.html":[1,3,0,2],
 "functions_c.html":[1,3,0,3],
@@ -212,8 +211,8 @@ var NAVTREEINDEX61 =
 "functions_enum.html":[1,3,4],
 "functions_eval.html":[1,3,5],
 "functions_f.html":[1,3,0,6],
-"functions_func.html":[1,3,1],
 "functions_func.html":[1,3,1,0],
+"functions_func.html":[1,3,1],
 "functions_func_b.html":[1,3,1,1],
 "functions_func_c.html":[1,3,1,2],
 "functions_func_d.html":[1,3,1,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX61 =
 "functions_n.html":[1,3,0,14],
 "functions_o.html":[1,3,0,15],
 "functions_p.html":[1,3,0,16],
-"functions_prop.html":[1,3,6]
+"functions_prop.html":[1,3,6],
+"functions_q.html":[1,3,0,17]
 };

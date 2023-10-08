@@ -1,6 +1,5 @@
 var NAVTREEINDEX49 =
 {
-"dc/dcb/structVPE_1_1Vector3D.html#a8998778108abba3fe654d8fcb95710bf":[1,0,2,5,3],
 "dc/dcb/structVPE_1_1Vector3D.html#a9f09c5c7a51a1fffb800c3df7dd42bf2":[1,0,2,5,2],
 "dc/dd3/classVPatternConverter.html":[1,0,324],
 "dc/dd3/classVPatternConverter.html#a007507fc592c953033b5abb868f6a6d0":[1,0,324,90],
@@ -249,5 +248,6 @@ var NAVTREEINDEX49 =
 "dc/df7/classVPE_1_1VShortcutEditWidget.html#a79b083b0feae8f7c1bf56252ff7cdbbc":[1,0,2,19,8],
 "dc/df7/classVPE_1_1VShortcutEditWidget.html#a85a74331658019dcec8518023e97ff8d":[1,0,2,19,4],
 "dc/df7/classVPE_1_1VShortcutEditWidget.html#a9d1e2459359794ae0c0b20b9d4dd9c5e":[1,0,2,19,5],
-"dc/df7/classVPE_1_1VShortcutEditWidget.html#ab46321a527ea3935e38808d1d522e8d2":[1,0,2,19,6]
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#ab46321a527ea3935e38808d1d522e8d2":[1,0,2,19,6],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#acba46dfd330b2825dd1cdd55197e5693":[1,0,2,19,10]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX4 =
 {
-"d1/d7a/classDialogEndLine.html#a3f7235f8dae82ef88929360850ccff78":[1,0,44,9],
 "d1/d7a/classDialogEndLine.html#a3faf00309143cdb1135e3fb6910bf1ee":[1,0,44,27],
 "d1/d7a/classDialogEndLine.html#a4f4404fc7912b850021c5ec11dac2324":[1,0,44,1],
 "d1/d7a/classDialogEndLine.html#a59f35e5dbab776297080f6316fc5be06":[1,0,44,17],
@@ -249,5 +248,6 @@ var NAVTREEINDEX4 =
 "d1/db9/vistoolpointfromarcandtangent_8cpp.html":[2,0,0,1,12,3,0,29],
 "d1/db9/vistoolpointfromarcandtangent_8cpp_source.html":[2,0,0,1,12,3,0,29],
 "d1/dbb/classVAbstractLayoutDialog.html":[1,0,187],
-"d1/dbb/classVAbstractLayoutDialog.html#a4fb9cb17b5ddae631a11f50f855319e6":[1,0,187,1]
+"d1/dbb/classVAbstractLayoutDialog.html#a4fb9cb17b5ddae631a11f50f855319e6":[1,0,187,1],
+"d1/dbb/classVAbstractLayoutDialog.html#a5533e41817b10ba43a248b2eb1ed2ce8":[1,0,187,0]
 };

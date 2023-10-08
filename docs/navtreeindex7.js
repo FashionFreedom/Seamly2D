@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"d2/d7b/classDialogTool.html#a02478f50983ed4280041b57abf22d305":[1,0,71,3],
 "d2/d7b/classDialogTool.html#a03b5e1c41a10e70de19c8800e1dbfe7c":[1,0,71,22],
 "d2/d7b/classDialogTool.html#a080d3a4a41e6b70099d201fd2bb8a963":[1,0,71,104],
 "d2/d7b/classDialogTool.html#a0a118fe7df26258a50f0bb05c5d1c2cf":[1,0,71,108],
@@ -249,5 +248,6 @@ var NAVTREEINDEX7 =
 "d2/dcb/classVPE_1_1VEnumProperty.html#ae2a2f1ca0e4097d0a9a6ece70f9c8732":[1,0,2,8,14],
 "d2/dcb/classVPE_1_1VEnumProperty.html#af3b22867359dbfe84908cad4e24d40c7":[1,0,2,8,10],
 "d2/dd4/vtoolbasepoint_8h.html":[2,0,0,1,12,1,0,2,1,9],
-"d2/dd4/vtoolbasepoint_8h_source.html":[2,0,0,1,12,1,0,2,1,9]
+"d2/dd4/vtoolbasepoint_8h_source.html":[2,0,0,1,12,1,0,2,1,9],
+"d2/de0/addpiece_8h.html":[2,0,0,1,12,2,10]
 };

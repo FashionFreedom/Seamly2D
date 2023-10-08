@@ -1,6 +1,5 @@
 var NAVTREEINDEX62 =
 {
-"functions_q.html":[1,3,0,17],
 "functions_r.html":[1,3,0,18],
 "functions_rela.html":[1,3,7],
 "functions_s.html":[1,3,0,19],
@@ -41,8 +40,8 @@ var NAVTREEINDEX62 =
 "functions_y.html":[1,3,0,25],
 "functions_z.html":[1,3,0,26],
 "functions_~.html":[1,3,0,27],
-"globals.html":[2,1,0],
 "globals.html":[2,1,0,0],
+"globals.html":[2,1,0],
 "globals_a.html":[2,1,0,1],
 "globals_b.html":[2,1,0,2],
 "globals_c.html":[2,1,0,3],

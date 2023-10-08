@@ -84,7 +84,7 @@ var NAVTREEINDEX2 =
 "d0/de0/vtranslatemeasurements_8h_source.html":[2,0,0,1,9,28],
 "d0/de6/classPreferencesConfigurationPage.html":[1,0,138],
 "d0/de6/classPreferencesConfigurationPage.html#a0240da5a70266f8e864c6c542673b7cf":[1,0,138,0],
-"d0/de6/classPreferencesConfigurationPage.html#a312e2d36cf10003a558236c64d35457a":[1,0,138,16],
+"d0/de6/classPreferencesConfigurationPage.html#a312e2d36cf10003a558236c64d35457a":[1,0,138,15],
 "d0/de6/classPreferencesConfigurationPage.html#a3c6c9a606dcc493d7ecb645e47bb00d7":[1,0,138,9],
 "d0/de6/classPreferencesConfigurationPage.html#a446c52770f60cac01435cf0293cf759b":[1,0,138,2],
 "d0/de6/classPreferencesConfigurationPage.html#a4d8a0f540db8a9f705f29f60453d61a3":[1,0,138,4],
@@ -97,8 +97,7 @@ var NAVTREEINDEX2 =
 "d0/de6/classPreferencesConfigurationPage.html#ad8df1e72cbf9f76d915e32b268c6aa0a":[1,0,138,1],
 "d0/de6/classPreferencesConfigurationPage.html#adbb6b2352ed2b7c4084589ecf991628d":[1,0,138,7],
 "d0/de6/classPreferencesConfigurationPage.html#ae0cc0f77bf412669695af4a817ea1058":[1,0,138,10],
-"d0/de6/classPreferencesConfigurationPage.html#ae9b7023a22acbb355156b872d6d17281":[1,0,138,17],
-"d0/de6/classPreferencesConfigurationPage.html#aeb0c9fd630e1a714458b0c5dea695ff9":[1,0,138,15],
+"d0/de6/classPreferencesConfigurationPage.html#ae9b7023a22acbb355156b872d6d17281":[1,0,138,16],
 "d0/de6/classPreferencesConfigurationPage.html#af121824ae8e725ae57fdce32959f56b2":[1,0,138,3],
 "d0/de6/classPreferencesConfigurationPage.html#af50a9ae77fd579e80c9804a030b2641b":[1,0,138,8],
 "d0/de8/classVPoster.html":[1,0,339],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "d1/d40/classDialogTriangle.html#a7682a6c0928b85d8795dd375a27d9cc9":[1,0,72,4],
 "d1/d40/classDialogTriangle.html#a99c7ac5243cf52438521f1c869339b0e":[1,0,72,2],
 "d1/d40/classDialogTriangle.html#a99f50525ce5ffb2d76ec9b9af34b3dd1":[1,0,72,1],
-"d1/d40/classDialogTriangle.html#ac177d24b3549afa7b0d79d20e2fbd767":[1,0,72,8]
+"d1/d40/classDialogTriangle.html#ac177d24b3549afa7b0d79d20e2fbd767":[1,0,72,8],
+"d1/d40/classDialogTriangle.html#acde5822189652cfbfed83d5000598bfc":[1,0,72,10]
 };

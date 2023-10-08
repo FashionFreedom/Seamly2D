@@ -1,6 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"d3/da7/classEditGroupDialog.html#a620bc7d553b0a9674c389b9ced15b4bf":[1,0,82,24],
 "d3/da7/classEditGroupDialog.html#a7980ed3b5e4045ed87cdb66c580c5ede":[1,0,82,9],
 "d3/da7/classEditGroupDialog.html#a8037c9b2748d8a32a45512fad748bff2":[1,0,82,25],
 "d3/da7/classEditGroupDialog.html#a8194c32ec2cff14a167822e43b87fb6c":[1,0,82,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX11 =
 "d4/d11/vcommonsettings_8cpp.html#a41e1517fa41c5ca67525c235e47b6096":[2,0,0,1,7,17,81],
 "d4/d11/vcommonsettings_8cpp.html#a464c6501262ea18e1b0902086c26b006":[2,0,0,1,7,17,22],
 "d4/d11/vcommonsettings_8cpp.html#a466e58d60d4df94c653ae24efd557bed":[2,0,0,1,7,17,10],
-"d4/d11/vcommonsettings_8cpp.html#a4737f155235118b924d74d65812b04b6":[2,0,0,1,7,17,57]
+"d4/d11/vcommonsettings_8cpp.html#a4737f155235118b924d74d65812b04b6":[2,0,0,1,7,17,57],
+"d4/d11/vcommonsettings_8cpp.html#a485dbb77fd83568851ecf5d4be59ac45":[2,0,0,1,7,17,115]
 };

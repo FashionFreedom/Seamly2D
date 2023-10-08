@@ -1,6 +1,5 @@
 var NAVTREEINDEX57 =
 {
-"de/d6d/classVisToolCubicBezier.html#a485b709f038ce56738582525a37f061f":[1,0,264,8],
 "de/d6d/classVisToolCubicBezier.html#a4fa7c4d1460141afdad18082254c1d63":[1,0,264,1],
 "de/d6d/classVisToolCubicBezier.html#a5561116dd54b324d5b59d21b17314b8b":[1,0,264,5],
 "de/d6d/classVisToolCubicBezier.html#a7e29fcfeb663c80d814d83615fab5231":[1,0,264,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX57 =
 "de/dbc/classVGraphicsSimpleTextItem.html#a41137f1cfdb49a0d43ec572a74c53c29":[1,0,251,6],
 "de/dbc/classVGraphicsSimpleTextItem.html#a5172f4cc7ae06cc0b91d7c89329eef64":[1,0,251,8],
 "de/dbc/classVGraphicsSimpleTextItem.html#a5175a4abaaa6fba3cc09e16a440eac67":[1,0,251,28],
-"de/dbc/classVGraphicsSimpleTextItem.html#a54c16aba2a52097be3ff02aeda596103":[1,0,251,1]
+"de/dbc/classVGraphicsSimpleTextItem.html#a54c16aba2a52097be3ff02aeda596103":[1,0,251,1],
+"de/dbc/classVGraphicsSimpleTextItem.html#a551dec0c77beb3222f110238e8231836":[1,0,251,20]
 };

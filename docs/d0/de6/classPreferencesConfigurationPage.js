@@ -15,7 +15,6 @@ var classPreferencesConfigurationPage =
     [ "m_moveSuffixChanged", "d0/de6/classPreferencesConfigurationPage.html#a6ecf90208b4d06ba02d788fb55401ea6", null ],
     [ "m_rotateSuffixChanged", "d0/de6/classPreferencesConfigurationPage.html#a7d42b024d007ddfa15abb476dd26c580", null ],
     [ "m_selectionSoundChanged", "d0/de6/classPreferencesConfigurationPage.html#aa7eee78a3b6a726d6e41365420d1860c", null ],
-    [ "m_systemChanged", "d0/de6/classPreferencesConfigurationPage.html#aeb0c9fd630e1a714458b0c5dea695ff9", null ],
     [ "m_unitChanged", "d0/de6/classPreferencesConfigurationPage.html#a312e2d36cf10003a558236c64d35457a", null ],
     [ "ui", "d0/de6/classPreferencesConfigurationPage.html#ae9b7023a22acbb355156b872d6d17281", null ]
 ];

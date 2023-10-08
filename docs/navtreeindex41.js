@@ -1,6 +1,5 @@
 var NAVTREEINDEX41 =
 {
-"db/d02/classVCubicBezierData.html#a28dc4b6ec02f7cd7df45693baed365e8":[1,0,215,8],
 "db/d02/classVCubicBezierData.html#a470c7dc2eb479f913b1621b5ebd3e851":[1,0,215,6],
 "db/d02/classVCubicBezierData.html#a6b99446f7b080edbc7a0ab7b74cb1894":[1,0,215,7],
 "db/d02/classVCubicBezierData.html#ab18b481d366b3362f0c215ceb58e54b8":[1,0,215,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX41 =
 "db/d57/classVPointF.html#a88edd1678d8a96491aa85dc23f1544ce":[1,0,336,15],
 "db/d57/classVPointF.html#a8c2bba0832e74582e35f55904bfc845f":[1,0,336,3],
 "db/d57/classVPointF.html#aa2124a8469c6a99052c267a1501f9912":[1,0,336,19],
-"db/d57/classVPointF.html#abc43653b42695e82d69fa37bf9630c74":[1,0,336,6]
+"db/d57/classVPointF.html#abc43653b42695e82d69fa37bf9630c74":[1,0,336,6],
+"db/d57/classVPointF.html#ac40b6b39ec65f96390adb8f296d69cf5":[1,0,336,23]
 };

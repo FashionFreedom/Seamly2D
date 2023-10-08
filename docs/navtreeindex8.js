@@ -1,6 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"d2/de0/addpiece_8h.html":[2,0,0,1,12,2,10],
 "d2/de0/addpiece_8h_source.html":[2,0,0,1,12,2,10],
 "d2/de5/vdxfpaintdevice_8cpp.html":[2,0,0,1,3,8],
 "d2/de5/vdxfpaintdevice_8cpp_source.html":[2,0,0,1,3,8],
@@ -249,5 +248,6 @@ var NAVTREEINDEX8 =
 "d3/d44/classVTranslateMeasurements.html#a09b5c73fd5bed1498291c64c993d2680":[1,0,396,1],
 "d3/d44/classVTranslateMeasurements.html#a1461c47dc64fb77aa03abb2d08fb3df8":[1,0,396,15],
 "d3/d44/classVTranslateMeasurements.html#a1532d532aff03c56e1aa6383d2bcffd5":[1,0,396,21],
-"d3/d44/classVTranslateMeasurements.html#a1c7ce092eda85ae3c172112528242c2e":[1,0,396,14]
+"d3/d44/classVTranslateMeasurements.html#a1c7ce092eda85ae3c172112528242c2e":[1,0,396,14],
+"d3/d44/classVTranslateMeasurements.html#a2023636ac72736dcb9337303b0805416":[1,0,396,17]
 };

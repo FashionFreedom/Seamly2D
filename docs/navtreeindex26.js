@@ -1,6 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"d6/dfc/classAnchorPointDialog.html#a86e2d79c7f0d33ef17995d07c041e2a1":[1,0,11,10],
 "d6/dfc/classAnchorPointDialog.html#a8a5d013489f8716722b0d04dff69ac0a":[1,0,11,1],
 "d6/dfc/classAnchorPointDialog.html#a9bcc8ea230bb5e96d302615ee4f6ee28":[1,0,11,5],
 "d6/dfc/classAnchorPointDialog.html#aa2a976dade39e9c1ed5e22b904e20f41":[1,0,11,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX26 =
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html":[1,0,2,37],
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html#a3219d4249146b4f74265fb7c7a556ea8":[1,0,2,37,2],
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html#ac0ec655d432c13827bd5e7fb47e8b7ec":[1,0,2,37,0],
-"d7/d5d/classVPE_1_1VPropertySetPrivate.html#acb0b55cd20ddc171cbc175031fe60862":[1,0,2,37,1]
+"d7/d5d/classVPE_1_1VPropertySetPrivate.html#acb0b55cd20ddc171cbc175031fe60862":[1,0,2,37,1],
+"d7/d5e/classDialogMirrorByAxis.html":[1,0,53]
 };

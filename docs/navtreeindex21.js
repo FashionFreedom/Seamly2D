@@ -1,6 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9a88183b946cc5f0e8c96b2e66e1c74a7e":[2,0,0,1,5,26,1,7],
 "d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9a9ede004c94369027853b4a491071ef53":[2,0,0,1,5,26,1,2],
 "d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9aac70412e939d72a9234cdebb1af5867b":[2,0,0,1,5,26,1,9],
 "d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9aced824f3a4e9dd5feb68da4cb78a3430":[2,0,0,1,5,26,1,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX21 =
 "d5/dd0/libs_2vformat_2stable_8cpp.html":[2,0,0,1,4,0],
 "d5/dd0/libs_2vformat_2stable_8cpp_source.html":[2,0,0,1,4,0],
 "d5/dd2/vspline_8cpp.html":[2,0,0,1,5,33],
-"d5/dd2/vspline_8cpp_source.html":[2,0,0,1,5,33]
+"d5/dd2/vspline_8cpp_source.html":[2,0,0,1,5,33],
+"d5/dd5/vcubicbezier_8h.html":[2,0,0,1,5,18]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX33 =
 {
-"d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#af8aeb7c96e510de59b36203f2e1b8529":[0,0,8,2],
 "d8/dfd/vspline_8h.html":[2,0,0,1,5,34],
 "d8/dfd/vspline_8h.html#a5e0873aef2c4d5edbf4b846bfa39e8d5":[2,0,0,1,5,34,1],
 "d8/dfd/vspline_8h_source.html":[2,0,0,1,5,34],
@@ -249,5 +248,6 @@ var NAVTREEINDEX33 =
 "d9/d54/classVAbstractArc.html#abae946f3ed2a79ab51d557456324c7d0":[1,0,177,21],
 "d9/d54/classVAbstractArc.html#abb093cbfc83a1656f41c1f49c0a3643f":[1,0,177,2],
 "d9/d54/classVAbstractArc.html#ac48e0d7dfc2eec62cf70c41c9efa234f":[1,0,177,23],
-"d9/d54/classVAbstractArc.html#ac6b7fc4629f7c510afa73a5f5b67ba4e":[1,0,177,10]
+"d9/d54/classVAbstractArc.html#ac6b7fc4629f7c510afa73a5f5b67ba4e":[1,0,177,10],
+"d9/d54/classVAbstractArc.html#acc753166626bcbf5048b5e2bc011f95d":[1,0,177,14]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385":[2,0,0,1,6,14,1],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34":[2,0,0,1,6,14,1,2],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a664c140e94e21ff7725b2f5cbeb09af2":[2,0,0,1,6,14,1,3],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a70a47cae4eb221930f2663fd244369ea":[2,0,0,1,6,14,1,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX51 =
 "dd/db0/namespaceQT__WARNING__POP.html#af3cf1695bd87c1b8e150bf4b62c0c90f":[0,0,20,7],
 "dd/db0/namespaceQT__WARNING__POP.html#afcdb93c8fe03d1b43a08c027a267a495":[0,0,20,44],
 "dd/db1/dialogseamlymepreferences_8cpp.html":[2,0,0,0,1,0,7],
-"dd/db1/dialogseamlymepreferences_8cpp_source.html":[2,0,0,0,1,0,7]
+"dd/db1/dialogseamlymepreferences_8cpp_source.html":[2,0,0,0,1,0,7],
+"dd/db2/qmutranslation_8cpp.html":[2,0,0,1,2,23]
 };

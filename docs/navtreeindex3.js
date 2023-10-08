@@ -1,6 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"d1/d40/classDialogTriangle.html#acde5822189652cfbfed83d5000598bfc":[1,0,72,10],
 "d1/d40/classDialogTriangle.html#ace8a8da5f9c82c19d9a84f69dab25aef":[1,0,72,11],
 "d1/d40/classDialogTriangle.html#ada2cf10929f6482c55b9787c3435b5ba":[1,0,72,3],
 "d1/d40/classDialogTriangle.html#af6de0fff8bfa4bf5c377ca849fc42e71":[1,0,72,13],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "d1/d7a/classDialogEndLine.html#a2d6587d4a810dab76328735e0416e6e7":[1,0,44,6],
 "d1/d7a/classDialogEndLine.html#a3536195f349422fe63836623c4048961":[1,0,44,24],
 "d1/d7a/classDialogEndLine.html#a3ac97ee7f84e0fe5ed24aa6b56132077":[1,0,44,18],
-"d1/d7a/classDialogEndLine.html#a3da40e179dc7fa99766ad729b59f3e72":[1,0,44,10]
+"d1/d7a/classDialogEndLine.html#a3da40e179dc7fa99766ad729b59f3e72":[1,0,44,10],
+"d1/d7a/classDialogEndLine.html#a3f7235f8dae82ef88929360850ccff78":[1,0,44,9]
 };

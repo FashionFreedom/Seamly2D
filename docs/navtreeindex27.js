@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"d7/d5e/classDialogMirrorByAxis.html":[1,0,53],
 "d7/d5e/classDialogMirrorByAxis.html#a02509647c608b114c7e70fdc4ef47b29":[1,0,53,4],
 "d7/d5e/classDialogMirrorByAxis.html#a039cfbbc1abc3eb0f1279a57b86456fe":[1,0,53,22],
 "d7/d5e/classDialogMirrorByAxis.html#a25bc9079c44431773e9c8751393c1693":[1,0,53,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "d7/da6/classVCubicBezierPath.html#a474042775bf3d80ceb6f98d166efb20f":[1,0,216,13],
 "d7/da6/classVCubicBezierPath.html#a61e614261dbacfc9050cb1e88d0562ae":[1,0,216,9],
 "d7/da6/classVCubicBezierPath.html#a64645c36af0d62e08a60b4799eaecd9f":[1,0,216,8],
-"d7/da6/classVCubicBezierPath.html#a6b7ae558db2f0eb06f99c3a0cad31a32":[1,0,216,12]
+"d7/da6/classVCubicBezierPath.html#a6b7ae558db2f0eb06f99c3a0cad31a32":[1,0,216,12],
+"d7/da6/classVCubicBezierPath.html#a793f710ef1e2c6fe754eac19dc7aa207":[1,0,216,5]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"df/d89/classVPE_1_1VFileEditWidget.html#ad8034c392ac9b792fadf460b10b625f0":[1,0,2,10,2],
 "df/d89/classVPE_1_1VFileEditWidget.html#adeb9b293c352331e3d760cb0b0bd630f":[1,0,2,10,16],
 "df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,10,21],
 "df/d89/classVPE_1_1VFileEditWidget.html#af70de8d1ec28d384a26c22ce41f163a5":[1,0,2,10,12],
@@ -249,5 +248,6 @@ var NAVTREEINDEX60 =
 "df/de1/classVPiecePath.html#a913fb715d0e1c9acfb470a3cabcd3d0d":[1,0,334,11],
 "df/de1/classVPiecePath.html#a9296c27fe396030b03d1d2ca47d302d1":[1,0,334,39],
 "df/de1/classVPiecePath.html#a985d9f676d9ff99c50ab992364215381":[1,0,334,37],
-"df/de1/classVPiecePath.html#a9ebebfe2f4a0a1783099f77a376562f4":[1,0,334,26]
+"df/de1/classVPiecePath.html#a9ebebfe2f4a0a1783099f77a376562f4":[1,0,334,26],
+"df/de1/classVPiecePath.html#aa07edfea9583daf9e9e1ff6ddec0e6df":[1,0,334,27]
 };

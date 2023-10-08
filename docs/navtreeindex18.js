@@ -1,6 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"d4/dd9/classVisToolCutSplinePath.html#aeffb9222d40fb44f5c94b5eda9a04339":[1,0,269,6],
 "d4/ddb/vtoolnormal_8cpp.html":[2,0,0,1,12,1,0,2,1,1,16],
 "d4/ddb/vtoolnormal_8cpp_source.html":[2,0,0,1,12,1,0,2,1,1,16],
 "d4/de6/classVPE_1_1SpinboxProperty.html":[1,0,2,14],
@@ -249,5 +248,6 @@ var NAVTREEINDEX18 =
 "d5/d2c/vpatternconverter_8cpp.html#ad6360bf649ee088b49d8cb6618e985d9":[2,0,0,1,1,1,10,57],
 "d5/d2c/vpatternconverter_8cpp.html#adae1c8def95f898b34765a384300f3fc":[2,0,0,1,1,1,10,25],
 "d5/d2c/vpatternconverter_8cpp.html#adb3248694fcfe8f2e81ddb4b5f4ddf50":[2,0,0,1,1,1,10,115],
-"d5/d2c/vpatternconverter_8cpp.html#adb9f3de4f07004be30d13ed4a0b6fa44":[2,0,0,1,1,1,10,10]
+"d5/d2c/vpatternconverter_8cpp.html#adb9f3de4f07004be30d13ed4a0b6fa44":[2,0,0,1,1,1,10,10],
+"d5/d2c/vpatternconverter_8cpp.html#adcc43e4731e0a9ef1f0feb6e4eb3ad1c":[2,0,0,1,1,1,10,112]
 };
