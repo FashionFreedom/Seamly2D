@@ -571,7 +571,7 @@ qreal VAbstractCubicBezier::LengthT(qreal t) const
 {
     if (t < 0 || t > 1)
     {
-        qWarning() << "Wrong value t.";
+        qDebug() << "Wrong value t.";
         return 0;
     }
     QLineF seg1_2 ( static_cast<QPointF>(GetP1 ()), GetControlPoint1 () );

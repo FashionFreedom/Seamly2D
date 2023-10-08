@@ -562,7 +562,7 @@ bool QmuParserTokenReader::IsEOF ( token_type &a_Tok )
             }
             catch (qmu::QmuParserError &error)
             {
-                qWarning() << "  Code:" << error.GetCode() << "(" << error.GetMsg() << ")";
+                qDebug() << "  Code:" << error.GetCode() << "(" << error.GetMsg() << ")";
                 throw;
             }
         }

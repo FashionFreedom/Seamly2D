@@ -920,7 +920,7 @@ QString VTranslateVars::FormulaFromUser(const QString &formula, bool osSeparator
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qWarning() << "Can't convert to double token"<<nValues.at(i);
+                qDebug() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 
@@ -1061,7 +1061,7 @@ QString VTranslateVars::FormulaToUser(const QString &formula, bool osSeparator) 
             const qreal d = loc.toDouble(nValues.at(i), &ok);
             if (ok == false)
             {
-                qWarning() << "Can't convert to double token"<<nValues.at(i);
+                qDebug() << "Can't convert to double token"<<nValues.at(i);
                 continue;//Leave with out translation
             }
 

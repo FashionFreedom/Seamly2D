@@ -278,7 +278,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qWarning() << "Can't find element by id" << Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return rowData;
     }
     try
@@ -607,7 +607,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     }
     catch (const VExceptionBadId &error)
     {
-        qWarning() << error.ErrorMessage() << Q_FUNC_INFO;
+        qDebug() << error.ErrorMessage() << Q_FUNC_INFO;
         return rowData;
     }
     qWarning() << "Can't create history record for the tool.";
