@@ -1,7 +1,5 @@
 var NAVTREEINDEX59 =
 {
-"df/d18/qmuparserbase_8h.html":[2,0,0,1,2,7],
-"df/d18/qmuparserbase_8h_source.html":[2,0,0,1,2,7],
 "df/d22/seamlymepreferencesconfigurationpage_8h.html":[2,0,0,0,1,0,0,1],
 "df/d22/seamlymepreferencesconfigurationpage_8h_source.html":[2,0,0,0,1,0,0,1],
 "df/d25/vnodeellipticalarc_8h.html":[2,0,0,1,12,1,1,8],
@@ -249,5 +247,7 @@ var NAVTREEINDEX59 =
 "df/d89/classVPE_1_1VFileEditWidget.html#ac753eca02b685ce2e83005a80382068a":[1,0,2,10,5],
 "df/d89/classVPE_1_1VFileEditWidget.html#acd4aeb83d26b191a16098ce12945d654":[1,0,2,10,22],
 "df/d89/classVPE_1_1VFileEditWidget.html#ad5fddfa9fd6c06a2e0eb44e90e32ba8d":[1,0,2,10,3],
-"df/d89/classVPE_1_1VFileEditWidget.html#ad8034c392ac9b792fadf460b10b625f0":[1,0,2,10,2]
+"df/d89/classVPE_1_1VFileEditWidget.html#ad8034c392ac9b792fadf460b10b625f0":[1,0,2,10,2],
+"df/d89/classVPE_1_1VFileEditWidget.html#adeb9b293c352331e3d760cb0b0bd630f":[1,0,2,10,16],
+"df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,10,21]
 };

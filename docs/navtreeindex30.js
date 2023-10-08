@@ -1,7 +1,5 @@
 var NAVTREEINDEX30 =
 {
-"d8/d61/classTMainWindow.html#a8024a85b1798539474778ee4a485eab7":[1,0,169,60],
-"d8/d61/classTMainWindow.html#a830472d35eec5cac02eaa722352a5310":[1,0,169,3],
 "d8/d61/classTMainWindow.html#a836eb87be514a2d79a16d4b17a23f22c":[1,0,169,77],
 "d8/d61/classTMainWindow.html#a868c475d48f2284d7880a59a75ddbede":[1,0,169,49],
 "d8/d61/classTMainWindow.html#a89395e0e84f75e7d8472c6be49e3aaf8":[1,0,169,107],
@@ -249,5 +247,7 @@ var NAVTREEINDEX30 =
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#a4fc37dc63cec226efb0d02d3d0ced0e3":[1,0,0,10,53],
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#a5e9a5b3d53733f73fa9b27eae1b44b91":[1,0,0,10,15],
 "d8/daa/classqmu_1_1QmuParserTokenReader.html#a5f2878662ce24e8fec957f18b8ba869a":[1,0,0,10,17],
-"d8/daa/classqmu_1_1QmuParserTokenReader.html#a5f2f51b32434ee03d95f2db83fa8967a":[1,0,0,10,29]
+"d8/daa/classqmu_1_1QmuParserTokenReader.html#a5f2f51b32434ee03d95f2db83fa8967a":[1,0,0,10,29],
+"d8/daa/classqmu_1_1QmuParserTokenReader.html#a68f2272a68da486e1dd9224424417b08":[1,0,0,10,4],
+"d8/daa/classqmu_1_1QmuParserTokenReader.html#a6e0b024270f302a2bb98a2f804b8b788":[1,0,0,10,40]
 };

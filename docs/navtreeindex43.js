@@ -1,7 +1,5 @@
 var NAVTREEINDEX43 =
 {
-"db/dc4/classqmu_1_1QmuParserCallback.html":[1,0,0,6],
-"db/dc4/classqmu_1_1QmuParserCallback.html#a02390bd9a8af126b30085d4d86883e3c":[1,0,0,6,22],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a0c9bab33b0b61c283911155e29bf26d6":[1,0,0,6,39],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a11d5cfefbddc551af7e150ba0e48c154":[1,0,0,6,36],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a16d42b342de9f498df43864c978e5e9e":[1,0,0,6,21],
@@ -206,9 +204,9 @@ var NAVTREEINDEX43 =
 "db/dd7/classVAbstractArcData.html#ac5b55ec309dfe4b80a2a4da7b6f11ec1":[1,0,178,10],
 "db/dd7/classVAbstractArcData.html#ac68ff819fd8f284dd972b5aacae89518":[1,0,178,13],
 "db/dd7/classVAbstractArcData.html#adc5c6c31fe50ebe084ba6bd989062544":[1,0,178,7],
-"db/dd7/dialogvariables_8cpp.html":[2,0,0,0,0,1,21],
-"db/dd7/dialogvariables_8cpp.html#a637a585da62be12edae69e1bd4e33449":[2,0,0,0,0,1,21,0],
-"db/dd7/dialogvariables_8cpp_source.html":[2,0,0,0,0,1,21],
+"db/dd7/dialogvariables_8cpp.html":[2,0,0,0,0,1,20],
+"db/dd7/dialogvariables_8cpp.html#a637a585da62be12edae69e1bd4e33449":[2,0,0,0,0,1,20,0],
+"db/dd7/dialogvariables_8cpp_source.html":[2,0,0,0,0,1,20],
 "db/dda/classDecimalChartDialog.html":[1,0,21],
 "db/dda/classDecimalChartDialog.html#a2bfbf853072b9a46e181e2c0e9d7cc9d":[1,0,21,0],
 "db/dda/classDecimalChartDialog.html#a7abb2a4e03b6b0d679a1d3ca7bb3328e":[1,0,21,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX43 =
 "db/dda/classVAbstractApplication.html#a82a68e4e4625193cb2cb439325ab8699":[1,0,176,30],
 "db/dda/classVAbstractApplication.html#a83712518dcd81978d3f54ef8cb77bf7f":[1,0,176,38],
 "db/dda/classVAbstractApplication.html#a92886d256c5e9be89659da9dcc191107":[1,0,176,14],
-"db/dda/classVAbstractApplication.html#aa76510ae070b475c90495d3606ecf1c6":[1,0,176,48]
+"db/dda/classVAbstractApplication.html#aa76510ae070b475c90495d3606ecf1c6":[1,0,176,48],
+"db/dda/classVAbstractApplication.html#aaf7f1160ef591e625cb67d208c6eb6c8":[1,0,176,29],
+"db/dda/classVAbstractApplication.html#ab354e58700c474ae6d0ea167419e1c9c":[1,0,176,17]
 };

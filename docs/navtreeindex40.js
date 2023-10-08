@@ -1,7 +1,5 @@
 var NAVTREEINDEX40 =
 {
-"da/dbf/intersect__circles__visual_8cpp_source.html":[2,0,0,1,12,3,0,3],
-"da/dbf/vistoolarc_8h.html":[2,0,0,1,12,3,1,7],
 "da/dbf/vistoolarc_8h_source.html":[2,0,0,1,12,3,1,7],
 "da/dc6/vistoolpointofintersectionarcs_8h.html":[2,0,0,1,12,3,0,34],
 "da/dc6/vistoolpointofintersectionarcs_8h_source.html":[2,0,0,1,12,3,0,34],
@@ -249,5 +247,7 @@ var NAVTREEINDEX40 =
 "da/dfb/union__dialog_8h_source.html":[2,0,0,1,12,0,1,82],
 "db/d02/classVCubicBezierData.html":[1,0,215],
 "db/d02/classVCubicBezierData.html#a094c4ccd8aa0474bc80644097d7bc76f":[1,0,215,1],
-"db/d02/classVCubicBezierData.html#a28dc4b6ec02f7cd7df45693baed365e8":[1,0,215,8]
+"db/d02/classVCubicBezierData.html#a28dc4b6ec02f7cd7df45693baed365e8":[1,0,215,8],
+"db/d02/classVCubicBezierData.html#a470c7dc2eb479f913b1621b5ebd3e851":[1,0,215,6],
+"db/d02/classVCubicBezierData.html#a6b99446f7b080edbc7a0ab7b74cb1894":[1,0,215,7]
 };

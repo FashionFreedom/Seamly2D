@@ -1,7 +1,5 @@
 var NAVTREEINDEX12 =
 {
-"d4/d11/vcommonsettings_8cpp.html#a49808ed294e367be1fa93861f1f5c36c":[2,0,0,1,7,17,15],
-"d4/d11/vcommonsettings_8cpp.html#a4b0abdc5578b3badb71003b000ece7e5":[2,0,0,1,7,17,91],
 "d4/d11/vcommonsettings_8cpp.html#a4f84ec7974cf91210fa9f1329cf667c6":[2,0,0,1,7,17,75],
 "d4/d11/vcommonsettings_8cpp.html#a5336a2c97b7997d42fd907bef02d3876":[2,0,0,1,7,17,18],
 "d4/d11/vcommonsettings_8cpp.html#a55a4ea7793a79bc584e55669b40e6d7c":[2,0,0,1,7,17,102],
@@ -249,5 +247,7 @@ var NAVTREEINDEX12 =
 "d4/d2b/classVToolArcWithLength.html#acb085208beebd170b1a5fb4b29469b91":[1,0,360,17],
 "d4/d2b/classVToolArcWithLength.html#ad63c5be617118bfe420459f5235e6745":[1,0,360,12],
 "d4/d2b/classVToolArcWithLength.html#adac1e47188f7effe29329c353c4d6ee1":[1,0,360,21],
-"d4/d2b/classVToolArcWithLength.html#ae54ba320b71c8c6ab49dea0900797989":[1,0,360,15]
+"d4/d2b/classVToolArcWithLength.html#ae54ba320b71c8c6ab49dea0900797989":[1,0,360,15],
+"d4/d36/classVAbstractTool.html":[1,0,199],
+"d4/d36/classVAbstractTool.html#a08c03ebfcbbcfbc4f7433de128a5a3d5":[1,0,199,4]
 };

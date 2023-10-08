@@ -1,7 +1,5 @@
 var NAVTREEINDEX51 =
 {
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34":[2,0,0,1,6,14,1,2],
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a664c140e94e21ff7725b2f5cbeb09af2":[2,0,0,1,6,14,1,3],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a70a47cae4eb221930f2663fd244369ea":[2,0,0,1,6,14,1,0],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a8c4a5810902e7660d6ab7658bdde74e6":[2,0,0,1,6,14,1,1],
 "dd/d4a/vlayoutdef_8h.html#af1e732f0ac9c7478f79af187b99e503a":[2,0,0,1,6,14,0],
@@ -72,9 +70,9 @@ var NAVTREEINDEX51 =
 "dd/d52/classSetPieceColor.html#ac9a7127eb35be63bd0b010808b89a1fd":[1,0,161,0],
 "dd/d52/classSetPieceColor.html#adfa09c2f5c764ce6b997d5430fddd2e4":[1,0,161,10],
 "dd/d52/classSetPieceColor.html#ae4c4e60d23a6a9df784002c63e3b31f5":[1,0,161,2],
-"dd/d54/export__layout__dialog_8cpp.html":[2,0,0,0,0,1,23],
-"dd/d54/export__layout__dialog_8cpp.html#a48df73b2d488914bb05636eeb1017521":[2,0,0,0,0,1,23,0],
-"dd/d54/export__layout__dialog_8cpp_source.html":[2,0,0,0,0,1,23],
+"dd/d54/export__layout__dialog_8cpp.html":[2,0,0,0,0,1,22],
+"dd/d54/export__layout__dialog_8cpp.html#a48df73b2d488914bb05636eeb1017521":[2,0,0,0,0,1,22,0],
+"dd/d54/export__layout__dialog_8cpp_source.html":[2,0,0,0,0,1,22],
 "dd/d57/vcmdexport_8h.html":[2,0,0,0,0,0,3],
 "dd/d57/vcmdexport_8h.html#a2a5de723f4f2e702d26026cb3471b1ea":[2,0,0,0,0,0,3,3],
 "dd/d57/vcmdexport_8h.html#a2c27b3e93739102ce70a1aaa534849e5":[2,0,0,0,0,0,3,2],
@@ -171,8 +169,8 @@ var NAVTREEINDEX51 =
 "dd/d71/vistoolarcwithlength_8cpp_source.html":[2,0,0,1,12,3,1,8],
 "dd/d78/dxiface_8h.html":[2,0,0,1,3,3],
 "dd/d78/dxiface_8h_source.html":[2,0,0,1,3,3],
-"dd/d84/shortcuts__dialog_8cpp.html":[2,0,0,0,0,1,31],
-"dd/d84/shortcuts__dialog_8cpp_source.html":[2,0,0,0,0,1,31],
+"dd/d84/shortcuts__dialog_8cpp.html":[2,0,0,0,0,1,30],
+"dd/d84/shortcuts__dialog_8cpp_source.html":[2,0,0,0,0,1,30],
 "dd/da2/classVScaledLine.html":[1,0,342],
 "dd/da2/classVScaledLine.html#a071602288ffae13e7a1645ce9e0276bc":[1,0,342,3],
 "dd/da2/classVScaledLine.html#a1429d6f468ce3f4da13c45e0604507f2":[1,0,342,2],
@@ -249,5 +247,7 @@ var NAVTREEINDEX51 =
 "dd/db0/namespaceQT__WARNING__POP.html#afcdb93c8fe03d1b43a08c027a267a495":[0,0,20,44],
 "dd/db1/dialogseamlymepreferences_8cpp.html":[2,0,0,0,1,0,7],
 "dd/db1/dialogseamlymepreferences_8cpp_source.html":[2,0,0,0,1,0,7],
-"dd/db2/qmutranslation_8cpp.html":[2,0,0,1,2,23]
+"dd/db2/qmutranslation_8cpp.html":[2,0,0,1,2,23],
+"dd/db2/qmutranslation_8cpp_source.html":[2,0,0,1,2,23],
+"dd/db2/vsettings_8h.html":[2,0,0,1,7,24]
 };

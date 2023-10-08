@@ -1,7 +1,5 @@
 var NAVTREEINDEX37 =
 {
-"da/d04/classMApplication.html#ae7d4a424a5c9764d4d5ac0338fc7a2c9":[1,0,107,23],
-"da/d04/classMApplication.html#aea055a569f3bc8436c2827073558e509":[1,0,107,11],
 "da/d04/classMApplication.html#afb5c95bf10f20a88939a09e9d75038b9":[1,0,107,14],
 "da/d06/classDialogDateTimeFormats.html":[1,0,42],
 "da/d06/classDialogDateTimeFormats.html#a144d5b4c55ae302cc9a8449a6b5a1651":[1,0,42,6],
@@ -249,5 +247,7 @@ var NAVTREEINDEX37 =
 "da/d4e/classVGrainlineItem.html#a1cebbad6f59070f1b9197049bb711252":[1,0,249,24],
 "da/d4e/classVGrainlineItem.html#a266789f475aec411483a9b9c1fe81740":[1,0,249,36],
 "da/d4e/classVGrainlineItem.html#a2e9053b3393b2697f2a16905ffa9461a":[1,0,249,25],
-"da/d4e/classVGrainlineItem.html#a2f469fa1d1e679dc118c4ab215fa1354":[1,0,249,42]
+"da/d4e/classVGrainlineItem.html#a2f469fa1d1e679dc118c4ab215fa1354":[1,0,249,42],
+"da/d4e/classVGrainlineItem.html#a30b48687c1b33428daf1595da9a3c2fa":[1,0,249,23],
+"da/d4e/classVGrainlineItem.html#a36367fee79cfe0cf8802caea8954fb9e":[1,0,249,29]
 };

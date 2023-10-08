@@ -158,8 +158,6 @@ var NAVTREEINDEX11 =
 "d3/dd9/vtoolinternalpath_8cpp_source.html":[2,0,0,1,12,1,1,15],
 "d3/df3/deltool_8cpp.html":[2,0,0,1,12,2,19],
 "d3/df3/deltool_8cpp_source.html":[2,0,0,1,12,2,19],
-"d3/df3/dialoghistory_8cpp.html":[2,0,0,0,0,1,9],
-"d3/df3/dialoghistory_8cpp_source.html":[2,0,0,0,0,1,9],
 "d3/df6/dialogline_8h.html":[2,0,0,1,12,0,1,34],
 "d3/df6/dialogline_8h_source.html":[2,0,0,1,12,0,1,34],
 "d3/df7/vcontainer_8h.html":[2,0,0,1,9,12],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "d4/d11/vcommonsettings_8cpp.html#a464c6501262ea18e1b0902086c26b006":[2,0,0,1,7,17,22],
 "d4/d11/vcommonsettings_8cpp.html#a466e58d60d4df94c653ae24efd557bed":[2,0,0,1,7,17,10],
 "d4/d11/vcommonsettings_8cpp.html#a4737f155235118b924d74d65812b04b6":[2,0,0,1,7,17,57],
-"d4/d11/vcommonsettings_8cpp.html#a485dbb77fd83568851ecf5d4be59ac45":[2,0,0,1,7,17,115]
+"d4/d11/vcommonsettings_8cpp.html#a485dbb77fd83568851ecf5d4be59ac45":[2,0,0,1,7,17,115],
+"d4/d11/vcommonsettings_8cpp.html#a49808ed294e367be1fa93861f1f5c36c":[2,0,0,1,7,17,15],
+"d4/d11/vcommonsettings_8cpp.html#a4b0abdc5578b3badb71003b000ece7e5":[2,0,0,1,7,17,91]
 };

@@ -1,7 +1,5 @@
 var NAVTREEINDEX34 =
 {
-"d9/d54/classVAbstractArc.html#ae5dfd7b02c0f36bf9c7d7af9b0956606":[1,0,177,20],
-"d9/d54/classVAbstractArc.html#ae930d749a318dac397bd6cdc01ee6ba2":[1,0,177,6],
 "d9/d54/classVAbstractArc.html#afad394dead5f91806c20cbe84e00f31e":[1,0,177,15],
 "d9/d54/classVAbstractArc.html#afe862f50e5d74694f2232029a3b8b189":[1,0,177,19],
 "d9/d54/dialoggroup_8h.html":[2,0,0,1,12,0,1,30],
@@ -249,5 +247,7 @@ var NAVTREEINDEX34 =
 "d9/d92/libs_2vwidgets_2calculator_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[2,0,0,1,13,0,4,0],
 "d9/d92/libs_2vwidgets_2calculator_2main_8cpp_source.html":[2,0,0,1,13,0,4],
 "d9/d93/classVPieceNodeData.html":[1,0,333],
-"d9/d93/classVPieceNodeData.html#a0de715ee9eef8053c05e6cc82f8ab2b8":[1,0,333,5]
+"d9/d93/classVPieceNodeData.html#a0de715ee9eef8053c05e6cc82f8ab2b8":[1,0,333,5],
+"d9/d93/classVPieceNodeData.html#a13263b128600c8440111ff1f28fe983a":[1,0,333,16],
+"d9/d93/classVPieceNodeData.html#a1a4e62247e6e58634e38997ca5a2c96a":[1,0,333,13]
 };

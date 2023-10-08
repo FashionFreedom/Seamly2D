@@ -1,9 +1,7 @@
 var NAVTREEINDEX23 =
 {
-"d6/d0b/def_8cpp.html#afe3d74de98705f0a262de22f028cbb1d":[2,0,0,1,7,5,15],
-"d6/d0b/def_8cpp_source.html":[2,0,0,1,7,5],
-"d6/d10/dialogpreferences_8h.html":[2,0,0,0,0,1,19],
-"d6/d10/dialogpreferences_8h_source.html":[2,0,0,0,0,1,19],
+"d6/d10/dialogpreferences_8h.html":[2,0,0,0,0,1,18],
+"d6/d10/dialogpreferences_8h_source.html":[2,0,0,0,0,1,18],
 "d6/d13/vpropertyset_8h.html":[2,0,0,1,10,26],
 "d6/d13/vpropertyset_8h_source.html":[2,0,0,1,10,26],
 "d6/d15/structVFormulaField.html":[1,0,240],
@@ -249,5 +247,7 @@ var NAVTREEINDEX23 =
 "d6/d1a/classMainWindow.html#adba1f584285fa5cb8a4f2f8907dd3faa":[1,0,105,51],
 "d6/d1a/classMainWindow.html#adc2403907930a09c2b2710d8ac3e95ea":[1,0,105,67],
 "d6/d1a/classMainWindow.html#adff14423eb94a6e664b47fbb69224fdc":[1,0,105,71],
-"d6/d1a/classMainWindow.html#ae2cb84bec0f18189dde840fd167e0728":[1,0,105,102]
+"d6/d1a/classMainWindow.html#ae2cb84bec0f18189dde840fd167e0728":[1,0,105,102],
+"d6/d1a/classMainWindow.html#ae2fe4e227fb2e0606bd81c9b4d7a47c6":[1,0,105,127],
+"d6/d1a/classMainWindow.html#ae45ddb21cf6fef7bc68309586b71b595":[1,0,105,248]
 };

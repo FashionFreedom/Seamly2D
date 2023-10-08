@@ -1,7 +1,5 @@
 var NAVTREEINDEX60 =
 {
-"df/d89/classVPE_1_1VFileEditWidget.html#adeb9b293c352331e3d760cb0b0bd630f":[1,0,2,10,16],
-"df/d89/classVPE_1_1VFileEditWidget.html#af3a9fff0daef7c873ae825088c370509":[1,0,2,10,21],
 "df/d89/classVPE_1_1VFileEditWidget.html#af70de8d1ec28d384a26c22ce41f163a5":[1,0,2,10,12],
 "df/d89/classVPE_1_1VFileEditWidget.html#aff064e71f91f4886f4f98e2db257bb55":[1,0,2,10,19],
 "df/d93/classVNodeArc.html":[1,0,314],
@@ -101,8 +99,8 @@ var NAVTREEINDEX60 =
 "df/da4/mapplication_8h_source.html":[2,0,0,0,1,3],
 "df/da4/vseamlymesettings_8h.html":[2,0,0,1,7,22],
 "df/da4/vseamlymesettings_8h_source.html":[2,0,0,1,7,22],
-"df/da7/groups__widget_8h.html":[2,0,0,0,0,1,26],
-"df/da7/groups__widget_8h_source.html":[2,0,0,0,0,1,26],
+"df/da7/groups__widget_8h.html":[2,0,0,0,0,1,25],
+"df/da7/groups__widget_8h_source.html":[2,0,0,0,0,1,25],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html":[1,0,2,42],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html#a036ee4b6029fdda2c296f2a25c8bdc48":[1,0,2,42,2],
 "df/da8/classVPE_1_1VWidgetPropertyPrivate.html#a9f2bf688b343732bfd0da09a2aa8cfee":[1,0,2,42,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX60 =
 "df/de1/classVPiecePath.html#a9296c27fe396030b03d1d2ca47d302d1":[1,0,334,39],
 "df/de1/classVPiecePath.html#a985d9f676d9ff99c50ab992364215381":[1,0,334,37],
 "df/de1/classVPiecePath.html#a9ebebfe2f4a0a1783099f77a376562f4":[1,0,334,26],
-"df/de1/classVPiecePath.html#aa07edfea9583daf9e9e1ff6ddec0e6df":[1,0,334,27]
+"df/de1/classVPiecePath.html#aa07edfea9583daf9e9e1ff6ddec0e6df":[1,0,334,27],
+"df/de1/classVPiecePath.html#aa11dc7d39175e8911befd9df89d84288":[1,0,334,24],
+"df/de1/classVPiecePath.html#aa3fd6256f610dcfd2f4e61ce990c3770":[1,0,334,0]
 };

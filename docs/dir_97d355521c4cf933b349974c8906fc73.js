@@ -17,7 +17,6 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "dialogdatetimeformats.h", "d5/d11/dialogdatetimeformats_8h.html", [
       [ "DialogDateTimeFormats", "da/d06/classDialogDateTimeFormats.html", "da/d06/classDialogDateTimeFormats" ]
     ] ],
-    [ "dialoghistory.cpp", "d3/df3/dialoghistory_8cpp.html", null ],
     [ "dialoglayoutprogress.cpp", "d6/d89/dialoglayoutprogress_8cpp.html", null ],
     [ "dialoglayoutprogress.h", "d3/d03/dialoglayoutprogress_8h.html", [
       [ "DialogLayoutProgress", "dd/d64/classDialogLayoutProgress.html", "dd/d64/classDialogLayoutProgress" ]

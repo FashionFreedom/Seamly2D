@@ -1,7 +1,5 @@
 var NAVTREEINDEX45 =
 {
-"dc/d10/classDialogCurveIntersectAxis.html#a2af75909a181cb0c5afaff534ede501f":[1,0,38,24],
-"dc/d10/classDialogCurveIntersectAxis.html#a2d219face234d414d4d7f9c08d13bd3e":[1,0,38,29],
 "dc/d10/classDialogCurveIntersectAxis.html#a353ab9c9c41a48013e08c3679aa150ab":[1,0,38,5],
 "dc/d10/classDialogCurveIntersectAxis.html#a3659f6dea879cb7cacbbbf1ddead8d98":[1,0,38,20],
 "dc/d10/classDialogCurveIntersectAxis.html#a3a2d3408758d14250545491fc5b0d73b":[1,0,38,23],
@@ -249,5 +247,7 @@ var NAVTREEINDEX45 =
 "dc/d3e/classqmu_1_1QmuTranslation.html#a5311cdf123766cb3c792cf58a3d69e8e":[1,0,0,12,6],
 "dc/d3e/classqmu_1_1QmuTranslation.html#a77958aa66d3d0b910eb394cc1055112d":[1,0,0,12,2],
 "dc/d3e/classqmu_1_1QmuTranslation.html#a7e6dfa6a39f6cf8a359dc186f4754b8b":[1,0,0,12,7],
-"dc/d3e/classqmu_1_1QmuTranslation.html#a8ce969a06062aaa59b78470dc43e5af9":[1,0,0,12,0]
+"dc/d3e/classqmu_1_1QmuTranslation.html#a8ce969a06062aaa59b78470dc43e5af9":[1,0,0,12,0],
+"dc/d3e/classqmu_1_1QmuTranslation.html#a9fec477fe42972a13467343f13094f69":[1,0,0,12,1],
+"dc/d3e/classqmu_1_1QmuTranslation.html#aaafa8efbaf090237a13a6c331df0c2d7":[1,0,0,12,5]
 };

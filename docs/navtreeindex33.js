@@ -1,7 +1,5 @@
 var NAVTREEINDEX33 =
 {
-"d8/dfd/vspline_8h.html":[2,0,0,1,5,34],
-"d8/dfd/vspline_8h.html#a5e0873aef2c4d5edbf4b846bfa39e8d5":[2,0,0,1,5,34,1],
 "d8/dfd/vspline_8h_source.html":[2,0,0,1,5,34],
 "d9/d00/adddetnode_8h.html":[2,0,0,1,12,2,6],
 "d9/d00/adddetnode_8h_source.html":[2,0,0,1,12,2,6],
@@ -186,8 +184,8 @@ var NAVTREEINDEX33 =
 "d9/d47/vformula_8h_source.html":[2,0,0,1,9,14],
 "d9/d47/vtoolrecord_8h.html":[2,0,0,1,1,1,13],
 "d9/d47/vtoolrecord_8h_source.html":[2,0,0,1,1,1,13],
-"d9/d49/shortcuts__dialog_8h.html":[2,0,0,0,0,1,32],
-"d9/d49/shortcuts__dialog_8h_source.html":[2,0,0,0,0,1,32],
+"d9/d49/shortcuts__dialog_8h.html":[2,0,0,0,0,1,31],
+"d9/d49/shortcuts__dialog_8h_source.html":[2,0,0,0,0,1,31],
 "d9/d4b/fvupdater_8h.html":[2,0,0,1,0,1],
 "d9/d4b/fvupdater_8h.html#a5a6ec33c68bf45639f36c0f823a73c94":[2,0,0,1,0,1,1],
 "d9/d4b/fvupdater_8h_source.html":[2,0,0,1,0,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX33 =
 "d9/d54/classVAbstractArc.html#abb093cbfc83a1656f41c1f49c0a3643f":[1,0,177,2],
 "d9/d54/classVAbstractArc.html#ac48e0d7dfc2eec62cf70c41c9efa234f":[1,0,177,23],
 "d9/d54/classVAbstractArc.html#ac6b7fc4629f7c510afa73a5f5b67ba4e":[1,0,177,10],
-"d9/d54/classVAbstractArc.html#acc753166626bcbf5048b5e2bc011f95d":[1,0,177,14]
+"d9/d54/classVAbstractArc.html#acc753166626bcbf5048b5e2bc011f95d":[1,0,177,14],
+"d9/d54/classVAbstractArc.html#ae5dfd7b02c0f36bf9c7d7af9b0956606":[1,0,177,20],
+"d9/d54/classVAbstractArc.html#ae930d749a318dac397bd6cdc01ee6ba2":[1,0,177,6]
 };

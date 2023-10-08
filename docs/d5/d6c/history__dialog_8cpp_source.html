@@ -377,7 +377,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keyword">const</span> QDomElement domElement = m_doc-&gt;elementById(toolId);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span> (domElement.isElement() == <span class="keyword">false</span>)</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    {</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span> &lt;&lt; Q_FUNC_INFO;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t find element by id&quot;</span> &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;        <span class="keywordflow">return</span> rowData;</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    }</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">try</span></div>
@@ -706,7 +706,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    }</div>
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="../../de/da9/classVExceptionBadId.html">VExceptionBadId</a> &amp;error)</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    {</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        qWarning() &lt;&lt; error.<a class="code" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">ErrorMessage</a>() &lt;&lt; Q_FUNC_INFO;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;        qDebug() &lt;&lt; error.<a class="code" href="../../de/da9/classVExceptionBadId.html#abbfc04f0381b327fbbcd247776db2fe8">ErrorMessage</a>() &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        <span class="keywordflow">return</span> rowData;</div>
 <div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    }</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t create history record for the tool.&quot;</span>;</div>

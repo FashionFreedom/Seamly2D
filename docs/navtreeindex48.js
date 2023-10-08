@@ -1,7 +1,5 @@
 var NAVTREEINDEX48 =
 {
-"dc/db7/measurements_8h.html#a4565cec7365e32ed3f291c1ceb7188e6":[2,0,0,1,9,5,114],
-"dc/db7/measurements_8h.html#a45a943872af093fbdeee3a3c7f0c8cf8":[2,0,0,1,9,5,135],
 "dc/db7/measurements_8h.html#a46043bf1e19f0db022ce5e18ab3270dc":[2,0,0,1,9,5,165],
 "dc/db7/measurements_8h.html#a46cc4ddc22d065554bfec0db8f8c0440":[2,0,0,1,9,5,139],
 "dc/db7/measurements_8h.html#a47f138b1c92c6dcb18ef3285b4498961":[2,0,0,1,9,5,228],
@@ -249,5 +247,7 @@ var NAVTREEINDEX48 =
 "dc/dcb/structVPE_1_1Vector3D.html#a1b513adf35e27a771e45cf1863ce883b":[1,0,2,5,0],
 "dc/dcb/structVPE_1_1Vector3D.html#a26c64e56d367dcdd328da301e3b587d0":[1,0,2,5,6],
 "dc/dcb/structVPE_1_1Vector3D.html#a2a6d9568378852c0553a387ee4931ad1":[1,0,2,5,4],
-"dc/dcb/structVPE_1_1Vector3D.html#a8998778108abba3fe654d8fcb95710bf":[1,0,2,5,3]
+"dc/dcb/structVPE_1_1Vector3D.html#a8998778108abba3fe654d8fcb95710bf":[1,0,2,5,3],
+"dc/dcb/structVPE_1_1Vector3D.html#a9f09c5c7a51a1fffb800c3df7dd42bf2":[1,0,2,5,2],
+"dc/dd3/classVPatternConverter.html":[1,0,324]
 };

@@ -1,7 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"d5/dd5/vcubicbezier_8h.html#a510dbe24d59cc637a7c34632f228277f":[2,0,0,1,5,18,1],
-"d5/dd5/vcubicbezier_8h_source.html":[2,0,0,1,5,18],
 "d5/dd7/classDialogLine.html":[1,0,50],
 "d5/dd7/classDialogLine.html#a0a94d8be1f4fc9bc8f77b0ead337d129":[1,0,50,16],
 "d5/dd7/classDialogLine.html#a17214310559577bbcb1548b7e5697d24":[1,0,50,8],
@@ -81,8 +79,8 @@ var NAVTREEINDEX22 =
 "d5/de4/classVToolPointFromArcAndTangent.html#afca425981948b0d951efb6e1e5dc1e45":[1,0,384,18],
 "d5/de4/delete__draftblock_8h.html":[2,0,0,1,12,2,14],
 "d5/de4/delete__draftblock_8h_source.html":[2,0,0,1,12,2,14],
-"d5/de4/vabstractlayoutdialog_8cpp.html":[2,0,0,0,0,1,35],
-"d5/de4/vabstractlayoutdialog_8cpp_source.html":[2,0,0,0,0,1,35],
+"d5/de4/vabstractlayoutdialog_8cpp.html":[2,0,0,0,0,1,34],
+"d5/de4/vabstractlayoutdialog_8cpp_source.html":[2,0,0,0,0,1,34],
 "d5/de5/vtoolendline_8h.html":[2,0,0,1,12,1,0,2,1,1,9],
 "d5/de5/vtoolendline_8h_source.html":[2,0,0,1,12,1,0,2,1,1,9],
 "d5/de8/classVGrainlineDataPrivate.html":[1,0,248],
@@ -249,5 +247,7 @@ var NAVTREEINDEX22 =
 "d6/d0b/def_8cpp.html#af0523eb397a368f935f2dc75a79eaa8b":[2,0,0,1,7,5,74],
 "d6/d0b/def_8cpp.html#af49aeb9df96488d2b90dece1756b1d2c":[2,0,0,1,7,5,10],
 "d6/d0b/def_8cpp.html#af51912b634cbe7051d52891a1fd3981d":[2,0,0,1,7,5,22],
-"d6/d0b/def_8cpp.html#afa0a872157a8d9c2a6ad6542ebf34d59":[2,0,0,1,7,5,53]
+"d6/d0b/def_8cpp.html#afa0a872157a8d9c2a6ad6542ebf34d59":[2,0,0,1,7,5,53],
+"d6/d0b/def_8cpp.html#afe3d74de98705f0a262de22f028cbb1d":[2,0,0,1,7,5,15],
+"d6/d0b/def_8cpp_source.html":[2,0,0,1,7,5]
 };

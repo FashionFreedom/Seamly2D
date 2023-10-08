@@ -1,7 +1,5 @@
 var NAVTREEINDEX25 =
 {
-"d6/d6b/classVToolBisector.html#a03774901ba31118f217b74af44f0718c":[1,0,362,6],
-"d6/d6b/classVToolBisector.html#a0c09eeda900b693867ca283b6fae2042":[1,0,362,22],
 "d6/d6b/classVToolBisector.html#a18f8bac393baa4062fce2f1eb22a7061":[1,0,362,13],
 "d6/d6b/classVToolBisector.html#a19f6f30fc581f0573f2dc7c2ca4bb466":[1,0,362,3],
 "d6/d6b/classVToolBisector.html#a1c6b3f6d7c7de121a98b849981828905":[1,0,362,5],
@@ -80,8 +78,8 @@ var NAVTREEINDEX25 =
 "d6/d84/delaunay_8h.html#abc6a5bf457ef3a37aed461cdcb3c8fbc":[2,0,0,1,8,1,3],
 "d6/d84/delaunay_8h.html#abe705106bcafe02255601006bece14dc":[2,0,0,1,8,1,6],
 "d6/d84/delaunay_8h_source.html":[2,0,0,1,8,1],
-"d6/d89/dialoglayoutprogress_8cpp.html":[2,0,0,0,0,1,10],
-"d6/d89/dialoglayoutprogress_8cpp_source.html":[2,0,0,0,0,1,10],
+"d6/d89/dialoglayoutprogress_8cpp.html":[2,0,0,0,0,1,9],
+"d6/d89/dialoglayoutprogress_8cpp_source.html":[2,0,0,0,0,1,9],
 "d6/d8a/vistoolinternalpath_8cpp.html":[2,0,0,1,12,3,1,22],
 "d6/d8a/vistoolinternalpath_8cpp_source.html":[2,0,0,1,12,3,1,22],
 "d6/d8e/me__shortcuts__dialog_8cpp.html":[2,0,0,0,1,0,9],
@@ -249,5 +247,7 @@ var NAVTREEINDEX25 =
 "d6/dfc/classAnchorPointDialog.html#a215e32d5182f0863414e19ac336f5dde":[1,0,11,15],
 "d6/dfc/classAnchorPointDialog.html#a469d504618f7bf0f877992a59bb0e0b9":[1,0,11,2],
 "d6/dfc/classAnchorPointDialog.html#a5c1e4678811f9b07bfa07fd205ccdffc":[1,0,11,4],
-"d6/dfc/classAnchorPointDialog.html#a86e2d79c7f0d33ef17995d07c041e2a1":[1,0,11,10]
+"d6/dfc/classAnchorPointDialog.html#a86e2d79c7f0d33ef17995d07c041e2a1":[1,0,11,10],
+"d6/dfc/classAnchorPointDialog.html#a8a5d013489f8716722b0d04dff69ac0a":[1,0,11,1],
+"d6/dfc/classAnchorPointDialog.html#a9bcc8ea230bb5e96d302615ee4f6ee28":[1,0,11,5]
 };

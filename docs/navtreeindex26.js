@@ -1,7 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"d6/dfc/classAnchorPointDialog.html#a8a5d013489f8716722b0d04dff69ac0a":[1,0,11,1],
-"d6/dfc/classAnchorPointDialog.html#a9bcc8ea230bb5e96d302615ee4f6ee28":[1,0,11,5],
 "d6/dfc/classAnchorPointDialog.html#aa2a976dade39e9c1ed5e22b904e20f41":[1,0,11,14],
 "d6/dfc/classAnchorPointDialog.html#aa3b29cc04e16069c9373e9b9863cf2a2":[1,0,11,11],
 "d6/dfc/classAnchorPointDialog.html#aabae591b517ed6eb02d92af4f56b9223":[1,0,11,8],
@@ -120,8 +118,8 @@ var NAVTREEINDEX26 =
 "d7/d18/classRemoveGroupItem.html#a39ebb121370a2581983365cd7120c3fd":[1,0,152,3],
 "d7/d18/classRemoveGroupItem.html#a98800c12ad6b679a15bd39fff6f85664":[1,0,152,5],
 "d7/d18/classRemoveGroupItem.html#acd1e2baf0c90ca03d6dd8366fdbf0e90":[1,0,152,4],
-"d7/d18/pieces__widget_8h.html":[2,0,0,0,0,1,30],
-"d7/d18/pieces__widget_8h_source.html":[2,0,0,0,0,1,30],
+"d7/d18/pieces__widget_8h.html":[2,0,0,0,0,1,29],
+"d7/d18/pieces__widget_8h_source.html":[2,0,0,0,0,1,29],
 "d7/d1a/libs_2vformat_2stable_8h.html":[2,0,0,1,4,1],
 "d7/d1a/libs_2vformat_2stable_8h_source.html":[2,0,0,1,4,1],
 "d7/d1b/pen__toolbar_8cpp.html":[2,0,0,1,13,21],
@@ -203,8 +201,8 @@ var NAVTREEINDEX26 =
 "d7/d44/dxfdef_8cpp.html":[2,0,0,1,3,0],
 "d7/d44/dxfdef_8cpp.html#a73fa4d3086af765e2c5d827f786a4631":[2,0,0,1,3,0,0],
 "d7/d44/dxfdef_8cpp_source.html":[2,0,0,1,3,0],
-"d7/d44/history__dialog_8h.html":[2,0,0,0,0,1,28],
-"d7/d44/history__dialog_8h_source.html":[2,0,0,0,0,1,28],
+"d7/d44/history__dialog_8h.html":[2,0,0,0,0,1,27],
+"d7/d44/history__dialog_8h_source.html":[2,0,0,0,0,1,27],
 "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html":[0,0,2],
 "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#a6e4259470f736c8f847d8d04b3fef36d":[0,0,2,1],
 "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#af04aa336f20ec8424e3ff06065363df1":[0,0,2,0],
@@ -249,5 +247,7 @@ var NAVTREEINDEX26 =
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html#a3219d4249146b4f74265fb7c7a556ea8":[1,0,2,37,2],
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html#ac0ec655d432c13827bd5e7fb47e8b7ec":[1,0,2,37,0],
 "d7/d5d/classVPE_1_1VPropertySetPrivate.html#acb0b55cd20ddc171cbc175031fe60862":[1,0,2,37,1],
-"d7/d5e/classDialogMirrorByAxis.html":[1,0,53]
+"d7/d5e/classDialogMirrorByAxis.html":[1,0,53],
+"d7/d5e/classDialogMirrorByAxis.html#a02509647c608b114c7e70fdc4ef47b29":[1,0,53,4],
+"d7/d5e/classDialogMirrorByAxis.html#a039cfbbc1abc3eb0f1279a57b86456fe":[1,0,53,22]
 };

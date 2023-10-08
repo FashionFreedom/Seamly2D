@@ -1,7 +1,5 @@
 var NAVTREEINDEX21 =
 {
-"d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9a9ede004c94369027853b4a491071ef53":[2,0,0,1,5,26,1,2],
-"d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9aac70412e939d72a9234cdebb1af5867b":[2,0,0,1,5,26,1,9],
 "d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9aced824f3a4e9dd5feb68da4cb78a3430":[2,0,0,1,5,26,1,5],
 "d5/d9d/vgeometrydef_8h.html#a6bf870a878c696639c3936fa7e9729b9ad95f061893652d68f9748808e12cb40c":[2,0,0,1,5,26,1,10],
 "d5/d9d/vgeometrydef_8h.html#a85a66cf8eff1eceb62457cf1931ddf1a":[2,0,0,1,5,26,0],
@@ -206,8 +204,8 @@ var NAVTREEINDEX21 =
 "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#afe17da3bd7e3382419fcb24b1529943f":[0,0,6,61],
 "d5/dc4/vtablesearch_8cpp.html":[2,0,0,1,7,26],
 "d5/dc4/vtablesearch_8cpp_source.html":[2,0,0,1,7,26],
-"d5/dc5/dialogpreferences_8cpp.html":[2,0,0,0,0,1,18],
-"d5/dc5/dialogpreferences_8cpp_source.html":[2,0,0,0,0,1,18],
+"d5/dc5/dialogpreferences_8cpp.html":[2,0,0,0,0,1,17],
+"d5/dc5/dialogpreferences_8cpp_source.html":[2,0,0,0,0,1,17],
 "d5/dc6/vistoolheight_8cpp.html":[2,0,0,1,12,3,0,19],
 "d5/dc6/vistoolheight_8cpp_source.html":[2,0,0,1,12,3,0,19],
 "d5/dc7/classDialogRotation.html":[1,0,65],
@@ -249,5 +247,7 @@ var NAVTREEINDEX21 =
 "d5/dd0/libs_2vformat_2stable_8cpp_source.html":[2,0,0,1,4,0],
 "d5/dd2/vspline_8cpp.html":[2,0,0,1,5,33],
 "d5/dd2/vspline_8cpp_source.html":[2,0,0,1,5,33],
-"d5/dd5/vcubicbezier_8h.html":[2,0,0,1,5,18]
+"d5/dd5/vcubicbezier_8h.html":[2,0,0,1,5,18],
+"d5/dd5/vcubicbezier_8h.html#a510dbe24d59cc637a7c34632f228277f":[2,0,0,1,5,18,1],
+"d5/dd5/vcubicbezier_8h_source.html":[2,0,0,1,5,18]
 };

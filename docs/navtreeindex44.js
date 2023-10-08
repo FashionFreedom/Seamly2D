@@ -1,7 +1,5 @@
 var NAVTREEINDEX44 =
 {
-"db/dda/classVAbstractApplication.html#aaf7f1160ef591e625cb67d208c6eb6c8":[1,0,176,29],
-"db/dda/classVAbstractApplication.html#ab354e58700c474ae6d0ea167419e1c9c":[1,0,176,17],
 "db/dda/classVAbstractApplication.html#ab6ab93b0a13844b1d56d9050834e9de2":[1,0,176,26],
 "db/dda/classVAbstractApplication.html#ac1c05c6d5ad38bc3c1996ad500f818bc":[1,0,176,32],
 "db/dda/classVAbstractApplication.html#ac2a1a4070b6b686d62266592bc45d385":[1,0,176,23],
@@ -93,8 +91,8 @@ var NAVTREEINDEX44 =
 "db/deb/dialognewmeasurements_8h_source.html":[2,0,0,0,1,0,6],
 "db/ded/vistoolnormal_8cpp.html":[2,0,0,1,12,3,0,27],
 "db/ded/vistoolnormal_8cpp_source.html":[2,0,0,1,12,3,0,27],
-"db/def/dialoglayoutsettings_8cpp.html":[2,0,0,0,0,1,12],
-"db/def/dialoglayoutsettings_8cpp_source.html":[2,0,0,0,0,1,12],
+"db/def/dialoglayoutsettings_8cpp.html":[2,0,0,0,0,1,11],
+"db/def/dialoglayoutsettings_8cpp_source.html":[2,0,0,0,0,1,11],
 "db/df1/classVPE_1_1VLabelProperty.html":[1,0,2,11],
 "db/df1/classVPE_1_1VLabelProperty.html#a04dc6b9e81f560e08b37a9bd68b2c254":[1,0,2,11,11],
 "db/df1/classVPE_1_1VLabelProperty.html#a108ec8871a8a5612950719266b1c2aaa":[1,0,2,11,7],
@@ -249,5 +247,7 @@ var NAVTREEINDEX44 =
 "dc/d10/classDialogCurveIntersectAxis.html":[1,0,38],
 "dc/d10/classDialogCurveIntersectAxis.html#a011ecc936b49383cc95b7759c7f8798d":[1,0,38,16],
 "dc/d10/classDialogCurveIntersectAxis.html#a166a54d336f56ec5055f014f3fbc3154":[1,0,38,19],
-"dc/d10/classDialogCurveIntersectAxis.html#a16899054bd5536f0ac5a8d9bf5127b0e":[1,0,38,4]
+"dc/d10/classDialogCurveIntersectAxis.html#a16899054bd5536f0ac5a8d9bf5127b0e":[1,0,38,4],
+"dc/d10/classDialogCurveIntersectAxis.html#a2af75909a181cb0c5afaff534ede501f":[1,0,38,24],
+"dc/d10/classDialogCurveIntersectAxis.html#a2d219face234d414d4d7f9c08d13bd3e":[1,0,38,29]
 };

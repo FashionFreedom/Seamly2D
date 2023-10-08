@@ -1,15 +1,13 @@
 var NAVTREEINDEX42 =
 {
-"db/d57/classVPointF.html#ac4aee0e2c249996c1b344687bd343e48":[1,0,336,1],
-"db/d57/classVPointF.html#ac93f3b1b9d223fc05a43c8346114a3bc":[1,0,336,25],
 "db/d57/classVPointF.html#ade607c2f7c70e05130b635c134bd71dd":[1,0,336,12],
 "db/d57/classVPointF.html#adf84b2a73939bc1f11e3b1532cb19eb7":[1,0,336,9],
 "db/d57/classVPointF.html#ae1761dc9edc264ed9bd6b024cce33f11":[1,0,336,7],
 "db/d57/classVPointF.html#afd0c99a6d66fd913b5691c2384d713a5":[1,0,336,24],
 "db/d5b/moveoperationlabel_8cpp.html":[2,0,0,1,12,2,0,6],
 "db/d5b/moveoperationlabel_8cpp_source.html":[2,0,0,1,12,2,0,6],
-"db/d5c/groups__widget_8cpp.html":[2,0,0,0,0,1,25],
-"db/d5c/groups__widget_8cpp_source.html":[2,0,0,0,0,1,25],
+"db/d5c/groups__widget_8cpp.html":[2,0,0,0,0,1,24],
+"db/d5c/groups__widget_8cpp_source.html":[2,0,0,0,0,1,24],
 "db/d5c/vposition_8h.html":[2,0,0,1,6,27],
 "db/d5c/vposition_8h_source.html":[2,0,0,1,6,27],
 "db/d5e/classVLabelTemplateConverter.html":[1,0,293],
@@ -249,5 +247,7 @@ var NAVTREEINDEX42 =
 "db/dc1/vabstractfloatitemdata_8h.html":[2,0,0,1,9,0,2],
 "db/dc1/vabstractfloatitemdata_8h_source.html":[2,0,0,1,9,0,2],
 "db/dc2/app_2seamlyme_2stable_8cpp.html":[2,0,0,0,1,4],
-"db/dc2/app_2seamlyme_2stable_8cpp_source.html":[2,0,0,0,1,4]
+"db/dc2/app_2seamlyme_2stable_8cpp_source.html":[2,0,0,0,1,4],
+"db/dc4/classqmu_1_1QmuParserCallback.html":[1,0,0,6],
+"db/dc4/classqmu_1_1QmuParserCallback.html#a02390bd9a8af126b30085d4d86883e3c":[1,0,0,6,22]
 };

@@ -1,7 +1,5 @@
 var NAVTREEINDEX57 =
 {
-"de/d6d/classVisToolCubicBezier.html#a4fa7c4d1460141afdad18082254c1d63":[1,0,264,1],
-"de/d6d/classVisToolCubicBezier.html#a5561116dd54b324d5b59d21b17314b8b":[1,0,264,5],
 "de/d6d/classVisToolCubicBezier.html#a7e29fcfeb663c80d814d83615fab5231":[1,0,264,14],
 "de/d6d/classVisToolCubicBezier.html#aa153dcdf6981b1ed88dc693a845b5012":[1,0,264,15],
 "de/d6d/classVisToolCubicBezier.html#aa656f0c7859584d1c0c3a76a23a2004b":[1,0,264,12],
@@ -17,8 +15,8 @@ var NAVTREEINDEX57 =
 "de/d77/classVCurveCLength.html#ad7ad3c2036e6d967b980abf64720f051":[1,0,219,4],
 "de/d77/classVCurveCLength.html#adb9db7842d0ab2aecd433aab6d0b681f":[1,0,219,1],
 "de/d77/classVCurveCLength.html#ae13991890c59d7d08b0f2c296a1bc81f":[1,0,219,2],
-"de/d7c/dialogvariables_8h.html":[2,0,0,0,0,1,22],
-"de/d7c/dialogvariables_8h_source.html":[2,0,0,0,0,1,22],
+"de/d7c/dialogvariables_8h.html":[2,0,0,0,0,1,21],
+"de/d7c/dialogvariables_8h_source.html":[2,0,0,0,0,1,21],
 "de/d7d/vabstractpattern_8cpp.html":[2,0,0,1,1,1,4],
 "de/d7d/vabstractpattern_8cpp.html#a03b1fb578fba1ecb51300ab233820199":[2,0,0,1,1,1,4,0],
 "de/d7d/vabstractpattern_8cpp_source.html":[2,0,0,1,1,1,4],
@@ -34,8 +32,8 @@ var NAVTREEINDEX57 =
 "de/d84/vpropertymodel_8cpp_source.html":[2,0,0,1,10,22],
 "de/d85/vtooltriangle_8cpp.html":[2,0,0,1,12,1,0,2,1,22],
 "de/d85/vtooltriangle_8cpp_source.html":[2,0,0,1,12,1,0,2,1,22],
-"de/d87/dialognewpattern_8cpp.html":[2,0,0,0,0,1,14],
-"de/d87/dialognewpattern_8cpp_source.html":[2,0,0,0,0,1,14],
+"de/d87/dialognewpattern_8cpp.html":[2,0,0,0,0,1,13],
+"de/d87/dialognewpattern_8cpp_source.html":[2,0,0,0,0,1,13],
 "de/d8e/classShortcutsDialog.html":[1,0,162],
 "de/d8e/classShortcutsDialog.html#a055f525af67de5393f6c744db6b460cf":[1,0,162,2],
 "de/d8e/classShortcutsDialog.html#a39991c735951f34a35c68df15ce85e76":[1,0,162,1],
@@ -249,5 +247,7 @@ var NAVTREEINDEX57 =
 "de/dbc/classVGraphicsSimpleTextItem.html#a5172f4cc7ae06cc0b91d7c89329eef64":[1,0,251,8],
 "de/dbc/classVGraphicsSimpleTextItem.html#a5175a4abaaa6fba3cc09e16a440eac67":[1,0,251,28],
 "de/dbc/classVGraphicsSimpleTextItem.html#a54c16aba2a52097be3ff02aeda596103":[1,0,251,1],
-"de/dbc/classVGraphicsSimpleTextItem.html#a551dec0c77beb3222f110238e8231836":[1,0,251,20]
+"de/dbc/classVGraphicsSimpleTextItem.html#a551dec0c77beb3222f110238e8231836":[1,0,251,20],
+"de/dbc/classVGraphicsSimpleTextItem.html#a5ef63c23f5442b64faa95cb92c69fd35":[1,0,251,27],
+"de/dbc/classVGraphicsSimpleTextItem.html#a652ecd000f6c4de5cef9d216194eed93":[1,0,251,21]
 };

@@ -1,7 +1,5 @@
 var NAVTREEINDEX52 =
 {
-"dd/db2/qmutranslation_8cpp_source.html":[2,0,0,1,2,23],
-"dd/db2/vsettings_8h.html":[2,0,0,1,7,24],
 "dd/db2/vsettings_8h_source.html":[2,0,0,1,7,24],
 "dd/dbe/namespaceanonymous__namespace_02vtoolmove_8cpp_03.html":[0,0,18],
 "dd/dbe/namespaceanonymous__namespace_02vtoolmove_8cpp_03.html#a2f7cb2fa85efab3c7cc6db3569f5bd15":[0,0,18,0],
@@ -109,8 +107,8 @@ var NAVTREEINDEX52 =
 "dd/dda/classVFSplinePointData.html#ad82413a414b075488387a9f4d6665a15":[1,0,244,9],
 "dd/dda/classVFSplinePointData.html#ae643f79a1761058eb1b0abd9bf107bd1":[1,0,244,8],
 "dd/dda/classVFSplinePointData.html#af8f3489c5f679ca2b7773225d5a908e2":[1,0,244,5],
-"dd/de2/show__info__dialog_8h.html":[2,0,0,0,0,1,34],
-"dd/de2/show__info__dialog_8h_source.html":[2,0,0,0,0,1,34],
+"dd/de2/show__info__dialog_8h.html":[2,0,0,0,0,1,33],
+"dd/de2/show__info__dialog_8h_source.html":[2,0,0,0,0,1,33],
 "dd/de8/vformulaproperty_8h.html":[2,0,0,0,0,0,5],
 "dd/de8/vformulaproperty_8h_source.html":[2,0,0,0,0,0,5],
 "dd/df1/classVToolTriangle.html":[1,0,394],
@@ -249,5 +247,7 @@ var NAVTREEINDEX52 =
 "de/d04/classVToolTrueDarts.html#abb5933d38426a28d39cdb3f29c6f0e54":[1,0,395,24],
 "de/d04/classVToolTrueDarts.html#abd90c9a2e71c401e6e92438c6227d6ae":[1,0,395,1],
 "de/d04/classVToolTrueDarts.html#abe8420bf7017689ae69dde46ec7ce8a5":[1,0,395,20],
-"de/d04/classVToolTrueDarts.html#ac17a3fb26fb06a68b3fafca723856506":[1,0,395,10]
+"de/d04/classVToolTrueDarts.html#ac17a3fb26fb06a68b3fafca723856506":[1,0,395,10],
+"de/d04/classVToolTrueDarts.html#ac7235442de119517dec5d3d8f21eb491":[1,0,395,18],
+"de/d04/classVToolTrueDarts.html#ad1ad6515bcaad1642e97cce6387e2658":[1,0,395,27]
 };

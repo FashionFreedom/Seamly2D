@@ -1,7 +1,5 @@
 var NAVTREEINDEX58 =
 {
-"de/dbc/classVGraphicsSimpleTextItem.html#a5ef63c23f5442b64faa95cb92c69fd35":[1,0,251,27],
-"de/dbc/classVGraphicsSimpleTextItem.html#a652ecd000f6c4de5cef9d216194eed93":[1,0,251,21],
 "de/dbc/classVGraphicsSimpleTextItem.html#a6ce87883b877f45159565ee87df5ea0c":[1,0,251,30],
 "de/dbc/classVGraphicsSimpleTextItem.html#a76477109ef92ecf17f6bcd577b6e91be":[1,0,251,25],
 "de/dbc/classVGraphicsSimpleTextItem.html#a8098c3409fad5479b96fba9aba391f9b":[1,0,251,12],
@@ -249,5 +247,7 @@ var NAVTREEINDEX58 =
 "df/d11/classVFSplinePoint.html#ae23973ec7f38d64a63994daf4f10bed2":[1,0,243,5],
 "df/d11/classVFSplinePoint.html#af66b136afacae995589c27071beb956e":[1,0,243,7],
 "df/d17/vnodedetail__p_8h.html":[2,0,0,1,9,17],
-"df/d17/vnodedetail__p_8h_source.html":[2,0,0,1,9,17]
+"df/d17/vnodedetail__p_8h_source.html":[2,0,0,1,9,17],
+"df/d18/qmuparserbase_8h.html":[2,0,0,1,2,7],
+"df/d18/qmuparserbase_8h_source.html":[2,0,0,1,2,7]
 };

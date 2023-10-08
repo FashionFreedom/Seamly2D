@@ -1,7 +1,5 @@
 var NAVTREEINDEX18 =
 {
-"d4/ddb/vtoolnormal_8cpp.html":[2,0,0,1,12,1,0,2,1,1,16],
-"d4/ddb/vtoolnormal_8cpp_source.html":[2,0,0,1,12,1,0,2,1,1,16],
 "d4/de6/classVPE_1_1SpinboxProperty.html":[1,0,2,14],
 "d4/de6/classVPE_1_1SpinboxProperty.html#a1ea2f7953f663b805ebe9fdc482790eb":[1,0,2,14,12],
 "d4/de6/classVPE_1_1SpinboxProperty.html#a34d1460ffe4fa88029660760ba8cb749":[1,0,2,14,10],
@@ -90,10 +88,10 @@ var NAVTREEINDEX18 =
 "d5/d10/classColorComboBox.html#afc62bb3b6e2915b2931359fa82a2f46e":[1,0,19,7],
 "d5/d11/dialogdatetimeformats_8h.html":[2,0,0,0,0,1,8],
 "d5/d11/dialogdatetimeformats_8h_source.html":[2,0,0,0,0,1,8],
-"d5/d18/dialogpatternproperties_8cpp.html":[2,0,0,0,0,1,16],
-"d5/d18/dialogpatternproperties_8cpp.html#a9b38b776d94af3b5657a006328185f5c":[2,0,0,0,0,1,16,1],
-"d5/d18/dialogpatternproperties_8cpp.html#aad549bf488f4d0b345da8f36d0442ef0":[2,0,0,0,0,1,16,0],
-"d5/d18/dialogpatternproperties_8cpp_source.html":[2,0,0,0,0,1,16],
+"d5/d18/dialogpatternproperties_8cpp.html":[2,0,0,0,0,1,15],
+"d5/d18/dialogpatternproperties_8cpp.html#a9b38b776d94af3b5657a006328185f5c":[2,0,0,0,0,1,15,1],
+"d5/d18/dialogpatternproperties_8cpp.html#aad549bf488f4d0b345da8f36d0442ef0":[2,0,0,0,0,1,15,0],
+"d5/d18/dialogpatternproperties_8cpp_source.html":[2,0,0,0,0,1,15],
 "d5/d23/classFvUpdater.html":[1,0,88],
 "d5/d23/classFvUpdater.html#a0060c2d7f631b30b208ebc18da24ff14":[1,0,88,15],
 "d5/d23/classFvUpdater.html#a02ac29693e06ead232159421b67889de":[1,0,88,3],
@@ -249,5 +247,7 @@ var NAVTREEINDEX18 =
 "d5/d2c/vpatternconverter_8cpp.html#adae1c8def95f898b34765a384300f3fc":[2,0,0,1,1,1,10,25],
 "d5/d2c/vpatternconverter_8cpp.html#adb3248694fcfe8f2e81ddb4b5f4ddf50":[2,0,0,1,1,1,10,115],
 "d5/d2c/vpatternconverter_8cpp.html#adb9f3de4f07004be30d13ed4a0b6fa44":[2,0,0,1,1,1,10,10],
-"d5/d2c/vpatternconverter_8cpp.html#adcc43e4731e0a9ef1f0feb6e4eb3ad1c":[2,0,0,1,1,1,10,112]
+"d5/d2c/vpatternconverter_8cpp.html#adcc43e4731e0a9ef1f0feb6e4eb3ad1c":[2,0,0,1,1,1,10,112],
+"d5/d2c/vpatternconverter_8cpp.html#adeb8b86f3153b5e586ab95eb7b950ef4":[2,0,0,1,1,1,10,19],
+"d5/d2c/vpatternconverter_8cpp.html#adebfe4f2e2c144cceb4e31e0df76a6b8":[2,0,0,1,1,1,10,1]
 };

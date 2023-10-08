@@ -279,7 +279,7 @@ $(document).ready(function(){initNavTree('df/d40/export__format__combobox_8cpp_s
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    QStringList args;</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#if defined(Q_OS_WIN) || defined(Q_OS_OSX)</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Seek pdftops in app bundle or near valentin.exe</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Seek pdftops in app bundle or near seamaly2d.exe</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    proc.start(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;applicationDirPath() + QLatin1String(<span class="stringliteral">&quot;/&quot;</span>)+ <a class="code" href="../../df/d40/export__format__combobox_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList());</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    proc.start(<a class="code" href="../../df/d40/export__format__combobox_8cpp.html#a912a77a5eeb3952fe9c0efc114027c64">PDFTOPS</a>, QStringList()); <span class="comment">// Seek pdftops in standard path</span></div>

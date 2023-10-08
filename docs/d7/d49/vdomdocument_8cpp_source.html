@@ -842,7 +842,7 @@ $(document).ready(function(){initNavTree('d7/d49/vdomdocument_8cpp_source.html',
 <div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;{</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="keywordflow">if</span> (fileName.isEmpty())</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    {</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Got empty file name.&quot;</span>;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Got empty file name.&quot;</span>;</div>
 <div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    }</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">bool</span> success = <span class="keyword">false</span>;</div>
@@ -905,7 +905,7 @@ $(document).ready(function(){initNavTree('d7/d49/vdomdocument_8cpp_source.html',
 <div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keyword">const</span> QDomNodeList nodeList = this-&gt;elementsByTagName(tag);</div>
 <div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="keywordflow">if</span> (nodeList.isEmpty())</div>
 <div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    {</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        qWarning() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t save tag &quot;</span> &lt;&lt; tag &lt;&lt; Q_FUNC_INFO;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;        qDebug() &lt;&lt; <span class="stringliteral">&quot;Can&#39;t save tag &quot;</span> &lt;&lt; tag &lt;&lt; Q_FUNC_INFO;</div>
 <div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    }</div>
 <div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;    {</div>

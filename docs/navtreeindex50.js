@@ -1,7 +1,5 @@
 var NAVTREEINDEX50 =
 {
-"dc/df7/classVPE_1_1VShortcutEditWidget.html#afd0b6c1c0f3da9aacc05c29cb94cea92":[1,0,2,19,3],
-"dc/df8/classVContainerData.html":[1,0,210],
 "dc/df8/classVContainerData.html#a29d8baca87fb94ca75ac93b04623073a":[1,0,210,6],
 "dc/df8/classVContainerData.html#a40e129856d726490ef778f12dcefb1c4":[1,0,210,7],
 "dc/df8/classVContainerData.html#a51194555880879e21faa00310499ff2a":[1,0,210,2],
@@ -97,8 +95,8 @@ var NAVTREEINDEX50 =
 "dd/d0c/libs_2vgeometry_2stable_8cpp_source.html":[2,0,0,1,5,0],
 "dd/d0e/movespoint_8h.html":[2,0,0,1,12,2,30],
 "dd/d0e/movespoint_8h_source.html":[2,0,0,1,12,2,30],
-"dd/d10/dialognewpattern_8h.html":[2,0,0,0,0,1,15],
-"dd/d10/dialognewpattern_8h_source.html":[2,0,0,0,0,1,15],
+"dd/d10/dialognewpattern_8h.html":[2,0,0,0,0,1,14],
+"dd/d10/dialognewpattern_8h_source.html":[2,0,0,0,0,1,14],
 "dd/d11/vtoolpointofintersectionarcs_8h.html":[2,0,0,1,12,1,0,2,1,17],
 "dd/d11/vtoolpointofintersectionarcs_8h_source.html":[2,0,0,1,12,1,0,2,1,17],
 "dd/d13/vstandardpropertyfactory_8h.html":[2,0,0,1,10,34],
@@ -249,5 +247,7 @@ var NAVTREEINDEX50 =
 "dd/d48/libs_2vpropertyexplorer_2stable_8h.html":[2,0,0,1,10,4],
 "dd/d48/libs_2vpropertyexplorer_2stable_8h_source.html":[2,0,0,1,10,4],
 "dd/d4a/vlayoutdef_8h.html":[2,0,0,1,6,14],
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385":[2,0,0,1,6,14,1]
+"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385":[2,0,0,1,6,14,1],
+"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34":[2,0,0,1,6,14,1,2],
+"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a664c140e94e21ff7725b2f5cbeb09af2":[2,0,0,1,6,14,1,3]
 };
