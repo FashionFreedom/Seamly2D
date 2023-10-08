@@ -870,7 +870,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             ChangeColor(labelEditFormula, Qt::red);
             emit ToolTip(tr("Parser error: %1").arg(error.GetMsg()));
             label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
-            qWarning() << "\nMath parser error:\n"
+            qDebug() << "\nMath parser error:\n"
                        << "--------------------------------------\n"
                        << "Message:     " << error.GetMsg()  << "\n"
                        << "Expression:  " << error.GetExpr() << "\n"

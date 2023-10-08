@@ -196,7 +196,7 @@ qreal VAbstractTool::CheckFormula(const quint32 &toolId, QString &formula, VCont
     }
     catch (qmu::QmuParserError &error)
     {
-        qWarning() << "\nMath parser error:\n"
+        qDebug() << "\nMath parser error:\n"
                    << "--------------------------------------\n"
                    << "Message:     " << error.GetMsg()  << "\n"
                    << "Expression:  " << error.GetExpr() << "\n"

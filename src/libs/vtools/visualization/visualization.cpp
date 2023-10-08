@@ -208,7 +208,7 @@ qreal Visualization::FindVal(const QString &expression,
         catch (qmu::QmuParserError &error)
         {
             val = 0;
-            qWarning() << "\nMath parser error:\n"
+            qDebug() << "\nMath parser error:\n"
                        << "--------------------------------------\n"
                        << "Message:     " << error.GetMsg()  << "\n"
                        << "Expression:  " << error.GetExpr() << "\n"
