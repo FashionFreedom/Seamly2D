@@ -45,10 +45,9 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
 #include "dialogvariables.h"
 #include "ui_dialogvariables.h"
 #include "../vwidgets/vwidgetpopup.h"
@@ -61,9 +60,11 @@
 
 #include <QFileDialog>
 #include <QDir>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QTableWidget>
+#include <QScreen>
 #include <QSettings>
 #include <QTableWidgetItem>
 #include <QtNumeric>
@@ -93,6 +94,9 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
 
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->name_LineEdit->setClearButtonEnabled(true);
     ui->filter_LineEdit->installEventFilter(this);

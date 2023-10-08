@@ -2,14 +2,14 @@
  **
  **  @file   me_shortcuts_dialog.h
  **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   5 14, 2022
+ **  @date   3 Sep, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  All Rights Reserved.
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2022-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -33,11 +33,13 @@
 #include <QClipboard>
 #include <QFileDialog>
 #include <QFont>
+#include <QGuiApplication>
 #include <QTextDocument>
 #include <QPageLayout>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QPrintDialog>
+#include <QScreen>
 #include <QShowEvent>
 #include <QString>
 #include <QtWidgets>
@@ -52,6 +54,9 @@ MeShortcutsDialog::MeShortcutsDialog(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     connect(ui->clipboard_ToolButton, &QToolButton::clicked, this, &MeShortcutsDialog::copyToClipboard);
     connect(ui->printer_ToolButton,   &QToolButton::clicked, this, &MeShortcutsDialog::sendToPrinter);

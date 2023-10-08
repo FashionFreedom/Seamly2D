@@ -45,7 +45,7 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -63,8 +63,11 @@
 #include "../vtools/tools/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h"
 #include "../xml/vpattern.h"
 #include "../vmisc/diagnostic.h"
+
 #include <QDebug>
 #include <QCloseEvent>
+#include <QGuiApplication>
+#include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -84,6 +87,9 @@ DialogHistory::DialogHistory(VContainer *data, VPattern *doc, QWidget *parent)
 
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->find_LineEdit->installEventFilter(this);
 
