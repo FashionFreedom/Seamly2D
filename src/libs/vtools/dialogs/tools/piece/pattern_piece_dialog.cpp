@@ -71,12 +71,15 @@
 
 #include <QColorDialog>
 #include <QFileInfo>
+#include <QLabel>
+#include <QLayoutItem>
 #include <QGuiApplication>
 #include <QKeyEvent>
 #include <QMenu>
 #include <QPixmap>
 #include <QScreen>
 #include <QSound>
+#include <QtDebug>
 #include <QTimer>
 #include <QtNumeric>
 
@@ -757,7 +760,7 @@ void PatternPieceDialog::pieceNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::pieceColorChanged()
 {
-    const QColor color = QColorDialog::getColor(Qt::white, this, "Select Color", QColorDialog::DontUseNativeDialog);
+    const QColor color = QColorDialog::getColor(Qt::white, this, tr("Select Color"), QColorDialog::DontUseNativeDialog);
 
     if (color.isValid())
     {

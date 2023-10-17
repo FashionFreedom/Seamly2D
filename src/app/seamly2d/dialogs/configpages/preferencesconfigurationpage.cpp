@@ -1,26 +1,29 @@
-/***************************************************************************
- **  @file   preferencesconfigurationpage.cpp
- **  @author Douglas S Caskey
- **  @date   21 Seo, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+/******************************************************************************
+*   @file   preferencesconfigurationpage.h
+**  @author Douglas S Caskey
+**  @date   26 Oct, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
 /************************************************************************
  **
@@ -308,10 +311,9 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
-        // retranslate designer form (single inheritance approach)
-        RetranslateUi();
+        ui->retranslateUi(this);
+        ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
     }
-    // remember to call base class implementation
     QWidget::changeEvent(event);
 }
 
@@ -340,15 +342,4 @@ void PreferencesConfigurationPage::InitUnits()
     {
         ui->unitCombo->setCurrentIndex(indexUnit);
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::RetranslateUi()
-{
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    //ui->description->setText(tr("After each crash Seamly2D collects information that may help us fix the "
-    //                            "problem. We do not collect any personal information. Find more about what %1"
-    //                            "kind of information%2 we collect.")
-    //                         .arg("<a href=\"https://wiki.seamly.net/wiki/UserManual:Crash_reports\">")
-    //                         .arg("</a>"));
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogLayoutSettings</class>
- <widget class="QDialog" name="DialogLayoutSettings">
+ <class>LayoutSettingsDialog</class>
+ <widget class="QDialog" name="LayoutSettingsDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -59,7 +59,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBoxTemplates"/>
+             <widget class="PageFormatCombobox" name="comboBoxTemplates"/>
             </item>
            </layout>
           </item>
@@ -717,6 +717,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PageFormatCombobox</class>
+   <extends>QComboBox</extends>
+   <header>page_format_combobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../share/resources/toolicon.qrc"/>
   <include location="../../../libs/vmisc/share/resources/icon.qrc"/>
@@ -725,7 +732,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogLayoutSettings</receiver>
+   <receiver>LayoutSettingsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -741,7 +748,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogLayoutSettings</receiver>
+   <receiver>LayoutSettingsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -756,7 +763,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="buttonGroupPrinciple"/>
   <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroupPrinciple"/>
  </buttongroups>
 </ui>

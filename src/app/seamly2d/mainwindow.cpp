@@ -1739,6 +1739,7 @@ void MainWindow::changeEvent(QEvent *event)
         helpLabel->setText(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
         UpdateWindowTitle();
+        initPenToolBar();
         emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation
@@ -2450,9 +2451,10 @@ void MainWindow::initPenToolBar()
 {
     if (m_penToolBar != nullptr)
     {
+        disconnect(m_penToolBar, nullptr, this, nullptr);
         delete m_penToolBar;
     }
-    m_penToolBar = new PenToolBar("Toolbar Pen", this);
+    m_penToolBar = new PenToolBar(tr("Pen Toolbar"), this);
     m_penToolBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_penToolBar->setObjectName("penToolBar");
     this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
@@ -4900,6 +4902,9 @@ bool MainWindow::MaybeSave()
         messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
         messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
         const auto ret = static_cast<QMessageBox::StandardButton>(messageBox->exec());
 
         switch (ret)
@@ -6160,7 +6165,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
-        qCDebug(vMainWindow, "%s", helpLabel);
+        qCDebug(vMainWindow, "%s", qUtf8Printable(helpLabel->text()));
 
         //Fit scene size to best size for first show
         zoomFirstShow();

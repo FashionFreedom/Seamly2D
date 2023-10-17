@@ -162,8 +162,13 @@ void DialogAboutSeamlyMe::FontPointSize(QWidget *w, int pointSize)
 //---------------------------------------------------------------------------------------------------------------------
 void DialogAboutSeamlyMe::RetranslateUi()
 {
+    QString revision = BUILD_REVISION;
+    if (BUILD_REVISION == "unknown")
+    {
+        revision = tr("unknown");
+    }
     ui->label_SeamlyMe_Version->setText(QString("SeamlyMe %1").arg(APP_VERSION_STR));
-    ui->labelBuildRevision->setText(tr("Build revision: %1").arg(BUILD_REVISION));
+    ui->labelBuildRevision->setText(tr("Build revision: %1").arg(revision));
     ui->label_QT_Version->setText(buildCompatibilityString());
 
     const QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));

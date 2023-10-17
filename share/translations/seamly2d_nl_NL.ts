@@ -44,7 +44,7 @@
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
 </context>
 <context>
@@ -71,6 +71,85 @@
     <message>
         <source>Calculator</source>
         <translation>Rekenmachine</translation>
+    </message>
+</context>
+<context>
+    <name>CalculatorUtil</name>
+    <message>
+        <source>.</source>
+        <translation>.</translation>
+    </message>
+    <message>
+        <source>±</source>
+        <translation>±</translation>
+    </message>
+    <message>
+        <source>Backspace</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>MC</source>
+        <translation>MC</translation>
+    </message>
+    <message>
+        <source>MR</source>
+        <translation>MR</translation>
+    </message>
+    <message>
+        <source>MS</source>
+        <translation>MS</translation>
+    </message>
+    <message>
+        <source>M+</source>
+        <translation>M+</translation>
+    </message>
+    <message>
+        <source>÷</source>
+        <translation>÷</translation>
+    </message>
+    <message>
+        <source>×</source>
+        <translation>×</translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation>+</translation>
+    </message>
+    <message>
+        <source>Sqrt</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>x²</source>
+        <translation>x²</translation>
+    </message>
+    <message>
+        <source>1/x</source>
+        <translation>1/x</translation>
+    </message>
+    <message>
+        <source>=</source>
+        <translation>=</translation>
+    </message>
+    <message>
+        <source>Calculator</source>
+        <translation>Rekenmachine</translation>
+    </message>
+    <message>
+        <source>####</source>
+        <translation>####</translation>
     </message>
 </context>
 <context>
@@ -154,8 +233,8 @@ p, li { white-space: pre-wrap; }
         <translation>Kan uw standaard browser niet openen</translation>
     </message>
     <message>
-        <source>Build revision:</source>
-        <translation>Herziene uitgave gebouwd:</translation>
+        <source>Build revision: %1</source>
+        <translation>Herziene uitgave gebouwd: %1</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
@@ -169,6 +248,10 @@ p, li { white-space: pre-wrap; }
         <source>Downloading installer %p% complete</source>
         <translation>Downloaden installeerprogramma %p% volledig</translation>
     </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
+    </message>
 </context>
 <context>
     <name>DialogAboutSeamlyMe</name>
@@ -181,8 +264,8 @@ p, li { white-space: pre-wrap; }
         <translation>Versie programma SeamlyMe</translation>
     </message>
     <message>
-        <source>Build revision:</source>
-        <translation>Herziene uitgave gebouwd:</translation>
+        <source>Build revision: %1</source>
+        <translation>Herziene uitgave gebouwd: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
@@ -201,16 +284,16 @@ p, li { white-space: pre-wrap; }
         <translation>Kan uw standaard browser niet openen</translation>
     </message>
     <message>
-        <source>Build revision: %1</source>
-        <translation>Herziene uitgave gebouwd: %1</translation>
-    </message>
-    <message>
         <source>Built on %1 at %2</source>
         <translation>Gebouwd op %1 op %2</translation>
     </message>
     <message>
         <source>Web site : %1</source>
         <translation>Web site : %1</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <translation>onbekend</translation>
     </message>
 </context>
 <context>
@@ -276,10 +359,6 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -298,6 +377,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -383,14 +466,14 @@ p, li { white-space: pre-wrap; }
         <translation>Geometrie</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Eerste Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Eerste Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -402,7 +485,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
 </context>
 <context>
@@ -485,9 +568,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -499,7 +582,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
 </context>
 <context>
@@ -565,10 +648,6 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -587,6 +666,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -735,7 +818,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -748,10 +831,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -767,9 +846,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -778,6 +857,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -819,10 +902,6 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -833,6 +912,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -874,10 +957,6 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -888,6 +967,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -929,10 +1012,6 @@ p, li { white-space: pre-wrap; }
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -943,6 +1022,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -1048,7 +1131,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
@@ -1071,20 +1154,20 @@ p, li { white-space: pre-wrap; }
         <translation>Geometrie</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Eerste Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Eerste Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Tweede Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Tweede Hoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Draaiingshoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berekening Draaiingshoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
 </context>
 <context>
@@ -1127,7 +1210,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1140,10 +1223,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -1159,9 +1238,9 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1170,6 +1249,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -1227,7 +1310,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1240,10 +1323,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -1268,6 +1347,10 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -1298,7 +1381,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Piece:</source>
@@ -1569,210 +1652,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogLayoutSettings</name>
-    <message>
-        <source>Templates:</source>
-        <translation>Sjablonen:</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Breedte:</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Hoogte:</translation>
-    </message>
-    <message>
-        <source>Rotate workpiece</source>
-        <translation>Draai patroondeel</translation>
-    </message>
-    <message>
-        <source>Rotate by</source>
-        <translation>Draai om</translation>
-    </message>
-    <message>
-        <source>degree</source>
-        <translation>graad</translation>
-    </message>
-    <message>
-        <source>Three groups: big, middle, small</source>
-        <translation>Drie groepen: groot, middel en klein</translation>
-    </message>
-    <message>
-        <source>Two groups: big, small</source>
-        <translation>Twee groepen: groot, klein</translation>
-    </message>
-    <message>
-        <source>Descending area</source>
-        <translation>Kleiner wordend gebied</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimeters</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Inches</translation>
-    </message>
-    <message>
-        <source>Pixels</source>
-        <translation>Pixels</translation>
-    </message>
-    <message>
-        <source>Auto crop unused length</source>
-        <translation>Automatisch inkorten van ongebruikte lengte</translation>
-    </message>
-    <message>
-        <source>Unite pages (if possible)</source>
-        <translation>Voeg pagina&apos;s samen( wanneer mogeljk)</translation>
-    </message>
-    <message>
-        <source>Gap width:</source>
-        <translation>Tussenruimte:</translation>
-    </message>
-    <message>
-        <source>Save length of the sheet</source>
-        <translation>Sla de lengte van het blad op</translation>
-    </message>
-    <message>
-        <source>Letter</source>
-        <translation>Letter</translation>
-    </message>
-    <message>
-        <source>Legal</source>
-        <translation>Legaal</translation>
-    </message>
-    <message>
-        <source>Roll 24in</source>
-        <translation>Papierrol van 24 inches = 60,96 cm</translation>
-    </message>
-    <message>
-        <source>Roll 30in</source>
-        <translation>Papierrol van 30 inches = 76,20 cm</translation>
-    </message>
-    <message>
-        <source>Roll 36in</source>
-        <translation>Papierrol 36 inches = 91,44 cm</translation>
-    </message>
-    <message>
-        <source>Roll 42in</source>
-        <translation>Papierrol 42 inches = 106,68 cm</translation>
-    </message>
-    <message>
-        <source>Roll 44in</source>
-        <translation>Papierrol 44 inches = 111,76 cm</translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation>Papier Formaat</translation>
-    </message>
-    <message>
-        <source>Left:</source>
-        <translation>Links:</translation>
-    </message>
-    <message>
-        <source>Right:</source>
-        <translation>Rechts:</translation>
-    </message>
-    <message>
-        <source>Top:</source>
-        <translation>Top:</translation>
-    </message>
-    <message>
-        <source>Bottom:</source>
-        <translation>Bodem:</translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation>Op maat</translation>
-    </message>
-    <message>
-        <source>Wrong fields.</source>
-        <translation>Verkeerde velden.</translation>
-    </message>
-    <message>
-        <source>
-	Three groups: big, middle, small = 0;
-	Two groups: big, small = 1;
-	Descending area = 2</source>
-        <translation>
-	Drie groepen: groot, middel, klein = 0;
-	Twee groepen: groot, klein = 1;
-	Kleiner wordende ruimte = 2</translation>
-    </message>
-    <message>
-        <source>Layout options</source>
-        <translation>Opmaak opties</translation>
-    </message>
-    <message>
-        <source>Shift/Offset length:</source>
-        <translation>Verschuivings/Offset lengte:</translation>
-    </message>
-    <message>
-        <source>Rule for choosing the next workpiece</source>
-        <translation>Regel voor het kiezen van het volgende patroondeel</translation>
-    </message>
-    <message>
-        <source>Divide into strips</source>
-        <translation>Verdeel in strepen</translation>
-    </message>
-    <message>
-        <source>Multiplier</source>
-        <translation>Vermenigvuldiger</translation>
-    </message>
-    <message>
-        <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation>Stel vermenigvuldiger in op de lengte van het grootste patroondeel in de opmaak.</translation>
-    </message>
-    <message>
-        <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation>Het mogelijk maken om van grote afmetingen van papier het creatieproces te versnellen.</translation>
-    </message>
-    <message>
-        <source>Printer:</source>
-        <translation>Printer:</translation>
-    </message>
-    <message>
-        <source>None</source>
-        <comment>Printer</comment>
-        <translation>Geen</translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation>Tekst</translation>
-    </message>
-    <message>
-        <source>Text will be converted to paths</source>
-        <translation>tekst zal omgezet worden naar paden</translation>
-    </message>
-    <message>
-        <source>Export text as paths</source>
-        <translation>Exporteer tekst als paden</translation>
-    </message>
-    <message>
-        <source>Margins</source>
-        <translation>Marges</translation>
-    </message>
-    <message>
-        <source>Ignore margins</source>
-        <translation>Neger marges</translation>
-    </message>
-    <message>
-        <source>Layout print settings</source>
-        <translation>Opmaak adrukinstellingen</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeters</translation>
-    </message>
-    <message>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogLine</name>
     <message>
         <source>Select second point</source>
@@ -1788,7 +1667,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1812,11 +1691,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Lijn_</translation>
+        <translation>Lijn_</translation>
     </message>
 </context>
 <context>
@@ -1858,16 +1737,16 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -1918,7 +1797,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1931,10 +1810,6 @@ Apply settings anyway?</source>
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -1958,9 +1833,9 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Hoekberekening&lt;/b&gt;&lt;br&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1969,6 +1844,10 @@ Apply settings anyway?</source>
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2258,7 +2137,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Lijn_soort:</translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -2271,10 +2150,6 @@ Apply settings anyway?</source>
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -2293,10 +2168,6 @@ Apply settings anyway?</source>
         <translation>Draaiing:</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Draaiingshoek&lt;/span&gt;&lt;br/&gt;Hoeken worden opgegeven in graden. Een volledige cirkel is 360 graden. Positieve waarden voor een hoek betekenen een richting tegen de klok, terwijl negatieve hoeken met de klok meegaan. Nul graden is op de positie van 3 uur op een horloge. &lt;br/&gt;&lt;br/&gt;Draaiingshoek wordt opgeteld bij de hoek van de Loodrechte.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source> deg</source>
         <translation> graad</translation>
     </message>
@@ -2307,6 +2178,14 @@ Apply settings anyway?</source>
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2503,16 +2382,16 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2562,10 +2441,6 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -2584,6 +2459,10 @@ Apply settings anyway?</source>
     <message>
         <source>Geometry</source>
         <translation>Geometrie</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2613,16 +2492,16 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2648,10 +2527,6 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -2666,6 +2541,10 @@ Apply settings anyway?</source>
     <message>
         <source>Horizontal take:</source>
         <translation>Horizontale steek:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2821,10 +2700,6 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -2843,6 +2718,10 @@ Apply settings anyway?</source>
     <message>
         <source>Lineweight:</source>
         <translation>Lijnbreedte:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -2864,10 +2743,6 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -2882,6 +2757,10 @@ Apply settings anyway?</source>
     <message>
         <source>Y coordinate:</source>
         <translation>Y coordinaat:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -3220,10 +3099,6 @@ Apply settings anyway?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
@@ -3238,6 +3113,10 @@ Apply settings anyway?</source>
     <message>
         <source>2nd axis point:</source>
         <translation>Tweede punt as:</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -3283,14 +3162,6 @@ Apply settings anyway?</source>
         <translation>Derde figuurnaad punt:</translation>
     </message>
     <message>
-        <source>1st new dart point:</source>
-        <translation>Eerste nieuwe figuurnaad punt:</translation>
-    </message>
-    <message>
-        <source>2nd new dart point:</source>
-        <translation>Tweede nieuwe figuurnaad punt:</translation>
-    </message>
-    <message>
         <source>True Darts</source>
         <translation>Echte Figuurnaden</translation>
     </message>
@@ -3301,6 +3172,14 @@ Apply settings anyway?</source>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Point name 1:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name 2:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -3508,11 +3387,11 @@ Apply settings anyway?</source>
     <name>EditFormulaDialog</name>
     <message>
         <source>Edit formula</source>
-        <translation type="unfinished">Verander formule</translation>
+        <translation>Verander formule</translation>
     </message>
     <message>
         <source>Measurements</source>
-        <translation type="unfinished">Maten</translation>
+        <translation>Maten</translation>
     </message>
     <message>
         <source>Custom Variables</source>
@@ -3544,19 +3423,19 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Functions</source>
-        <translation type="unfinished">Funkties</translation>
+        <translation>Funkties</translation>
     </message>
     <message>
         <source>Formula:</source>
-        <translation type="unfinished">Formule:</translation>
+        <translation>Formule:</translation>
     </message>
     <message>
         <source>Value</source>
-        <translation type="unfinished">Waarde</translation>
+        <translation>Waarde</translation>
     </message>
     <message>
         <source>Calculation</source>
-        <translation type="unfinished">Berekening</translation>
+        <translation>Berekening</translation>
     </message>
     <message>
         <source>Clear formula</source>
@@ -3568,7 +3447,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Insert variable into formula</source>
-        <translation type="unfinished">Voeg variabele in de formule</translation>
+        <translation>Voeg variabele in de formule</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
@@ -3576,15 +3455,15 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Hide empty measurements</source>
-        <translation type="unfinished">Verberg ongeschreven maten</translation>
+        <translation>Verberg ongeschreven maten</translation>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Naam</translation>
+        <translation>Naam</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation type="unfinished">Volledige naam</translation>
+        <translation>Volledige naam</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
@@ -3592,35 +3471,35 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Filter list by keyword</source>
-        <translation type="unfinished">Filter de lijst met een sleutelwoord</translation>
+        <translation>Filter de lijst met een sleutelwoord</translation>
     </message>
     <message>
         <source>Measurement</source>
-        <translation type="unfinished">Maat</translation>
+        <translation>Maat</translation>
     </message>
     <message>
         <source>Custom Variable</source>
-        <translation type="unfinished">Gebruikersvariabele</translation>
+        <translation>Gebruikersvariabele</translation>
     </message>
     <message>
         <source>Line length</source>
-        <translation type="unfinished">Lijnlengte</translation>
+        <translation>Lijnlengte</translation>
     </message>
     <message>
         <source>Curve length</source>
-        <translation type="unfinished">Lengte van de kromme</translation>
+        <translation>Lengte van de kromme</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation type="unfinished">Lijnhoek</translation>
+        <translation>Lijnhoek</translation>
     </message>
     <message>
         <source>Arc radius</source>
-        <translation type="unfinished">Boogstraal</translation>
+        <translation>Boogstraal</translation>
     </message>
     <message>
         <source>Curve angle</source>
-        <translation type="unfinished">hoek van de kromme</translation>
+        <translation>Hoek van de kromme</translation>
     </message>
 </context>
 <context>
@@ -3631,15 +3510,15 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Name:</source>
-        <translation type="unfinished">Naam:</translation>
+        <translation>Naam:</translation>
     </message>
     <message>
         <source>Color:</source>
-        <translation type="unfinished">Kleur:</translation>
+        <translation>Kleur:</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation type="unfinished"></translation>
+        <translation>Unieke naam patroondeel</translation>
     </message>
     <message>
         <source>Unique group name</source>
@@ -3647,11 +3526,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Linetype:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lijnsoort:</translation>
     </message>
     <message>
         <source>Lineweight:</source>
-        <translation type="unfinished">Lijnbreedte:</translation>
+        <translation>Lijnbreedte:</translation>
     </message>
 </context>
 <context>
@@ -3892,6 +3771,17 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>ExportFormatCombobox</name>
+    <message>
+        <source>(flat) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
@@ -4017,6 +3907,10 @@ Apply settings anyway?</source>
         <source>Confirm Export</source>
         <translation>Bevestig export</translation>
     </message>
+    <message>
+        <source>Export files:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -4056,7 +3950,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4066,7 +3960,7 @@ Possibly the file is already being downloaded.</source>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation type="unfinished">Groepenbeheer</translation>
+        <translation>Groepenbeheer</translation>
     </message>
     <message>
         <source>Show All Groups</source>
@@ -4098,7 +3992,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Groups</source>
-        <translation type="unfinished">Groepen</translation>
+        <translation>Groepen</translation>
     </message>
     <message>
         <source>Group list</source>
@@ -4118,7 +4012,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name Exists</source>
-        <translation type="unfinished">Naam Bestaat</translation>
+        <translation>Naam Bestaat</translation>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
@@ -4130,7 +4024,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Rename</source>
-        <translation type="unfinished">Hernoem</translation>
+        <translation>Hernoem</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4154,7 +4048,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Base point</source>
-        <translation type="unfinished">%1 - Basis punt</translation>
+        <translation>%1 - Basis punt</translation>
     </message>
     <message>
         <source>%1 - Point Length and Angle</source>
@@ -4202,7 +4096,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Boog_</translation>
+        <translation>Boog_</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Length</source>
@@ -4214,7 +4108,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">Splinepad_</translation>
+        <translation>Splinepad_</translation>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
@@ -4262,7 +4156,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation type="unfinished">%1 - Snijpunt van Cirkels</translation>
+        <translation>%1 - Snijpunt van Cirkels</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
@@ -4286,7 +4180,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>ElArc_</source>
-        <translation type="unfinished">EllBoog_</translation>
+        <translation>EllBoog_</translation>
     </message>
     <message>
         <source>%1 - Rotation</source>
@@ -4322,7 +4216,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished">Naam</translation>
+        <translation>Naam</translation>
     </message>
 </context>
 <context>
@@ -4603,7 +4497,7 @@ Possibly the file is already being downloaded.</source>
     <name>InternalStrings</name>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</translation>
+        <translation>Het programma wordt geleverd zoals het is, zonder enige vorm van garantie, inclusief de garantie op ontwerp, verkoopbaarheid en geschiktheid voor een bepaald doel.</translation>
     </message>
 </context>
 <context>
@@ -4611,10 +4505,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Selection</source>
         <translation>Selectie</translation>
-    </message>
-    <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
     </message>
     <message>
         <source>Take:</source>
@@ -4675,6 +4565,10 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -4759,16 +4653,16 @@ Possibly the file is already being downloaded.</source>
         <translation>Punt - Snijpunt Cirkels</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation>Unieke naam</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
     </message>
 </context>
 <context>
@@ -4780,6 +4674,205 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Point Intersect Circles</source>
         <translation>Snijpunt Cirkels</translation>
+    </message>
+</context>
+<context>
+    <name>LayoutSettingsDialog</name>
+    <message>
+        <source>Templates:</source>
+        <translation>Sjablonen:</translation>
+    </message>
+    <message>
+        <source>Width:</source>
+        <translation>Breedte:</translation>
+    </message>
+    <message>
+        <source>Height:</source>
+        <translation>Hoogte:</translation>
+    </message>
+    <message>
+        <source>Rotate workpiece</source>
+        <translation>Draai patroondeel</translation>
+    </message>
+    <message>
+        <source>Rotate by</source>
+        <translation>Draai om</translation>
+    </message>
+    <message>
+        <source>degree</source>
+        <translation>graad</translation>
+    </message>
+    <message>
+        <source>Three groups: big, middle, small</source>
+        <translation>Drie groepen: groot, middel en klein</translation>
+    </message>
+    <message>
+        <source>Two groups: big, small</source>
+        <translation>Twee groepen: groot, klein</translation>
+    </message>
+    <message>
+        <source>Descending area</source>
+        <translation>Kleiner wordend gebied</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Pixels</source>
+        <translation>Pixels</translation>
+    </message>
+    <message>
+        <source>Auto crop unused length</source>
+        <translation>Automatisch inkorten van ongebruikte lengte</translation>
+    </message>
+    <message>
+        <source>Unite pages (if possible)</source>
+        <translation>Voeg pagina&apos;s samen( wanneer mogeljk)</translation>
+    </message>
+    <message>
+        <source>Gap width:</source>
+        <translation>Tussenruimte:</translation>
+    </message>
+    <message>
+        <source>Save length of the sheet</source>
+        <translation>Sla de lengte van het blad op</translation>
+    </message>
+    <message>
+        <source>Paper format</source>
+        <translation>Papier Formaat</translation>
+    </message>
+    <message>
+        <source>Left:</source>
+        <translation>Links:</translation>
+    </message>
+    <message>
+        <source>Right:</source>
+        <translation>Rechts:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Top:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Bodem:</translation>
+    </message>
+    <message>
+        <source>Wrong fields.</source>
+        <translation>Verkeerde velden.</translation>
+    </message>
+    <message>
+        <source>
+	Three groups: big, middle, small = 0;
+	Two groups: big, small = 1;
+	Descending area = 2</source>
+        <translation>
+	Drie groepen: groot, middel, klein = 0;
+	Twee groepen: groot, klein = 1;
+	Kleiner wordende ruimte = 2</translation>
+    </message>
+    <message>
+        <source>Layout options</source>
+        <translation>Opmaak opties</translation>
+    </message>
+    <message>
+        <source>Shift/Offset length:</source>
+        <translation>Verschuivings/Offset lengte:</translation>
+    </message>
+    <message>
+        <source>Rule for choosing the next workpiece</source>
+        <translation>Regel voor het kiezen van het volgende patroondeel</translation>
+    </message>
+    <message>
+        <source>Divide into strips</source>
+        <translation>Verdeel in strepen</translation>
+    </message>
+    <message>
+        <source>Multiplier</source>
+        <translation>Vermenigvuldiger</translation>
+    </message>
+    <message>
+        <source>Set multiplier for length of the biggest workpiece in layout.</source>
+        <translation>Stel vermenigvuldiger in op de lengte van het grootste patroondeel in de opmaak.</translation>
+    </message>
+    <message>
+        <source>Enabling for sheets that have big height will speed up creating.</source>
+        <translation>Het mogelijk maken om van grote afmetingen van papier het creatieproces te versnellen.</translation>
+    </message>
+    <message>
+        <source>Printer:</source>
+        <translation>Printer:</translation>
+    </message>
+    <message>
+        <source>None</source>
+        <comment>Printer</comment>
+        <translation>Geen</translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation>Tekst</translation>
+    </message>
+    <message>
+        <source>Text will be converted to paths</source>
+        <translation>tekst zal omgezet worden naar paden</translation>
+    </message>
+    <message>
+        <source>Export text as paths</source>
+        <translation>Exporteer tekst als paden</translation>
+    </message>
+    <message>
+        <source>Margins</source>
+        <translation>Marges</translation>
+    </message>
+    <message>
+        <source>Ignore margins</source>
+        <translation>Neger marges</translation>
+    </message>
+    <message>
+        <source>Layout print settings</source>
+        <translation>Opmaak adrukinstellingen</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing.
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LineTypeComboBox</name>
+    <message>
+        <source>No Pen</source>
+        <translation>Geen Pen</translation>
+    </message>
+    <message>
+        <source>Solidline</source>
+        <translation>Volle lijn</translation>
+    </message>
+    <message>
+        <source>Dash</source>
+        <translation>Streep</translation>
+    </message>
+    <message>
+        <source>Dot</source>
+        <translation>Punt</translation>
+    </message>
+    <message>
+        <source>Dash Dot</source>
+        <translation>Streep Punt</translation>
+    </message>
+    <message>
+        <source>Dash Dot Dot</source>
+        <translation>Streep Punt Punt</translation>
     </message>
 </context>
 <context>
@@ -5066,7 +5159,8 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
-        <translation>Het patroon is aangepast. Wil je de veranderingen opslaan?</translation>
+        <translation>Het patroon is aangepast.
+Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
@@ -6870,11 +6964,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>untitled</source>
-        <translation type="unfinished">zonder titel</translation>
+        <translation>zonder titel</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation type="unfinished">Kon bestand niet exclusief openen. Dit bestand wordt al gebruikt in een ander venster. Verwacht botsingen als er twee copieën van het programma draaien.</translation>
+        <translation>Kon bestand niet exclusief openen. Dit bestand wordt al gebruikt in een ander venster. Verwacht botsingen als er twee copieën van het programma draaien.</translation>
+    </message>
+    <message>
+        <source>Pen Toolbar</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6947,10 +7045,6 @@ Do you want to save your changes?</source>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
-        <source>SeamlyME - Shortcuts</source>
-        <translation>SeamlyMe - Sneltoetsen</translation>
-    </message>
-    <message>
         <source>Copy shortcuts to the clipboard</source>
         <translation>Kopieer sneltoetsen naar het klembord</translation>
     </message>
@@ -6963,12 +7057,108 @@ Do you want to save your changes?</source>
         <translation>Zend sneltoetsen naar de printer</translation>
     </message>
     <message>
-        <source>Seamly2S Shortcuts</source>
-        <translation>Seamly2S Sneltoetsen</translation>
-    </message>
-    <message>
         <source>Export PDF</source>
         <translation></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished">Bestand</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished">Nieuw</translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Individual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Multisize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Afdrukken</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Opslaan</translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as</source>
+        <translation type="unfinished">Opslaan als</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation type="unfinished">Exporteer naar CSV</translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Afsluiten</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Help</translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished">K</translation>
+    </message>
+    <message>
+        <source>SeamlyMe Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+G</source>
+        <translation type="unfinished">Ctrl+Shift+G</translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
+        <translation type="unfinished">Ctrl+G</translation>
     </message>
 </context>
 <context>
@@ -7076,6 +7266,37 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>MouseCoordinates</name>
+    <message>
+        <source>Form</source>
+        <translation>Vorm</translation>
+    </message>
+    <message>
+        <source> XPos:</source>
+        <translation> XPos:</translation>
+    </message>
+    <message>
+        <source>xpos</source>
+        <translation>xpos</translation>
+    </message>
+    <message>
+        <source>YPos:</source>
+        <translation>YPos:</translation>
+    </message>
+    <message>
+        <source>ypos</source>
+        <translation>ypos</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Eenheden:</translation>
+    </message>
+    <message>
+        <source>units</source>
+        <translation>eenheden</translation>
+    </message>
+</context>
+<context>
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
@@ -7126,6 +7347,77 @@ Do you want to save your changes?</source>
     <message>
         <source>move spline path</source>
         <translation>verplaats splinepad</translation>
+    </message>
+</context>
+<context>
+    <name>PageFormatCombobox</name>
+    <message>
+        <source>A0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Letter</source>
+        <translation type="unfinished">Letter</translation>
+    </message>
+    <message>
+        <source>Legal</source>
+        <translation type="unfinished">Legaal</translation>
+    </message>
+    <message>
+        <source>Tabloid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ANSI C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ANSI D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ANSI E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 24in</source>
+        <translation type="unfinished">Papierrol 24in / 60,96cm</translation>
+    </message>
+    <message>
+        <source>Roll 30in</source>
+        <translation type="unfinished">Papierrol 30in / 76,20cm</translation>
+    </message>
+    <message>
+        <source>Roll 36in</source>
+        <translation type="unfinished">Papierrol 36in / 91,44cm</translation>
+    </message>
+    <message>
+        <source>Roll 42in</source>
+        <translation type="unfinished">Papierrol 42in / 106,68cm</translation>
+    </message>
+    <message>
+        <source>Roll 44in</source>
+        <translation type="unfinished">Papierrol 44in / 111,76cm</translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished">Op maat</translation>
     </message>
 </context>
 <context>
@@ -7273,10 +7565,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Attributes</source>
         <translation>Kenmerken</translation>
-    </message>
-    <message>
-        <source>Forbid flipping:</source>
-        <translation>Omdraaien niet toegestaan:</translation>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
@@ -7762,6 +8050,18 @@ Do you want to save your changes?</source>
         <source>Labels</source>
         <translation>Labels</translation>
     </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flipping:</source>
+        <translation>Flipperen:</translation>
+    </message>
+    <message>
+        <source>Forbid</source>
+        <translation>Verbieden</translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -7819,7 +8119,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Forbid Flipping</source>
-        <translation>Kantelen niet toegestaan</translation>
+        <translation>Flipping verbieden</translation>
     </message>
     <message>
         <source>Raise to top</source>
@@ -7859,7 +8159,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Forbid Flipping changed: </source>
-        <translation>Kantelen Niet Toegestaan veranderd: </translation>
+        <translation>Flipping verbieden veranderd: </translation>
     </message>
     <message>
         <source>Enabled</source>
@@ -7931,6 +8231,84 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>PenToolBar</name>
+    <message>
+        <source>Current line color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current line type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current line weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PieceFillComboBox</name>
+    <message>
+        <source>No Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagonal Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PiecesWidget</name>
     <message>
         <source>Form</source>
@@ -7984,10 +8362,6 @@ Do you want to save your changes?</source>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>1st point:</source>
         <translation>Eerste punt:</translation>
     </message>
@@ -8023,6 +8397,10 @@ Do you want to save your changes?</source>
         <source>Choose unique name.</source>
         <translation>Kies unieke naam.</translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished">Naam:</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesConfigurationPage</name>
@@ -8045,18 +8423,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Label language:</source>
         <translation>Taal label:</translation>
-    </message>
-    <message>
-        <source>Pattern making system</source>
-        <translation>Patroon teken systeem</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation>Auteur:</translation>
-    </message>
-    <message>
-        <source>Book:</source>
-        <translation>Boek:</translation>
     </message>
     <message>
         <source>With OS options</source>
@@ -8101,10 +8467,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Confirm Format Rewriting</source>
         <translation>Bevestig herformatteren</translation>
-    </message>
-    <message>
-        <source>System:</source>
-        <translation>Systeem:</translation>
     </message>
     <message>
         <source>Operations Default Suffix</source>
@@ -8527,10 +8889,6 @@ Do you want to save your changes?</source>
         <translation>Gebruik Ctrl toets</translation>
     </message>
     <message>
-        <source>          Speed:</source>
-        <translation>          Snelheid:</translation>
-    </message>
-    <message>
         <source>Behavior</source>
         <translation>Gedrag</translation>
     </message>
@@ -8622,7 +8980,7 @@ Do you want to save your changes?</source>
     <name>PreferencesPatternPage</name>
     <message>
         <source>Forbid flipping</source>
-        <translation>Kantelen niet toegestaan</translation>
+        <translation>Flipping verbieden</translation>
     </message>
     <message>
         <source>By default forbid flipping for all new created workpieces</source>
@@ -8950,7 +9308,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>%1</source>
-        <translation type="unfinished">%1</translation>
+        <translation>%1</translation>
     </message>
 </context>
 <context>
@@ -9203,8 +9561,8 @@ Do you want to save your changes?</source>
         <translation>Patroon teken systeem</translation>
     </message>
     <message>
-        <source>Pattern making system:</source>
-        <translation>Patroon teken systeem:</translation>
+        <source>System:</source>
+        <translation>Systeem:</translation>
     </message>
     <message>
         <source>Author:</source>
@@ -9235,12 +9593,12 @@ Do you want to save your changes?</source>
         <translation>Standaardhoogte en -grootte</translation>
     </message>
     <message>
-        <source>Default height:</source>
-        <translation>Standaard hoogte:</translation>
+        <source>Height:</source>
+        <translation>Hoogte:</translation>
     </message>
     <message>
-        <source>Default size:</source>
-        <translation>Standaard maat:</translation>
+        <source>Size:</source>
+        <translation>Maat:</translation>
     </message>
     <message>
         <source>With OS options</source>
@@ -9300,10 +9658,6 @@ Do you want to save your changes?</source>
 <context>
     <name>ShortcutsDialog</name>
     <message>
-        <source>Seamly2D - Shortcuts</source>
-        <translation>Seamly2D - Sneltoetsen</translation>
-    </message>
-    <message>
         <source>Copy shortcuts to the clipboard</source>
         <translation>Kopieer sneltoetsen naar het klembord</translation>
     </message>
@@ -9316,12 +9670,840 @@ Do you want to save your changes?</source>
         <translation>Zend sneltoetsen naar de printer</translation>
     </message>
     <message>
-        <source>Seamly2S Shortcuts</source>
-        <translation>Seamly2S Sneltoetsen</translation>
+        <source>Seamly2D Shortcuts</source>
+        <translation type="unfinished">Seamly2S Sneltoetsen {2D?}</translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished">Bestand</translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished">Nieuw</translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Open</translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished">Afsluiten</translation>
+    </message>
+    <message>
+        <source>Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Opslaan</translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as</source>
+        <translation type="unfinished">Opslaan als</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished">Afdrukken</translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+Comma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document Information</source>
+        <translation type="unfinished">Document informatie</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished">Afsluiten</translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished">Ongedaan maken</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished">Beeld</translation>
+    </message>
+    <message>
+        <source>Draft Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layout Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In</source>
+        <translation type="unfinished">Inzoomen</translation>
+    </message>
+    <message>
+        <source>Ctrl++</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation type="unfinished">Uitzoomen</translation>
+    </message>
+    <message>
+        <source>Ctrl+-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom 1:1</source>
+        <translation type="unfinished">Zoom 1:1</translation>
+    </message>
+    <message>
+        <source>Ctrl+0</source>
+        <translation type="unfinished">Ctrl+0</translation>
+    </message>
+    <message>
+        <source>Zoom to Point</source>
+        <translation type="unfinished">Zoom in op Punt</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+P</source>
+        <translation type="unfinished">Ctrl+Alt+P</translation>
+    </message>
+    <message>
+        <source>Fit All</source>
+        <translation type="unfinished">Toon alles</translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished">Vorige</translation>
+    </message>
+    <message>
+        <source>Ctrl+Left</source>
+        <translation type="unfinished">Ctrl+Links</translation>
+    </message>
+    <message>
+        <source>Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Area</source>
+        <translation type="unfinished">Gebied</translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation type="unfinished">Ctrl+A</translation>
+    </message>
+    <message>
+        <source>Pan</source>
+        <translation type="unfinished">Toon Panorama</translation>
+    </message>
+    <message>
+        <source>Z, P</source>
+        <translation type="unfinished">Z, P</translation>
+    </message>
+    <message>
+        <source>Show Name Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, P</source>
+        <translation type="unfinished">V, P</translation>
+    </message>
+    <message>
+        <source>Increase Text Size</source>
+        <translation type="unfinished">Maak Tekst Groter</translation>
+    </message>
+    <message>
+        <source>Ctrl+]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decrease Text Size</source>
+        <translation type="unfinished">Maak tekst Kleiner</translation>
+    </message>
+    <message>
+        <source>Ctrl+[</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Tool Color</source>
+        <translation type="unfinished">Gebruik Gereedschapskleur</translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, W</source>
+        <translation type="unfinished">V, W</translation>
+    </message>
+    <message>
+        <source>Curve Control Points</source>
+        <translation type="unfinished">Controlepunten Kromme</translation>
+    </message>
+    <message>
+        <source>V, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Origin</source>
+        <translation type="unfinished">Oorsprong van de as</translation>
+    </message>
+    <message>
+        <source>V, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Allowance</source>
+        <translation type="unfinished">Naadtoeslag</translation>
+    </message>
+    <message>
+        <source>V, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grainlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished">Labels</translation>
+    </message>
+    <message>
+        <source>V, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Maten</translation>
+    </message>
+    <message>
+        <source>Open SeamlyMe</source>
+        <translation type="unfinished">Open SeamlyMe</translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variables Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Variables Table  to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Draft Block</source>
+        <translation type="unfinished">Nieuw Tekenblok</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Draft Block</source>
+        <translation type="unfinished">Hernoem Tekenblok</translation>
+    </message>
+    <message>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation type="unfinished">Punt</translation>
+    </message>
+    <message>
+        <source>Length and Angle</source>
+        <translation type="unfinished">Lengte en Hoek</translation>
+    </message>
+    <message>
+        <source>L, A</source>
+        <translation type="unfinished">L, A</translation>
+    </message>
+    <message>
+        <source>On Line</source>
+        <translation type="unfinished">Op Lijn</translation>
+    </message>
+    <message>
+        <source>O, L</source>
+        <translation type="unfinished">O, L</translation>
+    </message>
+    <message>
+        <source>On Perpendicular</source>
+        <translation type="unfinished">Op Loodrechte</translation>
+    </message>
+    <message>
+        <source>O, P</source>
+        <translation type="unfinished">O, P</translation>
+    </message>
+    <message>
+        <source>On Bisector</source>
+        <translation type="unfinished">Op Bisectrice</translation>
+    </message>
+    <message>
+        <source>O, B</source>
+        <translation type="unfinished">O, B</translation>
+    </message>
+    <message>
+        <source>Length to Line</source>
+        <translation type="unfinished">Lengte tot Lijn</translation>
+    </message>
+    <message>
+        <source>P, S</source>
+        <translation type="unfinished">P, S</translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Line</source>
+        <translation type="unfinished">Snijpunt Boog en Lijn</translation>
+    </message>
+    <message>
+        <source>A, L</source>
+        <translation type="unfinished">A, L</translation>
+    </message>
+    <message>
+        <source>Intersect Axis and Triangle</source>
+        <translation type="unfinished">Snijpunt As en Driehoek</translation>
+    </message>
+    <message>
+        <source>X, T</source>
+        <translation type="unfinished">X, T</translation>
+    </message>
+    <message>
+        <source>Intersect XY</source>
+        <translation type="unfinished">Snijpunt XY</translation>
+    </message>
+    <message>
+        <source>X, Y</source>
+        <translation type="unfinished">X, Y</translation>
+    </message>
+    <message>
+        <source>Intersect Line and Perpendicular</source>
+        <translation type="unfinished">Snijpunt Lijn en Loodrechte</translation>
+    </message>
+    <message>
+        <source>L, P</source>
+        <translation type="unfinished">L, P</translation>
+    </message>
+    <message>
+        <source>Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, X</source>
+        <translation type="unfinished">L, X</translation>
+    </message>
+    <message>
+        <source>Midpoint On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+O, Shift+L</source>
+        <translation type="unfinished">Shift+O, Shift+L</translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="unfinished">Lijn</translation>
+    </message>
+    <message>
+        <source>Alt+L</source>
+        <translation type="unfinished">Alt+L</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Lines</source>
+        <translation type="unfinished">Punt - Snijpunt Lijnen</translation>
+    </message>
+    <message>
+        <source>I, L</source>
+        <translation type="unfinished">I, L</translation>
+    </message>
+    <message>
+        <source>Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Interactive</source>
+        <translation type="unfinished">Kromme - Interactief</translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished">Alt+C</translation>
+    </message>
+    <message>
+        <source>Spline - Interactive</source>
+        <translation type="unfinished">Spline - Interactief</translation>
+    </message>
+    <message>
+        <source>Alt+S</source>
+        <translation type="unfinished">Alt+S</translation>
+    </message>
+    <message>
+        <source>Curve - Fixed</source>
+        <translation type="unfinished">Kromme - Vast</translation>
+    </message>
+    <message>
+        <source>Alt+Shift+C</source>
+        <translation type="unfinished">Alt+Shift+C</translation>
+    </message>
+    <message>
+        <source>Spline - Fixed</source>
+        <translation type="unfinished">Spline - Vast</translation>
+    </message>
+    <message>
+        <source>Alt+Shift+S</source>
+        <translation type="unfinished">Alt+Shift+S</translation>
+    </message>
+    <message>
+        <source>Point - On Curve</source>
+        <translation type="unfinished">Punt - Op Kromme</translation>
+    </message>
+    <message>
+        <source>O, C</source>
+        <translation type="unfinished">O, C</translation>
+    </message>
+    <message>
+        <source>Point - On Spline	</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, S</source>
+        <translation type="unfinished">O, S</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curves</source>
+        <translation type="unfinished">Punt - Snijpunt Krommes</translation>
+    </message>
+    <message>
+        <source>I, C</source>
+        <translation type="unfinished">I, C</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curve and Axis</source>
+        <translation type="unfinished">Punt - Snijpunt Kromme en As</translation>
+    </message>
+    <message>
+        <source>C, X</source>
+        <translation type="unfinished">C, X</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curve and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation type="unfinished">Alt+A</translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length</source>
+        <translation type="unfinished">Boog - Straal en Lengte</translation>
+    </message>
+    <message>
+        <source>Alt+Shift+A</source>
+        <translation type="unfinished">Alt+Shift+A</translation>
+    </message>
+    <message>
+        <source>Point - On Arc</source>
+        <translation type="unfinished">Punt - Op Boog</translation>
+    </message>
+    <message>
+        <source>O, A</source>
+        <translation type="unfinished">O, A</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, X</source>
+        <translation type="unfinished">A, X</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arcs</source>
+        <translation type="unfinished">Punt - Snijpunt Bogen</translation>
+    </message>
+    <message>
+        <source>I, A</source>
+        <translation type="unfinished">I, A</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circles</source>
+        <translation type="unfinished">Punt - Snijpunt Cirkels</translation>
+    </message>
+    <message>
+        <source>Shift+I, Shift+C</source>
+        <translation type="unfinished">Shift+I, Shift+C</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circle and Tangent</source>
+        <translation type="unfinished">Punt - Snijpunt Cirkel en Raaklijn</translation>
+    </message>
+    <message>
+        <source>C, T</source>
+        <translation type="unfinished">C, T</translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Tangent</source>
+        <translation type="unfinished">Punt - Snijpunt Boog en Raaklijn</translation>
+    </message>
+    <message>
+        <source>A, T</source>
+        <translation type="unfinished">A, T</translation>
+    </message>
+    <message>
+        <source>Elliptical Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+E</source>
+        <translation type="unfinished">Alt+E</translation>
+    </message>
+    <message>
+        <source>Operations</source>
+        <translation type="unfinished">Bewerkingen</translation>
+    </message>
+    <message>
+        <source>Add Objects to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>G</source>
+        <translation type="unfinished">G</translation>
+    </message>
+    <message>
+        <source>Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>R</source>
+        <translation type="unfinished">R</translation>
+    </message>
+    <message>
+        <source>Mirror by Line</source>
+        <translation type="unfinished">Spiegel over Lijn</translation>
+    </message>
+    <message>
+        <source>M, L</source>
+        <translation type="unfinished">M,L</translation>
+    </message>
+    <message>
+        <source>Mirror by Axis</source>
+        <translation type="unfinished">Spiegel over As</translation>
+    </message>
+    <message>
+        <source>M, A</source>
+        <translation type="unfinished">M, A</translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished">Verplaats</translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation type="unfinished">Alt+M</translation>
+    </message>
+    <message>
+        <source>True Darts</source>
+        <translation type="unfinished">Echte Figuurnaden</translation>
+    </message>
+    <message>
+        <source>T, D</source>
+        <translation type="unfinished">T, D</translation>
+    </message>
+    <message>
+        <source>Export Draft Blocks</source>
+        <translation type="unfinished">Exporteer Tekenblok</translation>
+    </message>
+    <message>
+        <source>E, D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Piece</source>
+        <translation type="unfinished">Patroondeel</translation>
+    </message>
+    <message>
+        <source>New Pattern Piece</source>
+        <translation type="unfinished">Nieuw Patroondeel</translation>
+    </message>
+    <message>
+        <source>N, P</source>
+        <translation type="unfinished">N, P</translation>
+    </message>
+    <message>
+        <source>Anchor Point</source>
+        <translation type="unfinished">Ankerpunt</translation>
+    </message>
+    <message>
+        <source>A, P</source>
+        <translation type="unfinished">A, P</translation>
+    </message>
+    <message>
+        <source>Internal Path</source>
+        <translation type="unfinished">Binnenpad</translation>
+    </message>
+    <message>
+        <source>I, P</source>
+        <translation type="unfinished">I, P</translation>
+    </message>
+    <message>
+        <source>I, N</source>
+        <translation type="unfinished">I, N</translation>
+    </message>
+    <message>
+        <source>Edit Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include in Layout</source>
+        <translation type="unfinished">In Opmaak opnemen</translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid Flipping</source>
+        <translation type="unfinished">Flipping verbieden</translation>
+    </message>
+    <message>
+        <source>F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raise To Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower To Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished">Hernoem</translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished">Details</translation>
+    </message>
+    <message>
+        <source>Unite Pieces</source>
+        <translation type="unfinished">Verenig 2 Patroondelen (U)</translation>
+    </message>
+    <message>
+        <source>U</source>
+        <translation type="unfinished">U</translation>
+    </message>
+    <message>
+        <source>Export Pieces</source>
+        <translation type="unfinished">Exporteer Patroondelen</translation>
+    </message>
+    <message>
+        <source>E, P</source>
+        <translation type="unfinished">E, P</translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished">Opmaak</translation>
+    </message>
+    <message>
+        <source>New Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>N, L</source>
+        <translation type="unfinished">N, L</translation>
+    </message>
+    <message>
+        <source>Export Layout</source>
+        <translation type="unfinished">Exporteer Opmaak</translation>
+    </message>
+    <message>
+        <source>E, L</source>
+        <translation type="unfinished">E, L</translation>
+    </message>
+    <message>
+        <source>Last Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Geschiedenis</translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Utilities</source>
+        <translation type="unfinished">Hulpmiddelen</translation>
+    </message>
+    <message>
+        <source>Calculator</source>
+        <translation type="unfinished">Rekenmachine</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Chart</source>
+        <translation type="unfinished">Decimaaltabel</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Help</translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished">K</translation>
+    </message>
+    <message>
+        <source>Shift+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Export PDF</source>
-        <translation>Exporteer PDF</translation>
+        <translation type="unfinished">Exporteer PDF</translation>
+    </message>
+    <message>
+        <source>Insert Nodes</source>
+        <translation type="unfinished">Voeg kernpunten in</translation>
     </message>
 </context>
 <context>
@@ -9425,10 +10607,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Formula:</source>
         <translation>Formule:</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in berichten box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Base value:</source>
@@ -9933,7 +11111,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation></translation>
+        <translation>Afsluiten</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -9965,7 +11143,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Afdrukken</translation>
+        <translation>Afdrukken</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
@@ -9977,6 +11155,10 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10054,7 +11236,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Lijn_</translation>
+        <translation>Lijn_</translation>
     </message>
 </context>
 <context>
@@ -10170,6 +11352,25 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Can&apos;t cut this spline</source>
         <translation>Kan deze spline niet knippen</translation>
+    </message>
+</context>
+<context>
+    <name>VAbstractMainWindow</name>
+    <message>
+        <source>Confirm format rewriting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation>Exporteer naar CSV</translation>
     </message>
 </context>
 <context>
@@ -11210,6 +12411,13 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
 </context>
 <context>
+    <name>VSimpleCurve</name>
+    <message>
+        <source>VSimpleCurve::RefreshGeometry: pointer to curve is null.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VSplinePath</name>
     <message>
         <source>Not enough points to create the spline.</source>
@@ -11705,10 +12913,6 @@ Wil je deze veranderingen opslaan?</translation>
         <translation>Selectie</translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation>Punt naam:</translation>
-    </message>
-    <message>
         <source>Coordinates</source>
         <translation>Coordinaten</translation>
     </message>
@@ -11890,7 +13094,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <translation type="unfinished">Boog_</translation>
+        <translation>Boog_</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -11898,11 +13102,11 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>SplPath_</source>
-        <translation type="unfinished">Splinepad_</translation>
+        <translation>Splinepad_</translation>
     </message>
     <message>
         <source>Line_</source>
-        <translation type="unfinished">Lijn_</translation>
+        <translation>Lijn_</translation>
     </message>
 </context>
 <context>
@@ -13213,7 +14417,7 @@ Usage: log(x)</comment>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x)</comment>
-        <translation type="unfinished">In</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>exp</source>
@@ -13261,13 +14465,13 @@ Usage: max(arg 1; arg 2; ... arg n)</comment>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished">som</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished">gemiddeld</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>fmod</source>

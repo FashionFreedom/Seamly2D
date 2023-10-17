@@ -140,6 +140,7 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
+                <bold>true</bold>
                </font>
               </property>
               <property name="title">
@@ -2074,7 +2075,7 @@
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>240</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -2254,7 +2255,7 @@ border-radius: 4px;
                </font>
               </property>
               <property name="text">
-               <string>          Speed:</string>
+               <string>Speed:</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -2303,7 +2304,7 @@ border-radius: 4px;
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>225</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>

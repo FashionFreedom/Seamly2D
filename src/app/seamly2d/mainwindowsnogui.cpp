@@ -55,7 +55,7 @@
 #include "../vpatterndb/vcontainer.h"
 #include "../vobj/vobjpaintdevice.h"
 #include "../vdxf/vdxfpaintdevice.h"
-#include "dialogs/dialoglayoutsettings.h"
+#include "dialogs/layoutsettings_dialog.h"
 #include "../vwidgets/vmaingraphicsscene.h"
 #include "../vlayout/vlayoutgenerator.h"
 #include "dialogs/dialoglayoutprogress.h"
@@ -160,7 +160,7 @@ void MainWindowsNoGUI::toolLayoutSettings(QToolButton *tButton, bool checked)
     {
         VLayoutGenerator lGenerator;
 
-        DialogLayoutSettings layout(&lGenerator, this);
+        LayoutSettingsDialog layout(&lGenerator, this);
         if (layout.exec() == QDialog::Rejected)
         {
             tButton->setChecked(false);

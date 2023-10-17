@@ -150,8 +150,6 @@ private slots:
 
     void                ShowMData();
 
-    void                DeployFormula();
-
     void                SaveMName(const QString &text);
     void                SaveMValue();
     void                SaveMBaseValue(double value);
@@ -176,7 +174,7 @@ private:
     QComboBox          *gradationHeights;
     QComboBox          *gradationSizes;
     QComboBox          *comboBoxUnits;
-    int                 formulaBaseHeight;
+
     std::shared_ptr<VLockGuard<char>> lock;
     QSharedPointer<VTableSearch>      search;
     QLabel             *labelGradationHeights;

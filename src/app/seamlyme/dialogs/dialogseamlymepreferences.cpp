@@ -1,7 +1,7 @@
 /******************************************************************************
 *   @file   dialogseamlymepreferences.cpp
 **  @author Douglas S Caskey
-**  @date   3 Sep, 2023
+**  @date   26 Oct, 2023
 **
 **  @brief
 **  @copyright
@@ -99,6 +99,16 @@ DialogSeamlyMePreferences::DialogSeamlyMePreferences(QWidget *parent)
 DialogSeamlyMePreferences::~DialogSeamlyMePreferences()
 {
     delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogSeamlyMePreferences::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

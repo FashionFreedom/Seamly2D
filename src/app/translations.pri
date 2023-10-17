@@ -22,6 +22,7 @@ isEmpty(LOCALES){
         en_US \
         en_CA \
         en_IN \
+        en_GB \
         ro_RO \
         zh_CN \
         pt_BR \
@@ -35,4 +36,5 @@ CONFIG += lrelease embed_translations
 for(lang, LANGUAGES) {
     EXTRA_TRANSLATIONS += $${TRANSLATIONS_PATH}/seamly2d_$${lang}.ts
     EXTRA_TRANSLATIONS += $${TRANSLATIONS_PATH}/measurements_$${lang}.ts
+    EXTRA_TRANSLATIONS += $${TRANSLATIONS_PATH}/qtbase_$${lang}.ts
 }

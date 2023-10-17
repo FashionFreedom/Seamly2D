@@ -43,7 +43,6 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -52,8 +51,11 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="labelAlignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
            <widget class="QLabel" name="labelEditNamePoint">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -63,26 +65,25 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>85</width>
+              <width>90</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
             <property name="text">
-             <string>Point name:</string>
+             <string>Name:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="0" column="1">
            <widget class="QLineEdit" name="lineEditNamePoint">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -92,14 +93,13 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>125</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -111,22 +111,17 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
+          <item row="1" column="0">
            <widget class="QLabel" name="label">
             <property name="minimumSize">
              <size>
-              <width>85</width>
+              <width>90</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -138,7 +133,7 @@
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
            <widget class="QComboBox" name="comboBoxResult">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -148,14 +143,13 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>125</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -177,7 +171,6 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -192,7 +185,6 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -213,14 +205,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -242,14 +233,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>125</width>
+                <width>80</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -269,7 +259,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
@@ -313,7 +303,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -335,14 +324,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -408,7 +396,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -475,7 +462,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -498,7 +484,6 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -519,14 +504,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -555,7 +539,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -575,7 +558,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
@@ -619,7 +602,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -641,14 +623,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>80</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -714,7 +695,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -781,7 +761,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>

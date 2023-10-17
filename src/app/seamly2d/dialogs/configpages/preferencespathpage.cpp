@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   preferencespathpage.h
+**  @author Douglas S Caskey
+**  @date   26 Oct, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   preferencespathpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -75,6 +79,16 @@ PreferencesPathPage::PreferencesPathPage(QWidget *parent)
 PreferencesPathPage::~PreferencesPathPage()
 {
     delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesPathPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -201,6 +215,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(0, 0, new QTableWidgetItem(tr("My Individual Measurements")));
+        ui->pathTable->item(0, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathIndividualMeasurements());
         item->setToolTip(settings->GetPathIndividualMeasurements());
         ui->pathTable->setItem(0, 1, item);
@@ -208,6 +223,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(1, 0, new QTableWidgetItem(tr("My Multisize Measurements")));
+        ui->pathTable->item(1, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathMultisizeMeasurements());
         item->setToolTip(settings->GetPathMultisizeMeasurements());
         ui->pathTable->setItem(1, 1, item);
@@ -215,6 +231,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(2, 0, new QTableWidgetItem(tr("My Patterns")));
+        ui->pathTable->item(2, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathPattern());
         item->setToolTip(settings->GetPathPattern());
         ui->pathTable->setItem(2, 1, item);
@@ -222,6 +239,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(3, 0, new QTableWidgetItem(tr("My Layouts")));
+        ui->pathTable->item(3, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->getLayoutPath());
         item->setToolTip(settings->getLayoutPath());
         ui->pathTable->setItem(3, 1, item);
@@ -229,6 +247,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(4, 0, new QTableWidgetItem(tr("My Templates")));
+        ui->pathTable->item(4, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathTemplate());
         item->setToolTip(settings->GetPathTemplate());
         ui->pathTable->setItem(4, 1, item);
@@ -236,6 +255,7 @@ void PreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(5, 0, new QTableWidgetItem(tr("My label templates")));
+        ui->pathTable->item(5, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathLabelTemplate());
         item->setToolTip(settings->GetPathLabelTemplate());
         ui->pathTable->setItem(5, 1, item);

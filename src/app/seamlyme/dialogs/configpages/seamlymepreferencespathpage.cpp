@@ -77,6 +77,16 @@ SeamlyMePreferencesPathPage::~SeamlyMePreferencesPathPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void SeamlyMePreferencesPathPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesPathPage::Apply()
 {
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
@@ -171,6 +181,7 @@ void SeamlyMePreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(0, 0, new QTableWidgetItem(tr("My Individual Measurements")));
+        ui->pathTable->item(0, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathIndividualMeasurements());
         item->setToolTip(settings->GetPathIndividualMeasurements());
         ui->pathTable->setItem(0, 1, item);
@@ -178,6 +189,7 @@ void SeamlyMePreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(1, 0, new QTableWidgetItem(tr("My Multisize Measurements")));
+        ui->pathTable->item(1, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathMultisizeMeasurements());
         item->setToolTip(settings->GetPathMultisizeMeasurements());
         ui->pathTable->setItem(1, 1, item);
@@ -185,6 +197,7 @@ void SeamlyMePreferencesPathPage::InitTable()
 
     {
         ui->pathTable->setItem(2, 0, new QTableWidgetItem(tr("My Templates")));
+        ui->pathTable->item(2, 0)->setTextAlignment(Qt::AlignRight | Qt::AlignVCenter);
         QTableWidgetItem *item = new QTableWidgetItem(settings->GetPathTemplate());
         item->setToolTip(settings->GetPathTemplate());
         ui->pathTable->setItem(2, 1, item);

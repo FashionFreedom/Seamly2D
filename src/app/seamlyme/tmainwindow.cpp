@@ -121,7 +121,6 @@ TMainWindow::TMainWindow(QWidget *parent)
 	  gradationHeights(nullptr),
 	  gradationSizes(nullptr),
 	  comboBoxUnits(nullptr),
-	  formulaBaseHeight(0),
 	  lock(nullptr),
 	  search(),
 	  labelGradationHeights(nullptr),
@@ -502,7 +501,8 @@ void TMainWindow::CreateFromExisting()
 		usedNotExistedDir = directory.mkpath(".");
 	}
 
-	const QString mPath = QFileDialog::getOpenFileName(this, tr("Select file"), pathTo, filter);
+	const QString mPath = QFileDialog::getOpenFileName(this, tr("Select file"), pathTo, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
 
 	if (not mPath.isEmpty())
 	{
@@ -1558,7 +1558,8 @@ void TMainWindow::ImportFromPattern()
 	QString pathTo = qApp->SeamlyMeSettings()->GetPathTemplate();
 	pathTo = VCommonSettings::PrepareStandardTemplates(pathTo);
 
-	const QString mPath = QFileDialog::getOpenFileName(this, tr("Import from a pattern"), pathTo, filter);
+	const QString mPath = QFileDialog::getOpenFileName(this, tr("Import from a pattern"), pathTo, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
 	if (mPath.isEmpty())
 	{
 		return;
@@ -1769,39 +1770,6 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	// And also those 50 px. DockWidget has some border. And i can't find how big it is.
 	// Can lead to problem in future.
 	ui->dockWidgetDiagram->setMaximumWidth(ui->labelDiagram->width()+50);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::DeployFormula()
-{
-	SCASSERT(ui->plainTextEditFormula != nullptr)
-	SCASSERT(ui->pushButtonGrow != nullptr)
-
-	const QTextCursor cursor = ui->plainTextEditFormula->textCursor();
-
-	if (ui->plainTextEditFormula->height() < DIALOG_MAX_FORMULA_HEIGHT)
-	{
-		ui->plainTextEditFormula->setFixedHeight(DIALOG_MAX_FORMULA_HEIGHT);
-		//Set icon from theme (internal for Windows system)
-		ui->pushButtonGrow->setIcon(QIcon::fromTheme("go-next",
-													 QIcon(":/icons/win.icon.theme/16x16/actions/go-next.png")));
-	}
-	else
-	{
-	   ui->plainTextEditFormula->setFixedHeight(formulaBaseHeight);
-	   //Set icon from theme (internal for Windows system)
-	   ui->pushButtonGrow->setIcon(QIcon::fromTheme("go-down",
-													QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
-	}
-
-	// I found that after change size of formula field, it was filed for angle formula, field for formula became black.
-	// This code prevent this.
-	setUpdatesEnabled(false);
-	repaint();
-	setUpdatesEnabled(true);
-
-	ui->plainTextEditFormula->setFocus();
-	ui->plainTextEditFormula->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2218,11 +2186,9 @@ void TMainWindow::InitWindow()
 		// Because Qt Designer doesn't know about our deleting we will create empty objects for correct
 		// working the retranslation UI
 		// Tab Measurements
-		HackWidget(&ui->horizontalLayoutValue);
 		HackWidget(&ui->plainTextEditFormula);
 		HackWidget(&ui->toolButtonExpr);
 		HackWidget(&ui->labelFormula);
-		HackWidget(&ui->pushButtonGrow);
 
 		// Tab Information
 		HackWidget(&ui->lineEditGivenName);
@@ -2310,9 +2276,7 @@ void TMainWindow::InitWindow()
 		connect(ui->comboBoxGender, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
 				&TMainWindow::SaveGender);
 		connect(ui->dateEditBirthDate, &QDateEdit::dateChanged, this, &TMainWindow::SaveBirthDate);
-		connect(ui->pushButtonGrow, &QPushButton::clicked, this, &TMainWindow::DeployFormula);
 
-		this->formulaBaseHeight = ui->plainTextEditFormula->height();
 		connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &TMainWindow::SaveMValue,
 				Qt::UniqueConnection);
 
@@ -2497,6 +2461,9 @@ bool TMainWindow::MaybeSave()
 		messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
 		messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
 		const QMessageBox::StandardButton ret = static_cast<QMessageBox::StandardButton>(messageBox->exec());
 
 		switch (ret)
@@ -2777,7 +2744,6 @@ void TMainWindow::MFields(bool enabled)
 	else
 	{
 		ui->plainTextEditFormula->setEnabled(enabled);
-		ui->pushButtonGrow->setEnabled(enabled);
 		ui->toolButtonExpr->setEnabled(enabled);
 	}
 
@@ -2916,7 +2882,8 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::Open(const QString &pathTo, const QString &filter)
 {
-	const QString mPath = QFileDialog::getOpenFileName(this, tr("Open file"), pathTo, filter);
+	const QString mPath = QFileDialog::getOpenFileName(this, tr("Open file"), pathTo, filter, nullptr,
+                                                          QFileDialog::DontUseNativeDialog);
 
 	if (not mPath.isEmpty())
 	{

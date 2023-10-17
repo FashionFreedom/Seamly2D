@@ -1,7 +1,7 @@
 /******************************************************************************
 *   @file   dialogpreferences.cpp
 **  @author Douglas S Caskey
-**  @date   3 Sep, 2023
+**  @date   26 Oct, 2023
 **
 **  @brief
 **  @copyright
@@ -105,6 +105,16 @@ DialogPreferences::DialogPreferences(QWidget *parent)
 DialogPreferences::~DialogPreferences()
 {
     delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogPreferences::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
