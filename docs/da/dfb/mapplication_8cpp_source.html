@@ -746,7 +746,7 @@ $(document).ready(function(){initNavTree('da/dfb/mapplication_8cpp_source.html',
 <div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;        }</div>
 <div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        qCWarning(mApp, <span class="stringliteral">&quot;Can&#39;t establish connection to the server &#39;%s&#39;&quot;</span>, qUtf8Printable(serverName));</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;        qCDebug(mApp, <span class="stringliteral">&quot;Can&#39;t establish connection to the server &#39;%s&#39;&quot;</span>, qUtf8Printable(serverName));</div>
 <div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
 <div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;        <a class="code" href="../../da/d04/classMApplication.html#a1588860c306a02f9d8b22068ae4c84d6">localServer</a> = <span class="keyword">new</span> QLocalServer(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;        connect(<a class="code" href="../../da/d04/classMApplication.html#a1588860c306a02f9d8b22068ae4c84d6">localServer</a>, &amp;QLocalServer::newConnection, <span class="keyword">this</span>, &amp;<a class="code" href="../../da/d04/classMApplication.html#a17514e46fa94c2d6dd459b592e4c91d7">MApplication::NewLocalSocketConnection</a>);</div>
