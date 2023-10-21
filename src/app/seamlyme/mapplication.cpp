@@ -647,7 +647,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
             return;
         }
 
-        qCWarning(mApp, "Can't establish connection to the server '%s'", qUtf8Printable(serverName));
+        qCDebug(mApp, "Can't establish connection to the server '%s'", qUtf8Printable(serverName));
 
         localServer = new QLocalServer(this);
         connect(localServer, &QLocalServer::newConnection, this, &MApplication::NewLocalSocketConnection);
