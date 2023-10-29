@@ -164,7 +164,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%4        </td><td>%5</td></tr>"
                                     "<tr><td width = 50%>%6        </td><td>%7</td></tr>"
                                     "<tr><td width = 50%>%8        </td><td>%9</td></tr>"
-                                    "<tr><td width = 50%>%10        </td><td>%11</td></tr>"                                    "<tr><td width = 50%>%3        </td><td>%4</td></tr>"
+                                    "<tr><td width = 50%>%10        </td><td>%11</td></tr>"                                    
                                     "<tr><td width = 50%>%12        </td><td>%13</td></tr>"
                                     "<tr><td width = 50%>%14        </td><td>%15</td></tr>"
                                     "<tr><td width = 50%>%16        </td><td>%17</td></tr>"

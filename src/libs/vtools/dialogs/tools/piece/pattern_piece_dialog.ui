@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>577</width>
+    <width>550</width>
     <height>630</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>480</width>
+    <width>550</width>
     <height>500</height>
    </size>
   </property>
@@ -1506,43 +1506,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_6">
-                  <item>
-                   <widget class="QPushButton" name="widthGrow_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_4">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_7">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="widthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -1559,7 +1537,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -1570,6 +1548,9 @@ QListWidget::item:selected {
                     </property>
                     <property name="toolTip">
                      <string>Calculation</string>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Sunken</enum>
                     </property>
                     <property name="tabChangesFocus">
                      <bool>true</bool>
@@ -1606,8 +1587,8 @@ QListWidget::item:selected {
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_3">
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_10">
-                  <item>
+                 <layout class="QFormLayout" name="formLayout">
+                  <item row="0" column="0">
                    <widget class="QLabel" name="labelNode">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -1641,24 +1622,24 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QComboBox" name="nodes_ComboBox">
                     <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                       <horstretch>0</horstretch>
                       <verstretch>0</verstretch>
                      </sizepolicy>
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>200</width>
                       <height>0</height>
                      </size>
                     </property>
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>20</height>
+                      <height>16777215</height>
                      </size>
                     </property>
                     <property name="font">
@@ -1668,19 +1649,6 @@ QListWidget::item:selected {
                      </font>
                     </property>
                    </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_7">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                  </layout>
                 </item>
@@ -1767,7 +1735,7 @@ QListWidget::item:selected {
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>40</width>
+                      <width>50</width>
                       <height>0</height>
                      </size>
                     </property>
@@ -1790,6 +1758,19 @@ QListWidget::item:selected {
                      <string notr="true">_</string>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_3">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>10</width>
+                      <height>17</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                   <item>
                    <widget class="QPushButton" name="beforeDefault_PushButton">
@@ -1818,19 +1799,6 @@ QListWidget::item:selected {
                      <string>Use Default</string>
                     </property>
                    </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_3">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>10</width>
-                      <height>17</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                   <item>
                    <widget class="QToolButton" name="beforeExpr_ToolButton">
@@ -1867,43 +1835,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_7">
-                  <item>
-                   <widget class="QPushButton" name="beforeWidthGrow_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_5">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_8">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="beforeWidthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -1914,7 +1860,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -2016,7 +1962,7 @@ QListWidget::item:selected {
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>40</width>
+                      <width>50</width>
                       <height>0</height>
                      </size>
                     </property>
@@ -2039,6 +1985,19 @@ QListWidget::item:selected {
                      <string notr="true">_</string>
                     </property>
                    </widget>
+                  </item>
+                  <item>
+                   <spacer name="horizontalSpacer_6">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>10</width>
+                      <height>20</height>
+                     </size>
+                    </property>
+                   </spacer>
                   </item>
                   <item>
                    <widget class="QPushButton" name="afterDefault_PushButton">
@@ -2067,19 +2026,6 @@ QListWidget::item:selected {
                      <string>Use Default</string>
                     </property>
                    </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer_6">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>10</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
                   </item>
                   <item alignment="Qt::AlignRight">
                    <widget class="QToolButton" name="afterExpr_ToolButton">
@@ -2116,43 +2062,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_17">
-                  <item>
-                   <widget class="QPushButton" name="afterWidthGrow_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_6">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_15">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</normaloff>:/icons/win.icon.theme/32x32/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="afterWidthFormula_PlainTextEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -2163,7 +2087,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -2183,8 +2107,8 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_15">
-                  <item>
+                 <layout class="QFormLayout" name="formLayout_2">
+                  <item row="0" column="0">
                    <widget class="QLabel" name="labelAngle">
                     <property name="minimumSize">
                      <size>
@@ -2206,7 +2130,7 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QComboBox" name="angle_ComboBox">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -2216,7 +2140,7 @@ QListWidget::item:selected {
                     </property>
                     <property name="minimumSize">
                      <size>
-                      <width>100</width>
+                      <width>200</width>
                       <height>0</height>
                      </size>
                     </property>
@@ -2228,20 +2152,20 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                  <item>
-                   <spacer name="horizontalSpacer_8">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
                  </layout>
+                </item>
+                <item>
+                 <spacer name="verticalSpacer_10">
+                  <property name="orientation">
+                   <enum>Qt::Vertical</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>20</width>
+                    <height>40</height>
+                   </size>
+                  </property>
+                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -2252,146 +2176,134 @@ QListWidget::item:selected {
             <attribute name="title">
              <string>Custom</string>
             </attribute>
-            <layout class="QVBoxLayout" name="verticalLayout_34">
+            <layout class="QVBoxLayout" name="verticalLayout_4">
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_43">
-                 <item>
-                  <widget class="QLabel" name="labelStartPoint">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Start point:</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="startPoint_ComboBox">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+              <layout class="QFormLayout" name="formLayout_7">
+               <item row="0" column="0">
+                <widget class="QLabel" name="labelStartPoint">
+                 <property name="minimumSize">
+                  <size>
+                   <width>90</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Start point:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_44">
-                 <item>
-                  <widget class="QLabel" name="labelEndPoint">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>End point:</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="endPoint_ComboBox">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+               <item row="0" column="1">
+                <widget class="QComboBox" name="startPoint_ComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_45">
-                 <item>
-                  <widget class="QLabel" name="labelIncludeType">
-                   <property name="minimumSize">
-                    <size>
-                     <width>80</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                   <property name="text">
-                    <string>Include as:</string>
-                   </property>
-                   <property name="alignment">
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="comboBoxIncludeType">
-                   <property name="sizePolicy">
-                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                     <horstretch>0</horstretch>
-                     <verstretch>0</verstretch>
-                    </sizepolicy>
-                   </property>
-                   <property name="minimumSize">
-                    <size>
-                     <width>70</width>
-                     <height>0</height>
-                    </size>
-                   </property>
-                   <property name="font">
-                    <font>
-                     <pointsize>9</pointsize>
-                    </font>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+               <item row="1" column="0">
+                <widget class="QLabel" name="labelEndPoint">
+                 <property name="minimumSize">
+                  <size>
+                   <width>90</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>End point:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QComboBox" name="endPoint_ComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="labelIncludeType">
+                 <property name="minimumSize">
+                  <size>
+                   <width>90</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>Include as:</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QComboBox" name="comboBoxIncludeType">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                </widget>
                </item>
               </layout>
              </item>
@@ -2448,7 +2360,7 @@ QListWidget::item:selected {
             </font>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="pieceLabel_Tab">
             <attribute name="icon">
@@ -2461,18 +2373,9 @@ QListWidget::item:selected {
             <layout class="QVBoxLayout" name="verticalLayout_10">
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_30">
-               <item>
-                <widget class="QLabel" name="label_13">
-                 <property name="font">
-                  <font>
-                   <pointsize>9</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Label template:</string>
-                 </property>
-                </widget>
-               </item>
+               <property name="leftMargin">
+                <number>9</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="editPieceLabel_PushButton">
                  <property name="font">
@@ -2527,6 +2430,12 @@ QListWidget::item:selected {
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout">
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_18">
                   <item alignment="Qt::AlignLeft">
@@ -2673,43 +2582,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_19">
-                  <item>
-                   <widget class="QPushButton" name="showPieceLabelWidth_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_10">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_24">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="pieceLabelWidthFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -2720,7 +2607,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -2741,19 +2628,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_4">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_20">
@@ -2898,43 +2772,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_21">
-                  <item>
-                   <widget class="QPushButton" name="showPieceLabelHeight_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_11">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_25">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="pieceLabelHeightFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -2945,7 +2797,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -2966,19 +2818,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_5">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_22">
@@ -3123,43 +2962,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_23">
-                  <item>
-                   <widget class="QPushButton" name="showPieceLabelAngle_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_12">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_26">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="pieceLabelAngleFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -3170,7 +2987,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -3191,19 +3008,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_8">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -3226,11 +3030,14 @@ QListWidget::item:selected {
                 <string>Anchor points</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_16">
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
                 <item>
-                 <layout class="QFormLayout" name="formLayout_9">
-                  <property name="fieldGrowthPolicy">
-                   <enum>QFormLayout::ExpandingFieldsGrow</enum>
-                  </property>
+                 <layout class="QGridLayout" name="gridLayout_4" columnminimumwidth="90,100">
                   <item row="0" column="0">
                    <widget class="QLabel" name="labelDLCenter">
                     <property name="minimumSize">
@@ -3246,7 +3053,7 @@ QListWidget::item:selected {
                      </font>
                     </property>
                     <property name="text">
-                     <string>Center anchor:</string>
+                     <string>Center:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -3275,52 +3082,7 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="Line" name="line_3">
-                  <property name="minimumSize">
-                   <size>
-                    <width>200</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <bold>false</bold>
-                   </font>
-                  </property>
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_47">
-                  <item>
-                   <widget class="QLabel" name="labelDLTopLeftAnchor">
-                    <property name="minimumSize">
-                     <size>
-                      <width>90</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>9</pointsize>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Top left anchor:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
+                  <item row="2" column="1">
                    <widget class="QComboBox" name="pieceLabelTopLeftAnchor_ComboBox">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -3342,12 +3104,8 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_48">
-                  <item>
-                   <widget class="QLabel" name="labelDLBottomRightAnchor">
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="labelDLTopLeftAnchor">
                     <property name="minimumSize">
                      <size>
                       <width>90</width>
@@ -3361,14 +3119,14 @@ QListWidget::item:selected {
                      </font>
                     </property>
                     <property name="text">
-                     <string>Bottom right anchor:</string>
+                     <string>Top left:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
-                  <item>
+                  <item row="3" column="1">
                    <widget class="QComboBox" name="pieceLabelBottomRightAnchor_ComboBox">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -3387,6 +3145,35 @@ QListWidget::item:selected {
                       <pointsize>9</pointsize>
                       <bold>false</bold>
                      </font>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="labelDLBottomRightAnchor">
+                    <property name="minimumSize">
+                     <size>
+                      <width>90</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>9</pointsize>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Bottom right:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="2">
+                   <widget class="Line" name="line">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
                     </property>
                    </widget>
                   </item>
@@ -3421,18 +3208,9 @@ QListWidget::item:selected {
             <layout class="QVBoxLayout" name="verticalLayout_29">
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_31">
-               <item>
-                <widget class="QLabel" name="label_14">
-                 <property name="font">
-                  <font>
-                   <pointsize>9</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>Label template:</string>
-                 </property>
-                </widget>
-               </item>
+               <property name="leftMargin">
+                <number>9</number>
+               </property>
                <item>
                 <widget class="QPushButton" name="editPatternLabel_PushButton">
                  <property name="font">
@@ -3487,6 +3265,12 @@ QListWidget::item:selected {
                 <bool>false</bool>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_14">
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_25">
                   <item alignment="Qt::AlignLeft">
@@ -3630,43 +3414,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_26">
-                  <item>
-                   <widget class="QPushButton" name="showPatternLabelWidth_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_13">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_27">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="patternLabelWidthFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -3677,7 +3439,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -3698,19 +3460,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_6">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_24">
@@ -3855,43 +3604,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_27">
-                  <item>
-                   <widget class="QPushButton" name="showPatternLabelHeight_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_14">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_28">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="patternLabelHeightFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -3902,7 +3629,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -3923,19 +3650,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_7">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                 <item>
                  <layout class="QHBoxLayout" name="horizontalLayout_29">
@@ -4080,43 +3794,21 @@ QListWidget::item:selected {
                  </layout>
                 </item>
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_28">
-                  <item>
-                   <widget class="QPushButton" name="showPatternLabelAngle_PushButton">
-                    <property name="maximumSize">
+                 <layout class="QFormLayout" name="formLayout_15">
+                  <item row="0" column="0">
+                   <spacer name="horizontalSpacer_29">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
                      <size>
-                      <width>18</width>
-                      <height>18</height>
+                      <width>90</width>
+                      <height>20</height>
                      </size>
                     </property>
-                    <property name="sizeIncrement">
-                     <size>
-                      <width>0</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="toolTip">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                    <property name="text">
-                     <string notr="true"/>
-                    </property>
-                    <property name="icon">
-                     <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                      <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                    </property>
-                    <property name="iconSize">
-                     <size>
-                      <width>16</width>
-                      <height>16</height>
-                     </size>
-                    </property>
-                    <property name="flat">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
+                   </spacer>
                   </item>
-                  <item>
+                  <item row="0" column="1">
                    <widget class="QPlainTextEdit" name="patternLabelAngleFormula_LineEdit">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -4127,7 +3819,7 @@ QListWidget::item:selected {
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
-                      <height>28</height>
+                      <height>62</height>
                      </size>
                     </property>
                     <property name="font">
@@ -4148,19 +3840,6 @@ QListWidget::item:selected {
                    </widget>
                   </item>
                  </layout>
-                </item>
-                <item>
-                 <spacer name="verticalSpacer_13">
-                  <property name="orientation">
-                   <enum>Qt::Vertical</enum>
-                  </property>
-                  <property name="sizeHint" stdset="0">
-                   <size>
-                    <width>20</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                 </spacer>
                 </item>
                </layout>
               </widget>
@@ -4189,11 +3868,36 @@ QListWidget::item:selected {
                 <string>Anchor points</string>
                </property>
                <layout class="QVBoxLayout" name="verticalLayout_28">
+                <property name="topMargin">
+                 <number>6</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>6</number>
+                </property>
                 <item>
-                 <layout class="QFormLayout" name="formLayout_10">
-                  <property name="fieldGrowthPolicy">
-                   <enum>QFormLayout::ExpandingFieldsGrow</enum>
-                  </property>
+                 <layout class="QGridLayout" name="gridLayout_5" columnminimumwidth="90,100">
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="patternLabelTopLeftAnchor_ComboBox">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>100</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>9</pointsize>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                   </widget>
+                  </item>
                   <item row="0" column="0">
                    <widget class="QLabel" name="labelPLCenter">
                     <property name="minimumSize">
@@ -4209,7 +3913,29 @@ QListWidget::item:selected {
                      </font>
                     </property>
                     <property name="text">
-                     <string>Center anchor:</string>
+                     <string>Center:</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QLabel" name="labelPLBottomRightAnchor">
+                    <property name="minimumSize">
+                     <size>
+                      <width>90</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="font">
+                     <font>
+                      <pointsize>9</pointsize>
+                      <bold>false</bold>
+                     </font>
+                    </property>
+                    <property name="text">
+                     <string>Bottom right:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4238,18 +3964,7 @@ QListWidget::item:selected {
                     </property>
                    </widget>
                   </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="Line" name="line_2">
-                  <property name="orientation">
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_49">
-                  <item>
+                  <item row="2" column="0">
                    <widget class="QLabel" name="labelPLTopLeftAnchor">
                     <property name="minimumSize">
                      <size>
@@ -4264,62 +3979,14 @@ QListWidget::item:selected {
                      </font>
                     </property>
                     <property name="text">
-                     <string>Top left anchor:</string>
+                     <string>Top left:</string>
                     </property>
                     <property name="alignment">
                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                     </property>
                    </widget>
                   </item>
-                  <item>
-                   <widget class="QComboBox" name="patternLabelTopLeftAnchor_ComboBox">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <property name="minimumSize">
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>9</pointsize>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout_50">
-                  <item>
-                   <widget class="QLabel" name="labelPLBottomRightAnchor">
-                    <property name="minimumSize">
-                     <size>
-                      <width>90</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="font">
-                     <font>
-                      <pointsize>9</pointsize>
-                      <bold>false</bold>
-                     </font>
-                    </property>
-                    <property name="text">
-                     <string>Bottom right anchor:</string>
-                    </property>
-                    <property name="alignment">
-                     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
+                  <item row="3" column="1">
                    <widget class="QComboBox" name="patternLabelBottomRightAnchor_ComboBox">
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -4338,6 +4005,13 @@ QListWidget::item:selected {
                       <pointsize>9</pointsize>
                       <bold>false</bold>
                      </font>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="0" colspan="2">
+                   <widget class="Line" name="line_2">
+                    <property name="orientation">
+                     <enum>Qt::Horizontal</enum>
                     </property>
                    </widget>
                   </item>
@@ -4447,7 +4121,7 @@ QListWidget::item:selected {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>70</width>
+                  <width>90</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -4578,43 +4252,21 @@ QListWidget::item:selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_12">
-              <item>
-               <widget class="QPushButton" name="showRotation_PushButton">
-                <property name="maximumSize">
+             <layout class="QFormLayout" name="formLayout_8">
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_16">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>18</width>
-                  <height>18</height>
+                  <width>90</width>
+                  <height>20</height>
                  </size>
                 </property>
-                <property name="sizeIncrement">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="text">
-                 <string notr="true"/>
-                </property>
-                <property name="icon">
-                 <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                  <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>16</width>
-                  <height>16</height>
-                 </size>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
+               </spacer>
               </item>
-              <item>
+              <item row="0" column="1">
                <widget class="QPlainTextEdit" name="rotationFormula_LineEdit">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -4625,7 +4277,7 @@ QListWidget::item:selected {
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>28</height>
+                  <height>80</height>
                  </size>
                 </property>
                 <property name="font">
@@ -4659,7 +4311,7 @@ QListWidget::item:selected {
                 </property>
                 <property name="minimumSize">
                  <size>
-                  <width>70</width>
+                  <width>90</width>
                   <height>0</height>
                  </size>
                 </property>
@@ -4790,43 +4442,21 @@ QListWidget::item:selected {
              </layout>
             </item>
             <item>
-             <layout class="QHBoxLayout" name="horizontalLayout_14">
-              <item>
-               <widget class="QPushButton" name="showLength_PushButton">
-                <property name="maximumSize">
+             <layout class="QFormLayout" name="formLayout_9">
+              <item row="0" column="0">
+               <spacer name="horizontalSpacer_23">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
                  <size>
-                  <width>18</width>
-                  <height>18</height>
+                  <width>90</width>
+                  <height>20</height>
                  </size>
                 </property>
-                <property name="sizeIncrement">
-                 <size>
-                  <width>0</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="text">
-                 <string notr="true"/>
-                </property>
-                <property name="icon">
-                 <iconset resource="../../../../vmisc/share/resources/theme.qrc">
-                  <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-                </property>
-                <property name="iconSize">
-                 <size>
-                  <width>16</width>
-                  <height>16</height>
-                 </size>
-                </property>
-                <property name="flat">
-                 <bool>true</bool>
-                </property>
-               </widget>
+               </spacer>
               </item>
-              <item>
+              <item row="0" column="1">
                <widget class="QPlainTextEdit" name="lengthFormula_LineEdit">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -4837,7 +4467,7 @@ QListWidget::item:selected {
                 <property name="maximumSize">
                  <size>
                   <width>16777215</width>
-                  <height>28</height>
+                  <height>80</height>
                  </size>
                 </property>
                 <property name="font">
@@ -4881,10 +4511,85 @@ QListWidget::item:selected {
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_26">
             <item>
-             <layout class="QFormLayout" name="formLayout_8">
-              <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
-              </property>
+             <layout class="QGridLayout" name="gridLayout" columnminimumwidth="90,100">
+              <item row="2" column="0">
+               <widget class="QLabel" name="topGrainlineAnchor_Label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>90</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Top:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="bottomGrainlineAnchor_Label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>90</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>Bottom:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QComboBox" name="grainlineBottomAnchor_ComboBox">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>100</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>9</pointsize>
+                  <bold>false</bold>
+                 </font>
+                </property>
+               </widget>
+              </item>
               <item row="0" column="0">
                <widget class="QLabel" name="labelCenter">
                 <property name="sizePolicy">
@@ -4906,7 +4611,7 @@ QListWidget::item:selected {
                  </font>
                 </property>
                 <property name="text">
-                 <string>Center point:</string>
+                 <string>Center:</string>
                 </property>
                 <property name="alignment">
                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -4935,52 +4640,7 @@ QListWidget::item:selected {
                 </property>
                </widget>
               </item>
-             </layout>
-            </item>
-            <item>
-             <widget class="Line" name="line">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QFormLayout" name="formLayout_7">
-              <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
-              </property>
-              <property name="labelAlignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-              </property>
-              <item row="0" column="0">
-               <widget class="QLabel" name="topGrainlineAnchor_Label">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>90</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Top point:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="0" column="1">
+              <item row="2" column="1">
                <widget class="QComboBox" name="grainlineTopAnchor_ComboBox">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -5002,53 +4662,10 @@ QListWidget::item:selected {
                 </property>
                </widget>
               </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="bottomGrainlineAnchor_Label">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>90</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                  <bold>false</bold>
-                 </font>
-                </property>
-                <property name="text">
-                 <string>Bottom point:</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
-               <widget class="QComboBox" name="grainlineBottomAnchor_ComboBox">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="minimumSize">
-                 <size>
-                  <width>100</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="font">
-                 <font>
-                  <pointsize>9</pointsize>
-                  <bold>false</bold>
-                 </font>
+              <item row="1" column="0" colspan="2">
+               <widget class="Line" name="line_4">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
                 </property>
                </widget>
               </item>
@@ -5076,10 +4693,7 @@ QListWidget::item:selected {
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_25">
             <item>
-             <layout class="QFormLayout" name="formLayout_6">
-              <property name="fieldGrowthPolicy">
-               <enum>QFormLayout::ExpandingFieldsGrow</enum>
-              </property>
+             <layout class="QGridLayout" name="gridLayout_3" columnminimumwidth="90,100">
               <item row="0" column="0">
                <widget class="QLabel" name="labelEditLen_2">
                 <property name="sizePolicy">
@@ -5162,8 +4776,8 @@ QListWidget::item:selected {
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>264</width>
-              <height>486</height>
+              <width>362</width>
+              <height>558</height>
              </rect>
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_8">

@@ -4597,7 +4597,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Center:</source>
-        <translation type="unfinished"></translation>
+        <translation>Centre:</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -5190,10 +5190,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation>Re-ouvrir fichier.</translation>
     </message>
     <message>
-        <source>Pointer</source>
-        <translation>Pointeur</translation>
-    </message>
-    <message>
         <source>Layout</source>
         <translation>Plan de coupe</translation>
     </message>
@@ -5698,18 +5694,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ellipses_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5842,7 +5826,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
+        <source>Zoom Out (Ctrl+-)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5854,7 +5838,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5950,27 +5934,11 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5982,27 +5950,11 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Operations Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6075,10 +6027,6 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>E, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>details_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7646,10 +7594,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished">Assistant Formule</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation type="unfinished">Calcul</translation>
     </message>
@@ -7702,10 +7646,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7726,18 +7666,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7752,18 +7680,6 @@ Voulez-vous sauvegarder les changements?</translation>
     <message>
         <source>Length:</source>
         <translation type="unfinished">Longueur:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8056,6 +7972,26 @@ Voulez-vous sauvegarder les changements?</translation>
     <message>
         <source>Forbid</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center:</source>
+        <translation>Centre:</translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation>Haut à gauche:</translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation>Bas à droite:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Haut:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Bas:</translation>
     </message>
 </context>
 <context>
@@ -8889,10 +8825,6 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use CTRL Modifier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -13016,7 +12948,7 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Center:</source>
-        <translation type="unfinished"></translation>
+        <translation>Centre:</translation>
     </message>
     <message>
         <source>Second circle:</source>

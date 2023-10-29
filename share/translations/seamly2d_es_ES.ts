@@ -5,7 +5,7 @@
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>añadir bloque de dibujo %1</translation>
+        <translation>añadir bloque de borrador %1</translation>
     </message>
 </context>
 <context>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Clear All</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpiar todo</translation>
     </message>
     <message>
         <source>MC</source>
@@ -232,7 +232,7 @@ p, li { white-space: pre-wrap; }
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>eliminar bloque de dibujo %1</translation>
+        <translation>eliminar bloque de borrador %1</translation>
     </message>
 </context>
 <context>
@@ -1664,11 +1664,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogLayoutProgress</name>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>No se ha podido preparar los datos para la creación del diseño</translation>
+        <translation>No se ha podido preparar los datos para la creación del maquetación</translation>
     </message>
     <message>
         <source>Create a Layout</source>
-        <translation>Crear un diseño</translation>
+        <translation>Crear un Maquetación</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
@@ -3209,11 +3209,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point name 1:</source>
-        <translation type="unfinished">Nombre del punto 1:</translation>
+        <translation>Nombre del punto 1:</translation>
     </message>
     <message>
         <source>Point name 2:</source>
-        <translation type="unfinished">Nombre del punto 2:</translation>
+        <translation>Nombre del punto 2:</translation>
     </message>
 </context>
 <context>
@@ -3822,7 +3822,7 @@ puntos de control</translation>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translation>Exportar diseño</translation>
+        <translation>Exportar Maquetación</translation>
     </message>
     <message>
         <source>Binary form</source>
@@ -4818,7 +4818,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Layout options</source>
-        <translation>Opciones de diseño</translation>
+        <translation>Opciones de maquetación</translation>
     </message>
     <message>
         <source>Shift/Offset length:</source>
@@ -4838,7 +4838,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation>Establezca el multiplicador de la longitud de la mayor pieza del diseño.</translation>
+        <translation>Establezca el multiplicador de la longitud de la mayor pieza del maquetación.</translation>
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
@@ -4870,7 +4870,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Layout print settings</source>
-        <translation>Configuración de impresión de diseño</translation>
+        <translation>Configuración de impresión de maquetación</translation>
     </message>
     <message>
         <source>Millimeters</source>
@@ -5235,12 +5235,8 @@ Do you want to save your changes?</source>
         <translation>Volver a abrir archivos.</translation>
     </message>
     <message>
-        <source>Pointer</source>
-        <translation>Puntero</translation>
-    </message>
-    <message>
         <source>Layout</source>
-        <translation>Diseño</translation>
+        <translation>Maquetación</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5256,7 +5252,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Imprime el diseño dividido en hojas pequeñas (para impresoras normales)</translation>
+        <translation>Imprime el maquetación dividido en hojas pequeñas (para impresoras normales)</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -5264,7 +5260,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print preview original layout</source>
-        <translation>Vista previa de impresión del diseño original</translation>
+        <translation>Vista previa de impresión del maquetación original</translation>
     </message>
     <message>
         <source>Export As...</source>
@@ -5272,7 +5268,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout mode</source>
-        <translation>Modo diseño</translation>
+        <translation>Modo maquetación</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
@@ -5344,7 +5340,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>Imprimir un diseño original</translation>
+        <translation>Imprimir un maquetación original</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
@@ -5352,7 +5348,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print preview tiled layout</source>
-        <translation>Vista previa de impresión del diseño dividido en cuadrículas</translation>
+        <translation>Vista previa de impresión del maquetación dividido en cuadrículas</translation>
     </message>
     <message>
         <source>Measurements unloaded</source>
@@ -5548,7 +5544,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet.</source>
-        <translation>Aún no puede usar el modo Diseño.</translation>
+        <translation>Aún no puede usar el modo Maquetación.</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
@@ -5616,7 +5612,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Páginas de diseño</translation>
+        <translation>Páginas de maquetación</translation>
     </message>
     <message>
         <source>Group Manager</source>
@@ -5660,7 +5656,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>Barra de herramientas de diseño</translation>
+        <translation>Barra de herramientas de maquetación</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
@@ -5684,7 +5680,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Exportar bloques de dibujo (E, D)</translation>
+        <translation>Exportar bloques de borrador (E, D)</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
@@ -5708,31 +5704,31 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft</source>
-        <translation>Pinza</translation>
+        <translation>Borrador</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabajar con bloques de dibujo. Estos bloques de dibujo son la base para pasar a la siguiente etapa, &quot;Modo Pieza&quot;. Para entrar en &amp;quot;Modo Pieza&amp;quot; se necesita crear al menos una pieza del patrón.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabajar con bloques de borrador. Estos bloques de borrador son la base para pasar a la siguiente etapa, &quot;Modo Pieza&quot;. Para entrar en &amp;quot;Modo Pieza&amp;quot; se necesita crear al menos una pieza del patrón.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabajar con piezas de patrón. Para entrar en &amp;quot;Modo Pieza&amp;quot; se necesita crear al menos una pieza de patrón en el &quot;Modo Dibujo&quot;. Las piezas del patrón creadas en esta etapa se utilizarán para crear un diseño. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para trabajar con piezas de patrón. Para entrar en &amp;quot;Modo Pieza&amp;quot; se necesita crear al menos una pieza de patrón en el &quot;Modo Dibujo&quot;. Las piezas del patrón creadas en esta etapa se utilizarán para crear un maquetación. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Nuevo bloque de dibujo</translation>
+        <translation>Nuevo bloque de borrador</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>Añadir Nuevo bloque de dibujo (Ctrl+Shift+N)</translation>
+        <translation>Añadir Nuevo bloque de borrador (Control+Mayúsculas+N)</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Cambiar nombre de Nuevo bloque de dibujo</translation>
+        <translation>Cambiar nombre de Nuevo bloque de borrador</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
-        <translation>Cambiar nombre de Nuevo bloque de dibujo</translation>
+        <translation>Cambiar nombre de Nuevo bloque de borrador</translation>
     </message>
     <message>
         <source>Variables table</source>
@@ -5740,19 +5736,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para crear diseño de piezas de patrón. Este modo está disponible si ya se creó al menos una pieza de patrón en el &quot;Modo pieza&quot;. El diseño se puede exportar a su formato de archivo preferido y guardarlo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>ellipses_Action</source>
-        <translation>Acción_sobre elipses</translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation>Herramientas de Elipse</translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation>W, E</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modo para crear maquetación de piezas de patrón. Este modo está disponible si ya se creó al menos una pieza de patrón en el &quot;Modo pieza&quot;. El maquetación se puede exportar a su formato de archivo preferido y guardarlo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>G</source>
@@ -5876,7 +5860,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
-        <translation>Acercar (Ctrl++)</translation>
+        <translation>Acercar (Control++)</translation>
     </message>
     <message>
         <source>Zoom Out</source>
@@ -5887,20 +5871,12 @@ Do you want to save your changes?</source>
         <translation>Fuera</translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
-        <translation>Alejar (CTRL+-)</translation>
-    </message>
-    <message>
         <source>Fit All</source>
         <translation>Ajustar todo</translation>
     </message>
     <message>
         <source>Fit</source>
         <translation>Ajustar</translation>
-    </message>
-    <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
-        <translation>Zoom para ajustar todo</translation>
     </message>
     <message>
         <source>Report bug...</source>
@@ -5936,7 +5912,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Open SeamlyMe measurements app (Ctrl+M)</source>
-        <translation>Abrir la aplicación de medidas SeamlyMe (Ctrl+M)</translation>
+        <translation>Abrir la aplicación de medidas SeamlyMe (Control+M)</translation>
     </message>
     <message>
         <source>Export Variables to CSV</source>
@@ -5956,7 +5932,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation>Zoom para Previo (Ctrl+Izquierda) (Ctrl+Left)</translation>
+        <translation>Zoom para Previo (Control+Izquierda)</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
@@ -5988,35 +5964,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation>Zoom al 100 por ciento (Ctrl+0)</translation>
+        <translation>Zoom al 100 por ciento (Control+0)</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation>Acción_puntos</translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation>Herramientas de puntos</translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation>W, P</translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation>Acciones_Línea</translation>
-    </message>
-    <message>
         <source>Line Tools</source>
         <translation>Herramientas de línea</translation>
-    </message>
-    <message>
-        <source>W, L</source>
-        <translation>W, L</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -6027,32 +5987,16 @@ Do you want to save your changes?</source>
         <translation>Herramientas de curva</translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation>Acciones_herramienta arco</translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation>Herramientas de Arco</translation>
-    </message>
-    <message>
-        <source>W, A</source>
-        <translation>W, A</translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation>Acciones_modificaciones</translation>
     </message>
     <message>
         <source>Operations Tools</source>
         <translation>Herramientas de operaciones</translation>
     </message>
     <message>
-        <source>W, O</source>
-        <translation>W, O</translation>
-    </message>
-    <message>
         <source>Layout Tools</source>
-        <translation>Herramientas de diseño</translation>
+        <translation>Herramientas de maquetación</translation>
     </message>
     <message>
         <source>Piece tools</source>
@@ -6068,7 +6012,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>Nuevo diseño de impresión</translation>
+        <translation>Nuevo maquetación de impresión</translation>
     </message>
     <message>
         <source>N, L</source>
@@ -6076,7 +6020,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Exportar diseño</translation>
+        <translation>Exportar maquetación</translation>
     </message>
     <message>
         <source>E, L</source>
@@ -6123,10 +6067,6 @@ Do you want to save your changes?</source>
         <translation>E, P</translation>
     </message>
     <message>
-        <source>details_Action</source>
-        <translation>Acción_detalles</translation>
-    </message>
-    <message>
         <source>Detail tools</source>
         <translation>Herramientas de detalle</translation>
     </message>
@@ -6148,7 +6088,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Increase Text Size (Ctrl+])</source>
-        <translation>Aumentar el tamaño del texto (Ctrl+])</translation>
+        <translation>Aumentar el tamaño del texto (Control+])</translation>
     </message>
     <message>
         <source>Ctrl+]</source>
@@ -6160,7 +6100,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Decrease Text Size (Ctrl+[)</source>
-        <translation>Disminuir el tamaño del texto (Ctrl+[)</translation>
+        <translation>Disminuir el tamaño del texto (Control+[)</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -6244,7 +6184,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Exportar bloques de dibujo</translation>
+        <translation>Exportar bloques de borrador</translation>
     </message>
     <message>
         <source>E, D</source>
@@ -6308,7 +6248,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft Block:</source>
-        <translation>Bolque de dibujo:</translation>
+        <translation>Bolque de borrador:</translation>
     </message>
     <message>
         <source>Rotate</source>
@@ -6348,11 +6288,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Aún no puede usar el modo Diseño. Por favor, cree al menos una pieza del patrón.</translation>
+        <translation>Aún no puede usar el modo Maquetación. Por favor, cree al menos una pieza del patrón.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Aún no puede usar el modo Diseño. Por favor, incluya al menos una pieza del patrón al diseño.</translation>
+        <translation>Aún no puede usar el modo Maquetación. Por favor, incluya al menos una pieza del patrón al maquetación.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -6360,7 +6300,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft block.</source>
-        <translation>Bloque de dibujo.</translation>
+        <translation>Bloque de borrador.</translation>
     </message>
     <message>
         <source>Name Exists</source>
@@ -6368,11 +6308,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The action can&apos;t be completed because the Draft Block name already exists.</source>
-        <translation>La acción no se puede completar porque el nombre del bloque de Dibujo ya existe.</translation>
+        <translation>La acción no se puede completar porque el nombre del Bloque de Borrador ya existe.</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>No tiene piezas para exportar. Por favor, incluya al menos una pieza en el diseño.</translation>
+        <translation>No tiene piezas para exportar. Por favor, incluya al menos una pieza en el maquetación.</translation>
     </message>
     <message>
         <source>Export pieces</source>
@@ -6404,11 +6344,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft block %1</source>
-        <translation>Bloque de diseño %1</translation>
+        <translation>Bloque de maquetación %1</translation>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Bloque de diseño %1</translation>
+        <translation>Bloque de maquetación %1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
@@ -6452,7 +6392,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto medio de la línea (Mayús+O, Mayús+L)</translation>
+        <translation>Punto - Punto medio de la línea (Mayúsculas+O, Mayúsculas+L)</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
@@ -6468,11 +6408,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Curve - Fixed (Alt+Shift+C)</source>
-        <translation>Curva - Fija (Alt + Mayús + C)</translation>
+        <translation>Curva - Fija (Alt+Mayúsculas+C)</translation>
     </message>
     <message>
         <source>Spline - Fixed (Alt+Shift+S)</source>
-        <translation>Spline - Fijo (Alt + Mayús + S)</translation>
+        <translation>Spline - Fijo (Alt+Mayúsculas+S)</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
@@ -6508,7 +6448,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Punto - Intersección de Círculos (Mayús+I, Mayús+C)</translation>
+        <translation>Punto - Intersección de Círculos (Mayúsculas+I, Mayúsculas+C)</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
@@ -6520,7 +6460,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Arco: Radio y Longitud (Alt+Shift+A)</translation>
+        <translation>Arco: Radio y Longitud (Alt+Mayúsculas+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
@@ -6564,11 +6504,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>Nuevo diseño de impresión (N, L)</translation>
+        <translation>Nuevo maquetación de impresión (N, L)</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>Exportar diseño (E, L)</translation>
+        <translation>Exportar maquetación (E, L)</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6592,11 +6532,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto medio en línea (Mayús+TO, Mayús+L)</translation>
+        <translation>Punto - Punto medio en línea (Mayúsculas+O, Mayúsculas+L)</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
-        <translation>Shift+O, Shift+L</translation>
+        <translation>Mayúsculas+O, Mayúsculas+L</translation>
     </message>
     <message>
         <source>On Line</source>
@@ -6688,7 +6628,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Alt+Shift+C</source>
-        <translation>Alt+Shift+C</translation>
+        <translation>Alt+Mayúsculas+C</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
@@ -6712,7 +6652,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Alt+Shift+S</source>
-        <translation>Alt+Shift+S</translation>
+        <translation>Alt+Mayúsculas+S</translation>
     </message>
     <message>
         <source>Intersect Curves</source>
@@ -6768,11 +6708,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Interseccción Círculos (Shift+I, Shift+C)</translation>
+        <translation>Interseccción Círculos (Mayúsculas+I, Mayúsculas+C)</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
-        <translation>Shift+I, Shift+C</translation>
+        <translation>Mayúsculas+I, Mayúsculas+C</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent</source>
@@ -6800,19 +6740,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Alt+Shift+A</source>
-        <translation>Alt+Shift+A</translation>
+        <translation>Alt+Mayúsculas+A</translation>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
-        <translation>Activar la última herramienta utilizada (Ctrl+Shift+L)</translation>
+        <translation>Activar la última herramienta utilizada (Control+Mayúsculas+L)</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
-        <translation>Zoom a seleccionado (Ctrl+Right)</translation>
+        <translation>Zoom a seleccionado (Control+Derecha)</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Zoom al área seleccionada (Ctrl+A)</translation>
+        <translation>Zoom al área seleccionada (Control+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
@@ -6820,11 +6760,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>Crear nuevo diseño de impresión (N, L)</translation>
+        <translation>Crear nuevo maquetación de impresión (N, L)</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoom al punto (Ctrl + Alt + P)</translation>
+        <translation>Zoom al punto (Control + Alt + P)</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -7014,6 +6954,14 @@ Do you want to save your changes?</source>
         <source>Pen Toolbar</source>
         <translation>Barra de herramientas del lápiz</translation>
     </message>
+    <message>
+        <source>Zoom Out (Ctrl+-)</source>
+        <translation>Alejar (Control+-)</translation>
+    </message>
+    <message>
+        <source>Zoom to Fit All(Ctrl+=)</source>
+        <translation>Zoom para ajustar todo (Control+=)</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7039,15 +6987,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The layout is stale.</source>
-        <translation>El diseño es obsoleto.</translation>
+        <translation>El maquetación es obsoleto.</translation>
     </message>
     <message>
         <source>The layout was not updated since last pattern modification. Do you want to continue?</source>
-        <translation>El diseño no se actualizo desde la última modificación del patrón. ¿Desea continuar?</translation>
+        <translation>El maquetación no se actualizo desde la última modificación del patrón. ¿Desea continuar?</translation>
     </message>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
-        <translation>No se ha podido preparar los datos para la creación del diseño</translation>
+        <translation>No se ha podido preparar los datos para la creación del maquetación</translation>
     </message>
     <message>
         <source>Can&apos;t open printer %1</source>
@@ -7110,7 +7058,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation>Control+N</translation>
     </message>
     <message>
         <source>Open Individual</source>
@@ -7118,7 +7066,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
+        <translation>Control+O</translation>
     </message>
     <message>
         <source>Open Multisize</source>
@@ -7126,7 +7074,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
-        <translation>Ctrl+Shift+O</translation>
+        <translation>Control+Mayúsculas+O</translation>
     </message>
     <message>
         <source>Print</source>
@@ -7134,7 +7082,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation>Control+P</translation>
     </message>
     <message>
         <source>Save</source>
@@ -7142,7 +7090,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation>Control+S</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -7150,7 +7098,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Shift+S</translation>
+        <translation>Control+Mayúsculas+S</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -7158,7 +7106,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
+        <translation>Control+E</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -7166,7 +7114,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation>Control+Q</translation>
     </message>
     <message>
         <source>Help</source>
@@ -7190,7 +7138,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
-        <translation>Ctrl+Shift+G</translation>
+        <translation>Control+Mayúsculas+G</translation>
     </message>
     <message>
         <source>Find next</source>
@@ -7198,7 +7146,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+G</source>
-        <translation>Ctrl+G</translation>
+        <translation>Control+G</translation>
     </message>
 </context>
 <context>
@@ -7625,7 +7573,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Forbid piece be mirrored in a layout.</source>
-        <translation>Prohibir que la pieza se refleje en un diseño.</translation>
+        <translation>Prohibir que la pieza se refleje en un maquetación.</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -7708,10 +7656,6 @@ Do you want to save your changes?</source>
         <translation>Asistente de fórmula</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mostrar el cálculo completo en el cuadro de mensaje&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Cálculo</translation>
     </message>
@@ -7764,10 +7708,6 @@ Do you want to save your changes?</source>
         <translation>Etiqueta de pieza</translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation>Plantilla de etiqueta:</translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation>Editar etiqueta de patrón</translation>
     </message>
@@ -7788,18 +7728,6 @@ Do you want to save your changes?</source>
         <translation>Puntos de Anclaje</translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation>Anclaje central:</translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation>Anclaje superior izquierda:</translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation>Anclaje inferior derecho:</translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation>Etiqueta de patrón</translation>
     </message>
@@ -7814,18 +7742,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Length:</source>
         <translation>Longitud:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation>Punto central:</translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation>Punto Superior:</translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation>Punto Inferior:</translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8119,6 +8035,26 @@ Do you want to save your changes?</source>
         <source>Forbid</source>
         <translation>Prohibir</translation>
     </message>
+    <message>
+        <source>Center:</source>
+        <translation>Centro:</translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation>Arriba a la izquierda:</translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation>Abajo a la derecha:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Arriba:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Abajo:</translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -8172,7 +8108,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Incluir en el diseño</translation>
+        <translation>Incluir en el maquetación</translation>
     </message>
     <message>
         <source>Forbid Flipping</source>
@@ -8291,15 +8227,15 @@ Do you want to save your changes?</source>
     <name>PenToolBar</name>
     <message>
         <source>Current line color</source>
-        <translation type="unfinished"></translation>
+        <translation>Color de línea actual</translation>
     </message>
     <message>
         <source>Current line type</source>
-        <translation type="unfinished"></translation>
+        <translation>Tipo de línea actual</translation>
     </message>
     <message>
         <source>Current line weight</source>
-        <translation type="unfinished"></translation>
+        <translation>Peso de línea actual</translation>
     </message>
 </context>
 <context>
@@ -8405,7 +8341,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>Alternar inclusión de pieza de patrón en el diseño</translation>
+        <translation>Alternar inclusión de pieza de patrón en el maquetación</translation>
     </message>
 </context>
 <context>
@@ -8683,7 +8619,7 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation>diseño</translation>
+        <translation>maquetación</translation>
     </message>
     <message>
         <source>Graphical output</source>
@@ -8951,10 +8887,6 @@ actualización:</translation>
         <translation>Restricciones</translation>
     </message>
     <message>
-        <source>Use CTRL Modifier</source>
-        <translation>Usar CTRL modificador</translation>
-    </message>
-    <message>
         <source>Angle Step:</source>
         <translation>Paso de ángulo:</translation>
     </message>
@@ -9024,7 +8956,7 @@ actualización:</translation>
     </message>
     <message>
         <source>My Layouts</source>
-        <translation>Mis Diseños</translation>
+        <translation>Mis Maquetaciones</translation>
     </message>
     <message>
         <source>My Templates</source>
@@ -9743,7 +9675,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation>Ctrl+N</translation>
+        <translation>Control+N</translation>
     </message>
     <message>
         <source>Open</source>
@@ -9751,7 +9683,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation>Ctrl+O</translation>
+        <translation>Control+O</translation>
     </message>
     <message>
         <source>Close</source>
@@ -9759,7 +9691,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+W</source>
-        <translation></translation>
+        <translation>Control+W</translation>
     </message>
     <message>
         <source>Save</source>
@@ -9767,7 +9699,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation>Ctrl+S</translation>
+        <translation>Control+S</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -9775,7 +9707,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation>Ctrl+Shift+S</translation>
+        <translation>Control+Mayúsculas+S</translation>
     </message>
     <message>
         <source>Print</source>
@@ -9783,15 +9715,15 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation>Ctrl+P</translation>
+        <translation>Control+P</translation>
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation type="unfinished"></translation>
+        <translation>Preferencias de patrón</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
-        <translation>Ctrl+Shift+Comma</translation>
+        <translation>Control+Mayúsculas+Comma</translation>
     </message>
     <message>
         <source>Document Information</source>
@@ -9799,7 +9731,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation>Ctrl+I</translation>
+        <translation>Control+I</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -9807,7 +9739,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation>Ctrl+Q</translation>
+        <translation>Control+Q</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -9819,7 +9751,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation>Ctrl+Z</translation>
+        <translation>Control+Z</translation>
     </message>
     <message>
         <source>Redo</source>
@@ -9827,7 +9759,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
-        <translation>Ctrl+Y</translation>
+        <translation>Control+Y</translation>
     </message>
     <message>
         <source>View</source>
@@ -9835,23 +9767,23 @@ actualización:</translation>
     </message>
     <message>
         <source>Draft Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Borrador</translation>
     </message>
     <message>
         <source>Shift+D</source>
-        <translation>Shift+D</translation>
+        <translation>Mayúsculas+D</translation>
     </message>
     <message>
         <source>Piece Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo Pieza</translation>
     </message>
     <message>
         <source>Layout Mode</source>
-        <translation type="unfinished"></translation>
+        <translation>Modo maquetación</translation>
     </message>
     <message>
         <source>Shift+L</source>
-        <translation>Shift+L</translation>
+        <translation>Control+L</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -9859,7 +9791,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl++</source>
-        <translation>Ctrl++</translation>
+        <translation>Control++</translation>
     </message>
     <message>
         <source>Zoom Out</source>
@@ -9867,7 +9799,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
-        <translation>Ctrl+-</translation>
+        <translation>Control+-</translation>
     </message>
     <message>
         <source>Zoom 1:1</source>
@@ -9875,7 +9807,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
-        <translation>Ctrl+0</translation>
+        <translation>Control+0</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
@@ -9883,7 +9815,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
-        <translation>Ctrl+Alt+P</translation>
+        <translation>Control+Alt+P</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -9891,7 +9823,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+=</source>
-        <translation>Ctrl+=</translation>
+        <translation>Control+=</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -9899,7 +9831,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
-        <translation>Ctrl+Izquierda</translation>
+        <translation>Control+Izquierda</translation>
     </message>
     <message>
         <source>Selected</source>
@@ -9907,7 +9839,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Right</source>
-        <translation>Ctrl+Derecha</translation>
+        <translation>Control+Derecha</translation>
     </message>
     <message>
         <source>Area</source>
@@ -9915,7 +9847,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation>Ctrl+A</translation>
+        <translation>Control+A</translation>
     </message>
     <message>
         <source>Pan</source>
@@ -9927,7 +9859,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Show Name Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar texto del nombre</translation>
     </message>
     <message>
         <source>V, P</source>
@@ -9939,7 +9871,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+]</source>
-        <translation>Ctrl+]</translation>
+        <translation>Control+]</translation>
     </message>
     <message>
         <source>Decrease Text Size</source>
@@ -9947,7 +9879,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
-        <translation>Ctrl+[</translation>
+        <translation>Control+[</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
@@ -10011,7 +9943,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+M</source>
-        <translation>Ctrl+M</translation>
+        <translation>Control+M</translation>
     </message>
     <message>
         <source>Variables Table</source>
@@ -10019,7 +9951,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
-        <translation>Ctrl+T</translation>
+        <translation>Control+T</translation>
     </message>
     <message>
         <source>Export Variables Table  to CSV</source>
@@ -10027,7 +9959,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation>Ctrl+E</translation>
+        <translation>Control+E</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -10035,15 +9967,15 @@ actualización:</translation>
     </message>
     <message>
         <source>New Draft Block</source>
-        <translation>Nuevo bloque de dibujo</translation>
+        <translation>Nuevo bloque de borrador</translation>
     </message>
     <message>
         <source>Ctrl+Shift+N</source>
-        <translation>Ctrl+Shift+N</translation>
+        <translation>Control+Mayúsculas+N</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Cambiar nombre de Nuevo bloque de dibujo</translation>
+        <translation>Cambiar nombre de Nuevo bloque de borrador</translation>
     </message>
     <message>
         <source>F2</source>
@@ -10139,7 +10071,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
-        <translation>Shift+O, Shift+L</translation>
+        <translation>Mayúsculas+O, Mayúsculas+L</translation>
     </message>
     <message>
         <source>Line</source>
@@ -10183,7 +10115,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
-        <translation>Alt+Shift+C</translation>
+        <translation>Alt+Mayúsculas+C</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
@@ -10191,7 +10123,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Alt+Shift+S</source>
-        <translation>Alt+Shift+S</translation>
+        <translation>Alt+Mayúsculas+S</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
@@ -10251,7 +10183,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
-        <translation>Alt+Shift+A</translation>
+        <translation>Alt+Mayúsculas+A</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
@@ -10283,7 +10215,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
-        <translation>Shift+I, Shift+C</translation>
+        <translation>Mayúsculas+I, Mayúsculas+C</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
@@ -10363,7 +10295,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Export Draft Blocks</source>
-        <translation>Exportar bloques de dibujo</translation>
+        <translation>Exportar bloques de borrador</translation>
     </message>
     <message>
         <source>E, D</source>
@@ -10415,11 +10347,11 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation>Ctrl+L</translation>
+        <translation>Control+L</translation>
     </message>
     <message>
         <source>Include in Layout</source>
-        <translation>Incluir en el diseño</translation>
+        <translation>Incluir en el maquetación</translation>
     </message>
     <message>
         <source>I</source>
@@ -10439,7 +10371,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
-        <translation>Ctrl+Inicio</translation>
+        <translation>Control+Inicio</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
@@ -10447,7 +10379,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
-        <translation>Ctrl+Fin</translation>
+        <translation>Control+Fin</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -10483,11 +10415,11 @@ actualización:</translation>
     </message>
     <message>
         <source>Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Maquetación</translation>
     </message>
     <message>
         <source>New Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuevo Maquetación</translation>
     </message>
     <message>
         <source>N, L</source>
@@ -10495,7 +10427,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Exportar diseño</translation>
+        <translation>Exportar maquetación</translation>
     </message>
     <message>
         <source>E, L</source>
@@ -10507,7 +10439,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation>Ctrl+Shift+L</translation>
+        <translation>Control+Mayúsculas+L</translation>
     </message>
     <message>
         <source>History</source>
@@ -10515,7 +10447,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation>Control+H</translation>
     </message>
     <message>
         <source>Utilities</source>
@@ -10527,7 +10459,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Shift+C</source>
-        <translation>Ctrl+Shift+C</translation>
+        <translation>Control+Mayúsculas+C</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
@@ -10535,7 +10467,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
-        <translation>Ctrl+Shift+D</translation>
+        <translation>Control+Mayúsculas+D</translation>
     </message>
     <message>
         <source>Help</source>
@@ -10551,7 +10483,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Shift+P</source>
-        <translation>Shift+P</translation>
+        <translation>Mayúsculas+P</translation>
     </message>
     <message>
         <source>T</source>
@@ -11228,11 +11160,11 @@ Do you want to save your changes?</source>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Pieza en lista de diseño</translation>
+        <translation>Pieza en lista de maquetación</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Incluir pieza en el diseño modificado: </translation>
+        <translation>Incluir pieza en el maquetación modificado: </translation>
     </message>
     <message>
         <source>Include</source>
@@ -11781,7 +11713,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout units (as paper&apos;s one except px, export mode).</source>
-        <translation>Unidades del diseño (como uno de papel, excepto px, modo de exportación).</translation>
+        <translation>Unidades del maquetación (como uno de papel, excepto px, modo de exportación).</translation>
     </message>
     <message>
         <source>The unit</source>
@@ -11817,7 +11749,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Unidades del diseño no soportadas.</translation>
+        <translation>Unidades del maquetación no soportadas.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
@@ -11829,11 +11761,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The base filename of exported layout files. Use it to enable console export mode.</source>
-        <translation>El nombre básico de los archivos de diseño exportados. Úselo para habilitar el modo de exportación de la consola.</translation>
+        <translation>El nombre básico de los archivos de maquetación exportados. Úselo para habilitar el modo de exportación de la consola.</translation>
     </message>
     <message>
         <source>The base filename of layout files</source>
-        <translation>El nombre de archivo básico de los archivos de diseño</translation>
+        <translation>El nombre de archivo básico de los archivos de maquetación</translation>
     </message>
     <message>
         <source>The destination folder</source>
@@ -11929,15 +11861,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Save length of the sheet if set (export mode). The option tells the program to use as much as possible width of sheet. Quality of a layout can be worse when this option was used.</source>
-        <translation>Guardar el largo de la hoja, si está establecido (modo de exportación). Esta opción indica al programa que aproveche el ancho de la hoja lo máximo posible. La calidad del diseño puede empeorar cuando se usa esta opción.</translation>
+        <translation>Guardar el largo de la hoja, si está establecido (modo de exportación). Esta opción indica al programa que aproveche el ancho de la hoja lo máximo posible. La calidad del maquetación puede empeorar cuando se usa esta opción.</translation>
     </message>
     <message>
         <source>The layout gap width x2, measured in layout units (export mode). Set distance between details and a detail and a sheet.</source>
-        <translation>Ancho del salto del diseño x2, medido en las unidades del diseño. (modo de exportación). Establece la distancia entre los detalles y entre un detalle y la hoja.</translation>
+        <translation>Ancho del salto del maquetación x2, medido en las unidades del maquetación. (modo de exportación). Establece la distancia entre los detalles y entre un detalle y la hoja.</translation>
     </message>
     <message>
         <source>Sets layout groupping cases (export mode): %1.</source>
-        <translation>Establece casos de agrupación de diseño (modo de exportación): %1.</translation>
+        <translation>Establece casos de agrupación de maquetación (modo de exportación): %1.</translation>
     </message>
     <message>
         <source>Run the program in a test mode. The program in this mode loads a single pattern file and silently quit without showing the main window. The key have priority before key &apos;%1&apos;.</source>
@@ -11945,7 +11877,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Shift/Offset layout length measured in layout units (export mode). The option show how many points along edge will be used in creating a layout.</source>
-        <translation>Longitud del desplazamiento del diseño medido en unidades del diseño (modo de exportación). La opción muestra cuantos puntos a lo largo del límite serán usados para crear un diseño.</translation>
+        <translation>Longitud del desplazamiento del maquetación medido en unidades del maquetación (modo de exportación). La opción muestra cuantos puntos a lo largo del límite serán usados para crear un maquetación.</translation>
     </message>
     <message>
         <source>Shift/Offset length</source>
@@ -11977,7 +11909,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export only details. Export details as they positioned in the details mode. Any layout related options will be ignored.</source>
-        <translation>Exportar sólo detalles. Exporte los detalles tal como se ubicaron en el modo  Detalle. Se ignorarán todas las opciones relacionadas con el diseño.</translation>
+        <translation>Exportar sólo detalles. Exporte los detalles tal como se ubicaron en el modo  Detalle. Se ignorarán todas las opciones relacionadas con el maquetación.</translation>
     </message>
     <message>
         <source>Set size value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
@@ -12469,7 +12401,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>layouts</source>
-        <translation>Diseños</translation>
+        <translation>maquetación</translation>
     </message>
 </context>
 <context>

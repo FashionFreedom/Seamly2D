@@ -3950,7 +3950,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4842,7 +4842,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5193,10 +5193,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Reopen files.</source>
         <translation>Heropen bestanden.</translation>
-    </message>
-    <message>
-        <source>Pointer</source>
-        <translation>Aanwijzer</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -5703,18 +5699,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus voor het creëren van een opmaak voor patroondelen. Dezew modus is beschikbaar nadat tenminste één patroondeel is gemaakt in  &amp;quot;Patroondeel Modus&amp;quot;. De opmaak kan worden uitgevoerd naar het bestandsformaat van uw voorkeur en zo worden opgeslagen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>ellipses_Action</source>
-        <translation>ellipses_Action</translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation>Ellips Gereedschap</translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation>W, E</translation>
-    </message>
-    <message>
         <source>G</source>
         <translation>G</translation>
     </message>
@@ -5847,7 +5831,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Uit</translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
+        <source>Zoom Out (Ctrl+-)</source>
         <translation>Uitzoomen (Ctrl+-)</translation>
     </message>
     <message>
@@ -5859,7 +5843,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Pas aan</translation>
     </message>
     <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation>Zoom om alles te tonen (Ctrl+=)</translation>
     </message>
     <message>
@@ -5955,28 +5939,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Ctrl+0</translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation>Actie op Punten</translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation>Punt Gereeschap</translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation>W, P</translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation>Lijn Acties</translation>
-    </message>
-    <message>
         <source>Line Tools</source>
         <translation>Lijn Gereedschappen</translation>
-    </message>
-    <message>
-        <source>W, L</source>
-        <translation>W, L</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -5987,28 +5955,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kromme Gereedschappen</translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation>Boog_Acties</translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation>Boog Gereedschappen</translation>
     </message>
     <message>
-        <source>W, A</source>
-        <translation>W, A</translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation>Bewerkingen_Actie</translation>
-    </message>
-    <message>
         <source>Operations Tools</source>
         <translation>Bewerkingen Gereedschappen</translation>
-    </message>
-    <message>
-        <source>W, O</source>
-        <translation>W, O</translation>
     </message>
     <message>
         <source>Layout Tools</source>
@@ -6081,10 +6033,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>E, P</source>
         <translation>E, P</translation>
-    </message>
-    <message>
-        <source>details_Action</source>
-        <translation>details_Action</translation>
     </message>
     <message>
         <source>Detail tools</source>
@@ -7651,10 +7599,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Formule wizard</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Toon volledige berekening in een message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation>Berekening</translation>
     </message>
@@ -7707,10 +7651,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Patroondeel label</translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation>Labelsjabloon:</translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation>Bewerk patroonlabel</translation>
     </message>
@@ -7731,18 +7671,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Ankerpunten</translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation>Centraal anker:</translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation>Anker boven links:</translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation>Anker beneden Rechts:</translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation>Patroonlabel</translation>
     </message>
@@ -7757,18 +7685,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Length:</source>
         <translation>Lengte:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation>Middelpunt:</translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation>Bovenste punt:</translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation>Onderste Punt:</translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8061,6 +7977,26 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Forbid</source>
         <translation>Verbieden</translation>
+    </message>
+    <message>
+        <source>Center:</source>
+        <translation>Middelpunt:</translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation>Linksboven:</translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation>Rechtsonder:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Top:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Onder:</translation>
     </message>
 </context>
 <context>
@@ -8895,10 +8831,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Constraints</source>
         <translation>Beperkingen</translation>
-    </message>
-    <message>
-        <source>Use CTRL Modifier</source>
-        <translation>Gebruik CTRL toets</translation>
     </message>
     <message>
         <source>Angle Step:</source>

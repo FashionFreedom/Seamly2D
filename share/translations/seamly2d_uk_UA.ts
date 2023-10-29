@@ -3220,7 +3220,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>The calculated value</source>
@@ -3367,7 +3367,7 @@ p, li { white-space: pre-wrap; }
     <name>DoubleLinePointTool</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>Length</source>
@@ -3454,7 +3454,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>Full name</source>
@@ -4211,7 +4211,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -4234,7 +4234,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>Decription</source>
@@ -4597,7 +4597,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Center:</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр:</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -5189,10 +5189,6 @@ Do you want to save your changes?</source>
         <translation>Відкрити знову файли.</translation>
     </message>
     <message>
-        <source>Pointer</source>
-        <translation>Вказівник</translation>
-    </message>
-    <message>
         <source>Layout</source>
         <translation>Розкладка</translation>
     </message>
@@ -5697,18 +5693,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ellipses_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5841,7 +5825,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
+        <source>Zoom Out (Ctrl+-)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5853,7 +5837,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5949,27 +5933,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5981,27 +5949,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Operations Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6074,10 +6026,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>E, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>details_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7645,10 +7593,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation type="unfinished">Розрахунок</translation>
     </message>
@@ -7701,10 +7645,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7725,18 +7665,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7751,18 +7679,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Length:</source>
         <translation type="unfinished">Довжина:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation type="unfinished">Точка центру:</translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8056,6 +7972,26 @@ Do you want to save your changes?</source>
         <source>Forbid</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Center:</source>
+        <translation>Центр:</translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation>Внизу праворуч:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Верхнє:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Нижнє:</translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -8314,7 +8250,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iмя</translation>
     </message>
     <message>
         <source>Include all pieces</source>
@@ -8888,10 +8824,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use CTRL Modifier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11371,7 +11303,7 @@ Do you want to save your changes?</source>
     <name>VAbstractOperation</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>Length</source>
@@ -11412,7 +11344,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12433,7 +12365,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12494,7 +12426,7 @@ Do you want to save your changes?</source>
     <name>VToolBasePoint</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12569,7 +12501,7 @@ Do you want to save your changes?</source>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12607,7 +12539,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12625,7 +12557,7 @@ Do you want to save your changes?</source>
     <name>VToolLineIntersect</name>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -12640,7 +12572,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
@@ -12663,7 +12595,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -13015,7 +12947,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Center:</source>
-        <translation type="unfinished"></translation>
+        <translation>Центр:</translation>
     </message>
     <message>
         <source>Second circle:</source>
@@ -13125,7 +13057,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>
@@ -13173,7 +13105,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">імя</translation>
     </message>
 </context>
 <context>

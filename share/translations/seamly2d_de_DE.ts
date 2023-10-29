@@ -5190,10 +5190,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zuletzt geöffnete Dateien laden.</translation>
     </message>
     <message>
-        <source>Pointer</source>
-        <translation>Zeiger</translation>
-    </message>
-    <message>
         <source>Layout</source>
         <translation>Layout</translation>
     </message>
@@ -5698,18 +5694,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ellipses_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5823,7 +5807,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Heranzoomen</translation>
     </message>
     <message>
         <source>In</source>
@@ -5831,19 +5815,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
-        <translation type="unfinished"></translation>
+        <translation>Heranzoomen (Strg++)</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Herauszoomen</translation>
     </message>
     <message>
         <source>Out</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
-        <translation type="unfinished"></translation>
+        <source>Zoom Out (Ctrl+-)</source>
+        <translation>Herauszoomen (Strg+-)</translation>
     </message>
     <message>
         <source>Fit All</source>
@@ -5854,7 +5838,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5899,7 +5883,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation type="unfinished">Strg+Left</translation>
+        <translation>Ausgewählte</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
@@ -5907,15 +5891,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorherige</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom zum vorherigen (Strg+Links)</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+Links</translation>
     </message>
     <message>
         <source>Area</source>
@@ -5923,7 +5907,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
-        <translation type="unfinished">Strg+A</translation>
+        <translation>Strg+A</translation>
     </message>
     <message>
         <source>Pan</source>
@@ -5943,34 +5927,18 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation type="unfinished"></translation>
+        <translation>Auf 100 Prozent zoomen (Strg+0)</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
         <translation type="unfinished">Strg+0</translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5982,27 +5950,11 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Operations Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6075,10 +6027,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>E, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>details_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -7646,10 +7594,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation type="unfinished">Berechnung</translation>
     </message>
@@ -7702,10 +7646,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7726,18 +7666,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7752,18 +7680,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Length:</source>
         <translation type="unfinished">Länge:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation type="unfinished">Mittelpunkt:</translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -8056,6 +7972,26 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Forbid</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation>Oben links:</translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation>Unten rechts:</translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation>Oben:</translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation>Unten:</translation>
     </message>
 </context>
 <context>
@@ -8889,10 +8825,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use CTRL Modifier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9790,7 +9722,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Heranzoomen</translation>
     </message>
     <message>
         <source>Ctrl++</source>
@@ -9798,7 +9730,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Herauszoomen</translation>
     </message>
     <message>
         <source>Ctrl+-</source>
@@ -9830,15 +9762,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Previous</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vorherige</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+Links</translation>
     </message>
     <message>
         <source>Selected</source>
-        <translation type="unfinished">Strg+Left</translation>
+        <translation type="unfinished">Ausgewählte</translation>
     </message>
     <message>
         <source>Ctrl+Right</source>
