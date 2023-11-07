@@ -2163,10 +2163,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Rotation:</translation>
     </message>
     <message>
-        <source> deg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6917,6 +6913,10 @@ Voulez-vous sauvegarder les changements?</translation>
         <source>Pen Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8173,6 +8173,14 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Current line weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset current pen to defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current pen preset</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10090,14 +10098,6 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>C, X</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point - Intersect Curve and Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12333,13 +12333,6 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>layouts</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VSimpleCurve</name>
-    <message>
-        <source>VSimpleCurve::RefreshGeometry: pointer to curve is null.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

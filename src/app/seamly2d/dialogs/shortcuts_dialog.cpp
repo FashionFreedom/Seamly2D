@@ -164,7 +164,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%4        </td><td>%5</td></tr>"
                                     "<tr><td width = 50%>%6        </td><td>%7</td></tr>"
                                     "<tr><td width = 50%>%8        </td><td>%9</td></tr>"
-                                    "<tr><td width = 50%>%10        </td><td>%11</td></tr>"                                    
+                                    "<tr><td width = 50%>%10        </td><td>%11</td></tr>"
                                     "<tr><td width = 50%>%12        </td><td>%13</td></tr>"
                                     "<tr><td width = 50%>%14        </td><td>%15</td></tr>"
                                     "<tr><td width = 50%>%16        </td><td>%17</td></tr>"
@@ -204,9 +204,8 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                     "<tr><td width = 50%>%10       </td><td>%11</td></tr>"
                                     "<tr><td width = 50%>%12       </td><td>%13</td></tr>"
                                     "<tr><td width = 50%>%14       </td><td>%15</td></tr>"
-                                    "<tr><td width = 50%>%16       </td><td>%17</td></tr>"
-                                    "<tr><td width = 50%>%18       </td><td>%19<br></td></tr>"
-                                 "</table>")
+                                    "<tr><td width = 50%>%16       </td><td>%17<br></td></tr>"
+                                  "</table>")
                                  .arg(tr("Curves"))                                          //1
                                  .arg(tr("Curve - Interactive")).arg(tr("Alt+C"))            //2 &3
                                  .arg(tr("Spline - Interactive")).arg(tr("Alt+S"))           //4 & 5
@@ -215,8 +214,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Point - On Curve")).arg(tr("O, C"))                //10 & 11
                                  .arg(tr("Point - On Spline	")).arg(tr("O, S"))              //12 & 13
                                  .arg(tr("Point - Intersect Curves")).arg(tr("I, C"))        //14 & 15
-                                 .arg(tr("Point - Intersect Curve and Axis")).arg(tr("C, X"))//16 & 17
-                                 .arg(tr("Point - Intersect Curve and Line")).arg(tr("C, L"));//18 & 19
+                                 .arg(tr("Point - Intersect Curve and Axis")).arg(tr("C, X"));//16 & 17
 
 
     const QString arcs = QString("<table style=font-size:11pt; font-weight:600>"

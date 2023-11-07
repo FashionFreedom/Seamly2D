@@ -487,7 +487,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Arco - Radio y ángulos</translation>
+        <translation>Arco - Radio y Ángulos</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -588,7 +588,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - radio y longitud</translation>
+        <translation>Arco - Radio y Longitud</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -673,7 +673,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punto - En bisectriz</translation>
+        <translation>Punto - En Bisectriz</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -858,7 +858,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>Intersección - curva y eje</translation>
+        <translation>Intersección - Curva y Eje</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -927,7 +927,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punto - En arco</translation>
+        <translation>Punto - En Arco</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1350,7 +1350,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punto - de intersección de Línea y Perpendicular</translation>
+        <translation>Punto - Intersección de Línea y Perpendicular</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1837,7 +1837,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Line and Axis</source>
-        <translation>Intersección. - de línea y eje</translation>
+        <translation>Intersección - De línea y eje</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1905,7 +1905,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Reflejar:por el eje</translation>
+        <translation>Reflejar por Eje</translation>
     </message>
     <message>
         <source>Axis point:</source>
@@ -1944,7 +1944,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByLine</name>
     <message>
         <source>Mirror by Line</source>
-        <translation>Reflejar por línea</translation>
+        <translation>Reflejar por Línea</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2178,7 +2178,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punto - En perpendicular</translation>
+        <translation>Punto - En Perpendicular</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2201,10 +2201,6 @@ p, li { white-space: pre-wrap; }
         <translation>Rotación:</translation>
     </message>
     <message>
-        <source> deg</source>
-        <translation> grados</translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation>Propiedades</translation>
     </message>
@@ -2214,7 +2210,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Ángulo de Rotación&lt;/span&gt;&lt;br/&gt;Los ángulos se especifican en grados, es decir, un círculo completo equivale a 360 grados. Los valores positivos para un ángulo significan en sentido contrario a las agujas del reloj, mientras que un valor negativo significa en el sentido de las agujas del reloj. Cero grados está en la posición de las 3 en punto.&lt;br/&gt;&lt;br/&gt;El ángulo de rotación se suma al ángulo de la perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2229,7 +2225,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Heights and Sizes</source>
-        <translation>Alturas y tallas</translation>
+        <translation>Alturas y Tallas</translation>
     </message>
     <message>
         <source>All heights (cm)</source>
@@ -2309,7 +2305,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show in Explorer</source>
-        <translation>Mostrar en el explorador</translation>
+        <translation>Mostrar en el Explorador</translation>
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
@@ -2329,15 +2325,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern number:</source>
-        <translation>Número del Patrón:</translation>
+        <translation>Número del patrón:</translation>
     </message>
     <message>
         <source>Company/Designer name:</source>
-        <translation>Nombre de la Empresa/Diseñador:</translation>
+        <translation>Nombre de la empresa/diseñador:</translation>
     </message>
     <message>
         <source>Customer name:</source>
-        <translation>Nombre del Cliente:</translation>
+        <translation>Nombre del cliente:</translation>
     </message>
     <message>
         <source>From multisize measurements</source>
@@ -2408,7 +2404,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punto - de la intersección del arco y la tangente</translation>
+        <translation>Punto - Intersección Arco y Tangente</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2467,7 +2463,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punto - de la intersección del arco y línea</translation>
+        <translation>Punto - Intersección Arco y Línea</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2518,7 +2514,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punto - de la intersección de arcos</translation>
+        <translation>Punto - Intersección de Arcos</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2553,7 +2549,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punto - de la intersección de Curvas intersección</translation>
+        <translation>Punto - Intersección de Curvas</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2596,7 +2592,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Rutas de archivos</translation>
+        <translation>Rutas de Archivos</translation>
     </message>
     <message>
         <source>Graphics</source>
@@ -2668,7 +2664,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Rutas de archivos</translation>
+        <translation>Rutas de Archivos</translation>
     </message>
 </context>
 <context>
@@ -2727,7 +2723,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Punto - a lo largo de la línea</translation>
+        <translation>Punto - Longitud a Línea</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3126,7 +3122,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punto - de intersección del eje y el triángulo</translation>
+        <translation>Punto - Intersección Eje y Triángulo</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3197,7 +3193,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Pinzas correctas</translation>
+        <translation>Pinzas Correctas</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -3433,28 +3429,27 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line Lengths</source>
-        <translation>Longitudes de línea</translation>
+        <translation>Longitudes de Línea</translation>
     </message>
     <message>
         <source>Line Angles</source>
-        <translation>Ángulos de línea</translation>
+        <translation>Ángulos de Línea</translation>
     </message>
     <message>
         <source>Curve Lengths</source>
-        <translation>Longitudes de curva</translation>
+        <translation>Longitudes de Curva</translation>
     </message>
     <message>
         <source>Curve Angles</source>
-        <translation>Ángulos de curva</translation>
+        <translation>Ángulos de Curva</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation> Longitudes de los
-puntos de control</translation>
+        <translation> Longitudes del Puntos de Control</translation>
     </message>
     <message>
         <source>Arc Radii</source>
-        <translation>Radios de arco</translation>
+        <translation>Radios de Arco</translation>
     </message>
     <message>
         <source>Functions</source>
@@ -3526,7 +3521,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Line Angle</source>
-        <translation>Ángulo de la línea</translation>
+        <translation>Ángulo de Línea</translation>
     </message>
     <message>
         <source>Arc radius</source>
@@ -3534,7 +3529,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Curve angle</source>
-        <translation>Ángulo de la curva</translation>
+        <translation>Ángulo de curva</translation>
     </message>
 </context>
 <context>
@@ -3760,7 +3755,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Material: Fabric</source>
-        <translation>Tipo de tela</translation>
+        <translation>Material: Tela</translation>
     </message>
     <message>
         <source>Fabric</source>
@@ -3768,7 +3763,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Material: Lining</source>
-        <translation>Tela de forro</translation>
+        <translation>Material: Forro</translation>
     </message>
     <message>
         <source>Lining</source>
@@ -3776,7 +3771,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>Tipo de entretela</translation>
+        <translation>Material: Entretela</translation>
     </message>
     <message>
         <source>Interfacing</source>
@@ -3784,15 +3779,15 @@ puntos de control</translation>
     </message>
     <message>
         <source>Material: Interlining</source>
-        <translation>Material de entretela de forro</translation>
+        <translation>Material: Entretela</translation>
     </message>
     <message>
         <source>Interlining</source>
-        <translation>Entretela de forro</translation>
+        <translation>Entretela</translation>
     </message>
     <message>
         <source>Word: Cut</source>
-        <translation>Palabra: cortar</translation>
+        <translation>Palabra: Cortar</translation>
     </message>
     <message>
         <source>Cut</source>
@@ -3800,7 +3795,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Word: on fold</source>
-        <translation>Plabra:en el pliegue</translation>
+        <translation>Plabra: en pliegue</translation>
     </message>
     <message>
         <source>on fold</source>
@@ -3830,7 +3825,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Text as paths</source>
-        <translation>Texto como rutas</translation>
+        <translation>Texto como Rutas</translation>
     </message>
     <message>
         <source>Path:</source>
@@ -3942,7 +3937,7 @@ puntos de control</translation>
     </message>
     <message>
         <source>Confirm Export</source>
-        <translation>Confirmar exportación</translation>
+        <translation>Confirmar Exportación</translation>
     </message>
     <message>
         <source>Export files:</source>
@@ -4000,15 +3995,15 @@ Possibly the file is already being downloaded.</source>
     <name>GroupsWidget</name>
     <message>
         <source>Group Manager</source>
-        <translation>Administrador de grupo</translation>
+        <translation>Administrador de Grupo</translation>
     </message>
     <message>
         <source>Show All Groups</source>
-        <translation>Mostrar todos los grupos</translation>
+        <translation>Mostrar todos los Grupos</translation>
     </message>
     <message>
         <source>Hide all groups</source>
-        <translation>Ocultar todos los grupos</translation>
+        <translation>Ocultar todos los Grupos</translation>
     </message>
     <message>
         <source>Lock all groups</source>
@@ -4060,7 +4055,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Edit Group</source>
-        <translation>Editar grupo</translation>
+        <translation>Editar Grupo</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -4104,19 +4099,19 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Length to Line</source>
-        <translation>%1 - Punto a lo largo de la línea</translation>
+        <translation>%1 - Punto Longitud a Línea</translation>
     </message>
     <message>
         <source>%1 - Point On Perpendicular</source>
-        <translation>%1 - Punto en la Perpendicular</translation>
+        <translation>%1 - Punto en Perpendicular</translation>
     </message>
     <message>
         <source>%1 - Point On Bisector</source>
-        <translation>%1 - Punto en la bisectriz</translation>
+        <translation>%1 - Punto en Bisectriz</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Punto de intersección de dos líneas</translation>
+        <translation>%1 - Punto Intersección de Líneas</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
@@ -4132,7 +4127,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
-        <translation>%1 - Radio y ángulos del arco</translation>
+        <translation>%1 - Radio y Ángulos del Arco</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -4140,7 +4135,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Length</source>
-        <translation>%1 - Radio y longitud del arco</translation>
+        <translation>%1 - Radio y Longitud del Arco</translation>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
@@ -4156,27 +4151,27 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
-        <translation>%1 - Punto de intersección de arco y línea</translation>
+        <translation>%1 - Punto Intersección Arco y Línea</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Punto de intersección de Línea y Perpendicular</translation>
+        <translation>%1 - Punto Intersección Línea y Perpendicular</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
-        <translation>%1 - Punto de intersección de eje y tangente</translation>
+        <translation>%1 - Punto Intersección Eje y Tangente</translation>
     </message>
     <message>
         <source>%1 - Point Intersect XY</source>
-        <translation>%1 - Punto de intersección XY</translation>
+        <translation>%1 - Punto Intersección XY</translation>
     </message>
     <message>
         <source>%1 - Point On Arc</source>
-        <translation>%1 - Punto en el arco</translation>
+        <translation>%1 - Punto en Arco</translation>
     </message>
     <message>
         <source>%1 - Point On Curve</source>
-        <translation>%1 - Punto en la Curva</translation>
+        <translation>%1 - Punto en Curva</translation>
     </message>
     <message>
         <source>%1 - Point On Spline</source>
@@ -4184,35 +4179,35 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Punto de intersección de línea y eje</translation>
+        <translation>%1 - Punto de Intersección Línea y Eje</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
-        <translation>%1 - Punto de intersección de curva y eje</translation>
+        <translation>%1 - Punto de Intersección Curva y Eje</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arcs</source>
-        <translation>%1 - Punto de intersección de arcos</translation>
+        <translation>%1 - Punto Intersección de Arcos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punto de intersección de circulos</translation>
+        <translation>%1 - Punto Intersección de Circulos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Punto de intersección de curvas</translation>
+        <translation>%1 - Punto Intersección de Curvas</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Punto de intersección de circulo y tangente</translation>
+        <translation>%1 - Punto Intersección de Circulo y Tangente</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Punto de intersección de arco y tangente</translation>
+        <translation>%1 - Punto Intersección de Arco y Tangente</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Pinza correcta %2_%3_%4</translation>
+        <translation>%1 - Pinza Correcta %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
@@ -4240,11 +4235,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Mover objeto de grupo</translation>
+        <translation>Mover Objeto de Grupo</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Eliminar objeto de grupo</translation>
+        <translation>Eliminar Objeto de Grupo</translation>
     </message>
     <message>
         <source>Group color</source>
@@ -4303,23 +4298,23 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point On Line %1_%2</source>
-        <translation>Punto en la línea %1_%2</translation>
+        <translation>Punto en Línea %1_%2</translation>
     </message>
     <message>
         <source>Point Length to Line</source>
-        <translation>Punto a lo largo de la línea</translation>
+        <translation>Punto Longitud a Línea</translation>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
-        <translation>Punto en perpendicular %1_%2</translation>
+        <translation>Punto en Perpendicular %1_%2</translation>
     </message>
     <message>
         <source>Point On Bisector %1_%2_%3</source>
-        <translation>Punto en la bisectriz %1_%2_%3</translation>
+        <translation>Punto en Bisectriz %1_%2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Punto en la intersección de las líneas %1_%2 y %3_%4</translation>
+        <translation>Punto Intersección de las Líneas %1_%2 y %3_%4</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4339,11 +4334,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
-        <translation>Radio y ángulos del arco</translation>
+        <translation>Radio y Ángulos del Arco</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Length %1</source>
-        <translation>Radio y longitud del arco %1</translation>
+        <translation>Radio y Longitud del Arco %1</translation>
     </message>
     <message>
         <source>SplPath_</source>
@@ -4351,7 +4346,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spline Interactive</source>
-        <translation>Spline interactivo</translation>
+        <translation>Spline Interactivo</translation>
     </message>
     <message>
         <source>Spline Fixed</source>
@@ -4359,51 +4354,51 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
-        <translation>Punto en la intersección del arco con centro %1 y línea %2_%3</translation>
+        <translation>Punto Intersección del Arco con centro %1 y Línea %2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
-        <translation>Punto en la intersección de Line %1_%2 y perpendicular %3</translation>
+        <translation>Punto Intersección de Line %1_%2 y Perpendicular %3</translation>
     </message>
     <message>
         <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Punto en la intersección de Eje %1_%2 y Triángulo puntos %3 y %4</translation>
+        <translation>Punto Intersección de Eje %1_%2 y Triángulo puntos %3 y %4</translation>
     </message>
     <message>
         <source>Point Intersect XY of points %1 and %2</source>
-        <translation>Punto en la intersección de XY de puntos %1 y %2</translation>
+        <translation>Punto Intersección XY de puntos %1 y %2</translation>
     </message>
     <message>
         <source>Point On Arc</source>
-        <translation>Punto en arco</translation>
+        <translation>Punto en Arco</translation>
     </message>
     <message>
         <source>Point On Curve</source>
-        <translation>Punto en curva</translation>
+        <translation>Punto en Curva</translation>
     </message>
     <message>
         <source>Point On Spline</source>
-        <translation>Punto en spline</translation>
+        <translation>Punto en Spline</translation>
     </message>
     <message>
         <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>%Punto en la intersección de Línea %1_%2 y el Eje que pasa por el punto %3</translation>
+        <translation>%Punto Intersección de Línea %1_%2 y el Eje que pasa por el punto %3</translation>
     </message>
     <message>
         <source>Point Intersect Curve &amp; Axis through point %1</source>
-        <translation>Punto en la intersección de Curva y Eje a través del punto%1</translation>
+        <translation>Punto Intersección Curva y Eje a través del punto%1</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punto en la intersección de Arcos</translation>
+        <translation>Punto Intersección de Arcos</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punto de intersección de círculos</translation>
+        <translation>%1 - Punto Intersección de Círculos</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punto de intersección de Curvas</translation>
+        <translation>Punto Intersección de Curvas</translation>
     </message>
     <message>
         <source>Point Intersect Circle &amp; Tangent</source>
@@ -4411,7 +4406,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Punto de intersección del arco y la tangente</translation>
+        <translation>Punto Intersección Arco y Tangente</translation>
     </message>
     <message>
         <source>True Dart %1_%2_%3</source>
@@ -4431,15 +4426,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Mirror by Line %1_%2. Suffix %3</source>
-        <translation>Reflejo por línea %1_%2. Sufijo %3</translation>
+        <translation>Reflejo por Línea %1_%2. Sufijo %3</translation>
     </message>
     <message>
         <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>Reflejo por eje a través de %1 punto. Sufijo %2</translation>
+        <translation>Reflejo por Eje a través de %1 punto. Sufijo %2</translation>
     </message>
     <message>
         <source>Move - rotate around point %1. Suffix %2</source>
-        <translation>Mover: rotación alrededor del punto %1. Sufijo %2</translation>
+        <translation>Mover - Rotación alrededor del punto %1. Sufijo %2</translation>
     </message>
     <message>
         <source>Description</source>
@@ -4447,7 +4442,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point Length and Angle from point %1</source>
-        <translation>Punto a lo Largo y ángulo desde el punto %1</translation>
+        <translation>Punto Largo y Ángulo desde el punto %1</translation>
     </message>
 </context>
 <context>
@@ -4526,11 +4521,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation> Es posible que sea necesario invertirlo manualmente.</translation>
+        <translation> es posible que sea necesario invertirlo manualmente.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Insertar nodos</translation>
+        <translation>Insertar Nodos</translation>
     </message>
 </context>
 <context>
@@ -4596,7 +4591,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punto - en la intersección de Circulo y Tangente</translation>
+        <translation>Punto - Intersección Círculo y Tangente</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -4690,7 +4685,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punto - de intersección de Círculos</translation>
+        <translation>Punto - Intersección de Círculos</translation>
     </message>
     <message>
         <source>Unique name</source>
@@ -4713,7 +4708,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point Intersect Circles</source>
-        <translation>Punto - de intersección de Círculos</translation>
+        <translation>Punto - Intersección de Círculos</translation>
     </message>
 </context>
 <context>
@@ -5592,27 +5587,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation>Barra de herramientas de archivos</translation>
+        <translation>Barra de Herramientas de Archivos</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
-        <translation>Modo de Barra de herramientas de archivos</translation>
+        <translation>Modo de Barra de Herramientas de Archivos</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation>Barra de herramientas de patrón</translation>
+        <translation>Barra de Herramientas de Patrón</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation>Editar Barra de herramientas</translation>
+        <translation>Editar Barra de Herramientas</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Editor de propiedades</translation>
+        <translation>Editor de Propiedades</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation>Páginas de maquetación</translation>
+        <translation>Páginas de Maquetación</translation>
     </message>
     <message>
         <source>Group Manager</source>
@@ -5620,51 +5615,51 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Zoom ToolBar</source>
-        <translation>Barra de herramientas de zoom</translation>
+        <translation>Barra de Herramientas de Zoom</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Barra de Caja de herramientas</translation>
+        <translation>Barra de Caja de Herramientas</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
-        <translation>Barra de herramientas de puntos</translation>
+        <translation>Barra de Herramientas de Puntos</translation>
     </message>
     <message>
         <source>Lines ToolBar</source>
-        <translation>Barra de herramientas de líneas</translation>
+        <translation>Barra de Herramientas de Líneas</translation>
     </message>
     <message>
         <source>Curves ToolBar</source>
-        <translation>Barra de herramientas de curvas</translation>
+        <translation>Barra de Herramientas de Curvas</translation>
     </message>
     <message>
         <source>Arcs ToolBar</source>
-        <translation>Barra de herramientas de arcos</translation>
+        <translation>Barra de Herramientas de Arcos</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Barra de herramientas operaciones</translation>
+        <translation>Barra de Herramientas Operaciones</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
-        <translation>Barra de herramientas de piezas</translation>
+        <translation>Barra de Herramientas de Piezas</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Barra de herramientas de detalles</translation>
+        <translation>Barra de Herramientas de Detalles</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
-        <translation>Barra de herramientas de maquetación</translation>
+        <translation>Barra de Herramientas de Maquetación</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
-        <translation>Barra de herramientas de nombre de puntos</translation>
+        <translation>Barra de Herramientas de Nombre de Puntos</translation>
     </message>
     <message>
         <source>Toolbox</source>
-        <translation>Caja de herramientas</translation>
+        <translation>Caja de Herramientas</translation>
     </message>
     <message>
         <source>Line between 2 Points (Alt+L)</source>
@@ -5676,11 +5671,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Rotate Selected Objects (R)</source>
-        <translation>Girar objetos seleccionados (R)</translation>
+        <translation>Girar Objetos Seleccionados (R)</translation>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Exportar bloques de borrador (E, D)</translation>
+        <translation>Exportar Bloques de Borrador (E, D)</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
@@ -5688,7 +5683,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Add Details</source>
-        <translation>Añadir detalles</translation>
+        <translation>Añadir Detalles</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
@@ -5700,7 +5695,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>Vista de barra de herramientas</translation>
+        <translation>Vista de Barra de Herramientas</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -5752,7 +5747,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Reflejar por la línea</translation>
+        <translation>Reflejar por Línea</translation>
     </message>
     <message>
         <source>M, L</source>
@@ -5760,7 +5755,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Reflejar por el Eje</translation>
+        <translation>Reflejar por Eje</translation>
     </message>
     <message>
         <source>M, A</source>
@@ -5840,15 +5835,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Exit the Application</source>
-        <translation>Salir de la aplicación</translation>
+        <translation>Salir de la Aplicación</translation>
     </message>
     <message>
         <source>Application Preferences...</source>
-        <translation>Preferencias de aplicación...</translation>
+        <translation>Preferencias de Aplicación...</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Preferencias de patrón...</translation>
+        <translation>Preferencias de Patrón...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -5900,7 +5895,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Curve Control Points</source>
-        <translation>Puntos de control de curvas</translation>
+        <translation>Puntos de Control de Curvas</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
@@ -5972,11 +5967,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point Tools</source>
-        <translation>Herramientas de puntos</translation>
+        <translation>Herramientas de Puntos</translation>
     </message>
     <message>
         <source>Line Tools</source>
-        <translation>Herramientas de línea</translation>
+        <translation>Herramientas de Línea</translation>
     </message>
     <message>
         <source>Alt+L</source>
@@ -5984,7 +5979,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Curve Tools</source>
-        <translation>Herramientas de curva</translation>
+        <translation>Herramientas de Curva</translation>
     </message>
     <message>
         <source>Arc Tools</source>
@@ -5992,11 +5987,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Operations Tools</source>
-        <translation>Herramientas de operaciones</translation>
+        <translation>Herramientas de Operaciones</translation>
     </message>
     <message>
         <source>Layout Tools</source>
-        <translation>Herramientas de maquetación</translation>
+        <translation>Herramientas de Maquetación</translation>
     </message>
     <message>
         <source>Piece tools</source>
@@ -6004,7 +5999,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nueva pieza de patrón</translation>
+        <translation>Nueva Pieza de Patrón</translation>
     </message>
     <message>
         <source>N, P</source>
@@ -6012,7 +6007,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout</source>
-        <translation>Nuevo maquetación de impresión</translation>
+        <translation>Nuevo Maquetación de Impresión</translation>
     </message>
     <message>
         <source>N, L</source>
@@ -6020,7 +6015,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Layout</source>
-        <translation>Exportar maquetación</translation>
+        <translation>Exportar Maquetación</translation>
     </message>
     <message>
         <source>E, L</source>
@@ -6028,7 +6023,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation>Punto de anclaje</translation>
+        <translation>Punto de Anclaje</translation>
     </message>
     <message>
         <source>A, P</source>
@@ -6036,7 +6031,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Ruta interna</translation>
+        <translation>Ruta Interna</translation>
     </message>
     <message>
         <source>I, P</source>
@@ -6044,7 +6039,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation>Insertar nodos</translation>
+        <translation>Insertar Nodos</translation>
     </message>
     <message>
         <source>I, N</source>
@@ -6052,7 +6047,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Unir piezas</translation>
+        <translation>Unir Piezas</translation>
     </message>
     <message>
         <source>U</source>
@@ -6124,7 +6119,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
-        <translation>Alternar origen del eje (V, A)</translation>
+        <translation>Alternar Origen del Eje (V, A)</translation>
     </message>
     <message>
         <source>V, A</source>
@@ -6132,7 +6127,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Wireframe Mode</source>
-        <translation>Modo de estructura alámbrica</translation>
+        <translation>Modo de Estructura Alámbrica</translation>
     </message>
     <message>
         <source>Toggle Wireframe Mode (V, W)</source>
@@ -6224,7 +6219,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Herramienta::Operaciones - Crear grupo:&lt;/b&gt; Seleccione uno o más objetos - Para seleccionar varios objetos Mantenga presionado &lt;b&gt;%1&lt;/b&gt;Para finalizar la creación del grupo presione&lt;b&gt;ENTER&lt;/b&gt; </translation>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Crear Grupo:&lt;/b&gt; Seleccione uno o más objetos - Para seleccionar varios objetos Mantenga presionado &lt;b&gt;%1&lt;/b&gt;Para finalizar la creación del grupo presione&lt;b&gt;ENTER&lt;/b&gt; </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6232,11 +6227,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por línea:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Línea:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por eje:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
+        <translation>&lt;b&gt;Herramienta::Operaciones - Reflejar por Eje:&lt;/b&gt;Seleccione uno o más objetos: mantenga presionado &lt;b&gt;%1&lt;/b&gt; para selecciónar varios objetos. Presione &lt;b&gt;ENTER&lt;/b&gt; para confirmar la selección</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6272,7 +6267,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Exportar piezas de patrón</translation>
+        <translation>Exportar Piezas de Patrón</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -6284,7 +6279,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Piezas de patrón</translation>
+        <translation>Piezas de Patrón</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
@@ -6324,7 +6319,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Herramienta::Pieza - Añadir nueva pieza de patrón:&lt;/b&gt; Seleccione la ruta principal de los objetos en el sentido de las agujas del reloj.</translation>
+        <translation>&lt;b&gt;Herramienta::Pieza - Añadir Nueva Pieza de Patrón:&lt;/b&gt; Seleccione la ruta principal de los objetos en el sentido de las agujas del reloj.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
@@ -6332,7 +6327,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt;Herramienta::Pieza - Ruta interna:&lt;/b&gt; Seleccione objetos de la ruta, use &lt;b&gt;SHIFT&lt;/b&gt; para invertir la dirección de la curva</translation>
+        <translation>&lt;b&gt;Herramienta::Pieza - Ruta Interna:&lt;/b&gt; Seleccione objetos de la ruta, use &lt;b&gt;SHIFT&lt;/b&gt; para invertir la dirección de la curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
@@ -6348,23 +6343,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Draft Block %1</source>
-        <translation>Bloque de maquetación %1</translation>
+        <translation>Bloque de Maquetación %1</translation>
     </message>
     <message>
         <source>Point - On Bisector (O, B)</source>
-        <translation>Punto: en la bisectriz (O, B)</translation>
+        <translation>Punto - En la bisectriz (O, B)</translation>
     </message>
     <message>
         <source>Point - Length to Line (P, S)</source>
-        <translation>Punto - Longitud en la línea (P, S)</translation>
+        <translation>Punto - Longitud a Línea (P, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Line (A, L)</source>
-        <translation>Punto - Intersección de arco y línea (A, L)</translation>
+        <translation>Punto - Intersección Arco y Línea (A, L)</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
-        <translation>Punto - Intersección del eje y el triángulo (X, T)</translation>
+        <translation>Punto - Intersección Eje y Triángulo (X, T)</translation>
     </message>
     <message>
         <source>Point - Intersect XY (X, Y)</source>
@@ -6372,11 +6367,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
-        <translation>Punto - Línea de intersección y perpendicular (L, P)</translation>
+        <translation>Punto - Línea Intersección y Perpendicular (L, P)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
-        <translation>Punto - Intersección de Línea y Eje (L, X)</translation>
+        <translation>Punto - Intersección Línea y Eje (L, X)</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
@@ -6384,15 +6379,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Length and Angle (L, A)</source>
-        <translation>Punto: Longitud y Ángulo (L, A)</translation>
+        <translation>Punto - Longitud y Ángulo (L, A)</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
-        <translation>Punto - En la línea (O, L)</translation>
+        <translation>Punto - En Línea (O, L)</translation>
     </message>
     <message>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto medio de la línea (Mayúsculas+O, Mayúsculas+L)</translation>
+        <translation>Punto - Punto Medio de Línea (Mayúsculas+O, Mayúsculas+L)</translation>
     </message>
     <message>
         <source>Point - Intersect Lines (I, L)</source>
@@ -6416,7 +6411,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
-        <translation>Punto: en Spline (O, S)</translation>
+        <translation>Punto - En Spline (O, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Curves (I, C)</source>
@@ -6424,7 +6419,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis (C, X)</source>
-        <translation>Punto - Intersección de Curva y Eje (C, X)</translation>
+        <translation>Punto - Intersección Curva y Eje (C, X)</translation>
     </message>
     <message>
         <source>Point - On Curve (O, C)</source>
@@ -6432,15 +6427,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Radius and Angles (Alt+A)</source>
-        <translation>Arco - Radio y ángulos (Alt+A)</translation>
+        <translation>Arco - Radio y Ángulos (Alt+A)</translation>
     </message>
     <message>
         <source>Point - On Arc (O, A)</source>
-        <translation>Punto - En arco (O, A)</translation>
+        <translation>Punto - En Arco (O, A)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis (A, X)</source>
-        <translation>Punto: Intersección del Arco y el Eje (A, X)</translation>
+        <translation>Punto - Intersección Arco y Eje (A, X)</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs (I, A)</source>
@@ -6452,15 +6447,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent (C, T)</source>
-        <translation>Punto - Intersección del círculo y la tangente (C, T)</translation>
+        <translation>Punto - Intersección Círculo y Tangente (C, T)</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent (A, T)</source>
-        <translation>Punto: Intersección de Arco y Tangente (A, T)</translation>
+        <translation>Punto - Intersección Arco y Tangente (A, T)</translation>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Arco: Radio y Longitud (Alt+Mayúsculas+A)</translation>
+        <translation>Arco - Radio y Longitud (Alt+Mayúsculas+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
@@ -6468,15 +6463,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Reflejar objetos por línea (M, L)</translation>
+        <translation>Reflejar Objetos por Línea (M, L)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Reflejar objetos por eje (M, A)</translation>
+        <translation>Reflejar Objetos por Eje (M, A)</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
-        <translation>Mover objetos (Alt+M)</translation>
+        <translation>Mover Objetos (Alt+M)</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
@@ -6492,7 +6487,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Insert Nodes (I, N)</source>
-        <translation>Insertar nodos (I, N)</translation>
+        <translation>Insertar Nodos (I, N)</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
@@ -6504,11 +6499,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>Nuevo maquetación de impresión (N, L)</translation>
+        <translation>Nuevo maquetación de Impresión (N, L)</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
-        <translation>Exportar maquetación (E, L)</translation>
+        <translation>Exportar Maquetación (E, L)</translation>
     </message>
     <message>
         <source>Alt+M</source>
@@ -6520,7 +6515,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc -Elliptical</source>
-        <translation>Arco -Elíptico</translation>
+        <translation>Arco - Elíptico</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -6528,11 +6523,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Midpoint on Line</source>
-        <translation>Punto medio en línea</translation>
+        <translation>Punto Medio de Línea</translation>
     </message>
     <message>
         <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto medio en línea (Mayúsculas+O, Mayúsculas+L)</translation>
+        <translation>Punto - Punto Medio de Línea (Mayúsculas+O, Mayúsculas+L)</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -6540,7 +6535,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>On Line</source>
-        <translation>En línea</translation>
+        <translation>En Línea</translation>
     </message>
     <message>
         <source>O, L</source>
@@ -6548,7 +6543,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Longitud y ángulo</translation>
+        <translation>Longitud y Ángulo</translation>
     </message>
     <message>
         <source>L, A</source>
@@ -6556,7 +6551,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>En perpendicular</translation>
+        <translation>En Perpendicular</translation>
     </message>
     <message>
         <source>O, P</source>
@@ -6564,7 +6559,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>En bisectriz</translation>
+        <translation>En Bisectriz</translation>
     </message>
     <message>
         <source>O, B</source>
@@ -6572,15 +6567,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Longitud a la línea</translation>
+        <translation>Longitud a Línea</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
-        <translation>Intersección arco y línea</translation>
+        <translation>Intersección Arco y Línea</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Intersección del Eje y el Triángulo</translation>
+        <translation>Intersección Eje y Triángulo</translation>
     </message>
     <message>
         <source>X, T</source>
@@ -6596,7 +6591,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Intersección de Línea y Eje</translation>
+        <translation>Intersección Línea y Eje</translation>
     </message>
     <message>
         <source>L, X</source>
@@ -6612,11 +6607,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point on Curve</source>
-        <translation>Punto en la curva</translation>
+        <translation>Punto en Curva</translation>
     </message>
     <message>
         <source>Point on Curve (A, C)</source>
-        <translation>Punto en la curva (A, C)</translation>
+        <translation>Punto en Curva (A, C)</translation>
     </message>
     <message>
         <source>O, C</source>
@@ -6660,7 +6655,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Curve and Axis</source>
-        <translation>Intersección de Curva y Eje</translation>
+        <translation>Intersección Curva y Eje</translation>
     </message>
     <message>
         <source>C, X</source>
@@ -6668,19 +6663,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Radius and Angles</source>
-        <translation>Radio y ángulos</translation>
+        <translation>Radio y Ángulos</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Arco: Radio y Ángulos</translation>
+        <translation>Arco - Radio y Ángulos</translation>
     </message>
     <message>
         <source>Point on Arc</source>
-        <translation>Punto en el arco</translation>
+        <translation>Punto en Arco</translation>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
-        <translation>Punto en el arco (O, A)</translation>
+        <translation>Punto en Arco (O, A)</translation>
     </message>
     <message>
         <source>O, A</source>
@@ -6776,15 +6771,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Punto medio en línea&lt;/b&gt;: Seleccione el primer punto</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Punto Medio en Línea&lt;/b&gt;: Seleccione el primer punto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Longitud y ángulo&lt;/b&gt;: Seleccione punto</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Longitud y Ángulo&lt;/b&gt;: Seleccione punto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Herramienta::Punto - En línea:&lt;/b&gt; Seleccione el primer punto</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - En Línea:&lt;/b&gt; Seleccione el primer punto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
@@ -6792,11 +6787,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Herramienta::Punto - En bisectriz:&lt;/b&gt; Seleccione el primer punto del ángulo</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - En Bisectriz:&lt;/b&gt; Seleccione el primer punto del ángulo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Longitud de línea:&lt;/b&gt; Seleccione un punto</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Longitud de Línea:&lt;/b&gt; Seleccione un punto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
@@ -6804,7 +6799,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Intersección del Eje y el Yriángulo:&lt;/b&gt; Seleccione el primer punto del eje</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Eje y Triángulo:&lt;/b&gt; Seleccione el primer punto del eje</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
@@ -6812,15 +6807,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Línea de intersección y perpendicular:&lt;/b&gt; Seleccionar un punto básico</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Línea Intersección y Perpendicular:&lt;/b&gt; Seleccionar un punto básico</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Herramienta::Punto - Intersección de Línea y Eje:&lt;/b&gt; Seleccione el primer punto de la línea</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Línea y Eje:&lt;/b&gt; Seleccione el primer punto de la línea</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Herramienta::Línea:&lt;/b&gt;:Seleccione el primer punto</translation>
+        <translation>&lt;b&gt;Herramienta::Línea:&lt;/b&gt; Seleccione el primer punto</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
@@ -6844,7 +6839,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Herramienta::Punto - En curva:&lt;/b&gt; Seleccione el primer punto de la curva</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - En Curva:&lt;/b&gt; Seleccione el primer punto de la curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
@@ -6852,39 +6847,39 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de intersección de curvas:&lt;/b&gt; Seleccione la primera curva</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección de Curvas:&lt;/b&gt; Seleccione la primera curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Curva y Eje:&lt;/b&gt; Seleccione la  curva</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Curva y Eje:&lt;/b&gt; Seleccione la  curva</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt;Herramienta::Arco - Radio y ángulos:&lt;/b&gt; Seleccione el punto del centro del arco</translation>
+        <translation>&lt;b&gt;Herramienta::Arco - Radio y Ángulos:&lt;/b&gt; Seleccione el punto del centro del arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Herramienta::Punto - En arco:&lt;/b&gt; Seleccione arco</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - En Arco:&lt;/b&gt; Seleccione arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Arco y Eje:&lt;/b&gt; Seleccione el  arco</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Arco y Eje:&lt;/b&gt; Seleccione el  arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Arcos:&lt;/b&gt; Seleccione primero un arco</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección de Arcos:&lt;/b&gt; Seleccione primero un arco</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Círculos:&lt;/b&gt; Seleccione el centro del primer círculo</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección de Círculos:&lt;/b&gt; Seleccione el centro del primer círculo</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Círculo y Tangente:&lt;/b&gt; Seleccione punto en la tangente</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Círculo y Tangente:&lt;/b&gt; Seleccione punto en la tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Herramienta::Punto - de Intersección de Arco y Tangente:&lt;/b&gt; Seleccione punto en la tangente</translation>
+        <translation>&lt;b&gt;Herramienta::Punto - Intersección Arco y Tangente:&lt;/b&gt; Seleccione punto en la tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
@@ -6908,15 +6903,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Curve &amp; Axis</source>
-        <translation>Intersección de Curva y Eje</translation>
+        <translation>Intersección Curva y Eje</translation>
     </message>
     <message>
         <source>Add Objects to Group (G)</source>
-        <translation>Aañadir objetos al grupo (G)</translation>
+        <translation>Aañadir Objetos al Grupo (G)</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Aañadir objetos al grupo</translation>
+        <translation>Aañadir Objetos al Grupo</translation>
     </message>
     <message>
         <source>Add Group Objects</source>
@@ -6952,7 +6947,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pen Toolbar</source>
-        <translation>Barra de herramientas del lápiz</translation>
+        <translation>Barra de Herramientas del lápiz</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
@@ -6961,6 +6956,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Zoom to Fit All(Ctrl+=)</source>
         <translation>Zoom para ajustar todo (Control+=)</translation>
+    </message>
+    <message>
+        <source>Toolbars</source>
+        <translation>Barras de Herramientas</translation>
     </message>
 </context>
 <context>
@@ -7429,7 +7428,7 @@ Do you want to save your changes?</source>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Herramienta de pieza de patrón</translation>
+        <translation>Herramienta de Pieza de Patrón</translation>
     </message>
     <message>
         <source>Properties </source>
@@ -7469,7 +7468,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>PatternPiece</source>
-        <translation>Pieza de patrón</translation>
+        <translation>Pieza de Patrón</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
@@ -8104,7 +8103,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Bloquear Pieza de patrón</translation>
+        <translation>Bloquear Pieza de Patrón</translation>
     </message>
     <message>
         <source>Include in Layout</source>
@@ -8237,68 +8236,76 @@ Do you want to save your changes?</source>
         <source>Current line weight</source>
         <translation>Peso de línea actual</translation>
     </message>
+    <message>
+        <source>Reset current pen to defaults</source>
+        <translation type="unfinished">Restablecer el lápiz actual a los valores predeterminados</translation>
+    </message>
+    <message>
+        <source>Save current pen preset</source>
+        <translation type="unfinished">Guardar el preajuste actual del lápiz</translation>
+    </message>
 </context>
 <context>
     <name>PieceFillComboBox</name>
     <message>
         <source>No Fill</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sin relleno</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation type="unfinished"></translation>
+        <translation>Sólido</translation>
     </message>
     <message>
         <source>Density 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 1</translation>
     </message>
     <message>
         <source>Density 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 2</translation>
     </message>
     <message>
         <source>Density 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 3</translation>
     </message>
     <message>
         <source>Density 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 4</translation>
     </message>
     <message>
         <source>Density 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 5</translation>
     </message>
     <message>
         <source>Density 6</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 6</translation>
     </message>
     <message>
         <source>Density 7</source>
-        <translation type="unfinished"></translation>
+        <translation>Densidad 7</translation>
     </message>
     <message>
         <source>Horizontal Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea horizontal</translation>
     </message>
     <message>
         <source>Vertical Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Línea vertical</translation>
     </message>
     <message>
         <source>Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Cruz</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagonal Inversa</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation type="unfinished"></translation>
+        <translation>Diagonal de avance</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
-        <translation type="unfinished"></translation>
+        <translation>Cruz Diagonal</translation>
     </message>
 </context>
 <context>
@@ -8468,11 +8475,11 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Reflejar por el Eje:</translation>
+        <translation>Reflejar por Eje:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Reflejar por línea:</translation>
+        <translation>Reflejar por Línea:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
@@ -8484,7 +8491,7 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>File Handling</source>
-        <translation>Manejo de archivos</translation>
+        <translation>Manejo de Archivos</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
@@ -8575,7 +8582,7 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Barras de herramientas</translation>
+        <translation>Barras de Herramientas</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
@@ -8587,7 +8594,7 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>ToolBox</source>
-        <translation>Caja de herramientas</translation>
+        <translation>Caja de Herramientas</translation>
     </message>
     <message>
         <source>Point</source>
@@ -9003,7 +9010,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Pieza de patrón</translation>
+        <translation>Pieza de Patrón</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9193,7 +9200,7 @@ actualización:</translation>
     </message>
     <message>
         <source>inch</source>
-        <translation>pulgadas</translation>
+        <translation>pulg</translation>
     </message>
     <message>
         <source>Property</source>
@@ -9574,7 +9581,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Toolbar</source>
-        <translation>Barra de herramientas</translation>
+        <translation>Barra de Herramientas</translation>
     </message>
     <message>
         <source>The text appears under the icon (recommended for beginners).</source>
@@ -9887,7 +9894,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Wireframe</source>
-        <translation type="unfinished"></translation>
+        <translation>Marco de Alambre</translation>
     </message>
     <message>
         <source>V, W</source>
@@ -9911,7 +9918,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Seam Allowance</source>
-        <translation type="unfinished"></translation>
+        <translation>Márgenes de costura</translation>
     </message>
     <message>
         <source>V, S</source>
@@ -9919,7 +9926,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección del hilo</translation>
     </message>
     <message>
         <source>V, G</source>
@@ -9947,7 +9954,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Variables Table</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabla de Variables</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -9955,7 +9962,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Export Variables Table  to CSV</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar Tabla de Variables a CSV</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -9963,7 +9970,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Tools</source>
-        <translation type="unfinished"></translation>
+        <translation>Herramientas</translation>
     </message>
     <message>
         <source>New Draft Block</source>
@@ -9987,7 +9994,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Length and Angle</source>
-        <translation>Longitud y ángulo</translation>
+        <translation>Longitud y Ángulo</translation>
     </message>
     <message>
         <source>L, A</source>
@@ -9995,7 +10002,7 @@ actualización:</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>En línea</translation>
+        <translation>En Línea</translation>
     </message>
     <message>
         <source>O, L</source>
@@ -10003,7 +10010,7 @@ actualización:</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>En perpendicular</translation>
+        <translation>En Perpendicular</translation>
     </message>
     <message>
         <source>O, P</source>
@@ -10011,7 +10018,7 @@ actualización:</translation>
     </message>
     <message>
         <source>On Bisector</source>
-        <translation>En bisectriz</translation>
+        <translation>En Bisectriz</translation>
     </message>
     <message>
         <source>O, B</source>
@@ -10019,7 +10026,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Longitud a la línea</translation>
+        <translation>Longitud a Línea</translation>
     </message>
     <message>
         <source>P, S</source>
@@ -10035,7 +10042,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Intersect Axis and Triangle</source>
-        <translation>Intersección del Eje y el Triángulo</translation>
+        <translation>Intersección Eje y Triángulo</translation>
     </message>
     <message>
         <source>X, T</source>
@@ -10059,7 +10066,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Intersección de Línea y Eje</translation>
+        <translation>Intersección Línea y Eje</translation>
     </message>
     <message>
         <source>L, X</source>
@@ -10067,7 +10074,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Midpoint On Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto Medio de Línea</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -10091,7 +10098,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Curves</source>
-        <translation type="unfinished"></translation>
+        <translation>Curvas</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
@@ -10111,7 +10118,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation type="unfinished"></translation>
+        <translation>Curva - Fijo</translation>
     </message>
     <message>
         <source>Alt+Shift+C</source>
@@ -10135,7 +10142,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto - En Spline	</translation>
     </message>
     <message>
         <source>O, S</source>
@@ -10143,7 +10150,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto - Intersección de Curvas</translation>
     </message>
     <message>
         <source>I, C</source>
@@ -10151,27 +10158,19 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Punto - de intersección de Curva y Eje</translation>
+        <translation>Punto - Intersección Curva y Eje</translation>
     </message>
     <message>
         <source>C, X</source>
         <translation>C, X</translation>
     </message>
     <message>
-        <source>Point - Intersect Curve and Line</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C, L</source>
-        <translation>C, L</translation>
-    </message>
-    <message>
         <source>Arcs</source>
-        <translation type="unfinished"></translation>
+        <translation>Arcos</translation>
     </message>
     <message>
         <source>Arc - Radius and Angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco - Radio y Ángulos</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -10179,7 +10178,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco - Radio y Longitud</translation>
     </message>
     <message>
         <source>Alt+Shift+A</source>
@@ -10187,7 +10186,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punto - En arco</translation>
+        <translation>Punto - En Arco</translation>
     </message>
     <message>
         <source>O, A</source>
@@ -10195,7 +10194,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto - Intersección Arco y Eje</translation>
     </message>
     <message>
         <source>A, X</source>
@@ -10203,7 +10202,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punto - de la intersección de arcos</translation>
+        <translation>Punto - Intersección de Arcos</translation>
     </message>
     <message>
         <source>I, A</source>
@@ -10211,7 +10210,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punto - de intersección de Círculos</translation>
+        <translation>Punto - Intersección de Círculos</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -10219,7 +10218,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto - Intersección Círculo y Tangente</translation>
     </message>
     <message>
         <source>C, T</source>
@@ -10227,7 +10226,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto - Intersección Arco y Tangente</translation>
     </message>
     <message>
         <source>A, T</source>
@@ -10235,7 +10234,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Elliptical Arc</source>
-        <translation type="unfinished"></translation>
+        <translation>Arco Elíptico</translation>
     </message>
     <message>
         <source>Alt+E</source>
@@ -10247,7 +10246,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Add Objects to Group</source>
-        <translation>Aañadir objetos al grupo</translation>
+        <translation>Aañadir Objetos al Grupo</translation>
     </message>
     <message>
         <source>G</source>
@@ -10263,7 +10262,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflejar por Línea</translation>
     </message>
     <message>
         <source>M, L</source>
@@ -10271,7 +10270,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Reflejar por Eje</translation>
     </message>
     <message>
         <source>M, A</source>
@@ -10287,7 +10286,7 @@ actualización:</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinzas Correctas</translation>
     </message>
     <message>
         <source>T, D</source>
@@ -10303,11 +10302,11 @@ actualización:</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>Pieza de patrón</translation>
+        <translation>Pieza de Patrón</translation>
     </message>
     <message>
         <source>New Pattern Piece</source>
-        <translation>Nueva pieza de patrón</translation>
+        <translation>Nueva Pieza de Patrón</translation>
     </message>
     <message>
         <source>N, P</source>
@@ -10315,7 +10314,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Anchor Point</source>
-        <translation type="unfinished"></translation>
+        <translation>Punto de Anclaje</translation>
     </message>
     <message>
         <source>A, P</source>
@@ -10323,7 +10322,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Ruta interna</translation>
+        <translation>Ruta Interna</translation>
     </message>
     <message>
         <source>I, P</source>
@@ -10335,7 +10334,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Edit Properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Editar Propiedades</translation>
     </message>
     <message>
         <source>P</source>
@@ -10343,7 +10342,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Alternar Cerrar</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10367,7 +10366,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Traer al Frente</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
@@ -10375,7 +10374,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bajar al Fondo</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -10435,7 +10434,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Last Tool</source>
-        <translation type="unfinished"></translation>
+        <translation>Última Herramienta</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
@@ -11160,7 +11159,7 @@ Do you want to save your changes?</source>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Pieza en lista de maquetación</translation>
+        <translation>Pieza en Lista de Maquetación</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
@@ -11179,7 +11178,7 @@ Do you want to save your changes?</source>
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>Bloqueo Pieza de patrón</translation>
+        <translation>Bloqueo pieza de patrón</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
@@ -11352,15 +11351,15 @@ Do you want to save your changes?</source>
     <name>VAbstractMainWindow</name>
     <message>
         <source>Confirm format rewriting</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Confirmar la reescritura del formato</translation>
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Este archivo utiliza la versión v%1 del formato anterior. La actual es v%2. Si guarda el archivo con esta versión de la aplicación, se actualizará la versión de formato de este archivo. Esto puede impedir que pueda abrir el archivo con versiones anteriores de la aplicación. ¿Realmente desea continuar?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valores separados por comas</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -12052,7 +12051,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Show Point Name</source>
-        <translation>Mostrar Nombre del punto</translation>
+        <translation>Mostrar Nombre del Punto</translation>
     </message>
     <message>
         <source>Add Group Object</source>
@@ -12060,7 +12059,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Eliminar objeto de grupo</translation>
+        <translation>Eliminar Objeto de Grupo</translation>
     </message>
 </context>
 <context>
@@ -12106,7 +12105,7 @@ Do you want to save your changes?</source>
     <name>VNodePoint</name>
     <message>
         <source>Show Point Name</source>
-        <translation>Mostrar Nombre del punto</translation>
+        <translation>Mostrar Nombre del Punto</translation>
     </message>
 </context>
 <context>
@@ -12211,7 +12210,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating point of intersection curve and axis</source>
-        <translation>Error al crear o actualizar el punto de intersección de curva y eje</translation>
+        <translation>Error al crear o actualizar el punto de intersección curva y eje</translation>
     </message>
     <message>
         <source>Error creating or updating line</source>
@@ -12405,13 +12404,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VSimpleCurve</name>
-    <message>
-        <source>VSimpleCurve::RefreshGeometry: pointer to curve is null.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>VSplinePath</name>
     <message>
         <source>Not enough points to create the spline.</source>
@@ -12506,7 +12498,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Punto de intersección de Curva y Eje</translation>
+        <translation>Punto de Intersección Curva y Eje</translation>
     </message>
 </context>
 <context>
@@ -12649,7 +12641,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Intersección de Línea y Eje</translation>
+        <translation>Intersección Línea y Eje</translation>
     </message>
 </context>
 <context>
@@ -12716,7 +12708,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>True darts</source>
-        <translation>Pinzas correctas</translation>
+        <translation>Pinzas Correctas</translation>
     </message>
     <message>
         <source>Base point:</source>
@@ -12880,7 +12872,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Punto - de intersección XY</translation>
+        <translation>Punto - Intersección XY</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -12896,11 +12888,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Mirror by Line</source>
-        <translation>Reflejar por línea</translation>
+        <translation>Reflejar por Línea</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>Reflejar por el eje</translation>
+        <translation>Reflejar por Eje</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -12932,15 +12924,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
-        <translation>Arco - Radio y ángulos</translation>
+        <translation>Arco - Radio y Ángulos</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
-        <translation>Arco - radio y longitud</translation>
+        <translation>Arco - Radio y Longitud</translation>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punto - En bisectriz</translation>
+        <translation>Punto - En Bisectriz</translation>
     </message>
     <message>
         <source>Second dart point:</source>
@@ -12952,7 +12944,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punto - En arco</translation>
+        <translation>Punto - En Arco</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
@@ -12964,7 +12956,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punto - de intersección de Línea y Perpendicular</translation>
+        <translation>Punto - Intersección de Línea y Perpendicular</translation>
     </message>
     <message>
         <source>Line</source>
@@ -12984,7 +12976,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punto - En perpendicular</translation>
+        <translation>Punto - En Perpendicular</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -12992,7 +12984,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punto - de la intersección del arco y línea</translation>
+        <translation>Punto - Intersección Arco y Línea</translation>
     </message>
     <message>
         <source>1st line point:</source>
@@ -13004,11 +12996,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punto - de la intersección de arcos</translation>
+        <translation>Punto - Intersección de Arcos</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punto - de intersección de Círculos</translation>
+        <translation>Punto - Intersección de Círculos</translation>
     </message>
     <message>
         <source>First circle:</source>
@@ -13024,7 +13016,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punto - de intersección de Curvas</translation>
+        <translation>Punto - Intersección de Curvas</translation>
     </message>
     <message>
         <source>Vertical take:</source>
@@ -13036,15 +13028,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punto - de intersección de circulo y tangente</translation>
+        <translation>Punto - Intersección Círculo y Tangente</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punto - de intersección de arco y tangente</translation>
+        <translation>Punto - Intersección Arco y tangente</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
-        <translation>Punto a lo largo de la línea</translation>
+        <translation>Punto - Longitud a Línea</translation>
     </message>
     <message>
         <source>Curve - Interactive</source>
@@ -13064,7 +13056,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punto - de intersección de eje y tangente</translation>
+        <translation>Punto - Intersección Eje y Tangente</translation>
     </message>
     <message>
         <source>1st axis point:</source>
@@ -13076,15 +13068,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Line and Axis</source>
-        <translation>Punto - de la intersección del línea y eje</translation>
+        <translation>Punto - Intersección Línea y Eje</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Punto - de intersección de Curva y Eje</translation>
+        <translation>Punto - Intersección Curva y Eje</translation>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Arco -Elíptico</translation>
+        <translation>Arco - Elíptico</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -13111,7 +13103,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Intersección del arco y la tangente</translation>
+        <translation>Intersección Arco y Tangente</translation>
     </message>
 </context>
 <context>
@@ -13137,7 +13129,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punto de la intersección de arcos</translation>
+        <translation>Punto Intersección de Arcos</translation>
     </message>
 </context>
 <context>
@@ -13148,7 +13140,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punto de intersección de las Curvas</translation>
+        <translation>Punto Intersección de Curvas</translation>
     </message>
 </context>
 <context>
@@ -14153,20 +14145,20 @@ Do you want to save your changes?</source>
     <message>
         <source>cm</source>
         <comment>centimeter</comment>
-        <translatorcomment>centímetro</translatorcomment>
+        <translatorcomment>centimeter</translatorcomment>
         <translation>cm</translation>
     </message>
     <message>
         <source>mm</source>
         <comment>millimeter</comment>
-        <translatorcomment>milímetro</translatorcomment>
+        <translatorcomment>millimeter</translatorcomment>
         <translation>mm</translation>
     </message>
     <message>
         <source>in</source>
         <comment>inch</comment>
         <translatorcomment>pulgada</translatorcomment>
-        <translation>pulgada</translation>
+        <translation>pulg</translation>
     </message>
     <message>
         <source>Line_</source>
@@ -14737,7 +14729,7 @@ Usage: fmod(x; y)</comment>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;Intersección de Curva y Eje &lt;/b&gt;: ángulo = %1°, mantenga presionado &lt;b&gt;SHIFT&lt;/b&gt; para fijar el próximo ángulo recto o su mitad. Presione &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación </translation>
+        <translation>&lt;b&gt;Intersección Curva y Eje &lt;/b&gt;: ángulo = %1°, mantenga presionado &lt;b&gt;SHIFT&lt;/b&gt; para fijar el próximo ángulo recto o su mitad. Presione &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación </translation>
     </message>
 </context>
 <context>
@@ -14751,7 +14743,7 @@ Usage: fmod(x; y)</comment>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Intersección de Línea y Eje&lt;/b&gt;: ángulo = %1°, mantenga presionado &lt;b&gt;SHIFT&lt;/b&gt; para fijar el próximo ángulo recto o su mitad. Presione &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la herramienta</translation>
+        <translation>&lt;b&gt;Intersección Línea y Eje&lt;/b&gt;: ángulo = %1°, mantenga presionado &lt;b&gt;SHIFT&lt;/b&gt; para fijar el próximo ángulo recto o su mitad. Presione &lt;b&gt;ENTER&lt;/b&gt; para finalizar la creación de la herramienta</translation>
     </message>
 </context>
 <context>

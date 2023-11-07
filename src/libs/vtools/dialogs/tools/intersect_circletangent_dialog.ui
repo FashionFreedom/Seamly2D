@@ -371,7 +371,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>85</width>
               <height>0</height>
              </size>
             </property>
@@ -557,8 +557,8 @@
   </layout>
  </widget>
  <resources>
-  <include location="../../../vmisc/share/resources/icon.qrc"/>
   <include location="../../../vmisc/share/resources/theme.qrc"/>
+  <include location="../../../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>

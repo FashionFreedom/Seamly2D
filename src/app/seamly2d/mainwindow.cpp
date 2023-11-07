@@ -3157,7 +3157,7 @@ void MainWindow::CancelTool()
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(false);
             ui->arrow_Action->setChecked(false);
-            helpLabel->setText("");
+            helpLabel->setText(QString(""));
 
             // Crash: using CRTL+Z while using line tool.
             undoAction->setEnabled(false);
@@ -4998,7 +4998,7 @@ void MainWindow::CreateMenus()
     separatorAct->setSeparator(true);
     ui->view_Menu->addAction(separatorAct);
 
-    QMenu *menu = new QMenu("Toolbars");
+    QMenu *menu = new QMenu(tr("Toolbars"));
     ui->view_Menu->addMenu(menu);
 
     menu->addAction(ui->file_ToolBar->toggleViewAction());
@@ -6352,6 +6352,8 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
+    helpLabel->setText(QString(""));
+    
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);
     ui->exportPiecesAs_ToolButton->setChecked(true);
@@ -6418,6 +6420,8 @@ void MainWindow::exportPiecesAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportDraftBlocksAs()
 {
+    helpLabel->setText(QString(""));
+
     //select export tool button
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);

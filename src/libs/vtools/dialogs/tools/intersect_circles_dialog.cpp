@@ -116,12 +116,6 @@ IntersectCirclesDialog::IntersectCirclesDialog(const VContainer *data, const qui
     connect(ui->plainTextEditCircle2Radius, &QPlainTextEdit::textChanged, this,
             &IntersectCirclesDialog::Circle2RadiusChanged);
 
-    connect(ui->pushButtonGrowCircle1Radius, &QPushButton::clicked, this,
-            &IntersectCirclesDialog::DeployCircle1RadiusTextEdit);
-
-    connect(ui->pushButtonGrowCircle2Radius, &QPushButton::clicked, this,
-            &IntersectCirclesDialog::DeployCircle2RadiusTextEdit);
-
     vis = new IntersectCirclesVisual(data);
 }
 
@@ -181,11 +175,6 @@ QString IntersectCirclesDialog::GetFirstCircleRadius() const
 void IntersectCirclesDialog::SetFirstCircleRadius(const QString &value)
 {
     const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployCircle1RadiusTextEdit();
-    }
     ui->plainTextEditCircle1Radius->setPlainText(formula);
 
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);
@@ -206,11 +195,6 @@ QString IntersectCirclesDialog::GetSecondCircleRadius() const
 void IntersectCirclesDialog::SetSecondCircleRadius(const QString &value)
 {
     const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
-    // increase height if needed.
-    if (formula.length() > 80)
-    {
-        this->DeployCircle2RadiusTextEdit();
-    }
     ui->plainTextEditCircle2Radius->setPlainText(formula);
 
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);
@@ -297,18 +281,6 @@ void IntersectCirclesDialog::PointChanged()
     ChangeColor(ui->labelCircle1Center, color);
     ChangeColor(ui->labelCircle1Center, color);
     CheckState();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void IntersectCirclesDialog::DeployCircle1RadiusTextEdit()
-{
-    DeployFormula(ui->plainTextEditCircle1Radius, ui->pushButtonGrowCircle1Radius, formulaBaseHeightCircle1Radius);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void IntersectCirclesDialog::DeployCircle2RadiusTextEdit()
-{
-    DeployFormula(ui->plainTextEditCircle2Radius, ui->pushButtonGrowCircle2Radius, formulaBaseHeightCircle2Radius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

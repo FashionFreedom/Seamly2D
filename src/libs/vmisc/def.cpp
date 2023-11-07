@@ -401,7 +401,7 @@ QString strippedName(const QString &fullFileName)
 QString makeHeaderName(const QString &name)
 {
     QString headerStr = QObject::tr("%1").arg(name);
-    return headerStr.left(1).toUpper();
+    return headerStr.at(0).toUpper();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
