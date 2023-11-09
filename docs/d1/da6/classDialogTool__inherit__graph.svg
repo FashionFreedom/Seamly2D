@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 7463;
+var viewWidth = 7444;
 var viewHeight = 1453;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,7 +54,7 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>DialogTool</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-1449 7459,-1449 7459,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-1449 7440,-1449 7440,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
@@ -1845,195 +1845,193 @@ var sectionId = 'dynsection-0';
 <g id="node43" class="node">
 <title>Node43</title>
 <g id="a_node43"><a xlink:href="../../d0/d09/classIntersectCirclesDialog.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="6762,-88.5 6762,-541.5 6938,-541.5 6938,-88.5 6762,-88.5"/>
-<text text-anchor="middle" x="6850" y="-529.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesDialog</text>
-<polyline fill="none" stroke="black" points="6762,-522.5 6938,-522.5 "/>
-<text text-anchor="start" x="6770" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="6770" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagCircle1Radius</text>
-<text text-anchor="start" x="6770" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagCircle2Radius</text>
-<text text-anchor="start" x="6770" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerCircle1Radius</text>
-<text text-anchor="start" x="6770" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerCircle2Radius</text>
-<text text-anchor="start" x="6770" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circle1Radius</text>
-<text text-anchor="start" x="6770" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circle2Radius</text>
-<text text-anchor="start" x="6770" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightCircle1</text>
-<text text-anchor="start" x="6770" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">Radius</text>
-<text text-anchor="start" x="6770" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightCircle2</text>
-<text text-anchor="start" x="6770" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">Radius</text>
-<polyline fill="none" stroke="black" points="6762,-393.5 6938,-393.5 "/>
-<text text-anchor="start" x="6770" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IntersectCirclesDialog()</text>
-<text text-anchor="start" x="6770" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~IntersectCirclesDialog()</text>
-<text text-anchor="start" x="6770" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
-<text text-anchor="start" x="6770" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
-<text text-anchor="start" x="6770" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
-<text text-anchor="start" x="6770" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
-<text text-anchor="start" x="6770" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
-<text text-anchor="start" x="6770" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
-<text text-anchor="start" x="6770" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
-<text text-anchor="start" x="6770" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
-<text text-anchor="start" x="6770" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
-<text text-anchor="start" x="6770" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
-<text text-anchor="start" x="6770" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
-<text text-anchor="start" x="6770" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="6770" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointChanged()</text>
-<text text-anchor="start" x="6770" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployCircle1RadiusTextEdit()</text>
-<text text-anchor="start" x="6770" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DeployCircle2RadiusTextEdit()</text>
-<text text-anchor="start" x="6770" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Circle1RadiusChanged()</text>
-<text text-anchor="start" x="6770" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Circle2RadiusChanged()</text>
-<text text-anchor="start" x="6770" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXCircle1Radius()</text>
-<text text-anchor="start" x="6770" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXCircle2Radius()</text>
-<text text-anchor="start" x="6770" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalCircle1Radius()</text>
-<text text-anchor="start" x="6770" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalCircle2Radius()</text>
-<text text-anchor="start" x="6770" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="6770" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="6770" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="6770" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<polygon fill="white" stroke="black" points="6762.5,-99.5 6762.5,-530.5 6919.5,-530.5 6919.5,-99.5 6762.5,-99.5"/>
+<text text-anchor="middle" x="6841" y="-518.5" font-family="Helvetica,sans-Serif" font-size="10.00">IntersectCirclesDialog</text>
+<polyline fill="none" stroke="black" points="6762.5,-511.5 6919.5,-511.5 "/>
+<text text-anchor="start" x="6770.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="6770.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagCircle1Radius</text>
+<text text-anchor="start" x="6770.5" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagCircle2Radius</text>
+<text text-anchor="start" x="6770.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerCircle1Radius</text>
+<text text-anchor="start" x="6770.5" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; timerCircle2Radius</text>
+<text text-anchor="start" x="6770.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circle1Radius</text>
+<text text-anchor="start" x="6770.5" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; circle2Radius</text>
+<text text-anchor="start" x="6770.5" y="-422.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightCircle1</text>
+<text text-anchor="start" x="6770.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">Radius</text>
+<text text-anchor="start" x="6770.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; formulaBaseHeightCircle2</text>
+<text text-anchor="start" x="6770.5" y="-389.5" font-family="Helvetica,sans-Serif" font-size="10.00">Radius</text>
+<polyline fill="none" stroke="black" points="6762.5,-382.5 6919.5,-382.5 "/>
+<text text-anchor="start" x="6770.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IntersectCirclesDialog()</text>
+<text text-anchor="start" x="6770.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~IntersectCirclesDialog()</text>
+<text text-anchor="start" x="6770.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPointName()</text>
+<text text-anchor="start" x="6770.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleCenterId()</text>
+<text text-anchor="start" x="6770.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleCenterId()</text>
+<text text-anchor="start" x="6770.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleCenterId()</text>
+<text text-anchor="start" x="6770.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleCenterId()</text>
+<text text-anchor="start" x="6770.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFirstCircleRadius()</text>
+<text text-anchor="start" x="6770.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetFirstCircleRadius()</text>
+<text text-anchor="start" x="6770.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetSecondCircleRadius()</text>
+<text text-anchor="start" x="6770.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSecondCircleRadius()</text>
+<text text-anchor="start" x="6770.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCrossCirclesPoint()</text>
+<text text-anchor="start" x="6770.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setCirclesCrossPoint()</text>
+<text text-anchor="start" x="6770.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="6770.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointChanged()</text>
+<text text-anchor="start" x="6770.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Circle1RadiusChanged()</text>
+<text text-anchor="start" x="6770.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Circle2RadiusChanged()</text>
+<text text-anchor="start" x="6770.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXCircle1Radius()</text>
+<text text-anchor="start" x="6770.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FXCircle2Radius()</text>
+<text text-anchor="start" x="6770.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalCircle1Radius()</text>
+<text text-anchor="start" x="6770.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ EvalCircle2Radius()</text>
+<text text-anchor="start" x="6770.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="6770.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="6770.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="6770.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node43 -->
 <g id="edge43" class="edge">
 <title>Node1&#45;&gt;Node43</title>
-<path fill="none" stroke="midnightblue" d="M3828.38,-1001.69C4316.66,-971.12 6522.72,-823.09 6753,-630 6780.87,-606.63 6800.88,-575.43 6815.21,-541.74"/>
-<polygon fill="none" stroke="midnightblue" points="3827.96,-998.21 3818.19,-1002.32 3828.39,-1005.19 3827.96,-998.21"/>
+<path fill="none" stroke="midnightblue" d="M3828.47,-1001.8C4317.24,-971.79 6525.28,-826.11 6753,-630 6783.24,-603.95 6803.5,-568.44 6816.99,-530.65"/>
+<polygon fill="none" stroke="midnightblue" points="3828.05,-998.32 3818.28,-1002.42 3828.47,-1005.3 3828.05,-998.32"/>
 </g>
 <!-- Node44 -->
 <g id="node44" class="node">
 <title>Node44</title>
 <g id="a_node44"><a xlink:href="../../d5/d41/classPatternPieceDialog.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="6956.5,-28 6956.5,-602 7153.5,-602 7153.5,-28 6956.5,-28"/>
-<text text-anchor="middle" x="7055" y="-590" font-family="Helvetica,sans-Serif" font-size="10.00">PatternPieceDialog</text>
-<polyline fill="none" stroke="black" points="6956.5,-583 7153.5,-583 "/>
-<text text-anchor="start" x="6964.5" y="-571" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="6964.5" y="-560" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; applyAllowed</text>
-<text text-anchor="start" x="6964.5" y="-549" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagGrainlineAnchor</text>
-<text text-anchor="start" x="6964.5" y="-538" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelAnchor</text>
-<text text-anchor="start" x="6964.5" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelAnchor</text>
-<text text-anchor="start" x="6964.5" y="-516" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagGrainlineFormula</text>
-<text text-anchor="start" x="6964.5" y="-505" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelAngle</text>
-<text text-anchor="start" x="6964.5" y="-494" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelFormula</text>
-<text text-anchor="start" x="6964.5" y="-483" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelAngle</text>
-<text text-anchor="start" x="6964.5" y="-472" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelFormula</text>
-<text text-anchor="start" x="6964.5" y="-461" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
-<polyline fill="none" stroke="black" points="6956.5,-454 7153.5,-454 "/>
-<text text-anchor="start" x="6964.5" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternPieceDialog()</text>
-<text text-anchor="start" x="6964.5" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PatternPieceDialog()</text>
-<text text-anchor="start" x="6964.5" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">+ pageChanged()</text>
-<text text-anchor="start" x="6964.5" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">+ enableApply()</text>
-<text text-anchor="start" x="6964.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiece()</text>
-<text text-anchor="start" x="6964.5" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPiece()</text>
-<text text-anchor="start" x="6964.5" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSeamAllowanceWidthFormula()</text>
-<text text-anchor="start" x="6964.5" y="-365" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="6964.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
-<text text-anchor="start" x="6964.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
-<text text-anchor="start" x="6964.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
-<text text-anchor="start" x="6964.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
-<text text-anchor="start" x="6964.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="6964.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
-<text text-anchor="start" x="6964.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
-<text text-anchor="start" x="6964.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreatePiece()</text>
-<text text-anchor="start" x="6964.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newMainPathItem()</text>
-<text text-anchor="start" x="6964.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newCustomSeamAllowance()</text>
-<text text-anchor="start" x="6964.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newInternalPath()</text>
-<text text-anchor="start" x="6964.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newAnchorPoint()</text>
-<text text-anchor="start" x="6964.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPathName()</text>
-<text text-anchor="start" x="6964.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPieceColor()</text>
-<text text-anchor="start" x="6964.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPieceColor()</text>
-<text text-anchor="start" x="6964.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPieceFill()</text>
-<text text-anchor="start" x="6964.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPieceFill()</text>
-<text text-anchor="start" x="6964.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">and 49 more...</text>
-<text text-anchor="start" x="6964.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setErrorText()</text>
-<text text-anchor="start" x="6964.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; clearErrorText()</text>
-<text text-anchor="start" x="6964.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pieceNameChanged()</text>
-<text text-anchor="start" x="6964.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pieceColorChanged()</text>
-<text text-anchor="start" x="6964.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showMainPathContextMenu()</text>
-<text text-anchor="start" x="6964.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showCustomSAContextMenu()</text>
-<text text-anchor="start" x="6964.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showInternalPathsContext</text>
-<text text-anchor="start" x="6964.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">Menu()</text>
-<text text-anchor="start" x="6964.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showAnchorsContextMenu()</text>
-<text text-anchor="start" x="6964.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; nodeListChanged()</text>
-<text text-anchor="start" x="6964.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; enableSeamAllowance()</text>
-<text text-anchor="start" x="6964.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">and 58 more...</text>
+<polygon fill="white" stroke="black" points="6937.5,-28 6937.5,-602 7134.5,-602 7134.5,-28 6937.5,-28"/>
+<text text-anchor="middle" x="7036" y="-590" font-family="Helvetica,sans-Serif" font-size="10.00">PatternPieceDialog</text>
+<polyline fill="none" stroke="black" points="6937.5,-583 7134.5,-583 "/>
+<text text-anchor="start" x="6945.5" y="-571" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="6945.5" y="-560" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; applyAllowed</text>
+<text text-anchor="start" x="6945.5" y="-549" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagGrainlineAnchor</text>
+<text text-anchor="start" x="6945.5" y="-538" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelAnchor</text>
+<text text-anchor="start" x="6945.5" y="-527" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelAnchor</text>
+<text text-anchor="start" x="6945.5" y="-516" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagGrainlineFormula</text>
+<text text-anchor="start" x="6945.5" y="-505" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelAngle</text>
+<text text-anchor="start" x="6945.5" y="-494" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPieceLabelFormula</text>
+<text text-anchor="start" x="6945.5" y="-483" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelAngle</text>
+<text text-anchor="start" x="6945.5" y="-472" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; flagPatternLabelFormula</text>
+<text text-anchor="start" x="6945.5" y="-461" font-family="Helvetica,sans-Serif" font-size="10.00">and 20 more...</text>
+<polyline fill="none" stroke="black" points="6937.5,-454 7134.5,-454 "/>
+<text text-anchor="start" x="6945.5" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternPieceDialog()</text>
+<text text-anchor="start" x="6945.5" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PatternPieceDialog()</text>
+<text text-anchor="start" x="6945.5" y="-420" font-family="Helvetica,sans-Serif" font-size="10.00">+ pageChanged()</text>
+<text text-anchor="start" x="6945.5" y="-409" font-family="Helvetica,sans-Serif" font-size="10.00">+ enableApply()</text>
+<text text-anchor="start" x="6945.5" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiece()</text>
+<text text-anchor="start" x="6945.5" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPiece()</text>
+<text text-anchor="start" x="6945.5" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSeamAllowanceWidthFormula()</text>
+<text text-anchor="start" x="6945.5" y="-365" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="6945.5" y="-354" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowDialog()</text>
+<text text-anchor="start" x="6945.5" y="-343" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<text text-anchor="start" x="6945.5" y="-332" font-family="Helvetica,sans-Serif" font-size="10.00"># CheckState()</text>
+<text text-anchor="start" x="6945.5" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+<text text-anchor="start" x="6945.5" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="6945.5" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
+<text text-anchor="start" x="6945.5" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
+<text text-anchor="start" x="6945.5" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreatePiece()</text>
+<text text-anchor="start" x="6945.5" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newMainPathItem()</text>
+<text text-anchor="start" x="6945.5" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newCustomSeamAllowance()</text>
+<text text-anchor="start" x="6945.5" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newInternalPath()</text>
+<text text-anchor="start" x="6945.5" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; newAnchorPoint()</text>
+<text text-anchor="start" x="6945.5" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPathName()</text>
+<text text-anchor="start" x="6945.5" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPieceColor()</text>
+<text text-anchor="start" x="6945.5" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPieceColor()</text>
+<text text-anchor="start" x="6945.5" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getPieceFill()</text>
+<text text-anchor="start" x="6945.5" y="-178" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPieceFill()</text>
+<text text-anchor="start" x="6945.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">and 49 more...</text>
+<text text-anchor="start" x="6945.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setErrorText()</text>
+<text text-anchor="start" x="6945.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; clearErrorText()</text>
+<text text-anchor="start" x="6945.5" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pieceNameChanged()</text>
+<text text-anchor="start" x="6945.5" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pieceColorChanged()</text>
+<text text-anchor="start" x="6945.5" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showMainPathContextMenu()</text>
+<text text-anchor="start" x="6945.5" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showCustomSAContextMenu()</text>
+<text text-anchor="start" x="6945.5" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showInternalPathsContext</text>
+<text text-anchor="start" x="6945.5" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">Menu()</text>
+<text text-anchor="start" x="6945.5" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showAnchorsContextMenu()</text>
+<text text-anchor="start" x="6945.5" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; nodeListChanged()</text>
+<text text-anchor="start" x="6945.5" y="-46" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; enableSeamAllowance()</text>
+<text text-anchor="start" x="6945.5" y="-35" font-family="Helvetica,sans-Serif" font-size="10.00">and 47 more...</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node44 -->
 <g id="edge44" class="edge">
 <title>Node1&#45;&gt;Node44</title>
-<path fill="none" stroke="midnightblue" d="M3828.54,-1002.29C4335.51,-973.85 6697.23,-831.24 6947,-630 6957.32,-621.68 6966.67,-612.32 6975.12,-602.18"/>
-<polygon fill="none" stroke="midnightblue" points="3828.12,-998.81 3818.33,-1002.86 3828.51,-1005.79 3828.12,-998.81"/>
+<path fill="none" stroke="midnightblue" d="M3828.42,-1002.24C4333.48,-973.62 6681.03,-830.51 6929,-630 6939.3,-621.67 6948.61,-612.3 6957.03,-602.15"/>
+<polygon fill="none" stroke="midnightblue" points="3828.05,-998.76 3818.26,-1002.82 3828.44,-1005.75 3828.05,-998.76"/>
 </g>
 <!-- Node45 -->
 <g id="node45" class="node">
 <title>Node45</title>
 <g id="a_node45"><a xlink:href="../../d1/d64/classPointIntersectXYDialog.html" target="_top" xlink:title="The PointIntersectXYDialog class dialog for ToolPointOfIntersection. Help create point and edit optio...">
-<polygon fill="white" stroke="black" points="7171.5,-198.5 7171.5,-431.5 7326.5,-431.5 7326.5,-198.5 7171.5,-198.5"/>
-<text text-anchor="middle" x="7249" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointIntersectXYDialog</text>
-<polyline fill="none" stroke="black" points="7171.5,-412.5 7326.5,-412.5 "/>
-<text text-anchor="start" x="7179.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="black" points="7171.5,-393.5 7326.5,-393.5 "/>
-<text text-anchor="start" x="7179.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointIntersectXYDialog()</text>
-<text text-anchor="start" x="7179.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PointIntersectXYDialog()</text>
-<text text-anchor="start" x="7179.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointName()</text>
-<text text-anchor="start" x="7179.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPointId()</text>
-<text text-anchor="start" x="7179.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPointId()</text>
-<text text-anchor="start" x="7179.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPointId()</text>
-<text text-anchor="start" x="7179.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPointId()</text>
-<text text-anchor="start" x="7179.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
-<text text-anchor="start" x="7179.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
-<text text-anchor="start" x="7179.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
-<text text-anchor="start" x="7179.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
-<text text-anchor="start" x="7179.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
-<text text-anchor="start" x="7179.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
-<text text-anchor="start" x="7179.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="7179.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointChanged()</text>
-<text text-anchor="start" x="7179.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
-<text text-anchor="start" x="7179.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
+<polygon fill="white" stroke="black" points="7152.5,-198.5 7152.5,-431.5 7307.5,-431.5 7307.5,-198.5 7152.5,-198.5"/>
+<text text-anchor="middle" x="7230" y="-419.5" font-family="Helvetica,sans-Serif" font-size="10.00">PointIntersectXYDialog</text>
+<polyline fill="none" stroke="black" points="7152.5,-412.5 7307.5,-412.5 "/>
+<text text-anchor="start" x="7160.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="black" points="7152.5,-393.5 7307.5,-393.5 "/>
+<text text-anchor="start" x="7160.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PointIntersectXYDialog()</text>
+<text text-anchor="start" x="7160.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PointIntersectXYDialog()</text>
+<text text-anchor="start" x="7160.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPointName()</text>
+<text text-anchor="start" x="7160.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getFirstPointId()</text>
+<text text-anchor="start" x="7160.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setFirstPointId()</text>
+<text text-anchor="start" x="7160.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getSecondPointId()</text>
+<text text-anchor="start" x="7160.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSecondPointId()</text>
+<text text-anchor="start" x="7160.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineType()</text>
+<text text-anchor="start" x="7160.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineType()</text>
+<text text-anchor="start" x="7160.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineWeight()</text>
+<text text-anchor="start" x="7160.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineWeight()</text>
+<text text-anchor="start" x="7160.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLineColor()</text>
+<text text-anchor="start" x="7160.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setLineColor()</text>
+<text text-anchor="start" x="7160.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="7160.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ pointChanged()</text>
+<text text-anchor="start" x="7160.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ShowVisualization()</text>
+<text text-anchor="start" x="7160.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SaveData()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node45 -->
 <g id="edge45" class="edge">
 <title>Node1&#45;&gt;Node45</title>
-<path fill="none" stroke="midnightblue" d="M3828.26,-1003.33C4355.5,-979.43 6901.73,-853 7163,-630 7219.75,-581.56 7240.84,-499.59 7247.96,-431.55"/>
-<polygon fill="none" stroke="midnightblue" points="3827.86,-999.84 3818.03,-1003.79 3828.18,-1006.84 3827.86,-999.84"/>
+<path fill="none" stroke="midnightblue" d="M3828.59,-1003.25C4354.8,-979.05 6884.37,-851.74 7144,-630 7200.73,-581.55 7221.83,-499.58 7228.95,-431.54"/>
+<polygon fill="none" stroke="midnightblue" points="3828.21,-999.77 3818.38,-1003.72 3828.53,-1006.76 3828.21,-999.77"/>
 </g>
 <!-- Node46 -->
 <g id="node46" class="node">
 <title>Node46</title>
 <g id="a_node46"><a xlink:href="../../d0/dc3/classUnionDialog.html" target="_top" xlink:title="The UnionDialog class dialog for Union Tool.">
-<polygon fill="white" stroke="black" points="7345,-182 7345,-448 7455,-448 7455,-182 7345,-182"/>
-<text text-anchor="middle" x="7400" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">UnionDialog</text>
-<polyline fill="none" stroke="black" points="7345,-429 7455,-429 "/>
-<text text-anchor="start" x="7353" y="-417" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="7353" y="-406" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece1_Index</text>
-<text text-anchor="start" x="7353" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece2_Index</text>
-<text text-anchor="start" x="7353" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d1</text>
-<text text-anchor="start" x="7353" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d2</text>
-<text text-anchor="start" x="7353" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberD</text>
-<text text-anchor="start" x="7353" y="-351" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberP</text>
-<text text-anchor="start" x="7353" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1</text>
-<text text-anchor="start" x="7353" y="-329" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2</text>
-<text text-anchor="start" x="7353" y="-318" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_beep</text>
-<polyline fill="none" stroke="black" points="7345,-311 7455,-311 "/>
-<text text-anchor="start" x="7353" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionDialog()</text>
-<text text-anchor="start" x="7353" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~UnionDialog()</text>
-<text text-anchor="start" x="7353" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Id()</text>
-<text text-anchor="start" x="7353" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Id()</text>
-<text text-anchor="start" x="7353" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Index()</text>
-<text text-anchor="start" x="7353" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Index()</text>
-<text text-anchor="start" x="7353" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ retainPieces()</text>
-<text text-anchor="start" x="7353" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
-<text text-anchor="start" x="7353" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckObject()</text>
-<text text-anchor="start" x="7353" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkPiece()</text>
-<text text-anchor="start" x="7353" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; chosenPiece()</text>
+<polygon fill="white" stroke="black" points="7326,-182 7326,-448 7436,-448 7436,-182 7326,-182"/>
+<text text-anchor="middle" x="7381" y="-436" font-family="Helvetica,sans-Serif" font-size="10.00">UnionDialog</text>
+<polyline fill="none" stroke="black" points="7326,-429 7436,-429 "/>
+<text text-anchor="start" x="7334" y="-417" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="7334" y="-406" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece1_Index</text>
+<text text-anchor="start" x="7334" y="-395" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; piece2_Index</text>
+<text text-anchor="start" x="7334" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d1</text>
+<text text-anchor="start" x="7334" y="-373" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d2</text>
+<text text-anchor="start" x="7334" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberD</text>
+<text text-anchor="start" x="7334" y="-351" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; numberP</text>
+<text text-anchor="start" x="7334" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p1</text>
+<text text-anchor="start" x="7334" y="-329" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; p2</text>
+<text text-anchor="start" x="7334" y="-318" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_beep</text>
+<polyline fill="none" stroke="black" points="7326,-311 7436,-311 "/>
+<text text-anchor="start" x="7334" y="-299" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionDialog()</text>
+<text text-anchor="start" x="7334" y="-288" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~UnionDialog()</text>
+<text text-anchor="start" x="7334" y="-277" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Id()</text>
+<text text-anchor="start" x="7334" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Id()</text>
+<text text-anchor="start" x="7334" y="-255" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece1Index()</text>
+<text text-anchor="start" x="7334" y="-244" font-family="Helvetica,sans-Serif" font-size="10.00">+ getPiece2Index()</text>
+<text text-anchor="start" x="7334" y="-233" font-family="Helvetica,sans-Serif" font-size="10.00">+ retainPieces()</text>
+<text text-anchor="start" x="7334" y="-222" font-family="Helvetica,sans-Serif" font-size="10.00">+ ChosenObject()</text>
+<text text-anchor="start" x="7334" y="-211" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CheckObject()</text>
+<text text-anchor="start" x="7334" y="-200" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; checkPiece()</text>
+<text text-anchor="start" x="7334" y="-189" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; chosenPiece()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node46 -->
 <g id="edge46" class="edge">
 <title>Node1&#45;&gt;Node46</title>
-<path fill="none" stroke="midnightblue" d="M3828.44,-1004.14C4372.59,-984.12 7068.19,-873.1 7336,-630 7385.85,-584.75 7402.87,-512.13 7406.96,-448.12"/>
-<polygon fill="none" stroke="midnightblue" points="3828.14,-1000.65 3818.28,-1004.51 3828.4,-1007.64 3828.14,-1000.65"/>
+<path fill="none" stroke="midnightblue" d="M3828.38,-1004.09C4370.67,-983.81 7050.72,-871.84 7317,-630 7366.83,-584.74 7383.86,-512.12 7387.95,-448.11"/>
+<polygon fill="none" stroke="midnightblue" points="3828.11,-1000.59 3818.25,-1004.46 3828.37,-1007.59 3828.11,-1000.59"/>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">

@@ -59,14 +59,15 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="282.5,-0.5 282.5,-134.5 415.5,-134.5 415.5,-0.5 282.5,-0.5"/>
-<text text-anchor="middle" x="349" y="-122.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogPreferences</text>
-<polyline fill="none" stroke="black" points="282.5,-115.5 415.5,-115.5 "/>
-<text text-anchor="start" x="290.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="290.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
-<polyline fill="none" stroke="black" points="282.5,-85.5 415.5,-85.5 "/>
-<text text-anchor="start" x="290.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogPreferences()</text>
-<text text-anchor="start" x="290.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogPreferences()</text>
+<polygon fill="#bfbfbf" stroke="black" points="282.5,-0.5 282.5,-145.5 415.5,-145.5 415.5,-0.5 282.5,-0.5"/>
+<text text-anchor="middle" x="349" y="-133.5" font-family="Helvetica,sans-Serif" font-size="10.00">DialogPreferences</text>
+<polyline fill="none" stroke="black" points="282.5,-126.5 415.5,-126.5 "/>
+<text text-anchor="start" x="290.5" y="-114.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="290.5" y="-103.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_isInitialized</text>
+<polyline fill="none" stroke="black" points="282.5,-96.5 415.5,-96.5 "/>
+<text text-anchor="start" x="290.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ DialogPreferences()</text>
+<text text-anchor="start" x="290.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~DialogPreferences()</text>
+<text text-anchor="start" x="290.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 <text text-anchor="start" x="290.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
 <text text-anchor="start" x="290.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00"># resizeEvent()</text>
 <text text-anchor="start" x="290.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Apply()</text>
@@ -79,34 +80,35 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="0,-276 0,-333 56,-333 56,-276 0,-276"/>
-<text text-anchor="middle" x="28" y="-321" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
-<polyline fill="none" stroke="#bfbfbf" points="0,-314 56,-314 "/>
-<text text-anchor="middle" x="28" y="-302" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="0,-295 56,-295 "/>
-<text text-anchor="middle" x="28" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="0,-281.5 0,-338.5 56,-338.5 56,-281.5 0,-281.5"/>
+<text text-anchor="middle" x="28" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">QDialog</text>
+<polyline fill="none" stroke="#bfbfbf" points="0,-319.5 56,-319.5 "/>
+<text text-anchor="middle" x="28" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="0,-300.5 56,-300.5 "/>
+<text text-anchor="middle" x="28" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M30.97,-265.73C34.9,-239.33 43.99,-204.86 65,-182 122.21,-119.73 218.14,-91.01 282.48,-78.2"/>
-<polygon fill="none" stroke="midnightblue" points="27.49,-265.39 29.67,-275.76 34.43,-266.3 27.49,-265.39"/>
+<path fill="none" stroke="midnightblue" d="M31.84,-271.16C36.17,-246.25 45.39,-214.42 65,-193 122.4,-130.31 218.05,-99.59 282.3,-85.31"/>
+<polygon fill="none" stroke="midnightblue" points="28.33,-270.94 30.27,-281.36 35.25,-272.01 28.33,-270.94"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:href="../../de/dcf/classPreferencesPatternPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="74.5,-221 74.5,-388 239.5,-388 239.5,-221 74.5,-221"/>
-<text text-anchor="middle" x="157" y="-376" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesPatternPage</text>
-<polyline fill="none" stroke="black" points="74.5,-369 239.5,-369 "/>
-<text text-anchor="start" x="82.5" y="-357" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="black" points="74.5,-350 239.5,-350 "/>
-<text text-anchor="start" x="82.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesPatternPage()</text>
-<text text-anchor="start" x="82.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesPatternPage()</text>
-<text text-anchor="start" x="82.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
-<text text-anchor="start" x="82.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ initDefaultSeamAllowance()</text>
+<polygon fill="white" stroke="black" points="74.5,-221 74.5,-399 239.5,-399 239.5,-221 74.5,-221"/>
+<text text-anchor="middle" x="157" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesPatternPage</text>
+<polyline fill="none" stroke="black" points="74.5,-380 239.5,-380 "/>
+<text text-anchor="start" x="82.5" y="-368" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="black" points="74.5,-361 239.5,-361 "/>
+<text text-anchor="start" x="82.5" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesPatternPage()</text>
+<text text-anchor="start" x="82.5" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesPatternPage()</text>
+<text text-anchor="start" x="82.5" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="82.5" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ initDefaultSeamAllowance()</text>
+<text text-anchor="start" x="82.5" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 <text text-anchor="start" x="82.5" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeLabelsTab()</text>
 <text text-anchor="start" x="82.5" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initNotches()</text>
 <text text-anchor="start" x="82.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initGrainlines()</text>
@@ -120,9 +122,9 @@ var sectionId = 'dynsection-1';
 <!-- Node3&#45;&gt;Node1 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M212.02,-220.76C228.04,-198.19 246.07,-174.15 264,-153 267.25,-149.16 270.65,-145.29 274.14,-141.44"/>
-<polygon fill="none" stroke="#404040" points="274.27,-141.29 275.4,-134.17 282.41,-132.47 281.28,-139.6 274.27,-141.29"/>
-<text text-anchor="middle" x="304.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_patternPage</text>
+<path fill="none" stroke="#404040" d="M219.55,-220.66C233.74,-201.64 249.05,-181.88 264,-164 267.26,-160.1 270.64,-156.16 274.09,-152.21"/>
+<polygon fill="none" stroke="#404040" points="274.29,-151.99 275.28,-144.84 282.25,-143.01 281.26,-150.15 274.29,-151.99"/>
+<text text-anchor="middle" x="304.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_patternPage</text>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -140,14 +142,14 @@ var sectionId = 'dynsection-1';
 <!-- Node4&#45;&gt;Node3 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M399.66,-485.57C358.89,-477.39 294.83,-460.15 249,-427 234.21,-416.3 220.71,-402.54 208.87,-388.15"/>
-<polygon fill="none" stroke="midnightblue" points="399.02,-489.01 409.5,-487.46 400.34,-482.14 399.02,-489.01"/>
+<path fill="none" stroke="midnightblue" d="M399.46,-485.29C358.8,-476.91 295.07,-459.54 249,-427 237.77,-419.07 227.21,-409.38 217.54,-399.03"/>
+<polygon fill="none" stroke="midnightblue" points="398.79,-488.73 409.28,-487.23 400.15,-481.86 398.79,-488.73"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../d0/de6/classPreferencesConfigurationPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="258,-182.5 258,-426.5 440,-426.5 440,-182.5 258,-182.5"/>
+<polygon fill="white" stroke="black" points="258,-193.5 258,-426.5 440,-426.5 440,-193.5 258,-193.5"/>
 <text text-anchor="middle" x="349" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesConfigurationPage</text>
 <polyline fill="none" stroke="black" points="258,-407.5 440,-407.5 "/>
 <text text-anchor="start" x="266" y="-395.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
@@ -169,28 +171,28 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="266" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 <text text-anchor="start" x="266" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetLabelComboBox()</text>
 <text text-anchor="start" x="266" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitUnits()</text>
-<text text-anchor="start" x="266" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RetranslateUi()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node5 -->
 <g id="edge5" class="edge">
 <title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M421.36,-455.45C417.15,-446.71 412.41,-436.91 407.44,-426.6"/>
-<polygon fill="none" stroke="midnightblue" points="418.22,-457 425.72,-464.48 424.53,-453.95 418.22,-457"/>
+<path fill="none" stroke="midnightblue" d="M420.66,-455.12C416.34,-446.44 411.51,-436.72 406.45,-426.55"/>
+<polygon fill="none" stroke="midnightblue" points="417.55,-456.72 425.13,-464.12 423.82,-453.6 417.55,-456.72"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../d8/db8/classPreferencesPathPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="458,-248.5 458,-360.5 604,-360.5 604,-248.5 458,-248.5"/>
-<text text-anchor="middle" x="531" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesPathPage</text>
-<polyline fill="none" stroke="black" points="458,-341.5 604,-341.5 "/>
-<text text-anchor="start" x="466" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<polyline fill="none" stroke="black" points="458,-322.5 604,-322.5 "/>
-<text text-anchor="start" x="466" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesPathPage()</text>
-<text text-anchor="start" x="466" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesPathPage()</text>
-<text text-anchor="start" x="466" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<polygon fill="white" stroke="black" points="458,-248.5 458,-371.5 604,-371.5 604,-248.5 458,-248.5"/>
+<text text-anchor="middle" x="531" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesPathPage</text>
+<polyline fill="none" stroke="black" points="458,-352.5 604,-352.5 "/>
+<text text-anchor="start" x="466" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<polyline fill="none" stroke="black" points="458,-333.5 604,-333.5 "/>
+<text text-anchor="start" x="466" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesPathPage()</text>
+<text text-anchor="start" x="466" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesPathPage()</text>
+<text text-anchor="start" x="466" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="466" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 <text text-anchor="start" x="466" y="-277.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitTable()</text>
 <text text-anchor="start" x="466" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DefaultPath()</text>
 <text text-anchor="start" x="466" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; EditPath()</text>
@@ -200,59 +202,60 @@ var sectionId = 'dynsection-1';
 <!-- Node4&#45;&gt;Node6 -->
 <g id="edge7" class="edge">
 <title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M457.07,-455.38C470.4,-428.35 488.77,-391.12 503.86,-360.52"/>
-<polygon fill="none" stroke="midnightblue" points="453.86,-453.96 452.57,-464.48 460.14,-457.06 453.86,-453.96"/>
+<path fill="none" stroke="midnightblue" d="M457.81,-455C470.01,-431 486.19,-399.16 500.23,-371.53"/>
+<polygon fill="none" stroke="midnightblue" points="454.58,-453.61 453.17,-464.12 460.82,-456.79 454.58,-453.61"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../d9/d0d/classPreferencesGraphicsViewPage.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="622,-215.5 622,-393.5 816,-393.5 816,-215.5 622,-215.5"/>
-<text text-anchor="middle" x="719" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
-<polyline fill="none" stroke="black" points="622,-374.5 816,-374.5 "/>
-<text text-anchor="start" x="630" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="630" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbPositiveColorChanged</text>
-<text text-anchor="start" x="630" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbNegativeColorChanged</text>
-<text text-anchor="start" x="630" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameColorChanged</text>
-<text text-anchor="start" x="630" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameHoverColorChanged</text>
-<text text-anchor="start" x="630" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_orginAxisColorChanged</text>
-<text text-anchor="start" x="630" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_primarySupportColorChanged</text>
-<text text-anchor="start" x="630" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_secondarySupportColorChanged</text>
-<text text-anchor="start" x="630" y="-274.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tertiarySupportColorChanged</text>
-<polyline fill="none" stroke="black" points="622,-267.5 816,-267.5 "/>
-<text text-anchor="start" x="630" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
-<text text-anchor="start" x="630" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
-<text text-anchor="start" x="630" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
-<text text-anchor="start" x="630" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<polygon fill="white" stroke="black" points="622,-215.5 622,-404.5 816,-404.5 816,-215.5 622,-215.5"/>
+<text text-anchor="middle" x="719" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">PreferencesGraphicsViewPage</text>
+<polyline fill="none" stroke="black" points="622,-385.5 816,-385.5 "/>
+<text text-anchor="start" x="630" y="-373.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="630" y="-362.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbPositiveColorChanged</text>
+<text text-anchor="start" x="630" y="-351.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_zrbNegativeColorChanged</text>
+<text text-anchor="start" x="630" y="-340.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameColorChanged</text>
+<text text-anchor="start" x="630" y="-329.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_pointNameHoverColorChanged</text>
+<text text-anchor="start" x="630" y="-318.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_orginAxisColorChanged</text>
+<text text-anchor="start" x="630" y="-307.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_primarySupportColorChanged</text>
+<text text-anchor="start" x="630" y="-296.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_secondarySupportColorChanged</text>
+<text text-anchor="start" x="630" y="-285.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tertiarySupportColorChanged</text>
+<polyline fill="none" stroke="black" points="622,-278.5 816,-278.5 "/>
+<text text-anchor="start" x="630" y="-266.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PreferencesGraphicsViewPage()</text>
+<text text-anchor="start" x="630" y="-255.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~PreferencesGraphicsView</text>
+<text text-anchor="start" x="630" y="-244.5" font-family="Helvetica,sans-Serif" font-size="10.00">Page()</text>
+<text text-anchor="start" x="630" y="-233.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Apply()</text>
+<text text-anchor="start" x="630" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
 </a>
 </g>
 </g>
 <!-- Node4&#45;&gt;Node7 -->
 <g id="edge9" class="edge">
 <title>Node4&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M478.76,-483.16C515.86,-473.58 571.56,-455.69 613,-427 626.7,-417.52 639.75,-405.88 651.72,-393.61"/>
-<polygon fill="none" stroke="midnightblue" points="477.67,-479.82 468.81,-485.64 479.36,-486.61 477.67,-479.82"/>
+<path fill="none" stroke="midnightblue" d="M478.61,-482.94C515.6,-473.2 571.23,-455.21 613,-427 622.72,-420.43 632.17,-412.8 641.16,-404.65"/>
+<polygon fill="none" stroke="midnightblue" points="477.52,-479.6 468.7,-485.47 479.25,-486.39 477.52,-479.6"/>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M349,-182.21C349,-170.18 349,-158.2 349,-146.78"/>
-<polygon fill="none" stroke="#404040" points="349,-146.63 345,-140.63 349,-134.63 353,-140.63 349,-146.63"/>
-<text text-anchor="middle" x="394.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_configurePage</text>
+<path fill="none" stroke="#404040" d="M349,-193.22C349,-181.31 349,-169.37 349,-157.91"/>
+<polygon fill="none" stroke="#404040" points="349,-157.67 345,-151.67 349,-145.67 353,-151.67 349,-157.67"/>
+<text text-anchor="middle" x="394.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_configurePage</text>
 </g>
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge6" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M504.51,-248.22C488.97,-218.51 467.74,-182.12 444,-153 438.02,-145.66 431.37,-138.41 424.46,-131.42"/>
-<polygon fill="none" stroke="#404040" points="424.15,-131.13 417.07,-129.78 415.58,-122.73 422.66,-124.07 424.15,-131.13"/>
-<text text-anchor="middle" x="483.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_pathPage</text>
+<path fill="none" stroke="#404040" d="M499.53,-248.39C484.32,-221.43 464.86,-189.98 444,-164 438,-156.53 431.4,-149.07 424.55,-141.83"/>
+<polygon fill="none" stroke="#404040" points="424.14,-141.41 417.09,-139.88 415.78,-132.79 422.83,-134.31 424.14,-141.41"/>
+<text text-anchor="middle" x="486.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_pathPage</text>
 </g>
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M650.71,-215.35C638.96,-203.23 626.23,-191.64 613,-182 556.35,-140.72 482.36,-110.56 427.12,-91.75"/>
-<polygon fill="none" stroke="#404040" points="427.02,-91.72 420.06,-93.61 415.64,-87.91 422.6,-86.02 427.02,-91.72"/>
-<text text-anchor="middle" x="624.5" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_graphicsPage</text>
+<path fill="none" stroke="#404040" d="M640.08,-215.43C631.37,-207.36 622.28,-199.72 613,-193 555.89,-151.63 482.1,-119.87 427.06,-99.6"/>
+<polygon fill="none" stroke="#404040" points="426.9,-99.54 419.89,-101.26 415.61,-95.46 422.62,-93.74 426.9,-99.54"/>
+<text text-anchor="middle" x="624.5" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;m_graphicsPage</text>
 </g>
 </g>
 </svg>

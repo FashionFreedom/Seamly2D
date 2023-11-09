@@ -47,9 +47,14 @@ var hierarchy =
       [ "ExportFormatCombobox", "d4/d06/classExportFormatCombobox.html", null ],
       [ "LineTypeComboBox", "d9/de2/classLineTypeComboBox.html", null ],
       [ "LineWeightComboBox", "d6/d43/classLineWeightComboBox.html", null ],
+      [ "PageFormatCombobox", "db/d44/classPageFormatCombobox.html", null ],
       [ "PieceFillComboBox", "d8/d5b/classPieceFillComboBox.html", null ]
     ] ],
     [ "QDialog", null, [
+      [ "AbstractLayoutDialog", "df/dc3/classAbstractLayoutDialog.html", [
+        [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html", null ],
+        [ "LayoutSettingsDialog", "db/d32/classLayoutSettingsDialog.html", null ]
+      ] ],
       [ "CalculatorDialog", "dc/d3d/classCalculatorDialog.html", null ],
       [ "DecimalChartDialog", "db/dda/classDecimalChartDialog.html", null ],
       [ "DialogAboutApp", "de/d06/classDialogAboutApp.html", null ],
@@ -115,11 +120,7 @@ var hierarchy =
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],
       [ "ShortcutsDialog", "de/d8e/classShortcutsDialog.html", null ],
       [ "ShowInfoDialog", "da/d5b/classShowInfoDialog.html", null ],
-      [ "Utils::CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html", null ],
-      [ "VAbstractLayoutDialog", "d1/dbb/classVAbstractLayoutDialog.html", [
-        [ "DialogLayoutSettings", "da/d20/classDialogLayoutSettings.html", null ],
-        [ "ExportLayoutDialog", "de/dbd/classExportLayoutDialog.html", null ]
-      ] ]
+      [ "Utils::CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html", null ]
     ] ],
     [ "QDomDocument", null, [
       [ "VDomDocument", "d6/deb/classVDomDocument.html", [

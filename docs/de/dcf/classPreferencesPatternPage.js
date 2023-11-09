@@ -4,6 +4,7 @@ var classPreferencesPatternPage =
     [ "~PreferencesPatternPage", "de/dcf/classPreferencesPatternPage.html#ae599991939d08b1fac7c4706a7ba2c6a", null ],
     [ "Apply", "de/dcf/classPreferencesPatternPage.html#ad654184993784760ad3d27855df85889", null ],
     [ "callDateTimeFormatEditor", "de/dcf/classPreferencesPatternPage.html#a1804d09bebd04073fa2e411950fbd061", null ],
+    [ "changeEvent", "de/dcf/classPreferencesPatternPage.html#ace340055ef0f394b722cd6ade1ab5407", null ],
     [ "editDateTimeFormats", "de/dcf/classPreferencesPatternPage.html#a14306db5b8c63a78585b82a7034b0672", null ],
     [ "initComboBoxFormats", "de/dcf/classPreferencesPatternPage.html#a6877127c5264f51a404cb9e20ced05c4", null ],
     [ "initDefaultSeamAllowance", "de/dcf/classPreferencesPatternPage.html#afe49c98173a08afeba3a0f23df6284ea", null ],

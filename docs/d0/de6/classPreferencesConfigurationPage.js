@@ -5,7 +5,6 @@ var classPreferencesConfigurationPage =
     [ "Apply", "d0/de6/classPreferencesConfigurationPage.html#a446c52770f60cac01435cf0293cf759b", null ],
     [ "changeEvent", "d0/de6/classPreferencesConfigurationPage.html#af121824ae8e725ae57fdce32959f56b2", null ],
     [ "InitUnits", "d0/de6/classPreferencesConfigurationPage.html#a4d8a0f540db8a9f705f29f60453d61a3", null ],
-    [ "RetranslateUi", "d0/de6/classPreferencesConfigurationPage.html#a55aa2a50123401a26e6b8019f0582457", null ],
     [ "SetLabelComboBox", "d0/de6/classPreferencesConfigurationPage.html#ad44bc8ce32fabc1f097bac00dc80e06e", null ],
     [ "m_defaultExportFormatChanged", "d0/de6/classPreferencesConfigurationPage.html#adbb6b2352ed2b7c4084589ecf991628d", null ],
     [ "m_labelLangChanged", "d0/de6/classPreferencesConfigurationPage.html#af50a9ae77fd579e80c9804a030b2641b", null ],

@@ -144,6 +144,25 @@ var def_8h =
       [ "Portrait", "d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763a1c7444be9626d149ab598fb79b639f96", null ],
       [ "Landscape", "d4/da4/def_8h.html#a54267460986230f3ed5d2f2921983763a815dff01257e5ef182b25d4c1ef0a7a0", null ]
     ] ],
+    [ "PaperSizeFormat", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078", [
+      [ "A0", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078ad88c146dfafdea37a837778a92415bc2", null ],
+      [ "A1", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a27f237e6b7f96587b6202ff3607ad88a", null ],
+      [ "A2", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078ac6bdf6f65f3845da9085e9ae5790b494", null ],
+      [ "A3", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a6593d7b12fd418cdb35bbf438de72f66", null ],
+      [ "A4", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a0c2f3adf2a48bab3adb470f4da57f3d0", null ],
+      [ "Letter", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a17a53d1a012580ef609b70ef6a25d1f1", null ],
+      [ "Legal", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078aa10a9bcd450087de1ce1f80b35f44883", null ],
+      [ "Tabloid", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a4856da4c90d3427b62339995ab82151e", null ],
+      [ "AnsiC", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a11b8bf246c092aa2e31a2854f948de22", null ],
+      [ "AnsiD", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a9b0f1d31e93891ae54a2a8b1a792339e", null ],
+      [ "AnsiE", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a79ba5b897e08a781a9128297fb01be10", null ],
+      [ "Roll24in", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078aa53fc34a28678c56601220fc3f021c1d", null ],
+      [ "Roll30in", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a27736e8ab588cd66ad41f2fb889c15f6", null ],
+      [ "Roll36in", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078add60e15ef4c1163a333d51dfebe197b1", null ],
+      [ "Roll42in", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078aede3de0cc2a140d0a6b91947069dcc16", null ],
+      [ "Roll44in", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078aa6cc2c6cd06863094faa905743911aaa", null ],
+      [ "Custom", "d4/da4/def_8h.html#aca73ca8ec1be60fec2512e2685077078a90589c47f06eb971d548591f23c285af", null ]
+    ] ],
     [ "PieceNodeAngle", "d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2", [
       [ "ByLength", "d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2afbadcb331283eb70a8a3b6ad274f745d", null ],
       [ "ByPointsIntersection", "d4/da4/def_8h.html#a2fedf9fccccc9531756a26b2128252e2a8f2a6e10487912a3529d97426fb2d25e", null ],

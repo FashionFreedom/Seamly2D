@@ -176,13 +176,13 @@ $(document).ready(function(){initNavTree('d7/d1b/pen__toolbar_8cpp_source.html',
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    QToolButton *resetButton = <span class="keyword">new</span> QToolButton;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    resetButton-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/win.icon.theme/24x24/actions/edit-undo.png&quot;</span>));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    resetButton-&gt;setToolTip (<span class="stringliteral">&quot;Reset current pen to defaults&quot;</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    resetButton-&gt;setToolTip(tr(<span class="stringliteral">&quot;Reset current pen to defaults&quot;</span>));</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    addWidget(resetButton);</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    connect(resetButton, &amp;QToolButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="../../d5/dd9/classPenToolBar.html#a018995b1e5633d07b0424e6e88fd68e4">PenToolBar::penReset</a>);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    QToolButton *savePresetButton = <span class="keyword">new</span> QToolButton;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    savePresetButton-&gt;setIcon(QIcon(<span class="stringliteral">&quot;:/icons/win.icon.theme/24x24/actions/document-save-as.png&quot;</span>));</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    savePresetButton-&gt;setToolTip (<span class="stringliteral">&quot;Save current pen preset&quot;</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    savePresetButton-&gt;setToolTip(tr(<span class="stringliteral">&quot;Save current pen preset&quot;</span>));</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    addWidget(savePresetButton);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    connect(savePresetButton, &amp;QToolButton::clicked, <span class="keyword">this</span>, &amp;<a class="code" href="../../d5/dd9/classPenToolBar.html#a109a664ed240f867ae1587f853bfc283">PenToolBar::savePreset</a>);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>

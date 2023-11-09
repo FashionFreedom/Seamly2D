@@ -35,6 +35,10 @@ var dir_fa16871e366acf28eec42e1eb99c66a0 =
     [ "nonscalingfill_pathitem.h", "dd/d15/nonscalingfill__pathitem_8h.html", [
       [ "NonScalingFillPathItem", "df/d63/classNonScalingFillPathItem.html", "df/d63/classNonScalingFillPathItem" ]
     ] ],
+    [ "page_format_combobox.cpp", "d2/d28/page__format__combobox_8cpp.html", null ],
+    [ "page_format_combobox.h", "d3/d86/page__format__combobox_8h.html", [
+      [ "PageFormatCombobox", "db/d44/classPageFormatCombobox.html", "db/d44/classPageFormatCombobox" ]
+    ] ],
     [ "pen.cpp", "dc/de4/pen_8cpp.html", "dc/de4/pen_8cpp" ],
     [ "pen.h", "da/d10/pen_8h.html", [
       [ "Pen", "d9/de7/classPen.html", "d9/de7/classPen" ]
