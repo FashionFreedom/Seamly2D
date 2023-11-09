@@ -2361,7 +2361,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolSinglePoint(QGraphicsItem *item
     formView->setTitle(tr("Base point"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
 
     VPE::VPointFProperty* itemCoordinates = new VPE::VPointFProperty(tr("Coordinates"));
     itemCoordinates->setValue(tool->GetBasePointPos());
@@ -2376,7 +2376,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolEndLine(QGraphicsItem *item)
     formView->setTitle(tr("Point - Length and Angle"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2397,7 +2397,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolAlongLine(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -2462,7 +2462,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolBisector(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Bisector"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->BasePointName(), tr("Second point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->ThirdPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
@@ -2501,7 +2501,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutArc(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Arc"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Arc:"), AttrArc, GOType::Arc);
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2516,7 +2516,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSpline(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Curve"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Curve);
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2531,7 +2531,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath(QGraphicsItem *it
     formView->setTitle(tr("Point - On Spline"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Path);
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2546,7 +2546,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolHeight(QGraphicsItem *item)
     formView->setTitle(tr("Point - Intersect Line and Perpendicular"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->FirstLinePointName(), tr("First line point:"), AttrP1Line, GOType::Point);
     addObjectProperty(tool, tool->SecondLinePointName(), tr("Second line point:"), AttrP2Line, GOType::Point);
@@ -2583,7 +2583,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolLineIntersect(QGraphicsItem *it
     formView->setTitle(tr("Point - Intersect Lines"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addPropertyLabel(tr("First line"), AttrName);
     addObjectProperty(tool, tool->Line1P1Name(), tr("First point:"), AttrP1Line1, GOType::Point);
     addObjectProperty(tool, tool->Line1P2Name(), tr("Second point:"), AttrP2Line1, GOType::Point);
@@ -2600,7 +2600,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolNormal(QGraphicsItem *item)
     formView->setTitle(tr("Point - On Perpendicular"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
@@ -2628,7 +2628,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfContact(QGraphicsItem *i
     formView->setTitle(tr("Point - Intersect Arc and Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->ArcCenterPointName(), tr("Center of arc:"), AttrCenter, GOType::Point);
     addObjectProperty(tool, tool->FirstPointName(), tr("1st line point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("2nd line point:"), AttrSecondPoint, GOType::Point);
@@ -2645,7 +2645,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersection(QGraphicsIt
     formView->setTitle(tr("Point - Intersect XY"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->firstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->secondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 
@@ -2663,7 +2663,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionArcs(QGraphi
     formView->setTitle(tr("Point - Intersect Arcs"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstArcName(), tr("First arc:"), AttrFirstArc, GOType::Arc);
     addObjectProperty(tool, tool->SecondArcName(), tr("Second arc:"), AttrSecondArc, GOType::Arc);
     addPropertyCrossPoint(tool, tr("Take:"));
@@ -2677,7 +2677,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCircles(QGra
     formView->setTitle(tr("Point - Intersect Circles"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addPropertyCrossPoint(tool, tr("Take:"));
 
     addPropertyLabel(tr("Geometry"), AttrName);
@@ -2698,7 +2698,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCurves(QGrap
     formView->setTitle(tr("Point - Intersect Curves"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->FirstCurveName(), tr("First curve:"), AttrCurve1, GOType::AllCurves);
     addObjectProperty(tool, tool->SecondCurveName(), tr("Second curve:"), AttrCurve2, GOType::AllCurves);
     addPropertyVCrossPoint(tool, tr("Vertical take:"));
@@ -2713,7 +2713,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointFromCircleAndTangent(QGrap
     formView->setTitle(tr("Point - Intersect Circle and Tangent"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->CircleCenterPointName(), tr("Center point:"), AttrCCenter, GOType::Point);
     addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
 
@@ -2730,7 +2730,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolPointFromArcAndTangent(QGraphic
     formView->setTitle(tr("Point - Intersect Arc and Tangent"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
     addObjectProperty(tool, tool->ArcName(), tr("Arc:"), AttrArc, GOType::Arc);
     addPropertyCrossPoint(tool, tr("Take:"));
@@ -2744,7 +2744,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolShoulderPoint(QGraphicsItem *it
     formView->setTitle(tr("Point - Length to Line"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
     addObjectProperty(tool, tool->ShoulderPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
@@ -2866,7 +2866,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolTriangle(QGraphicsItem *item)
 
     formView->setTitle(tr("Point - Intersect Axis and Triangle"));
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->AxisP1Name(), tr("1st axis point:"), AttrAxisP1, GOType::Point);
     addObjectProperty(tool, tool->AxisP2Name(), tr("2nd axis point:"), AttrAxisP2, GOType::Point);
     addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
@@ -2881,7 +2881,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolLineIntersectAxis(QGraphicsItem
     formView->setTitle(tr("Point - Intersect Line and Axis"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
     addObjectProperty(tool, tool->FirstLinePoint(), tr("First point:"), AttrFirstPoint, GOType::Point);
     addObjectProperty(tool, tool->SecondLinePoint(), tr("Second point:"), AttrSecondPoint, GOType::Point);
@@ -2903,7 +2903,7 @@ void VToolOptionsPropertyBrowser::showOptionsToolCurveIntersectAxis(QGraphicsIte
     formView->setTitle(tr("Point - Intersect Curve and Axis"));
 
     addPropertyLabel(tr("Selection"), AttrName);
-    addPropertyObjectName(tool, tr("Point name:"));
+    addPropertyObjectName(tool, tr("Name:"));
     addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
 
     addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::AllCurves);

@@ -2309,8 +2309,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2443,8 +2443,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>100</width>
-              <height>54</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -2712,7 +2712,7 @@
      <normaloff>:/icon/32x32/arrow_cursor.png</normaloff>:/icon/32x32/arrow_cursor.png</iconset>
    </property>
    <property name="text">
-    <string>Pointer</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Pointer tools</string>
@@ -2830,24 +2830,6 @@
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
-   </property>
-  </action>
-  <action name="ellipses_Action">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/ellipses_toolbox.png</normaloff>:/toolicon/32x32/ellipses_toolbox.png</iconset>
-   </property>
-   <property name="text">
-    <string>ellipses_Action</string>
-   </property>
-   <property name="toolTip">
-    <string>Ellipse Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, E</string>
    </property>
   </action>
   <action name="group_Action">
@@ -3606,7 +3588,7 @@
     <string>Out</string>
    </property>
    <property name="toolTip">
-    <string>Zoom Out (CTRL+-)</string>
+    <string>Zoom Out (Ctrl+-)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+-</string>
@@ -3651,7 +3633,7 @@
     <string>Fit</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Fit All(CTRL+=)</string>
+    <string>Zoom to Fit All(Ctrl+=)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+=</string>
@@ -4100,13 +4082,10 @@
      <normaloff>:/toolicon/32x32/points_toolbox.png</normaloff>:/toolicon/32x32/points_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>points_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Point Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, P</string>
    </property>
   </action>
   <action name="lines_Action">
@@ -4118,13 +4097,10 @@
      <normaloff>:/toolicon/32x32/lines_toolbox.png</normaloff>:/toolicon/32x32/lines_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>line_Actions</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Line Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, L</string>
    </property>
   </action>
   <action name="lineTool_Action">
@@ -4146,12 +4122,15 @@
    </property>
   </action>
   <action name="curves_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/spline_toolboxs.png</normaloff>:/toolicon/32x32/spline_toolboxs.png</iconset>
    </property>
    <property name="text">
-    <string>Curve</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Curve Tools</string>
@@ -4166,13 +4145,10 @@
      <normaloff>:/toolicon/32x32/arcs_toolbox.png</normaloff>:/toolicon/32x32/arcs_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>arcTool_Actions</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Arc Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, A</string>
    </property>
   </action>
   <action name="modifications_Action">
@@ -4184,13 +4160,10 @@
      <normaloff>:/toolicon/32x32/operations_toolbox.png</normaloff>:/toolicon/32x32/operations_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>modifications_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Operations Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, O</string>
    </property>
   </action>
   <action name="layout_Action">
@@ -4202,7 +4175,7 @@
      <normaloff>:/toolicon/32x32/layout_toolbox.png</normaloff>:/toolicon/32x32/layout_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>Layout</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Layout Tools</string>
@@ -4217,7 +4190,7 @@
      <normaloff>:/toolicon/32x32/patternpiece_toolbox.png</normaloff>:/toolicon/32x32/patternpiece_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>Details</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Piece tools</string>
@@ -4373,7 +4346,7 @@
      <normaloff>:/toolicon/32x32/details_toolbox.png</normaloff>:/toolicon/32x32/details_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>details_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Detail tools</string>

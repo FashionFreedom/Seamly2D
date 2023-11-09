@@ -63,6 +63,7 @@
 #include <QGuiApplication>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QTabBar>
 #include <QTableWidget>
 #include <QScreen>
 #include <QSettings>

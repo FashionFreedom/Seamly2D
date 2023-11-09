@@ -82,17 +82,22 @@ DialogAboutApp::DialogAboutApp(QWidget *parent) :
 
 	qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
+    QString revision = BUILD_REVISION;
+    if (revision == QString("unknown"))
+    {
+        revision = tr("unknown");
+    }
 	ui->label_Seamly2D_Version->setText(QString("Seamly2D %1").arg(APP_VERSION_STR));
-	ui->labelBuildRevision->setText(QString("Build revision: %1").arg(BUILD_REVISION));
+	ui->labelBuildRevision->setText(tr("Build revision: %1").arg(revision));
 	ui->label_QT_Version->setText(buildCompatibilityString());
 
 	QDate date = QLocale::c().toDate(QString(__DATE__).simplified(), QLatin1String("MMM d yyyy"));
 	ui->label_Seamly2D_Built->setText(tr("Built on %1 at %2").arg(date.toString()).arg(__TIME__));
 
 	ui->label_Legal_Stuff->setText(QApplication::translate("InternalStrings",
-														   "The program is provided AS IS with NO WARRANTY OF ANY "
-														   "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
-														   "AND FITNESS FOR A PARTICULAR PURPOSE."));
+									  "The program is provided AS IS with NO WARRANTY OF ANY "
+									  "KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY "
+									  "AND FITNESS FOR A PARTICULAR PURPOSE."));
 
 
 	ui->pushButton_Web_Site->setText(tr("Web site : %1").arg(VER_COMPANYDOMAIN_STR));

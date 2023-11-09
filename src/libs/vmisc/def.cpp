@@ -377,8 +377,8 @@ QStringList SupportedLocales()
                                               << QStringLiteral("ro_RO")
                                               << QStringLiteral("zh_CN")
                                               << QStringLiteral("pt_BR")
-                                              << QStringLiteral("el_GR");
-
+                                              << QStringLiteral("el_GR")
+                                              << QStringLiteral("en_GB");
     return locales;
 }
 
@@ -401,7 +401,7 @@ QString strippedName(const QString &fullFileName)
 QString makeHeaderName(const QString &name)
 {
     QString headerStr = QObject::tr("%1").arg(name);
-    return headerStr.left(1).toUpper();
+    return headerStr.at(0).toUpper();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

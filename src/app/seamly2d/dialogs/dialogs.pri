@@ -2,13 +2,14 @@
 # This need for correct working file translations.pro
 
 HEADERS += \
+    $$PWD/abstractlayout_dialog.h \
     $$PWD/calculator_dialog.h \
     $$PWD/decimalchart_dialog.h \
     $$PWD/dialogs.h \
     $$PWD/dialogpatternproperties.h \
     $$PWD/dialognewpattern.h \
     $$PWD/dialogaboutapp.h \
-    $$PWD/dialoglayoutsettings.h \
+    $$PWD/layoutsettings_dialog.h \
     $$PWD/dialoglayoutprogress.h \
     $$PWD/dialogvariables.h \
     $$PWD/export_layout_dialog.h \
@@ -22,16 +23,16 @@ HEADERS += \
     $$PWD/configpages/preferencespatternpage.h \
     $$PWD/configpages/preferencespathpage.h \
     $$PWD/configpages/preferencesgraphicsviewpage.h \
-    $$PWD/dialogdatetimeformats.h \
-    $$PWD/vabstractlayoutdialog.h
+    $$PWD/dialogdatetimeformats.h
 
 SOURCES += \
+    $$PWD/abstractlayout_dialog.cpp \
     $$PWD/calculator_dialog.cpp \
     $$PWD/decimalchart_dialog.cpp \
     $$PWD/dialogpatternproperties.cpp \
     $$PWD/dialognewpattern.cpp \
     $$PWD/dialogaboutapp.cpp \
-    $$PWD/dialoglayoutsettings.cpp \
+    $$PWD/layoutsettings_dialog.cpp \
     $$PWD/dialoglayoutprogress.cpp \
     $$PWD/dialogvariables.cpp \
     $$PWD/export_layout_dialog.cpp \
@@ -45,8 +46,7 @@ SOURCES += \
     $$PWD/configpages/preferencespatternpage.cpp \
     $$PWD/configpages/preferencespathpage.cpp \
     $$PWD/configpages/preferencesgraphicsviewpage.cpp \
-    $$PWD/dialogdatetimeformats.cpp \
-    $$PWD/vabstractlayoutdialog.cpp
+    $$PWD/dialogdatetimeformats.cpp
 
 FORMS += \
     $$PWD/calculator_dialog.ui \
@@ -54,12 +54,12 @@ FORMS += \
     $$PWD/dialogpatternproperties.ui \
     $$PWD/dialognewpattern.ui \
     $$PWD/dialogaboutapp.ui \
-    $$PWD/dialoglayoutsettings.ui \
     $$PWD/dialoglayoutprogress.ui \
     $$PWD/dialogvariables.ui \
     $$PWD/export_layout_dialog.ui \
     $$PWD/groups_widget.ui \
     $$PWD/history_dialog.ui \
+    $$PWD/layoutsettings_dialog.ui \
     $$PWD/pieces_widget.ui \
     $$PWD/shortcuts_dialog.ui \
     $$PWD/show_info_dialog.ui \

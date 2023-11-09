@@ -35,7 +35,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -44,8 +43,11 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_2">
-        <item>
+       <layout class="QFormLayout" name="formLayout">
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <item row="0" column="0">
          <widget class="QLabel" name="axisPoint_Label">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -55,13 +57,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -73,39 +75,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="1">
          <widget class="QComboBox" name="axisPoint_ComboBox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="toolTip">
-           <string/>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_3">
-        <item>
-         <widget class="QLabel" name="curve_Label">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -118,7 +91,32 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string/>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="curve_Label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -130,36 +128,10 @@
           </property>
          </widget>
         </item>
-        <item>
+        <item row="1" column="1">
          <widget class="QComboBox" name="curve_ComboBox">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>140</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <weight>50</weight>
-            <bold>false</bold>
-           </font>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_4">
-        <item>
-         <widget class="QLabel" name="pointName_Label">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -172,19 +144,41 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="pointName_Label">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>90</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
           <property name="text">
-           <string>Point name:</string>
+           <string>Name:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="2" column="1">
          <widget class="QLineEdit" name="pointName_LineEdit">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -194,13 +188,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -228,7 +222,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -248,7 +241,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
@@ -291,7 +284,7 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -313,13 +306,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>87</width>
+            <width>85</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -419,13 +412,13 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
+            <pointsize>9</pointsize>
             <bold>false</bold>
            </font>
           </property>
           <property name="toolTip">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o'clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o'clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="tabChangesFocus">
            <bool>true</bool>
@@ -451,7 +444,6 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -461,6 +453,9 @@
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
        <layout class="QFormLayout" name="formLayout_3">
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
         <item row="1" column="0">
          <widget class="QLabel" name="lineType_Label">
           <property name="sizePolicy">
@@ -471,7 +466,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
@@ -484,7 +479,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -506,7 +500,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -519,7 +513,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -535,7 +528,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
@@ -548,7 +541,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -570,14 +562,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -593,7 +584,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
@@ -606,7 +597,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -628,14 +618,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>140</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>

@@ -11,6 +11,7 @@ SOURCES += \
     $$PWD/linetype_combobox.cpp \
     $$PWD/lineweight_combobox.cpp \
     $$PWD/mouse_coordinates.cpp \
+    $$PWD/page_format_combobox.cpp \
     $$PWD/pen_toolbar.cpp \
     $$PWD/nonscalingfill_pathitem.cpp \
     $$PWD/piece_tablewidgetitem.cpp \
@@ -45,6 +46,7 @@ HEADERS += \
     $$PWD/linetype_combobox.h \
     $$PWD/lineweight_combobox.h \
     $$PWD/mouse_coordinates.h \
+    $$PWD/page_format_combobox.h \
     $$PWD/pen_toolbar.h \
     $$PWD/nonscalingfill_pathitem.h \
     $$PWD/piece_tablewidgetitem.h \

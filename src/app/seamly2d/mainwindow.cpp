@@ -1739,6 +1739,7 @@ void MainWindow::changeEvent(QEvent *event)
         helpLabel->setText(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
         UpdateWindowTitle();
+        initPenToolBar();
         emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation
@@ -2450,9 +2451,10 @@ void MainWindow::initPenToolBar()
 {
     if (m_penToolBar != nullptr)
     {
+        disconnect(m_penToolBar, nullptr, this, nullptr);
         delete m_penToolBar;
     }
-    m_penToolBar = new PenToolBar("Toolbar Pen", this);
+    m_penToolBar = new PenToolBar(tr("Pen Toolbar"), this);
     m_penToolBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_penToolBar->setObjectName("penToolBar");
     this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
@@ -2685,7 +2687,7 @@ void MainWindow::handlePointsMenu()
 
     QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Length and Angle") + "\tL, A");
     QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("On Line") + "\tO, L");
-    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\tShift+O, Shift+L");
+    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\t" + tr("Shift+O, Shift+L"));
     QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("On Perpendicular") + "\tO, P");
     QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("On Bisector") + "\tO, B");
     QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Length to Line") + "\tP, S");
@@ -2774,7 +2776,7 @@ void MainWindow::handleLinesMenu()
     qCDebug(vMainWindow, "Lines Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\tAlt+L");
+    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\t" + tr("Alt+L"));
     QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Intersect Lines") + "\tI, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
@@ -2802,15 +2804,15 @@ void MainWindow::handleArcsMenu()
     qCDebug(vMainWindow, "Arcs Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\tAlt+A");
+    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\t" + tr("Alt+A"));
     QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point on Arc") + "\tO, A");
     QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersect Arc and Axis") + "\tA, X");
     QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersect Arcs") + "\tI, A");
-    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\tShift+I, Shift+C");
+    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\t" + tr("Shift+I, Shift+C"));
     QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Intersect Circle and Tangent") + "\tC, T");
     QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Intersect Arc and Tangent") + "\tA, T");
-    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\tAlt+Shift+A");
-    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\tAlt+E");
+    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\t" + tr("Alt+Shift+A"));
+    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\t" + tr("Alt+E"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2879,10 +2881,10 @@ void MainWindow::handleCurvesMenu()
     qCDebug(vMainWindow, "Curves Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\tAlt+C");
-    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\tAlt+S");
-    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\tAlt+Shift+C");
-    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\tAlt+Shift+S");
+    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\t" + tr("Alt+C"));
+    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\t" + tr("Alt+S"));
+    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\t" + tr("Alt+Shift+C"));
+    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\t" + tr("Alt+Shift+S"));
     QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point on Curve") + "\tO, C");
     QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point on Spline") + "\tO, S");
     QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersect Curves") + "\tI, C");
@@ -2959,7 +2961,7 @@ void MainWindow::handleOperationsMenu()
     QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
     QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
     QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\tAlt+M");
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\t" + tr("Alt+M"));
     QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts") + "\tT, D");
     QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"),    tr("Export Draft Blocks") + "\tE, D");
 
@@ -3155,7 +3157,7 @@ void MainWindow::CancelTool()
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(false);
             ui->arrow_Action->setChecked(false);
-            helpLabel->setText("");
+            helpLabel->setText(QString(""));
 
             // Crash: using CRTL+Z while using line tool.
             undoAction->setEnabled(false);
@@ -4900,6 +4902,9 @@ bool MainWindow::MaybeSave()
         messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
         messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
         const auto ret = static_cast<QMessageBox::StandardButton>(messageBox->exec());
 
         switch (ret)
@@ -4993,7 +4998,7 @@ void MainWindow::CreateMenus()
     separatorAct->setSeparator(true);
     ui->view_Menu->addAction(separatorAct);
 
-    QMenu *menu = new QMenu("Toolbars");
+    QMenu *menu = new QMenu(tr("Toolbars"));
     ui->view_Menu->addMenu(menu);
 
     menu->addAction(ui->file_ToolBar->toggleViewAction());
@@ -6160,7 +6165,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
-        qCDebug(vMainWindow, "%s", helpLabel);
+        qCDebug(vMainWindow, "%s", qUtf8Printable(helpLabel->text()));
 
         //Fit scene size to best size for first show
         zoomFirstShow();
@@ -6347,6 +6352,8 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
+    helpLabel->setText(QString(""));
+    
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);
     ui->exportPiecesAs_ToolButton->setChecked(true);
@@ -6413,6 +6420,8 @@ void MainWindow::exportPiecesAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportDraftBlocksAs()
 {
+    helpLabel->setText(QString(""));
+
     //select export tool button
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);

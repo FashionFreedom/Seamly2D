@@ -1174,7 +1174,7 @@ void DialogTool::FormulaChanged()
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -1183,7 +1183,7 @@ void DialogTool::FormulaChangedPlainText() //-V524
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 
@@ -1275,7 +1275,7 @@ void DialogTool::EvalFormula()
 {
     SCASSERT(plainTextEditFormula != nullptr)
     SCASSERT(labelResultCalculation != nullptr)
-    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog lable (cm, mm or inch)
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);//Show unit in dialog lable (cm, mm or inch)
     Eval(plainTextEditFormula->toPlainText(), flagFormula, labelResultCalculation, postfix, false);
 }
 
