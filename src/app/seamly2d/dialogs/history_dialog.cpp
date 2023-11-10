@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   historyDialog.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 11, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2015 - 2023 Seamly, LLC
@@ -71,6 +71,8 @@
 #include <QClipboard>
 #include <QCloseEvent>
 #include <QDebug>
+#include <QGuiApplication>
+#include <QScreen>
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -89,6 +91,9 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
     ui->setupUi(this);
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint | Qt::WindowMaximizeButtonHint) & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->find_LineEdit->installEventFilter(this);
 
@@ -217,7 +222,7 @@ void HistoryDialog::fillTable()
 
             {
                 QTableWidgetItem *item = new QTableWidgetItem(QString().setNum(rowData.id));
-                item->setTextAlignment(Qt::AlignRight);
+                item->setTextAlignment(Qt::AlignHCenter);
                 item->setSizeHint(QSize(80, 24));
                 item->setData(Qt::UserRole, rowData.id);
                 item->setFlags(item->flags() ^ Qt::ItemIsEditable);
@@ -273,7 +278,7 @@ RowData HistoryDialog::record(const VToolRecord &tool)
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return rowData;
     }
     try
@@ -600,12 +605,12 @@ RowData HistoryDialog::record(const VToolRecord &tool)
         }
         return rowData;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
-        qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
+        qDebug() << error.ErrorMessage() << Q_FUNC_INFO;
         return rowData;
     }
-    qDebug()<<"Can't create history record for the tool.";
+    qWarning() << "Can't create history record for the tool.";
     return rowData;
 }
 

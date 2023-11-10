@@ -1,29 +1,26 @@
-/******************************************************************************
-*   @file   measurements.cpp
-**  @author Douglas S Caskey
-**  @date   14 Jul, 2023
-**
-**  @brief
-**  @copyright
-**  This source code is part of the Seamly2D project, a pattern making
-**  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2023 Seamly2D project
-**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
-**
-**  Seamly2D is free software: you can redistribute it and/or modify
-**  it under the terms of the GNU General Public License as published by
-**  the Free Software Foundation, either version 3 of the License, or
-**  (at your option) any later version.
-**
-**  Seamly2D is distributed in the hope that it will be useful,
-**  but WITHOUT ANY WARRANTY; without even the implied warranty of
-**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-**  GNU General Public License for more details.
-**
-**  You should have received a copy of the GNU General Public License
-**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
-**
-*************************************************************************/
+/***************************************************************************
+ **  @file   measurements.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
 /************************************************************************
  **
@@ -35,7 +32,7 @@
  **  @copyright
  **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Valentina project
+ **  Copyright (C) 2013-2015 Valentina project
  **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Valentina is free software: you can redistribute it and/or modify
@@ -117,7 +114,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Measurements created with Seamly2D v%1 (http://seamly.net/).").arg(APP_VERSION_STR);
+    return QString("Measurements created with Seamly2D v%1 (https://seamly.io/).").arg(APP_VERSION_STR);
 }
 }
 
@@ -302,9 +299,9 @@ void Measurements::readMeasurements() const
         {
             description = GetParametrString(dom, AttrDescription);
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         QString fullName;
@@ -312,9 +309,9 @@ void Measurements::readMeasurements() const
         {
             fullName = GetParametrString(dom, AttrFullName);
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         QSharedPointer<MeasurementVariable> meash;
@@ -951,9 +948,9 @@ qreal Measurements::EvalFormula(VContainer *data, const QString &formula, bool *
             (qIsInf(result) || qIsNaN(result)) ? *ok = false : *ok = true;
             return result;
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             *ok = false;
             return 0;
         }

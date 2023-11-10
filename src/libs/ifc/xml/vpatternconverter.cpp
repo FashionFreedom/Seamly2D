@@ -1,7 +1,11 @@
 /******************************************************************************
  *   @file   vpatternconverter.h
  **  @author Douglas S Caskey
- **   @date   Jul 8, 2023
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
  **  @brief
  **  @copyright
@@ -1401,10 +1405,10 @@ QSet<QString> VPatternConverter::FixIncrementsToV0_2_0()
                         const QString base = GetParametrString(domElement, strBase);
                         domElement.setAttribute(strFormula, base);
                     }
-                    catch (VExceptionEmptyParameter &e)
+                    catch (VExceptionEmptyParameter &error)
                     {
                         VException excep("Can't get increment.");
-                        excep.AddMoreInformation(e.ErrorMessage());
+                        excep.AddMoreInformation(error.ErrorMessage());
                         throw excep;
                     }
                     domElement.removeAttribute(strId);
@@ -1437,9 +1441,9 @@ void VPatternConverter::FixPointExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strLength);
             dom.setAttribute(strLength, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1447,18 +1451,18 @@ void VPatternConverter::FixPointExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strAngle);
             dom.setAttribute(strAngle, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
         try
         {
             formula = GetParametrString(dom, strC1Radius);
             dom.setAttribute(strC1Radius, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1466,9 +1470,9 @@ void VPatternConverter::FixPointExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strC2Radius);
             dom.setAttribute(strC2Radius, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1476,9 +1480,9 @@ void VPatternConverter::FixPointExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strCRadius);
             dom.setAttribute(strCRadius, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1501,9 +1505,9 @@ void VPatternConverter::FixArcExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strAngle1);
             dom.setAttribute(strAngle1, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1511,9 +1515,9 @@ void VPatternConverter::FixArcExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strAngle2);
             dom.setAttribute(strAngle2, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1521,9 +1525,9 @@ void VPatternConverter::FixArcExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strRadius);
             dom.setAttribute(strRadius, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1531,9 +1535,9 @@ void VPatternConverter::FixArcExpressionsToV0_2_0(const QSet<QString> &names)
             formula = GetParametrString(dom, strLength);
             dom.setAttribute(strLength, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1556,9 +1560,9 @@ void VPatternConverter::FixPathPointExpressionsToV0_2_0(const QSet<QString> &nam
             formula = GetParametrString(dom, strKAsm1);
             dom.setAttribute(strKAsm1, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1566,9 +1570,9 @@ void VPatternConverter::FixPathPointExpressionsToV0_2_0(const QSet<QString> &nam
             formula = GetParametrString(dom, strKAsm2);
             dom.setAttribute(strKAsm2, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1576,9 +1580,9 @@ void VPatternConverter::FixPathPointExpressionsToV0_2_0(const QSet<QString> &nam
             formula = GetParametrString(dom, strAngle);
             dom.setAttribute(strAngle, FixIncrementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1601,9 +1605,9 @@ void VPatternConverter::ConvertPointExpressionsToV0_2_0(const QMap<QString, QStr
             formula = GetParametrString(dom, strLength);
             dom.setAttribute(strLength, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1611,18 +1615,18 @@ void VPatternConverter::ConvertPointExpressionsToV0_2_0(const QMap<QString, QStr
             formula = GetParametrString(dom, strAngle);
             dom.setAttribute(strAngle, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
         try
         {
             formula = GetParametrString(dom, strC1Radius);
             dom.setAttribute(strC1Radius, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1630,9 +1634,9 @@ void VPatternConverter::ConvertPointExpressionsToV0_2_0(const QMap<QString, QStr
             formula = GetParametrString(dom, strC2Radius);
             dom.setAttribute(strC2Radius, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1640,9 +1644,9 @@ void VPatternConverter::ConvertPointExpressionsToV0_2_0(const QMap<QString, QStr
             formula = GetParametrString(dom, strCRadius);
             dom.setAttribute(strCRadius, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1665,9 +1669,9 @@ void VPatternConverter::ConvertArcExpressionsToV0_2_0(const QMap<QString, QStrin
             formula = GetParametrString(dom, strAngle1);
             dom.setAttribute(strAngle1, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1675,9 +1679,9 @@ void VPatternConverter::ConvertArcExpressionsToV0_2_0(const QMap<QString, QStrin
             formula = GetParametrString(dom, strAngle2);
             dom.setAttribute(strAngle2, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1685,9 +1689,9 @@ void VPatternConverter::ConvertArcExpressionsToV0_2_0(const QMap<QString, QStrin
             formula = GetParametrString(dom, strRadius);
             dom.setAttribute(strRadius, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1695,9 +1699,9 @@ void VPatternConverter::ConvertArcExpressionsToV0_2_0(const QMap<QString, QStrin
             formula = GetParametrString(dom, strLength);
             dom.setAttribute(strLength, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1720,9 +1724,9 @@ void VPatternConverter::ConvertPathPointExpressionsToV0_2_0(const QMap<QString, 
             formula = GetParametrString(dom, strKAsm1);
             dom.setAttribute(strKAsm1, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1730,9 +1734,9 @@ void VPatternConverter::ConvertPathPointExpressionsToV0_2_0(const QMap<QString, 
             formula = GetParametrString(dom, strKAsm2);
             dom.setAttribute(strKAsm2, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
 
         try
@@ -1740,9 +1744,9 @@ void VPatternConverter::ConvertPathPointExpressionsToV0_2_0(const QMap<QString, 
             formula = GetParametrString(dom, strAngle);
             dom.setAttribute(strAngle, FixMeasurementInFormulaToV0_2_0(formula, names));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 }
@@ -1882,10 +1886,10 @@ QString VPatternConverter::MUnitV0_1_4() const
     {
         return GetParametrString(element, strUnit);
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
         VException excep("Can't get unit.");
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }

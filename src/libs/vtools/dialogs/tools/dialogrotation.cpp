@@ -75,7 +75,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
@@ -107,7 +107,7 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogRotation::evaluateAngle);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->rotation_ComboBox);
 
@@ -350,7 +350,7 @@ void DialogRotation::angleChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::editAngleFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);

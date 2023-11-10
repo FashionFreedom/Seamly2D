@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>485</width>
-    <height>570</height>
+    <width>472</width>
+    <height>572</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>100</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>600</width>
-    <height>570</height>
+    <width>487</width>
+    <height>572</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -28,16 +28,25 @@
   <property name="styleSheet">
    <string notr="true">background-color: rgb(240, 240, 240);</string>
   </property>
-  <layout class="QFormLayout" name="formLayout">
-   <property name="formAlignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-   </property>
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout_13">
+   <item>
     <widget class="QTabWidget" name="tabWidget">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize">
       <size>
-       <width>470</width>
-       <height>0</height>
+       <width>465</width>
+       <height>550</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>465</width>
+       <height>550</height>
       </size>
      </property>
      <property name="palette">
@@ -145,7 +154,7 @@
      <property name="currentIndex">
       <number>0</number>
      </property>
-     <widget class="QWidget" name="general_Tab">
+     <widget class="QWidget" name="editing_Tab">
       <attribute name="title">
        <string>Editing</string>
       </attribute>
@@ -154,25 +163,32 @@
         <widget class="QGroupBox" name="undo_GroupBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>60</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
           <string>Undo</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_3">
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <item>
@@ -258,18 +274,25 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>60</height>
+           <height>0</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
           <string>Selection sound</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_11">
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_8">
             <item>
@@ -295,9 +318,15 @@
             </item>
             <item>
              <widget class="QComboBox" name="selectionSound_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -407,19 +436,6 @@
               </item>
              </widget>
             </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
            </layout>
           </item>
          </layout>
@@ -429,29 +445,41 @@
         <widget class="QGroupBox" name="patternEditing_GroupBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>90</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
           <string>Pattern Editing Warnings</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_7">
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_8">
             <item>
              <widget class="QCheckBox" name="confirmItemDelete_CheckBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Confirm Item Delete</string>
               </property>
@@ -462,6 +490,11 @@
             </item>
             <item>
              <widget class="QCheckBox" name="confirmFormatRewriting_CheckBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Confirm Format Rewriting</string>
               </property>
@@ -476,187 +509,44 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="patternMakingSytem_GroupBox">
-         <property name="minimumSize">
-          <size>
-           <width>420</width>
-           <height>160</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>420</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="title">
-          <string>Pattern making system</string>
-         </property>
-         <layout class="QFormLayout" name="formLayout_2">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_15">
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>System:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QComboBox" name="systemCombo">
-            <property name="minimumSize">
-             <size>
-              <width>250</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_16">
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Author:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QLabel" name="systemAuthorValueLabel">
-            <property name="minimumSize">
-             <size>
-              <width>200</width>
-              <height>20</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string notr="true">author</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QLabel" name="label_17">
-            <property name="minimumSize">
-             <size>
-              <width>140</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>Book:</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPlainTextEdit" name="systemBookValueLabel">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>250</width>
-              <height>50</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>280</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: rgb(255, 255, 255);</string>
-            </property>
-            <property name="readOnly">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item>
         <widget class="QGroupBox" name="suffix_GroupBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>150</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>465</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
           <string>Operations Default Suffix</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
+          <property name="topMargin">
+           <number>6</number>
+          </property>
+          <property name="bottomMargin">
+           <number>6</number>
+          </property>
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <item>
              <widget class="QLabel" name="label_11">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -673,26 +563,24 @@
             </item>
             <item>
              <widget class="QComboBox" name="mirrorByAxisSuffix_ComboBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_7">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -700,6 +588,11 @@
            <layout class="QHBoxLayout" name="horizontalLayout_7">
             <item>
              <widget class="QLabel" name="label_12">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -716,26 +609,24 @@
             </item>
             <item>
              <widget class="QComboBox" name="mirrorByLineSuffix_ComboBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_8">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -743,6 +634,11 @@
            <layout class="QHBoxLayout" name="horizontalLayout">
             <item>
              <widget class="QLabel" name="label_13">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -759,26 +655,24 @@
             </item>
             <item>
              <widget class="QComboBox" name="moveSuffix_ComboBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_9">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -786,6 +680,11 @@
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <item>
              <widget class="QLabel" name="label_14">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>140</width>
@@ -802,26 +701,24 @@
             </item>
             <item>
              <widget class="QComboBox" name="rotateSuffix_ComboBox">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+               </font>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>200</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_10">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -852,20 +749,20 @@
         <widget class="QGroupBox" name="autoSave_CheckBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>60</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <bold>false</bold>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -961,15 +858,20 @@
         <widget class="QGroupBox" name="exportFormat_GroupBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>120</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="font">
+          <font>
+           <bold>true</bold>
+          </font>
          </property>
          <property name="title">
           <string>Export Format</string>
@@ -1009,26 +911,19 @@
             </item>
             <item>
              <widget class="ExportFormatCombobox" name="defaultExportFormat_ComboBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>250</width>
+                <width>240</width>
                 <height>0</height>
                </size>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -1059,19 +954,20 @@
         <widget class="QGroupBox" name="language_GroupBox">
          <property name="minimumSize">
           <size>
-           <width>420</width>
-           <height>140</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
          <property name="font">
           <font>
            <pointsize>9</pointsize>
+           <bold>true</bold>
           </font>
          </property>
          <property name="title">
@@ -1103,9 +999,15 @@
             </item>
             <item>
              <widget class="QComboBox" name="langCombo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>245</width>
+                <width>240</width>
                 <height>0</height>
                </size>
               </property>
@@ -1115,19 +1017,6 @@
                </font>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_12">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -1215,9 +1104,15 @@
             </item>
             <item>
              <widget class="QComboBox" name="unitCombo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>245</width>
+                <width>240</width>
                 <height>0</height>
                </size>
               </property>
@@ -1227,19 +1122,6 @@
                </font>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_14">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -1268,9 +1150,15 @@
             </item>
             <item>
              <widget class="QComboBox" name="labelCombo">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>245</width>
+                <width>240</width>
                 <height>0</height>
                </size>
               </property>
@@ -1280,19 +1168,6 @@
                </font>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_15">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>

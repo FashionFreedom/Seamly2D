@@ -1,7 +1,7 @@
  /******************************************************************************
   *   @file   export_format_combobox.cpp
   **  @author DS Caskey
-  **  @date   Mar 15, 2022
+  **  @date   @date   17 Sep, 2023
   **
   **  @brief
   **  @copyright
@@ -180,7 +180,7 @@ bool ExportFormatCombobox::testPdf()
     QStringList args;
 
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
-    // Seek pdftops in app bundle or near valentin.exe
+    // Seek pdftops in app bundle or near seamaly2d.exe
     proc.start(qApp->applicationDirPath() + QLatin1String("/")+ PDFTOPS, QStringList());
 #else
     proc.start(PDFTOPS, QStringList()); // Seek pdftops in standard path
@@ -192,7 +192,7 @@ bool ExportFormatCombobox::testPdf()
     }
     else
     {
-        qDebug()<<PDFTOPS<<"error"<<proc.error()<<proc.errorString();
+        qWarning() << PDFTOPS << "error" << proc.error() << proc.errorString();
     }
     return res;
 }

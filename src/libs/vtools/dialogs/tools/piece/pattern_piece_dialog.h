@@ -151,17 +151,6 @@ private slots:
     void                        editPieceLabelFormula();
     void                        editPatternLabelFormula();
 
-    void                        expandGrainlineRotation();
-    void                        expandGrainlineLength();
-
-    void                        expandPieceLabelWidth();
-    void                        expandPieceLabelHeight();
-    void                        expandPieceLabelAngle();
-
-    void                        expandPatternLabelWidth();
-    void                        expandPatternLabelHeight();
-    void                        expandPatternLabelAngle();
-
     void                        resetGrainlineWarning();
     void                        resetLabelsWarning();
 
@@ -180,10 +169,6 @@ private slots:
     void                        defaultWidthChanged();
     void                        beforeWidthChanged();
     void                        afterWidthChanged();
-
-    void                        expandWidthFormulaTextEdit();
-    void                        expandWidthBeforeFormulaTextEdit();
-    void                        expandWidthAfterFormulaTextEdit();
 
     void                        grainlineAnchorChanged();
     void                        pieceLabelAnchorChanged();
@@ -220,17 +205,6 @@ private:
     VPieceLabelData             m_oldData;
     VPatternLabelData           m_oldGeom;
     VGrainlineData              m_oldGrainline;
-    int                         m_rotationBaseHeight;
-    int                         m_lengthBaseHeight;
-    int                         m_pieceLabelWidthBaseHeight;
-    int                         m_pieceLabelHeightBaseHeight;
-    int                         m_pieceLabelAngleBaseHeight;
-    int                         m_patternLabelWidthBaseHeight;
-    int                         m_patternLabelHeightBaseHeight;
-    int                         m_patternLabelAngleBaseHeight;
-    int                         m_widthFormula;
-    int                         m_beforeWidthFormula;
-    int                         m_afterWidthFormula;
     QTimer                     *m_timerWidth;
     QTimer                     *m_timerWidthBefore;
     QTimer                     *m_timerWidthAfter;

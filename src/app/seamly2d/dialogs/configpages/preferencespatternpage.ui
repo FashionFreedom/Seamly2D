@@ -18,8 +18,8 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>100</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
@@ -100,6 +100,7 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="title">
@@ -219,6 +220,7 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
+         <bold>true</bold>
         </font>
        </property>
        <property name="title">
@@ -275,6 +277,11 @@
          <height>150</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <bold>true</bold>
+        </font>
+       </property>
        <property name="title">
         <string>Attributes</string>
        </property>
@@ -287,7 +294,7 @@
              <widget class="QLabel" name="defaultNotchType_Label">
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -355,7 +362,7 @@
              <widget class="QLabel" name="notchColor_Label">
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -412,7 +419,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -510,7 +517,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -644,6 +651,7 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
+       <bold>true</bold>
       </font>
      </property>
      <property name="title">
@@ -687,13 +695,13 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>120</width>
             <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>16777215</width>
+            <width>120</width>
             <height>16777215</height>
            </size>
           </property>
@@ -726,7 +734,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>120</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
           </property>
@@ -779,8 +787,14 @@
          <widget class="QLabel" name="grainlineColor_Label">
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>120</width>
             <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -838,13 +852,13 @@
          <widget class="QLabel" name="grainlinelLineweight_Label">
           <property name="minimumSize">
            <size>
-            <width>80</width>
+            <width>120</width>
             <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>80</width>
+            <width>120</width>
             <height>16777215</height>
            </size>
           </property>
@@ -947,102 +961,97 @@
      <property name="font">
       <font>
        <pointsize>9</pointsize>
+       <bold>true</bold>
       </font>
      </property>
      <property name="title">
       <string>Seam allowance</string>
      </property>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>20</y>
-        <width>334</width>
-        <height>22</height>
-       </rect>
-      </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QLabel" name="defaultSeamAllowance_Label">
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Default value:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QDoubleSpinBox" name="defaultSeamAllowance_DoubleSpinBox">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>200</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color: rgb(255, 255, 255);</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-         <property name="decimals">
-          <number>3</number>
-         </property>
-         <property name="maximum">
-          <double>100.000000000000000</double>
-         </property>
-         <property name="singleStep">
-          <double>0.100000000000000</double>
-         </property>
-         <property name="value">
-          <double>1.000000000000000</double>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-      </layout>
-     </widget>
+     <layout class="QVBoxLayout" name="verticalLayout_23">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="defaultSeamAllowance_Label">
+          <property name="minimumSize">
+           <size>
+            <width>120</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Default value:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QDoubleSpinBox" name="defaultSeamAllowance_DoubleSpinBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>120</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="decimals">
+           <number>3</number>
+          </property>
+          <property name="maximum">
+           <double>100.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.100000000000000</double>
+          </property>
+          <property name="value">
+           <double>1.000000000000000</double>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
     <widget class="QGroupBox" name="groupBox">
      <property name="geometry">
@@ -1064,6 +1073,11 @@
        <width>0</width>
        <height>160</height>
       </size>
+     </property>
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="title">
       <string>Paths</string>
@@ -1095,7 +1109,7 @@
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">
@@ -1540,7 +1554,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>120</width>
                 <height>18</height>
                </size>
               </property>
@@ -1605,7 +1619,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>120</width>
                 <height>18</height>
                </size>
               </property>
@@ -1664,7 +1678,7 @@
              <widget class="QLabel" name="internalLineweight_Label">
               <property name="minimumSize">
                <size>
-                <width>65</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -2031,7 +2045,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>120</width>
               <height>0</height>
              </size>
             </property>
@@ -2129,7 +2143,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>120</width>
               <height>0</height>
              </size>
             </property>
@@ -2221,7 +2235,7 @@
            <widget class="QLabel" name="labelsColor_Label">
             <property name="minimumSize">
              <size>
-              <width>80</width>
+              <width>120</width>
               <height>0</height>
              </size>
             </property>
@@ -2308,7 +2322,7 @@
              <widget class="QLabel" name="dateFormats_Label">
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -2391,7 +2405,7 @@
              <widget class="QLabel" name="timeFormats_Label">
               <property name="minimumSize">
                <size>
-                <width>80</width>
+                <width>120</width>
                 <height>0</height>
                </size>
               </property>
@@ -2502,7 +2516,7 @@
            <widget class="QLabel" name="patternTemplate_Label">
             <property name="minimumSize">
              <size>
-              <width>75</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>
@@ -2537,7 +2551,7 @@
            <widget class="QLabel" name="pieceTemplate_Label">
             <property name="minimumSize">
              <size>
-              <width>75</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>

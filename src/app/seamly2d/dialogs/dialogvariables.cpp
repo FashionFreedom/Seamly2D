@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogvariables.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,38 +19,35 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   dialogvariables.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
 #include "dialogvariables.h"
 #include "ui_dialogvariables.h"
 #include "../vwidgets/vwidgetpopup.h"
@@ -57,13 +56,16 @@
 #include "../qmuparser/qmutokenparser.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/calculator.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 
 #include <QFileDialog>
 #include <QDir>
+#include <QGuiApplication>
 #include <QMessageBox>
 #include <QCloseEvent>
+#include <QTabBar>
 #include <QTableWidget>
+#include <QScreen>
 #include <QSettings>
 #include <QTableWidgetItem>
 #include <QtNumeric>
@@ -93,6 +95,9 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
 
     setWindowFlags(Qt::Window);
     setWindowFlags((windowFlags() | Qt::WindowStaysOnTopHint) & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     ui->name_LineEdit->setClearButtonEnabled(true);
     ui->filter_LineEdit->installEventFilter(this);
@@ -216,9 +221,9 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         {
             formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             formula = variable->GetFormula();
         }
 
@@ -419,10 +424,10 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
             label->setToolTip(tr("Value"));
             return true;
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(e.GetMsg()));
-            label->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            label->setText(tr("Error") + " (" + postfix + "). " + tr("Parser error: %1").arg(error.GetMsg()));
+            label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
             return false;
         }
     }
@@ -816,9 +821,9 @@ void DialogVariables::saveCustomVariableFormula()
         const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
         doc->SetIncrementFormula(name->text(), formula);
     }
-    catch (qmu::QmuParserError &e) // Just in case something bad will happen
+    catch (qmu::QmuParserError &error) // Just in case something bad will happen
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;
     }
 
@@ -845,7 +850,7 @@ void DialogVariables::Fx()
     const QTableWidgetItem *name = ui->variables_TableWidget->item(row, 0);
     QSharedPointer<VIncrement> variable = data->GetVariable<VIncrement>(name->text());
 
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(variable->GetData(), NULL_ID, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
     dialog->setWindowTitle(tr("Edit variable"));
     dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
                                                           qApp->Settings()->GetOsSeparator()));
@@ -976,9 +981,9 @@ void DialogVariables::showCustomVariableDetails()
         {
             variable = data->GetVariable<VIncrement>(name->text());
         }
-        catch(const VExceptionBadId &e)
+        catch(const VExceptionBadId &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             enablePieces(false);
             return;
         }
@@ -999,9 +1004,9 @@ void DialogVariables::showCustomVariableDetails()
         {
             formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             formula = variable->GetFormula();
         }
 

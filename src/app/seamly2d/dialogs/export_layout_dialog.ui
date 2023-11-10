@@ -508,7 +508,7 @@ border-radius: 4px;
                 </size>
                </property>
                <property name="text">
-                <string notr="true">Export files:</string>
+                <string>Export files:</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
@@ -700,7 +700,7 @@ border-radius: 4px;
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="templates_ComboBox">
+           <widget class="PageFormatCombobox" name="templates_ComboBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -796,6 +796,11 @@ border-radius: 4px;
    <class>ExportFormatCombobox</class>
    <extends>QComboBox</extends>
    <header>export_format_combobox.h</header>
+  </customwidget>
+  <customwidget>
+   <class>PageFormatCombobox</class>
+   <extends>QComboBox</extends>
+   <header>page_format_combobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>

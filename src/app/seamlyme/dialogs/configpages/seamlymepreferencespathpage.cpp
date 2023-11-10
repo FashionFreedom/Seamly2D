@@ -81,6 +81,16 @@ SeamlyMePreferencesPathPage::~SeamlyMePreferencesPathPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void SeamlyMePreferencesPathPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesPathPage::Apply()
 {
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();

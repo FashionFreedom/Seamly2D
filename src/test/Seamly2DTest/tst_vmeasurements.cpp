@@ -111,9 +111,9 @@ void TST_Measurements::CreateEmptyMultisizeFile()
     {
         VDomDocument::ValidateXML(MultiSizeConverter::CurrentSchema, fileName);
     }
-    catch (VException &e)
+    catch (VException &error)
     {
-        QFAIL(e.ErrorMessage().toUtf8().constData());
+        QFAIL(error.ErrorMessage().toUtf8().constData());
     }
 }
 
@@ -151,9 +151,9 @@ void TST_Measurements::CreateEmptyIndividualFile()
     {
         VDomDocument::ValidateXML(IndividualSizeConverter::CurrentSchema, fileName);
     }
-    catch (VException &e)
+    catch (VException &error)
     {
-        QFAIL(e.ErrorMessage().toUtf8().constData());
+        QFAIL(error.ErrorMessage().toUtf8().constData());
     }
 }
 
@@ -206,9 +206,9 @@ void TST_Measurements::ValidPMCodesMultisizeFile()
         {
             VDomDocument::ValidateXML(MultiSizeConverter::CurrentSchema, fileName);
         }
-        catch (VException &e)
+        catch (VException &error)
         {
-            const QString message = QString("Error: %1 for code=%2").arg(e.ErrorMessage()).arg(listSystems.at(i));
+            const QString message = QString("Error: %1 for code=%2").arg(error.ErrorMessage()).arg(listSystems.at(i));
             QFAIL(qUtf8Printable(message));
         }
     }
@@ -257,9 +257,9 @@ void TST_Measurements::ValidPMCodesIndividualFile()
         {
             VDomDocument::ValidateXML(IndividualSizeConverter::CurrentSchema, fileName);
         }
-        catch (VException &e)
+        catch (VException &error)
         {
-            const QString message = QString("Error: %1 for code=%2").arg(e.ErrorMessage()).arg(listSystems.at(i));
+            const QString message = QString("Error: %1 for code=%2").arg(error.ErrorMessage()).arg(listSystems.at(i));
             QFAIL(qUtf8Printable(message));
         }
     }

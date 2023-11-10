@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   groups_widget.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -73,6 +73,7 @@
 #include "../vgeometry/vcubicbezierpath.h"
 #include "../vgeometry/vpointf.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vwidgets/group_tablewidgetitem.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vsettings.h"
@@ -114,6 +115,7 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     ui->groups_Splitter->restoreState(settings.value("splitterSizes").toByteArray());
 
     fillTable(m_doc->getGroups());
+    ui->groups_TableWidget->sortItems(settings.value("groupSort", 4).toInt(), Qt::AscendingOrder);
 
     connect(m_doc, &VAbstractPattern::patternHasGroups, this, &GroupsWidget::draftBlockHasGroups);
 
@@ -138,6 +140,7 @@ GroupsWidget::GroupsWidget(VContainer *data, VAbstractPattern *doc, QWidget *par
     connect(ui->groupItems_ListWidget, &QListWidget::customContextMenuRequested, this, &GroupsWidget::groupItemContextMenu);
     connect(ui->groupItems_ListWidget, &QListWidget::itemDoubleClicked,          this, &GroupsWidget::itemDoubleClicked);
 
+    connect(ui->groups_TableWidget->horizontalHeader(), &QHeaderView::sectionClicked, this, &GroupsWidget::headerClicked);
     connect(ui->groups_Splitter, &QSplitter::splitterMoved, this, &GroupsWidget::splitterMoved);
 }
 
@@ -382,7 +385,7 @@ void GroupsWidget::editGroup()
         ui->groups_TableWidget->blockSignals(false);
         return;
     }
-    QTableWidgetItem *item = ui->groups_TableWidget->item(row,1);
+
     const quint32 groupId = ui->groups_TableWidget->item(row, 0)->data(Qt::UserRole).toUInt();
     const bool locked = m_doc->getGroupLock(groupId);
     QString oldGroupName = m_doc->getGroupName(groupId);
@@ -434,14 +437,22 @@ void GroupsWidget::editGroup()
         }
 
         const QString groupColor = dialog->getColor();
-        QPixmap pixmap = VAbstractTool::createColorIcon(32, 12, groupColor);
-
         const QString groupLineType = dialog->getLineType();
         const QString groupLineWeight = dialog->getLineWeight();
 
-        item = ui->groups_TableWidget->item(row,3);
+        QTableWidgetItem *item = ui->groups_TableWidget->item(row, 3);
+        item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        item->setSizeHint(QSize(20, 20));
+        QPixmap pixmap(20, 20);
+        pixmap.fill(QColor(groupColor));
         item->setIcon(QIcon(pixmap));
+        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Group color"));
+        ui->groups_TableWidget->setItem(row, 3, item);
+
+        item = ui->groups_TableWidget->item(row, 4);
         item->setText(groupName);
+
         m_doc->setGroupName(groupId, groupName);
         m_doc->setGroupColor(groupId, groupColor);
         m_doc->setGroupLineType(groupId, groupLineType);
@@ -455,6 +466,9 @@ void GroupsWidget::editGroup()
 //---------------------------------------------------------------------------------------------------------------------
 void GroupsWidget::groupContextMenu(const QPoint &pos)
 {
+    ui->groups_TableWidget->setSortingEnabled(false);
+    ui->groups_TableWidget->blockSignals(true);
+
     QTableWidgetItem *item = ui->groups_TableWidget->itemAt(pos);
     if (!item)
     {
@@ -526,10 +540,19 @@ void GroupsWidget::groupContextMenu(const QPoint &pos)
 
       const QString groupColor = dialog->getColor();
       const QString groupLineType = dialog->getLineType();
-       const QString groupLineWeight = dialog->getLineWeight();
-      QPixmap pixmap = VAbstractTool::createColorIcon(32, 12, groupColor);
+      const QString groupLineWeight = dialog->getLineWeight();
+
       item = ui->groups_TableWidget->item(row, 3);
+      item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+      item->setSizeHint(QSize(20, 20));
+      QPixmap pixmap(20, 20);
+      pixmap.fill(QColor(groupColor));
       item->setIcon(QIcon(pixmap));
+      item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+      item->setToolTip(tr("Group color"));
+      ui->groups_TableWidget->setItem(row, 3, item);
+
+      item = ui->groups_TableWidget->item(row, 4);
       item->setText(groupName);
       m_doc->setGroupName(groupId, groupName);
       m_doc->setGroupColor(groupId, groupColor);
@@ -542,6 +565,10 @@ void GroupsWidget::groupContextMenu(const QPoint &pos)
         connect(command, &DelGroup::updateGroups, this, &GroupsWidget::updateGroups);
         qApp->getUndoStack()->push(command);
     }
+
+    ui->groups_TableWidget->setSortingEnabled(true);
+    ui->groups_TableWidget->blockSignals(false);
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -561,8 +588,10 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
 {
     ui->groups_TableWidget->blockSignals(true);
     ui->groups_TableWidget->clear();
-    ui->groups_TableWidget->setColumnCount(4);
+    ui->groups_TableWidget->setColumnCount(5);
     ui->groups_TableWidget->setRowCount(groups.size());
+    ui->groups_TableWidget->setSortingEnabled(false);
+
     qint32 currentRow = -1;
     auto i = groups.constBegin();
     while (i != groups.constEnd())
@@ -571,8 +600,9 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
         const GroupAttributes data = i.value();
 
         // Add visibility item
-        QTableWidgetItem *item = new QTableWidgetItem();
+        GroupTableWidgetItem *item = new GroupTableWidgetItem(m_doc);
         item->setTextAlignment(Qt::AlignHCenter);
+        item->setSizeHint(QSize(20, 20));
 
         setGroupVisibility(item, i.key(), data.visible);
 
@@ -582,49 +612,55 @@ void GroupsWidget::fillTable(const QMap<quint32, GroupAttributes> &groups)
         ui->groups_TableWidget->setItem(currentRow, 0, item);
 
         // Add locked item
-        item = new QTableWidgetItem();
+        item = new GroupTableWidgetItem(m_doc);
         item->setTextAlignment(Qt::AlignHCenter);
-
-        if (data.locked)
-        {
-            item->setIcon(QIcon("://icon/32x32/lock_on.png"));
-        }
-        else
-        {
-            item->setIcon(QIcon("://icon/32x32/lock_off.png"));
-        }
-
+        item->setSizeHint(QSize(20, 20));
+        item->setIcon(data.locked ? QIcon("://icon/32x32/lock_on.png") : QIcon("://icon/32x32/lock_off.png"));
         item->setData(Qt::UserRole, i.key());
         item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
         item->setToolTip(tr("Show which groups in the list are locked"));
         ui->groups_TableWidget->setItem(currentRow, 1, item);
 
-        // Add Edit Item
-        if (!m_doc->isGroupEmpty(i.key()))
-        {
-            item = new QTableWidgetItem();
-            item->setTextAlignment(Qt::AlignHCenter);
-            item->setIcon(QIcon("://icon/32x32/history.png"));
-            item->setData(Qt::UserRole, i.key());
-            item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
-            item->setToolTip(tr("Show which groups contain objects"));
-            ui->groups_TableWidget->setItem(currentRow, 2, item);
-        }
+        // Add contain objects Item
+        item = new GroupTableWidgetItem(m_doc);
+        item->setTextAlignment(Qt::AlignHCenter);
+        item->setIcon(!m_doc->isGroupEmpty(i.key()) ? QIcon("://icon/32x32/history.png") : QIcon());
+        item->setData(Qt::UserRole, i.key());
+        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Show which groups contain objects"));
+        ui->groups_TableWidget->setItem(currentRow, 2, item);
+
+        // Add color item
+        item = new GroupTableWidgetItem(m_doc);
+        item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        item->setSizeHint(QSize(20, 20));
+        QPixmap pixmap(20, 20);
+        pixmap.fill(QColor(data.color));
+        item->setIcon(QIcon(pixmap));
+        item->setData(Qt::UserRole, data.color);
+        item->setFlags(item->flags() &= ~(Qt::ItemIsEditable));  // set the item non-editable (view only), and non-selectable
+        item->setToolTip(tr("Group color"));
+        ui->groups_TableWidget->setItem(currentRow, 3, item);
 
         // Add group name item
-        QPixmap pixmap = VAbstractTool::createColorIcon(32,12,data.color);
-
-        item = new QTableWidgetItem(data.name);
-        item->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-        item->setIcon(QIcon(pixmap));
-        item->setToolTip(tr("Group color and name"));
-        ui->groups_TableWidget->setItem(currentRow, 3, item);
+        QTableWidgetItem *nameItem = new QTableWidgetItem(data.name);
+        nameItem->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+        nameItem->setToolTip(tr("Group name"));
+        ui->groups_TableWidget->setItem(currentRow, 4, nameItem);
 
         ++i;
     }
-    ui->groups_TableWidget->sortItems(1, Qt::AscendingOrder);
+
+    ui->groups_TableWidget->setHorizontalHeaderItem(0, new QTableWidgetItem(makeHeaderName(QString("Visible"))));
+    ui->groups_TableWidget->setHorizontalHeaderItem(1, new QTableWidgetItem(makeHeaderName(QString("Locked"))));
+    ui->groups_TableWidget->setHorizontalHeaderItem(2, new QTableWidgetItem(makeHeaderName(QString("Objects"))));
+    ui->groups_TableWidget->setHorizontalHeaderItem(3, new QTableWidgetItem(makeHeaderName(QString("Color"))));
+    ui->groups_TableWidget->setHorizontalHeaderItem(4, new QTableWidgetItem(tr("Name")));
+    ui->groups_TableWidget->horizontalHeaderItem(4)->setTextAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    ui->groups_TableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->groups_TableWidget->resizeColumnsToContents();
     ui->groups_TableWidget->resizeRowsToContents();
+    ui->groups_TableWidget->setSortingEnabled(true);
     ui->groups_TableWidget->blockSignals(false);
 }
 
@@ -675,7 +711,7 @@ QString GroupsWidget::getCurrentGroupName()
     }
     int row = ui->groups_TableWidget->row(item);
     qCDebug(WidgetGroups, "Row = %d\n", row);
-    const QString groupName = ui->groups_TableWidget->item(row, 3)->text();
+    const QString groupName = ui->groups_TableWidget->item(row, 4)->text();
     return groupName;
 }
 
@@ -727,7 +763,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
     const QDomElement domElement = m_doc->elementById(toolId);
     if (domElement.isElement() == false)
     {
-        qDebug()<<"Can't find element by id"<<Q_FUNC_INFO;
+        qDebug() << "Can't find element by id" << Q_FUNC_INFO;
         return;
     }
         try
@@ -998,7 +1034,6 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
             itemData.append(objId);
             itemData.append(toolId);
 
-            qCDebug(WidgetGroups, "Icon Name = %s", qUtf8Printable(iconFileName));
             QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(iconFileName));
             item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
@@ -1006,13 +1041,13 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
             return;
         }
 
-        catch (const VExceptionBadId &e)
+        catch (const VExceptionBadId &error)
         {
             QList<quint32>itemData;
             itemData.append(objId);
             itemData.append(toolId);
 
-            qDebug()<<e.ErrorMessage()<<Q_FUNC_INFO;
+            qDebug() << error.ErrorMessage() << Q_FUNC_INFO;
             QListWidgetItem *item = new QListWidgetItem(objName);
             item->setIcon(QIcon(":/icons/win.icon.theme/16x16/status/dialog-warning.png"));
             item->setData(Qt::UserRole,  QVariant::fromValue(itemData));
@@ -1059,11 +1094,10 @@ QString GroupsWidget::getObjName(quint32 toolId)
         const auto obj = m_data->GetGObject(toolId);
         return obj->name();
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         qCDebug(WidgetGroups, "Error! Couldn't get object name by id = %s. %s %s", qUtf8Printable(QString().setNum(toolId)),
-            qUtf8Printable(e.ErrorMessage()),
-            qUtf8Printable(e.DetailedInformation()));
+                qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         return QString("Unknown Object");// Return Unknown string
     }
 }
@@ -1326,4 +1360,15 @@ void GroupsWidget::splitterMoved(int pos, int index)
 
     QSettings settings;
     settings.setValue("splitterSizes", ui->groups_Splitter->saveState());
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief headerClicked Sort state whenever header section clicked.
+ * @param index
+ */
+void GroupsWidget::headerClicked(int index)
+{
+    QSettings settings;
+    settings.setValue("groupSort", index);
 }

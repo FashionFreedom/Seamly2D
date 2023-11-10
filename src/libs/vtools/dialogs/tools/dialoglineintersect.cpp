@@ -91,7 +91,7 @@ DialogLineIntersect::DialogLineIntersect(const VContainer *data, const quint32 &
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     number = 0;
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 

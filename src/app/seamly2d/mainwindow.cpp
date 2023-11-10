@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   mainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   14 Jul, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -115,6 +115,7 @@
 #include <QFontComboBox>
 #include <QTextCodec>
 #include <QDoubleSpinBox>
+#include <QSharedPointer>
 
 #if defined(Q_OS_MAC)
 #include <QMimeData>
@@ -198,9 +199,9 @@ MainWindow::MainWindow(QWidget *parent)
     InitScenes();
     doc = new VPattern(pattern, &mode, draftScene, pieceScene);
     connect(doc, &VPattern::ClearMainWindow, this, &MainWindow::Clear);
-    connect(doc, &VPattern::patternChanged, this, &MainWindow::PatternChangesWereSaved);
-    connect(doc, &VPattern::UndoCommand, this, &MainWindow::FullParseFile);
-    connect(doc, &VPattern::SetEnabledGUI, this, &MainWindow::SetEnabledGUI);
+    connect(doc, &VPattern::patternChanged, this, &MainWindow::patternChangesWereSaved);
+    connect(doc, &VPattern::UndoCommand, this, &MainWindow::fullParseFile);
+    connect(doc, &VPattern::setGuiEnabled, this, &MainWindow::setGuiEnabled);
     connect(doc, &VPattern::CheckLayout, this, [this]()
     {
         if (pattern->DataPieces()->count() == 0)
@@ -211,7 +212,7 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
     });
-    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::GlobalchangeDraftBlock);
+    connect(doc, &VPattern::setCurrentDraftBlock, this, &MainWindow::changeDraftBlockGlobally);
     connect(doc, &VPattern::CheckLayout, this, [&](){
         this->updateZoomToPointComboBox(draftPointNamesList());
     });
@@ -231,7 +232,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     initToolsToolBar();
 
-    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::PatternChangesWereSaved);
+    connect(qApp->getUndoStack(), &QUndoStack::cleanChanged, this, &MainWindow::patternChangesWereSaved);
 
     InitAutoSave();
 
@@ -308,7 +309,7 @@ void MainWindow::addDraftBlock(const QString &blockName)
 {
     if (doc->appendDraftBlock(blockName) == false)
     {
-        qCDebug(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
+        qCWarning(vMainWindow, "Error creating draft block with the name %s.", qUtf8Printable(blockName));
         return;
     }
 
@@ -332,11 +333,11 @@ void MainWindow::addDraftBlock(const QString &blockName)
                                          Source::FromGui);
     ui->view->itemClicked(spoint);
 
-    setEnableTools(true);
-    SetEnableWidgets(true);
+    setToolsEnabled(true);
+    setWidgetsEnabled(true);
 
     const qint32 index = draftBlockComboBox->findText(blockName);
-    if ( index != -1 )
+    if (index != -1)
     { // -1 for not found
         draftBlockComboBox->setCurrentIndex(index);
     }
@@ -489,6 +490,7 @@ QSharedPointer<Measurements> MainWindow::openMeasurementFile(const QString &file
             }
         }
     }
+
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
@@ -515,7 +517,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     if (qApp->patternUnit() == Unit::Inch && measurements->Type() == MeasurementsType::Multisize)
     {
-        qWarning()<<tr("Gradation doesn't support inches");
+        qWarning() << tr("Gradation doesn't support inches");
         return false;
     }
 
@@ -526,10 +528,12 @@ bool MainWindow::loadMeasurements(const QString &fileName)
         pattern->ClearVariables(VarType::Measurement);
         measurements->readMeasurements();
     }
+
     catch (VExceptionEmptyParameter &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -539,8 +543,11 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
     if (measurements->Type() == MeasurementsType::Multisize)
     {
+
         VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->MUnit(),
-                                          *measurements->GetData()->GetPatternUnit()));
+
+        qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(path));
+
         VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->MUnit(),
                                             *measurements->GetData()->GetPatternUnit()));
 
@@ -549,7 +556,10 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     }
     else if (measurements->Type() == MeasurementsType::Individual)
     {
+
         setSizeHeightForIndividualM();
+
+        qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(path));
     }
 
     return true;
@@ -580,10 +590,12 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         pattern->ClearVariables(VarType::Measurement);
         measurements->readMeasurements();
     }
+
     catch (VExceptionEmptyParameter &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -1713,10 +1725,10 @@ void MainWindow::addSelectedItemsToGroup()
  * @brief showEvent handle after show window.
  * @param event show event.
  */
-void MainWindow::showEvent( QShowEvent *event )
+void MainWindow::showEvent(QShowEvent *event)
 {
-    QMainWindow::showEvent( event );
-    if ( event->spontaneous() )
+    QMainWindow::showEvent(event);
+    if (event->spontaneous())
     {
         return;
     }
@@ -1744,6 +1756,7 @@ void MainWindow::changeEvent(QEvent *event)
         helpLabel->setText(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
         UpdateWindowTitle();
+        initPenToolBar();
         emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation
@@ -1885,7 +1898,9 @@ void MainWindow::LoadIndividual()
     const QString dir = qApp->Seamly2DSettings()->getIndividualSizePath();
 
     bool usedNotExistedDir = false;
+
     QDir directory(dir);
+
     if (!directory.exists())
     {
         usedNotExistedDir = directory.mkpath(".");
@@ -1893,6 +1908,7 @@ void MainWindow::LoadIndividual()
 
     const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
+
 
     if (!filename.isEmpty())
     {
@@ -1902,10 +1918,15 @@ void MainWindow::LoadIndividual()
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
+
+            qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(filename));
+
             ui->unloadMeasurements_Action->setEnabled(true);
+
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
             watcher->addPath(filename);
-            PatternChangesWereSaved(false);
+            patternChangesWereSaved(false);
+
             ui->editCurrent_Action->setEnabled(true);
             helpLabel->setText(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
@@ -1953,10 +1974,15 @@ void MainWindow::LoadMultisize()
             {
                 watcher->removePath(AbsoluteMPath(qApp->getFilePath(), doc->MPath()));
             }
+
+            qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(filename));
+
             ui->unloadMeasurements_Action->setEnabled(true);
+
             doc->SetMPath(RelativeMPath(qApp->getFilePath(), filename));
             watcher->addPath(filename);
-            PatternChangesWereSaved(false);
+            patternChangesWereSaved(false);
+
             ui->editCurrent_Action->setEnabled(true);
             helpLabel->setText(tr("Measurements loaded"));
             doc->LiteParseTree(Document::LiteParse);
@@ -1998,7 +2024,7 @@ void MainWindow::UnloadMeasurements()
         qApp->setPatternType(MeasurementsType::Unknown);
         doc->SetMPath(QString());
         emit doc->UpdatePatternLabel();
-        PatternChangesWereSaved(false);
+        patternChangesWereSaved(false);
         ui->editCurrent_Action->setEnabled(false);
         ui->unloadMeasurements_Action->setDisabled(true);
         helpLabel->setText(tr("Measurements unloaded"));
@@ -2309,6 +2335,7 @@ void MainWindow::initDraftToolBar()
         }
         RenameDraftBlock *draftBlock = new RenameDraftBlock(doc, draftBlockName, draftBlockComboBox);
         qApp->getUndoStack()->push(draftBlock);
+        fullParseFile();
     });
 }
 
@@ -2451,9 +2478,10 @@ void MainWindow::initPenToolBar()
 {
     if (m_penToolBar != nullptr)
     {
+        disconnect(m_penToolBar, nullptr, this, nullptr);
         delete m_penToolBar;
     }
-    m_penToolBar = new PenToolBar("Toolbar Pen", this);
+    m_penToolBar = new PenToolBar(tr("Pen Toolbar"), this);
     m_penToolBar->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     m_penToolBar->setObjectName("penToolBar");
     this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
@@ -2686,7 +2714,7 @@ void MainWindow::handlePointsMenu()
 
     QAction *action_PointAtDA           = menu.addAction(QIcon(":/toolicon/32x32/segment.png"),                tr("Length and Angle") + "\tL, A");
     QAction *action_PointAlongLine      = menu.addAction(QIcon(":/toolicon/32x32/along_line.png"),             tr("On Line") + "\tO, L");
-    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\tShift+O, Shift+L");
+    QAction *action_Midpoint            = menu.addAction(QIcon(":/toolicon/32x32/midpoint.png"),               tr("Midpoint") + "\t" + tr("Shift+O, Shift+L"));
     QAction *action_AlongPerpendicular  = menu.addAction(QIcon(":/toolicon/32x32/normal.png"),                 tr("On Perpendicular") + "\tO, P");
     QAction *action_Bisector            = menu.addAction(QIcon(":/toolicon/32x32/bisector.png"),               tr("On Bisector") + "\tO, B");
     QAction *action_Shoulder            = menu.addAction(QIcon(":/toolicon/32x32/shoulder.png"),               tr("Length to Line") + "\tP, S");
@@ -2775,7 +2803,7 @@ void MainWindow::handleLinesMenu()
     qCDebug(vMainWindow, "Lines Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\tAlt+L");
+    QAction *action_Line          = menu.addAction(QIcon(":/toolicon/32x32/line.png"),      tr("Line") + "\t" + tr("Alt+L"));
     QAction *action_LineIntersect = menu.addAction(QIcon(":/toolicon/32x32/intersect.png"), tr("Intersect Lines") + "\tI, L");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
@@ -2803,15 +2831,15 @@ void MainWindow::handleArcsMenu()
     qCDebug(vMainWindow, "Arcs Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\tAlt+A");
+    QAction *action_Arc              = menu.addAction(QIcon(":/toolicon/32x32/arc.png"),                           tr("Radius and Angles") + "\t" + tr("Alt+A"));
     QAction *action_PointAlongArc    = menu.addAction(QIcon(":/toolicon/32x32/arc_cut.png"),                       tr("Point on Arc") + "\tO, A");
     QAction *action_ArcIntersectAxis = menu.addAction(QIcon(":/toolicon/32x32/arc_intersect_axis.png"),            tr("Intersect Arc and Axis") + "\tA, X");
     QAction *action_ArcIntersectArc  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"),    tr("Intersect Arcs") + "\tI, A");
-    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\tShift+I, Shift+C");
+    QAction *action_CircleIntersect  = menu.addAction(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"), tr("Intersect Circles") + "\t" + tr("Shift+I, Shift+C"));
     QAction *action_CircleTangent    = menu.addAction(QIcon(":/toolicon/32x32/point_from_circle_and_tangent.png"), tr("Intersect Circle and Tangent") + "\tC, T");
     QAction *action_ArcTangent       = menu.addAction(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"),    tr("Intersect Arc and Tangent") + "\tA, T");
-    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\tAlt+Shift+A");
-    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\tAlt+E");
+    QAction *action_ArcWithLength    = menu.addAction(QIcon(":/toolicon/32x32/arc_with_length.png"),               tr("Radius and Length") + "\t" + tr("Alt+Shift+A"));
+    QAction *action_EllipticalArc    = menu.addAction(QIcon(":/toolicon/32x32/el_arc.png"),                        tr("Elliptical") + "\t" + tr("Alt+E"));
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -2880,10 +2908,10 @@ void MainWindow::handleCurvesMenu()
     qCDebug(vMainWindow, "Curves Menu selected. \n");
     QMenu menu;
 
-    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\tAlt+C");
-    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\tAlt+S");
-    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\tAlt+Shift+C");
-    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\tAlt+Shift+S");
+    QAction *action_Curve                = menu.addAction(QIcon(":/toolicon/32x32/spline.png"),               tr("Curve - Interactive") + "\t" + tr("Alt+C"));
+    QAction *action_Spline               = menu.addAction(QIcon(":/toolicon/32x32/splinePath.png"),           tr("Spline - Interactive") + "\t" + tr("Alt+S"));
+    QAction *action_CurveWithCPs         = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier.png"),         tr("Curve - Fixed") + "\t" + tr("Alt+Shift+C"));
+    QAction *action_SplineWithCPs        = menu.addAction(QIcon(":/toolicon/32x32/cubic_bezier_path.png"),    tr("Spline - Fixed") + "\t" + tr("Alt+Shift+S"));
     QAction *action_PointAlongCurve      = menu.addAction(QIcon(":/toolicon/32x32/spline_cut_point.png"),     tr("Point on Curve") + "\tO, C");
     QAction *action_PointAlongSpline     = menu.addAction(QIcon(":/toolicon/32x32/splinePath_cut_point.png"), tr("Point on Spline") + "\tO, S");
     QAction *action_CurveIntersectCurve  = menu.addAction(QIcon(":/toolicon/32x32/intersection_curves.png"),  tr("Intersect Curves") + "\tI, C");
@@ -2960,7 +2988,7 @@ void MainWindow::handleOperationsMenu()
     QAction *action_Rotate       = menu.addAction(QIcon(":/toolicon/32x32/rotation.png"),       tr("Rotate") + "\tR");
     QAction *action_MirrorByLine = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_line.png"), tr("Mirror by Line") + "\tM, L");
     QAction *action_MirrorByAxis = menu.addAction(QIcon(":/toolicon/32x32/mirror_by_axis.png"), tr("Mirror by Axis") + "\tM, A");
-    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\tAlt+M");
+    QAction *action_Move         = menu.addAction(QIcon(":/toolicon/32x32/move.png"),           tr("Move") + "\t" + tr("Alt+M"));
     QAction *action_TrueDarts    = menu.addAction(QIcon(":/toolicon/32x32/true_darts.png"),     tr("True Darts") + "\tT, D");
     QAction *action_ExportDraftBlocks = menu.addAction(QIcon(":/toolicon/32x32/export.png"),    tr("Export Draft Blocks") + "\tE, D");
 
@@ -3151,12 +3179,12 @@ void MainWindow::CancelTool()
     ui->zoomToArea_Action->setChecked(false);      //Disable Zoom to Area
     ui->view->zoomToAreaEnabled(false);
 
-    switch ( currentTool )
+    switch (currentTool)
     {
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(false);
             ui->arrow_Action->setChecked(false);
-            helpLabel->setText("");
+            helpLabel->setText(QString(""));
 
             // Crash: using CRTL+Z while using line tool.
             undoAction->setEnabled(false);
@@ -3484,8 +3512,8 @@ void MainWindow::showDraftMode(bool checked)
         draftBlockComboBox->setCurrentIndex(currentBlockIndex); //restore current draft block
         drawMode = true;
 
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
 
         draftScene->enablePiecesMode(qApp->Seamly2DSettings()->getShowControlPoints());
         draftScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
@@ -3568,8 +3596,8 @@ void MainWindow::showPieceMode(bool checked)
             currentToolBoxIndex = ui->piece_ToolBox->currentIndex();
         }
         mode = Draw::Modeling;
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
 
         pieceScene->setOriginsVisible(qApp->Settings()->getShowAxisOrigin());
 
@@ -3666,6 +3694,7 @@ void MainWindow::showLayoutMode(bool checked)
         {
             pieceList = preparePiecesForLayout(pieces);
         }
+
         catch (VException &exception)
         {
             pieceList.clear();
@@ -3685,8 +3714,8 @@ void MainWindow::showLayoutMode(bool checked)
             currentToolBoxIndex = ui->layout_ToolBox->currentIndex();
         }
         mode = Draw::Layout;
-        setEnableTools(true);
-        SetEnableWidgets(true);
+        setToolsEnabled(true);
+        setWidgetsEnabled(true);
         ui->layout_ToolBox->setCurrentIndex(ui->layout_ToolBox->indexOf(ui->layout_Page));
 
         mouseCoordinates->updateCoordinates(QPointF());
@@ -4034,7 +4063,7 @@ void MainWindow::Clear()
     ui->unloadMeasurements_Action->setEnabled(false);
     ui->editCurrent_Action->setEnabled(false);
 
-    setEnableTools(false);
+    setToolsEnabled(false);
     qApp->setPatternUnit(Unit::Cm);
     qApp->setPatternType(MeasurementsType::Unknown);
 
@@ -4068,73 +4097,85 @@ void MainWindow::FileClosedCorrect()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::FullParseFile()
+void MainWindow::fullParseFile()
 {
     qCDebug(vMainWindow, "Full parsing file");
 
     toolProperties->clearPropertyBrowser();
     try
     {
-        SetEnabledGUI(true);
+        setGuiEnabled(true);
         doc->Parse(Document::FullParse);
     }
+
     catch (const VExceptionUndo &exception)
     {
         Q_UNUSED(exception)
+
         /* If user want undo last operation before undo we need finish broken redo operation. For those we post event
          * myself. Later in method customEvent call undo.*/
         QApplication::postEvent(this, new UndoEvent());
         return;
     }
+
     catch (const VExceptionObjectError &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
+
     catch (const VExceptionConversionError &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
+
     catch (const VExceptionEmptyParameter &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
+
     catch (const VExceptionWrongId &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
+
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -4144,7 +4185,9 @@ void MainWindow::FullParseFile()
     catch (const std::bad_alloc &)
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
-        SetEnabledGUI(false);
+
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -4152,10 +4195,10 @@ void MainWindow::FullParseFile()
         return;
     }
 
-    QString patternPiece;
+    QString draftBlock;
     if (draftBlockComboBox->currentIndex() != -1)
     {
-        patternPiece = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
+        draftBlock = draftBlockComboBox->itemText(draftBlockComboBox->currentIndex());
     }
     draftBlockComboBox->blockSignals(true);
     draftBlockComboBox->clear();
@@ -4170,8 +4213,8 @@ void MainWindow::FullParseFile()
     }
     else
     {
-        const qint32 index = draftBlockComboBox->findText(patternPiece);
-        if ( index != -1 )
+        const qint32 index = draftBlockComboBox->findText(draftBlock);
+        if (index != -1)
         {
             draftBlockComboBox->setCurrentIndex(index);
         }
@@ -4179,9 +4222,9 @@ void MainWindow::FullParseFile()
     draftBlockComboBox->blockSignals(false);
     ui->patternPreferences_Action->setEnabled(true);
 
-    GlobalchangeDraftBlock(patternPiece);
+    changeDraftBlockGlobally(draftBlock);
 
-    setEnableTools(draftBlockComboBox->count() > 0);
+    setToolsEnabled(draftBlockComboBox->count() > 0);
     patternPiecesWidget->updateList();
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
@@ -4189,36 +4232,43 @@ void MainWindow::FullParseFile()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
+void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
 {
-    const qint32 index = draftBlockComboBox->findText(patternPiece);
+    const qint32 index = draftBlockComboBox->findText(draftBlock);
     try
     {
-        if ( index != -1 )
+        if (index != -1)
         { // -1 for not found
             changeDraftBlock(index, false);
+            draftBlockComboBox->blockSignals(true);
+            draftBlockComboBox->setCurrentIndex(index);
+            draftBlockComboBox->blockSignals(false);
         }
         else
         {
             changeDraftBlock(0, false);
         }
     }
+
     catch (VExceptionBadId &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Bad id.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
         return;
     }
+
     catch (const VExceptionEmptyParameter &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
-        SetEnabledGUI(false);
+        setGuiEnabled(false);
+
         if (!VApplication::IsGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
@@ -4228,7 +4278,7 @@ void MainWindow::GlobalchangeDraftBlock(const QString &patternPiece)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::SetEnabledGUI(bool enabled)
+void MainWindow::setGuiEnabled(bool enabled)
 {
     if (guiEnabled != enabled)
     {
@@ -4237,11 +4287,11 @@ void MainWindow::SetEnabledGUI(bool enabled)
             handleArrowTool(true);
             qApp->getUndoStack()->clear();
         }
-        SetEnableWidgets(enabled);
+        setWidgetsEnabled(enabled);
 
         guiEnabled = enabled;
 
-        setEnableTools(enabled);
+        setToolsEnabled(enabled);
         ui->statusBar->setEnabled(enabled);
     #ifndef QT_NO_CURSOR
         QGuiApplication::setOverrideCursor(Qt::ArrowCursor);
@@ -4251,10 +4301,10 @@ void MainWindow::SetEnabledGUI(bool enabled)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetEnableWidgets enable action button.
+ * @brief setWidgetsEnabled enable action button.
  * @param enable enable value.
  */
-void MainWindow::SetEnableWidgets(bool enable)
+void MainWindow::setWidgetsEnabled(bool enable)
 {
     const bool draftStage = (mode == Draw::Calculation);
     const bool pieceStage = (mode == Draw::Modeling);
@@ -4333,7 +4383,7 @@ void MainWindow::SetEnableWidgets(bool enable)
     actionDockWidgetLayouts->setEnabled(enable && layoutStage);
 
     //Now we don't want allow user call context menu
-    draftScene->SetDisableTools(!enable, doc->getActiveDraftBlockName());
+    draftScene->setToolsDisabled(!enable, doc->getActiveDraftBlockName());
     ui->view->setEnabled(enable);
 }
 
@@ -4436,7 +4486,7 @@ void MainWindow::New()
 /**
  * @brief haveChange enable action save if we have unsaved change.
  */
-void MainWindow::PatternChangesWereSaved(bool saved)
+void MainWindow::patternChangesWereSaved(bool saved)
 {
     if (guiEnabled)
     {
@@ -4473,7 +4523,7 @@ void MainWindow::ChangedSize(int index)
         }
         else
         {
-            qCDebug(vMainWindow, "Couldn't restore size value.");
+            qCWarning(vMainWindow, "Couldn't restore size value.");
         }
     }
 }
@@ -4503,7 +4553,7 @@ void MainWindow::ChangedHeight(int index)
         }
         else
         {
-            qCDebug(vMainWindow, "Couldn't restore height value.");
+            qCWarning(vMainWindow, "Couldn't restore height value.");
         }
     }
 }
@@ -4550,10 +4600,10 @@ void MainWindow::SetDefaultSize()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief setEnableTools enable button.
+ * @brief setToolsEnabled enable button.
  * @param enable enable value.
  */
-void MainWindow::setEnableTools(bool enable)
+void MainWindow::setToolsEnabled(bool enable)
 {
     bool draftTools = false;
     bool pieceTools = false;
@@ -4767,14 +4817,14 @@ bool MainWindow::SavePattern(const QString &fileName, QString &error)
             setCurrentFile(fileName);
             helpLabel->setText(tr("File saved"));
             qCDebug(vMainWindow, "File %s saved.", qUtf8Printable(fileName));
-            PatternChangesWereSaved(result);
+            patternChangesWereSaved(result);
         }
     }
     else
     {
         doc->SetMPath(filename);
         emit doc->UpdatePatternLabel();
-        qCDebug(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
+        qCWarning(vMainWindow, "Could not save file %s. %s.", qUtf8Printable(fileName), qUtf8Printable(error));
     }
     return result;
 }
@@ -4904,6 +4954,9 @@ bool MainWindow::MaybeSave()
         messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
         messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
         const auto ret = static_cast<QMessageBox::StandardButton>(messageBox->exec());
 
         switch (ret)
@@ -4997,7 +5050,7 @@ void MainWindow::CreateMenus()
     separatorAct->setSeparator(true);
     ui->view_Menu->addAction(separatorAct);
 
-    QMenu *menu = new QMenu("Toolbars");
+    QMenu *menu = new QMenu(tr("Toolbars"));
     ui->view_Menu->addMenu(menu);
 
     menu->addAction(ui->file_ToolBar->toggleViewAction());
@@ -5057,7 +5110,7 @@ void MainWindow::LastUsedTool()
         return;
     }
 
-    switch ( lastUsedTool )
+    switch (lastUsedTool)
     {
         case Tool::Arrow:
             ui->arrowPointer_ToolButton->setChecked(true);
@@ -5894,7 +5947,7 @@ void MainWindow::CreateActions()
     connect(ui->forum_Action, &QAction::triggered, this, []()
     {
         qCDebug(vMainWindow, "Opening forum");
-        QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.net/")));
+        QDesktopServices::openUrl(QUrl(QStringLiteral("https://forum.seamly.io/")));
     });
 
     connect(ui->reportBug_Action, &QAction::triggered, this, []()
@@ -5944,7 +5997,7 @@ void MainWindow::InitAutoSave()
     {
         const qint32 autoTime = qApp->Seamly2DSettings()->getAutosaveInterval();
         autoSaveTimer->start(autoTime*60000);
-        qCDebug(vMainWindow, "Autosaving every %d minutes.", autoTime);
+        qCInfo(vMainWindow, "Autosaving every %d minutes.", autoTime);
     }
     qApp->setAutoSaveTimer(autoSaveTimer);
 }
@@ -5953,7 +6006,7 @@ void MainWindow::InitAutoSave()
 QString MainWindow::createDraftBlockName(const QString &text)
 {
     QInputDialog *dialog = new QInputDialog(this);
-    dialog->setInputMode( QInputDialog::TextInput );
+    dialog->setInputMode(QInputDialog::TextInput);
     dialog->setLabelText(tr("Name:"));
     dialog->setTextEchoMode(QLineEdit::Normal);
     dialog->setWindowTitle(tr("Draft block."));
@@ -6016,7 +6069,7 @@ MainWindow::~MainWindow()
  */
 bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasureFile)
 {
-    qCDebug(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
+    qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
 
     //We have unsaved changes or load more then one file per time
     if (OpenNewSeamly2D(fileName))
@@ -6026,7 +6079,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (fileName.isEmpty())
     {
-        qCDebug(vMainWindow, "New loaded filename is empty.");
+        qCWarning(vMainWindow, "New loaded filename is empty.");
         Clear();
         return false;
     }
@@ -6056,10 +6109,12 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             return false; // stop continue processing
         }
     }
+
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
         Clear();
         if (!VApplication::IsGUIMode())
         {
@@ -6073,7 +6128,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (lock->IsLocked())
     {
-        qCDebug(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
+        qCInfo(vMainWindow, "Pattern file %s was locked.", qUtf8Printable(fileName));
     }
     else
     {
@@ -6143,10 +6198,12 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
             initStatusBar();
         }
     }
+
     catch (VException &exception)
     {
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
         qApp->setOpeningPattern();// End opening file
         Clear();
         if (!VApplication::IsGUIMode())
@@ -6156,15 +6213,15 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         return false;
     }
 
-    FullParseFile();
+    fullParseFile();
 
     if (guiEnabled)
     { // No errors occurred
         patternReadOnly = doc->IsReadOnly();
-        SetEnableWidgets(true);
+        setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
-        qCDebug(vMainWindow, "File loaded.");
+        qCDebug(vMainWindow, "%s", qUtf8Printable(helpLabel->text()));
 
         //Fit scene size to best size for first show
         zoomFirstShow();
@@ -6338,6 +6395,7 @@ void MainWindow::exportLayoutAs()
 
         ExportData(QVector<VLayoutPiece>(), dialog);
     }
+
     catch (const VException &exception)
     {
         ui->exportLayout_ToolButton->setChecked(false);
@@ -6351,6 +6409,8 @@ void MainWindow::exportLayoutAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportPiecesAs()
 {
+    helpLabel->setText(QString(""));
+
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);
     ui->exportPiecesAs_ToolButton->setChecked(true);
@@ -6380,6 +6440,7 @@ void MainWindow::exportPiecesAs()
     {
         pieceList = preparePiecesForLayout(piecesInLayout);
     }
+
     catch (VException &exception)
     {
         QMessageBox::warning(this, tr("Export pieces"),
@@ -6401,6 +6462,7 @@ void MainWindow::exportPiecesAs()
 
         ExportData(pieceList, dialog);
     }
+
     catch (const VException &exception)
     {
         ui->exportPiecesAs_ToolButton->setChecked(false);
@@ -6417,6 +6479,8 @@ void MainWindow::exportPiecesAs()
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::exportDraftBlocksAs()
 {
+    helpLabel->setText(QString(""));
+
     //select export tool button
     ui->arrowPointer_ToolButton->setChecked(false);
     ui->arrow_Action->setChecked(false);
@@ -6600,7 +6664,7 @@ void MainWindow::ReopenFilesAfterCrash(QStringList &args)
                     }
                     else
                     {
-                        qCDebug(vMainWindow, "Could not copy %s%s to %s %s",
+                        qCWarning(vMainWindow, "Could not copy %s%s to %s %s",
                                 qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(autosavePrefix),
                                 qUtf8Printable(restoreFiles.at(i)), qUtf8Printable(error));
                     }
@@ -6674,6 +6738,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     const QString dir = qApp->Seamly2DSettings()->getIndividualSizePath();
 
                     bool usedNotExistedDir = false;
+
                     QDir directory(dir);
                     if (!directory.exists())
                     {
@@ -6780,8 +6845,9 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     checkRequiredMeasurements(measurements.data());
 
                     qApp->setPatternType(patternType);
+
                     doc->SetMPath(RelativeMPath(patternPath, filename));
-                    PatternChangesWereSaved(false);
+                    patternChangesWereSaved(false);
                     return filename;
                 }
             }
@@ -6883,6 +6949,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 
             ExportData(pieceList, dialog);
         }
+
         catch (const VException &exception)
         {
             qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export exception.")), qUtf8Printable(exception.ErrorMessage()));
@@ -6906,6 +6973,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 
                 ExportData(pieceList, dialog);
             }
+
             catch (const VException &exception)
             {
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Export exception.")), qUtf8Printable(exception.ErrorMessage()));

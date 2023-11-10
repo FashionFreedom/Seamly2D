@@ -208,14 +208,14 @@ QVector<QPointF> VAbstractPiece::Equidistant(const QVector<VSAPoint> &points, qr
 {
     if (width < 0)
     {
-        qDebug()<<"Width < 0.";
+        qDebug() << "Width < 0.";
         return QVector<QPointF>();
     }
 
     QVector<VSAPoint> p = CorrectEquidistantPoints(points);
     if ( p.size() < 3 )
     {
-        qDebug()<<"Not enough points for building the equidistant.";
+        qDebug() << "Not enough points for building the equidistant.";
         return QVector<QPointF>();
     }
 
@@ -489,7 +489,7 @@ QVector<QPointF> VAbstractPiece::EkvPoint(const VSAPoint &p1Line1, const VSAPoin
     QVector<QPointF> points;
     if (p2Line1 != p2Line2)
     {
-        qDebug()<<"Last points of two lines must be equal.";
+        qDebug() << "Last points of two lines must be equal.";
         return QVector<QPointF>(); // Wrong edges
     }
 
@@ -626,7 +626,7 @@ QVector<QPointF> VAbstractPiece::AngleByLength(const QPointF &p2, const QPointF 
         QLineF::IntersectType type = QLineF(sp1, sp2).intersects(cutLine, &px);
         if (type == QLineF::NoIntersection)
         {
-            qDebug()<<"Couldn't find intersection with cut line.";
+            qDebug() << "Couldn't find intersection with cut line.";
         }
         points.append(px);
 
@@ -634,7 +634,7 @@ QVector<QPointF> VAbstractPiece::AngleByLength(const QPointF &p2, const QPointF 
         type = QLineF(sp2, sp3).intersects(cutLine, &px);
         if (type == QLineF::NoIntersection)
         {
-            qDebug()<<"Couldn't find intersection with cut line.";
+            qDebug() << "Couldn't find intersection with cut line.";
         }
         points.append(px);
     }

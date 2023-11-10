@@ -282,13 +282,13 @@ protected:
     void             DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowLength, int formulaBaseHeight);
 
     template <typename T>
-    void             InitOkCancelApply(T *ui);
+    void             initializeOkCancelApply(T *ui);
 
     template <typename T>
-    void             InitOkCancel(T *ui);
+    void             initializeOkCancel(T *ui);
 
     template <typename T>
-    void             InitFormulaUI(T *ui);
+    void             initializeFormulaUi(T *ui);
 
     template <typename T>
     void             AddVisualization();
@@ -359,12 +359,12 @@ inline VAbstractTool *DialogTool::GetAssociatedTool()
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
 /**
- * @brief InitOkCancelApply initialise OK / Cancel and Apply buttons
+ * @brief initializeOkCancelApply initialize OK / Cancel and Apply buttons
  * @param ui Dialog container
  */
-inline void DialogTool::InitOkCancelApply(T *ui)
+inline void DialogTool::initializeOkCancelApply(T *ui)
 {
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
     apply_Button = ui->buttonBox->button(QDialogButtonBox::Apply);
     SCASSERT(apply_Button != nullptr)
     connect(apply_Button, &QPushButton::clicked, this, &DialogTool::DialogApply);
@@ -373,10 +373,10 @@ inline void DialogTool::InitOkCancelApply(T *ui)
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
 /**
- * @brief InitOkCancel initialise OK and Cancel buttons
+ * @brief initializeOkCancel initialize OK and Cancel buttons
  * @param ui Dialog container
  */
-inline void DialogTool::InitOkCancel(T *ui)
+inline void DialogTool::initializeOkCancel(T *ui)
 {
     ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
     SCASSERT(ok_Button != nullptr)
@@ -392,10 +392,10 @@ inline void DialogTool::InitOkCancel(T *ui)
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
 /**
- * @brief InitFormulaUI initialise ui object for formula fild
+ * @brief initializeFormulaUi initialize ui object for the formula field
  * @param ui Dialog container
  */
-inline void DialogTool::InitFormulaUI(T *ui)
+inline void DialogTool::initializeFormulaUi(T *ui)
 {
     labelResultCalculation = ui->labelResultCalculation;
     plainTextEditFormula = ui->plainTextEditFormula;

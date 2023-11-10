@@ -43,7 +43,6 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -52,8 +51,11 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_3">
-          <item>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="labelAlignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <item row="0" column="0">
            <widget class="QLabel" name="labelEditNamePoint">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -63,26 +65,25 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>85</width>
+              <width>90</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
             <property name="text">
-             <string>Point name:</string>
+             <string>Name:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
-          <item>
+          <item row="0" column="1">
            <widget class="QLineEdit" name="lineEditNamePoint">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -92,14 +93,13 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>125</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -111,22 +111,17 @@
             </property>
            </widget>
           </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8">
-          <item>
+          <item row="1" column="0">
            <widget class="QLabel" name="label">
             <property name="minimumSize">
              <size>
-              <width>85</width>
+              <width>90</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -138,7 +133,7 @@
             </property>
            </widget>
           </item>
-          <item>
+          <item row="1" column="1">
            <widget class="QComboBox" name="comboBoxResult">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -148,14 +143,13 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>125</width>
+              <width>80</width>
               <height>0</height>
              </size>
             </property>
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -177,7 +171,6 @@
        <property name="font">
         <font>
          <pointsize>9</pointsize>
-         <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
@@ -192,7 +185,6 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -213,14 +205,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -242,14 +233,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>125</width>
+                <width>80</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -269,7 +259,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
@@ -313,7 +303,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -335,14 +324,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -408,7 +396,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -437,18 +424,17 @@
               <property name="text">
                <string notr="true"/>
               </property>
-              <property name="icon">
-               <iconset resource="../../../vmisc/share/resources/theme.qrc">
-                <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-              </property>
               <property name="iconSize">
                <size>
                 <width>16</width>
                 <height>16</height>
                </size>
               </property>
-              <property name="flat">
+              <property name="autoDefault">
                <bool>false</bool>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -469,13 +455,12 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>28</height>
+                <height>60</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -498,7 +483,6 @@
             <property name="font">
              <font>
               <pointsize>9</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -519,14 +503,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -555,7 +538,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -575,7 +557,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>90</width>
                 <height>0</height>
                </size>
               </property>
@@ -619,7 +601,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -641,14 +622,13 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>85</width>
                 <height>0</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -714,7 +694,6 @@
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -743,18 +722,17 @@
               <property name="text">
                <string notr="true"/>
               </property>
-              <property name="icon">
-               <iconset resource="../../../vmisc/share/resources/theme.qrc">
-                <normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</normaloff>:/icons/win.icon.theme/24x24/actions/go-down.png</iconset>
-              </property>
               <property name="iconSize">
                <size>
                 <width>16</width>
                 <height>16</height>
                </size>
               </property>
-              <property name="flat">
+              <property name="autoDefault">
                <bool>false</bool>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
               </property>
              </widget>
             </item>
@@ -775,13 +753,12 @@
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
-                <height>28</height>
+                <height>60</height>
                </size>
               </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
-                <weight>50</weight>
                 <bold>false</bold>
                </font>
               </property>
@@ -842,7 +819,6 @@
  </widget>
  <resources>
   <include location="../../../vmisc/share/resources/icon.qrc"/>
-  <include location="../../../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>

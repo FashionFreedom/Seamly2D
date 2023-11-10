@@ -17,7 +17,7 @@
    <string>Export options</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../share/resources/seamlymeicon.qrc">
+   <iconset>
     <normaloff>:/seamlymeicon/64x64/logo.png</normaloff>:/seamlymeicon/64x64/logo.png</iconset>
   </property>
   <property name="modal">
@@ -47,13 +47,35 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>80</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="text">
            <string>Codec:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBoxCodec"/>
+         <widget class="QComboBox" name="comboBoxCodec">
+          <property name="minimumSize">
+           <size>
+            <width>200</width>
+            <height>0</height>
+           </size>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>
@@ -124,9 +146,7 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="../share/resources/seamlymeicon.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>buttonBox</sender>

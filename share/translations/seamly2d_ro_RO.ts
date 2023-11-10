@@ -2,13 +2,6 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ro_RO">
 <context>
-    <name>AddDet</name>
-    <message>
-        <source>add detail</source>
-        <translation type="vanished">adaugă detaliu</translation>
-    </message>
-</context>
-<context>
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
@@ -30,18 +23,7 @@
     </message>
 </context>
 <context>
-    <name>AddPatternPiece</name>
-    <message>
-        <source>add pattern piece %1</source>
-        <translation type="vanished">adaugă piesă model %1</translation>
-    </message>
-</context>
-<context>
     <name>AddPiece</name>
-    <message>
-        <source>add detail</source>
-        <translation type="obsolete">adaugă detaliu</translation>
-    </message>
     <message>
         <source>add piece</source>
         <translation type="unfinished"></translation>
@@ -63,13 +45,6 @@
     <message>
         <source>Name:</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>AddUnionDetails</name>
-    <message>
-        <source>add union details</source>
-        <translation type="vanished">adauga detalii ale Uniunii</translation>
     </message>
 </context>
 <context>
@@ -99,266 +74,88 @@
     </message>
 </context>
 <context>
-    <name>CommunityPage</name>
+    <name>CalculatorUtil</name>
     <message>
-        <source>Server</source>
-        <translation type="vanished">Server</translation>
+        <source>.</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Server name/IP</source>
-        <translation type="vanished">Nume Server/IP</translation>
+        <source>±</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Secure connection</source>
-        <translation type="vanished">Conexiune securizată</translation>
+        <source>Backspace</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy settings</source>
-        <translation type="vanished">Setările Proxy</translation>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Use Proxy</source>
-        <translation type="vanished">Utilizare Proxy</translation>
+        <source>Clear All</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy address</source>
-        <translation type="vanished">Adresă Proxy</translation>
+        <source>MC</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy port</source>
-        <translation type="vanished">Port Proxy</translation>
+        <source>MR</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy user</source>
-        <translation type="vanished">Utilizator Proxy</translation>
+        <source>MS</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy pass</source>
-        <translation type="vanished">Aprobare Proxy</translation>
+        <source>M+</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User settings</source>
-        <translation type="vanished">Setările de utilizator</translation>
+        <source>÷</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User Name</source>
-        <translation type="vanished">Nume Utilizator</translation>
+        <source>×</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Save password</source>
-        <translation type="vanished">Salvează Parola</translation>
+        <source>-</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Password</source>
-        <translation type="vanished">Parolă</translation>
+        <source>+</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Server name/IP:</source>
-        <translation type="vanished">Nume Server/IP:</translation>
+        <source>Sqrt</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy address:</source>
-        <translation type="vanished">Adresă Proxy:</translation>
+        <source>x²</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy port:</source>
-        <translation type="vanished">Port Proxy:</translation>
+        <source>1/x</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy user:</source>
-        <translation type="vanished">User Proxy:</translation>
+        <source>=</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Proxy pass:</source>
-        <translation type="vanished">Permis Proxy:</translation>
+        <source>Calculator</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>User Name:</source>
-        <translation type="vanished">Nume User:</translation>
-    </message>
-    <message>
-        <source>Password:</source>
-        <translation type="vanished">Parolă:</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Aplică</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp; Anulare</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">&amp;Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Configurare Dialog</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Configurație</translation>
-    </message>
-    <message>
-        <source>Pattern</source>
-        <translation type="vanished">Model</translation>
-    </message>
-    <message>
-        <source>Community</source>
-        <translation type="vanished">Comunitate</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">Căi</translation>
-    </message>
-</context>
-<context>
-    <name>ConfigurationPage</name>
-    <message>
-        <source>Setup user interface language updated and will be used the next time start</source>
-        <translation type="vanished">Setare limbaj interfață de utilizator actualizată și va fi folosită la următoarul Start</translation>
-    </message>
-    <message>
-        <source>Default unit updated and will be used the next pattern creation</source>
-        <translation type="vanished">Unitate implicit actualizată și va fi folosită la următoarea crearea de model</translation>
-    </message>
-    <message>
-        <source>Save</source>
-        <translation type="vanished">Salvează</translation>
-    </message>
-    <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="vanished">Auto salvarea modelului modificat</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="vanished">min</translation>
-    </message>
-    <message>
-        <source>Interval:</source>
-        <translation type="vanished">Interval:</translation>
-    </message>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Limba</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">LImbaj GUI</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">Piese de separare zecimal</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">Cu opțiuni OS (%1)</translation>
-    </message>
-    <message>
-        <source>Default unit</source>
-        <translation type="vanished">Unitate implicită</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="vanished">Centimetrii</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimetrii</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="vanished">Inci</translation>
-    </message>
-    <message>
-        <source>Label language</source>
-        <translation type="vanished">Limbaj etichetă</translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="vanished">Trimite raport de blocare</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="vanished">Trimite rapoarte de blocaj (recomandat)</translation>
-    </message>
-    <message>
-        <source>After each crash Seamly2D collect information that may help us fix a problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">După fiecare blocaj Seamly2D colectează informații care ne pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Afla mai multe despre ceea ce &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
-    </message>
-    <message>
-        <source>Pattern Editing</source>
-        <translation type="vanished">Editare Modele</translation>
-    </message>
-    <message>
-        <source>Confirm item deletion</source>
-        <translation type="vanished">Confirmă ștergere articol</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="vanished">Bară de instrumente</translation>
-    </message>
-    <message>
-        <source>The text appears under the icon. (recommended for beginners.)</source>
-        <translation type="vanished">Textul apare sub pictograma. (Recomandat pentru începători.)</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="vanished">Limbaj GUI:</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts:</source>
-        <translation type="vanished">Piese separator decimal:</translation>
-    </message>
-    <message>
-        <source>Default unit:</source>
-        <translation type="vanished">Unitate standard:</translation>
-    </message>
-    <message>
-        <source>Label language:</source>
-        <translation type="vanished">Limbă etichetă:</translation>
-    </message>
-    <message>
-        <source>Pattern making system</source>
-        <translation type="vanished">Sistem construire Tipare</translation>
-    </message>
-    <message>
-        <source>Pattern making system:</source>
-        <translation type="vanished">Sistem construire Tipare:</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="vanished">Autor:</translation>
-    </message>
-    <message>
-        <source>Book:</source>
-        <translation type="vanished">Carte:</translation>
-    </message>
-    <message>
-        <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
-        <translation type="vanished">Unitatea standard a fost actualizată și va fi utilizată ca standard pentru modelele viitoare pe care le creați.</translation>
-    </message>
-    <message>
-        <source>After each crash Seamly2D collects information that may help us fix the problem. We do not collect any personal information. Find more about what &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt;kind of information&lt;/a&gt; we collect.</source>
-        <translation type="vanished">După fiecare prăbușire, Seamly2D colectează informații care pot ajuta să rezolvăm problema. Noi nu colectăm informații personale. Află mai multe despre ce &lt;a href=&quot;https://wiki.seamly.net/wiki/Developer:Crash_Reports&quot;&gt; fel de informații &lt;/a&gt; colectăm noi.</translation>
+        <source>####</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -374,6 +171,14 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -392,24 +197,10 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DeleteDetail</name>
-    <message>
-        <source>delete tool</source>
-        <translation type="vanished"> instrument ștergere</translation>
-    </message>
-</context>
-<context>
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DeletePatternPiece</name>
-    <message>
-        <source>delete pattern piece %1</source>
-        <translation type="vanished">șterge piesa tipar %1</translation>
     </message>
 </context>
 <context>
@@ -434,10 +225,6 @@ p, li { white-space: pre-wrap; }
         <translation>Contribuitori</translation>
     </message>
     <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Construit pe %3 la %4</translation>
-    </message>
-    <message>
         <source>Web site : %1</source>
         <translation>Site Web: %1</translation>
     </message>
@@ -446,8 +233,8 @@ p, li { white-space: pre-wrap; }
         <translation>Nu pot deschide browser-ul implicit</translation>
     </message>
     <message>
-        <source>Build revision:</source>
-        <translation>Revizie Versiune:</translation>
+        <source>Build revision: %1</source>
+        <translation>Revizie Versiune: %1</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
@@ -459,6 +246,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>unknown</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -473,8 +264,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Varianta cu Bandă</translation>
     </message>
     <message>
-        <source>Build revision:</source>
-        <translation type="unfinished">Revizie Versiune:</translation>
+        <source>Build revision: %1</source>
+        <translation type="unfinished">Revizie Versiune: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
@@ -493,10 +284,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Nu pot deschide browser-ul implicit</translation>
     </message>
     <message>
-        <source>Build revision: %1</source>
-        <translation type="unfinished">Revizie Versiune: %1</translation>
-    </message>
-    <message>
         <source>Built on %1 at %2</source>
         <translation type="unfinished">Construit pe %1 la %2</translation>
     </message>
@@ -504,99 +291,20 @@ p, li { white-space: pre-wrap; }
         <source>Web site : %1</source>
         <translation type="unfinished">Site Web: %1</translation>
     </message>
-</context>
-<context>
-    <name>DialogAboutTape</name>
     <message>
-        <source>About SeamlyMe</source>
-        <translation type="vanished">Despre Bandă</translation>
-    </message>
-    <message>
-        <source>SeamlyMe version</source>
-        <translation type="vanished">Varianta cu Bandă</translation>
-    </message>
-    <message>
-        <source>Build revision:</source>
-        <translation type="vanished">Revizie Versiune:</translation>
-    </message>
-    <message>
-        <source>This program is part of Seamly2D project.</source>
-        <translation type="vanished">Acest program face parte din proiectul Seamly2D.</translation>
-    </message>
-    <message>
-        <source>Build revision: %1</source>
-        <translation type="vanished">Revizie Versiune: %1</translation>
-    </message>
-    <message>
-        <source>Built on %3 at %4</source>
-        <translation type="vanished">Construit pe %3 la %4</translation>
-    </message>
-    <message>
-        <source>Web site : %1</source>
-        <translation type="vanished">Site Web: %1</translation>
-    </message>
-    <message>
-        <source>Cannot open your default browser</source>
-        <translation type="vanished">Nu pot deschide browser-ul implicit</translation>
-    </message>
-    <message>
-        <source>Built on %1 at %2</source>
-        <translation type="vanished">Construit pe %1 la %2</translation>
+        <source>unknown</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogAlongLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selectați al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Punct la distanță de-a lungul liniei</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -619,10 +327,6 @@ p, li { white-space: pre-wrap; }
         <translation>Calcul</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>Primul Punct:</translation>
     </message>
@@ -639,22 +343,6 @@ p, li { white-space: pre-wrap; }
         <translation>Al doilea punct al liniei</translation>
     </message>
     <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -668,10 +356,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -694,48 +378,16 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogArc</name>
     <message>
-        <source>Arc</source>
-        <translation type="vanished">Curbura</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Valoare rază</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Primul unghi</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Valoarea primului unghi</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">Al doilea unghi</translation>
-    </message>
-    <message>
-        <source>Value of second angle</source>
-        <translation type="vanished">Valoarea unghiului al doilea</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">Punct central</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
     </message>
     <message>
         <source>Error</source>
@@ -748,10 +400,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Angles equal</source>
         <translation>Unghiuri egale</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -776,10 +424,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Value</source>
         <translation>Valoare</translation>
-    </message>
-    <message>
-        <source>Calulation</source>
-        <translation type="vanished">Calcul</translation>
     </message>
     <message>
         <source>First angle:</source>
@@ -822,12 +466,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -846,48 +490,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogArcWithLength</name>
     <message>
-        <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Valoare rază</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Primul unghi</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Valoarea primului unghi</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Arc length</source>
-        <translation type="vanished">Arc lungime</translation>
-    </message>
-    <message>
-        <source>Center point</source>
-        <translation type="vanished">Punct central</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -963,7 +567,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -982,52 +586,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogBisector</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Primul punct de unghi</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Al doilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">Al treilea punct</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">Al treilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Arată linia de la al doilea punct pâna la acest punct</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
@@ -1036,14 +596,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Select third point of angle</source>
         <translation>Alege al treilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Punct de-a lungul bisectorului</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1066,18 +618,6 @@ p, li { white-space: pre-wrap; }
         <translation>Calcul</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>Primul Punct:</translation>
     </message>
@@ -1088,14 +628,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Third point:</source>
         <translation>Al treilea punct:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1111,10 +643,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1135,6 +663,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1251,52 +783,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogCurveIntersectAxis</name>
     <message>
-        <source>Angle</source>
-        <translation type="vanished">Unghi</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Valoarea unghiului</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Axis point</source>
-        <translation type="vanished">Punct de axă</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Curbură</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
-    </message>
-    <message>
         <source>Select axis point</source>
         <translation>Alege punctul de axă</translation>
-    </message>
-    <message>
-        <source>Point intersect curve and axis</source>
-        <translation type="vanished">Punctul intersectează cubrura și axa</translation>
-    </message>
-    <message>
-        <source>Axis Point</source>
-        <translation type="vanished">Punct de axă</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1315,36 +807,12 @@ p, li { white-space: pre-wrap; }
         <translation>Valoare</translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="vanished">Calcul</translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation>Punct de axă:</translation>
     </message>
     <message>
         <source>Curve:</source>
         <translation>Curbă:</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -1363,10 +831,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1380,7 +844,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1391,40 +855,16 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutArc</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Curbura</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Segment an arc</source>
-        <translation type="vanished">Segmentează o curbură</translation>
-    </message>
-    <message>
-        <source>Selected arc</source>
-        <translation type="vanished">Curbură aleasă</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1451,31 +891,11 @@ p, li { white-space: pre-wrap; }
         <translation>Arc:</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">Culoare:</translation>
-    </message>
-    <message>
         <source>Point - On Arc</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1490,40 +910,16 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSpline</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Curbură</translation>
-    </message>
-    <message>
-        <source>Selected curve</source>
-        <translation type="vanished">Curbura aleasă</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Segmenting a simple curve</source>
-        <translation type="vanished">Segmentarea unei simple curburi</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1548,22 +944,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Curve:</source>
         <translation>Curbă:</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">Culoare:</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
@@ -1574,10 +954,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1589,40 +965,16 @@ p, li { white-space: pre-wrap; }
         <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogCutSplinePath</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Curbură</translation>
-    </message>
-    <message>
-        <source>Selected curve path</source>
-        <translation type="vanished">Alegere traseu curbură</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Segment a curved path</source>
-        <translation type="vanished">Segmentare traseu curbat</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -1649,31 +1001,11 @@ p, li { white-space: pre-wrap; }
         <translation>Curbă:</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Color:</source>
-        <translation type="vanished">Culoare:</translation>
-    </message>
-    <message>
         <source>Point - On Spline</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1686,6 +1018,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Geometry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1705,291 +1041,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;empty&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogDetail</name>
-    <message>
-        <source>Detail</source>
-        <translation type="vanished">Detalii</translation>
-    </message>
-    <message>
-        <source>Bias X</source>
-        <translation type="vanished">Intersectare X</translation>
-    </message>
-    <message>
-        <source>cm</source>
-        <translation type="vanished">cm</translation>
-    </message>
-    <message>
-        <source>Bias Y</source>
-        <translation type="vanished">Intersectare Y</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Opțiuni</translation>
-    </message>
-    <message>
-        <source>Name of detail</source>
-        <translation type="vanished">Nume detaliului</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="vanished">Adaos cusatură</translation>
-    </message>
-    <message>
-        <source>Width</source>
-        <translation type="vanished">Lățime</translation>
-    </message>
-    <message>
-        <source>Closed</source>
-        <translation type="vanished">închis</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Șterge</translation>
-    </message>
-    <message>
-        <source>Got wrong scene object. Ignore.</source>
-        <translation type="vanished">Obiect de decor greșit. Ignoră.</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="vanished">Înapoi</translation>
-    </message>
-    <message>
-        <source>Seam allowance tool</source>
-        <translation type="vanished">Instrument pentru adaos la cusătură</translation>
-    </message>
-    <message>
-        <source>All objects in path should follow in clockwise direction.</source>
-        <translation type="vanished">Toate obiectele de pe rută trebuie să urmeze în sensul acelor de ceasornic.</translation>
-    </message>
-    <message>
-        <source>Scroll down the list</source>
-        <translation type="vanished">Derulați în jos lista</translation>
-    </message>
-    <message>
-        <source>Scroll up the list</source>
-        <translation type="vanished">Derula în sus lista</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation type="vanished">Gata!</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation type="vanished">Ai nevoie de mai multe puncte!</translation>
-    </message>
-    <message>
-        <source>First point can not equal the last point!</source>
-        <translation type="vanished">Primul punct nu poate fii la fel cu ultimul punct!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation type="vanished">Ai puncte duble!</translation>
-    </message>
-    <message>
-        <source>You have to choose points in a clockwise direction!</source>
-        <translation type="vanished">Trebuie să alegi punctele în sensul acelor de ceasornic!</translation>
-    </message>
-    <message>
-        <source>Bias X:</source>
-        <translation type="vanished">Bias X:</translation>
-    </message>
-    <message>
-        <source>Bias Y:</source>
-        <translation type="vanished">Bias Y:</translation>
-    </message>
-    <message>
-        <source>Name of detail:</source>
-        <translation type="vanished">Nume detaliu:</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="vanished">Lățime:</translation>
-    </message>
-    <message>
-        <source>First point cannot be equal to the last point!</source>
-        <translation type="vanished">Primul punct nu poate fi la fel cu ultimul punct!</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditLabel</name>
-    <message>
-        <source>Could not save file</source>
-        <translation type="obsolete">Fișierul nu a putut fii salvat</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation type="obsolete">Eroare de fișier.</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="obsolete">Dimensiune</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="obsolete">Înălțime</translation>
-    </message>
-</context>
-<context>
-    <name>DialogEditWrongFormula</name>
-    <message>
-        <source>Edit formula</source>
-        <translation>Editează formula</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Formula</translation>
-    </message>
-    <message>
-        <source>Insert variable into formula</source>
-        <translation>Introdu variabilă în formulă</translation>
-    </message>
-    <message>
-        <source>Value of first angle</source>
-        <translation type="vanished">Valoarea primului unghi</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Input data</source>
-        <translation>Date intrare</translation>
-    </message>
-    <message>
-        <source>Size and height</source>
-        <translation type="vanished">Mărime și înălțime</translation>
-    </message>
-    <message>
-        <source>Measurements</source>
-        <translation>Măsurători</translation>
-    </message>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">Adaosuri</translation>
-    </message>
-    <message>
-        <source>Length of lines</source>
-        <translation type="vanished">Lungimea liniilor</translation>
-    </message>
-    <message>
-        <source>Length of arcs</source>
-        <translation type="vanished">Lungimea curburilor</translation>
-    </message>
-    <message>
-        <source>Length of curves</source>
-        <translation type="vanished">Lungime curbe</translation>
-    </message>
-    <message>
-        <source>Angle of lines</source>
-        <translation type="vanished">Unghiul liniilor</translation>
-    </message>
-    <message>
-        <source>Hide empty measurements</source>
-        <translation>Ascunde măsurători goale</translation>
-    </message>
-    <message>
-        <source>Double click for add to formula</source>
-        <translation type="vanished">Dublu click pentru a adauga la formulă</translation>
-    </message>
-    <message>
-        <source>Height</source>
-        <translation type="vanished">Înălțime</translation>
-    </message>
-    <message>
-        <source>Size</source>
-        <translation type="vanished">Dimensiune</translation>
-    </message>
-    <message>
-        <source>Line length</source>
-        <translation>Linie lungime</translation>
-    </message>
-    <message>
-        <source>Arc length</source>
-        <translation type="vanished">Arc lungime</translation>
-    </message>
-    <message>
-        <source>Curve length</source>
-        <translation>Curbă lungime</translation>
-    </message>
-    <message>
-        <source>Line Angle</source>
-        <translation>Linie Unghi</translation>
-    </message>
-    <message>
-        <source>Arc radius</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve angle</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Formula:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation>Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation>Calcul</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="unfinished">Nume</translation>
-    </message>
-    <message>
-        <source>Full name</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Functions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Filter list by keyword</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom variables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Curve angles</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Control point lengths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc radiuses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurement</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom Variable</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2022,10 +1073,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>First angle:</source>
         <translation type="unfinished">Primul unghi:</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
     </message>
     <message>
         <source>Second angle:</source>
@@ -2104,15 +1151,15 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2123,52 +1170,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogEndLine</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Unghi</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Valoarea unghiului</translation>
-    </message>
-    <message>
-        <source>Base point</source>
-        <translation type="vanished">Punct de bază</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Punct la distanță și unghi</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -2203,26 +1206,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
-    </message>
-    <message>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2239,10 +1222,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2256,7 +1235,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2265,6 +1244,10 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2310,30 +1293,6 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogHeight</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Base point</source>
-        <translation type="vanished">Punct de bază</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to our point</source>
-        <translation type="vanished">Arată linia de la primul punct la punctul nostru</translation>
-    </message>
-    <message>
         <source>Select first point of line</source>
         <translation>Alege primul punct al liniei</translation>
     </message>
@@ -2342,40 +1301,8 @@ p, li { white-space: pre-wrap; }
         <translation>Selectați al doilea punct al liniei</translation>
     </message>
     <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Punct perpendicular pe linie</translation>
-    </message>
-    <message>
-        <source>Base Point</source>
-        <translation type="vanished">Punct de bază</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Base point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -2391,10 +1318,6 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2421,187 +1344,9 @@ p, li { white-space: pre-wrap; }
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogHistory</name>
     <message>
-        <source>History</source>
-        <translation type="vanished">Decurs</translation>
-    </message>
-    <message>
-        <source>Tool</source>
-        <translation type="vanished">Instrument</translation>
-    </message>
-    <message>
-        <source>Can&apos;t create record.</source>
-        <translation type="vanished">Nu pot crea înregistrare.</translation>
-    </message>
-    <message>
-        <source>%1 - Base point</source>
-        <translation type="vanished">%1 Punct de bază</translation>
-    </message>
-    <message>
-        <source>%1_%2 - Line from point %1 to point %2</source>
-        <translation type="vanished">%1_%2 - Linia de la punctul %1 la punctul %2</translation>
-    </message>
-    <message>
-        <source>%3 - Point along line %1_%2</source>
-        <translation type="vanished">%3 - Punct pe linia %1_%2</translation>
-    </message>
-    <message>
-        <source>%1 - Point of shoulder</source>
-        <translation type="vanished">%1 - Punct umăr</translation>
-    </message>
-    <message>
-        <source>%3 - normal to line %1_%2</source>
-        <translation type="vanished">%3 - normal la linia %1_%2</translation>
-    </message>
-    <message>
-        <source>%4 - bisector of angle %1_%2_%3</source>
-        <translation type="vanished">%4 - bisector al unghiului %1_%2_%3</translation>
-    </message>
-    <message>
-        <source>%5 - intersection of lines %1_%2 and %3_%4</source>
-        <translation type="vanished">%5 - intersecția liniilor %1_%2 și %3_%4</translation>
-    </message>
-    <message>
-        <source>Curve %1_%2</source>
-        <translation type="vanished">Curbura %1_%2</translation>
-    </message>
-    <message>
-        <source>Arc with center in point %1</source>
-        <translation type="vanished">Curbură cu centrul în punctul %1</translation>
-    </message>
-    <message>
-        <source>Curve point %1</source>
-        <translation type="vanished">Curbură punct %1</translation>
-    </message>
-    <message>
-        <source>%4 - point of contact of arc with the center in point %1 and line %2_%3</source>
-        <translation type="vanished">%4 - punct de contact al curburii cu centru in punctul %1 și linia %2_%3</translation>
-    </message>
-    <message>
-        <source>Point of perpendicular from point %1 to line %2_%3</source>
-        <translation type="vanished">Punct perpendiculat din punctul %1 cu linia %2_%3</translation>
-    </message>
-    <message>
-        <source>Triangle: axis %1_%2, points %3 and %4</source>
-        <translation type="vanished">Triunghi: axa %1_%2, punctele %3 și %4</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection %2 and %3</source>
-        <translation type="vanished">%1 - punct de intersecție %2 și %3</translation>
-    </message>
-    <message>
-        <source>%1 - cut arc with center %2</source>
-        <translation type="vanished">%1 - taie curbura cu centrul %2</translation>
-    </message>
-    <message>
-        <source>%1 - cut curve %2_%3</source>
-        <translation type="vanished">%1 - taie curbura %2_%3</translation>
-    </message>
-    <message>
-        <source>%1 - cut curve path %2</source>
-        <translation type="vanished">%1 - taie ruta curburei %2</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection line %2_%3 and axis through point %4</source>
-        <translation type="vanished">%1 - punct linie de intersecție %2_%3 și axa prin punctul %4</translation>
-    </message>
-    <message>
-        <source>%1 - point of intersection curve and axis through point %2</source>
-        <translation type="vanished">%1 - punct cubură de intersecție și axa prin punctul %2</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="obsolete">Curbură</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="obsolete">Curbura</translation>
-    </message>
-</context>
-<context>
-    <name>DialogIncrements</name>
-    <message>
-        <source>Increments</source>
-        <translation type="vanished">Adaosuri</translation>
-    </message>
-    <message>
-        <source>Name</source>
-        <translation type="vanished">Nume</translation>
-    </message>
-    <message>
-        <source>The calculated value</source>
-        <translation type="vanished">Valoarea calculată</translation>
-    </message>
-    <message>
-        <source>Lines</source>
-        <translation type="vanished">Linii</translation>
-    </message>
-    <message>
-        <source>Line</source>
-        <translation type="vanished">Linie</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Curve</source>
-        <translation type="vanished">Curbură</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Curbura</translation>
-    </message>
-    <message>
-        <source>Tables of Variables</source>
-        <translation type="vanished">Tabele de variabile</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Unghi</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Formula</translation>
-    </message>
-    <message>
-        <source>Details</source>
-        <translation type="vanished">Detalii</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Eroare</translation>
-    </message>
-    <message>
-        <source>Empty field</source>
-        <translation type="vanished">Câmp gol</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Valoare</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation type="vanished">Eroare Parser: %1</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">Calcul</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="vanished">Asistent Formulă</translation>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2886,16 +1631,8 @@ p, li { white-space: pre-wrap; }
         <translation>Nu s-au putut pregăti datele pentru crearea unei schițe</translation>
     </message>
     <message>
-        <source>Several workpieces left not arranged, but none of them match for paper</source>
-        <translation type="vanished">Mai multe piese au rămas nearanjate, dar nici una dintre ele nu se potrivesc pentru hârtie</translation>
-    </message>
-    <message>
         <source>Create a Layout</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for worpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Găsirea celei mai bune poziții pentru piese. Te rog asteapta.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
@@ -2911,255 +1648,10 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogLayoutSettings</name>
-    <message>
-        <source>Paper size</source>
-        <translation type="vanished">Dimensiune hârtie</translation>
-    </message>
-    <message>
-        <source>Templates:</source>
-        <translation>Șabloane:</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation>Lățime:</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation>Înălțime:</translation>
-    </message>
-    <message>
-        <source>Rotate workpiece</source>
-        <translation>Rotește Piesa</translation>
-    </message>
-    <message>
-        <source>Rotate by</source>
-        <translation>Rotită de</translation>
-    </message>
-    <message>
-        <source>degree</source>
-        <translation>Grad</translation>
-    </message>
-    <message>
-        <source>Creation options</source>
-        <translation type="vanished">Creare Opțiuni</translation>
-    </message>
-    <message>
-        <source>Shift length:</source>
-        <translation type="vanished">Schimbare lungime:</translation>
-    </message>
-    <message>
-        <source>Principle of choosing the next workpiece</source>
-        <translation type="vanished">Principiul alegerii piesei următoare</translation>
-    </message>
-    <message>
-        <source>Three groups: big, middle, small</source>
-        <translation>Trei grupuri: mare, mijlociu, mic</translation>
-    </message>
-    <message>
-        <source>Two groups: big, small</source>
-        <translation>Două grupuri: mare, mic</translation>
-    </message>
-    <message>
-        <source>Descending area</source>
-        <translation>Zonă descendentă</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimetrii</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimetrii</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Inci</translation>
-    </message>
-    <message>
-        <source>Pixels</source>
-        <translation>Pixeli</translation>
-    </message>
-    <message>
-        <source>Auto crop unused length</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unite pages (if possible)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Gap width:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Save length of the sheet</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Letter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Legal</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Roll 24in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Roll 30in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Roll 36in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Roll 42in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Roll 44in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Paper format</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Left:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Right:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Custom</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Wrong fields.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>
-	Three groups: big, middle, small = 0;
-	Two groups: big, small = 1;
-	Descending area = 2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Layout options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Shift/Offset length:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rule for choosing the next workpiece</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Divide into strips</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multiplier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Set multiplier for length of the biggest workpiece in layout.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Printer:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>None</source>
-        <comment>Printer</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Text will be converted to paths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export text as paths</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Margins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ignore margins</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Layout print settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Margins go beyond printing.
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogLine</name>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
-    </message>
     <message>
         <source>Select second point</source>
         <translation>Alege al doilea punct</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Linie între puncte</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -3168,14 +1660,6 @@ Apply settings anyway?</source>
     <message>
         <source>Second point:</source>
         <translation>Al doilea punct:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3213,20 +1697,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogLineIntersect</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
         <source>First line</source>
         <translation>Prima linie</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
     </message>
     <message>
         <source>Second line</source>
@@ -3245,22 +1717,6 @@ Apply settings anyway?</source>
         <translation>Alege al doilea punct al liniei a doua</translation>
     </message>
     <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Punct la linia de intersecție</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>Primul Punct:</translation>
     </message>
@@ -3277,10 +1733,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3288,48 +1740,20 @@ Apply settings anyway?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogLineIntersectAxis</name>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Unghi</translation>
-    </message>
-    <message>
-        <source>Value of angle</source>
-        <translation type="vanished">Valoarea unghiului</translation>
-    </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Axis point</source>
-        <translation type="vanished">Punct de axă</translation>
-    </message>
-    <message>
         <source>First point of line</source>
         <translation>Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>First line point</source>
-        <translation type="vanished">Primul punct de linie</translation>
-    </message>
-    <message>
-        <source>Second line point</source>
-        <translation type="vanished">Al doilea Punct de linie</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -3340,20 +1764,12 @@ Apply settings anyway?</source>
         <translation>Alege punctul de axă</translation>
     </message>
     <message>
-        <source>Point intersect line and axis</source>
-        <translation type="vanished">Punctul intersectează linia și axa</translation>
-    </message>
-    <message>
         <source>Axis Point</source>
         <translation>Punct de axă</translation>
     </message>
     <message>
         <source>Second point of line</source>
         <translation>Al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -3372,32 +1788,8 @@ Apply settings anyway?</source>
         <translation>Valoare</translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="vanished">Calcul</translation>
-    </message>
-    <message>
         <source>Axis point:</source>
         <translation>Punct de axă:</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3413,10 +1805,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3441,7 +1829,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3450,6 +1838,10 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Lineweight:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3565,10 +1957,6 @@ Apply settings anyway?</source>
         <translation type="unfinished">Valoare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Length:</source>
         <translation type="unfinished">Lungime:</translation>
     </message>
@@ -3657,10 +2045,6 @@ Apply settings anyway?</source>
         <translation>Centimetrii</translation>
     </message>
     <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimetrii</translation>
-    </message>
-    <message>
         <source>Inches</source>
         <translation>Inci</translation>
     </message>
@@ -3676,24 +2060,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNewPattern</name>
     <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Măsuri individuale</translation>
-    </message>
-    <message>
-        <source>Pattern piece name</source>
-        <translation type="vanished">Nume piesă de Tipar</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation>Unități:</translation>
     </message>
     <message>
         <source>Centimeters</source>
         <translation>Centimetrii</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="vanished">Milimetrii</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -3723,60 +2095,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogNormal</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Additional angle degrees</source>
-        <translation type="vanished">Grade de unghi suplimentare</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to this point</source>
-        <translation type="vanished">Arată linia de la primul punct până la acest punct</translation>
-    </message>
-    <message>
         <source>Select second point of line</source>
         <translation>Selectați al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Punct de-a lungul unei perpendiculare</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -3799,32 +2123,12 @@ Apply settings anyway?</source>
         <translation>Calcul</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>Primul Punct:</translation>
     </message>
     <message>
         <source>Second point:</source>
         <translation>Al doilea punct:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3840,10 +2144,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3863,14 +2163,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation..png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source> deg</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Attributes</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3878,28 +2170,20 @@ Apply settings anyway?</source>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogPatternProperties</name>
     <message>
-        <source>Pattern properties</source>
-        <translation type="vanished">Proprietăți tipar</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation type="vanished">Descriere</translation>
-    </message>
-    <message>
-        <source>Author name</source>
-        <translation type="vanished">Numele autorului</translation>
-    </message>
-    <message>
         <source>Pattern description</source>
         <translation>Descriere tipar</translation>
-    </message>
-    <message>
-        <source>For technical notes.</source>
-        <translation type="vanished">Pentru note tehnice.</translation>
     </message>
     <message>
         <source>Heights and Sizes</source>
@@ -4063,136 +2347,10 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogPatternXmlEdit</name>
-    <message>
-        <source>XML Editor</source>
-        <translation type="vanished">Editor XML</translation>
-    </message>
-    <message>
-        <source>Value :</source>
-        <translation type="vanished">Valoare:</translation>
-    </message>
-    <message>
-        <source>Name :</source>
-        <translation type="vanished">Nume:</translation>
-    </message>
-    <message>
-        <source>&lt;No selection&gt;</source>
-        <translation type="vanished">&lt;No selection&gt;</translation>
-    </message>
-    <message>
-        <source>Type : </source>
-        <translation type="vanished">Tip:</translation>
-    </message>
-    <message>
-        <source>Add  attribute</source>
-        <translation type="vanished">Adaugă atribut</translation>
-    </message>
-    <message>
-        <source>Add  son</source>
-        <translation type="vanished">Adaugă fiu</translation>
-    </message>
-    <message>
-        <source>Remove attribute</source>
-        <translation type="vanished">Elimină atribut</translation>
-    </message>
-    <message>
-        <source>Remove node</source>
-        <translation type="vanished">Elimină nod</translation>
-    </message>
-    <message>
-        <source>Set</source>
-        <translation type="vanished">Setează</translation>
-    </message>
-    <message>
-        <source>Cancel</source>
-        <translation type="vanished">Anulare</translation>
-    </message>
-</context>
-<context>
-    <name>DialogPiecePath</name>
-    <message>
-        <source>Ready!</source>
-        <translation type="obsolete">Gata!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Adaos cusatură</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Lățime:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="obsolete">Înapoi</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Șterge</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation type="obsolete">Ai nevoie de mai multe puncte!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation type="obsolete">Ai puncte duble!</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">Unghi</translation>
-    </message>
-</context>
-<context>
     <name>DialogPointFromArcAndTangent</name>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Curbura</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
-    </message>
     <message>
         <source>Select an arc</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -4215,10 +2373,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4226,83 +2380,16 @@ Apply settings anyway?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogPointFromCircleAndTangent</name>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
-    </message>
-    <message>
-        <source>Edit radius</source>
-        <translation type="vanished">Editare raza</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Eroare</translation>
-    </message>
-    <message>
-        <source>Radius can&apos;t be negative</source>
-        <translation type="vanished">Raza nu poate fii negativă</translation>
-    </message>
-    <message>
-        <source>Radius:</source>
-        <translation type="vanished">Rază:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="vanished">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">Calcul</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogPointOfContact</name>
     <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>Value of radius</source>
-        <translation type="vanished">Valoare rază</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
@@ -4333,18 +2420,6 @@ Apply settings anyway?</source>
         <translation>Calcul</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Center of arc:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4354,10 +2429,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4380,63 +2451,16 @@ Apply settings anyway?</source>
         <source>Geometry</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogPointOfIntersection</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Primul punct de unghi</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Al doilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>DialogPointOfIntersectionArcs</name>
     <message>
-        <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Selected arc</source>
-        <translation type="vanished">Curbură aleasă</translation>
-    </message>
-    <message>
         <source>Select second an arc</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
     </message>
     <message>
         <source>First arc:</source>
@@ -4459,10 +2483,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4470,56 +2490,9 @@ Apply settings anyway?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>DialogPointOfIntersectionCircles</name>
     <message>
-        <source>Dialog</source>
-        <translation type="vanished">Dialog</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="vanished">Eroare</translation>
-    </message>
-    <message>
-        <source>Radius can&apos;t be negative</source>
-        <translation type="vanished">Raza nu poate fii negativă</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="vanished">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="vanished">Calcul</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4533,18 +2506,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Select second curve</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4554,10 +2515,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4576,24 +2533,16 @@ Apply settings anyway?</source>
         <source>Horizontal take:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogPreferences</name>
     <message>
-        <source>Preferences</source>
-        <translation type="obsolete">Preferințe</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Configurație</translation>
-    </message>
-    <message>
         <source>Pattern</source>
         <translation type="unfinished">Model</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Căi</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -4631,20 +2580,12 @@ Apply settings anyway?</source>
         <translation type="unfinished">Valoare</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Suffix:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Edit angle</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -4673,64 +2614,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogSaveLAyout</name>
-    <message>
-        <source>Path:</source>
-        <translation type="vanished">Rută:</translation>
-    </message>
-</context>
-<context>
-    <name>DialogSeamAllowance</name>
-    <message>
-        <source>Ready!</source>
-        <translation type="obsolete">Gata!</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Reverse</source>
-        <translation type="obsolete">Înapoi</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Șterge</translation>
-    </message>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Opțiuni</translation>
-    </message>
-    <message>
-        <source>Parser error: %1</source>
-        <translation type="obsolete">Eroare Parser: %1</translation>
-    </message>
-    <message>
-        <source>You need more points!</source>
-        <translation type="obsolete">Ai nevoie de mai multe puncte!</translation>
-    </message>
-    <message>
-        <source>You have to choose points in a clockwise direction!</source>
-        <translation type="obsolete">Trebuie să alegi punctele în sensul acelor de ceasornic!</translation>
-    </message>
-    <message>
-        <source>First point cannot be equal to the last point!</source>
-        <translation type="obsolete">Primul punct nu poate fi la fel cu ultimul punct!</translation>
-    </message>
-    <message>
-        <source>You have double points!</source>
-        <translation type="obsolete">Ai puncte duble!</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="obsolete">Eroare</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Căi</translation>
-    </message>
-</context>
-<context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
@@ -4748,40 +2631,8 @@ Apply settings anyway?</source>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Value of length</source>
-        <translation type="vanished">Valoare lungime</translation>
-    </message>
-    <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
-        <source>Third point</source>
-        <translation type="vanished">Al treilea punct</translation>
-    </message>
-    <message>
-        <source>Type of line</source>
-        <translation type="vanished">Tip de linie</translation>
-    </message>
-    <message>
-        <source>Show line from first point to our point</source>
-        <translation type="vanished">Arată linia de la primul punct la punctul nostru</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -4790,14 +2641,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point of line</source>
         <translation>Selectați al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Punct special la umăr</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
     </message>
     <message>
         <source>Edit length</source>
@@ -4820,18 +2663,6 @@ Apply settings anyway?</source>
         <translation>Calcul</translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>First point:</source>
         <translation>Primul Punct:</translation>
     </message>
@@ -4842,14 +2673,6 @@ Apply settings anyway?</source>
     <message>
         <source>Third point:</source>
         <translation>Al treilea punct:</translation>
-    </message>
-    <message>
-        <source>Type of line:</source>
-        <translation type="vanished">Tip de linie:</translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="vanished">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -4865,10 +2688,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4891,13 +2710,13 @@ Apply settings anyway?</source>
         <source>Lineweight:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSinglePoint</name>
-    <message>
-        <source>Single point</source>
-        <translation type="vanished">Punct singur</translation>
-    </message>
     <message>
         <source>Coordinates on the sheet</source>
         <translation>Coordinate pe foaie</translation>
@@ -4907,35 +2726,11 @@ Apply settings anyway?</source>
         <translation>Coordinate</translation>
     </message>
     <message>
-        <source>Y coordinate</source>
-        <translation type="vanished">Coordonata Y</translation>
-    </message>
-    <message>
-        <source>X coordinate</source>
-        <translation type="vanished">Coordonata X</translation>
-    </message>
-    <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Base Point</source>
         <translation type="unfinished">Punct de bază</translation>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4954,6 +2749,10 @@ Apply settings anyway?</source>
         <source>Y coordinate:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogSpline</name>
@@ -4962,40 +2761,12 @@ Apply settings anyway?</source>
         <translation>Primul Punct</translation>
     </message>
     <message>
-        <source>Length ratio of the first control point</source>
-        <translation type="vanished">Raport lungime al primului punct de control</translation>
-    </message>
-    <message>
-        <source>The angle of the first control point</source>
-        <translation type="vanished">Unghiul primului punct de control</translation>
-    </message>
-    <message>
         <source>Second point</source>
         <translation>Al doilea punct</translation>
     </message>
     <message>
-        <source>Length ratio of the second control point</source>
-        <translation type="vanished">Raport lungime al celui de al doilea punct de control</translation>
-    </message>
-    <message>
-        <source>The angle of the second control point</source>
-        <translation type="vanished">Unghiul celui de al doilea punct de control</translation>
-    </message>
-    <message>
-        <source>Coefficient of curvature of the curve</source>
-        <translation type="vanished">Coeficientul de curbură a curbei</translation>
-    </message>
-    <message>
         <source>Select last point of curve</source>
         <translation>Alege ultimul punct de curbă</translation>
-    </message>
-    <message>
-        <source>Simple curve</source>
-        <translation type="vanished">Curbă simplă</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -5093,44 +2864,12 @@ Apply settings anyway?</source>
 <context>
     <name>DialogSplinePath</name>
     <message>
-        <source>Curved path</source>
-        <translation type="vanished">Traiectorie curbată</translation>
-    </message>
-    <message>
-        <source>Point of curve</source>
-        <translation type="vanished">Punctul curbei</translation>
-    </message>
-    <message>
-        <source>Length ratio of the first control point</source>
-        <translation type="vanished">Raport lungime al primului punct de control</translation>
-    </message>
-    <message>
-        <source>The angle of the first control point</source>
-        <translation type="vanished">Unghiul primului punct de control</translation>
-    </message>
-    <message>
-        <source>Length ratio of the second control point</source>
-        <translation type="vanished">Raport lungime al celui de al doilea punct de control</translation>
-    </message>
-    <message>
-        <source>The angle of the second control point</source>
-        <translation type="vanished">Unghiul celui de al doilea punct de control</translation>
-    </message>
-    <message>
         <source>List of points</source>
         <translation>Lista punctelor</translation>
     </message>
     <message>
-        <source>Coefficient of curvature of the curve</source>
-        <translation type="vanished">Coeficientul de curbură a curbei</translation>
-    </message>
-    <message>
         <source>Select point of curve path</source>
         <translation>Alege punctul de traiectorie al curbei</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -5242,21 +2981,6 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>DialogTapePreferences</name>
-    <message>
-        <source>Preferences</source>
-        <translation type="obsolete">Preferințe</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="obsolete">Configurație</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="obsolete">Căi</translation>
-    </message>
-</context>
-<context>
     <name>DialogTool</name>
     <message>
         <source>Error</source>
@@ -5269,10 +2993,6 @@ Apply settings anyway?</source>
     <message>
         <source>Value can&apos;t be 0</source>
         <translation>Valoarea nu poate fi 0</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Valoare</translation>
     </message>
     <message>
         <source>Parser error: %1</source>
@@ -5342,30 +3062,6 @@ Apply settings anyway?</source>
 <context>
     <name>DialogTriangle</name>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>First point of axis</source>
-        <translation type="vanished">Primul punct al axei</translation>
-    </message>
-    <message>
-        <source>First point of line</source>
-        <translation type="vanished">Primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Second point of axis</source>
-        <translation type="vanished">Al doilea punct al axei</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
         <source>Select second point of axis</source>
         <translation>Alege al doilea punct al axei</translation>
     </message>
@@ -5376,34 +3072,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select second point</source>
         <translation>Alege al doilea punct</translation>
-    </message>
-    <message>
-        <source>Triangle tool</source>
-        <translation type="vanished">Instrument triunghi</translation>
-    </message>
-    <message>
-        <source>First point of the axis</source>
-        <translation type="vanished">Primul punct al axei</translation>
-    </message>
-    <message>
-        <source>Second point of the axis</source>
-        <translation type="vanished">Al doilea punct al axei</translation>
-    </message>
-    <message>
-        <source>Second point of line</source>
-        <translation type="vanished">Al doilea punct al liniei</translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="vanished">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -5422,10 +3090,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5441,25 +3105,13 @@ Apply settings anyway?</source>
         <source>2nd axis point:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogTrueDarts</name>
-    <message>
-        <source>First point of angle</source>
-        <translation type="vanished">Primul punct de unghi</translation>
-    </message>
-    <message>
-        <source>Second point of angle</source>
-        <translation type="vanished">Al doilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Third point of angle</source>
-        <translation type="vanished">Al treilea punct de unghi</translation>
-    </message>
-    <message>
-        <source>Show line from second point to this point</source>
-        <translation type="vanished">Arată linia de la al doilea punct pâna la acest punct</translation>
-    </message>
     <message>
         <source>Select the second base point</source>
         <translation type="unfinished"></translation>
@@ -5475,14 +3127,6 @@ Apply settings anyway?</source>
     <message>
         <source>Select the third dart point</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="vanished">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="vanished">Alege o denumire unică.</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -5509,14 +3153,6 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>1st new dart point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>2nd new dart point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>True Darts</source>
         <translation type="unfinished"></translation>
     </message>
@@ -5528,16 +3164,20 @@ Apply settings anyway?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Point name 1:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name 2:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>DialogUndo</name>
     <message>
         <source>Broken formula</source>
         <translation>Formula stricată</translation>
-    </message>
-    <message>
-        <source>Error while calculation formula. You can try undo last operation or fix broken formula.</source>
-        <translation type="vanished">Eroare în timpul calcularii formulei. Puteți încerca, de a anula ultima operație sau repara formula stricată.</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
@@ -5554,41 +3194,6 @@ Apply settings anyway?</source>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>DialogUnionDetails</name>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want union details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Vrei cu adevarat detalii despre Uniune? &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Union tool</source>
-        <translation type="vanished">Instrument Uniune</translation>
-    </message>
-    <message>
-        <source>Select a first point</source>
-        <translation type="vanished">Alege un prim punct</translation>
-    </message>
-    <message>
-        <source>Workpiece should have at least two points and three objects</source>
-        <translation type="vanished">Piesei ar trebui să aibă cel puțin două puncte și trei obiecte</translation>
-    </message>
-    <message>
-        <source>Select a second point</source>
-        <translation type="vanished">Alege un al doilea punct</translation>
-    </message>
-    <message>
-        <source>Select a unique point</source>
-        <translation type="vanished">Alege un punct unic</translation>
-    </message>
-    <message>
-        <source>Select a detail</source>
-        <translation type="vanished">Alege un detaliu</translation>
-    </message>
-    <message>
-        <source>Select a point on edge</source>
-        <translation type="vanished">Alege un punct pe margine</translation>
     </message>
 </context>
 <context>
@@ -5767,6 +3372,125 @@ Apply settings anyway?</source>
     <message>
         <source>Tool</source>
         <translation type="unfinished">Instrument</translation>
+    </message>
+</context>
+<context>
+    <name>EditFormulaDialog</name>
+    <message>
+        <source>Edit formula</source>
+        <translation type="unfinished">Editează formula</translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Măsurători</translation>
+    </message>
+    <message>
+        <source>Custom Variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Angles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> Control Point Lengths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc Radii</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Functions</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Formula:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Value</source>
+        <translation type="unfinished">Valoare</translation>
+    </message>
+    <message>
+        <source>Calculation</source>
+        <translation type="unfinished">Calcul</translation>
+    </message>
+    <message>
+        <source>Clear formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset to original formula</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert variable into formula</source>
+        <translation type="unfinished">Introdu variabilă în formulă</translation>
+    </message>
+    <message>
+        <source>Hides measurement variables that have no value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide empty measurements</source>
+        <translation type="unfinished">Ascunde măsurători goale</translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nume</translation>
+    </message>
+    <message>
+        <source>Full name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter variable list by keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Filter list by keyword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurement</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom Variable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line length</source>
+        <translation type="unfinished">Linie lungime</translation>
+    </message>
+    <message>
+        <source>Curve length</source>
+        <translation type="unfinished">Curbă lungime</translation>
+    </message>
+    <message>
+        <source>Line Angle</source>
+        <translation type="unfinished">Linie Unghi</translation>
+    </message>
+    <message>
+        <source>Arc radius</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve angle</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6038,6 +3762,17 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
+    <name>ExportFormatCombobox</name>
+    <message>
+        <source>(flat) files</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>files</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
@@ -6163,6 +3898,10 @@ Apply settings anyway?</source>
         <source>Confirm Export</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Export files:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>FvUpdater</name>
@@ -6176,12 +3915,6 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Information</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unable to get exclusive access to file
-%1
-Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6207,28 +3940,11 @@ for writing</source>
 Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>GrainlineTab</name>
     <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="obsolete">Lungime:</translation>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6315,10 +4031,6 @@ Do you want to download it?</source>
     </message>
     <message>
         <source>Show which groups contain objects</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Group color and name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6484,6 +4196,18 @@ Do you want to download it?</source>
     <message>
         <source>Remove Group Object</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name</source>
+        <translation type="unfinished">Nume</translation>
     </message>
 </context>
 <context>
@@ -6774,18 +4498,6 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="obsolete">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="obsolete">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>Take:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6845,6 +4557,10 @@ Do you want to download it?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>IntersectCircleTangentTool</name>
@@ -6862,18 +4578,6 @@ Do you want to download it?</source>
     <message>
         <source>Selection</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point label:</source>
-        <translation type="obsolete">Denumire punct:</translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="obsolete">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="obsolete">Alege o denumire unică.</translation>
     </message>
     <message>
         <source>Take:</source>
@@ -6940,15 +4644,15 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unique name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Choose unique name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Name:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -6964,34 +4668,199 @@ Do you want to download it?</source>
     </message>
 </context>
 <context>
-    <name>LabelsTab</name>
+    <name>LayoutSettingsDialog</name>
+    <message>
+        <source>Templates:</source>
+        <translation>Șabloane:</translation>
+    </message>
     <message>
         <source>Width:</source>
-        <translation type="obsolete">Lățime:</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>Lățime:</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation type="obsolete">Înălțime:</translation>
+        <translation>Înălțime:</translation>
     </message>
     <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
+        <source>Rotate workpiece</source>
+        <translation>Rotește Piesa</translation>
+    </message>
+    <message>
+        <source>Rotate by</source>
+        <translation>Rotită de</translation>
+    </message>
+    <message>
+        <source>degree</source>
+        <translation>Grad</translation>
+    </message>
+    <message>
+        <source>Three groups: big, middle, small</source>
+        <translation>Trei grupuri: mare, mijlociu, mic</translation>
+    </message>
+    <message>
+        <source>Two groups: big, small</source>
+        <translation>Două grupuri: mare, mic</translation>
+    </message>
+    <message>
+        <source>Descending area</source>
+        <translation>Zonă descendentă</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimetrii</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inci</translation>
+    </message>
+    <message>
+        <source>Pixels</source>
+        <translation>Pixeli</translation>
+    </message>
+    <message>
+        <source>Auto crop unused length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unite pages (if possible)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Gap width:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save length of the sheet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Paper format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Right:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wrong fields.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>
+	Three groups: big, middle, small = 0;
+	Two groups: big, small = 1;
+	Descending area = 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layout options</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift/Offset length:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rule for choosing the next workpiece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Divide into strips</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multiplier</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Set multiplier for length of the biggest workpiece in layout.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enabling for sheets that have big height will speed up creating.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Printer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>None</source>
+        <comment>Printer</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text will be converted to paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export text as paths</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ignore margins</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layout print settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LineTypeComboBox</name>
+    <message>
+        <source>No Pen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solidline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Dash Dot Dot</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -7108,40 +4977,12 @@ Do you want to download it?</source>
         <translation>Punct</translation>
     </message>
     <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Punct de-a lungul unei perpendiculare</translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Punct perpendicular pe linie</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Punct de-a lungul bisectorului</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Punct la distanță și unghi</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Punct la distanță de-a lungul liniei</translation>
-    </message>
-    <message>
         <source>Tools for creating lines.</source>
         <translation>Instrumente pentru crearea de linii.</translation>
     </message>
     <message>
         <source>Line</source>
         <translation>Linie</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Linie între puncte</translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Punct la linia de intersecție</translation>
     </message>
     <message>
         <source>Tools for creating curves.</source>
@@ -7160,14 +5001,6 @@ Do you want to download it?</source>
         <translation>Curbura</translation>
     </message>
     <message>
-        <source>Tools for creating details.</source>
-        <translation type="vanished">Instrumente pentru crearea de detalii.</translation>
-    </message>
-    <message>
-        <source>Detail</source>
-        <translation type="vanished">Detalii</translation>
-    </message>
-    <message>
         <source>&amp;File</source>
         <translation>&amp; Fișier</translation>
     </message>
@@ -7176,40 +5009,8 @@ Do you want to download it?</source>
         <translation>&amp; Ajutor</translation>
     </message>
     <message>
-        <source>&amp;Pattern piece</source>
-        <translation type="vanished">&amp;Piesă tipar</translation>
-    </message>
-    <message>
         <source>Measurements</source>
         <translation>Măsurători</translation>
-    </message>
-    <message>
-        <source>Window</source>
-        <translation type="vanished">Fereastră</translation>
-    </message>
-    <message>
-        <source>Toolbar files</source>
-        <translation type="vanished">Bara de instrumente pentru fișiere</translation>
-    </message>
-    <message>
-        <source>ToolBar modes</source>
-        <translation type="vanished">Moduri ale Bării de instrumente</translation>
-    </message>
-    <message>
-        <source>Toolbar pattern</source>
-        <translation type="vanished">Model de Bară de instrumente</translation>
-    </message>
-    <message>
-        <source>Toolbar options</source>
-        <translation type="vanished">Opțiuni ale Bării de instrumente</translation>
-    </message>
-    <message>
-        <source>Toolbar tools</source>
-        <translation type="vanished">Instrumente ale Bării de instrumente</translation>
-    </message>
-    <message>
-        <source>Tool options</source>
-        <translation type="vanished">Opțiunile instrumentului</translation>
     </message>
     <message>
         <source>New</source>
@@ -7256,36 +5057,12 @@ Do you want to download it?</source>
         <translation>Salvează tiparul care încă nu este salvat</translation>
     </message>
     <message>
-        <source>Draw</source>
-        <translation type="vanished">Trage</translation>
-    </message>
-    <message>
         <source>Details</source>
         <translation>Detalii</translation>
     </message>
     <message>
         <source>Pointer tools</source>
         <translation>Instrumente indicator</translation>
-    </message>
-    <message>
-        <source>New pattern piece</source>
-        <translation type="vanished">Piesă nouă de tipar</translation>
-    </message>
-    <message>
-        <source>Add new pattern piece</source>
-        <translation type="vanished">Adaugă o nouă piesă de tipar</translation>
-    </message>
-    <message>
-        <source>Change the label of pattern piece</source>
-        <translation type="vanished">Schimbă denumirea piesei de tipar</translation>
-    </message>
-    <message>
-        <source>Table of variables</source>
-        <translation type="vanished">Tabel de variabile</translation>
-    </message>
-    <message>
-        <source>Tables of variables</source>
-        <translation type="vanished">Tabele de variabile</translation>
     </message>
     <message>
         <source>History</source>
@@ -7304,164 +5081,24 @@ Do you want to download it?</source>
         <translation>E&amp;xit</translation>
     </message>
     <message>
-        <source>Exit the application</source>
-        <translation type="vanished">Ieși din aplicație</translation>
-    </message>
-    <message>
         <source>Preferences</source>
         <translation>Preferințe</translation>
-    </message>
-    <message>
-        <source>Pattern properties</source>
-        <translation type="vanished">Proprietăți tipar</translation>
-    </message>
-    <message>
-        <source>Zoom in</source>
-        <translation type="vanished">Mărește</translation>
-    </message>
-    <message>
-        <source>zoom in</source>
-        <translation type="vanished">mărește</translation>
-    </message>
-    <message>
-        <source>Zoom out</source>
-        <translation type="vanished">Micșorează</translation>
-    </message>
-    <message>
-        <source>Edit pattern XML code</source>
-        <translation type="vanished">Editează codul XML al tiparului</translation>
-    </message>
-    <message>
-        <source>Original zoom </source>
-        <translation type="vanished">Zoom Original</translation>
-    </message>
-    <message>
-        <source>Original Zoom </source>
-        <translation type="vanished">Zoom Original</translation>
-    </message>
-    <message>
-        <source>Zoom fit best</source>
-        <translation type="vanished">Zoom se potrivesc cel mai bine</translation>
-    </message>
-    <message>
-        <source>Stop</source>
-        <translation type="vanished">Stop</translation>
-    </message>
-    <message>
-        <source>Stop using tool</source>
-        <translation type="vanished">Nu mai folosii instrumentul</translation>
-    </message>
-    <message>
-        <source>Repot Bug...</source>
-        <translation type="vanished">Raportează o Eroare...</translation>
     </message>
     <message>
         <source>Report bug</source>
         <translation>Raportează o eroare</translation>
     </message>
     <message>
-        <source>Close window</source>
-        <translation type="vanished">Închide fereastra</translation>
-    </message>
-    <message>
-        <source>Online help</source>
-        <translation type="vanished">Ajutor online</translation>
-    </message>
-    <message>
         <source>Show online help</source>
         <translation>Arată ajutorul online</translation>
-    </message>
-    <message>
-        <source>Pattern piece %1</source>
-        <translation type="vanished">Piesă Tipar %1</translation>
-    </message>
-    <message>
-        <source>Select point</source>
-        <translation type="vanished">Alege un punct</translation>
-    </message>
-    <message>
-        <source>Select first point</source>
-        <translation type="vanished">Alege primul punct</translation>
-    </message>
-    <message>
-        <source>Select first point of line</source>
-        <translation type="vanished">Alege primul punct al liniei</translation>
-    </message>
-    <message>
-        <source>Select first point of angle</source>
-        <translation type="vanished">Alege primul punct de unghi</translation>
-    </message>
-    <message>
-        <source>Select first point of first line</source>
-        <translation type="vanished">Alege primul punct al primei linii</translation>
-    </message>
-    <message>
-        <source>Select first point curve</source>
-        <translation type="vanished">Alege ultimul punct de curbă</translation>
-    </message>
-    <message>
-        <source>Select simple curve</source>
-        <translation type="vanished">Alege curbă simpla</translation>
-    </message>
-    <message>
-        <source>Select point of center of arc</source>
-        <translation type="vanished">Selectează punctul de centru pentru curbură</translation>
-    </message>
-    <message>
-        <source>Select point of curve path</source>
-        <translation type="vanished">Alege punctul de traiectorie al curbei</translation>
-    </message>
-    <message>
-        <source>Select curve path</source>
-        <translation type="vanished">Alegere traseu curbă</translation>
-    </message>
-    <message>
-        <source>Select points, arcs, curves clockwise.</source>
-        <translation type="vanished">Alege puncte, arce, curbe în sensul acelor de ceasornic.</translation>
-    </message>
-    <message>
-        <source>Select base point</source>
-        <translation type="vanished">Alege punctul bază</translation>
-    </message>
-    <message>
-        <source>Select first point of axis</source>
-        <translation type="vanished">Alege primul punct al axei</translation>
-    </message>
-    <message>
-        <source>Select detail</source>
-        <translation type="vanished">Alege detaliu</translation>
-    </message>
-    <message>
-        <source>Select arc</source>
-        <translation type="vanished">Alege arc</translation>
-    </message>
-    <message>
-        <source>Select curve</source>
-        <translation type="vanished">Alege curbă</translation>
     </message>
     <message>
         <source>About Qt</source>
         <translation>Despre Qt</translation>
     </message>
     <message>
-        <source>Height: </source>
-        <translation type="vanished">Înălțime:</translation>
-    </message>
-    <message>
-        <source>Size: </source>
-        <translation type="vanished">Dimensiune:</translation>
-    </message>
-    <message>
-        <source>Pattern Piece: </source>
-        <translation type="vanished">Piesă Tipar:</translation>
-    </message>
-    <message>
         <source>Pattern files (*.val)</source>
         <translation>Fișiere tipar (*.val)</translation>
-    </message>
-    <message>
-        <source>pattern</source>
-        <translation type="vanished">tipar</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -7542,62 +5179,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Reopen files.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Standard measurements (*.vst)</source>
-        <translation type="vanished">Măsuri standard (* .vst)</translation>
-    </message>
-    <message>
-        <source>Individual measurements (*.vit)</source>
-        <translation type="vanished">Măsuri individuale (* .vit)</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Punct special la umăr</translation>
-    </message>
-    <message>
-        <source>Triangle tool</source>
-        <translation type="vanished">Instrument triunghi</translation>
-    </message>
-    <message>
-        <source>Point intersect line and axis</source>
-        <translation type="vanished">Punctul intersectează linia și axa</translation>
-    </message>
-    <message>
-        <source>Simple curve</source>
-        <translation type="vanished">Curbă simplă</translation>
-    </message>
-    <message>
-        <source>Curved path</source>
-        <translation type="vanished">Traiectorie curbată</translation>
-    </message>
-    <message>
-        <source>Segmenting a simple curve</source>
-        <translation type="vanished">Segmentarea unei simple curburi</translation>
-    </message>
-    <message>
-        <source>Segment a curved path</source>
-        <translation type="vanished">Segmentare traseu curbat</translation>
-    </message>
-    <message>
-        <source>Point intersect curve and axis</source>
-        <translation type="vanished">Punctul intersectează cubrura și axa</translation>
-    </message>
-    <message>
-        <source>Segment an arc</source>
-        <translation type="vanished">Segmentează o curbură</translation>
-    </message>
-    <message>
-        <source>Seam allowance tool</source>
-        <translation type="vanished">Instrument pentru adaos la cusătură</translation>
-    </message>
-    <message>
-        <source>Union tool</source>
-        <translation type="vanished">Instrument Uniune</translation>
-    </message>
-    <message>
-        <source>Pointer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8105,18 +5686,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>ellipses_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ellipse Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, E</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8249,7 +5818,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom Out (CTRL+-)</source>
+        <source>Zoom Out (Ctrl+-)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8261,7 +5830,7 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Zoom to Fit All(CTRL+=)</source>
+        <source>Zoom to Fit All(Ctrl+=)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8357,27 +5926,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>points_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Point Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>line_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Line Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8389,27 +5942,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>arcTool_Actions</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Arc Tools</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>W, A</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>modifications_Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Operations Tools</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>W, O</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8482,10 +6019,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>E, P</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>details_Action</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -9360,6 +6893,26 @@ Do you want to save your changes?</source>
         <source>Failed to lock. File with this name is opened in another window.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>untitled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pen Toolbar</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toolbars</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -9394,10 +6947,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
         <translation>Nu s-au putut pregăti datele pentru crearea unei schițe</translation>
-    </message>
-    <message>
-        <source>Several workpieces left not arranged, but none of them match for paper</source>
-        <translation type="vanished">Mai multe piese au rămas nearanjate, dar nici una dintre ele nu se potrivesc pentru hârtie</translation>
     </message>
     <message>
         <source>Can&apos;t open printer %1</source>
@@ -9435,10 +6984,6 @@ Do you want to save your changes?</source>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
-        <source>SeamlyME - Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy shortcuts to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9451,11 +6996,107 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seamly2S Shortcuts</source>
+        <source>Export PDF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Export PDF</source>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished">Nou</translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Individual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open Multisize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Salvează</translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as</source>
+        <translation type="unfinished">Salvează ca și</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>SeamlyMe Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Find next</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+G</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9564,6 +7205,37 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>MouseCoordinates</name>
+    <message>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source> XPos:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>xpos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>YPos:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ypos</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Unități:</translation>
+    </message>
+    <message>
+        <source>units</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
@@ -9617,56 +7289,74 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>NotchesTab</name>
+    <name>PageFormatCombobox</name>
     <message>
-        <source>Length:</source>
-        <translation type="obsolete">Lungime:</translation>
+        <source>A0</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
-    </message>
-</context>
-<context>
-    <name>PathPage</name>
-    <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Măsuri individuale</translation>
-    </message>
-</context>
-<context>
-    <name>PathsTab</name>
-    <message>
-        <source>All objects in path should follow in clockwise direction.</source>
-        <translation type="obsolete">Toate obiectele de pe rută trebuie să urmeze în sensul acelor de ceasornic.</translation>
+        <source>A1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Ready!</source>
-        <translation type="obsolete">Gata!</translation>
+        <source>A2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Adaos cusatură</translation>
+        <source>A3</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
+        <source>A4</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
+        <source>Letter</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
+        <source>Legal</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <source>Tabloid</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
+        <source>ANSI C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ANSI D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ANSI E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 24in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 30in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 36in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 42in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Roll 44in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Custom</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9816,10 +7506,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Forbid flipping:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Forbid piece be mirrored in a layout.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9904,10 +7590,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished">Asistent Formulă</translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
         <source>Calculation</source>
         <translation type="unfinished">Calcul</translation>
     </message>
@@ -9960,10 +7642,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Label template:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Edit pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9984,18 +7662,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Center anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Top left anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom right anchor:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern label</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10010,18 +7676,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Length:</source>
         <translation type="unfinished">Lungime:</translation>
-    </message>
-    <message>
-        <source>Center point:</source>
-        <translation type="unfinished">Punct central:</translation>
-    </message>
-    <message>
-        <source>Top point:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Bottom point:</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Arrows</source>
@@ -10303,6 +7957,38 @@ Do you want to save your changes?</source>
         <source>Labels</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Flipping:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top left:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom right:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Top:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bottom:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PatternPieceTool</name>
@@ -10472,6 +8158,92 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>PenToolBar</name>
+    <message>
+        <source>Current line color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current line type</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Current line weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Reset current pen to defaults</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save current pen preset</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>PieceFillComboBox</name>
+    <message>
+        <source>No Fill</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Solid</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Density 7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Horizontal Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vertical Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Backward Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forward Diagonal</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Diagonal Cross</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>PiecesWidget</name>
     <message>
         <source>Form</source>
@@ -10525,18 +8297,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point name:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unique label</source>
-        <translation type="obsolete">Denumire unică</translation>
-    </message>
-    <message>
-        <source>Choose unique label.</source>
-        <translation type="obsolete">Alege o denumire unică.</translation>
-    </message>
-    <message>
         <source>1st point:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10572,24 +8332,16 @@ Do you want to save your changes?</source>
         <source>Choose unique name.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Name:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesConfigurationPage</name>
     <message>
-        <source>Save</source>
-        <translation type="obsolete">Salvează</translation>
-    </message>
-    <message>
-        <source>Auto-save modified pattern</source>
-        <translation type="obsolete">Auto salvarea modelului modificat</translation>
-    </message>
-    <message>
         <source>Interval:</source>
         <translation type="unfinished">Interval:</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <translation type="obsolete">min</translation>
     </message>
     <message>
         <source>Language</source>
@@ -10600,44 +8352,12 @@ Do you want to save your changes?</source>
         <translation type="unfinished">Limbaj GUI:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation type="obsolete">Piese separator decimal:</translation>
-    </message>
-    <message>
         <source>Default unit:</source>
         <translation type="unfinished">Unitate standard:</translation>
     </message>
     <message>
         <source>Label language:</source>
         <translation type="unfinished">Limbă etichetă:</translation>
-    </message>
-    <message>
-        <source>Pattern making system</source>
-        <translation type="unfinished">Sistem construire Tipare</translation>
-    </message>
-    <message>
-        <source>Pattern making system:</source>
-        <translation type="obsolete">Sistem construire Tipare:</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="unfinished">Autor:</translation>
-    </message>
-    <message>
-        <source>Book:</source>
-        <translation type="unfinished">Carte:</translation>
-    </message>
-    <message>
-        <source>Send crash reports</source>
-        <translation type="obsolete">Trimite raport de blocare</translation>
-    </message>
-    <message>
-        <source>Send crash reports (recommended)</source>
-        <translation type="obsolete">Trimite rapoarte de blocaj (recomandat)</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="obsolete">Bară de instrumente</translation>
     </message>
     <message>
         <source>With OS options</source>
@@ -10650,10 +8370,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Centimeters</source>
         <translation type="unfinished">Centimetrii</translation>
-    </message>
-    <message>
-        <source>Millimiters</source>
-        <translation type="obsolete">Milimetrii</translation>
     </message>
     <message>
         <source>Inches</source>
@@ -10685,10 +8401,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Confirm Format Rewriting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>System:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11112,19 +8824,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>          Speed:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Behavior</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Constraints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Use CTRL Modifier</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11533,6 +9237,10 @@ Do you want to save your changes?</source>
         <source>No Pen</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>%1</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>QmuParser</name>
@@ -11784,8 +9492,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished">Sistem construire Tipare</translation>
     </message>
     <message>
-        <source>Pattern making system:</source>
-        <translation type="unfinished">Sistem construire Tipare:</translation>
+        <source>System:</source>
+        <translation type="unfinished">Sistem:</translation>
     </message>
     <message>
         <source>Author:</source>
@@ -11816,11 +9524,11 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Default height:</source>
-        <translation type="unfinished"></translation>
+        <source>Height:</source>
+        <translation type="unfinished">Înălțime:</translation>
     </message>
     <message>
-        <source>Default size:</source>
+        <source>Size:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -11881,10 +9589,6 @@ Do you want to save your changes?</source>
 <context>
     <name>ShortcutsDialog</name>
     <message>
-        <source>Seamly2D - Shortcuts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Copy shortcuts to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11897,11 +9601,831 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Seamly2S Shortcuts</source>
+        <source>Seamly2D Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New</source>
+        <translation type="unfinished">Nou</translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished">Deschide</translation>
+    </message>
+    <message>
+        <source>Ctrl+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save</source>
+        <translation type="unfinished">Salvează</translation>
+    </message>
+    <message>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save as</source>
+        <translation type="unfinished">Salvează ca și</translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Print</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Preferences</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+Comma</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Document Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Exit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Q</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Undo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Redo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>View</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Draft Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layout Mode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl++</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom 1:1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom to Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fit All</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+=</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Previous</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Left</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selected</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Right</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Area</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pan</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Z, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Name Text</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Increase Text Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+]</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decrease Text Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+[</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Use Tool Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wireframe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, W</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve Control Points</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Axis Origin</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Seam Allowance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Grainlines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Labels</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>V, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurements</source>
+        <translation type="unfinished">Măsurători</translation>
+    </message>
+    <message>
+        <source>Open SeamlyMe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variables Table</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Variables Table  to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tools</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename Draft Block</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point</source>
+        <translation type="unfinished">Punct</translation>
+    </message>
+    <message>
+        <source>Length and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>On Bisector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, B</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Length to Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Arc and Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Axis and Triangle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect XY</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>X, Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Line and Perpendicular</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Intersect Line and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>L, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Midpoint On Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+O, Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line</source>
+        <translation type="unfinished">Linie</translation>
+    </message>
+    <message>
+        <source>Alt+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Lines</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Interactive</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Curve - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spline - Fixed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Spline	</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curves</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Curve and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Angle</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc - Radius and Length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+Shift+A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - On Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>O, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, X</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arcs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circles</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+I, Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Circle and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point - Intersect Arc and Tangent</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Elliptical Arc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+E</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Operations</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add Objects to Group</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>G</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rotation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Line</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mirror by Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>M, A</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Alt+M</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>True Darts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T, D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Draft Blocks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E, D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Pattern Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>N, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Anchor Point</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>A, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Internal Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I, N</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit Properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Include in Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Forbid Flipping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Raise To Top</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Home</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Lower To Bottom</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+End</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Rename</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Delete</source>
+        <translation type="unfinished">Șterge</translation>
+    </message>
+    <message>
+        <source>Del</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Details</source>
+        <translation type="unfinished">Detalii</translation>
+    </message>
+    <message>
+        <source>Unite Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>U</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Pieces</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E, P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>N, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export Layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>E, L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Tool</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+L</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>History</source>
+        <translation type="unfinished">Decurs</translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Utilities</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Calculator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal Chart</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Shift+D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Keyboard Shortcuts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>K</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Shift+P</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Export PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Insert Nodes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12006,10 +10530,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Formula:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Base value:</source>
@@ -12192,18 +10712,6 @@ Do you want to save your changes?</source>
         <translation>Fișierul nu a putut fii salvat</translation>
     </message>
     <message>
-        <source>measurements</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Individual measurements (*.vit)</source>
-        <translation type="vanished">Măsuri individuale (* .vit)</translation>
-    </message>
-    <message>
-        <source>Standard measurements (*.vst)</source>
-        <translation type="vanished">Măsuri standard (* .vst)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Salvează ca și</translation>
     </message>
@@ -12226,14 +10734,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Parser error: %1</source>
         <translation>Eroare Parser: %1</translation>
-    </message>
-    <message>
-        <source>Height: </source>
-        <translation type="vanished">Înălțime:</translation>
-    </message>
-    <message>
-        <source>Size: </source>
-        <translation type="vanished">Dimensiune:</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -12567,225 +11067,21 @@ Do you want to save your changes?</source>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>TabGrainline</name>
     <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
+        <source>Number</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
+        <source>Ctrl+E</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
+        <source>untitled</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Length:</source>
-        <translation type="obsolete">Lungime:</translation>
-    </message>
-</context>
-<context>
-    <name>TabLabels</name>
-    <message>
-        <source>Name of detail:</source>
-        <translation type="obsolete">Nume detaliu:</translation>
-    </message>
-    <message>
-        <source>Detail</source>
-        <translation type="obsolete">Detalii</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Lățime:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Height:</source>
-        <translation type="obsolete">Înălțime:</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
-    </message>
-</context>
-<context>
-    <name>TabPassmarks</name>
-    <message>
-        <source>Angle</source>
-        <translation type="obsolete">Unghi</translation>
-    </message>
-</context>
-<context>
-    <name>TabPaths</name>
-    <message>
-        <source>All objects in path should follow in clockwise direction.</source>
-        <translation type="obsolete">Toate obiectele de pe rută trebuie să urmeze în sensul acelor de ceasornic.</translation>
-    </message>
-    <message>
-        <source>Ready!</source>
-        <translation type="obsolete">Gata!</translation>
-    </message>
-    <message>
-        <source>Seam allowance</source>
-        <translation type="obsolete">Adaos cusatură</translation>
-    </message>
-    <message>
-        <source>Width:</source>
-        <translation type="obsolete">Lățime:</translation>
-    </message>
-    <message>
-        <source>Formula wizard</source>
-        <translation type="obsolete">Asistent Formulă</translation>
-    </message>
-    <message>
-        <source>Value</source>
-        <translation type="obsolete">Valoare</translation>
-    </message>
-    <message>
-        <source>Calculation</source>
-        <translation type="obsolete">Calcul</translation>
-    </message>
-    <message>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="obsolete">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt; Arată calcul complet în message box &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <source>Angle:</source>
-        <translation type="obsolete">Unghi:</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigDialog</name>
-    <message>
-        <source>Apply</source>
-        <translation type="vanished">Aplică</translation>
-    </message>
-    <message>
-        <source>&amp;Cancel</source>
-        <translation type="vanished">&amp; Anulare</translation>
-    </message>
-    <message>
-        <source>&amp;Ok</source>
-        <translation type="vanished">&amp;Ok</translation>
-    </message>
-    <message>
-        <source>Config Dialog</source>
-        <translation type="vanished">Configurare Dialog</translation>
-    </message>
-    <message>
-        <source>Configuration</source>
-        <translation type="vanished">Configurație</translation>
-    </message>
-    <message>
-        <source>Paths</source>
-        <translation type="vanished">Căi</translation>
-    </message>
-</context>
-<context>
-    <name>TapeConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="vanished">Limba</translation>
-    </message>
-    <message>
-        <source>GUI language</source>
-        <translation type="vanished">LImbaj GUI</translation>
-    </message>
-    <message>
-        <source>Pattern making system</source>
-        <translation type="vanished">Sistem construire Tipare</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="vanished">Autor:</translation>
-    </message>
-    <message>
-        <source>Book:</source>
-        <translation type="vanished">Carte:</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts</source>
-        <translation type="vanished">Piese de separare zecimal</translation>
-    </message>
-    <message>
-        <source>With OS options (%1)</source>
-        <translation type="vanished">Cu opțiuni OS (%1)</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="vanished">Limbaj GUI:</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts:</source>
-        <translation type="vanished">Piese separator decimal:</translation>
-    </message>
-    <message>
-        <source>Pattern making system:</source>
-        <translation type="vanished">Sistem construire Tipare:</translation>
-    </message>
-</context>
-<context>
-    <name>TapePathPage</name>
-    <message>
-        <source>Individual measurements</source>
-        <translation type="vanished">Măsuri individuale</translation>
-    </message>
-</context>
-<context>
-    <name>TapePreferencesConfigurationPage</name>
-    <message>
-        <source>Language</source>
-        <translation type="obsolete">Limba</translation>
-    </message>
-    <message>
-        <source>GUI language:</source>
-        <translation type="obsolete">Limbaj GUI:</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts:</source>
-        <translation type="obsolete">Piese separator decimal:</translation>
-    </message>
-    <message>
-        <source>Pattern making system</source>
-        <translation type="obsolete">Sistem construire Tipare</translation>
-    </message>
-    <message>
-        <source>Pattern making system:</source>
-        <translation type="obsolete">Sistem construire Tipare:</translation>
-    </message>
-    <message>
-        <source>Author:</source>
-        <translation type="obsolete">Autor:</translation>
-    </message>
-    <message>
-        <source>Book:</source>
-        <translation type="obsolete">Carte:</translation>
-    </message>
-    <message>
-        <source>Toolbar</source>
-        <translation type="obsolete">Bară de instrumente</translation>
+        <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12981,6 +11277,25 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
+    <name>VAbstractMainWindow</name>
+    <message>
+        <source>Confirm format rewriting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Comma-Separated Values</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export to CSV</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VAbstractOperation</name>
     <message>
         <source>Name</source>
@@ -13012,10 +11327,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VAbstractPieceData</name>
-    <message>
-        <source>Detail</source>
-        <translation type="obsolete">Detalii</translation>
-    </message>
     <message>
         <source>Piece</source>
         <translation type="unfinished"></translation>
@@ -13658,10 +11969,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VDrawTool</name>
     <message>
-        <source>Options</source>
-        <translation type="vanished">Opțiuni</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Șterge</translation>
     </message>
@@ -13698,14 +12005,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VFormulaProperty</name>
-    <message>
-        <source>Value</source>
-        <translation type="vanished">Valoare</translation>
-    </message>
-    <message>
-        <source>Formula</source>
-        <translation type="vanished">Formula</translation>
-    </message>
     <message>
         <source>Formula:</source>
         <translation type="unfinished"></translation>
@@ -13961,10 +12260,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Detail</source>
-        <translation type="obsolete">Detalii</translation>
-    </message>
-    <message>
         <source>Unnamed path</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14064,14 +12359,6 @@ Do you want to save your changes?</source>
 <context>
     <name>VToolArc</name>
     <message>
-        <source>Length</source>
-        <translation type="obsolete">Lungime</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Rază</translation>
-    </message>
-    <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
     </message>
@@ -14094,14 +12381,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolArcWithLength</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Lungime</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Rază</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -14147,13 +12426,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolCut</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Lungime</translation>
     </message>
 </context>
 <context>
@@ -14214,17 +12486,6 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>VToolDetail</name>
-    <message>
-        <source>Options</source>
-        <translation type="vanished">Opțiuni</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="vanished">Șterge</translation>
-    </message>
-</context>
-<context>
     <name>VToolDoublePoint</name>
     <message>
         <source>Name</source>
@@ -14233,14 +12494,6 @@ Do you want to save your changes?</source>
 </context>
 <context>
     <name>VToolEllipticalArc</name>
-    <message>
-        <source>Length</source>
-        <translation type="obsolete">Lungime</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="obsolete">Rază</translation>
-    </message>
     <message>
         <source>Start angle</source>
         <translation type="unfinished"></translation>
@@ -14381,100 +12634,12 @@ Do you want to save your changes?</source>
         <translation>Punct de bază</translation>
     </message>
     <message>
-        <source>Point label</source>
-        <translation type="vanished">Etichetă Punct</translation>
-    </message>
-    <message>
-        <source>Point at distance and angle</source>
-        <translation type="vanished">Punct la distanță și unghi</translation>
-    </message>
-    <message>
-        <source>Length</source>
-        <translation type="vanished">Lungime</translation>
-    </message>
-    <message>
-        <source>Angle</source>
-        <translation type="vanished">Unghi</translation>
-    </message>
-    <message>
-        <source>Point at distance along line</source>
-        <translation type="vanished">Punct la distanță de-a lungul liniei</translation>
-    </message>
-    <message>
-        <source>Arc</source>
-        <translation type="vanished">Curbura</translation>
-    </message>
-    <message>
-        <source>Radius</source>
-        <translation type="vanished">Rază</translation>
-    </message>
-    <message>
-        <source>First angle</source>
-        <translation type="vanished">Primul unghi</translation>
-    </message>
-    <message>
-        <source>Second angle</source>
-        <translation type="vanished">Al doilea unghi</translation>
-    </message>
-    <message>
-        <source>Point along bisector</source>
-        <translation type="vanished">Punct de-a lungul bisectorului</translation>
-    </message>
-    <message>
-        <source>Perpendicular point along line</source>
-        <translation type="vanished">Punct perpendicular pe linie</translation>
-    </message>
-    <message>
-        <source>Line between points</source>
-        <translation type="vanished">Linie între puncte</translation>
-    </message>
-    <message>
-        <source>Point at line intersection</source>
-        <translation type="vanished">Punct la linia de intersecție</translation>
-    </message>
-    <message>
-        <source>Point along perpendicular</source>
-        <translation type="vanished">Punct de-a lungul unei perpendiculare</translation>
-    </message>
-    <message>
-        <source>Additional angle degrees</source>
-        <translation type="vanished">Grade de unghi suplimentare</translation>
-    </message>
-    <message>
-        <source>Special point on shoulder</source>
-        <translation type="vanished">Punct special la umăr</translation>
-    </message>
-    <message>
-        <source>Line color</source>
-        <translation type="vanished">Culoarea liniei</translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="vanished">Culoare</translation>
-    </message>
-    <message>
-        <source>First point</source>
-        <translation type="vanished">Primul Punct</translation>
-    </message>
-    <message>
-        <source>Second point</source>
-        <translation type="vanished">Al doilea punct</translation>
-    </message>
-    <message>
         <source>True darts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point label:</source>
-        <translation type="obsolete">Denumire punct:</translation>
-    </message>
-    <message>
         <source>Base point:</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Line color:</source>
-        <translation type="obsolete">Culoarea liniei:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -14654,10 +12819,6 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Point name:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14918,17 +13079,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Rotation angle</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VToolSeamAllowance</name>
-    <message>
-        <source>Options</source>
-        <translation type="obsolete">Opțiuni</translation>
-    </message>
-    <message>
-        <source>Delete</source>
-        <translation type="obsolete">Șterge</translation>
     </message>
 </context>
 <context>
@@ -15764,136 +13914,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>sin</source>
-        <comment>sine function</comment>
-        <translation type="vanished">sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>cosine function</comment>
-        <translation type="vanished">cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>tangens function</comment>
-        <translation type="vanished">tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>arcus sine function</comment>
-        <translation type="vanished">asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>arcus cosine function</comment>
-        <translation type="vanished">acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>arcus tangens function</comment>
-        <translation type="vanished">atan</translation>
-    </message>
-    <message>
-        <source>sinh</source>
-        <comment>hyperbolic sine function</comment>
-        <translation>sinh</translation>
-    </message>
-    <message>
-        <source>cosh</source>
-        <comment>hyperbolic cosine</comment>
-        <translation>cosh</translation>
-    </message>
-    <message>
-        <source>tanh</source>
-        <comment>hyperbolic tangens function</comment>
-        <translation type="vanished">tanh</translation>
-    </message>
-    <message>
-        <source>asinh</source>
-        <comment>hyperbolic arcus sine function</comment>
-        <translation type="vanished">asinh</translation>
-    </message>
-    <message>
-        <source>acosh</source>
-        <comment>hyperbolic arcus tangens function</comment>
-        <translation type="vanished">acosh</translation>
-    </message>
-    <message>
-        <source>atanh</source>
-        <comment>hyperbolic arcur tangens function</comment>
-        <translation type="vanished">atanh</translation>
-    </message>
-    <message>
-        <source>log2</source>
-        <comment>logarithm to the base 2</comment>
-        <translation>log2</translation>
-    </message>
-    <message>
-        <source>log10</source>
-        <comment>logarithm to the base 10</comment>
-        <translation>log10</translation>
-    </message>
-    <message>
-        <source>log</source>
-        <comment>logarithm to the base 10</comment>
-        <translation>log</translation>
-    </message>
-    <message>
-        <source>ln</source>
-        <comment>logarithm to base e (2.71828...)</comment>
-        <translation>ln</translation>
-    </message>
-    <message>
-        <source>exp</source>
-        <comment>e raised to the power of x</comment>
-        <translation>exp</translation>
-    </message>
-    <message>
-        <source>sqrt</source>
-        <comment>square root of a value</comment>
-        <translation>sqrt</translation>
-    </message>
-    <message>
-        <source>sign</source>
-        <comment>sign function -1 if x&lt;0; 1 if x&gt;0</comment>
-        <translation>sign</translation>
-    </message>
-    <message>
-        <source>rint</source>
-        <comment>round to nearest integer</comment>
-        <translation>rint</translation>
-    </message>
-    <message>
-        <source>abs</source>
-        <comment>absolute value</comment>
-        <translation>abs</translation>
-    </message>
-    <message>
-        <source>min</source>
-        <comment>min of all arguments</comment>
-        <translation>min</translation>
-    </message>
-    <message>
-        <source>max</source>
-        <comment>max of all arguments</comment>
-        <translation>max</translation>
-    </message>
-    <message>
-        <source>sum</source>
-        <comment>sum of all arguments</comment>
-        <translation>sum</translation>
-    </message>
-    <message>
-        <source>avg</source>
-        <comment>mean value of all arguments</comment>
-        <translation>avg</translation>
-    </message>
-    <message>
-        <source>fmod</source>
-        <comment>Returns the floating-point remainder of numer/denom (rounded towards zero)</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>cm</source>
         <comment>centimeter</comment>
         <translation>cm</translation>
@@ -15979,11 +13999,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>acosh</source>
-        <comment>hyperbolic arcus cosine function</comment>
-        <translation type="obsolete">acosh</translation>
-    </message>
-    <message>
         <source>size</source>
         <comment>placeholder</comment>
         <translation type="unfinished"></translation>
@@ -16016,56 +14031,6 @@ Do you want to save your changes?</source>
     <message>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>degTorad</source>
-        <comment>converts degrees to radian</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>radTodeg</source>
-        <comment>converts radian to degrees</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>sin</source>
-        <comment>sine function working with radians</comment>
-        <translation type="unfinished">sin</translation>
-    </message>
-    <message>
-        <source>cos</source>
-        <comment>cosine function working with radians</comment>
-        <translation type="unfinished">cos</translation>
-    </message>
-    <message>
-        <source>tan</source>
-        <comment>tangens function working with radians</comment>
-        <translation type="obsolete">tan</translation>
-    </message>
-    <message>
-        <source>asin</source>
-        <comment>arcus sine function working with radians</comment>
-        <translation type="obsolete">asin</translation>
-    </message>
-    <message>
-        <source>acos</source>
-        <comment>arcus cosine function working with radians</comment>
-        <translation type="obsolete">acos</translation>
-    </message>
-    <message>
-        <source>atan</source>
-        <comment>arcus tangens function working with radians</comment>
-        <translation type="obsolete">atan</translation>
-    </message>
-    <message>
-        <source>sinD</source>
-        <comment>sine function working with degrees</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>cosD</source>
-        <comment>cosine function working with degrees</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -16224,71 +14189,208 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <source>degTorad</source>
+        <comment>Converts degrees to radians
+Usage: degTorad(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>radTodeg</source>
+        <comment>Converts radians to degrees
+Usage: radTodeg(angle θ in radians)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>sin</source>
+        <comment>Sine function working with radians
+Usage: sin(angle θ in radians)</comment>
+        <translation type="unfinished">sin</translation>
+    </message>
+    <message>
+        <source>cos</source>
+        <comment>Cosine function working with radians
+Usage: cos(angle θ in radians)</comment>
+        <translation type="unfinished">cos</translation>
+    </message>
+    <message>
         <source>tan</source>
-        <comment>tangent function working with radians</comment>
+        <comment>Tangent function working with radians
+Usage: tan(angle θ in radians)</comment>
         <translation type="unfinished">tan</translation>
     </message>
     <message>
         <source>asin</source>
-        <comment>inverse sine function working with radians</comment>
+        <comment>Inverse sine function working with radians
+Usage: asin(x)</comment>
         <translation type="unfinished">asin</translation>
     </message>
     <message>
         <source>acos</source>
-        <comment>inverse cosine function working with radians</comment>
+        <comment>Inverse cosine function working with radians
+Usage: acos(x)</comment>
         <translation type="unfinished">acos</translation>
     </message>
     <message>
         <source>atan</source>
-        <comment>inverse tangent function working with radians</comment>
+        <comment>Inverse tangent function working with radians
+Usage: atan(x)</comment>
         <translation type="unfinished">atan</translation>
     </message>
     <message>
+        <source>sinh</source>
+        <comment>Hyperbolic sine function
+Usage: sinh(angle θ in radians)</comment>
+        <translation type="unfinished">sinh</translation>
+    </message>
+    <message>
+        <source>cosh</source>
+        <comment>Hyperbolic cosine
+Usage: cosh(angle θ in radians)</comment>
+        <translation type="unfinished">cosh</translation>
+    </message>
+    <message>
         <source>tanh</source>
-        <comment>hyperbolic tangent function</comment>
+        <comment>Hyperbolic tangent function
+Usage: tanh(angle θ in radians)</comment>
         <translation type="unfinished">tanh</translation>
     </message>
     <message>
         <source>asinh</source>
-        <comment>inverse hyperbolic sine function</comment>
+        <comment>Inverse Hyperbolic sine function
+Usage: asinh(x)</comment>
         <translation type="unfinished">asinh</translation>
     </message>
     <message>
         <source>acosh</source>
-        <comment>inverse hyperbolic cosine function</comment>
+        <comment>Inverse Hyperbolic cosine function
+Usage: acosh(x)</comment>
         <translation type="unfinished">acosh</translation>
     </message>
     <message>
         <source>atanh</source>
-        <comment>inverse hyperbolic tangent function</comment>
+        <comment>Inverse Hyperbolic tangent function
+Usage: atanh(x)</comment>
         <translation type="unfinished">atanh</translation>
     </message>
     <message>
+        <source>sinD</source>
+        <comment>Sine function working with degrees
+Usage: sinD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>cosD</source>
+        <comment>Cosine function working with degrees
+Usage: cosD(angle θ in degrees)</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>tanD</source>
-        <comment>tangent function working with degrees</comment>
+        <comment>Tangent function working with degrees
+Usage: tanD(angle θ in degrees)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>asinD</source>
-        <comment>inverse sine function working with degrees</comment>
+        <comment>Inverse sine function working with degrees
+Usage: asinD(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>acosD</source>
-        <comment>inverse cosine function working with degrees</comment>
+        <comment>Inverse cosine function working with degrees
+Usage: acosD(x)</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>atanD</source>
-        <comment>inverse tangent function working with degrees</comment>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
         <translation type="unfinished"></translation>
     </message>
-</context>
-<context>
-    <name>VWidgetGroups</name>
     <message>
-        <source>Delete</source>
-        <translation type="obsolete">Șterge</translation>
+        <source>log2</source>
+        <comment>Logarithm to the base 2
+Usage: log2(x)</comment>
+        <translation type="unfinished">log2</translation>
+    </message>
+    <message>
+        <source>log10</source>
+        <comment>Logarithm to the base 10
+Usage: log10(x)</comment>
+        <translation type="unfinished">log10</translation>
+    </message>
+    <message>
+        <source>log</source>
+        <comment>Logarithm to the base 10
+Usage: log(x)</comment>
+        <translation type="unfinished">log</translation>
+    </message>
+    <message>
+        <source>ln</source>
+        <comment>Logarithm to base e (2.71828...)
+Usage: ln(x)</comment>
+        <translation type="unfinished">ln</translation>
+    </message>
+    <message>
+        <source>exp</source>
+        <comment>E raised to the power of x
+Usage: exp(x) where e = 2.718</comment>
+        <translation type="unfinished">exp</translation>
+    </message>
+    <message>
+        <source>sqrt</source>
+        <comment>Square root of a value
+Usage: sqrt(x)</comment>
+        <translation type="unfinished">sqrt</translation>
+    </message>
+    <message>
+        <source>sign</source>
+        <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
+Usage: sign(x)</comment>
+        <translation type="unfinished">sign</translation>
+    </message>
+    <message>
+        <source>rint</source>
+        <comment>Round to nearest integer
+Usage: rint(float x)</comment>
+        <translation type="unfinished">rint</translation>
+    </message>
+    <message>
+        <source>abs</source>
+        <comment>Absolute value
+Usage: abs(x)</comment>
+        <translation type="unfinished">abs</translation>
+    </message>
+    <message>
+        <source>min</source>
+        <comment>Min of all arguments
+Usage: min(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">min</translation>
+    </message>
+    <message>
+        <source>max</source>
+        <comment>Max of all arguments
+Usage: max(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">max</translation>
+    </message>
+    <message>
+        <source>sum</source>
+        <comment>Sum of all arguments
+Usage: sum(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">sum</translation>
+    </message>
+    <message>
+        <source>avg</source>
+        <comment>Mean value of all arguments
+Usage: avg(arg 1; arg 2; ... arg n)</comment>
+        <translation type="unfinished">avg</translation>
+    </message>
+    <message>
+        <source>fmod</source>
+        <comment>Returns the floating-point remainder of x/y (rounded towards zero)
+Usage: fmod(x; y)</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

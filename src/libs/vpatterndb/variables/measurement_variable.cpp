@@ -139,7 +139,7 @@ QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit 
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -166,7 +166,7 @@ QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patter
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -193,7 +193,7 @@ QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -211,7 +211,7 @@ QStringList MeasurementVariable::WholeListSizes(Unit patternUnit)
     QStringList list;
     if (patternUnit == Unit::Inch)
     {
-        qWarning()<<"Multisize table doesn't support inches.";
+        qWarning() << "Multisize table doesn't support inches.";
         return list;
     }
 
@@ -284,10 +284,10 @@ void MeasurementVariable::ListValue(QStringList &list, qreal value, Unit pattern
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetGuiText measurement name for tooltip
+ * @brief getGuiText measurement name for tooltip
  * @return measurement name
  */
-QString MeasurementVariable::GetGuiText() const
+QString MeasurementVariable::getGuiText() const
 {
     return d->gui_text;
 }
@@ -311,7 +311,7 @@ QString MeasurementVariable::GetFormula() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MeasurementVariable::IsCustom() const
+bool MeasurementVariable::isCustom() const
 {
     return GetName().indexOf(CustomMSign) == 0;
 }
@@ -329,7 +329,7 @@ bool MeasurementVariable::IsFormulaOk() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MeasurementVariable::IsNotUsed() const
+bool MeasurementVariable::isNotUsed() const
 {
     return qFuzzyIsNull(d->base) && qFuzzyIsNull(d->ksize) && qFuzzyIsNull(d->kheight);
 }

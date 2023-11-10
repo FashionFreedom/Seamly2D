@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   vabstractpattern.cpp
  **  @author Douglas S Caskey
- **  @date   Mar 1, 2023
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -240,9 +240,9 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
     {
         formula.expression = VDomDocument::GetParametrString(element, attribute);
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;
     }
 
@@ -539,18 +539,18 @@ QDomElement VAbstractPattern::getDraftBlockElement(const QString &name)
  */
 bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &newName)
 {
-    Q_ASSERT_X(not newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
-    Q_ASSERT_X(not oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
+    Q_ASSERT_X(!newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
+    Q_ASSERT_X(!oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
 
     if (draftBlockNameExists(oldName) == false)
     {
-        qDebug()<<"Do not exist draft block with name"<<oldName;
+        qDebug() << "Draft block does not exist with name" << oldName;
         return false;
     }
 
     if (draftBlockNameExists(newName))
     {
-        qDebug()<<"Already exist draft block with name"<<newName;
+        qDebug() << "Draft block already exists with name" << newName;
         return false;
     }
 
@@ -568,7 +568,7 @@ bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &n
     }
     else
     {
-        qDebug()<<"Can't find draft block node with name"<<oldName<<Q_FUNC_INFO;
+        qDebug() << "Can't find draft block node with name" << oldName << Q_FUNC_INFO;
         return false;
     }
 }
@@ -893,7 +893,7 @@ void VAbstractPattern::SetMPath(const QString &path)
     }
     else
     {
-        qDebug()<<"Can't save path to measurements"<<Q_FUNC_INFO;
+        qWarning() << "Can't save path to measurements" << Q_FUNC_INFO;
     }
 }
 
@@ -1051,7 +1051,7 @@ void VAbstractPattern::SetGradationHeights(const QMap<GHeights, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1245,7 +1245,7 @@ void VAbstractPattern::SetGradationSizes(const QMap<GSizes, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1812,9 +1812,9 @@ QStringList VAbstractPattern::ListIncrements() const
         {
             increments.append(GetParametrString(dom, IncrementName));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 
@@ -2152,10 +2152,10 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QD
 
         return group;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating group"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }

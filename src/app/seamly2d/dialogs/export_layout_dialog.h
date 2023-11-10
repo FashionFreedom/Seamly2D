@@ -29,15 +29,15 @@
  **
  *************************************************************************/
 
-#ifndef DIALOGSAVELAYOUT_H
-#define DIALOGSAVELAYOUT_H
+#ifndef EXPORT_LAYOUT_DIALOG_H
+#define EXPORT_LAYOUT_DIALOG_H
 
 #include <QDialog>
 #include <QMarginsF>
 
 #include "../vgeometry/vgeometrydef.h"
 #include "../vmisc/def.h"
-#include "vabstractlayoutdialog.h"
+#include "abstractlayout_dialog.h"
 
 namespace Ui
 {
@@ -45,7 +45,7 @@ namespace Ui
 }
 
 
-class ExportLayoutDialog : public  VAbstractLayoutDialog
+class ExportLayoutDialog : public  AbstractLayoutDialog
 {
     Q_OBJECT
 
@@ -98,4 +98,4 @@ private:
     void                  writeSettings() const;
 };
 
-#endif // DIALOGSAVELAYOUT_H
+#endif // EXPORT_LAYOUT_DIALOG_H

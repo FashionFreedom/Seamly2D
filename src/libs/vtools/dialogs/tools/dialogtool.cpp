@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   dialogtool.cpp
  **  @author Douglas S Caskey
- **  @date   Dec 11, 2022
+ **  @date   17 Sep, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2022 Seamly, LLC
@@ -691,7 +691,7 @@ void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bo
             info = getNodeInfo(node, true);
             break;
         default:
-            qDebug()<<"Got wrong tools. Ignore.";
+            qWarning() << "Got wrong tools. Ignore.";
             return;
     }
 
@@ -863,18 +863,18 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                 }
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             label->setText(tr("Error") + " (" + postfix + ")");
             flag = false;
             ChangeColor(labelEditFormula, Qt::red);
-            emit ToolTip(tr("Parser error: %1").arg(e.GetMsg()));
-            label->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            emit ToolTip(tr("Parser error: %1").arg(error.GetMsg()));
+            label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
             qDebug() << "\nMath parser error:\n"
-                     << "--------------------------------------\n"
-                     << "Message:     " << e.GetMsg()  << "\n"
-                     << "Expression:  " << e.GetExpr() << "\n"
-                     << "--------------------------------------";
+                       << "--------------------------------------\n"
+                       << "Message:     " << error.GetMsg()  << "\n"
+                       << "Expression:  " << error.GetExpr() << "\n"
+                       << "--------------------------------------";
         }
     }
     CheckState(); // Disable Ok and Apply buttons if something wrong.
@@ -983,7 +983,7 @@ bool DialogTool::SetObject(const quint32 &id, QComboBox *box, const QString &too
     }
     else
     {
-        qWarning()<<"Can't find object by id"<<id;
+        qWarning() << "Can't find object by id"<<id;
     }
     return false;
 }
@@ -1174,7 +1174,7 @@ void DialogTool::FormulaChanged()
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -1183,7 +1183,7 @@ void DialogTool::FormulaChangedPlainText() //-V524
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 
@@ -1275,7 +1275,7 @@ void DialogTool::EvalFormula()
 {
     SCASSERT(plainTextEditFormula != nullptr)
     SCASSERT(labelResultCalculation != nullptr)
-    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog lable (cm, mm or inch)
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);//Show unit in dialog lable (cm, mm or inch)
     Eval(plainTextEditFormula->toPlainText(), flagFormula, labelResultCalculation, postfix, false);
 }
 

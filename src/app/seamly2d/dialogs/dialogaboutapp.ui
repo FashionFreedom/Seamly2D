@@ -88,7 +88,6 @@
          <property name="font">
           <font>
            <pointsize>15</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -104,12 +103,17 @@
         <widget class="QLabel" name="labelBuildRevision">
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
+         <property name="accessibleName">
+          <string/>
+         </property>
+         <property name="accessibleDescription">
+          <string/>
+         </property>
          <property name="text">
-          <string>Build revision:</string>
+          <string notr="true">Build revision:</string>
          </property>
         </widget>
        </item>
@@ -216,8 +220,8 @@
           <bool>true</bool>
          </property>
          <property name="plainText">
-<string notr="true">Contributors   
-Alphabetical order: 
+          <string notr="true">Contributors
+Alphabetical order:
   Aleenejejw
   Subhash Abhijith
   Sergey Alyoshin

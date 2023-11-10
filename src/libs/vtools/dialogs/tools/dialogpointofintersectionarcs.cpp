@@ -78,7 +78,7 @@ DialogPointOfIntersectionArcs::DialogPointOfIntersectionArcs(const VContainer *d
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxArcs(ui->comboBoxArc1);

@@ -35,7 +35,8 @@
 #include <QCoreApplication>
 #include <QCommandLineParser>
 
-#include "../dialogs/dialoglayoutsettings.h"
+#include "../dialogs/layoutsettings_dialog.h"
+#include "../vmisc/def.h"
 #include "../vmisc/vsysexits.h"
 
 class VCommandLine;
@@ -98,8 +99,8 @@ protected:
 
     VCommandLine();
 
-    //@brief returns DialogLayoutSettings::PaperSizeTemplate
-    DialogLayoutSettings::PaperSizeTemplate  OptPaperSize() const;
+    //@brief returns LayoutSettingsDialog::PaperSizeFormat
+    PaperSizeFormat  OptPaperSize() const;
     //@brief returns rotation in degrees or 0 if not set
     int OptRotation() const;
 
@@ -120,8 +121,8 @@ private:
     bool isGuiEnabled;
     friend class VApplication;
 
-    static qreal Lo2Px(const QString& src, const DialogLayoutSettings& converter);
-    static qreal Pg2Px(const QString& src, const DialogLayoutSettings& converter);
+    static qreal Lo2Px(const QString& src, const LayoutSettingsDialog& converter);
+    static qreal Pg2Px(const QString& src, const LayoutSettingsDialog& converter);
 
     static void InitOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex);
 };

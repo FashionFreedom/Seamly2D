@@ -61,6 +61,7 @@
 #include "../vmisc/vlockguard.h"
 
 #include <QPointer>
+#include <QSharedPointer>
 
 namespace Ui
 {
@@ -163,11 +164,11 @@ private slots:
     void zoomScaleChanged(qreal scale);
     void MouseMove(const QPointF &scenePos);
     void Clear();
-    void PatternChangesWereSaved(bool saved);
+    void patternChangesWereSaved(bool saved);
     void LastUsedTool();
-    void FullParseFile();
-    void SetEnabledGUI(bool enabled);
-    void GlobalchangeDraftBlock(const QString &patternPiece);
+    void fullParseFile();
+    void setGuiEnabled(bool enabled);
+    void changeDraftBlockGlobally(const QString &patternPiece);
     void ToolBarStyles();
     void resetOrigins();
     void showLayoutPages(int index);
@@ -368,8 +369,8 @@ private:
 
     void                              CancelTool();
 
-    void               SetEnableWidgets(bool enable);
-    void               setEnableTools(bool enable);
+    void               setWidgetsEnabled(bool enable);
+    void               setToolsEnabled(bool enable);
     void               SetLayoutModeActions();
 
     void               SaveCurrentScene();
@@ -434,8 +435,8 @@ private:
     void               InitScenes();
 
     QSharedPointer<Measurements> openMeasurementFile(const QString &fileName);
-    bool               loadMeasurements(const QString &path);
-    bool               updateMeasurements(const QString &path, int size, int height);
+    bool               loadMeasurements(const QString &fileName);
+    bool               updateMeasurements(const QString &fileName, int size, int height);
     void               checkRequiredMeasurements(const Measurements *m);
 
     void               ReopenFilesAfterCrash(QStringList &args);

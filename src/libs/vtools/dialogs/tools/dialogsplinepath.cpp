@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogsplinepath.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogsplinepath.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +30,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -75,7 +76,7 @@
 #include "../../visualization/path/vistoolsplinepath.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmuparsererror.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/../ifc/ifcdef.h"
 #include "../vgeometry/vpointf.h"
 #include "../vgeometry/vsplinepoint.h"
@@ -123,7 +124,7 @@ DialogSplinePath::DialogSplinePath(const VContainer *data, const quint32 &toolId
     ui->plainTextEditLength1F->installEventFilter(this);
     ui->plainTextEditLength2F->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     ok_Button->setEnabled(false);
 
     FillComboBoxPoints(ui->comboBoxPoint);
@@ -410,9 +411,9 @@ void DialogSplinePath::Angle1Changed()
         {
             p.SetAngle1(angle1, qApp->TrVars()->FormulaFromUser(angle1F, qApp->Settings()->GetOsSeparator()));
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             p.SetAngle1(angle1, angle1F);
         }
 
@@ -453,9 +454,9 @@ void DialogSplinePath::Angle2Changed()
         {
             p.SetAngle2(angle2, qApp->TrVars()->FormulaFromUser(angle2F, qApp->Settings()->GetOsSeparator()));
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             p.SetAngle2(angle2, angle2F);
         }
 
@@ -496,9 +497,9 @@ void DialogSplinePath::Length1Changed()
         {
             p.SetLength1(length1, qApp->TrVars()->FormulaFromUser(length1F, qApp->Settings()->GetOsSeparator()));
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             p.SetLength1(length1, length1F);
         }
 
@@ -530,9 +531,9 @@ void DialogSplinePath::Length2Changed()
         {
             p.SetLength2(length2, qApp->TrVars()->FormulaFromUser(length2F, qApp->Settings()->GetOsSeparator()));
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
             p.SetLength2(length2, length2F);
         }
 
@@ -545,7 +546,7 @@ void DialogSplinePath::Length2Changed()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle1()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first control point angle"));
 
     QString angle1F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditAngle1F->toPlainText().replace("\n", " "),
@@ -570,7 +571,7 @@ void DialogSplinePath::FXAngle1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXAngle2()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second control point angle"));
 
     QString angle2F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditAngle2F->toPlainText().replace("\n", " "),
@@ -595,7 +596,7 @@ void DialogSplinePath::FXAngle2()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength1()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit first control point length"));
 
     QString length1F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditLength1F->toPlainText().replace("\n", " "),
@@ -620,7 +621,7 @@ void DialogSplinePath::FXLength1()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogSplinePath::FXLength2()
 {
-    auto dialog = new DialogEditWrongFormula(data, toolId, this);
+    auto dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit second control point length"));
 
     QString length2F = qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditLength2F->toPlainText().replace("\n", " "),

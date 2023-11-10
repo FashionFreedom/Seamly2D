@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   tmainwindow.cpp
  **  @author Douglas S Caskey
- **   @date   Jul 8, 2023
+ **  @date   17 Sep, 2023
  **
  **  @brief
  **  @copyright
@@ -73,9 +73,10 @@
 #include "../vmisc/qxtcsvmodel.h"
 #include "vlitepattern.h"
 #include "../qmuparser/qmudef.h"
-#include "../vtools/dialogs/support/dialogeditwrongformula.h"
+#include "../vtools/dialogs/support/edit_formula_dialog.h"
 #include "version.h"
 #include "mapplication.h" // Should be last because of definning qApp
+#include "../vformat/measurements.h"
 
 #include <QClipboard>
 #include <QComboBox>
@@ -122,7 +123,6 @@ TMainWindow::TMainWindow(QWidget *parent)
 	  gradationHeights(nullptr),
 	  gradationSizes(nullptr),
 	  comboBoxUnits(nullptr),
-	  formulaBaseHeight(0),
 	  lock(nullptr),
 	  search(),
 	  labelGradationHeights(nullptr),
@@ -348,6 +348,7 @@ bool TMainWindow::LoadFile(const QString &path)
 		{
 			qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
 					   qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
 			ui->labelToolTip->setVisible(true);
 			ui->tabWidget->setVisible(false);
 			delete individualMeasurements;
@@ -1446,6 +1447,7 @@ void TMainWindow::Fx()
 	   // Translate to internal look.
 	   meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
+
 	catch(const VExceptionBadId &exception)
 	{
 		qCCritical(tMainWindow, "%s\n\n%s\n\n%s",
@@ -1454,7 +1456,7 @@ void TMainWindow::Fx()
 		return;
 	}
 
-	DialogEditWrongFormula *dialog = new DialogEditWrongFormula(meash->GetData(), NULL_ID, this);
+	EditFormulaDialog *dialog = new EditFormulaDialog(meash->GetData(), NULL_ID, this);
 	dialog->setWindowTitle(tr("Edit measurement"));
 	dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditFormula->toPlainText().replace("\n", " "),
 														  true));
@@ -1602,6 +1604,7 @@ void TMainWindow::ImportFromPattern()
 		doc->setXMLContent(converter.Convert());
 		measurements = doc->ListMeasurements();
 	}
+
 	catch (VException &exception)
 	{
 		qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
@@ -1683,6 +1686,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 			// Translate to internal look.
 			meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 		}
+
 		catch(const VExceptionBadId &exception)
 		{
 			Q_UNUSED(exception)
@@ -1695,17 +1699,17 @@ void TMainWindow::ShowNewMData(bool fresh)
 		// Don't block all signal for QLineEdit. Need for correct handle with clear button.
 		disconnect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
 		ui->plainTextEditDescription->blockSignals(true);
-		if (meash->IsCustom())
+		if (meash->isCustom())
 		{
 			ui->plainTextEditDescription->setPlainText(meash->GetDescription());
-			ui->lineEditFullName->setText(meash->GetGuiText());
+			ui->lineEditFullName->setText(meash->getGuiText());
 			ui->lineEditName->setText(ClearCustomName(meash->GetName()));
 		}
 		else
 		{
 			//Show known
 			ui->plainTextEditDescription->setPlainText(qApp->TrVars()->Description(meash->GetName()));
-			ui->lineEditFullName->setText(qApp->TrVars()->GuiText(meash->GetName()));
+			ui->lineEditFullName->setText(qApp->TrVars()->guiText(meash->GetName()));
 			ui->lineEditName->setText(nameField->text());
 		}
 		connect(ui->lineEditName, &QLineEdit::textEdited, this, &TMainWindow::SaveMName);
@@ -1785,46 +1789,13 @@ void TMainWindow::ShowMDiagram(const QString &name)
 	{
 		ui->labelDiagram->setText(QString("<html><head/><body><p align=\"center\">%1</p>"
 										  "<p align=\"center\"><b>%2</b>. <i>%3</i></p></body></html>")
-										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->GuiText(name)));
+										  .arg(MeasurementDatabaseDialog::imageUrl(number), number, trv->guiText(name)));
 	}
 	// This part is very ugly, can't find better way to resize dockWidget.
 	ui->labelDiagram->adjustSize();
 	// And also those 50 px. DockWidget has some border. And i can't find how big it is.
 	// Can lead to problem in future.
 	ui->dockWidgetDiagram->setMaximumWidth(ui->labelDiagram->width()+50);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void TMainWindow::DeployFormula()
-{
-	SCASSERT(ui->plainTextEditFormula != nullptr)
-	SCASSERT(ui->pushButtonGrow != nullptr)
-
-	const QTextCursor cursor = ui->plainTextEditFormula->textCursor();
-
-	if (ui->plainTextEditFormula->height() < DIALOG_MAX_FORMULA_HEIGHT)
-	{
-		ui->plainTextEditFormula->setFixedHeight(DIALOG_MAX_FORMULA_HEIGHT);
-		//Set icon from theme (internal for Windows system)
-		ui->pushButtonGrow->setIcon(QIcon::fromTheme("go-next",
-													 QIcon(":/icons/win.icon.theme/16x16/actions/go-next.png")));
-	}
-	else
-	{
-	   ui->plainTextEditFormula->setFixedHeight(formulaBaseHeight);
-	   //Set icon from theme (internal for Windows system)
-	   ui->pushButtonGrow->setIcon(QIcon::fromTheme("go-down",
-													QIcon(":/icons/win.icon.theme/16x16/actions/go-down.png")));
-	}
-
-	// I found that after change size of formula field, it was filed for angle formula, field for formula became black.
-	// This code prevent this.
-	setUpdatesEnabled(false);
-	repaint();
-	setUpdatesEnabled(true);
-
-	ui->plainTextEditFormula->setFocus();
-	ui->plainTextEditFormula->setTextCursor(cursor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1846,6 +1817,7 @@ void TMainWindow::SaveMName(const QString &text)
 		// Translate to internal look.
 		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
+
 	catch(const VExceptionBadId &exception)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
@@ -1856,7 +1828,7 @@ void TMainWindow::SaveMName(const QString &text)
 
 	QString newName = text;
 
-	if (meash->IsCustom())
+	if (meash->isCustom())
 	{
 		newName.isEmpty() ? newName = GetCustomName() : newName = CustomMSign + newName;
 
@@ -1925,6 +1897,7 @@ void TMainWindow::SaveMValue()
 		// Translate to internal look.
 		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
+
 	catch(const VExceptionBadId &exception)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
@@ -2084,6 +2057,7 @@ void TMainWindow::SaveMFullName()
 		// Translate to internal look.
 		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
+
 	catch(const VExceptionBadId &exception)
 	{
 		qCWarning(tMainWindow, "%s\n\n%s\n\n%s",
@@ -2092,7 +2066,7 @@ void TMainWindow::SaveMFullName()
 		return;
 	}
 
-	if (meash->IsCustom())
+	if (meash->isCustom())
 	{
 		individualMeasurements->SetMFullName(nameField->data(Qt::UserRole).toString(), ui->lineEditFullName->text());
 
@@ -2241,11 +2215,9 @@ void TMainWindow::InitWindow()
 		// Because Qt Designer doesn't know about our deleting we will create empty objects for correct
 		// working the retranslation UI
 		// Tab Measurements
-		HackWidget(&ui->horizontalLayoutValue);
 		HackWidget(&ui->plainTextEditFormula);
 		HackWidget(&ui->toolButtonExpr);
 		HackWidget(&ui->labelFormula);
-		HackWidget(&ui->pushButtonGrow);
 
 		// Tab Information
 		HackWidget(&ui->lineEditGivenName);
@@ -2333,9 +2305,7 @@ void TMainWindow::InitWindow()
 		connect(ui->comboBoxGender, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
 				&TMainWindow::SaveGender);
 		connect(ui->dateEditBirthDate, &QDateEdit::dateChanged, this, &TMainWindow::SaveBirthDate);
-		connect(ui->pushButtonGrow, &QPushButton::clicked, this, &TMainWindow::DeployFormula);
 
-		this->formulaBaseHeight = ui->plainTextEditFormula->height();
 		connect(ui->plainTextEditFormula, &QPlainTextEdit::textChanged, this, &TMainWindow::SaveMValue,
 				Qt::UniqueConnection);
 
@@ -2520,6 +2490,9 @@ bool TMainWindow::MaybeSave()
 		messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
 		messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
 		const QMessageBox::StandardButton ret = static_cast<QMessageBox::StandardButton>(messageBox->exec());
 
 		switch (ret)
@@ -2649,16 +2622,16 @@ void TMainWindow::RefreshTable(bool freshCall)
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
-			if (meash->IsCustom())
+			if (meash->isCustom())
 			{
                 AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
-				AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
+				AddCell(meash->getGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
 			{
 
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*meash->GetValue(), mUnit, pUnit);
@@ -2684,15 +2657,15 @@ void TMainWindow::RefreshTable(bool freshCall)
 											 Qt::AlignVCenter); // name
 			item->setData(Qt::UserRole, meash->GetName());
 
-			if (meash->IsCustom())
+			if (meash->isCustom())
 			{
 				AddCell(QStringLiteral("na"), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(meash->GetGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(meash->getGuiText(), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 			else
 			{
 				AddCell(getMeasurementNumber(meash->GetName()), currentRow, ColumnNumber, Qt::AlignVCenter);
-                AddCell(qApp->TrVars()->GuiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
+                AddCell(qApp->TrVars()->guiText(meash->GetName()), currentRow, ColumnFullName, Qt::AlignVCenter);
 			}
 
 			const qreal value = UnitConvertor(*data->DataVariables()->value(meash->GetName())->GetValue(), mUnit,
@@ -2800,7 +2773,6 @@ void TMainWindow::MFields(bool enabled)
 	else
 	{
 		ui->plainTextEditFormula->setEnabled(enabled);
-		ui->pushButtonGrow->setEnabled(enabled);
 		ui->toolButtonExpr->setEnabled(enabled);
 	}
 
@@ -2940,7 +2912,6 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::Open(const QString &dir, const QString &filter)
 {
-
     const QString filename = fileDialog(this, tr("Open file"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
                                         QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
 
@@ -3138,10 +3109,12 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 			UpdatePadlock(mIsReadOnly);
 			MeasurementGUI();
 		}
+
 		catch (VException &exception)
 		{
 			qCCritical(tMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File error.")),
 					   qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
+
 			ui->labelToolTip->setVisible(true);
 			ui->tabWidget->setVisible(false);
 			delete individualMeasurements;
@@ -3263,8 +3236,8 @@ bool TMainWindow::IgnoreLocking(int error, const QString &path)
 
 	if (answer == QMessageBox::Abort)
 	{
-		qCDebug(tMainWindow, "Failed to lock %s", qUtf8Printable(path));
-		qCDebug(tMainWindow, "Error type: %d", error);
+		qCWarning(tMainWindow, "Failed to lock %s", qUtf8Printable(path));
+		qCWarning(tMainWindow, "Error type: %d", error);
 		if (qApp->IsTestMode())
 		{
 			switch(error)

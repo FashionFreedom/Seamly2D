@@ -76,9 +76,6 @@ public slots:
     virtual void      ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;
     void              PointChanged();
 
-    void              DeployCircle1RadiusTextEdit();
-    void              DeployCircle2RadiusTextEdit();
-
     void              Circle1RadiusChanged();
     void              Circle2RadiusChanged();
 
