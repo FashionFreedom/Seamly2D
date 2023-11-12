@@ -2303,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Выкройка</translation>
+        <translation>Выкройка</translation>
     </message>
     <message>
         <source>For technical notes</source>
@@ -5100,10 +5100,6 @@ Apply settings anyway?</source>
         <translation>Про Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Файлы выкроек (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Сохранить как</translation>
     </message>
@@ -5167,10 +5163,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Wrong units.</source>
         <translation>Неправильные единицы измерения.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Ошибка файла.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5279,10 +5271,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Невозможно установить высоту. Файл не был открыт.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Ошибка экспорта.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6916,6 +6904,18 @@ Do you want to save your changes?</source>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>выкройка</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -6977,7 +6977,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Выкройка</translation>
+        <translation>Выкройка</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7205,6 +7205,17 @@ Do you want to save your changes?</source>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Мерки выкройки</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Невозможно найти мерку «%1»</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Пустое название мерки!</translation>
     </message>
 </context>
 <context>
@@ -8906,7 +8917,7 @@ Do you want to save your changes?</source>
         <translation>Мои шаблоны</translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10683,10 +10694,6 @@ Do you want to save your changes?</source>
         <translation>Только для чтения</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Открыть шаблон</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>База данных</translation>
     </message>
@@ -10771,10 +10778,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Импорт из выкройки</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Файлы выкроек (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10932,18 +10935,6 @@ Do you want to save your changes?</source>
         <translation>Файл блокировки</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Этот файл уже открыт в другом окне. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Файл блокировки не может быть создан из-за отсутствия разрешений. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Произошла неизвестная ошибка, например, полностью заполненный раздел предотвращает запись файла блокировки. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>lock файл не может быть создан, не хватает прав доступа.</translation>
     </message>
@@ -11086,6 +11077,30 @@ Do you want to save your changes?</source>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Открыть шаблон ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Файлы выкроек</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Этот файл уже открыт в другом окне. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Файл блокировки не может быть создан из-за отсутствия разрешений. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Произошла неизвестная ошибка, например, полностью заполненный раздел предотвращает запись файла блокировки. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
     </message>
 </context>
 <context>
@@ -12021,17 +12036,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>Деталь %1 не имеет формы.</translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Невозможно найти мерку «%1»</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Пустое название мерки!</translation>
     </message>
 </context>
 <context>
@@ -14314,12 +14318,6 @@ Usage: acosD(x)</comment>
         <translation></translation>
     </message>
     <message>
-        <source>atanD</source>
-        <comment>inverse tangent function working with degrees
-Usage: atanD(x)</comment>
-        <translation></translation>
-    </message>
-    <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
 Usage: log2(x)</comment>
@@ -14402,6 +14400,12 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>atanD</source>
+        <comment>Inverse tangent function working with degrees
+Usage: atanD(x)</comment>
+        <translation>atanD</translation>
     </message>
 </context>
 <context>

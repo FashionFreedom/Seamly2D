@@ -3770,7 +3770,7 @@ bool MainWindow::SaveAs()
     if (filePath.isEmpty())
     {
         dir = qApp->Seamly2DSettings()->GetPathPattern();
-        fileName = QLatin1String("pattern");
+        fileName = tr("pattern");
     }
     else
     {

@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4830,7 +4830,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5097,10 +5097,6 @@ Apply settings anyway?</source>
         <translation>Σχετικά με το Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Αρχεία πατρόν (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Αποθήκευση ως</translation>
     </message>
@@ -5165,10 +5161,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Wrong units.</source>
         <translation>Λανθασμένες μονάδες.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Σφάλμα στο αρχείο.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5277,10 +5269,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Δεν ήταν δυνατός ο ορισμός ύψους. Το αρχείο δεν ανοίχτηκε.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Σφάλμα εξαγωγής.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6914,6 +6902,18 @@ Do you want to save your changes?</source>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7203,6 +7203,17 @@ Do you want to save your changes?</source>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Διαστάσεις σχεδίασης πατρόν</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Δεν είναι δυνατή η εύρεση της μέτρησης &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Το όνομα μέτρησης είναι κενό!</translation>
     </message>
 </context>
 <context>
@@ -8904,7 +8915,7 @@ Do you want to save your changes?</source>
         <translation>Πρότυπά μου</translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10681,10 +10692,6 @@ Do you want to save your changes?</source>
         <translation>Μόνο ανάγνωση</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Άνοιγμα προτύπου</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Βάση δεδομένων</translation>
     </message>
@@ -10769,10 +10776,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Εισαγωγή απο ένα πατρόν</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Αρχεία πατρόν (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10930,18 +10933,6 @@ Do you want to save your changes?</source>
         <translation>Κλείδωμα αρχείου</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Αυτό το αρχείο είναι ήδη ανοιχτό σε άλλο παράθυρο. Αγνοήστε αν θέλετε να συνεχίσετε (δε συνιστάται, μπορεί να προκαλέσει καταστροφή δεδομένων).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11083,6 +11074,30 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation type="unfinished">Αρχεία πατρόν</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished">Αυτό το αρχείο είναι ήδη ανοιχτό σε άλλο παράθυρο. Αγνοήστε αν θέλετε να συνεχίσετε (δε συνιστάται, μπορεί να προκαλέσει καταστροφή δεδομένων).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12017,17 +12032,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Δεν είναι δυνατή η εύρεση της μέτρησης &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Το όνομα μέτρησης είναι κενό!</translation>
     </message>
 </context>
 <context>

@@ -5109,10 +5109,6 @@ Apply settings anyway?</source>
         <translation>Über Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Schnittmusterdateien (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Speichern als</translation>
     </message>
@@ -5177,10 +5173,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Falsche Maßeinheiten.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Dateifehler.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5291,10 +5283,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Höhe konnte nicht bestimmt werden. Datei nicht geöffnet.</translation>
     </message>
     <message>
-        <source>Export error.</source>
-        <translation>Export-Fehler.</translation>
-    </message>
-    <message>
         <source>Please, provide one input file.</source>
         <translation>Bitte stellen Sie eine Eingabedatei zur Verfügung.</translation>
     </message>
@@ -5348,7 +5336,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>DIe Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverust führen).</translation>
+        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverust führen).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
@@ -5408,19 +5396,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation type="unfinished">Kann keine Erlaubniss für %1 als schreibbarsetzen.</translation>
+        <translation>Kann keine Erlaubniss für %1 als schreibbarsetzen.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation type="unfinished">Kann die Datei nicht sichern.</translation>
+        <translation>Kann die Datei nicht sichern.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation type="unfinished">Kann die Datei nicht sichern</translation>
+        <translation>Kann die Datei nicht sichern</translation>
     </message>
     <message>
         <source>read only</source>
-        <translation type="unfinished">Nur lesen</translation>
+        <translation>Nur lesen</translation>
     </message>
     <message>
         <source>Contains information about increments and internal variables</source>
@@ -5480,7 +5468,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnittmusterdateien</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -6926,6 +6914,18 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>Toolbars</source>
         <translation>Symbolleiste</translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>schnittmuster</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7215,6 +7215,17 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation>Schnittmustermaße</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Maß &apos;%1&apos; kann nicht gefunden werden</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Name des Maßes ist leer!</translation>
     </message>
 </context>
 <context>
@@ -8917,7 +8928,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>meine Vorlagen</translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation>Meine Etiketten Vorlagen</translation>
     </message>
 </context>
@@ -10695,10 +10706,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Nur lesen</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Vorlage öffnen</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Datenbank</translation>
     </message>
@@ -10782,10 +10789,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Importieren von einem Schnittteil</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Schnittmuster-Dateien (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10943,18 +10946,6 @@ Do you want to save your changes?</source>
         <translation>Datei wird gesperrt</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>DIe Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden.</translation>
     </message>
@@ -11097,6 +11088,30 @@ Do you want to save your changes?</source>
     <message>
         <source>Copy to clipboard</source>
         <translation>In die zwischenablage kopieren</translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Vorlage öffnen ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Strg+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Schnittmusterdateien</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
 </context>
 <context>
@@ -12034,17 +12049,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>Schnitteil %1 dhat keine form.</translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Maß &apos;%1&apos; kann nicht gefunden werden</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Name des Maßes ist leer!</translation>
     </message>
 </context>
 <context>

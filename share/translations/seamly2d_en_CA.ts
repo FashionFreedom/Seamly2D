@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4833,7 +4833,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5100,10 +5100,6 @@ Apply settings anyway?</source>
         <translation>About Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Pattern files (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Save as</translation>
     </message>
@@ -5168,10 +5164,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Wrong units.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>File error.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5280,10 +5272,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Couldn&apos;t set height. File wasn&apos;t opened.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Export error.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6917,6 +6905,18 @@ Do you want to save your changes?</translation>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7206,6 +7206,17 @@ Do you want to save your changes?</translation>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Patternmaking measurements</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Can&apos;t find measurement &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>The measurement name is empty!</translation>
     </message>
 </context>
 <context>
@@ -8907,8 +8918,8 @@ Do you want to save your changes?</translation>
         <translation>My Templates</translation>
     </message>
     <message>
-        <source>My label templates</source>
-        <translation type="unfinished"></translation>
+        <source>My Label Templates</source>
+        <translation>My Label Templates</translation>
     </message>
 </context>
 <context>
@@ -10684,10 +10695,6 @@ Do you want to save your changes?</translation>
         <translation>Read only</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Open template</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Database</translation>
     </message>
@@ -10772,10 +10779,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Import from a pattern</source>
         <translation>Import from a pattern</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Pattern files (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10933,18 +10936,6 @@ Do you want to save your changes?</translation>
         <translation>Locking file</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>The lock file could not be created, for lack of permissions.</translation>
     </message>
@@ -11087,6 +11078,30 @@ Do you want to save your changes?</translation>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Open template ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation type="unfinished">Pattern files</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished">This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished">The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished">Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</translation>
     </message>
 </context>
 <context>
@@ -12022,17 +12037,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>Piece %1 doesn&apos;t have shape.</translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Can&apos;t find measurement &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>The measurement name is empty!</translation>
     </message>
 </context>
 <context>

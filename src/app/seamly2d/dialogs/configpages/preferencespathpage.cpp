@@ -259,7 +259,7 @@ void PreferencesPathPage::initializeTable()
     }
 
     {
-        QTableWidgetItem *item = new QTableWidgetItem(tr("My Label templates"));
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Label Templates"));
         item->setIcon(QIcon("://icon/32x32/labels.png"));
         ui->pathTable->setItem(5, 0, item);
         item = new QTableWidgetItem(settings->GetPathLabelTemplate());

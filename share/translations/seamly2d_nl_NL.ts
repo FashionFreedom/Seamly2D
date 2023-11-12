@@ -5105,10 +5105,6 @@ Apply settings anyway?</source>
         <translation>Over Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Patroon bestanden (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Opslaan als</translation>
     </message>
@@ -5173,10 +5169,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Verkeerde eenheden.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Bestandsfout.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5285,10 +5277,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Kon hoogte niet instellen. Bestand was niet geopend.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Export fout.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6904,7 +6892,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -6921,6 +6909,18 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Toolbars</source>
         <translation>Werkbalken</translation>
+    </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>patroon</translation>
     </message>
 </context>
 <context>
@@ -7211,6 +7211,17 @@ Wil je de veranderingen opslaan?</translation>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation>Patroonteken maten</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Kan maten &apos;%1&apos; niet vinden</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>De maten naam is leeg!</translation>
     </message>
 </context>
 <context>
@@ -8912,8 +8923,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Mijn Sjablonen</translation>
     </message>
     <message>
-        <source>My label templates</source>
-        <translation>Mijn labelsjablonen</translation>
+        <source>My Label Templates</source>
+        <translation>Mijn Labelsjablonen</translation>
     </message>
 </context>
 <context>
@@ -10083,7 +10094,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Point - On Spline	</source>
-        <translation >Punt - Op Spline	</translation>
+        <translation>Punt - Op Spline	</translation>
     </message>
     <message>
         <source>O, S</source>
@@ -10239,7 +10250,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>E, D</source>
-        <translation type="unfinished"></translation>
+        <translation>E, D</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
@@ -10279,7 +10290,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>P</source>
-        <translation type="unfinished"></translation>
+        <translation>P</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
@@ -10287,7 +10298,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+L</translation>
     </message>
     <message>
         <source>Include in Layout</source>
@@ -10311,7 +10322,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Home</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
@@ -10319,7 +10330,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+End</translation>
     </message>
     <message>
         <source>Rename</source>
@@ -10331,7 +10342,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Del</source>
-        <translation type="unfinished"></translation>
+        <translation>Del</translation>
     </message>
     <message>
         <source>Details</source>
@@ -10359,7 +10370,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>New Layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuwe Opmaak</translation>
     </message>
     <message>
         <source>N, L</source>
@@ -10379,7 +10390,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+Shift+L</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+L</translation>
     </message>
     <message>
         <source>History</source>
@@ -10387,7 +10398,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+H</translation>
     </message>
     <message>
         <source>Utilities</source>
@@ -10399,7 +10410,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+Shift+C</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+C</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
@@ -10407,7 +10418,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+D</translation>
     </message>
     <message>
         <source>Help</source>
@@ -10423,11 +10434,11 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Shift+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+P</translation>
     </message>
     <message>
         <source>T</source>
-        <translation type="unfinished"></translation>
+        <translation>T</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -10689,10 +10700,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Alleen lezen</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Open sjabloon</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Archief</translation>
     </message>
@@ -10777,10 +10784,6 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Import from a pattern</source>
         <translation>Invoeren van een patroon</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Patroon bestanden (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10938,18 +10941,6 @@ Wil je deze veranderingen opslaan?</translation>
         <translation>Vergrendelingsbestand</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Dit bestand is al geopend in een ander venster. Negeren als u wilt doorgaan (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Het vergrendelingsbestand kon niet worden aangemaakt, wegens het ontbreken van machtigingen. Negeren als u wilt doorgaan  (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Onbekende fout gebeurd, bijvoorbeeld een volledige partitie voorkomt het schrijven uit het vergrendelingsbestand. Negeren als u wilt doorgaan (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>Het vergrendelingsbestand kon niet worden aangemaakt, wegens het ontbreken van machtigingen.</translation>
     </message>
@@ -11083,7 +11074,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Nummer</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -11092,6 +11083,30 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Open sjabloon ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Patroonbestanden</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Dit bestand is al geopend in een ander venster. Negeren als u wilt doorgaan (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Het vergrendelingsbestand kon niet worden aangemaakt, wegens het ontbreken van machtigingen. Negeren als u wilt doorgaan  (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Onbekende fout gebeurd, bijvoorbeeld een volledige partitie voorkomt het schrijven uit het vergrendelingsbestand. Negeren als u wilt doorgaan (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
     </message>
 </context>
 <context>
@@ -12027,17 +12042,6 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>Deel %1 heeft geen vorm.</translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Kan maten &apos;%1&apos; niet vinden</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>De maten naam is leeg!</translation>
     </message>
 </context>
 <context>
@@ -14138,17 +14142,17 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>pOrientation</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>pOriëntatie</translation>
     </message>
     <message>
         <source>pRotation</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>pDraaiing</translation>
     </message>
     <message>
         <source>pTilt</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>pHelling</translation>
     </message>
     <message>
         <source>pFoldPosition</source>
@@ -14158,37 +14162,37 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>pName</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>pNaam</translation>
     </message>
     <message>
         <source>pQuantity</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>pAantal</translation>
     </message>
     <message>
         <source>mFabric</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>mStof</translation>
     </message>
     <message>
         <source>mLining</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>mVoering</translation>
     </message>
     <message>
         <source>mInterfacing</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>mVlieseline</translation>
     </message>
     <message>
         <source>mInterlining</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>mTussenvoering</translation>
     </message>
     <message>
         <source>wCut</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>wKnip</translation>
     </message>
     <message>
         <source>wOnFold</source>

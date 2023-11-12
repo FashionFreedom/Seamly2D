@@ -2303,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Patron</translation>
+        <translation>Patron</translation>
     </message>
     <message>
         <source>For technical notes</source>
@@ -2542,7 +2542,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPreferences</name>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Patron</translation>
+        <translation>Patron</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -5100,10 +5100,6 @@ Apply settings anyway?</source>
         <translation>À propos de Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Fichier de patron (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Enregistrer sous</translation>
     </message>
@@ -5168,10 +5164,6 @@ Voulez-vous sauvegarder les changements?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Mauvaises unités de mesure.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Erreur de fichier.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5280,10 +5272,6 @@ Voulez-vous sauvegarder les changements?</translation>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Impossible de régler la stature. le fichier n&apos;a pas été ouvert.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Erreur d&apos;exportation.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -5471,7 +5459,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de patron</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -5851,7 +5839,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">K</translation>
     </message>
     <message>
         <source>Last tool</source>
@@ -6917,6 +6905,18 @@ Voulez-vous sauvegarder les changements?</translation>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation type="unfinished">patron</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -6978,7 +6978,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Patron</translation>
+        <translation>Patron</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7013,7 +7013,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <source>Open Individual</source>
@@ -7021,7 +7021,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+O</translation>
     </message>
     <message>
         <source>Open Multisize</source>
@@ -7037,7 +7037,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+P</translation>
     </message>
     <message>
         <source>Save</source>
@@ -7045,7 +7045,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -7053,7 +7053,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Export to CSV</source>
@@ -7069,7 +7069,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>Help</source>
@@ -7081,7 +7081,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">K</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
@@ -7206,6 +7206,17 @@ Voulez-vous sauvegarder les changements?</translation>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Mesures de patronnage</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Impossible de trouver la mesure &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Le nom de mesure est vide !</translation>
     </message>
 </context>
 <context>
@@ -8907,7 +8918,7 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9618,7 +9629,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <source>Open</source>
@@ -9626,7 +9637,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+O</translation>
     </message>
     <message>
         <source>Close</source>
@@ -9642,7 +9653,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+S</translation>
     </message>
     <message>
         <source>Save as</source>
@@ -9650,7 +9661,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Print</source>
@@ -9658,7 +9669,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+P</translation>
     </message>
     <message>
         <source>Pattern Preferences</source>
@@ -9682,7 +9693,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -10414,7 +10425,7 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">K</translation>
     </message>
     <message>
         <source>Shift+P</source>
@@ -10684,10 +10695,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation>Lecture seulement</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Ouvrir modèle</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Base de données</translation>
     </message>
@@ -10772,10 +10779,6 @@ Voulez-vous enregistrer les changements?</translation>
     <message>
         <source>Import from a pattern</source>
         <translation>Importer depuis un patron</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Fichier de patron (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10933,18 +10936,6 @@ Voulez-vous enregistrer les changements?</translation>
         <translation>Verrouiller le fichier (lecture seule)</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Le fichier est déjà ouvert dans une autre fenêtre. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Le fichier en lecture seule ne peut être créer par manque de permission. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Une erreur inconnue s&apos;est produite, par exemple une partition pleine empêche d&apos;écrire le fichier en lecture seule. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>Le fichier en lecture seule ne peut être créer par manque de permission.</translation>
     </message>
@@ -11026,15 +11017,15 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Ctrl+O</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+O</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+S</translation>
     </message>
     <message>
         <source>Ctrl+Shift+S</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Shift+S</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -11042,11 +11033,11 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Q</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -11054,7 +11045,7 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Ctrl+,</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+,</translation>
     </message>
     <message>
         <source>Shortcuts</source>
@@ -11062,7 +11053,7 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>K</source>
-        <translation type="unfinished"></translation>
+        <translation>K</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
@@ -11070,11 +11061,11 @@ Voulez-vous enregistrer les changements?</translation>
     </message>
     <message>
         <source>Print</source>
-        <translation type="unfinished">Imprimer</translation>
+        <translation>Imprimer</translation>
     </message>
     <message>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <source>Number</source>
@@ -11087,6 +11078,30 @@ Voulez-vous enregistrer les changements?</translation>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Ouvrir modèle ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Fichier de patron</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Le fichier est déjà ouvert dans une autre fenêtre. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Le fichier en lecture seule ne peut être créer par manque de permission. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Une erreur inconnue s&apos;est produite, par exemple une partition pleine empêche d&apos;écrire le fichier en lecture seule. Ignorer pour continuer (déconseillé car pouvant causer une corruption de données).</translation>
     </message>
 </context>
 <context>
@@ -12021,17 +12036,6 @@ Voulez-vous enregistrer les changements?</translation>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Impossible de trouver la mesure &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Le nom de mesure est vide !</translation>
     </message>
 </context>
 <context>

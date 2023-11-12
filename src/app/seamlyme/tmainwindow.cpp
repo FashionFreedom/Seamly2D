@@ -3211,13 +3211,13 @@ bool TMainWindow::IgnoreLocking(int error, const QString &path)
 			case QLockFile::LockFailedError:
 				answer = QMessageBox::warning(this, tr("Locking file"),
 											  tr("This file already opened in another window. Ignore if you want "
-												 "to continue (!recommended, can cause a data corruption)."),
+												 "to continue (not recommended, can cause a data corruption)."),
 											  QMessageBox::Abort|QMessageBox::Ignore, QMessageBox::Abort);
 				break;
 			case QLockFile::PermissionError:
 				answer = QMessageBox::question(this, tr("Locking file"),
 											   tr("The lock file could not be created, for lack of permissions. "
-												  "Ignore if you want to continue (!recommended, can cause "
+												  "Ignore if you want to continue (not recommended, can cause "
 												  "a data corruption)."),
 											   QMessageBox::Abort|QMessageBox::Ignore, QMessageBox::Abort);
 				break;
@@ -3225,7 +3225,7 @@ bool TMainWindow::IgnoreLocking(int error, const QString &path)
 				answer = QMessageBox::question(this, tr("Locking file"),
 											   tr("Unknown error happened, for instance a full partition "
 												  "prevented writing out the lock file. Ignore if you want to "
-												  "continue (!recommended, can cause a data corruption)."),
+												  "continue (not recommended, can cause a data corruption)."),
 											   QMessageBox::Abort|QMessageBox::Ignore, QMessageBox::Abort);
 				break;
 			default:

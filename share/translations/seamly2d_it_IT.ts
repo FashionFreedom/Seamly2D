@@ -2303,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Modello</translation>
+        <translation>Modello</translation>
     </message>
     <message>
         <source>For technical notes</source>
@@ -2542,7 +2542,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPreferences</name>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Modello</translation>
+        <translation>Modello</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -5100,10 +5100,6 @@ Apply settings anyway?</source>
         <translation>About Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>File Modello (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Salva come</translation>
     </message>
@@ -5168,10 +5164,6 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Unità sbagliate.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Errore nel file.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5280,10 +5272,6 @@ Vuoi salvare i cambiamenti?</translation>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Impossibile stabilire l&apos;altezza. Il file non è stato aperto.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Errore di esportazione.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -5471,7 +5459,7 @@ Vuoi salvare i cambiamenti?</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation type="unfinished"></translation>
+        <translation>File Modello</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -6917,6 +6905,18 @@ Vuoi salvare i cambiamenti?</translation>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>modello</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -6978,7 +6978,7 @@ Vuoi salvare i cambiamenti?</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Modello</translation>
+        <translation>Modello</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7206,6 +7206,17 @@ Vuoi salvare i cambiamenti?</translation>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Misure modellistica</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8907,7 +8918,7 @@ Vuoi salvare i cambiamenti?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10684,10 +10695,6 @@ Vuoi salvare i cambiamenti?</translation>
         <translation>Sola lettura</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Open template</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Database</translation>
     </message>
@@ -10772,10 +10779,6 @@ Vuoi salvare le tue modifiche?</translation>
     <message>
         <source>Import from a pattern</source>
         <translation>Importa dal cartamodello</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>File Modello (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10933,18 +10936,6 @@ Vuoi salvare le tue modifiche?</translation>
         <translation>File bloccato</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Questo file è già aperto in un&apos;altra finestra. Ignora se vuoi continuare (non consigliato, può provocare un danneggiamento dei dati).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Il file bloccato non può essere creato, per mancanza di autorizzazione. Ignora se vuoi continuare (scelta non consigliata, può causare un danneggiamento dei dati).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Si è verificato un errore sconosciuto, come ad esempio il fallimento di una partizione completa durante la trascrizione di un file bloccato. Ignora se vuoi continuare (scelta non consigliata, può causare un danneggiamento dei dati).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>Il file bloccato non può essere creato, per mancanza di autorizzazione.</translation>
     </message>
@@ -11087,6 +11078,30 @@ Vuoi salvare le tue modifiche?</translation>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>File Modello</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Questo file è già aperto in un&apos;altra finestra. Ignora se vuoi continuare (non consigliato, può provocare un danneggiamento dei dati).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Il file bloccato non può essere creato, per mancanza di autorizzazione. Ignora se vuoi continuare (scelta non consigliata, può causare un danneggiamento dei dati).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Si è verificato un errore sconosciuto, come ad esempio il fallimento di una partizione completa durante la trascrizione di un file bloccato. Ignora se vuoi continuare (scelta non consigliata, può causare un danneggiamento dei dati).</translation>
     </message>
 </context>
 <context>
@@ -12019,17 +12034,6 @@ Vuoi salvare le tue modifiche?</translation>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -2303,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Střih</translation>
+        <translation>Střih</translation>
     </message>
     <message>
         <source>For technical notes</source>
@@ -2542,7 +2542,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPreferences</name>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Střih</translation>
+        <translation>Střih</translation>
     </message>
     <message>
         <source>Application Preferences</source>
@@ -5097,10 +5097,6 @@ Apply settings anyway?</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Soubory se střihy (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Uložit jako</translation>
     </message>
@@ -5165,10 +5161,6 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Wrong units.</source>
         <translation>Nesprávné jednotky.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Chyba souboru.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5276,10 +5268,6 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Export error.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -5468,7 +5456,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Pattern files</source>
-        <translation type="unfinished"></translation>
+        <translation>Soubory se střihy</translation>
     </message>
     <message>
         <source>Wiki</source>
@@ -6914,6 +6902,18 @@ Chcete uložit své změny?</translation>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>střih</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -6975,7 +6975,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Střih</translation>
+        <translation>Střih</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7202,6 +7202,17 @@ Chcete uložit své změny?</translation>
     <message>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8904,7 +8915,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10681,10 +10692,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation type="unfinished"></translation>
     </message>
@@ -10768,10 +10775,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Soubory se střihy (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10929,18 +10932,6 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11082,6 +11073,30 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Soubory se střihy</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12017,17 +12032,6 @@ Do you want to save your changes?</source>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>MeasurementDoc</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
