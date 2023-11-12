@@ -5144,7 +5144,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>untitled.val</source>
+        <source>untitled.sm2d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12025,7 +12025,7 @@ Do you want to save your changes?</translation>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>

@@ -5141,8 +5141,8 @@ Apply settings anyway?</source>
         <translation>Soubor uložen</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>Bez názvu.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>Bez názvu.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -12021,7 +12021,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>

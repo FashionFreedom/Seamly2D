@@ -5141,8 +5141,8 @@ Apply settings anyway?</source>
         <translation>Αποθηκευμένο αρχείο</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>Ανώνυμο.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>Ανώνυμο.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -12020,7 +12020,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation>Δεν είναι δυνατή η εύρεση της μέτρησης &apos;%1&apos;</translation>

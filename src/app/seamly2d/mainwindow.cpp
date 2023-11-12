@@ -435,9 +435,9 @@ void MainWindow::InitScenes()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSharedPointer<Measurements> MainWindow::openMeasurementFile(const QString &fileName)
+QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fileName)
 {
-    QSharedPointer<Measurements> measurements;
+    QSharedPointer<MeasurementDoc> measurements;
     if (fileName.isEmpty())
     {
         return measurements;
@@ -445,7 +445,7 @@ QSharedPointer<Measurements> MainWindow::openMeasurementFile(const QString &file
 
     try
     {
-        measurements = QSharedPointer<Measurements>(new Measurements(pattern));
+        measurements = QSharedPointer<MeasurementDoc>(new MeasurementDoc(pattern));
         measurements->setSize(VContainer::rsize());
         measurements->setHeight(VContainer::rheight());
         measurements->setXMLContent(fileName);
@@ -508,7 +508,7 @@ QSharedPointer<Measurements> MainWindow::openMeasurementFile(const QString &file
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::loadMeasurements(const QString &fileName)
 {
-    QSharedPointer<Measurements> measurements = openMeasurementFile(fileName);
+    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
 
     if (measurements->isNull())
     {
@@ -545,8 +545,9 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     {
 
         VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->MUnit(),
+                                          *measurements->GetData()->GetPatternUnit()));
 
-        qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(path));
+        qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
 
         VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->MUnit(),
                                             *measurements->GetData()->GetPatternUnit()));
@@ -559,7 +560,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 
         setSizeHeightForIndividualM();
 
-        qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(path));
+        qCInfo(vMainWindow, "Individual file %s was loaded.", qUtf8Printable(fileName));
     }
 
     return true;
@@ -568,7 +569,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::updateMeasurements(const QString &fileName, int size, int height)
 {
-    QSharedPointer<Measurements> measurements = openMeasurementFile(fileName);
+    QSharedPointer<MeasurementDoc> measurements = openMeasurementFile(fileName);
 
     if (measurements->isNull())
     {
@@ -620,7 +621,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::checkRequiredMeasurements(const Measurements *measurements)
+void MainWindow::checkRequiredMeasurements(const MeasurementDoc *measurements)
 {
     auto tempMeasurements = measurements->ListAll();
     auto docMeasurements = doc->ListMeasurements();
@@ -6088,7 +6089,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     {
         // Here comes undocumented Seamly2D's feature.
         // Because app bundle in Mac OS X doesn't allow setup association for SeamlyMe we must do this through Seamly2D
-        Measurements measurements(pattern);
+        MeasurementDoc measurements(pattern);
         measurements.setSize(VContainer::rsize());
         measurements.setHeight(VContainer::rheight());
         measurements.setXMLContent(fileName);
@@ -6790,7 +6791,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                 }
                 else
                 {
-                    QScopedPointer<Measurements> measurements(new Measurements(pattern));
+                    QScopedPointer<MeasurementDoc> measurements(new MeasurementDoc(pattern));
                     measurements->setSize(VContainer::rsize());
                     measurements->setHeight(VContainer::rheight());
                     measurements->setXMLContent(filename);
@@ -7150,7 +7151,7 @@ void MainWindow::ProcessCMD()
 //---------------------------------------------------------------------------------------------------------------------
 QString MainWindow::GetPatternFileName()
 {
-    QString shownName = tr("untitled.val");
+    QString shownName = tr("untitled.sm2d");
     if(!qApp->getFilePath().isEmpty())
     {
         shownName = qApp->getFilePath();

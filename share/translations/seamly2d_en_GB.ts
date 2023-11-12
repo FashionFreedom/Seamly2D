@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4833,7 +4833,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5144,7 +5144,7 @@ Apply settings anyway?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>untitled.val</source>
+        <source>untitled.sm2d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -12025,7 +12025,7 @@ Do you want to save your changes?</translation>
     </message>
 </context>
 <context>
-    <name>VMeasurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation type="unfinished"></translation>

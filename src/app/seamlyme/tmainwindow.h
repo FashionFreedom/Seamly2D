@@ -60,7 +60,6 @@
 
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
-#include "../vformat/measurements.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "dialogs/me_shortcuts_dialog.h"
@@ -72,6 +71,8 @@ namespace Ui
 
 class QLabel;
 class MeShortcutsDialog;
+class MeasurementDoc;
+class VContainer;
 
 class TMainWindow : public VAbstractMainWindow
 {
@@ -163,7 +164,7 @@ private slots:
 private:
     Q_DISABLE_COPY(TMainWindow)
     Ui::TMainWindow    *ui;
-    Measurements       *individualMeasurements;
+    MeasurementDoc     *individualMeasurements;
     VContainer         *data;
     Unit                mUnit;
     Unit                pUnit;

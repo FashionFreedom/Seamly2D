@@ -5149,8 +5149,8 @@ Apply settings anyway?</source>
         <translation>Bestand opgeslagen</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>zonder titel.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>zonder titel.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -12030,7 +12030,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation>Kan maten &apos;%1&apos; niet vinden</translation>

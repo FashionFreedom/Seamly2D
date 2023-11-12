@@ -69,14 +69,14 @@
 
 enum class GenderType : char { Male, Female, Unknown };
 
-class Measurements : public VDomDocument
+class MeasurementDoc : public VDomDocument
 {
-    Q_DECLARE_TR_FUNCTIONS(Measurements)
+    Q_DECLARE_TR_FUNCTIONS(MeasurementDoc)
 public:
-    explicit         Measurements(VContainer *data);
-                     Measurements(Unit unit, VContainer *data);
-                     Measurements(Unit unit, int baseSize, int baseHeight, VContainer *data);
-    virtual         ~Measurements() Q_DECL_EQ_DEFAULT;
+    explicit         MeasurementDoc(VContainer *data);
+                     MeasurementDoc(Unit unit, VContainer *data);
+                     MeasurementDoc(Unit unit, int baseSize, int baseHeight, VContainer *data);
+    virtual         ~MeasurementDoc() Q_DECL_EQ_DEFAULT;
 
     virtual void     setXMLContent(const QString &fileName) Q_DECL_OVERRIDE;
     virtual bool     SaveDocument(const QString &fileName, QString &error) Q_DECL_OVERRIDE;
@@ -170,7 +170,7 @@ public:
     VContainer          *GetData() const;
 
 private:
-    Q_DISABLE_COPY(Measurements)
+    Q_DISABLE_COPY(MeasurementDoc)
 
     /** @brief data container with data. */
     VContainer          *data;

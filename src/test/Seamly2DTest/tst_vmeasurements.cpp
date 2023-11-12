@@ -82,8 +82,8 @@ void TST_Measurements::CreateEmptyMultisizeFile()
     VContainer::setHeight(height);
     VContainer::setSize(size);
 
-    QSharedPointer<Measurements> m =
-            QSharedPointer<Measurements>(new Measurements(mUnit, size, height, data.data()));
+    QSharedPointer<MeasurementDoc> m =
+            QSharedPointer<MeasurementDoc>(new MeasurementDoc(mUnit, size, height, data.data()));
     m->setSize(VContainer::rsize());
     m->setHeight(VContainer::rheight());
 
@@ -127,8 +127,8 @@ void TST_Measurements::CreateEmptyIndividualFile()
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
 
-    QSharedPointer<Measurements> m =
-            QSharedPointer<Measurements>(new Measurements(mUnit, data.data()));
+    QSharedPointer<MeasurementDoc> m =
+            QSharedPointer<MeasurementDoc>(new MeasurementDoc(mUnit, data.data()));
 
     QTemporaryFile file;
     QString fileName;
@@ -172,8 +172,8 @@ void TST_Measurements::ValidPMCodesMultisizeFile()
     VContainer::setHeight(height);
     VContainer::setSize(size);
 
-    QSharedPointer<Measurements> m =
-            QSharedPointer<Measurements>(new Measurements(mUnit, size, height, data.data()));
+    QSharedPointer<MeasurementDoc> m =
+            QSharedPointer<MeasurementDoc>(new MeasurementDoc(mUnit, size, height, data.data()));
     m->setSize(VContainer::rsize());
     m->setHeight(VContainer::rheight());
 
@@ -225,8 +225,8 @@ void TST_Measurements::ValidPMCodesIndividualFile()
 
     QSharedPointer<VContainer> data = QSharedPointer<VContainer>(new VContainer(nullptr, &mUnit));
 
-    QSharedPointer<Measurements> m =
-            QSharedPointer<Measurements>(new Measurements(mUnit, data.data()));
+    QSharedPointer<MeasurementDoc> m =
+            QSharedPointer<MeasurementDoc>(new MeasurementDoc(mUnit, data.data()));
 
     const QStringList listSystems = ListPMSystems();
     for (int i = 0; i < listSystems.size(); ++i)

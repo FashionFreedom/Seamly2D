@@ -284,7 +284,7 @@ bool TMainWindow::LoadFile(const QString &path)
 		{
 			data = new VContainer(qApp->TrVars(), &mUnit);
 
-			individualMeasurements = new Measurements(data);
+			individualMeasurements = new MeasurementDoc(data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
 			individualMeasurements->setXMLContent(path);
@@ -407,7 +407,7 @@ void TMainWindow::FileNew()
 
 		if (mType == MeasurementsType::Multisize)
 		{
-			individualMeasurements = new Measurements(mUnit, measurements.BaseSize(), measurements.BaseHeight(), data);
+			individualMeasurements = new MeasurementDoc(mUnit, measurements.BaseSize(), measurements.BaseHeight(), data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
 			m_curFileFormatVersion = MultiSizeConverter::MeasurementMaxVer;
@@ -415,7 +415,7 @@ void TMainWindow::FileNew()
 		}
 		else
 		{
-			individualMeasurements = new Measurements(mUnit, data);
+			individualMeasurements = new MeasurementDoc(mUnit, data);
 			m_curFileFormatVersion = IndividualSizeConverter::MeasurementMaxVer;
 			m_curFileFormatVersionStr = IndividualSizeConverter::MeasurementMaxVerStr;
 		}
@@ -3051,7 +3051,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 		{
 			data = new VContainer(qApp->TrVars(), &mUnit);
 
-			individualMeasurements = new Measurements(data);
+			individualMeasurements = new MeasurementDoc(data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
 			individualMeasurements->setXMLContent(path);

@@ -69,7 +69,7 @@ namespace Ui
 }
 
 class VToolOptionsPropertyBrowser;
-class Measurements;
+class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
@@ -434,10 +434,10 @@ private:
 
     void               InitScenes();
 
-    QSharedPointer<Measurements> openMeasurementFile(const QString &fileName);
+    QSharedPointer<MeasurementDoc> openMeasurementFile(const QString &fileName);
     bool               loadMeasurements(const QString &fileName);
     bool               updateMeasurements(const QString &fileName, int size, int height);
-    void               checkRequiredMeasurements(const Measurements *m);
+    void               checkRequiredMeasurements(const MeasurementDoc *m);
 
     void               ReopenFilesAfterCrash(QStringList &args);
     void               DoExport(const VCommandLinePtr& expParams);

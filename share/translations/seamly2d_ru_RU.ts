@@ -5144,8 +5144,8 @@ Apply settings anyway?</source>
         <translation>Файл сохранен</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>без_имени.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>без_имени.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -12024,7 +12024,7 @@ Do you want to save your changes?</source>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation>Невозможно найти мерку «%1»</translation>
@@ -14315,7 +14315,7 @@ Usage: acosD(x)</comment>
     </message>
     <message>
         <source>atanD</source>
-        <comment>inverse tangent function working with degrees</comment>
+        <comment>inverse tangent function working with degrees
 Usage: atanD(x)</comment>
         <translation></translation>
     </message>

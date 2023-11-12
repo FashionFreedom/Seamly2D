@@ -5144,8 +5144,8 @@ Apply settings anyway?</source>
         <translation>File saved</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>untitled.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>untitled.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -12025,7 +12025,7 @@ Do you want to save your changes?</translation>
     </message>
 </context>
 <context>
-    <name>Measurements</name>
+    <name>MeasurementDoc</name>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;</source>
         <translation>Can&apos;t find measurement &apos;%1&apos;</translation>
