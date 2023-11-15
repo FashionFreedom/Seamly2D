@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 839;
+var viewWidth = 830;
 var viewHeight = 705;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,30 +54,30 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VInternalVariable</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-701 835,-701 835,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-701 826,-701 826,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="398,-496.5 398,-696.5 526,-696.5 526,-496.5 398,-496.5"/>
-<text text-anchor="middle" x="462" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">VInternalVariable</text>
-<polyline fill="none" stroke="black" points="398,-677.5 526,-677.5 "/>
-<text text-anchor="start" x="406" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="398,-658.5 526,-658.5 "/>
-<text text-anchor="start" x="406" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInternalVariable()</text>
-<text text-anchor="start" x="406" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInternalVariable()</text>
-<text text-anchor="start" x="406" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VInternalVariable()</text>
-<text text-anchor="start" x="406" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="406" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="406" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetValue()</text>
-<text text-anchor="start" x="406" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetValue()</text>
-<text text-anchor="start" x="406" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
-<text text-anchor="start" x="406" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
-<text text-anchor="start" x="406" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetType()</text>
-<text text-anchor="start" x="406" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetType()</text>
-<text text-anchor="start" x="406" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
-<text text-anchor="start" x="406" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isNotUsed()</text>
-<text text-anchor="start" x="406" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetValue()</text>
+<polygon fill="#bfbfbf" stroke="black" points="404,-496.5 404,-696.5 532,-696.5 532,-496.5 404,-496.5"/>
+<text text-anchor="middle" x="468" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">VInternalVariable</text>
+<polyline fill="none" stroke="black" points="404,-677.5 532,-677.5 "/>
+<text text-anchor="start" x="412" y="-665.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="404,-658.5 532,-658.5 "/>
+<text text-anchor="start" x="412" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInternalVariable()</text>
+<text text-anchor="start" x="412" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VInternalVariable()</text>
+<text text-anchor="start" x="412" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VInternalVariable()</text>
+<text text-anchor="start" x="412" y="-613.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="412" y="-602.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="412" y="-591.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetValue()</text>
+<text text-anchor="start" x="412" y="-580.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetValue()</text>
+<text text-anchor="start" x="412" y="-569.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetName()</text>
+<text text-anchor="start" x="412" y="-558.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetName()</text>
+<text text-anchor="start" x="412" y="-547.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetType()</text>
+<text text-anchor="start" x="412" y="-536.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetType()</text>
+<text text-anchor="start" x="412" y="-525.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
+<text text-anchor="start" x="412" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ isNotUsed()</text>
+<text text-anchor="start" x="412" y="-503.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetValue()</text>
 </a>
 </g>
 </g>
@@ -85,112 +85,112 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../d3/d5a/classVCurveVariable.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="213.5,-292.5 213.5,-459.5 332.5,-459.5 332.5,-292.5 213.5,-292.5"/>
-<text text-anchor="middle" x="273" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCurveVariable</text>
-<polyline fill="none" stroke="black" points="213.5,-440.5 332.5,-440.5 "/>
-<text text-anchor="start" x="221.5" y="-428.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="213.5,-421.5 332.5,-421.5 "/>
-<text text-anchor="start" x="221.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
-<text text-anchor="start" x="221.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
-<text text-anchor="start" x="221.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
-<text text-anchor="start" x="221.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurveVariable()</text>
-<text text-anchor="start" x="221.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="221.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="221.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
-<text text-anchor="start" x="221.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetId()</text>
-<text text-anchor="start" x="221.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetId()</text>
-<text text-anchor="start" x="221.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetParentId()</text>
-<text text-anchor="start" x="221.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetParentId()</text>
+<polygon fill="white" stroke="black" points="219.5,-292.5 219.5,-459.5 338.5,-459.5 338.5,-292.5 219.5,-292.5"/>
+<text text-anchor="middle" x="279" y="-447.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCurveVariable</text>
+<polyline fill="none" stroke="black" points="219.5,-440.5 338.5,-440.5 "/>
+<text text-anchor="start" x="227.5" y="-428.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="219.5,-421.5 338.5,-421.5 "/>
+<text text-anchor="start" x="227.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
+<text text-anchor="start" x="227.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
+<text text-anchor="start" x="227.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCurveVariable()</text>
+<text text-anchor="start" x="227.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VCurveVariable()</text>
+<text text-anchor="start" x="227.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="227.5" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="227.5" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
+<text text-anchor="start" x="227.5" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetId()</text>
+<text text-anchor="start" x="227.5" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetId()</text>
+<text text-anchor="start" x="227.5" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetParentId()</text>
+<text text-anchor="start" x="227.5" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetParentId()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M390.87,-516.02C374.7,-497.71 357.67,-478.26 342,-460 338.95,-456.44 335.84,-452.79 332.7,-449.1"/>
-<polygon fill="none" stroke="midnightblue" points="388.5,-518.62 397.75,-523.79 393.74,-513.98 388.5,-518.62"/>
+<path fill="none" stroke="midnightblue" d="M396.87,-516.02C380.7,-497.71 363.67,-478.26 348,-460 344.95,-456.44 341.84,-452.79 338.7,-449.1"/>
+<polygon fill="none" stroke="midnightblue" points="394.5,-518.62 403.75,-523.79 399.74,-513.98 394.5,-518.62"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../d6/d57/classVLengthLine.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="351,-298 351,-454 455,-454 455,-298 351,-298"/>
-<text text-anchor="middle" x="403" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">VLengthLine</text>
-<polyline fill="none" stroke="black" points="351,-435 455,-435 "/>
-<text text-anchor="start" x="359" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="351,-416 455,-416 "/>
-<text text-anchor="start" x="359" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
-<text text-anchor="start" x="359" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
-<text text-anchor="start" x="359" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
-<text text-anchor="start" x="359" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLengthLine()</text>
-<text text-anchor="start" x="359" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="359" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="359" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
-<text text-anchor="start" x="359" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetValue()</text>
-<text text-anchor="start" x="359" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Id()</text>
-<text text-anchor="start" x="359" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Id()</text>
+<polygon fill="white" stroke="black" points="357,-298 357,-454 461,-454 461,-298 357,-298"/>
+<text text-anchor="middle" x="409" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">VLengthLine</text>
+<polyline fill="none" stroke="black" points="357,-435 461,-435 "/>
+<text text-anchor="start" x="365" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="357,-416 461,-416 "/>
+<text text-anchor="start" x="365" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
+<text text-anchor="start" x="365" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
+<text text-anchor="start" x="365" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLengthLine()</text>
+<text text-anchor="start" x="365" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLengthLine()</text>
+<text text-anchor="start" x="365" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="365" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="365" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
+<text text-anchor="start" x="365" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetValue()</text>
+<text text-anchor="start" x="365" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Id()</text>
+<text text-anchor="start" x="365" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Id()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M432.64,-486.78C429.66,-475.74 426.68,-464.68 423.81,-454.07"/>
-<polygon fill="none" stroke="midnightblue" points="429.28,-487.74 435.26,-496.48 436.03,-485.91 429.28,-487.74"/>
+<path fill="none" stroke="midnightblue" d="M438.64,-486.78C435.66,-475.74 432.68,-464.68 429.81,-454.07"/>
+<polygon fill="none" stroke="midnightblue" points="435.28,-487.74 441.26,-496.48 442.03,-485.91 435.28,-487.74"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../d1/d88/classVLineAngle.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="473,-298 473,-454 571,-454 571,-298 473,-298"/>
-<text text-anchor="middle" x="522" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">VLineAngle</text>
-<polyline fill="none" stroke="black" points="473,-435 571,-435 "/>
-<text text-anchor="start" x="481" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="473,-416 571,-416 "/>
-<text text-anchor="start" x="481" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
-<text text-anchor="start" x="481" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
-<text text-anchor="start" x="481" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
-<text text-anchor="start" x="481" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLineAngle()</text>
-<text text-anchor="start" x="481" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="481" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="481" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
-<text text-anchor="start" x="481" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetValue()</text>
-<text text-anchor="start" x="481" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Id()</text>
-<text text-anchor="start" x="481" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Id()</text>
+<polygon fill="white" stroke="black" points="479,-298 479,-454 577,-454 577,-298 479,-298"/>
+<text text-anchor="middle" x="528" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">VLineAngle</text>
+<polyline fill="none" stroke="black" points="479,-435 577,-435 "/>
+<text text-anchor="start" x="487" y="-423" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="479,-416 577,-416 "/>
+<text text-anchor="start" x="487" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
+<text text-anchor="start" x="487" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
+<text text-anchor="start" x="487" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VLineAngle()</text>
+<text text-anchor="start" x="487" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VLineAngle()</text>
+<text text-anchor="start" x="487" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="487" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="487" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Filter()</text>
+<text text-anchor="start" x="487" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetValue()</text>
+<text text-anchor="start" x="487" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP1Id()</text>
+<text text-anchor="start" x="487" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetP2Id()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node8 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M491.85,-486.78C494.89,-475.74 497.92,-464.68 500.84,-454.07"/>
-<polygon fill="none" stroke="midnightblue" points="488.46,-485.91 489.19,-496.48 495.21,-487.76 488.46,-485.91"/>
+<path fill="none" stroke="midnightblue" d="M497.85,-486.78C500.89,-475.74 503.92,-464.68 506.84,-454.07"/>
+<polygon fill="none" stroke="midnightblue" points="494.46,-485.91 495.19,-496.48 501.21,-487.76 494.46,-485.91"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="../../da/d49/classVVariable.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="589,-309 589,-443 697,-443 697,-309 589,-309"/>
-<text text-anchor="middle" x="643" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">VVariable</text>
-<polyline fill="none" stroke="black" points="589,-424 697,-424 "/>
-<text text-anchor="start" x="597" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="589,-405 697,-405 "/>
-<text text-anchor="start" x="597" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
-<text text-anchor="start" x="597" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
-<text text-anchor="start" x="597" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
-<text text-anchor="start" x="597" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VVariable()</text>
-<text text-anchor="start" x="597" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="597" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="597" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDescription()</text>
-<text text-anchor="start" x="597" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDescription()</text>
+<polygon fill="white" stroke="black" points="595,-309 595,-443 703,-443 703,-309 595,-309"/>
+<text text-anchor="middle" x="649" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00">VVariable</text>
+<polyline fill="none" stroke="black" points="595,-424 703,-424 "/>
+<text text-anchor="start" x="603" y="-412" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="595,-405 703,-405 "/>
+<text text-anchor="start" x="603" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
+<text text-anchor="start" x="603" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
+<text text-anchor="start" x="603" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00">+ VVariable()</text>
+<text text-anchor="start" x="603" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VVariable()</text>
+<text text-anchor="start" x="603" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="603" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="603" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDescription()</text>
+<text text-anchor="start" x="603" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDescription()</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node9 -->
 <g id="edge8" class="edge">
 <title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M532.98,-515.79C548.7,-497.65 565.1,-478.32 580,-460 584.45,-454.53 589.01,-448.79 593.54,-443.01"/>
-<polygon fill="none" stroke="midnightblue" points="530.21,-513.64 526.29,-523.49 535.5,-518.23 530.21,-513.64"/>
+<path fill="none" stroke="midnightblue" d="M538.98,-515.79C554.7,-497.65 571.1,-478.32 586,-460 590.45,-454.53 595.01,-448.79 599.54,-443.01"/>
+<polygon fill="none" stroke="midnightblue" points="536.21,-513.64 532.29,-523.49 541.5,-518.23 536.21,-513.64"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -213,8 +213,8 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node2&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M204.58,-337.4C171.78,-316.74 133.89,-288.67 107,-256 89.67,-234.94 76.37,-207.87 66.91,-184.13"/>
-<polygon fill="none" stroke="midnightblue" points="202.89,-340.47 213.23,-342.76 206.57,-334.52 202.89,-340.47"/>
+<path fill="none" stroke="midnightblue" d="M210.46,-339.32C175.93,-318.66 135.47,-290.01 107,-256 89.5,-235.09 76.18,-208.03 66.74,-184.27"/>
+<polygon fill="none" stroke="midnightblue" points="208.7,-342.34 219.1,-344.39 212.25,-336.31 208.7,-342.34"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -237,8 +237,8 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M234.53,-283.12C220.61,-249.88 205.34,-213.4 193.14,-184.28"/>
-<polygon fill="none" stroke="midnightblue" points="231.33,-284.53 238.42,-292.4 237.78,-281.83 231.33,-284.53"/>
+<path fill="none" stroke="midnightblue" d="M238.29,-283.12C223.56,-249.88 207.4,-213.4 194.49,-184.28"/>
+<polygon fill="none" stroke="midnightblue" points="235.15,-284.68 242.4,-292.4 241.55,-281.84 235.15,-284.68"/>
 </g>
 <!-- Node5 -->
 <g id="node5" class="node">
@@ -261,8 +261,8 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M283.55,-282.27C287.31,-249.26 291.42,-213.15 294.71,-184.28"/>
-<polygon fill="none" stroke="midnightblue" points="280.05,-282.07 282.4,-292.4 287.01,-282.86 280.05,-282.07"/>
+<path fill="none" stroke="midnightblue" d="M287.29,-282.27C290.25,-249.26 293.47,-213.15 296.06,-184.28"/>
+<polygon fill="none" stroke="midnightblue" points="283.79,-282.13 286.39,-292.4 290.76,-282.75 283.79,-282.13"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -285,73 +285,73 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node6 -->
 <g id="edge5" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M339.17,-295.36C352.03,-279.33 363.29,-264.73 369,-256 383.82,-233.33 397.99,-206.94 409.37,-184.11"/>
-<polygon fill="none" stroke="midnightblue" points="336.3,-293.35 332.74,-303.33 341.74,-297.74 336.3,-293.35"/>
+<path fill="none" stroke="midnightblue" d="M344.52,-292.03C353.07,-280.15 361.47,-267.92 369,-256 383.4,-233.21 397.45,-206.92 408.86,-184.2"/>
+<polygon fill="none" stroke="midnightblue" points="341.64,-290.04 338.58,-300.18 347.29,-294.16 341.64,-290.04"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../dd/d0c/classVIncrement.html" target="_top" xlink:title="The VIncrement class keep data row of increment table.">
-<polygon fill="white" stroke="black" points="565,-50 565,-206 665,-206 665,-50 565,-50"/>
-<text text-anchor="middle" x="615" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">VIncrement</text>
-<polyline fill="none" stroke="black" points="565,-187 665,-187 "/>
-<text text-anchor="start" x="573" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="565,-168 665,-168 "/>
-<text text-anchor="start" x="573" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
-<text text-anchor="start" x="573" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
-<text text-anchor="start" x="573" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
-<text text-anchor="start" x="573" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VIncrement()</text>
-<text text-anchor="start" x="573" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="573" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="573" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndex()</text>
-<text text-anchor="start" x="573" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="573" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsFormulaOk()</text>
-<text text-anchor="start" x="573" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetData()</text>
+<g id="a_node10"><a xlink:href="../../d5/d38/classMeasurementVariable.html" target="_top" xlink:title="The MeasurementVariable class keep data row of multisize table.">
+<polygon fill="white" stroke="black" points="552.5,-0.5 552.5,-255.5 703.5,-255.5 703.5,-0.5 552.5,-0.5"/>
+<text text-anchor="middle" x="628" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">MeasurementVariable</text>
+<polyline fill="none" stroke="black" points="552.5,-236.5 703.5,-236.5 "/>
+<text text-anchor="start" x="560.5" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="552.5,-217.5 703.5,-217.5 "/>
+<text text-anchor="start" x="560.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementVariable()</text>
+<text text-anchor="start" x="560.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementVariable()</text>
+<text text-anchor="start" x="560.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementVariable()</text>
+<text text-anchor="start" x="560.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~MeasurementVariable()</text>
+<text text-anchor="start" x="560.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="560.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="560.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getGuiText()</text>
+<text text-anchor="start" x="560.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagName()</text>
+<text text-anchor="start" x="560.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTagName()</text>
+<text text-anchor="start" x="560.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="560.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
+<text text-anchor="start" x="560.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListHeights()</text>
+<text text-anchor="start" x="560.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListSizes()</text>
+<text text-anchor="start" x="560.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ WholeListHeights()</text>
+<text text-anchor="start" x="560.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ WholeListSizes()</text>
+<text text-anchor="start" x="560.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsGradationSizeValid()</text>
+<text text-anchor="start" x="560.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsGradationHeightValid()</text>
+<text text-anchor="start" x="560.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CalcValue()</text>
+<text text-anchor="start" x="560.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListValue()</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node10 -->
 <g id="edge9" class="edge">
 <title>Node9&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M634.3,-298.56C630.96,-269.2 627.14,-235.7 623.79,-206.27"/>
-<polygon fill="none" stroke="midnightblue" points="630.85,-299.21 635.46,-308.75 637.81,-298.42 630.85,-299.21"/>
+<path fill="none" stroke="midnightblue" d="M642.47,-298.49C641.3,-284.82 640.06,-270.26 638.81,-255.63"/>
+<polygon fill="none" stroke="midnightblue" points="639.01,-299.09 643.34,-308.75 645.98,-298.49 639.01,-299.09"/>
 </g>
 <!-- Node11 -->
 <g id="node11" class="node">
 <title>Node11</title>
-<g id="a_node11"><a xlink:href="../../de/dcc/classVMeasurement.html" target="_top" xlink:title="The VMeasurement class keep data row of multisize table.">
-<polygon fill="white" stroke="black" points="683,-0.5 683,-255.5 831,-255.5 831,-0.5 683,-0.5"/>
-<text text-anchor="middle" x="757" y="-243.5" font-family="Helvetica,sans-Serif" font-size="10.00">VMeasurement</text>
-<polyline fill="none" stroke="black" points="683,-236.5 831,-236.5 "/>
-<text text-anchor="start" x="691" y="-224.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<polyline fill="none" stroke="black" points="683,-217.5 831,-217.5 "/>
-<text text-anchor="start" x="691" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurement()</text>
-<text text-anchor="start" x="691" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurement()</text>
-<text text-anchor="start" x="691" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurement()</text>
-<text text-anchor="start" x="691" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VMeasurement()</text>
-<text text-anchor="start" x="691" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="691" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="691" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getGuiText()</text>
-<text text-anchor="start" x="691" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagName()</text>
-<text text-anchor="start" x="691" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTagName()</text>
-<text text-anchor="start" x="691" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
-<text text-anchor="start" x="691" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
-<text text-anchor="start" x="691" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListHeights()</text>
-<text text-anchor="start" x="691" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListSizes()</text>
-<text text-anchor="start" x="691" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ WholeListHeights()</text>
-<text text-anchor="start" x="691" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ WholeListSizes()</text>
-<text text-anchor="start" x="691" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsGradationSizeValid()</text>
-<text text-anchor="start" x="691" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsGradationHeightValid()</text>
-<text text-anchor="start" x="691" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CalcValue()</text>
-<text text-anchor="start" x="691" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListValue()</text>
+<g id="a_node11"><a xlink:href="../../dd/d0c/classVIncrement.html" target="_top" xlink:title="The VIncrement class keep data row of increment table.">
+<polygon fill="white" stroke="black" points="722,-50 722,-206 822,-206 822,-50 722,-50"/>
+<text text-anchor="middle" x="772" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">VIncrement</text>
+<polyline fill="none" stroke="black" points="722,-187 822,-187 "/>
+<text text-anchor="start" x="730" y="-175" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<polyline fill="none" stroke="black" points="722,-168 822,-168 "/>
+<text text-anchor="start" x="730" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
+<text text-anchor="start" x="730" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
+<text text-anchor="start" x="730" y="-134" font-family="Helvetica,sans-Serif" font-size="10.00">+ VIncrement()</text>
+<text text-anchor="start" x="730" y="-123" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VIncrement()</text>
+<text text-anchor="start" x="730" y="-112" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="730" y="-101" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="730" y="-90" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndex()</text>
+<text text-anchor="start" x="730" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFormula()</text>
+<text text-anchor="start" x="730" y="-68" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsFormulaOk()</text>
+<text text-anchor="start" x="730" y="-57" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetData()</text>
 </a>
 </g>
 </g>
 <!-- Node9&#45;&gt;Node11 -->
 <g id="edge10" class="edge">
 <title>Node9&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M678.08,-299.29C684.52,-285.4 691.4,-270.55 698.32,-255.63"/>
-<polygon fill="none" stroke="midnightblue" points="674.73,-298.21 673.7,-308.75 681.08,-301.15 674.73,-298.21"/>
+<path fill="none" stroke="midnightblue" d="M690.19,-300.01C697.92,-285.49 705.83,-270.33 713,-256 721,-240.02 729.27,-222.75 736.99,-206.24"/>
+<polygon fill="none" stroke="midnightblue" points="687.03,-298.49 685.41,-308.96 693.21,-301.79 687.03,-298.49"/>
 </g>
 </g>
 </svg>

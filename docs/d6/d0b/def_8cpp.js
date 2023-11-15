@@ -2,6 +2,7 @@ var def_8cpp =
 [
     [ "AbsoluteMPath", "d6/d0b/def_8cpp.html#a8d50451fd4a55abe67764f4301741a69", null ],
     [ "darkenPixmap", "d6/d0b/def_8cpp.html#a22a5db7a0dfa32ad14c6d35651c2c422", null ],
+    [ "fileDialog", "d6/d0b/def_8cpp.html#a69ac5f366d382afc7a0ebc7c95876562", null ],
     [ "FromPixel", "d6/d0b/def_8cpp.html#ace05d8de4ddacda154ba7dfca94c1542", null ],
     [ "GetMinPrinterFields", "d6/d0b/def_8cpp.html#add7320b6951a9336f34f515402f29388", null ],
     [ "GetPrinterFields", "d6/d0b/def_8cpp.html#a2cd5bde5ec66f27f34b8844839fe6da2", null ],
@@ -91,6 +92,9 @@ var def_8cpp =
     [ "sin_F", "d6/d0b/def_8cpp.html#a5ee284ec559bdbc00fd8b7e86f468c0f", null ],
     [ "sinD_F", "d6/d0b/def_8cpp.html#a741f8fe695d3104406290d3a5d56066b", null ],
     [ "sinh_F", "d6/d0b/def_8cpp.html#a852ca08ff416add569934e5ed595cf67", null ],
+    [ "sm2dExt", "d6/d0b/def_8cpp.html#aa5fca30929e71e5e7100c6298b4d029f", null ],
+    [ "smisExt", "d6/d0b/def_8cpp.html#a9bfcb9e60796e9cc99f22d5f89565911", null ],
+    [ "smmsExt", "d6/d0b/def_8cpp.html#a9587970837f22f368e5962c72dc1eae3", null ],
     [ "sqrt_F", "d6/d0b/def_8cpp.html#ac889b53c7acfce1f2e4d463444c29c26", null ],
     [ "strBisector", "d6/d0b/def_8cpp.html#aefb6e31b0bee618cc6955ebc20972bc5", null ],
     [ "strCastle", "d6/d0b/def_8cpp.html#a546f1f0a79108b2d73f6d15726701a96", null ],
@@ -110,5 +114,8 @@ var def_8cpp =
     [ "unitCM", "d6/d0b/def_8cpp.html#a76bea8e4da8138da44cd242f8aa85a37", null ],
     [ "unitINCH", "d6/d0b/def_8cpp.html#ac99511a44618ea64c4927fe23f1a8832", null ],
     [ "unitMM", "d6/d0b/def_8cpp.html#a4b5c5c4ec31a31da47f7aa6fe4231101", null ],
-    [ "unitPX", "d6/d0b/def_8cpp.html#ab7b5d272ddc9705ff0a78d42eb8060a1", null ]
+    [ "unitPX", "d6/d0b/def_8cpp.html#ab7b5d272ddc9705ff0a78d42eb8060a1", null ],
+    [ "valExt", "d6/d0b/def_8cpp.html#a0753dcf9b5b856c64988b254c3bcd8ba", null ],
+    [ "vitExt", "d6/d0b/def_8cpp.html#a648d0adfbe92b249d55c0c580f57fd13", null ],
+    [ "vstExt", "d6/d0b/def_8cpp.html#a7abf3e3f85fd48f0b89c5aa8c2bdf805", null ]
 ];

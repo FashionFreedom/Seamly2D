@@ -13,65 +13,65 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="1186,-0.5 1186,-640.5 1362,-640.5 1362,-0.5 1186,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="1186.5,-0.5 1186.5,-640.5 1361.5,-640.5 1361.5,-0.5 1186.5,-0.5"/>
 <text text-anchor="middle" x="1274" y="-628.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindowsNoGUI</text>
-<polyline fill="none" stroke="black" points="1186,-621.5 1362,-621.5 "/>
-<text text-anchor="start" x="1194" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00"># currentScene</text>
-<text text-anchor="start" x="1194" y="-598.5" font-family="Helvetica,sans-Serif" font-size="10.00"># tempSceneLayout</text>
-<text text-anchor="start" x="1194" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00"># undoAction</text>
-<text text-anchor="start" x="1194" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00"># redoAction</text>
-<text text-anchor="start" x="1194" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetToolOptions</text>
-<text text-anchor="start" x="1194" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetGroups</text>
-<text text-anchor="start" x="1194" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetLayouts</text>
-<text text-anchor="start" x="1194" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetToolbox</text>
-<text text-anchor="start" x="1194" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isNoScaling</text>
-<text text-anchor="start" x="1194" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isLayoutStale</text>
-<text text-anchor="start" x="1194" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ignoreMargins</text>
-<text text-anchor="start" x="1194" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00"># margins</text>
-<text text-anchor="start" x="1194" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00"># paperSize</text>
-<text text-anchor="start" x="1194" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isTiled</text>
-<text text-anchor="start" x="1194" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isAutoCrop</text>
-<text text-anchor="start" x="1194" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isUnitePages</text>
-<text text-anchor="start" x="1194" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; layoutPrinterName</text>
-<polyline fill="none" stroke="black" points="1186,-426.5 1362,-426.5 "/>
-<text text-anchor="start" x="1194" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainWindowsNoGUI()</text>
-<text text-anchor="start" x="1194" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~MainWindowsNoGUI()</text>
-<text text-anchor="start" x="1194" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ toolLayoutSettings()</text>
-<text text-anchor="start" x="1194" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintPreviewOrigin()</text>
-<text text-anchor="start" x="1194" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintPreviewTiled()</text>
-<text text-anchor="start" x="1194" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintOrigin()</text>
-<text text-anchor="start" x="1194" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintTiled()</text>
-<text text-anchor="start" x="1194" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshLabels()</text>
-<text text-anchor="start" x="1194" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshGrainLines()</text>
-<text text-anchor="start" x="1194" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshSeamAllowances()</text>
-<text text-anchor="start" x="1194" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportSVG()</text>
-<text text-anchor="start" x="1194" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportPNG()</text>
-<text text-anchor="start" x="1194" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
-<text text-anchor="start" x="1194" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ExportData()</text>
-<text text-anchor="start" x="1194" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitTempLayoutScene()</text>
-<text text-anchor="start" x="1194" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CleanLayout()</text>
-<text text-anchor="start" x="1194" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareSceneList()</text>
-<text text-anchor="start" x="1194" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ScenePreview()</text>
-<text text-anchor="start" x="1194" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># LayoutSettings()</text>
-<text text-anchor="start" x="1194" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ContinueIfLayoutStale()</text>
-<text text-anchor="start" x="1194" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FileName()</text>
-<text text-anchor="start" x="1194" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetSizeHeightForIndividualM()</text>
-<text text-anchor="start" x="1194" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># preparePiecesForLayout()</text>
-<text text-anchor="start" x="1194" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PdfTiledFile()</text>
-<text text-anchor="start" x="1194" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; convertPdfToPs()</text>
-<text text-anchor="start" x="1194" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ObjFile()</text>
-<text text-anchor="start" x="1194" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FlatDxfFile()</text>
-<text text-anchor="start" x="1194" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AAMADxfFile()</text>
-<text text-anchor="start" x="1194" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PreparePaper()</text>
-<text text-anchor="start" x="1194" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RestorePaper()</text>
-<text text-anchor="start" x="1194" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrepareTextForDXF()</text>
-<text text-anchor="start" x="1194" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RestoreTextAfterDXF()</text>
-<text text-anchor="start" x="1194" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrintPreview()</text>
-<text text-anchor="start" x="1194" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
-<text text-anchor="start" x="1194" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateShadows()</text>
-<text text-anchor="start" x="1194" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateScenes()</text>
-<text text-anchor="start" x="1194" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrintPages()</text>
-<text text-anchor="start" x="1194" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ErrorConsoleMode()</text>
+<polyline fill="none" stroke="black" points="1186.5,-621.5 1361.5,-621.5 "/>
+<text text-anchor="start" x="1194.5" y="-609.5" font-family="Helvetica,sans-Serif" font-size="10.00"># currentScene</text>
+<text text-anchor="start" x="1194.5" y="-598.5" font-family="Helvetica,sans-Serif" font-size="10.00"># tempSceneLayout</text>
+<text text-anchor="start" x="1194.5" y="-587.5" font-family="Helvetica,sans-Serif" font-size="10.00"># undoAction</text>
+<text text-anchor="start" x="1194.5" y="-576.5" font-family="Helvetica,sans-Serif" font-size="10.00"># redoAction</text>
+<text text-anchor="start" x="1194.5" y="-565.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetToolOptions</text>
+<text text-anchor="start" x="1194.5" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetGroups</text>
+<text text-anchor="start" x="1194.5" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetLayouts</text>
+<text text-anchor="start" x="1194.5" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00"># actionDockWidgetToolbox</text>
+<text text-anchor="start" x="1194.5" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isNoScaling</text>
+<text text-anchor="start" x="1194.5" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isLayoutStale</text>
+<text text-anchor="start" x="1194.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ignoreMargins</text>
+<text text-anchor="start" x="1194.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00"># margins</text>
+<text text-anchor="start" x="1194.5" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00"># paperSize</text>
+<text text-anchor="start" x="1194.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isTiled</text>
+<text text-anchor="start" x="1194.5" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isAutoCrop</text>
+<text text-anchor="start" x="1194.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; isUnitePages</text>
+<text text-anchor="start" x="1194.5" y="-433.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; layoutPrinterName</text>
+<polyline fill="none" stroke="black" points="1186.5,-426.5 1361.5,-426.5 "/>
+<text text-anchor="start" x="1194.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MainWindowsNoGUI()</text>
+<text text-anchor="start" x="1194.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~MainWindowsNoGUI()</text>
+<text text-anchor="start" x="1194.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ toolLayoutSettings()</text>
+<text text-anchor="start" x="1194.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintPreviewOrigin()</text>
+<text text-anchor="start" x="1194.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintPreviewTiled()</text>
+<text text-anchor="start" x="1194.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintOrigin()</text>
+<text text-anchor="start" x="1194.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PrintTiled()</text>
+<text text-anchor="start" x="1194.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshLabels()</text>
+<text text-anchor="start" x="1194.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshGrainLines()</text>
+<text text-anchor="start" x="1194.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshSeamAllowances()</text>
+<text text-anchor="start" x="1194.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportSVG()</text>
+<text text-anchor="start" x="1194.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ exportPNG()</text>
+<text text-anchor="start" x="1194.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 7 more...</text>
+<text text-anchor="start" x="1194.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ExportData()</text>
+<text text-anchor="start" x="1194.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitTempLayoutScene()</text>
+<text text-anchor="start" x="1194.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CleanLayout()</text>
+<text text-anchor="start" x="1194.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># PrepareSceneList()</text>
+<text text-anchor="start" x="1194.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ScenePreview()</text>
+<text text-anchor="start" x="1194.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># LayoutSettings()</text>
+<text text-anchor="start" x="1194.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ContinueIfLayoutStale()</text>
+<text text-anchor="start" x="1194.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># FileName()</text>
+<text text-anchor="start" x="1194.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setSizeHeightForIndividualM()</text>
+<text text-anchor="start" x="1194.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># preparePiecesForLayout()</text>
+<text text-anchor="start" x="1194.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PdfTiledFile()</text>
+<text text-anchor="start" x="1194.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; convertPdfToPs()</text>
+<text text-anchor="start" x="1194.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ObjFile()</text>
+<text text-anchor="start" x="1194.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FlatDxfFile()</text>
+<text text-anchor="start" x="1194.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AAMADxfFile()</text>
+<text text-anchor="start" x="1194.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PreparePaper()</text>
+<text text-anchor="start" x="1194.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RestorePaper()</text>
+<text text-anchor="start" x="1194.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrepareTextForDXF()</text>
+<text text-anchor="start" x="1194.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; RestoreTextAfterDXF()</text>
+<text text-anchor="start" x="1194.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrintPreview()</text>
+<text text-anchor="start" x="1194.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 11 more...</text>
+<text text-anchor="start" x="1194.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateShadows()</text>
+<text text-anchor="start" x="1194.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateScenes()</text>
+<text text-anchor="start" x="1194.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PrintPages()</text>
+<text text-anchor="start" x="1194.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ErrorConsoleMode()</text>
 </a>
 </g>
 </g>
@@ -101,7 +101,7 @@
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M689.66,-788.88C818.32,-685.98 1056.94,-495.11 1185.87,-391.99"/>
+<path fill="none" stroke="midnightblue" d="M689.67,-788.88C818.51,-685.82 1057.62,-494.58 1186.41,-391.56"/>
 <polygon fill="none" stroke="midnightblue" points="687.35,-786.25 681.73,-795.23 691.72,-791.72 687.35,-786.25"/>
 </g>
 <!-- Node3 -->
@@ -163,8 +163,8 @@
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M983.55,-699.4C989.89,-685.47 996.72,-671.82 1004,-659 1052.32,-573.97 1121.43,-488.03 1177.63,-424.16"/>
-<polygon fill="none" stroke="#404040" points="1177.87,-423.89 1178.85,-416.74 1185.82,-414.9 1184.84,-422.04 1177.87,-423.89"/>
+<path fill="none" stroke="#404040" d="M983.55,-699.4C989.89,-685.47 996.72,-671.82 1004,-659 1052.5,-573.66 1121.93,-487.41 1178.24,-423.46"/>
+<polygon fill="none" stroke="#404040" points="1178.5,-423.17 1179.48,-416.03 1186.45,-414.19 1185.47,-421.33 1178.5,-423.17"/>
 <text text-anchor="middle" x="1018.5" y="-667.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #doc</text>
 </g>
 <!-- Node5 -->
@@ -568,8 +568,8 @@
 <text text-anchor="start" x="1027.5" y="-1444" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateId()</text>
 <text text-anchor="start" x="1027.5" y="-1433" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueNames()</text>
 <text text-anchor="start" x="1027.5" y="-1422" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueIncrementNames()</text>
-<text text-anchor="start" x="1027.5" y="-1411" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSize()</text>
-<text text-anchor="start" x="1027.5" y="-1400" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetHeight()</text>
+<text text-anchor="start" x="1027.5" y="-1411" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSize()</text>
+<text text-anchor="start" x="1027.5" y="-1400" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHeight()</text>
 <text text-anchor="start" x="1027.5" y="-1389" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 <text text-anchor="start" x="1027.5" y="-1378" font-family="Helvetica,sans-Serif" font-size="10.00">+ rsize()</text>
 <text text-anchor="start" x="1027.5" y="-1367" font-family="Helvetica,sans-Serif" font-size="10.00">+ height()</text>
@@ -588,8 +588,8 @@
 <!-- Node17&#45;&gt;Node1 -->
 <g id="edge22" class="edge">
 <title>Node17&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1078.74,-1260.6C1054.49,-1068.16 1028.65,-801.05 1056,-699 1080.23,-608.6 1131.92,-517.44 1178.89,-447.36"/>
-<polygon fill="none" stroke="#404040" points="1179.06,-447.11 1179.11,-439.9 1185.78,-437.17 1185.73,-444.39 1179.06,-447.11"/>
+<path fill="none" stroke="#404040" d="M1078.74,-1260.6C1054.49,-1068.16 1028.65,-801.05 1056,-699 1080.32,-608.25 1132.32,-516.74 1179.43,-446.55"/>
+<polygon fill="none" stroke="#404040" points="1179.61,-446.28 1179.67,-439.07 1186.35,-436.35 1186.29,-443.56 1179.61,-446.28"/>
 <text text-anchor="middle" x="1079.5" y="-857.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #pattern</text>
 </g>
 <!-- Node17&#45;&gt;Node4 -->
@@ -657,8 +657,8 @@
 <!-- Node20&#45;&gt;Node1 -->
 <g id="edge19" class="edge">
 <title>Node20&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1519.81,-825.78C1489.84,-764.31 1423.67,-628.56 1367.53,-513.38"/>
-<polygon fill="none" stroke="#404040" points="1367.39,-513.09 1361.16,-509.45 1362.13,-502.3 1368.35,-505.94 1367.39,-513.09"/>
+<path fill="none" stroke="#404040" d="M1519.81,-825.78C1489.74,-764.09 1423.2,-627.58 1366.92,-512.13"/>
+<polygon fill="none" stroke="#404040" points="1366.77,-511.82 1360.54,-508.18 1361.51,-501.03 1367.73,-504.67 1366.77,-511.82"/>
 <text text-anchor="middle" x="1464.5" y="-667.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #pieces</text>
 </g>
 <!-- Node21 -->
@@ -677,8 +677,8 @@
 <!-- Node21&#45;&gt;Node1 -->
 <g id="edge20" class="edge">
 <title>Node21&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1695.06,-831.35C1681.36,-798.36 1656.03,-742.24 1626,-699 1551.21,-591.32 1446.94,-483.43 1371.31,-410.73"/>
-<polygon fill="none" stroke="#404040" points="1370.9,-410.34 1363.8,-409.08 1362.23,-402.04 1369.33,-403.3 1370.9,-410.34"/>
+<path fill="none" stroke="#404040" d="M1695.06,-831.35C1681.36,-798.36 1656.03,-742.24 1626,-699 1551.09,-591.15 1446.6,-483.07 1370.94,-410.37"/>
+<polygon fill="none" stroke="#404040" points="1370.53,-409.98 1363.43,-408.72 1361.86,-401.68 1368.96,-402.94 1370.53,-409.98"/>
 <text text-anchor="middle" x="1636.5" y="-667.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #pieceList</text>
 </g>
 <!-- Node22 -->
@@ -697,8 +697,8 @@
 <!-- Node22&#45;&gt;Node1 -->
 <g id="edge21" class="edge">
 <title>Node22&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1858.52,-831.23C1845.98,-797.37 1821.4,-739.63 1787,-699 1667.43,-557.76 1484.96,-439.86 1372.93,-375.14"/>
-<polygon fill="none" stroke="#404040" points="1372.72,-375.02 1365.52,-375.5 1362.31,-369.05 1369.5,-368.56 1372.72,-375.02"/>
+<path fill="none" stroke="#404040" d="M1858.52,-831.23C1845.98,-797.37 1821.4,-739.63 1787,-699 1667.26,-557.56 1484.43,-439.52 1372.44,-374.86"/>
+<polygon fill="none" stroke="#404040" points="1372.24,-374.74 1365.04,-375.23 1361.83,-368.77 1369.02,-368.29 1372.24,-374.74"/>
 <text text-anchor="middle" x="1790" y="-673" font-family="Helvetica,sans-Serif" font-size="10.00"> #papers</text>
 <text text-anchor="middle" x="1790" y="-662" font-family="Helvetica,sans-Serif" font-size="10.00">#shadows</text>
 </g>

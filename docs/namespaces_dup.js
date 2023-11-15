@@ -7,6 +7,9 @@ var namespaces_dup =
       [ "CreateLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#adc02e3f28db0229af91f2077610c4b9d", null ],
       [ "RemoveLayoutPath", "df/da0/namespaceanonymous__namespace_02mainwindowsnogui_8cpp_03.html#aba458b4f78f014b23015631f3a439456", null ]
     ] ],
+    [ "anonymous_namespace{measurements.cpp}", "dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html", [
+      [ "FileComment", "dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html#a6cfc6f484e575ef4a1ed713c707803ef", null ]
+    ] ],
     [ "anonymous_namespace{pattern_piece_dialog.cpp}", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html", [
       [ "enableDefaultButton", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#af04aa336f20ec8424e3ff06065363df1", null ],
       [ "getFormulaFromUser", "d7/d49/namespaceanonymous__namespace_02pattern__piece__dialog_8cpp_03.html#a6e4259470f736c8f847d8d04b3fef36d", null ]
@@ -161,9 +164,6 @@ var namespaces_dup =
       [ "PieceLabelText", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#a9d5be9c5672d55404b37efffeccaa53f", null ],
       [ "PrepareAllowance", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ad74a963f5f1e9c33334369640b35ada9", null ],
       [ "RotatePoint", "d8/dfc/namespaceanonymous__namespace_02vlayoutpiece_8cpp_03.html#ac9b8474c898648af470a9dde3441a5e8", null ]
-    ] ],
-    [ "anonymous_namespace{vmeasurements.cpp}", "db/d5f/namespaceanonymous__namespace_02vmeasurements_8cpp_03.html", [
-      [ "FileComment", "db/d5f/namespaceanonymous__namespace_02vmeasurements_8cpp_03.html#a7531de103f9a1b36e7ea3963a8ff7e57", null ]
     ] ],
     [ "anonymous_namespace{vnodedetail.cpp}", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html", [
       [ "ConvertAfter", "d9/d83/namespaceanonymous__namespace_02vnodedetail_8cpp_03.html#a6333f8827e9243cf90c85518487730c6", null ],

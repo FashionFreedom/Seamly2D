@@ -20,7 +20,7 @@ var classVLayoutPaper =
     [ "operator=", "d4/d25/classVLayoutPaper.html#a013011412cb7b92055da511b6a89fd85", null ],
     [ "piecesBoundingRect", "d4/d25/classVLayoutPaper.html#a46bc841795ed61dac0a91805ec99ee90", null ],
     [ "SaveResult", "d4/d25/classVLayoutPaper.html#a31d663c00d8494201f0f92933ce735cb", null ],
-    [ "SetHeight", "d4/d25/classVLayoutPaper.html#a8e591bff3ac834da94530dbb28f8f7f6", null ],
+    [ "setHeight", "d4/d25/classVLayoutPaper.html#ab1bee215fa51914d090760b4f54de95c", null ],
     [ "SetLayoutWidth", "d4/d25/classVLayoutPaper.html#ac72e8e9b3801744f1672999722bce662", null ],
     [ "SetPaperIndex", "d4/d25/classVLayoutPaper.html#a92c5a5d92661cfb913d63fab7f2c42a8", null ],
     [ "setPieces", "d4/d25/classVLayoutPaper.html#a21f686a78317c7c032affc4a35fc96e1", null ],

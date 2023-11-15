@@ -39,6 +39,7 @@ var hierarchy =
     [ "QApplication", null, [
       [ "VAbstractApplication", "db/dda/classVAbstractApplication.html", [
         [ "MApplication", "da/d04/classMApplication.html", null ],
+        [ "TestVApplication", "d2/df0/classTestVApplication.html", null ],
         [ "VApplication", "d1/d58/classVApplication.html", null ]
       ] ]
     ] ],
@@ -124,10 +125,11 @@ var hierarchy =
     ] ],
     [ "QDomDocument", null, [
       [ "VDomDocument", "d6/deb/classVDomDocument.html", [
+        [ "MeasurementDoc", "d9/d6d/classMeasurementDoc.html", null ],
         [ "VAbstractConverter", "dc/d68/classVAbstractConverter.html", [
-          [ "VAbstractMConverter", "d8/d87/classVAbstractMConverter.html", [
-            [ "VVITConverter", "d3/d19/classVVITConverter.html", null ],
-            [ "VVSTConverter", "d8/d2a/classVVSTConverter.html", null ]
+          [ "AbstractMConverter", "d8/d6b/classAbstractMConverter.html", [
+            [ "IndividualSizeConverter", "d8/dfc/classIndividualSizeConverter.html", null ],
+            [ "MultiSizeConverter", "d6/d91/classMultiSizeConverter.html", null ]
           ] ],
           [ "VLabelTemplateConverter", "db/d5e/classVLabelTemplateConverter.html", null ],
           [ "VPatternConverter", "dc/dd3/classVPatternConverter.html", null ]
@@ -136,8 +138,7 @@ var hierarchy =
           [ "VLitePattern", "da/d79/classVLitePattern.html", null ],
           [ "VPattern", "d4/d43/classVPattern.html", null ]
         ] ],
-        [ "VLabelTemplate", "d0/df9/classVLabelTemplate.html", null ],
-        [ "VMeasurements", "d9/d7d/classVMeasurements.html", null ]
+        [ "VLabelTemplate", "d0/df9/classVLabelTemplate.html", null ]
       ] ]
     ] ],
     [ "QEvent", null, [
@@ -361,9 +362,39 @@ var hierarchy =
     [ "qmu::QmuParserTokenReader", "d8/daa/classqmu_1_1QmuParserTokenReader.html", null ],
     [ "qmu::QmuTranslation", "dc/d3e/classqmu_1_1QmuTranslation.html", null ],
     [ "QObject", null, [
-      [ "AbstractTest", "d0/d9b/classAbstractTest.html", null ],
+      [ "AbstractTest", "d0/d9b/classAbstractTest.html", [
+        [ "TST_AbstractRegExp", "d7/d66/classTST__AbstractRegExp.html", [
+          [ "TST_BuitInRegExp", "d8/d54/classTST__BuitInRegExp.html", null ],
+          [ "TST_MeasurementRegExp", "da/d11/classTST__MeasurementRegExp.html", null ]
+        ] ],
+        [ "TST_QmuParserErrorMsg", "de/da6/classTST__QmuParserErrorMsg.html", null ],
+        [ "TST_Seamly2DCommandLine", "d2/d3e/classTST__Seamly2DCommandLine.html", null ],
+        [ "TST_SeamlyMeCommandLine", "d8/dde/classTST__SeamlyMeCommandLine.html", null ],
+        [ "TST_VAbstractCurve", "d3/d1d/classTST__VAbstractCurve.html", null ],
+        [ "TST_VAbstractPiece", "d6/d89/classTST__VAbstractPiece.html", null ],
+        [ "TST_VEllipticalArc", "d2/d9c/classTST__VEllipticalArc.html", null ],
+        [ "TST_VLayoutDetail", "d1/dd3/classTST__VLayoutDetail.html", null ],
+        [ "TST_VPiece", "db/dbb/classTST__VPiece.html", null ],
+        [ "TST_VSpline", "d7/d3f/classTST__VSpline.html", null ]
+      ] ],
       [ "FvUpdater", "d5/d23/classFvUpdater.html", null ],
       [ "GraphicsViewZoom", "da/d19/classGraphicsViewZoom.html", null ],
+      [ "TST_FindPoint", "d6/d30/classTST__FindPoint.html", null ],
+      [ "TST_Measurements", "da/d3b/classTST__Measurements.html", null ],
+      [ "TST_Misc", "d5/d79/classTST__Misc.html", null ],
+      [ "TST_NameRegExp", "d3/d4d/classTST__NameRegExp.html", null ],
+      [ "TST_QmuTokenParser", "d3/df0/classTST__QmuTokenParser.html", null ],
+      [ "TST_ReadVal", "dc/d3d/classTST__ReadVal.html", null ],
+      [ "TST_TSTranslation", "d9/dd4/classTST__TSTranslation.html", null ],
+      [ "TST_VArc", "df/daf/classTST__VArc.html", null ],
+      [ "TST_VCommandLine", "d0/dcb/classTST__VCommandLine.html", null ],
+      [ "TST_VCubicBezierPath", "de/d02/classTST__VCubicBezierPath.html", null ],
+      [ "TST_VGObject", "d4/d53/classTST__VGObject.html", null ],
+      [ "TST_VLockGuard", "d7/d69/classTST__VLockGuard.html", null ],
+      [ "TST_VPointF", "d5/d29/classTST__VPointF.html", null ],
+      [ "TST_VPoster", "db/d56/classTST__VPoster.html", null ],
+      [ "TST_VSplinePath", "d8/d25/classTST__VSplinePath.html", null ],
+      [ "TST_VTranslateVars", "da/d3d/classTST__VTranslateVars.html", null ],
       [ "VAbstractPattern", "d8/dba/classVAbstractPattern.html", null ],
       [ "VAbstractSimple", "dc/de5/classVAbstractSimple.html", [
         [ "VSimpleCurve", "d4/d36/classVSimpleCurve.html", null ],
@@ -487,6 +518,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "QSharedData", null, [
+      [ "MeasurementVariableData", "d3/d99/classMeasurementVariableData.html", null ],
       [ "VAbstractArcData", "db/dd7/classVAbstractArcData.html", null ],
       [ "VAbstractCurveData", "d5/db0/classVAbstractCurveData.html", null ],
       [ "VAbstractFloatItemDataPrivate", "d4/d75/classVAbstractFloatItemDataPrivate.html", null ],
@@ -509,7 +541,6 @@ var hierarchy =
       [ "VLayoutPiecePathData", "da/dba/classVLayoutPiecePathData.html", null ],
       [ "VLengthLineData", "d6/d08/classVLengthLineData.html", null ],
       [ "VLineAngleData", "d5/d6a/classVLineAngleData.html", null ],
-      [ "VMeasurementData", "d1/d7b/classVMeasurementData.html", null ],
       [ "VNodeDetailData", "de/da5/classVNodeDetailData.html", null ],
       [ "VPatternLabelDataPrivate", "d3/d32/classVPatternLabelDataPrivate.html", null ],
       [ "VPieceData", "d7/d87/classVPieceData.html", null ],
@@ -526,6 +557,8 @@ var hierarchy =
     [ "QSharedPointer< DialogTool >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< dx_iface >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QCursor >", "dd/daa/classQSharedPointer.html", null ],
+    [ "QSharedPointer< QDomDocument >", "dd/daa/classQSharedPointer.html", null ],
+    [ "QSharedPointer< QFile >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QHash< quint32, VPiece > >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QHash< quint32, VPiecePath > >", "dd/daa/classQSharedPointer.html", null ],
     [ "QSharedPointer< QIODevice >", "dd/daa/classQSharedPointer.html", null ],
@@ -663,8 +696,8 @@ var hierarchy =
       [ "VLengthLine", "d6/d57/classVLengthLine.html", null ],
       [ "VLineAngle", "d1/d88/classVLineAngle.html", null ],
       [ "VVariable", "da/d49/classVVariable.html", [
-        [ "VIncrement", "dd/d0c/classVIncrement.html", null ],
-        [ "VMeasurement", "de/dcc/classVMeasurement.html", null ]
+        [ "MeasurementVariable", "d5/d38/classMeasurementVariable.html", null ],
+        [ "VIncrement", "dd/d0c/classVIncrement.html", null ]
       ] ]
     ] ],
     [ "VLabelTemplateLine", "dc/daa/structVLabelTemplateLine.html", null ],

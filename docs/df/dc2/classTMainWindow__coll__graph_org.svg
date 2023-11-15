@@ -47,7 +47,7 @@
 <text text-anchor="start" x="461.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># handleExportToCSV()</text>
 <text text-anchor="start" x="461.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetupMenu()</text>
 <text text-anchor="start" x="461.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitWindow()</text>
-<text text-anchor="start" x="461.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitTable()</text>
+<text text-anchor="start" x="461.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeTable()</text>
 <text text-anchor="start" x="461.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetDecimals()</text>
 <text text-anchor="start" x="461.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitUnits()</text>
 <text text-anchor="start" x="461.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitComboBoxUnits()</text>
@@ -209,8 +209,8 @@
 <text text-anchor="start" x="632" y="-1301" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateId()</text>
 <text text-anchor="start" x="632" y="-1290" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueNames()</text>
 <text text-anchor="start" x="632" y="-1279" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueIncrementNames()</text>
-<text text-anchor="start" x="632" y="-1268" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetSize()</text>
-<text text-anchor="start" x="632" y="-1257" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetHeight()</text>
+<text text-anchor="start" x="632" y="-1268" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSize()</text>
+<text text-anchor="start" x="632" y="-1257" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHeight()</text>
 <text text-anchor="start" x="632" y="-1246" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
 <text text-anchor="start" x="632" y="-1235" font-family="Helvetica,sans-Serif" font-size="10.00">+ rsize()</text>
 <text text-anchor="start" x="632" y="-1224" font-family="Helvetica,sans-Serif" font-size="10.00">+ height()</text>
@@ -236,9 +236,9 @@
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
-<g id="a_node8"><a xlink:href="../../d9/d7d/classVMeasurements.html" target="_top" xlink:title=" ">
+<g id="a_node8"><a xlink:href="../../d9/d6d/classMeasurementDoc.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="760.5,-633.5 760.5,-1053.5 920.5,-1053.5 920.5,-633.5 760.5,-633.5"/>
-<text text-anchor="middle" x="840.5" y="-1041.5" font-family="Helvetica,sans-Serif" font-size="10.00">VMeasurements</text>
+<text text-anchor="middle" x="840.5" y="-1041.5" font-family="Helvetica,sans-Serif" font-size="10.00">MeasurementDoc</text>
 <polyline fill="none" stroke="black" points="760.5,-1034.5 920.5,-1034.5 "/>
 <text text-anchor="start" x="768.5" y="-1022.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVST</text>
 <text text-anchor="start" x="768.5" y="-1011.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVIT</text>
@@ -255,10 +255,10 @@
 <text text-anchor="start" x="768.5" y="-890.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentSize</text>
 <text text-anchor="start" x="768.5" y="-879.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_currentHeight</text>
 <polyline fill="none" stroke="black" points="760.5,-872.5 920.5,-872.5 "/>
-<text text-anchor="start" x="768.5" y="-860.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurements()</text>
-<text text-anchor="start" x="768.5" y="-849.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurements()</text>
-<text text-anchor="start" x="768.5" y="-838.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VMeasurements()</text>
-<text text-anchor="start" x="768.5" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VMeasurements()</text>
+<text text-anchor="start" x="768.5" y="-860.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementDoc()</text>
+<text text-anchor="start" x="768.5" y="-849.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementDoc()</text>
+<text text-anchor="start" x="768.5" y="-838.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeasurementDoc()</text>
+<text text-anchor="start" x="768.5" y="-827.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~MeasurementDoc()</text>
 <text text-anchor="start" x="768.5" y="-816.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setXMLContent()</text>
 <text text-anchor="start" x="768.5" y="-805.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SaveDocument()</text>
 <text text-anchor="start" x="768.5" y="-794.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ addEmpty()</text>

@@ -13,7 +13,7 @@ var searchData=
   ['_5fpatternunit_10',['_patternUnit',['../db/dda/classVAbstractApplication.html#a0c3f2f86e53faf19f81c5748127fc6be',1,'VAbstractApplication']]],
   ['_5freferens_11',['_referens',['../d5/d68/classVDataTool.html#a40badacf10d985708aea80fea513fff1',1,'VDataTool']]],
   ['_5fsize_12',['_size',['../d2/d83/classVContainer.html#a9c6dc336b3e1843145e3bb9d5f6add58',1,'VContainer']]],
-  ['_5ftagname_13',['_tagName',['../d1/d7b/classVMeasurementData.html#aca72f31b42d0422734d87db5727cd183',1,'VMeasurementData']]],
+  ['_5ftagname_13',['_tagName',['../d3/d99/classMeasurementVariableData.html#a4db49ce7639eb00e20941cc9293de3cd',1,'MeasurementVariableData']]],
   ['_5fx_14',['_x',['../d6/d1a/classVPointFData.html#ac3d0b21747fe4f5df6e34c0df19f9779',1,'VPointFData']]],
   ['_5fy_15',['_y',['../d6/d1a/classVPointFData.html#a6aada7b361fe91befe24855c2e947aff',1,'VPointFData']]]
 ];
