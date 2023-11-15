@@ -95,7 +95,13 @@
 #include "../vpatterndb/variables/vincrement.h"
 #include "../vpatterndb/variables/vlineangle.h"
 #include "../vpatterndb/variables/vlinelength.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
+#include "../ifc/xml/vdomdocument.h"
+#include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vmisc/vcommonsettings.h"
+#include "../tools/dialogtool.h"
+#include "ui_edit_formula_dialog.h"
 
 template <class T> class QSharedPointer;
 
@@ -206,7 +212,7 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::Measurements:
         {
             const QString name = qApp->TrVars()->VarFromUser(item->text());
-            const QSharedPointer<VMeasurement> measurements = data->GetVariable<VMeasurement>(name);
+            const QSharedPointer<MeasurementVariable> measurements = data->GetVariable<MeasurementVariable>(name);
             const QString desc = (measurements->getGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->getGuiText());
             setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
@@ -612,7 +618,7 @@ void EditFormulaDialog::showVariable(const QMap<key, val> &var)
  * @brief showMeasurements show measurements in table
  * @param var container with measurements
  */
-void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<VMeasurement> > &var)
+void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<MeasurementVariable> > &var)
 {
     ui->tableWidget->blockSignals(true);
     ui->tableWidget->clearContents();
@@ -620,7 +626,7 @@ void EditFormulaDialog::showMeasurements(const QMap<QString, QSharedPointer<VMea
     ui->tableWidget->setColumnHidden(ColumnFullName, false);
     ui->description_Label->setText("");
 
-    QMapIterator<QString, QSharedPointer<VMeasurement>> iMap(var);
+    QMapIterator<QString, QSharedPointer<MeasurementVariable>> iMap(var);
     while (iMap.hasNext())
     {
         iMap.next();

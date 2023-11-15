@@ -90,7 +90,7 @@ private:
     quint32               m_systemCode;
     QPointer<QTranslator> m_pmsTranslator;
 
-    int     LoadMeasurements(const QString &checkedLocale);
+    int     loadMeasurements(const QString &checkedLocale);
     void    RemoveTrMeasurements(const QString &checkedLocale);
 };
 

@@ -5097,10 +5097,6 @@ Apply settings anyway?</source>
         <translation>Σχετικά με το Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Αρχεία πατρόν (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Αποθήκευση ως</translation>
     </message>
@@ -5141,8 +5137,8 @@ Apply settings anyway?</source>
         <translation>Αποθηκευμένο αρχείο</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>Ανώνυμο.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>Ανώνυμο.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -5165,10 +5161,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Wrong units.</source>
         <translation>Λανθασμένες μονάδες.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Σφάλμα στο αρχείο.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5277,10 +5269,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Δεν ήταν δυνατός ο ορισμός ύψους. Το αρχείο δεν ανοίχτηκε.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Σφάλμα εξαγωγής.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6914,6 +6902,18 @@ Do you want to save your changes?</source>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7203,6 +7203,17 @@ Do you want to save your changes?</source>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Διαστάσεις σχεδίασης πατρόν</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Δεν είναι δυνατή η εύρεση της μέτρησης &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Το όνομα μέτρησης είναι κενό!</translation>
     </message>
 </context>
 <context>
@@ -8904,7 +8915,7 @@ Do you want to save your changes?</source>
         <translation>Πρότυπά μου</translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -10681,10 +10692,6 @@ Do you want to save your changes?</source>
         <translation>Μόνο ανάγνωση</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Άνοιγμα προτύπου</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Βάση δεδομένων</translation>
     </message>
@@ -10769,10 +10776,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Εισαγωγή απο ένα πατρόν</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Αρχεία πατρόν (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10930,18 +10933,6 @@ Do you want to save your changes?</source>
         <translation>Κλείδωμα αρχείου</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Αυτό το αρχείο είναι ήδη ανοιχτό σε άλλο παράθυρο. Αγνοήστε αν θέλετε να συνεχίσετε (δε συνιστάται, μπορεί να προκαλέσει καταστροφή δεδομένων).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11083,6 +11074,30 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Copy to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation type="unfinished">Αρχεία πατρόν</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished">Αυτό το αρχείο είναι ήδη ανοιχτό σε άλλο παράθυρο. Αγνοήστε αν θέλετε να συνεχίσετε (δε συνιστάται, μπορεί να προκαλέσει καταστροφή δεδομένων).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12017,17 +12032,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>VMeasurements</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Δεν είναι δυνατή η εύρεση της μέτρησης &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Το όνομα μέτρησης είναι κενό!</translation>
     </message>
 </context>
 <context>
@@ -14194,205 +14198,205 @@ Do you want to save your changes?</source>
         <source>degTorad</source>
         <comment>Converts degrees to radians
 Usage: degTorad(angle θ in degrees)</comment>
-        <translation type="unfinished"></translation>
+        <translation>degTorad</translation>
     </message>
     <message>
         <source>radTodeg</source>
         <comment>Converts radians to degrees
 Usage: radTodeg(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>radTodeg</translation>
     </message>
     <message>
         <source>sin</source>
         <comment>Sine function working with radians
 Usage: sin(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>sin</translation>
     </message>
     <message>
         <source>cos</source>
         <comment>Cosine function working with radians
 Usage: cos(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>cos</translation>
     </message>
     <message>
         <source>tan</source>
         <comment>Tangent function working with radians
 Usage: tan(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>tan</translation>
     </message>
     <message>
         <source>asin</source>
         <comment>Inverse sine function working with radians
 Usage: asin(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>asin</translation>
     </message>
     <message>
         <source>acos</source>
         <comment>Inverse cosine function working with radians
 Usage: acos(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>acos</translation>
     </message>
     <message>
         <source>atan</source>
         <comment>Inverse tangent function working with radians
 Usage: atan(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>atan</translation>
     </message>
     <message>
         <source>sinh</source>
         <comment>Hyperbolic sine function
 Usage: sinh(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>sinh</translation>
     </message>
     <message>
         <source>cosh</source>
         <comment>Hyperbolic cosine
 Usage: cosh(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>cosh</translation>
     </message>
     <message>
         <source>tanh</source>
         <comment>Hyperbolic tangent function
 Usage: tanh(angle θ in radians)</comment>
-        <translation type="unfinished"></translation>
+        <translation>tanh</translation>
     </message>
     <message>
         <source>asinh</source>
         <comment>Inverse Hyperbolic sine function
 Usage: asinh(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>asinh</translation>
     </message>
     <message>
         <source>acosh</source>
         <comment>Inverse Hyperbolic cosine function
 Usage: acosh(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>acosh</translation>
     </message>
     <message>
         <source>atanh</source>
         <comment>Inverse Hyperbolic tangent function
 Usage: atanh(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>atanh</translation>
     </message>
     <message>
         <source>sinD</source>
         <comment>Sine function working with degrees
 Usage: sinD(angle θ in degrees)</comment>
-        <translation type="unfinished"></translation>
+        <translation>sinD</translation>
     </message>
     <message>
         <source>cosD</source>
         <comment>Cosine function working with degrees
 Usage: cosD(angle θ in degrees)</comment>
-        <translation type="unfinished"></translation>
+        <translation>cosD</translation>
     </message>
     <message>
         <source>tanD</source>
         <comment>Tangent function working with degrees
 Usage: tanD(angle θ in degrees)</comment>
-        <translation type="unfinished"></translation>
+        <translation>tanD</translation>
     </message>
     <message>
         <source>asinD</source>
         <comment>Inverse sine function working with degrees
 Usage: asinD(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>asinD</translation>
     </message>
     <message>
         <source>acosD</source>
         <comment>Inverse cosine function working with degrees
 Usage: acosD(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>acosD</translation>
     </message>
     <message>
         <source>atanD</source>
         <comment>Inverse tangent function working with degrees
 Usage: atanD(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>atanD</translation>
     </message>
     <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
 Usage: log2(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>log2</translation>
     </message>
     <message>
         <source>log10</source>
         <comment>Logarithm to the base 10
 Usage: log10(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>log10</translation>
     </message>
     <message>
         <source>log</source>
         <comment>Logarithm to the base 10
 Usage: log(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>log</translation>
     </message>
     <message>
         <source>ln</source>
         <comment>Logarithm to base e (2.71828...)
 Usage: ln(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>ln</translation>
     </message>
     <message>
         <source>exp</source>
         <comment>E raised to the power of x
 Usage: exp(x) where e = 2.718</comment>
-        <translation type="unfinished"></translation>
+        <translation>exp</translation>
     </message>
     <message>
         <source>sqrt</source>
         <comment>Square root of a value
 Usage: sqrt(x)</comment>
-        <translation type="unfinished">sqrt</translation>
+        <translation>sqrt</translation>
     </message>
     <message>
         <source>sign</source>
         <comment>Sign function -1 if x&lt;0; 1 if x&gt;0
 Usage: sign(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>sign</translation>
     </message>
     <message>
         <source>rint</source>
         <comment>Round to nearest integer
 Usage: rint(float x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>rint</translation>
     </message>
     <message>
         <source>abs</source>
         <comment>Absolute value
 Usage: abs(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>abs</translation>
     </message>
     <message>
         <source>min</source>
         <comment>Min of all arguments
 Usage: min(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished"></translation>
+        <translation>min</translation>
     </message>
     <message>
         <source>max</source>
         <comment>Max of all arguments
 Usage: max(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished"></translation>
+        <translation>max</translation>
     </message>
     <message>
         <source>sum</source>
         <comment>Sum of all arguments
 Usage: sum(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished"></translation>
+        <translation>sum</translation>
     </message>
     <message>
         <source>avg</source>
         <comment>Mean value of all arguments
 Usage: avg(arg 1; arg 2; ... arg n)</comment>
-        <translation type="unfinished">avg</translation>
+        <translation>avg</translation>
     </message>
     <message>
         <source>fmod</source>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
-        <translation type="unfinished"></translation>
+        <translation>fmod</translation>
     </message>
 </context>
 <context>

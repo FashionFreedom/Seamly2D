@@ -56,7 +56,7 @@
 #include "dialognewmeasurements.h"
 #include "ui_dialognewmeasurements.h"
 
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../vmisc/vseamlymesettings.h"
 #include "../mapplication.h"
 
@@ -224,7 +224,7 @@ void DialogNewMeasurements::InitMTypes()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogNewMeasurements::InitHeightsList()
 {
-    const QStringList list = VMeasurement::WholeListHeights(MUnit());
+    const QStringList list = MeasurementVariable::WholeListHeights(MUnit());
     ui->comboBoxBaseHeight->clear();
     ui->comboBoxBaseHeight->addItems(list);
 }
@@ -232,7 +232,7 @@ void DialogNewMeasurements::InitHeightsList()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogNewMeasurements::InitSizesList()
 {
-    const QStringList list = VMeasurement::WholeListSizes(MUnit());
+    const QStringList list = MeasurementVariable::WholeListSizes(MUnit());
     ui->comboBoxBaseSize->clear();
     ui->comboBoxBaseSize->addItems(list);
 }

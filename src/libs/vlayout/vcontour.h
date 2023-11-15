@@ -90,7 +90,7 @@ public:
     void    SetShift(quint32 shift);
 
     int  GetHeight() const;
-    void SetHeight(int height);
+    void setHeight(int height);
 
     int  GetWidth() const;
     void SetWidth(int width);

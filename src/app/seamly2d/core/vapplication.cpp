@@ -24,7 +24,7 @@
 
 /************************************************************************
  **
- **  @file   vexceptionemptyparameter.cpp
+ **  @file   vapplication.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
@@ -46,22 +46,23 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "vapplication.h"
+
+#include "../mainwindow.h"
+#include "../version.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
 #include "../ifc/exception/vexceptionbadid.h"
 #include "../ifc/exception/vexceptionconversionerror.h"
 #include "../ifc/exception/vexceptionemptyparameter.h"
 #include "../ifc/exception/vexceptionwrongid.h"
-#include "../vwidgets/vmaingraphicsview.h"
-#include "../version.h"
 #include "../vmisc/logging.h"
 #include "../vmisc/vmath.h"
 #include "../qmuparser/qmuparsererror.h"
-#include "../mainwindow.h"
+#include "../vwidgets/vmaingraphicsview.h"
 
 #include <Qt>
 #include <QtDebug>
@@ -605,9 +606,9 @@ void VApplication::InitOptions()
     VSettings *settings = Seamly2DSettings();
     QDir().mkpath(settings->GetDefPathLayout());
     QDir().mkpath(settings->GetDefPathPattern());
-    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
-    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
-    QDir().mkpath(settings->GetDefPathTemplate());
+    QDir().mkpath(settings->getDefaultIndividualSizePath());
+    QDir().mkpath(settings->getDefaultMultisizePath());
+    QDir().mkpath(settings->getDefaultTemplatePath());
     QDir().mkpath(settings->GetDefPathLabelTemplate());
 }
 

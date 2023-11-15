@@ -5144,10 +5144,6 @@ Apply settings anyway?</source>
         <translation>Sobre Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Archivos de patrón (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Guardar como</translation>
     </message>
@@ -5188,8 +5184,8 @@ Apply settings anyway?</source>
         <translation>Archivo guardado</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>Sin título.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>Sin título.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -5212,10 +5208,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Wrong units.</source>
         <translation>Unidades no son válidas.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Error en archivo.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5324,10 +5316,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>No se pudo establecer la altura. No se abrió el archivo.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Error en exportación.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6961,6 +6949,18 @@ Do you want to save your changes?</source>
         <source>Toolbars</source>
         <translation>Barras de Herramientas</translation>
     </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>patrón</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -7267,6 +7267,17 @@ Do you want to save your changes?</source>
         <comment>Measurement section</comment>
         <translatorcomment>Sección de medidas</translatorcomment>
         <translation>Medidas de Patronaje</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>No se pudo encontrar la medida &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>El nombre de la medida esta vacío!</translation>
     </message>
 </context>
 <context>
@@ -8970,8 +8981,8 @@ actualización:</translation>
         <translation>Mis Plantillas</translation>
     </message>
     <message>
-        <source>My label templates</source>
-        <translation>Mis plantillas de etiquetas</translation>
+        <source>My Label Templates</source>
+        <translation>Mis Plantillas de Etiquetas</translation>
     </message>
 </context>
 <context>
@@ -10748,10 +10759,6 @@ actualización:</translation>
         <translation>Solo lectura</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Abrir plantilla</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>Base de datos</translation>
     </message>
@@ -10835,10 +10842,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Importar desde un patrón</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Archivos de patrón (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10999,18 +11002,6 @@ Do you want to save your changes?</source>
         <translation>Archivo de bloqueo</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Este archivo está abierto en otra ventana. Si desea continuar: Haga click en Ignorar (no recomendado , puede causar errores).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Archivo bloqueado, no puede ser mostrado por falta de permisos. Si desea continuar haga clic en Ignorar (no recomendado, puede causar errores).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ocurrió un error desconocido, puede ser una partición llena impedía que se escriba el archivo de bloqueo. Ignorelo si desea continuar (no se recomienda, puede causar errores).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>No se pudo crear el archivo de bloqueo, por falta de permisos.</translation>
     </message>
@@ -11153,6 +11144,30 @@ Do you want to save your changes?</source>
     <message>
         <source>Copy to clipboard</source>
         <translation>Copiar al portapapeles</translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Abrir plantilla ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Archivos de patrones</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Este archivo esta abierto en otra ventana. Si desea continuar: Haga click en Ignorar (no recomendado, puede provocar datos erroneos).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Archivo bloqueado, no puede ser mostrado por falta de permisos. Si desea continuar: Haga click en Ignorar (no recomendado, puede provocar errores).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Se produjo un error desconocido, por ejemplo una parte llena impedía escribir el archivo de bloqueo. Ignorelo si desea continuar (no se recomienda, puede provocar errores).</translation>
     </message>
 </context>
 <context>
@@ -12088,17 +12103,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>La pieza %1 no tiene forma.</translation>
-    </message>
-</context>
-<context>
-    <name>VMeasurements</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>No se pudo encontrar la medida &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>¡El nombre de la medida esta vacío!</translation>
     </message>
 </context>
 <context>

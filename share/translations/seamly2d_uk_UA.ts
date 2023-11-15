@@ -2303,7 +2303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Лекало</translation>
+        <translation>Лекало</translation>
     </message>
     <message>
         <source>For technical notes</source>
@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4833,7 +4833,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -5100,10 +5100,6 @@ Apply settings anyway?</source>
         <translation>Про Qt</translation>
     </message>
     <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Файл лекала (*.val)</translation>
-    </message>
-    <message>
         <source>Save as</source>
         <translation>Зберегти як</translation>
     </message>
@@ -5144,8 +5140,8 @@ Apply settings anyway?</source>
         <translation>Файл збережено</translation>
     </message>
     <message>
-        <source>untitled.val</source>
-        <translation>безімений.val</translation>
+        <source>untitled.sm2d</source>
+        <translation>безімений.sm2d</translation>
     </message>
     <message>
         <source>The pattern has been modified.
@@ -5167,10 +5163,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Wrong units.</source>
         <translation>Неправильні одиниці виміру.</translation>
-    </message>
-    <message>
-        <source>File error.</source>
-        <translation>Помилка файла.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5279,10 +5271,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
         <translation>Не вдалося встановити зріст. Файл не було відкрито.</translation>
-    </message>
-    <message>
-        <source>Export error.</source>
-        <translation>Помилка експорту.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
@@ -6898,7 +6886,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <source>untitled</source>
@@ -6915,6 +6903,18 @@ Do you want to save your changes?</source>
     <message>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Export exception.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>pattern</source>
+        <translation>лекало</translation>
     </message>
 </context>
 <context>
@@ -6977,7 +6977,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pattern</source>
-        <translation type="unfinished">Лекало</translation>
+        <translation>Лекало</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
@@ -7060,7 +7060,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <source>Exit</source>
@@ -7205,6 +7205,17 @@ Do you want to save your changes?</source>
         <source>Patternmaking measurements</source>
         <comment>Measurement section</comment>
         <translation type="unfinished">Мірки лекала</translation>
+    </message>
+</context>
+<context>
+    <name>MeasurementDoc</name>
+    <message>
+        <source>Can&apos;t find measurement &apos;%1&apos;</source>
+        <translation>Не вдалося знайти мірку &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <source>The measurement name is empty!</source>
+        <translation>Ім&apos;я мірки порожнє!</translation>
     </message>
 </context>
 <context>
@@ -8906,7 +8917,7 @@ Do you want to save your changes?</source>
         <translation>Мої шаблони</translation>
     </message>
     <message>
-        <source>My label templates</source>
+        <source>My Label Templates</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9901,7 +9912,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+E</translation>
     </message>
     <message>
         <source>Tools</source>
@@ -10683,10 +10694,6 @@ Do you want to save your changes?</source>
         <translation>Тільки читання</translation>
     </message>
     <message>
-        <source>Open template</source>
-        <translation>Відкрити шаблон</translation>
-    </message>
-    <message>
         <source>Database</source>
         <translation>База даних</translation>
     </message>
@@ -10771,10 +10778,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Import from a pattern</source>
         <translation>Імпорт з викрійки</translation>
-    </message>
-    <message>
-        <source>Pattern files (*.val)</source>
-        <translation>Файл лекала (*.val)</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
@@ -10932,18 +10935,6 @@ Do you want to save your changes?</source>
         <translation>Файл блокування</translation>
     </message>
     <message>
-        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Цей файл вже відкрит в іншому вікні. Ігноруйте, якщо бажаєте продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
-    </message>
-    <message>
-        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Файл блокування не може бути створений через відсутність дозволу. Ігноруйте, якщо бажаєте продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
-    </message>
-    <message>
-        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Виникла невідома помилка, наприклад, повністю заповнений розділ заважає запису файлу блокування. Ігноруйте, якщо ви хочете продовжити (не рекомендується, може призвести до пошкодження даних).</translation>
-    </message>
-    <message>
         <source>The lock file could not be created, for lack of permissions.</source>
         <translation>Файл блокування не може бути створений, не вистачає прав доступу.</translation>
     </message>
@@ -11081,11 +11072,35 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Ctrl+E</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+E</translation>
     </message>
     <message>
         <source>Copy to clipboard</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open template ...</source>
+        <translation>Відкрити шаблон ...</translation>
+    </message>
+    <message>
+        <source>Ctrl+Alt+O</source>
+        <translation>Ctrl+Alt+O</translation>
+    </message>
+    <message>
+        <source>Pattern files</source>
+        <translation>Файли лекал</translation>
+    </message>
+    <message>
+        <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Цей файл вже відкритий в іншому вікні. Ігноруйте якщо ви хочете продовжити (не рекомендується, може призвести до втрати даних).</translation>
+    </message>
+    <message>
+        <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Не вдалося створити lock файл через відсутність дозволів. Ігноруйте якщо хочете продовжити (не рекомендується, може призвести до втрати даних).</translation>
+    </message>
+    <message>
+        <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
+        <translation>Сталася невідома помилка, наприклад переповнення розділу попередило запис lock файлу. Ігноруйте якщо бажаєте продовжити (не рекомендується, може призвести до втрати даних).</translation>
     </message>
 </context>
 <context>
@@ -12020,17 +12035,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
         <translation>Деталь %1 не має форми.</translation>
-    </message>
-</context>
-<context>
-    <name>VMeasurements</name>
-    <message>
-        <source>Can&apos;t find measurement &apos;%1&apos;</source>
-        <translation>Не вдалося знайти мірку &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <source>The measurement name is empty!</source>
-        <translation>Ім&apos;я мірки порожнє!</translation>
     </message>
 </context>
 <context>
@@ -14311,13 +14315,13 @@ Usage: acosD(x)</comment>
         <source>atanD</source>
         <comment>Inverse tangent function working with degrees
 Usage: atanD(x)</comment>
-        <translation type="unfinished"></translation>
+        <translation>atanD</translation>
     </message>
     <message>
         <source>log2</source>
         <comment>Logarithm to the base 2
 Usage: log2(x)</comment>
-        <translation type="unfinished">log2</translation>
+        <translation>log2</translation>
     </message>
     <message>
         <source>log10</source>

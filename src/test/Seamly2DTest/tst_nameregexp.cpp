@@ -52,7 +52,7 @@
 #include "tst_nameregexp.h"
 #include "../qmuparser/qmudef.h"
 #include "../vmisc/logging.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 
 #include <QtTest>
 

@@ -1252,7 +1252,9 @@
     <bool>false</bool>
    </attribute>
    <addaction name="actionNew"/>
+   <addaction name="actionOpenTemplate"/>
    <addaction name="actionOpenIndividual"/>
+   <addaction name="actionOpenMultisize"/>
    <addaction name="print_Action"/>
    <addaction name="actionSave"/>
    <addaction name="actionSaveAs"/>
@@ -1328,8 +1330,8 @@
   </widget>
   <action name="actionOpenIndividual">
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/individual_size_file.png</normaloff>:/icon/32x32/individual_size_file.png</iconset>
    </property>
    <property name="text">
     <string>Open individual ...</string>
@@ -1477,8 +1479,8 @@
   </action>
   <action name="actionOpenMultisize">
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/multisize_size_file.png</normaloff>:/icon/32x32/multisize_size_file.png</iconset>
    </property>
    <property name="text">
     <string>Open multisize ...</string>
@@ -1492,11 +1494,14 @@
   </action>
   <action name="actionOpenTemplate">
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/template_size_file.png</normaloff>:/icon/32x32/template_size_file.png</iconset>
    </property>
    <property name="text">
-    <string>Open template</string>
+    <string>Open template ...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+O</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -1595,8 +1600,8 @@
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

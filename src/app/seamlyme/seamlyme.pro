@@ -79,9 +79,9 @@ unix{
         #languages added inside translations.pri
 
         # logo on macx.
-        ICON = $${PWD}/../../../dist/SeamlyMe.icns
+        ICON = $${PWD}/../../../dist/seamlyme.icns
 
-        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/Info.plist
+        QMAKE_INFO_PLIST = $${PWD}/../../../dist/macx/seamlyme/info.plist
 
         # Copy to bundle multisize measurements files
         multisize.path = $${RESOURCES_DIR}/tables/multisize
@@ -92,8 +92,8 @@ unix{
         templates.files = $$INSTALL_STANDARD_TEMPLATES
 
         format.path = $${RESOURCES_DIR}
-        format.files += $$PWD/../../../dist/macx/i-measurements.icns
-        format.files += $$PWD/../../../dist/macx/s-measurements.icns
+        format.files += $$PWD/../../../dist/macx/individual_size_file.icns
+        format.files += $$PWD/../../../dist/macx/multi_size_file.icns
 
         QMAKE_BUNDLE_DATA += \
             templates \

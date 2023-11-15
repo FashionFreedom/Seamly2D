@@ -23,6 +23,7 @@
  **************************************************************************/
 
 /************************************************************************
+ **
  **  @file   mapplication.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   8 7, 2015
@@ -45,7 +46,7 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -399,9 +400,9 @@ void MApplication::InitOptions()
 
     OpenSettings();
     VSeamlyMeSettings *settings = SeamlyMeSettings();
-    QDir().mkpath(settings->GetDefPathTemplate());
-    QDir().mkpath(settings->GetDefPathIndividualMeasurements());
-    QDir().mkpath(settings->GetDefPathMultisizeMeasurements());
+    QDir().mkpath(settings->getDefaultTemplatePath());
+    QDir().mkpath(settings->getDefaultIndividualSizePath());
+    QDir().mkpath(settings->getDefaultMultisizePath());
     QDir().mkpath(settings->GetDefPathLabelTemplate());
 
     qCInfo(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
@@ -543,12 +544,12 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     //-----
     QCommandLineOption heightOption(QStringList() << "e" << "height",
             tr("Open with the base height. Valid values: %1cm.")
-                                    .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", ")),
+                                    .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
             tr("The base height"));
     parser.addOption(heightOption);
     //-----
     QCommandLineOption sizeOption(QStringList() << "s" << "size",
-            tr("Open with the base size. Valid values: %1cm.").arg(VMeasurement::WholeListSizes(Unit::Cm).join(", ")),
+            tr("Open with the base size. Valid values: %1cm.").arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
             tr("The base size"));
     parser.addOption(sizeOption);
     //-----
@@ -579,7 +580,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     if (parser.isSet(heightOption))
     {
         const QString heightValue = parser.value(heightOption);
-        if (VMeasurement::IsGradationHeightValid(heightValue))
+        if (MeasurementVariable::IsGradationHeightValid(heightValue))
         {
             flagHeight = true;
             height = heightValue.toInt();
@@ -588,7 +589,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base height argument. Must be %1cm.")
-                               .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }
@@ -596,7 +597,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     if (parser.isSet(sizeOption))
     {
         const QString sizeValue = parser.value(sizeOption);
-        if (VMeasurement::IsGradationSizeValid(sizeValue))
+        if (MeasurementVariable::IsGradationSizeValid(sizeValue))
         {
             flagSize = true;
             size = sizeValue.toInt();
@@ -605,7 +606,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         {
             qCCritical(mApp, "%s\n",
                     qPrintable(tr("Invalid base size argument. Must be %1cm.")
-                               .arg(VMeasurement::WholeListSizes(Unit::Cm).join(", "))));
+                               .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", "))));
             parser.showHelp(V_EX_USAGE);
         }
     }

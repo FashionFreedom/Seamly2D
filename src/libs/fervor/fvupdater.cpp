@@ -73,7 +73,7 @@
 #include <QProcess>
 #include <QtConcurrent/QtConcurrent>
 #include "../ifc/exception/vexception.h"
-#include "../ifc/xml/vabstractconverter.h"
+#include "../ifc/xml/abstract_converter.h"
 #include "../vmisc/projectversion.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"

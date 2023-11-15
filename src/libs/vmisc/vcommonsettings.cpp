@@ -23,6 +23,7 @@
  **************************************************************************/
 
 /************************************************************************
+ **
  **  @file   vcommonsettings.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 7, 2015
@@ -45,7 +46,7 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -381,30 +382,30 @@ QString VCommonSettings::StandardTemplatesPath()
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::PrepareStandardTemplates(const QString & currentPath)
 {
-    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), GetDefPathTemplate());
+    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), getDefaultTemplatePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::PrepareMultisizeTables(const QString &currentPath)
+QString VCommonSettings::prepareMultisizeTables(const QString &currentPath)
 {
-    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), GetDefPathMultisizeMeasurements());
+    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), getDefaultMultisizePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathIndividualMeasurements()
+QString VCommonSettings::getDefaultIndividualSizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("individual");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathIndividualMeasurements() const
+QString VCommonSettings::getIndividualSizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsIndividualMeasurements, GetDefPathIndividualMeasurements()).toString();
+    return settings.value(settingPathsIndividualMeasurements, getDefaultIndividualSizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
+void VCommonSettings::setIndividualSizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsIndividualMeasurements, value);
@@ -412,20 +413,20 @@ void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathMultisizeMeasurements()
+QString VCommonSettings::getDefaultMultisizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("multisize");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathMultisizeMeasurements() const
+QString VCommonSettings::getMultisizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsMultisizeMeasurements, GetDefPathMultisizeMeasurements()).toString();
+    return settings.value(settingPathsMultisizeMeasurements, getDefaultMultisizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
+void VCommonSettings::setMultisizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsMultisizeMeasurements, value);
@@ -433,20 +434,20 @@ void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathTemplate()
+QString VCommonSettings::getDefaultTemplatePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathTemplate() const
+QString VCommonSettings::getTemplatePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingPathsTemplates, GetDefPathTemplate()).toString();
+    return settings.value(settingPathsTemplates, getDefaultTemplatePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathTemplate(const QString &value)
+void VCommonSettings::setTemplatePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsTemplates, value);

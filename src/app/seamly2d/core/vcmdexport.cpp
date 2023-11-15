@@ -30,7 +30,7 @@
 #include "../dialogs/layoutsettings_dialog.h"
 #include "../vwidgets/export_format_combobox.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../vformat/vmeasurements.h"
+#include "../vformat/measurements.h"
 #include "../vmisc/commandoptions.h"
 #include "../vmisc/def.h"
 #include "../vmisc/vsettings.h"
@@ -122,7 +122,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
                                           translate("VCommandLine", "Set size value a pattern file, that was opened "
                                                                     "with multisize measurements (export mode). Valid "
                                                                     "values: %1cm.")
-                                                                .arg(VMeasurement::WholeListSizes(Unit::Cm).join(", ")),
+                                                                .arg(MeasurementVariable::WholeListSizes(Unit::Cm).join(", ")),
                                           translate("VCommandLine", "The size value")));
 
     optionsIndex.insert(LONG_OPTION_GRADATIONHEIGHT, index++);
@@ -130,7 +130,7 @@ void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> 
                                           translate("VCommandLine", "Set height value a pattern file, that was opened "
                                                                     "with multisize measurements (export mode). Valid "
                                                                     "values: %1cm.")
-                                                              .arg(VMeasurement::WholeListHeights(Unit::Cm).join(", ")),
+                                                              .arg(MeasurementVariable::WholeListHeights(Unit::Cm).join(", ")),
                                           translate("VCommandLine", "The height value")));
 
     //=================================================================================================================
@@ -680,7 +680,7 @@ bool VCommandLine::IsSetGradationHeight() const
 QString VCommandLine::OptGradationSize() const
 {
     const QString size = parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONSIZE)));
-    if (VMeasurement::IsGradationSizeValid(size))
+    if (MeasurementVariable::IsGradationSizeValid(size))
     {
         return size;
     }
@@ -695,7 +695,7 @@ QString VCommandLine::OptGradationSize() const
 QString VCommandLine::OptGradationHeight() const
 {
     const QString height = parser.value(*optionsUsed.value(optionsIndex.value(LONG_OPTION_GRADATIONHEIGHT)));
-    if (VMeasurement::IsGradationHeightValid(height))
+    if (MeasurementVariable::IsGradationHeightValid(height))
     {
         return height;
     }

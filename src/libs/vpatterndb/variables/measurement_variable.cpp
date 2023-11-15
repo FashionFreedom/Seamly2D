@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   vstandardtablecell.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
+/******************************************************************************
+ *   @file   measurement_variable.cpp
+ **  @author Douglas S Caskey
+ **  @date   16 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,7 +25,35 @@
  **
  *************************************************************************/
 
-#include "vmeasurement.h"
+/************************************************************************
+ **
+ **  @file   vstandardtablecell.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+#include "measurement_variable.h"
 
 #include <QMap>
 #include <QMessageLogger>
@@ -57,19 +61,19 @@
 
 #include "../ifc/ifcdef.h"
 #include "vvariable.h"
-#include "vmeasurement_p.h"
+#include "measurement_variable_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VMeasurement &VMeasurement::operator=(VMeasurement &&m) Q_DECL_NOTHROW
+MeasurementVariable &MeasurementVariable::operator=(MeasurementVariable &&m) Q_DECL_NOTHROW
 { Swap(m); return *this; }
 #endif
 
-void VMeasurement::Swap(VMeasurement &m) Q_DECL_NOTHROW
+void MeasurementVariable::Swap(MeasurementVariable &m) Q_DECL_NOTHROW
 { VVariable::Swap(m); std::swap(d, m.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VMeasurement create measurement for multisize table
+ * @brief MeasurementVariable create measurement for multisize table
  * @param name measurement's name
  * @param base value in base size and height
  * @param ksize increment in sizes
@@ -78,11 +82,11 @@ void VMeasurement::Swap(VMeasurement &m) Q_DECL_NOTHROW
  * @param description measurement full description
  * @param tagName measurement's tag name in file
  */
-VMeasurement::VMeasurement(quint32 index, const QString &name, qreal baseSize, qreal baseHeight, const qreal &base,
+MeasurementVariable::MeasurementVariable(quint32 index, const QString &name, qreal baseSize, qreal baseHeight, const qreal &base,
                            const qreal &ksize, const qreal &kheight, const QString &gui_text,
                            const QString &description, const QString &tagName)
-    :VVariable(name, description),
-      d(new VMeasurementData(index, gui_text, tagName, baseSize, baseHeight, base, ksize, kheight))
+    : VVariable(name, description)
+    , d(new MeasurementVariableData(index, gui_text, tagName, baseSize, baseHeight, base, ksize, kheight))
 {
     SetType(VarType::Measurement);
     VInternalVariable::SetValue(d->base);
@@ -90,29 +94,31 @@ VMeasurement::VMeasurement(quint32 index, const QString &name, qreal baseSize, q
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VMeasurement create measurement for individual table
+ * @brief MeasurementVariable create measurement for individual table
  * @param name measurement's name
  * @param base value in base size and height
  * @param gui_text shor tooltip for user
  * @param description measurement full description
  * @param tagName measurement's tag name in file
  */
-VMeasurement::VMeasurement(VContainer *data, quint32 index, const QString &name, const qreal &base,
+MeasurementVariable::MeasurementVariable(VContainer *data, quint32 index, const QString &name, const qreal &base,
                            const QString &formula, bool ok, const QString &gui_text, const QString &description,
                            const QString &tagName)
-    :VVariable(name, description), d(new VMeasurementData(data, index, formula, ok, gui_text, tagName, base))
+    : VVariable(name, description)
+    , d(new MeasurementVariableData(data, index, formula, ok, gui_text, tagName, base))
 {
     SetType(VarType::Measurement);
     VInternalVariable::SetValue(base);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurement::VMeasurement(const VMeasurement &m)
-    :VVariable(m), d(m.d)
+MeasurementVariable::MeasurementVariable(const MeasurementVariable &m)
+    : VVariable(m)
+    , d(m.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurement &VMeasurement::operator=(const VMeasurement &m)
+MeasurementVariable &MeasurementVariable::operator=(const MeasurementVariable &m)
 {
     if ( &m == this )
     {
@@ -124,11 +130,11 @@ VMeasurement &VMeasurement::operator=(const VMeasurement &m)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VMeasurement::~VMeasurement()
+MeasurementVariable::~MeasurementVariable()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurement::ListHeights(QMap<GHeights, bool> heights, Unit patternUnit)
+QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit patternUnit)
 {
     QStringList list;
     if (patternUnit == Unit::Inch)
@@ -149,13 +155,13 @@ QStringList VMeasurement::ListHeights(QMap<GHeights, bool> heights, Unit pattern
 
     if (list.isEmpty())
     {
-        list = VMeasurement::WholeListHeights(patternUnit);
+        list = MeasurementVariable::WholeListHeights(patternUnit);
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurement::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
+QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
 {
     QStringList list;
     if (patternUnit == Unit::Inch)
@@ -176,13 +182,13 @@ QStringList VMeasurement::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
 
     if (list.isEmpty())
     {
-        list = VMeasurement::WholeListSizes(patternUnit);
+        list = MeasurementVariable::WholeListSizes(patternUnit);
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurement::WholeListHeights(Unit patternUnit)
+QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
 {
     QStringList list;
     if (patternUnit == Unit::Inch)
@@ -200,7 +206,7 @@ QStringList VMeasurement::WholeListHeights(Unit patternUnit)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VMeasurement::WholeListSizes(Unit patternUnit)
+QStringList MeasurementVariable::WholeListSizes(Unit patternUnit)
 {
     QStringList list;
     if (patternUnit == Unit::Inch)
@@ -218,11 +224,11 @@ QStringList VMeasurement::WholeListSizes(Unit patternUnit)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::IsGradationSizeValid(const QString &size)
+bool MeasurementVariable::IsGradationSizeValid(const QString &size)
 {
     if (not size.isEmpty())
     {
-        const QStringList sizes = VMeasurement::WholeListSizes(Unit::Cm);
+        const QStringList sizes = MeasurementVariable::WholeListSizes(Unit::Cm);
         return sizes.contains(size);
     }
     else
@@ -232,11 +238,11 @@ bool VMeasurement::IsGradationSizeValid(const QString &size)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::IsGradationHeightValid(const QString &height)
+bool MeasurementVariable::IsGradationHeightValid(const QString &height)
 {
     if (not height.isEmpty())
     {
-        const QStringList heights = VMeasurement::WholeListHeights(Unit::Cm);
+        const QStringList heights = MeasurementVariable::WholeListHeights(Unit::Cm);
         return heights.contains(height);
     }
     else
@@ -246,7 +252,7 @@ bool VMeasurement::IsGradationHeightValid(const QString &height)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VMeasurement::CalcValue() const
+qreal MeasurementVariable::CalcValue() const
 {
     if (d->currentUnit == nullptr || d->currentSize == nullptr || d->currentHeight == nullptr)
     {
@@ -269,7 +275,7 @@ qreal VMeasurement::CalcValue() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::ListValue(QStringList &list, qreal value, Unit patternUnit)
+void MeasurementVariable::ListValue(QStringList &list, qreal value, Unit patternUnit)
 {
     const qreal val = UnitConvertor(value, Unit::Cm, patternUnit);
     const QString strVal = QString("%1").arg(val);
@@ -281,86 +287,86 @@ void VMeasurement::ListValue(QStringList &list, qreal value, Unit patternUnit)
  * @brief getGuiText measurement name for tooltip
  * @return measurement name
  */
-QString VMeasurement::getGuiText() const
+QString MeasurementVariable::getGuiText() const
 {
     return d->gui_text;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurement::TagName() const
+QString MeasurementVariable::TagName() const
 {
     return d->_tagName;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::setTagName(const QString &tagName)
+void MeasurementVariable::setTagName(const QString &tagName)
 {
     d->_tagName = tagName;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VMeasurement::GetFormula() const
+QString MeasurementVariable::GetFormula() const
 {
     return d->formula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::isCustom() const
+bool MeasurementVariable::isCustom() const
 {
     return GetName().indexOf(CustomMSign) == 0;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VMeasurement::Index() const
+int MeasurementVariable::Index() const
 {
     return static_cast<int>(d->index);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::IsFormulaOk() const
+bool MeasurementVariable::IsFormulaOk() const
 {
     return d->formulaOk;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VMeasurement::isNotUsed() const
+bool MeasurementVariable::isNotUsed() const
 {
     return qFuzzyIsNull(d->base) && qFuzzyIsNull(d->ksize) && qFuzzyIsNull(d->kheight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VMeasurement::GetValue() const
+qreal MeasurementVariable::GetValue() const
 {
     return CalcValue();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal *VMeasurement::GetValue()
+qreal *MeasurementVariable::GetValue()
 {
     VInternalVariable::SetValue(CalcValue());
     return VInternalVariable::GetValue();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VContainer *VMeasurement::GetData()
+VContainer *MeasurementVariable::GetData()
 {
     return &d->data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::SetSize(qreal *size)
+void MeasurementVariable::setSize(qreal *size)
 {
     d->currentSize = size;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::SetHeight(qreal *height)
+void MeasurementVariable::setHeight(qreal *height)
 {
     d->currentHeight = height;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::SetUnit(const Unit *unit)
+void MeasurementVariable::SetUnit(const Unit *unit)
 {
     d->currentUnit = unit;
 }
@@ -370,13 +376,13 @@ void VMeasurement::SetUnit(const Unit *unit)
  * @brief GetBase return value in base size and height
  * @return value
  */
-qreal VMeasurement::GetBase() const
+qreal MeasurementVariable::GetBase() const
 {
     return d->base;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VMeasurement::SetBase(const qreal &value)
+void MeasurementVariable::SetBase(const qreal &value)
 {
     d->base = value;
 }
@@ -386,14 +392,14 @@ void VMeasurement::SetBase(const qreal &value)
  * @brief GetKsize return increment in sizes
  * @return increment
  */
-qreal VMeasurement::GetKsize() const
+qreal MeasurementVariable::GetKsize() const
 {
     return d->ksize;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-void VMeasurement::SetKsize(const qreal &value)
+void MeasurementVariable::SetKsize(const qreal &value)
 {
     d->ksize = value;
 }
@@ -403,14 +409,14 @@ void VMeasurement::SetKsize(const qreal &value)
  * @brief GetKheight return increment in heights
  * @return increment
  */
-qreal VMeasurement::GetKheight() const
+qreal MeasurementVariable::GetKheight() const
 {
     return d->kheight;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 // cppcheck-suppress unusedFunction
-void VMeasurement::SetKheight(const qreal &value)
+void MeasurementVariable::SetKheight(const qreal &value)
 {
     d->kheight = value;
 }

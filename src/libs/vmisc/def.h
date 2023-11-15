@@ -30,6 +30,7 @@
 #define DEF_H
 
 #include <qcompilerdetection.h>
+#include <QFileDialog>
 #include <QLineF>
 #include <QString>
 #include <QStringList>
@@ -467,6 +468,13 @@ extern const QString unitCM;
 extern const QString unitINCH;
 extern const QString unitPX;
 
+extern const QString valExt;
+extern const QString vitExt;
+extern const QString vstExt;
+extern const QString sm2dExt;
+extern const QString smisExt;
+extern const QString smmsExt;
+
 void SetItemOverrideCursor(QGraphicsItem *item, const QString & pixmapPath, int hotX = -1, int hotY = -1);
 
 extern const qreal PrintDPI;
@@ -484,6 +492,9 @@ QString makeHeaderName(const QString &name);
 Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);
 Q_REQUIRED_RESULT QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath);
+Q_REQUIRED_RESULT QString fileDialog(QWidget *parent, const QString &title,  const QString &dir,
+                                     const QString &filter, QString *selectedFilter, QFileDialog::Option option,
+                                     QFileDialog::FileMode mode,  QFileDialog::AcceptMode accept);
 
 Q_REQUIRED_RESULT QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info,
                                                           QPrinter::PrinterMode mode = QPrinter::ScreenResolution);

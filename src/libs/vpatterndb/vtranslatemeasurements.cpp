@@ -1,7 +1,7 @@
 /******************************************************************************
 *   @file   vtranslatemeasurements.cpp
-**  @author DSCaskey <dscaskey@gmail.com>
-**  @date  5 Jun, 2023
+**  @author Douglas S Caskey
+**  @date   14 Jul, 2023
 **
 **  @brief
 **  @copyright
@@ -55,7 +55,7 @@
 #include "vtranslatemeasurements.h"
 
 #include "../qmuparser/qmutranslation.h"
-#include "measurements.h"
+#include "measurements_def.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 VTranslateMeasurements::VTranslateMeasurements()

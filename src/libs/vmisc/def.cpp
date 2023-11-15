@@ -56,6 +56,7 @@
 #include <QColor>
 #include <QComboBox>
 #include <QCursor>
+#include <QFileDialog>
 #include <QDir>
 #include <QDirIterator>
 #include <QFileInfo>
@@ -188,19 +189,26 @@ const QStringList labelTemplatePlaceholders = QStringList() << pl_size
                                                             << pl_wCut
                                                             << pl_wOnFold;
 
-const QString cursorArrowOpenHand = QStringLiteral("://cursor/cursor-arrow-openhand.png");
+const QString cursorArrowOpenHand  = QStringLiteral("://cursor/cursor-arrow-openhand.png");
 const QString cursorArrowCloseHand = QStringLiteral("://cursor/cursor-arrow-closehand.png");
 
 // From documantation: If you use QStringLiteral you should avoid declaring the same literal in multiple places: This
 // furthermore blows up the binary sizes.
 const QString degreeSymbol = QStringLiteral("°");
-const QString trueStr = QStringLiteral("true");
-const QString falseStr = QStringLiteral("false");
+const QString trueStr      = QStringLiteral("true");
+const QString falseStr     = QStringLiteral("false");
 
-const QString unitMM   = QStringLiteral("mm");
-const QString unitCM   = QStringLiteral("cm");
-const QString unitINCH = QStringLiteral("inch");
-const QString unitPX   = QStringLiteral("px");
+const QString unitMM       = QStringLiteral("mm");
+const QString unitCM       = QStringLiteral("cm");
+const QString unitINCH     = QStringLiteral("inch");
+const QString unitPX       = QStringLiteral("px");
+
+const QString valExt       = QStringLiteral("val");
+const QString vitExt       = QStringLiteral("vit");
+const QString vstExt       = QStringLiteral("vst");
+const QString sm2dExt      = QStringLiteral("sm2d");
+const QString smisExt      = QStringLiteral("smis");
+const QString smmsExt      = QStringLiteral("smms");
 
 //---------------------------------------------------------------------------------------------------------------------
 void SetItemOverrideCursor(QGraphicsItem *item, const QString &pixmapPath, int hotX, int hotY)
@@ -434,6 +442,45 @@ QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath)
     }
 
     return QFileInfo(QFileInfo(patternPath).absoluteDir(), relativeMPath).absoluteFilePath();
+}
+
+QString fileDialog(QWidget *parent, const QString &title,  const QString &dir, const QString &filter,
+                   QString *selectedFilter, QFileDialog::Option option, QFileDialog::FileMode mode,
+                   QFileDialog::AcceptMode accept)
+{
+    QFileDialog dialog(parent, title, dir, filter);
+    dialog.setWindowFlags(dialog.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    dialog.setOption(option);
+    dialog.setFileMode(mode);
+    dialog.setAcceptMode(accept);
+    dialog.setSupportedSchemes(QStringList(QStringLiteral("file")));
+    if (selectedFilter && !selectedFilter->isEmpty())
+    {
+        dialog.selectNameFilter(*selectedFilter);
+    }
+
+    QUrl selectedUrl;
+    if (dialog.exec() == QDialog::Accepted)
+    {
+        if (selectedFilter)
+        {
+            *selectedFilter = dialog.selectedNameFilter();
+        }
+        selectedUrl = dialog.selectedUrls().value(0);
+    }
+    else
+    {
+        selectedUrl = QUrl();
+    }
+
+    if (selectedUrl.isLocalFile() || selectedUrl.isEmpty())
+    {
+        return selectedUrl.toLocalFile();
+    }
+    else
+    {
+        return selectedUrl.toString();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

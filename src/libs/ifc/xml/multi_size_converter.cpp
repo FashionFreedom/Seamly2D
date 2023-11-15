@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   VVSTConverter.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   15 7, 2015
+/******************************************************************************
+ *   @file   multi_size_converter.cpp
+ **  @author Douglas S Caskey
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,7 +25,35 @@
  **
  *************************************************************************/
 
-#include "vvstconverter.h"
+ /************************************************************************
+ **
+ **  @file   VVITConverter.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   15 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
+#include "multi_size_converter.h"
 
 #include <QDomNode>
 #include <QDomNodeList>
@@ -65,7 +69,7 @@
 
 #include "../exception/vexception.h"
 #include "../vmisc/def.h"
-#include "vabstractmconverter.h"
+#include "abstract_m_converter.h"
 
 /*
  * Version rules:
@@ -75,24 +79,24 @@
  * 4. patch - little change.
  */
 
-const QString VVSTConverter::MeasurementMinVerStr = QStringLiteral("0.3.0");
-const QString VVSTConverter::MeasurementMaxVerStr = QStringLiteral("0.4.4");
-const QString VVSTConverter::CurrentSchema        = QStringLiteral("://schema/standard_measurements/v0.4.4.xsd");
+const QString MultiSizeConverter::MeasurementMinVerStr = QStringLiteral("0.3.0");
+const QString MultiSizeConverter::MeasurementMaxVerStr = QStringLiteral("0.4.4");
+const QString MultiSizeConverter::CurrentSchema        = QStringLiteral("://schema/standard_measurements/v0.4.4.xsd");
 
-//VVSTConverter::MeasurementMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
-//VVSTConverter::MeasurementMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
+//MultiSizeConverter::MeasurementMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
+//MultiSizeConverter::MeasurementMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 
 static const QString strTagRead_Only = QStringLiteral("read-only");
 
 //---------------------------------------------------------------------------------------------------------------------
-VVSTConverter::VVSTConverter(const QString &fileName)
-    :VAbstractMConverter(fileName)
+MultiSizeConverter::MultiSizeConverter(const QString &fileName)
+    :AbstractMConverter(fileName)
 {
     ValidateInputFile(CurrentSchema);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VVSTConverter::XSDSchema(int ver) const
+QString MultiSizeConverter::XSDSchema(int ver) const
 {
     switch (ver)
     {
@@ -116,7 +120,7 @@ QString VVSTConverter::XSDSchema(int ver) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ApplyPatches()
+void MultiSizeConverter::ApplyPatches()
 {
     switch (m_ver)
     {
@@ -149,17 +153,17 @@ void VVSTConverter::ApplyPatches()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::DowngradeToCurrentMaxVersion()
+void MultiSizeConverter::DowngradeToCurrentMaxVersion()
 {
     SetVersion(MeasurementMaxVerStr);
     Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VVSTConverter::IsReadOnly() const
+bool MultiSizeConverter::IsReadOnly() const
 {
     // Check if attribute read-only was not changed in file format
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 4, 4),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 4, 4),
                       "Check attribute read-only.");
 
     // Possibly in future attribute read-only will change position etc.
@@ -170,10 +174,10 @@ bool VVSTConverter::IsReadOnly() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::AddNewTagsForV0_4_0()
+void MultiSizeConverter::AddNewTagsForV0_4_0()
 {
     // TODO. Delete if minimal supported version is 0.4.0
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
                       "Time to refactor the code.");
 
     QDomElement rootElement = this->documentElement();
@@ -195,10 +199,10 @@ void VVSTConverter::AddNewTagsForV0_4_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::RemoveTagsForV0_4_0()
+void MultiSizeConverter::RemoveTagsForV0_4_0()
 {
     // TODO. Delete if minimal supported version is 0.4.0
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
                       "Time to refactor the code.");
 
     QDomElement rootElement = this->documentElement();
@@ -221,10 +225,10 @@ void VVSTConverter::RemoveTagsForV0_4_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ConvertMeasurementsToV0_4_0()
+void MultiSizeConverter::ConvertMeasurementsToV0_4_0()
 {
     // TODO. Delete if minimal supported version is 0.4.0
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
                       "Time to refactor the code.");
 
     const QString tagBM = QStringLiteral("body-measurements");
@@ -271,10 +275,10 @@ void VVSTConverter::ConvertMeasurementsToV0_4_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VVSTConverter::AddMV0_4_0(const QString &name, qreal value, qreal sizeIncrease, qreal heightIncrease)
+QDomElement MultiSizeConverter::AddMV0_4_0(const QString &name, qreal value, qreal sizeIncrease, qreal heightIncrease)
 {
     // TODO. Delete if minimal supported version is 0.4.0
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
                       "Time to refactor the code.");
 
     QDomElement element = createElement(QStringLiteral("m"));
@@ -290,10 +294,10 @@ QDomElement VVSTConverter::AddMV0_4_0(const QString &name, qreal value, qreal si
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::PM_SystemV0_4_1()
+void MultiSizeConverter::PM_SystemV0_4_1()
 {
     // TODO. Delete if minimal supported version is 0.4.1
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 1),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 1),
                       "Time to refactor the code.");
 
     QDomElement pm_system = createElement(QStringLiteral("pm_system"));
@@ -307,10 +311,10 @@ void VVSTConverter::PM_SystemV0_4_1()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ConvertMeasurementsToV0_4_2()
+void MultiSizeConverter::ConvertMeasurementsToV0_4_2()
 {
     // TODO. Delete if minimal supported version is 0.4.2
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 2),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 2),
                       "Time to refactor the code.");
 
     const QMap<QString, QString> names = OldNamesToNewNames_InV0_3_3();
@@ -340,10 +344,10 @@ void VVSTConverter::ConvertMeasurementsToV0_4_2()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ToV0_4_0()
+void MultiSizeConverter::ToV0_4_0()
 {
     // TODO. Delete if minimal supported version is 0.4.0
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 0),
                       "Time to refactor the code.");
 
     AddRootComment();
@@ -355,10 +359,10 @@ void VVSTConverter::ToV0_4_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ToV0_4_1()
+void MultiSizeConverter::ToV0_4_1()
 {
     // TODO. Delete if minimal supported version is 0.4.1
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 1),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 1),
                       "Time to refactor the code.");
 
     SetVersion(QStringLiteral("0.4.1"));
@@ -367,10 +371,10 @@ void VVSTConverter::ToV0_4_1()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ToV0_4_2()
+void MultiSizeConverter::ToV0_4_2()
 {
     // TODO. Delete if minimal supported version is 0.4.2
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 2),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 2),
                       "Time to refactor the code.");
 
     SetVersion(QStringLiteral("0.4.2"));
@@ -379,10 +383,10 @@ void VVSTConverter::ToV0_4_2()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ToV0_4_3()
+void MultiSizeConverter::ToV0_4_3()
 {
     // TODO. Delete if minimal supported version is 0.4.3
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 3),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 3),
                       "Time to refactor the code.");
 
     SetVersion(QStringLiteral("0.4.3"));
@@ -390,10 +394,10 @@ void VVSTConverter::ToV0_4_3()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VVSTConverter::ToV0_4_4()
+void MultiSizeConverter::ToV0_4_4()
 {
     // TODO. Delete if minimal supported version is 0.4.4
-    Q_STATIC_ASSERT_X(VVSTConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 4),
+    Q_STATIC_ASSERT_X(MultiSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 4, 4),
                       "Time to refactor the code.");
 
     SetVersion(QStringLiteral("0.4.4"));

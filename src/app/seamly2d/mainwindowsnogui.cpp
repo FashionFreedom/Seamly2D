@@ -64,7 +64,7 @@
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
 #include "../vpatterndb/floatItemData/vpatternlabeldata.h"
 #include "../vpatterndb/floatItemData/vgrainlinedata.h"
-#include "../vpatterndb/measurements.h"
+#include "../vpatterndb/measurements_def.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/tools/pattern_piece_tool.h"
 
@@ -1733,26 +1733,26 @@ QString MainWindowsNoGUI::FileName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindowsNoGUI::SetSizeHeightForIndividualM() const
+void MainWindowsNoGUI::setSizeHeightForIndividualM() const
 {
     const QHash<QString, QSharedPointer<VInternalVariable> > * vars = pattern->DataVariables();
 
     if (vars->contains(size_M))
     {
-        VContainer::SetSize(*vars->value(size_M)->GetValue());
+        VContainer::setSize(*vars->value(size_M)->GetValue());
     }
     else
     {
-        VContainer::SetSize(0);
+        VContainer::setSize(0);
     }
 
     if (vars->contains(height_M))
     {
-        VContainer::SetHeight(*vars->value(height_M)->GetValue());
+        VContainer::setHeight(*vars->value(height_M)->GetValue());
     }
     else
     {
-        VContainer::SetHeight(0);
+        VContainer::setHeight(0);
     }
 
     doc->SetPatternWasChanged(true);

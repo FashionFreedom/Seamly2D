@@ -1,7 +1,7 @@
 /******************************************************************************
  *   @file   mainwindow.h
  **  @author Douglas S Caskey
- **  @date   29 Mar, 2023
+ **  @date   14 Jul, 2023
  **
  **  @brief
  **  @copyright
@@ -11,10 +11,19 @@
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- *****************************************************************************/
+ *************************************************************************/
 
 /************************************************************************
  **
@@ -52,6 +61,7 @@
 #include "../vmisc/vlockguard.h"
 
 #include <QPointer>
+#include <QSharedPointer>
 
 namespace Ui
 {
@@ -59,7 +69,7 @@ namespace Ui
 }
 
 class VToolOptionsPropertyBrowser;
-class VMeasurements;
+class MeasurementDoc;
 class QFileSystemWatcher;
 class QLabel;
 class DialogVariables;
@@ -402,7 +412,7 @@ private:
     void               CreateActions();
     void               InitAutoSave();
     QString            createDraftBlockName(const QString &text);
-    QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
+    QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
     QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
     /**
@@ -424,16 +434,16 @@ private:
 
     void               InitScenes();
 
-    QSharedPointer<VMeasurements> OpenMeasurementFile(const QString &path);
-    bool               LoadMeasurements(const QString &path);
-    bool               UpdateMeasurements(const QString &path, int size, int height);
-    void               CheckRequiredMeasurements(const VMeasurements *m);
+    QSharedPointer<MeasurementDoc> openMeasurementFile(const QString &fileName);
+    bool               loadMeasurements(const QString &fileName);
+    bool               updateMeasurements(const QString &fileName, int size, int height);
+    void               checkRequiredMeasurements(const MeasurementDoc *m);
 
     void               ReopenFilesAfterCrash(QStringList &args);
     void               DoExport(const VCommandLinePtr& expParams);
 
-    bool               SetSize(const QString &text);
-    bool               SetHeight(const QString & text);
+    bool               setSize(const QString &text);
+    bool               setHeight(const QString & text);
 
     QString            GetPatternFileName();
     QString            GetMeasurementFileName();
