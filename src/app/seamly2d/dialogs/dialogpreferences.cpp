@@ -77,6 +77,7 @@ DialogPreferences::DialogPreferences(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    qApp->getSceneView()->itemClicked(nullptr); //clear any selection
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));

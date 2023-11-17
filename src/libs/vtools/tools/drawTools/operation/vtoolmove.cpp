@@ -1,7 +1,7 @@
 /***************************************************************************
  **  @file   vtoolmove.cpp
  **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
+ **  @date   18 Nov, 2023
  **
  **  @copyright
  **  Copyright (C) 2017 - 2023 Seamly, LLC
@@ -466,13 +466,13 @@ void VToolMove::setFormulaRotation(const VFormula &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolMove::getOriginPointName() const
 {
-    try
-    {
-        return VAbstractTool::data.GetGObject(m_originPointId)->name();
-    }
-    catch (const VExceptionBadId &)
+    if (m_originPointId == NULL_ID)
     {
         return tr("Center point");
+    }
+    else
+    {
+        return VAbstractTool::data.GetGObject(m_originPointId)->name();
     }
 }
 

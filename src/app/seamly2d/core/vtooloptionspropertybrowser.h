@@ -56,6 +56,7 @@
 #ifndef VTOOLOPTIONSPROPERTYBROWSER_H
 #define VTOOLOPTIONSPROPERTYBROWSER_H
 
+#include <QEvent>
 #include <QObject>
 #include <QMap>
 
@@ -88,6 +89,8 @@ private slots:
 protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
 
+    virtual bool                     event(QEvent *e) Q_DECL_OVERRIDE;
+
     const VContainer                *m_data;
     VPE::VPropertyModel             *propertyModel;
     VPE::VPropertyFormView          *formView;
@@ -95,6 +98,7 @@ protected:
     QGraphicsItem                   *currentItem;
     QMap<VPE::VProperty *, QString>  propertyToId;
     QMap<QString, VPE::VProperty *>  idToProperty;
+    QString                          m_centerPointStr;
 
 private:
     void addProperty(VPE::VProperty *property, const QString &id);
