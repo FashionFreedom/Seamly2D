@@ -88,9 +88,6 @@ private slots:
 
 protected:
     Q_DISABLE_COPY(VToolOptionsPropertyBrowser)
-
-    virtual bool                     event(QEvent *e) Q_DECL_OVERRIDE;
-
     const VContainer                *m_data;
     VPE::VPropertyModel             *propertyModel;
     VPE::VPropertyFormView          *formView;

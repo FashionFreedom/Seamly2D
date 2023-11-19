@@ -368,17 +368,6 @@ void VToolOptionsPropertyBrowser::refreshOptions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VToolOptionsPropertyBrowser::event(QEvent *e)
-{
-    if (e->type() == QEvent::LanguageChange)
-    {
-        m_centerPointStr = (tr("Center point"));
-        return true;
-    }
-
-    return false;
-}
-//---------------------------------------------------------------------------------------------------------------------
 void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
 {
     VPE::VProperty *prop = property;
