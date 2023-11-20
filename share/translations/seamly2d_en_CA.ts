@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4833,7 +4833,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -13031,6 +13031,10 @@ Do you want to save your changes?</translation>
     <message>
         <source>Line_</source>
         <translation type="unfinished">Line_</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation type="unfinished">Center point</translation>
     </message>
 </context>
 <context>

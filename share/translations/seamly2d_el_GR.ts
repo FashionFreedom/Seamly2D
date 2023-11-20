@@ -1998,7 +1998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Κεντρικό σημείο</translation>
+        <translation>Κεντρικό σημείο</translation>
     </message>
     <message>
         <source>Edit rotation</source>
@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4507,7 +4507,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished">Κεντρικό σημείο:</translation>
+        <translation>Κεντρικό σημείο:</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -4830,7 +4830,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -12614,7 +12614,7 @@ Do you want to save your changes?</source>
     <name>VToolMove</name>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Κεντρικό σημείο</translation>
+        <translation>Κεντρικό σημείο</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -13026,6 +13026,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Line_</source>
         <translation type="unfinished">Γραμμή_</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation type="unfinished">Κεντρικό σημείο</translation>
     </message>
 </context>
 <context>

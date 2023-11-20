@@ -439,7 +439,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskipiste:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
@@ -543,7 +543,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskipiste:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1084,7 +1084,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Keskipiste:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
@@ -1998,7 +1998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Keskipiste</translation>
+        <translation>Keskipiste</translation>
     </message>
     <message>
         <source>Edit rotation</source>
@@ -12615,7 +12615,7 @@ Do you want to save your changes?</source>
     <name>VToolMove</name>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Keskipiste</translation>
+        <translation>Keskipiste</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -13027,6 +13027,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Line_</source>
         <translation type="unfinished">Viiva_</translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Keskipiste</translation>
     </message>
 </context>
 <context>

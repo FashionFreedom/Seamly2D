@@ -1998,7 +1998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Punct central</translation>
+        <translation>Punct central</translation>
     </message>
     <message>
         <source>Edit rotation</source>
@@ -12612,7 +12612,7 @@ Do you want to save your changes?</source>
     <name>VToolMove</name>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">Punct central</translation>
+        <translation>Punct central</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -13024,6 +13024,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Line_</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Punct central</translation>
     </message>
 </context>
 <context>

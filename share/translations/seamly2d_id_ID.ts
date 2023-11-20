@@ -439,7 +439,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titik tengah:</translation>
     </message>
     <message>
         <source>Select center point of the arc</source>
@@ -1998,7 +1998,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">titik tengah</translation>
+        <translation>Titik tengah</translation>
     </message>
     <message>
         <source>Edit rotation</source>
@@ -4507,7 +4507,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titik tengah:</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -12613,7 +12613,7 @@ Do you want to save your changes?</source>
     <name>VToolMove</name>
     <message>
         <source>Center point</source>
-        <translation type="unfinished">titik tengah</translation>
+        <translation>Titik tengah</translation>
     </message>
     <message>
         <source>Angle</source>
@@ -12664,7 +12664,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Center point:</source>
-        <translation type="unfinished"></translation>
+        <translation>Titik tengah:</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -13025,6 +13025,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Line_</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Center point</source>
+        <translation>Titik tengah</translation>
     </message>
 </context>
 <context>

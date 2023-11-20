@@ -74,6 +74,7 @@
 #include "../vwidgets/vcurvepathitem.h"
 
 #include <QDockWidget>
+//#include <QEvent>
 #include <QHBoxLayout>
 #include <QDebug>
 #include <QRegularExpression>
@@ -87,6 +88,7 @@ VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data,
     , currentItem(nullptr)
     , propertyToId(QMap<VPE::VProperty *, QString>())
     , idToProperty(QMap<QString, VPE::VProperty *>())
+    , m_centerPointStr(tr("Center point"))
 {
     propertyModel = new VPE::VPropertyModel(this);
     formView = new VPE::VPropertyFormView(propertyModel, parent);
@@ -888,7 +890,7 @@ endLoop:
 
     if (tool->type() == VToolMove::Type)
     {
-        map.insert("Center point", NULL_ID);
+        map.insert(m_centerPointStr, NULL_ID);
     }
     return map;
 }
@@ -2941,8 +2943,8 @@ void VToolOptionsPropertyBrowser::showOptionsToolMove(QGraphicsItem *item)
 
     addPropertyLabel(tr("Selection"), AttrName);
     addPropertyOperationSuffix(tool, tr("Suffix:"));
-    addObjectProperty(tool, tool->getOriginPointName(), tr("Origin point:"), AttrCenter, GOType::Point);
-
+    QString originPointName = tool->getOriginPointName();
+    addObjectProperty(tool, originPointName, tr("Origin point:"), AttrCenter, GOType::Point);
     addPropertyLabel(tr("Geometry"), AttrName);
     addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
     addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);

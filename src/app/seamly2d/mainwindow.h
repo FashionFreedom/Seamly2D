@@ -352,6 +352,7 @@ private:
     void                              initToolsToolBar();
     void                              initToolBarVisibility();
     void                              initPenToolBar();
+    void                              initPropertyEditor();    
     void                              updateToolBarVisibility();
     void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
     void                              InitToolButtons();

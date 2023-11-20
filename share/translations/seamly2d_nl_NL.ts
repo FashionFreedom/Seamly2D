@@ -13037,6 +13037,10 @@ Wil je deze veranderingen opslaan?</translation>
         <source>Line_</source>
         <translation>Lijn_</translation>
     </message>
+    <message>
+        <source>Center point</source>
+        <translation>Middelste punt</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>

@@ -13045,6 +13045,10 @@ Do you want to save your changes?</source>
         <source>Line_</source>
         <translation>Linie_</translation>
     </message>
+    <message>
+        <source>Center point</source>
+        <translation>Mittelpunkt</translation>
+    </message>
 </context>
 <context>
     <name>VToolPointFromArcAndTangent</name>

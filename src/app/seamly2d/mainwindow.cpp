@@ -219,6 +219,7 @@ MainWindow::MainWindow(QWidget *parent)
     qApp->setCurrentDocument(doc);
     qApp->setCurrentData(pattern);
 
+    showMaximized();
     InitDocksContain();
     CreateMenus();
     initDraftToolBar();
@@ -1756,6 +1757,16 @@ void MainWindow::changeEvent(QEvent *event)
         redoAction->setText(tr("&Redo"));
         helpLabel->setText(QObject::tr("Changes applied."));
         draftBlockLabel->setText(tr("Draft Block:"));
+
+        if (mode == Draw::Calculation)
+        {
+            ui->groups_DockWidget->setWindowTitle(tr("Group Manager"));
+        }
+        else
+        {
+            ui->groups_DockWidget->setWindowTitle(tr("Pattern Pieces"));
+        }
+
         UpdateWindowTitle();
         initPenToolBar();
         emit pieceScene->LanguageChanged();
@@ -2488,6 +2499,24 @@ void MainWindow::initPenToolBar()
     this->addToolBar(Qt::TopToolBarArea, m_penToolBar);
 
     connect(m_penToolBar, &PenToolBar::penChanged, this, &MainWindow::penChanged);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initPropertyEditor initialize the Properties Editor.
+ */
+void MainWindow::initPropertyEditor()
+{
+    qCDebug(vMainWindow, "Initialize the Tool Property Editor.");
+    if (toolProperties != nullptr)
+    {
+        disconnect(toolProperties, nullptr, this, nullptr);
+        delete toolProperties;
+    }
+    toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
+
+    connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
+    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
 }
 
 /**
@@ -5333,19 +5362,17 @@ void MainWindow::AddDocks()
     {
         isToolboxDockVisible  = visible;
     });
-}
 
+    tabifyDockWidget(ui->groups_DockWidget, ui->toolProperties_DockWidget);
+	splitDockWidget(ui->toolProperties_DockWidget, ui->layoutPages_DockWidget, Qt::Vertical);
+}
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::InitDocksContain()
 {
     setTabPosition(Qt::RightDockWidgetArea, QTabWidget::West);
     setTabPosition(Qt::LeftDockWidgetArea, QTabWidget::East);
 
-    qCDebug(vMainWindow, "Initialize Tool Options Property editor.");
-    toolProperties = new VToolOptionsPropertyBrowser(pattern, ui->toolProperties_DockWidget);
-
-    connect(ui->view, &VMainGraphicsView::itemClicked, toolProperties, &VToolOptionsPropertyBrowser::itemClicked);
-    connect(doc, &VPattern::FullUpdateFromFile, toolProperties, &VToolOptionsPropertyBrowser::updateOptions);
+    initPropertyEditor();
 
     qCDebug(vMainWindow, "Initialize Groups manager.");
     groupsWidget = new GroupsWidget(pattern, doc, this);
@@ -6337,8 +6364,9 @@ void MainWindow::Preferences()
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::updateViewToolbar);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::resetPanShortcuts);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, [this](){emit doc->FullUpdateFromFile();});
-        connect(dialog.data(), &DialogPreferences::updateProperties,
-                toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
+        //connect(dialog.data(), &DialogPreferences::updateProperties,
+        //        toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initPropertyEditor);
 
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
