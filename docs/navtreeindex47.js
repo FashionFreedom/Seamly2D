@@ -1,5 +1,6 @@
 var NAVTREEINDEX47 =
 {
+"dc/d1d/tst__vcommandline_8cpp.html":[2,0,0,2,2,19],
 "dc/d1d/tst__vcommandline_8cpp_source.html":[2,0,0,2,2,19],
 "dc/d20/preferencespathpage_8cpp.html":[2,0,0,0,0,1,0,4],
 "dc/d20/preferencespathpage_8cpp_source.html":[2,0,0,0,0,1,0,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d59/classVAbstractMainWindow.html#a83e6500d73223a567ffbb1e5e8923bf5":[1,0,224,6],
 "dc/d59/classVAbstractMainWindow.html#a98df58db7adb372304f04b2f72936fd5":[1,0,224,0],
 "dc/d59/classVAbstractMainWindow.html#ad331115ff94643e19efd6ea03ef1a949":[1,0,224,5],
-"dc/d59/classVAbstractMainWindow.html#ad8a1ff6d5f795e94c16ebe906f8115ba":[1,0,224,2],
-"dc/d59/classVAbstractMainWindow.html#ae1d79c763c7505ae3fdbe20fbe9b243a":[1,0,224,1]
+"dc/d59/classVAbstractMainWindow.html#ad8a1ff6d5f795e94c16ebe906f8115ba":[1,0,224,2]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX45 =
 {
+"db/dcf/classDialogEllipticalArc.html#a3d005c4c2939bbe541fb468f3eea4efe":[1,0,45,61],
 "db/dcf/classDialogEllipticalArc.html#a3e7a9ba6d39fc251be3357373532a020":[1,0,45,14],
 "db/dcf/classDialogEllipticalArc.html#a443afa030c0e08921dca5df3df99221c":[1,0,45,66],
 "db/dcf/classDialogEllipticalArc.html#a44ae7c4df4f1b2c7cb6c438c4ed98646":[1,0,45,24],
@@ -248,6 +249,5 @@ var NAVTREEINDEX45 =
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a5ffa5f742f5f1a9c5e8ee98a395daf46":[0,0,15,29],
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a60f6ad3fe10e8dba6695e143c957034e":[0,0,15,12],
 "db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a644c1c2ced0a7af3972aeb4b592622a2":[0,0,15,31],
-"db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a6a9a3cf9c105721872d8acfcfdd68fba":[0,0,15,20],
-"db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a75d38df070ba496b01c852de9896b971":[0,0,15,6]
+"db/dea/namespaceanonymous__namespace_02vsettings_8cpp_03.html#a6a9a3cf9c105721872d8acfcfdd68fba":[0,0,15,20]
 };

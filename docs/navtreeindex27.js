@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"d6/d84/delaunay_8h.html#abc6a5bf457ef3a37aed461cdcb3c8fbc":[2,0,0,1,8,1,3],
 "d6/d84/delaunay_8h.html#abe705106bcafe02255601006bece14dc":[2,0,0,1,8,1,6],
 "d6/d84/delaunay_8h_source.html":[2,0,0,1,8,1],
 "d6/d89/classTST__VAbstractPiece.html":[1,0,195],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "d6/dfc/classAnchorPointDialog.html#aa3b29cc04e16069c9373e9b9863cf2a2":[1,0,13,11],
 "d6/dfc/classAnchorPointDialog.html#aabae591b517ed6eb02d92af4f56b9223":[1,0,13,8],
 "d6/dfc/classAnchorPointDialog.html#aad38a285f88667a208a83b3f2e91c966":[1,0,13,13],
-"d6/dfc/classAnchorPointDialog.html#ad62de2d96acc3edef1890e690563c93f":[1,0,13,6],
-"d6/dfc/classAnchorPointDialog.html#ae1a749e8b82027229bef30840d3e592a":[1,0,13,7]
+"d6/dfc/classAnchorPointDialog.html#ad62de2d96acc3edef1890e690563c93f":[1,0,13,6]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX34 =
 {
+"d8/dba/classVAbstractPattern.html#a78923c614ae30f6937710e0aa94fe696":[1,0,228,247],
 "d8/dba/classVAbstractPattern.html#a78b38a8e90f909bcd597ac4c3ab486ae":[1,0,228,288],
 "d8/dba/classVAbstractPattern.html#a79a182ac0560064269c1c1404f39f9b3":[1,0,228,190],
 "d8/dba/classVAbstractPattern.html#a79ae485e18f75f7d2619b15e511774af":[1,0,228,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX34 =
 "d8/ddf/vdatatool_8h_source.html":[2,0,0,1,12,1,10],
 "d8/de3/vabstractoperation_8cpp.html":[2,0,0,1,12,1,0,0,1],
 "d8/de3/vabstractoperation_8cpp.html#a26bfe1234cbb6e8ccbc96425cba9c562":[2,0,0,1,12,1,0,0,1,0],
-"d8/de3/vabstractoperation_8cpp_source.html":[2,0,0,1,12,1,0,0,1],
-"d8/de6/structTextLine.html":[1,0,177]
+"d8/de3/vabstractoperation_8cpp_source.html":[2,0,0,1,12,1,0,0,1]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX53 =
 {
+"dd/dc4/classVAbstractBezier.html#acab599ac20beaa795f305c2b06200295":[1,0,216,0],
+"dd/dc4/classVAbstractBezier.html#aedf4a48ee6e6082ae541b91426b1a17f":[1,0,216,1],
 "dd/dc5/vistoolcubicbezierpath_8h.html":[2,0,0,1,12,3,1,13],
 "dd/dc5/vistoolcubicbezierpath_8h_source.html":[2,0,0,1,12,3,1,13],
 "dd/dc5/vistoolcutspline_8cpp.html":[2,0,0,1,12,3,1,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX53 =
 "dd/de9/measurements__def_8cpp.html#abc457561002e2b30dc9e97fff6ad4ed2":[2,0,0,1,9,4,262],
 "dd/de9/measurements__def_8cpp.html#abe76e8fb0da5e54e35437db2c1b79ba2":[2,0,0,1,9,4,63],
 "dd/de9/measurements__def_8cpp.html#abf336aae23ea23eec34d003ca600b800":[2,0,0,1,9,4,204],
-"dd/de9/measurements__def_8cpp.html#abfb345927c1ab1fa3d78ec1965307deb":[2,0,0,1,9,4,263],
-"dd/de9/measurements__def_8cpp.html#abfb53eb111459c3008d7699a5fb8dc34":[2,0,0,1,9,4,158],
-"dd/de9/measurements__def_8cpp.html#ac027946889fe1a7c7ec20ac4da7ecdff":[2,0,0,1,9,4,103]
+"dd/de9/measurements__def_8cpp.html#abfb345927c1ab1fa3d78ec1965307deb":[2,0,0,1,9,4,263]
 };

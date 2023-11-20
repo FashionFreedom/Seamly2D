@@ -1,5 +1,7 @@
 var NAVTREEINDEX62 =
 {
+"df/d9a/classDialogBisector.html#a5033f7ce72eeacf72efb0c047198c1d5":[1,0,37,9],
+"df/d9a/classDialogBisector.html#a59bec4a33a4a0a0c046b550fd21dff10":[1,0,37,20],
 "df/d9a/classDialogBisector.html#a5e9fb4d3153f1cadb187f8721d964cad":[1,0,37,2],
 "df/d9a/classDialogBisector.html#a5eecdfe8e0d764ae52a529ff622ef7c4":[1,0,37,0],
 "df/d9a/classDialogBisector.html#a6d292a5e1eb2cf6f0e7fc096030f9c78":[1,0,37,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX62 =
 "df/de5/classVLayoutPiece.html#a2622282d7ea378d667d5ac7e129542d1":[1,0,333,11],
 "df/de5/classVLayoutPiece.html#a2ab2da9e76bed8adb4b58f0f3815ef9f":[1,0,333,42],
 "df/de5/classVLayoutPiece.html#a312763885cad8574f3d35b13a6be7b57":[1,0,333,17],
-"df/de5/classVLayoutPiece.html#a32d511c7c52da9a5c8a99a078c5f0d40":[1,0,333,36],
-"df/de5/classVLayoutPiece.html#a3f04aa0c85bfdb8cf1e7bbab6d15e32f":[1,0,333,63],
-"df/de5/classVLayoutPiece.html#a4aaeb0f2eb6391e04d15393cc97d91f3":[1,0,333,64]
+"df/de5/classVLayoutPiece.html#a32d511c7c52da9a5c8a99a078c5f0d40":[1,0,333,36]
 };

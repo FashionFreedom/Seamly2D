@@ -1,5 +1,7 @@
 var NAVTREEINDEX60 =
 {
+"de/dbc/classVGraphicsSimpleTextItem.html#adf57487aac7de02641bfb69bc71e320c":[1,0,286,19],
+"de/dbc/classVGraphicsSimpleTextItem.html#aee2a9b01fc9341baf7969ff6da2dacfb":[1,0,286,29],
 "de/dbd/classExportLayoutDialog.html":[1,0,87],
 "de/dbd/classExportLayoutDialog.html#a0198fc5d765f1280580dfc7d9bb74c68":[1,0,87,20],
 "de/dbd/classExportLayoutDialog.html#a05a97329520b5fa1842368daa97363ea":[1,0,87,18],
@@ -247,7 +249,5 @@ var NAVTREEINDEX60 =
 "df/d4b/vcolorpropertyeditor_8h.html":[2,0,0,1,10,0,12],
 "df/d4b/vcolorpropertyeditor_8h_source.html":[2,0,0,1,10,0,12],
 "df/d4b/vmaingraphicsview_8h.html":[2,0,0,1,13,50],
-"df/d4b/vmaingraphicsview_8h_source.html":[2,0,0,1,13,50],
-"df/d4b/vsplinepoint_8h.html":[2,0,0,1,5,40],
-"df/d4b/vsplinepoint_8h.html#ab85b1a47fd57766611915f54dddd4ff0":[2,0,0,1,5,40,2]
+"df/d4b/vmaingraphicsview_8h_source.html":[2,0,0,1,13,50]
 };

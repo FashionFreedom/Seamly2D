@@ -1,5 +1,6 @@
 var NAVTREEINDEX48 =
 {
+"dc/d59/classVAbstractMainWindow.html#ae1d79c763c7505ae3fdbe20fbe9b243a":[1,0,224,1],
 "dc/d5e/vtoolmirrorbyline_8h.html":[2,0,0,1,12,1,0,0,0,5],
 "dc/d5e/vtoolmirrorbyline_8h_source.html":[2,0,0,1,12,1,0,0,0,5],
 "dc/d60/dialogpointfromarcandtangent_8h.html":[2,0,0,1,12,0,1,48],
@@ -157,7 +158,7 @@ var NAVTREEINDEX48 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a01b75c8d0f343bc092633e2012c5b9e4":[1,0,415,98],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a01f3526a59622c47952b34419b11f97e":[1,0,415,83],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a02fcd9b05902addeff1e9f4e881a7f61":[1,0,415,31],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a0334240f4eedf63363de9ff1173a13a1":[1,0,415,142],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a0334240f4eedf63363de9ff1173a13a1":[1,0,415,143],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a05d63f18be26bdbcb1896447756879d3":[1,0,415,1],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a06283097160424fcd2d577d53612319d":[1,0,415,117],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a06d98de5840cb67c97b2659268eb1911":[1,0,415,80],
@@ -192,6 +193,7 @@ var NAVTREEINDEX48 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a3a2e79f4f4b3f0736b2365334225c46a":[1,0,415,4],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a3acab36af9155fbdb326a543a1b4f038":[1,0,415,25],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a40d4a92137c1e94a6455523bfd8b0858":[1,0,415,11],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a4356a4bcbe5a938c093fa5e4f117aab8":[1,0,415,142],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a440e819f74651bffc5138c38c00bbfdd":[1,0,415,124],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a446ba6076873087a68ccf6b26f9c4cab":[1,0,415,2],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a46a6c4c50b63fd6af4a084eafcddc88e":[1,0,415,57],
@@ -224,7 +226,7 @@ var NAVTREEINDEX48 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a7cca22222edb978b34e2f80082e6d89e":[1,0,415,137],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a7d0f52c1a3040525d3d98fe5c95d42dc":[1,0,415,42],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a7dcafef7da8432907525ef7a508609d0":[1,0,415,90],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a7e8b17e73cdb2fe5ebb550aacd13ec19":[1,0,415,143],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a7e8b17e73cdb2fe5ebb550aacd13ec19":[1,0,415,144],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a80b88d5e56db275a5276fb32c447bcc0":[1,0,415,66],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a811439f804f2016104e8551846cbbe80":[1,0,415,16],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a82955507489881c2ec7dde1b3accb630":[1,0,415,134],
@@ -247,7 +249,5 @@ var NAVTREEINDEX48 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a9ba14b08ad6ccffd8d3000b313a24aca":[1,0,415,36],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a9cb6b942d765f3f583012a557c9e9e17":[1,0,415,97],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a9eabec9402ec6bb4342db65452428fc8":[1,0,415,9],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#aa112fc50fc9440bd2d1dad137ddd2399":[1,0,415,22],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#aa374619854487a043d6122439f1db78d":[1,0,415,119],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#aa5362527ebf6e814ab8971dc67ad75f2":[1,0,415,52]
+"dc/d8f/classVToolOptionsPropertyBrowser.html#aa112fc50fc9440bd2d1dad137ddd2399":[1,0,415,22]
 };

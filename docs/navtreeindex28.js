@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"d6/dfc/classAnchorPointDialog.html#ae1a749e8b82027229bef30840d3e592a":[1,0,13,7],
 "d6/dfc/classAnchorPointDialog.html#af0b9a7fabc1202048fba570cbd2af05f":[1,0,13,12],
 "d6/dfc/classAnchorPointDialog.html#afbeca6100af5cdb4fbc8c81c83d89171":[1,0,13,3],
 "d6/dfc/classAnchorPointDialog.html#afc3d436148b688f2a3fca351e8f57f2b":[1,0,13,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5":[2,0,0,1,12,0,0,3,1,0],
 "d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928ac146f02bc0f24f00569bee85acf64e01":[2,0,0,1,12,0,0,3,1,2],
 "d7/d4c/edit__formula__dialog_8h_source.html":[2,0,0,1,12,0,0,3],
-"d7/d4c/vpropertyset__p_8h.html":[2,0,0,1,10,27],
-"d7/d4c/vpropertyset__p_8h_source.html":[2,0,0,1,10,27]
+"d7/d4c/vpropertyset__p_8h.html":[2,0,0,1,10,27]
 };

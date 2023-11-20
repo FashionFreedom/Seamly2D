@@ -1,5 +1,7 @@
 var NAVTREEINDEX54 =
 {
+"dd/de9/measurements__def_8cpp.html#abfb53eb111459c3008d7699a5fb8dc34":[2,0,0,1,9,4,158],
+"dd/de9/measurements__def_8cpp.html#ac027946889fe1a7c7ec20ac4da7ecdff":[2,0,0,1,9,4,103],
 "dd/de9/measurements__def_8cpp.html#ac145c2733d9eccdd1285bf5ad86b37e1":[2,0,0,1,9,4,41],
 "dd/de9/measurements__def_8cpp.html#ac1ab5f022878297e133bc38363576be5":[2,0,0,1,9,4,224],
 "dd/de9/measurements__def_8cpp.html#ac1ae2a795e70ec77f26047837af742d5":[2,0,0,1,9,4,45],
@@ -247,7 +249,5 @@ var NAVTREEINDEX54 =
 "de/d04/classVUndoCommand.html#af6db4e8675af953b970e1f1b304ff0c0":[1,0,430,15],
 "de/d04/vabstractsimple_8cpp.html":[2,0,0,1,13,35],
 "de/d04/vabstractsimple_8cpp_source.html":[2,0,0,1,13,35],
-"de/d06/classDialogAboutApp.html":[1,0,32],
-"de/d06/classDialogAboutApp.html#a416cd070c09d56b8743bce87f95bc3c0":[1,0,32,5],
-"de/d06/classDialogAboutApp.html#a486aa8631cfdfd266cf6371ef584762d":[1,0,32,0]
+"de/d06/classDialogAboutApp.html":[1,0,32]
 };

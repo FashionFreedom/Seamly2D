@@ -1,5 +1,6 @@
 var NAVTREEINDEX41 =
 {
+"da/dac/classVSAPoint.html#a55ee3143b481d405e6c45804378ee517":[1,0,372,3],
 "da/dac/classVSAPoint.html#a78bdd945426bc797fc83ee039affbff5":[1,0,372,6],
 "da/dac/classVSAPoint.html#aa830982a7091b598a3947128b4ee50d3":[1,0,372,5],
 "da/dac/classVSAPoint.html#aa8b679a831c134d8b60515540e4f32d0":[1,0,372,13],
@@ -248,6 +249,5 @@ var NAVTREEINDEX41 =
 "da/dfb/classPatternPieceTool.html#a6e892bb34a3d4bdb6e97abd0bd019690":[1,0,133,106],
 "da/dfb/classPatternPieceTool.html#a6fba9b61eeb5785f578ba6219b9238d3":[1,0,133,80],
 "da/dfb/classPatternPieceTool.html#a6ffaa4219ff5be5f924c08ab6627093c":[1,0,133,90],
-"da/dfb/classPatternPieceTool.html#a74cd0caaa878a4685f2346e8bea0082d":[1,0,133,27],
-"da/dfb/classPatternPieceTool.html#a7a3746a484125aef30fbb3714eb18769":[1,0,133,105]
+"da/dfb/classPatternPieceTool.html#a74cd0caaa878a4685f2346e8bea0082d":[1,0,133,27]
 };

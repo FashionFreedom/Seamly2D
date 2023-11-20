@@ -1,5 +1,7 @@
 var NAVTREEINDEX59 =
 {
+"de/d7f/classDialogUndo.html#aac0748115365bf43e6af041309b1bf13":[1,0,75,3],
+"de/d7f/classDialogUndo.html#ad70db7728ad9ed0184be64465bb01b52":[1,0,75,6],
 "de/d7f/classDialogUndo.html#af64c036d4dd82d7515b461ff4412e72a":[1,0,75,4],
 "de/d84/vpropertymodel_8cpp.html":[2,0,0,1,10,22],
 "de/d84/vpropertymodel_8cpp_source.html":[2,0,0,1,10,22],
@@ -247,7 +249,5 @@ var NAVTREEINDEX59 =
 "de/dbc/classVGraphicsSimpleTextItem.html#ab12a7c465cf23abbf545581d39151092":[1,0,286,14],
 "de/dbc/classVGraphicsSimpleTextItem.html#abe332dfa2a23a078e5ed4ec110bd370e":[1,0,286,17],
 "de/dbc/classVGraphicsSimpleTextItem.html#ac7885577f2af536dfd027990c7924f4f":[1,0,286,4],
-"de/dbc/classVGraphicsSimpleTextItem.html#ad55adfba7b76a6d7d08188dea768f6a1":[1,0,286,31],
-"de/dbc/classVGraphicsSimpleTextItem.html#adf57487aac7de02641bfb69bc71e320c":[1,0,286,19],
-"de/dbc/classVGraphicsSimpleTextItem.html#aee2a9b01fc9341baf7969ff6da2dacfb":[1,0,286,29]
+"de/dbc/classVGraphicsSimpleTextItem.html#ad55adfba7b76a6d7d08188dea768f6a1":[1,0,286,31]
 };

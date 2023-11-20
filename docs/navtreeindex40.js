@@ -1,5 +1,6 @@
 var NAVTREEINDEX40 =
 {
+"da/d69/vtranslatevars_8h.html":[2,0,0,1,9,30],
 "da/d69/vtranslatevars_8h_source.html":[2,0,0,1,9,30],
 "da/d70/point__intersectxy__dialog_8h.html":[2,0,0,1,12,0,1,80],
 "da/d70/point__intersectxy__dialog_8h_source.html":[2,0,0,1,12,0,1,80],
@@ -248,6 +249,5 @@ var NAVTREEINDEX40 =
 "da/dac/classVSAPoint.html#a1f5a23bcc673ece40d70de0578449b27":[1,0,372,12],
 "da/dac/classVSAPoint.html#a299e565a2de4500df44d4acf16f3d62b":[1,0,372,1],
 "da/dac/classVSAPoint.html#a439dbfad1a755b1364dccadd44296308":[1,0,372,0],
-"da/dac/classVSAPoint.html#a480c790c82042a4f89e70332d073863f":[1,0,372,8],
-"da/dac/classVSAPoint.html#a55ee3143b481d405e6c45804378ee517":[1,0,372,3]
+"da/dac/classVSAPoint.html#a480c790c82042a4f89e70332d073863f":[1,0,372,8]
 };

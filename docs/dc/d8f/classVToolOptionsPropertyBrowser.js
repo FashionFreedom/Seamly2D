@@ -142,6 +142,7 @@ var classVToolOptionsPropertyBrowser =
     [ "currentItem", "dc/d8f/classVToolOptionsPropertyBrowser.html#ade8802baa568f80b1152cc033dd2970d", null ],
     [ "formView", "dc/d8f/classVToolOptionsPropertyBrowser.html#ac20fec4aadfe22eb99a4063198d4215f", null ],
     [ "idToProperty", "dc/d8f/classVToolOptionsPropertyBrowser.html#a6e849d07b655c5fd840c248d3ff23be9", null ],
+    [ "m_centerPointStr", "dc/d8f/classVToolOptionsPropertyBrowser.html#a4356a4bcbe5a938c093fa5e4f117aab8", null ],
     [ "m_data", "dc/d8f/classVToolOptionsPropertyBrowser.html#a0334240f4eedf63363de9ff1173a13a1", null ],
     [ "propertyModel", "dc/d8f/classVToolOptionsPropertyBrowser.html#a7e8b17e73cdb2fe5ebb550aacd13ec19", null ],
     [ "propertyToId", "dc/d8f/classVToolOptionsPropertyBrowser.html#ae046c3a9fef63573e7bbb234915e9e64", null ]

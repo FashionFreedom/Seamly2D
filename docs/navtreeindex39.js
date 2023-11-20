@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"da/d3d/classTST__VTranslateVars.html#adf7de5f98cb640f0ec5d48387ba0bb54":[1,0,208,0],
 "da/d3d/classTST__VTranslateVars.html#afcce68567f5471c111a25cca26368fe4":[1,0,208,5],
 "da/d3f/dialogpointofintersectionarcs_8h.html":[2,0,0,1,12,0,1,52],
 "da/d3f/dialogpointofintersectionarcs_8h_source.html":[2,0,0,1,12,0,1,52],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "da/d5e/classVPE_1_1VColorProperty.html#a83c4df426d5ed7e2daf89e616604bd98":[1,0,2,3,2],
 "da/d5e/classVPE_1_1VColorProperty.html#a8835fba68447596f6a7884c40ad19a27":[1,0,2,3,5],
 "da/d5e/classVPE_1_1VColorProperty.html#ac3c4016a6f7446b564cb768fda3f0c43":[1,0,2,3,4],
-"da/d5e/classVPE_1_1VColorProperty.html#ae6b508a96baf0af4275b9462ae27336d":[1,0,2,3,0],
-"da/d69/vtranslatevars_8h.html":[2,0,0,1,9,30]
+"da/d5e/classVPE_1_1VColorProperty.html#ae6b508a96baf0af4275b9462ae27336d":[1,0,2,3,0]
 };

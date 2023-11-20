@@ -1,5 +1,6 @@
 var NAVTREEINDEX31 =
 {
+"d7/df1/classEditLabelTemplateDialog.html#a184a7e405c0dfef5c558d9bad417cc5f":[1,0,84,3],
 "d7/df1/classEditLabelTemplateDialog.html#a2d70945148bcb328293bf08221c06939":[1,0,84,25],
 "d7/df1/classEditLabelTemplateDialog.html#a3989878508ca594d57e8e764188453ac":[1,0,84,17],
 "d7/df1/classEditLabelTemplateDialog.html#a3cc69eb5519084e635c18521db737462":[1,0,84,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX31 =
 "d8/d61/classTMainWindow.html#a0bf89940dad5e491b7c5d6cb077f9a8c":[1,0,178,9],
 "d8/d61/classTMainWindow.html#a0c42381917843e80f4778d53130a2d4b":[1,0,178,77],
 "d8/d61/classTMainWindow.html#a0cda35af53662516f387dc3bc73a4a28":[1,0,178,43],
-"d8/d61/classTMainWindow.html#a0dbe84c1ef961845beb9125cbdaa022e":[1,0,178,14],
-"d8/d61/classTMainWindow.html#a0e20ce68bff8a777dbb513527c5c7c2e":[1,0,178,111]
+"d8/d61/classTMainWindow.html#a0dbe84c1ef961845beb9125cbdaa022e":[1,0,178,14]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX43 =
 {
+"db/d32/classLayoutSettingsDialog.html#afb41d28bc0532cfe6108132b75dcd21b":[1,0,104,18],
 "db/d32/classLayoutSettingsDialog.html#afbac0c27f56b807c59288b7b4ebd65bf":[1,0,104,63],
 "db/d32/dialogbisector_8h.html":[2,0,0,1,12,0,1,12],
 "db/d32/dialogbisector_8h_source.html":[2,0,0,1,12,0,1,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX43 =
 "db/d62/classqmu_1_1QmuParserBase.html#a6ffa53fa088ed0e9275df0171e6c165f":[1,0,0,3,43],
 "db/d62/classqmu_1_1QmuParserBase.html#a7739d9c48b3831cb7f055694b0d76b6c":[1,0,0,3,114],
 "db/d62/classqmu_1_1QmuParserBase.html#a77bccfae4618fcc48f1a5b7b41790baa":[1,0,0,3,96],
-"db/d62/classqmu_1_1QmuParserBase.html#a7bfc59d0faa9178e70421f456307cc07":[1,0,0,3,45],
-"db/d62/classqmu_1_1QmuParserBase.html#a7c2a4e5a0053c3d8a7bfeb579a5872b0":[1,0,0,3,36]
+"db/d62/classqmu_1_1QmuParserBase.html#a7bfc59d0faa9178e70421f456307cc07":[1,0,0,3,45]
 };

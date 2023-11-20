@@ -63,8 +63,8 @@
 <text text-anchor="start" x="1768.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initToolsToolBar()</text>
 <text text-anchor="start" x="1768.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initToolBarVisibility()</text>
 <text text-anchor="start" x="1768.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initPenToolBar()</text>
-<text text-anchor="start" x="1768.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; updateToolBarVisibility()</text>
-<text text-anchor="start" x="1768.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 83 more...</text>
+<text text-anchor="start" x="1768.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initPropertyEditor()</text>
+<text text-anchor="start" x="1768.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 84 more...</text>
 <text text-anchor="start" x="1768.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; zoomScaleChanged()</text>
 <text text-anchor="start" x="1768.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; MouseMove()</text>
 <text text-anchor="start" x="1768.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Clear()</text>
@@ -435,35 +435,36 @@
 <g id="node31" class="node">
 <title>Node31</title>
 <g id="a_node31"><a xlink:href="../../dc/d8f/classVToolOptionsPropertyBrowser.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="359,-1536 359,-1769 539,-1769 539,-1536 359,-1536"/>
-<text text-anchor="middle" x="449" y="-1757" font-family="Helvetica,sans-Serif" font-size="10.00">VToolOptionsPropertyBrowser</text>
-<polyline fill="none" stroke="black" points="359,-1750 539,-1750 "/>
-<text text-anchor="start" x="367" y="-1738" font-family="Helvetica,sans-Serif" font-size="10.00"># currentItem</text>
-<polyline fill="none" stroke="black" points="359,-1731 539,-1731 "/>
-<text text-anchor="start" x="367" y="-1719" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolOptionsPropertyBrowser()</text>
-<text text-anchor="start" x="367" y="-1708" font-family="Helvetica,sans-Serif" font-size="10.00">+ clearPropertyBrowser()</text>
-<text text-anchor="start" x="367" y="-1697" font-family="Helvetica,sans-Serif" font-size="10.00">+ itemClicked()</text>
-<text text-anchor="start" x="367" y="-1686" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateOptions()</text>
-<text text-anchor="start" x="367" y="-1675" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshOptions()</text>
-<text text-anchor="start" x="367" y="-1664" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addProperty()</text>
-<text text-anchor="start" x="367" y="-1653" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showItemOptions()</text>
-<text text-anchor="start" x="367" y="-1642" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getObjectList()</text>
-<text text-anchor="start" x="367" y="-1631" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName()</text>
-<text text-anchor="start" x="367" y="-1620" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName1()</text>
-<text text-anchor="start" x="367" y="-1609" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName2()</text>
-<text text-anchor="start" x="367" y="-1598" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setOperationSuffix()</text>
-<text text-anchor="start" x="367" y="-1587" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getCrossPoint()</text>
-<text text-anchor="start" x="367" y="-1576" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setCirclesCrossPoint()</text>
-<text text-anchor="start" x="367" y="-1565" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setCurveVCrossPoint()</text>
-<text text-anchor="start" x="367" y="-1554" font-family="Helvetica,sans-Serif" font-size="10.00">and 123 more...</text>
-<text text-anchor="start" x="367" y="-1543" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; userChangedData()</text>
+<polygon fill="white" stroke="black" points="359,-1530.5 359,-1774.5 539,-1774.5 539,-1530.5 359,-1530.5"/>
+<text text-anchor="middle" x="449" y="-1762.5" font-family="Helvetica,sans-Serif" font-size="10.00">VToolOptionsPropertyBrowser</text>
+<polyline fill="none" stroke="black" points="359,-1755.5 539,-1755.5 "/>
+<text text-anchor="start" x="367" y="-1743.5" font-family="Helvetica,sans-Serif" font-size="10.00"># currentItem</text>
+<text text-anchor="start" x="367" y="-1732.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_centerPointStr</text>
+<polyline fill="none" stroke="black" points="359,-1725.5 539,-1725.5 "/>
+<text text-anchor="start" x="367" y="-1713.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VToolOptionsPropertyBrowser()</text>
+<text text-anchor="start" x="367" y="-1702.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clearPropertyBrowser()</text>
+<text text-anchor="start" x="367" y="-1691.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ itemClicked()</text>
+<text text-anchor="start" x="367" y="-1680.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateOptions()</text>
+<text text-anchor="start" x="367" y="-1669.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ refreshOptions()</text>
+<text text-anchor="start" x="367" y="-1658.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; addProperty()</text>
+<text text-anchor="start" x="367" y="-1647.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; showItemOptions()</text>
+<text text-anchor="start" x="367" y="-1636.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getObjectList()</text>
+<text text-anchor="start" x="367" y="-1625.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName()</text>
+<text text-anchor="start" x="367" y="-1614.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName1()</text>
+<text text-anchor="start" x="367" y="-1603.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setPointName2()</text>
+<text text-anchor="start" x="367" y="-1592.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setOperationSuffix()</text>
+<text text-anchor="start" x="367" y="-1581.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; getCrossPoint()</text>
+<text text-anchor="start" x="367" y="-1570.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setCirclesCrossPoint()</text>
+<text text-anchor="start" x="367" y="-1559.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; setCurveVCrossPoint()</text>
+<text text-anchor="start" x="367" y="-1548.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 123 more...</text>
+<text text-anchor="start" x="367" y="-1537.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; userChangedData()</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node31 -->
 <g id="edge35" class="edge">
 <title>Node7&#45;&gt;Node31</title>
-<path fill="none" stroke="midnightblue" d="M567.29,-3179.82C568.53,-2990.31 571.36,-2140.33 525,-1881 518.35,-1843.8 506.86,-1804.38 494.81,-1769"/>
+<path fill="none" stroke="midnightblue" d="M567.29,-3179.82C568.53,-2990.31 571.36,-2140.33 525,-1881 518.7,-1845.75 508.05,-1808.5 496.69,-1774.59"/>
 <polygon fill="none" stroke="midnightblue" points="563.79,-3179.82 567.22,-3189.85 570.79,-3179.87 563.79,-3179.82"/>
 </g>
 <!-- Node8 -->
@@ -811,8 +812,8 @@
 <!-- Node18&#45;&gt;Node31 -->
 <g id="edge44" class="edge">
 <title>Node18&#45;&gt;Node31</title>
-<path fill="none" stroke="#404040" d="M742.91,-2102.83C726.32,-2039.16 699.94,-1972.69 658,-1921 657.73,-1920.66 548.3,-1863.31 548,-1863 525.39,-1839.38 507.16,-1809.65 492.81,-1780.06"/>
-<polygon fill="none" stroke="#404040" points="492.8,-1780.03 486.63,-1776.31 487.69,-1769.17 493.87,-1772.9 492.8,-1780.03"/>
+<path fill="none" stroke="#404040" d="M742.91,-2102.83C726.32,-2039.16 699.94,-1972.69 658,-1921 657.73,-1920.66 548.3,-1863.31 548,-1863 526.82,-1840.87 509.48,-1813.37 495.57,-1785.66"/>
+<polygon fill="none" stroke="#404040" points="495.45,-1785.41 489.24,-1781.76 490.21,-1774.62 496.43,-1778.27 495.45,-1785.41"/>
 <text text-anchor="middle" x="647.5" y="-1889.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #m_data</text>
 </g>
 <!-- Node18&#45;&gt;Node45 -->
@@ -1087,7 +1088,7 @@
 <!-- Node31&#45;&gt;Node1 -->
 <g id="edge34" class="edge">
 <title>Node31&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M421.98,-1535.78C385.24,-1347.15 343.57,-971.54 529,-743 687.19,-548.03 1474.72,-403.33 1748.23,-358.26"/>
+<path fill="none" stroke="#404040" d="M420.94,-1530.41C384.47,-1340.09 345.31,-969.39 529,-743 687.19,-548.03 1474.72,-403.33 1748.23,-358.26"/>
 <polygon fill="none" stroke="#404040" points="1748.24,-358.26 1753.52,-353.34 1760.08,-356.32 1754.81,-361.24 1748.24,-358.26"/>
 <text text-anchor="middle" x="567" y="-1061" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;toolProperties</text>
 </g>
@@ -1279,8 +1280,8 @@
 <!-- Node38&#45;&gt;Node31 -->
 <g id="edge42" class="edge">
 <title>Node38&#45;&gt;Node31</title>
-<path fill="none" stroke="#404040" d="M247.25,-2284.41C254.65,-2215.44 275.5,-2051.87 318,-1921 324.08,-1902.28 328.43,-1898.72 337,-1881 352.84,-1848.24 370.13,-1812.92 386.28,-1780.11"/>
-<polygon fill="none" stroke="#404040" points="386.41,-1779.85 385.47,-1772.7 391.71,-1769.08 392.65,-1776.23 386.41,-1779.85"/>
+<path fill="none" stroke="#404040" d="M247.25,-2284.41C254.65,-2215.44 275.5,-2051.87 318,-1921 324.08,-1902.28 328.43,-1898.72 337,-1881 351.96,-1850.07 368.21,-1816.85 383.57,-1785.62"/>
+<polygon fill="none" stroke="#404040" points="383.66,-1785.43 382.72,-1778.28 388.96,-1774.66 389.9,-1781.81 383.66,-1785.43"/>
 <text text-anchor="middle" x="373.5" y="-1889.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #propertyToId</text>
 </g>
 <!-- Node39 -->
@@ -1300,8 +1301,8 @@
 <!-- Node39&#45;&gt;Node31 -->
 <g id="edge43" class="edge">
 <title>Node39&#45;&gt;Node31</title>
-<path fill="none" stroke="#404040" d="M499.25,-3884.31C504.76,-3859.25 511,-3823.93 511,-3792.5 511,-3792.5 511,-3792.5 511,-2317.5 511,-2123.4 520.24,-2073.7 497,-1881 493.06,-1848.34 486.77,-1813.42 480.02,-1780.99"/>
-<polygon fill="none" stroke="#404040" points="480,-1780.9 474.84,-1775.86 477.51,-1769.16 482.67,-1774.2 480,-1780.9"/>
+<path fill="none" stroke="#404040" d="M499.25,-3884.31C504.76,-3859.25 511,-3823.93 511,-3792.5 511,-3792.5 511,-3792.5 511,-2317.5 511,-2123.4 520.24,-2073.7 497,-1881 493.3,-1850.31 487.52,-1817.62 481.23,-1786.88"/>
+<polygon fill="none" stroke="#404040" points="481.15,-1786.49 476.01,-1781.43 478.7,-1774.75 483.84,-1779.8 481.15,-1786.49"/>
 <text text-anchor="middle" x="547.5" y="-3472" font-family="Helvetica,sans-Serif" font-size="10.00"> #idToProperty</text>
 </g>
 <!-- Node39&#45;&gt;Node44 -->
@@ -1340,8 +1341,8 @@
 <!-- Node40&#45;&gt;Node31 -->
 <g id="edge45" class="edge">
 <title>Node40&#45;&gt;Node31</title>
-<path fill="none" stroke="#404040" d="M403.33,-2218.49C402.71,-2129.88 403.97,-1996.54 414,-1881 416.81,-1848.61 421.37,-1813.83 426.29,-1781.45"/>
-<polygon fill="none" stroke="#404040" points="426.35,-1781.03 423.31,-1774.49 428.18,-1769.17 431.22,-1775.71 426.35,-1781.03"/>
+<path fill="none" stroke="#404040" d="M403.33,-2218.49C402.71,-2129.88 403.97,-1996.54 414,-1881 416.66,-1850.42 420.87,-1817.72 425.46,-1786.91"/>
+<polygon fill="none" stroke="#404040" points="425.51,-1786.61 422.46,-1780.08 427.31,-1774.75 430.37,-1781.28 425.51,-1786.61"/>
 <text text-anchor="middle" x="455.5" y="-1889.5" font-family="Helvetica,sans-Serif" font-size="10.00"> #propertyModel</text>
 </g>
 <!-- Node41 -->

@@ -132,6 +132,7 @@ var classMainWindow =
     [ "initModesToolBar", "d6/d1a/classMainWindow.html#ad1239c86866f87fb31c3a01680ff1ed2", null ],
     [ "initPenToolBar", "d6/d1a/classMainWindow.html#a28073c1f398d66c97d0efa59e9cea599", null ],
     [ "initPointNameToolBar", "d6/d1a/classMainWindow.html#af9327aa15b432d3fbc1425b8f12e9d36", null ],
+    [ "initPropertyEditor", "d6/d1a/classMainWindow.html#a0e2e3dbbf2290699efcf25086068debf", null ],
     [ "InitScenes", "d6/d1a/classMainWindow.html#a942da39258c275fe2a15afebe3baed89", null ],
     [ "initStatusBar", "d6/d1a/classMainWindow.html#ab03270fd7d6947737a5e3d57684c8547", null ],
     [ "initToolBarVisibility", "d6/d1a/classMainWindow.html#a09c7cf05c0580cc719dfdd4e22761ac7", null ],

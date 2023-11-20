@@ -1,5 +1,7 @@
 var NAVTREEINDEX61 =
 {
+"df/d4b/vsplinepoint_8h.html":[2,0,0,1,5,40],
+"df/d4b/vsplinepoint_8h.html#ab85b1a47fd57766611915f54dddd4ff0":[2,0,0,1,5,40,2],
 "df/d4b/vsplinepoint_8h.html#ae62f2d377d9298d7d97f9b6b8c8aadea":[2,0,0,1,5,40,3],
 "df/d4b/vsplinepoint_8h_source.html":[2,0,0,1,5,40],
 "df/d4f/varcradius__p_8h.html":[2,0,0,1,9,1,5],
@@ -247,7 +249,5 @@ var NAVTREEINDEX61 =
 "df/d9a/classDialogBisector.html#a2ea7fd037e7ed030e9eee249cb8a6129":[1,0,37,22],
 "df/d9a/classDialogBisector.html#a3790481a8239fa7e4f05d2628d6920ab":[1,0,37,13],
 "df/d9a/classDialogBisector.html#a3aa7376e3c2324b54887366b3c1d575c":[1,0,37,8],
-"df/d9a/classDialogBisector.html#a457ce4929ed3a717d89b9188f2881157":[1,0,37,25],
-"df/d9a/classDialogBisector.html#a5033f7ce72eeacf72efb0c047198c1d5":[1,0,37,9],
-"df/d9a/classDialogBisector.html#a59bec4a33a4a0a0c046b550fd21dff10":[1,0,37,20]
+"df/d9a/classDialogBisector.html#a457ce4929ed3a717d89b9188f2881157":[1,0,37,25]
 };
