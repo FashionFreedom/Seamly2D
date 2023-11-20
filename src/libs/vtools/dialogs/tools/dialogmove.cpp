@@ -486,7 +486,7 @@ void DialogMove::originChanged(const QString &text)
 {
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
     SCASSERT(operation != nullptr)
-    if (text == tr("Center Point"))
+    if (text == tr("Center point"))
     {
         operation->setOriginPointId(NULL_ID);
         useOriginPoint = false;
