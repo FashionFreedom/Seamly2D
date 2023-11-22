@@ -3950,7 +3950,7 @@ Do you want to download it?</source>
 Möchten Sie diesen downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4842,7 +4842,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -13958,22 +13958,22 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Line_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Linie_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>WinkelLinie_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -13983,27 +13983,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>RadiusArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>RadiusBogen_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel1Bogen_</translation>
     </message>
     <message>
         <source>Angle2Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel2Bogen_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle1Spl_</translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle2Spl_</translation>
     </message>
     <message>
@@ -14018,7 +14018,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seg_</source>
-        <comment>Segment. Left symbol _ in the name</comment>
+        <comment>Segment. Leave the _ symbol in translation</comment>
         <translation>Seg_</translation>
     </message>
     <message>
@@ -14038,12 +14038,12 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>C1LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C1LängeSpl_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C2LängeSpl_</translation>
     </message>
     <message>
@@ -14063,32 +14063,32 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>M_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>M_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>ElBogen_</translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius1ElBogen_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius2ElBogen_</translation>
     </message>
     <message>
         <source>Angle1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel1ElBogen_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel2ElBogen_</translation>
     </message>
     <message>
@@ -14213,7 +14213,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Variable_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Variable_</translation>
     </message>
     <message>
