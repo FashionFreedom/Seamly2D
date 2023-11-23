@@ -4019,10 +4019,6 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation>Hernoem</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4204,15 +4200,43 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Group color</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep kleur</translation>
     </message>
     <message>
         <source>Group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam groep</translation>
     </message>
     <message>
         <source>Name</source>
         <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerk</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Zichtbaar</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>De groep is zichtbaar</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Vergrendeld</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>De groep is vergrendeld</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>Groep heeft objecten</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
     </message>
 </context>
 <context>

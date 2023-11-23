@@ -4023,10 +4023,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Gruppe bearbeiten</translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation>Umbenennen</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Löschen</translation>
     </message>
@@ -4217,6 +4213,34 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
     </message>
 </context>
 <context>

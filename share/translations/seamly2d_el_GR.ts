@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4012,10 +4012,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Edit Group</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation type="unfinished">Μετονομασία</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4208,6 +4204,34 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation type="unfinished">Όνομα</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Επεξεργασία</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4830,7 +4854,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
