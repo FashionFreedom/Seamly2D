@@ -3946,7 +3946,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4838,7 +4838,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -8270,10 +8270,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Vorm</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Onbenoemd</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Naam</translation>
     </message>
@@ -8304,6 +8300,62 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
         <translation>Flip opname van patroondeel in opmaak</translation>
+    </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit pattern piece properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished">Vergrendeld</translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished">Patroondeel</translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle lock on pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens color selector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens pattern piece properties dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

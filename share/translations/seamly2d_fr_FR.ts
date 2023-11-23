@@ -3941,7 +3941,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4833,7 +4833,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -8265,10 +8265,6 @@ Voulez-vous sauvegarder les changements?</translation>
         <translation type="unfinished">Formulaire</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation type="unfinished">Sans nom</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation type="unfinished">Nom</translation>
     </message>
@@ -8298,6 +8294,62 @@ Voulez-vous sauvegarder les changements?</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit pattern piece properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle lock on pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens color selector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens pattern piece properties dialog</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
