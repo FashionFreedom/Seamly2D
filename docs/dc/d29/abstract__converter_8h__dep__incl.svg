@@ -59,9 +59,9 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="376,-201.5 376,-231.5 507,-231.5 507,-201.5 376,-201.5"/>
-<text text-anchor="start" x="384" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
-<text text-anchor="middle" x="441.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_converter.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="350,-201.5 350,-231.5 481,-231.5 481,-201.5 350,-201.5"/>
+<text text-anchor="start" x="358" y="-219.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
+<text text-anchor="middle" x="415.5" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">_converter.h</text>
 </a>
 </g>
 </g>
@@ -69,17 +69,17 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../d0/d08/abstract__converter_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="42,-134.5 42,-164.5 173,-164.5 173,-134.5 42,-134.5"/>
-<text text-anchor="start" x="50" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
-<text text-anchor="middle" x="107.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_converter.cpp</text>
+<polygon fill="white" stroke="black" points="30,-134.5 30,-164.5 161,-164.5 161,-134.5 30,-134.5"/>
+<text text-anchor="start" x="38" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
+<text text-anchor="middle" x="95.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_converter.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M366.06,-200.82C308.04,-189.53 228.67,-174.08 173.22,-163.29"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="365.43,-204.26 375.91,-202.74 366.76,-197.39 365.43,-204.26"/>
+<path fill="none" stroke="midnightblue" d="M340.05,-200.17C285.73,-189.14 213.16,-174.4 161.22,-163.85"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="339.47,-203.63 349.97,-202.19 340.87,-196.77 339.47,-203.63"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -94,24 +94,39 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M365.56,-206.7C321.58,-199.55 266.08,-186.91 220.5,-165 200.54,-155.41 200.48,-145.4 181.5,-134 157.12,-119.35 127.72,-106.6 104.62,-97.57"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="365.19,-210.19 375.61,-208.28 366.28,-203.27 365.19,-210.19"/>
+<path fill="none" stroke="midnightblue" d="M339.55,-205.07C299.17,-197.56 249.54,-185.1 208.5,-165 188.61,-155.26 188.24,-145.8 169.5,-134 147.08,-119.89 120.13,-106.9 99.28,-97.63"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="339.14,-208.56 349.6,-206.88 340.38,-201.67 339.14,-208.56"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../d0/d93/individual__size__converter_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="226,-67.5 226,-97.5 365,-97.5 365,-67.5 226,-67.5"/>
-<text text-anchor="start" x="234" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/individual</text>
-<text text-anchor="middle" x="295.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.h</text>
+<g id="a_node4"><a xlink:href="../../d4/d90/fvupdater_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="444,-140 444,-159 597,-159 597,-140 444,-140"/>
+<text text-anchor="middle" x="520.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/fervor/fvupdater.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M424.52,-193.42C410.71,-176.21 390.18,-152.25 369.5,-134 353.87,-120.21 334.33,-107.02 319.25,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="421.78,-195.61 430.73,-201.28 427.27,-191.26 421.78,-195.61"/>
+<path fill="none" stroke="midnightblue" d="M447.04,-195.97C466.95,-183.65 491.67,-168.35 506.76,-159.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="444.94,-193.16 438.28,-201.4 448.63,-199.11 444.94,-193.16"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="../../da/d2c/abstract__m__converter_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="218,-134.5 218,-164.5 349,-164.5 349,-134.5 218,-134.5"/>
+<text text-anchor="start" x="226" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
+<text text-anchor="middle" x="283.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_m_converter.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node5 -->
+<g id="edge4" class="edge">
+<title>Node1&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M377.63,-196.85C356.76,-186.58 331.27,-174.03 312.09,-164.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="376.34,-200.12 386.86,-201.4 379.43,-193.84 376.34,-200.12"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -124,220 +139,205 @@ var sectionId = 'dynsection-1';
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge6" class="edge">
+<g id="edge14" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M441.5,-191.02C441.5,-163.51 441.5,-119.79 441.5,-97.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="438,-191.37 441.5,-201.37 445,-191.37 438,-191.37"/>
-</g>
-<!-- Node9 -->
-<g id="node9" class="node">
-<title>Node9</title>
-<g id="a_node9"><a xlink:href="../../da/d2c/abstract__m__converter_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="230,-134.5 230,-164.5 361,-164.5 361,-134.5 230,-134.5"/>
-<text text-anchor="start" x="238" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/abstract</text>
-<text text-anchor="middle" x="295.5" y="-141.5" font-family="Helvetica,sans-Serif" font-size="10.00">_m_converter.h</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node9 -->
-<g id="edge9" class="edge">
-<title>Node1&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M400.55,-197.27C377.3,-186.92 348.63,-174.15 327.12,-164.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="399.26,-200.53 409.82,-201.4 402.11,-194.13 399.26,-200.53"/>
+<path fill="none" stroke="midnightblue" d="M420.25,-191.39C425.66,-163.9 434.33,-119.89 438.74,-97.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="416.78,-190.89 418.28,-201.37 423.65,-192.24 416.78,-190.89"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../d5/d35/vlabeltemplateconverter_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="503.5,-140 503.5,-159 723.5,-159 723.5,-140 503.5,-140"/>
-<text text-anchor="middle" x="613.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vlabeltemplateconverter.h</text>
+<g id="a_node10"><a xlink:href="../../d0/d93/individual__size__converter_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="188,-67.5 188,-97.5 327,-97.5 327,-67.5 188,-67.5"/>
+<text text-anchor="start" x="196" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/individual</text>
+<text text-anchor="middle" x="257.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge15" class="edge">
 <title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M488.38,-197.78C521.73,-185.18 565.05,-168.81 590.99,-159.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="486.94,-194.59 478.82,-201.4 489.41,-201.13 486.94,-194.59"/>
+<path fill="none" stroke="midnightblue" d="M403.04,-192.12C392.7,-174.42 376.61,-150.43 357.5,-134 339.36,-118.41 315.56,-106.14 295.74,-97.6"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="400.22,-194.24 408.18,-201.22 406.31,-190.79 400.22,-194.24"/>
 </g>
-<!-- Node13 -->
-<g id="node13" class="node">
-<title>Node13</title>
-<g id="a_node13"><a xlink:href="../../df/d2f/vpatternconverter_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="860,-140 860,-159 1047,-159 1047,-140 860,-140"/>
-<text text-anchor="middle" x="953.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vpatternconverter.h</text>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="../../d5/d35/vlabeltemplateconverter_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="615.5,-140 615.5,-159 835.5,-159 835.5,-140 615.5,-140"/>
+<text text-anchor="middle" x="725.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vlabeltemplateconverter.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node13 -->
-<g id="edge18" class="edge">
-<title>Node1&#45;&gt;Node13</title>
-<path fill="none" stroke="midnightblue" d="M517.13,-205.9C616.85,-193.24 790.78,-171.16 886.16,-159.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="516.61,-202.44 507.13,-207.17 517.49,-209.38 516.61,-202.44"/>
+<!-- Node1&#45;&gt;Node11 -->
+<g id="edge16" class="edge">
+<title>Node1&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M491.2,-199.63C552.12,-186.85 635.4,-169.39 684.51,-159.09"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="490.31,-196.24 481.24,-201.72 491.75,-203.09 490.31,-196.24"/>
 </g>
-<!-- Node15 -->
-<g id="node15" class="node">
-<title>Node15</title>
-<g id="a_node15"><a xlink:href="../../d5/d2c/vpatternconverter_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node14 -->
+<g id="node14" class="node">
+<title>Node14</title>
+<g id="a_node14"><a xlink:href="../../df/d2f/vpatternconverter_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="979,-140 979,-159 1166,-159 1166,-140 979,-140"/>
+<text text-anchor="middle" x="1072.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vpatternconverter.h</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node14 -->
+<g id="edge19" class="edge">
+<title>Node1&#45;&gt;Node14</title>
+<path fill="none" stroke="midnightblue" d="M491.29,-208C614.36,-195.83 856.89,-171.83 986.33,-159.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="490.81,-204.53 481.2,-209 491.5,-211.5 490.81,-204.53"/>
+</g>
+<!-- Node16 -->
+<g id="node16" class="node">
+<title>Node16</title>
+<g id="a_node16"><a xlink:href="../../d5/d2c/vpatternconverter_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="1186.5,-73 1186.5,-92 1384.5,-92 1384.5,-73 1186.5,-73"/>
 <text text-anchor="middle" x="1285.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vpatternconverter.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node15 -->
-<g id="edge22" class="edge">
-<title>Node1&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M517.49,-214.73C659.52,-212.39 959.57,-202.97 1055.5,-165 1076.09,-156.85 1074.71,-143.93 1094.5,-134 1137.27,-112.54 1190.14,-99.47 1229.41,-92.02"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="517.07,-211.23 507.13,-214.89 517.18,-218.23 517.07,-211.23"/>
-</g>
-<!-- Node16 -->
-<g id="node16" class="node">
-<title>Node16</title>
-<g id="a_node16"><a xlink:href="../../d4/d90/fvupdater_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1103,-140 1103,-159 1256,-159 1256,-140 1103,-140"/>
-<text text-anchor="middle" x="1179.5" y="-147" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/fervor/fvupdater.cpp</text>
-</a>
-</g>
-</g>
 <!-- Node1&#45;&gt;Node16 -->
-<g id="edge21" class="edge">
+<g id="edge22" class="edge">
 <title>Node1&#45;&gt;Node16</title>
-<path fill="none" stroke="midnightblue" d="M517.61,-211.54C638.75,-204.79 882.75,-189.38 1088.5,-165 1102.16,-163.38 1116.92,-161.21 1130.48,-159.05"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="517.13,-208.06 507.34,-212.11 517.51,-215.05 517.13,-208.06"/>
+<path fill="none" stroke="midnightblue" d="M491.22,-215.81C657.69,-215.62 1050.55,-210.23 1174.5,-165 1218.52,-148.94 1260.2,-109.7 1277.32,-92.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="491.06,-212.31 481.06,-215.81 491.06,-219.31 491.06,-212.31"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="../../d5/d6e/individual__size__converter_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="73,-0.5 73,-30.5 212,-30.5 212,-0.5 73,-0.5"/>
-<text text-anchor="start" x="81" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/individual</text>
-<text text-anchor="middle" x="142.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node4&#45;&gt;Node5 -->
-<g id="edge4" class="edge">
-<title>Node4&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M252.91,-63.41C228.48,-53.03 198.28,-40.2 175.63,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="251.73,-66.71 262.3,-67.4 254.47,-60.26 251.73,-66.71"/>
+<!-- Node5&#45;&gt;Node3 -->
+<g id="edge5" class="edge">
+<title>Node5&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M226.75,-131.58C191.34,-121.02 146.3,-107.59 112.83,-97.61"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="225.88,-134.97 236.47,-134.48 227.88,-128.26 225.88,-134.97"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
-<g id="a_node6"><a xlink:href="../../d9/de3/measurements_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="364.5,-6 364.5,-25 554.5,-25 554.5,-6 364.5,-6"/>
-<text text-anchor="middle" x="459.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vformat/measurements.cpp</text>
+<g id="a_node6"><a xlink:href="../../d5/d6e/individual__size__converter_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="54,-0.5 54,-30.5 193,-30.5 193,-0.5 54,-0.5"/>
+<text text-anchor="start" x="62" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/individual</text>
+<text text-anchor="middle" x="123.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node4&#45;&gt;Node6 -->
-<g id="edge5" class="edge">
-<title>Node4&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M340.61,-63.62C372.35,-51.04 413.41,-34.77 438.04,-25.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="339.09,-60.46 331.09,-67.4 341.67,-66.97 339.09,-60.46"/>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge6" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M232.5,-130.45C214.19,-122.38 194.2,-111.57 178.5,-98 156.16,-78.69 138.89,-48.26 130.05,-30.56"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="231.32,-133.75 241.89,-134.43 234.05,-127.31 231.32,-133.75"/>
 </g>
-<!-- Node7&#45;&gt;Node6 -->
-<g id="edge8" class="edge">
-<title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M448.12,-57.6C451.25,-46.28 454.8,-33.46 457.09,-25.19"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="444.7,-56.82 445.41,-67.4 451.45,-58.69 444.7,-56.82"/>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge7" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<path fill="none" stroke="midnightblue" d="M327.15,-130.54C352.43,-120.14 383.8,-107.24 407.28,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="325.7,-127.35 317.78,-134.4 328.36,-133.83 325.7,-127.35"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../d9/d94/multi__size__converter_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="230.5,-0.5 230.5,-30.5 346.5,-30.5 346.5,-0.5 230.5,-0.5"/>
-<text text-anchor="start" x="238.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/multi</text>
-<text text-anchor="middle" x="288.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.cpp</text>
+<polygon fill="white" stroke="black" points="419.5,-0.5 419.5,-30.5 535.5,-30.5 535.5,-0.5 419.5,-0.5"/>
+<text text-anchor="start" x="427.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/multi</text>
+<text text-anchor="middle" x="477.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_size_converter.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge7" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M398.91,-63.41C374.48,-53.03 344.28,-40.2 321.63,-30.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="397.73,-66.71 408.3,-67.4 400.47,-60.26 397.73,-66.71"/>
-</g>
-<!-- Node9&#45;&gt;Node3 -->
-<g id="edge10" class="edge">
-<title>Node9&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M236.11,-131.71C198.68,-121.14 150.9,-107.63 115.43,-97.61"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="235.3,-135.12 245.88,-134.48 237.21,-128.39 235.3,-135.12"/>
-</g>
-<!-- Node9&#45;&gt;Node4 -->
-<g id="edge12" class="edge">
-<title>Node9&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M295.5,-124.11C295.5,-115.15 295.5,-105.32 295.5,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="292,-124.4 295.5,-134.4 299,-124.4 292,-124.4"/>
-</g>
-<!-- Node9&#45;&gt;Node5 -->
-<g id="edge11" class="edge">
-<title>Node9&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M256.18,-129.64C240.5,-121.14 222.81,-110.25 208.5,-98 184.85,-77.75 163.35,-48.19 151.67,-30.79"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="254.67,-132.8 265.15,-134.36 257.93,-126.61 254.67,-132.8"/>
-</g>
-<!-- Node9&#45;&gt;Node7 -->
+<!-- Node5&#45;&gt;Node8 -->
 <g id="edge13" class="edge">
-<title>Node9&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M336.45,-130.27C359.7,-119.92 388.37,-107.15 409.88,-97.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="334.89,-127.13 327.18,-134.4 337.74,-133.53 334.89,-127.13"/>
+<title>Node5&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M305.57,-127.45C327.63,-106.65 360.26,-76.6 374.5,-67 395.97,-52.53 422.19,-39.73 442.81,-30.64"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="303.12,-124.96 298.26,-134.38 307.93,-130.04 303.12,-124.96"/>
 </g>
-<!-- Node9&#45;&gt;Node8 -->
-<g id="edge14" class="edge">
-<title>Node9&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M249.23,-129.41C236.3,-121.67 223.81,-111.34 216.5,-98 209.88,-85.92 210.14,-79.22 216.5,-67 224.88,-50.88 241.03,-38.84 255.91,-30.56"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="247.74,-132.59 258.19,-134.36 251.13,-126.46 247.74,-132.59"/>
+<!-- Node5&#45;&gt;Node10 -->
+<g id="edge10" class="edge">
+<title>Node5&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M274.1,-124.99C270.42,-115.8 266.33,-105.58 263.13,-97.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="270.89,-126.41 277.86,-134.4 277.39,-123.81 270.89,-126.41"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d7/d63/vlabeltemplateconverter_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node7&#45;&gt;Node8 -->
+<g id="edge8" class="edge">
+<title>Node7&#45;&gt;Node8</title>
+<path fill="none" stroke="midnightblue" d="M454.2,-58.58C459.37,-49.24 465.18,-38.75 469.7,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="451.09,-56.95 449.31,-67.4 457.22,-60.34 451.09,-56.95"/>
+</g>
+<!-- Node9 -->
+<g id="node9" class="node">
+<title>Node9</title>
+<g id="a_node9"><a xlink:href="../../d9/de3/measurements_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="211.5,-6 211.5,-25 401.5,-25 401.5,-6 211.5,-6"/>
+<text text-anchor="middle" x="306.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vformat/measurements.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node9 -->
+<g id="edge9" class="edge">
+<title>Node7&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M403.01,-62.97C377.08,-50.48 344.09,-34.6 324.17,-25.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="401.68,-66.21 412.21,-67.4 404.72,-59.9 401.68,-66.21"/>
+</g>
+<!-- Node10&#45;&gt;Node6 -->
+<g id="edge11" class="edge">
+<title>Node10&#45;&gt;Node6</title>
+<path fill="none" stroke="midnightblue" d="M219.35,-62.99C198.11,-52.69 172.09,-40.07 152.52,-30.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="217.9,-66.18 228.42,-67.4 220.95,-59.88 217.9,-66.18"/>
+</g>
+<!-- Node10&#45;&gt;Node9 -->
+<g id="edge12" class="edge">
+<title>Node10&#45;&gt;Node9</title>
+<path fill="none" stroke="midnightblue" d="M274.22,-59.32C283.06,-47.6 293.4,-33.88 299.95,-25.19"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="271.36,-57.3 268.13,-67.4 276.95,-61.52 271.36,-57.3"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="../../d7/d63/vlabeltemplateconverter_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="727,-73 727,-92 958,-92 958,-73 727,-73"/>
 <text text-anchor="middle" x="842.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vlabeltemplateconverter.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge16" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M653.69,-137.09C699,-124.23 771.62,-103.62 812.33,-92.06"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="652.57,-133.77 643.91,-139.87 654.49,-140.5 652.57,-133.77"/>
+<!-- Node11&#45;&gt;Node12 -->
+<g id="edge17" class="edge">
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M750.18,-134.79C773.37,-121.9 807.36,-103.02 826.97,-92.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="748.32,-131.82 741.28,-139.73 751.72,-137.94 748.32,-131.82"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="../../d9/daf/vlabeltemplate_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node13 -->
+<g id="node13" class="node">
+<title>Node13</title>
+<g id="a_node13"><a xlink:href="../../d9/daf/vlabeltemplate_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="518,-73 518,-92 709,-92 709,-73 518,-73"/>
 <text text-anchor="middle" x="613.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vformat/vlabeltemplate.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node12 -->
-<g id="edge17" class="edge">
-<title>Node10&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M613.5,-129.54C613.5,-117.17 613.5,-101.62 613.5,-92.13"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="610,-129.73 613.5,-139.73 617,-129.73 610,-129.73"/>
+<!-- Node11&#45;&gt;Node13 -->
+<g id="edge18" class="edge">
+<title>Node11&#45;&gt;Node13</title>
+<path fill="none" stroke="midnightblue" d="M701.58,-134.62C679.39,-121.74 647.06,-102.98 628.37,-92.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="699.99,-137.74 710.4,-139.73 703.5,-131.69 699.99,-137.74"/>
 </g>
-<!-- Node14 -->
-<g id="node14" class="node">
-<title>Node14</title>
-<g id="a_node14"><a xlink:href="../../de/d7d/vabstractpattern_8cpp.html" target="_top" xlink:title=" ">
+<!-- Node15 -->
+<g id="node15" class="node">
+<title>Node15</title>
+<g id="a_node15"><a xlink:href="../../de/d7d/vabstractpattern_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="976.5,-73 976.5,-92 1168.5,-92 1168.5,-73 976.5,-73"/>
 <text text-anchor="middle" x="1072.5" y="-80" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/ifc/xml/vabstractpattern.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node14 -->
-<g id="edge19" class="edge">
-<title>Node13&#45;&gt;Node14</title>
-<path fill="none" stroke="midnightblue" d="M978.61,-134.79C1002.19,-121.9 1036.76,-103.02 1056.71,-92.13"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="976.65,-131.87 969.55,-139.73 980,-138.01 976.65,-131.87"/>
-</g>
-<!-- Node13&#45;&gt;Node15 -->
+<!-- Node14&#45;&gt;Node15 -->
 <g id="edge20" class="edge">
-<title>Node13&#45;&gt;Node15</title>
-<path fill="none" stroke="midnightblue" d="M1007.34,-137.96C1072.69,-125.16 1181.59,-103.84 1241.92,-92.03"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1006.39,-134.58 997.24,-139.94 1007.73,-141.45 1006.39,-134.58"/>
+<title>Node14&#45;&gt;Node15</title>
+<path fill="none" stroke="midnightblue" d="M1072.5,-129.54C1072.5,-117.17 1072.5,-101.62 1072.5,-92.13"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1069,-129.73 1072.5,-139.73 1076,-129.73 1069,-129.73"/>
+</g>
+<!-- Node14&#45;&gt;Node16 -->
+<g id="edge21" class="edge">
+<title>Node14&#45;&gt;Node16</title>
+<path fill="none" stroke="midnightblue" d="M1110.42,-136.93C1152.59,-124.06 1219.73,-103.57 1257.44,-92.06"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1109.33,-133.6 1100.78,-139.87 1111.37,-140.3 1109.33,-133.6"/>
 </g>
 </g>
 </svg>
