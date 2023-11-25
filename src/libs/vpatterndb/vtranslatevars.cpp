@@ -397,33 +397,33 @@ void VTranslateVars::InitPatternMakingSystems()
 //---------------------------------------------------------------------------------------------------------------------
 void VTranslateVars::InitVariables()
 {
-    variables.insert(measurement_, translate("VTranslateVars", "M_", "Left symbol _ in the name"));
-    variables.insert(variable_, translate("VTranslateVars", "Variable_", "Left symbol _ in the name"));
-    variables.insert(line_, translate("VTranslateVars", "Line_", "Left symbol _ in the name"));
-    variables.insert(angleLine_, translate("VTranslateVars", "AngleLine_", "Left symbol _ in the name"));
-    variables.insert(arc_, translate("VTranslateVars", "Arc_", "Left symbol _ in the name"));
-    variables.insert(elarc_, translate("VTranslateVars", "ElArc_", "Left symbol _ in the name"));
-    variables.insert(spl_, translate("VTranslateVars", "Spl_", "Left symbol _ in the name"));
+    variables.insert(measurement_, translate("VTranslateVars", "M_", "Leave the _ symbol in translation"));
+    variables.insert(variable_, translate("VTranslateVars", "Variable_", "Leave the _ symbol in translation"));
+    variables.insert(line_, translate("VTranslateVars", "Line_", "Leave the _ symbol in translation"));
+    variables.insert(angleLine_, translate("VTranslateVars", "AngleLine_", "Leave the _ symbol in translation"));
+    variables.insert(arc_, translate("VTranslateVars", "Arc_", "Leave the _ symbol in translation"));
+    variables.insert(elarc_, translate("VTranslateVars", "ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(spl_, translate("VTranslateVars", "Spl_", "Leave the _ symbol in translation"));
     variables.insert(splPath, translate("VTranslateVars", "SplPath", "Do not add symbol _ to the end of the name"));
-    variables.insert(radiusArc_, translate("VTranslateVars", "RadiusArc_", "Left symbol _ in the name"));
-    variables.insert(radius1ElArc_, translate("VTranslateVars", "Radius1ElArc_", "Left symbol _ in the name"));
-    variables.insert(radius2ElArc_, translate("VTranslateVars", "Radius2ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle1Arc_, translate("VTranslateVars", "Angle1Arc_", "Left symbol _ in the name"));
-    variables.insert(angle2Arc_, translate("VTranslateVars", "Angle2Arc_", "Left symbol _ in the name"));
-    variables.insert(angle1ElArc_, translate("VTranslateVars", "Angle1ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle2ElArc_, translate("VTranslateVars", "Angle2ElArc_", "Left symbol _ in the name"));
-    variables.insert(angle1Spl_, translate("VTranslateVars", "Angle1Spl_", "Left symbol _ in the name"));
-    variables.insert(angle2Spl_, translate("VTranslateVars", "Angle2Spl_", "Left symbol _ in the name"));
+    variables.insert(radiusArc_, translate("VTranslateVars", "RadiusArc_", "Leave the _ symbol in translation"));
+    variables.insert(radius1ElArc_, translate("VTranslateVars", "Radius1ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(radius2ElArc_, translate("VTranslateVars", "Radius2ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1Arc_, translate("VTranslateVars", "Angle1Arc_", "Leave the _ symbol in translation"));
+    variables.insert(angle2Arc_, translate("VTranslateVars", "Angle2Arc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1ElArc_, translate("VTranslateVars", "Angle1ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle2ElArc_, translate("VTranslateVars", "Angle2ElArc_", "Leave the _ symbol in translation"));
+    variables.insert(angle1Spl_, translate("VTranslateVars", "Angle1Spl_", "Leave the _ symbol in translation"));
+    variables.insert(angle2Spl_, translate("VTranslateVars", "Angle2Spl_", "Leave the _ symbol in translation"));
     variables.insert(angle1SplPath, translate("VTranslateVars", "Angle1SplPath",
                                               "Do not add symbol _ to the end of the name"));
     variables.insert(angle2SplPath, translate("VTranslateVars", "Angle2SplPath",
                                               "Do not add symbol _ to the end of the name"));
-    variables.insert(seg_, translate("VTranslateVars", "Seg_", "Segment. Left symbol _ in the name"));
+    variables.insert(seg_, translate("VTranslateVars", "Seg_", "Segment. Leave the _ symbol in translation"));
     variables.insert(currentLength, translate("VTranslateVars", "CurrentLength", "Do not add space between words"));
     variables.insert(currentSeamAllowance, translate("VTranslateVars", "CurrentSeamAllowance",
                                                      "Do not add space between words"));
-    variables.insert(c1LengthSpl_, translate("VTranslateVars", "C1LengthSpl_", "Left symbol _ in the name"));
-    variables.insert(c2LengthSpl_, translate("VTranslateVars", "C2LengthSpl_", "Left symbol _ in the name"));
+    variables.insert(c1LengthSpl_, translate("VTranslateVars", "C1LengthSpl_", "Leave the _ symbol in translation"));
+    variables.insert(c2LengthSpl_, translate("VTranslateVars", "C2LengthSpl_", "Leave the _ symbol in translation"));
     variables.insert(c1LengthSplPath, translate("VTranslateVars", "C1LengthSplPath",
                                                 "Do not add symbol _ to the end of the name"));
     variables.insert(c2LengthSplPath, translate("VTranslateVars", "C2LengthSplPath",
