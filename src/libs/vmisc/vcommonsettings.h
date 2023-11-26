@@ -89,6 +89,10 @@ public:
     QString              getMultisizePath() const;
     void                 setMultisizePath(const QString &value);
 
+    static QString       getDefaultBodyScansPath();
+    QString              getBodyScansPath() const;
+    void                 setBodyScansPath(const QString &value);
+
     static QString       getDefaultTemplatePath();
     QString              getTemplatePath() const;
     void                 setTemplatePath(const QString &value);
@@ -249,6 +253,39 @@ public:
 
     bool                 getConstrainModKey() const;
     void                 setConstrainModKey(const bool &value);
+
+    QString              getCompanyName() const;
+    void                 setCompanyName(const QString &value);
+
+    QString              getContact() const;
+    void                 setContact(const QString &value);
+
+    QString              getAddress() const;
+    void                 setAddress(const QString &value);
+
+    QString              getCity() const;
+    void                 setCity(const QString &value);
+
+    QString              getState() const;
+    void                 setState(const QString &value);
+
+    QString              getZipcode() const;
+    void                 setZipcode(const QString &value);
+
+    QString              getCountry() const;
+    void                 setCountry(const QString &value);
+
+    QString              getTelephone() const;
+    void                 setTelephone(const QString &value);
+
+    QString              getFax() const;
+    void                 setFax(const QString &value);
+
+    QString              getEmail() const;
+    void                 setEmail(const QString &value);
+
+    QString              getWebsite() const;
+    void                 setWebsite(const QString &value);
 
     int                  GetUndoCount() const;
     void                 SetUndoCount(const int &value);

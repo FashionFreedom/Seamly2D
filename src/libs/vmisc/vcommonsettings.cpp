@@ -76,7 +76,20 @@ namespace
 const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_measurements");
 const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/standard_measurements");
 const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
+const QString settingPathsBodyScans                      = QStringLiteral("paths/bodyscans");
 const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
+
+const QString settingConfigurationCompanyName            = QStringLiteral("graphicsview/companyName");
+const QString settingConfigurationContact                = QStringLiteral("graphicsview/contact");
+const QString settingConfigurationAddress                = QStringLiteral("graphicsview/address");
+const QString settingConfigurationCity                   = QStringLiteral("graphicsview/city");
+const QString settingConfigurationState                  = QStringLiteral("graphicsview/state");
+const QString settingConfigurationZipcode                = QStringLiteral("graphicsview/zipcode");
+const QString settingConfigurationCountry                = QStringLiteral("graphicsview/country");
+const QString settingConfigurationTelephone              = QStringLiteral("graphicsview/telephone");
+const QString settingConfigurationFax                    = QStringLiteral("graphicsview/fax");
+const QString settingConfigurationEmail                  = QStringLiteral("graphicsview/email");
+const QString settingConfigurationWebsite                = QStringLiteral("graphicsview/website");
 
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
@@ -451,6 +464,27 @@ void VCommonSettings::setTemplatePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
     settings.setValue(settingPathsTemplates, value);
+    settings.sync();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultBodyScansPath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("bodyscans");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getBodyScansPath() const
+{
+    QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
+    return settings.value(settingPathsBodyScans, getDefaultBodyScansPath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setBodyScansPath(const QString &value)
+{
+    QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
+    settings.setValue(settingPathsBodyScans, value);
     settings.sync();
 }
 
@@ -1093,6 +1127,117 @@ bool VCommonSettings::getConstrainModKey() const
 void VCommonSettings::setConstrainModKey(const bool &value)
 {
     setValue(settingGraphicsViewConstrainModKey, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getCompanyName() const
+{
+    return value(settingConfigurationCompanyName, "").toString();
+}
+
+void VCommonSettings::setCompanyName(const QString &value)
+{
+    setValue(settingConfigurationCompanyName, value);
+}
+
+QString VCommonSettings::getContact() const
+{
+    return value(settingConfigurationContact, "").toString();
+}
+
+void VCommonSettings::setContact(const QString &value)
+{
+    setValue(settingConfigurationContact, value);
+}
+
+QString VCommonSettings::getAddress() const
+{
+    return value(settingConfigurationAddress, "").toString();
+}
+
+void VCommonSettings::setAddress(const QString &value)
+{
+    setValue(settingConfigurationAddress, value);
+}
+
+QString VCommonSettings::getCity() const
+{
+    return value(settingConfigurationCity, "").toString();
+}
+
+void VCommonSettings::setCity(const QString &value)
+{
+    setValue(settingConfigurationCity, value);
+}
+
+QString VCommonSettings::getState() const
+{
+    return value(settingConfigurationState, "").toString();
+}
+
+void VCommonSettings::setState(const QString &value)
+{
+    setValue(settingConfigurationState, value);
+}
+
+QString VCommonSettings::getZipcode() const
+{
+    return value(settingConfigurationZipcode, "").toString();
+}
+
+void VCommonSettings::setZipcode(const QString &value)
+{
+    setValue(settingConfigurationZipcode, value);
+}
+
+QString VCommonSettings::getCountry() const
+{
+    return value(settingConfigurationCountry, "").toString();
+}
+
+void VCommonSettings::setCountry(const QString &value)
+{
+    setValue(settingConfigurationCountry, value);
+}
+
+QString VCommonSettings::getTelephone() const
+{
+    return value(settingConfigurationTelephone, "").toString();
+}
+
+void VCommonSettings::setTelephone(const QString &value)
+{
+    setValue(settingConfigurationTelephone, value);
+}
+
+QString VCommonSettings::getFax() const
+{
+    return value(settingConfigurationFax, "").toString();
+}
+
+void VCommonSettings::setFax(const QString &value)
+{
+    setValue(settingConfigurationFax, value);
+}
+
+QString VCommonSettings::getEmail() const
+{
+    return value(settingConfigurationEmail, "").toString();
+}
+
+void VCommonSettings::setEmail(const QString &value)
+{
+    setValue(settingConfigurationEmail, value);
+}
+
+QString VCommonSettings::getWebsite() const
+{
+    return value(settingConfigurationWebsite, "").toString();
+}
+
+void VCommonSettings::setWebsite(const QString &value)
+{
+    setValue(settingConfigurationWebsite, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
