@@ -14002,22 +14002,22 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Line_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Lijn_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>HoekLijn_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Boog_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Vvk_</translation>
     </message>
     <message>
@@ -14027,27 +14027,27 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>RadiusArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Straalboog_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Hoek1boog_</translation>
     </message>
     <message>
         <source>Angle2Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Hoek2boog_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Hoek1Vvk_</translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Hoek2Vvk_</translation>
     </message>
     <message>
@@ -14062,7 +14062,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Seg_</source>
-        <comment>Segment. Left symbol _ in the name</comment>
+        <comment>Segment. Leave the _ symbol in translation</comment>
         <translation>Seg_</translation>
     </message>
     <message>
@@ -14082,12 +14082,12 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>C1LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C1LengteVvk_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C2LengteVvk_</translation>
     </message>
     <message>
@@ -14107,32 +14107,32 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>M_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>M_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>ElArc_</translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius1ElArc_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius2ElArc_</translation>
     </message>
     <message>
         <source>Angle1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle1ElArc_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle2ElArc_</translation>
     </message>
     <message>
@@ -14257,7 +14257,7 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Variable_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Variable_</translation>
     </message>
     <message>

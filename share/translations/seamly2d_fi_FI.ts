@@ -13993,22 +13993,22 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Line_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished">Viiva_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished">KulmaViiva_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished">Kaari_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished">Spl_</translation>
     </message>
     <message>
@@ -14018,27 +14018,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>RadiusArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle2Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14053,7 +14053,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seg_</source>
-        <comment>Segment. Left symbol _ in the name</comment>
+        <comment>Segment. Leave the _ symbol in translation</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14073,12 +14073,12 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>C1LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14098,32 +14098,32 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>M_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14248,7 +14248,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Variable_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
