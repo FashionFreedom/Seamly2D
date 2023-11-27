@@ -373,7 +373,7 @@ enum class GSizes : unsigned char { ALL,
 
 extern const QString LONG_OPTION_NO_HDPI_SCALING;
 bool IsOptionSet(int argc, char *argv[], const char *option);
-void InitHighDpiScaling(int argc, char *argv[]);
+void initHighDpiScaling(int argc, char *argv[]);
 
 // functions
 extern const QString degTorad_F;

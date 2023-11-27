@@ -36,7 +36,8 @@ include(seamlyme.pri)
 
 RESOURCES += \
     share/resources/seamlymeicon.qrc \
-    share/resources/diagrams.qrc
+    share/resources/diagrams.qrc \
+    share/resources/splash.qrc
 
 # INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
 include(../tables.pri)
@@ -245,3 +246,6 @@ win32{
     # run windeployqt to include all qt libraries and vc_redist in $${DESTDIR}
     QMAKE_POST_LINK += windeployqt $$shell_path($$DESTDIR/$${TARGET}.exe)
 }
+
+DISTFILES += \
+    share/resources/splash/Coming Soon.png
