@@ -70,7 +70,7 @@ class PiecesWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit           PiecesWidget(VContainer *data, VAbstractPattern *doc, QWidget *parent = nullptr);
+    explicit           PiecesWidget(VContainer *data, VAbstractPattern *doc,  QWidget *parent = nullptr);
     virtual           ~PiecesWidget();
 
 signals:
@@ -86,15 +86,29 @@ private slots:
     void               cellDoubleClicked(int row, int column);
     void               showContextMenu(const QPoint &pos);
 
+protected:
+    virtual void       changeEvent(QEvent* event) Q_DECL_OVERRIDE;
+
 private:
     Q_DISABLE_COPY(PiecesWidget)
-    Ui::PiecesWidget  *ui;
-    VAbstractPattern  *m_doc;
-    VContainer        *m_data;
+    Ui::PiecesWidget             *ui;
+    VAbstractPattern             *m_doc;
+    VContainer                   *m_data;
+    const QHash<quint32, VPiece> *m_allPieces;
 
     void               fillTable(const QHash<quint32, VPiece> *details);
     void               toggleInLayoutPieces(bool inLayout);
     void               toggleLockedPieces(bool lock);
+    void               headerClicked(int index);
+    QString            formatLetterString(const VPiece piece);
+    void               includeAllPieces();
+    void               invertIncludedPieces();
+    void               excludeAllPieces();
+    void               lockAllPieces();
+    void               invertLockedPieces();
+    void               unlockAllPieces();
+    void               editPieceColor(quint32 id);
+    void               editPieceProperties(quint32 id);
 };
 
 #endif // PIECES_WIDGET_H
