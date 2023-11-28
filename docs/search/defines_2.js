@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['converter_5fversion_5fcheck_19151',['CONVERTER_VERSION_CHECK',['../d0/da1/abstract__converter_8h.html#a84d8d5101c009ef420b2a531fb6fbdfa',1,'abstract_converter.h']]]
+  ['base_5f10_19163',['BASE_10',['../d5/d7b/pieces__widget_8cpp.html#a28058f70322c00eacb48599400efaa2d',1,'pieces_widget.cpp']]]
 ];

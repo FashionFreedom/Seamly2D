@@ -59,43 +59,43 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="145.5,-89.5 145.5,-119.5 312.5,-119.5 312.5,-89.5 145.5,-89.5"/>
-<text text-anchor="start" x="153.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="229" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="173.5,-89.5 173.5,-119.5 340.5,-119.5 340.5,-89.5 173.5,-89.5"/>
+<text text-anchor="start" x="181.5" y="-107.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="257" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.h</text>
 </a>
 </g>
 </g>
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 122,-41.5 122,-11.5 0,-11.5"/>
+<g id="a_node2"><a xlink:href="../../de/d3c/dialoglineintersectaxis_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-11.5 0,-41.5 178,-41.5 178,-11.5 0,-11.5"/>
 <text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="61" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
+<text text-anchor="middle" x="89" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M188.54,-85.2C158.89,-71.78 119.22,-53.84 92.04,-41.54"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="187.24,-88.45 197.79,-89.38 190.13,-82.07 187.24,-88.45"/>
+<path fill="none" stroke="midnightblue" d="M216.54,-85.2C186.89,-71.78 147.22,-53.84 120.04,-41.54"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="215.24,-88.45 225.79,-89.38 218.13,-82.07 215.24,-88.45"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../de/d3c/dialoglineintersectaxis_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="140,-11.5 140,-41.5 318,-41.5 318,-11.5 140,-11.5"/>
-<text text-anchor="start" x="148" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
-<text text-anchor="middle" x="229" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tools/dialoglineintersectaxis.cpp</text>
+<g id="a_node3"><a xlink:href="../../df/ded/tooldialogs_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="196,-11.5 196,-41.5 318,-41.5 318,-11.5 196,-11.5"/>
+<text text-anchor="start" x="204" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/dialogs</text>
+<text text-anchor="middle" x="257" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldialogs.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M229,-79.09C229,-66.76 229,-52.22 229,-41.73"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="225.5,-79.2 229,-89.2 232.5,-79.21 225.5,-79.2"/>
+<path fill="none" stroke="midnightblue" d="M257,-79.09C257,-66.76 257,-52.22 257,-41.73"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="253.5,-79.2 257,-89.2 260.5,-79.21 253.5,-79.2"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
@@ -112,8 +112,8 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M273.11,-85.48C297.13,-75.66 327.24,-63.36 353.53,-52.62"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="271.48,-82.36 263.55,-89.38 274.13,-88.84 271.48,-82.36"/>
+<path fill="none" stroke="midnightblue" d="M295.56,-84.95C315.78,-75.22 340.85,-63.17 362.79,-52.62"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="293.84,-81.89 286.35,-89.38 296.88,-88.2 293.84,-81.89"/>
 </g>
 </g>
 </svg>

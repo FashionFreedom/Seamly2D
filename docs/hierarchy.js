@@ -306,6 +306,7 @@ var hierarchy =
     [ "QHash< quint32, QDomElement >", "da/da1/classQHash.html", null ],
     [ "QHash< quint32, QSharedPointer< VGObject > >", "da/da1/classQHash.html", null ],
     [ "QHash< quint32, VDataTool * >", "da/da1/classQHash.html", null ],
+    [ "QHash< quint32, VPiece >", "da/da1/classQHash.html", null ],
     [ "QLineEdit", null, [
       [ "VLineEdit", "d7/d0f/classVLineEdit.html", null ]
     ] ],

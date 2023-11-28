@@ -59,7 +59,7 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "layoutsettings_dialog.h", "d3/dd8/layoutsettings__dialog_8h.html", [
       [ "LayoutSettingsDialog", "db/d32/classLayoutSettingsDialog.html", "db/d32/classLayoutSettingsDialog" ]
     ] ],
-    [ "pieces_widget.cpp", "d5/d7b/pieces__widget_8cpp.html", null ],
+    [ "pieces_widget.cpp", "d5/d7b/pieces__widget_8cpp.html", "d5/d7b/pieces__widget_8cpp" ],
     [ "pieces_widget.h", "d7/d18/pieces__widget_8h.html", [
       [ "PiecesWidget", "d4/dc9/classPiecesWidget.html", "d4/dc9/classPiecesWidget" ]
     ] ],

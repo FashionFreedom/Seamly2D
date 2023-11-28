@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['inexact_19167',['INEXACT',['../d6/d2f/predicates_8cpp.html#ad49beae4f708cdfe26352d865ed2eb95',1,'predicates.cpp']]],
-  ['init_5flocale_5fvariables_19168',['INIT_LOCALE_VARIABLES',['../d9/de4/qmudef_8h.html#acf47c8ad7cf93e1e0d8dfabd52e9e45d',1,'qmudef.h']]],
-  ['inside_19169',['INSIDE',['../de/d57/delaunay_8cpp.html#a1a58ace3d61e5eddb10aaee57d9fcba9',1,'delaunay.cpp']]]
+  ['fast_5fpredicate_19177',['FAST_PREDICATE',['../d6/d84/delaunay_8h.html#a222b34bbc338fa4446ff230a0e47d386',1,'delaunay.h']]],
+  ['fast_5ftwo_5fsum_19178',['Fast_Two_Sum',['../d6/d2f/predicates_8cpp.html#ae85afbfee038480d9baf7796514cb121',1,'predicates.cpp']]],
+  ['fast_5ftwo_5fsum_5ftail_19179',['Fast_Two_Sum_Tail',['../d6/d2f/predicates_8cpp.html#afdb937df435c24d5c402eb0fdd97f6da',1,'predicates.cpp']]]
 ];

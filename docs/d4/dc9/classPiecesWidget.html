@@ -97,6 +97,7 @@ $(document).ready(function(){initNavTree('d4/dc9/classPiecesWidget.html','../../
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pri-slots">Private Slots</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -110,7 +111,7 @@ $(document).ready(function(){initNavTree('d4/dc9/classPiecesWidget.html','../../
 <div class="dynheader">
 Inheritance diagram for PiecesWidget:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d9e/classPiecesWidget__inherit__graph.svg" width="191" height="390"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="../../d0/d9e/classPiecesWidget__inherit__graph.svg" width="191" height="566"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
@@ -141,6 +142,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4096645e716572633572dbb8c97ed1a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#ab4096645e716572633572dbb8c97ed1a">~PiecesWidget</a> ()</td></tr>
 <tr class="separator:ab4096645e716572633572dbb8c97ed1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5c91f12e3d799938833f3f2202b4d668"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a5c91f12e3d799938833f3f2202b4d668">changeEvent</a> (QEvent *event) Q_DECL_OVERRIDE</td></tr>
+<tr class="separator:a5c91f12e3d799938833f3f2202b4d668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-slots"></a>
 Private Slots</h2></td></tr>
 <tr class="memitem:a116cf928e4eb5e270e251f5634f60d0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a116cf928e4eb5e270e251f5634f60d0c">cellClicked</a> (int row, int column)</td></tr>
@@ -158,6 +164,28 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:aa0f1aae79966af1605650c5df6cce521"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54841cd64e97a2601c7b4c35cc0bbf4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a54841cd64e97a2601c7b4c35cc0bbf4c">toggleLockedPieces</a> (bool lock)</td></tr>
 <tr class="separator:a54841cd64e97a2601c7b4c35cc0bbf4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7fada8de6074741dc98bd905a6dd8628"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a7fada8de6074741dc98bd905a6dd8628">headerClicked</a> (int index)</td></tr>
+<tr class="memdesc:a7fada8de6074741dc98bd905a6dd8628"><td class="mdescLeft">&#160;</td><td class="mdescRight">headerClicked Sort state whenever header section clicked.  <a href="../../d4/dc9/classPiecesWidget.html#a7fada8de6074741dc98bd905a6dd8628">More...</a><br /></td></tr>
+<tr class="separator:a7fada8de6074741dc98bd905a6dd8628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07218ec375cdd2b4ff476f9df153dea3"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a07218ec375cdd2b4ff476f9df153dea3">formatLetterString</a> (const <a class="el" href="../../d0/dab/classVPiece.html">VPiece</a> piece)</td></tr>
+<tr class="memdesc:a07218ec375cdd2b4ff476f9df153dea3"><td class="mdescLeft">&#160;</td><td class="mdescRight">formatLetterString makes name to include piece letter and piece name  <a href="../../d4/dc9/classPiecesWidget.html#a07218ec375cdd2b4ff476f9df153dea3">More...</a><br /></td></tr>
+<tr class="separator:a07218ec375cdd2b4ff476f9df153dea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a3fda48cb0b4d70a4f09f8ed588ece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a89a3fda48cb0b4d70a4f09f8ed588ece">includeAllPieces</a> ()</td></tr>
+<tr class="separator:a89a3fda48cb0b4d70a4f09f8ed588ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac537e04de5a89909cd40834d28ec48ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#ac537e04de5a89909cd40834d28ec48ac">invertIncludedPieces</a> ()</td></tr>
+<tr class="separator:ac537e04de5a89909cd40834d28ec48ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a023ab01251fcd0ac7cc5a592eadec171"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a023ab01251fcd0ac7cc5a592eadec171">excludeAllPieces</a> ()</td></tr>
+<tr class="separator:a023ab01251fcd0ac7cc5a592eadec171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ebe4e20d2c586ffeb24a62c5deff67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a86ebe4e20d2c586ffeb24a62c5deff67">lockAllPieces</a> ()</td></tr>
+<tr class="separator:a86ebe4e20d2c586ffeb24a62c5deff67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0655edbb3c0020208547dfcba8f2fd24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a0655edbb3c0020208547dfcba8f2fd24">invertLockedPieces</a> ()</td></tr>
+<tr class="separator:a0655edbb3c0020208547dfcba8f2fd24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c1c9c449a885a07701ef7d41ad4478c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a8c1c9c449a885a07701ef7d41ad4478c">unlockAllPieces</a> ()</td></tr>
+<tr class="separator:a8c1c9c449a885a07701ef7d41ad4478c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28e12fbf8b4df4072ceea995983f116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#ae28e12fbf8b4df4072ceea995983f116">editPieceColor</a> (quint32 id)</td></tr>
+<tr class="separator:ae28e12fbf8b4df4072ceea995983f116"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ac107188d9f36974e032602418f6fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#a03ac107188d9f36974e032602418f6fc">editPieceProperties</a> (quint32 id)</td></tr>
+<tr class="separator:a03ac107188d9f36974e032602418f6fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -167,6 +195,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aafa4255cebd84f4e86a0af2904635a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6bb78b6db34fdc506dee3fcbae60b40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d83/classVContainer.html">VContainer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#ac6bb78b6db34fdc506dee3fcbae60b40">m_data</a></td></tr>
 <tr class="separator:ac6bb78b6db34fdc506dee3fcbae60b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7b0dce8089416a1850bf53ad8df9e45"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../da/da1/classQHash.html">QHash</a>&lt; quint32, <a class="el" href="../../d0/dab/classVPiece.html">VPiece</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc9/classPiecesWidget.html#aa7b0dce8089416a1850bf53ad8df9e45">m_allPieces</a></td></tr>
+<tr class="separator:aa7b0dce8089416a1850bf53ad8df9e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -212,9 +242,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">72</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">79</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00233">fillTable()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00645">excludeAllPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">fillTable()</a>, <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00613">includeAllPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00652">lockAllPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00688">unlockAllPieces()</a>.</p>
 
 </div>
 </div>
@@ -241,9 +271,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00090">90</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00168">168</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
 
 </div>
 </div>
@@ -282,11 +312,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">161</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">263</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>, <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
 
 </div>
 </div>
@@ -324,11 +352,134 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">197</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">316</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01983">PatternPieceTool::editPieceProperties()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00649">VAbstractPattern::getTool()</a>, <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">m_doc</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe">SetPieceColor</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>, and <a class="el" href="../../dd/d52/classSetPieceColor.html#a34bf9b4c8cd5148abfdfedd8a05d3b80">SetPieceColor::updateList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00707">editPieceProperties()</a>, <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>.</p>
+</div>
+</div>
+<a id="a5c91f12e3d799938833f3f2202b4d668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c91f12e3d799938833f3f2202b4d668">&#9670;&nbsp;</a></span>changeEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::changeEvent </td>
+          <td>(</td>
+          <td class="paramtype">QEvent *&#160;</td>
+          <td class="paramname"><em>event</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00174">174</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
+
+</div>
+</div>
+<a id="ae28e12fbf8b4df4072ceea995983f116"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28e12fbf8b4df4072ceea995983f116">&#9670;&nbsp;</a></span>editPieceColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::editPieceColor </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">695</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d4/dc9/classPiecesWidget.html#a7b9c38b1dd4bed3600a80ea0f001cfba">Highlight()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6a1415ace152d3e2c8a0bb8864690337fe">SetPieceColor</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, and <a class="el" href="../../dd/d52/classSetPieceColor.html#a34bf9b4c8cd5148abfdfedd8a05d3b80">SetPieceColor::updateList()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">cellDoubleClicked()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>.</p>
+
+</div>
+</div>
+<a id="a03ac107188d9f36974e032602418f6fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ac107188d9f36974e032602418f6fc">&#9670;&nbsp;</a></span>editPieceProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::editPieceProperties </td>
+          <td>(</td>
+          <td class="paramtype">quint32&#160;</td>
+          <td class="paramname"><em>id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00707">707</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dea/pattern__piece__tool_8cpp_source.html#l01983">PatternPieceTool::editPieceProperties()</a>, <a class="el" href="../../de/d7d/vabstractpattern_8cpp_source.html#l00649">VAbstractPattern::getTool()</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">cellDoubleClicked()</a>.</p>
+
+</div>
+</div>
+<a id="a023ab01251fcd0ac7cc5a592eadec171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a023ab01251fcd0ac7cc5a592eadec171">&#9670;&nbsp;</a></span>excludeAllPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::excludeAllPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00645">645</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
 
 </div>
 </div>
@@ -356,11 +507,87 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">346</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00111">VAbstractPiece::getColor()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00098">VAbstractPiece::GetName()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00376">VPiece::isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00388">VPiece::isLocked()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00504">formatLetterString()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00111">VAbstractPiece::getColor()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00098">VAbstractPiece::GetName()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00376">VPiece::isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00388">VPiece::isLocked()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00409">makeHeaderName()</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00138">updateList()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00240">updateList()</a>.</p>
+
+</div>
+</div>
+<a id="a07218ec375cdd2b4ff476f9df153dea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07218ec375cdd2b4ff476f9df153dea3">&#9670;&nbsp;</a></span>formatLetterString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QString PiecesWidget::formatLetterString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/dab/classVPiece.html">VPiece</a>&#160;</td>
+          <td class="paramname"><em>piece</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>formatLetterString makes name to include piece letter and piece name </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">piece</td><td>pattern piece </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00504">504</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00075">BASE_10</a>, <a class="el" href="../../de/d4a/vpiecelabeldata_8cpp_source.html#l00077">VPieceLabelData::GetLetter()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00532">VPiece::GetPatternPieceData()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00076">MAX_LENGTH</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">fillTable()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>.</p>
+
+</div>
+</div>
+<a id="a7fada8de6074741dc98bd905a6dd8628"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fada8de6074741dc98bd905a6dd8628">&#9670;&nbsp;</a></span>headerClicked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::headerClicked </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>headerClicked Sort state whenever header section clicked. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
 </div>
 </div>
@@ -388,7 +615,131 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>.</p>
+
+</div>
+</div>
+<a id="a89a3fda48cb0b4d70a4f09f8ed588ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89a3fda48cb0b4d70a4f09f8ed588ece">&#9670;&nbsp;</a></span>includeAllPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::includeAllPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00613">613</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
+
+</div>
+</div>
+<a id="ac537e04de5a89909cd40834d28ec48ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac537e04de5a89909cd40834d28ec48ac">&#9670;&nbsp;</a></span>invertIncludedPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::invertIncludedPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">620</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00097">m_allPieces</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a0655edbb3c0020208547dfcba8f2fd24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0655edbb3c0020208547dfcba8f2fd24">&#9670;&nbsp;</a></span>invertLockedPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::invertLockedPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">659</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00097">m_allPieces</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
+
+</div>
+</div>
+<a id="a86ebe4e20d2c586ffeb24a62c5deff67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ebe4e20d2c586ffeb24a62c5deff67">&#9670;&nbsp;</a></span>lockAllPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::lockAllPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00652">652</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
 
 </div>
 </div>
@@ -416,9 +767,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00145">145</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00247">247</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>.</p>
 
@@ -448,11 +799,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">368</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">521</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">toggleInLayoutPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">toggleLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>, <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00645">excludeAllPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00613">includeAllPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00652">lockAllPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00097">m_allPieces</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00688">unlockAllPieces()</a>.</p>
 
 </div>
 </div>
@@ -480,11 +829,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">311</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">435</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">m_doc</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6aa02955249e3e5f23157c87c512064afc">TogglePieceInLayout</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489">TogglePieceInLayout::updateList()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00645">excludeAllPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00613">includeAllPieces()</a>.</p>
 
 </div>
 </div>
@@ -512,11 +861,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">336</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">460</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>, and <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">m_doc</a>, <a class="el" href="../../d7/df5/classVMainGraphicsScene.html#a8d1d49e900e0cbde51924a518ccfa8a5">VMainGraphicsScene::pieceLockedChanged()</a>, <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, <a class="el" href="../../d6/dbe/vundocommand_8h.html#aeb42a5e0c886f3719edb15c410d148e6af1a2d0a05bec059120cdb120012986c4">TogglePieceLock</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>, and <a class="el" href="../../d9/d39/classTogglePieceLock.html#a8f0d30813258eab12a6950ab395e3a02">TogglePieceLock::updateList()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00652">lockAllPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00688">unlockAllPieces()</a>.</p>
 
 </div>
 </div>
@@ -544,11 +893,42 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">96</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00111">VAbstractPiece::getColor()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00098">VAbstractPiece::GetName()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00376">VPiece::isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00388">VPiece::isLocked()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">ui</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00504">formatLetterString()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00111">VAbstractPiece::getColor()</a>, <a class="el" href="../../d9/d15/vabstractpiece_8cpp_source.html#l00098">VAbstractPiece::GetName()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00376">VPiece::isInLayout()</a>, <a class="el" href="../../df/d7a/vpiece_8cpp_source.html#l00388">VPiece::isLocked()</a>, <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">ui</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">toggleInLayoutPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">toggleLockedPieces()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>.</p>
+
+</div>
+</div>
+<a id="a8c1c9c449a885a07701ef7d41ad4478c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1c9c449a885a07701ef7d41ad4478c">&#9670;&nbsp;</a></span>unlockAllPieces()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PiecesWidget::unlockAllPieces </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00688">688</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d9/d02/vapplication_8h_source.html#l00067">qApp</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
 
 </div>
 </div>
@@ -575,15 +955,41 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00240">240</a> of file <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html">pieces_widget.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00233">fillTable()</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">m_data</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00712">VContainer::DataPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">fillTable()</a>, and <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">m_data</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l04130">MainWindow::fullParseFile()</a>, <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05370">MainWindow::InitDocksContain()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l03581">MainWindow::showPieceMode()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa7b0dce8089416a1850bf53ad8df9e45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b0dce8089416a1850bf53ad8df9e45">&#9670;&nbsp;</a></span>m_allPieces</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../da/da1/classQHash.html">QHash</a>&lt;quint32, <a class="el" href="../../d0/dab/classVPiece.html">VPiece</a>&gt;* PiecesWidget::m_allPieces</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00097">97</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>.</p>
+
+</div>
+</div>
 <a id="ac6bb78b6db34fdc506dee3fcbae60b40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac6bb78b6db34fdc506dee3fcbae60b40">&#9670;&nbsp;</a></span>m_data</h2>
 
@@ -604,9 +1010,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00093">93</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00096">96</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00233">fillTable()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">toggleInLayoutPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">toggleLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00138">updateList()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">fillTable()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00240">updateList()</a>.</p>
 
 </div>
 </div>
@@ -630,9 +1036,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00092">92</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00095">95</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">toggleInLayoutPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">toggleLockedPieces()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00695">editPieceColor()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>.</p>
 
 </div>
 </div>
@@ -656,9 +1062,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00091">91</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d7/d18/pieces__widget_8h_source.html#l00094">94</a> of file <a class="el" href="../../d7/d18/pieces__widget_8h_source.html">pieces_widget.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00161">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00197">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00233">fillTable()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00072">PiecesWidget()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00145">selectPiece()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00368">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00311">toggleInLayoutPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00336">toggleLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00096">togglePiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00090">~PiecesWidget()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00263">cellClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00316">cellDoubleClicked()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00174">changeEvent()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00346">fillTable()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00620">invertIncludedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00659">invertLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00079">PiecesWidget()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00247">selectPiece()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00521">showContextMenu()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00435">toggleInLayoutPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00460">toggleLockedPieces()</a>, <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00185">togglePiece()</a>, and <a class="el" href="../../d5/d7b/pieces__widget_8cpp_source.html#l00168">~PiecesWidget()</a>.</p>
 
 </div>
 </div>
