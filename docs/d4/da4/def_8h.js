@@ -339,7 +339,7 @@ var def_8h =
     [ "FromPixel", "d4/da4/def_8h.html#ad344c39a9d756b7ae9a7c0fb7ab4767b", null ],
     [ "GetMinPrinterFields", "d4/da4/def_8h.html#add7320b6951a9336f34f515402f29388", null ],
     [ "GetPrinterFields", "d4/da4/def_8h.html#a2cd5bde5ec66f27f34b8844839fe6da2", null ],
-    [ "InitHighDpiScaling", "d4/da4/def_8h.html#a1a1ecd7b9352a026b0a07b101a539a95", null ],
+    [ "initHighDpiScaling", "d4/da4/def_8h.html#a1bf2551180232a51cb3941a5394ed35e", null ],
     [ "InitLanguages", "d4/da4/def_8h.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d4/da4/def_8h.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
     [ "makeHeaderName", "d4/da4/def_8h.html#a0d388d3b034a1f7b4f3618163b213f73", null ],

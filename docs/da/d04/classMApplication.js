@@ -15,7 +15,7 @@ var classMApplication =
     [ "notify", "da/d04/classMApplication.html#a15b6c27a62d556b3b8c8fa9f856ccae4", null ],
     [ "OpenSettings", "da/d04/classMApplication.html#a39c0c4ae690f667f2d46d8dc263460fc", null ],
     [ "ParseCommandLine", "da/d04/classMApplication.html#afb5c95bf10f20a88939a09e9d75038b9", null ],
-    [ "ProcessCMD", "da/d04/classMApplication.html#ab4db80060aa086ad4fc670b5d7c5a176", null ],
+    [ "processCommandLine", "da/d04/classMApplication.html#ab37826e43368fe43d868b642834bda08", null ],
     [ "retranslateGroups", "da/d04/classMApplication.html#aa1c47c2f56b21ad5b74c316493550348", null ],
     [ "RetranslateTables", "da/d04/classMApplication.html#a29865b0724720781a9b9f5bb4b635df4", null ],
     [ "SeamlyMeSettings", "da/d04/classMApplication.html#adcd9090f222687254148da53f747e2e7", null ],

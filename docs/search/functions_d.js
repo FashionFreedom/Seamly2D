@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['name_13378',['name',['../d1/de7/classVGObject.html#a3015e9c2e0dda69cd4a81e1f25dc1263',1,'VGObject::name()'],['../d3/d64/classVAbstractSpline.html#a7ffc35b6b8ba935eb8ec9eb7e3c925e8',1,'VAbstractSpline::name()'],['../da/dbc/classVToolSinglePoint.html#a5abed11b2a556d9d6767cabf6d36376a',1,'VToolSinglePoint::name()']]],
-  ['name_13379',['Name',['../d9/d43/classVExceptionEmptyParameter.html#a0ae1584f17063b61826fde0c938d9397',1,'VExceptionEmptyParameter']]],
-  ['name_13380',['name',['../da/da8/classDialogNewPattern.html#aa48212f4478a766b9a4bbb4b2a2897e0',1,'DialogNewPattern']]],
-  ['namechanged_13381',['nameChanged',['../d3/da7/classEditGroupDialog.html#ab95b9737e729f56a2daf8526c1f87b04',1,'EditGroupDialog']]],
-  ['namechanged_13382',['NameChanged',['../d3/da7/classEditGroupDialog.html#a936686511245a69d890430308674df96',1,'EditGroupDialog::NameChanged()'],['../d7/d8c/classDialogTrueDarts.html#ab6e4fff33bf5e572d16209a2e78f757a',1,'DialogTrueDarts::NameChanged()'],['../d4/d7f/classDialogInternalPath.html#a799ebc1534b287ea9481079cc73c9309',1,'DialogInternalPath::NameChanged()']]],
+  ['name_13379',['name',['../da/da8/classDialogNewPattern.html#aa48212f4478a766b9a4bbb4b2a2897e0',1,'DialogNewPattern::name()'],['../d1/de7/classVGObject.html#a3015e9c2e0dda69cd4a81e1f25dc1263',1,'VGObject::name()'],['../d3/d64/classVAbstractSpline.html#a7ffc35b6b8ba935eb8ec9eb7e3c925e8',1,'VAbstractSpline::name()'],['../da/dbc/classVToolSinglePoint.html#a5abed11b2a556d9d6767cabf6d36376a',1,'VToolSinglePoint::name()']]],
+  ['name_13380',['Name',['../d9/d43/classVExceptionEmptyParameter.html#a0ae1584f17063b61826fde0c938d9397',1,'VExceptionEmptyParameter']]],
+  ['namechanged_13381',['NameChanged',['../d3/da7/classEditGroupDialog.html#a936686511245a69d890430308674df96',1,'EditGroupDialog::NameChanged()'],['../d7/d8c/classDialogTrueDarts.html#ab6e4fff33bf5e572d16209a2e78f757a',1,'DialogTrueDarts::NameChanged()'],['../d4/d7f/classDialogInternalPath.html#a799ebc1534b287ea9481079cc73c9309',1,'DialogInternalPath::NameChanged()']]],
+  ['namechanged_13382',['nameChanged',['../d3/da7/classEditGroupDialog.html#ab95b9737e729f56a2daf8526c1f87b04',1,'EditGroupDialog']]],
   ['namechangedposition_13383',['nameChangedPosition',['../d1/d6b/classVSimplePoint.html#a186e8ce0f381199c2c6bc70a0a9e5788',1,'VSimplePoint::nameChangedPosition()'],['../de/dbc/classVGraphicsSimpleTextItem.html#ab12a7c465cf23abbf545581d39151092',1,'VGraphicsSimpleTextItem::nameChangedPosition()'],['../d6/d7a/classVNodePoint.html#ad31b77e34ba05e15263909fce9e09994',1,'VNodePoint::nameChangedPosition()']]],
   ['namedartpoint1changed_13384',['NameDartPoint1Changed',['../d7/d8c/classDialogTrueDarts.html#a672f7bc9a609e73509b1db11538b3950',1,'DialogTrueDarts']]],
   ['namedartpoint2changed_13385',['NameDartPoint2Changed',['../d7/d8c/classDialogTrueDarts.html#aa529cf8a86cd24c140d7152753f8e521',1,'DialogTrueDarts']]],

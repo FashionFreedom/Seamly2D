@@ -6,7 +6,7 @@ var def_8cpp =
     [ "FromPixel", "d6/d0b/def_8cpp.html#ace05d8de4ddacda154ba7dfca94c1542", null ],
     [ "GetMinPrinterFields", "d6/d0b/def_8cpp.html#add7320b6951a9336f34f515402f29388", null ],
     [ "GetPrinterFields", "d6/d0b/def_8cpp.html#a2cd5bde5ec66f27f34b8844839fe6da2", null ],
-    [ "InitHighDpiScaling", "d6/d0b/def_8cpp.html#a1a1ecd7b9352a026b0a07b101a539a95", null ],
+    [ "initHighDpiScaling", "d6/d0b/def_8cpp.html#a1bf2551180232a51cb3941a5394ed35e", null ],
     [ "InitLanguages", "d6/d0b/def_8cpp.html#aaf08b4a7d0085a255e1dde1ce3b7206e", null ],
     [ "IsOptionSet", "d6/d0b/def_8cpp.html#a9d0bfb211c7efe9986367b0de5883ad9", null ],
     [ "makeHeaderName", "d6/d0b/def_8cpp.html#a0d388d3b034a1f7b4f3618163b213f73", null ],
