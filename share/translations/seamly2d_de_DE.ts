@@ -8275,10 +8275,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Unbenannt</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Bezeichnung</translation>
     </message>
@@ -8309,6 +8305,62 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
         <translation>EInschluß des Schnittteils in das Layout umkippen</translation>
+    </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished">Farbe auswählen</translation>
+    </message>
+    <message>
+        <source>Edit pattern piece properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished">gesperrt</translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished">Stück</translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle lock on pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens color selector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens pattern piece properties dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

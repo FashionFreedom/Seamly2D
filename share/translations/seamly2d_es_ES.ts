@@ -6951,11 +6951,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>File exception.</source>
-        <translation type="unfinished"></translation>
+        <translation>Excepción de archivo.</translation>
     </message>
     <message>
         <source>Export exception.</source>
-        <translation type="unfinished"></translation>
+        <translation>Excepción de exportación.</translation>
     </message>
     <message>
         <source>pattern</source>
@@ -8249,18 +8249,18 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation type="unfinished">Restablecer el lápiz actual a los valores predeterminados</translation>
+        <translation>Restablecer el lápiz actual a los valores predeterminados</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation type="unfinished">Guardar el preajuste actual del lápiz</translation>
+        <translation>Guardar el preajuste actual del lápiz</translation>
     </message>
 </context>
 <context>
     <name>PieceFillComboBox</name>
     <message>
         <source>No Fill</source>
-        <translation type="unfinished">Sin relleno</translation>
+        <translation>Sin relleno</translation>
     </message>
     <message>
         <source>Solid</source>
@@ -8326,10 +8326,6 @@ Do you want to save your changes?</source>
         <translation>Forma</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Sin Nombre</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
@@ -8360,6 +8356,62 @@ Do you want to save your changes?</source>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
         <translation>Alternar inclusión de pieza de patrón en el maquetación</translation>
+    </message>
+    <message>
+        <source>Select Color</source>
+        <translation>Seleccionar el color</translation>
+    </message>
+    <message>
+        <source>Edit pattern piece properties</source>
+        <translation>Editar las propiedades de la pieza de patrón</translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation>Incluido</translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation>Pieza patrón se incluye en el diseño</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Bloqueado</translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation>Pieza patrón bloqueada</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation>Color de la pieza patrón</translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation>Pieza</translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation>Letra de la pieza patrón</translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation>Nombre de la pieza patrón</translation>
+    </message>
+    <message>
+        <source>Toggle lock on pattern piece</source>
+        <translation>Bloqueo del interruptor en la pieza de patrón</translation>
+    </message>
+    <message>
+        <source>Double click opens color selector</source>
+        <translation>Un doble clic abre el selector de color</translation>
+    </message>
+    <message>
+        <source>Double click opens pattern piece properties dialog</source>
+        <translation>Al hacer doble clic se abre el cuadro de diálogo de propiedades de la pieza del patrón</translation>
     </message>
 </context>
 <context>
@@ -10353,7 +10405,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Toggle Lock</source>
-        <translation type="unfinished">Alternar Cerrar</translation>
+        <translation>Interruptor de bloqueo</translation>
     </message>
     <message>
         <source>Ctrl+L</source>
@@ -10377,7 +10429,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Raise To Top</source>
-        <translation type="unfinished">Traer al Frente</translation>
+        <translation>Traer al Frente</translation>
     </message>
     <message>
         <source>Ctrl+Home</source>
@@ -10385,7 +10437,7 @@ actualización:</translation>
     </message>
     <message>
         <source>Lower To Bottom</source>
-        <translation type="unfinished">Bajar al Fondo</translation>
+        <translation>Bajar al Fondo</translation>
     </message>
     <message>
         <source>Ctrl+End</source>
@@ -11366,15 +11418,15 @@ Do you want to save your changes?</source>
     <name>VAbstractMainWindow</name>
     <message>
         <source>Confirm format rewriting</source>
-        <translation type="unfinished">Confirmar la reescritura del formato</translation>
+        <translation>Confirmar la reescritura del formato</translation>
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation type="unfinished">Este archivo utiliza la versión v%1 del formato anterior. La actual es v%2. Si guarda el archivo con esta versión de la aplicación, se actualizará la versión de formato de este archivo. Esto puede impedir que pueda abrir el archivo con versiones anteriores de la aplicación. ¿Realmente desea continuar?</translation>
+        <translation>Este archivo utiliza la versión v%1 del formato anterior. La actual es v%2. Si guarda el archivo con esta versión de la aplicación, se actualizará la versión de formato de este archivo. Esto puede impedir que pueda abrir el archivo con versiones anteriores de la aplicación. ¿Realmente desea continuar?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
-        <translation type="unfinished">Valores separados por comas</translation>
+        <translation>Valores separados por comas</translation>
     </message>
     <message>
         <source>Export to CSV</source>
