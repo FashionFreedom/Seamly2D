@@ -1,5 +1,8 @@
 var NAVTREEINDEX59 =
 {
+"de/d77/classVCurveCLength.html":[1,0,254],
+"de/d77/classVCurveCLength.html#a4f0775b5126588a92a59e9ef62467060":[1,0,254,5],
+"de/d77/classVCurveCLength.html#a96f6c27f398847557124f5c179f60a52":[1,0,254,0],
 "de/d77/classVCurveCLength.html#a9dd9cee02a714c4b5cb9edebf04e5237":[1,0,254,3],
 "de/d77/classVCurveCLength.html#ad7ad3c2036e6d967b980abf64720f051":[1,0,254,4],
 "de/d77/classVCurveCLength.html#adb9db7842d0ab2aecd433aab6d0b681f":[1,0,254,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX59 =
 "de/dbc/classVGraphicsSimpleTextItem.html#a5175a4abaaa6fba3cc09e16a440eac67":[1,0,286,28],
 "de/dbc/classVGraphicsSimpleTextItem.html#a54c16aba2a52097be3ff02aeda596103":[1,0,286,1],
 "de/dbc/classVGraphicsSimpleTextItem.html#a551dec0c77beb3222f110238e8231836":[1,0,286,20],
-"de/dbc/classVGraphicsSimpleTextItem.html#a5ef63c23f5442b64faa95cb92c69fd35":[1,0,286,27],
-"de/dbc/classVGraphicsSimpleTextItem.html#a652ecd000f6c4de5cef9d216194eed93":[1,0,286,21],
-"de/dbc/classVGraphicsSimpleTextItem.html#a6ce87883b877f45159565ee87df5ea0c":[1,0,286,30],
-"de/dbc/classVGraphicsSimpleTextItem.html#a76477109ef92ecf17f6bcd577b6e91be":[1,0,286,25]
+"de/dbc/classVGraphicsSimpleTextItem.html#a5ef63c23f5442b64faa95cb92c69fd35":[1,0,286,27]
 };

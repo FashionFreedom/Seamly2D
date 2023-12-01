@@ -1,5 +1,8 @@
 var NAVTREEINDEX50 =
 {
+"dc/dd3/classVPatternConverter.html#a7e7706ccbcc1f7e33018bee610e8c9d3":[1,0,356,47],
+"dc/dd3/classVPatternConverter.html#a81dd57426d65be4fc7968dbcbff37d53":[1,0,356,10],
+"dc/dd3/classVPatternConverter.html#a8444a987892fe787ba9003c56d75fcb4":[1,0,356,73],
 "dc/dd3/classVPatternConverter.html#a89715544d4ab483e768d0c87e44eb809":[1,0,356,15],
 "dc/dd3/classVPatternConverter.html#a8ac4610fd14425ecda355eb1ec822031":[1,0,356,74],
 "dc/dd3/classVPatternConverter.html#a8ac8cc06bf2e5faedb7afe7281076248":[1,0,356,43],
@@ -246,8 +249,5 @@ var NAVTREEINDEX50 =
 "dd/d08/classDialogPointOfContact.html":[1,0,62],
 "dd/d08/classDialogPointOfContact.html#a01aa87bd49774cd1847f1a601df7924e":[1,0,62,7],
 "dd/d08/classDialogPointOfContact.html#a028d10e2f42167d3632c0aee6ea60cb2":[1,0,62,0],
-"dd/d08/classDialogPointOfContact.html#a22683847873883d56287b270f5a2a574":[1,0,62,17],
-"dd/d08/classDialogPointOfContact.html#a263728d556fc4b791081d4753a4646f8":[1,0,62,19],
-"dd/d08/classDialogPointOfContact.html#a5ac6085adf282a45537b076593986998":[1,0,62,13],
-"dd/d08/classDialogPointOfContact.html#a654a0afa0b0074c0ec0463b39930f71a":[1,0,62,9]
+"dd/d08/classDialogPointOfContact.html#a22683847873883d56287b270f5a2a574":[1,0,62,17]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX62 =
 {
+"df/d94/vnodespline_8cpp_source.html":[2,0,0,1,12,1,1,11],
+"df/d95/vemptyproperty_8h.html":[2,0,0,1,10,0,14],
+"df/d95/vemptyproperty_8h_source.html":[2,0,0,1,10,0,14],
 "df/d98/vnodearc_8h.html":[2,0,0,1,12,1,1,6],
 "df/d98/vnodearc_8h_source.html":[2,0,0,1,12,1,1,6],
 "df/d9a/classDialogBisector.html":[1,0,37],
@@ -246,8 +249,5 @@ var NAVTREEINDEX62 =
 "df/de1/classVPiecePath.html#ade8786c18a64d99ba1356c7b115dc9b6":[1,0,366,42],
 "df/de1/classVPiecePath.html#af5553b684d938ee8b94da301f3704cd9":[1,0,366,20],
 "df/de1/classVPiecePath.html#af9920700731879dc087d68611edaf6de":[1,0,366,12],
-"df/de1/classVPiecePath.html#afa5aa57c418da11a6dace9d51bf8529b":[1,0,366,30],
-"df/de1/classVPiecePath.html#afde87be9430a339c040e3ac6516c8d8c":[1,0,366,15],
-"df/de5/classVLayoutPiece.html":[1,0,333],
-"df/de5/classVLayoutPiece.html#a003008a1860e4422feedad37a556f40d":[1,0,333,61]
+"df/de1/classVPiecePath.html#afa5aa57c418da11a6dace9d51bf8529b":[1,0,366,30]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX60 =
 {
+"de/dbc/classVGraphicsSimpleTextItem.html#a652ecd000f6c4de5cef9d216194eed93":[1,0,286,21],
+"de/dbc/classVGraphicsSimpleTextItem.html#a6ce87883b877f45159565ee87df5ea0c":[1,0,286,30],
+"de/dbc/classVGraphicsSimpleTextItem.html#a76477109ef92ecf17f6bcd577b6e91be":[1,0,286,25],
 "de/dbc/classVGraphicsSimpleTextItem.html#a8098c3409fad5479b96fba9aba391f9b":[1,0,286,12],
 "de/dbc/classVGraphicsSimpleTextItem.html#a818d41734ecedd94699eb59ba6065d47":[1,0,286,24],
 "de/dbc/classVGraphicsSimpleTextItem.html#a842cfe03c7f18641f4a000e805114d7d":[1,0,286,3],
@@ -246,8 +249,5 @@ var NAVTREEINDEX60 =
 "df/d35/classVAbstractPieceData.html#af09aa6c437df3596baf27fa047463c4b":[1,0,230,9],
 "df/d35/classVAbstractPieceData.html#afb5c879eedf71754c0178efea47bdae4":[1,0,230,10],
 "df/d35/vbestsquare_8h.html":[2,0,0,1,6,8],
-"df/d35/vbestsquare_8h_source.html":[2,0,0,1,6,8],
-"df/d38/vsimplepoint_8cpp.html":[2,0,0,1,13,57],
-"df/d38/vsimplepoint_8cpp_source.html":[2,0,0,1,13,57],
-"df/d40/export__format__combobox_8cpp.html":[2,0,0,1,13,3]
+"df/d35/vbestsquare_8h_source.html":[2,0,0,1,6,8]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX64 =
 {
+"functions_vars.html":[1,3,2],
+"functions_vars_a.html":[1,3,2,1],
+"functions_vars_b.html":[1,3,2,2],
 "functions_vars_c.html":[1,3,2,3],
 "functions_vars_d.html":[1,3,2,4],
 "functions_vars_e.html":[1,3,2,5],
@@ -29,8 +32,8 @@ var NAVTREEINDEX64 =
 "functions_y.html":[1,3,0,25],
 "functions_z.html":[1,3,0,26],
 "functions_~.html":[1,3,0,27],
-"globals.html":[2,1,0],
 "globals.html":[2,1,0,0],
+"globals.html":[2,1,0],
 "globals_a.html":[2,1,0,1],
 "globals_b.html":[2,1,0,2],
 "globals_c.html":[2,1,0,3],
