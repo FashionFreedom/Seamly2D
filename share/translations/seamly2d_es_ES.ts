@@ -4058,10 +4058,6 @@ Possibly the file is already being downloaded.</source>
         <translation>Editar Grupo</translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation>Renombrar</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation>Eliminar</translation>
     </message>
@@ -4252,6 +4248,34 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Nombre</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>El grupo es visible</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Bloqueado</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>El grupo está bloqueado</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>El grupo tiene objetos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
     </message>
 </context>
 <context>

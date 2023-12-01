@@ -4014,10 +4014,6 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished">删除</translation>
     </message>
@@ -4207,6 +4203,34 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

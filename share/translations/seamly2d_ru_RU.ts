@@ -4240,6 +4240,34 @@ Possibly the file is already being downloaded.</source>
         <source>Name</source>
         <translation>Название</translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Редактировать</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
