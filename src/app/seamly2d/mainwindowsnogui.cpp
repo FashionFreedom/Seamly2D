@@ -1169,7 +1169,7 @@ void MainWindowsNoGUI::FlatDxfFile(const QString &name, int version, bool binary
     generator.setFileName(name);
     generator.setSize(paper->rect().size().toSize());
     generator.setResolution(PrintDPI);
-    generator.SetVersion(static_cast<DRW::Version>(version));
+    generator.setVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
 
@@ -1190,7 +1190,7 @@ void MainWindowsNoGUI::AAMADxfFile(const QString &name, int version, bool binary
     generator.setFileName(name);
     generator.setSize(size);
     generator.setResolution(PrintDPI);
-    generator.SetVersion(static_cast<DRW::Version>(version));
+    generator.setVersion(static_cast<DRW::Version>(version));
     generator.SetBinaryFormat(binary);
     generator.setInsunits(VarInsunits::Millimeters);// Decided to always use mm. See issue #745
     generator.ExportToAAMA(pieces);

@@ -1,13 +1,13 @@
 /******************************************************************************
  *   @file   tmainwindow.h
  **  @author Douglas S Caskey
- **  @date   14 Jul, 2023
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -184,7 +184,7 @@ private:
     QAction            *actionDockDiagram;
     bool                dockDiagramVisible;
     bool                isInitialized;
-    bool                mIsReadOnly;
+    bool                m_isReadOnly;
     enum { MaxRecentFiles = 5 };
     QAction            *recentFileActs[MaxRecentFiles];
     QAction            *separatorAct;

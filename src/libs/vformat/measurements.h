@@ -1,13 +1,13 @@
 /******************************************************************************
 *   @file   measurements.h
 **  @author Douglas S Caskey
-**  @date   16 Jul, 2023
+**  @date   25 Jan, 2024
 **
 **  @brief
 **  @copyright
 **  This source code is part of the Seamly2D project, a pattern making
 **  program to create and model patterns of clothing.
-**  Copyright (C) 2017-2023 Seamly2D project
+**  Copyright (C) 2017-2024 Seamly2D project
 **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
 **
 **  Seamly2D is free software: you can redistribute it and/or modify
@@ -117,7 +117,7 @@ public:
     QString          Email() const;
     void             SetEmail(const QString &text);
 
-    bool             IsReadOnly() const;
+    bool             isReadOnly() const;
     void             SetReadOnly(bool ro);
 
     void             setSize(qreal *size);
@@ -133,6 +133,8 @@ public:
 
     static const QString TagVST;
     static const QString TagVIT;
+    static const QString TagSMMS;
+    static const QString TagSMIS;
     static const QString TagBodyMeasurements;
     static const QString TagNotes;
     static const QString TagSize;

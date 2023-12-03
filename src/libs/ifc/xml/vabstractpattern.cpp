@@ -1576,7 +1576,7 @@ QString VAbstractPattern::GetVersion() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetVersion()
+void VAbstractPattern::setVersion()
 {
     setTagText(TagVersion, VPatternConverter::PatternMaxVerStr);
     emit patternChanged(false);
@@ -1774,7 +1774,7 @@ void VAbstractPattern::InsertTag(const QStringList &tags, const QDomElement &ele
             break;
         }
     }
-    SetVersion();
+    setVersion();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

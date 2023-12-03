@@ -74,31 +74,31 @@ VLabelTemplateConverter::VLabelTemplateConverter(const QString &fileName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLabelTemplateConverter::MinVer() const
+int VLabelTemplateConverter::minVer() const
 {
     return LabelTemplateMinVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLabelTemplateConverter::MaxVer() const
+int VLabelTemplateConverter::maxVer() const
 {
     return LabelTemplateMaxVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VLabelTemplateConverter::MinVerStr() const
+QString VLabelTemplateConverter::minVerStr() const
 {
     return LabelTemplateMinVerStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VLabelTemplateConverter::MaxVerStr() const
+QString VLabelTemplateConverter::maxVerStr() const
 {
     return LabelTemplateMaxVerStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VLabelTemplateConverter::XSDSchema(int ver) const
+QString VLabelTemplateConverter::getSchema(int ver) const
 {
     switch (ver)
     {
@@ -112,7 +112,7 @@ QString VLabelTemplateConverter::XSDSchema(int ver) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLabelTemplateConverter::ApplyPatches()
+void VLabelTemplateConverter::applyPatches()
 {
     switch (m_ver)
     {
@@ -125,8 +125,8 @@ void VLabelTemplateConverter::ApplyPatches()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VLabelTemplateConverter::DowngradeToCurrentMaxVersion()
+void VLabelTemplateConverter::downgradeToCurrentMaxVersion()
 {
-    SetVersion(LabelTemplateMaxVerStr);
+    setVersion(LabelTemplateMaxVerStr);
     Save();
 }

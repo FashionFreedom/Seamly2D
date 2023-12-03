@@ -90,9 +90,9 @@ int main(int argc, char *argv[])
     QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
     splash.show();
 
-    QTimer::singleShot(10000, &splash, &QWidget::close);                 // display splash screenfor 10 secs.
+    QTimer::singleShot(0, &splash, &QWidget::close);                 // display splash screenfor 10 secs.
 
-    QTimer::singleShot(10000, &app, &MApplication::processCommandLine);  // delay main screen from opening until
+    QTimer::singleShot(0, &app, &MApplication::processCommandLine);  // delay main screen from opening until
                                                                          // splash screen closes.
     return app.exec();
 }

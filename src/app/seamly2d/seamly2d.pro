@@ -78,8 +78,8 @@ message(seamly2d.pro: Examples: $$[QT_INSTALL_EXAMPLES])
 # Path to resource file.
 win32:RC_FILE = share/resources/seamly2d.rc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
-include(../tables.pri)
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
+include(../samples.pri)
 
 win32 {
     INSTALL_PDFTOPS += ../../../dist/win/pdftops.exe

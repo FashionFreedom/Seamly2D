@@ -94,12 +94,12 @@ VAbstractConverter::VAbstractConverter(const QString &fileName)
 //---------------------------------------------------------------------------------------------------------------------
 QString VAbstractConverter::Convert()
 {
-    if (m_ver == MaxVer())
+    if (m_ver == maxVer())
     {
         return m_convertedFileName;
     }
 
-    if (!IsReadOnly())
+    if (!isReadOnly())
     {
         ReserveFile();
     }
@@ -115,9 +115,9 @@ QString VAbstractConverter::Convert()
     }
 
     qInfo() << " m_ver = " << m_ver;
-    qInfo() << " MaxVer = " << MaxVer();
+    qInfo() << " MaxVer = " << maxVer();
 
-    m_ver < MaxVer() ? ApplyPatches() : DowngradeToCurrentMaxVersion();
+    m_ver < maxVer() ? applyPatches() : downgradeToCurrentMaxVersion();
 
     return m_convertedFileName;
 }
@@ -299,7 +299,7 @@ void VAbstractConverter::ReserveFile() const
         qt_ntfs_permission_lookup--; // turn it off again
 #endif /*Q_OS_WIN32*/
 
-        if (!IsReadOnly() && isFileWritable)
+        if (!isReadOnly() && isFileWritable)
         {
             const QString errorMsg(tr("Error creating a reserv copy: %1.").arg(error));
             throw VException(errorMsg);
@@ -349,15 +349,15 @@ void VAbstractConverter::BiasTokens(int position, int bias, QMap<int, QString> &
 //---------------------------------------------------------------------------------------------------------------------
 Q_NORETURN void VAbstractConverter::InvalidVersion(int ver) const
 {
-    if (ver < MinVer())
+    if (ver < minVer())
     {
-        const QString errorMsg(tr("Invalid version. Minimum supported version is %1").arg(MinVerStr()));
+        const QString errorMsg(tr("Invalid version. Minimum supported version is %1").arg(minVerStr()));
         throw VException(errorMsg);
     }
 
-    if (ver > MaxVer())
+    if (ver > maxVer())
     {
-        const QString errorMsg(tr("Invalid version. Maximum supported version is %1").arg(MaxVerStr()));
+        const QString errorMsg(tr("Invalid version. Maximum supported version is %1").arg(maxVerStr()));
         throw VException(errorMsg);
     }
 
@@ -371,15 +371,15 @@ void VAbstractConverter::ValidateInputFile(const QString &currentSchema) const
     QString schema;
     try
     {
-        schema = XSDSchema(m_ver);
+        schema = getSchema(m_ver);
     }
     catch(const VException &error)
     {
-        if (m_ver < MinVer())
+        if (m_ver < minVer())
         { // Version less than minimally supported version. Can't do anything.
             throw;
         }
-        else if (m_ver > MaxVer())
+        else if (m_ver > maxVer())
         { // Version bigger than maximum supported version. We still have a chance to open the file.
             try
             { // Try to open like the current version.
@@ -430,7 +430,7 @@ void VAbstractConverter::Save()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractConverter::SetVersion(const QString &version)
+void VAbstractConverter::setVersion(const QString &version)
 {
     ValidateVersion(version);
 

@@ -1,13 +1,13 @@
 /******************************************************************************
  *   @file   tmainwindow.cpp
  **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -131,7 +131,7 @@ TMainWindow::TMainWindow(QWidget *parent)
 	  actionDockDiagram(nullptr),
 	  dockDiagramVisible(true),
 	  isInitialized(false),
-	  mIsReadOnly(false),
+	  m_isReadOnly(false),
 	  recentFileActs(),
 	  separatorAct(nullptr),
 	  hackedWidgets()
@@ -246,11 +246,12 @@ void TMainWindow::SetPUnit(Unit unit)
 //---------------------------------------------------------------------------------------------------------------------
 bool TMainWindow::LoadFile(const QString &path)
 {
+    QString filename = path;
 	if (individualMeasurements == nullptr)
 	{
-		if (!QFileInfo(path).exists())
+		if (!QFileInfo(filename).exists())
 		{
-			qCCritical(tMainWindow, "%s", qUtf8Printable(tr("File '%1' doesn't exist!").arg(path)));
+			qCCritical(tMainWindow, "%s", qUtf8Printable(tr("File '%1' doesn't exist!").arg(filename)));
 			if (qApp->IsTestMode())
 			{
 				qApp->exit(V_EX_NOINPUT);
@@ -262,7 +263,7 @@ bool TMainWindow::LoadFile(const QString &path)
 		QList<TMainWindow*>list = qApp->MainWindows();
 		for (int i = 0; i < list.size(); ++i)
 		{
-			if (list.at(i)->CurrentFile() == path)
+			if (list.at(i)->CurrentFile() == filename)
 			{
 				list.at(i)->activateWindow();
 				close();
@@ -270,11 +271,11 @@ bool TMainWindow::LoadFile(const QString &path)
 			}
 		}
 
-		VlpCreateLock(lock, path);
+		VlpCreateLock(lock, filename);
 
 		if (!lock->IsLocked())
 		{
-			if (!IgnoreLocking(lock->GetLockError(), path))
+			if (!IgnoreLocking(lock->GetLockError(), filename))
 			{
 				return false;
 			}
@@ -287,7 +288,7 @@ bool TMainWindow::LoadFile(const QString &path)
 			individualMeasurements = new MeasurementDoc(data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
-			individualMeasurements->setXMLContent(path);
+			individualMeasurements->setXMLContent(filename);
 
 			mType = individualMeasurements->Type();
 
@@ -299,17 +300,19 @@ bool TMainWindow::LoadFile(const QString &path)
 
 			if (mType == MeasurementsType::Multisize)
 			{
-				MultiSizeConverter converter(path);
+				MultiSizeConverter converter(filename);
 				m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
 				m_curFileFormatVersionStr = converter.GetVersionStr();
 				individualMeasurements->setXMLContent(converter.Convert());// Read again after conversion
+                filename.replace(QLatin1String(".vst"), QLatin1String(".smms"));
 			}
 			else
 			{
-				IndividualSizeConverter converter(path);
+				IndividualSizeConverter converter(filename);
 				m_curFileFormatVersion = converter.GetCurrentFormatVarsion();
 				m_curFileFormatVersionStr = converter.GetVersionStr();
 				individualMeasurements->setXMLContent(converter.Convert());// Read again after conversion
+                filename.replace(QLatin1String(".vit"), QLatin1String(".smis"));
 			}
 
 			if (!individualMeasurements->eachKnownNameIsValid())
@@ -327,10 +330,10 @@ bool TMainWindow::LoadFile(const QString &path)
 			ui->labelToolTip->setVisible(false);
 			ui->tabWidget->setVisible(true);
 
-			mIsReadOnly = individualMeasurements->IsReadOnly();
-			UpdatePadlock(mIsReadOnly);
+			m_isReadOnly = individualMeasurements->isReadOnly();
+			UpdatePadlock(m_isReadOnly);
 
-			SetCurrentFile(path);
+			SetCurrentFile(filename);
 
 			InitWindow();
 
@@ -367,7 +370,7 @@ bool TMainWindow::LoadFile(const QString &path)
 	else
 	{
 		qApp->NewMainWindow();
-		return qApp->MainWindow()->LoadFile(path);
+		return qApp->MainWindow()->LoadFile(filename);
 	}
 
 	return true;
@@ -420,8 +423,8 @@ void TMainWindow::FileNew()
 			m_curFileFormatVersionStr = IndividualSizeConverter::MeasurementMaxVerStr;
 		}
 
-		mIsReadOnly = individualMeasurements->IsReadOnly();
-		UpdatePadlock(mIsReadOnly);
+		m_isReadOnly = individualMeasurements->isReadOnly();
+		UpdatePadlock(m_isReadOnly);
 
 		SetCurrentFile("");
 		MeasurementsWasSaved(false);
@@ -892,7 +895,7 @@ void TMainWindow::printPages(QPrinter *printer)
 //---------------------------------------------------------------------------------------------------------------------
 bool TMainWindow::FileSave()
 {
-	if (curFile.isEmpty() || mIsReadOnly)
+	if (curFile.isEmpty() || m_isReadOnly)
 	{
 		return FileSaveAs();
 	}
@@ -900,13 +903,13 @@ bool TMainWindow::FileSave()
 	{
 		if (mType == MeasurementsType::Multisize
 				&& m_curFileFormatVersion < MultiSizeConverter::MeasurementMaxVer
-				&& not ContinueFormatRewrite(m_curFileFormatVersionStr, MultiSizeConverter::MeasurementMaxVerStr))
+				&& !ContinueFormatRewrite(m_curFileFormatVersionStr, MultiSizeConverter::MeasurementMaxVerStr))
 		{
 			return false;
 		}
 		else if (mType == MeasurementsType::Individual
 				 && m_curFileFormatVersion < IndividualSizeConverter::MeasurementMaxVer
-				 && not ContinueFormatRewrite(m_curFileFormatVersionStr, IndividualSizeConverter::MeasurementMaxVerStr))
+				 && !ContinueFormatRewrite(m_curFileFormatVersionStr, IndividualSizeConverter::MeasurementMaxVerStr))
 		{
 			return false;
 		}
@@ -1108,10 +1111,10 @@ bool TMainWindow::FileSaveAs()
 	}
 
 	// Need for restoring previous state in case of failure
-	const bool readOnly = individualMeasurements->IsReadOnly();
+	const bool readOnly = individualMeasurements->isReadOnly();
 
 	individualMeasurements->SetReadOnly(false);
-	mIsReadOnly = false;
+	m_isReadOnly = false;
 
 	QString error;
 	bool result = SaveMeasurements(fileName, error);
@@ -1127,7 +1130,7 @@ bool TMainWindow::FileSaveAs()
 
 		// Restore previous state
 		individualMeasurements->SetReadOnly(readOnly);
-		mIsReadOnly = readOnly;
+		m_isReadOnly = readOnly;
 		RemoveTempDir();
 		return false;
 	}
@@ -2107,7 +2110,7 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionExportToCSV, &QAction::triggered, this, &TMainWindow::handleExportToCSV);
 	connect(ui->actionReadOnly, &QAction::triggered, this, [this](bool ro)
 	{
-		if (!mIsReadOnly)
+		if (!m_isReadOnly)
 		{
 			individualMeasurements->SetReadOnly(ro);
 			MeasurementsWasSaved(false);
@@ -2420,7 +2423,7 @@ void TMainWindow::ShowHeaderUnits(QTableWidget *table, int column, const QString
 void TMainWindow::MeasurementsWasSaved(bool saved)
 {
 	setWindowModified(!saved);
-	not mIsReadOnly ? ui->actionSave->setEnabled(!saved): ui->actionSave->setEnabled(false);
+	!m_isReadOnly ? ui->actionSave->setEnabled(!saved): ui->actionSave->setEnabled(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2486,7 +2489,7 @@ bool TMainWindow::MaybeSave()
 		messageBox->setDefaultButton(QMessageBox::Yes);
 		messageBox->setEscapeButton(QMessageBox::Cancel);
 
-		messageBox->setButtonText(QMessageBox::Yes, curFile.isEmpty() || mIsReadOnly ? tr("Save...") : tr("Save"));
+		messageBox->setButtonText(QMessageBox::Yes, curFile.isEmpty() || m_isReadOnly ? tr("Save...") : tr("Save"));
 		messageBox->setButtonText(QMessageBox::No, tr("Don't Save"));
 
 		messageBox->setWindowModality(Qt::ApplicationModal);
@@ -2498,7 +2501,7 @@ bool TMainWindow::MaybeSave()
 		switch (ret)
 		{
 			case QMessageBox::Yes:
-				if (mIsReadOnly)
+				if (m_isReadOnly)
 				{
 					return FileSaveAs();
 				}
@@ -2777,7 +2780,7 @@ void TMainWindow::MFields(bool enabled)
 	}
 
 	ui->lineEditFind->setEnabled(enabled);
-	if (enabled && not ui->lineEditFind->text().isEmpty())
+	if (enabled && !ui->lineEditFind->text().isEmpty())
 	{
 		ui->toolButtonFindPrevious->setEnabled(enabled);
 		ui->toolButtonFindNext->setEnabled(enabled);
@@ -2814,7 +2817,7 @@ void TMainWindow::UpdateWindowTitle()
 
 	fileName += QLatin1String("[*]");
 
-	if (mIsReadOnly || not isFileWritable)
+	if (m_isReadOnly || !isFileWritable)
 	{
 		fileName += QLatin1String(" (") + tr("read only") + QLatin1String(")");
 	}
@@ -2941,7 +2944,7 @@ void TMainWindow::UpdatePadlock(bool ro)
 		ui->actionReadOnly->setIcon(QIcon("://seamlymeicon/24x24/padlock_opened.png"));
 	}
 
-	ui->actionReadOnly->setDisabled(mIsReadOnly);
+	ui->actionReadOnly->setDisabled(m_isReadOnly);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2949,7 +2952,7 @@ void TMainWindow::MeasurementGUI()
 {
 	if (const QTableWidgetItem *nameField = ui->tableWidget->item(ui->tableWidget->currentRow(), ColumnName))
 	{
-		const bool isCustom = not (nameField->text().indexOf(CustomMSign) == 0);
+		const bool isCustom = !(nameField->text().indexOf(CustomMSign) == 0);
 		ui->lineEditName->setReadOnly(isCustom);
 		ui->plainTextEditDescription->setReadOnly(isCustom);
 		ui->lineEditFullName->setReadOnly(isCustom);
@@ -3105,8 +3108,8 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 
 			lock.reset();// Now we can unlock the file
 
-			mIsReadOnly = individualMeasurements->IsReadOnly();
-			UpdatePadlock(mIsReadOnly);
+			m_isReadOnly = individualMeasurements->isReadOnly();
+			UpdatePadlock(m_isReadOnly);
 			MeasurementGUI();
 		}
 
