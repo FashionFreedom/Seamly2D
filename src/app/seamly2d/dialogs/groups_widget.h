@@ -98,6 +98,8 @@ private slots:
     void              renameGroup(int row, int column);
     void              groupContextMenu(const QPoint &pos);
     void              draftBlockHasGroups(bool value);
+ protected:
+    virtual void      changeEvent(QEvent* event) Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(GroupsWidget)
@@ -111,6 +113,8 @@ private:
     void              fillGroupItemList();
     void              addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype);
     void              groupItemContextMenu(const QPoint &pos);
+    void              cellClicked(int row, int column);
+    void              cellDoubleClicked(int row, int column);
     void              itemDoubleClicked(QListWidgetItem *item);
     void              zoomToObject(QSharedPointer<VPointF> point);
     void              setGroupVisibility(QTableWidgetItem *item, const quint32 &groupId, const bool &visible);

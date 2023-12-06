@@ -51,7 +51,7 @@ bool PieceTableWidgetItem::operator<(const QTableWidgetItem &other) const
     }
     else if (other.column() == 2)
     {
-        return this->background().color().name() < other.background().color().name();
+        return this->data(Qt::UserRole).toString() < other.data(Qt::UserRole).toString();
     }
     return false;
 }

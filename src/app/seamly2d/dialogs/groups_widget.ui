@@ -95,9 +95,6 @@
        <property name="statusTip">
         <string>Lock all groups</string>
        </property>
-       <property name="text">
-        <string notr="true">...</string>
-       </property>
        <property name="icon">
         <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
          <normaloff>:/icon/32x32/lock_on.png</normaloff>:/icon/32x32/lock_on.png</iconset>
@@ -120,9 +117,6 @@
        </property>
        <property name="statusTip">
         <string>Unlock all groups</string>
-       </property>
-       <property name="text">
-        <string notr="true">...</string>
        </property>
        <property name="icon">
         <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
@@ -202,6 +196,9 @@
     <widget class="QSplitter" name="groups_Splitter">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
+     </property>
+          <property name="childrenCollapsible">
+      <bool>false</bool>
      </property>
      <widget class="QGroupBox" name="groups_GroupBox">
       <property name="minimumSize">
@@ -321,6 +318,9 @@
          </attribute>
          <attribute name="horizontalHeaderMinimumSectionSize">
           <number>16</number>
+         </attribute>
+         <attribute name="horizontalHeaderDefaultSectionSize">
+          <number>30</number>
          </attribute>
          <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
           <bool>true</bool>

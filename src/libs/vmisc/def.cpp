@@ -595,7 +595,7 @@ bool IsOptionSet(int argc, char *argv[], const char *option)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void InitHighDpiScaling(int argc, char *argv[])
+void initHighDpiScaling(int argc, char *argv[])
 {
     /* For more info see: http://doc.qt.io/qt-5/highdpi.html */
     if (IsOptionSet(argc, argv, qPrintable(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING)))

@@ -3950,7 +3950,7 @@ Do you want to download it?</source>
 Möchten Sie diesen downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4021,10 +4021,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Edit Group</source>
         <translation>Gruppe bearbeiten</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Umbenennen</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4217,6 +4213,34 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
     </message>
 </context>
 <context>
@@ -4842,7 +4866,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -8275,10 +8299,6 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Form</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Unbenannt</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Bezeichnung</translation>
     </message>
@@ -8309,6 +8329,62 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
         <translation>EInschluß des Schnittteils in das Layout umkippen</translation>
+    </message>
+    <message>
+        <source>Select Color</source>
+        <translation type="unfinished">Farbe auswählen</translation>
+    </message>
+    <message>
+        <source>Edit pattern piece properties</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished">gesperrt</translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation type="unfinished">Stück</translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Toggle lock on pattern piece</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens color selector</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Double click opens pattern piece properties dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13958,22 +14034,22 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Line_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Linie_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>WinkelLinie_</translation>
     </message>
     <message>
         <source>Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Bogen_</translation>
     </message>
     <message>
         <source>Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Spl_</translation>
     </message>
     <message>
@@ -13983,27 +14059,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>RadiusArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>RadiusBogen_</translation>
     </message>
     <message>
         <source>Angle1Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel1Bogen_</translation>
     </message>
     <message>
         <source>Angle2Arc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel2Bogen_</translation>
     </message>
     <message>
         <source>Angle1Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle1Spl_</translation>
     </message>
     <message>
         <source>Angle2Spl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Angle2Spl_</translation>
     </message>
     <message>
@@ -14018,7 +14094,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seg_</source>
-        <comment>Segment. Left symbol _ in the name</comment>
+        <comment>Segment. Leave the _ symbol in translation</comment>
         <translation>Seg_</translation>
     </message>
     <message>
@@ -14038,12 +14114,12 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>C1LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C1LängeSpl_</translation>
     </message>
     <message>
         <source>C2LengthSpl_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>C2LängeSpl_</translation>
     </message>
     <message>
@@ -14063,32 +14139,32 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>M_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>M_</translation>
     </message>
     <message>
         <source>ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>ElBogen_</translation>
     </message>
     <message>
         <source>Radius1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius1ElBogen_</translation>
     </message>
     <message>
         <source>Radius2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Radius2ElBogen_</translation>
     </message>
     <message>
         <source>Angle1ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel1ElBogen_</translation>
     </message>
     <message>
         <source>Angle2ElArc_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Winkel2ElBogen_</translation>
     </message>
     <message>
@@ -14213,7 +14289,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Variable_</source>
-        <comment>Left symbol _ in the name</comment>
+        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation>Variable_</translation>
     </message>
     <message>
