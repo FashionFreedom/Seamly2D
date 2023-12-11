@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 581;
+var viewWidth = 582;
 var viewHeight = 95;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,13 +54,13 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/app/seamlyme/version.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-91 577,-91 577,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-91 577.5,-91 577.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="186,-67.5 186,-86.5 341,-86.5 341,-67.5 186,-67.5"/>
-<text text-anchor="middle" x="263.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/version.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="187,-67.5 187,-86.5 342,-86.5 342,-67.5 187,-67.5"/>
+<text text-anchor="middle" x="264.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/version.h</text>
 </a>
 </g>
 </g>
@@ -77,38 +77,38 @@ var sectionId = 'dynsection-1';
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M226.52,-64.36C195.72,-54.66 151.77,-40.83 119.04,-30.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="225.83,-67.81 236.42,-67.48 227.93,-61.13 225.83,-67.81"/>
+<path fill="none" stroke="midnightblue" d="M227.72,-64.48C196.75,-54.78 152.32,-40.87 119.28,-30.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="226.69,-67.83 237.28,-67.48 228.78,-61.15 226.69,-67.83"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../da/dfb/mapplication_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="166.5,-6 166.5,-25 360.5,-25 360.5,-6 166.5,-6"/>
-<text text-anchor="middle" x="263.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/mapplication.cpp</text>
+<g id="a_node3"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="167,-6 167,-25 362,-25 362,-6 167,-6"/>
+<text text-anchor="middle" x="264.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/tmainwindow.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M263.5,-57.32C263.5,-46.5 263.5,-33.4 263.5,-25.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="260,-57.48 263.5,-67.48 267,-57.48 260,-57.48"/>
+<path fill="none" stroke="midnightblue" d="M264.5,-57.32C264.5,-46.5 264.5,-33.4 264.5,-25.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="261,-57.48 264.5,-67.48 268,-57.48 261,-57.48"/>
 </g>
 <!-- Node4 -->
 <g id="node4" class="node">
 <title>Node4</title>
-<g id="a_node4"><a xlink:href="../../dc/de1/tmainwindow_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="378,-6 378,-25 573,-25 573,-6 378,-6"/>
-<text text-anchor="middle" x="475.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/tmainwindow.cpp</text>
+<g id="a_node4"><a xlink:href="../../da/dfb/mapplication_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="379.5,-6 379.5,-25 573.5,-25 573.5,-6 379.5,-6"/>
+<text text-anchor="middle" x="476.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">src/app/seamlyme/mapplication.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node4 -->
 <g id="edge3" class="edge">
 <title>Node1&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M303.59,-64.75C344.77,-53.19 407.98,-35.45 445.18,-25.01"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="302.56,-61.4 293.87,-67.48 304.45,-68.14 302.56,-61.4"/>
+<path fill="none" stroke="midnightblue" d="M304.59,-64.75C345.77,-53.19 408.98,-35.45 446.18,-25.01"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="303.56,-61.4 294.87,-67.48 305.45,-68.14 303.56,-61.4"/>
 </g>
 </g>
 </svg>
