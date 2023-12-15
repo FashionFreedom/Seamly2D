@@ -572,7 +572,7 @@ var searchData=
   ['setnamep2_6417',['setNameP2',['../d0/dcf/classVToolDoublePoint.html#a15bd716f0442566015e6fa806e717c14',1,'VToolDoublePoint']]],
   ['setnewdartpointnames_6418',['SetNewDartPointNames',['../d7/d8c/classDialogTrueDarts.html#a84b470aa3f90a537950125fd4d1875a3',1,'DialogTrueDarts']]],
   ['setnodes_6419',['SetNodes',['../df/de1/classVPiecePath.html#a85d983785b92ff08bdf59b1ec55ce949',1,'VPiecePath']]],
-  ['setnotch_6420',['setNotch',['../d7/dac/classVPieceNode.html#a2564e67d715963b69db21e2288a794b5',1,'VPieceNode::setNotch()'],['../d5/d41/classPatternPieceDialog.html#a421184133377572388253f88bd271f53',1,'PatternPieceDialog::setNotch()']]],
+  ['setnotch_6420',['setNotch',['../d7/dac/classVPieceNode.html#a2564e67d715963b69db21e2288a794b5',1,'VPieceNode::setNotch()'],['../d5/d41/classPatternPieceDialog.html#a4d0dba088c7556c5144932a03ad7e3fc',1,'PatternPieceDialog::setNotch()']]],
   ['setnotchangle_6421',['setNotchAngle',['../d7/dac/classVPieceNode.html#acd509d7a5e63eb88616b524436dd2df3',1,'VPieceNode']]],
   ['setnotchcount_6422',['setNotchCount',['../d7/dac/classVPieceNode.html#a106e4c9f97f11368954e5956c8f5621b',1,'VPieceNode']]],
   ['setnotches_6423',['setNotches',['../df/de5/classVLayoutPiece.html#a566ca5183b3a7a758adbec7efda56407',1,'VLayoutPiece']]],

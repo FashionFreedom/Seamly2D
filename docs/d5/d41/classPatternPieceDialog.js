@@ -102,7 +102,7 @@ var classPatternPieceDialog =
     [ "setGrainlineLength", "d5/d41/classPatternPieceDialog.html#a230f46d200ad43e411d243902e62a3be", null ],
     [ "setInLayout", "d5/d41/classPatternPieceDialog.html#a8d32918b585c061eb7bd21e243260c4c", null ],
     [ "setMoveExclusions", "d5/d41/classPatternPieceDialog.html#ae8fe211c6245dd4c49f7a2a307830996", null ],
-    [ "setNotch", "d5/d41/classPatternPieceDialog.html#a421184133377572388253f88bd271f53", null ],
+    [ "setNotch", "d5/d41/classPatternPieceDialog.html#a4d0dba088c7556c5144932a03ad7e3fc", null ],
     [ "setPatternLabelAngle", "d5/d41/classPatternPieceDialog.html#a8cdc2a45e51bbb6bac952e85e9d6bcd4", null ],
     [ "setPatternLabelHeight", "d5/d41/classPatternPieceDialog.html#a1295390124e49e734983fb157a6ec866", null ],
     [ "setPatternLabelWidth", "d5/d41/classPatternPieceDialog.html#a336147fd5c20cf7738da40d59f3a30d5", null ],
