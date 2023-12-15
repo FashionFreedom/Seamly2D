@@ -286,7 +286,8 @@ private:
     void                        reverseNode(QListWidgetItem *rowItem);
     void                        duplicateNode(QListWidgetItem *rowItem);
     void                        excludeNode(QListWidgetItem *rowItem);
-    void                        setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType);
+    void                        setNotch(QListWidgetItem *rowItem, bool isNotch, NotchType notchType,
+                                         NotchSubType notchSubType);
     void                        setCurrentText(QComboBox *box, const QString &text) const;
     qreal                       getFormulaValue(QPlainTextEdit *text) const;
 };
