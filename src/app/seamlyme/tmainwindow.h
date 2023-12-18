@@ -111,6 +111,8 @@ private slots:
     void                OpenMultisize();
     void                OpenTemplate();
     void                CreateFromExisting();
+    //void                handleBodyScanner1();
+    void                handleBodyScanner2();
     void                Preferences();
     void                ToolBarStyles();
 

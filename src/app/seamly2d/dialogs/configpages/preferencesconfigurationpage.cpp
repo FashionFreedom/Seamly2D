@@ -62,6 +62,8 @@
 #include <QDir>
 #include <QDirIterator>
 #include <QMessageBox>
+#include <QRegularExpression>
+#include <QRegularExpressionValidator>
 #include <QSound>
 #include <QTimer>
 
@@ -81,6 +83,25 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    QRegularExpression rx("\\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}\\b",
+                          QRegularExpression::CaseInsensitiveOption);
+    ui->email_LineEdit->setValidator(new QRegularExpressionValidator(rx, this));
+
+    //Designer Info
+    ui->companyName_LineEdit->setText(qApp->Seamly2DSettings()->getCompanyName());
+    ui->contact_LineEdit->setText(qApp->Seamly2DSettings()->getContact());
+    ui->address_LineEdit->setText(qApp->Seamly2DSettings()->getAddress());
+    ui->city_LineEdit->setText(qApp->Seamly2DSettings()->getCity());
+    ui->state_LineEdit->setText(qApp->Seamly2DSettings()->getState());
+    ui->zipcode_LineEdit->setText(qApp->Seamly2DSettings()->getZipcode());
+    ui->country_LineEdit->setText(qApp->Seamly2DSettings()->getCountry());
+    ui->telephone_LineEdit->setText(qApp->Seamly2DSettings()->getTelephone());
+    ui->fax_LineEdit->setText(qApp->Seamly2DSettings()->getFax());
+    ui->email_LineEdit->setText(qApp->Seamly2DSettings()->getEmail());
+    ui->website_LineEdit->setText(qApp->Seamly2DSettings()->getWebsite());
+
+    connect(ui->email_LineEdit, &QLineEdit::textChanged, this, &PreferencesConfigurationPage::adjustTextColor);
 
     //Editing
     // Undo
@@ -223,7 +244,27 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesConfigurationPage::Apply()
 {
+    if(!ui->email_LineEdit->hasAcceptableInput()){
+        QMessageBox::warning(this, tr("Email verification"),
+                             tr("Email format is incorrect."), QMessageBox::Ok);
+        return;
+    }
+
     VSettings *settings = qApp->Seamly2DSettings();
+
+    //Designer Info
+    settings->setCompanyName(ui->companyName_LineEdit->text());
+    settings->setContact(ui->contact_LineEdit->text());
+    settings->setAddress(ui->address_LineEdit->text());
+    settings->setCity(ui->city_LineEdit->text());
+    settings->setState(ui->state_LineEdit->text());
+    settings->setZipcode(ui->zipcode_LineEdit->text());
+    settings->setCountry(ui->country_LineEdit->text());
+    settings->setTelephone(ui->telephone_LineEdit->text());
+    settings->setFax(ui->fax_LineEdit->text());
+    settings->setEmail(ui->email_LineEdit->text());
+    settings->setWebsite(ui->website_LineEdit->text());
+
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
@@ -342,4 +383,12 @@ void PreferencesConfigurationPage::InitUnits()
     {
         ui->unitCombo->setCurrentIndex(indexUnit);
     }
+}
+
+void PreferencesConfigurationPage::adjustTextColor()
+{
+    if(!ui->email_LineEdit->hasAcceptableInput())
+        ui->email_LineEdit->setStyleSheet("QLineEdit {color: red;}");
+    else
+        ui->email_LineEdit->setStyleSheet("QLineEdit {color: black;}");
 }

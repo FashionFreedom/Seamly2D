@@ -75,15 +75,17 @@
 #include "../qmuparser/qmudef.h"
 #include "../vtools/dialogs/support/edit_formula_dialog.h"
 #include "version.h"
-#include "mapplication.h" // Should be last because of definning qApp
 #include "../vformat/measurements.h"
+#include "mapplication.h" // Should be last because of definning qApp
 
 #include <QClipboard>
 #include <QComboBox>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QLabel>
 #include <QMessageBox>
+#include <QPixmap>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QProcess>
@@ -533,6 +535,63 @@ void TMainWindow::CreateFromExisting()
 		QDir directory(dir);
 		directory.rmpath(".");
 	}
+}
+
+/*
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::handleBodyScanner1()
+{
+    const QString filter = QString("3D Measure Up") + QLatin1String(" (*.txt)");
+
+    //Use standard path to template files
+    QString dir = qApp->SeamlyMeSettings()->getBodyScansPath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(dir);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = fileDialog(this, tr("Import body scan"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+                                        QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
+
+    QMessageBox messageBox(this);
+    messageBox.setMaximumWidth(600);
+    messageBox.setText("3D Measure Up file:");
+    messageBox.setInformativeText(filename);
+    messageBox.setStandardButtons(QMessageBox::Ok);
+    messageBox.setDefaultButton(QMessageBox::Ok);
+    messageBox.exec();
+}
+*/
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::handleBodyScanner2()
+{
+    QString msg = tr("To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.\n") +
+                  tr("You can attach your 3DLook file with an email and send to convert@seamly.io.\n\n") +
+                  tr("Subsequently, you will recieve an email with the converted file, which you can then\nload in SeamlyME as usual.\n\n") +
+                  tr("We'll attempt to open your email program now, where you will need to select the\n3DLook file to attach.");
+
+    QMessageBox messageBox(this);
+    messageBox.setIconPixmap(QPixmap(":/icon/body_scan.png"));
+    messageBox.setText("Convert 3DLook file:");
+    messageBox.setInformativeText(msg);
+    messageBox.setStandardButtons(QMessageBox::Ok);
+    messageBox.setDefaultButton(QMessageBox::Ok);
+    messageBox.exec();
+
+
+    VSettings *settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, "Seamly2DTeam", "Seamly2D", this);
+
+    QString to = "convert@seamly.io";
+    QString name = settings->getCompanyName();
+    QString email = settings->getEmail();
+    QString subject = "3DLook file conversion";
+    QString body = "Dear Seamly Team,\n\n Please convert the following 3DLook files to SeamlyME format.\n";
+
+    QDesktopServices::openUrl(QUrl("mailto:" + to + "?subject=" + subject + "&body=" + body, QUrl::TolerantMode));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2101,6 +2160,10 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionOpenMultisize, &QAction::triggered, this, &TMainWindow::OpenMultisize);
 	connect(ui->actionOpenTemplate, &QAction::triggered, this, &TMainWindow::OpenTemplate);
 	connect(ui->actionCreateFromExisting, &QAction::triggered, this, &TMainWindow::CreateFromExisting);
+
+    //connect(ui->bodyScanner1_Action, &QAction::triggered, this, &TMainWindow::handleBodyScanner1);
+	connect(ui->bodyScanner2_Action, &QAction::triggered, this, &TMainWindow::handleBodyScanner2);
+
 	connect(ui->print_Action, &QAction::triggered, this, &TMainWindow::print);
     connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
