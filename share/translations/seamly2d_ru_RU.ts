@@ -3970,12 +3970,10 @@ Do you want to download it?</source>
 Хотите скачать его?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Невозможно получить эксклюзивный доступ к файлу
-%1
-Возможно, файл уже загружается.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4043,10 +4041,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Edit Group</source>
         <translation>Редактировать группу</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4254,7 +4248,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Заблокировано</translation>
     </message>
     <message>
         <source>Group is locked</source>
@@ -4893,12 +4887,10 @@ Possibly the file is already being downloaded.</source>
         <translation>Миллиметры</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
-        <translation>Маржа выходит за рамки полиграфии.
-
-Применять настройки в любом случае?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -8328,10 +8320,6 @@ Do you want to save your changes?</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Безымянный</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -8365,7 +8353,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Выберите Цвет</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
@@ -8381,7 +8369,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Заблокировано</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
@@ -8397,7 +8385,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Piece</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Деталь</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
@@ -8640,6 +8628,66 @@ Do you want to save your changes?</source>
     <message>
         <source>Sound:</source>
         <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addres:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation type="unfinished">Эл. почта:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email format is incorrect.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9674,10 +9722,6 @@ Do you want to save your changes?</source>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
     <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation>Пути, которые использует Seamly2D</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Тип</translation>
     </message>
@@ -9708,6 +9752,14 @@ Do you want to save your changes?</source>
     <message>
         <source>My Templates</source>
         <translation>Мои шаблоны</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11223,6 +11275,41 @@ Do you want to save your changes?</source>
         <source>Pattern files</source>
         <translation>Файлы выкроек</translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can attach your 3DLook file with an email and send to convert@seamly.io.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subsequently, you will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We&apos;ll attempt to open your email program now, where you will need to select the
+3DLook file to attach.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -12009,6 +12096,10 @@ Do you want to save your changes?</source>
     <message>
         <source>label templates</source>
         <translation>Шаблоны метки</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14069,54 +14160,9 @@ Do you want to save your changes?</source>
         <translation>дюйм</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Линия_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>УголЛинии_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Дуга_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Спл_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>СлСпл</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>РадиусДуги_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Улог1Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол1Спл_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Спл_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
@@ -14149,16 +14195,6 @@ Do you want to save your changes?</source>
         <translation>Рост</translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>С1ДлинаСпл_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>С2ДлинаСпл_</translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>С1ДлинаСлСпл</translation>
@@ -14172,36 +14208,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>ТекущаяПрибавкаНаШов</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>М_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Дуга_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Радиус1Дуги_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Радиус2Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Улог1Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Дуги_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14322,11 +14328,6 @@ Do you want to save your changes?</source>
         <source>wOnFold</source>
         <comment>placeholder</comment>
         <translation>сНа Сгиб</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Переменная_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14531,6 +14532,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">М_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Переменная_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Линия_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">УголЛинии_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Дуга_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Спл_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">РадиусДуги_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Радиус1Дуги_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Радиус2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Угол2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Угол2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Угол1Спл_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Угол2Спл_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">С1ДлинаСпл_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">С2ДлинаСпл_</translation>
     </message>
 </context>
 <context>

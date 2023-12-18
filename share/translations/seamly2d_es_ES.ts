@@ -8660,6 +8660,66 @@ gráfica de usuario:</translation>
         <source>Sound:</source>
         <translation>Sonido:</translation>
     </message>
+    <message>
+        <source>Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Addres:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation type="unfinished">Correo electrónico:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email format is incorrect.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9694,10 +9754,6 @@ actualización:</translation>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
     <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation>Rutas que utiliza Seamly2D</translation>
-    </message>
-    <message>
         <source>Type</source>
         <translation>Tipo</translation>
     </message>
@@ -9728,6 +9784,14 @@ actualización:</translation>
     <message>
         <source>My Templates</source>
         <translation>Mis Plantillas</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11245,6 +11309,41 @@ Do you want to save your changes?</source>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation>Se produjo un error desconocido, por ejemplo una parte llena impedía escribir el archivo de bloqueo. Ignorelo si desea continuar (no se recomienda, puede provocar errores).</translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You can attach your 3DLook file with an email and send to convert@seamly.io.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Subsequently, you will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>We&apos;ll attempt to open your email program now, where you will need to select the
+3DLook file to attach.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -12031,6 +12130,10 @@ Do you want to save your changes?</source>
     <message>
         <source>label templates</source>
         <translation>Plantillas de la etiqueta</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14245,64 +14348,10 @@ Do you want to save your changes?</source>
         <translation>pulg</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Línea_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>AngleLine_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Arc_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translatorcomment>No agregue el símbolo _ al final del nombre</translatorcomment>
         <translation>SplPath</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>RadiusArc_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1Arc_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2Arc_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1Spl_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2Spl_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
@@ -14341,18 +14390,6 @@ Do you want to save your changes?</source>
         <translation>altura</translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>C1LengthSpl_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>C2LengthSpl_</translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translatorcomment>No agregue el símbolo _ al final del nombre</translatorcomment>
@@ -14368,42 +14405,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>MargenDeCosturaActual</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Radius1ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Radius2ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2ElArc_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14548,12 +14549,6 @@ Do you want to save your changes?</source>
         <comment>placeholder</comment>
         <translatorcomment>marcador de posición</translatorcomment>
         <translation>wLomo</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Variable_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14792,6 +14787,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
 Usage: fmod(x; y)</comment>
         <translatorcomment>Devuelve el resto en coma flotante de x/y (redondeado hacia cero) Uso: fmod(x; y)</translatorcomment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">M_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Variable_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Línea_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">AngleLine_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">RadiusArc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1Arc_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2Arc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C1LengthSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C2LengthSpl_</translation>
     </message>
 </context>
 <context>
