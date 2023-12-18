@@ -60,7 +60,6 @@
 #include "dialogs/dialogmdatabase.h"
 #include "dialogs/dialogseamlymepreferences.h"
 #include "dialogs/dialogexporttocsv.h"
-#include "dialogs/mailto_dialog.h"
 #include "dialogs/me_shortcuts_dialog.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/pmsystems.h"

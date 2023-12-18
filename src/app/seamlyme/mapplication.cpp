@@ -740,7 +740,7 @@ TMainWindow *MApplication::NewMainWindow()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::ProcessCMD()
+void MApplication::processCommandLine()
 {
     ParseCommandLine(SocketConnection::Client, arguments());
 }
