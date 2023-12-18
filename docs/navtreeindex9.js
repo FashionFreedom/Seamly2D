@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"d2/d9c/classTST__VEllipticalArc.html#af71009e2f7e3089c125f71bb65cb7159":[1,0,199,1],
 "d2/da3/tst__vcubicbezierpath_8h.html":[2,0,0,2,2,22],
 "d2/da3/tst__vcubicbezierpath_8h_source.html":[2,0,0,2,2,22],
 "d2/da5/tst__nameregexp_8cpp.html":[2,0,0,2,2,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "d3/d32/classVPatternLabelDataPrivate.html":[1,0,358],
 "d3/d32/classVPatternLabelDataPrivate.html#a0446cb29fa2d404b43cbd4697bd2c1af":[1,0,358,8],
 "d3/d32/classVPatternLabelDataPrivate.html#a118a9b4a972c4fed97325f2e33bd6446":[1,0,358,5],
-"d3/d32/classVPatternLabelDataPrivate.html#a32b6998a14cfa19e6faf0dee3e5182d5":[1,0,358,0],
-"d3/d32/classVPatternLabelDataPrivate.html#a42d20ad310ead9e3ff2e940bc5a401a3":[1,0,358,6]
+"d3/d32/classVPatternLabelDataPrivate.html#a32b6998a14cfa19e6faf0dee3e5182d5":[1,0,358,0]
 };

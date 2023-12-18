@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['referens_18590',['Referens',['../d2/df2/classVDrawTool.html#a69bf2b95d209765b25d9ea6931ad34a2',1,'VDrawTool']]],
-  ['removeoption_18591',['RemoveOption',['../d2/df2/classVDrawTool.html#aa261a054fa2833a8dc61ddb80ca1c04e',1,'VDrawTool']]]
+  ['referens_18666',['Referens',['../d2/df2/classVDrawTool.html#a69bf2b95d209765b25d9ea6931ad34a2',1,'VDrawTool']]],
+  ['removeoption_18667',['RemoveOption',['../d2/df2/classVDrawTool.html#aa261a054fa2833a8dc61ddb80ca1c04e',1,'VDrawTool']]]
 ];

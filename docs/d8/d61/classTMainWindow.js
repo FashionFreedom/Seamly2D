@@ -27,6 +27,7 @@ var classTMainWindow =
     [ "GetCustomName", "d8/d61/classTMainWindow.html#a0191e75cf46b9235eaec63c8e254841a", null ],
     [ "getMeasurementNumber", "d8/d61/classTMainWindow.html#aec8c750150c9c9ff34fb40a677807535", null ],
     [ "HackWidget", "d8/d61/classTMainWindow.html#a70c116fcf394626df69cf37f48c35d13", null ],
+    [ "handleBodyScanner2", "d8/d61/classTMainWindow.html#aecfb3f94b1689696a7a5d71964a6065c", null ],
     [ "handleExportToCSV", "d8/d61/classTMainWindow.html#a89b4194343ad59dc8cb14e226f4a082a", null ],
     [ "IgnoreLocking", "d8/d61/classTMainWindow.html#afdf00baedf5814d713774816996d8864", null ],
     [ "ImportFromPattern", "d8/d61/classTMainWindow.html#aa16223e3ef35905627a33a73750b7500", null ],

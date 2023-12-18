@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac73b91f310fd0038f160f1721d4bace6":[2,0,0,1,12,0,1,66,2,1],
 "d1/d30/dialogtool_8h.html#a68b566b665945afc1b16dd60d38f5844ac8d2fc8ed10b21e647d7f58d4436b050":[2,0,0,1,12,0,1,66,2,0],
 "d1/d30/dialogtool_8h_source.html":[2,0,0,1,12,0,1,66],
 "d1/d35/classDialogLineIntersect.html":[1,0,52],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "d1/d6f/classVToolMirrorByAxis.html#a18638fbfb924473174f8698ce7e7a5f9":[1,0,411,18],
 "d1/d6f/classVToolMirrorByAxis.html#a1e0e56b31f008aa655b3d766401060b6":[1,0,411,8],
 "d1/d6f/classVToolMirrorByAxis.html#a2343dc1ae765281b056880cf11976b55":[1,0,411,20],
-"d1/d6f/classVToolMirrorByAxis.html#a394dac20492bf8b52b158f2755c26447":[1,0,411,0],
-"d1/d6f/classVToolMirrorByAxis.html#a6b550255f1b35f15fe8fe3f5ae262017":[1,0,411,17]
+"d1/d6f/classVToolMirrorByAxis.html#a394dac20492bf8b52b158f2755c26447":[1,0,411,0]
 };

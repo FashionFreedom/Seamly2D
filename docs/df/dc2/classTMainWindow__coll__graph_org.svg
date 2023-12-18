@@ -13,60 +13,60 @@
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="453.5,-0.5 453.5,-585.5 583.5,-585.5 583.5,-0.5 453.5,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="451.5,-0.5 451.5,-585.5 585.5,-585.5 585.5,-0.5 451.5,-0.5"/>
 <text text-anchor="middle" x="518.5" y="-573.5" font-family="Helvetica,sans-Serif" font-size="10.00">TMainWindow</text>
-<polyline fill="none" stroke="black" points="453.5,-566.5 583.5,-566.5 "/>
-<text text-anchor="start" x="461.5" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
-<text text-anchor="start" x="461.5" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; mUnit</text>
-<text text-anchor="start" x="461.5" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pUnit</text>
-<text text-anchor="start" x="461.5" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; mType</text>
-<text text-anchor="start" x="461.5" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; currentSize</text>
-<text text-anchor="start" x="461.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; currentHeight</text>
-<text text-anchor="start" x="461.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; curFile</text>
-<text text-anchor="start" x="461.5" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; gradationHeights</text>
-<text text-anchor="start" x="461.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; gradationSizes</text>
-<text text-anchor="start" x="461.5" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; comboBoxUnits</text>
-<text text-anchor="start" x="461.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
-<polyline fill="none" stroke="black" points="453.5,-437.5 583.5,-437.5 "/>
-<text text-anchor="start" x="461.5" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TMainWindow()</text>
-<text text-anchor="start" x="461.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~TMainWindow()</text>
-<text text-anchor="start" x="461.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurrentFile()</text>
-<text text-anchor="start" x="461.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RetranslateTable()</text>
-<text text-anchor="start" x="461.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBaseMHeight()</text>
-<text text-anchor="start" x="461.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBaseMSize()</text>
-<text text-anchor="start" x="461.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPUnit()</text>
-<text text-anchor="start" x="461.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadFile()</text>
-<text text-anchor="start" x="461.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowToolTip()</text>
-<text text-anchor="start" x="461.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToSelected()</text>
-<text text-anchor="start" x="461.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateGroups()</text>
-<text text-anchor="start" x="461.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
-<text text-anchor="start" x="461.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
-<text text-anchor="start" x="461.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
-<text text-anchor="start" x="461.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
-<text text-anchor="start" x="461.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># exportToCSVData()</text>
-<text text-anchor="start" x="461.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># handleExportToCSV()</text>
-<text text-anchor="start" x="461.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetupMenu()</text>
-<text text-anchor="start" x="461.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitWindow()</text>
-<text text-anchor="start" x="461.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeTable()</text>
-<text text-anchor="start" x="461.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetDecimals()</text>
-<text text-anchor="start" x="461.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitUnits()</text>
-<text text-anchor="start" x="461.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitComboBoxUnits()</text>
-<text text-anchor="start" x="461.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitGender()</text>
-<text text-anchor="start" x="461.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowNewMData()</text>
-<text text-anchor="start" x="461.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowUnits()</text>
-<text text-anchor="start" x="461.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowHeaderUnits()</text>
-<text text-anchor="start" x="461.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
-<text text-anchor="start" x="461.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FileNew()</text>
-<text text-anchor="start" x="461.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenIndividual()</text>
-<text text-anchor="start" x="461.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenMultisize()</text>
-<text text-anchor="start" x="461.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenTemplate()</text>
-<text text-anchor="start" x="461.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateFromExisting()</text>
-<text text-anchor="start" x="461.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Preferences()</text>
-<text text-anchor="start" x="461.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ToolBarStyles()</text>
-<text text-anchor="start" x="461.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; print()</text>
-<text text-anchor="start" x="461.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; printPages()</text>
-<text text-anchor="start" x="461.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FileSave()</text>
-<text text-anchor="start" x="461.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 30 more...</text>
+<polyline fill="none" stroke="black" points="451.5,-566.5 585.5,-566.5 "/>
+<text text-anchor="start" x="459.5" y="-554.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ui</text>
+<text text-anchor="start" x="459.5" y="-543.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; mUnit</text>
+<text text-anchor="start" x="459.5" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; pUnit</text>
+<text text-anchor="start" x="459.5" y="-521.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; mType</text>
+<text text-anchor="start" x="459.5" y="-510.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; currentSize</text>
+<text text-anchor="start" x="459.5" y="-499.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; currentHeight</text>
+<text text-anchor="start" x="459.5" y="-488.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; curFile</text>
+<text text-anchor="start" x="459.5" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; gradationHeights</text>
+<text text-anchor="start" x="459.5" y="-466.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; gradationSizes</text>
+<text text-anchor="start" x="459.5" y="-455.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; comboBoxUnits</text>
+<text text-anchor="start" x="459.5" y="-444.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 9 more...</text>
+<polyline fill="none" stroke="black" points="451.5,-437.5 585.5,-437.5 "/>
+<text text-anchor="start" x="459.5" y="-425.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TMainWindow()</text>
+<text text-anchor="start" x="459.5" y="-414.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~TMainWindow()</text>
+<text text-anchor="start" x="459.5" y="-403.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurrentFile()</text>
+<text text-anchor="start" x="459.5" y="-392.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ RetranslateTable()</text>
+<text text-anchor="start" x="459.5" y="-381.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBaseMHeight()</text>
+<text text-anchor="start" x="459.5" y="-370.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetBaseMSize()</text>
+<text text-anchor="start" x="459.5" y="-359.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetPUnit()</text>
+<text text-anchor="start" x="459.5" y="-348.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ LoadFile()</text>
+<text text-anchor="start" x="459.5" y="-337.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShowToolTip()</text>
+<text text-anchor="start" x="459.5" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ zoomToSelected()</text>
+<text text-anchor="start" x="459.5" y="-315.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ updateGroups()</text>
+<text text-anchor="start" x="459.5" y="-304.5" font-family="Helvetica,sans-Serif" font-size="10.00"># closeEvent()</text>
+<text text-anchor="start" x="459.5" y="-293.5" font-family="Helvetica,sans-Serif" font-size="10.00"># changeEvent()</text>
+<text text-anchor="start" x="459.5" y="-282.5" font-family="Helvetica,sans-Serif" font-size="10.00"># showEvent()</text>
+<text text-anchor="start" x="459.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00"># eventFilter()</text>
+<text text-anchor="start" x="459.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00"># exportToCSVData()</text>
+<text text-anchor="start" x="459.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># handleExportToCSV()</text>
+<text text-anchor="start" x="459.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetupMenu()</text>
+<text text-anchor="start" x="459.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitWindow()</text>
+<text text-anchor="start" x="459.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; initializeTable()</text>
+<text text-anchor="start" x="459.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; SetDecimals()</text>
+<text text-anchor="start" x="459.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitUnits()</text>
+<text text-anchor="start" x="459.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitComboBoxUnits()</text>
+<text text-anchor="start" x="459.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; InitGender()</text>
+<text text-anchor="start" x="459.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowNewMData()</text>
+<text text-anchor="start" x="459.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowUnits()</text>
+<text text-anchor="start" x="459.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ShowHeaderUnits()</text>
+<text text-anchor="start" x="459.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
+<text text-anchor="start" x="459.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; FileNew()</text>
+<text text-anchor="start" x="459.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenIndividual()</text>
+<text text-anchor="start" x="459.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenMultisize()</text>
+<text text-anchor="start" x="459.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OpenTemplate()</text>
+<text text-anchor="start" x="459.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; CreateFromExisting()</text>
+<text text-anchor="start" x="459.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; handleBodyScanner2()</text>
+<text text-anchor="start" x="459.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; Preferences()</text>
+<text text-anchor="start" x="459.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ToolBarStyles()</text>
+<text text-anchor="start" x="459.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; print()</text>
+<text text-anchor="start" x="459.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; printPages()</text>
+<text text-anchor="start" x="459.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 31 more...</text>
 </a>
 </g>
 </g>
@@ -96,7 +96,7 @@
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M109.53,-750.22C124.2,-712.14 144.02,-668.67 168.5,-633 249.64,-514.78 376.77,-404.5 453.42,-343.47"/>
+<path fill="none" stroke="midnightblue" d="M109.53,-750.22C124.2,-712.14 144.02,-668.67 168.5,-633 248.93,-515.83 374.53,-406.45 451.37,-345.1"/>
 <polygon fill="none" stroke="midnightblue" points="106.18,-749.19 105.92,-759.78 112.73,-751.66 106.18,-749.19"/>
 </g>
 <!-- Node3 -->
@@ -134,8 +134,8 @@
 <!-- Node4&#45;&gt;Node1 -->
 <g id="edge3" class="edge">
 <title>Node4&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M280.12,-814.92C310.5,-748.54 389.54,-575.82 448.32,-447.35"/>
-<polygon fill="none" stroke="#404040" points="448.42,-447.15 447.28,-440.03 453.41,-436.24 454.55,-443.36 448.42,-447.15"/>
+<path fill="none" stroke="#404040" d="M280.12,-814.92C310.16,-749.28 387.78,-579.65 446.35,-451.66"/>
+<polygon fill="none" stroke="#404040" points="446.43,-451.49 445.29,-444.37 451.42,-440.58 452.56,-447.7 446.43,-451.49"/>
 <text text-anchor="middle" x="394.5" y="-607" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;search</text>
 </g>
 <!-- Node5 -->
@@ -229,8 +229,8 @@
 <!-- Node7&#45;&gt;Node1 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M715.02,-1117.89C714.41,-946.68 709.01,-721.4 686.5,-633 666.23,-553.41 625.68,-470.69 589.5,-406.89"/>
-<polygon fill="none" stroke="#404040" points="589.47,-406.83 583.01,-403.61 583.5,-396.42 589.96,-399.64 589.47,-406.83"/>
+<path fill="none" stroke="#404040" d="M715.02,-1117.89C714.41,-946.68 709.01,-721.4 686.5,-633 666.66,-555.08 627.38,-474.16 591.78,-410.93"/>
+<polygon fill="none" stroke="#404040" points="591.58,-410.57 585.14,-407.33 585.65,-400.14 592.09,-403.38 591.58,-410.57"/>
 <text text-anchor="middle" x="730" y="-841" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;data</text>
 </g>
 <!-- Node8 -->
@@ -289,8 +289,8 @@
 <!-- Node8&#45;&gt;Node1 -->
 <g id="edge7" class="edge">
 <title>Node8&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M760.42,-659.41C755.84,-650.41 751.19,-641.57 746.5,-633 700.01,-548.08 638.28,-457.35 590.78,-391.14"/>
-<polygon fill="none" stroke="#404040" points="590.59,-390.88 583.84,-388.35 583.58,-381.14 590.33,-383.67 590.59,-390.88"/>
+<path fill="none" stroke="#404040" d="M760.42,-659.41C755.84,-650.41 751.19,-641.57 746.5,-633 700.66,-549.27 640,-459.87 592.77,-393.92"/>
+<polygon fill="none" stroke="#404040" points="592.61,-393.7 585.86,-391.16 585.61,-383.95 592.36,-386.49 592.61,-393.7"/>
 <text text-anchor="middle" x="800.5" y="-607" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;individualMeasurements</text>
 </g>
 <!-- Node9 -->

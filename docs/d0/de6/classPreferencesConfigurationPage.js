@@ -2,6 +2,7 @@ var classPreferencesConfigurationPage =
 [
     [ "PreferencesConfigurationPage", "d0/de6/classPreferencesConfigurationPage.html#a0240da5a70266f8e864c6c542673b7cf", null ],
     [ "~PreferencesConfigurationPage", "d0/de6/classPreferencesConfigurationPage.html#ad8df1e72cbf9f76d915e32b268c6aa0a", null ],
+    [ "adjustTextColor", "d0/de6/classPreferencesConfigurationPage.html#a8c7534c66fdc442181d65c45241df82b", null ],
     [ "Apply", "d0/de6/classPreferencesConfigurationPage.html#a446c52770f60cac01435cf0293cf759b", null ],
     [ "changeEvent", "d0/de6/classPreferencesConfigurationPage.html#af121824ae8e725ae57fdce32959f56b2", null ],
     [ "InitUnits", "d0/de6/classPreferencesConfigurationPage.html#a4d8a0f540db8a9f705f29f60453d61a3", null ],

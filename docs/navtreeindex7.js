@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"d2/d08/classMouseCoordinates.html#a7fa5e986201bd2e1ce05754019f03063":[1,0,117,4],
 "d2/d08/classMouseCoordinates.html#a8c08f23569a21a6530b5548e7f6914ba":[1,0,117,3],
 "d2/d08/classMouseCoordinates.html#a8ce4250b9b58c41b1e72146ca996a0f8":[1,0,117,2],
 "d2/d08/classMouseCoordinates.html#adae5ae219484caf96008f94890d1b28c":[1,0,117,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "d2/d6d/classVArc.html#a1a00084ff4c81ec8088033b0d4a09bae":[1,0,236,10],
 "d2/d6d/classVArc.html#a1c97dab69e5750959019fb5b060f79d7":[1,0,236,0],
 "d2/d6d/classVArc.html#a331dc412c4c54176b03d91d43162796e":[1,0,236,6],
-"d2/d6d/classVArc.html#a3df6759593f4f9c24cf9b73d2c2f670c":[1,0,236,8],
-"d2/d6d/classVArc.html#a5aa418cc4c0929f95930c8acd8098102":[1,0,236,9]
+"d2/d6d/classVArc.html#a3df6759593f4f9c24cf9b73d2c2f670c":[1,0,236,8]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"d3/d32/classVPatternLabelDataPrivate.html#a42d20ad310ead9e3ff2e940bc5a401a3":[1,0,358,6],
 "d3/d32/classVPatternLabelDataPrivate.html#a495f6aab3ff0fe0e86f7a64f1fc984eb":[1,0,358,4],
 "d3/d32/classVPatternLabelDataPrivate.html#a51d2f43c183e84e8ce82b355d0708ec5":[1,0,358,1],
 "d3/d32/classVPatternLabelDataPrivate.html#a54a1ef4b260cfca1dd76ee7d1fe44b47":[1,0,358,10],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "d3/d84/classDialogArcWithLength.html#a17a55d06b478e7f5e3545dfbc0a0259c":[1,0,36,48],
 "d3/d84/classDialogArcWithLength.html#a1ae1397e31d9d418a77ce400d76526a8":[1,0,36,0],
 "d3/d84/classDialogArcWithLength.html#a278663cc4b234731d9bc5296a4ffd1b2":[1,0,36,36],
-"d3/d84/classDialogArcWithLength.html#a279b335f5b1d307a602b5c6ad9562b76":[1,0,36,41],
-"d3/d84/classDialogArcWithLength.html#a2f5267ddfd42f9b2c67ebf3c6055d726":[1,0,36,8]
+"d3/d84/classDialogArcWithLength.html#a279b335f5b1d307a602b5c6ad9562b76":[1,0,36,41]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"d1/db3/dialogtool_8cpp.html#ac2e003f541cb5afc14468f3b6945ef46":[2,0,0,1,12,0,1,65,2],
 "d1/db3/dialogtool_8cpp_source.html":[2,0,0,1,12,0,1,65],
 "d1/db7/vposter_8h.html":[2,0,0,1,6,29],
 "d1/db7/vposter_8h_source.html":[2,0,0,1,6,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "d2/d07/vgobject_8h.html#a1fccde82d17382120fb572b0386a6604":[2,0,0,1,5,28,1],
 "d2/d07/vgobject_8h_source.html":[2,0,0,1,5,28],
 "d2/d08/classMouseCoordinates.html":[1,0,117],
-"d2/d08/classMouseCoordinates.html#a3e03a77eca8fc458ad0cfc90774276dd":[1,0,117,0],
-"d2/d08/classMouseCoordinates.html#a7fa5e986201bd2e1ce05754019f03063":[1,0,117,4]
+"d2/d08/classMouseCoordinates.html#a3e03a77eca8fc458ad0cfc90774276dd":[1,0,117,0]
 };
