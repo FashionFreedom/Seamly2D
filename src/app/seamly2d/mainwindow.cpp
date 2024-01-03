@@ -478,7 +478,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
 
         if (measurements->Type() == MeasurementsType::Multisize)
         {
-            if (measurements->MUnit() == Unit::Inch)
+            if (measurements->measurementUnits() == Unit::Inch)
             {
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Wrong units.")),
                           qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
@@ -545,12 +545,12 @@ bool MainWindow::loadMeasurements(const QString &fileName)
     if (measurements->Type() == MeasurementsType::Multisize)
     {
 
-        VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->MUnit(),
+        VContainer::setSize(UnitConvertor(measurements->BaseSize(), measurements->measurementUnits(),
                                           *measurements->GetData()->GetPatternUnit()));
 
         qCInfo(vMainWindow, "Multisize file %s was loaded.", qUtf8Printable(fileName));
 
-        VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->MUnit(),
+        VContainer::setHeight(UnitConvertor(measurements->BaseHeight(), measurements->measurementUnits(),
                                             *measurements->GetData()->GetPatternUnit()));
 
         doc->SetPatternWasChanged(true);
@@ -2065,9 +2065,9 @@ void MainWindow::ShowMeasurements()
                     << "-u"
                     << UnitsToStr(qApp->patternUnit())
                     << "-e"
-                    << QString().setNum(static_cast<int>(UnitConvertor(VContainer::height(), doc->MUnit(), Unit::Cm)))
+                    << QString().setNum(static_cast<int>(UnitConvertor(VContainer::height(), doc->measurementUnits(), Unit::Cm)))
                     << "-s"
-                    << QString().setNum(static_cast<int>(UnitConvertor(VContainer::size(), doc->MUnit(), Unit::Cm)));
+                    << QString().setNum(static_cast<int>(UnitConvertor(VContainer::size(), doc->measurementUnits(), Unit::Cm)));
         }
         else
         {
@@ -6181,7 +6181,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
         {
             doc->SetMPath(RelativeMPath(fileName, customMeasureFile));
         }
-        qApp->setPatternUnit(doc->MUnit());
+        qApp->setPatternUnit(doc->measurementUnits());
         const QString path = AbsoluteMPath(fileName, doc->MPath());
 
         if (!path.isEmpty())

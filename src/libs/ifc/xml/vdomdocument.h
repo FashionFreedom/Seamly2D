@@ -135,7 +135,7 @@ public:
     static qreal   GetParametrDouble(const QDomElement& domElement, const QString &name, const QString &defValue);
     static quint32 getParameterId(const QDomElement& domElement);
 
-    Unit           MUnit() const;
+    Unit           measurementUnits() const;
 
     static void    ValidateXML(const QString &schema, const QString &fileName);
     virtual void   setXMLContent(const QString &fileName);

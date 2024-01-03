@@ -93,7 +93,7 @@
                             .arg(doc->GetPatternName())    //3
                             .arg(doc->GetPatternNumber())  //4
                             .arg(doc->GetVersion())        //5
-                            .arg(UnitsToStr(doc->MUnit())) //6
+                            .arg(UnitsToStr(doc->measurementUnits())) //6
                             .arg(doc->MPath())             //7
                             .arg(doc->GetDescription())    //8
                             .arg(doc->GetNotes())          //9

@@ -70,6 +70,10 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
 {
     ui->setupUi(this);
 
+    //-------------------- Startup
+    ui->showWelcome_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowWelcome());
+    //ui->showSplash_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowSplash());
+
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
     {
@@ -77,8 +81,8 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     });
 
     //-------------------- Decimal separator setup
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->SeamlyMeSettings()->GetOsSeparator());
+    ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOption_CheckBox->setChecked(qApp->SeamlyMeSettings()->GetOsSeparator());
 
     //---------------------- Pattern making system
     InitPMSystems(ui->systemCombo);
@@ -150,7 +154,7 @@ void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
     if (event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
-        ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
+        ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     }
     QWidget::changeEvent(event);
 }
@@ -159,7 +163,10 @@ void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
 void SeamlyMePreferencesConfigurationPage::Apply()
 {
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
-    settings->SetOsSeparator(ui->osOptionCheck->isChecked());
+
+    settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
+    //settings->setShowSplash(ui->showSplash_CheckBox->isChecked());
+    settings->SetOsSeparator(ui->osOption_CheckBox->isChecked());
 
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 

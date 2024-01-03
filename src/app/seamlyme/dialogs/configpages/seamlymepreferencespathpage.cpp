@@ -219,7 +219,7 @@ void SeamlyMePreferencesPathPage::initializeTable()
 
     {
         QTableWidgetItem *item = new QTableWidgetItem(tr("My Body Scans"));
-        //item->setIcon(QIcon("://icon/32x32/template_size_file.png"));
+        item->setIcon(QIcon("://icon/32x32/body_scan.png"));
         ui->pathTable->setItem(3, 0, item);
         item = new QTableWidgetItem(settings->getBodyScansPath());
         item->setToolTip(settings->getBodyScansPath());

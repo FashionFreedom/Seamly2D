@@ -107,6 +107,12 @@ public:
     QString              getDefaultPieceTemplate() const;
     void                 setDefaultPieceTemplate(const QString &text);
 
+    bool                 getShowWelcome() const;
+    void                 setShowWelcome(const bool &value);
+
+    bool                 getShowSplash() const;
+    void                 setShowSplash(const bool &value);
+
     bool                 GetOsSeparator() const;
     void                 SetOsSeparator(const bool &value);
 

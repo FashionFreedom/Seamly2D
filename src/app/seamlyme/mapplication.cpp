@@ -667,7 +667,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
             }
         }
 
-        loadTranslations(SeamlyMeSettings()->GetLocale());
+        //loadTranslations(SeamlyMeSettings()->GetLocale());
     }
 
     const QStringList args = parser.positionalArguments();
