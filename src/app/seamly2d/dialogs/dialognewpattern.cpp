@@ -75,7 +75,7 @@ DialogNewPattern::DialogNewPattern(VContainer *data, const QString &patternPiece
 
     ui->lineEditName->setClearButtonEnabled(true);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QRect position = this->frameGeometry();
     position.moveCenter(QGuiApplication::primaryScreen()->availableGeometry().center());

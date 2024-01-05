@@ -108,7 +108,7 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     SCASSERT(doc != nullptr)
 
     VSettings *settings = qApp->Seamly2DSettings();
-    settings->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     if (qApp->getFilePath().isEmpty())
     {

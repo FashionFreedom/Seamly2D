@@ -196,7 +196,7 @@ template <typename T>
 inline QString VAbstractApplication::LocaleToString(const T &value)
 {
     QLocale loc;
-    qApp->Settings()->GetOsSeparator() ? loc = QLocale() : loc = QLocale::c();
+    qApp->Settings()->getOsSeparator() ? loc = QLocale() : loc = QLocale::c();
     return loc.toString(value);
 }
 

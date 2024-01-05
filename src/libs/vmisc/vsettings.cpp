@@ -119,13 +119,13 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization, co
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetLabelLanguage() const
+QString VSettings::getLabelLanguage() const
 {
     return value(settingConfigurationLabelLanguage, QLocale().bcp47Name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetLabelLanguage(const QString &value)
+void VSettings::setLabelLanguage(const QString &value)
 {
     setValue(settingConfigurationLabelLanguage, value);
 }

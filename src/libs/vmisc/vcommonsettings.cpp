@@ -557,13 +557,13 @@ void VCommonSettings::setShowSplash(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetOsSeparator() const
+bool VCommonSettings::getOsSeparator() const
 {
     return value(settingConfigurationOsSeparator, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetOsSeparator(const bool &value)
+void VCommonSettings::setOsSeparator(const bool &value)
 {
     setValue(settingConfigurationOsSeparator, value);
 }
@@ -575,7 +575,7 @@ bool VCommonSettings::GetAutosaveState() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetAutosaveState(const bool &value)
+void VCommonSettings::setAutosaveState(const bool &value)
 {
     setValue(settingConfigurationAutosaveState, value);
 }
@@ -649,13 +649,13 @@ void VCommonSettings::SetSendReportState(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetLocale() const
+QString VCommonSettings::getLocale() const
 {
     return value(settingConfigurationLocale, QLocale().name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetLocale(const QString &value)
+void VCommonSettings::setLocale(const QString &value)
 {
     setValue(settingConfigurationLocale, value);
 }
@@ -1281,7 +1281,7 @@ int VCommonSettings::GetUndoCount() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetUndoCount(const int &value)
+void VCommonSettings::setUndoCount(const int &value)
 {
     setValue(settingPatternUndo, value);
 }

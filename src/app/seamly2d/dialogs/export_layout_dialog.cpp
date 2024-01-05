@@ -65,7 +65,7 @@ ExportLayoutDialog::ExportLayoutDialog(int count, Draw mode, const QString &file
     ui->path_LineEdit->setClearButtonEnabled(true);
     ui->filename_LineEdit->setClearButtonEnabled(true);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     m_SaveButton = ui->buttonBox->button(QDialogButtonBox::Save);
     SCASSERT(m_SaveButton != nullptr)

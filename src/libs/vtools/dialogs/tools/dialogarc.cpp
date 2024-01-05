@@ -220,7 +220,7 @@ void DialogArc::setCenter(const quint32 &value)
  */
 void DialogArc::setF2(const QString &value)
 {
-    f2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    f2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f2.length() > 80)
     {
@@ -286,7 +286,7 @@ void DialogArc::setLineColor(const QString &value)
  */
 void DialogArc::setF1(const QString &value)
 {
-    f1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    f1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f1.length() > 80)
     {
@@ -308,7 +308,7 @@ void DialogArc::setF1(const QString &value)
  */
 void DialogArc::setRadius(const QString &value)
 {
-    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius.length() > 80)
     {
@@ -586,7 +586,7 @@ quint32 DialogArc::getCenter() const
  */
 QString DialogArc::getRadius() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -596,7 +596,7 @@ QString DialogArc::getRadius() const
  */
 QString DialogArc::getF1() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f1, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(f1, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -606,5 +606,5 @@ QString DialogArc::getF1() const
  */
 QString DialogArc::getF2() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f2, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(f2, qApp->Settings()->getOsSeparator());
 }

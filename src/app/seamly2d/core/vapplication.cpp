@@ -589,7 +589,7 @@ void VApplication::InitOptions()
 
     if (VApplication::IsGUIMode())// By default console version uses system locale
     {
-        loadTranslations(Seamly2DSettings()->GetLocale());
+        loadTranslations(Seamly2DSettings()->getLocale());
     }
 
     static const char * GENERIC_ICON_TO_CHECK = "document-open";

@@ -70,7 +70,7 @@ LayoutSettingsDialog::LayoutSettingsDialog(VLayoutGenerator *generator, QWidget 
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     //moved from ReadSettings - well...it seems it can be done once only (i.e. constructor) because Init funcs dont
     //even cleanse lists before adding

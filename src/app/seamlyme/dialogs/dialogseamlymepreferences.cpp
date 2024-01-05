@@ -78,7 +78,7 @@ DialogSeamlyMePreferences::DialogSeamlyMePreferences(QWidget *parent)
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
     SCASSERT(ok_Button != nullptr)
@@ -156,7 +156,7 @@ void DialogSeamlyMePreferences::Apply()
     m_configurationPage->Apply();
     m_pathPage->Apply();
 
-    qApp->SeamlyMeSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->SeamlyMeSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     emit updateProperties();
     setResult(QDialog::Accepted);
 }

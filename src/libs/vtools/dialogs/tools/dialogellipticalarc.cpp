@@ -236,7 +236,7 @@ void DialogEllipticalArc::SetCenter(const quint32 &value)
  */
 QString DialogEllipticalArc::GetRadius1() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius1, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(radius1, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -246,7 +246,7 @@ QString DialogEllipticalArc::GetRadius1() const
  */
 void DialogEllipticalArc::SetRadius1(const QString &value)
 {
-    radius1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    radius1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius1.length() > 80)
     {
@@ -268,7 +268,7 @@ void DialogEllipticalArc::SetRadius1(const QString &value)
  */
 QString DialogEllipticalArc::GetRadius2() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius2, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(radius2, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -278,7 +278,7 @@ QString DialogEllipticalArc::GetRadius2() const
  */
 void DialogEllipticalArc::SetRadius2(const QString &value)
 {
-    radius2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    radius2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius2.length() > 80)
     {
@@ -300,7 +300,7 @@ void DialogEllipticalArc::SetRadius2(const QString &value)
  */
 QString DialogEllipticalArc::GetF1() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f1, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(f1, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -310,7 +310,7 @@ QString DialogEllipticalArc::GetF1() const
  */
 void DialogEllipticalArc::SetF1(const QString &value)
 {
-    f1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    f1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f1.length() > 80)
     {
@@ -332,7 +332,7 @@ void DialogEllipticalArc::SetF1(const QString &value)
  */
 QString DialogEllipticalArc::GetF2() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f2, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(f2, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -342,7 +342,7 @@ QString DialogEllipticalArc::GetF2() const
  */
 void DialogEllipticalArc::SetF2(const QString &value)
 {
-    f2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    f2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f2.length() > 80)
     {
@@ -364,7 +364,7 @@ void DialogEllipticalArc::SetF2(const QString &value)
  */
 QString DialogEllipticalArc::GetRotationAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(rotationAngle, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(rotationAngle, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -374,7 +374,7 @@ QString DialogEllipticalArc::GetRotationAngle() const
  */
 void DialogEllipticalArc::SetRotationAngle(const QString &value)
 {
-    rotationAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    rotationAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (rotationAngle.length() > 80)
     {

@@ -23,7 +23,8 @@ HEADERS += \
     $$PWD/configpages/preferencespatternpage.h \
     $$PWD/configpages/preferencespathpage.h \
     $$PWD/configpages/preferencesgraphicsviewpage.h \
-    $$PWD/dialogdatetimeformats.h
+    $$PWD/dialogdatetimeformats.h \
+    $$PWD/welcome_dialog.h
 
 SOURCES += \
     $$PWD/abstractlayout_dialog.cpp \
@@ -46,7 +47,8 @@ SOURCES += \
     $$PWD/configpages/preferencespatternpage.cpp \
     $$PWD/configpages/preferencespathpage.cpp \
     $$PWD/configpages/preferencesgraphicsviewpage.cpp \
-    $$PWD/dialogdatetimeformats.cpp
+    $$PWD/dialogdatetimeformats.cpp \
+    $$PWD/welcome_dialog.cpp
 
 FORMS += \
     $$PWD/calculator_dialog.ui \
@@ -68,4 +70,5 @@ FORMS += \
     $$PWD/configpages/preferencespatternpage.ui \
     $$PWD/configpages/preferencespathpage.ui \
     $$PWD/configpages/preferencesgraphicsviewpage.ui \
-    $$PWD/dialogdatetimeformats.ui
+    $$PWD/dialogdatetimeformats.ui \
+    $$PWD/welcome_dialog.ui

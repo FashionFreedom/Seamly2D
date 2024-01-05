@@ -452,7 +452,7 @@ bool DialogTool::eventFilter(QObject *object, QEvent *event)
             }
             else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     plainTextEdit->insertPlainText(QLocale().decimalPoint());
                 }
@@ -825,7 +825,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             QString formula = text;
             formula.replace("\n", " ");
             // Translate to internal look.
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 

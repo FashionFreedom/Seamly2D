@@ -86,10 +86,10 @@ int main(int argc, char *argv[])
 #endif //Q_OS_MAC
 
     MApplication app(argc, argv);
-    app.InitOptions();    
+    app.InitOptions();
 
     auto settings = qApp->SeamlyMeSettings();
-    app.loadTranslations(settings->GetLocale());
+    app.loadTranslations(settings->getLocale());
     bool showWelcome = settings->getShowWelcome();
     //bool showSplash  = settings->getShowSplash();
 

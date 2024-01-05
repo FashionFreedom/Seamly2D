@@ -491,7 +491,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
 void EditLabelTemplateDialog::InitPlaceholders()
 {
     // Pattern tags
-    QLocale locale(qApp->Settings()->GetLocale());
+    QLocale locale(qApp->Settings()->getLocale());
 
     const QString date = locale.toString(QDate::currentDate(), m_doc->GetLabelDateFormat());
     m_placeholders.insert(pl_date, qMakePair(tr("Date"), date));

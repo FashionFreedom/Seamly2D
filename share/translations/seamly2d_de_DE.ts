@@ -3903,10 +3903,12 @@ for writing</source>
 zum schreiben</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden 
+%1
+Möglicherweise wird die Datei bereits heruntergeladen.</translation>
     </message>
 </context>
 <context>
@@ -4816,10 +4818,12 @@ eine neue Gruppe der Liste zufügen</translation>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ränder gehen über den Druck hinaus. 
+
+Einstellungen trotzdem anwenden?</translation>
     </message>
 </context>
 <context>
@@ -8656,6 +8660,19 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>Email format is not valid.</source>
         <translation>Das E-Mail-Format ist nicht gültig.</translation>
     </message>
+    <message>
+        <source>Startup</source>
+        <translatorcomment>Startup</translatorcomment>
+        <translation>Startup</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Willkommensbildschirm nicht anzeigen</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -9807,15 +9824,87 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Welcome to Seamly2D</source>
+        <translation>Willkommen bei Seamly2D</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Bitte wählen Sie die gewünschten Einheiten, das Dezimaltrennzeichen und die Sprache. (Sie können diese Angaben später ändern.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Einheiten:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Dezimaltrennzeichen:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI-Sprache:</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Nicht mehr anzeigen</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Gebietsschema des Benutzers</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Zentimeter</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeter</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Zoll</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
+    </message>
+    <message>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Legt die für Seamly2D verwendete Sprache fest.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
     </message>
 </context>
 <context>

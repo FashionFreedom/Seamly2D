@@ -520,7 +520,7 @@ void EditFormulaDialog::resizeEvent(QResizeEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void EditFormulaDialog::SetFormula(const QString &value)
 {
-    m_formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    m_formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     m_undoFormula = m_formula;
     ui->plainTextEditFormula->setPlainText(m_formula);
     MoveCursorToEnd(ui->plainTextEditFormula);
@@ -547,7 +547,7 @@ void EditFormulaDialog::setPostfix(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString EditFormulaDialog::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(m_formula, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(m_formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

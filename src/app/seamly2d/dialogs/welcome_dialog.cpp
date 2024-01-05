@@ -1,6 +1,6 @@
-//  @file   me_welcome_dialog.cpp
+//  @file   welcome_dialog.cpp
 //  @author Douglas S Caskey
-//  @date   31 Dec, 2023
+//  @date   5 Jan, 2024
 //
 //  @brief
 //  @copyright
@@ -22,23 +22,21 @@
 //  You should have received a copy of the GNU General Public License
 //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
-#include "me_welcome_dialog.h"
-#include "ui_me_welcome_dialog.h"
+#include "welcome_dialog.h"
+#include "ui_welcome_dialog.h"
 
-#include "../vpatterndb/variables/measurement_variable.h"
-//#include "../vmisc/vseamlymesettings.h"
-#include "../mapplication.h"
+#include "../core/vapplication.h"
 
 #include <QPushButton>
 #include <QShowEvent>
 
 
 //---------------------------------------------------------------------------------------------------------------------
-SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
+SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::SeamlyMeWelcomeDialog)
+    , ui(new Ui::SeamlyWelcomeDialog)
     , m_langChanged(false)
-    , settings(qApp->SeamlyMeSettings())
+    , settings(qApp->Seamly2DSettings())
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -49,7 +47,7 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     //-------------------- Decimal separator setup
     ui->separator_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     ui->separator_CheckBox->setChecked(settings->getOsSeparator());
-    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyMeWelcomeDialog::seperatorChanged);
+    connect(ui->separator_CheckBox, &QCheckBox::stateChanged, this, &SeamlyWelcomeDialog::seperatorChanged);
 
     //-------------------- Languages setup
     InitLanguages(ui->language_ComboBox);
@@ -63,18 +61,18 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
 
     QPushButton *ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
     SCASSERT(ok_Button != nullptr)
-    connect(ok_Button, &QPushButton::clicked, this, &SeamlyMeWelcomeDialog::apply);
+    connect(ok_Button, &QPushButton::clicked, this, &SeamlyWelcomeDialog::apply);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-SeamlyMeWelcomeDialog::~SeamlyMeWelcomeDialog()
+SeamlyWelcomeDialog::~SeamlyWelcomeDialog()
 {
     delete ui;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 // @brief apply apply dialog changes
-void SeamlyMeWelcomeDialog::apply()
+void SeamlyWelcomeDialog::apply()
 {
     settings->SetUnit(qvariant_cast<QString>(ui->units_ComboBox->currentData()));
     settings->setOsSeparator(ui->separator_CheckBox->isChecked());
@@ -94,7 +92,7 @@ void SeamlyMeWelcomeDialog::apply()
 //---------------------------------------------------------------------------------------------------------------------
 // @brief changeEvent handle event changes
 // @param type event type
-void SeamlyMeWelcomeDialog::changeEvent(QEvent *event)
+void SeamlyWelcomeDialog::changeEvent(QEvent *event)
 {
     if (event->type() == QEvent::LanguageChange)
     {
@@ -108,7 +106,7 @@ void SeamlyMeWelcomeDialog::changeEvent(QEvent *event)
 }
 
 // @brief seperatorChanged handle change in decimal seperator
-void SeamlyMeWelcomeDialog::seperatorChanged()
+void SeamlyWelcomeDialog::seperatorChanged()
 {
     QString seperator = ui->separator_CheckBox->isChecked() ? QString(QLocale().decimalPoint())
                                                             : QString(QLocale::c().decimalPoint());
@@ -120,7 +118,7 @@ void SeamlyMeWelcomeDialog::seperatorChanged()
 //---------------------------------------------------------------------------------------------------------------------
 // @brief initUnits initinailize the units combobox
 // @param type measurment type
-void SeamlyMeWelcomeDialog::initUnits(const MeasurementsType &type)
+void SeamlyWelcomeDialog::initUnits(const MeasurementsType &type)
 {
     ui->units_ComboBox->addItem(tr("Centimeters"), unitCM);
     ui->units_ComboBox->addItem(tr("Millimeters"), unitMM);
