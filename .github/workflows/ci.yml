@@ -122,6 +122,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: xcode version
+        # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
+        # when using Xcode 15.1+, thus lock working version while we are on Qt5
+        run: |
+          sudo xcode-select -s /Applications/Xcode_14.2.app
+
       - uses: jurplel/install-qt-action@v3
         with:
           version: ${{ env.QT_VERSION }}
