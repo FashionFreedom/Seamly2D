@@ -92,7 +92,6 @@ const QString settingConfigurationEmail                  = QStringLiteral("graph
 const QString settingConfigurationWebsite                = QStringLiteral("graphicsview/website");
 
 const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
-const QString settingConfigurationShowSplash             = QStringLiteral("configuration/showSplash");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
@@ -542,18 +541,6 @@ bool VCommonSettings::getShowWelcome() const
 void VCommonSettings::setShowWelcome(const bool &value)
 {
     setValue(settingConfigurationShowWelcome, value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::getShowSplash() const
-{
-    return value(settingConfigurationShowSplash, 1).toBool();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setShowSplash(const bool &value)
-{
-    setValue(settingConfigurationShowSplash, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

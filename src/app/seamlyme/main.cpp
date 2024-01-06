@@ -61,7 +61,6 @@
 #include "../vmisc/vseamlymesettings.h"
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
-#include <QSplashScreen>
 #include <QTimer>
 
 int main(int argc, char *argv[])
@@ -91,8 +90,8 @@ int main(int argc, char *argv[])
     auto settings = qApp->SeamlyMeSettings();
     app.loadTranslations(settings->GetLocale());
     bool showWelcome = settings->getShowWelcome();
-    //bool showSplash  = settings->getShowSplash();
 
+    // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
     if (!showWelcome)
     {
         SeamlyMeWelcomeDialog *dialog = new SeamlyMeWelcomeDialog();
@@ -100,17 +99,7 @@ int main(int argc, char *argv[])
         dialog->exec();
     }
 
-/*
-    if (showSplash)
-    {
-        QPixmap pixmap(":/splash/coming_soon.png");
-        QSplashScreen splash(pixmap, Qt::WindowStaysOnTopHint);
-        splash.show();
-
-        QTimer::singleShot(5000, &splash, &QWidget::close);              // display splash screenfor 10 secs.
-    }
-*/
-    QTimer::singleShot(50, &app, &MApplication::processCommandLine);     // delay main screen from opening until
+    QTimer::singleShot(0, &app, &MApplication::processCommandLine);
 
     return app.exec();
 }
