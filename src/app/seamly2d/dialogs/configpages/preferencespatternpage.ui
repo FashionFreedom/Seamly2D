@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -24,8 +24,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>600</width>
-    <height>570</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -57,8 +57,8 @@
    </property>
    <property name="maximumSize">
     <size>
-     <width>465</width>
-     <height>555</height>
+     <width>16777215</width>
+     <height>16777215</height>
     </size>
    </property>
    <property name="font">
@@ -73,6 +73,12 @@
     <number>0</number>
    </property>
    <widget class="QWidget" name="tab_4">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <attribute name="title">
      <string>Pattern Piece</string>
     </attribute>
@@ -93,7 +99,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>420</width>
+         <width>16777215</width>
          <height>16777215</height>
         </size>
        </property>
@@ -193,6 +199,12 @@
     </layout>
    </widget>
    <widget class="QWidget" name="tab_5">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <attribute name="title">
      <string>Notches</string>
     </attribute>
@@ -213,7 +225,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>420</width>
+         <width>16777215</width>
          <height>16777215</height>
         </size>
        </property>
@@ -618,6 +630,12 @@
     </layout>
    </widget>
    <widget class="QWidget" name="tab_10">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <attribute name="title">
      <string>Grainlines</string>
     </attribute>
@@ -644,7 +662,7 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>420</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
@@ -928,6 +946,12 @@
     </widget>
    </widget>
    <widget class="QWidget" name="tab_6">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <attribute name="title">
      <string>Paths</string>
     </attribute>
@@ -954,7 +978,7 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>420</width>
+       <width>16777215</width>
        <height>16777215</height>
       </size>
      </property>
@@ -1963,6 +1987,12 @@
     </widget>
    </widget>
    <widget class="QWidget" name="tab_7">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
     <attribute name="title">
      <string>Labels</string>
     </attribute>
@@ -1983,7 +2013,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>420</width>
+         <width>16777215</width>
          <height>16777215</height>
         </size>
        </property>
@@ -2301,7 +2331,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>420</width>
+         <width>16777215</width>
          <height>16777215</height>
         </size>
        </property>

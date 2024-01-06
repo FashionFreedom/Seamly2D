@@ -131,16 +131,16 @@ void VSettings::SetLabelLanguage(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetDefPathPattern()
+QString VSettings::getDefaultPatternPath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("patterns");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetPathPattern() const
+QString VSettings::getPatternPath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
-    return settings.value(settingPathsPattern, GetDefPathPattern()).toString();
+    return settings.value(settingPathsPattern, getDefaultPatternPath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -152,7 +152,7 @@ void VSettings::SetPathPattern(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetDefPathLayout()
+QString VSettings::getDefaultLayoutPath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("layouts");
 }
@@ -161,7 +161,7 @@ QString VSettings::GetDefPathLayout()
 QString VSettings::getLayoutPath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
-    return settings.value(settingPathsLayout, GetDefPathLayout()).toString();
+    return settings.value(settingPathsLayout, getDefaultLayoutPath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

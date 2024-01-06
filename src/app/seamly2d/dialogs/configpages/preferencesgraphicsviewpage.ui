@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
@@ -24,8 +24,8 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="font">
@@ -56,8 +56,8 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>465</width>
-       <height>550</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="font">
@@ -137,6 +137,12 @@
             </item>
             <item>
              <widget class="QGroupBox" name="groupBox_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <pointsize>9</pointsize>
@@ -351,6 +357,12 @@
       <layout class="QVBoxLayout" name="verticalLayout_19">
        <item>
         <widget class="QGroupBox" name="labelFont_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
@@ -616,6 +628,12 @@
        </item>
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
@@ -879,6 +897,12 @@
        </item>
        <item>
         <widget class="QGroupBox" name="pointNameFont_GroupBox_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize">
           <size>
            <width>420</width>
@@ -1176,7 +1200,7 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1329,7 +1353,7 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>
@@ -1482,7 +1506,7 @@
          </property>
          <property name="maximumSize">
           <size>
-           <width>420</width>
+           <width>16777215</width>
            <height>16777215</height>
           </size>
          </property>

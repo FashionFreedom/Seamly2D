@@ -3798,7 +3798,7 @@ bool MainWindow::SaveAs()
     bool usedNotExistedDir = false;
     if (filePath.isEmpty())
     {
-        dir = qApp->Seamly2DSettings()->GetPathPattern();
+        dir = qApp->Seamly2DSettings()->getPatternPath();
         fileName = tr("pattern");
     }
     else
