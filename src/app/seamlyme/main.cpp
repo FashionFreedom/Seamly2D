@@ -61,6 +61,7 @@
 #include "../vmisc/vseamlymesettings.h"
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
+#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -91,7 +92,7 @@ int main(int argc, char *argv[])
 
     // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
     bool showWelcome = !settings->getShowWelcome();
-    
+
     if (showWelcome)
     {
         SeamlyMeWelcomeDialog *dialog = new SeamlyMeWelcomeDialog();
@@ -99,7 +100,8 @@ int main(int argc, char *argv[])
         dialog->exec();
     }
 
-    app.processCommandLine();
+    QTimer::singleShot(0, &app, &MApplication::processCommandLine);
+    //app.processCommandLine();
 
     return app.exec();
 }
