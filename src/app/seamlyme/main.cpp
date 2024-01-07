@@ -61,7 +61,6 @@
 #include "../vmisc/vseamlymesettings.h"
 
 #include <QMessageBox> // For QT_REQUIRE_VERSION
-#include <QTimer>
 
 int main(int argc, char *argv[])
 {
@@ -85,21 +84,22 @@ int main(int argc, char *argv[])
 #endif //Q_OS_MAC
 
     MApplication app(argc, argv);
-    app.InitOptions();    
+    app.InitOptions();
 
     auto settings = qApp->SeamlyMeSettings();
     app.loadTranslations(settings->GetLocale());
-    bool showWelcome = settings->getShowWelcome();
 
     // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
-    if (!showWelcome)
+    bool showWelcome = !settings->getShowWelcome();
+    
+    if (showWelcome)
     {
         SeamlyMeWelcomeDialog *dialog = new SeamlyMeWelcomeDialog();
         dialog->setAttribute(Qt::WA_DeleteOnClose, true);
         dialog->exec();
     }
 
-    QTimer::singleShot(0, &app, &MApplication::processCommandLine);
+    app.processCommandLine();
 
     return app.exec();
 }
