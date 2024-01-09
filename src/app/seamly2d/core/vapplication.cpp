@@ -604,12 +604,12 @@ void VApplication::InitOptions()
 
     OpenSettings();
     VSettings *settings = Seamly2DSettings();
-    QDir().mkpath(settings->GetDefPathLayout());
-    QDir().mkpath(settings->GetDefPathPattern());
+    QDir().mkpath(settings->getDefaultLayoutPath());
+    QDir().mkpath(settings->getDefaultPatternPath());
     QDir().mkpath(settings->getDefaultIndividualSizePath());
     QDir().mkpath(settings->getDefaultMultisizePath());
     QDir().mkpath(settings->getDefaultTemplatePath());
-    QDir().mkpath(settings->GetDefPathLabelTemplate());
+    QDir().mkpath(settings->getDefaultLabelTemplatePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

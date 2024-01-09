@@ -164,17 +164,22 @@ void SeamlyMePreferencesPathPage::editPath()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), path,
-                                                          QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks |
+                                                              QFileDialog::DontUseNativeDialog,
+                                                              QFileDialog::Directory, QFileDialog::AcceptOpen);
+
+    const QString dir = QFileInfo(filename).filePath();
+
+    if (usedNotExistedDir)
+    {
+        QDir directory(path);
+        directory.rmpath(".");
+    }
+
     if (dir.isEmpty())
     {
-        if (usedNotExistedDir)
-        {
-            QDir directory(path);
-            directory.rmpath(".");
-        }
-
-        defaultPath();
         return;
     }
 

@@ -72,7 +72,6 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
 
     //-------------------- Startup
     ui->showWelcome_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowWelcome());
-    //ui->showSplash_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowSplash());
 
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -165,9 +164,7 @@ void SeamlyMePreferencesConfigurationPage::Apply()
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
     settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
-    //settings->setShowSplash(ui->showSplash_CheckBox->isChecked());
     settings->setOsSeparator(ui->osOption_CheckBox->isChecked());
-
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 
     if (m_langChanged || m_systemChanged)

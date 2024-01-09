@@ -97,8 +97,8 @@ public:
     QString              getTemplatePath() const;
     void                 setTemplatePath(const QString &value);
 
-    static QString       GetDefPathLabelTemplate();
-    QString              GetPathLabelTemplate() const;
+    static QString       getDefaultLabelTemplatePath();
+    QString              getLabelTemplatePath() const;
     void                 SetPathLabelTemplate(const QString &value);
 
     QString              getDefaultPatternTemplate() const;
@@ -109,9 +109,6 @@ public:
 
     bool                 getShowWelcome() const;
     void                 setShowWelcome(const bool &value);
-
-    bool                 getShowSplash() const;
-    void                 setShowSplash(const bool &value);
 
     bool                 getOsSeparator() const;
     void                 setOsSeparator(const bool &value);

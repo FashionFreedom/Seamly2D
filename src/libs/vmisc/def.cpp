@@ -445,12 +445,12 @@ QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath)
 }
 
 QString fileDialog(QWidget *parent, const QString &title,  const QString &dir, const QString &filter,
-                   QString *selectedFilter, QFileDialog::Option option, QFileDialog::FileMode mode,
+                   QString *selectedFilter, QFileDialog::Options options, QFileDialog::FileMode mode,
                    QFileDialog::AcceptMode accept)
 {
     QFileDialog dialog(parent, title, dir, filter);
     dialog.setWindowFlags(dialog.windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    dialog.setOption(option);
+    dialog.setOptions(options);
     dialog.setFileMode(mode);
     dialog.setAcceptMode(accept);
     dialog.setSupportedSchemes(QStringList(QStringLiteral("file")));
