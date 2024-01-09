@@ -490,15 +490,15 @@ void VCommonSettings::setBodyScansPath(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathLabelTemplate()
+QString VCommonSettings::getDefaultLabelTemplatePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathLabelTemplate() const
+QString VCommonSettings::getLabelTemplatePath() const
 {
-    return value(settingPathsLabelTemplate, GetDefPathLabelTemplate()).toString();
+    return value(settingPathsLabelTemplate, getDefaultLabelTemplatePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -510,7 +510,7 @@ void VCommonSettings::SetPathLabelTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPatternTemplate() const
 {
-    return value(settingDefaultPatternTemplate, GetPathLabelTemplate() + "default_pattern_label.xml").toString();
+    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -522,7 +522,7 @@ void VCommonSettings::setDefaultPatternTemplate(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultPieceTemplate() const
 {
-    return value(settingDefaultPieceTemplate, GetPathLabelTemplate() + "default_piece_label.xml").toString();
+    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "default_piece_label.xml").toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------

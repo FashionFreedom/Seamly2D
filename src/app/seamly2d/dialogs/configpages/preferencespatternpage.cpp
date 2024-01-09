@@ -263,7 +263,7 @@ void PreferencesPatternPage::setDefaultTemplate()
 
     QString filter(tr("Label template") + QLatin1String("(*.xml)"));
     const QString fileName = QFileDialog::getOpenFileName(this, tr("Import template"),
-                                                          settings->GetPathLabelTemplate(), filter, nullptr,
+                                                          settings->getLabelTemplatePath(), filter, nullptr,
                                                           QFileDialog::DontUseNativeDialog);
 
 

@@ -97,8 +97,8 @@ public:
     QString              getTemplatePath() const;
     void                 setTemplatePath(const QString &value);
 
-    static QString       GetDefPathLabelTemplate();
-    QString              GetPathLabelTemplate() const;
+    static QString       getDefaultLabelTemplatePath();
+    QString              getLabelTemplatePath() const;
     void                 SetPathLabelTemplate(const QString &value);
 
     QString              getDefaultPatternTemplate() const;

@@ -403,7 +403,7 @@ void MApplication::InitOptions()
     QDir().mkpath(settings->getDefaultTemplatePath());
     QDir().mkpath(settings->getDefaultIndividualSizePath());
     QDir().mkpath(settings->getDefaultMultisizePath());
-    QDir().mkpath(settings->GetDefPathLabelTemplate());
+    QDir().mkpath(settings->getDefaultLabelTemplatePath());
 
     qCInfo(mApp, "Version: %s", qUtf8Printable(APP_VERSION_STR));
     qCInfo(mApp, "Build revision: %s", BUILD_REVISION);
