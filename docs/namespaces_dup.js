@@ -48,6 +48,7 @@ var namespaces_dup =
       [ "settingConfigurationOsSeparator", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6e9567caa6878f26427f31829687c72a", null ],
       [ "settingConfigurationRotateSuffix", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a49808ed294e367be1fa93861f1f5c36c", null ],
       [ "settingConfigurationSendReportState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aae86da731199bc98a2ad66f72db5c901", null ],
+      [ "settingConfigurationShowWelcome", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a541bb478fb63027bbd5b3c10e9fefe33", null ],
       [ "settingConfigurationState", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad5165727659916350befceb487d7d367", null ],
       [ "settingConfigurationTelephone", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a6ff734082fe6c60dbcba93cf3dc4ddde", null ],
       [ "settingConfigurationUnit", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aa446a2e6f60f80bd44c6063ad3c6a549", null ],

@@ -63,7 +63,6 @@ var hierarchy =
       [ "DialogDateTimeFormats", "da/d06/classDialogDateTimeFormats.html", null ],
       [ "DialogExportToCSV", "dc/d09/classDialogExportToCSV.html", null ],
       [ "DialogLayoutProgress", "dd/d64/classDialogLayoutProgress.html", null ],
-      [ "DialogNewMeasurements", "d9/de2/classDialogNewMeasurements.html", null ],
       [ "DialogNewPattern", "da/da8/classDialogNewPattern.html", null ],
       [ "DialogPatternProperties", "d4/d15/classDialogPatternProperties.html", null ],
       [ "DialogPreferences", "d1/d61/classDialogPreferences.html", null ],
@@ -119,6 +118,8 @@ var hierarchy =
       [ "EditLabelTemplateDialog", "d7/df1/classEditLabelTemplateDialog.html", null ],
       [ "MeShortcutsDialog", "dd/d67/classMeShortcutsDialog.html", null ],
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],
+      [ "NewMeasurementsDialog", "dc/da3/classNewMeasurementsDialog.html", null ],
+      [ "SeamlyMeWelcomeDialog", "d5/d64/classSeamlyMeWelcomeDialog.html", null ],
       [ "ShortcutsDialog", "de/d8e/classShortcutsDialog.html", null ],
       [ "ShowInfoDialog", "da/d5b/classShowInfoDialog.html", null ],
       [ "Utils::CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html", null ]

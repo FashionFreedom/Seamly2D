@@ -24,6 +24,7 @@ var vcommonsettings_8cpp =
     [ "settingConfigurationOsSeparator", "d4/d11/vcommonsettings_8cpp.html#a6e9567caa6878f26427f31829687c72a", null ],
     [ "settingConfigurationRotateSuffix", "d4/d11/vcommonsettings_8cpp.html#a49808ed294e367be1fa93861f1f5c36c", null ],
     [ "settingConfigurationSendReportState", "d4/d11/vcommonsettings_8cpp.html#aae86da731199bc98a2ad66f72db5c901", null ],
+    [ "settingConfigurationShowWelcome", "d4/d11/vcommonsettings_8cpp.html#a541bb478fb63027bbd5b3c10e9fefe33", null ],
     [ "settingConfigurationState", "d4/d11/vcommonsettings_8cpp.html#ad5165727659916350befceb487d7d367", null ],
     [ "settingConfigurationTelephone", "d4/d11/vcommonsettings_8cpp.html#a6ff734082fe6c60dbcba93cf3dc4ddde", null ],
     [ "settingConfigurationUnit", "d4/d11/vcommonsettings_8cpp.html#aa446a2e6f60f80bd44c6063ad3c6a549", null ],
