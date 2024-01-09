@@ -7106,7 +7106,7 @@ bool MainWindow::setHeight(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ProcessCMD()
+void MainWindow::processCommandLine()
 {
     const VCommandLinePtr cmd = qApp->CommandLine();
     auto args = cmd->OptInputFileNames();

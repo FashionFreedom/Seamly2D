@@ -97,10 +97,10 @@ int main(int argc, char *argv[])
     app.InitOptions();
 
     auto settings = qApp->Seamly2DSettings();
-    //app.loadTranslations(settings->getLocale());
-    bool showWelcome = settings->getShowWelcome();
+    // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
+    bool showWelcome = !settings->getShowWelcome();
 
-    if (!showWelcome)
+    if (showWelcome)
     {
         SeamlyWelcomeDialog *dialog = new SeamlyWelcomeDialog();
         dialog->setAttribute(Qt::WA_DeleteOnClose, true);
@@ -108,21 +108,21 @@ int main(int argc, char *argv[])
         app.loadTranslations(settings->getLocale());
     }
 
-    MainWindow w;
+    MainWindow window;
 #if !defined(Q_OS_MAC)
     app.setWindowIcon(QIcon(":/icon/64x64/icon64x64.png"));
 #endif // !defined(Q_OS_MAC)
-    app.setMainWindow(&w);
+    app.setMainWindow(&window);
 
     int msec = 0;
     //Before we load pattern show window.
     if (VApplication::IsGUIMode())
     {
-        w.show();
+        window.show();
         msec = 15; // set delay for correct the first fitbest zoom
     }
 
-    QTimer::singleShot(msec, &w, SLOT(ProcessCMD()));
+    QTimer::singleShot(msec, &window, &MainWindow::processCommandLine);
 
     return app.exec();
 }

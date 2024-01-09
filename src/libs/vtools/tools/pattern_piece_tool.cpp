@@ -1366,6 +1366,10 @@ void PatternPieceTool::keyReleaseEvent(QKeyEvent *event)
 
         case Qt::Key_S:
             {
+                if (event->modifiers() & Qt::ControlModifier)
+                {
+                    break;
+                }
                 toggleSeamAllowance(!piece.IsSeamAllowance());
                 break;
             }

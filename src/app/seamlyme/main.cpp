@@ -101,7 +101,6 @@ int main(int argc, char *argv[])
     }
 
     QTimer::singleShot(0, &app, &MApplication::processCommandLine);
-    //app.processCommandLine();
 
     return app.exec();
 }
