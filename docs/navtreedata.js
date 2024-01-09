@@ -86,7 +86,7 @@ var NAVTREEINDEX =
 "d4/d43/classVPattern.html#a2c883d0e6582c6463828b912a0b1b762",
 "d4/d7f/classDialogInternalPath.html#a6396b400b8c374419318df708fa017f9",
 "d4/da0/pattern__piece__dialog_8h.html#a99e233a1cb0213a420b931b50195e09e",
-"d4/da4/def_8h.html#a65e418ff8a3ba84e3530a4d46ac42788",
+"d4/da4/def_8h.html#a649cee1df19c5ee54bd377e7e84f6fa0",
 "d4/dc0/classVAbstractFloatItemData.html",
 "d5/d23/classFvUpdater.html#a0b6132221e8bafacf1fa207963e04164",
 "d5/d41/classPatternPieceDialog.html#a0c9c06f8293aefe4176fd65c4301da4e",

@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 175;
+var viewWidth = 187;
 var viewHeight = 573;
 var sectionId = 'dynsection-0';
 </script>
@@ -54,23 +54,23 @@ var sectionId = 'dynsection-0';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>VSeamlyMeSettings</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-569 171,-569 171,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-569 183,-569 183,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="10,-0.5 10,-123.5 157,-123.5 157,-0.5 10,-0.5"/>
-<text text-anchor="middle" x="83.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">VSeamlyMeSettings</text>
-<polyline fill="none" stroke="black" points="10,-104.5 157,-104.5 "/>
-<text text-anchor="middle" x="83.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="black" points="10,-85.5 157,-85.5 "/>
-<text text-anchor="start" x="18" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VSeamlyMeSettings()</text>
-<text text-anchor="start" x="18" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDataBaseGeometry()</text>
-<text text-anchor="start" x="18" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDataBaseGeometry()</text>
-<text text-anchor="start" x="18" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDefHeight()</text>
-<text text-anchor="start" x="18" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefHeight()</text>
-<text text-anchor="start" x="18" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDefSize()</text>
-<text text-anchor="start" x="18" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefSize()</text>
+<polygon fill="#bfbfbf" stroke="black" points="16,-0.5 16,-123.5 163,-123.5 163,-0.5 16,-0.5"/>
+<text text-anchor="middle" x="89.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">VSeamlyMeSettings</text>
+<polyline fill="none" stroke="black" points="16,-104.5 163,-104.5 "/>
+<text text-anchor="middle" x="89.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="black" points="16,-85.5 163,-85.5 "/>
+<text text-anchor="start" x="24" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VSeamlyMeSettings()</text>
+<text text-anchor="start" x="24" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDataBaseGeometry()</text>
+<text text-anchor="start" x="24" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setDataBaseGeometry()</text>
+<text text-anchor="start" x="24" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDefHeight()</text>
+<text text-anchor="start" x="24" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefHeight()</text>
+<text text-anchor="start" x="24" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SetDefSize()</text>
+<text text-anchor="start" x="24" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefSize()</text>
 </a>
 </g>
 </g>
@@ -78,11 +78,11 @@ var sectionId = 'dynsection-0';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../de/d0f/classVCommonSettings.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-160.5 0,-470.5 167,-470.5 167,-160.5 0,-160.5"/>
-<text text-anchor="middle" x="83.5" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCommonSettings</text>
-<polyline fill="none" stroke="black" points="0,-451.5 167,-451.5 "/>
+<polygon fill="white" stroke="black" points="0,-160.5 0,-470.5 179,-470.5 179,-160.5 0,-160.5"/>
+<text text-anchor="middle" x="89.5" y="-458.5" font-family="Helvetica,sans-Serif" font-size="10.00">VCommonSettings</text>
+<polyline fill="none" stroke="black" points="0,-451.5 179,-451.5 "/>
 <text text-anchor="start" x="8" y="-439.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ unixStandardSharePath</text>
-<polyline fill="none" stroke="black" points="0,-432.5 167,-432.5 "/>
+<polyline fill="none" stroke="black" points="0,-432.5 179,-432.5 "/>
 <text text-anchor="start" x="8" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VCommonSettings()</text>
 <text text-anchor="start" x="8" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getIndividualSizePath()</text>
 <text text-anchor="start" x="8" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setIndividualSizePath()</text>
@@ -92,7 +92,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="8" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setBodyScansPath()</text>
 <text text-anchor="start" x="8" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getTemplatePath()</text>
 <text text-anchor="start" x="8" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setTemplatePath()</text>
-<text text-anchor="start" x="8" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPathLabelTemplate()</text>
+<text text-anchor="start" x="8" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getLabelTemplatePath()</text>
 <text text-anchor="start" x="8" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 261 more...</text>
 <text text-anchor="start" x="8" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ SharePath()</text>
 <text text-anchor="start" x="8" y="-288.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MultisizeTablesPath()</text>
@@ -104,7 +104,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="8" y="-222.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultMultisizePath()</text>
 <text text-anchor="start" x="8" y="-211.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultBodyScansPath()</text>
 <text text-anchor="start" x="8" y="-200.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultTemplatePath()</text>
-<text text-anchor="start" x="8" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetDefPathLabelTemplate()</text>
+<text text-anchor="start" x="8" y="-189.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getDefaultLabelTemplatePath()</text>
 <text text-anchor="start" x="8" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PredefinedDateFormats()</text>
 <text text-anchor="start" x="8" y="-167.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PredefinedTimeFormats()</text>
 </a>
@@ -113,27 +113,27 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="midnightblue" d="M83.5,-150.13C83.5,-140.91 83.5,-132 83.5,-123.62"/>
-<polygon fill="none" stroke="midnightblue" points="80,-150.24 83.5,-160.24 87,-150.24 80,-150.24"/>
+<path fill="none" stroke="midnightblue" d="M89.5,-150.13C89.5,-140.91 89.5,-132 89.5,-123.62"/>
+<polygon fill="none" stroke="midnightblue" points="86,-150.24 89.5,-160.24 93,-150.24 86,-150.24"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
 <g id="a_node3"><a xlink:title=" ">
-<polygon fill="white" stroke="#bfbfbf" points="51.5,-507.5 51.5,-564.5 115.5,-564.5 115.5,-507.5 51.5,-507.5"/>
-<text text-anchor="middle" x="83.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSettings</text>
-<polyline fill="none" stroke="#bfbfbf" points="51.5,-545.5 115.5,-545.5 "/>
-<text text-anchor="middle" x="83.5" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
-<polyline fill="none" stroke="#bfbfbf" points="51.5,-526.5 115.5,-526.5 "/>
-<text text-anchor="middle" x="83.5" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polygon fill="white" stroke="#bfbfbf" points="57.5,-507.5 57.5,-564.5 121.5,-564.5 121.5,-507.5 57.5,-507.5"/>
+<text text-anchor="middle" x="89.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">QSettings</text>
+<polyline fill="none" stroke="#bfbfbf" points="57.5,-545.5 121.5,-545.5 "/>
+<text text-anchor="middle" x="89.5" y="-533.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
+<polyline fill="none" stroke="#bfbfbf" points="57.5,-526.5 121.5,-526.5 "/>
+<text text-anchor="middle" x="89.5" y="-514.5" font-family="Helvetica,sans-Serif" font-size="10.00"> </text>
 </a>
 </g>
 </g>
 <!-- Node3&#45;&gt;Node2 -->
 <g id="edge2" class="edge">
 <title>Node3&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M83.5,-497.28C83.5,-489.21 83.5,-480.21 83.5,-470.65"/>
-<polygon fill="none" stroke="midnightblue" points="80,-497.33 83.5,-507.33 87,-497.33 80,-497.33"/>
+<path fill="none" stroke="midnightblue" d="M89.5,-497.28C89.5,-489.21 89.5,-480.21 89.5,-470.65"/>
+<polygon fill="none" stroke="midnightblue" points="86,-497.33 89.5,-507.33 93,-497.33 86,-497.33"/>
 </g>
 </g>
 </svg>

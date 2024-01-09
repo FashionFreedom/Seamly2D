@@ -1,6 +1,8 @@
 var classVSettings =
 [
     [ "VSettings", "d4/d80/classVSettings.html#a509ec6bce6ddd31b164fd3c935dc272e", null ],
+    [ "getDefaultLayoutPath", "d4/d80/classVSettings.html#a5100c2ec3b49d17a0e4acc3594339e58", null ],
+    [ "getDefaultPatternPath", "d4/d80/classVSettings.html#aaef66f2af986f10d7284dbb1618701e2", null ],
     [ "GetDefIgnoreAllFields", "d4/d80/classVSettings.html#ad0a99c6039e95ba7150750a27408c407", null ],
     [ "GetDefLayoutAutoCrop", "d4/d80/classVSettings.html#a94b3fab3949252ef2516e0e1a82a4d1c", null ],
     [ "GetDefLayoutGroup", "d4/d80/classVSettings.html#a3e1143f5b543cef8da391a9eb1d9edf1", null ],
@@ -11,8 +13,6 @@ var classVSettings =
     [ "GetDefLayoutUnitePages", "d4/d80/classVSettings.html#af7c28a2afa59eb55dee8480043aae760", null ],
     [ "GetDefLayoutWidth", "d4/d80/classVSettings.html#a29ad03e168085c0b969051e9437669ce", null ],
     [ "GetDefMultiplier", "d4/d80/classVSettings.html#a84d523cb49eb34db1bf91ba30358dc84", null ],
-    [ "GetDefPathLayout", "d4/d80/classVSettings.html#a38b5e0d1e032d3d6cea113ac40ce3e60", null ],
-    [ "GetDefPathPattern", "d4/d80/classVSettings.html#a4bb7f509ceb3dc585b6bce761ad8d8b5", null ],
     [ "GetDefStripOptimization", "d4/d80/classVSettings.html#afbfc108c531b78231638e8634b7a5e33", null ],
     [ "GetDefTextAsPaths", "d4/d80/classVSettings.html#a577679269a37109bf1e4a0ee25488b87", null ],
     [ "GetFields", "d4/d80/classVSettings.html#aa411c7224ebad06c46a3f1e77e4d62d2", null ],
@@ -31,7 +31,7 @@ var classVSettings =
     [ "GetLayoutUnitePages", "d4/d80/classVSettings.html#ae04624968d599c98376ea3b26b6a2a49", null ],
     [ "GetLayoutWidth", "d4/d80/classVSettings.html#a58054c03e521d67a01abb66caf62e16a", null ],
     [ "GetMultiplier", "d4/d80/classVSettings.html#a2f97cd8b49044c487c33d00dc0da2955", null ],
-    [ "GetPathPattern", "d4/d80/classVSettings.html#aa0be4d2d2d0b94abb9a2d08f0f081f33", null ],
+    [ "getPatternPath", "d4/d80/classVSettings.html#a176ce588c256ab41e333b839a7ce3f07", null ],
     [ "GetProxy", "d4/d80/classVSettings.html#a8dd490eec6fa24552c46b2d338a83b8b", null ],
     [ "GetProxyAddress", "d4/d80/classVSettings.html#acd7b5ad70243ce426a4539a33d44c971", null ],
     [ "GetProxyPass", "d4/d80/classVSettings.html#ac663df86b69eeda15a16cad91c805e1f", null ],
