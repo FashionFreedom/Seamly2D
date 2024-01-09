@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DialogNewMeasurements</class>
- <widget class="QDialog" name="DialogNewMeasurements">
+ <class>NewMeasurementsDialog</class>
+ <widget class="QDialog" name="NewMeasurementsDialog">
   <property name="windowModality">
    <enum>Qt::WindowModal</enum>
   </property>
@@ -215,7 +215,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>accepted()</signal>
-   <receiver>DialogNewMeasurements</receiver>
+   <receiver>NewMeasurementsDialog</receiver>
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
@@ -231,7 +231,7 @@
   <connection>
    <sender>buttonBox</sender>
    <signal>rejected()</signal>
-   <receiver>DialogNewMeasurements</receiver>
+   <receiver>NewMeasurementsDialog</receiver>
    <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel">

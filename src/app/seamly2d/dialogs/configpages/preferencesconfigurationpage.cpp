@@ -208,7 +208,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
 
     // Decimal separator setup
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
 
     // Unit setup
@@ -244,10 +244,12 @@ PreferencesConfigurationPage::~PreferencesConfigurationPage()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesConfigurationPage::Apply()
 {
-    if(!ui->email_LineEdit->hasAcceptableInput()){
+    if(!ui->email_LineEdit->text().isEmpty() && !ui->email_LineEdit->hasAcceptableInput())
+    {
         QMessageBox::warning(this, tr("Email verification"),
-                             tr("Email format is incorrect."), QMessageBox::Ok);
-        return;
+                             tr("Email format is not valid."), QMessageBox::Ok);
+
+        ui->email_LineEdit->setText(QString(""));
     }
 
     VSettings *settings = qApp->Seamly2DSettings();
@@ -353,7 +355,7 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
     if (event->type() == QEvent::LanguageChange)
     {
         ui->retranslateUi(this);
-        ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
+        ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     }
     QWidget::changeEvent(event);
 }

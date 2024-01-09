@@ -7,19 +7,56 @@
     <x>0</x>
     <y>0</y>
     <width>485</width>
-    <height>526</height>
+    <height>567</height>
    </rect>
   </property>
   <property name="maximumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
    <string notr="true">Configuration</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="startup_GroupBox">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Startup</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_7">
+      <item>
+       <widget class="QCheckBox" name="showWelcome_CheckBox">
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Do not show welcome screen</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item>
     <widget class="QGroupBox" name="groupBox_2">
      <property name="font">
@@ -56,6 +93,12 @@
         </item>
         <item>
          <widget class="QComboBox" name="langCombo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -87,7 +130,7 @@
            </font>
           </property>
           <property name="text">
-           <string>Decimal separator parts:</string>
+           <string>Decimal separator:</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -95,7 +138,13 @@
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="osOptionCheck">
+         <widget class="QCheckBox" name="osOption_CheckBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -108,7 +157,7 @@
            </font>
           </property>
           <property name="text">
-           <string notr="true">&lt; With OS options &gt;</string>
+           <string notr="true">&lt; User locale &gt;</string>
           </property>
           <property name="checked">
            <bool>true</bool>
@@ -124,6 +173,7 @@
     <widget class="QGroupBox" name="groupBox_3">
      <property name="font">
       <font>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -143,6 +193,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -156,6 +207,12 @@
         </item>
         <item>
          <widget class="QComboBox" name="systemCombo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -164,6 +221,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -183,6 +241,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -196,6 +255,12 @@
         </item>
         <item>
          <widget class="QLabel" name="systemAuthorValueLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -204,6 +269,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -226,6 +292,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -233,14 +300,14 @@
            <string>Book:</string>
           </property>
           <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPlainTextEdit" name="systemBookValueLabel">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -253,6 +320,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -270,6 +338,7 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="font">
       <font>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -289,6 +358,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -302,6 +372,12 @@
         </item>
         <item>
          <widget class="QComboBox" name="defHeightCombo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -310,6 +386,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -329,6 +406,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -342,6 +420,12 @@
         </item>
         <item>
          <widget class="QComboBox" name="defSizeCombo">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="minimumSize">
            <size>
             <width>300</width>
@@ -350,6 +434,7 @@
           </property>
           <property name="font">
            <font>
+            <pointsize>10</pointsize>
             <bold>false</bold>
            </font>
           </property>
@@ -364,6 +449,7 @@
     <widget class="QGroupBox" name="groupBox_5">
      <property name="font">
       <font>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -381,6 +467,7 @@
         </property>
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>false</bold>
          </font>
         </property>
@@ -396,6 +483,7 @@
     <widget class="QGroupBox" name="groupBox_6">
      <property name="font">
       <font>
+       <pointsize>10</pointsize>
        <bold>true</bold>
       </font>
      </property>
@@ -407,6 +495,7 @@
        <widget class="QCheckBox" name="toolBarStyle_CheckBox">
         <property name="font">
          <font>
+          <pointsize>10</pointsize>
           <bold>false</bold>
          </font>
         </property>

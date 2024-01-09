@@ -2053,49 +2053,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Nuevo archivo de medidas</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Tipo de medida:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Unidad:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Talla basica:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Altura básica:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individual</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centímetros</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Pulgadas</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>Multitalla</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Milímetros</translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -3985,7 +3942,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4299,10 +4256,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Nombre</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation>Descripción</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4901,7 +4854,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6538,10 +6491,6 @@ Do you want to save your changes?</source>
         <translation>Punto Medio de Línea</translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto Medio de Línea (Mayúsculas+O, Mayúsculas+L)</translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation>Mayúsculas+O, Mayúsculas+L</translation>
     </message>
@@ -7386,6 +7335,49 @@ Do you want to save your changes?</source>
     <message>
         <source>move spline path</source>
         <translation>mover ruta de spline</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Nuevo archivo de medidas</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Tipo de medida:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Unidad:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Talla base:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Altura base:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individual</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Multitalla</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centímetros</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Milímetros</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Pulgadas</translation>
     </message>
 </context>
 <context>
@@ -8501,8 +8493,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Idioma del interfaz
-gráfica de usuario:</translation>
+        <translation>GUI Idioma:</translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8511,10 +8502,6 @@ gráfica de usuario:</translation>
     <message>
         <source>Label language:</source>
         <translation>Idioma de las etiquetas:</translation>
-    </message>
-    <message>
-        <source>With OS options</source>
-        <translation>Con opciones de sistema operativo</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8662,63 +8649,67 @@ gráfica de usuario:</translation>
     </message>
     <message>
         <source>Designer Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Información para diseñadores</translation>
     </message>
     <message>
         <source>Company / Designer Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Empresa / Información para diseñadores</translation>
     </message>
     <message>
         <source>Company / Designer:</source>
-        <translation type="unfinished"></translation>
+        <translation>Empresa / Diseñador:</translation>
     </message>
     <message>
         <source>Contact:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Addres:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contacto:</translation>
     </message>
     <message>
         <source>City:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ciudad:</translation>
     </message>
     <message>
         <source>State:</source>
-        <translation type="unfinished"></translation>
+        <translation>Estado:</translation>
     </message>
     <message>
         <source>Zipcode:</source>
-        <translation type="unfinished"></translation>
+        <translation>Código postal:</translation>
     </message>
     <message>
         <source>Country:</source>
-        <translation type="unfinished"></translation>
+        <translation>País:</translation>
     </message>
     <message>
         <source>Telephone:</source>
-        <translation type="unfinished"></translation>
+        <translation>Teléfono:</translation>
     </message>
     <message>
         <source>Fax:</source>
-        <translation type="unfinished"></translation>
+        <translation>Fax:</translation>
     </message>
     <message>
         <source>Email:</source>
-        <translation type="unfinished">Correo electrónico:</translation>
+        <translation>Correo electrónico:</translation>
     </message>
     <message>
         <source>Website:</source>
-        <translation type="unfinished"></translation>
+        <translation>Página web:</translation>
     </message>
     <message>
         <source>Email verification</source>
-        <translation type="unfinished"></translation>
+        <translation>Verificación del correo electrónico</translation>
     </message>
     <message>
-        <source>Email format is incorrect.</source>
-        <translation type="unfinished"></translation>
+        <source>Address:</source>
+        <translation>:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation>El formato del correo electrónico no es válido.</translation>
     </message>
 </context>
 <context>
@@ -9699,10 +9690,6 @@ actualización:</translation>
         <translation>GUI Idioma:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation>Separador decimal:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation>Sistema de creación de patrones</translation>
     </message>
@@ -9747,8 +9734,20 @@ actualización:</translation>
         <translation>Talla:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Con opciones de sistema operativo</translation>
+        <source>Startup</source>
+        <translation>Puesta en marcha</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>No mostrar la pantalla de bienvenida</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Separador decimal:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
     </message>
 </context>
 <context>
@@ -9787,10 +9786,92 @@ actualización:</translation>
     </message>
     <message>
         <source>Paths that SeamlyME uses</source>
-        <translation type="unfinished"></translation>
+        <translation>Rutas que utiliza SeamlyME</translation>
     </message>
     <message>
         <source>My Body Scans</source>
+        <translation>Mis escáneres corporales</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Bienvenido a SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>Usuarios de 3D Look</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Para utilizar un escaneado corporal 3D Look es necesario convertir el archivo al formato SeamlyME. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Adjunte su archivo 3DLook a un correo electrónico y envíelo a convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Recibirá un correo electrónico con el archivo convertido, que podrá cargar en SeamlyME como de costumbre.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Elija las unidades, el separador decimal y el idioma que prefiera. (Puede cambiarlos más adelante.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Unidades:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Establece las unidades por defecto para un nuevo archivo de medición.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Separador decimal:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI Idioma:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Establece el idioma utilizado para SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>No volver a mostrar</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centímetros</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Milímetros</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Pulgadas</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -11311,38 +11392,42 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import body scan as</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar escáner corporal como</translation>
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation type="unfinished"></translation>
+        <translation>3D Measure Up</translation>
     </message>
     <message>
         <source>3D Look</source>
-        <translation type="unfinished"></translation>
+        <translation>3D Look</translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation>Adjunte su archivo 3DLook a un correo electrónico y envíelo a convert@seamly.io.
+
+</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation>Recibirá un correo electrónico con el archivo convertido, que podrá cargar en SeamlyME como de costumbre.
+
+</translation>
     </message>
     <message>
         <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Para utilizar un escaneado corporal 3D Look es necesario convertir el archivo al formato SeamlyME.
+</translation>
     </message>
     <message>
-        <source>You can attach your 3DLook file with an email and send to convert@seamly.io.
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Subsequently, you will recieve an email with the converted file, which you can then
-load in SeamlyME as usual.
-
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>We&apos;ll attempt to open your email program now, where you will need to select the
-3DLook file to attach.</source>
-        <translation type="unfinished"></translation>
+        <source>Convert 3DLook file:</source>
+        <translation>Convertir archivo 3DLook:</translation>
     </message>
 </context>
 <context>
@@ -12133,7 +12218,7 @@ load in SeamlyME as usual.
     </message>
     <message>
         <source>bodyscans</source>
-        <translation type="unfinished"></translation>
+        <translation>escaneos corporales</translation>
     </message>
 </context>
 <context>
@@ -14791,32 +14876,32 @@ Usage: fmod(x; y)</comment>
     <message>
         <source>M_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished">M_</translation>
+        <translation>M_</translation>
     </message>
     <message>
         <source>Variable_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished">Variable_</translation>
+        <translation>Variable_</translation>
     </message>
     <message>
         <source>Line_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished">Línea_</translation>
+        <translation>Línea_</translation>
     </message>
     <message>
         <source>AngleLine_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished">AngleLine_</translation>
+        <translation>AngleLine_</translation>
     </message>
     <message>
         <source>Arc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished"></translation>
+        <translation>Arco_</translation>
     </message>
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished"></translation>
+        <translation>ElArco_</translation>
     </message>
     <message>
         <source>Spl_</source>

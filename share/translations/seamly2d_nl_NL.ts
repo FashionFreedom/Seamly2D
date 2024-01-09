@@ -2020,49 +2020,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Nieuw maten bestand</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Maten soort:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Eenheid:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Basis maat:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Basis hoogte:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individueel</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimeters</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Inches</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>Meerdere maten</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeters</translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -3946,7 +3903,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4076,7 +4033,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spl_</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
@@ -4260,10 +4217,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Naam</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation>Beschrijving</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4862,7 +4815,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6507,10 +6460,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Middelpunt op Lijn</translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punt - Middelpunt op Lijn (Shift+O, Shift+L)</translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation>Shift+O, Shift+L</translation>
     </message>
@@ -7330,6 +7279,49 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>move spline path</source>
         <translation>verplaats splinepad</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Nieuw maten bestand</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Maten soort:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Eenheid:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Basis maat:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Basis hoogte:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individueel</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Meerdere maten</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
     </message>
 </context>
 <context>
@@ -8456,10 +8448,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Taal label:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Met OS optiies</translation>
-    </message>
-    <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation>De standaardwaarde van de eenheid is opgewaardeerd en zal worden gebruikt  als de standaardbasis voor uw volgende patrooncreatie.</translation>
     </message>
@@ -8620,7 +8608,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Addres:</source>
+        <source>Address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8660,8 +8648,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Email format is incorrect.</source>
+        <source>Email format is not valid.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -9640,10 +9632,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>GUI taal:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation>Decimale gescheiden delen:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation>Patroon teken systeem</translation>
     </message>
@@ -9688,8 +9676,20 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Maat:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Met OS opties</translation>
+        <source>Startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished">Decimaal scheidingsteken:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -9732,6 +9732,88 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>My Body Scans</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Welkom bij SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>3D Look gebruikers</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Om een 3D Look bodyscan te gebruiken, moet het bestand worden geconverteerd naar het SeamlyME formaat. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Kies de eenheden, het decimaalscheidingsteken en de taal van je voorkeur. (Je kunt deze later wijzigen.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Eenheden:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Decimaal scheidingsteken:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI taal:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Niet meer weergeven</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Lokalisatie gebruiker</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9854,7 +9936,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Opnieuw doen</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -11250,38 +11332,42 @@ Wil je deze veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Import body scan as</source>
-        <translation type="unfinished"></translation>
+        <translation>Scan lichaam importeren als</translation>
     </message>
     <message>
         <source>3D Measure Up</source>
-        <translation type="unfinished"></translation>
+        <translation>3D Measure Up</translation>
     </message>
     <message>
         <source>3D Look</source>
-        <translation type="unfinished"></translation>
+        <translation>3D Look</translation>
     </message>
     <message>
         <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Om een 3D Look bodyscan te gebruiken, moet het bestand worden geconverteerd naar het SeamlyME formaat.
+</translation>
     </message>
     <message>
-        <source>You can attach your 3DLook file with an email and send to convert@seamly.io.
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.
+
+</translation>
     </message>
     <message>
-        <source>Subsequently, you will recieve an email with the converted file, which you can then
+        <source>You will recieve an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.
+
+</translation>
     </message>
     <message>
-        <source>We&apos;ll attempt to open your email program now, where you will need to select the
-3DLook file to attach.</source>
-        <translation type="unfinished"></translation>
+        <source>Convert 3DLook file:</source>
+        <translation>3DLook-bestand converteren:</translation>
     </message>
 </context>
 <context>
@@ -14529,12 +14615,12 @@ Usage: fmod(x; y)</comment>
     <message>
         <source>ElArc_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">EllBoog_</translation>
     </message>
     <message>
         <source>Spl_</source>
         <comment>Leave the _ symbol in translation</comment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spl_</translation>
     </message>
     <message>
         <source>RadiusArc_</source>

@@ -2015,49 +2015,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individuální</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimetry</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Palce</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -4255,10 +4212,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation type="unfinished">Název</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1</source>
@@ -6499,10 +6452,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7321,6 +7270,49 @@ Chcete uložit své změny?</translation>
     <name>MoveSplinePath</name>
     <message>
         <source>move spline path</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individuální</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimetry</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Palce</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8448,10 +8440,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8612,7 +8600,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Addres:</source>
+        <source>Address:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -8652,7 +8640,11 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Email format is incorrect.</source>
+        <source>Email format is not valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9632,10 +9624,6 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9680,7 +9668,19 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>With OS options</source>
+        <source>Startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9725,6 +9725,88 @@ Chcete uložit své změny?</translation>
     <message>
         <source>My Body Scans</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Jednotky:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation type="unfinished">Centimetry</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation type="unfinished">Palce</translation>
     </message>
 </context>
 <context>
@@ -11257,21 +11339,20 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You can attach your 3DLook file with an email and send to convert@seamly.io.
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Subsequently, you will recieve an email with the converted file, which you can then
+        <source>You will recieve an email with the converted file, which you can then
 load in SeamlyME as usual.
 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>We&apos;ll attempt to open your email program now, where you will need to select the
-3DLook file to attach.</source>
+        <source>Convert 3DLook file:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
