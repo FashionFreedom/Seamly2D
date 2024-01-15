@@ -29,7 +29,7 @@
    <iconset resource="../../../libs/vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/logos/seamly_logo_32.png</normaloff>:/icon/logos/seamly_logo_32.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
+  <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
@@ -96,7 +96,7 @@
              </font>
             </property>
             <property name="text">
-             <string>Please choose your preferred units, decimal separator, and language. (You can change these later.)</string>
+             <string>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</string>
             </property>
             <property name="wordWrap">
              <bool>true</bool>
@@ -238,6 +238,149 @@ When unchecked the period is used.</string>
             <property name="toolTip">
              <string>Sets the language used for Seamly2D.</string>
             </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="selectionSound_Label">
+            <property name="minimumSize">
+             <size>
+              <width>150</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Sound:</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QComboBox" name="selectionSound_ComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="locale">
+             <locale language="English" country="UnitedStates"/>
+            </property>
+            <property name="currentText">
+             <string notr="true">silent</string>
+            </property>
+            <property name="placeholderText">
+             <string notr="true"/>
+            </property>
+            <item>
+             <property name="text">
+              <string notr="true">silent</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">button_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">mouse1_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">mouse2_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">mouse3_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">camera_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">camera_buzz</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">clock_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">clock_beep</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">microwave_beep</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">coffeemaker_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">coffeemaker2_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">inspirstar_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">phone2_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">phone1_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">scissors_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">wallswitch_click</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string notr="true">buzz_click</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>

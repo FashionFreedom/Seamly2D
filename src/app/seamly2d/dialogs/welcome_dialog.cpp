@@ -29,6 +29,7 @@
 
 #include <QPushButton>
 #include <QShowEvent>
+#include <QSound>
 
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -36,6 +37,7 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyWelcomeDialog)
     , m_langChanged(false)
+    , m_selectionSoundChanged(false)
     , settings(qApp->Seamly2DSettings())
 {
     ui->setupUi(this);
@@ -55,6 +57,18 @@ SeamlyWelcomeDialog::SeamlyWelcomeDialog(QWidget *parent)
             this, [this]()
     {
         m_langChanged = true;
+    });
+
+    //-------------------- Selection sound
+    int index = ui->selectionSound_ComboBox->findText(settings->getSound());
+    if (index != -1)
+    {
+        ui->selectionSound_ComboBox->setCurrentIndex(index);
+    }
+    connect(ui->selectionSound_ComboBox, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_selectionSoundChanged = true;
+        QSound::play("qrc:/sounds/" + ui->selectionSound_ComboBox->currentText() + ".wav");
     });
 
     ui->doNotShow_CheckBox->setChecked(settings->getShowWelcome());
@@ -84,6 +98,13 @@ void SeamlyWelcomeDialog::apply()
         const QString locale = qvariant_cast<QString>(ui->language_ComboBox->currentData());
         settings->setLocale(locale);
         m_langChanged = false;
+    }
+
+    if (m_selectionSoundChanged)
+    {
+        const QString sound = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
+        settings->setSelectionSound(sound);
+        m_selectionSoundChanged = false;
     }
 
     done(QDialog::Accepted);

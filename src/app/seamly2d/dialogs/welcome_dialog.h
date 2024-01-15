@@ -52,6 +52,7 @@ private:
     Q_DISABLE_COPY(SeamlyWelcomeDialog)
     Ui::SeamlyWelcomeDialog *ui;
     bool                       m_langChanged;
+    bool                       m_selectionSoundChanged;
     VSettings                 *settings;
 
     void                       initUnits(const MeasurementsType &type);
