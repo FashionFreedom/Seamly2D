@@ -9746,148 +9746,162 @@ Vuoi salvare i cambiamenti?</translation>
     <name>SeamlyMeWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Benvenuti</translation>
     </message>
     <message>
         <source>Welcome to SeamlyME</source>
-        <translation type="unfinished"></translation>
+        <translation>Benvenuti a SeamlyME</translation>
     </message>
     <message>
         <source>3D Look users</source>
-        <translation type="unfinished"></translation>
+        <translation>Utenti di 3D Look</translation>
     </message>
     <message>
         <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
-        <translation type="unfinished"></translation>
+        <translation>Per utilizzare una scansione del corpo 3D Look, il file deve essere convertito nel formato SeamlyME. </translation>
     </message>
     <message>
         <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
-        <translation type="unfinished"></translation>
+        <translation>Allegare il file 3DLook a un&apos;e-mail e inviarlo a convert@seamly.io.</translation>
     </message>
     <message>
         <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
-        <translation type="unfinished"></translation>
+        <translation>Riceverete un&apos;e-mail con il file convertito, che potrete caricare in SeamlyME come di consueto.</translation>
     </message>
     <message>
         <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Scegliere le unità di misura, il separatore decimale e la lingua preferiti. (È possibile modificarli in seguito.)</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Unità:</translation>
+        <translation>Unità:</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta le unità di misura predefinite per un nuovo file di misura.</translation>
     </message>
     <message>
         <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Separatore decimale:</translation>
     </message>
     <message>
         <source>Selects what decimal separator char to use. 
 When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il carattere di separazione decimale da utilizzare. 
+Quando è selezionata, viene utilizzato il separatore del locale dell&apos;utente. 
+Quando è deselezionato, viene utilizzato il punto.</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation type="unfinished">Lingua di interfaccia:</translation>
+        <translation>Lingua di interfaccia:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta la lingua utilizzata per SeamlyMe.</translation>
     </message>
     <message>
         <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando è selezionata, la finestra di benvenuto non viene visualizzata. 
+È possibile modificare questa impostazione nelle preferenze di SeamlyMe.</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
+        <translation>Non mostrare di nuovo</translation>
     </message>
     <message>
         <source>User locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Locale dell&apos;utente</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished">Centimetri</translation>
+        <translation>Centimetri</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Millimetri</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished">Pollici</translation>
+        <translation>Pollici</translation>
     </message>
 </context>
 <context>
     <name>SeamlyWelcomeDialog</name>
     <message>
         <source>Welcome</source>
-        <translation type="unfinished"></translation>
+        <translation>Benvenuti</translation>
     </message>
     <message>
         <source>Welcome to Seamly2D</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Benvenuti a Seamly2D</translation>
     </message>
     <message>
         <source>Units:</source>
-        <translation type="unfinished">Unità:</translation>
+        <translation>Unità:</translation>
     </message>
     <message>
         <source>Sets the default units for a new measurement file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta le unità di misura predefinite per un nuovo file di misura.</translation>
     </message>
     <message>
         <source>Decimal separator:</source>
-        <translation type="unfinished"></translation>
+        <translation>Separatore decimale:</translation>
     </message>
     <message>
         <source>Selects what decimal separator char to use. 
 When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona il carattere di separazione decimale da utilizzare. 
+Quando è selezionata, viene utilizzato il separatore del locale dell&apos;utente. 
+Quando è deselezionato, viene utilizzato il punto.</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation type="unfinished">Lingua di interfaccia:</translation>
+        <translation>Lingua di interfaccia:</translation>
     </message>
     <message>
         <source>Do not show again</source>
-        <translation type="unfinished"></translation>
+        <translation>Non mostrare di nuovo</translation>
     </message>
     <message>
         <source>User locale</source>
-        <translation type="unfinished"></translation>
+        <translation>Locale dell&apos;utente</translation>
     </message>
     <message>
         <source>Centimeters</source>
-        <translation type="unfinished">Centimetri</translation>
+        <translation>Centimetri</translation>
     </message>
     <message>
         <source>Millimeters</source>
-        <translation type="unfinished"></translation>
+        <translation>Millimetri</translation>
     </message>
     <message>
         <source>Inches</source>
-        <translation type="unfinished">Pollici</translation>
+        <translation>Pollici</translation>
     </message>
     <message>
         <source>Sets the language used for Seamly2D.</source>
-        <translation type="unfinished"></translation>
+        <translation>Imposta la lingua utilizzata per Seamly2D.</translation>
     </message>
     <message>
         <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Quando è selezionata, la finestra di benvenuto non viene visualizzata. 
+È possibile modificare questa impostazione nelle preferenze di Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Scegliere le unità di misura, il separatore decimale, la lingua e il suono di selezione preferiti. (È possibile modificarli in seguito.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Suono:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Imposta il suono del clic di selezione del nodo.</translation>
     </message>
 </context>
 <context>

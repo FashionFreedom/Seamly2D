@@ -9843,10 +9843,6 @@ Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
         <translation>Welkom bij Seamly2D</translation>
     </message>
     <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Kies de eenheden, het decimaalscheidingsteken en de taal van je voorkeur. (Je kunt deze later wijzigen.)</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation>Eenheden:</translation>
     </message>
@@ -9899,6 +9895,18 @@ Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
 You can change this setting in the Seamly2D preferences.</source>
         <translation>Als deze optie is aangevinkt, wordt het welkomstvenster niet weergegeven. 
 Je kunt deze instelling wijzigen in de Seamly2D voorkeuren.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Kies de eenheden, het decimaalscheidingsteken, de taal en het selectiegeluid van je voorkeur. (Je kunt deze later wijzigen.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Geluid:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Stelt het klikgeluid van de knooppuntselectie in.</translation>
     </message>
 </context>
 <context>

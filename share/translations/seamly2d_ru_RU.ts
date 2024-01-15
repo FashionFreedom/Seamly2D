@@ -9874,10 +9874,6 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Добро пожаловать в Seamly2D</translation>
     </message>
     <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Выберите желаемые единицы измерения, десятичный разделитель и язык. (Вы можете изменить их позже.)</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation>Единицы измерения:</translation>
     </message>
@@ -9930,6 +9926,18 @@ When unchecked the period is used.</source>
 You can change this setting in the Seamly2D preferences.</source>
         <translation>Если флажок установлен, окно приветствия не будет отображаться. 
 Эту настройку можно изменить в настройках Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Выберите желаемые единицы измерения, десятичный разделитель, язык и звук выбора. (Вы можете изменить их позже.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
 </context>
 <context>

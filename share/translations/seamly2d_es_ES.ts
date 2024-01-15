@@ -9905,10 +9905,6 @@ Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
         <translation>Bienvenido a Seamly2D</translation>
     </message>
     <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Elija las unidades, el separador decimal y el idioma que prefiera. (Puede cambiarlos más adelante.)</translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation>Unidades:</translation>
     </message>
@@ -9961,6 +9957,18 @@ Si no se selecciona, se utiliza el punto.</translation>
 You can change this setting in the Seamly2D preferences.</source>
         <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida. 
 Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Sonido:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
 </context>
 <context>

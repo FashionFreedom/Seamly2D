@@ -1558,7 +1558,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Width:</source>
-        <translation>Breite:</translation>
+        <translation> Breite:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -3365,7 +3365,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation>Kontrollpunktlängen</translation>
+        <translation> Kontrollpunktlängen</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -3903,10 +3903,10 @@ for writing</source>
 zum schreiben</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden 
+        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
 %1
 Möglicherweise wird die Datei bereits heruntergeladen.</translation>
     </message>
@@ -3935,8 +3935,7 @@ Möglicherweise wird die Datei bereits heruntergeladen.</translation>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>
-eine neue Gruppe der Liste zufügen</translation>
+        <translation>Eine neue Gruppe der Liste zufügen</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
@@ -4748,9 +4747,9 @@ eine neue Gruppe der Liste zufügen</translation>
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-⇥Drei Gruppen: groß, mittel, klein = 0
-⇥Zwei Gruppen: groß, klein = 1
-⇥Absteigende Fläche = 2</translation>
+	Drei Gruppen: groß, mittel, klein = 0
+	Zwei Gruppen: groß, klein = 1
+	Absteigende Fläche = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
@@ -4818,10 +4817,10 @@ eine neue Gruppe der Liste zufügen</translation>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Ränder gehen über den Druck hinaus. 
+        <translation>Ränder gehen über den Druck hinaus.
 
 Einstellungen trotzdem anwenden?</translation>
     </message>
@@ -5506,7 +5505,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>Abläufe</translation>
+        <translation>&amp;Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>
@@ -7792,7 +7791,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source> Width:</source>
-        <translation>Breite:</translation>
+        <translation> Breite:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
@@ -8946,7 +8945,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source> px</source>
-        <translation>Pixel</translation>
+        <translation> px</translation>
     </message>
     <message>
         <source>Duration:</source>
@@ -9109,7 +9108,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>&amp;Schnittteil</translation>
+        <translation>Schnittteil</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9824,17 +9823,17 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
 Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
 Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
     </message>
 </context>
@@ -9847,10 +9846,6 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
     <message>
         <source>Welcome to Seamly2D</source>
         <translation>Willkommen bei Seamly2D</translation>
-    </message>
-    <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation>Bitte wählen Sie die gewünschten Einheiten, das Dezimaltrennzeichen und die Sprache. (Sie können diese Angaben später ändern.)</translation>
     </message>
     <message>
         <source>Units:</source>
@@ -9889,21 +9884,33 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll. 
-Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet. 
-Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
-    </message>
-    <message>
         <source>Sets the language used for Seamly2D.</source>
         <translation>Legt die für Seamly2D verwendete Sprache fest.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Ton:</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt. 
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
 Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
     </message>
 </context>
@@ -12737,19 +12744,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>Radius</translation>
+        <translation>     Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Abschlusswinkel</translation>
+        <translation>  Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>Etikett</translation>
+        <translation>      Etikett</translation>
     </message>
 </context>
 <context>
@@ -12760,23 +12767,23 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>Radius</translation>
+        <translation>     Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Abschlusswinkel</translation>
+        <translation>  Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Name</source>
-        <translation>Bezeichnung</translation>
+        <translation>      Bezeichnung</translation>
     </message>
     <message>
         <source>      Tool</source>
-        <translation>Werkzeug</translation>
+        <translation>      Werkzeug</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
@@ -12873,19 +12880,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>    Radius</source>
-        <translation>Radius</translation>
+        <translation>    Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Endwinkel</translation>
+        <translation>  Endwinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>Etikett</translation>
+        <translation>      Etikett</translation>
     </message>
 </context>
 <context>
@@ -13451,7 +13458,7 @@ wie gewohnt in SeamlyME laden können.
     <name>VToolRotation</name>
     <message>
         <source>  Origin point</source>
-        <translation>Ausgangspunkt</translation>
+        <translation>  Ausgangspunkt</translation>
     </message>
     <message>
         <source>Rotation angle</source>

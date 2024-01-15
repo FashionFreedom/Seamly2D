@@ -9832,10 +9832,6 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Units:</source>
         <translation type="unfinished">Jednotky:</translation>
     </message>
@@ -9884,6 +9880,18 @@ When unchecked the period is used.</source>
     <message>
         <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
