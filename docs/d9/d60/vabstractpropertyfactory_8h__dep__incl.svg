@@ -22,38 +22,38 @@
 <!-- Node2 -->
 <g id="node2" class="node">
 <title>Node2</title>
-<g id="a_node2"><a xlink:href="../../df/d86/vpropertyfactorymanager_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 164,-30.5 164,-0.5 0,-0.5"/>
-<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
-<text text-anchor="middle" x="82" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpropertyfactorymanager.cpp</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node2 -->
-<g id="edge1" class="edge">
-<title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M116.92,-126.06C111.16,-117.63 105.15,-107.72 101,-98 91.35,-75.42 86.16,-47.14 83.75,-30.52"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="114.09,-128.12 122.74,-134.25 119.8,-124.07 114.09,-128.12"/>
-</g>
-<!-- Node3 -->
-<g id="node3" class="node">
-<title>Node3</title>
-<g id="a_node3"><a xlink:href="../../dd/d13/vstandardpropertyfactory_8h.html" target="_top" xlink:title=" ">
+<g id="a_node2"><a xlink:href="../../dd/d13/vstandardpropertyfactory_8h.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="black" points="110,-67.5 110,-97.5 262,-97.5 262,-67.5 110,-67.5"/>
 <text text-anchor="start" x="118" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
 <text text-anchor="middle" x="186" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vstandardpropertyfactory.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node3 -->
-<g id="edge2" class="edge">
-<title>Node1&#45;&gt;Node3</title>
+<!-- Node1&#45;&gt;Node2 -->
+<g id="edge1" class="edge">
+<title>Node1&#45;&gt;Node2</title>
 <path fill="none" stroke="midnightblue" d="M151.64,-126.45C159.28,-116.9 168,-106 174.74,-97.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="148.8,-124.4 145.28,-134.4 154.26,-128.77 148.8,-124.4"/>
 </g>
-<!-- Node3&#45;&gt;Node2 -->
-<g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node2</title>
+<!-- Node3 -->
+<g id="node3" class="node">
+<title>Node3</title>
+<g id="a_node3"><a xlink:href="../../df/d86/vpropertyfactorymanager_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-0.5 0,-30.5 164,-30.5 164,-0.5 0,-0.5"/>
+<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vpropertyexplorer</text>
+<text text-anchor="middle" x="82" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vpropertyfactorymanager.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node1&#45;&gt;Node3 -->
+<g id="edge4" class="edge">
+<title>Node1&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M116.92,-126.06C111.16,-117.63 105.15,-107.72 101,-98 91.35,-75.42 86.16,-47.14 83.75,-30.52"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="114.09,-128.12 122.74,-134.25 119.8,-124.07 114.09,-128.12"/>
+</g>
+<!-- Node2&#45;&gt;Node3 -->
+<g id="edge2" class="edge">
+<title>Node2&#45;&gt;Node3</title>
 <path fill="none" stroke="midnightblue" d="M154.82,-62.02C138.64,-51.9 119.23,-39.77 104.52,-30.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="153.1,-65.06 163.43,-67.4 156.81,-59.13 153.1,-65.06"/>
 </g>
@@ -67,9 +67,9 @@
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge4" class="edge">
-<title>Node3&#45;&gt;Node4</title>
+<!-- Node2&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node2&#45;&gt;Node4</title>
 <path fill="none" stroke="midnightblue" d="M210.74,-60.88C222.59,-51.01 236.48,-39.43 247.11,-30.58"/>
 <polygon fill="midnightblue" stroke="midnightblue" points="208.37,-58.31 202.92,-67.4 212.85,-63.68 208.37,-58.31"/>
 </g>
