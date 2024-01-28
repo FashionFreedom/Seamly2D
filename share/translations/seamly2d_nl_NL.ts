@@ -2020,49 +2020,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Nieuw maten bestand</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Maten soort:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Eenheid:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Basis maat:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Basis hoogte:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individueel</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centimeters</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Inches</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>Meerdere maten</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeters</translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -3946,7 +3903,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4019,10 +3976,6 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation>Hernoem</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4080,7 +4033,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spl_</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Spl_</translation>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
@@ -4204,15 +4157,43 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Group color</source>
-        <translation type="unfinished"></translation>
+        <translation>Groep kleur</translation>
     </message>
     <message>
         <source>Group name</source>
-        <translation type="unfinished"></translation>
+        <translation>Naam groep</translation>
     </message>
     <message>
         <source>Name</source>
         <translation>Naam</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bewerk</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Zichtbaar</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>De groep is zichtbaar</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Vergrendeld</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>De groep is vergrendeld</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>Groep heeft objecten</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Kleur</translation>
     </message>
 </context>
 <context>
@@ -4236,10 +4217,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Naam</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation>Beschrijving</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4838,7 +4815,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6483,10 +6460,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Middelpunt op Lijn</translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punt - Middelpunt op Lijn (Shift+O, Shift+L)</translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation>Shift+O, Shift+L</translation>
     </message>
@@ -7306,6 +7279,49 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>move spline path</source>
         <translation>verplaats splinepad</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Nieuw maten bestand</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Maten soort:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Eenheid:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Basis maat:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Basis hoogte:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individueel</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Meerdere maten</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
     </message>
 </context>
 <context>
@@ -8327,7 +8343,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kleur</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
@@ -8430,10 +8446,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Label language:</source>
         <translation>Taal label:</translation>
-    </message>
-    <message>
-        <source>With OS options</source>
-        <translation>Met OS optiies</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8578,6 +8590,70 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Sound:</source>
         <translation>Geluid:</translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation type="unfinished">Emailadres:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -9556,10 +9632,6 @@ Wil je de veranderingen opslaan?</translation>
         <translation>GUI taal:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation>Decimale gescheiden delen:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation>Patroon teken systeem</translation>
     </message>
@@ -9604,16 +9676,24 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Maat:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Met OS opties</translation>
+        <source>Startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished">Decimaal scheidingsteken:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished">Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
-    <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation>Pad dat Seamly2D gebruikt</translation>
-    </message>
     <message>
         <source>Type</source>
         <translation>Soort</translation>
@@ -9645,6 +9725,96 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>My Templates</source>
         <translation>Mijn Sjablonen</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Welkom bij SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>3D Look gebruikers</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Om een 3D Look bodyscan te gebruiken, moet het bestand worden geconverteerd naar het SeamlyME formaat. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Kies de eenheden, het decimaalscheidingsteken en de taal van je voorkeur. (Je kunt deze later wijzigen.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Eenheden:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Decimaal scheidingsteken:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI taal:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Niet meer weergeven</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Lokalisatie gebruiker</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9766,7 +9936,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Redo</source>
-        <translation type="unfinished"></translation>
+        <translation>Opnieuw doen</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -11160,6 +11330,45 @@ Wil je deze veranderingen opslaan?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation>Onbekende fout gebeurd, bijvoorbeeld een volledige partitie voorkomt het schrijven uit het vergrendelingsbestand. Negeren als u wilt doorgaan (niet aanbevolen, kan leiden tot gegevensbeschadiging).</translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation>Scan lichaam importeren als</translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation>3D Measure Up</translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation>3D Look</translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation>Om een 3D Look bodyscan te gebruiken, moet het bestand worden geconverteerd naar het SeamlyME formaat.
+</translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation>Voeg uw 3DLook-bestand bij in een e-mail en stuur het naar convert@seamly.io.
+
+</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation>Je ontvangt een e-mail met het geconverteerde bestand, dat je vervolgens zoals gewoonlijk in SeamlyME kunt laden.
+
+</translation>
+    </message>
+    <message>
+        <source>Convert 3DLook file:</source>
+        <translation>3DLook-bestand converteren:</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -11946,6 +12155,10 @@ Wil je deze veranderingen opslaan?</translation>
     <message>
         <source>label templates</source>
         <translation>labelsjablonen</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -14001,54 +14214,9 @@ Wil je deze veranderingen opslaan?</translation>
         <translation>in</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Lijn_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>HoekLijn_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Boog_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Vvk_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>Vvkpad</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Straalboog_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Hoek1boog_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Hoek2boog_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Hoek1Vvk_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Hoek2Vvk_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
@@ -14081,16 +14249,6 @@ Wil je deze veranderingen opslaan?</translation>
         <translation>hoogte</translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>C1LengteVvk_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>C2LengteVvk_</translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>C1LengteVvkpad</translation>
@@ -14104,36 +14262,6 @@ Wil je deze veranderingen opslaan?</translation>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>HuidigeNaadToegift</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Radius1ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Radius2ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Angle1ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Angle2ElArc_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14254,11 +14382,6 @@ Wil je deze veranderingen opslaan?</translation>
         <source>wOnFold</source>
         <comment>placeholder</comment>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Variable_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14463,6 +14586,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">M_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Variable_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Lijn_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">HoekLijn_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Boog_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">EllBoog_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Straalboog_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek1boog_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek2boog_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek1Vvk_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Hoek2Vvk_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C1LengteVvk_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C2LengteVvk_</translation>
     </message>
 </context>
 <context>

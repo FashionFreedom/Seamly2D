@@ -333,12 +333,12 @@ void MeasurementDoc::readMeasurements() const
             tempMeash->setHeight(m_currentHeight);
             tempMeash->SetUnit(data->GetPatternUnit());
 
-            base = UnitConvertor(base, MUnit(), *data->GetPatternUnit());
-            ksize = UnitConvertor(ksize, MUnit(), *data->GetPatternUnit());
-            kheight = UnitConvertor(kheight, MUnit(), *data->GetPatternUnit());
+            base = UnitConvertor(base, measurementUnits(), *data->GetPatternUnit());
+            ksize = UnitConvertor(ksize, measurementUnits(), *data->GetPatternUnit());
+            kheight = UnitConvertor(kheight, measurementUnits(), *data->GetPatternUnit());
 
-            const qreal baseSize = UnitConvertor(BaseSize(), MUnit(), *data->GetPatternUnit());
-            const qreal baseHeight = UnitConvertor(BaseHeight(), MUnit(), *data->GetPatternUnit());
+            const qreal baseSize = UnitConvertor(BaseSize(), measurementUnits(), *data->GetPatternUnit());
+            const qreal baseHeight = UnitConvertor(BaseHeight(), measurementUnits(), *data->GetPatternUnit());
 
             meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(static_cast<quint32>(i), name, baseSize, baseHeight,
                                                                   base, ksize, kheight, fullName, description));
@@ -355,7 +355,7 @@ void MeasurementDoc::readMeasurements() const
             tempMeash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(tempData.data(), static_cast<quint32>(i), name,
                                                                       value, formula, ok));
 
-            value = UnitConvertor(value, MUnit(), *data->GetPatternUnit());
+            value = UnitConvertor(value, measurementUnits(), *data->GetPatternUnit());
             meash = QSharedPointer<MeasurementVariable>(new MeasurementVariable(data, static_cast<quint32>(i), name, value, formula,
                                                                   ok, fullName, description));
         }
@@ -837,7 +837,7 @@ void MeasurementDoc::CreateEmptyIndividualFile(Unit unit)
 //---------------------------------------------------------------------------------------------------------------------
 qreal MeasurementDoc::UniqueTagAttr(const QString &tag, const QString &attr, qreal defValue) const
 {
-    const qreal defVal = UnitConvertor(defValue, Unit::Cm, MUnit());
+    const qreal defVal = UnitConvertor(defValue, Unit::Cm, measurementUnits());
 
     const QDomNodeList nodeList = this->elementsByTagName(tag);
     if (nodeList.isEmpty())

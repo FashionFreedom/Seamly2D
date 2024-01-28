@@ -313,7 +313,7 @@ void EditLabelTemplateDialog::NewTemplate()
 void EditLabelTemplateDialog::ExportTemplate()
 {
     QString filters(tr("Label template") + QLatin1String("(*.xml)"));
-    QString dir = qApp->Settings()->GetPathLabelTemplate();
+    QString dir = qApp->Settings()->getLabelTemplatePath();
 
     bool usedNotExistedDir = false;
     QDir directory(dir);
@@ -384,7 +384,7 @@ void EditLabelTemplateDialog::ImportTemplate()
 
     QString filter(tr("Label template") + QLatin1String("(*.xml)"));
     const QString fileName = QFileDialog::getOpenFileName(this, tr("Import template"),
-                                                          qApp->Settings()->GetPathLabelTemplate(), filter, nullptr,
+                                                          qApp->Settings()->getLabelTemplatePath(), filter, nullptr,
                                                           QFileDialog::DontUseNativeDialog);
     if (fileName.isEmpty())
     {

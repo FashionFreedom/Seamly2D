@@ -5,7 +5,7 @@
     <name>AddDraftBlock</name>
     <message>
         <source>add draft block %1</source>
-        <translation>Schnittmuster hinzufügen %1</translation>
+        <translation>Entwurfsblock hinzufügen %1</translation>
     </message>
 </context>
 <context>
@@ -19,14 +19,14 @@
     <name>AddGroupItem</name>
     <message>
         <source>Add item to group</source>
-        <translation>Teil zur Gruppe hinzufügen</translation>
+        <translation>Objekt zur Gruppe hinzufügen</translation>
     </message>
 </context>
 <context>
     <name>AddPiece</name>
     <message>
         <source>add piece</source>
-        <translation>ein Schnittteil hinzufügen</translation>
+        <translation>Schnittteil hinzufügen</translation>
     </message>
 </context>
 <context>
@@ -40,7 +40,7 @@
     <name>AddToGroupDialog</name>
     <message>
         <source>Add to Group</source>
-        <translation>Der Gruppe hinzufügen</translation>
+        <translation>Zur Gruppe hinzufügen</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -51,11 +51,11 @@
     <name>AnchorPointDialog</name>
     <message>
         <source>Anchor Point</source>
-        <translation>Anker Punkt</translation>
+        <translation>Ankerpunkt</translation>
     </message>
     <message>
         <source>Anchor Point tool</source>
-        <translation>Anker Punkt Werkzeug</translation>
+        <translation>Ankerpunkt Werkzeug</translation>
     </message>
     <message>
         <source>Point:</source>
@@ -156,7 +156,7 @@
     <name>DecimalChartDialog</name>
     <message>
         <source>Decimal Chart</source>
-        <translation>Dezimal Tabelle</translation>
+        <translation>Dezimaltabelle</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -171,7 +171,7 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;11/16 = .6875&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;13/16 = .8125&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;15/16 = .9375&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -179,7 +179,7 @@ p, li { white-space: pre-wrap; }
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;  font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;1/8 = .125&lt;br /&gt;2/8 = .250&lt;br /&gt;3/8 = .375&lt;br /&gt;4/8 = .500&lt;br /&gt;5/8 = .625&lt;br /&gt;6/8 = .750&lt;br /&gt;7/8 = .875&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -193,14 +193,14 @@ p, li { white-space: pre-wrap; }
     <name>DelTool</name>
     <message>
         <source>delete tool</source>
-        <translation>Löschwerkzeug</translation>
+        <translation>Werkzeug löschen</translation>
     </message>
 </context>
 <context>
     <name>DeleteDraftBlock</name>
     <message>
         <source>delete draft block %1</source>
-        <translation>Entwurfsblock entfernen %1</translation>
+        <translation>Entwurfsblock löschen %1</translation>
     </message>
 </context>
 <context>
@@ -230,11 +230,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Konnte den Standard-Browser nicht starten</translation>
+        <translation>Standardbrowser kann nicht geöffnet werden</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Build-Revision: %1</translation>
+        <translation>Build Revision: %1</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
@@ -261,15 +261,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>SeamlyMe version</source>
-        <translation>SeamlyMe version</translation>
+        <translation>SeamlyMe Version</translation>
     </message>
     <message>
         <source>Build revision: %1</source>
-        <translation>Build-Revision: %1</translation>
+        <translation>Build Revision: %1</translation>
     </message>
     <message>
         <source>This program is part of Seamly2D project.</source>
-        <translation>Dieses Programm ist Teil des Seamly2D-Projekts.</translation>
+        <translation>Dieses Programm ist Teil des Seamly2D Projekts.</translation>
     </message>
     <message>
         <source>Downloading installer %p% complete</source>
@@ -281,7 +281,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Cannot open your default browser</source>
-        <translation>Konnte den Standard-Browser nicht starten</translation>
+        <translation>Ihr Standardbrowser kann nicht geöffnet werden</translation>
     </message>
     <message>
         <source>Built on %1 at %2</source>
@@ -300,7 +300,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogAlongLine</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -308,7 +308,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -316,7 +316,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -352,7 +352,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Punkt - Auf einer Linie</translation>
+        <translation>Punkt - auf einer Linie</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -360,11 +360,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -387,7 +387,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogArc</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Error</source>
@@ -399,7 +399,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Angles equal</source>
-        <translation>Beide Winkel sind identisch</translation>
+        <translation>Winkel sind identisch</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -479,19 +479,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>DialogArcWithLength</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigenn&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -569,7 +569,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width= 370&gt;&lt;tr&gt;&lt;td align =linke width =300&gt;&lt;b&gt;AWinkelbeerechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, i.e. ein kompletter Kreis entspricht 360 Gradpositive Werte eines Winkels bedeuten gegen den Uhrzeigersinnwohingegen negative Werte im Uhrzeigersinn bedeuten. P. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = rechts valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width= 370&gt;&lt;tr&gt;&lt;td align =left width=300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein kompletter Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = rechts valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -588,19 +588,19 @@ p, li { white-space: pre-wrap; }
     <name>DialogBisector</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select second point of angle</source>
-        <translation>Scheitelpunkt auswählen</translation>
+        <translation>Zweiten Punkt des Winkels auswählen</translation>
     </message>
     <message>
         <source>Select third point of angle</source>
-        <translation>Zweiten Punkt auf dem zweiten Schenkel wählen</translation>
+        <translation>Dritten Punkt des Winkels auswählen</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -608,7 +608,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -640,7 +640,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punkt - Auf einer Winkelhalbierenden</translation>
+        <translation>Punkt - auf einer Winkelhalbierenden</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -648,11 +648,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wähle einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -699,15 +699,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select the second point of curve</source>
-        <translation>Zweiten Punkt auf der Kurve auswählen</translation>
+        <translation>Zweiten Punkt der Kurve auswählen</translation>
     </message>
     <message>
         <source>Select the third point of curve</source>
-        <translation>Dritten Punkt auf der Kurve auswählen</translation>
+        <translation>Dritten Punkt der Kurve auswählen</translation>
     </message>
     <message>
         <source>Select the fourth point of curve</source>
-        <translation>Vierten Punkt auf der Kurve auswählen</translation>
+        <translation>Vierten Punkt der Kurve auswählen</translation>
     </message>
     <message>
         <source>Invalid spline</source>
@@ -719,7 +719,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Kurve - Fixiert</translation>
+        <translation>Kurve - fixiert</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -742,7 +742,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>List of points</source>
-        <translation>Liste von Punkten</translation>
+        <translation>Liste der Punkte</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -754,7 +754,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid spline path</source>
-        <translation>Ungültiger Spline-Pfad/glatte Kurve</translation>
+        <translation>Ungültiger Spline Pfad</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -762,7 +762,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline - Fixiert</translation>
+        <translation>Spline - fixiert</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -785,7 +785,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogCurveIntersectAxis</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select axis point</source>
@@ -801,7 +801,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -825,7 +825,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Intersect - Curve and Axis</source>
-        <translation>Schneidet - Kurve und Winkel</translation>
+        <translation>Schnittpunkt - Kurve und Winkel</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -833,20 +833,20 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wähle einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
-        <translation>Geometry</translation>
+        <translation>Geometrie</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -865,11 +865,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogCutArc</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -877,7 +877,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -893,7 +893,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>Punkt - Auf Bogen</translation>
+        <translation>Punkt - auf Bogen</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -905,7 +905,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wähle einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -920,11 +920,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogCutSpline</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -932,7 +932,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -948,7 +948,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Punkt - Auf einer Kurve</translation>
+        <translation>Punkt - auf einer Kurve</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -975,11 +975,11 @@ p, li { white-space: pre-wrap; }
     <name>DialogCutSplinePath</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -987,7 +987,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1003,7 +1003,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Punkt - Auf Kurve</translation>
+        <translation>Punkt - auf Spline</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1030,7 +1030,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogDateTimeFormats</name>
     <message>
         <source>Label date time editor</source>
-        <translation>Etikett Datum Zeit Editor</translation>
+        <translation>Etiketten Datum-Zeit Editor</translation>
     </message>
     <message>
         <source>Format:</source>
@@ -1038,7 +1038,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Insert a format</source>
-        <translation>gib ein Format ein</translation>
+        <translation>Gib ein Format ein</translation>
     </message>
     <message>
         <source>&lt;empty&gt;</source>
@@ -1053,7 +1053,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1065,7 +1065,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Radius2:</source>
@@ -1081,7 +1081,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation angle:</source>
-        <translation>Rotationswinkel:</translation>
+        <translation>Drehwinkel:</translation>
     </message>
     <message>
         <source>Center point:</source>
@@ -1100,12 +1100,8 @@ p, li { white-space: pre-wrap; }
         <translation>Fehler</translation>
     </message>
     <message>
-        <source>Radius can&apos;t be negative</source>
-        <translation>Radius kann nicht negativ sein</translation>
-    </message>
-    <message>
         <source>Angles equal</source>
-        <translation>Beide Winkel sind identisch</translation>
+        <translation>Winkel sind gleich</translation>
     </message>
     <message>
         <source>Edit radius1</source>
@@ -1133,7 +1129,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Bogen-elliptisch</translation>
+        <translation>Bogen - elliptisch</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1157,22 +1153,26 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;First Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des ersten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Second Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Zweiten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des zweiten Winkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersin. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Anfangswinkles&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Berechnung des Drehwinkels&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>Radius can&apos;t be negative</source>
+        <translation>Radius kann nicht negativ sein</translation>
     </message>
 </context>
 <context>
     <name>DialogEndLine</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit angle</source>
@@ -1180,7 +1180,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -1188,7 +1188,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1224,11 +1224,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutige namen</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -1237,7 +1237,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1307,7 +1307,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Linetype:</source>
-        <translation>Linientyo:</translation>
+        <translation>Linientyp:</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -1315,7 +1315,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punkt - Schneidet Linie und Lotsenkrechte</translation>
+        <translation>Punkt - schneidet Linie und Senkrechte</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1370,7 +1370,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create name for your path</source>
-        <translation>Name für dein verzeichnis erstellen</translation>
+        <translation>Bezeichnung für Dein Verzeichnis erstellen</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -1394,7 +1394,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Move row down one row</source>
-        <translation>Reihe  eine Reihe nach unten verschieben</translation>
+        <translation>Reihe eine Reihe nach unten verschieben</translation>
     </message>
     <message>
         <source>Move row to bottom of list</source>
@@ -1418,7 +1418,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Seam allowance</source>
-        <translation>Nahtzugaben</translation>
+        <translation>Nahtzugabe</translation>
     </message>
     <message>
         <source>Width:</source>
@@ -1438,7 +1438,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vollständige Berechnung in der Nachrichtenbox anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Nodes</source>
@@ -1486,7 +1486,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T: Markierung</translation>
+        <translation>T Markierung</translation>
     </message>
     <message>
         <source>U Notch</source>
@@ -1494,11 +1494,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>V Internal</source>
-        <translation>V:innen</translation>
+        <translation>V innen</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V:aussen</translation>
+        <translation>V aussen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -1522,7 +1522,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select to designate the corner point as a notch</source>
-        <translation>Auswählen um den Eckpunkt als Markierung zu benennen</translation>
+        <translation>Auswählen, um den Eckpunkt als Markierung festzulegen</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -1542,15 +1542,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Markierung auf  Standard zurücksetzen.</translation>
+        <translation>Markierung auf Standard zurücksetzen.</translation>
     </message>
     <message>
         <source>This option has effect only if the second notch on seam line is enabled in global preferences. The option helps disable the second notch for this notch only.</source>
-        <translation>Diese Option hat nur dann eine Auswirkung wenn die zweite Markierung auf der Nahtlinie in der allgemeinen Einstellung aktiviert ist. Die Option:Deaktivieren der zweiten Markierung nur für diese Markierung hilft.</translation>
+        <translation>Diese Option hat nur dann eine Auswirkung wenn die zweite Markierung auf der Nahtlinie in der allgemeinen Einstellung aktiviert ist. Die Option hilft die zweite Markierung nur für diese Markierung zu deaktivieren.</translation>
     </message>
     <message>
         <source>Show second notch on seam line</source>
-        <translation>zweite Markierung auf der Nahtlinie anzeigen</translation>
+        <translation>Zweite Markierung auf der Nahtlinie anzeigen</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
@@ -1566,7 +1566,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select main path objects, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction, Press &lt;b&gt;ENTER&lt;/b&gt; to finish path creation </source>
-        <translation>Auswahl der Hauptpfad Objekte, Mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren, Press &lt;b&gt;ENTER&lt;/b&gt; Pfaderstellung abschliessen </translation>
+        <translation>Hauptpfad Objekte auswählen, Mit &lt;b&gt;SHIFT&lt;/b&gt; die Kurvenrichtung umkehren, mit &lt;b&gt;ENTER&lt;/b&gt; Pfaderstellung abschliessen </translation>
     </message>
     <message>
         <source>Reverse</source>
@@ -1578,43 +1578,43 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>aktuelle Nahtzugabe</translation>
+        <translation>Aktuelle Nahtzugabe</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Bearbeiten der Nahtzugabenbreite</translation>
+        <translation>Nahtzugabenbreite bearbeiten</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Bearbeiten derNahtzugabenweite vorher</translation>
+        <translation>Nahtzugabenbreite vorher bearbeiten</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Bearbeiten der Nahtzugabenweite nachher</translation>
+        <translation>Nahtzugabenbreite nachher bearbeiten</translation>
     </message>
     <message>
         <source>Internal path</source>
-        <translation>internes Verzeichniss</translation>
+        <translation>Internes Verzeichnis</translation>
     </message>
     <message>
         <source>Custom seam allowance</source>
-        <translation>individuelle Nahtzugabe</translation>
+        <translation>Individuelle Nahtzugabe</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation>Sie brauchen mehr Punkte!</translation>
+        <translation>Du brauchst mehr Punkte!</translation>
     </message>
     <message>
         <source>First point of &lt;b&gt;custom seam allowance&lt;/b&gt; cannot be equal to the last point!</source>
-        <translation>Startpunktder&lt;b&gt;individuellen Nahtzugabe/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
+        <translation>Startpunkt der&lt;b&gt;individuellen Nahtzugabe/b&gt; kann nicht gleichzeitig der Endpunkt sein!</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Sie haben doppelte Punkte!</translation>
+        <translation>Du hast doppelte Punkte!</translation>
     </message>
     <message>
         <source>Each point in the &lt;b&gt;custom seam allowance&lt;/b&gt; path must be unique!</source>
-        <translation>Jeder Punkt der &lt;b&gt;individuellen Nahtzugaabe&lt;/b&gt; Verzeicniss muss unterschiedlich sein!</translation>
+        <translation>Jeder Punkt des &lt;b&gt;individuelle Nahtzugaben&lt;/b&gt; Verzeichnis muss eindeutig sein!</translation>
     </message>
     <message>
         <source>List of details is empty!</source>
@@ -1622,7 +1622,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Please, select a detail to insert into!</source>
-        <translation>Zum Einfügen ein Detail auswählen!</translation>
+        <translation>Bitte ein Detail zum Einfügen in die Liste auswählen!</translation>
     </message>
 </context>
 <context>
@@ -1633,19 +1633,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Create a Layout</source>
-        <translation>Layout erstellen</translation>
+        <translation>Ein Layout erstellen</translation>
     </message>
     <message>
         <source>Arranged workpieces: %1 from %2</source>
-        <translation>Angeordnete Schnitteile: %1 bis %2</translation>
+        <translation>Angeordnete Schnittteile: %1 von %2</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Finding best position for workpieces. Please, wait.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Suche beste Position für Schnitteil. Bitte warten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Suche beste Position für Schnittteile. Bitte warten.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Ein oder mehrere Schnittteile sind größer als das ausgewählte Papierformat. Bitte ein grpößeres.</translation>
+        <translation>Ein oder mehrere Schnittteile sind größer als das ausgewählte Papierformat. Bitte ein größeres Papierformat wählen.</translation>
     </message>
 </context>
 <context>
@@ -1727,7 +1727,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Punkt - Schneidet Linien</translation>
+        <translation>Punkt - schneidet Linien</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -1739,7 +1739,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -1750,7 +1750,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogLineIntersectAxis</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>First point of line</source>
@@ -1762,7 +1762,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select axis point</source>
-        <translation>Achsenpunkt wählen</translation>
+        <translation>Achsenpunkt auswählen</translation>
     </message>
     <message>
         <source>Axis Point</source>
@@ -1782,7 +1782,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -1832,7 +1832,7 @@ p, li { white-space: pre-wrap; }
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
-&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel werden in Grad angegeben, i.e. ein vollständiger Kreis entspricht 360 Grad positive Werte bedeuten gegen den Uhrzeigersinn wihingegen negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = rechts valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel werden in Grad angegeben, d.h. ein vollständiger Kreis entspricht 360 Grad, positive Werte bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -1855,7 +1855,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>ME Database - Add known measurement</source>
-        <translation>ME Database - Füge bekannte Maße hinzu</translation>
+        <translation>ME Database - füge bekannte Maße hinzu</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1870,7 +1870,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogMirrorByAxis</name>
     <message>
         <source>Mirror by Axis</source>
-        <translation>An einer Achse spiegeln</translation>
+        <translation>Spiegeln an einer Achse</translation>
     </message>
     <message>
         <source>Axis point:</source>
@@ -1886,11 +1886,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select axis rotation point</source>
-        <translation>Wählt Achsenrotationspunkt</translation>
+        <translation>Achsendrehpunkt wählen</translation>
     </message>
     <message>
         <source>Select axis rotation point that is not part of the list of objects</source>
-        <translation>Wählt Achsenrotationspunkt der nicht zur Liste der Objekte gehört</translation>
+        <translation>Einen Achsendrehpunkt wählen, der nicht zur Liste der Objekte gehört</translation>
     </message>
     <message>
         <source>Vertical axis</source>
@@ -1929,19 +1929,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select first mirror line point</source>
-        <translation>Wähle Punkt eins Spiegeln an einer Linie</translation>
+        <translation>Wähle ersten Punkt der Spiegellinie</translation>
     </message>
     <message>
         <source>Select first mirror line point that is not part of the list of objects</source>
-        <translation>Wähle Punkt 1 Siegeln an einer linie der nicht zur Liste der Objekte gehört</translation>
+        <translation>Wähle einen ersten Punkt der Spiegellinie, der nicht zur Objektliste gehört</translation>
     </message>
     <message>
         <source>Select second mirror line point</source>
-        <translation>Wähle Punkt 2 der Spiegeln an einer Linie</translation>
+        <translation>Wähle zweiten Punkt der Spiegellinie</translation>
     </message>
     <message>
         <source>Select second mirror line point that is not part of the list of objects</source>
-        <translation>Wähle zweiten Spiegelpunkt der nicht Teil der Obnejktliste ist</translation>
+        <translation>Wähle einen zweiten Punkt der Spiegellinie, der nicht zur Objektliste gehört</translation>
     </message>
 </context>
 <context>
@@ -1952,7 +1952,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2009,54 +2009,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;AWinkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotation Angle Calculation&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-</context>
-<context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Neue Maßsatzdatei</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Maßsatz-Typ:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Einheit:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Basisgröße:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Basishöhe:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individuell</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Zentimeter</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Zoll</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>mehrfache Größen</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Millimeter</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotationswinkelberechnung&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2075,11 +2032,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Eindeutiger Name des Schnittteils</translation>
+        <translation>Eindeutige Schnittteil Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique pattern piece name.</source>
-        <translation>Eindeutigen Namen für das Schnitteil eingeben.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung für das Schnittteil.</translation>
     </message>
     <message>
         <source>New pattern</source>
@@ -2091,14 +2048,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Draft block name:</source>
-        <translation>Entwurfblock bezeichnung:</translation>
+        <translation>Entwurfsblock Bezeichnung:</translation>
     </message>
 </context>
 <context>
     <name>DialogNormal</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Die ganze Berechnung im Fenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select second point of line</source>
@@ -2106,7 +2063,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2114,7 +2071,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2142,7 +2099,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punkt - Auf einer Senkrechten</translation>
+        <translation>Punkt - auf einer Senkrechten</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2154,7 +2111,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2174,7 +2131,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotatation Angle&lt;/span&gt;&lt;br/&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an angle means counter-clockwise while a negative value means the clockwise direction. &lt;br/&gt;&lt;br/&gt;Rotation angle is added to the angle of the perpendicular.&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotationswinkel&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px;&quot; width=&quot;370&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot;&gt;&lt;tr&gt;&lt;td width=&quot;300&quot;&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Rotationswinkel&lt;/span&gt;&lt;br/&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position .&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; vertical-align:middle;&quot;&gt;&lt;p align=&quot;right&quot;&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot; style=&quot;vertical-align: middle;&quot;/&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2189,11 +2146,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Heights and Sizes</source>
-        <translation>Längen und Größen</translation>
+        <translation>Körperhöhen und Größen</translation>
     </message>
     <message>
         <source>All heights (cm)</source>
-        <translation>Alle Längen (cm)</translation>
+        <translation>Alle Körperhöhen (cm)</translation>
     </message>
     <message>
         <source>All sizes (cm)</source>
@@ -2201,7 +2158,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Standardhöhe und Größe</translation>
+        <translation>Standardkörperhöhe und -größe</translation>
     </message>
     <message>
         <source>Custom</source>
@@ -2209,7 +2166,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Height:</source>
-        <translation>Höhe:</translation>
+        <translation>Körperhöhe:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -2241,7 +2198,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Save image to file</source>
-        <translation>Bild als Datei speichern</translation>
+        <translation>Bild in Datei speichern</translation>
     </message>
     <message>
         <source>Show image</source>
@@ -2269,7 +2226,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Show in Explorer</source>
-        <translation>Im Dateiexplorer anzeigen</translation>
+        <translation>Im Explorer anzeigen</translation>
     </message>
     <message>
         <source>&lt;Empty&gt;</source>
@@ -2301,7 +2258,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>From multisize measurements</source>
-        <translation>von Mehrfachgrößen Maßen</translation>
+        <translation>Vom Mehrgrößen Maßsatz</translation>
     </message>
     <message>
         <source>Pattern</source>
@@ -2309,7 +2266,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>For technical notes</source>
-        <translation>Für technische Notizen</translation>
+        <translation>Für technische Anmerkungen</translation>
     </message>
     <message>
         <source>Label data</source>
@@ -2317,11 +2274,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Label template:</source>
-        <translation>Etikett vorlagen:</translation>
-    </message>
-    <message>
-        <source>Edit pattern label</source>
-        <translation>Schnittmuster Etikett bearbeiten</translation>
+        <translation>Etikettenvorlage:</translation>
     </message>
     <message>
         <source>Edit template</source>
@@ -2333,26 +2286,30 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Time format:</source>
-        <translation>Zeit format:</translation>
+        <translation>Zeitformat:</translation>
     </message>
     <message>
         <source>Save label data.</source>
-        <translation>Ettikettendaten sichern.</translation>
+        <translation>Etikettendaten sichern.</translation>
     </message>
     <message>
         <source>Label data were changed. Do you want to save them before editing label template?</source>
-        <translation>Etiketten Daten wurden geändert: Sollen die Änderungen vor der Etiketten Vorlagen Bearbeitung gespeichert werden ?</translation>
+        <translation>Etiketten Daten wurden geändert. Sollen die Änderungen vor der Etikettenvorlagen Bearbeitung gespeichert werden ?</translation>
     </message>
     <message>
         <source>Pattern preferences</source>
         <translation>Schnittmuster Einstellungen</translation>
+    </message>
+    <message>
+        <source>Edit pattern label</source>
+        <translation>Schnittmuster Etikett bearbeiten</translation>
     </message>
 </context>
 <context>
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Select an arc</source>
-        <translation>Einen Bogen auswählen</translation>
+        <translation>Wähle veinen Bogen</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -2364,11 +2321,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Take:</source>
-        <translation>Nehmen:</translation>
+        <translation>Übernehmen:</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt - Schneidet Bogen und Tangente</translation>
+        <translation>Punkt - schneidet Bogen und Tangente</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2380,7 +2337,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2391,7 +2348,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPointOfContact</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Die vollständige Berechnung im Fenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select point of center of arc</source>
@@ -2403,7 +2360,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit radius</source>
-        <translation>Radius verändern</translation>
+        <translation>Radius bearbeiten</translation>
     </message>
     <message>
         <source>Radius:</source>
@@ -2411,7 +2368,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2427,7 +2384,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt - Schneidet Bogen und Linie</translation>
+        <translation>Punkt - schneidet Bogen und Linie</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2439,15 +2396,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>Erster punkt der linie:</translation>
+        <translation>Erster Linienpunkt:</translation>
     </message>
     <message>
         <source>2nd line point</source>
-        <translation>Zweiter punkt der linie</translation>
+        <translation>Zweiter Linienpunkt</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2462,7 +2419,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPointOfIntersectionArcs</name>
     <message>
         <source>Select second an arc</source>
-        <translation>Einen Bogen auswählen</translation>
+        <translation>Zweiten Bogen auswählen</translation>
     </message>
     <message>
         <source>First arc:</source>
@@ -2474,11 +2431,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Take:</source>
-        <translation>Nehmen:</translation>
+        <translation>Übernehmen:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punkt - Schneidet Bögen</translation>
+        <translation>Punkt - schneidet Bögen</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2490,7 +2447,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2513,7 +2470,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punkt - Schneidet Kurven</translation>
+        <translation>Punkt - schneidet Kurven</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -2525,15 +2482,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation type="unfinished">vertikale Aufnahme:</translation>
+        <translation>Vertikale Aufnahme:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation type="unfinished">horizontale Aufnahme:</translation>
+        <translation>Horizontale Aufnahme:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -2548,7 +2505,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Application Preferences</source>
-        <translation>Anwendungseinstellungen</translation>
+        <translation>Anwendungsvoreinstellungen</translation>
     </message>
     <message>
         <source>General</source>
@@ -2556,11 +2513,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Pfad zur Datei</translation>
+        <translation>Dateipfad</translation>
     </message>
     <message>
         <source>Graphics</source>
-        <translation>Grafik</translation>
+        <translation>Grafiken</translation>
     </message>
 </context>
 <context>
@@ -2575,7 +2532,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2595,7 +2552,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Rotation pt:</source>
-        <translation>Rotationspunkt:</translation>
+        <translation>Drehpunkt:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2603,38 +2560,38 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select rotation point</source>
-        <translation>Achsenrotationspunkt wählen</translation>
+        <translation>Achsendrehpunkt wählen</translation>
     </message>
     <message>
         <source>Select rotation point that is not part of the list of objects</source>
-        <translation>Achsenrotationspunkt wählen, der nicht zur Liste der Objekte gehört</translation>
+        <translation>Achsendrehpunkt wählen, der nicht zur Liste der Objekte gehört</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, i.e. ein voller Kreis entspricht 360 Grad positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, während negative Werte im Uhrzeigersinn bedeuten Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Winkelberechnung&lt;/b&gt;&lt;br&gt;Winkel sind in Grad angegeben, d.h. ein voller Kreis entspricht 360 Grad, positive Werte eines Winkels bedeuten gegen den Uhrzeigersinn, negative Werte bedeuten im Uhrzeigersinn. Null Grad ist in der 3 Uhr Position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
     <name>DialogSeamlyMePreferences</name>
     <message>
         <source>Preferences</source>
-        <translation>Einstellungen</translation>
+        <translation>Vorlieben</translation>
     </message>
     <message>
         <source>Configuration</source>
-        <translation>Einstellung</translation>
+        <translation>Konfiguration</translation>
     </message>
     <message>
         <source>File Paths</source>
-        <translation>Dateipfad</translation>
+        <translation>Dateipfade</translation>
     </message>
 </context>
 <context>
     <name>DialogShoulderPoint</name>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Select first point of line</source>
@@ -2646,7 +2603,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit length</source>
-        <translation>Länge ändern</translation>
+        <translation>Länge bearbeiten</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2654,7 +2611,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2698,7 +2655,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -2721,7 +2678,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogSinglePoint</name>
     <message>
         <source>Coordinates on the sheet</source>
-        <translation>Koordinaten auf der Seite</translation>
+        <translation>Koordinaten auf dem Blatt</translation>
     </message>
     <message>
         <source>Coordinates</source>
@@ -2741,7 +2698,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>X coordinate:</source>
@@ -2768,7 +2725,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Select last point of curve</source>
-        <translation>Letzten Punkt auf der Kurve auswählen</translation>
+        <translation>Letzten Punkt der Kurve auswählen</translation>
     </message>
     <message>
         <source>Color:</source>
@@ -2792,7 +2749,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid spline</source>
-        <translation>Ungültige Spline/glatte Kurve</translation>
+        <translation>Ungültige Spline</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2800,7 +2757,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2808,7 +2765,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -2899,7 +2856,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid spline path</source>
-        <translation>Ungültiger Spline-Pfad/glatte Kurve</translation>
+        <translation>Ungültiger Spline Pfad</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -2907,7 +2864,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Value</source>
@@ -2915,7 +2872,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ganze Berechnungsformel anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Edit first control point angle</source>
@@ -2955,7 +2912,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interaktiv</translation>
+        <translation>Spline - interaktiv</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3014,7 +2971,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Lowest point</source>
-        <translation>Unterster Punkt</translation>
+        <translation>Tiefster Punkt</translation>
     </message>
     <message>
         <source>Leftmost point</source>
@@ -3026,7 +2983,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>by length</source>
-        <translation>nach länge</translation>
+        <translation>nach Länge</translation>
     </message>
     <message>
         <source>by points intersetions</source>
@@ -3034,23 +2991,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>by first edge symmetry</source>
-        <translation>ach der ersten Ecke Symmetrie</translation>
+        <translation>nach Symmetrie der ersten Ecke</translation>
     </message>
     <message>
         <source>by second edge symmetry</source>
-        <translation>Symmetrie nach der zweiten Ecke</translation>
+        <translation>nach Symmetrie der zweiten Ecke</translation>
     </message>
     <message>
         <source>by first edge right angle</source>
-        <translation>rechter Winkel nach der ersten Ecke</translation>
+        <translation>nach rechtem Winkel der ersten Ecke</translation>
     </message>
     <message>
         <source>by second edge right angle</source>
-        <translation>rechter Winkel nach der zweiten Ecke</translation>
+        <translation>nach rechtem Winkel der zweiten Ecke</translation>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Ungültiges Ergebnis: Der Wer ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
+        <translation>Ungültiges Ergebnis: Der Wert ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
     </message>
     <message>
         <source>Value can&apos;t be less than 0</source>
@@ -3065,7 +3022,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogTriangle</name>
     <message>
         <source>Select second point of axis</source>
-        <translation>Den zweiten Punkt der Achse auswählen</translation>
+        <translation>Zweiten Punkt der Achse auswählen</translation>
     </message>
     <message>
         <source>Select first point</source>
@@ -3093,11 +3050,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>1st axis point:</source>
@@ -3116,19 +3073,19 @@ p, li { white-space: pre-wrap; }
     <name>DialogTrueDarts</name>
     <message>
         <source>Select the second base point</source>
-        <translation>Den zweiten Ausgangspunkt auswählen</translation>
+        <translation>Zweiten Ausgangspunkt auswählen</translation>
     </message>
     <message>
         <source>Select the first dart point</source>
-        <translation>Den ersten Abnäherpunkt auswählen</translation>
+        <translation>Ersten Abnäherpunkt auswählen</translation>
     </message>
     <message>
         <source>Select the second dart point</source>
-        <translation>Den zweiten Abnäherpunkt auswählen</translation>
+        <translation>Zweiten Abnäherpunkt auswählen</translation>
     </message>
     <message>
         <source>Select the third dart point</source>
-        <translation>Den dritten Abnäherpunkt auswählen</translation>
+        <translation>Dritten Abnäherpunkt auswählen</translation>
     </message>
     <message>
         <source>Selection</source>
@@ -3136,23 +3093,23 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st base point:</source>
-        <translation>Erster basispunkt:</translation>
+        <translation>Erster Ausgangspunkt:</translation>
     </message>
     <message>
         <source>2nd base point:</source>
-        <translation>Zweiter ausgangspunkt:</translation>
+        <translation>Zweiter Ausgangspunkt:</translation>
     </message>
     <message>
         <source>1st dart point:</source>
-        <translation>Erster abnäherpunkt:</translation>
+        <translation>Erster Abnäherpunkt:</translation>
     </message>
     <message>
         <source>2nd dart point:</source>
-        <translation>Zweiter abnäherpunkt:</translation>
+        <translation>Zweiter Abnäherpunkt:</translation>
     </message>
     <message>
         <source>3rd dart point:</source>
-        <translation>Dritter abnäherpunkt:</translation>
+        <translation>Dritter Abnäherpunkt:</translation>
     </message>
     <message>
         <source>True Darts</source>
@@ -3160,11 +3117,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wähle einen eindeutigen namen aus.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Point name 1:</source>
@@ -3179,7 +3136,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogUndo</name>
     <message>
         <source>Broken formula</source>
-        <translation>Ungültige Formel</translation>
+        <translation>Defekte Formel</translation>
     </message>
     <message>
         <source>&amp;Undo</source>
@@ -3187,7 +3144,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>&amp;Fix formula</source>
-        <translation>&amp;Formel korrigieren</translation>
+        <translation>&amp;Formel festlegen</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
@@ -3195,7 +3152,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Error while calculation formula. You can try to undo last operation or fix broken formula.</source>
-        <translation>Fehler beim Berechnen der Formel. Machen Sie den letzten Schritt rückgängig oder korrigieren Sie die Formel.</translation>
+        <translation>Fehler beim Berechnen der Formel. Du kannst versuchen, den letzten Schritt rückgängig zu machen, oder die defekte Formel festlegen.</translation>
     </message>
 </context>
 <context>
@@ -3214,7 +3171,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom variables</source>
-        <translation>Benutzerdefinierte variablen</translation>
+        <translation>Kundenvariablen</translation>
     </message>
     <message>
         <source>Name</source>
@@ -3222,7 +3179,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>The calculated value</source>
-        <translation>Berechneter Wert</translation>
+        <translation>Der berechnete Wert</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -3238,16 +3195,15 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Add custom variable</source>
-        <translatorcomment>ich würde es mit benutzerdefinierte Variablen übersetzen</translatorcomment>
-        <translation>Individuelles Maß hinzufügen</translation>
+        <translation>Benutzerdefinierte Variable hinzufügen</translation>
     </message>
     <message>
         <source>Remove custom variable</source>
-        <translation>benutzerdefinierte Variablen entfernen</translation>
+        <translation>Benutzerdefinierte Variable entfernen</translation>
     </message>
     <message>
         <source>Details</source>
@@ -3287,7 +3243,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Line lengths</source>
-        <translation>Linienlänge</translation>
+        <translation>Linienlängen</translation>
     </message>
     <message>
         <source>Line</source>
@@ -3319,7 +3275,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Control point lengths</source>
-        <translation>Längen Kontrollpunkt</translation>
+        <translation>Kontrollpunktlängen</translation>
     </message>
     <message>
         <source>Arc radiuses</source>
@@ -3347,7 +3303,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Ungültiges Ergebnis: Der Wer ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
+        <translation>Ungültiges Ergebnis: Der Wert ist unendlich oder NaN, Bitte Deine Berechnung prüfen.</translation>
     </message>
     <message>
         <source>Value</source>
@@ -3359,7 +3315,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Edit variable</source>
-        <translation>Variable ändern</translation>
+        <translation>Variable bearbeiten</translation>
     </message>
 </context>
 <context>
@@ -3389,8 +3345,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Custom Variables</source>
-        <translation>Benutzerdefinierte
-Variablen</translation>
+        <translation>Kundenvariablen</translation>
     </message>
     <message>
         <source>Line Lengths</source>
@@ -3410,11 +3365,11 @@ Variablen</translation>
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation>Längen Kontrollpunkt</translation>
+        <translation>Kontrollpunktlängen</translation>
     </message>
     <message>
         <source>Arc Radii</source>
-        <translation>Bogen Radius</translation>
+        <translation>Bogenradien</translation>
     </message>
     <message>
         <source>Functions</source>
@@ -3446,7 +3401,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Hides measurement variables that have no value</source>
-        <translation>Messvariablen die keinen Wert haben - aussblenden</translation>
+        <translation>Maßvariablen die keinen Wert haben werden ausgeblendet</translation>
     </message>
     <message>
         <source>Hide empty measurements</source>
@@ -3458,7 +3413,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Vollständiger Name</translation>
+        <translation>Vollständige Bezeichnung</translation>
     </message>
     <message>
         <source>Filter variable list by keyword</source>
@@ -3474,7 +3429,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Custom Variable</source>
-        <translation>benutzerdefinierte Variable</translation>
+        <translation>Kundenvariable</translation>
     </message>
     <message>
         <source>Line length</source>
@@ -3513,11 +3468,11 @@ Variablen</translation>
     </message>
     <message>
         <source>Unique pattern piece name</source>
-        <translation>Eindeutiger Name des Schnittteils</translation>
+        <translation>Eindeutige Bezeichnung des Schnittteils</translation>
     </message>
     <message>
         <source>Unique group name</source>
-        <translation>Eindeutiger Gruppenname</translation>
+        <translation>Eindeutige Gruppenbezeichnung</translation>
     </message>
     <message>
         <source>Linetype:</source>
@@ -3532,7 +3487,7 @@ Variablen</translation>
     <name>EditLabelTemplateDialog</name>
     <message>
         <source>Edit label template</source>
-        <translation>Schnittmuster Etikett bearbeiten</translation>
+        <translation>Etikettvorlage bearbeiten</translation>
     </message>
     <message>
         <source>Clear current and begin new label</source>
@@ -3553,7 +3508,7 @@ Variablen</translation>
     <message>
         <source>Bold</source>
         <comment>Font formatting</comment>
-        <translation>Bold</translation>
+        <translation>Fett</translation>
     </message>
     <message>
         <source>Italic</source>
@@ -3566,7 +3521,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Centers horizontally in the available space</source>
-        <translation>zentriert sich horizontal im verfügbaren Platz</translation>
+        <translation>Zentriert horizontal im verfügbaren Platz</translation>
     </message>
     <message>
         <source>Aligns with the right edge</source>
@@ -3574,7 +3529,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Additional font size. Use to make a line bigger.</source>
-        <translation>zusätzliche Schriftgröße. Benutzen um eine Linie größer zzu machen.</translation>
+        <translation>Zusätzliche Schriftgröße. Benutzen um eine Linie größer zu machen.</translation>
     </message>
     <message>
         <source>Text:</source>
@@ -3606,11 +3561,11 @@ Variablen</translation>
     </message>
     <message>
         <source>Creating new template will overwrite the current, do you want to continue?</source>
-        <translation>Beim Erstellen einer neuen Vorlage wird die aktuelle überschrieben, Möchten Sie forrfahren?</translation>
+        <translation>Beim Erstellen einer neuen Vorlage überschreibt die aktuelle, möchtest Du fortfahren?</translation>
     </message>
     <message>
         <source>Label template</source>
-        <translation>Etikett Vorlage</translation>
+        <translation>Etikettvorlage</translation>
     </message>
     <message>
         <source>Export label template</source>
@@ -3630,7 +3585,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Import template will overwrite the current, do you want to continue?</source>
-        <translation>Beim Import der Vorlage wird die aktuelle überschrieben. Möchten Sie fortfahren?</translation>
+        <translation>Beim Import der Vorlage wird die aktuelle überschrieben, möchtest Du fortfahren?</translation>
     </message>
     <message>
         <source>File error.</source>
@@ -3654,7 +3609,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Company name or designer name</source>
-        <translation>Firmen- oder Designer Name</translation>
+        <translation>Firmen- oder Designername</translation>
     </message>
     <message>
         <source>Customer name</source>
@@ -3670,7 +3625,7 @@ Variablen</translation>
     </message>
     <message>
         <source>Measurments file name</source>
-        <translation>Maße Dateiname</translation>
+        <translation>Maßsatz Dateiname</translation>
     </message>
     <message>
         <source>Size</source>
@@ -3678,23 +3633,23 @@ Variablen</translation>
     </message>
     <message>
         <source>Height</source>
-        <translation>Höhe</translation>
+        <translation>Körperhöhe</translation>
     </message>
     <message>
         <source>Measurments extension</source>
-        <translation>Maße Erweiterung</translation>
+        <translation>Maßsatz Erweiterung</translation>
     </message>
     <message>
         <source>Piece letter</source>
-        <translation>Schnnittteil Buchstabe</translation>
+        <translation>Schnittteil Buchstabe</translation>
     </message>
     <message>
         <source>Piece annotation</source>
-        <translation>Schnittmmuster Anmerkung</translation>
+        <translation>Schnittteil Anmerkung</translation>
     </message>
     <message>
         <source>Piece orientation</source>
-        <translation>Schnittmmuster Anmerkung</translation>
+        <translation>Schnittteil Ausrichtung</translation>
     </message>
     <message>
         <source>Piece rotation</source>
@@ -3702,11 +3657,11 @@ Variablen</translation>
     </message>
     <message>
         <source>Piece tilt</source>
-        <translation>Schnittteilneigung</translation>
+        <translation>Schnittteil Neigung</translation>
     </message>
     <message>
         <source>Piece fold position</source>
-        <translation>Schnitteil Bruch Position</translation>
+        <translation>Schnittteil Bruch Position</translation>
     </message>
     <message>
         <source>Piece name</source>
@@ -3734,11 +3689,11 @@ Variablen</translation>
     </message>
     <message>
         <source>Material: Interfacing</source>
-        <translation>Material: Schnittstelle</translation>
+        <translation>Material: Verstärkung</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Schnittstelle</translation>
+        <translation>Verstärkung</translation>
     </message>
     <message>
         <source>Material: Interlining</source>
@@ -3769,23 +3724,21 @@ Variablen</translation>
     <name>ExportFormatCombobox</name>
     <message>
         <source>(flat) files</source>
-        <translation>(flache) dateien</translation>
+        <translation>(flache) Dateien</translation>
     </message>
     <message>
         <source>files</source>
-        <translation>dateien</translation>
+        <translation>Dateien</translation>
     </message>
 </context>
 <context>
     <name>ExportLayoutDialog</name>
     <message>
         <source>Export Layout</source>
-        <translatorcomment>es gab keinen Übersetzungsvorschlag</translatorcomment>
         <translation>Layout exportieren</translation>
     </message>
     <message>
         <source>Binary form</source>
-        <translatorcomment>keine Übersetzung vorhanden</translatorcomment>
         <translation>Binärform</translation>
     </message>
     <message>
@@ -3822,7 +3775,7 @@ Variablen</translation>
     </message>
     <message>
         <source>File base name</source>
-        <translation>Datei-Basisname</translation>
+        <translation>Datei Basisname</translation>
     </message>
     <message>
         <source>Quality (0-100):</source>
@@ -3866,11 +3819,11 @@ Variablen</translation>
     </message>
     <message>
         <source>Orientation: </source>
-        <translation type="unfinished"></translation>
+        <translation>Orientierung: </translation>
     </message>
     <message>
         <source>The base filename does not match a regular expression.</source>
-        <translation>Der Dateiname enthält unerlaubte Zeichen.</translation>
+        <translation>Die Ausgangsdateibezeichnung entspricht keiner regulären Formulierung.</translation>
     </message>
     <message>
         <source>Select folder</source>
@@ -3878,15 +3831,15 @@ Variablen</translation>
     </message>
     <message>
         <source>Tried to use out of range format number.</source>
-        <translation>Die verwendete Formatnummer liegt außerhalb der Reichweite.</translation>
+        <translation>Versucht die ausserhalb des Formatbereichs liegenden Zahlen zu benutzen.</translation>
     </message>
     <message>
         <source>Selected not present format.</source>
-        <translation>Ausgewähltes Format nicht vorhanden.</translation>
+        <translation>Ausgewähltes nicht vorhandenes Format.</translation>
     </message>
     <message>
         <source>The destination directory doesn&apos;t exist or is not readable.</source>
-        <translation>Der Zielordner existiert nicht oder kann nicht gelesen werden.</translation>
+        <translation>Das Zielverzeichnis existiert nicht oder kann nicht gelesen werden.</translation>
     </message>
     <message>
         <source>%1 already exists.</source>
@@ -3894,11 +3847,11 @@ Variablen</translation>
     </message>
     <message>
         <source>%1 files with basename %2 already exist.</source>
-        <translation>%1 fDatei mit Basisnamen %2 besteht bereits.</translation>
+        <translation>%1 Datei mit Basisnamen %2 besteht bereits.</translation>
     </message>
     <message>
         <source>Do you want to replace them?</source>
-        <translation>Möchten Sie diese ersetzen?</translation>
+        <translation>Möchtest Du diese ersetzen?</translation>
     </message>
     <message>
         <source>Confirm Export</source>
@@ -3924,20 +3877,12 @@ Variablen</translation>
         <translation>Information</translation>
     </message>
     <message>
-        <source>Unable to open file
-%1
-for writing</source>
-        <translation>Ausserstande die Datei zu öffnen
-%1
-zum schreiben</translation>
-    </message>
-    <message>
         <source>File download failed: %1.</source>
         <translation>Dateidownload ist fehlgeschlagen: %1.</translation>
     </message>
     <message>
         <source>Download has started, the installer will open once it&apos;s finished downloading</source>
-        <translation>Der Download hat begonen, der Installer wird sich öffnen sobald der Download abgeschlossen ist</translation>
+        <translation>Download hat begonnen, der Installer öffnet sich, sobald der Download abgeschlossen ist</translation>
     </message>
     <message>
         <source>No new releases available.</source>
@@ -3947,10 +3892,18 @@ zum schreiben</translation>
         <source>A new release %1 is available.
 Do you want to download it?</source>
         <translation>Ein neuer Release %1 ist verfügbar.
-Möchten Sie diesen downloaden?</translation>
+Möchtest Du diesen downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to open file
+%1
+for writing</source>
+        <translation>Datei kann nicht geöffnet werden
+%1
+zum schreiben</translation>
+    </message>
+    <message>
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -3964,7 +3917,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Show All Groups</source>
-        <translation>Zeige alle Gruppen an</translation>
+        <translation>Alle Gruppen anzeigen</translation>
     </message>
     <message>
         <source>Hide all groups</source>
@@ -3980,7 +3933,8 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>Füge eine neue Gruppe der Liste zu</translation>
+        <translation>
+eine neue Gruppe der Liste zufügen</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
@@ -3988,7 +3942,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Edit group properties</source>
-        <translation>Bearbeite die Gruppen Eigenschaften</translation>
+        <translation>Bearbeite die Gruppeneigenschaften</translation>
     </message>
     <message>
         <source>Groups</source>
@@ -4008,7 +3962,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Double clicking zooms to object.</source>
-        <translation>Doppelklict zoomt zum objekt.</translation>
+        <translation>Doppelklicken zoomt zum Objekt.</translation>
     </message>
     <message>
         <source>Name Exists</source>
@@ -4016,15 +3970,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>The action can&apos;t be completed because the group name already exists.</source>
-        <translation>Die Aktion kann nicht abgeschlosen werden weil die Gruppe bereits existiert.</translation>
+        <translation>Die Aktion kann nicht abgeschlossen werden weil die Gruppenbezeichnung bereits existiert.</translation>
     </message>
     <message>
         <source>Edit Group</source>
         <translation>Gruppe bearbeiten</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Umbenennen</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4044,7 +3994,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Unknown Object</source>
-        <translation>unbekanntes Objekt</translation>
+        <translation>Unbekanntes Objekt</translation>
     </message>
     <message>
         <source>%1 - Base point</source>
@@ -4076,11 +4026,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Intersect Lines</source>
-        <translation>%1 - Punkt Schneidet Linien</translation>
+        <translation>%1 - Punkt schneidet Linien</translation>
     </message>
     <message>
         <source>%1 - Curve Interactive</source>
-        <translation>%1 - Kurve Interaktiv</translation>
+        <translation>%1 - Kurve interaktiv</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4088,7 +4038,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Curve Fixed</source>
-        <translation>%1 - Kurve Fixiert</translation>
+        <translation>%1 - Kurve fixiert</translation>
     </message>
     <message>
         <source>%1 - Arc Radius &amp; Angles</source>
@@ -4104,7 +4054,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Spline Interactive</source>
-        <translation>%1 - Spline Interaktiv</translation>
+        <translation>%1 - Spline interaktiv</translation>
     </message>
     <message>
         <source>SplPath_</source>
@@ -4112,23 +4062,23 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Spline Fixed</source>
-        <translation>%1 - Spline Fixiert</translation>
+        <translation>%1 - Spline fixiert</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Line</source>
-        <translation>%1 - Punkt - Schneidet Bogen &amp; Linie</translation>
+        <translation>%1 - Punkt - schneidet Bogen &amp; Linie</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Perpendicular</source>
-        <translation>%1 - Punkt Schneidet Linie &amp; Lotsenkrechte</translation>
+        <translation>%1 - Punkt schneidet Linie &amp; Senkrechte</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Axis &amp; Triangle</source>
-        <translation>%1 - Punkt Schneidet Achse &amp; Dreieck</translation>
+        <translation>%1 - Punkt schneidet Achse &amp; Dreieck</translation>
     </message>
     <message>
         <source>%1 - Point Intersect XY</source>
-        <translation>%1 - Punkt Schneidet XY</translation>
+        <translation>%1 - Punkt schneidet XY</translation>
     </message>
     <message>
         <source>%1 - Point On Arc</source>
@@ -4144,39 +4094,39 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>%1 - Point Intersect Line &amp; Axis</source>
-        <translation>%1 - Punkt Schneidet Linie &amp; Achse</translation>
+        <translation>%1 - Punkt schneidet Linie &amp; Achse</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curve &amp; Axis</source>
-        <translation>%1 - Punkt Schneidet Kurve &amp; Achse</translation>
+        <translation>%1 - Punkt schneidet Kurve &amp; Achse</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arcs</source>
-        <translation>%1 - Punkt Schneidet Bögen</translation>
+        <translation>%1 - Punkt schneidet Bögen</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punkt Schneidet Kreise</translation>
+        <translation>%1 - Punkt schneidet Kreise</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Curves</source>
-        <translation>%1 - Punkt Schneidet Kurven</translation>
+        <translation>%1 - Punkt schneidet Kurven</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circle &amp; Tangent</source>
-        <translation>%1 - Punkt Schneidet Kreis &amp; Tangente</translation>
+        <translation>%1 - Punkt schneidet Kreis &amp; Tangente</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Arc &amp; Tangent</source>
-        <translation>%1 - Punkt Schneidet Bogen &amp; Tangente</translation>
+        <translation>%1 - Punkt schneidet Bogen &amp; Tangente</translation>
     </message>
     <message>
         <source>%1 - True Dart %2_%3_%4</source>
-        <translation>%1 - Wahre Dart %2_%3_%4</translation>
+        <translation>%1 - endgültiger Abnäher %2_%3_%4</translation>
     </message>
     <message>
         <source>%1 - Arc Elliptical</source>
-        <translation>%1 - Bogen Elliptisch</translation>
+        <translation>%1 - Bogen elliptisch</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -4200,11 +4150,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Move Group Object</source>
-        <translation>Gruppenobjekt Bewegen</translation>
+        <translation>Gruppenobjekt bewegen</translation>
     </message>
     <message>
         <source>Remove Group Object</source>
-        <translation>Gruppen Objekt Entfernen</translation>
+        <translation>Gruppenobjekt entfernen</translation>
     </message>
     <message>
         <source>Group color</source>
@@ -4212,11 +4162,39 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Group name</source>
-        <translation>Gruppenname</translation>
+        <translation>Gruppenbezeichnung</translation>
     </message>
     <message>
         <source>Name</source>
         <translation>Bezeichnung</translation>
+    </message>
+    <message>
+        <source>Edit</source>
+        <translation>Bearbeiten</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Sichtbar</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>Gruppe ist sichtbar</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>Gruppe ist gesperrt</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>Gruppe hat Objekte</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
     </message>
 </context>
 <context>
@@ -4231,7 +4209,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Search text</source>
-        <translation>Text Suchen</translation>
+        <translation>Text suchen</translation>
     </message>
     <message>
         <source>Id</source>
@@ -4242,8 +4220,8 @@ Possibly the file is already being downloaded.</source>
         <translation>Bezeichnung</translation>
     </message>
     <message>
-        <source>Decription</source>
-        <translation>Auswahl</translation>
+        <source>Description</source>
+        <translation>Beschreibung</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4259,7 +4237,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Line from %1 to %2</source>
-        <translation>Linie von %1 ach %2</translation>
+        <translation>Linie von %1 nach %2</translation>
     </message>
     <message>
         <source>Point On Line %1_%2</source>
@@ -4271,15 +4249,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point On Perpendicular %1_%2</source>
-        <translation>Punkt auf der Senkrechten %1_%2</translation>
+        <translation>Punkt auf einer Senkrechten %1_%2</translation>
     </message>
     <message>
         <source>Point On Bisector %1_%2_%3</source>
-        <translation>Punkt auf der Winkelhalbierender %1_%2_%3</translation>
+        <translation>Punkt auf einer Winkelhalbierenden %1_%2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Lines %1_%2 and %3_%4</source>
-        <translation>Punkt Schneidet Linien %1_%2und %3_%4</translation>
+        <translation>Punkt schneidet Linien %1_%2und %3_%4</translation>
     </message>
     <message>
         <source>Spl_</source>
@@ -4287,11 +4265,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Curve Interactive</source>
-        <translation>Kurve Interaktiv</translation>
+        <translation>Kurve interaktiv</translation>
     </message>
     <message>
         <source>Curve Fixed</source>
-        <translation>Kurve Fixiert</translation>
+        <translation>Kurve fixiert</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -4299,7 +4277,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc Radius &amp; Angles</source>
-        <translation>Bogenradius &amp; Winkel</translation>
+        <translation>Bogen Radius &amp; Winkel</translation>
     </message>
     <message>
         <source>Arc Radius &amp; Length %1</source>
@@ -4311,27 +4289,27 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Spline Interactive</source>
-        <translation>Spline Interaktiv</translation>
+        <translation>Spline interaktiv</translation>
     </message>
     <message>
         <source>Spline Fixed</source>
-        <translation>Spline Fixiert</translation>
+        <translation>Spline fixiert</translation>
     </message>
     <message>
         <source>Point Intersect Arc with center %1 &amp; Line %2_%3</source>
-        <translation>Punkt Schneidet Bogen mit Mittel %1 &amp; Linie %2_%3</translation>
+        <translation>Punkt schneidet Bogen mit Mittelpunkt %1 &amp; Linie %2_%3</translation>
     </message>
     <message>
         <source>Point Intersect Line %1_%2 &amp; Perpendicular %3</source>
-        <translation>Punkt Schneidet Linie %1_%2 &amp; Lotsenkrechten %3</translation>
+        <translation>Punkt schneidet Linie %1_%2 &amp; Senkrechten %3</translation>
     </message>
     <message>
         <source>Point Intersect Axis %1_%2 &amp; Triangle points %3 and %4</source>
-        <translation>Punkt Schneidet Achse  %1_%2 &amp; Dreieck  Punkte %3 und %4</translation>
+        <translation>Punkt schneidet Achse  %1_%2 &amp; Dreieckspunkte %3 und %4</translation>
     </message>
     <message>
         <source>Point Intersect XY of points %1 and %2</source>
-        <translation>Punkt Schneidet XY der Punkte %1 und %2</translation>
+        <translation>Punkt schneidet XY der Punkte %1 und %2</translation>
     </message>
     <message>
         <source>Point On Arc</source>
@@ -4343,39 +4321,39 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point On Spline</source>
-        <translation>Punkt auf einer glatten Kurve</translation>
+        <translation>Punkt auf einer Spline</translation>
     </message>
     <message>
         <source>%Point Intersect Line &amp; %1_%2 and Axis through point %3</source>
-        <translation>%Punkt Schneidett Linie  &amp; %1_%2 und  Achse durch Punkt%3</translation>
+        <translation>%Punkt schneidet Linie  &amp; %1_%2 und  Achse durch Punkt%3</translation>
     </message>
     <message>
         <source>Point Intersect Curve &amp; Axis through point %1</source>
-        <translation>Punkt Schneidet Kurve &amp; Achse durch Punkt %1</translation>
+        <translation>Punkt schneidet Kurve &amp; Achse durch Punkt %1</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punkt Schneidet Bögen</translation>
+        <translation>Punkt schneidet Bögen</translation>
     </message>
     <message>
         <source>%1 - Point Intersect Circles</source>
-        <translation>%1 - Punkt Schneidet Kreise</translation>
+        <translation>%1 - Punkt schneidet Kreise</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punkt Schneidet Kurven</translation>
+        <translation>Punkt schneidet Kurven</translation>
     </message>
     <message>
         <source>Point Intersect Circle &amp; Tangent</source>
-        <translation>Punkt Schneidet Kreis und Tangente</translation>
+        <translation>Punkt schneidet Kreis &amp; Tangente</translation>
     </message>
     <message>
         <source>Point Intersect Arc &amp; Tangent</source>
-        <translation>Punkt Schneidet Bogen und Tangente</translation>
+        <translation>Punkt schneidet Bogen &amp; Tangente</translation>
     </message>
     <message>
         <source>True Dart %1_%2_%3</source>
-        <translation>Abnäherlänge ausgleichen %1_%2_%3</translation>
+        <translation>Endgültige Abnäherlänge  %1_%2_%3</translation>
     </message>
     <message>
         <source>ElArc_</source>
@@ -4383,11 +4361,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Arc Elliptical with length %1</source>
-        <translation>Bogeen elliptisch mit Länge %1</translation>
+        <translation>Bogen elliptisch mit Länge %1</translation>
     </message>
     <message>
         <source>Rotation around point %1. Suffix %2</source>
-        <translation>Drehung um einen Punkt %1. Suffix %2</translation>
+        <translation>Drehung um Punkt %1. Suffix %2</translation>
     </message>
     <message>
         <source>Mirror by Line %1_%2. Suffix %3</source>
@@ -4395,15 +4373,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Mirror by Axis through %1 point. Suffix %2</source>
-        <translation>An einer Achse spiegeln %1 Punkt. Suffix %2</translation>
+        <translation>Spiegeln an einer Achse durch %1 Punkt. Suffix %2</translation>
     </message>
     <message>
         <source>Move - rotate around point %1. Suffix %2</source>
-        <translation>Bewegen - Drehen um einen Punkt %1. Suffix %2</translation>
-    </message>
-    <message>
-        <source>Description</source>
-        <translation>Beschreibung</translation>
+        <translation>Bewegen - drehen um Punkt %1. Suffix %2</translation>
     </message>
     <message>
         <source>Point Length and Angle from point %1</source>
@@ -4418,7 +4392,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Piece:</source>
-        <translation>SchnittLinienstärke:</translation>
+        <translation>Schnittteil:</translation>
     </message>
     <message>
         <source>Nodes:</source>
@@ -4450,7 +4424,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>T: Markierung</translation>
+        <translation>T Markierung</translation>
     </message>
     <message>
         <source>UNotch</source>
@@ -4458,11 +4432,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>V:innen</translation>
+        <translation>V innen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>V:aussen</translation>
+        <translation>V aussen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -4482,22 +4456,22 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source> was auto reversed.</source>
-        <translation>war automatisch umgekehrt.</translation>
+        <translation> war automatisch umgekehrt.</translation>
     </message>
     <message>
         <source> may need to be manually reversed.</source>
-        <translation>müsste evtl manuell umgedreht werden.</translation>
+        <translation> muss evtl. manuell umgekehrt werden.</translation>
     </message>
     <message>
         <source>Insert Nodes</source>
-        <translation type="unfinished">Füge Knoten ein</translation>
+        <translation>Knoten einfügen</translation>
     </message>
 </context>
 <context>
     <name>InternalStrings</name>
     <message>
         <source>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</source>
-        <translation>Das Programm wird in dem Zustand WIE ES IST OHNE GARANTIE UND GEWÄHRLEISTUNG IRGENDEINER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK, zur Verfügung gestellt.</translation>
+        <translation>Das Programm wird WIE ES IST, OHNE GEWÄHRLEISTUNG JEGLICHER ART, EINSCHLIESSLICH DER GARANTIE FÜR DESIGN, GEBRAUCHSFÄHIGKEIT UND EIGNUNG FÜR EINEN BESTIMMTEN ZWECK zur Verfügung gestellt.</translation>
     </message>
 </context>
 <context>
@@ -4508,7 +4482,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Nehmen:</translation>
+        <translation>Auswählen:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -4532,7 +4506,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;die gesamte Berechnung anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -4540,7 +4514,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Select a circle center</source>
-        <translation>Wählen Sie einen Kreismittelpunkt</translation>
+        <translation>Kreismittelpunkt wählen</translation>
     </message>
     <message>
         <source>Edit radius</source>
@@ -4556,15 +4530,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt - Schneidet Kreis und Tangente</translation>
+        <translation>Punkt - schneidet Kreis und Tangente</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -4575,7 +4549,7 @@ Possibly the file is already being downloaded.</source>
     <name>IntersectCircleTangentTool</name>
     <message>
         <source>Intersect Circle and Tangent</source>
-        <translation>Schnittpunkt Bogen und Tangente</translation>
+        <translation>Schnittpunkt Kreis und Tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Circle and Tangent&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
@@ -4590,7 +4564,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Take:</source>
-        <translation>Nehmen:</translation>
+        <translation>Auswählen:</translation>
     </message>
     <message>
         <source>Geometry</source>
@@ -4614,11 +4588,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;die komplette Berechnung anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;vollständige Berechnung im Hinweisfenster anzeigen&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -4630,7 +4604,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Select second circle center</source>
-        <translation>Wählen des zweiten Kreismittelpunktes</translation>
+        <translation>Zweiten Kreismittelpunkt wählen</translation>
     </message>
     <message>
         <source>Edit first circle radius</source>
@@ -4650,15 +4624,15 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punkt - Schneidet Kreise</translation>
+        <translation>Punkt - schneidet Kreise</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -4673,7 +4647,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Point Intersect Circles</source>
-        <translation>Punkt Schneidet Kreise</translation>
+        <translation>Punkt schneidet Kreise</translation>
     </message>
 </context>
 <context>
@@ -4692,11 +4666,11 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Rotate workpiece</source>
-        <translation>Drehen</translation>
+        <translation>Schnittteil drehen</translation>
     </message>
     <message>
         <source>Rotate by</source>
-        <translation>Drehen im Winkel von</translation>
+        <translation>Drehen um</translation>
     </message>
     <message>
         <source>degree</source>
@@ -4802,7 +4776,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Enabling for sheets that have big height will speed up creating.</source>
-        <translation>Das Erlauben von besonders hohen Seiten verschnellert das Erstellen.</translation>
+        <translation>Durch die Aktivierung für Blätter mit großer Höhe wird die Erstellung beschleunigt.</translation>
     </message>
     <message>
         <source>Printer:</source>
@@ -4811,7 +4785,7 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>None</source>
         <comment>Printer</comment>
-        <translation>Keine</translation>
+        <translation>Keiner</translation>
     </message>
     <message>
         <source>Text</source>
@@ -4819,7 +4793,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Text will be converted to paths</source>
-        <translation>Text wird in Verzeichnis geändert</translation>
+        <translation>Text wird in Verzeichnisse umgewandelt</translation>
     </message>
     <message>
         <source>Export text as paths</source>
@@ -4835,14 +4809,14 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Layout print settings</source>
-        <translation>Layout druck einstellungen</translation>
+        <translation>Layoutdruck Einstellungen</translation>
     </message>
     <message>
         <source>Millimeters</source>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -4852,11 +4826,11 @@ Apply settings anyway?</source>
     <name>LineTypeComboBox</name>
     <message>
         <source>No Pen</source>
-        <translation>Kein stift</translation>
+        <translation>Kein Stift</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Durchgezogene linie</translation>
+        <translation>Durchgezogene Linie</translation>
     </message>
     <message>
         <source>Dash</source>
@@ -4879,23 +4853,23 @@ Apply settings anyway?</source>
     <name>MApplication</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
-        <translation>Fehler beim Verarbeiten der Datei. Das Programm wird geschlossen.</translation>
+        <translation>Fehler beim Parsen der Datei. Das Programm wird beendet.</translation>
     </message>
     <message>
         <source>Error bad id. Program will be terminated.</source>
-        <translation>Fehler - unbekannte ID. Das Programm wird geschlossen.</translation>
+        <translation>Fehler - ungültige ID. Das Programm wird beendet.</translation>
     </message>
     <message>
         <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird geschlossen.</translation>
+        <translation>Fehler - Wert kann nicht konvertiert werden. Das Programm wird beendet.</translation>
     </message>
     <message>
         <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Fehler - leerer Parameter. Das Programm wird geschlossen.</translation>
+        <translation>Fehler - leerer Parameter. Das Programm wird beendet.</translation>
     </message>
     <message>
         <source>Error wrong id. Program will be terminated.</source>
-        <translation>Fehler - falsche ID. Das Programm wird geschlossen.</translation>
+        <translation>Fehler - falsche ID. Das Programm wird beendet.</translation>
     </message>
     <message>
         <source>Something&apos;s wrong!!</source>
@@ -4903,7 +4877,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Parser-Fehler: %1. Programm wird beendet.</translation>
+        <translation>Parser Fehler: %1. Programm wird beendet.</translation>
     </message>
     <message>
         <source>Exception thrown: %1. Program will be terminated.</source>
@@ -4919,7 +4893,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>The base height</source>
-        <translation>Die Basishöhe</translation>
+        <translation>Die Basiskörperhöhe</translation>
     </message>
     <message>
         <source>The base size</source>
@@ -4927,11 +4901,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Maßeinheit der Schnittmuster-Datei bestimmen: cm, mm, Zoll.</translation>
+        <translation>Schnittmusterdatei Einheit festlegen: cm, mm, Zoll.</translation>
     </message>
     <message>
         <source>The pattern unit</source>
-        <translation>Die Schnittmuster-Maßeinheit</translation>
+        <translation>Die Schnittmuster Einheit</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be cm, mm or inch.</source>
@@ -4939,39 +4913,39 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Eingehende Verbindung &apos;%1&apos; kann nicht aufgefangen werden</translation>
+        <translation>Es&apos; kann nicht begonnen werden, auf eingehende Verbindungen über den Namen zu hören&apos;%1&apos;</translation>
     </message>
     <message>
         <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>Der Test-Modus unterstützt das Öffnen mehrerer Dateien nicht.</translation>
+        <translation>Der Test Modus unterstützt nicht das Öffnen mehrerer Dateien.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Bitte stellen Sie eine Eingabedatei zur Verfügung.</translation>
+        <translation>Bitte stellen Sie eine Eingabedatei bereit.</translation>
     </message>
     <message>
         <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Geöffnet mit der Basisgröße. Gültige Werte: %1cm.</translation>
+        <translation>Mit der Basisgröße öffnen. Gültige Werte: %1cm.</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Ungültige Basishöhe. Muss %1cm sein.</translation>
+        <translation>Ungültiges Argument für die Basiskörperhöhe. Muss %1cm sein.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Ungültige Basisgröße. Muss in %1cm sein .</translation>
+        <translation>Ungültiges Argument für die Basisgröße. Muss in %1cm sein .</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Geöffnet mit der Basishöhe. Gültige Werte: %1cm.</translation>
+        <translation>Mit der Basiskörperhöhe öffnen. Gültige Werte: %1cm.</translation>
     </message>
     <message>
         <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Verwenden zum Einheiten testen. Ausführung des Programms und öffnen einer Datei ohne Fensteranzeige.</translation>
+        <translation>Verwenden zum Einheiten testen. Führen Sie das Programm aus und öffnen Sie eine Datei, ohne das Hauptfenster anzuzeigen.</translation>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>hohe dpi Skalierung deaktivieren. Diese Option wählen wenn es Probleme mit der Skalierung (StandardSkalierung aaktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
+        <translation>Deaktivieren Sie die Skalierung mit hoher Auflösung. Rufen Sie diese Option auf, wenn es Probleme mit der Skalierung gibt (standardmäßig ist die Skalierung aktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
     </message>
 </context>
 <context>
@@ -5062,11 +5036,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Save &amp;As...</source>
-        <translation>Speichern &amp;unter...</translation>
+        <translation>Speichern &amp;als...</translation>
     </message>
     <message>
         <source>Save not yet saved pattern</source>
-        <translation>Speichere ungesichertes Schnittmuster</translation>
+        <translation>Noch nicht gespeichertes Schnittmuster speichern</translation>
     </message>
     <message>
         <source>Details</source>
@@ -5074,7 +5048,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Pointer tools</source>
-        <translation>Zeigerwerkzeuge</translation>
+        <translation>Zeigewerkzeuge</translation>
     </message>
     <message>
         <source>History</source>
@@ -5090,7 +5064,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>E&amp;xit</source>
-        <translation>Seamly2D &amp;beenden</translation>
+        <translation>Be&amp;enden</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -5168,11 +5142,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Diese Datei ist bereits geöffnet.</translation>
+        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
         <source>Wrong units.</source>
-        <translation>Falsche Maßeinheiten.</translation>
+        <translation>Falsche Einheiten.</translation>
     </message>
     <message>
         <source>File loaded</source>
@@ -5184,7 +5158,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
-        <translation>Zuletzt geöffnete Dateien laden.</translation>
+        <translation>Dateien erneut öffnen.</translation>
     </message>
     <message>
         <source>Layout</source>
@@ -5200,11 +5174,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Print tiled PDF</source>
-        <translation>Kachelblätter als PDF drucken</translation>
+        <translation>PDF Kachelblätter drucken</translation>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Teilen und Speichern eines Layouts in kleinere Seiten (für normale Drucker)</translation>
+        <translation>Teilen und drucken eines Layouts in kleinere Seiten (für normale Drucker)</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -5232,11 +5206,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>You can&apos;t export empty scene.</source>
-        <translation>Sie können ein leeres Layout nicht exportieren.</translation>
+        <translation>Du kannst kein leeres Layout exportieren.</translation>
     </message>
     <message>
         <source>Measurement file contains invalid known measurement(s).</source>
-        <translation>Maßdatei enthält ungültiges Maß(e).</translation>
+        <translation>Die Maßdatei enthält ungültige bekannte Maße.</translation>
     </message>
     <message>
         <source>Measurement file has unknown format.</source>
@@ -5244,7 +5218,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Measurement files types have not match.</source>
-        <translation>Die Arten der Maßdateien stimmen nicht überein.</translation>
+        <translation>Die Maßdatei Arten stimmen nicht überein.</translation>
     </message>
     <message>
         <source>Couldn&apos;t sync measurements.</source>
@@ -5260,7 +5234,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Loading measurements file</source>
-        <translation>Lädt die Maßdatei</translation>
+        <translation>Lädt Maßdatei</translation>
     </message>
     <message>
         <source>Not supported size value &apos;%1&apos; for this pattern file.</source>
@@ -5276,19 +5250,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Not supported height value &apos;%1&apos; for this pattern file.</source>
-        <translation>Nicht unterstütze Höheneinheit &apos;%1&apos; für diese Schnittmusterdatei.</translation>
+        <translation>Nicht unterstützer Körperhöhen Wert &apos;%1&apos; für diese Schnittmusterdatei.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. File wasn&apos;t opened.</source>
-        <translation>Höhe konnte nicht bestimmt werden. Datei nicht geöffnet.</translation>
+        <translation>Körperhöhe konnte nicht bestimmt werden. Datei nicht geöffnet.</translation>
     </message>
     <message>
         <source>Please, provide one input file.</source>
-        <translation>Bitte stellen Sie eine Eingabedatei zur Verfügung.</translation>
+        <translation>Bitte stelle eine Eingabedatei zur Verfügung.</translation>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>Originales Layout drucken</translation>
+        <translation>Ein originales Layout drucken</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
@@ -5304,7 +5278,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Couldn&apos;t unload measurements. Some of them are used in the pattern.</source>
-        <translation>Geladene Maße, die im Schnittteil verwendet werden, können nicht gelöscht werden.</translation>
+        <translation>Maße konnten nicht gelöscht werden, einige werden im Schnittteil verwendet.</translation>
     </message>
     <message>
         <source>New pattern</source>
@@ -5328,19 +5302,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Locking file</source>
-        <translation>Datei wird gesperrt</translation>
+        <translation>Datei sperren</translation>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet. Diese Nachricht ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverust führen).</translation>
+        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Diese Nachricht ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplatten-Partition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplatten Partition verhindert, dass die Sperrdatei geschrieben werden konnte. Diese Nachricht ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
@@ -5348,7 +5322,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplatten-Partition verhindert, dass die Sperrdatei geschrieben werden konnte.</translation>
+        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplatten Partition verhindert, dass die Sperrdatei geschrieben werden konnte.</translation>
     </message>
     <message>
         <source>Operations</source>
@@ -5360,15 +5334,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Tool pointer</source>
-        <translation>Nachtwerkzeut</translation>
+        <translation>Werkzeug Anzeiger</translation>
     </message>
     <message>
         <source>Original zoom</source>
-        <translation type="unfinished"></translation>
+        <translation>Original zoom</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Höhe:</translation>
+        <translation>Körperhöhe:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -5376,35 +5350,35 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
-        <translation>DIe Maßdatei &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; kann nicht gefunden werden. Möchtest diu die?</translation>
+        <translation>Die Maßdateien &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; konnten nicht gefunden werden. Möchtest Du den Speicherort aktualisieren?</translation>
     </message>
     <message>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Maße wurden geändert. Sollen die Maße jetzt synchronisiert werden?</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
-        <translation type="unfinished"></translation>
+        <translation>Gradierung unterstützt Zoll nicht</translation>
     </message>
     <message>
         <source>Measurements have been synced</source>
-        <translation type="unfinished"></translation>
+        <translation>Maße wurden synchronisiert</translation>
     </message>
     <message>
         <source>The document has no write permissions.</source>
-        <translation type="unfinished"></translation>
+        <translation>Das Dokument hat keine Schreibberechtigung.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Kann keine Erlaubniss für %1 als schreibbarsetzen.</translation>
+        <translation>Kann keine Berechtigung für %1 als schreibbar setzen.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
-        <translation>Kann die Datei nicht sichern.</translation>
+        <translation>Die Datei kann nicht gesichert werden.</translation>
     </message>
     <message>
         <source>Could not save the file</source>
-        <translation>Kann die Datei nicht sichern</translation>
+        <translation>Die Datei kann nicht gesichert werden</translation>
     </message>
     <message>
         <source>read only</source>
@@ -5412,23 +5386,23 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Contains information about increments and internal variables</source>
-        <translation type="unfinished"></translation>
+        <translation>Enthält Informationen über Schritte und interne Variablen</translation>
     </message>
     <message>
         <source>Load Individual</source>
-        <translation type="unfinished"></translation>
+        <translation>Individuell laden</translation>
     </message>
     <message>
         <source>Load Individual measurements file</source>
-        <translation type="unfinished"></translation>
+        <translation>individuelle Maße laden</translation>
     </message>
     <message>
         <source>Load Multisize</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehrgröße laden</translation>
     </message>
     <message>
         <source>Load multisize measurements file</source>
-        <translation type="unfinished"></translation>
+        <translation>Mehrgrößen Maße laden</translation>
     </message>
     <message>
         <source>Open SeamlyMe</source>
@@ -5436,27 +5410,27 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Edit Current</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelle bearbeiten</translation>
     </message>
     <message>
         <source>Edit linked to the pattern measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>Verknüpft mit den Schnittmustermaßen bearbeiten</translation>
     </message>
     <message>
         <source>Sync</source>
-        <translation type="unfinished"></translation>
+        <translation>Sync</translation>
     </message>
     <message>
         <source>Synchronize linked to the pattern measurements after change</source>
-        <translation type="unfinished"></translation>
+        <translation>Verknüpft mit den Mustermaßen nach Änderung synchronisieren</translation>
     </message>
     <message>
         <source>Unload Current</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktuelle löschen</translation>
     </message>
     <message>
         <source>Unload measurements if they were not used in a pattern file</source>
-        <translation type="unfinished"></translation>
+        <translation>Maße löschen, wenn sie nicht in einer Schnittmusterdatei benutzt werden</translation>
     </message>
     <message>
         <source>Individual measurements</source>
@@ -5464,7 +5438,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Multisize measurements</source>
-        <translation type="unfinished">Mehrgrößen Maße</translation>
+        <translation>Mehrgrößen Maße</translation>
     </message>
     <message>
         <source>Pattern files</source>
@@ -5476,7 +5450,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Forum</source>
-        <translation type="unfinished"></translation>
+        <translation>Forum</translation>
     </message>
     <message>
         <source>Name</source>
@@ -5484,7 +5458,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>The calculated value</source>
-        <translation>Berechneter Wert</translation>
+        <translation>Der berechnete Wert</translation>
     </message>
     <message>
         <source>Formula</source>
@@ -5496,15 +5470,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Anwendung unterstütz&apos; keine Mehrgrößentabellen in Zoll.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe kann nicht eingestellt werden. Mindestens eine Mehrgrößenmaßdatei ist notwendig.</translation>
     </message>
     <message>
         <source>Couldn&apos;t set height. Need a file with multisize measurements.</source>
-        <translation type="unfinished"></translation>
+        <translation>Körperhöhe kann nicht eingestellt werden. Mindestens eine Mehrgrößenmaßdatei muß vorhanden sein.</translation>
     </message>
     <message>
         <source>Preview</source>
@@ -5516,7 +5490,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Punktnamen</translation>
+        <translation>Punktbezeichnungen</translation>
     </message>
     <message>
         <source>Edit</source>
@@ -5528,7 +5502,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation type="unfinished"></translation>
+        <translation>Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>
@@ -5540,27 +5514,27 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>File Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei Symbolleiste</translation>
     </message>
     <message>
         <source>Mode ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Modus Symbolleiste</translation>
     </message>
     <message>
         <source>Pattern Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Vorlagen Symbolleiste</translation>
     </message>
     <message>
         <source>Edit Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Symbolleiste bearbeiten</translation>
     </message>
     <message>
         <source>Property Editor</source>
-        <translation>Eigenschafts Editor</translation>
+        <translation>Eigenschaften Editor</translation>
     </message>
     <message>
         <source>Layout Pages</source>
-        <translation type="unfinished">Layout Seiten</translation>
+        <translation>Seiten Layout</translation>
     </message>
     <message>
         <source>Group Manager</source>
@@ -5572,27 +5546,27 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toolbox ToolBar</source>
-        <translation>Symbolleiste Optionen</translation>
+        <translation>Werkzeuge Symbolleiste</translation>
     </message>
     <message>
         <source>Points Toolbar</source>
-        <translation type="unfinished"></translation>
+        <translation>Punkte Symbolleiste</translation>
     </message>
     <message>
         <source>Lines ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Linien Symbolleiste</translation>
     </message>
     <message>
         <source>Curves ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Kurven Symbolleiste</translation>
     </message>
     <message>
         <source>Arcs ToolBar</source>
-        <translation>Symbolleistedür den Bogen</translation>
+        <translation>Bögen Symbolleiste</translation>
     </message>
     <message>
         <source>Operations ToolBar</source>
-        <translation>Symbolleiste Operationen</translation>
+        <translation>Operationen Symbolleiste</translation>
     </message>
     <message>
         <source>Piece ToolBar</source>
@@ -5600,7 +5574,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Details ToolBar</source>
-        <translation>Detail Symbolleiste</translation>
+        <translation>Details Symbolleiste</translation>
     </message>
     <message>
         <source>Layout ToolBar</source>
@@ -5608,7 +5582,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point Name ToolBar</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktbezeichnung Symbolleiste</translation>
     </message>
     <message>
         <source>Toolbox</source>
@@ -5628,7 +5602,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Export Draft Blocks (E, D)</source>
-        <translation>Exportiere Entwurfsblöcke (E, D)</translation>
+        <translation>Entwurfsblöcke (E, D) exportieren</translation>
     </message>
     <message>
         <source>Tools for adding pattern pieces.</source>
@@ -5640,11 +5614,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Tools for adding details to pattern pieces</source>
-        <translation>Werkzeuge um Details zu  einem Schnittteil   hinzuzufügen</translation>
+        <translation>Werkzeuge um Details zu Schnittteilen hinzuzufügen</translation>
     </message>
     <message>
         <source>Unite 2 Pieces (U)</source>
-        <translation type="unfinished"></translation>
+        <translation>2 Teile zusammenführen (U)</translation>
     </message>
     <message>
         <source>View Toolbar</source>
@@ -5652,15 +5626,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Draft</source>
-        <translation>Entwürfe</translation>
+        <translation>Entwurf</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with draft blocks. These draft blocks are the base for going to the next stage &amp;quot;Piece mode&amp;quot;. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus  zur Arbeit mit Entwurfsblöcken. Diese Entwursblöcke sind die Basis um in die nächste Phase zu gehen. &amp;quot;Teil Modus&amp;quot;. Bevor Du die diesen Teil Modus &amp;quot;aktivieren kannst&amp;quot; Musst Du mindestens ein Teil erstellt haben.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for working with pattern pieces. Before you will be able to enable the &amp;quot;Piece mode&amp;quot; you need to create at least one pattern piece on the stage &amp;quot;Draft mode&amp;quot;. Pattern pieces created on this stage will be used for creating a layout. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus Mit Schnittteilen arbeiten. Bevor Du den Teile Modus aktivieren kannst, musst &amp;quot; Du mindestens ein Schnittteil im Stadium &amp;quot;Entwurfsmodus&amp;quot; erstellt haben&amp;quot;. Schnittteile die in dieser Phase erstellt wurden, werden zur Layouterstellung benutzt.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>New Draft Block</source>
@@ -5668,11 +5642,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Add new draft block (Ctrl+Shift+N)</source>
-        <translation>Füge neuen Entwurfsblock hinzu (Ctrl+Shift+N)</translation>
+        <translation>Neuen Entwurfsblock hinzufügen (Ctrl+Shift+N)</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Entwursblock umbenennen</translation>
+        <translation>Entwurfsblock umbenennen</translation>
     </message>
     <message>
         <source>Change the name of the draft block</source>
@@ -5684,7 +5658,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Mode for creating a layout of pattern pieces. This mode is available if at least one pattern piece was created in &amp;quot;Piece mode&amp;quot;. The layout can be exported to your preferred file format and saved.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Modus um ein Layout aus Schnittteilen zu erstellen. Dieser Modus ist verfügbar wenn mindestens ein Schnittteil im Schnitzel Modus erstellt worden ist.&amp;quot;Teil Modus&amp;quot;. Das Layout kann in Dein bevorzugtes Dateiformat exportiert und gespeichert werden.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>G</source>
@@ -5708,7 +5682,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Mirror by Axis</source>
-        <translation>An einer Achse spiegeln</translation>
+        <translation>Spiegeln an einer Achse</translation>
     </message>
     <message>
         <source>M, A</source>
@@ -5720,7 +5694,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>True Darts</source>
-        <translation>Abnäherlänge ausgleichen</translation>
+        <translation>Abnäherlängen ausgleichen</translation>
     </message>
     <message>
         <source>T, D</source>
@@ -5796,7 +5770,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern Preferences...</source>
-        <translation>Schnittteil Vorlieben...</translation>
+        <translation>Schnittteil Einstellungen...</translation>
     </message>
     <message>
         <source>Zoom In</source>
@@ -5804,7 +5778,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>In</source>
-        <translation>In</translation>
+        <translation>Heran</translation>
     </message>
     <message>
         <source>Zoom In (Ctrl++)</source>
@@ -5816,7 +5790,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Out</source>
-        <translation>Aus</translation>
+        <translation>Heraus</translation>
     </message>
     <message>
         <source>Zoom Out (Ctrl+-)</source>
@@ -5828,7 +5802,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Fit</source>
-        <translation>passen</translation>
+        <translation>Passen</translation>
     </message>
     <message>
         <source>Zoom to Fit All(Ctrl+=)</source>
@@ -5860,7 +5834,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Kontroll Punkte und Kruvenrichtung umschalten (V, C)</translation>
+        <translation>Kontrollpunkte und Kruvenrichtung umschalten (V, C)</translation>
     </message>
     <message>
         <source>Load multisize</source>
@@ -5880,7 +5854,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Label Template Editor...</source>
-        <translation>Etikett Vorlagen Editor...</translation>
+        <translation>Etikettenvorlagen Editor...</translation>
     </message>
     <message>
         <source>Previous</source>
@@ -5888,7 +5862,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to Previous (Ctrl+Left)</source>
-        <translation>Zoom zum vorherigen (Strg+Links)</translation>
+        <translation>Zoom zum Vorherigen (Strg+Links)</translation>
     </message>
     <message>
         <source>Ctrl+Left</source>
@@ -5920,7 +5894,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to 100 percent (Ctrl+0)</source>
-        <translation>Zoom tauf 100 prozent (Strg+0)</translation>
+        <translation>Zoom auf 100 Prozent (Strg+0)</translation>
     </message>
     <message>
         <source>Ctrl+0</source>
@@ -5940,7 +5914,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Curve Tools</source>
-        <translation>Kurve Werkzeuge</translation>
+        <translation>Kurven Werkzeuge</translation>
     </message>
     <message>
         <source>Arc Tools</source>
@@ -5980,7 +5954,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>E, L</source>
-        <translation>E;L</translation>
+        <translation>E, L</translation>
     </message>
     <message>
         <source>Anchor Point</source>
@@ -5992,7 +5966,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Internal Path</source>
-        <translation>Unterverzeichnis</translation>
+        <translation>Internes Verzeichnis</translation>
     </message>
     <message>
         <source>I, P</source>
@@ -6008,7 +5982,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Unite Pieces</source>
-        <translation>Teile zusammenfügen</translation>
+        <translation>Füge Teile zusammen</translation>
     </message>
     <message>
         <source>U</source>
@@ -6016,7 +5990,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Export Pieces</source>
-        <translation>Schnitteile exportieren</translation>
+        <translation>Schnittteile exportieren</translation>
     </message>
     <message>
         <source>E, P</source>
@@ -6028,11 +6002,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point Name Text</source>
-        <translation>Bezeichnung des Punktes Text</translation>
+        <translation>Punktbezeichnung Text</translation>
     </message>
     <message>
         <source>Toggle Point Name Text (P)</source>
-        <translation>Umschalten der Punkt Bezeichnung Text (P)</translation>
+        <translation>Umschalten Punkt Bezeichnung Text (P)</translation>
     </message>
     <message>
         <source>V, P</source>
@@ -6056,7 +6030,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Decrease Text Size (Ctrl+[)</source>
-        <translation>Textgröße verringern  (Strg+[)</translation>
+        <translation>Textgröße verringern (Strg+[)</translation>
     </message>
     <message>
         <source>Ctrl+[</source>
@@ -6064,11 +6038,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Benutzen Sie das Farb Werkzeug</translation>
+        <translation>Benutze Werkzeugfarbe</translation>
     </message>
     <message>
         <source>Use Tool Color (T)</source>
-        <translation>Benutzen Sie Das Farb Werkzeug (T)</translation>
+        <translation>Benutze Werkzeugfarbe (T)</translation>
     </message>
     <message>
         <source>V, T</source>
@@ -6076,7 +6050,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Axis Origin </source>
-        <translation>Ausgangsachse </translation>
+        <translation>Achsenursprung </translation>
     </message>
     <message>
         <source>Toggle Axis Origin (V, A)</source>
@@ -6100,7 +6074,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Grainlines</source>
-        <translation>Fadenlauf</translation>
+        <translation>Fadenläufe</translation>
     </message>
     <message>
         <source>Toggle Grainlines (V, G)</source>
@@ -6132,7 +6106,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Decimal Chart</source>
-        <translation>Dezimal Tabelle</translation>
+        <translation>Dezimatabelle</translation>
     </message>
     <message>
         <source>Ctrl+Shift+D</source>
@@ -6160,15 +6134,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Document Info...</source>
-        <translation>Dokument Information...</translation>
+        <translation>Dokument Info...</translation>
     </message>
     <message>
         <source>Document Info</source>
-        <translation>Dokument Information</translation>
+        <translation>Dokument Info</translation>
     </message>
     <message>
         <source>Display document Info</source>
-        <translation>Dokument Information anzeigen</translation>
+        <translation>Dokument Info anzeigen</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
@@ -6180,27 +6154,23 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Create Group:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to finish group creation </source>
-        <translation>&lt;b&gt;Werkzeug: Operationen - erstellen Gruppe&lt;/b Wähle ein oder mehr Opbjekte - Halten b&gt;%1&lt;/b&gt;für mehrfach Auswahl, &lt;bENTER &lt;/b&gt;um die Gruppenerstellung abzuschließen </translation>
-    </message>
-    <message>
-        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werzeug: Operationen - Drehung&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; ffür mehrfache Auswahlen, Press &lt;b&gt;ENTER&lt;/b&gt; um die Auswahl zu bestätigen</translation>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Gruppe erstellen:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten b&gt;%1&lt;/b&gt;für Mehrfachauswahl, mit &lt;&gt;ENTER &lt;/b&gt; die Gruppenerstellung abschließen </translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Line:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werkzeug: Operatioin - an einer Linie spiegelnr&lt;/b&gt; ein oder mehr Objekte auswählen - JHalten &lt;b&gt;%1&lt;/b&gt; ffür mehrfache Auswahlen, &lt;b&gt;ENTER&lt;/b&gt; to confirm um diie Auswahl zu bestätigen</translation>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Linie:&lt;/b&gt; wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Mirror by Axis:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werkzeug: Operatioin - an einer Achse spiegelnr&lt;/b&gt; ein oder mehr Objekte auswählen - JHalten &lt;b&gt;%1&lt;/b&gt; ffür mehrfache Auswahlen, &lt;b&gt;ENTER&lt;/b&gt; to confirm um diie Auswahl zu bestätigen</translation>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Spiegeln an einer Achse:&lt;/b&gt; wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - Move:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werkzeug - Operation - Bewegen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; ffür Mehrfachauswahl, PRESS &lt;b&gt;ENTER&lt;/b&gt; tum die Auswahl zu bestätigen</translation>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Bewegen:&lt;/b&gt; Wähle ein oder mehrere Objekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Operations - TrueDarts:&lt;/b&gt; Select the first base line point</source>
-        <translation>&lt;b&gt;Werkzeug: Operationen Abnäher korrigieren:&lt;/b&gt; Wähle den ersten Grundllinienpunkt  aus</translation>
+        <translation>&lt;b&gt;Werkzeug::Operationenen Abnäher korrigieren:&lt;/b&gt; wähle den ersten Basispunkt</translation>
     </message>
     <message>
         <source>Draft Block:</source>
@@ -6212,7 +6182,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Add AnchorPoint</source>
-        <translation>Ankerpunkt hiinzufügen</translation>
+        <translation>Ankerpunkt hinzufügen</translation>
     </message>
     <message>
         <source>Create Internal Path</source>
@@ -6224,11 +6194,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Union Tool</source>
-        <translation>Verbindungswerkzeug</translation>
+        <translation>Vereinigungswerkzeug</translation>
     </message>
     <message>
         <source>Export Pattern Pieces</source>
-        <translation>Schnittteil exportieren</translation>
+        <translation>Schnittteile exportieren</translation>
     </message>
     <message>
         <source>Piece mode</source>
@@ -6236,19 +6206,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>You can&apos;t use Piece mode yet. Please, create at least one pattern piece.</source>
-        <translation>Schnitteilmodus kann nicht benutzt werden, erstelle mindestens ein schnittteil.</translation>
+        <translation>Schnitteilmodus kann noch nicht genutzt werden, Erstelle mindestens ein Schnittteil.</translation>
     </message>
     <message>
         <source>Pattern Pieces</source>
-        <translation>Schnittteil</translation>
+        <translation>Schnittteile</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, create at least one pattern piece.</source>
-        <translation>Layoutmodus kann nicht genutzt werden, erstelle mindestens ein schnittteil.</translation>
+        <translation>Layoutmodus kann noch nicht genutzt werden, Erstelle mindestens ein Schnittteil.</translation>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet. Please, include at least one pattern piece in layout.</source>
-        <translation>Layoutmodus kann nicht genutzt werden, wähle mindestens ein Schnittteil im Layout aus.</translation>
+        <translation>Layoutmodus kann nicht genutzt werden, mindestens ein Schnittteil ins Layout aufnehmen.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -6268,35 +6238,35 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>You don&apos;t have any pieces to export. Please, include at least one piece in layout.</source>
-        <translation>Es gibt kein Sschnitteil zum exportieren, wähle im Layout mindestens ein Schnitteil aus.</translation>
+        <translation>Es gibt kein Schnittteil zum exportieren, mindestens ein Schnittteil ins Layout übernehmen.</translation>
     </message>
     <message>
         <source>Export pieces</source>
-        <translation>Schnitteile exportieren</translation>
+        <translation>Schnittteile exportieren</translation>
     </message>
     <message>
         <source>Can&apos;t export pieces.</source>
-        <translation>Schnittteile können nicht exportiert weerden.</translation>
+        <translation>Schnittteile können nicht exportiert werden.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
-        <translation>&lt;b&gt;Schnittteil Werkzeug - Neues Schnitteil hinzufügen&lt;/b&gt;  Objekte des Hauptverzeichniss im Uhrzeigersinn auswählen.</translation>
+        <translation>&lt;b&gt;Werkzeug: Schnittteil - Neues Schnittteil hinzufügen&lt;/b&gt; Hauptpfad der Objekte im Uhrzeigersinn auswählen.</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Add Anchor Point:&lt;/b&gt; Select anchor point</source>
-        <translation>&lt;b&gt;Werkzeug: Schnitteil Ankerpunkt hinufügen :&lt;/b&gt; Ankerpunkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Schnittteil - Ankerpunkt hinzufügen :&lt;/b&gt; wähle einen Ankerpunkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Internal Path:&lt;/b&gt; Select path objects, use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction</source>
-        <translation>&lt;b&gt; Schnitteilwerkzeug - Unterverzeichnis:&lt;/b&gt; Zum Auswählen der Verzeichnissobjekte , benutze , &lt;b&gt;SHIFT&lt;/b&gt; um die Richtung der Kurven umzukehren</translation>
+        <translation>&lt;b&gt;Werkzeug: Schnittteil - Unterverzeichnis:&lt;/b&gt; Zum Auswählen der Verzeichnissobjekte , benutze , &lt;b&gt;SHIFT&lt;/b&gt; um die Richtung der Kurven umzukehren</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Piece - Insert Nodes:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
-        <translation>&lt;b&gt;Werkzeug::Teil-Knoten einfügen:&lt;/b&gt; wähle ein oder mehere Objekte aus, Haltenr &lt;b&gt;%1&lt;/b&gt; für die Mehrfachauswahl,&lt;b&gt; &gt;ENTER  to confirm selection</translation>
+        <translation>&lt;b&gt;Werkzeug::Schnitteil-Knoten einfügen:&lt;/b&gt; wähle ein oder mehrere Objekte aus, Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl,&lt;b&gt;ENTER &gt;um Auswahl zu bestätigen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
-        <translation>&lt;b&gt;Werkzeug VVerbindungsdetails /b&gt; Wähle ein schnitteil</translation>
+        <translation>&lt;b&gt;Werkzeug: Details Vereinigung /b&gt; wähle ein Schnittteil</translation>
     </message>
     <message>
         <source>Draft block %1</source>
@@ -6328,7 +6298,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
-        <translation>Point - Schneidet Linie und Lotsenkrechte (L, P)</translation>
+        <translation>Point - Schneidet Linie und Senkrechte (L, P)</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis (L, X)</source>
@@ -6336,11 +6306,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point - On Perpendicular (O, P)</source>
-        <translation>Punkt - Auf einer Lotsenkrechten (O, P)</translation>
+        <translation>Punkt - Auf einer Senkrechten (O, P)</translation>
     </message>
     <message>
         <source>Point - Length and Angle (L, A)</source>
-        <translation>Punkt - Länge und Winkel   (L, A)</translation>
+        <translation>Punkt - Länge und Winkel (L, A)</translation>
     </message>
     <message>
         <source>Point - On Line (O, L)</source>
@@ -6372,7 +6342,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point - On Spline (O, S)</source>
-        <translation>Punkt - Auf einer göatten Kurve( O, S)</translation>
+        <translation>Punkt - Auf einer Spline ( O, S)</translation>
     </message>
     <message>
         <source>Point - Intersect Curves (I, C)</source>
@@ -6416,7 +6386,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
-        <translation>Bogen - Radius und Lönge (Alt+Shift+A)</translation>
+        <translation>Bogen - Radius und Länge (Alt+Umschalt+A)</translation>
     </message>
     <message>
         <source>Arc - Elliptical (Alt+E)</source>
@@ -6424,19 +6394,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Mirror Objects by Line (M, L)</source>
-        <translation>Obejet an einer Linie spiegeln (M, L)</translation>
+        <translation>Objekte an einer Linie spiegeln (M, L)</translation>
     </message>
     <message>
         <source>Mirror Objects by Axis (M, A)</source>
-        <translation>Objet an einer Achse spiegelns (M, A)</translation>
+        <translation>Objekte an einer Achse spiegeln (M, A)</translation>
     </message>
     <message>
         <source>Move Objects (Alt+M)</source>
-        <translation>Objekt bewegen (Alt-M)</translation>
+        <translation>Objekte bewegen (Alt-M)</translation>
     </message>
     <message>
         <source>True Darts (T, D)</source>
-        <translation>Abnäherlänge ausgleichen (T;D)</translation>
+        <translation>Abnäherlängen ausgleichen (T;D)</translation>
     </message>
     <message>
         <source>Add New Pattern Piece (N, P)</source>
@@ -6448,7 +6418,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Insert Nodes (I, N)</source>
-        <translation> Füge Knoten ein (I, N)</translation>
+        <translation>Füge Knoten ein (I, N)</translation>
     </message>
     <message>
         <source>Add Internal Path (I, P)</source>
@@ -6460,7 +6430,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>New Print Layout (N, L)</source>
-        <translation>neues Druck-Layout (N, L)</translation>
+        <translation>Neues Drucklayout (N, L)</translation>
     </message>
     <message>
         <source>Export Layout (E, L)</source>
@@ -6484,11 +6454,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Midpoint on Line</source>
-        <translation>Mittelpunkt auf einer Linie</translation>
-    </message>
-    <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punkt - Mittelpunkt auf einer Linie (Shift+O, Shift+L)</translation>
+        <translation>Mittelpunkt auf Linie</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -6496,7 +6462,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>Auf eiiner Linie</translation>
+        <translation>Auf Linie</translation>
     </message>
     <message>
         <source>O, L</source>
@@ -6512,7 +6478,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Auf einer Lotsenkrehten</translation>
+        <translation>Auf Senkrechter</translation>
     </message>
     <message>
         <source>O, P</source>
@@ -6528,7 +6494,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Length to Line</source>
-        <translation>Länge auf einer Linie</translation>
+        <translation>Länge zur Linie</translation>
     </message>
     <message>
         <source>Intersect  Arc and Line</source>
@@ -6540,19 +6506,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>X, T</source>
-        <translation>X, Y</translation>
+        <translation>X, T</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Schneidet Linie und Lotsenkrechte</translation>
-    </message>
-    <message>
-        <source>L, P</source>
-        <translation>L,P</translation>
+        <translation>Schneidet Linie und Senkrechte</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Schnittpunkt Linie und Achse</translation>
+        <translation>Schneidet Linie und Achse</translation>
     </message>
     <message>
         <source>L, X</source>
@@ -6568,11 +6530,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point on Curve</source>
-        <translation>Punkt auf einer Kurve</translation>
+        <translation>Punkt auf Kurve</translation>
     </message>
     <message>
         <source>Point on Curve (A, C)</source>
-        <translation>Punkt - Auf einer Kurve  (O, C)</translation>
+        <translation>Punkt auf Kurve  (O, C)</translation>
     </message>
     <message>
         <source>O, C</source>
@@ -6632,7 +6594,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point on Arc</source>
-        <translation>Punkt auf einem Bogen</translation>
+        <translation>Punkt auf Bogen</translation>
     </message>
     <message>
         <source>Point on Arc (O, A)</source>
@@ -6664,7 +6626,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Intersect Circles (Shift+I, Shift+C)</source>
-        <translation>Schneidet Krreise (Umschalt+I, Umschalt+C)</translation>
+        <translation>Schneidet Kreise (Umschalt+I, Umschalt+C)</translation>
     </message>
     <message>
         <source>Shift+I, Shift+C</source>
@@ -6676,7 +6638,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Intersect Circle and Tangent (C, T)</source>
-        <translation>Schneidet Kreis und Tangenten (C, T)</translation>
+        <translation>Schneidet Kreis und Tangente (C, T)</translation>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
@@ -6700,7 +6662,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Activate last used tool (Ctrl+Shift+L)</source>
-        <translation>letztes benutztes Werkzeug aktivieren Ctrl+Shift+L)</translation>
+        <translation>Letztes benutztes Werkzeug aktivieren Strg+Umschalt+L)</translation>
     </message>
     <message>
         <source>Zoom to Selected (Ctrl+Right)</source>
@@ -6708,7 +6670,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to selected Area (Ctrl+A)</source>
-        <translation>Zoom zum  ausgewälten Bereich  (Ctrl+A)</translation>
+        <translation>Zoom zum  ausgewählten Bereich  (Ctrl+A)</translation>
     </message>
     <message>
         <source>Pan Work Area (Z, P)</source>
@@ -6716,11 +6678,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Create New Print Layout (N, L)</source>
-        <translation>Erstelle ein neues Drucklayout  (N, L)</translation>
+        <translation>Erstelle ein neues Drucklayout (N, L)</translation>
     </message>
     <message>
         <source>Zoom to point (Ctrl + Alt + P)</source>
-        <translation>Zoom zum Punkt (Ctrl + Alt + P)</translation>
+        <translation>Zoom zum Punkt (Strg + Alt + P)</translation>
     </message>
     <message>
         <source>Ctrl+Alt+P</source>
@@ -6728,11 +6690,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Please provide additional measurements: %1</source>
-        <translation>Bitte haltem Sie zusätzliche Maße bereit %1</translation>
+        <translation>Bitte gib zusätzliche Maße an: %1</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt -Mittelpunkt auf einer Linin :&lt;/b&gt; ersten Punkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt -Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
@@ -6740,115 +6702,115 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Line:&lt;/b&gt; Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt -auf einer Linie&lt;/b&gt; den ersten Punkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt -auf einer Linie&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Perpendicular:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Lotsenkrechtenr:&lt;/b&gt; Den ersten PUnkt der Linie auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Senkrechten:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Bisector:&lt;/b&gt; Select first point of angle</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Winkelhalbierenden:&lt;/b&gt; Den ersten Punkt des Winkels auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer Winkelhalbierenden:&lt;/b&gt; Wähle den ersten Punkt des Winkels</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length to Line:&lt;/b&gt; Select point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt  - Länge zur Linie:&lt;/b&gt; Punkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt  - Länge zur Linie:&lt;/b&gt; Wähle einen Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Line:&lt;/b&gt; Select first point of line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Linie:&lt;/b&gt; den ersten Punkt der Linie auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Linie:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Axis and Triangle:&lt;/b&gt; Select first point of axis</source>
-        <translation>&lt;b&gt;Werkzeug: Puhkt - Schneidet Aches und Dreieck:&lt;/b&gt; den ersten Punkt der Achse auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Achse und Dreieck:&lt;/b&gt; Wähle den ersten Punkt der Achse</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect XY&lt;/b&gt; Select point for X value (vertical)</source>
-        <translation>&lt;b&gt;Wekzeug: Punkt - Schneidet XY&lt;/b&gt; Einen Punkt für den X Wert (vertikal) auswählen</translation>
+        <translation>&lt;b&gt;Wekzeug: Punkt - Schneidet XY&lt;/b&gt; Wähle einen Punkt für den X Wert (vertikal</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Perpendicular:&lt;/b&gt; Select base point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linie und Lotsenkrechte:&lt;/b&gt; Basispunkt auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linie und Senkrechte:&lt;/b&gt; Wähle den Basispunkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Line and Axis:&lt;/b&gt; Select first point of line</source>
-        <translation>b&gt;Werkzeug: Punkt - Schneidet Linie und Achse:&lt;/b&gt; den ersten Punkt der Linie auswählen</translation>
+        <translation>b&gt;Werkzeug: Punkt - Schneidet Linie und Achse:&lt;/b&gt; Wähle den ersten Punkt der Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Line:&lt;/b&gt;:Select first point</source>
-        <translation>&lt;b&gt;Linien Werkzeug  &lt;/b&gt;Wähle den  ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug: Linie  &lt;/b&gt;:Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Lines:&lt;/b&gt; Select first point of first line</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linien:&lt;/b&gt; den ersten Punkt der ersten Linie auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Linien:&lt;/b&gt; Wähle den ersten Punkt der ersten Linie</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Interactive:&lt;/b&gt; Select start point of curve</source>
-        <translation>&lt;b&gt; Werkzeug Kurve - Interaktiv b&gt; Wähle den Startpunkt der Kurve</translation>
+        <translation>&lt;b&gt; Werkzeug: Kurve - Interaktiv b&gt; Wähle den Startpunkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Interactive:&lt;/b&gt; Select start point of spline</source>
-        <translation>&lt;b&gt;Werkzeug: glatte Kurve - Interaktiv:&lt;/b&gt; Wähle den Startpunkt der Kurve</translation>
+        <translation>&lt;b&gt;Werkzeug: Spline - Interaktiv:&lt;/b&gt; Wähle den Startpunkt der Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Curve - Fixed:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt; Werkzeug : Kurve Fixiert &lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
+        <translation>&lt;b&gt; Werkzeug : Kurve  - Fixiert &lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Spline - Fixed:&lt;/b&gt; Select first point of spline</source>
-        <translation>&lt;b&gt;Werkzeug: Spline Fixiert:&lt;/b&gt; den ersten Punkt der glatten Kurve wählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Spline - Fixiert:&lt;/b&gt; Wähle den ersten Punkt der Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Curve:&lt;/b&gt; Select first point of curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt-auf einer Kurve:&lt;/b&gt; den ersten Punkt der Kurve auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - auf einer Kurve:&lt;/b&gt; Wähle den ersten Punkt der Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Spline:&lt;/b&gt; Select spline</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einer glatten Kurve&lt;/b&gt; glatte Kurve auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - auf Spline&lt;/b&gt; Wähle die Spline</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curves:&lt;/b&gt; Select first curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurven:&lt;/b&gt; die erste Kurve auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurven:&lt;/b&gt; Wähle die erste Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Curve and Axis:&lt;/b&gt; Select curve</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurve und Achse:&lt;/b&gt; die Kurve auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kurve und Achse:&lt;/b&gt; Wähle die Kurve</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Angles:&lt;/b&gt; Select point of center of arc</source>
-        <translation>&lt;b&gt; Werkzeug Bogen - Radius und Winkel &lt;/b&gt; Wählr einen Piunkt aus dem Zentrum des Bogens aus</translation>
+        <translation>&lt;b&gt; Werkzeug:Bogen - Radius und Winkel &lt;/b&gt; Wähle den Mittelpunkt des Bogens</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - On Arc:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einem Bogen :&lt;/b&gt; Bogen auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Auf einem Bogen :&lt;/b&gt; Wähle den Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Axis:&lt;/b&gt; Select arc</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Achse:&lt;/b&gt; Bogen  auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Achse:&lt;/b&gt; Wähle den Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arcs:&lt;/b&gt; Select first an arc</source>
-        <translation>&lt;b&gt;Werkzeug:Punkt - Schneidet Bögen:&lt;/b&gt; den ersten Bogen auswählenn</translation>
+        <translation>&lt;b&gt;Werkzeug:Punkt - Schneidet Bögen:&lt;/b&gt; Wähle den ersten Bogen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circles:&lt;/b&gt; Select first circle center</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kreise :&lt;/b&gt; den ersten Kreismittelpunkt auswähle n</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kreise :&lt;/b&gt; Wähle den ersten Kreismittelpunkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Circle and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Werkzeug: Piunkt - Schneidet Kreis und Tangente&lt;/b&gt; den ersten Pukt der Tangente auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Kreis und Tangente&lt;/b&gt; Wähle einen  Punkt auf der Tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Intersect Arc and Tangent:&lt;/b&gt; Select point on tangent</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Tangente:&lt;/b&gt; Einen Punkt auf der Tangente auswählen</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Schneidet Bogen und Tangente:&lt;/b&gt; Wähle einen Punkt auf der Tangente</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Radius and Length:&lt;/b&gt; Select point of the center of the arc</source>
-        <translation>&lt;b&gt;werkzeugen Bogen - Radius und Länge &lt;/b Wähle einen Punkt aus dem Zentrum des Bogend</translation>
+        <translation>&lt;b&gt;Werkzeug: Bogen - Radius und Länge &lt;/b Wähle den Mittelpunkt des Bogens</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Arc - Elliptical:&lt;/b&gt; Select point of center of elliptical arc</source>
-        <translation>&lt;b&gt;Werkzeug:l::Bogen - Elliptisch:&lt;/b&gt; wähle einenn Punkt AUS DEM ZENTRZM DES ELLIPTISCHEN BOGENS</translation>
+        <translation>&lt;b&gt;Werkzeug:l::Bogen - Elliptisch:&lt;/b&gt; Wähle den Mittelpunkt des Ellipsenbogens</translation>
     </message>
     <message>
         <source>Zoom to Point</source>
@@ -6880,7 +6842,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Group is Locked. Unlock to add objects</source>
-        <translation>Gruppe ist gespertt. Entsperren um Objekte hinzuzufügen</translation>
+        <translation>Gruppe ist gesperrt. Entsperren um Objekte hinzuzufügen</translation>
     </message>
     <message>
         <source>Can not save file.</source>
@@ -6888,11 +6850,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern is read only.</source>
-        <translation type="unfinished"></translation>
+        <translation>Schnittmuster ist schreibgeschützt.</translation>
     </message>
     <message>
         <source>Failed to lock. File with this name is opened in another window.</source>
-        <translation>das Sperren ist fehlgeschlagen. Datei mit diesem Namen ist in einem anderen Fenster geöffnet.</translation>
+        <translation>Sperren ist fehlgeschlagen. Datei mit diesem Namen ist in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -6904,7 +6866,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation type="unfinished">Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet. Bei zweifachem Ausführen kann es zu Konflikten kommen.</translation>
+        <translation>Sperren fehlgeschlagen. Diese Datei ist bereits in einem anderen Fenster geöffnet. Bei Anwendung von 2 Programmkopien kommt es zu Konflikten.</translation>
     </message>
     <message>
         <source>Pen Toolbar</source>
@@ -6912,26 +6874,34 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toolbars</source>
-        <translation>Symbolleiste</translation>
+        <translation>Symbolleisten</translation>
     </message>
     <message>
         <source>File exception.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dateiausnahme.</translation>
     </message>
     <message>
         <source>Export exception.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausnahme exportieren.</translation>
     </message>
     <message>
         <source>pattern</source>
-        <translation>schnittmuster</translation>
+        <translation>Schnittmuster</translation>
+    </message>
+    <message>
+        <source>L, P</source>
+        <translation>L, P</translation>
+    </message>
+    <message>
+        <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
+        <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
     <message>
         <source>Creating file &apos;%1&apos; failed! %2</source>
-        <translation>Fehler beim Erstellen der Datei &apos;%1&apos;! %2</translation>
+        <translation>Erstellen der Datei &apos;%1&apos; fehlgeschlagen! %2</translation>
     </message>
     <message>
         <source>Critical error!</source>
@@ -6943,7 +6913,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Cannot proceed because there are no available printers in your system.</source>
-        <translation>Prozess kann nicht fortgesetzt werden, da keine verfügbaren Drucker in Ihrem System vorhanden sind.</translation>
+        <translation>Kann nicht fortfahren werden, da keine verfügbaren Drucker in Ihrem System vorhanden sind.</translation>
     </message>
     <message>
         <source>unnamed</source>
@@ -6955,7 +6925,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>The layout was not updated since last pattern modification. Do you want to continue?</source>
-        <translation>Das Layout wurde seit der letzten Änderung nicht aktualisiert. Möchten Sie fortfahren?</translation>
+        <translation>Das Layout wurde seit der letzten Schnitteiländerung nicht aktualisiert. Möchtest Du fortfahren?</translation>
     </message>
     <message>
         <source>Couldn&apos;t prepare data for creation layout</source>
@@ -6967,19 +6937,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>For previewing multipage document all sheet should have the same size.</source>
-        <translation>Zum Speichern eines mehrseitigen Dokuments müssen alle Blätter die gleiche Größe haben.</translation>
+        <translation>Für die Vorschau eines mehrseitigen Dokuments sollten alle Blätter die gleiche Größe haben.</translation>
     </message>
     <message>
         <source>For printing multipages document all sheet should have the same size.</source>
-        <translation>Zum Drucken eines mehrseitigen Dokuments müssen alle Blätter die gleiche Größe haben.</translation>
+        <translation>Zum Drucken eines mehrseitigen Dokuments sollten alle Blätter die gleiche Größe haben.</translation>
     </message>
     <message>
         <source>Pages will be cropped because they do not fit printer paper size.</source>
-        <translation>Seiten werden zugeschnitten, da sie nicht mit der Papiergröße des Drucker übereinstimmen.</translation>
+        <translation>Seiten werden beschnitten, da sie nicht mit der Papiergröße des Drucker übereinstimmen.</translation>
     </message>
     <message>
         <source>Cannot set printer margins</source>
-        <translation>Die Druckränder können nicht gesetzt werden</translation>
+        <translation>Druckränder können nicht gesetzt werden</translation>
     </message>
     <message>
         <source>Can&apos;t create a path</source>
@@ -6991,14 +6961,14 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>One or more pattern pieces are bigger than the paper format you selected. Please select a bigger paper format.</source>
-        <translation>Ein oder mehrere Schnittteile sind größer als das ausgewählte Papierformat. Bitte ein grpößeres.</translation>
+        <translation>Ein oder mehrere Schnittteile sind größer als das ausgewählte Papierformat. Wähle ein größeres.</translation>
     </message>
 </context>
 <context>
     <name>MeShortcutsDialog</name>
     <message>
         <source>Copy shortcuts to the clipboard</source>
-        <translation>Verknüpfungen werden in die zwischenablage kopiert</translation>
+        <translation>Kopiere die Verknüpfungen in die Zwischenablage</translation>
     </message>
     <message>
         <source>Export shortcuts as a PDF</source>
@@ -7006,7 +6976,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Send shortcuts to the printer</source>
-        <translation>Verknüpungen werden an den Drucker gesendet</translation>
+        <translation>Sende Verknüpfungen an den Drucker</translation>
     </message>
     <message>
         <source>File</source>
@@ -7022,7 +6992,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Open Individual</source>
-        <translation>Individuelle maße öffnen</translation>
+        <translation>Individuelle Maße öffnen</translation>
     </message>
     <message>
         <source>Export PDF</source>
@@ -7034,7 +7004,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Open Multisize</source>
-        <translation>Mehrgrßen öffnen</translation>
+        <translation>Mehrgrößen öffnen</translation>
     </message>
     <message>
         <source>Ctrl+Shift+O</source>
@@ -7074,7 +7044,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Ausfahrt</translation>
+        <translation>Verlassen</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -7094,11 +7064,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>SeamlyMe Shortcuts</source>
-        <translation>SeamlyMe-Verknüpfungen</translation>
+        <translation>SeamlyMe Verknüpfungen</translation>
     </message>
     <message>
         <source>Find previous</source>
-        <translation>Finde vorheriges</translation>
+        <translation>Vorheriges finden</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
@@ -7106,7 +7076,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Find next</source>
-        <translation>Finde nächstes</translation>
+        <translation>Nächstes finden</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -7125,11 +7095,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Check all</source>
-        <translation>Alle aktivieren</translation>
+        <translation>Alle überprüfen</translation>
     </message>
     <message>
         <source>Uncheck all</source>
-        <translation>Alle deaktivieren</translation>
+        <translation>Alles deaktivieren</translation>
     </message>
     <message>
         <source>Direct Height</source>
@@ -7204,12 +7174,12 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Mann &amp; Maßanfertigung</translation>
+        <translation>Herren &amp; Maßanfertigung</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
         <comment>Measurement section</comment>
-        <translation>Historisch &amp; Speziell</translation>
+        <translation>Historische &amp; Spezialität</translation>
     </message>
     <message>
         <source>Patternmaking measurements</source>
@@ -7263,53 +7233,96 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>MoveDoubleLabel</name>
     <message>
         <source>move the first dart label</source>
-        <translation>Bewegen Sie die erste Abnäher-Bezeichnung</translation>
+        <translation>Verschiebe das erste Abnäher Etikett</translation>
     </message>
     <message>
         <source>move the second dart label</source>
-        <translation>Bewegen Sie die zweite Abnäher-Bezeichnung</translation>
+        <translation>Verschiebe das zweite Abnäher Etikett</translation>
     </message>
 </context>
 <context>
     <name>MoveGroupItem</name>
     <message>
         <source>Move group item</source>
-        <translation>Gruppenelement bewegen</translation>
+        <translation>Gruppenelement verschieben</translation>
     </message>
 </context>
 <context>
     <name>MoveLabel</name>
     <message>
         <source>move point label</source>
-        <translation>Punkt verschieben Etikett</translation>
+        <translation>Punkt Etikett verschieben</translation>
     </message>
 </context>
 <context>
     <name>MoveOperationLabel</name>
     <message>
         <source>move point label</source>
-        <translation>Punkt verschieben Etikett</translation>
+        <translation>Punkt Etikett verschieben</translation>
     </message>
 </context>
 <context>
     <name>MoveSPoint</name>
     <message>
         <source>move single point</source>
-        <translation>Einzelnen Punkt bewegen</translation>
+        <translation>Einzelnen Punkt verschieben</translation>
     </message>
 </context>
 <context>
     <name>MoveSpline</name>
     <message>
         <source>move spline</source>
-        <translation>glatte Kurve bewegen</translation>
+        <translation>Spline verschieben</translation>
     </message>
 </context>
 <context>
     <name>MoveSplinePath</name>
     <message>
         <source>move spline path</source>
-        <translation>glatte Kurve-Pfad ) bewegen</translation>
+        <translation>Spline Pfad verschieben</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Neue Maßdatei</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Maßsatz Typ:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Einheit:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Basisgröße:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Basis Körperhöhe:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individuell</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Zentimeter</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Zoll</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Mehrgröße</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeter</translation>
     </message>
 </context>
 <context>
@@ -7336,7 +7349,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Letter</source>
-        <translation>Letter (US-Papiergröße)</translation>
+        <translation>Brief</translation>
     </message>
     <message>
         <source>Legal</source>
@@ -7368,7 +7381,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Roll 36in</source>
-        <translation>Rollein 36zoll / 91.44cm</translation>
+        <translation>Rolle 36zoll / 91.44cm</translation>
     </message>
     <message>
         <source>Roll 42in</source>
@@ -7387,7 +7400,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>PatternPieceDialog</name>
     <message>
         <source>Pattern Piece Tool</source>
-        <translation>Schnittteil-Werkzeug</translation>
+        <translation>Schnittteil Werkzeug</translation>
     </message>
     <message>
         <source>Properties </source>
@@ -7431,7 +7444,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Name can&apos;t be empty</source>
-        <translation>Name kann nicht leer sein</translation>
+        <translation>Bezeichnung kann nicht leer sein</translation>
     </message>
     <message>
         <source>Letter:</source>
@@ -7439,7 +7452,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Letter of pattern piece</source>
-        <translation>Buchstabe des Schnitteils</translation>
+        <translation>Buchstabe des Schnittteils</translation>
     </message>
     <message>
         <source>Quantity:</source>
@@ -7451,7 +7464,6 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>on fold</source>
-        <translatorcomment>feststehender Begriff wenn ein Stoff gefaltet und dann zugeschnitten wird</translatorcomment>
         <translation>im Bruch</translation>
     </message>
     <message>
@@ -7460,7 +7472,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Undefined</source>
-        <translation>undefinieret</translation>
+        <translation>Undefiniert</translation>
     </message>
     <message>
         <source>Up/Down</source>
@@ -7468,7 +7480,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Left/Right</source>
-        <translation>Links/rechts</translation>
+        <translation>Links/Rechts</translation>
     </message>
     <message>
         <source>Orientation:</source>
@@ -7496,11 +7508,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>2-Way</source>
-        <translation>zweifach</translation>
+        <translation>Zweifach</translation>
     </message>
     <message>
         <source>4-Way</source>
-        <translation>vierfach</translation>
+        <translation>Vierfach</translation>
     </message>
     <message>
         <source>Any</source>
@@ -7512,11 +7524,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>CW X</source>
-        <translation>im Uhrzeigersinn:X</translation>
+        <translation>Im Uhrzeigersinn X</translation>
     </message>
     <message>
         <source>CCW X</source>
-        <translation>gegen den Uhrzeigersinn:X</translation>
+        <translation>Gegen den Uhrzeigersinn X</translation>
     </message>
     <message>
         <source>Annotation:</source>
@@ -7524,7 +7536,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>A text field to add comments</source>
-        <translation>Ein  Textfeld um Kommentare einzufügen</translation>
+        <translation>Ein Textfeld um Kommentare einzufügen</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -7552,11 +7564,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>All objects in path should follow in clockwise direction.</source>
-        <translation>Alle Objekte im Pfad sollten im Uhrzeigersinn folgen.</translation>
+        <translation>Alle Objekte im Pfad sollen im Uhrzeigersinn folgen.</translation>
     </message>
     <message>
         <source>Move row to top of list</source>
-        <translation>Reihe an den Anfang der Liste bewgen</translation>
+        <translation>Reihe an den Anfang der Liste bewegen</translation>
     </message>
     <message>
         <source>Move row up one row</source>
@@ -7584,7 +7596,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>The seam allowance is part of main path</source>
-        <translation>die Nahtzugabe ist Bestandteil des Hauptverzeichnisses</translation>
+        <translation>Die Nahtzugabe ist Bestandteil des Hauptverzeichnisses</translation>
     </message>
     <message>
         <source>Built in</source>
@@ -7612,7 +7624,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Formula wizard</source>
-        <translation>Formel-Assistent</translation>
+        <translation>Formelassistent</translation>
     </message>
     <message>
         <source>Calculation</source>
@@ -7648,7 +7660,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Custom</source>
-        <translation>Benutzer</translation>
+        <translation>Kunde</translation>
     </message>
     <message>
         <source>Start point:</source>
@@ -7660,7 +7672,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Include as:</source>
-        <translation>Einschließem als:</translation>
+        <translation>Einschließen als:</translation>
     </message>
     <message>
         <source>Piece label</source>
@@ -7684,7 +7696,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Anchor points</source>
-        <translation>Anker punkt</translation>
+        <translation>Ankerpunkt</translation>
     </message>
     <message>
         <source>Pattern label</source>
@@ -7696,7 +7708,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Fadenlauf anzeigenn</translation>
+        <translation>Fadenlauf anzeigen</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -7728,7 +7740,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T: Markierung</translation>
+        <translation>T Markierung</translation>
     </message>
     <message>
         <source>U Notch</source>
@@ -7736,11 +7748,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>V Internal </source>
-        <translation>V:innen </translation>
+        <translation>V innen </translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V:aussen</translation>
+        <translation>V aussen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -7764,7 +7776,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Select to designate a corner point as a notch</source>
-        <translation>Auswählen um den Eckpunkt als Markierung zu benennen</translation>
+        <translation>Auswählen um einen Eckpunkt als Markierung zu benennen</translation>
     </message>
     <message>
         <source>Intersection</source>
@@ -7780,11 +7792,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
-        <translation>Länge der Markierung auf Standard zurücksetzen.</translation>
+        <translation>Markierungslänge auf Standard zurücksetzen.</translation>
     </message>
     <message>
         <source>Reset notch with to default.</source>
-        <translation>Markierung auf  Standard zurücksetzen.</translation>
+        <translation>Markierungsweite auf Standard zurücksetzen.</translation>
     </message>
     <message>
         <source>Reset notch angle to default.</source>
@@ -7796,7 +7808,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Select main path objects clockwise, Use &lt;b&gt;SHIFT&lt;/b&gt; to reverse curve direction,  or &lt;b&gt;CTRL&lt;/b&gt; to keep curve direction. Press &lt;b&gt;ENTER&lt;/b&gt; to finish piece creation </source>
-        <translation type="unfinished"></translation>
+        <translation>Hauptpfad Objekte im Uhrzeigersinn auswählen, mit &lt;b&gt;SHIFT&lt;/b&gt; Kurvenrichtung umkehren,  oder &lt;b&gt;Strg&lt;/b&gt; um Kurvenrichtung beizubehalten. Mit &lt;b&gt;Enter&lt;/b&gt; Teilerstellung abschließen </translation>
     </message>
     <message>
         <source>Press OK to create pattern piece</source>
@@ -7816,19 +7828,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>TNotch</source>
-        <translation>T: Markierung</translation>
+        <translation>TMarkierung</translation>
     </message>
     <message>
         <source>UNotch</source>
-        <translation>U Markierung</translation>
+        <translation>UMarkierung</translation>
     </message>
     <message>
         <source>VInternal</source>
-        <translation>V:innen</translation>
+        <translation>VInnen</translation>
     </message>
     <message>
         <source>VExternal</source>
-        <translation>V:aussen</translation>
+        <translation>VAussen</translation>
     </message>
     <message>
         <source>Excluded</source>
@@ -7848,7 +7860,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Infinite/undefined result</source>
-        <translation>undendllches / undefiniertes Ergebnis</translation>
+        <translation>Unendliches / undefiniertes Ergebnis</translation>
     </message>
     <message>
         <source>Length should be positive</source>
@@ -7876,23 +7888,23 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Edit width</source>
-        <translation>Weite bearbeiten</translation>
+        <translation>Breite bearbeiten</translation>
     </message>
     <message>
         <source>Current seam allowance</source>
-        <translation>aktuelle Nahtzugabe</translation>
+        <translation>Aktuelle Nahtzugabe</translation>
     </message>
     <message>
         <source>Edit seam allowance width</source>
-        <translation>Bearbeiten der Nahtzugabenbreite</translation>
+        <translation>Nahtzugabenbreite bearbeiten</translation>
     </message>
     <message>
         <source>Edit seam allowance width before</source>
-        <translation>Bearbeiten derNahtzugabenweite vorher</translation>
+        <translation>Nahtzugabenweite vorher bearbeiten</translation>
     </message>
     <message>
         <source>Edit seam allowance width after</source>
-        <translation>Bearbeiten der Nahtzugabenweite nachher</translation>
+        <translation>Nahtzugabenweite nachher bearbeiten</translation>
     </message>
     <message>
         <source>Grainline</source>
@@ -7900,11 +7912,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>You need more points!</source>
-        <translation>Sie brauchen mehr Punkte!</translation>
+        <translation>Du brauchst mehr Punkte!</translation>
     </message>
     <message>
         <source>You must choose points in a clockwise direction!</source>
-        <translation>SIe müssen die Punkte im Uhrzeigersin auswählen!</translation>
+        <translation>Du musst die Punkte im Uhrzeigersin auswählen!</translation>
     </message>
     <message>
         <source>First point cannot be same as last point!</source>
@@ -7912,7 +7924,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>You have double points!</source>
-        <translation>Sie haben doppelte Punkte!</translation>
+        <translation>Du hast doppelte Punkte!</translation>
     </message>
     <message>
         <source>Each point in the path must be unique!</source>
@@ -7948,7 +7960,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Markierung auf der Schnittlinie anzeigen</translation>
+        <translation>Markierung auf Schnittlinie anzeigen</translation>
     </message>
     <message>
         <source>Show notch on the seam line.</source>
@@ -7956,7 +7968,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Markierung auf der Nahtlinie anzeigen</translation>
+        <translation>Markierung auf Nahtlinie anzeigen</translation>
     </message>
     <message>
         <source>Show Cut Line</source>
@@ -7988,7 +8000,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Flipping:</source>
-        <translation>Flippen:</translation>
+        <translation>Drehen:</translation>
     </message>
     <message>
         <source>Forbid</source>
@@ -8019,7 +8031,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>PatternPieceTool</name>
     <message>
         <source>Current seam allowance</source>
-        <translation>aktuelle Nahtzugabe</translation>
+        <translation>Aktuelle Nahtzugabe</translation>
     </message>
     <message>
         <source>move pattern piece label</source>
@@ -8027,15 +8039,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>resize pattern piece label</source>
-        <translation>Größe des Schnitteil Etiketts ändern</translation>
+        <translation>Größe des Schnittteil Etiketts ändern</translation>
     </message>
     <message>
         <source>rotate pattern piece label</source>
-        <translation>SChnittteil Etikett drehen</translation>
+        <translation>Schnittteil Etikett drehen</translation>
     </message>
     <message>
         <source>move pattern info label</source>
-        <translation>Schnittteil InfpEtikett bewegen</translation>
+        <translation>Schnittteilinfo Etikett bewegen</translation>
     </message>
     <message>
         <source>resize pattern info label</source>
@@ -8043,7 +8055,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>rotate pattern info label</source>
-        <translation>Schnitteilinfo Etikett drehen</translation>
+        <translation>Schnittteilinfo Etikett drehen</translation>
     </message>
     <message>
         <source>move grainline</source>
@@ -8063,7 +8075,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Lock Pattern Piece</source>
-        <translation>Schnitteil sperren</translation>
+        <translation>Schnittteil sperren</translation>
     </message>
     <message>
         <source>Include in Layout</source>
@@ -8079,7 +8091,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Lower to bottom</source>
-        <translation>nach Unten absenken</translation>
+        <translation>Nach unten absenken</translation>
     </message>
     <message>
         <source>Hide Seam Line</source>
@@ -8091,11 +8103,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show Grainline</source>
-        <translation>Fadenlauf anzeigenn</translation>
+        <translation>Fadenlauf anzeigen</translation>
     </message>
     <message>
         <source>Show Pattern Label</source>
-        <translation>Schnittteil Etikett anzeigen</translation>
+        <translation>Schnittmuster Etikett anzeigen</translation>
     </message>
     <message>
         <source>Show Piece Label</source>
@@ -8143,19 +8155,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show grainline</source>
-        <translation>Fadenlauf anzeigenn</translation>
+        <translation>Fadenlauf anzeigen</translation>
     </message>
     <message>
         <source>Grainline visibility changed: </source>
-        <translation>Fadenlauf Sichbarkeit geändert: </translation>
+        <translation>Fadenlauf Sichtbarkeit wurde geändert: </translation>
     </message>
     <message>
         <source>Show pattern label</source>
-        <translation>Schnittteil Etikett anzeigen</translation>
+        <translation>Schnittmuster Etikett anzeigen</translation>
     </message>
     <message>
         <source>Pattern label visibility changed: </source>
-        <translation>Sichtbarkeit des Schnittteiletiketts wurde geändert: </translation>
+        <translation>Sichtbarkeit des Schnittmuster Etiketts wurde geändert: </translation>
     </message>
     <message>
         <source>Show piece label</source>
@@ -8163,7 +8175,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Piece label visibility changed: </source>
-        <translation>Sichtberkeit des Schnittteils wurde geändert: </translation>
+        <translation>Sichtbarkeit des Schnittteil Etiketts wurde geändert: </translation>
     </message>
     <message>
         <source>Piece name:</source>
@@ -8175,11 +8187,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Rename pattern piece</source>
-        <translation>Schnittteil umbenennen</translation>
+        <translation>Schnittmuster umbenennen</translation>
     </message>
     <message>
         <source>Piece renamed to: </source>
-        <translation>Schnittteil wurde umbenannt: </translation>
+        <translation>Schnittteil wurde umbenannt in: </translation>
     </message>
 </context>
 <context>
@@ -8194,15 +8206,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Current line weight</source>
-        <translation>Aktuelles Liniengewicht</translation>
+        <translation>Aktuelle Linienstärke</translation>
     </message>
     <message>
         <source>Reset current pen to defaults</source>
-        <translation>Aktuellen Stift auf Standardwerte zurücksetzen</translation>
+        <translation>Aktuellen Stift auf Standad zurücksetzen</translation>
     </message>
     <message>
         <source>Save current pen preset</source>
-        <translation>Aktuelle Stiftvoreinstellung speichern</translation>
+        <translation>Aktuelle Stifteinstellung speichern</translation>
     </message>
 </context>
 <context>
@@ -8213,35 +8225,35 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Solid</source>
-        <translation>Durchgezogene</translation>
+        <translation>Durchgezogen</translation>
     </message>
     <message>
         <source>Density 1</source>
-        <translation>Density 1</translation>
+        <translation>Dichte 1</translation>
     </message>
     <message>
         <source>Density 2</source>
-        <translation>Density 2</translation>
+        <translation>Dichte 2</translation>
     </message>
     <message>
         <source>Density 3</source>
-        <translation>Density 3</translation>
+        <translation>Dichte 3</translation>
     </message>
     <message>
         <source>Density 4</source>
-        <translation>Density 4</translation>
+        <translation>Dichte 4</translation>
     </message>
     <message>
         <source>Density 5</source>
-        <translation>Density 5</translation>
+        <translation>Dichte 5</translation>
     </message>
     <message>
         <source>Density 6</source>
-        <translation>Density 6</translation>
+        <translation>Dichte 6</translation>
     </message>
     <message>
         <source>Density 7</source>
-        <translation>Density 7</translation>
+        <translation>Dichte 7</translation>
     </message>
     <message>
         <source>Horizontal Line</source>
@@ -8249,7 +8261,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Vertical Line</source>
-        <translation>Vertikal Linie</translation>
+        <translation>Vertikale Linie</translation>
     </message>
     <message>
         <source>Cross</source>
@@ -8257,11 +8269,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Backward Diagonal</source>
-        <translation>Rückwärts Diagonale</translation>
+        <translation>Rückwärtsdiagonale</translation>
     </message>
     <message>
         <source>Forward Diagonal</source>
-        <translation>Vorwärts Diagonale</translation>
+        <translation>Vorwärtsdiagonale</translation>
     </message>
     <message>
         <source>Diagonal Cross</source>
@@ -8304,63 +8316,63 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toggle inclusion of pattern piece in layout</source>
-        <translation>EInschluß des Schnittteils in das Layout umkippen</translation>
+        <translation>Einschluß des Schnittteils in das Layout umschalten</translation>
     </message>
     <message>
         <source>Select Color</source>
-        <translation type="unfinished">Farbe auswählen</translation>
+        <translation>Farbe auswählen</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Included</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern piece is included in layout</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Locked</source>
-        <translation type="unfinished">gesperrt</translation>
-    </message>
-    <message>
-        <source>Pattern piece is locked</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern piece color</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Piece</source>
-        <translation type="unfinished">Stück</translation>
-    </message>
-    <message>
-        <source>Pattern piece letter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Pattern piece name</source>
-        <translation type="unfinished"></translation>
+        <translation>Eigenschaften Schnittteils bearbeiten</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation type="unfinished"></translation>
+        <translation>Schloss des Schnittteils umschalten</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
-        <translation type="unfinished"></translation>
+        <translation>Doppelklick öffnet den Farbwähler</translation>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein Doppelklick öffnet den Dialog für die Eigenschaften des Schnittteils</translation>
+    </message>
+    <message>
+        <source>Included</source>
+        <translation>Eingeschlossene</translation>
+    </message>
+    <message>
+        <source>Pattern piece is included in layout</source>
+        <translation>Schnittteils ist im Layout enthalten</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Gesperrt</translation>
+    </message>
+    <message>
+        <source>Pattern piece is locked</source>
+        <translation>Schnittteil ist gesperrt</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Farbe</translation>
+    </message>
+    <message>
+        <source>Pattern piece color</source>
+        <translation>Schnittteil Farbe</translation>
+    </message>
+    <message>
+        <source>Piece</source>
+        <translation>Stück</translation>
+    </message>
+    <message>
+        <source>Pattern piece letter</source>
+        <translation>Schnittteil Buchstabe</translation>
+    </message>
+    <message>
+        <source>Pattern piece name</source>
+        <translation>Schnittteil Bezeichnung</translation>
     </message>
 </context>
 <context>
@@ -8375,11 +8387,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>1st point:</source>
-        <translation>Erster punkt:</translation>
+        <translation>Erster Punkt:</translation>
     </message>
     <message>
         <source>2nd point:</source>
-        <translation>Zweiter punkt:</translation>
+        <translation>Zweiter Punkt:</translation>
     </message>
     <message>
         <source>Attributes</source>
@@ -8403,11 +8415,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger name</translation>
+        <translation>Eindeutige Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wähle eine eindeutige Bezeichnung.</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -8426,23 +8438,19 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
+        <translation>GUI-Sprache:</translation>
     </message>
     <message>
         <source>Default unit:</source>
-        <translation>Standard-Maßeinheit:</translation>
+        <translation>Standard Maßeinheit:</translation>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Sprache der Bezeichnung:</translation>
-    </message>
-    <message>
-        <source>With OS options</source>
-        <translation>Nach Sprache des Betriebssystems</translation>
+        <translation>Etiketten Sprache:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
-        <translation>Die Standardmaßeinheit wurde geändert und wird als Standard für neu angelegte Schnittmuster wirksam.</translation>
+        <translation>Die Standardmaßeinheit wurde geändert und wird als Standard für die nächsten von Dir erstellten Schnittmuster benutzt.</translation>
     </message>
     <message>
         <source>Centimeters</source>
@@ -8462,7 +8470,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Count step:</source>
-        <translation>Schritte zählen:</translation>
+        <translation>Schritt zählen:</translation>
     </message>
     <message>
         <source>Pattern Editing Warnings</source>
@@ -8470,31 +8478,31 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Confirm Item Delete</source>
-        <translation>Löschen von Objekten bestätigen</translation>
+        <translation>Bestätige das Löschen des Objekts</translation>
     </message>
     <message>
         <source>Confirm Format Rewriting</source>
-        <translation>Formatumschreibung bestätigen</translation>
+        <translation>Bestätige Formatumschreibung</translation>
     </message>
     <message>
         <source>Operations Default Suffix</source>
-        <translation>Standardablauf Endung</translation>
+        <translation>Standardablauf Suffix</translation>
     </message>
     <message>
         <source>Mirror by axis suffix:</source>
-        <translation>Spiegeln an einer Achse :</translation>
+        <translation>Spiegeln an einer Achse Suffix:</translation>
     </message>
     <message>
         <source>Mirror by line suffix:</source>
-        <translation>Spiegeln an einer Linie:</translation>
+        <translation>Spiegeln an einer Linie Suffix:</translation>
     </message>
     <message>
         <source>Move suffix:</source>
-        <translation>Suffix bewegen:</translation>
+        <translation>Bewegen Suffix:</translation>
     </message>
     <message>
         <source>Rotate suffix:</source>
-        <translation>Suffix drehen:</translation>
+        <translation>Drehen Suffix:</translation>
     </message>
     <message>
         <source>File Handling</source>
@@ -8502,7 +8510,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
-        <translation>automatisches Speichern ausschalten</translation>
+        <translation>Automatisches Speichern aktivieren</translation>
     </message>
     <message>
         <source> min</source>
@@ -8514,15 +8522,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Export Format</source>
-        <translation>Export Format</translation>
+        <translation>Exportformat</translation>
     </message>
     <message>
         <source>Include mode type in filename</source>
-        <translation>Modus  mit in den Dateinamen aufnehmen</translation>
+        <translation>Modustyp in den Dateinamen aufnehmen</translation>
     </message>
     <message>
         <source>Save last used</source>
-        <translation>das zuletzt benutzte speichern</translation>
+        <translation>Zuletzt verwendet speichern</translation>
     </message>
     <message>
         <source>Default:</source>
@@ -8584,6 +8592,70 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source> (0 - no limit)</source>
         <translation> (0 - unbegrenzt)</translation>
     </message>
+    <message>
+        <source>Designer Info</source>
+        <translation>Designerinfos</translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation>Firma / Designerinfos</translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation>Firma / Designer:</translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation>Kontakt:</translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation>Stadt:</translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation>Staat:</translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation>Postleitzahl:</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation>Land:</translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation>Telefon:</translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation>Fax:</translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation>Email:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Website:</translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation>E-Mail-Überprüfung</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Anschrift:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Gebietsschema des Benutzers</translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation>Das E-Mail-Format ist nicht gültig.</translation>
+    </message>
 </context>
 <context>
     <name>PreferencesGraphicsViewPage</name>
@@ -8597,11 +8669,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Text label appears under the icon (recommended for beginners)</source>
-        <translation>Der Text wird unter dem Symbol angezeigt (empfohlen für Anfänger)</translation>
+        <translation>Textlabel erscheint unter dem Symbol (empfohlen für Anfänger)</translation>
     </message>
     <message>
         <source>Show tool toolbars</source>
-        <translation>Symbolleisten Werkzeuge anzeigen</translation>
+        <translation>Werkzeugleisten anzeigen</translation>
     </message>
     <message>
         <source>ToolBox</source>
@@ -8785,7 +8857,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Point Names</source>
-        <translation>Punktnamen</translation>
+        <translation>Punktbezeichnungen</translation>
     </message>
     <message>
         <source>GUI</source>
@@ -8870,7 +8942,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source> ms</source>
         <comment>milliseconds</comment>
-        <translation>ms</translation>
+        <translation> ms</translation>
     </message>
     <message>
         <source>Update interval:</source>
@@ -8918,11 +8990,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Zoom to selected with double click</source>
-        <translation>Zoom zur Auswahl (mit Doppelklick</translation>
+        <translation>Mit Doppelklick auf die Auswahl zoomen</translation>
     </message>
     <message>
         <source>Pan active while Space key is pressed</source>
-        <translation>Schwenk aktivi solange Leertaste gedrückt ist</translation>
+        <translation>Schwenk aktiv solange Leertaste gedrückt ist</translation>
     </message>
     <message>
         <source>Export</source>
@@ -8937,7 +9009,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>PreferencesPathPage</name>
     <message>
         <source>Paths that Seamly2D uses</source>
-        <translation>Verzeichnis das Seamly-&quot;D benutzt</translation>
+        <translation>Verzeichnis das Seamly2D benutzt</translation>
     </message>
     <message>
         <source>Type</source>
@@ -8961,15 +9033,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation>meine Individuellen Maße</translation>
+        <translation>Meine individuellen Maße</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>meine Mehrgrößen Maße</translation>
+        <translation>Meine Mehrgrößen Maße</translation>
     </message>
     <message>
         <source>My Patterns</source>
-        <translation>meine Schnittuster</translation>
+        <translation>Meine Schnittmuster</translation>
     </message>
     <message>
         <source>My Layouts</source>
@@ -8977,7 +9049,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>meine Vorlagen</translation>
+        <translation>Meine Vorlagen</translation>
     </message>
     <message>
         <source>My Label Templates</source>
@@ -8992,11 +9064,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>By default forbid flipping for all new created workpieces</source>
-        <translation>Mit dem Drehen untersagen Standard für alle neu erstellten Werkstücke</translation>
+        <translation>Standardmäßig ist das Drehen für alle neu erstellten Werkstücke verboten</translation>
     </message>
     <message>
         <source>By default hide the main path if the seam allowance was enabled</source>
-        <translation>Mit dem Standard Hauptverzeichnis verbergen wenn die Nahtzugabe aktiviert ist</translation>
+        <translation>Standardmäßig wird der Hauptpfad ausgeblendet, wenn die Nahtzugabe aktiviert ist</translation>
     </message>
     <message>
         <source>Seam allowance</source>
@@ -9032,7 +9104,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show notch on both the seam allowance and seam line.</source>
-        <translation> Markierung sowohl auf der Nahtzugabe als auch auf der  Nahtlinie anzeigen.</translation>
+        <translation>Markierung sowohl auf der Nahtzugabe als auch auf der  Nahtlinie anzeigen.</translation>
     </message>
     <message>
         <source>Type:</source>
@@ -9096,15 +9168,15 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Label data (date/time format)</source>
-        <translation>Etikett Datum (Datum/Zeit Format</translation>
+        <translation>Etikettendaten (Datum/Zeit Format</translation>
     </message>
     <message>
         <source>Slit</source>
-        <translation>https://www.redgifs.com/gifs/gaySchlitz</translation>
+        <translation>Schlitz</translation>
     </message>
     <message>
         <source>T Notch</source>
-        <translation>T: Markierung</translation>
+        <translation>T Markierung</translation>
     </message>
     <message>
         <source>U Notch</source>
@@ -9112,11 +9184,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>V Internal</source>
-        <translation>V:innen</translation>
+        <translation>V Innen</translation>
     </message>
     <message>
         <source>V External</source>
-        <translation>V:aussen</translation>
+        <translation>V Aussen</translation>
     </message>
     <message>
         <source>Castle</source>
@@ -9132,7 +9204,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show pattern labels</source>
-        <translation>Schnittteil Etikett anzeigen</translation>
+        <translation>Schnittmuster Etikett anzeigen</translation>
     </message>
     <message>
         <source>Show piece labels</source>
@@ -9152,11 +9224,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern label:</source>
-        <translation>Schnittteil etikett:</translation>
+        <translation>Schnittmuster Etikett:</translation>
     </message>
     <message>
         <source>Piece label:</source>
-        <translation>Schnittteil etikett:</translation>
+        <translation>Schnittteil Etikett:</translation>
     </message>
     <message>
         <source>Label template</source>
@@ -9168,11 +9240,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show notch on Cut Line</source>
-        <translation>Markierung auf der Schnittlinie anzeigen</translation>
+        <translation>Markierung auf Schnittlinie anzeigen</translation>
     </message>
     <message>
         <source>Show notch on Seam Line</source>
-        <translation>Markierung auf der Nahtlinie anzeigen</translation>
+        <translation>Markierung auf Nahtlinie anzeigen</translation>
     </message>
     <message>
         <source>Internals</source>
@@ -9198,7 +9270,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>QObject</name>
     <message>
         <source>Create new pattern piece to start working.</source>
-        <translation>Erstellen Sie ein neues Schnittteil, um fortzufahren.</translation>
+        <translation>Erstelle ein neues Schnittteil, um mit der Arbeit zu beginnen.</translation>
     </message>
     <message>
         <source>mm</source>
@@ -9232,7 +9304,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Changes applied.</source>
-        <translation>Änderungen angewendet.</translation>
+        <translation>Änderungen übernommen.</translation>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
@@ -9240,23 +9312,23 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Can&apos;t convert toUInt parameter</source>
-        <translation>Konnte nicht in Parameter vom Typ &apos;Integer&apos; umwandeln</translation>
+        <translation>Konnte toUInt Parameter nicht umwandeln</translation>
     </message>
     <message>
         <source>Can&apos;t convert toBool parameter</source>
-        <translation>Konnte nicht in Parameter vom Typ &apos;Boolean&apos; umwandeln</translation>
+        <translation>Konnte toBool Parameter nicht umwandeln</translation>
     </message>
     <message>
         <source>Got empty parameter</source>
-        <translation>Leerer Parameter erhalten</translation>
+        <translation>Leeren Parameter erhalten</translation>
     </message>
     <message>
         <source>Can&apos;t convert toDouble parameter</source>
-        <translation>Kann Parameter toDouble nicht konvertieren</translation>
+        <translation>Kann toDouble Parameter nicht konvertieren</translation>
     </message>
     <message>
         <source>Got wrong parameter id. Need only id &gt; 0.</source>
-        <translation>Falsche Parameter-ID. Wert &gt; 0 erforderlich.</translation>
+        <translation>Falsche Parameter id erhalten. Nur id erforderlich.</translation>
     </message>
     <message>
         <source>Fabric</source>
@@ -9268,7 +9340,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Interfacing</source>
-        <translation>Schnittstelle</translation>
+        <translation>Verstärkung</translation>
     </message>
     <message>
         <source>Interlining</source>
@@ -9292,7 +9364,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Solidline</source>
-        <translation>Durchgezogene linie</translation>
+        <translation>Durchgezogene Linie</translation>
     </message>
     <message>
         <source>Dash</source>
@@ -9312,7 +9384,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>No Pen</source>
-        <translation>Kein stift</translation>
+        <translation>Kein Stift</translation>
     </message>
     <message>
         <source>%1</source>
@@ -9437,7 +9509,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Divide by zero</source>
         <comment>Math parser error messages.</comment>
-        <translation>Division durch Null</translation>
+        <translation>Durch Null teilen</translation>
     </message>
     <message>
         <source>Domain error</source>
@@ -9558,15 +9630,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Sprache der Benutzeroberfläche:</translation>
-    </message>
-    <message>
-        <source>Decimal separator parts:</source>
-        <translation>Dezimaltrennzeichen:</translation>
+        <translation>GUI-Sprache:</translation>
     </message>
     <message>
         <source>Pattern making system</source>
-        <translation>Schnittmuster-System</translation>
+        <translation>Schnittmuster System</translation>
     </message>
     <message>
         <source>System:</source>
@@ -9598,28 +9666,35 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Default height and size</source>
-        <translation>Standardhöhe und Größe</translation>
+        <translation>Standardkörperhöhe und Größe</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Basishöhe:</translation>
+        <translation>Basiskörperhöhe:</translation>
     </message>
     <message>
         <source>Size:</source>
         <translation>Größe:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Mit OS Optionen</translation>
+        <source>Startup</source>
+        <translation>Startup</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Willkommensbildschirm nicht anzeigen</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Dezimaltrennzeichen:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Gebietsschema des Benutzers</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
-    <message>
-        <source>Paths that Seamly2D uses</source>
-        <translatorcomment>Verzeichnis das Seamly-2D benutzt</translatorcomment>
-        <translation>Verzeichnis das Seamly-&quot;D benutzt</translation>
-    </message>
     <message>
         <source>Type</source>
         <translation>Typ</translation>
@@ -9642,15 +9717,105 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>My Individual Measurements</source>
-        <translation type="unfinished">meine Individuellen Maße</translation>
+        <translation>Meine individuellen Maße</translation>
     </message>
     <message>
         <source>My Multisize Measurements</source>
-        <translation>meine Mehrgrößen Maße</translation>
+        <translation>Meine Mehrgrößen Maße</translation>
     </message>
     <message>
         <source>My Templates</source>
-        <translation>meine Vorlagen</translation>
+        <translation>Meine Vorlagen</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation>Verzeichnis das SeamlyME benutzt</translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation>Meine Körperscans</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Willkommen bei SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>3D-Look-Benutzer</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Um einen 3D Look Körperscan zu verwenden, muss die Datei in das SeamlyME-Format konvertiert werden. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Hängen Sie Ihre 3DLook-Datei an eine E-Mail an und senden Sie sie an convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Sie erhalten dann eine E-Mail mit der konvertierten Datei, die Sie dann wie gewohnt in SeamlyME laden können.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Bitte wählen Sie die gewünschten Einheiten, das Dezimaltrennzeichen und die Sprache. (Sie können diese Angaben später ändern.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Einheiten:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Dezimaltrennzeichen:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI-Sprache:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Legt die für SeamlyMe verwendete Sprache fest.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Nicht mehr anzeigen</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Gebietsschema des Benutzers</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Zentimeter</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeter</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Zoll</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9676,11 +9841,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Send shortcuts to the Printer</source>
-        <translation>Verknüpungen werden an den Drucker gesendet</translation>
-    </message>
-    <message>
-        <source>Seamly2D Shortcuts</source>
-        <translation>Seamly2D Verknüpfungen</translation>
+        <translation>Verknüpfungen an den Drucker senden</translation>
     </message>
     <message>
         <source>File</source>
@@ -9736,7 +9897,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Pattern Preferences</source>
-        <translation>Schnittteil Vorlieben</translation>
+        <translation>Schnittteil Voreinstellungen</translation>
     </message>
     <message>
         <source>Ctrl+Shift+Comma</source>
@@ -9752,7 +9913,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Ausfahrt</translation>
+        <translation>Verlassen</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -9992,7 +10153,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Rename Draft Block</source>
-        <translation>Entwursblock umbenennen</translation>
+        <translation>Entwurfsblock umbenennen</translation>
     </message>
     <message>
         <source>F2</source>
@@ -10012,7 +10173,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>On Line</source>
-        <translation>Auf eiiner Linie</translation>
+        <translation>Auf Linie</translation>
     </message>
     <message>
         <source>O, L</source>
@@ -10020,7 +10181,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>On Perpendicular</source>
-        <translation>Auf einer Lotsenkrehten</translation>
+        <translation>Auf Senkrechter</translation>
     </message>
     <message>
         <source>O, P</source>
@@ -10068,7 +10229,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Intersect Line and Perpendicular</source>
-        <translation>Schneidet Linie und Lotsenkrechte</translation>
+        <translation>Schneidet Linie und Senkrechte</translation>
     </message>
     <message>
         <source>L, P</source>
@@ -10076,7 +10237,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Schnittpunkt Linie und Achse</translation>
+        <translation>Schneidet Linie und Achse</translation>
     </message>
     <message>
         <source>L, X</source>
@@ -10506,6 +10667,10 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>Insert Nodes</source>
         <translation>Füge Knoten ein</translation>
     </message>
+    <message>
+        <source>Seamly2D Shortcuts</source>
+        <translation>Seamly2D Verknüpfungen</translation>
+    </message>
 </context>
 <context>
     <name>ShowDoublePointName</name>
@@ -10538,7 +10703,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;table style=font-size:11pt; font-weight:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Company:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Customer:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern Name:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Pattern No:  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Units:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Measurements:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Description: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Notes:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/table&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Tabellenstil=Schriftgröße:11pt; Schriftstärke:600&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Firma:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%1&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = rights&gt;&lt;b&gt;Kunde:    &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%2&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Bezeichnung:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%3&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Schnittmuster Nummer  &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%4&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Version:     &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%5&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Einheiten:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%6&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Maße:&lt;/b&gt;&lt;/td&gt;&lt;td&gt;%7&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Beschreibung: &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%8&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Anmerkungen:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%9&lt;br&gt;&lt;/td&gt;&lt;tr&gt;&lt;tr&gt;&lt;td align = right&gt;&lt;b&gt;Image:       &lt;/b&gt;&lt;/td&gt;&lt;td&gt;%10&lt;/td&gt;&lt;tr&gt;&lt;/Tabelle &gt;</translation>
     </message>
     <message>
         <source>Info files</source>
@@ -10557,14 +10722,14 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>ShowOperationPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>Umschalten der Punkt Sichtbarkeit</translation>
+        <translation>Punktsichtbarkeit umschalten</translation>
     </message>
 </context>
 <context>
     <name>ShowPointName</name>
     <message>
         <source>toggle point visibility</source>
-        <translation>Umschalten der Punkt Sichtbarkeit</translation>
+        <translation>Punktsichtbarkeit umschalten</translation>
     </message>
 </context>
 <context>
@@ -10595,7 +10760,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>In heights</source>
-        <translation>In Körpergrößen</translation>
+        <translation>In Körperhöhe</translation>
     </message>
     <message>
         <source>Details</source>
@@ -10619,7 +10784,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>In heights:</source>
-        <translation>In Längen:</translation>
+        <translation>In Körperhöhen:</translation>
     </message>
     <message>
         <source>Description:</source>
@@ -10639,7 +10804,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Full name:</source>
-        <translation>Vollständiger name:</translation>
+        <translation>Vollständige Bezeichnung:</translation>
     </message>
     <message>
         <source>Information</source>
@@ -10671,11 +10836,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Base height:</source>
-        <translation>Basishöhe:</translation>
+        <translation>Basiskörperhöhe:</translation>
     </message>
     <message>
         <source>Base height value</source>
-        <translation>Wert der Basishöhe</translation>
+        <translation>Wert der Basiskörperhöhe</translation>
     </message>
     <message>
         <source>Given name:</source>
@@ -10719,11 +10884,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Gradation</source>
-        <translation>Einteilung</translation>
+        <translation>Gradierung</translation>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Individuelle maße öffnen ...</translation>
+        <translation>Individuelle ...</translation>
     </message>
     <message>
         <source>Save</source>
@@ -10731,7 +10896,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Save As ...</source>
-        <translation>Speichern unter ...</translation>
+        <translation>Speichern als ...</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -10747,7 +10912,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Add known</source>
-        <translation>Bekanntes Maß hinzugen</translation>
+        <translation>Bekanntes Maß hinzufügen</translation>
     </message>
     <message>
         <source>Add custom</source>
@@ -10763,7 +10928,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Show information about all known measurement</source>
-        <translation>Zeigt Informationen über alle bekannten Maße</translation>
+        <translation>Informationen zu allen bekannten Maßen anzeigen</translation>
     </message>
     <message>
         <source>Preferences</source>
@@ -10775,7 +10940,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
-        <translation>Diese Datei ist bereits geöffnet.</translation>
+        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
         <source>File error.</source>
@@ -10824,7 +10989,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Measurements have been modified.
 Do you want to save your changes?</source>
-        <translation>Maße wurde geändert. Sollen die Änderungen gespeichert werden?</translation>
+        <translation>Maße wurden geändert. Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Empty field</source>
@@ -10840,11 +11005,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Import from a pattern</source>
-        <translation>Importieren von einem Schnittteil</translation>
+        <translation>Von einem Schnittteil importieren</translation>
     </message>
     <message>
         <source>Pattern unit:</source>
-        <translation>Schnittteil-Einheit:</translation>
+        <translation>Schnittteil Einheit:</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -10852,15 +11017,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation>Finde Vorheriges</translation>
+        <translation>Vorheriges suchen</translation>
     </message>
     <message>
         <source>Ctrl+Shift+G</source>
-        <translation>Ctrl+Shift+G</translation>
+        <translation>Strg+Shift+G</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation>Finde Nächstes</translation>
+        <translation>Nächstes finden</translation>
     </message>
     <message>
         <source>Ctrl+G</source>
@@ -10868,11 +11033,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window.</source>
-        <translation>Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
+        <translation>Sperren fehlgeschlagen. Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
         <source>File contains invalid known measurement(s).</source>
-        <translation>Maßdatei enthält ungültiges Maß(e).</translation>
+        <translation>Datei enthält ungültige bekannte Maße.</translation>
     </message>
     <message>
         <source>File has unknown format.</source>
@@ -10880,7 +11045,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Full name</source>
-        <translation>Vollständiger Name</translation>
+        <translation>Vollständige Bezeichnung</translation>
     </message>
     <message>
         <source>File &apos;%1&apos; doesn&apos;t exist!</source>
@@ -10888,7 +11053,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The name of known measurement forbidden to change.</source>
-        <translation>Der Name eines bekannten Maßes kann nicht geändert werden.</translation>
+        <translation>Die Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
     </message>
     <message>
         <source>Can&apos;t find measurement &apos;%1&apos;.</source>
@@ -10896,11 +11061,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The full name of known measurement forbidden to change.</source>
-        <translation>Der vollständige Name des bekannten Maßes kann nicht geändert werden.</translation>
+        <translation>Die vollständige Bezeichnung bekannter Maße kann nicht geändert werden.</translation>
     </message>
     <message>
         <source>Function Wizard</source>
-        <translation>Funktions-Assistent</translation>
+        <translation>Funktionsassistent</translation>
     </message>
     <message>
         <source>Move measurement top</source>
@@ -10913,21 +11078,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Delete measurement</source>
         <translation>Maß löschen</translation>
-    </message>
-    <message>
-        <source>unknown</source>
-        <comment>gender</comment>
-        <translation>unbekannt</translation>
-    </message>
-    <message>
-        <source>male</source>
-        <comment>gender</comment>
-        <translation>männlich</translation>
-    </message>
-    <message>
-        <source>female</source>
-        <comment>gender</comment>
-        <translation>weiblich</translation>
     </message>
     <message>
         <source>Gender:</source>
@@ -10943,7 +11093,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Create from existing file</source>
-        <translation>Erstellen aus vorhandener Datei</translation>
+        <translation>Aus vorhandener Datei erstellen</translation>
     </message>
     <message>
         <source>Select file</source>
@@ -10955,11 +11105,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;center\&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=\&quot;Zentrum\&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unknown measurement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; Schriftgröße:340pt;&quot;&gt;?&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;Zentrumr&quot;&gt;Unbekanntes Maß&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>About Qt</source>
@@ -10967,7 +11117,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>File was not saved yet.</source>
-        <translation>Datei konnte nicht gespeichert werden.</translation>
+        <translation>Datei wurde noch nicht gesichert.</translation>
     </message>
     <message>
         <source>Search</source>
@@ -10975,15 +11125,15 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula</source>
-        <translation>Name des Maßes in Formel</translation>
+        <translation>Name des Maßes in einer Formel</translation>
     </message>
     <message>
         <source>Measurement&apos;s name in a formula.</source>
-        <translation>Name des Maßes in Formel.</translation>
+        <translation>Name des Maßes in einer Formel.</translation>
     </message>
     <message>
         <source>Measurement&apos;s human-readable name.</source>
-        <translation>Name des Maßes für den Benutzer.</translation>
+        <translation>Name des Maßes für Menschen lesbar.</translation>
     </message>
     <message>
         <source>Save...</source>
@@ -11015,7 +11165,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Customer&apos;s name</source>
-        <translation>Kundenname</translation>
+        <translation>Vorname des Kunden</translation>
     </message>
     <message>
         <source>Customer&apos;s family name</source>
@@ -11023,11 +11173,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Customer&apos;s email address</source>
-        <translation>Email-Adresse des Kunden</translation>
+        <translation>Emailadresse des Kunden</translation>
     </message>
     <message>
         <source>Height:</source>
-        <translation>Höhe:</translation>
+        <translation>Körperhöhe:</translation>
     </message>
     <message>
         <source>Size:</source>
@@ -11039,11 +11189,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The measurements document has no write permissions.</source>
-        <translation>Das Maße Dokument hat keine Schreib Berechtigung.</translation>
+        <translation>Das Maße Dokument hat keine Schreibberechtigung.</translation>
     </message>
     <message>
         <source>Cannot set permissions for %1 to writable.</source>
-        <translation>Kann keine Erlaubniss für %1 als schreibbarsetzen.</translation>
+        <translation>Kann keine Erlaubniss für %1 als schreibbar setzen.</translation>
     </message>
     <message>
         <source>Could not save the file.</source>
@@ -11063,7 +11213,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Invalid result. Value is infinite or NaN. Please, check your calculations.</source>
-        <translation>Ungültiges Ergebnis: Der Wetr ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
+        <translation>Ungültiges Ergebnis: Der Wert ist unendlich oder NaN, Bitte die Berechnung prüfen.</translation>
     </message>
     <message>
         <source>Empty</source>
@@ -11071,7 +11221,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Open multisize ...</source>
-        <translation>Mehrgrßen öffnen...</translation>
+        <translation>Mehrgrößen öffnen...</translation>
     </message>
     <message>
         <source>Export from multisize measurements is not supported.</source>
@@ -11091,7 +11241,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Exit</source>
-        <translation>Ausfahrt</translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <source>Ctrl+Q</source>
@@ -11119,7 +11269,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
-        <translation>Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet. Bei zweifachem Ausführen kann es zu Konflikten kommen.</translation>
+        <translation>Fehler beim Sperren. Diese Datei ist bereits in einem anderen Fenster geöffnet. Beim Arbeiten mit zwei Kopien des Programms kommt es zu Kollisionen.</translation>
     </message>
     <message>
         <source>Print</source>
@@ -11139,7 +11289,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Copy to clipboard</source>
-        <translation>In die zwischenablage kopieren</translation>
+        <translation>In die Zwischenablage kopieren</translation>
     </message>
     <message>
         <source>Open template ...</source>
@@ -11155,26 +11305,81 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+        <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+        <translation>Die Sperrdatei konnte aufgrund fehlender Berechtigungen nicht erstellt werden. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren Sie diese Nachricht, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+        <translation>Ein unbekannter Fehler ist aufgetreten, zum Beispiel hat eine volle Festplattenpartition verhindert, dass die Sperrdatei geschrieben werden konnte. Ignorieren, wenn Sie fortfahren wollen (nicht empfohlen, kann zu Datenverlust führen).</translation>
+    </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation>Körperscan importieren als</translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation>3D Measure Up</translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation>3D Look</translation>
+    </message>
+    <message>
+        <source>unknown</source>
+        <comment>gender</comment>
+        <translation>unbekannt</translation>
+    </message>
+    <message>
+        <source>male</source>
+        <comment>gender</comment>
+        <translation>männlich</translation>
+    </message>
+    <message>
+        <source>female</source>
+        <comment>gender</comment>
+        <translation>weiblich</translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation>Um einen 3DLook-Körperscan zu verwenden, muss die Datei in das SeamlyME-Format konvertiert werden.
+</translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation>Hängen Sie Ihre 3DLook-Datei an eine E-Mail an und senden Sie sie an convert@seamly.io.
+
+</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation>Sie erhalten eine E-Mail mit der konvertierten Datei, die Sie dann
+wie gewohnt in SeamlyME laden können.
+
+</translation>
+    </message>
+    <message>
+        <source>Convert 3DLook file:</source>
+        <translation>3DLook-Datei konvertieren:</translation>
     </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
     <message>
         <source>Piece in Layout List</source>
-        <translation>Schnittteil in-Layoutliste</translation>
+        <translation>Schnittteil in Layoutliste</translation>
     </message>
     <message>
         <source>Include piece in layout changed: </source>
-        <translation>Schnitteil in daas Layout übernehmen wurde geändert: </translation>
+        <translation>Schnittteil in das Layout übernehmen wurde geändert: </translation>
     </message>
     <message>
         <source>Include</source>
@@ -11189,7 +11394,7 @@ Do you want to save your changes?</source>
     <name>TogglePieceLock</name>
     <message>
         <source>Pattern piece lock</source>
-        <translation>Schnitteil sperren</translation>
+        <translation>Schnittteil sperren</translation>
     </message>
     <message>
         <source>Piece lock changed: </source>
@@ -11197,7 +11402,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Locked</source>
-        <translation>gesperrt</translation>
+        <translation>Gesperrt</translation>
     </message>
     <message>
         <source>Unlocked</source>
@@ -11216,7 +11421,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Highest point</source>
-        <translation>Höchster Punkt</translation>
+        <translation>Oberster Punkt</translation>
     </message>
     <message>
         <source>Lowest point</source>
@@ -11247,7 +11452,7 @@ Do you want to save your changes?</source>
     <name>UnionDialog</name>
     <message>
         <source>Union tool</source>
-        <translation>Verbindungs-Werkzeug</translation>
+        <translation>Verbindungswerkzeug</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do you really want to unite details?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -11255,11 +11460,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Retain original pieces</source>
-        <translation>die Original Schnittteile zurückbehalten</translation>
+        <translation>Die Original Schnittteile zurückbehalten</translation>
     </message>
     <message>
         <source>Select the first point</source>
-        <translation>Den ersten Punkt  auswählen</translation>
+        <translation>Den ersten Punkt auswählen</translation>
     </message>
     <message>
         <source>Pattern piece should have at least two points and three objects</source>
@@ -11267,11 +11472,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select a second point</source>
-        <translation>Zweiten Punkt auswählen</translation>
+        <translation>Einen zweiten Punkt auswählen</translation>
     </message>
     <message>
         <source>Select a unique point</source>
-        <translation>Eindeutigen Punkt auswählen</translation>
+        <translation>Einen eindeutigen Punkt auswählen</translation>
     </message>
     <message>
         <source>Select a piece</source>
@@ -11279,7 +11484,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select a point on edge</source>
-        <translation>Punkt am Rand auswählen</translation>
+        <translation>Einen Punkt am Rand auswählen</translation>
     </message>
 </context>
 <context>
@@ -11301,7 +11506,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Do not &amp;show again</source>
-        <translation>Nicht erneut &amp;anzeigen</translation>
+        <translation>Nicht mehr &amp;anzeigen</translation>
     </message>
 </context>
 <context>
@@ -11316,19 +11521,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Version &quot;%1&quot; invalid.</source>
-        <translation>Versionsnummer &quot;%1&quot; ist ungültig.</translation>
+        <translation>Version &quot;%1&quot; ist ungültig.</translation>
     </message>
     <message>
         <source>Version &quot;0.0.0&quot; invalid.</source>
-        <translation>Versionsnummer &quot;0.0.0&quot; ist ungültig.</translation>
+        <translation>Version &quot;0.0.0&quot; ist ungültig.</translation>
     </message>
     <message>
         <source>Invalid version. Minimum supported version is %1</source>
-        <translation>Ungültige Version. Mindestens Version %1 erforderlich</translation>
+        <translation>Ungültige Version. Minimal unterstützte Version ist%1</translation>
     </message>
     <message>
         <source>Invalid version. Maximum supported version is %1</source>
-        <translation>Ungültige Version. Höchstens Version %1 unterstützt</translation>
+        <translation>Ungültige Version. Maximal unterstützte Version ist%1</translation>
     </message>
     <message>
         <source>Error no unique id.</source>
@@ -11336,11 +11541,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Could not change version.</source>
-        <translation>Konnte Versionsnummer nicht ändern.</translation>
+        <translation>Versionsnummer konnte nicht geändert werden.</translation>
     </message>
     <message>
         <source>Error creating a reserv copy: %1.</source>
-        <translation>Fehler bei der Erstellung einer reservierten Kopie : %1.</translation>
+        <translation>Fehler bei der Erstellung einer Reservekopie : %1.</translation>
     </message>
     <message>
         <source>Unexpected version &quot;%1&quot;.</source>
@@ -11362,11 +11567,11 @@ Do you want to save your changes?</source>
     <name>VAbstractMainWindow</name>
     <message>
         <source>Confirm format rewriting</source>
-        <translation type="unfinished">Umschreiben des Formats bestätigen</translation>
+        <translation>Umschreiben des Formats bestätigen</translation>
     </message>
     <message>
         <source>This file is using previous format version v%1. The current is v%2. Saving the file with this app version will update the format version for this file. This may prevent you from be able to open the file with older app versions. Do you really want to continue?</source>
-        <translation type="unfinished">Diese Datei verwendet die vorherige Formatversion v%1. Die aktuelle Version ist v%2. Wenn Sie die Datei mit dieser Anwendungsversion speichern, wird die Formatversion für diese Datei aktualisiert. Dies kann dazu führen, dass Sie die Datei nicht mehr mit älteren Programmversionen öffnen können. Möchten Sie wirklich fortfahren?</translation>
+        <translation>Diese Datei verwendet die vorherige Formatversion v%1. Die aktuelle Version ist v%2. Wenn Sie die Datei mit dieser Anwendungsversion speichern, wird die Formatversion für diese Datei aktualisiert. Dies kann dazu führen, dass Sie die Datei nicht mehr mit älteren Programmversionen öffnen können. Möchten Sie wirklich fortfahren?</translation>
     </message>
     <message>
         <source>Comma-Separated Values</source>
@@ -11396,7 +11601,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating group</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Gruppe&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren der Gruppe</translation>
     </message>
     <message>
         <source>New group</source>
@@ -11437,7 +11642,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Edit wrong formula</source>
-        <translation>Falsche formel korrigieren</translation>
+        <translation>Falsche Formel bearbeitet</translation>
     </message>
     <message>
         <source>Green</source>
@@ -11465,7 +11670,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Helles Lachsfarben</translation>
+        <translation>Hell Lachsrosa</translation>
     </message>
     <message>
         <source>Goldenrod</source>
@@ -11485,7 +11690,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Dark Violet</source>
-        <translation>Dunkelviolet</translation>
+        <translation>Dunkelviolett</translation>
     </message>
     <message>
         <source>Medium Sea Green</source>
@@ -11525,11 +11730,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Green Yellow</source>
-        <translation>Grün-Gelb</translation>
+        <translation>Grün Gelb</translation>
     </message>
     <message>
         <source>Sandy Brown</source>
-        <translation>Sandgarben</translation>
+        <translation>Sandiges Braun</translation>
     </message>
     <message>
         <source>Orange Red</source>
@@ -11549,11 +11754,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Blue Violet</source>
-        <translation>Blau Violet</translation>
+        <translation>Blauviolett</translation>
     </message>
     <message>
         <source>Medium Violet Red</source>
-        <translation>Mittleres Violet Rot</translation>
+        <translation>Mittleres Rotviolett</translation>
     </message>
     <message>
         <source>Indigo</source>
@@ -11593,7 +11798,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Dark Slate Grey</source>
-        <translation>Dunkelschiefergrau</translation>
+        <translation>Dunkles Schiefergrau</translation>
     </message>
     <message>
         <source>Grey</source>
@@ -11606,11 +11811,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Dark Sea Green</source>
-        <translation>Dukelmeeresgrün</translation>
+        <translation>Dunkles Meeresgrün</translation>
     </message>
     <message>
         <source>Light Grey</source>
-        <translation>Helles Grau</translation>
+        <translation>Hellgrau</translation>
     </message>
     <message>
         <source>Light Steel Blue</source>
@@ -11631,7 +11836,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>White Smoke</source>
-        <translation>weißer Rauch</translation>
+        <translation>Rauchweiß</translation>
     </message>
     <message>
         <source>White</source>
@@ -11652,7 +11857,7 @@ Do you want to save your changes?</source>
     <message>
         <source>Tan</source>
         <translatorcomment>oder auch Gelbbraun</translatorcomment>
-        <translation>Hellbrsaun</translation>
+        <translation>Hellbraun</translation>
     </message>
 </context>
 <context>
@@ -11790,7 +11995,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>The height value</source>
-        <translation>Die Basishöhe</translation>
+        <translation>Die Basiskörperhöhe</translation>
     </message>
     <message>
         <source>Page width in current units like 12.0 (cannot be used with &quot;%1&quot;, export mode).</source>
@@ -11802,11 +12007,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Invalid gradation size value.</source>
-        <translation>Ungültiges Größen-Gradierungsmaß.</translation>
+        <translation>Ungültiges Größen Gradierungsmaß.</translation>
     </message>
     <message>
         <source>Invalid gradation height value.</source>
-        <translation>Ungültiges Längen-Gradierungsmaß.</translation>
+        <translation>Ungültiges Längen Körperhöhen Gradierungsmaß.</translation>
     </message>
     <message>
         <source>Pattern making program.</source>
@@ -11910,7 +12115,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>hohe dpi Skalierung deaktivieren. Diese Option wählen wenn es Probleme mit der Skalierung (StandardSkalierung aaktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
+        <translation>Hohe dpi Skalierung deaktivieren. Diese Option wählen wenn es Probleme mit der Skalierung (StandardSkalierung aaktiviert). Alternativ können die %1 Umgebungsvariablen genutzt werden.</translation>
     </message>
     <message>
         <source>Export dxf in binary form.</source>
@@ -11930,30 +12135,34 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Set height value a pattern file, that was opened with multisize measurements (export mode). Valid values: %1cm.</source>
-        <translation>Größenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
+        <translation>Körperhöhenwert einer Schnittteildatei setzen, die mit Standardmaßen (Exportmodus) geöffnet wurde. Gültige Werte: %1cm.</translation>
     </message>
 </context>
 <context>
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>Maße</translation>
+        <translation>maße</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>Individuel</translation>
+        <translation>individuell</translation>
     </message>
     <message>
         <source>multisize</source>
-        <translation>Mehrgröße</translation>
+        <translation>mehrgröße</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>Vorlagen</translation>
+        <translation>vorlagen</translation>
     </message>
     <message>
         <source>label templates</source>
-        <translation>Etikett Vorlagen</translation>
+        <translation>etikett_vorlagen</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation>körperscans</translation>
     </message>
 </context>
 <context>
@@ -11996,7 +12205,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Can&apos;t cast object.</source>
-        <translation>Objekt kann nicht gelesen werden.</translation>
+        <translation>Objekt kann nicht ausgeworfen werden.</translation>
     </message>
 </context>
 <context>
@@ -12033,7 +12242,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Konnte Knoten nicht lesen</translation>
+        <translation>Konnte Knoten nicht erhalten</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
@@ -12041,7 +12250,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Could not load schema file &apos;%1&apos;.</source>
-        <translation>Konnte Schemadatei %1 nicht öffnen.</translation>
+        <translation>Konnte Schemadatei %1 nicht laden.</translation>
     </message>
     <message>
         <source>Fail to write Canonical XML.</source>
@@ -12064,7 +12273,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Show Point Name</source>
-        <translation>Punktname: anzeigen</translation>
+        <translation>Punktbezeichnung anzeigen</translation>
     </message>
     <message>
         <source>Add Group Object</source>
@@ -12100,7 +12309,7 @@ Do you want to save your changes?</source>
     <name>VLayoutPiece</name>
     <message>
         <source>Piece %1 doesn&apos;t have shape.</source>
-        <translation>Schnitteil %1 dhat keine form.</translation>
+        <translation>Schnittteil %1 hat keine Form.</translation>
     </message>
 </context>
 <context>
@@ -12232,31 +12441,31 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating modeling curve path</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Pfad Detail&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren der Modellierung des  vom Typ &quot;Pfad Detail&quot;</translation>
     </message>
     <message>
         <source>Error creating or updating simple arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Bogen&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren des einfachen Bogens&quot;</translation>
     </message>
     <message>
         <source>Error creating or updating modeling arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Bogen Detail&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren der Bogenmodellierung &quot;</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection arcs</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Bogen-Schnittpunktes</translation>
+        <translation>Fehler beim Erstellen oder Aktualisieren des Bogen Schnittpunktes</translation>
     </message>
     <message>
         <source>Error creating or updating point of intersection circles</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren des Kreis-Schnittpunktes</translation>
+        <translation>Fehler beim Erstellen oder Aktualisieren der Kreis Schnittpunktes</translation>
     </message>
     <message>
         <source>Error creating or updating point from circle and tangent</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren eines Berührungpunktes</translation>
+        <translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Kreis und Tangente</translation>
     </message>
     <message>
         <source>Error creating or updating point from arc and tangent</source>
-        <translation>Fehler beim Erstellen oder Aktualisieren eines Punktes von Bogen und Tangente</translation>
+        <translation>Fehler beim Erstellen oder Aktualisieren des Punktes von Bogen und Tangente</translation>
     </message>
     <message>
         <source>Error creating or updating true darts</source>
@@ -12264,7 +12473,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Wrong tag name &apos;%1&apos;.</source>
-        <translation>Falscher Symbolname &apos;%1&apos;.</translation>
+        <translation>Falsche  Markenbezeichnung &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown point type &apos;%1&apos;.</source>
@@ -12272,7 +12481,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unknown spline type &apos;%1&apos;.</source>
-        <translation>Unbekannte Spline Type &apos;%1&apos;.</translation>
+        <translation>Unbekannte Spline Typ &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Unknown arc type &apos;%1&apos;.</source>
@@ -12288,7 +12497,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating point of intersection curves</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Eintrags vom Typ &quot;Kurvenschnittpunkt&quot;</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren vom Punkt der Schnittkurven&quot;</translation>
     </message>
     <message>
         <source>Error creating or updating simple interactive spline</source>
@@ -12312,7 +12521,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>unbekantte Betriebsart &apos;%1&apos;.</translation>
+        <translation>Unbekantte Betriebsart &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
@@ -12332,7 +12541,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating modeling elliptical arc</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren elliptischer Bogen modellieen</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren modellieren elliptischer Bogen</translation>
     </message>
     <message>
         <source>Unnamed path</source>
@@ -12348,7 +12557,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating Intersect XY tool</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Schnittpunkts XY werkzeugs</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren des Schnittpunkts XY Werkzeugs</translation>
     </message>
     <message>
         <source>Error creating or updating operation of mirror by line</source>
@@ -12376,7 +12585,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Error creating or updating union pieces</source>
-        <translation>Fehler beim Anlegen oder Aktualisieren des Verbindungsschnittteils</translation>
+        <translation>Fehler beim Anlegen oder Aktualisieren der Verbindungsschnittteile</translation>
     </message>
 </context>
 <context>
@@ -12428,7 +12637,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Name</source>
-        <translation>Name</translation>
+        <translation>Bezeichnung</translation>
     </message>
 </context>
 <context>
@@ -12489,19 +12698,18 @@ Do you want to save your changes?</source>
     <name>VToolBasePoint</name>
     <message>
         <source>Name</source>
-        <translatorcomment>Name</translatorcomment>
-        <translation>Name</translation>
+        <translation>Bezeichnung</translation>
     </message>
 </context>
 <context>
     <name>VToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can not create intersection point %1 from point %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;to curve %3 with an axis angle of %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Kann keinen-Schnittpunkt-erstellen  %1 vom- Punkt %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;zur-Kurve %3 mit-einem-Achsenwinkel-vonf %4°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Den-Startpunkt-als-Platzhalter-benutzen-bis das-Mustter-korrigiert-ist.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Kann keinen Schnittpunkt %1 von Punkt %2&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;zur Kurve %3 mit einem Achsenwinkel von %4 erstellen°&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;den Startpunkt als Platzhalter benutzen bis das Mustter korrigiert ist.</translation>
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Schnittpunkt der Kurve und Achse</translation>
+        <translation>Schnittpunkt von Kurve und Achse</translation>
     </message>
 </context>
 <context>
@@ -12520,7 +12728,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>end angle</source>
-        <translation>SchlussEndwinkel</translation>
+        <translation>Endwinkel</translation>
     </message>
     <message>
         <source>radius</source>
@@ -12543,7 +12751,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>label</source>
-        <translation>Etiikett</translation>
+        <translation>Etikett</translation>
     </message>
 </context>
 <context>
@@ -12640,11 +12848,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Line and Axis&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 of&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linie und Achse&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;UAnfngspunkt als Platzhalter verwenden bis Schnitteil korrigiert ist.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;big&gt;Linie und Achse&lt;/big&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Anfangspunkt als Platzhalter verwenden bis Schnittteil korrigiert ist.</translation>
     </message>
     <message>
         <source>Intersect Line and Axis</source>
-        <translation>Schnittpunkt Linie und Achse</translation>
+        <translation>Schneidet Linie und Achse</translation>
     </message>
 </context>
 <context>
@@ -12673,11 +12881,11 @@ Do you want to save your changes?</source>
     <name>VToolMirrorByLine</name>
     <message>
         <source>First line point</source>
-        <translation>Punkt 1 der Linie</translation>
+        <translation>Erster Punkt der Linie</translation>
     </message>
     <message>
         <source>Second line point</source>
-        <translation>Punkt 2 der Linie</translation>
+        <translation>Zweiter Punkt der Linie</translation>
     </message>
 </context>
 <context>
@@ -12787,11 +12995,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>First line point:</source>
-        <translation>Punkt 1 der Linie:</translation>
+        <translation>Erster Punkt der Linie:</translation>
     </message>
     <message>
         <source>Second line point:</source>
-        <translation>Punkt 2 der Linie:</translation>
+        <translation>Zweiter Punkt der Linie:</translation>
     </message>
     <message>
         <source>Center of arc:</source>
@@ -12799,11 +13007,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>First arc:</source>
-        <translation>Erster bogen:</translation>
+        <translation>Erster Bogen:</translation>
     </message>
     <message>
         <source>Second arc:</source>
-        <translation>Zweiter bogen:</translation>
+        <translation>Zweiter Bogen:</translation>
     </message>
     <message>
         <source>Take:</source>
@@ -12811,11 +13019,11 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>First curve:</source>
-        <translation>Erste kurve:</translation>
+        <translation>Erste Kurve:</translation>
     </message>
     <message>
         <source>Second curve:</source>
-        <translation>Zweite kurve:</translation>
+        <translation>Zweite Kurve:</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -12831,19 +13039,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>C1: angle:</source>
-        <translation>K1 winkel:</translation>
+        <translation>C1 Winkel:</translation>
     </message>
     <message>
         <source>C1: length:</source>
-        <translation>K1 länge:</translation>
+        <translation>C1: Länge:</translation>
     </message>
     <message>
         <source>C2: angle:</source>
-        <translation>K2 winkel:</translation>
+        <translation>C2: Winkel:</translation>
     </message>
     <message>
         <source>C2: length:</source>
-        <translation>K2 länge:</translation>
+        <translation>C2: Länge:</translation>
     </message>
     <message>
         <source>Axis point:</source>
@@ -12871,7 +13079,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect XY</source>
-        <translation>Punkt - Schneidet XY</translation>
+        <translation>Punkt - schneidet XY</translation>
     </message>
     <message>
         <source>Rotation</source>
@@ -12895,7 +13103,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Selection</source>
-        <translation>Auswah</translation>
+        <translation>Auswahl</translation>
     </message>
     <message>
         <source>Coordinates</source>
@@ -12919,7 +13127,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Line</source>
-        <translation>Punkt - Auf Linie</translation>
+        <translation>Punkt - auf Linie</translation>
     </message>
     <message>
         <source>Arc - Radius and Angles</source>
@@ -12931,7 +13139,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Bisector</source>
-        <translation>Punkt - Auf Winkelhalbierender</translation>
+        <translation>Punkt - auf Winkelhalbierender</translation>
     </message>
     <message>
         <source>Second dart point:</source>
@@ -12939,23 +13147,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Third dart point:</source>
-        <translation> Dritter Abnäherpunkt:</translation>
+        <translation>Dritter Abnäherpunkt:</translation>
     </message>
     <message>
         <source>Point - On Arc</source>
-        <translation>punkt -auf Bogen</translation>
+        <translation>Punkt - auf Bogen</translation>
     </message>
     <message>
         <source>Point - On Curve</source>
-        <translation>Punkt - Auf Kurve</translation>
+        <translation>Punkt - auf Kurve</translation>
     </message>
     <message>
         <source>Point - On Spline</source>
-        <translation>Punkt - Auf glatter Kurve</translation>
+        <translation>Punkt - auf Spline</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Perpendicular</source>
-        <translation>Punkt - Schneidet Linie und Senkrechte</translation>
+        <translation>Punkt - schneidet Linie und Senkrechte</translation>
     </message>
     <message>
         <source>Line</source>
@@ -12963,7 +13171,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Lines</source>
-        <translation>Punkt - Schneidet Linie</translation>
+        <translation>Punkt - schneidet Linien</translation>
     </message>
     <message>
         <source>First line</source>
@@ -12975,7 +13183,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - On Perpendicular</source>
-        <translation>Punkt - Auf einer Senkrechten</translation>
+        <translation>Punkt - auf einer Senkrechten</translation>
     </message>
     <message>
         <source>Rotation:</source>
@@ -12983,23 +13191,23 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Point - Intersect Arc and Line</source>
-        <translation>Punkt - Schneidet Bogen und Linie</translation>
+        <translation>Punkt - schneidet Bogen und Linie</translation>
     </message>
     <message>
         <source>1st line point:</source>
-        <translation>Erster punkt der linie:</translation>
+        <translation>Erster Linienpunkt:</translation>
     </message>
     <message>
         <source>2nd line point:</source>
-        <translation>Zweiter punkt der linie:</translation>
+        <translation>Zweiter Linienpunkt:</translation>
     </message>
     <message>
         <source>Point - Intersect Arcs</source>
-        <translation>Punkt - Schneidet Bögen</translation>
+        <translation>Punkt - schneidet Bögen</translation>
     </message>
     <message>
         <source>Point - Intersect Circles</source>
-        <translation>Punkt - Schneidet Kreise</translation>
+        <translation>Punkt - schneidet Kreise</translation>
     </message>
     <message>
         <source>First circle:</source>
@@ -13011,27 +13219,27 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Second circle:</source>
-        <translation>zweiter Kreis:</translation>
+        <translation>Zweiter Kreis:</translation>
     </message>
     <message>
         <source>Point - Intersect Curves</source>
-        <translation>Punkt - Schneidet Kurven</translation>
+        <translation>Punkt - schneidet Kurven</translation>
     </message>
     <message>
         <source>Vertical take:</source>
-        <translation>vertikale Aufnahme:</translation>
+        <translation>Vertikale Aufnahme:</translation>
     </message>
     <message>
         <source>Horizontal take:</source>
-        <translation>horizontale Aufnahme:</translation>
+        <translation>Horizontale Aufnahme:</translation>
     </message>
     <message>
         <source>Point - Intersect Circle and Tangent</source>
-        <translation>Punkt - Schneidet Kreis und Tangente</translation>
+        <translation>Punkt - schneidet Kreis und Tangente</translation>
     </message>
     <message>
         <source>Point - Intersect Arc and Tangent</source>
-        <translation>Punkt - Schneidet Bogen und Tangente</translation>
+        <translation>Punkt - schneidet Bogen und Tangente</translation>
     </message>
     <message>
         <source>Point - Length to Line</source>
@@ -13043,35 +13251,35 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Curve - Fixed</source>
-        <translation>Kurve - Fixiert</translation>
+        <translation>Kurve - fixiert</translation>
     </message>
     <message>
         <source>Spline - Interactive</source>
-        <translation>Spline - Interaktiv</translation>
+        <translation>Spline - interaktiv</translation>
     </message>
     <message>
         <source>Spline - Fixed</source>
-        <translation>Spline - Fixiert</translation>
+        <translation>Spline - fixiert</translation>
     </message>
     <message>
         <source>Point - Intersect Axis and Triangle</source>
-        <translation>Punkt - Schneidet Achse und Dreieck</translation>
+        <translation>Punkt - schneidet Achse und Dreieck</translation>
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Erster achsenpunkt:</translation>
+        <translation>Erster Achsenpunkt:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Zweiter achsenpunkt:</translation>
+        <translation>Zweiter Achsenpunkt:</translation>
     </message>
     <message>
         <source>Point - Intersect Line and Axis</source>
-        <translation>Punkt - Schneidet Linie und Achse</translation>
+        <translation>Punkt - schneidet Linie und Achse</translation>
     </message>
     <message>
         <source>Point - Intersect Curve and Axis</source>
-        <translation>Punkt - Schneidet Kurve und Achse</translation>
+        <translation>Punkt - schneidet Kurve und Achse</translation>
     </message>
     <message>
         <source>Origin point:</source>
@@ -13079,7 +13287,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Arc - Elliptical</source>
-        <translation>Bogen - Elliptisch</translation>
+        <translation>Bogen - elliptisch</translation>
     </message>
     <message>
         <source>Arc_</source>
@@ -13110,7 +13318,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Intersect Arc and Tangent</source>
-        <translation>Schnittpunkt Bogen und Tangente</translation>
+        <translation>Schneidet Bogen und Tangente</translation>
     </message>
 </context>
 <context>
@@ -13132,22 +13340,22 @@ Do you want to save your changes?</source>
     <name>VToolPointOfIntersectionArcs</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Arcs&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 von Bögen&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt der Bögen kann nicht gefunden werden %1 von Bögen&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
     </message>
     <message>
         <source>Point Intersect Arcs</source>
-        <translation>Punkt Schneidet Bögen</translation>
+        <translation>Punkt schneidet Bögen</translation>
     </message>
 </context>
 <context>
     <name>VToolPointOfIntersectionCurves</name>
     <message>
         <source>&lt;b&gt;&lt;big&gt;Can&apos;t find intersection point %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Using origin point as a place holder until pattern is corrected.</source>
-        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 of Curves&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
+        <translation>&lt;b&gt;&lt;big&gt;Schnittpunkt kann nicht gefunden werden %1 der Kurven&lt;/big&gt;&lt;/b&gt;&lt;br&gt;Ausgangspunkt als Platzhalter benutzen bis Schnittteil korrigiert ist.</translation>
     </message>
     <message>
         <source>Point Intersect Curves</source>
-        <translation>Punkt Schneidet Kurven</translation>
+        <translation>Punkt schneidet Kurven</translation>
     </message>
 </context>
 <context>
@@ -13896,7 +14104,7 @@ Do you want to save your changes?</source>
     <message>
         <source>Friendship/Men</source>
         <comment>System name</comment>
-        <translation>Friendship/Herren</translation>
+        <translation>Friendship/Men</translation>
     </message>
     <message>
         <source>Pattern Cutting for Men&apos;s Costume</source>
@@ -13971,7 +14179,7 @@ Do you want to save your changes?</source>
     <message>
         <source>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</source>
         <comment>Book name</comment>
-        <translation>Practical Guide to Patternmaking for Fashion Designers: Juniors, Misses, and Women</translation>
+        <translation>Praktischer Leitfaden zur Mustererstellung für Modedesigner:JuniorInnen, und Frauen</translation>
     </message>
     <message>
         <source>American Garment Cutter</source>
@@ -13986,7 +14194,7 @@ Do you want to save your changes?</source>
     <message>
         <source>Seamly2D team</source>
         <comment>Author name</comment>
-        <translation>Seamly2D-Team</translation>
+        <translation>Seamly2D Team</translation>
     </message>
     <message>
         <source>Seamly2D&apos;s internal standard</source>
@@ -14009,69 +14217,19 @@ Do you want to save your changes?</source>
         <translation>zoll</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Linie_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>WinkelLinie_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Bogen_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>SplPath</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>RadiusBogen_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Winkel1Bogen_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Winkel2Bogen_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Angle1Spl_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Angle2Spl_</translation>
+        <translation>SplVerzeichnis</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Angle1SplPath</translation>
+        <translation>Winkel1SplVerzeichnis</translation>
     </message>
     <message>
         <source>Angle2SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation>Angle2SplPath</translation>
-    </message>
-    <message>
-        <source>Seg_</source>
-        <comment>Segment. Leave the _ symbol in translation</comment>
-        <translation>Seg_</translation>
+        <translation>Winkel2SplVerzeichnis</translation>
     </message>
     <message>
         <source>CurrentLength</source>
@@ -14081,22 +14239,12 @@ Do you want to save your changes?</source>
     <message>
         <source>size</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
+        <translation>Größe</translation>
     </message>
     <message>
         <source>height</source>
         <comment>placeholder</comment>
-        <translation>Höhe</translation>
-    </message>
-    <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>C1LängeSpl_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>C2LängeSpl_</translation>
+        <translation>Körperhöhe</translation>
     </message>
     <message>
         <source>C1LengthSplPath</source>
@@ -14112,36 +14260,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>AktuelleNahtzugabe</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>ElBogen_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Radius1ElBogen_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Radius2ElBogen_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Winkel1ElBogen_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Winkel2ElBogen_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14261,12 +14379,7 @@ Do you want to save your changes?</source>
     <message>
         <source>wOnFold</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Variable_</translation>
+        <translation>wOnFold</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14472,88 +14585,183 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
     </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>M_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Variab_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Linie_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkellinie_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Bogen_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>ElBogen_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Spl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>RadiusBogen_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Radius1ElBogen_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Radius2ElBogen_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel1Bogen_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel2Bogen_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel1ElBogen_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel2ElBogen_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Winkel2Spl_</translation>
+    </message>
+    <message>
+        <source>Seg_</source>
+        <comment>Segment. Leave the _ symbol in translation</comment>
+        <translation>Seg_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>C1LängeSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>C2LängeSpl_</translation>
+    </message>
 </context>
 <context>
     <name>VisToolCubicBezierPath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points</source>
-        <translation>&lt;b&gt;Gekrümmter Pfad&lt;/b&gt;: sieben oder mehr Punkte auswählen</translation>
+        <translation>&lt;b&gt;gekrümmter Pfad&lt;/b&gt;: sieben oder mehr Punkte auswählen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select more points for complete segment</source>
-        <translation>&lt;b&gt;Gekrümmter Pfad&lt;/b&gt;: mehr Punkte für das gesamte Segment auswählen</translation>
+        <translation>&lt;b&gt;gekrümmter Pfad&lt;/b&gt;: mehr Punkte für gesamtes Segment auswählen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select seven or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;gekrümmter Pfad&lt;/b&gt;: Wähle sieben oder mehr Punkte, Drücke&lt;b&gt;ENTER&lt;/b&gt; um Werkzeug Erstellung abzuschließen</translation>
+        <translation>&lt;b&gt;gekrümmter Pfad&lt;/b&gt;: sieben oder mehr Punkte auswählen, mit &lt;b&gt;ENTER&lt;/b&gt; Werkzeugerstellung abschließen</translation>
     </message>
 </context>
 <context>
     <name>VisToolCurveIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection curve and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation </source>
-        <translation>&lt;b&gt;Schnittpunkt Kurve und Achse&lt;/b&gt;: Winkel = %1°; &lt;b&gt;Shift&lt;/b&gt; - Winkel einrasten, &lt;b&gt;Enter&lt;/b&gt; - fertigstellen </translation>
+        <translation>&lt;b&gt;Laufender Schnittpunkt auf Kurve&lt;/b&gt;: Winkel = %1°, SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken, mit &lt;b&gt;ENTER&lt;/b&gt; die Werkzeugerstellung abschließen </translation>
     </message>
 </context>
 <context>
     <name>VisToolEndLine</name>
     <message>
         <source>&lt;b&gt;Point Length and Angle&lt;/b&gt;: angle = %1°, length = %2%3; Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Point Länge und Winkel&lt;/b&gt;:Winkel = %1°, length = %2%3; &lt;b&gt;SHIFT&lt;/b&gt; Winkel einrasten, Press &lt;b&gt;ENTER&lt;/b&gt; um die Werkzeugerstellung abzuschließen</translation>
+        <translation>&lt;b&gt;Punkt Länge und Winkel&lt;/b&gt;:Winkel = %1°, Länge = %2%3; SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken, mit &lt;b&gt;ENTER&lt;/b&gt; die Werkzeugerstellung abschließen</translation>
     </message>
 </context>
 <context>
     <name>VisToolLineIntersectAxis</name>
     <message>
         <source>&lt;b&gt;Intersection line and axis&lt;/b&gt;: angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;Schnittpunkt Linie und Achse&lt;/b&gt;: Winkel = %1°, &lt;b&gt;SHIFT&lt;/b&gt;Winkel einrasten, Press &lt;b&gt;ENTER&lt;/b&gt; um Werkzeugerstellung abzuschließen</translation>
+        <translation>&lt;b&gt;Schnittpunkt Linie und Achse&lt;/b&gt;: Winkel = %1°, SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken, Mit &lt;b&gt;ENTER&lt;/b&gt; Werkzeugerstellung abschließen</translation>
     </message>
 </context>
 <context>
     <name>VisToolMove</name>
     <message>
         <source>Length = %1%2, angle = %3°, &lt;b&gt;Shift&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish selecting a position</source>
-        <translation>Länge = %1%2, Winkel = %3°, &lt;b&gt;Shift&lt;/b&gt; um-Winkel-einzuschränken, &lt;b&gt;Maus click&lt;/b&gt; - Auswahl-der-Position-abschließen</translation>
+        <translation>Länge = %1%2, Winkel = %3°, &lt;b&gt;Shift&lt;/b&gt; um Winkel einzuschränken, &lt;b&gt;Maus click&lt;/b&gt; - Auswahl einer Position abschließen</translation>
     </message>
     <message>
         <source>Length = %1%2, angle = %3°, rotation angle = %4° Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle,&lt;b&gt;CTRL&lt;/b&gt; - change rotation origin point, &lt;b&gt;Mouse click&lt;/b&gt; - finish creating</source>
-        <translation>Länge = %1%2, Winkel = %3°,Drehwinkel = %4°SHIFT &lt;b&gt;Drücken&lt;/b&gt; tum den Winkel einzuschränken,&lt;b&gt;CTRL&lt;/b&gt; - Drehwinkelpunkt ändernt, &lt;b&gt;Maus click&lt;/b&gt; - Erstellung abschliessen</translation>
+        <translation>Länge = %1%2, Winkel = %3°,Drehwinkel = %4° SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken,&lt;b&gt;CTRL&lt;/b&gt; - Drehwinkelpunkt ändern, &lt;b&gt;Maus click&lt;/b&gt; - Erstellung abschliessen</translation>
     </message>
 </context>
 <context>
     <name>VisToolRotation</name>
     <message>
         <source>Rotating angle = %1°, Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle, &lt;b&gt;Mouse click&lt;/b&gt; - finish creation</source>
-        <translation>Winkel-drehen = %1°, ENTER&lt;b&gt;Halten&lt;/b&gt; tum-Winkel-einzuschränken, &lt;b&gt;Maus click&lt;/b&gt; - Erstellung-abschlie0en</translation>
+        <translation>Winkel drehen = %1°, SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken, &lt;b&gt;Maus click&lt;/b&gt; - Erstellung abschließen</translation>
     </message>
 </context>
 <context>
     <name>VisToolSpline</name>
     <message>
         <source>Hold &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Halte &lt;b&gt;SHIFT&lt;/b&gt; um-Winkel-einzuschränken</translation>
+        <translation>SHIFT &lt;b&gt;halten&lt;/b&gt; um Winkel einzuschränken</translation>
     </message>
 </context>
 <context>
     <name>VisToolSplinePath</name>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points</source>
-        <translation>&lt;b&gt;Gekrümmter Pfad&lt;/b&gt;: drei oder mehr Punkte auswählen</translation>
+        <translation>&lt;b&gt;gekrümmter Pfad&lt;/b&gt;: drei oder mehr Punkte auswählen</translation>
     </message>
     <message>
         <source>&lt;b&gt;Curved path&lt;/b&gt;: select three or more points, Press &lt;b&gt;ENTER&lt;/b&gt; to finish tool creation</source>
-        <translation>&lt;b&gt;gekrümmter-Pfad &lt;/b&gt;: drei -oder-mehr Punkte auswählen, Mit &lt;b&gt;ENTER&lt;/b-Werkzeugerstellung abschließen</translation>
+        <translation>&lt;b&gt;gekrümmter Pfad &lt;/b&gt;: drei oder mehr Punkte auswählen, Mit &lt;b&gt;ENTER&lt;/b&gt; Werkzeugerstellung abschließen</translation>
     </message>
     <message>
         <source>Use &lt;b&gt;SHIFT&lt;/b&gt; to constrain angle</source>
-        <translation>Mit &lt;b&gt;SHIFT&lt;/b&gt; um-den-Winkel einzuschränken</translation>
+        <translation>Mit &lt;b&gt;SHIFT&lt;/b&gt; Winkel einschränken</translation>
     </message>
 </context>
 <context>
     <name>mNoisyHandler</name>
     <message>
         <source>DEBUG:</source>
-        <translation>Fehlerbesitigung:</translation>
+        <translation>Fehlerbeseitigung:</translation>
     </message>
     <message>
         <source>WARNING:</source>
@@ -14581,11 +14789,11 @@ Usage: fmod(x; y)</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>kritischer Fehler</translation>
+        <translation>Kritischer Fehler</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>fataler Fehler</translation>
+        <translation>Fataler Fehler</translation>
     </message>
 </context>
 <context>
@@ -14616,11 +14824,11 @@ Usage: fmod(x; y)</comment>
     </message>
     <message>
         <source>Critical Error</source>
-        <translation>kritischer Fehler</translation>
+        <translation>Kritischer Fehler</translation>
     </message>
     <message>
         <source>Fatal Error</source>
-        <translation>fataler Fehler</translation>
+        <translation>Fataler Fehler</translation>
     </message>
     <message>
         <source>Information</source>

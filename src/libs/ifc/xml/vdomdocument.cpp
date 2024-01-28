@@ -557,7 +557,7 @@ quint32 VDomDocument::getParameterId(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-Unit VDomDocument::MUnit() const
+Unit VDomDocument::measurementUnits() const
 {
     Unit unit = StrToUnits(UniqueTagText(TagUnit, unitCM));
 

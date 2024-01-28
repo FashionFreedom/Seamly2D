@@ -493,7 +493,7 @@ Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);
 Q_REQUIRED_RESULT QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath);
 Q_REQUIRED_RESULT QString fileDialog(QWidget *parent, const QString &title,  const QString &dir,
-                                     const QString &filter, QString *selectedFilter, QFileDialog::Option option,
+                                     const QString &filter, QString *selectedFilter, QFileDialog::Options options,
                                      QFileDialog::FileMode mode,  QFileDialog::AcceptMode accept);
 
 Q_REQUIRED_RESULT QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info,

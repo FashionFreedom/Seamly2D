@@ -137,11 +137,6 @@ MeasurementVariable::~MeasurementVariable()
 QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit patternUnit)
 {
     QStringList list;
-    if (patternUnit == Unit::Inch)
-    {
-        qWarning() << "Multisize table doesn't support inches.";
-        return list;
-    }
 
     QMap<GHeights, bool>::const_iterator i = heights.constBegin();
     while (i != heights.constEnd())
@@ -164,11 +159,6 @@ QStringList MeasurementVariable::ListHeights(QMap<GHeights, bool> heights, Unit 
 QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patternUnit)
 {
     QStringList list;
-    if (patternUnit == Unit::Inch)
-    {
-        qWarning() << "Multisize table doesn't support inches.";
-        return list;
-    }
 
     QMap<GSizes, bool>::const_iterator i = sizes.constBegin();
     while (i != sizes.constEnd())
@@ -191,11 +181,6 @@ QStringList MeasurementVariable::ListSizes(QMap<GSizes, bool> sizes, Unit patter
 QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
 {
     QStringList list;
-    if (patternUnit == Unit::Inch)
-    {
-        qWarning() << "Multisize table doesn't support inches.";
-        return list;
-    }
 
     for (int i = static_cast<int>(GHeights::H50); i<= static_cast<int>(GHeights::H200); i = i+heightStep)
     {
@@ -209,11 +194,6 @@ QStringList MeasurementVariable::WholeListHeights(Unit patternUnit)
 QStringList MeasurementVariable::WholeListSizes(Unit patternUnit)
 {
     QStringList list;
-    if (patternUnit == Unit::Inch)
-    {
-        qWarning() << "Multisize table doesn't support inches.";
-        return list;
-    }
 
     for (int i = static_cast<int>(GSizes::S22); i<= static_cast<int>(GSizes::S72); i = i+sizeStep)
     {

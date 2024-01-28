@@ -2015,49 +2015,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -4014,10 +3971,6 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Rename</source>
-        <translation type="unfinished">Rename</translation>
-    </message>
-    <message>
         <source>Delete</source>
         <translation type="unfinished">Delete</translation>
     </message>
@@ -4209,6 +4162,34 @@ Possibly the file is already being downloaded.</source>
         <source>Name</source>
         <translation type="unfinished">Name</translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation type="unfinished">Edit</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
@@ -4231,10 +4212,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation type="unfinished">Name</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>%1</source>
@@ -6478,10 +6455,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7300,6 +7273,49 @@ Do you want to save your changes?</translation>
     <name>MoveSplinePath</name>
     <message>
         <source>move spline path</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -8427,10 +8443,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation type="unfinished">With OS options</translation>
-    </message>
-    <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8572,6 +8584,70 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Sound:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9551,10 +9627,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished">GUI language:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation type="unfinished">Decimal separator parts:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation type="unfinished">Pattern making system</translation>
     </message>
@@ -9599,16 +9671,24 @@ Do you want to save your changes?</translation>
         <translation type="unfinished">Size:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation type="unfinished">With OS options</translation>
+        <source>Startup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
-    <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation type="unfinished">Paths that Seamly2D uses</translation>
-    </message>
     <message>
         <source>Type</source>
         <translation type="unfinished">Type</translation>
@@ -9640,6 +9720,96 @@ Do you want to save your changes?</translation>
     <message>
         <source>My Templates</source>
         <translation type="unfinished">My Templates</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation type="unfinished">Units:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation type="unfinished">GUI language:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11155,6 +11325,40 @@ Do you want to save your changes?</translation>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Convert 3DLook file:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -11940,6 +12144,10 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>label templates</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -13996,53 +14204,8 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished">Line_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished">Arc_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished">Spl_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14076,16 +14239,6 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation type="unfinished"></translation>
@@ -14098,36 +14251,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14248,11 +14371,6 @@ Do you want to save your changes?</translation>
     <message>
         <source>wOnFold</source>
         <comment>placeholder</comment>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -14458,6 +14576,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Line_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Arc_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Spl_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

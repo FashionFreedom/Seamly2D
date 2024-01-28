@@ -91,6 +91,7 @@ private:
 
     void SetLabelComboBox(const QStringList &list);
     void InitUnits();
+    void adjustTextColor();
 };
 
 #endif // PREFERENCESCONFIGURATIONPAGE_H

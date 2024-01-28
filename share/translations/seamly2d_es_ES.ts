@@ -2053,49 +2053,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Nuevo archivo de medidas</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Tipo de medida:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Unidad:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Talla basica:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Altura básica:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Individual</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Centímetros</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Pulgadas</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>Multitalla</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Milímetros</translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -3985,7 +3942,7 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4056,10 +4013,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Edit Group</source>
         <translation>Editar Grupo</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Renombrar</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4253,6 +4206,34 @@ Possibly the file is already being downloaded.</source>
         <source>Name</source>
         <translation>Nombre</translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation>Editar</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Visible</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>El grupo es visible</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Bloqueado</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>El grupo está bloqueado</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>El grupo tiene objetos</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Color</translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
@@ -4275,10 +4256,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Nombre</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation>Descripción</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4877,7 +4854,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6514,10 +6491,6 @@ Do you want to save your changes?</source>
         <translation>Punto Medio de Línea</translation>
     </message>
     <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Punto - Punto Medio de Línea (Mayúsculas+O, Mayúsculas+L)</translation>
-    </message>
-    <message>
         <source>Shift+O, Shift+L</source>
         <translation>Mayúsculas+O, Mayúsculas+L</translation>
     </message>
@@ -7362,6 +7335,49 @@ Do you want to save your changes?</source>
     <message>
         <source>move spline path</source>
         <translation>mover ruta de spline</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Nuevo archivo de medidas</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Tipo de medida:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Unidad:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Talla base:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Altura base:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Individual</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Multitalla</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centímetros</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Milímetros</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Pulgadas</translation>
     </message>
 </context>
 <context>
@@ -8477,8 +8493,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>Idioma del interfaz
-gráfica de usuario:</translation>
+        <translation>GUI Idioma:</translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8487,10 +8502,6 @@ gráfica de usuario:</translation>
     <message>
         <source>Label language:</source>
         <translation>Idioma de las etiquetas:</translation>
-    </message>
-    <message>
-        <source>With OS options</source>
-        <translation>Con opciones de sistema operativo</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8635,6 +8646,70 @@ gráfica de usuario:</translation>
     <message>
         <source>Sound:</source>
         <translation>Sonido:</translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation>Información para diseñadores</translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation>Empresa / Información para diseñadores</translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation>Empresa / Diseñador:</translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation>Contacto:</translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation>Ciudad:</translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation>Estado:</translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation>Código postal:</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation>País:</translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation>Teléfono:</translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation>Fax:</translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation>Correo electrónico:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Página web:</translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation>Verificación del correo electrónico</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation>El formato del correo electrónico no es válido.</translation>
     </message>
 </context>
 <context>
@@ -9615,10 +9690,6 @@ actualización:</translation>
         <translation>GUI Idioma:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation>Separador decimal:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation>Sistema de creación de patrones</translation>
     </message>
@@ -9663,16 +9734,24 @@ actualización:</translation>
         <translation>Talla:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>Con opciones de sistema operativo</translation>
+        <source>Startup</source>
+        <translation>Puesta en marcha</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>No mostrar la pantalla de bienvenida</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Separador decimal:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
-    <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation>Rutas que utiliza Seamly2D</translation>
-    </message>
     <message>
         <source>Type</source>
         <translation>Tipo</translation>
@@ -9704,6 +9783,96 @@ actualización:</translation>
     <message>
         <source>My Templates</source>
         <translation>Mis Plantillas</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation>Rutas que utiliza SeamlyME</translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation>Mis escáneres corporales</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Bienvenido a SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>Usuarios de 3D Look</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Para utilizar un escaneado corporal 3D Look es necesario convertir el archivo al formato SeamlyME. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Adjunte su archivo 3DLook a un correo electrónico y envíelo a convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Recibirá un correo electrónico con el archivo convertido, que podrá cargar en SeamlyME como de costumbre.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Elija las unidades, el separador decimal y el idioma que prefiera. (Puede cambiarlos más adelante.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Unidades:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Establece las unidades por defecto para un nuevo archivo de medición.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Separador decimal:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI Idioma:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Establece el idioma utilizado para SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>No volver a mostrar</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centímetros</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Milímetros</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Pulgadas</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11221,6 +11390,45 @@ Do you want to save your changes?</source>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
         <translation>Se produjo un error desconocido, por ejemplo una parte llena impedía escribir el archivo de bloqueo. Ignorelo si desea continuar (no se recomienda, puede provocar errores).</translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation>Importar escáner corporal como</translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation>3D Measure Up</translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation>3D Look</translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation>Adjunte su archivo 3DLook a un correo electrónico y envíelo a convert@seamly.io.
+
+</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation>Recibirá un correo electrónico con el archivo convertido, que podrá cargar en SeamlyME como de costumbre.
+
+</translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation>Para utilizar un escaneado corporal 3D Look es necesario convertir el archivo al formato SeamlyME.
+</translation>
+    </message>
+    <message>
+        <source>Convert 3DLook file:</source>
+        <translation>Convertir archivo 3DLook:</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -12007,6 +12215,10 @@ Do you want to save your changes?</source>
     <message>
         <source>label templates</source>
         <translation>Plantillas de la etiqueta</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation>escaneos corporales</translation>
     </message>
 </context>
 <context>
@@ -14221,64 +14433,10 @@ Do you want to save your changes?</source>
         <translation>pulg</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Línea_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>AngleLine_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Arc_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Spl_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translatorcomment>No agregue el símbolo _ al final del nombre</translatorcomment>
         <translation>SplPath</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>RadiusArc_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1Arc_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2Arc_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1Spl_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2Spl_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
@@ -14317,18 +14475,6 @@ Do you want to save your changes?</source>
         <translation>altura</translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>C1LengthSpl_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>C2LengthSpl_</translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translatorcomment>No agregue el símbolo _ al final del nombre</translatorcomment>
@@ -14344,42 +14490,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>MargenDeCosturaActual</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>M_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Radius1ElArc_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Radius2ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle1ElArc_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Angle2ElArc_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14524,12 +14634,6 @@ Do you want to save your changes?</source>
         <comment>placeholder</comment>
         <translatorcomment>marcador de posición</translatorcomment>
         <translation>wLomo</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translatorcomment>Símbolo izquierdo _ en el nombre</translatorcomment>
-        <translation>Variable_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14768,6 +14872,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
 Usage: fmod(x; y)</comment>
         <translatorcomment>Devuelve el resto en coma flotante de x/y (redondeado hacia cero) Uso: fmod(x; y)</translatorcomment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>M_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Variable_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Línea_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>AngleLine_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Arco_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>ElArco_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">RadiusArc_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius1ElArc_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Radius2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1Arc_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2Arc_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2ElArc_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle1Spl_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">Angle2Spl_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C1LengthSpl_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation type="unfinished">C2LengthSpl_</translation>
     </message>
 </context>
 <context>

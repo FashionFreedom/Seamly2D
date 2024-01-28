@@ -56,7 +56,7 @@
 #include "tmainwindow.h"
 #include "ui_tmainwindow.h"
 #include "dialogs/dialogaboutseamlyme.h"
-#include "dialogs/dialognewmeasurements.h"
+#include "dialogs/new_measurements_dialog.h"
 #include "dialogs/dialogmdatabase.h"
 #include "dialogs/dialogseamlymepreferences.h"
 #include "dialogs/dialogexporttocsv.h"
@@ -75,15 +75,17 @@
 #include "../qmuparser/qmudef.h"
 #include "../vtools/dialogs/support/edit_formula_dialog.h"
 #include "version.h"
-#include "mapplication.h" // Should be last because of definning qApp
 #include "../vformat/measurements.h"
+#include "mapplication.h" // Should be last because of definning qApp
 
 #include <QClipboard>
 #include <QComboBox>
+#include <QDesktopServices>
 #include <QFileDialog>
 #include <QFileInfo>
 #include <QLabel>
 #include <QMessageBox>
+#include <QPixmap>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QProcess>
@@ -321,7 +323,7 @@ bool TMainWindow::LoadFile(const QString &path)
 				throw e;
 			}
 
-			mUnit = individualMeasurements->MUnit();
+			mUnit = individualMeasurements->measurementUnits();
 			pUnit = mUnit;
 
 			currentSize = individualMeasurements->BaseSize();
@@ -394,23 +396,23 @@ void TMainWindow::FileNew()
 {
 	if (individualMeasurements == nullptr)
 	{
-		DialogNewMeasurements measurements(this);
+		NewMeasurementsDialog measurements(this);
 		if (measurements.exec() == QDialog::Rejected)
 		{
 			return;
 		}
 
-		mUnit = measurements.MUnit();
+		mUnit = measurements.measurementUnits();
 		pUnit = mUnit;
-		mType = measurements.Type();
+		mType = measurements.type();
 
 		data = new VContainer(qApp->TrVars(), &mUnit);
-		currentHeight = measurements.BaseHeight();
-		currentSize = measurements.BaseSize();
+		currentHeight = measurements.baseHeight();
+		currentSize = measurements.baseSize();
 
 		if (mType == MeasurementsType::Multisize)
 		{
-			individualMeasurements = new MeasurementDoc(mUnit, measurements.BaseSize(), measurements.BaseHeight(), data);
+			individualMeasurements = new MeasurementDoc(mUnit, measurements.baseSize(), measurements.baseHeight(), data);
 			individualMeasurements->setSize(&currentSize);
 			individualMeasurements->setHeight(&currentHeight);
 			m_curFileFormatVersion = MultiSizeConverter::MeasurementMaxVer;
@@ -538,6 +540,63 @@ void TMainWindow::CreateFromExisting()
 	}
 }
 
+/*
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::handleBodyScanner1()
+{
+    const QString filter = QString("3D Measure Up") + QLatin1String(" (*.txt)");
+
+    //Use standard path to template files
+    QString dir = qApp->SeamlyMeSettings()->getBodyScansPath();
+
+    bool usedNotExistedDir = false;
+    QDir directory(dir);
+    if (!directory.exists())
+    {
+        usedNotExistedDir = directory.mkpath(".");
+    }
+
+    const QString filename = fileDialog(this, tr("Import body scan"), dir, filter, nullptr, QFileDialog::DontUseNativeDialog,
+                                        QFileDialog::ExistingFile, QFileDialog::AcceptOpen);
+
+    QMessageBox messageBox(this);
+    messageBox.setMaximumWidth(600);
+    messageBox.setText("3D Measure Up file:");
+    messageBox.setInformativeText(filename);
+    messageBox.setStandardButtons(QMessageBox::Ok);
+    messageBox.setDefaultButton(QMessageBox::Ok);
+    messageBox.exec();
+}
+*/
+
+//---------------------------------------------------------------------------------------------------------------------
+void TMainWindow::handleBodyScanner2()
+{
+    QString msg = tr("To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.\n") +
+                  tr("Attach your 3DLook file to an email and send to convert@seamly.io.\n\n") +
+                  tr("You will recieve an email with the converted file, which you can then\nload in SeamlyME as usual.\n\n");
+
+    QMessageBox messageBox(this);
+    messageBox.setIconPixmap(QPixmap(":/icon/body_scan.png"));
+    messageBox.setText(tr("Convert 3DLook file:"));
+    messageBox.setInformativeText(msg);
+    messageBox.setStandardButtons(QMessageBox::Ok);
+    messageBox.setDefaultButton(QMessageBox::Ok);
+    messageBox.exec();
+
+/*
+    VSettings *settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, "Seamly2DTeam", "Seamly2D", this);
+
+    QString to = "convert@seamly.io";
+    QString name = settings->getCompanyName();
+    QString email = settings->getEmail();
+    QString subject = "3DLook file conversion";
+    QString body = "Dear Seamly Team,\n\n Please convert the following 3DLook files to SeamlyME format.\n";
+
+    QDesktopServices::openUrl(QUrl("mailto:" + to + "?subject=" + subject + "&body=" + body, QUrl::TolerantMode));
+*/
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void TMainWindow::Preferences()
 {
@@ -594,9 +653,9 @@ void TMainWindow::changeEvent(QEvent *event)
 		{
 			ui->labelMType->setText(tr("Multisize measurements"));
 			ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->BaseSize()) + QLatin1String(" ") +
-											UnitsToStr(individualMeasurements->MUnit(), true));
+											UnitsToStr(individualMeasurements->measurementUnits(), true));
 			ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->BaseHeight()) + QLatin1String(" ") +
-											  UnitsToStr(individualMeasurements->MUnit(), true));
+											  UnitsToStr(individualMeasurements->measurementUnits(), true));
 
 			labelGradationHeights = new QLabel(tr("Height:"));
 			labelGradationSizes = new QLabel(tr("Size:"));
@@ -2104,6 +2163,10 @@ void TMainWindow::SetupMenu()
 	connect(ui->actionOpenMultisize, &QAction::triggered, this, &TMainWindow::OpenMultisize);
 	connect(ui->actionOpenTemplate, &QAction::triggered, this, &TMainWindow::OpenTemplate);
 	connect(ui->actionCreateFromExisting, &QAction::triggered, this, &TMainWindow::CreateFromExisting);
+
+    //connect(ui->bodyScanner1_Action, &QAction::triggered, this, &TMainWindow::handleBodyScanner1);
+	connect(ui->bodyScanner2_Action, &QAction::triggered, this, &TMainWindow::handleBodyScanner2);
+
 	connect(ui->print_Action, &QAction::triggered, this, &TMainWindow::print);
     connect(ui->actionSave, &QAction::triggered, this, &TMainWindow::FileSave);
 	connect(ui->actionSaveAs, &QAction::triggered, this, &TMainWindow::FileSaveAs);
@@ -2211,9 +2274,9 @@ void TMainWindow::InitWindow()
 	{
 		ui->labelMType->setText(tr("Multisize measurements"));
 		ui->labelBaseSizeValue->setText(QString().setNum(individualMeasurements->BaseSize()) + " " +
-										UnitsToStr(individualMeasurements->MUnit(), true));
+										UnitsToStr(individualMeasurements->measurementUnits(), true));
 		ui->labelBaseHeightValue->setText(QString().setNum(individualMeasurements->BaseHeight()) + " " +
-										  UnitsToStr(individualMeasurements->MUnit(), true));
+										  UnitsToStr(individualMeasurements->measurementUnits(), true));
 
 		// Because Qt Designer doesn't know about our deleting we will create empty objects for correct
 		// working the retranslation UI
@@ -3086,7 +3149,7 @@ bool TMainWindow::LoadFromExistingFile(const QString &path)
 				throw e;
 			}
 
-			mUnit = individualMeasurements->MUnit();
+			mUnit = individualMeasurements->measurementUnits();
 			pUnit = mUnit;
 
 			currentHeight = individualMeasurements->BaseHeight();

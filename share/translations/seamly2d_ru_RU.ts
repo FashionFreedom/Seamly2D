@@ -2038,49 +2038,6 @@ p, li { white-space: pre-wrap; }
     </message>
 </context>
 <context>
-    <name>DialogNewMeasurements</name>
-    <message>
-        <source>New measurement file</source>
-        <translation>Новый файл мерки</translation>
-    </message>
-    <message>
-        <source>Measurement type:</source>
-        <translation>Тип мерки:</translation>
-    </message>
-    <message>
-        <source>Unit:</source>
-        <translation>Единицы:</translation>
-    </message>
-    <message>
-        <source>Base size:</source>
-        <translation>Базовый размер:</translation>
-    </message>
-    <message>
-        <source>Base height:</source>
-        <translation>Базовая высота:</translation>
-    </message>
-    <message>
-        <source>Individual</source>
-        <translation>Индивидуальная</translation>
-    </message>
-    <message>
-        <source>Centimeters</source>
-        <translation>Сантиметры</translation>
-    </message>
-    <message>
-        <source>Inches</source>
-        <translation>Дюймы</translation>
-    </message>
-    <message>
-        <source>Multisize</source>
-        <translation>Мультиразмерные</translation>
-    </message>
-    <message>
-        <source>Millimeters</source>
-        <translation>Миллиметры</translation>
-    </message>
-</context>
-<context>
     <name>DialogNewPattern</name>
     <message>
         <source>Units:</source>
@@ -3973,9 +3930,7 @@ Do you want to download it?</source>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Невозможно получить эксклюзивный доступ к файлу
-%1
-Возможно, файл уже загружается.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -4043,10 +3998,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Edit Group</source>
         <translation>Редактировать группу</translation>
-    </message>
-    <message>
-        <source>Rename</source>
-        <translation>Переименовать</translation>
     </message>
     <message>
         <source>Delete</source>
@@ -4240,6 +4191,34 @@ Possibly the file is already being downloaded.</source>
         <source>Name</source>
         <translation>Название</translation>
     </message>
+    <message>
+        <source>Edit</source>
+        <translation>Редактировать</translation>
+    </message>
+    <message>
+        <source>Visible</source>
+        <translation>Видно</translation>
+    </message>
+    <message>
+        <source>Group is visible</source>
+        <translation>Группа видна</translation>
+    </message>
+    <message>
+        <source>Locked</source>
+        <translation>Заблокировано</translation>
+    </message>
+    <message>
+        <source>Group is locked</source>
+        <translation>Группа заблокирована</translation>
+    </message>
+    <message>
+        <source>Group has objects</source>
+        <translation>В группе есть объекты</translation>
+    </message>
+    <message>
+        <source>Color</source>
+        <translation>Цвет</translation>
+    </message>
 </context>
 <context>
     <name>HistoryDialog</name>
@@ -4262,10 +4241,6 @@ Possibly the file is already being downloaded.</source>
     <message>
         <source>Name</source>
         <translation>Название</translation>
-    </message>
-    <message>
-        <source>Decription</source>
-        <translation>Описание</translation>
     </message>
     <message>
         <source>%1</source>
@@ -4868,9 +4843,7 @@ Possibly the file is already being downloaded.</source>
         <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Маржа выходит за рамки полиграфии.
-
-Применять настройки в любом случае?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -5051,7 +5024,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>New</source>
-        <translation>Новое</translation>
+        <translation>Новый</translation>
     </message>
     <message>
         <source>&amp;New</source>
@@ -5167,7 +5140,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Bad id.</source>
-        <translation>Плохой id.</translation>
+        <translation>Неправильный идентификатор.</translation>
     </message>
     <message>
         <source>File saved</source>
@@ -5184,7 +5157,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>&amp;Redo</source>
-        <translation>&amp;Повторить</translation>
+        <translation>&amp;Вернуть</translation>
     </message>
     <message>
         <source>This file already opened in another window.</source>
@@ -5200,7 +5173,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Seamly2D didn&apos;t shut down correctly. Do you want reopen files (%1) you had open?</source>
-        <translation>Валентина была закрыта неправильно . Хотите восстановить файлы (%1) которые былы открыты раньше?</translation>
+        <translation>Seamly2D была закрыта неправильно . Хотите восстановить файлы (%1) которые были открыты раньше?</translation>
     </message>
     <message>
         <source>Reopen files.</source>
@@ -5208,7 +5181,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout</source>
-        <translation>Раскладка</translation>
+        <translation>Макет</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -5224,7 +5197,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Split and print a layout into smaller pages (for regular printers)</source>
-        <translation>Разделить и сохранить раскладку на меньшие листа (для обычных принтеров)</translation>
+        <translation>Разделить и распечатать макет на страницы меньшего размера.(для обычных принтеров)</translation>
     </message>
     <message>
         <source>Print preview</source>
@@ -5232,7 +5205,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print preview original layout</source>
-        <translation>Просмотр первоначальной раскладки</translation>
+        <translation>Предварительный просмотр исходного макета</translation>
     </message>
     <message>
         <source>Export As...</source>
@@ -5240,7 +5213,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Layout mode</source>
-        <translation>Режим раскладки</translation>
+        <translation>Режим макета</translation>
     </message>
     <message>
         <source>Unsaved changes</source>
@@ -5308,7 +5281,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Print an original layout</source>
-        <translation>Печать оригинальной раскладки</translation>
+        <translation>Распечатать оригинальный макет</translation>
     </message>
     <message>
         <source>Preview tiled PDF</source>
@@ -5352,19 +5325,19 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>This file already opened in another window. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Этот файл уже открыт в другом окне. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
+        <translation>Этот файл уже открыт в другом окне. Игнорируйте, если хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Файл блокировки не может быть создан из-за отсутствия разрешений. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
+        <translation>Файл блокировки не может быть создан из-за отсутствия разрешений. Игнорируйте, если хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file. Ignore if you want to continue (not recommended, can cause a data corruption).</source>
-        <translation>Произошла неизвестная ошибка, например, полностью заполненный раздел предотвращает запись файла блокировки. Игнорируйте, если вы хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
+        <translation>Произошла неизвестная ошибка, например, полностью заполненный раздел предотвращает запись файла блокировки. Игнорируйте, если  хотите продолжить (не рекомендуется, может привести к повреждению данных).</translation>
     </message>
     <message>
         <source>The lock file could not be created, for lack of permissions.</source>
-        <translation>lock файл не может быть создан, не хватает прав доступа.</translation>
+        <translation>Не удалось создать файл блокировки из-за отсутствия разрешений.</translation>
     </message>
     <message>
         <source>Unknown error happened, for instance a full partition prevented writing out the lock file.</source>
@@ -5400,7 +5373,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
-        <translation>Мерки были изменены. Согласовать мерки?</translation>
+        <translation>Мрки были изменены. Хотите обновить мерки сейчас?</translation>
     </message>
     <message>
         <source>Gradation doesn&apos;t support inches</source>
@@ -5408,7 +5381,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Measurements have been synced</source>
-        <translation>Метки синхронизированы</translation>
+        <translation>Мерки обновлены</translation>
     </message>
     <message>
         <source>The document has no write permissions.</source>
@@ -5492,7 +5465,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Wiki</source>
-        <translation>Вики</translation>
+        <translation>Wikipedia</translation>
     </message>
     <message>
         <source>Forum</source>
@@ -5512,7 +5485,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>You can&apos;t use Layout mode yet.</source>
-        <translation>Сейчас невозможно использовать режим раскладки.</translation>
+        <translation>Сейчас невозможно использовать режим макета.</translation>
     </message>
     <message>
         <source>Application doesn&apos;t support multisize table with inches.</source>
@@ -5532,7 +5505,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>View</source>
-        <translation>Просмотр</translation>
+        <translation>Вид</translation>
     </message>
     <message>
         <source>Point Names</source>
@@ -5668,7 +5641,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>View Toolbar</source>
-        <translation>Просмотр панели инструментов</translation>
+        <translation>Вид панели инструментов</translation>
     </message>
     <message>
         <source>Draft</source>
@@ -5844,7 +5817,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Fit All</source>
-        <translation>Подходит всем</translation>
+        <translation>Масштабировать всё</translation>
     </message>
     <message>
         <source>Fit</source>
@@ -5924,7 +5897,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Pan</source>
-        <translation>Pan</translation>
+        <translation>Панорама</translation>
     </message>
     <message>
         <source>Z, P</source>
@@ -6505,10 +6478,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Midpoint on Line</source>
         <translation>Точка на середине линии</translation>
-    </message>
-    <message>
-        <source>Point - Mispoint on Line (Shift+O, Shift+L)</source>
-        <translation>Точка на середине линии (Shift+O, Shift+L)</translation>
     </message>
     <message>
         <source>Shift+O, Shift+L</source>
@@ -7336,6 +7305,49 @@ Do you want to save your changes?</source>
     <message>
         <source>move spline path</source>
         <translation>переместить сложный сплайн</translation>
+    </message>
+</context>
+<context>
+    <name>NewMeasurementsDialog</name>
+    <message>
+        <source>New measurement file</source>
+        <translation>Новый файл мерки</translation>
+    </message>
+    <message>
+        <source>Measurement type:</source>
+        <translation>Тип мерки:</translation>
+    </message>
+    <message>
+        <source>Unit:</source>
+        <translation>Единицы:</translation>
+    </message>
+    <message>
+        <source>Base size:</source>
+        <translation>Базовый размер:</translation>
+    </message>
+    <message>
+        <source>Base height:</source>
+        <translation>Базовая высота:</translation>
+    </message>
+    <message>
+        <source>Individual</source>
+        <translation>Индивидуальная</translation>
+    </message>
+    <message>
+        <source>Multisize</source>
+        <translation>Мультиразмерные</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Сантиметры</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Миллиметры</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Дюймы</translation>
     </message>
 </context>
 <context>
@@ -8300,10 +8312,6 @@ Do you want to save your changes?</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>Unnamed</source>
-        <translation>Безымянный</translation>
-    </message>
-    <message>
         <source>Name</source>
         <translation>Название</translation>
     </message>
@@ -8337,59 +8345,59 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Select Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите Цвет</translation>
     </message>
     <message>
         <source>Edit pattern piece properties</source>
-        <translation type="unfinished"></translation>
+        <translation>Редактирование свойств детали выкройки</translation>
     </message>
     <message>
         <source>Included</source>
-        <translation type="unfinished"></translation>
+        <translation>Включен</translation>
     </message>
     <message>
         <source>Pattern piece is included in layout</source>
-        <translation type="unfinished"></translation>
+        <translation>Деталь выкройки включена в макет</translation>
     </message>
     <message>
         <source>Locked</source>
-        <translation type="unfinished"></translation>
+        <translation>Заблокировано</translation>
     </message>
     <message>
         <source>Pattern piece is locked</source>
-        <translation type="unfinished"></translation>
+        <translation>Деталь выкройки заблокирована</translation>
     </message>
     <message>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет</translation>
     </message>
     <message>
         <source>Pattern piece color</source>
-        <translation type="unfinished"></translation>
+        <translation>Цвет детали выкройки</translation>
     </message>
     <message>
         <source>Piece</source>
-        <translation type="unfinished"></translation>
+        <translation>Деталь</translation>
     </message>
     <message>
         <source>Pattern piece letter</source>
-        <translation type="unfinished"></translation>
+        <translation>Буквенное обозначение детали выкройки</translation>
     </message>
     <message>
         <source>Pattern piece name</source>
-        <translation type="unfinished"></translation>
+        <translation>Название детали выкройки</translation>
     </message>
     <message>
         <source>Toggle lock on pattern piece</source>
-        <translation type="unfinished"></translation>
+        <translation>Включатель блокировки детали выкройки</translation>
     </message>
     <message>
         <source>Double click opens color selector</source>
-        <translation type="unfinished"></translation>
+        <translation>Двойной щелчок открывает выбор цвета</translation>
     </message>
     <message>
         <source>Double click opens pattern piece properties dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Двойной щелчок открывает диалоговое окно свойств детали выкройки</translation>
     </message>
 </context>
 <context>
@@ -8464,10 +8472,6 @@ Do you want to save your changes?</source>
     <message>
         <source>Label language:</source>
         <translation>Язык имени точки:</translation>
-    </message>
-    <message>
-        <source>With OS options</source>
-        <translation>С опциями ОС</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8612,6 +8616,70 @@ Do you want to save your changes?</source>
     <message>
         <source>Sound:</source>
         <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Designer Info</source>
+        <translation>Информация о дизайнере</translation>
+    </message>
+    <message>
+        <source>Company / Designer Info</source>
+        <translation>Информация о компании / дизайнере</translation>
+    </message>
+    <message>
+        <source>Company / Designer:</source>
+        <translation>Компания / Дизайнер:</translation>
+    </message>
+    <message>
+        <source>Contact:</source>
+        <translation>Контакт:</translation>
+    </message>
+    <message>
+        <source>City:</source>
+        <translation>Город:</translation>
+    </message>
+    <message>
+        <source>State:</source>
+        <translation>Штат::</translation>
+    </message>
+    <message>
+        <source>Zipcode:</source>
+        <translation>почтовый индекс:</translation>
+    </message>
+    <message>
+        <source>Country:</source>
+        <translation>Страна:</translation>
+    </message>
+    <message>
+        <source>Telephone:</source>
+        <translation>Телефон:</translation>
+    </message>
+    <message>
+        <source>Fax:</source>
+        <translation>Факс:</translation>
+    </message>
+    <message>
+        <source>Email:</source>
+        <translation>Эл. почта:</translation>
+    </message>
+    <message>
+        <source>Website:</source>
+        <translation>Веб-сайт:</translation>
+    </message>
+    <message>
+        <source>Email verification</source>
+        <translation>Проверка электронной почты</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation>Адрес:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Пользовательская локаль</translation>
+    </message>
+    <message>
+        <source>Email format is not valid.</source>
+        <translation>Формат электронной почты не соответствует действительности.</translation>
     </message>
 </context>
 <context>
@@ -9591,10 +9659,6 @@ Do you want to save your changes?</source>
         <translation>Язык интерфейса:</translation>
     </message>
     <message>
-        <source>Decimal separator parts:</source>
-        <translation>Разделитель дробной части:</translation>
-    </message>
-    <message>
         <source>Pattern making system</source>
         <translation>Система создания выкроек</translation>
     </message>
@@ -9639,16 +9703,24 @@ Do you want to save your changes?</source>
         <translation>Размер:</translation>
     </message>
     <message>
-        <source>With OS options</source>
-        <translation>С опциями ОС</translation>
+        <source>Startup</source>
+        <translation>Стартап</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Не показывать экран приветствия</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Десятичный Разделитель:</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Пользовательская локаль</translation>
     </message>
 </context>
 <context>
     <name>SeamlyMePreferencesPathPage</name>
-    <message>
-        <source>Paths that Seamly2D uses</source>
-        <translation>Пути, которые использует Seamly2D</translation>
-    </message>
     <message>
         <source>Type</source>
         <translation>Тип</translation>
@@ -9680,6 +9752,96 @@ Do you want to save your changes?</source>
     <message>
         <source>My Templates</source>
         <translation>Мои шаблоны</translation>
+    </message>
+    <message>
+        <source>Paths that SeamlyME uses</source>
+        <translation>Пути, которые использует SeamlyME</translation>
+    </message>
+    <message>
+        <source>My Body Scans</source>
+        <translation>Сканирование моего тела</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyMeWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Добро пожаловать</translation>
+    </message>
+    <message>
+        <source>Welcome to SeamlyME</source>
+        <translation>Добро пожаловать в SeamlyME</translation>
+    </message>
+    <message>
+        <source>3D Look users</source>
+        <translation>Пользователи 3D Look</translation>
+    </message>
+    <message>
+        <source>To utilize a 3D Look body scan the file needs to be converted to SeamlyME format. </source>
+        <translation>Чтобы использовать сканирование тела 3DLook, файл необходимо преобразовать в формат SeamlyME. </translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.</source>
+        <translation>Прикрепите файл 3DLook к электронному письму и отправьте его на адрес convert@seamly.io.</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then load in SeamlyME as usual.</source>
+        <translation>Вы получите электронное письмо с преобразованным файлом, который затем можно загрузить в SeamlyME, как обычно.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, and language. (You can change these later.)</source>
+        <translation>Выберите желаемые единицы измерения, десятичный разделитель и язык. (Вы можете изменить их позже.)</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Единицы измерения:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Десятичный Разделитель:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>Язык интерфейса:</translation>
+    </message>
+    <message>
+        <source>Sets the language used for SeamlyMe.</source>
+        <translation>Устанавливает язык, используемый для SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Больше не показывать</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Пользовательская локаль</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Сантиметры</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Миллиметры</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Дюймы</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9801,7 +9963,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Redo</source>
-        <translation>Повторить</translation>
+        <translation>Вернуть</translation>
     </message>
     <message>
         <source>Ctrl+Y</source>
@@ -11195,6 +11357,46 @@ Do you want to save your changes?</source>
         <source>Pattern files</source>
         <translation>Файлы выкроек</translation>
     </message>
+    <message>
+        <source>Import body scan as</source>
+        <translation>Импортируйте сканирование тела как</translation>
+    </message>
+    <message>
+        <source>3D Measure Up</source>
+        <translation>3D Measure Up</translation>
+    </message>
+    <message>
+        <source>3D Look</source>
+        <translation>3D Look</translation>
+    </message>
+    <message>
+        <source>To utilize a 3DLook body scan the file needs to be converted to SeamlyME format.
+</source>
+        <translation>Чтобы использовать сканирование тела 3DLook, файл необходимо преобразовать в формат SeamlyME.
+</translation>
+    </message>
+    <message>
+        <source>Attach your 3DLook file to an email and send to convert@seamly.io.
+
+</source>
+        <translation>Прикрепите файл 3DLook к электронному письму и отправьте его на адрес convert@seamly.io.
+
+</translation>
+    </message>
+    <message>
+        <source>You will recieve an email with the converted file, which you can then
+load in SeamlyME as usual.
+
+</source>
+        <translation>Вы получите электронное письмо с преобразованным файлом, который затем можно
+загрузить в SeamlyME, как обычно.
+
+</translation>
+    </message>
+    <message>
+        <source>Convert 3DLook file:</source>
+        <translation>Конвертируйте файл 3DLook:</translation>
+    </message>
 </context>
 <context>
     <name>TogglePieceInLayout</name>
@@ -11981,6 +12183,10 @@ Do you want to save your changes?</source>
     <message>
         <source>label templates</source>
         <translation>Шаблоны метки</translation>
+    </message>
+    <message>
+        <source>bodyscans</source>
+        <translation>бодискан</translation>
     </message>
 </context>
 <context>
@@ -14041,54 +14247,9 @@ Do you want to save your changes?</source>
         <translation>дюйм</translation>
     </message>
     <message>
-        <source>Line_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Линия_</translation>
-    </message>
-    <message>
-        <source>AngleLine_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>УголЛинии_</translation>
-    </message>
-    <message>
-        <source>Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Дуга_</translation>
-    </message>
-    <message>
-        <source>Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Спл_</translation>
-    </message>
-    <message>
         <source>SplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>СлСпл</translation>
-    </message>
-    <message>
-        <source>RadiusArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>РадиусДуги_</translation>
-    </message>
-    <message>
-        <source>Angle1Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Улог1Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle2Arc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle1Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол1Спл_</translation>
-    </message>
-    <message>
-        <source>Angle2Spl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Спл_</translation>
     </message>
     <message>
         <source>Angle1SplPath</source>
@@ -14121,16 +14282,6 @@ Do you want to save your changes?</source>
         <translation>Рост</translation>
     </message>
     <message>
-        <source>C1LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>С1ДлинаСпл_</translation>
-    </message>
-    <message>
-        <source>C2LengthSpl_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>С2ДлинаСпл_</translation>
-    </message>
-    <message>
         <source>C1LengthSplPath</source>
         <comment>Do not add symbol _ to the end of the name</comment>
         <translation>С1ДлинаСлСпл</translation>
@@ -14144,36 +14295,6 @@ Do you want to save your changes?</source>
         <source>CurrentSeamAllowance</source>
         <comment>Do not add space between words</comment>
         <translation>ТекущаяПрибавкаНаШов</translation>
-    </message>
-    <message>
-        <source>M_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>М_</translation>
-    </message>
-    <message>
-        <source>ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Дуга_</translation>
-    </message>
-    <message>
-        <source>Radius1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Радиус1Дуги_</translation>
-    </message>
-    <message>
-        <source>Radius2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Радиус2Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle1ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Улог1Дуги_</translation>
-    </message>
-    <message>
-        <source>Angle2ElArc_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Угол2Дуги_</translation>
     </message>
     <message>
         <source>date</source>
@@ -14294,11 +14415,6 @@ Do you want to save your changes?</source>
         <source>wOnFold</source>
         <comment>placeholder</comment>
         <translation>сНа Сгиб</translation>
-    </message>
-    <message>
-        <source>Variable_</source>
-        <comment>No spaces in translation and must end with the _ symbol</comment>
-        <translation>Переменная_</translation>
     </message>
     <message>
         <source>degTorad</source>
@@ -14503,6 +14619,96 @@ Usage: avg(arg 1; arg 2; ... arg n)</comment>
         <comment>Returns the floating-point remainder of x/y (rounded towards zero)
 Usage: fmod(x; y)</comment>
         <translation>fmod</translation>
+    </message>
+    <message>
+        <source>M_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>М_</translation>
+    </message>
+    <message>
+        <source>Variable_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Переменная_</translation>
+    </message>
+    <message>
+        <source>Line_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Линия_</translation>
+    </message>
+    <message>
+        <source>AngleLine_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>УголЛинии_</translation>
+    </message>
+    <message>
+        <source>Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Дуга_</translation>
+    </message>
+    <message>
+        <source>ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Дуга_</translation>
+    </message>
+    <message>
+        <source>Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Спл_</translation>
+    </message>
+    <message>
+        <source>RadiusArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>РадиусДуги_</translation>
+    </message>
+    <message>
+        <source>Radius1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Радиус1Дуги_</translation>
+    </message>
+    <message>
+        <source>Radius2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Радиус2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2Arc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Угол2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Улог1Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle2ElArc_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Угол2Дуги_</translation>
+    </message>
+    <message>
+        <source>Angle1Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Угол1Спл_</translation>
+    </message>
+    <message>
+        <source>Angle2Spl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>Угол2Спл_</translation>
+    </message>
+    <message>
+        <source>C1LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>С1ДлинаСпл_</translation>
+    </message>
+    <message>
+        <source>C2LengthSpl_</source>
+        <comment>Leave the _ symbol in translation</comment>
+        <translation>С2ДлинаСпл_</translation>
     </message>
 </context>
 <context>

@@ -61,11 +61,12 @@
 
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 
 //---------------------------------------------------------------------------------------------------------------------
 PreferencesPathPage::PreferencesPathPage(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::PreferencesPathPage)
+    : QWidget(parent)
+    , ui(new Ui::PreferencesPathPage)
 {
     ui->setupUi(this);
 
@@ -95,11 +96,11 @@ void PreferencesPathPage::changeEvent(QEvent *event)
 void PreferencesPathPage::Apply()
 {
     VSettings *settings = qApp->Seamly2DSettings();
-    settings->setIndividualSizePath(ui->pathTable->item(0, 1)->text());
-    settings->setMultisizePath(ui->pathTable->item(1, 1)->text());
-    settings->SetPathPattern(ui->pathTable->item(2, 1)->text());
-    settings->SetPathLayout(ui->pathTable->item(3, 1)->text());
-    settings->setTemplatePath(ui->pathTable->item(4, 1)->text());
+    settings->SetPathPattern(ui->pathTable->item(0, 1)->text());
+    settings->setTemplatePath(ui->pathTable->item(1, 1)->text());
+    settings->setIndividualSizePath(ui->pathTable->item(2, 1)->text());
+    settings->setMultisizePath(ui->pathTable->item(3, 1)->text());
+    settings->SetPathLayout(ui->pathTable->item(4, 1)->text());
     settings->SetPathLabelTemplate(ui->pathTable->item(5, 1)->text());
 }
 
@@ -114,23 +115,23 @@ void PreferencesPathPage::defaultPath()
 
     switch (row)
     {
-        case 1: // multisize measurements
-            path = VCommonSettings::getDefaultMultisizePath();
+        case 0: // pattern path
+            path = VSettings::getDefaultPatternPath();
             break;
-        case 2: // pattern path
-            path = VSettings::GetDefPathPattern();
-            break;
-        case 0: // individual measurements
-            path = VCommonSettings::getDefaultIndividualSizePath();
-            break;
-        case 3: // layout path
-            path = VSettings::GetDefPathLayout();
-            break;
-        case 4: // templates
+        case 1: // templates
             path = VCommonSettings::getDefaultTemplatePath();
             break;
+        case 2: // individual measurements
+            path = VCommonSettings::getDefaultIndividualSizePath();
+            break;
+        case 3: // multisize measurements
+            path = VCommonSettings::getDefaultMultisizePath();
+            break;
+        case 4: // layout path
+            path = VSettings::getDefaultLayoutPath();
+            break;
         case 5: // label templates
-            path = VSettings::GetDefPathLabelTemplate();
+            path = VSettings::getDefaultLabelTemplatePath();
             break;
         default:
             break;
@@ -150,24 +151,24 @@ void PreferencesPathPage::editPath()
     QString path;
     switch (row)
     {
-        case 0: // individual measurements
+        case 0: // pattern path
+            path = qApp->Seamly2DSettings()->getPatternPath();
+            break;
+        case 1: // templates
+            path = qApp->Seamly2DSettings()->getTemplatePath();
+            break;
+        case 2: // individual measurements
             path = qApp->Seamly2DSettings()->getIndividualSizePath();
             break;
-        case 1: // multisize measurements
+        case 3: // multisize measurements
             path = qApp->Seamly2DSettings()->getMultisizePath();
             path = VCommonSettings::prepareMultisizeTables(path);
             break;
-        case 2: // pattern path
-            path = qApp->Seamly2DSettings()->GetPathPattern();
-            break;
-        case 3: // layout path
+        case 4: // layout path
             path = qApp->Seamly2DSettings()->getLayoutPath();
             break;
-        case 4: // templates
-            path = qApp->Seamly2DSettings()->getTemplatePath();
-            break;
         case 5: // label templates
-            path = qApp->Seamly2DSettings()->GetPathLabelTemplate();
+            path = qApp->Seamly2DSettings()->getLabelTemplatePath();
             break;
         default:
             break;
@@ -180,29 +181,27 @@ void PreferencesPathPage::editPath()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), path,
-                                                          QFileDialog::ShowDirsOnly
-                                                          | QFileDialog::DontResolveSymlinks
-                                                          | QFileDialog::DontUseNativeDialog);
-    if (dir.isEmpty())
-    {
-        if (usedNotExistedDir)
-        {
-            QDir directory(path);
-            directory.rmpath(".");
-        }
-        defaultPath();
-        return;
-    }
+    QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks |
+                                                              QFileDialog::DontUseNativeDialog,
+                                                              QFileDialog::Directory, QFileDialog::AcceptOpen);
 
-    item->setText(dir);
-    item->setToolTip(dir);
+    const QString dir = QFileInfo(filename).filePath();
 
     if (usedNotExistedDir)
     {
         QDir directory(path);
         directory.rmpath(".");
     }
+
+    if (dir.isEmpty())
+    {
+        return;
+    }
+
+    item->setText(dir);
+    item->setToolTip(dir);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -217,8 +216,8 @@ void PreferencesPathPage::initializeTable()
         QTableWidgetItem *item = new QTableWidgetItem(tr("My Patterns"));
         item->setIcon(QIcon("://icon/32x32/seamly2d_file.png"));
         ui->pathTable->setItem(0, 0, item);
-        item = new QTableWidgetItem(settings->GetPathPattern());
-        item->setToolTip(settings->GetPathPattern());
+        item = new QTableWidgetItem(settings->getPatternPath());
+        item->setToolTip(settings->getPatternPath());
         ui->pathTable->setItem(0, 1, item);
     }
 
@@ -262,8 +261,8 @@ void PreferencesPathPage::initializeTable()
         QTableWidgetItem *item = new QTableWidgetItem(tr("My Label Templates"));
         item->setIcon(QIcon("://icon/32x32/labels.png"));
         ui->pathTable->setItem(5, 0, item);
-        item = new QTableWidgetItem(settings->GetPathLabelTemplate());
-        item->setToolTip(settings->GetPathLabelTemplate());
+        item = new QTableWidgetItem(settings->getLabelTemplatePath());
+        item->setToolTip(settings->getLabelTemplatePath());
         ui->pathTable->setItem(5, 1, item);
     }
 

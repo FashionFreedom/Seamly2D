@@ -97,6 +97,7 @@ void SeamlyMePreferencesPathPage::Apply()
     settings->setIndividualSizePath(ui->pathTable->item(0, 1)->text());
     settings->setMultisizePath(ui->pathTable->item(1, 1)->text());
     settings->setTemplatePath(ui->pathTable->item(2, 1)->text());
+    settings->setBodyScansPath(ui->pathTable->item(3, 1)->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -117,6 +118,9 @@ void SeamlyMePreferencesPathPage::defaultPath()
             break;
         case 2: // templates
             path = VCommonSettings::getDefaultTemplatePath();
+            break;
+        case 3: // body scans
+            path = VCommonSettings::getDefaultBodyScansPath();
             break;
         default:
             break;
@@ -146,6 +150,9 @@ void SeamlyMePreferencesPathPage::editPath()
         case 2: // templates
             path = qApp->SeamlyMeSettings()->getTemplatePath();
             break;
+        case 3: // body scans
+            path = qApp->SeamlyMeSettings()->getBodyScansPath();
+            break;
         default:
             break;
     }
@@ -157,17 +164,22 @@ void SeamlyMePreferencesPathPage::editPath()
         usedNotExistedDir = directory.mkpath(".");
     }
 
-    const QString dir = QFileDialog::getExistingDirectory(this, tr("Open Directory"), path,
-                                                          QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+    QString filename = fileDialog(this, tr("Open Directory"), path, QString(""), nullptr,
+                                                              QFileDialog::ShowDirsOnly |
+                                                              QFileDialog::DontResolveSymlinks |
+                                                              QFileDialog::DontUseNativeDialog,
+                                                              QFileDialog::Directory, QFileDialog::AcceptOpen);
+
+    const QString dir = QFileInfo(filename).filePath();
+
+    if (usedNotExistedDir)
+    {
+        QDir directory(path);
+        directory.rmpath(".");
+    }
+
     if (dir.isEmpty())
     {
-        if (usedNotExistedDir)
-        {
-            QDir directory(path);
-            directory.rmpath(".");
-        }
-
-        defaultPath();
         return;
     }
 
@@ -178,7 +190,7 @@ void SeamlyMePreferencesPathPage::editPath()
 //---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesPathPage::initializeTable()
 {
-    ui->pathTable->setRowCount(3);
+    ui->pathTable->setRowCount(4);
     ui->pathTable->setColumnCount(2);
 
     const VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
@@ -208,6 +220,15 @@ void SeamlyMePreferencesPathPage::initializeTable()
         item = new QTableWidgetItem(settings->getTemplatePath());
         item->setToolTip(settings->getTemplatePath());
         ui->pathTable->setItem(2, 1, item);
+    }
+
+    {
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Body Scans"));
+        item->setIcon(QIcon("://icon/32x32/body_scan.png"));
+        ui->pathTable->setItem(3, 0, item);
+        item = new QTableWidgetItem(settings->getBodyScansPath());
+        item->setToolTip(settings->getBodyScansPath());
+        ui->pathTable->setItem(3, 1, item);
     }
 
     ui->pathTable->verticalHeader()->setDefaultSectionSize(20);

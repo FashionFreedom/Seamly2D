@@ -1187,12 +1187,24 @@
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="import_Menu">
+     <property name="title">
+      <string>Import body scan as</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+       <normaloff>:/icon/32x32/body_scan.png</normaloff>:/icon/32x32/body_scan.png</iconset>
+     </property>
+     <addaction name="bodyScanner2_Action"/>
+    </widget>
     <addaction name="actionNew"/>
     <addaction name="separator"/>
     <addaction name="actionOpenIndividual"/>
     <addaction name="actionOpenMultisize"/>
     <addaction name="actionOpenTemplate"/>
     <addaction name="actionCreateFromExisting"/>
+    <addaction name="separator"/>
+    <addaction name="import_Menu"/>
     <addaction name="separator"/>
     <addaction name="print_Action"/>
     <addaction name="actionSave"/>
@@ -1204,6 +1216,7 @@
     <addaction name="actionPreferences"/>
     <addaction name="separator"/>
     <addaction name="actionQuit"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="window_Menu">
     <property name="title">
@@ -1596,12 +1609,22 @@
     <string>Ctrl+P</string>
    </property>
   </action>
+  <action name="bodyScanner1_Action">
+   <property name="text">
+    <string>3D Measure Up</string>
+   </property>
+  </action>
+  <action name="bodyScanner2_Action">
+   <property name="text">
+    <string>3D Look</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources>
   <include location="share/resources/seamlymeicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
