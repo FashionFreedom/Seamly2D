@@ -5,7 +5,7 @@ INSTALL_INDIVIDUAL_MEASUREMENTS += \
 
 # Keep path to all files with multisize measurements we support right now
 INSTALL_MULTISIZE_MEASUREMENTS += \
-    $${PWD}/share/samples/measurements/multisize/GOST_man_ru.smms
+    $${PWD}/share/samples/measurements/multisize/gost_man_ru.smms
 
 # Keep path to all template files we have right now
 INSTALL_STANDARD_TEMPLATES += \
