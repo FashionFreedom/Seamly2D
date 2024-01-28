@@ -216,7 +216,7 @@ COLLECTION_FILES += \
     share/basic_block_women-2016.sm2d \
     share/gent_jacket_with_tummy.sm2d \
     share/moulage/moulage_05_armhole_neckline.sm2d \
-    share/moulage/07_Armhole_adjustment_010.sm2d \
+    share/moulage/07_armhole_adjustment_010.sm2d \
     share/moulage/my_calculated_measurements.smis \
     tst_seamlyme/gost_man_ru.smms
 
