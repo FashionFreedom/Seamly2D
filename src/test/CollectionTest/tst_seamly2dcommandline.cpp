@@ -256,7 +256,7 @@ void TST_Seamly2DCommandLine::TestOpenCollection_data() const
     QTest::addColumn<int>("exitCode");
 
     const QString tmp = QCoreApplication::applicationDirPath() + QDir::separator() + tmpTestCollectionFolder;
-    const QString testGOST = QString("--test;;-m;;%1").arg(tmp + QDir::separator() + QLatin1String("GOST_man_ru.smms"));
+    const QString testGOST = QString("--test;;-m;;%1").arg(tmp + QDir::separator() + QLatin1String("gost_man_ru.smms"));
     const QString keyTest = QStringLiteral("--test");
 
     QTest::newRow("bra")               << "bra.sm2d"               << keyTest  << V_EX_OK;
