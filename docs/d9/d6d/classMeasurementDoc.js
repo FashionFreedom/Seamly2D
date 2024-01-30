@@ -22,7 +22,7 @@ var classMeasurementDoc =
     [ "GenderToStr", "d9/d6d/classMeasurementDoc.html#af1752141c5b7d9aa5c02d47e840bc287", null ],
     [ "GetData", "d9/d6d/classMeasurementDoc.html#a1f410d38e3cb926b9029dda62c637c28", null ],
     [ "GivenName", "d9/d6d/classMeasurementDoc.html#aedff748da8c174cee91bbc4f752046ce", null ],
-    [ "IsReadOnly", "d9/d6d/classMeasurementDoc.html#a87a146208fa21fcb9b10910e7b2a3d1c", null ],
+    [ "isReadOnly", "d9/d6d/classMeasurementDoc.html#a64395ba0e376195fa2eb0c0b3a34a310", null ],
     [ "ListAll", "d9/d6d/classMeasurementDoc.html#a7d9be652311d803aa96104ab37efd304", null ],
     [ "listKnown", "d9/d6d/classMeasurementDoc.html#aa8ad974fc40033af6683f3cda7848323", null ],
     [ "MakeEmpty", "d9/d6d/classMeasurementDoc.html#a0ab00843f48eb7307b0c3eeacb7991cf", null ],
@@ -83,6 +83,8 @@ var classMeasurementDoc =
     [ "TagPMSystem", "d9/d6d/classMeasurementDoc.html#aa670b0ca2a640d1dc7fb97e59d0a64ec", null ],
     [ "TagReadOnly", "d9/d6d/classMeasurementDoc.html#a74fe50fe614ca3fa833efb2483291f1e", null ],
     [ "TagSize", "d9/d6d/classMeasurementDoc.html#a45c226924443c565c8f4d6a302673d61", null ],
+    [ "TagSMIS", "d9/d6d/classMeasurementDoc.html#a98f7a4d80ebe32f122d50c28661e2304", null ],
+    [ "TagSMMS", "d9/d6d/classMeasurementDoc.html#a855c0191324b26e6cd8ec115c02d2b96", null ],
     [ "TagVIT", "d9/d6d/classMeasurementDoc.html#a4f3be4ca41910935eadadd90f73d99f9", null ],
     [ "TagVST", "d9/d6d/classMeasurementDoc.html#a934612deb287a7b3aee43e3caab7fd54", null ],
     [ "type", "d9/d6d/classMeasurementDoc.html#aa3fdbc0f8eb0571f66c9cb767d34c82e", null ]

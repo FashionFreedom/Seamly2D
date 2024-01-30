@@ -185,8 +185,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a05ee0216be7eb91e627fd822dcecf0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d7cdb6926d491a419f7d16e291aeb52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a7d7cdb6926d491a419f7d16e291aeb52">SetEmail</a> (const QString &amp;text)</td></tr>
 <tr class="separator:a7d7cdb6926d491a419f7d16e291aeb52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87a146208fa21fcb9b10910e7b2a3d1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a87a146208fa21fcb9b10910e7b2a3d1c">IsReadOnly</a> () const</td></tr>
-<tr class="separator:a87a146208fa21fcb9b10910e7b2a3d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64395ba0e376195fa2eb0c0b3a34a310"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a64395ba0e376195fa2eb0c0b3a34a310">isReadOnly</a> () const</td></tr>
+<tr class="separator:a64395ba0e376195fa2eb0c0b3a34a310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3031cd8f255dd7800b080832b5cf5e53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a3031cd8f255dd7800b080832b5cf5e53">SetReadOnly</a> (bool ro)</td></tr>
 <tr class="separator:a3031cd8f255dd7800b080832b5cf5e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a855d940f8f5f124c0435f56e64670a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a855d940f8f5f124c0435f56e64670a2e">setSize</a> (qreal *size)</td></tr>
@@ -298,6 +298,10 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a934612deb287a7b3aee43e3caab7fd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f3be4ca41910935eadadd90f73d99f9"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a4f3be4ca41910935eadadd90f73d99f9">TagVIT</a> = QStringLiteral(&quot;vit&quot;)</td></tr>
 <tr class="separator:a4f3be4ca41910935eadadd90f73d99f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855c0191324b26e6cd8ec115c02d2b96"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a855c0191324b26e6cd8ec115c02d2b96">TagSMMS</a> = QStringLiteral(&quot;smms&quot;)</td></tr>
+<tr class="separator:a855c0191324b26e6cd8ec115c02d2b96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98f7a4d80ebe32f122d50c28661e2304"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a98f7a4d80ebe32f122d50c28661e2304">TagSMIS</a> = QStringLiteral(&quot;smis&quot;)</td></tr>
+<tr class="separator:a98f7a4d80ebe32f122d50c28661e2304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33c44bab639478e2024304128c576c1f"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a33c44bab639478e2024304128c576c1f">TagBodyMeasurements</a> = QStringLiteral(&quot;body-measurements&quot;)</td></tr>
 <tr class="separator:a33c44bab639478e2024304128c576c1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41f903d953b1c1c683a981edc3989b74"><td class="memItemLeft" align="right" valign="top">static const QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d6d/classMeasurementDoc.html#a41f903d953b1c1c683a981edc3989b74">TagNotes</a> = QStringLiteral(&quot;notes&quot;)</td></tr>
@@ -438,9 +442,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00122">122</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00127">127</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>, <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
 
 </div>
 </div>
@@ -470,9 +474,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00133">133</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00138">138</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">Individual</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">Individual</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>.</p>
 
 </div>
 </div>
@@ -514,9 +518,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00146">146</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00151">151</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, and <a class="el" href="../../d4/da4/def_8h_source.html#l00337">SCASSERT</a>.</p>
 
 </div>
 </div>
@@ -572,11 +576,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00180">180</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00185">185</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01543">TMainWindow::AddCustom()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01572">TMainWindow::AddKnown()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01629">TMainWindow::ImportFromPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01546">TMainWindow::AddCustom()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01575">TMainWindow::AddKnown()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01632">TMainWindow::ImportFromPattern()</a>.</p>
 
 </div>
 </div>
@@ -612,11 +616,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00189">189</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00194">194</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01543">TMainWindow::AddCustom()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01572">TMainWindow::AddKnown()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01629">TMainWindow::ImportFromPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01546">TMainWindow::AddCustom()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01575">TMainWindow::AddKnown()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01632">TMainWindow::ImportFromPattern()</a>.</p>
 
 </div>
 </div>
@@ -635,11 +639,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">400</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">405</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00833">UniqueTagAttr()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">TagHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00838">UniqueTagAttr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00640">TMainWindow::changeEvent()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00643">TMainWindow::changeEvent()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -658,11 +662,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">387</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">392</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagSize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00833">UniqueTagAttr()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00140">TagSize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00838">UniqueTagAttr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00640">TMainWindow::changeEvent()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00643">TMainWindow::changeEvent()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -681,11 +685,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00458">458</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00463">463</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00110">defBirthDate</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagBirthDate</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00115">defBirthDate</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagBirthDate</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01315">TMainWindow::SaveBirthDate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01318">TMainWindow::SaveBirthDate()</a>.</p>
 
 </div>
 </div>
@@ -704,11 +708,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00363">363</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00368">368</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00151">AttrValue</a>, <a class="el" href="../../dd/d20/qmutokenparser_8cpp_source.html#l00107">qmu::QmuTokenParser::IsSingle()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrValue</a>, <a class="el" href="../../dd/d20/qmutokenparser_8cpp_source.html#l00107">qmu::QmuTokenParser::IsSingle()</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>.</p>
 
 </div>
 </div>
@@ -736,9 +740,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00961">961</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00966">966</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00488">PMSystem()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00494">SetPMSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00493">PMSystem()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00499">SetPMSystem()</a>.</p>
 
 </div>
 </div>
@@ -766,11 +770,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">784</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">789</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00961">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00110">defBirthDate</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00115">anonymous_namespace{measurements.cpp}::FileComment()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">GenderToStr()</a>, <a class="el" href="../../d0/d93/individual__size__converter_8h_source.html#l00076">IndividualSizeConverter::MeasurementMaxVerStr</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagBirthDate</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagEmail</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">TagFamilyName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGender</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">TagGivenName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagNotes</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00140">TagPersonal</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagPMSystem</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagReadOnly</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00116">VDomDocument::TagUnit</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00115">VDomDocument::TagVersion</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00135">TagVIT</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00749">UnitsToStr()</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00966">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00115">defBirthDate</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00120">anonymous_namespace{measurements.cpp}::FileComment()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">GenderToStr()</a>, <a class="el" href="../../d0/d93/individual__size__converter_8h_source.html#l00076">IndividualSizeConverter::MeasurementMaxVerStr</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagBirthDate</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagEmail</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagFamilyName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagGender</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGivenName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagNotes</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">TagPersonal</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagPMSystem</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00149">TagReadOnly</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagSMIS</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00116">VDomDocument::TagUnit</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00115">VDomDocument::TagVersion</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00749">UnitsToStr()</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00133">MeasurementDoc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00138">MeasurementDoc()</a>.</p>
 
 </div>
 </div>
@@ -814,11 +818,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">741</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">746</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00961">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00115">anonymous_namespace{measurements.cpp}::FileComment()</a>, <a class="el" href="../../d5/d4c/multi__size__converter_8h_source.html#l00076">MultiSizeConverter::MeasurementMaxVerStr</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagNotes</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagPMSystem</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagReadOnly</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagSize</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00116">VDomDocument::TagUnit</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00115">VDomDocument::TagVersion</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00134">TagVST</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00749">UnitsToStr()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00966">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00120">anonymous_namespace{measurements.cpp}::FileComment()</a>, <a class="el" href="../../d5/d4c/multi__size__converter_8h_source.html#l00076">MultiSizeConverter::MeasurementMaxVerStr</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">TagHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagNotes</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagPMSystem</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00149">TagReadOnly</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00140">TagSize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagSMMS</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00116">VDomDocument::TagUnit</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00115">VDomDocument::TagVersion</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00749">UnitsToStr()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00146">MeasurementDoc()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00151">MeasurementDoc()</a>.</p>
 
 </div>
 </div>
@@ -837,11 +841,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00712">712</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00717">717</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dd/de9/measurements__def_8cpp_source.html#l01185">AllGroupNames()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00696">listKnown()</a>.</p>
+<p class="reference">References <a class="el" href="../../dd/de9/measurements__def_8cpp_source.html#l01185">AllGroupNames()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00701">listKnown()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>.</p>
 
 </div>
 </div>
@@ -860,11 +864,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00503">503</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00508">508</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagEmail</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagEmail</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01294">TMainWindow::SaveEmail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01297">TMainWindow::SaveEmail()</a>.</p>
 
 </div>
 </div>
@@ -908,11 +912,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00931">931</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00936">936</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00718">VContainer::DataVariables()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>, and <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00718">VContainer::DataVariables()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -931,11 +935,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00428">428</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00433">433</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">TagFamilyName</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagFamilyName</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01284">TMainWindow::SaveFamilyName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01287">TMainWindow::SaveFamilyName()</a>.</p>
 
 </div>
 </div>
@@ -963,11 +967,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">886</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">891</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrName</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">AttrName</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00189">AddEmptyAfter()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00263">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00248">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00214">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00233">MoveUp()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00207">Remove()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00577">SetMBaseValue()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00619">SetMDescription()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00633">SetMFullName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00605">SetMHeightIncrease()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00549">SetMName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00591">SetMSizeIncrease()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00563">SetMValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00194">AddEmptyAfter()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00268">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00253">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00219">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00238">MoveUp()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00212">Remove()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00582">SetMBaseValue()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00624">SetMDescription()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00638">SetMFullName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00610">SetMHeightIncrease()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00554">SetMName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00596">SetMSizeIncrease()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00568">SetMValue()</a>.</p>
 
 </div>
 </div>
@@ -986,11 +990,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00473">473</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00478">478</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">GenderUnknown</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00662">StrToGender()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGender</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00162">GenderUnknown</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00667">StrToGender()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagGender</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01304">TMainWindow::SaveGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01307">TMainWindow::SaveGender()</a>.</p>
 
 </div>
 </div>
@@ -1018,11 +1022,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">647</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">652</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01ab719ce180ec7bd9641fece2f920f4817">Female</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00159">GenderFemale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">GenderMale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">GenderUnknown</a>, <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a63889cfb9d3cbe05d1bd2be5cc9953fd">Male</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01ab719ce180ec7bd9641fece2f920f4817">Female</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00161">GenderFemale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">GenderMale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00162">GenderUnknown</a>, <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a63889cfb9d3cbe05d1bd2be5cc9953fd">Male</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00479">SetGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00484">SetGender()</a>.</p>
 
 </div>
 </div>
@@ -1041,9 +1045,9 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00735">735</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00740">740</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>.</p>
 
 </div>
 </div>
@@ -1062,22 +1066,22 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00443">443</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00448">448</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">TagGivenName</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGivenName</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01274">TMainWindow::SaveGivenName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01277">TMainWindow::SaveGivenName()</a>.</p>
 
 </div>
 </div>
-<a id="a87a146208fa21fcb9b10910e7b2a3d1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a146208fa21fcb9b10910e7b2a3d1c">&#9670;&nbsp;</a></span>IsReadOnly()</h2>
+<a id="a64395ba0e376195fa2eb0c0b3a34a310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64395ba0e376195fa2eb0c0b3a34a310">&#9670;&nbsp;</a></span>isReadOnly()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool MeasurementDoc::IsReadOnly </td>
+          <td class="memname">bool MeasurementDoc::isReadOnly </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1085,11 +1089,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">518</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">523</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00199">falseStr</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagReadOnly</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00198">trueStr</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00199">falseStr</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00149">TagReadOnly</a>, <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00198">trueStr</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00392">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01049">TMainWindow::FileSaveAs()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00464">SetBirthDate()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00509">SetEmail()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00434">SetFamilyName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00479">SetGender()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00449">SetGivenName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00419">SetNotes()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00494">SetPMSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00395">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01052">TMainWindow::FileSaveAs()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00469">SetBirthDate()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00514">SetEmail()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00439">SetFamilyName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00484">SetGender()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00454">SetGivenName()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00424">SetNotes()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00499">SetPMSystem()</a>.</p>
 
 </div>
 </div>
@@ -1108,11 +1112,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00678">678</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00683">683</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrName</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">AttrName</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00625">MainWindow::checkRequiredMeasurements()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01629">TMainWindow::ImportFromPattern()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00696">listKnown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l00625">MainWindow::checkRequiredMeasurements()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01632">TMainWindow::ImportFromPattern()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00701">listKnown()</a>.</p>
 
 </div>
 </div>
@@ -1131,11 +1135,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00696">696</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00701">701</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00070">CustomMSign</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00678">ListAll()</a>.</p>
+<p class="reference">References <a class="el" href="../../de/d31/ifcdef_8cpp_source.html#l00070">CustomMSign</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00683">ListAll()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01572">TMainWindow::AddKnown()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00712">eachKnownNameIsValid()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01575">TMainWindow::AddKnown()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00717">eachKnownNameIsValid()</a>.</p>
 
 </div>
 </div>
@@ -1173,11 +1177,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">858</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">863</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrHeightIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrSizeIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00151">AttrValue</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrHeightIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">AttrName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">AttrSizeIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrValue</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00180">addEmpty()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00189">AddEmptyAfter()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00185">addEmpty()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00194">AddEmptyAfter()</a>.</p>
 
 </div>
 </div>
@@ -1197,11 +1201,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00263">263</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00268">268</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01473">TMainWindow::MoveBottom()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01476">TMainWindow::MoveBottom()</a>.</p>
 
 </div>
 </div>
@@ -1221,11 +1225,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00248">248</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00253">253</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01455">TMainWindow::MoveDown()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01458">TMainWindow::MoveDown()</a>.</p>
 
 </div>
 </div>
@@ -1245,11 +1249,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00214">214</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00219">219</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01419">TMainWindow::MoveTop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01422">TMainWindow::MoveTop()</a>.</p>
 
 </div>
 </div>
@@ -1269,11 +1273,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00233">233</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00238">238</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01437">TMainWindow::MoveUp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01440">TMainWindow::MoveUp()</a>.</p>
 
 </div>
 </div>
@@ -1292,11 +1296,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00413">413</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00418">418</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagNotes</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagNotes</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01325">TMainWindow::SaveNotes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01328">TMainWindow::SaveNotes()</a>.</p>
 
 </div>
 </div>
@@ -1315,11 +1319,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00488">488</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00493">493</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00961">ClearPMCode()</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagPMSystem</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00966">ClearPMCode()</a>, <a class="el" href="../../d4/d4f/pmsystems_8cpp_source.html#l00114">p998_S</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagPMSystem</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00573">VDomDocument::UniqueTagText()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02258">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01335">TMainWindow::SavePMSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02261">TMainWindow::InitWindow()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01338">TMainWindow::SavePMSystem()</a>.</p>
 
 </div>
 </div>
@@ -1338,11 +1342,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">282</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">287</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00327">VContainer::AddVariable()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">AttrDescription</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">AttrFullName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrHeightIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrSizeIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00151">AttrValue</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">BaseSize()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">data</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00931">EvalFormula()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00502">VDomDocument::GetParametrDouble()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00460">VDomDocument::GetParametrString()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00599">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00605">VContainer::GetTrVars()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00180">m_currentHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">m_currentSize</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00560">VDomDocument::measurementUnits()</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagMeasurement</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d3/df7/vcontainer_8h_source.html#l00327">VContainer::AddVariable()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">AttrDescription</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">AttrFullName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrHeightIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">AttrName</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">AttrSizeIncrease</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrValue</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">BaseSize()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">data</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00936">EvalFormula()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00502">VDomDocument::GetParametrDouble()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00460">VDomDocument::GetParametrString()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00599">VContainer::GetPatternUnit()</a>, <a class="el" href="../../d6/d46/vcontainer_8cpp_source.html#l00605">VContainer::GetTrVars()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00182">m_currentHeight</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00181">m_currentSize</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00560">VDomDocument::measurementUnits()</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">TagMeasurement</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02648">TMainWindow::RefreshData()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02651">TMainWindow::RefreshData()</a>.</p>
 
 </div>
 </div>
@@ -1369,11 +1373,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00913">913</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">918</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">Individual</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00135">TagVIT</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00134">TagVST</a>, and <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">Individual</a>, <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386afe654bbf4b3083da71b3eb42ae08ebcc">Multisize</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagSMIS</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagSMMS</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00135">TagVIT</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00134">TagVST</a>, and <a class="el" href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00159">setXMLContent()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00164">setXMLContent()</a>.</p>
 
 </div>
 </div>
@@ -1393,11 +1397,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00207">207</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00212">212</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">TagBodyMeasurements</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">TagBodyMeasurements</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01348">TMainWindow::Remove()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01351">TMainWindow::Remove()</a>.</p>
 
 </div>
 </div>
@@ -1437,11 +1441,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d6/deb/classVDomDocument.html#aeaf681ea2c0d1efb06557f18e00f49c6">VDomDocument</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00166">166</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00171">171</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00115">anonymous_namespace{measurements.cpp}::FileComment()</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00742">VDomDocument::SaveDocument()</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00120">anonymous_namespace{measurements.cpp}::FileComment()</a>, and <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00742">VDomDocument::SaveDocument()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02522">TMainWindow::SaveMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02525">TMainWindow::SaveMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -1461,11 +1465,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00464">464</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00469">469</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagBirthDate</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagBirthDate</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01315">TMainWindow::SaveBirthDate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01318">TMainWindow::SaveBirthDate()</a>.</p>
 
 </div>
 </div>
@@ -1485,11 +1489,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00509">509</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00514">514</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagEmail</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">TagEmail</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01294">TMainWindow::SaveEmail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01297">TMainWindow::SaveEmail()</a>.</p>
 
 </div>
 </div>
@@ -1509,11 +1513,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00434">434</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00439">439</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">TagFamilyName</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">TagFamilyName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01284">TMainWindow::SaveFamilyName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01287">TMainWindow::SaveFamilyName()</a>.</p>
 
 </div>
 </div>
@@ -1533,11 +1537,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00479">479</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00484">484</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">GenderToStr()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGender</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">GenderToStr()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">TagGender</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01304">TMainWindow::SaveGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01307">TMainWindow::SaveGender()</a>.</p>
 
 </div>
 </div>
@@ -1557,11 +1561,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00449">449</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00454">454</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">TagGivenName</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">TagGivenName</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01274">TMainWindow::SaveGivenName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01277">TMainWindow::SaveGivenName()</a>.</p>
 
 </div>
 </div>
@@ -1581,11 +1585,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00543">543</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00548">548</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00180">m_currentHeight</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00182">m_currentHeight</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00392">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00395">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
 
 </div>
 </div>
@@ -1615,11 +1619,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00577">577</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00582">582</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">AttrBase</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrBase</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01999">TMainWindow::SaveMBaseValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02002">TMainWindow::SaveMBaseValue()</a>.</p>
 
 </div>
 </div>
@@ -1649,11 +1653,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00619">619</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00624">624</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">AttrDescription</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">AttrDescription</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02074">TMainWindow::SaveMDescription()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02077">TMainWindow::SaveMDescription()</a>.</p>
 
 </div>
 </div>
@@ -1683,11 +1687,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00633">633</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00638">638</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">AttrFullName</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">AttrFullName</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02101">TMainWindow::SaveMFullName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02104">TMainWindow::SaveMFullName()</a>.</p>
 
 </div>
 </div>
@@ -1717,11 +1721,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00605">605</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00610">610</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrHeightIncrease</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrHeightIncrease</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02049">TMainWindow::SaveMHeightIncrease()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02052">TMainWindow::SaveMHeightIncrease()</a>.</p>
 
 </div>
 </div>
@@ -1751,11 +1755,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00549">549</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00554">554</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">AttrName</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">AttrName</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01861">TMainWindow::SaveMName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01864">TMainWindow::SaveMName()</a>.</p>
 
 </div>
 </div>
@@ -1785,11 +1789,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00591">591</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00596">596</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">AttrSizeIncrease</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">AttrSizeIncrease</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02024">TMainWindow::SaveMSizeIncrease()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l02027">TMainWindow::SaveMSizeIncrease()</a>.</p>
 
 </div>
 </div>
@@ -1819,11 +1823,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00563">563</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00568">568</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00151">AttrValue</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">AttrValue</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, and <a class="el" href="../../d8/da5/vdomdocument_8h_source.html#l00185">VDomDocument::SetAttribute()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01491">TMainWindow::Fx()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01922">TMainWindow::SaveMValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01494">TMainWindow::Fx()</a>, and <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01925">TMainWindow::SaveMValue()</a>.</p>
 
 </div>
 </div>
@@ -1843,11 +1847,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00419">419</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00424">424</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">TagNotes</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">TagNotes</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01325">TMainWindow::SaveNotes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01328">TMainWindow::SaveNotes()</a>.</p>
 
 </div>
 </div>
@@ -1867,11 +1871,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00494">494</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00499">499</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00961">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">TagPMSystem</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00966">ClearPMCode()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagPMSystem</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01335">TMainWindow::SavePMSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01338">TMainWindow::SavePMSystem()</a>.</p>
 
 </div>
 </div>
@@ -1891,11 +1895,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00524">524</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00529">529</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00199">falseStr</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">TagReadOnly</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00198">trueStr</a>.</p>
+<p class="reference">References <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00199">falseStr</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00804">VDomDocument::setTagText()</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00149">TagReadOnly</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00198">trueStr</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01049">TMainWindow::FileSaveAs()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l01052">TMainWindow::FileSaveAs()</a>.</p>
 
 </div>
 </div>
@@ -1915,11 +1919,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00537">537</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00542">542</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">m_currentSize</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00181">m_currentSize</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00392">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00395">TMainWindow::FileNew()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
 
 </div>
 </div>
@@ -1949,11 +1953,11 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">VDomDocument</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00159">159</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00164">164</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00913">ReadType()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00703">VDomDocument::setXMLContent()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>.</p>
+<p class="reference">References <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">ReadType()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00703">VDomDocument::setXMLContent()</a>, and <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
 
 </div>
 </div>
@@ -1981,11 +1985,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00662">662</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00667">667</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01ab719ce180ec7bd9641fece2f920f4817">Female</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00159">GenderFemale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">GenderMale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">GenderUnknown</a>, <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a63889cfb9d3cbe05d1bd2be5cc9953fd">Male</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01ab719ce180ec7bd9641fece2f920f4817">Female</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00161">GenderFemale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">GenderMale</a>, <a class="el" href="../../dc/db7/measurements_8h_source.html#l00162">GenderUnknown</a>, <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a63889cfb9d3cbe05d1bd2be5cc9953fd">Male</a>, and <a class="el" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00473">Gender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00478">Gender()</a>.</p>
 
 </div>
 </div>
@@ -2004,11 +2008,11 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00381">381</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00386">386</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">type</a>.</p>
+<p class="reference">References <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">type</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03077">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l00249">TMainWindow::LoadFile()</a>, <a class="el" href="../../dc/de1/tmainwindow_8cpp_source.html#l03080">TMainWindow::LoadFromExistingFile()</a>, and <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l06098">MainWindow::LoadPattern()</a>.</p>
 
 </div>
 </div>
@@ -2052,11 +2056,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00833">833</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00838">838</a> of file <a class="el" href="../../d9/de3/measurements_8cpp_source.html">measurements.cpp</a>.</p>
 
 <p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a4d42fd7ad795178d64613eba2a2aa9ad">Cm</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00502">VDomDocument::GetParametrDouble()</a>, <a class="el" href="../../d7/d49/vdomdocument_8cpp_source.html#l00560">VDomDocument::measurementUnits()</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">BaseHeight()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">BaseSize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">BaseHeight()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">BaseSize()</a>.</p>
 
 </div>
 </div>
@@ -2081,9 +2085,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">150</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">152</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">BaseSize()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00577">SetMBaseValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">BaseSize()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00582">SetMBaseValue()</a>.</p>
 
 </div>
 </div>
@@ -2107,9 +2111,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">154</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">156</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00619">SetMDescription()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00624">SetMDescription()</a>.</p>
 
 </div>
 </div>
@@ -2133,9 +2137,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00156">156</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">158</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00633">SetMFullName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00638">SetMFullName()</a>.</p>
 
 </div>
 </div>
@@ -2159,9 +2163,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">153</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">155</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00605">SetMHeightIncrease()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00610">SetMHeightIncrease()</a>.</p>
 
 </div>
 </div>
@@ -2185,9 +2189,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00155">155</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00157">157</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00678">ListAll()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00549">SetMName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00683">ListAll()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00554">SetMName()</a>.</p>
 
 </div>
 </div>
@@ -2211,9 +2215,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00152">152</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00154">154</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00591">SetMSizeIncrease()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00596">SetMSizeIncrease()</a>.</p>
 
 </div>
 </div>
@@ -2237,9 +2241,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00151">151</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00153">153</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00363">ClearForExport()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00563">SetMValue()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00368">ClearForExport()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00568">SetMValue()</a>.</p>
 
 </div>
 </div>
@@ -2265,9 +2269,9 @@ Additional Inherited Members</h2></td></tr>
 
 <p>data container with data. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00176">176</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00178">178</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00931">EvalFormula()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00735">GetData()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00122">MeasurementDoc()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00936">EvalFormula()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00740">GetData()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00127">MeasurementDoc()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -2291,9 +2295,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00159">159</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00161">161</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00662">StrToGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00667">StrToGender()</a>.</p>
 
 </div>
 </div>
@@ -2317,9 +2321,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00158">158</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">160</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00662">StrToGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00667">StrToGender()</a>.</p>
 
 </div>
 </div>
@@ -2343,9 +2347,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00160">160</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00162">162</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00473">Gender()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00647">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00662">StrToGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00478">Gender()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00652">GenderToStr()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00667">StrToGender()</a>.</p>
 
 </div>
 </div>
@@ -2369,9 +2373,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00180">180</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00182">182</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00543">setHeight()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00548">setHeight()</a>.</p>
 
 </div>
 </div>
@@ -2395,9 +2399,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">179</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00181">181</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00537">setSize()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00542">setSize()</a>.</p>
 
 </div>
 </div>
@@ -2421,9 +2425,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">143</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">145</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00458">BirthDate()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00464">SetBirthDate()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00463">BirthDate()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00469">SetBirthDate()</a>.</p>
 
 </div>
 </div>
@@ -2447,9 +2451,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">136</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">138</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00180">addEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00189">AddEmptyAfter()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00263">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00248">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00214">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00233">MoveUp()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00207">Remove()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00185">addEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00194">AddEmptyAfter()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00268">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00253">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00219">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00238">MoveUp()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00212">Remove()</a>.</p>
 
 </div>
 </div>
@@ -2473,9 +2477,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">146</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">148</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00503">Email()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00509">SetEmail()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00508">Email()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00514">SetEmail()</a>.</p>
 
 </div>
 </div>
@@ -2499,9 +2503,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">141</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00143">143</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00428">FamilyName()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00434">SetFamilyName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00433">FamilyName()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00439">SetFamilyName()</a>.</p>
 
 </div>
 </div>
@@ -2525,9 +2529,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">144</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00146">146</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00473">Gender()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00479">SetGender()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00478">Gender()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00484">SetGender()</a>.</p>
 
 </div>
 </div>
@@ -2551,9 +2555,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">142</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00144">144</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00443">GivenName()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00449">SetGivenName()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00448">GivenName()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00454">SetGivenName()</a>.</p>
 
 </div>
 </div>
@@ -2577,9 +2581,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">139</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00141">141</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">BaseHeight()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">BaseHeight()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>.</p>
 
 </div>
 </div>
@@ -2603,9 +2607,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00148">148</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00150">150</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00363">ClearForExport()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00886">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00678">ListAll()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00263">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00248">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00214">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00233">MoveUp()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00368">ClearForExport()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00891">FindM()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00683">ListAll()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00268">MoveBottom()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00253">MoveDown()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00219">MoveTop()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00238">MoveUp()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>.</p>
 
 </div>
 </div>
@@ -2629,9 +2633,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">137</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00139">139</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00413">Notes()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00419">SetNotes()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00418">Notes()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00424">SetNotes()</a>.</p>
 
 </div>
 </div>
@@ -2655,9 +2659,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00140">140</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00142">142</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>.</p>
 
 </div>
 </div>
@@ -2681,9 +2685,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00145">145</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">147</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00488">PMSystem()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00494">SetPMSystem()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00493">PMSystem()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00499">SetPMSystem()</a>.</p>
 
 </div>
 </div>
@@ -2707,9 +2711,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00147">147</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00149">149</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00518">IsReadOnly()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00524">SetReadOnly()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00523">isReadOnly()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00529">SetReadOnly()</a>.</p>
 
 </div>
 </div>
@@ -2733,9 +2737,61 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00138">138</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00140">140</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">BaseSize()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">BaseSize()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>.</p>
+
+</div>
+</div>
+<a id="a98f7a4d80ebe32f122d50c28661e2304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98f7a4d80ebe32f122d50c28661e2304">&#9670;&nbsp;</a></span>TagSMIS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString MeasurementDoc::TagSMIS = QStringLiteral(&quot;smis&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00137">137</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00789">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">ReadType()</a>.</p>
+
+</div>
+</div>
+<a id="a855c0191324b26e6cd8ec115c02d2b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855c0191324b26e6cd8ec115c02d2b96">&#9670;&nbsp;</a></span>TagSMMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const QString MeasurementDoc::TagSMMS = QStringLiteral(&quot;smms&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00136">136</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00746">CreateEmptyMultisizeFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">ReadType()</a>.</p>
 
 </div>
 </div>
@@ -2761,7 +2817,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00135">135</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00784">CreateEmptyIndividualFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00913">ReadType()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">ReadType()</a>.</p>
 
 </div>
 </div>
@@ -2787,7 +2843,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00134">134</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00741">CreateEmptyMultisizeFile()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00913">ReadType()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00918">ReadType()</a>.</p>
 
 </div>
 </div>
@@ -2811,9 +2867,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00177">177</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/db7/measurements_8h_source.html#l00179">179</a> of file <a class="el" href="../../dc/db7/measurements_8h_source.html">measurements.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00400">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00387">BaseSize()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00858">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00282">readMeasurements()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00159">setXMLContent()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00381">Type()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00405">BaseHeight()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00392">BaseSize()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00863">MakeEmpty()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00287">readMeasurements()</a>, <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00164">setXMLContent()</a>, and <a class="el" href="../../d9/de3/measurements_8cpp_source.html#l00386">Type()</a>.</p>
 
 </div>
 </div>

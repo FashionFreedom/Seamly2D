@@ -1,5 +1,9 @@
 var NAVTREEINDEX39 =
 {
+"da/d1a/dialogellipticalarc_8h.html":[2,0,0,1,12,0,1,26],
+"da/d1a/dialogellipticalarc_8h_source.html":[2,0,0,1,12,0,1,26],
+"da/d1b/showdoublepointname_8cpp.html":[2,0,0,1,12,2,0,8],
+"da/d1b/showdoublepointname_8cpp_source.html":[2,0,0,1,12,2,0,8],
 "da/d2c/abstract__m__converter_8h.html":[2,0,0,1,1,1,3],
 "da/d2c/abstract__m__converter_8h_source.html":[2,0,0,1,1,1,3],
 "da/d2c/vlineedit_8h.html":[2,0,0,1,13,46],
@@ -245,9 +249,5 @@ var NAVTREEINDEX39 =
 "da/d5d/classVMainGraphicsView.html#a2b99dac31f68c2ed74674adc00d2e1a7":[1,0,346,10],
 "da/d5d/classVMainGraphicsView.html#a34ef2e7cfed8655063c0fd8e3a01c92d":[1,0,346,36],
 "da/d5d/classVMainGraphicsView.html#a36ede84b9ee68108c9670ef48351eb82":[1,0,346,28],
-"da/d5d/classVMainGraphicsView.html#a3e851399dc8a40bb92445c13e0f11707":[1,0,346,37],
-"da/d5d/classVMainGraphicsView.html#a5084a24b563181434129476dfa17e417":[1,0,346,19],
-"da/d5d/classVMainGraphicsView.html#a59fc66f4fc8b5399da24025361cad68a":[1,0,346,2],
-"da/d5d/classVMainGraphicsView.html#a6173641442850edbf7891dfd654b158b":[1,0,346,27],
-"da/d5d/classVMainGraphicsView.html#a6738f4a2ff500ca45508183167c91355":[1,0,346,7]
+"da/d5d/classVMainGraphicsView.html#a3e851399dc8a40bb92445c13e0f11707":[1,0,346,37]
 };

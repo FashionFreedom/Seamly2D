@@ -59,40 +59,40 @@ var sectionId = 'dynsection-1';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="32,-0.5 32,-365.5 226,-365.5 226,-0.5 32,-0.5"/>
+<polygon fill="#bfbfbf" stroke="black" points="32.5,-0.5 32.5,-365.5 225.5,-365.5 225.5,-0.5 32.5,-0.5"/>
 <text text-anchor="middle" x="129" y="-353.5" font-family="Helvetica,sans-Serif" font-size="10.00">VPatternConverter</text>
-<polyline fill="none" stroke="black" points="32,-346.5 226,-346.5 "/>
-<text text-anchor="start" x="40" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMaxVerStr</text>
-<text text-anchor="start" x="40" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurrentSchema</text>
-<text text-anchor="start" x="40" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMinVer</text>
-<text text-anchor="start" x="40" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMaxVer</text>
-<text text-anchor="start" x="40" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PatternMinVerStr</text>
-<polyline fill="none" stroke="black" points="32,-283.5 226,-283.5 "/>
-<text text-anchor="start" x="40" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPatternConverter()</text>
-<text text-anchor="start" x="40" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPatternConverter()</text>
-<text text-anchor="start" x="40" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MinVer()</text>
-<text text-anchor="start" x="40" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxVer()</text>
-<text text-anchor="start" x="40" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MinVerStr()</text>
-<text text-anchor="start" x="40" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxVerStr()</text>
-<text text-anchor="start" x="40" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># XSDSchema()</text>
-<text text-anchor="start" x="40" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ApplyPatches()</text>
-<text text-anchor="start" x="40" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DowngradeToCurrentMaxVersion()</text>
-<text text-anchor="start" x="40" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsReadOnly()</text>
-<text text-anchor="start" x="40" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_1()</text>
-<text text-anchor="start" x="40" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_2()</text>
-<text text-anchor="start" x="40" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_3()</text>
-<text text-anchor="start" x="40" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_4()</text>
-<text text-anchor="start" x="40" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_0()</text>
-<text text-anchor="start" x="40" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_1()</text>
-<text text-anchor="start" x="40" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_2()</text>
-<text text-anchor="start" x="40" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_3()</text>
-<text text-anchor="start" x="40" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_4()</text>
-<text text-anchor="start" x="40" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_5()</text>
-<text text-anchor="start" x="40" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 68 more...</text>
-<text text-anchor="start" x="40" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
-<text text-anchor="start" x="40" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">_InV0_2_0()</text>
-<text text-anchor="start" x="40" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
-<text text-anchor="start" x="40" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_InV0_2_1()</text>
+<polyline fill="none" stroke="black" points="32.5,-346.5 225.5,-346.5 "/>
+<text text-anchor="start" x="40.5" y="-334.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMaxVerStr</text>
+<text text-anchor="start" x="40.5" y="-323.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CurrentSchema</text>
+<text text-anchor="start" x="40.5" y="-312.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMinVer</text>
+<text text-anchor="start" x="40.5" y="-301.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ PatternMaxVer</text>
+<text text-anchor="start" x="40.5" y="-290.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; PatternMinVerStr</text>
+<polyline fill="none" stroke="black" points="32.5,-283.5 225.5,-283.5 "/>
+<text text-anchor="start" x="40.5" y="-271.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VPatternConverter()</text>
+<text text-anchor="start" x="40.5" y="-260.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VPatternConverter()</text>
+<text text-anchor="start" x="40.5" y="-249.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
+<text text-anchor="start" x="40.5" y="-238.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
+<text text-anchor="start" x="40.5" y="-227.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
+<text text-anchor="start" x="40.5" y="-216.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
+<text text-anchor="start" x="40.5" y="-205.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
+<text text-anchor="start" x="40.5" y="-194.5" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
+<text text-anchor="start" x="40.5" y="-183.5" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
+<text text-anchor="start" x="40.5" y="-172.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
+<text text-anchor="start" x="40.5" y="-161.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_1()</text>
+<text text-anchor="start" x="40.5" y="-150.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_2()</text>
+<text text-anchor="start" x="40.5" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_3()</text>
+<text text-anchor="start" x="40.5" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_1_4()</text>
+<text text-anchor="start" x="40.5" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_0()</text>
+<text text-anchor="start" x="40.5" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_1()</text>
+<text text-anchor="start" x="40.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_2()</text>
+<text text-anchor="start" x="40.5" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_3()</text>
+<text text-anchor="start" x="40.5" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_4()</text>
+<text text-anchor="start" x="40.5" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; toVersion0_2_5()</text>
+<text text-anchor="start" x="40.5" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 68 more...</text>
+<text text-anchor="start" x="40.5" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
+<text text-anchor="start" x="40.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">_InV0_2_0()</text>
+<text text-anchor="start" x="40.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; OldNamesToNewNames</text>
+<text text-anchor="start" x="40.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">_InV0_2_1()</text>
 </a>
 </g>
 </g>
@@ -100,38 +100,38 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../dc/d68/classVAbstractConverter.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="32,-403.5 32,-746.5 226,-746.5 226,-403.5 32,-403.5"/>
+<polygon fill="white" stroke="black" points="32.5,-403.5 32.5,-746.5 225.5,-746.5 225.5,-403.5 32.5,-403.5"/>
 <text text-anchor="middle" x="129" y="-734.5" font-family="Helvetica,sans-Serif" font-size="10.00">VAbstractConverter</text>
-<polyline fill="none" stroke="black" points="32,-727.5 226,-727.5 "/>
-<text text-anchor="start" x="40" y="-715.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
-<text text-anchor="start" x="40" y="-704.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
-<text text-anchor="start" x="40" y="-693.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
-<polyline fill="none" stroke="black" points="32,-686.5 226,-686.5 "/>
-<text text-anchor="start" x="40" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractConverter()</text>
-<text text-anchor="start" x="40" y="-663.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractConverter()</text>
-<text text-anchor="start" x="40" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Convert()</text>
-<text text-anchor="start" x="40" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCurrentFormatVarsion()</text>
-<text text-anchor="start" x="40" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersionStr()</text>
-<text text-anchor="start" x="40" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersion()</text>
-<text text-anchor="start" x="40" y="-608.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ValidateInputFile()</text>
-<text text-anchor="start" x="40" y="-597.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InvalidVersion()</text>
-<text text-anchor="start" x="40" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Save()</text>
-<text text-anchor="start" x="40" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00"># SetVersion()</text>
-<text text-anchor="start" x="40" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MinVer()</text>
-<text text-anchor="start" x="40" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxVer()</text>
-<text text-anchor="start" x="40" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MinVerStr()</text>
-<text text-anchor="start" x="40" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00"># MaxVerStr()</text>
-<text text-anchor="start" x="40" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00"># XSDSchema()</text>
-<text text-anchor="start" x="40" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ApplyPatches()</text>
-<text text-anchor="start" x="40" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00"># DowngradeToCurrentMaxVersion()</text>
-<text text-anchor="start" x="40" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00"># IsReadOnly()</text>
-<text text-anchor="start" x="40" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
-<text text-anchor="start" x="40" y="-465.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
-<text text-anchor="start" x="40" y="-454.5" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
-<text text-anchor="start" x="40" y="-443.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ReserveFile()</text>
-<text text-anchor="start" x="40" y="-432.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
-<text text-anchor="start" x="40" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeVersionNumber()</text>
-<text text-anchor="start" x="40" y="-410.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
+<polyline fill="none" stroke="black" points="32.5,-727.5 225.5,-727.5 "/>
+<text text-anchor="start" x="40.5" y="-715.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_ver</text>
+<text text-anchor="start" x="40.5" y="-704.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_convertedFileName</text>
+<text text-anchor="start" x="40.5" y="-693.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; m_tmpFile</text>
+<polyline fill="none" stroke="black" points="32.5,-686.5 225.5,-686.5 "/>
+<text text-anchor="start" x="40.5" y="-674.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractConverter()</text>
+<text text-anchor="start" x="40.5" y="-663.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractConverter()</text>
+<text text-anchor="start" x="40.5" y="-652.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Convert()</text>
+<text text-anchor="start" x="40.5" y="-641.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetCurrentFormatVarsion()</text>
+<text text-anchor="start" x="40.5" y="-630.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersionStr()</text>
+<text text-anchor="start" x="40.5" y="-619.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVersion()</text>
+<text text-anchor="start" x="40.5" y="-608.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ValidateInputFile()</text>
+<text text-anchor="start" x="40.5" y="-597.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InvalidVersion()</text>
+<text text-anchor="start" x="40.5" y="-586.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Save()</text>
+<text text-anchor="start" x="40.5" y="-575.5" font-family="Helvetica,sans-Serif" font-size="10.00"># setVersion()</text>
+<text text-anchor="start" x="40.5" y="-564.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVer()</text>
+<text text-anchor="start" x="40.5" y="-553.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVer()</text>
+<text text-anchor="start" x="40.5" y="-542.5" font-family="Helvetica,sans-Serif" font-size="10.00"># minVerStr()</text>
+<text text-anchor="start" x="40.5" y="-531.5" font-family="Helvetica,sans-Serif" font-size="10.00"># maxVerStr()</text>
+<text text-anchor="start" x="40.5" y="-520.5" font-family="Helvetica,sans-Serif" font-size="10.00"># getSchema()</text>
+<text text-anchor="start" x="40.5" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00"># applyPatches()</text>
+<text text-anchor="start" x="40.5" y="-498.5" font-family="Helvetica,sans-Serif" font-size="10.00"># downgradeToCurrentMaxVersion()</text>
+<text text-anchor="start" x="40.5" y="-487.5" font-family="Helvetica,sans-Serif" font-size="10.00"># isReadOnly()</text>
+<text text-anchor="start" x="40.5" y="-476.5" font-family="Helvetica,sans-Serif" font-size="10.00"># Replace()</text>
+<text text-anchor="start" x="40.5" y="-465.5" font-family="Helvetica,sans-Serif" font-size="10.00"># CorrectionsPositions()</text>
+<text text-anchor="start" x="40.5" y="-454.5" font-family="Helvetica,sans-Serif" font-size="10.00"># BiasTokens()</text>
+<text text-anchor="start" x="40.5" y="-443.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ReserveFile()</text>
+<text text-anchor="start" x="40.5" y="-432.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ValidateVersion()</text>
+<text text-anchor="start" x="40.5" y="-421.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeVersionNumber()</text>
+<text text-anchor="start" x="40.5" y="-410.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; removeBakExtension()</text>
 </a>
 </g>
 </g>

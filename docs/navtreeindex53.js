@@ -1,5 +1,9 @@
 var NAVTREEINDEX53 =
 {
+"dd/db1/dialogseamlymepreferences_8cpp_source.html":[2,0,0,0,1,0,5],
+"dd/db1/tst__tstranslation_8h.html":[2,0,0,2,3,12],
+"dd/db1/tst__tstranslation_8h_source.html":[2,0,0,2,3,12],
+"dd/db2/qmutranslation_8cpp.html":[2,0,0,1,2,23],
 "dd/db2/qmutranslation_8cpp_source.html":[2,0,0,1,2,23],
 "dd/db2/vsettings_8h.html":[2,0,0,1,7,24],
 "dd/db2/vsettings_8h_source.html":[2,0,0,1,7,24],
@@ -245,9 +249,5 @@ var NAVTREEINDEX53 =
 "dd/de9/measurements__def_8cpp.html#a7fb5334ead8f20cc9de83c15c3600026":[2,0,0,1,9,4,206],
 "dd/de9/measurements__def_8cpp.html#a81eb4fdc91b57ce6c77115f3a277d487":[2,0,0,1,9,4,214],
 "dd/de9/measurements__def_8cpp.html#a8218c9dead680e0af5fc49c213b19445":[2,0,0,1,9,4,169],
-"dd/de9/measurements__def_8cpp.html#a8271b09c0cd12ae7a452fa15cd33b3d5":[2,0,0,1,9,4,229],
-"dd/de9/measurements__def_8cpp.html#a8292319853b826f39718b0189f29c64c":[2,0,0,1,9,4,234],
-"dd/de9/measurements__def_8cpp.html#a82e1933709a8381f0c91a99bdd40198f":[2,0,0,1,9,4,232],
-"dd/de9/measurements__def_8cpp.html#a83a8d73b968178bee6e47a329e8bcf85":[2,0,0,1,9,4,230],
-"dd/de9/measurements__def_8cpp.html#a83aa60c4d6479c3f870d591ad9196cf2":[2,0,0,1,9,4,29]
+"dd/de9/measurements__def_8cpp.html#a8271b09c0cd12ae7a452fa15cd33b3d5":[2,0,0,1,9,4,229]
 };

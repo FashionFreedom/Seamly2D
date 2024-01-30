@@ -115,7 +115,7 @@ var classTMainWindow =
     [ "labelGradationSizes", "d8/d61/classTMainWindow.html#a0e20ce68bff8a777dbb513527c5c7c2e", null ],
     [ "labelPatternUnit", "d8/d61/classTMainWindow.html#aed841e8627190268620c7c1149cf95c8", null ],
     [ "lock", "d8/d61/classTMainWindow.html#aedb68abec30fcf8edb09d6fe039c5dfd", null ],
-    [ "mIsReadOnly", "d8/d61/classTMainWindow.html#ad6d989710d406f9feac9eb47bc6ab1b5", null ],
+    [ "m_isReadOnly", "d8/d61/classTMainWindow.html#a5e558955439c7a171ee6603296a44325", null ],
     [ "mType", "d8/d61/classTMainWindow.html#a9944451dc8bf731e00d9a3dc2e566e95", null ],
     [ "mUnit", "d8/d61/classTMainWindow.html#accf238814ac28528249e815ed9b7fad2", null ],
     [ "pUnit", "d8/d61/classTMainWindow.html#ab9678491127cea66f8c861ea968a794b", null ],

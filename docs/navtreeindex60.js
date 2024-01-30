@@ -1,5 +1,9 @@
 var NAVTREEINDEX60 =
 {
+"de/db3/classQxtCsvModel.html#a7880c36098c93bd889448a70ad0651d8":[1,0,156,4],
+"de/db3/classQxtCsvModel.html#a79d2eb0cc646860b273cb9107e1638bb":[1,0,156,12],
+"de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31":[1,0,156,0],
+"de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31a18cc2ddfc57fb9d42bceaac1c013e2a4":[1,0,156,0,6],
 "de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31a1f89b9da2466e278d7a79d0da8810200":[1,0,156,0,1],
 "de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31a52f3f29506d7b07663a5006b1b3e95f7":[1,0,156,0,7],
 "de/db3/classQxtCsvModel.html#a81cf512c562674f89d187746052e6a31a59a0c0d62846b0919701fe89c8abfdbf":[1,0,156,0,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX60 =
 "df/d07/classVPE_1_1VWidgetProperty.html":[1,0,2,21],
 "df/d07/classVPE_1_1VWidgetProperty.html#a12fd469adcd89bd1e3606169da2aa0cd":[1,0,2,21,2],
 "df/d07/classVPE_1_1VWidgetProperty.html#a5d854ae5521b83b45a3aa7faf96e3049":[1,0,2,21,1],
-"df/d07/classVPE_1_1VWidgetProperty.html#a73f708d45bd8985fb79471e85b8d59b5":[1,0,2,21,3],
-"df/d07/classVPE_1_1VWidgetProperty.html#a7e2262fab8326088de8aea506da4177e":[1,0,2,21,4],
-"df/d07/classVPE_1_1VWidgetProperty.html#aa804c8a1800406c681872f51c520be49":[1,0,2,21,0],
-"df/d07/classVPE_1_1VWidgetProperty.html#ae002ec93b9e50408e6208ad0bfa39408":[1,0,2,21,5],
-"df/d0c/vabstractfloatitemdata__p_8h.html":[2,0,0,1,9,0,3]
+"df/d07/classVPE_1_1VWidgetProperty.html#a73f708d45bd8985fb79471e85b8d59b5":[1,0,2,21,3]
 };

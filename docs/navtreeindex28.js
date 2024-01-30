@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"d6/deb/classVDomDocument.html#a553f050145886b403697c0a2b43b0f05":[1,0,261,30],
 "d6/deb/classVDomDocument.html#a595506656459aaf6825c1cab2c9b7238":[1,0,261,16],
 "d6/deb/classVDomDocument.html#a59c47296c3a1e728d95dc125b12014d5":[1,0,261,5],
 "d6/deb/classVDomDocument.html#a6012d50aa31b2aafbf513a89c1320daf":[1,0,261,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "d7/d3f/classTST__VSpline.html#a1f3bfae7de6a42a69766753c3b96bae9":[1,0,207,10],
 "d7/d3f/classTST__VSpline.html#a248e5b57c007257517459d15101801b9":[1,0,207,12],
 "d7/d3f/classTST__VSpline.html#a25df2aa37af280d82464cd669ab38d22":[1,0,207,6],
-"d7/d3f/classTST__VSpline.html#a437f9b1929f813cfc8e36c97442237e9":[1,0,207,3],
-"d7/d3f/classTST__VSpline.html#a4c0bb74f50aa2ecf3b8bc3e80e9cad33":[1,0,207,4]
+"d7/d3f/classTST__VSpline.html#a437f9b1929f813cfc8e36c97442237e9":[1,0,207,3]
 };

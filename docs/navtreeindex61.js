@@ -1,5 +1,9 @@
 var NAVTREEINDEX61 =
 {
+"df/d07/classVPE_1_1VWidgetProperty.html#a7e2262fab8326088de8aea506da4177e":[1,0,2,21,4],
+"df/d07/classVPE_1_1VWidgetProperty.html#aa804c8a1800406c681872f51c520be49":[1,0,2,21,0],
+"df/d07/classVPE_1_1VWidgetProperty.html#ae002ec93b9e50408e6208ad0bfa39408":[1,0,2,21,5],
+"df/d0c/vabstractfloatitemdata__p_8h.html":[2,0,0,1,9,0,3],
 "df/d0c/vabstractfloatitemdata__p_8h_source.html":[2,0,0,1,9,0,3],
 "df/d10/qmuparsertokenreader_8cpp.html":[2,0,0,1,2,19],
 "df/d10/qmuparsertokenreader_8cpp_source.html":[2,0,0,1,2,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX61 =
 "df/d7a/vpiece_8cpp.html#ae8655eab9eb2b655a9d590a4f9773c79":[2,0,0,1,9,18,0],
 "df/d7a/vpiece_8cpp_source.html":[2,0,0,1,9,18],
 "df/d7b/classVisToolSplinePath.html":[1,0,324],
-"df/d7b/classVisToolSplinePath.html#a16ed52c2ce60ae3c7fd2bbbb5b6a5fe3":[1,0,324,5],
-"df/d7b/classVisToolSplinePath.html#a1a263582f6ca80fa35211822abb8beee":[1,0,324,15],
-"df/d7b/classVisToolSplinePath.html#a4b85ac86f25cdd2ad1edf9aa334d13d4":[1,0,324,10],
-"df/d7b/classVisToolSplinePath.html#a6258f6f85ee0b7a43276759f2086532e":[1,0,324,9],
-"df/d7b/classVisToolSplinePath.html#a66978dceee4be1382e578ecae85f362d":[1,0,324,13]
+"df/d7b/classVisToolSplinePath.html#a16ed52c2ce60ae3c7fd2bbbb5b6a5fe3":[1,0,324,5]
 };

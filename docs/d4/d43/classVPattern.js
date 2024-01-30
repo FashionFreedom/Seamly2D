@@ -19,7 +19,7 @@ var classVPattern =
     [ "GetLabelBase", "d4/d43/classVPattern.html#a127db4af838b0a76a37c14d22f325451", null ],
     [ "IncrementReferens", "d4/d43/classVPattern.html#acf2548e54b6c3073fa3181cded586ae9", null ],
     [ "IsDefCustom", "d4/d43/classVPattern.html#ab137433052e30764de02adfd625457b3", null ],
-    [ "IsReadOnly", "d4/d43/classVPattern.html#a8681e4fdd2df4d64dfd4ccdaa33fe96c", null ],
+    [ "isReadOnly", "d4/d43/classVPattern.html#a8526cb8e6cb759f6e8dd1741a26fbb0c", null ],
     [ "LiteParseIncrements", "d4/d43/classVPattern.html#a5df4433842644a3cfb3e4340d8c8a0c8", null ],
     [ "LiteParseTree", "d4/d43/classVPattern.html#ad4fb73c93f0028b02295fb1a29bbfac8", null ],
     [ "MakeEmptyIncrement", "d4/d43/classVPattern.html#a7c8de429e2511806815f14d0a584c2b6", null ],

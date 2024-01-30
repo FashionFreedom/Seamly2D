@@ -139,7 +139,7 @@ var classVAbstractPattern =
     [ "SetPatternName", "d8/dba/classVAbstractPattern.html#a6c39894a4171242aef6ca6d554aae07f", null ],
     [ "SetPatternNumber", "d8/dba/classVAbstractPattern.html#a024d57aefc86cc965a8535d6d49c087c", null ],
     [ "SetPatternWasChanged", "d8/dba/classVAbstractPattern.html#a5bfe864f38ea22f19380ce7a9e20d878", null ],
-    [ "SetVersion", "d8/dba/classVAbstractPattern.html#aa145bf409f4500ac5236ab24bd0b4303", null ],
+    [ "setVersion", "d8/dba/classVAbstractPattern.html#af74aecba2ced4e8ebf002a5c12e1861c", null ],
     [ "showPiece", "d8/dba/classVAbstractPattern.html#abcb22a2fffcfbd48d34d7078527d4d7d", null ],
     [ "ShowTool", "d8/dba/classVAbstractPattern.html#a61e3a51093ef0555b997688a554f0912", null ],
     [ "SiblingNodeId", "d8/dba/classVAbstractPattern.html#a58beeca8626849307421f90ee3f44477", null ],
