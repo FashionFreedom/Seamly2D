@@ -189,7 +189,7 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     connect(ui->comboBoxSize, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, DefValueChanged);
 
-    const bool readOnly = doc->IsReadOnly();
+    const bool readOnly = doc->isReadOnly();
     ui->checkBoxPatternReadOnly->setChecked(readOnly);
     if (not readOnly)
     {

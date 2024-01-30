@@ -38,12 +38,8 @@ RESOURCES += \
     share/resources/seamlymeicon.qrc \
     share/resources/diagrams.qrc
 
-# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside tables.pri
-include(../tables.pri)
-
-win32 {
-    copyToDestdir($$INSTALL_STANDARD_TEMPLATES, $$shell_path($${OUT_PWD}/$${DESTDIR}/tables/templates))
-}
+# INSTALL_MULTISIZE_MEASUREMENTS and INSTALL_STANDARD_TEMPLATES and INSTALL_LABEL_TEMPLATES inside samples.pri
+include(../samples.pri)
 
 include(../translations.pri)
 

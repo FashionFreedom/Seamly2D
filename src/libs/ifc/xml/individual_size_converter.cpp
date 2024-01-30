@@ -1,13 +1,13 @@
 /******************************************************************************
  *   @file   individual_size_converter.cpp
  **  @author Douglas S Caskey
- **  @date   14 Jul, 2023
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -80,8 +80,8 @@
  */
 
 const QString IndividualSizeConverter::MeasurementMinVerStr = QStringLiteral("0.2.0");
-const QString IndividualSizeConverter::MeasurementMaxVerStr = QStringLiteral("0.3.3");
-const QString IndividualSizeConverter::CurrentSchema        = QStringLiteral("://schema/individual_measurements/v0.3.3.xsd");
+const QString IndividualSizeConverter::MeasurementMaxVerStr = QStringLiteral("0.3.4");
+const QString IndividualSizeConverter::CurrentSchema        = QStringLiteral("://schema/individual_size_measurements/v0.3.4.xsd");
 
 //IndividualSizeConverter::MeasurementMinVer; // <== DON'T FORGET TO UPDATE TOO!!!!
 //IndividualSizeConverter::MeasurementMaxVer; // <== DON'T FORGET TO UPDATE TOO!!!!
@@ -96,19 +96,21 @@ IndividualSizeConverter::IndividualSizeConverter(const QString &fileName)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString IndividualSizeConverter::XSDSchema(int ver) const
+QString IndividualSizeConverter::getSchema(int ver) const
 {
     switch (ver)
     {
         case (0x000200):
-            return QStringLiteral("://schema/individual_measurements/v0.2.0.xsd");
+            return QStringLiteral("://schema/individual_size_measurements/v0.2.0.xsd");
         case (0x000300):
-            return QStringLiteral("://schema/individual_measurements/v0.3.0.xsd");
+            return QStringLiteral("://schema/individual_size_measurements/v0.3.0.xsd");
         case (0x000301):
-            return QStringLiteral("://schema/individual_measurements/v0.3.1.xsd");
+            return QStringLiteral("://schema/individual_size_measurements/v0.3.1.xsd");
         case (0x000302):
-            return QStringLiteral("://schema/individual_measurements/v0.3.2.xsd");
+            return QStringLiteral("://schema/individual_size_measurements/v0.3.2.xsd");
         case (0x000303):
+            return QStringLiteral("://schema/individual_size_measurements/v0.3.3.xsd");
+        case (0x000304):
             return CurrentSchema;
         default:
             InvalidVersion(ver);
@@ -118,27 +120,31 @@ QString IndividualSizeConverter::XSDSchema(int ver) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ApplyPatches()
+void IndividualSizeConverter::applyPatches()
 {
     switch (m_ver)
     {
         case (0x000200):
-            ToV0_3_0();
-            ValidateXML(XSDSchema(0x000300), m_convertedFileName);
+            convertToVer0_3_0();
+            ValidateXML(getSchema(0x000300), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000300):
-            ToV0_3_1();
-            ValidateXML(XSDSchema(0x000301), m_convertedFileName);
+            convertToVer0_3_1();
+            ValidateXML(getSchema(0x000301), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000301):
-            ToV0_3_2();
-            ValidateXML(XSDSchema(0x000302), m_convertedFileName);
+            convertToVer0_3_2();
+            ValidateXML(getSchema(0x000302), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000302):
-            ToV0_3_3();
-            ValidateXML(XSDSchema(0x000303), m_convertedFileName);
+            convertToVer0_3_3();
+            ValidateXML(getSchema(0x000303), m_convertedFileName);
             V_FALLTHROUGH
         case (0x000303):
+            convertToVer0_3_4();
+            ValidateXML(getSchema(0x000304), m_convertedFileName);
+            V_FALLTHROUGH
+        case (0x000304):
             break;
         default:
             InvalidVersion(m_ver);
@@ -147,17 +153,17 @@ void IndividualSizeConverter::ApplyPatches()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::DowngradeToCurrentMaxVersion()
+void IndividualSizeConverter::downgradeToCurrentMaxVersion()
 {
-    SetVersion(MeasurementMaxVerStr);
+    setVersion(MeasurementMaxVerStr);
     Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool IndividualSizeConverter::IsReadOnly() const
+bool IndividualSizeConverter::isReadOnly() const
 {
     // Check if attribute read-only was not changed in file format
-    Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 3, 3),
+    Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMaxVer == CONVERTER_VERSION_CHECK(0, 3, 4),
                       "Check attribute read-only.");
 
     // Possibly in future attribute read-only will change position etc.
@@ -168,7 +174,7 @@ bool IndividualSizeConverter::IsReadOnly() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::AddNewTagsForV0_3_0()
+void IndividualSizeConverter::addNewTagsForVer0_3_0()
 {
     // TODO. Delete if minimal supported version is 0.3.0
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 0),
@@ -185,12 +191,12 @@ void IndividualSizeConverter::AddNewTagsForV0_3_0()
     refChild = rootElement.insertAfter(createElement(QStringLiteral("notes")), refChild);
 
     QDomElement unit = createElement("unit");
-    unit.appendChild(createTextNode(MUnitV0_2_0()));
+    unit.appendChild(createTextNode(convertUnitsToVer0_2_0()));
     rootElement.insertAfter(unit, refChild);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString IndividualSizeConverter::MUnitV0_2_0()
+QString IndividualSizeConverter::convertUnitsToVer0_2_0()
 {
     // TODO. Delete if minimal supported version is 0.3.0
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 0),
@@ -200,7 +206,7 @@ QString IndividualSizeConverter::MUnitV0_2_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ConvertMeasurementsToV0_3_0()
+void IndividualSizeConverter::convertMeasurementsToV0_3_0()
 {
     // TODO. Delete if minimal supported version is 0.3.0
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 0),
@@ -234,7 +240,7 @@ void IndividualSizeConverter::ConvertMeasurementsToV0_3_0()
             }
         }
 
-        bm.appendChild(AddMV0_3_0(keys.at(i), resValue));
+        bm.appendChild(addMeasurementsVer0_3_0(keys.at(i), resValue));
     }
 
     QDomElement rootElement = this->documentElement();
@@ -243,7 +249,7 @@ void IndividualSizeConverter::ConvertMeasurementsToV0_3_0()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement IndividualSizeConverter::AddMV0_3_0(const QString &name, qreal value)
+QDomElement IndividualSizeConverter::addMeasurementsVer0_3_0(const QString &name, qreal value)
 {
     // TODO. Delete if minimal supported version is 0.3.0
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 0),
@@ -260,7 +266,7 @@ QDomElement IndividualSizeConverter::AddMV0_3_0(const QString &name, qreal value
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::GenderV0_3_1()
+void IndividualSizeConverter::convertGenderToVer0_3_1()
 {
     // TODO. Delete if minimal supported version is 0.3.1
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 1),
@@ -277,7 +283,7 @@ void IndividualSizeConverter::GenderV0_3_1()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::PM_SystemV0_3_2()
+void IndividualSizeConverter::convertPmSystemToVer0_3_2()
 {
     // TODO. Delete if minimal supported version is 0.3.2
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 2),
@@ -294,7 +300,7 @@ void IndividualSizeConverter::PM_SystemV0_3_2()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ConvertMeasurementsToV0_3_3()
+void IndividualSizeConverter::convertMeasurementsToV0_3_3()
 {
     // TODO. Delete if minimal supported version is 0.3.3
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 3),
@@ -327,51 +333,72 @@ void IndividualSizeConverter::ConvertMeasurementsToV0_3_3()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ToV0_3_0()
+void IndividualSizeConverter::convertToVer0_3_0()
 {
     // TODO. Delete if minimal supported version is 0.3.0
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 0),
                       "Time to refactor the code.");
 
     AddRootComment();
-    SetVersion(QStringLiteral("0.3.0"));
-    AddNewTagsForV0_3_0();
-    ConvertMeasurementsToV0_3_0();
+    setVersion(QStringLiteral("0.3.0"));
+    addNewTagsForVer0_3_0();
+    convertMeasurementsToV0_3_0();
     Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ToV0_3_1()
+void IndividualSizeConverter::convertToVer0_3_1()
 {
     // TODO. Delete if minimal supported version is 0.3.1
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 1),
                       "Time to refactor the code.");
 
-    SetVersion(QStringLiteral("0.3.1"));
-    GenderV0_3_1();
+    setVersion(QStringLiteral("0.3.1"));
+    convertGenderToVer0_3_1();
     Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ToV0_3_2()
+void IndividualSizeConverter::convertToVer0_3_2()
 {
     // TODO. Delete if minimal supported version is 0.3.2
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 2),
                       "Time to refactor the code.");
 
-    SetVersion(QStringLiteral("0.3.2"));
-    PM_SystemV0_3_2();
+    setVersion(QStringLiteral("0.3.2"));
+    convertPmSystemToVer0_3_2();
     Save();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IndividualSizeConverter::ToV0_3_3()
+void IndividualSizeConverter::convertToVer0_3_3()
 {
     // TODO. Delete if minimal supported version is 0.3.3
     Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 3),
                       "Time to refactor the code.");
 
-    SetVersion(QStringLiteral("0.3.3"));
-    ConvertMeasurementsToV0_3_3();
+    setVersion(QStringLiteral("0.3.3"));
+    convertMeasurementsToV0_3_3();
+    Save();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void IndividualSizeConverter::convertToVer0_3_4()
+{
+    // TODO. Delete if minimal supported version is 0.3.4
+    Q_STATIC_ASSERT_X(IndividualSizeConverter::MeasurementMinVer < CONVERTER_VERSION_CHECK(0, 3, 4),
+                      "Time to refactor the code.");
+
+    const QDomNodeList list = elementsByTagName("vit");
+    for (int i=0; i < list.size(); ++i)
+    {
+        QDomElement element = list.at(i).toElement();
+        if (!element.isNull())
+        {
+            element.setTagName("smis");
+        }
+    }
+
+    setVersion(QStringLiteral("0.3.4"));
     Save();
 }

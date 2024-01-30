@@ -3879,7 +3879,7 @@ void VPattern::SetDefCustomSize(int value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VPattern::IsReadOnly() const
+bool VPattern::isReadOnly() const
 {
     const QDomElement pattern = documentElement();
 

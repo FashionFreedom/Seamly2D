@@ -114,7 +114,7 @@ public:
     int  GetDefCustomSize() const;
     void SetDefCustomSize(int value);
 
-    bool IsReadOnly() const;
+    bool isReadOnly() const;
     void SetReadOnly(bool rOnly);
 
     void LiteParseIncrements();

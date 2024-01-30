@@ -214,7 +214,7 @@ public:
     void                           DeleteImage();
 
     QString                        GetVersion() const;
-    void                           SetVersion();
+    void                           setVersion();
 
     QVector<quint32>               getOpItems(const quint32 &toolId, const QString &itemType);
     QVector<quint32>               getDartItems(const quint32 &toolId);

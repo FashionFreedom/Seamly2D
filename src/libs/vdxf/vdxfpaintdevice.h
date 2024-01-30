@@ -58,7 +58,7 @@ public:
     void   setResolution(double dpi);
 
     DRW::Version GetVersion() const;
-    void         SetVersion(DRW::Version version);
+    void         setVersion(DRW::Version version);
 
     void SetBinaryFormat(bool binary);
     bool IsBinaryFormat() const;

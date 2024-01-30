@@ -94,19 +94,19 @@ protected:
     void            ValidateInputFile(const QString &currentSchema) const;
     Q_NORETURN void InvalidVersion(int ver) const;
     void            Save();
-    void            SetVersion(const QString &version);
+    void            setVersion(const QString &version);
 
-    virtual int     MinVer() const =0;
-    virtual int     MaxVer() const =0;
+    virtual int     minVer() const =0;
+    virtual int     maxVer() const =0;
 
-    virtual QString MinVerStr() const =0;
-    virtual QString MaxVerStr() const =0;
+    virtual QString minVerStr() const =0;
+    virtual QString maxVerStr() const =0;
 
-    virtual QString XSDSchema(int ver) const =0;
-    virtual void    ApplyPatches() =0;
-    virtual void    DowngradeToCurrentMaxVersion() =0;
+    virtual QString getSchema(int ver) const =0;
+    virtual void    applyPatches() =0;
+    virtual void    downgradeToCurrentMaxVersion() =0;
 
-    virtual bool    IsReadOnly() const =0;
+    virtual bool    isReadOnly() const =0;
 
     void            Replace(QString &formula, const QString &newName, int position,
                             const QString &token, int &bias) const;

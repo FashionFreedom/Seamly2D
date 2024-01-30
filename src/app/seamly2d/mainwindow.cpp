@@ -6245,7 +6245,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
     if (guiEnabled)
     { // No errors occurred
-        patternReadOnly = doc->IsReadOnly();
+        patternReadOnly = doc->isReadOnly();
         setWidgetsEnabled(true);
         setCurrentFile(fileName);
         helpLabel->setText(tr("File loaded"));
@@ -6836,9 +6836,9 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     {
                         MultiSizeConverter converter(filename);
                         QString filename = converter.Convert();
-                        if (filename.contains(".vst"))
+                        if (filename.contains(QLatin1String(".") + vstExt))
                         {
-                            filename.replace(QString(".vst"), QString(".smms"));
+                            filename.replace(QLatin1String(".") + vstExt, QLatin1String(".") + smmsExt);
                             QString error;
                             const bool result = measurements->SaveDocument(filename, error);
                             if (result)
@@ -6852,9 +6852,9 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
                     {
                         IndividualSizeConverter converter(filename);
                         QString filename = converter.Convert();
-                        if (filename.contains(".vit"))
+                        if (filename.contains(QLatin1String(".") + vitExt))
                         {
-                            filename.replace(QString(".vit"), QString(".smis"));
+                            filename.replace(QLatin1String(".") + vitExt, QLatin1String(".") + smisExt);
                             QString error;
                             const bool result = measurements->SaveDocument(filename, error);
                             if (result)
