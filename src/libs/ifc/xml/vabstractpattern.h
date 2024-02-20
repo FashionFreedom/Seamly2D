@@ -141,9 +141,13 @@ public:
     qreal                          getDefaultLineWeight() const;
     QString                        getDefaultLineType() const;
 
+    void                           setDefaultBasePoint(QString basePoint);
+    QString                        getDefaultBasePoint() const;
+
     virtual void                   IncrementReferens(quint32 id) const=0;
     virtual void                   DecrementReferens(quint32 id) const=0;
 
+    virtual QStringList            GetCurrentAlphabet() const=0;
     virtual QString                GenerateLabel(const LabelType &type, const QString &reservedName = QString())const=0;
     virtual QString                GenerateSuffix(const QString &type) const=0;
 
@@ -475,6 +479,8 @@ protected:
     QString        m_DefaultLineColor;
     qreal          m_DefaultLineWeight;
     QString        m_DefaultLineType;
+
+    QString        defaultBasePoint;
 
     QString        lastSavedExportFormat;
 

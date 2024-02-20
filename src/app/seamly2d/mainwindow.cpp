@@ -268,6 +268,8 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
 
+    connect(qApp->Seamly2DSettings(), &VSettings::labelLanguageChanged, this, &MainWindow::initBasePointComboBox);
+
         // In case we will need it
         // else if (isAncestorOf(old) == true && now == nullptr)
         // focus OUT
@@ -2317,6 +2319,33 @@ void MainWindow::initPointNameToolBar()
                 upDateScenes();
             });
     fontSizeComboBox->setEnabled(true);
+
+    basePointComboBox = new QComboBox ;
+    initBasePointComboBox();
+    ui->pointName_ToolBar->addWidget(basePointComboBox);
+    basePointComboBox->setToolTip(tr("Letter used for new points"));
+    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    basePointComboBox->setCurrentIndex(0);
+
+    basePointComboBox->setEnabled(true);
+    connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initBasePointComboBox fills basePointComboBox according to the label language selected.
+ */
+void MainWindow::initBasePointComboBox()
+{
+    basePointComboBox->clear();
+    basePointComboBox->addItem(tr("Default"));
+
+    QStringList alphabet = doc->GetCurrentAlphabet();
+    for (int i = 0; i < alphabet.size(); i++)
+    {
+        basePointComboBox->addItem(alphabet.at(i));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2526,6 +2555,18 @@ void MainWindow::initPropertyEditor()
 void MainWindow::penChanged(Pen pen)
 {
     doc->setDefaultPen(pen);
+}
+
+void MainWindow::basePointChanged()
+{
+    QString basePoint = QString();
+
+    int index = basePointComboBox->currentIndex();
+    if (index != 0){
+        basePoint = basePointComboBox->currentText();
+    }
+    //we keep basePoint empty if default is selected
+    doc->setDefaultBasePoint(basePoint);
 }
 
 void MainWindow::updateToolBarVisibility()
