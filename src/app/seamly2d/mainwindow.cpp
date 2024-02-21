@@ -2323,7 +2323,7 @@ void MainWindow::initPointNameToolBar()
     basePointComboBox = new QComboBox ;
     initBasePointComboBox();
     ui->pointName_ToolBar->addWidget(basePointComboBox);
-    basePointComboBox->setToolTip(tr("Letter used for new points"));
+    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
     basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     basePointComboBox->setCurrentIndex(0);
     basePointComboBox->setEditable(true);
