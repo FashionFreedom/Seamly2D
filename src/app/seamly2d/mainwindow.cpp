@@ -2326,6 +2326,8 @@ void MainWindow::initPointNameToolBar()
     basePointComboBox->setToolTip(tr("Letter used for new points"));
     basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
     basePointComboBox->setCurrentIndex(0);
+    basePointComboBox->setEditable(true);
+    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
 
     basePointComboBox->setEnabled(true);
     connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
@@ -2559,12 +2561,23 @@ void MainWindow::penChanged(Pen pen)
 
 void MainWindow::basePointChanged()
 {
+    QString text = basePointComboBox->currentText();
     QString basePoint = QString();
 
-    int index = basePointComboBox->currentIndex();
-    if (index != 0){
-        basePoint = basePointComboBox->currentText();
+    QRegularExpression rx(NameRegExp());
+    if (rx.match(text).hasMatch() == false)
+    {
+        basePointComboBox->setStyleSheet("QComboBox {color: red;}");
     }
+    else
+    {
+        basePointComboBox->setStyleSheet("QComboBox {color: black;}");
+
+        if (!text.isEmpty() && text != tr("Default")){
+            basePoint = text;
+        }
+    }
+
     //we keep basePoint empty if default is selected
     doc->setDefaultBasePoint(basePoint);
 }
