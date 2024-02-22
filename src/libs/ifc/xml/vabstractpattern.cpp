@@ -648,12 +648,6 @@ QString VAbstractPattern::getDefaultLineType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VAbstractPattern::getDefaultBasePoint() const
-{
-    return defaultBasePoint;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief getTool return tool from tool list.
  * @param id tool id.

@@ -142,7 +142,6 @@ public:
     QString                        getDefaultLineType() const;
 
     void                           setDefaultBasePoint(QString basePoint);
-    QString                        getDefaultBasePoint() const;
 
     virtual void                   IncrementReferens(quint32 id) const=0;
     virtual void                   DecrementReferens(quint32 id) const=0;

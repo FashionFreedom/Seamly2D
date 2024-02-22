@@ -2342,12 +2342,7 @@ void MainWindow::initBasePointComboBox()
 {
     basePointComboBox->clear();
     basePointComboBox->addItem(tr("Default"));
-
-    QStringList alphabet = doc->GetCurrentAlphabet();
-    for (int i = 0; i < alphabet.size(); i++)
-    {
-        basePointComboBox->addItem(alphabet.at(i));
-    }
+    basePointComboBox->addItems(doc->GetCurrentAlphabet());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
