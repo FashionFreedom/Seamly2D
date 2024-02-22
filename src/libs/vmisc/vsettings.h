@@ -187,10 +187,6 @@ public:
     PageOrientation getTiledPDFOrientation() const;
     void setTiledPDFOrientation(PageOrientation value);
 
-
-signals:
-    void labelLanguageChanged();
-
 private:
     Q_DISABLE_COPY(VSettings)
 };

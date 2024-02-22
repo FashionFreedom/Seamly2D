@@ -128,7 +128,6 @@ QString VSettings::GetLabelLanguage() const
 void VSettings::SetLabelLanguage(const QString &value)
 {
     setValue(settingConfigurationLabelLanguage, value);
-    emit labelLanguageChanged();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
