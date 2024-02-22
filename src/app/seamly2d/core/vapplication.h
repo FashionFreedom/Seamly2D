@@ -86,8 +86,6 @@ public:
     QTimer             *getAutoSaveTimer() const;
     void               setAutoSaveTimer(QTimer *value);
 
-    static QStringList LabelLanguages();
-
     void               StartLogging();
     QTextStream       *LogFile();
 
