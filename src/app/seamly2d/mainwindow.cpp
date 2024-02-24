@@ -268,6 +268,8 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
 
+    connect(qApp->Seamly2DSettings(), &VSettings::labelLanguageChanged, this, &MainWindow::initBasePointComboBox);
+
         // In case we will need it
         // else if (isAncestorOf(old) == true && now == nullptr)
         // focus OUT
@@ -1769,7 +1771,6 @@ void MainWindow::changeEvent(QEvent *event)
 
         UpdateWindowTitle();
         initPenToolBar();
-        initBasePointComboBox();
         emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation

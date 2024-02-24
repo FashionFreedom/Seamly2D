@@ -81,6 +81,7 @@ private:
     Ui::PreferencesConfigurationPage *ui;
     bool m_langChanged;
     bool m_unitChanged;
+    bool m_labelLangChanged;
     bool m_selectionSoundChanged;
     bool m_moveSuffixChanged;
     bool m_rotateSuffixChanged;
@@ -88,6 +89,7 @@ private:
     bool m_mirrorByLineSuffixChanged;
     bool m_defaultExportFormatChanged;
 
+    void SetLabelComboBox(const QStringList &list);
     void InitUnits();
     void adjustTextColor();
 };

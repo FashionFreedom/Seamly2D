@@ -73,6 +73,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     , ui(new Ui::PreferencesConfigurationPage)
     , m_langChanged(false)
     , m_unitChanged(false)
+    , m_labelLangChanged(false)
     , m_selectionSoundChanged(false)
     , m_moveSuffixChanged(false)
     , m_rotateSuffixChanged(false)
@@ -216,7 +217,22 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     {
         m_unitChanged = true;
     });
+    SetLabelComboBox(VApplication::LabelLanguages());
 
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    if (index == -1)
+    {
+        index = ui->labelCombo->findData("en");
+    }
+    if (index != -1)
+    {
+        ui->labelCombo->setCurrentIndex(index);
+    }
+
+    connect(ui->labelCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
+    {
+        m_labelLangChanged = true;
+    });
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -301,6 +317,12 @@ void PreferencesConfigurationPage::Apply()
                                 "pattern you create.");
         QMessageBox::information(this, QCoreApplication::applicationName(), text);
     }
+    if (m_labelLangChanged)
+    {
+        const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
+        settings->SetLabelLanguage(locale);
+        m_labelLangChanged = false;
+    }
     if (m_moveSuffixChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->moveSuffix_ComboBox->currentData());
@@ -336,6 +358,18 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
         ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
     }
     QWidget::changeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
+{
+    for (int i = 0; i < list.size(); ++i)
+    {
+        QLocale loc = QLocale(list.at(i));
+        QString country = QLocale::countryToString(loc.country());
+        QIcon ico(QString("%1/%2.png").arg(":/flags").arg(country));
+        ui->labelCombo->addItem(ico, loc.nativeLanguageName(), list.at(i));
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------

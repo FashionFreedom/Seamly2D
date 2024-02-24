@@ -1201,44 +1201,60 @@ void VPattern::parseCurrentDraftBlock()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetCurrentAlphabet returns the alphabet corresponding to the selected language.
+ * @brief GetCurrentAlphabet returns the alphabet corresponding to the selected label language.
  */
 QStringList VPattern::GetCurrentAlphabet() const
 {
-    QString locale = qApp->Seamly2DSettings()->GetLocale();
-
+    const QStringList list = VApplication::LabelLanguages();
     const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
     QStringList alphabet;
-
-    if (locale == "de_DE")
+    switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
+    {
+    case 0: // de
     {
         const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
         alphabet = al.split(",");
+        break;
     }
-    else if (locale == "ru_RU")
+    case 2: // fr
+    {
+        const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
+        alphabet = al.split(",");
+        break;
+    }
+    case 3: // ru
     {
         const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
         alphabet = al.split(",");
+        break;
     }
-    else if (locale == "uk_UA")
+    case 4: // uk
     {
         const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
         alphabet = al.split(",");
+        break;
     }
-    else if (locale == "hr_HR" || locale == "bs_BA")
+    case 5: // hr
+    case 7: // bs
     {
         const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
         alphabet = al.split(",");
+        break;
     }
-    else if (locale == "sr_RS")
+    case 6: // sr
     {
         const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
         alphabet = al.split(",");
+        break;
     }
-    else
+    case 1: // en
+    default: // en
     {
         alphabet = def.split(",");
+        break;
     }
+    }
+
     return alphabet;
 }
 
