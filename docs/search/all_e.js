@@ -166,5 +166,5 @@ var searchData=
   ['number_4874',['number',['../d2/d7b/classDialogTool.html#a6f583a6003585697d9b06234fd1ace14',1,'DialogTool']]],
   ['numberd_4875',['numberD',['../d0/dc3/classUnionDialog.html#a3db03871b1f4d700120d4b3c0d08422c',1,'UnionDialog']]],
   ['numberp_4876',['numberP',['../d0/dc3/classUnionDialog.html#a172c21bafdd0d977b9a180ffa087b72c',1,'UnionDialog']]],
-  ['numdigitbuttons_4877',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]]
+  ['numdigitbuttons_4877',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#ab90b8074de076b0df724a471def477dba519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]]
 ];

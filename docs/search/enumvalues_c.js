@@ -32,5 +32,5 @@ var searchData=
   ['notmovable_19071',['NotMovable',['../da/d7d/classVPieceItem.html#a09ecb9f194c9e7bb7b1008938050cd03a72379022c5851042fa043c86560a7072',1,'VPieceItem']]],
   ['noval_19072',['noVAL',['../d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6a99793d900e61e610f4f9189a1a2eabc0',1,'qmu::QmuParserTokenReader']]],
   ['novar_19073',['noVAR',['../d8/daa/classqmu_1_1QmuParserTokenReader.html#ae8d5a1c2027478b943942506998cfcb6ade7551f5679fd6d81e4bc00b3961a7d5',1,'qmu::QmuParserTokenReader']]],
-  ['numdigitbuttons_19074',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#a2a8373d53c75e5b252f80a36cac1e54fa519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]]
+  ['numdigitbuttons_19074',['NumDigitButtons',['../d7/deb/classCalculatorUtil.html#ab90b8074de076b0df724a471def477dba519d31007d7af4d4a83ac8a493c904d5',1,'CalculatorUtil']]]
 ];
