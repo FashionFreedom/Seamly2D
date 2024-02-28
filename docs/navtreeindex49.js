@@ -1,5 +1,14 @@
 var NAVTREEINDEX49 =
 {
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a4356a4bcbe5a938c093fa5e4f117aab8":[1,0,416,142],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a440e819f74651bffc5138c38c00bbfdd":[1,0,416,124],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a446ba6076873087a68ccf6b26f9c4cab":[1,0,416,2],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a46a6c4c50b63fd6af4a084eafcddc88e":[1,0,416,57],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a49f0a994818d0a7f153659bdbe10014a":[1,0,416,131],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a4b4ea75f2a346a6811a88efca7e624e0":[1,0,416,46],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a4b5ccb5d2892482e5e0f96a7e08bc2f2":[1,0,416,14],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a4fb9a984b70d09979bb077394bc6336b":[1,0,416,76],
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a51685122ac3119f8cd34667f51f5ddd0":[1,0,416,136],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a51f0cfbba1e4f7e42110e5247ee41173":[1,0,416,58],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a523185904185e406b7a018aa7b62e7b4":[1,0,416,41],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a538e4a7206eb9907d9c847b02827179b":[1,0,416,112],
@@ -240,14 +249,5 @@ var NAVTREEINDEX49 =
 "dc/dc0/tmainwindow_8h_source.html":[2,0,0,0,1,7],
 "dc/dc2/dialogsplinepath_8cpp.html":[2,0,0,1,12,0,1,63],
 "dc/dc2/dialogsplinepath_8cpp_source.html":[2,0,0,1,12,0,1,63],
-"dc/dc9/libs_2fervor_2stable_8cpp.html":[2,0,0,1,0,2],
-"dc/dc9/libs_2fervor_2stable_8cpp_source.html":[2,0,0,1,0,2],
-"dc/dcb/structVPE_1_1Vector3D.html":[1,0,2,5],
-"dc/dcb/structVPE_1_1Vector3D.html#a175e485da44c1f419676f2124cefe407":[1,0,2,5,1],
-"dc/dcb/structVPE_1_1Vector3D.html#a17d490a8d2ad85a14673fc08193c809b":[1,0,2,5,5],
-"dc/dcb/structVPE_1_1Vector3D.html#a1b513adf35e27a771e45cf1863ce883b":[1,0,2,5,0],
-"dc/dcb/structVPE_1_1Vector3D.html#a26c64e56d367dcdd328da301e3b587d0":[1,0,2,5,6],
-"dc/dcb/structVPE_1_1Vector3D.html#a2a6d9568378852c0553a387ee4931ad1":[1,0,2,5,4],
-"dc/dcb/structVPE_1_1Vector3D.html#a8998778108abba3fe654d8fcb95710bf":[1,0,2,5,3],
-"dc/dcb/structVPE_1_1Vector3D.html#a9f09c5c7a51a1fffb800c3df7dd42bf2":[1,0,2,5,2]
+"dc/dc9/libs_2fervor_2stable_8cpp.html":[2,0,0,1,0,2]
 };

@@ -14,6 +14,7 @@ var classVPattern =
     [ "GenerateSuffix", "d4/d43/classVPattern.html#a398106d3f9107a2ca5a4af2f73fe74bd", null ],
     [ "getActiveBasePoint", "d4/d43/classVPattern.html#a19e139b0a879cb5cfafb864563d34573", null ],
     [ "getActivePatternPieces", "d4/d43/classVPattern.html#a117c4c20ac04d46cdd73d91381354c87", null ],
+    [ "GetCurrentAlphabet", "d4/d43/classVPattern.html#a44338b819f687039815556d0006a3a08", null ],
     [ "GetDefCustomHeight", "d4/d43/classVPattern.html#a2ea567f21f963b131e58568762ae9b94", null ],
     [ "GetDefCustomSize", "d4/d43/classVPattern.html#a069fecbafa30c34523e6e3a0609b5033", null ],
     [ "GetLabelBase", "d4/d43/classVPattern.html#a127db4af838b0a76a37c14d22f325451", null ],

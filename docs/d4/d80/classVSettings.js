@@ -48,6 +48,7 @@ var classVSettings =
     [ "getTiledPDFPaperWidth", "d4/d80/classVSettings.html#ab79147466004cc4ac7ceaa155c4278c1", null ],
     [ "GetUsername", "d4/d80/classVSettings.html#a1327ea8337a728adc6ee38b36a0cdc08", null ],
     [ "GetUserPassword", "d4/d80/classVSettings.html#a20e5b08b0422ab05b7894dcf414d2cc8", null ],
+    [ "labelLanguageChanged", "d4/d80/classVSettings.html#a3fb1dda28ec246f294fcd766bb7694bc", null ],
     [ "SetFields", "d4/d80/classVSettings.html#a6ecc00ed869e95c7f814ad9776baf364", null ],
     [ "SetGraphicalOutput", "d4/d80/classVSettings.html#a1990bdf5409c1e5c4fd53fd10765f85b", null ],
     [ "SetIgnoreAllFields", "d4/d80/classVSettings.html#aeaa09585cfde81437b956ce924cc4650", null ],

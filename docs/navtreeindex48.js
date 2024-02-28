@@ -1,5 +1,14 @@
 var NAVTREEINDEX48 =
 {
+"dc/d4d/libs_2vtools_2stable_8h.html":[2,0,0,1,12,5],
+"dc/d4d/libs_2vtools_2stable_8h_source.html":[2,0,0,1,12,5],
+"dc/d55/classVAbstractCurve.html":[1,0,221],
+"dc/d55/classVAbstractCurve.html#a1256a0bd9fd6d262e5b62e5bf04dde63":[1,0,221,8],
+"dc/d55/classVAbstractCurve.html#a1923048ce52373c7dd3e1d568d9a17d7":[1,0,221,10],
+"dc/d55/classVAbstractCurve.html#a19b9bd53186d2cbd96aedb621b25cd56":[1,0,221,14],
+"dc/d55/classVAbstractCurve.html#a20278c901fc52aad20ea2d5d7ff9c28b":[1,0,221,28],
+"dc/d55/classVAbstractCurve.html#a26ccfec5b5a94a07205945a3e56e9d80":[1,0,221,5],
+"dc/d55/classVAbstractCurve.html#a2b29c50a680b4ee96a7a69d6f297bc45":[1,0,221,2],
 "dc/d55/classVAbstractCurve.html#a2da2f37f84c53206194a8eef06932918":[1,0,221,21],
 "dc/d55/classVAbstractCurve.html#a397dbae5819080e7ef453b7a97453341":[1,0,221,17],
 "dc/d55/classVAbstractCurve.html#a3b7538aab0c072229bff8590b61d7d4f":[1,0,221,23],
@@ -240,14 +249,5 @@ var NAVTREEINDEX48 =
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a38226c56300ac72fb3fff0869ace84e2":[1,0,416,39],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a3a2e79f4f4b3f0736b2365334225c46a":[1,0,416,4],
 "dc/d8f/classVToolOptionsPropertyBrowser.html#a3acab36af9155fbdb326a543a1b4f038":[1,0,416,25],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a40d4a92137c1e94a6455523bfd8b0858":[1,0,416,11],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a4356a4bcbe5a938c093fa5e4f117aab8":[1,0,416,142],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a440e819f74651bffc5138c38c00bbfdd":[1,0,416,124],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a446ba6076873087a68ccf6b26f9c4cab":[1,0,416,2],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a46a6c4c50b63fd6af4a084eafcddc88e":[1,0,416,57],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a49f0a994818d0a7f153659bdbe10014a":[1,0,416,131],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a4b4ea75f2a346a6811a88efca7e624e0":[1,0,416,46],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a4b5ccb5d2892482e5e0f96a7e08bc2f2":[1,0,416,14],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a4fb9a984b70d09979bb077394bc6336b":[1,0,416,76],
-"dc/d8f/classVToolOptionsPropertyBrowser.html#a51685122ac3119f8cd34667f51f5ddd0":[1,0,416,136]
+"dc/d8f/classVToolOptionsPropertyBrowser.html#a40d4a92137c1e94a6455523bfd8b0858":[1,0,416,11]
 };

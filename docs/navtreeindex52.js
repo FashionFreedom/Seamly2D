@@ -1,5 +1,14 @@
 var NAVTREEINDEX52 =
 {
+"dd/d47/classTogglePieceInLayout.html#abc10a214cab7c9de3a52bca3931d0136":[1,0,180,3],
+"dd/d47/classTogglePieceInLayout.html#adef441553f9d1047b278f7d2133ce3fd":[1,0,180,12],
+"dd/d47/classTogglePieceInLayout.html#ae36150ecfed89551dadb3868e005f13b":[1,0,180,5],
+"dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489":[1,0,180,8],
+"dd/d48/libs_2vpropertyexplorer_2stable_8h.html":[2,0,0,1,10,4],
+"dd/d48/libs_2vpropertyexplorer_2stable_8h_source.html":[2,0,0,1,10,4],
+"dd/d4a/vlayoutdef_8h.html":[2,0,0,1,6,14],
+"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385":[2,0,0,1,6,14,1],
+"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34":[2,0,0,1,6,14,1,2],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a664c140e94e21ff7725b2f5cbeb09af2":[2,0,0,1,6,14,1,3],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a70a47cae4eb221930f2663fd244369ea":[2,0,0,1,6,14,1,0],
 "dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a8c4a5810902e7660d6ab7658bdde74e6":[2,0,0,1,6,14,1,1],
@@ -240,14 +249,5 @@ var NAVTREEINDEX52 =
 "dd/db0/namespaceQT__WARNING__POP.html#ac41e10d483d2db0d77719abf0b76a888":[0,0,20,16],
 "dd/db0/namespaceQT__WARNING__POP.html#ad03ee948b2d286145c906cb8c35e6f02":[0,0,20,23],
 "dd/db0/namespaceQT__WARNING__POP.html#ad42a694ad7f3ce1fcbf0adacbfee47ce":[0,0,20,17],
-"dd/db0/namespaceQT__WARNING__POP.html#ad453ba7eb35ddf1d02fcdd860553374e":[0,0,20,4],
-"dd/db0/namespaceQT__WARNING__POP.html#ad704af2c56c4705362b3a4dc5ee2a884":[0,0,20,2],
-"dd/db0/namespaceQT__WARNING__POP.html#adf0e17be09e7bf144ea4778f06622e5c":[0,0,20,14],
-"dd/db0/namespaceQT__WARNING__POP.html#ae98e656a88fca05c42090608324630ee":[0,0,20,13],
-"dd/db0/namespaceQT__WARNING__POP.html#aeb3cad6fd9643948b4a44c7a8ba576be":[0,0,20,49],
-"dd/db0/namespaceQT__WARNING__POP.html#af2ca1a54d1abf2b5efc89fab1651f9bd":[0,0,20,33],
-"dd/db0/namespaceQT__WARNING__POP.html#af36760762460542ed6876ec4c4d3e17d":[0,0,20,32],
-"dd/db0/namespaceQT__WARNING__POP.html#af3cf1695bd87c1b8e150bf4b62c0c90f":[0,0,20,7],
-"dd/db0/namespaceQT__WARNING__POP.html#afcdb93c8fe03d1b43a08c027a267a495":[0,0,20,44],
-"dd/db1/dialogseamlymepreferences_8cpp.html":[2,0,0,0,1,0,5]
+"dd/db0/namespaceQT__WARNING__POP.html#ad453ba7eb35ddf1d02fcdd860553374e":[0,0,20,4]
 };

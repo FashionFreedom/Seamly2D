@@ -1,5 +1,7 @@
 var NAVTREEINDEX18 =
 {
+"d4/da4/def_8h.html#a615623de036744d9ae9a2828af024f8d":[2,0,0,1,7,6,92],
+"d4/da4/def_8h.html#a648d0adfbe92b249d55c0c580f57fd13":[2,0,0,1,7,6,153],
 "d4/da4/def_8h.html#a649cee1df19c5ee54bd377e7e84f6fa0":[2,0,0,1,7,6,142],
 "d4/da4/def_8h.html#a65e418ff8a3ba84e3530a4d46ac42788":[2,0,0,1,7,6,107],
 "d4/da4/def_8h.html#a66765d6231f7691b11943ed0ee379fdb":[2,0,0,1,7,6,112],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "d4/daa/classVToolEllipticalArc.html#aab4a454e7b6e79a746421d0217012987":[1,0,404,0],
 "d4/daa/classVToolEllipticalArc.html#ab9592e76807ac64ea01035710dc728aa":[1,0,404,13],
 "d4/daa/classVToolEllipticalArc.html#ac430cd6cc6a3a8f76cd491550e594a74":[1,0,404,16],
-"d4/daa/classVToolEllipticalArc.html#ae2b83de7f3c504a05108e7de0e9366a0":[1,0,404,20],
-"d4/daa/classVToolEllipticalArc.html#af00d023d6fcdb2443430612c4b2d0ddc":[1,0,404,5],
-"d4/daa/classVToolEllipticalArc.html#af74906f1697249b51b2898c934239280":[1,0,404,8]
+"d4/daa/classVToolEllipticalArc.html#ae2b83de7f3c504a05108e7de0e9366a0":[1,0,404,20]
 };

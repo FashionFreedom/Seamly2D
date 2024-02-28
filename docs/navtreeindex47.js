@@ -1,5 +1,14 @@
 var NAVTREEINDEX47 =
 {
+"dc/d10/classDialogCurveIntersectAxis.html#ac7d12819fdbcf44573a6e1fd64e2282a":[1,0,40,11],
+"dc/d10/classDialogCurveIntersectAxis.html#ace6693f47fc416d370a94607317127d8":[1,0,40,7],
+"dc/d10/classDialogCurveIntersectAxis.html#ad851a3b8616739aa3097a53d72e8b027":[1,0,40,27],
+"dc/d10/classDialogCurveIntersectAxis.html#af65c78683d9c24a2795e557cb9597ede":[1,0,40,13],
+"dc/d10/classDialogCurveIntersectAxis.html#afe23dc2fc3c1cc0b69cb8d79c34b73a9":[1,0,40,8],
+"dc/d14/app_2seamly2d_2main_8cpp.html":[2,0,0,0,0,3],
+"dc/d14/app_2seamly2d_2main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97":[2,0,0,0,0,3,0],
+"dc/d14/app_2seamly2d_2main_8cpp_source.html":[2,0,0,0,0,3],
+"dc/d14/structqmu_1_1SToken.html":[1,0,0,4],
 "dc/d14/structqmu_1_1SToken.html#a19eeea353120bfc7941153bfe572629a":[1,0,0,4,10],
 "dc/d14/structqmu_1_1SToken.html#a219724568fac5fe68b4324c876493620":[1,0,0,4,5],
 "dc/d14/structqmu_1_1SToken.html#a29f2debc58d12330239f7a25faa4678a":[1,0,0,4,2],
@@ -240,14 +249,5 @@ var NAVTREEINDEX47 =
 "dc/d3e/classqmu_1_1QmuTranslation.html#aeb5a65a70997570f1855b45e3fad83b1":[1,0,0,12,12],
 "dc/d3e/classqmu_1_1QmuTranslation.html#afba1b563a6f5a03e66c2e55858cecf4a":[1,0,0,12,4],
 "dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html":[0,0,2],
-"dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html#a6cfc6f484e575ef4a1ed713c707803ef":[0,0,2,0],
-"dc/d4d/libs_2vtools_2stable_8h.html":[2,0,0,1,12,5],
-"dc/d4d/libs_2vtools_2stable_8h_source.html":[2,0,0,1,12,5],
-"dc/d55/classVAbstractCurve.html":[1,0,221],
-"dc/d55/classVAbstractCurve.html#a1256a0bd9fd6d262e5b62e5bf04dde63":[1,0,221,8],
-"dc/d55/classVAbstractCurve.html#a1923048ce52373c7dd3e1d568d9a17d7":[1,0,221,10],
-"dc/d55/classVAbstractCurve.html#a19b9bd53186d2cbd96aedb621b25cd56":[1,0,221,14],
-"dc/d55/classVAbstractCurve.html#a20278c901fc52aad20ea2d5d7ff9c28b":[1,0,221,28],
-"dc/d55/classVAbstractCurve.html#a26ccfec5b5a94a07205945a3e56e9d80":[1,0,221,5],
-"dc/d55/classVAbstractCurve.html#a2b29c50a680b4ee96a7a69d6f297bc45":[1,0,221,2]
+"dc/d48/namespaceanonymous__namespace_02measurements_8cpp_03.html#a6cfc6f484e575ef4a1ed713c707803ef":[0,0,2,0]
 };

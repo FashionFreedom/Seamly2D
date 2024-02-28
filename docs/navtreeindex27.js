@@ -1,5 +1,10 @@
 var NAVTREEINDEX27 =
 {
+"d6/d6b/classVToolBisector.html#ac60afef8eb73963eb0b22b7de3f2bb10":[1,0,395,7],
+"d6/d6b/classVToolBisector.html#ad475d56d64d7781f6b219aa7b8bdaa6a":[1,0,395,18],
+"d6/d6b/classVToolBisector.html#ad676e3d401b0b047edc984bb1d25cbfe":[1,0,395,10],
+"d6/d6b/classVToolBisector.html#aed774b7d21664cdeca3c099ed734f1ab":[1,0,395,15],
+"d6/d6f/vtoolrecord_8cpp.html":[2,0,0,1,1,1,16],
 "d6/d6f/vtoolrecord_8cpp_source.html":[2,0,0,1,1,1,16],
 "d6/d74/vpropertyfactorymanager__p_8h.html":[2,0,0,1,10,15],
 "d6/d74/vpropertyfactorymanager__p_8h_source.html":[2,0,0,1,10,15],
@@ -244,10 +249,5 @@ var NAVTREEINDEX27 =
 "d6/deb/classVDomDocument.html#a035e4a009f8f79f3f8e04e8aa43d56dc":[1,0,261,4],
 "d6/deb/classVDomDocument.html#a0529f100ec3ca1152a296f9cc59ef7f3":[1,0,261,11],
 "d6/deb/classVDomDocument.html#a0adad76775f408c27ded217805c2b6a2":[1,0,261,28],
-"d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb":[1,0,261,38],
-"d6/deb/classVDomDocument.html#a14e129a4d0d66b87adb48c38e46c0f37":[1,0,261,12],
-"d6/deb/classVDomDocument.html#a2267524a506a06da9664911c0f0760ea":[1,0,261,10],
-"d6/deb/classVDomDocument.html#a278a792a3d216ccd935a4fd163d0d0a8":[1,0,261,14],
-"d6/deb/classVDomDocument.html#a3190cc38f15720c8204d00716fad8469":[1,0,261,37],
-"d6/deb/classVDomDocument.html#a49eb5f686268f8ecab6faab3ee4ae1f0":[1,0,261,36]
+"d6/deb/classVDomDocument.html#a0c5421eaa5675ae09a895f78d87026eb":[1,0,261,38]
 };

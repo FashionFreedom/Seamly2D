@@ -1,5 +1,14 @@
 var NAVTREEINDEX51 =
 {
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a14a2bf29f66956aa1b0cb40899dd667b":[1,0,2,19,0],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a1fe65a3ff0bcb5fa8a5c1a9fb0e98e46":[1,0,2,19,2],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a2c45abbced3a5afaa0d7075970c60a6e":[1,0,2,19,11],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a4ea768118a4e5ed9888633c54fd435df":[1,0,2,19,7],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a6a95d3a898229b1559e6b8b3f8c2fa0b":[1,0,2,19,1],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a79b083b0feae8f7c1bf56252ff7cdbbc":[1,0,2,19,8],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a85a74331658019dcec8518023e97ff8d":[1,0,2,19,4],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#a9d1e2459359794ae0c0b20b9d4dd9c5e":[1,0,2,19,5],
+"dc/df7/classVPE_1_1VShortcutEditWidget.html#ab46321a527ea3935e38808d1d522e8d2":[1,0,2,19,6],
 "dc/df7/classVPE_1_1VShortcutEditWidget.html#acba46dfd330b2825dd1cdd55197e5693":[1,0,2,19,10],
 "dc/df7/classVPE_1_1VShortcutEditWidget.html#afd0b6c1c0f3da9aacc05c29cb94cea92":[1,0,2,19,3],
 "dc/df8/classVContainerData.html":[1,0,246],
@@ -240,14 +249,5 @@ var NAVTREEINDEX51 =
 "dd/d47/classTogglePieceInLayout.html#a7fc7764e128be594bdf7a58e99ee5990":[1,0,180,6],
 "dd/d47/classTogglePieceInLayout.html#a8b6a899954e808fdc7ee180dccf184b5":[1,0,180,10],
 "dd/d47/classTogglePieceInLayout.html#a999370cbb5bfb0bcf4edde171e13e83a":[1,0,180,9],
-"dd/d47/classTogglePieceInLayout.html#ab2b2622d46b2b203155ec72d0e08b2b0":[1,0,180,4],
-"dd/d47/classTogglePieceInLayout.html#abc10a214cab7c9de3a52bca3931d0136":[1,0,180,3],
-"dd/d47/classTogglePieceInLayout.html#adef441553f9d1047b278f7d2133ce3fd":[1,0,180,12],
-"dd/d47/classTogglePieceInLayout.html#ae36150ecfed89551dadb3868e005f13b":[1,0,180,5],
-"dd/d47/classTogglePieceInLayout.html#aef7d52e6d59c305b60e17b96a6160489":[1,0,180,8],
-"dd/d48/libs_2vpropertyexplorer_2stable_8h.html":[2,0,0,1,10,4],
-"dd/d48/libs_2vpropertyexplorer_2stable_8h_source.html":[2,0,0,1,10,4],
-"dd/d4a/vlayoutdef_8h.html":[2,0,0,1,6,14],
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385":[2,0,0,1,6,14,1],
-"dd/d4a/vlayoutdef_8h.html#a5f6d2a61316a995217a124144c21e385a3a120f601de97f45b41de706fc864f34":[2,0,0,1,6,14,1,2]
+"dd/d47/classTogglePieceInLayout.html#ab2b2622d46b2b203155ec72d0e08b2b0":[1,0,180,4]
 };

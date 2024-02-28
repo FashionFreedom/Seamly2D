@@ -1,5 +1,14 @@
 var NAVTREEINDEX42 =
 {
+"da/df9/classMoveSPoint.html#afdbb4002f62802eb67c40034a013f014":[1,0,125,8],
+"da/dfa/dialogbisector_8cpp.html":[2,0,0,1,12,0,1,11],
+"da/dfa/dialogbisector_8cpp_source.html":[2,0,0,1,12,0,1,11],
+"da/dfb/classPatternPieceTool.html":[1,0,133],
+"da/dfb/classPatternPieceTool.html#a00b74197ccf92296781f7e8b467ea2cf":[1,0,133,110],
+"da/dfb/classPatternPieceTool.html#a00ea2549fd333b7dcbcc0d523cfa8e51":[1,0,133,23],
+"da/dfb/classPatternPieceTool.html#a0228c71afb2d59fbcb651c1751c3e5dd":[1,0,133,42],
+"da/dfb/classPatternPieceTool.html#a06aa401f6a29cda1ec55e597c7275899":[1,0,133,8],
+"da/dfb/classPatternPieceTool.html#a09ca5080ce820ed5ba71a1e7d2d2c861":[1,0,133,16],
 "da/dfb/classPatternPieceTool.html#a0b6985235102856c90cbcc9746ee4754":[1,0,133,15],
 "da/dfb/classPatternPieceTool.html#a0c26dad89d32f95c43ade20b4641d14a":[1,0,133,35],
 "da/dfb/classPatternPieceTool.html#a0c76a8272e485fb363d80b072a6f9c7a":[1,0,133,91],
@@ -240,14 +249,5 @@ var NAVTREEINDEX42 =
 "db/d32/classLayoutSettingsDialog.html#a292091f9ca3f144c51c8bd1363a85eda":[1,0,103,5],
 "db/d32/classLayoutSettingsDialog.html#a299a3467fa98bea20984d2f4b54c80e0":[1,0,103,3],
 "db/d32/classLayoutSettingsDialog.html#a30528711a06d47cb305f2fd17d27e9d7":[1,0,103,69],
-"db/d32/classLayoutSettingsDialog.html#a3800f0ec9b6d645f91c528f14e42b737":[1,0,103,4],
-"db/d32/classLayoutSettingsDialog.html#a385411d287071ca8113a03f79403170a":[1,0,103,8],
-"db/d32/classLayoutSettingsDialog.html#a3aee7a49a9ad89ff1c8f97b61bbd489b":[1,0,103,21],
-"db/d32/classLayoutSettingsDialog.html#a44e8f8cc0fcd431a6d45b934f2fe3a3a":[1,0,103,9],
-"db/d32/classLayoutSettingsDialog.html#a453545859300c5893f27dd8a5a9efa22":[1,0,103,39],
-"db/d32/classLayoutSettingsDialog.html#a4601707863c3b4480545d47756085fd5":[1,0,103,71],
-"db/d32/classLayoutSettingsDialog.html#a47de49fd41c20bf972d65143941e80a8":[1,0,103,23],
-"db/d32/classLayoutSettingsDialog.html#a4967153123a6b662bd65d5edb4d70645":[1,0,103,64],
-"db/d32/classLayoutSettingsDialog.html#a4a44b0536ecd313ca3e99f9356d057e2":[1,0,103,2],
-"db/d32/classLayoutSettingsDialog.html#a4d1b3ea369029469651a5708f39ddf58":[1,0,103,42]
+"db/d32/classLayoutSettingsDialog.html#a3800f0ec9b6d645f91c528f14e42b737":[1,0,103,4]
 };
