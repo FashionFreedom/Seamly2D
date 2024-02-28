@@ -1200,58 +1200,68 @@ void VPattern::parseCurrentDraftBlock()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VPattern::GetLabelBase(quint32 index) const
+/**
+ * @brief GetCurrentAlphabet returns the alphabet corresponding to the selected label language.
+ */
+QStringList VPattern::GetCurrentAlphabet() const
 {
     const QStringList list = VApplication::LabelLanguages();
     const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
     QStringList alphabet;
     switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
     {
-        case 0: // de
-        {
-            const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
-            alphabet = al.split(",");
-            break;
-        }
-        case 2: // fr
-        {
-            const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
-            alphabet = al.split(",");
-            break;
-        }
-        case 3: // ru
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
-            alphabet = al.split(",");
-            break;
-        }
-        case 4: // uk
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
-            alphabet = al.split(",");
-            break;
-        }
-        case 5: // hr
-        case 7: // bs
-        {
-            const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
-            alphabet = al.split(",");
-            break;
-        }
-        case 6: // sr
-        {
-            const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
-            alphabet = al.split(",");
-            break;
-        }
-        case 1: // en
-        default: // en
-        {
-            alphabet = def.split(",");
-            break;
-        }
+    case 0: // de
+    {
+        const QString al = QStringLiteral("A,Ä,B,C,D,E,F,G,H,I,J,K,L,M,N,O,Ö,P,Q,R,S,ß,T,U,Ü,V,W,X,Y,Z");
+        alphabet = al.split(",");
+        break;
+    }
+    case 2: // fr
+    {
+        const QString al = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
+        alphabet = al.split(",");
+        break;
+    }
+    case 3: // ru
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,И,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Э,Ю,Я");
+        alphabet = al.split(",");
+        break;
+    }
+    case 4: // uk
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Е,Ж,З,І,Ї,Й,К,Л,М,Н,О,П,Р,С,Т,У,Ф,Х,Ц,Ч,Ш,Щ,Є,Ю,Я");
+        alphabet = al.split(",");
+        break;
+    }
+    case 5: // hr
+    case 7: // bs
+    {
+        const QString al = QStringLiteral("A,B,C,Č,Ć,D,Dž,Ð,E,F,G,H,I,J,K,L,Lj,M,N,Nj,O,P,R,S,Š,T,U,V,Z,Ž");
+        alphabet = al.split(",");
+        break;
+    }
+    case 6: // sr
+    {
+        const QString al = QStringLiteral("А,Б,В,Г,Д,Ђ,Е,Ж,З,И,Ј,К,Л,Љ,М,Н,Њ,О,П,Р,С,Т,Ћ,У,Ф,Х,Ц,Ч,Џ,Ш");
+        alphabet = al.split(",");
+        break;
+    }
+    case 1: // en
+    default: // en
+    {
+        alphabet = def.split(",");
+        break;
+    }
     }
 
+    return alphabet;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VPattern::GetLabelBase(quint32 index) const
+{
+    QStringList alphabet = GetCurrentAlphabet();
     QString base;
     const int count = qFloor(index/static_cast<quint32>(alphabet.size()));
     const int number = static_cast<int>(index) - alphabet.size() * count;
@@ -3622,7 +3632,7 @@ void VPattern::replaceNameInFormula(QVector<VFormulaField> &expressions, const Q
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GenerateLabel create name for draft block basepoint.
+ * @brief GenerateLabel create name for draft block basepoints.
  * @param type type of the label.
  * @param reservedName reversed point name. Use when need reserve name, but point is not in data base yet.
  * @return unique name for current draft block.
@@ -3652,7 +3662,11 @@ QString VPattern::GenerateLabel(const LabelType &type, const QString &reservedNa
     }
     else if (type == LabelType::NewLabel)
     {
-        const QString labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
+        QString labelBase = defaultBasePoint;
+        if (defaultBasePoint.isEmpty())
+        {
+            labelBase = GetLabelBase(static_cast<quint32>(getActiveDraftBlockIndex()));
+        }
 
         qint32 num = 1;
         QString name;

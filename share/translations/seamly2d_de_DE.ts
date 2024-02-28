@@ -3903,7 +3903,7 @@ for writing</source>
 zum schreiben</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file
+        <source>Unable to get exclusive access to file 
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4816,7 +4816,7 @@ eine neue Gruppe der Liste zufügen</translation>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing.
+        <source>Margins go beyond printing. 
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6896,6 +6896,15 @@ Sollen die Änderungen gespeichert werden?</translation>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Standard</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8446,7 +8455,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Etiketten Sprache:</translation>
+        <translation type="vanished">Etiketten Sprache:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8655,6 +8664,10 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Email format is not valid.</source>
         <translation>Das E-Mail-Format ist nicht gültig.</translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9807,13 +9820,13 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use.
-When checked the separator for the user&apos;s locale is used.
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed.
+        <source>When checked the Welcome window will not be displayed. 
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>

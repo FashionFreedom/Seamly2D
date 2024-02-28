@@ -268,6 +268,8 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
 
+    connect(qApp->Seamly2DSettings(), &VSettings::labelLanguageChanged, this, &MainWindow::initBasePointComboBox);
+
         // In case we will need it
         // else if (isAncestorOf(old) == true && now == nullptr)
         // focus OUT
@@ -2317,6 +2319,30 @@ void MainWindow::initPointNameToolBar()
                 upDateScenes();
             });
     fontSizeComboBox->setEnabled(true);
+
+    basePointComboBox = new QComboBox ;
+    initBasePointComboBox();
+    ui->pointName_ToolBar->addWidget(basePointComboBox);
+    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
+    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    basePointComboBox->setCurrentIndex(0);
+    basePointComboBox->setEditable(true);
+    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
+
+    basePointComboBox->setEnabled(true);
+    connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief initBasePointComboBox fills basePointComboBox according to the label language selected.
+ */
+void MainWindow::initBasePointComboBox()
+{
+    basePointComboBox->clear();
+    basePointComboBox->addItem(tr("Default"));
+    basePointComboBox->addItems(doc->GetCurrentAlphabet());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2526,6 +2552,29 @@ void MainWindow::initPropertyEditor()
 void MainWindow::penChanged(Pen pen)
 {
     doc->setDefaultPen(pen);
+}
+
+void MainWindow::basePointChanged()
+{
+    QString text = basePointComboBox->currentText();
+    QString basePoint = QString();
+
+    QRegularExpression rx(NameRegExp());
+    if (rx.match(text).hasMatch() == false)
+    {
+        basePointComboBox->setStyleSheet("QComboBox {color: red;}");
+    }
+    else
+    {
+        basePointComboBox->setStyleSheet("QComboBox {color: black;}");
+
+        if (!text.isEmpty() && text != tr("Default")){
+            basePoint = text;
+        }
+    }
+
+    //we keep basePoint empty if default is selected
+    doc->setDefaultBasePoint(basePoint);
 }
 
 void MainWindow::updateToolBarVisibility()

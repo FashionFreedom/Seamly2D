@@ -64,7 +64,7 @@ public:
 
     virtual void    IncrementReferens(quint32 id) const Q_DECL_OVERRIDE;
     virtual void    DecrementReferens(quint32 id) const Q_DECL_OVERRIDE;
-
+    virtual QStringList GetCurrentAlphabet() const Q_DECL_OVERRIDE;
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const Q_DECL_OVERRIDE;
     virtual QString GenerateSuffix(const QString &type) const Q_DECL_OVERRIDE;
 

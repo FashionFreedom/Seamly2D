@@ -261,6 +261,7 @@ VAbstractPattern::VAbstractPattern(QObject *parent)
     , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
     , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
     , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
+    , defaultBasePoint(QString())
     , lastSavedExportFormat(QString())
     , cursor(0)
     , toolsOnRemove(QVector<VDataTool*>())
@@ -620,6 +621,12 @@ void VAbstractPattern::setDefaultPen(Pen pen)
   m_DefaultLineColor  = pen.color;
   m_DefaultLineWeight = pen.lineWeight;
   m_DefaultLineType   = pen.lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultBasePoint(QString basePoint)
+{
+    defaultBasePoint = basePoint;
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -6890,6 +6890,15 @@ Do you want to save your changes?</translation>
         <source>pattern</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Default</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8440,7 +8449,7 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Label language:</translation>
+        <translation type="vanished">Label language:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8648,6 +8657,10 @@ Do you want to save your changes?</translation>
     </message>
     <message>
         <source>User locale</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
