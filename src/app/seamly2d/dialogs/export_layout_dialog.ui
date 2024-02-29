@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>360</height>
+    <width>750</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -21,14 +21,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>660</width>
+    <width>750</width>
     <height>360</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>900</width>
-    <height>360</height>
+    <height>400</height>
    </size>
   </property>
   <property name="font">
@@ -108,7 +108,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>90</width>
+              <width>120</width>
               <height>0</height>
              </size>
             </property>
@@ -174,7 +174,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>330</width>
+            <width>350</width>
             <height>110</height>
            </size>
           </property>
@@ -197,7 +197,7 @@
               <widget class="QLabel" name="format_Label">
                <property name="minimumSize">
                 <size>
-                 <width>90</width>
+                 <width>120</width>
                  <height>0</height>
                 </size>
                </property>
@@ -219,7 +219,7 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>210</width>
+                 <width>0</width>
                  <height>0</height>
                 </size>
                </property>
@@ -229,7 +229,7 @@
               <widget class="QLabel" name="filename_Label">
                <property name="minimumSize">
                 <size>
-                 <width>90</width>
+                 <width>120</width>
                  <height>0</height>
                 </size>
                </property>
@@ -251,7 +251,7 @@
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>210</width>
+                 <width>0</width>
                  <height>0</height>
                 </size>
                </property>
@@ -267,7 +267,7 @@
               <widget class="QLabel" name="quality_Label">
                <property name="minimumSize">
                 <size>
-                 <width>90</width>
+                 <width>120</width>
                  <height>0</height>
                 </size>
                </property>
@@ -329,7 +329,7 @@
                  </property>
                  <property name="minimumSize">
                   <size>
-                   <width>170</width>
+                   <width>0</width>
                    <height>22</height>
                   </size>
                  </property>
@@ -471,7 +471,7 @@ border-radius: 4px;
           </property>
           <property name="minimumSize">
            <size>
-            <width>300</width>
+            <width>250</width>
             <height>110</height>
            </size>
           </property>
@@ -503,7 +503,7 @@ border-radius: 4px;
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>70</width>
+                 <width>100</width>
                  <height>0</height>
                 </size>
                </property>
@@ -547,7 +547,7 @@ border-radius: 4px;
      </layout>
     </widget>
    </item>
-   <item row="4" column="1">
+   <item row="5" column="1">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -579,13 +579,13 @@ border-radius: 4px;
        <property name="minimumSize">
         <size>
          <width>300</width>
-         <height>80</height>
+         <height>88</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>80</height>
+         <height>16777215</height>
         </size>
        </property>
        <property name="title">
@@ -601,19 +601,47 @@ border-radius: 4px;
            <layout class="QFormLayout" name="margins_FormLayout">
             <item row="1" column="0">
              <widget class="QLabel" name="rightField_Label">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Right:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QDoubleSpinBox" name="rightField_DoubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="rightField_DoubleSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="0" column="1">
              <widget class="QDoubleSpinBox" name="leftField_DoubleSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>71</width>
+                <width>70</width>
                 <height>0</height>
                </size>
               </property>
@@ -621,8 +649,17 @@ border-radius: 4px;
             </item>
             <item row="0" column="0">
              <widget class="QLabel" name="leftField_Label">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Left:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -632,23 +669,67 @@ border-radius: 4px;
            <layout class="QFormLayout" name="formLayout_3">
             <item row="0" column="0">
              <widget class="QLabel" name="topField_Label">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Top:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
             <item row="0" column="1">
-             <widget class="QDoubleSpinBox" name="topField_DoubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="topField_DoubleSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
             <item row="1" column="0">
              <widget class="QLabel" name="bottomField_Label">
+              <property name="minimumSize">
+               <size>
+                <width>90</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="text">
                <string>Bottom:</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
             <item row="1" column="1">
-             <widget class="QDoubleSpinBox" name="bottomField_DoubleSpinBox"/>
+             <widget class="QDoubleSpinBox" name="bottomField_DoubleSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>70</width>
+                <height>0</height>
+               </size>
+              </property>
+             </widget>
             </item>
            </layout>
           </item>
@@ -671,13 +752,13 @@ border-radius: 4px;
        <property name="minimumSize">
         <size>
          <width>290</width>
-         <height>80</height>
+         <height>88</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
          <width>16777215</width>
-         <height>80</height>
+         <height>16777215</height>
         </size>
        </property>
        <property name="title">
@@ -694,8 +775,17 @@ border-radius: 4px;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Templates: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -723,8 +813,17 @@ border-radius: 4px;
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="text">
              <string>Orientation: </string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
@@ -788,6 +887,19 @@ border-radius: 4px;
       </widget>
      </item>
     </layout>
+   </item>
+   <item row="4" column="1">
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
    </item>
   </layout>
  </widget>
