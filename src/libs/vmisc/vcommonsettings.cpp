@@ -73,8 +73,8 @@
 
 namespace
 {
-const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_measurements");
-const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/standard_measurements");
+const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_size_measurements");
+const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/multi_size_measurements");
 const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
 const QString settingPathsBodyScans                      = QStringLiteral("paths/bodyscans");
 const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");

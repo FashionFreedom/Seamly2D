@@ -3898,7 +3898,7 @@ Do you want to download it?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4807,7 +4807,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6887,6 +6887,15 @@ Do you want to save your changes?</source>
         <source>pattern</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">Προεπιλογή</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8437,7 +8446,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Γλώσσα ετικέτας:</translation>
+        <translation type="vanished">Γλώσσα ετικέτας:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8657,6 +8666,10 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Do not show welcome screen</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -9782,8 +9795,8 @@ Do you want to save your changes?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9796,7 +9809,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9844,8 +9857,8 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9878,7 +9891,7 @@ When unchecked the period is used.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
         <translation type="unfinished"></translation>
     </message>

@@ -3903,7 +3903,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4815,7 +4815,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -6895,6 +6895,15 @@ Wil je de veranderingen opslaan?</translation>
         <source>pattern</source>
         <translation>patroon</translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8445,7 +8454,7 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Taal label:</translation>
+        <translation type="vanished">Taal label:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8666,6 +8675,10 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Do not show welcome screen</source>
         <translation>Welkomstscherm niet weergeven</translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9790,12 +9803,26 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
+    <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+    <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt.
+Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt.
+Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
         <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation>Als deze optie is aangevinkt, wordt het welkomstscherm niet weergegeven.
+Je kunt deze instelling wijzigen in de SeamlyMe-voorkeuren.</translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -9816,20 +9843,6 @@ Wil je de veranderingen opslaan?</translation>
     <message>
         <source>Inches</source>
         <translation>Inches</translation>
-    </message>
-    <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Als deze optie is aangevinkt, wordt het welkomstscherm niet weergegeven.
-Je kunt deze instelling wijzigen in de SeamlyMe-voorkeuren.</translation>
-    </message>
-    <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt. 
-Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt. 
-Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
     </message>
 </context>
 <context>
@@ -9855,6 +9868,14 @@ Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt.
+Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt.
+Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
@@ -9879,21 +9900,13 @@ Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
         <translation>Inches</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt. 
-Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt. 
-Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
-    </message>
-    <message>
         <source>Sets the language used for Seamly2D.</source>
         <translation>Stelt de taal in die wordt gebruikt voor Seamly2D.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Als deze optie is aangevinkt, wordt het welkomstvenster niet weergegeven. 
+        <translation>Als deze optie is aangevinkt, wordt het welkomstvenster niet weergegeven.
 Je kunt deze instelling wijzigen in de Seamly2D voorkeuren.</translation>
     </message>
     <message>

@@ -446,7 +446,7 @@ DRW::Version VDxfEngine::GetVersion() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VDxfEngine::SetVersion(DRW::Version version)
+void VDxfEngine::setVersion(DRW::Version version)
 {
     Q_ASSERT(not isActive());
     m_version = version;

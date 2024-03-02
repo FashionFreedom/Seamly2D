@@ -3927,10 +3927,10 @@ Do you want to download it?</source>
 Хотите скачать его?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Невозможно получить эксклюзивный доступ к файлу 
+        <translation>Невозможно получить эксклюзивный доступ к файлу
 %1
 Возможно, файл уже загружается.</translation>
     </message>
@@ -4842,10 +4842,10 @@ Possibly the file is already being downloaded.</source>
         <translation>Миллиметры</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Поля выходят за рамки печати. 
+        <translation>Поля выходят за рамки печати.
 
 Применять настройки в любом случае?</translation>
     </message>
@@ -6923,6 +6923,15 @@ Do you want to save your changes?</source>
         <source>untitled.sm2d</source>
         <translation>безымянный.sm2d</translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished">По умолчанию</translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8475,7 +8484,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Язык имени точки:</translation>
+        <translation type="vanished">Язык имени точки:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8696,6 +8705,10 @@ Do you want to save your changes?</source>
     <message>
         <source>Do not show welcome screen</source>
         <translation>Не показывать экран приветствия</translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9849,17 +9862,17 @@ Do you want to save your changes?</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Выбирает, какой десятичный разделитель использовать. 
-Если флажок установлен, используется разделитель для локали пользователя. 
+        <translation>Выбирает, какой десятичный разделитель использовать.
+Если флажок установлен, используется разделитель для локали пользователя.
 Если флажок снят, используется точка.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Если флажок установлен, окно приветствия не будет отображаться. 
+        <translation>Если флажок установлен, окно приветствия не будет отображаться.
 Эту настройку можно изменить в настройках SeamlyMe.</translation>
     </message>
 </context>
@@ -9886,11 +9899,11 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Десятичный Разделитель:</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Выбирает, какой десятичный разделитель использовать. 
-Если флажок установлен, используется разделитель для локали пользователя. 
+        <translation>Выбирает, какой десятичный разделитель использовать.
+Если флажок установлен, используется разделитель для локали пользователя.
 Если флажок снят, используется точка.</translation>
     </message>
     <message>
@@ -9922,9 +9935,9 @@ When unchecked the period is used.</source>
         <translation>Устанавливает язык, используемый для Seamly2D.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Если флажок установлен, окно приветствия не будет отображаться. 
+        <translation>Если флажок установлен, окно приветствия не будет отображаться.
 Эту настройку можно изменить в настройках Seamly2D.</translation>
     </message>
     <message>

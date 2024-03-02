@@ -105,6 +105,7 @@ public:
 public slots:
     void processCommandLine();
     void penChanged(Pen pen);
+    void basePointChanged();
 
     virtual void ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
     virtual void updateGroups() Q_DECL_OVERRIDE;
@@ -309,6 +310,7 @@ private:
 
     QFontComboBox                    *fontComboBox;
     QComboBox                        *fontSizeComboBox;
+    QComboBox                        *basePointComboBox;
     QComboBox                        *draftBlockComboBox;  /** @brief draftBlockComboBox stores names of draft blocks.*/
     QLabel                           *draftBlockLabel;
     Draw                              mode;                /** @brief mode stores current draw mode. */
@@ -349,6 +351,7 @@ private:
     void                              initModesToolBar();
     void                              initDraftToolBar();
     void                              initPointNameToolBar();
+    void                              initBasePointComboBox();
     void                              initToolsToolBar();
     void                              initToolBarVisibility();
     void                              initPenToolBar();

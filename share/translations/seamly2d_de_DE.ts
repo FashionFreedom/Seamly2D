@@ -1323,11 +1323,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutiger Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1814,7 +1814,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2309,7 +2309,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Select an arc</source>
-        <translation>Wähle veinen Bogen</translation>
+        <translation>Wähle einen Bogen</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -3058,11 +3058,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Erster achsenpunkt:</translation>
+        <translation>Erster Achsenpunkt:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Zweiter achsenpunkt:</translation>
+        <translation>Zweiter Achsenpunkt:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3898,17 +3898,15 @@ Möchtest Du diesen downloaden?</translation>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Datei kann nicht geöffnet werden
-%1
-zum schreiben</translation>
+        <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
     </message>
     <message>
         <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>Exklusiver Zugriff auf die Datei kann nicht gewährt werden
+        <translation>Exklusiver Zugang zur Datei kann nicht hergestellt werden
 %1
-Möglicherweise wird die Datei bereits heruntergeladen.</translation>
+Möglicherweise ist die Datei schon heruntergeladen worden.</translation>
     </message>
 </context>
 <context>
@@ -4932,11 +4930,11 @@ Einstellungen trotzdem anwenden?</translation>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Ungültiges Argument für die Basiskörperhöhe. Muss %1cm sein.</translation>
+        <translation>Ungültiges Parameter für die Basiskörperhöhe. Muss %1cm sein.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Ungültiges Argument für die Basisgröße. Muss in %1cm sein .</translation>
+        <translation>Ungültiges Parameter für die Basisgröße. Muss in %1cm sein .</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
@@ -5301,7 +5299,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht speichern</translation>
+        <translation>Nicht Speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -5837,7 +5835,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Kontrollpunkte und Kruvenrichtung umschalten (V, C)</translation>
+        <translation>Kontrollpunkte und Kurvenrichtung umschalten (V, C)</translation>
     </message>
     <message>
         <source>Load multisize</source>
@@ -6697,7 +6695,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt -Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
@@ -6898,6 +6896,16 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
+    </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation>Basisname, der für neue Punkte verwendet wird.
+Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation>Standard</translation>
     </message>
 </context>
 <context>
@@ -7177,7 +7185,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Herren &amp; Maßanfertigung</translation>
+        <translation>Herren &amp; Schneiderei</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
@@ -8441,7 +8449,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8449,7 +8457,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Etiketten Sprache:</translation>
+        <translation type="vanished">Etiketten Sprache:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8513,7 +8521,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Enable Autosave</source>
-        <translation>Automatisches Speichern aktivieren</translation>
+        <translation>Automatisches Speichern ausschalten</translation>
     </message>
     <message>
         <source> min</source>
@@ -8671,6 +8679,11 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Do not show welcome screen</source>
         <translation>Willkommensbildschirm nicht anzeigen</translation>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation>Punktbezeichnung Text:</translation>
     </message>
 </context>
 <context>
@@ -9412,12 +9425,12 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>too few arguments for function sum.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Argumente für Summenfunktion.</translation>
+        <translation>Zu wenige Parameter für Summenfunktion.</translation>
     </message>
     <message>
         <source>too few arguments for function min.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Argumente für Funktion min.</translation>
+        <translation>Zu wenige Parameter für Funktion min.</translation>
     </message>
 </context>
 <context>
@@ -9621,7 +9634,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     <name>SavePieceOptions</name>
     <message>
         <source>save detail option</source>
-        <translation>Detailoption speichern</translation>
+        <translation>Detailoption Speichern</translation>
     </message>
 </context>
 <context>
@@ -9646,7 +9659,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Pattern making system</source>
@@ -9796,7 +9809,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
@@ -9861,7 +9874,7 @@ Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translatio
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -10157,7 +10170,7 @@ Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</transla
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Benutzen Sie das Farb Werkzeug</translation>
+        <translation>Benutzen Sie das Farbwerkzeug</translation>
     </message>
     <message>
         <source>Wireframe</source>
@@ -10984,7 +10997,7 @@ Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</transla
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Individuelle ...</translation>
+        <translation>Individuelle öffnen...</translation>
     </message>
     <message>
         <source>Save</source>
@@ -11237,7 +11250,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht speichern</translation>
+        <translation>Nicht Speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -11734,7 +11747,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Möchten sie wirklich löschen?</translation>
+        <translation>Möchtest Du wirklich löschen?</translation>
     </message>
     <message>
         <source>Edit wrong formula</source>
@@ -11766,7 +11779,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Hell Lachsrosa</translation>
+        <translation>Helles Lachsrosa</translation>
     </message>
     <message>
         <source>Goldenrod</source>
@@ -11948,7 +11961,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Dark Khaki</source>
-        <translation>Dunkelkhaki</translation>
+        <translation>Dunkles Khaki</translation>
     </message>
     <message>
         <source>Tan</source>
@@ -12063,7 +12076,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Nicht unterstützte Layout-Größe.</translation>
+        <translation>Nicht unterstützte Layouteinheiten.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
@@ -12238,19 +12251,19 @@ wie gewohnt in SeamlyME laden können.
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>maße</translation>
+        <translation>Maße</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>individuell</translation>
+        <translation>Individuell</translation>
     </message>
     <message>
         <source>multisize</source>
-        <translation>mehrgröße</translation>
+        <translation>Mehrgröße</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>vorlagen</translation>
+        <translation>Vorlagen</translation>
     </message>
     <message>
         <source>label templates</source>
@@ -12320,12 +12333,12 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Konnte Datei %1 nicht öffnen: %2.</translation>
+        <translation>Konnte Datei nicht öffnen %1: %2.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
 %2.</source>
-        <translation>Konnte Schemadatei %1 nicht öffnen:
+        <translation>Konnte Schemadatei nicht öffnen %1:
 %2.</translation>
     </message>
     <message>
@@ -12338,7 +12351,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Konnte Knoten nicht erhalten</translation>
+        <translation>Konnte&apos;t Knoten nicht erhalten</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
@@ -12585,7 +12598,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Unbekannter Werkzeug Typ &apos;%1&apos;.</translation>
+        <translation>Unbekannter Werkzeug Typen &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error not unique id.</source>
@@ -12617,7 +12630,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>Unbekantte Betriebsart &apos;%1&apos;.</translation>
+        <translation>Unbekannte Betriebsart &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
@@ -12805,7 +12818,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Schnittpunkt von Kurve und Achse</translation>
+        <translation>Schnittpunkt von Kurve &amp; Achse</translation>
     </message>
 </context>
 <context>
@@ -13945,7 +13958,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>Europäischer Schnitt</translation>
+        <translation>European Cut</translation>
     </message>
     <message>
         <source>McCunn</source>

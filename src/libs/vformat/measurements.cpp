@@ -1,26 +1,29 @@
-/***************************************************************************
- **  @file   measurements.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+/******************************************************************************
+*   @file   measurements.cpp
+**  @author Douglas S Caskey
+**  @date   25 Jan, 2024
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2024 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
 /************************************************************************
  **
@@ -81,6 +84,8 @@
 
 const QString MeasurementDoc::TagVST              = QStringLiteral("vst");
 const QString MeasurementDoc::TagVIT              = QStringLiteral("vit");
+const QString MeasurementDoc::TagSMMS             = QStringLiteral("smms");
+const QString MeasurementDoc::TagSMIS             = QStringLiteral("smis");
 const QString MeasurementDoc::TagBodyMeasurements = QStringLiteral("body-measurements");
 const QString MeasurementDoc::TagNotes            = QStringLiteral("notes");
 const QString MeasurementDoc::TagSize             = QStringLiteral("size");
@@ -114,7 +119,7 @@ namespace
 //---------------------------------------------------------------------------------------------------------------------
 QString FileComment()
 {
-    return QString("Measurements created with Seamly2D v%1 (https://seamly.io/).").arg(APP_VERSION_STR);
+    return QString("Measurements created with SeamlyMe v%1 (https://seamly.io/).").arg(APP_VERSION_STR);
 }
 }
 
@@ -418,7 +423,7 @@ QString MeasurementDoc::Notes() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetNotes(const QString &text)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagNotes, text);
     }
@@ -433,7 +438,7 @@ QString MeasurementDoc::FamilyName() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetFamilyName(const QString &text)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagFamilyName, text);
     }
@@ -448,7 +453,7 @@ QString MeasurementDoc::GivenName() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetGivenName(const QString &text)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagGivenName, text);
     }
@@ -463,7 +468,7 @@ QDate MeasurementDoc::BirthDate() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetBirthDate(const QDate &date)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagBirthDate, date.toString("yyyy-MM-dd"));
     }
@@ -478,7 +483,7 @@ GenderType MeasurementDoc::Gender() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetGender(const GenderType &gender)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagGender, GenderToStr(gender));
     }
@@ -493,7 +498,7 @@ QString MeasurementDoc::PMSystem() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetPMSystem(const QString &system)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagPMSystem, ClearPMCode(system));
     }
@@ -508,14 +513,14 @@ QString MeasurementDoc::Email() const
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDoc::SetEmail(const QString &text)
 {
-    if (not IsReadOnly())
+    if (not isReadOnly())
     {
         setTagText(TagEmail, text);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MeasurementDoc::IsReadOnly() const
+bool MeasurementDoc::isReadOnly() const
 {
     return UniqueTagText(TagReadOnly, falseStr) == trueStr;
 }
@@ -741,7 +746,7 @@ VContainer *MeasurementDoc::GetData() const
 void MeasurementDoc::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseHeight)
 {
     this->clear();
-    QDomElement mElement = this->createElement(TagVST);
+    QDomElement mElement = this->createElement(TagSMMS);
 
     mElement.appendChild(createComment(FileComment()));
 
@@ -784,7 +789,7 @@ void MeasurementDoc::CreateEmptyMultisizeFile(Unit unit, int baseSize, int baseH
 void MeasurementDoc::CreateEmptyIndividualFile(Unit unit)
 {
     this->clear();
-    QDomElement mElement = this->createElement(TagVIT);
+    QDomElement mElement = this->createElement(TagSMIS);
 
     mElement.appendChild(createComment(FileComment()));
 
@@ -913,11 +918,11 @@ QDomElement MeasurementDoc::FindM(const QString &name) const
 MeasurementsType MeasurementDoc::ReadType() const
 {
     QDomElement root = documentElement();
-    if (root.tagName() == TagVST)
+    if ((root.tagName() == TagVST) || (root.tagName() == TagSMMS))
     {
         return MeasurementsType::Multisize;
     }
-    else if (root.tagName() == TagVIT)
+    else if ((root.tagName() == TagVIT) || (root.tagName() == TagSMIS))
     {
         return MeasurementsType::Individual;
     }

@@ -1,13 +1,13 @@
 /******************************************************************************
  *   @file   multi_size_converter.h
  **  @author Douglas S Caskey
- **  @date   14 Jul, 2023
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -78,62 +78,63 @@ public:
 // GCC 4.6 doesn't allow constexpr and const together
 #if !defined(__INTEL_COMPILER) && !defined(__clang__) && defined(__GNUC__) && (__GNUC__ * 100 + __GNUC_MINOR__) <= 406
     static Q_DECL_CONSTEXPR int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static Q_DECL_CONSTEXPR int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 4);
+    static Q_DECL_CONSTEXPR int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
 #else
     static Q_DECL_CONSTEXPR const int MeasurementMinVer = CONVERTER_VERSION_CHECK(0, 3, 0);
-    static Q_DECL_CONSTEXPR const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 4);
+    static Q_DECL_CONSTEXPR const int MeasurementMaxVer = CONVERTER_VERSION_CHECK(0, 4, 5);
 #endif
 
 protected:
-    virtual int     MinVer() const Q_DECL_OVERRIDE;
-    virtual int     MaxVer() const Q_DECL_OVERRIDE;
+    virtual int     minVer() const Q_DECL_OVERRIDE;
+    virtual int     maxVer() const Q_DECL_OVERRIDE;
 
-    virtual QString MinVerStr() const Q_DECL_OVERRIDE;
-    virtual QString MaxVerStr() const Q_DECL_OVERRIDE;
+    virtual QString minVerStr() const Q_DECL_OVERRIDE;
+    virtual QString maxVerStr() const Q_DECL_OVERRIDE;
 
-    virtual QString XSDSchema(int ver) const Q_DECL_OVERRIDE;
-    virtual void    ApplyPatches() Q_DECL_OVERRIDE;
-    virtual void    DowngradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
-    virtual bool    IsReadOnly() const Q_DECL_OVERRIDE;
+    virtual QString getSchema(int ver) const Q_DECL_OVERRIDE;
+    virtual void    applyPatches() Q_DECL_OVERRIDE;
+    virtual void    downgradeToCurrentMaxVersion() Q_DECL_OVERRIDE;
+    virtual bool    isReadOnly() const Q_DECL_OVERRIDE;
 
 private:
     Q_DISABLE_COPY(MultiSizeConverter)
     static const QString MeasurementMinVerStr;
 
-    void AddNewTagsForV0_4_0();
-    void RemoveTagsForV0_4_0();
-    void ConvertMeasurementsToV0_4_0();
-    QDomElement AddMV0_4_0(const QString &name, qreal value, qreal sizeIncrease, qreal heightIncrease);
-    void PM_SystemV0_4_1();
-    void ConvertMeasurementsToV0_4_2();
+    void addNewTagsForVer0_4_0();
+    void removeTagsForVer0_4_0();
+    void convertMeasurementsToV0_4_0();
+    QDomElement addMeasurementsVer0_4_0(const QString &name, qreal value, qreal sizeIncrease, qreal heightIncrease);
+    void convertPmSystemToVer0_4_1();
+    void convertMeasurementsToV0_4_2();
 
-    void ToV0_4_0();
-    void ToV0_4_1();
-    void ToV0_4_2();
-    void ToV0_4_3();
-    void ToV0_4_4();
+    void convertToVer0_4_0();
+    void convertToVer0_4_1();
+    void convertToVer0_4_2();
+    void convertToVer0_4_3();
+    void convertToVer0_4_4();
+    void convertToVer0_4_5();
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline int MultiSizeConverter::MinVer() const
+inline int MultiSizeConverter::minVer() const
 {
     return MeasurementMinVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline int MultiSizeConverter::MaxVer() const
+inline int MultiSizeConverter::maxVer() const
 {
     return MeasurementMaxVer;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString MultiSizeConverter::MinVerStr() const
+inline QString MultiSizeConverter::minVerStr() const
 {
     return MeasurementMinVerStr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString MultiSizeConverter::MaxVerStr() const
+inline QString MultiSizeConverter::maxVerStr() const
 {
     return MeasurementMaxVerStr;
 }

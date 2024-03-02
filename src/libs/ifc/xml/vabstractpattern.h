@@ -141,9 +141,12 @@ public:
     qreal                          getDefaultLineWeight() const;
     QString                        getDefaultLineType() const;
 
+    void                           setDefaultBasePoint(QString basePoint);
+
     virtual void                   IncrementReferens(quint32 id) const=0;
     virtual void                   DecrementReferens(quint32 id) const=0;
 
+    virtual QStringList            GetCurrentAlphabet() const=0;
     virtual QString                GenerateLabel(const LabelType &type, const QString &reservedName = QString())const=0;
     virtual QString                GenerateSuffix(const QString &type) const=0;
 
@@ -214,7 +217,7 @@ public:
     void                           DeleteImage();
 
     QString                        GetVersion() const;
-    void                           SetVersion();
+    void                           setVersion();
 
     QVector<quint32>               getOpItems(const quint32 &toolId, const QString &itemType);
     QVector<quint32>               getDartItems(const quint32 &toolId);
@@ -475,6 +478,8 @@ protected:
     QString        m_DefaultLineColor;
     qreal          m_DefaultLineWeight;
     QString        m_DefaultLineType;
+
+    QString        defaultBasePoint;
 
     QString        lastSavedExportFormat;
 

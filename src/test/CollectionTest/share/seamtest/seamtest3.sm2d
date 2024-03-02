@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <!--Pattern created with Seamly2D v2023.11.20.149 (https://seamly.io).-->
+    <version>0.4.0</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <patternLabel/>
+    <measurements/>
+    <increments/>
+    <draftBlock name="Pattern piece 1">
+        <calculation>
+            <point id="1" mx="0.132292" my="0.264583" name="A" type="single" x="0.79375" y="1.05833"/>
+            <point angle="0" basePoint="1" id="2" length="10" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A1" type="endLine"/>
+            <point angle="0" firstPoint="2" id="3" length="5" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A2" secondPoint="1" type="normal"/>
+            <point firstPoint="1" id="4" length="CurrentLength/2" lineColor="black" lineType="none" mx="0.132292" my="0.264583" name="A3" secondPoint="3" type="alongLine"/>
+            <point firstPoint="4" id="5" length="CurrentLength/2" lineColor="black" lineType="none" mx="0.132292" my="0.264583" name="A4" secondPoint="3" type="alongLine"/>
+            <point firstPoint="1" id="6" length="CurrentLength/2" lineColor="black" lineType="none" mx="0.132292" my="0.264583" name="A5" secondPoint="4" type="alongLine"/>
+            <spline color="black" id="7" type="pathInteractive">
+                <pathPoint angle1="65.3764" angle2="245.376" length1="0" length2="2.1538" pSpline="3"/>
+                <pathPoint angle1="248.531" angle2="68.531" length1="1.80107" length2="2.63289" pSpline="5"/>
+                <pathPoint angle1="42.0794" angle2="222.079" length1="0.714555" length2="3.76242" pSpline="4"/>
+                <pathPoint angle1="50.1229" angle2="230.123" length1="2.19303" length2="2.72501" pSpline="6"/>
+                <pathPoint angle1="228.872" angle2="48.872" length1="0.486869" length2="0" pSpline="1"/>
+            </spline>
+        </calculation>
+        <modeling>
+            <point id="8" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="9" idObject="2" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="10" idObject="3" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="11" idObject="7" inUse="true" type="modelingPath"/>
+            <point id="12" idObject="5" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="13" idObject="7" inUse="true" type="modelingPath"/>
+            <point id="14" idObject="4" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="15" idObject="7" inUse="true" type="modelingPath"/>
+            <point id="16" idObject="6" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="17" idObject="7" inUse="true" type="modelingPath"/>
+        </modeling>
+        <pieces>
+            <piece forbidFlipping="true" id="18" inLayout="true" mx="0" my="0" name="" seamAllowance="true" version="2" width="1">
+                <nodes>
+                    <node idObject="8" type="NodePoint"/>
+                    <node idObject="9" type="NodePoint"/>
+                    <node idObject="10" type="NodePoint"/>
+                    <node idObject="11" reverse="0" type="NodeSplinePath"/>
+                    <node after="0.5" before="0.5" idObject="12" type="NodePoint"/>
+                    <node idObject="13" reverse="0" type="NodeSplinePath"/>
+                    <node idObject="14" type="NodePoint"/>
+                    <node idObject="15" reverse="0" type="NodeSplinePath"/>
+                    <node before="0.2" idObject="16" type="NodePoint"/>
+                    <node idObject="17" reverse="0" type="NodeSplinePath"/>
+                </nodes>
+            </piece>
+        </pieces>
+        <groups/>
+    </draftBlock>
+</pattern>

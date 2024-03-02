@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern>
+    <!--Pattern created with Seamly2D v2023.11.20.149 (https://seamly.io).-->
+    <version>0.4.0</version>
+    <unit>cm</unit>
+    <description/>
+    <notes/>
+    <patternLabel/>
+    <measurements/>
+    <increments/>
+    <draftBlock name="Pattern piece 1">
+        <calculation>
+            <point id="1" mx="0.132292" my="0.264583" name="A" type="single" x="0.79375" y="1.05833"/>
+            <point angle="0" basePoint="1" id="2" length="10" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A1" type="endLine"/>
+            <point angle="0" firstPoint="2" id="3" length="5" lineColor="black" lineType="solidLine" mx="0.132292" my="0.264583" name="A2" secondPoint="1" type="normal"/>
+            <point firstPoint="1" id="4" length="CurrentLength/2" lineColor="black" lineType="none" mx="0.132292" my="0.264583" name="A3" secondPoint="3" type="alongLine"/>
+            <spline angle1="236.89" angle2="209.202" color="black" id="5" length1="1.06381" length2="2.9538" point1="4" point4="3" type="simpleInteractive"/>
+            <spline angle1="241.792" angle2="241.791" color="black" id="6" length1="2.22517" length2="2.12741" point1="1" point4="4" type="simpleInteractive"/>
+        </calculation>
+        <modeling>
+            <point id="12" idObject="1" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="13" idObject="2" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <point id="14" idObject="3" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="15" idObject="5" inUse="true" type="modelingSpline"/>
+            <point id="16" idObject="4" inUse="true" mx="0.132292" my="0.264583" type="modeling"/>
+            <spline id="17" idObject="6" inUse="true" type="modelingSpline"/>
+        </modeling>
+        <pieces>
+            <piece forbidFlipping="true" id="18" inLayout="true" mx="0" my="0" name="" seamAllowance="true" version="2" width="1">
+                <nodes>
+                    <node idObject="12" type="NodePoint"/>
+                    <node idObject="13" type="NodePoint"/>
+                    <node idObject="14" type="NodePoint"/>
+                    <node idObject="15" reverse="1" type="NodeSpline"/>
+                    <node after="1.01" before="1.01" idObject="16" type="NodePoint"/>
+                    <node idObject="17" reverse="1" type="NodeSpline"/>
+                </nodes>
+            </piece>
+        </pieces>
+        <groups/>
+    </draftBlock>
+</pattern>

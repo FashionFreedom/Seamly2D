@@ -83,6 +83,7 @@ defineTest(copyToDestdir) {
                     FILE ~= s,/,\\,g
                     DDIR ~= s,/,\\,g
                 }
+                message("copy:" $$quote($$FILE))
                 QMAKE_POST_LINK += $$VCOPY $$quote($$FILE) $$quote($$DDIR) $$escape_expand(\\n\\t)
             }
 

@@ -3942,10 +3942,10 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation>No se puede obtener acceso exclusivo al archivo 
+        <translation>No se puede obtener acceso exclusivo al archivo
 %1
 Posiblemente el archivo ya está siendo descargado.</translation>
     </message>
@@ -4856,10 +4856,10 @@ Posiblemente el archivo ya está siendo descargado.</translation>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation>Los márgenes van más allá de la impresión. 
+        <translation>Los márgenes van más allá de la impresión.
 
 ¿Aplicar ajustes de todos modos?</translation>
     </message>
@@ -6938,6 +6938,15 @@ Do you want to save your changes?</source>
         <source>pattern</source>
         <translation>patrón</translation>
     </message>
+    <message>
+        <source>Base name used for new points.
+Press enter to temporarily add it to the list.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Default</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindowsNoGUI</name>
@@ -8505,7 +8514,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Label language:</source>
-        <translation>Idioma de las etiquetas:</translation>
+        <translation type="vanished">Idioma de las etiquetas:</translation>
     </message>
     <message>
         <source>The Default unit has been updated and will be used as the default for the next pattern you create.</source>
@@ -8726,6 +8735,11 @@ Do you want to save your changes?</source>
     <message>
         <source>Do not show welcome screen</source>
         <translation>No mostrar la pantalla de bienvenida</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Point name text:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -9880,17 +9894,17 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar. 
-Si está marcada, se utiliza el separador de la configuración regional del usuario. 
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
 Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida. 
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
 Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
     </message>
 </context>
@@ -9941,11 +9955,11 @@ Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation>Selecciona el carácter separador decimal a utilizar. 
-Si está marcada, se utiliza el separador de la configuración regional del usuario. 
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
 Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
@@ -9953,9 +9967,9 @@ Si no se selecciona, se utiliza el punto.</translation>
         <translation>Establece el idioma utilizado para Seamly2D.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the Seamly2D preferences.</source>
-        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida. 
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
 Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
     </message>
     <message>

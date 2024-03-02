@@ -102,6 +102,8 @@ public:
 
     void replaceNameInFormula(QVector<VFormulaField> &expressions, const QString &name, const QString &newName);
 
+    QStringList    GetCurrentAlphabet() const;
+
     virtual QString GenerateLabel(const LabelType &type, const QString &reservedName = QString())const Q_DECL_OVERRIDE;
     virtual QString GenerateSuffix(const QString &type) const Q_DECL_OVERRIDE;
 
@@ -114,7 +116,7 @@ public:
     int  GetDefCustomSize() const;
     void SetDefCustomSize(int value);
 
-    bool IsReadOnly() const;
+    bool isReadOnly() const;
     void SetReadOnly(bool rOnly);
 
     void LiteParseIncrements();
@@ -177,6 +179,7 @@ private:
     template <typename T>
     QRectF         ToolBoundingRect(const QRectF &rec, const quint32 &id) const;
     void           parseCurrentDraftBlock();
+
     QString        GetLabelBase(quint32 index)const;
 
     void ParseToolBasePoint(VMainGraphicsScene *scene, const QDomElement &domElement, const Document &parse);
