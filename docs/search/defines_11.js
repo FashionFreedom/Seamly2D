@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uniformrand_19369',['UNIFORMRAND',['../d6/d2f/predicates_8cpp.html#a151c130268f15ea9975886f0750f3079',1,'predicates.cpp']]],
-  ['use_5fdouble_19370',['USE_DOUBLE',['../d6/d84/delaunay_8h.html#a3602f95fb57ccdebbb4e06786d23d033',1,'delaunay.h']]]
+  ['uniformrand_19371',['UNIFORMRAND',['../d6/d2f/predicates_8cpp.html#a151c130268f15ea9975886f0750f3079',1,'predicates.cpp']]],
+  ['use_5fdouble_19372',['USE_DOUBLE',['../d6/d84/delaunay_8h.html#a3602f95fb57ccdebbb4e06786d23d033',1,'delaunay.h']]]
 ];
