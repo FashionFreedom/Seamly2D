@@ -1208,7 +1208,7 @@ QStringList VPattern::GetCurrentAlphabet() const
     const QStringList list = VApplication::LabelLanguages();
     const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
     QStringList alphabet;
-    switch (list.indexOf(qApp->Seamly2DSettings()->GetLabelLanguage()))
+    switch (list.indexOf(qApp->Seamly2DSettings()->getLabelLanguage()))
     {
     case 0: // de
     {

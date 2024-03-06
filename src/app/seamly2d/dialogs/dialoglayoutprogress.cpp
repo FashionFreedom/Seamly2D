@@ -65,7 +65,7 @@ DialogLayoutProgress::DialogLayoutProgress(int count, QWidget *parent)
 {
     ui->setupUi(this);
 
-    qApp->Seamly2DSettings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Seamly2DSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     ui->progressBar->setMaximum(maxCount);
     ui->progressBar->setValue(0);

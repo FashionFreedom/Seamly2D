@@ -81,7 +81,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
 
     //-------------------- Decimal separator setup
     ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOption_CheckBox->setChecked(qApp->SeamlyMeSettings()->GetOsSeparator());
+    ui->osOption_CheckBox->setChecked(qApp->SeamlyMeSettings()->getOsSeparator());
 
     //---------------------- Pattern making system
     InitPMSystems(ui->systemCombo);
@@ -164,14 +164,13 @@ void SeamlyMePreferencesConfigurationPage::Apply()
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
 
     settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
-    settings->SetOsSeparator(ui->osOption_CheckBox->isChecked());
-
+    settings->setOsSeparator(ui->osOption_CheckBox->isChecked());
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->SetLocale(locale);
+        settings->setLocale(locale);
         m_langChanged = false;
 
         const QString code = qvariant_cast<QString>(ui->systemCombo->currentData());

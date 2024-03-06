@@ -140,7 +140,7 @@ TMainWindow::TMainWindow(QWidget *parent)
 {
 	ui->setupUi(this);
 
-	qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+	qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
 	ui->lineEditFind->setClearButtonEnabled(true);
 	ui->lineEditName->setClearButtonEnabled(true);
@@ -644,7 +644,7 @@ void TMainWindow::changeEvent(QEvent *event)
 {
 	if (event->type() == QEvent::LanguageChange)
 	{
-		qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+		qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
 		// retranslate designer form (single inheritance approach)
 		ui->retranslateUi(this);
@@ -736,7 +736,7 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			}
 			else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
 			{
-				if (qApp->Settings()->GetOsSeparator())
+				if (qApp->Settings()->getOsSeparator())
 				{
 					plainTextEdit->insertPlainText(QLocale().decimalPoint());
 				}
@@ -755,7 +755,7 @@ bool TMainWindow::eventFilter(QObject *object, QEvent *event)
 			QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
 			if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
 			{
-				if (qApp->Settings()->GetOsSeparator())
+				if (qApp->Settings()->getOsSeparator())
 				{
 					textEdit->insert(QLocale().decimalPoint());
 				}
@@ -1810,7 +1810,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 			QString formula;
 			try
 			{
-				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
+				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->getOsSeparator());
 			}
 			catch (qmu::QmuParserError &error)
 			{
@@ -1975,7 +1975,7 @@ void TMainWindow::SaveMValue()
 
 	try
 	{
-		const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
+		const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
 		individualMeasurements->SetMValue(nameField->data(Qt::UserRole).toString(), formula);
 	}
 	catch (qmu::QmuParserError &error) // Just in case something bad will happen
@@ -2357,7 +2357,7 @@ void TMainWindow::InitWindow()
 		ui->comboBoxGender->setCurrentIndex(index);
 
 		{
-			const QLocale dateLocale = QLocale(qApp->Settings()->GetLocale());
+			const QLocale dateLocale = QLocale(qApp->Settings()->getLocale());
 			ui->dateEditBirthDate->setLocale(dateLocale);
 			ui->dateEditBirthDate->setDisplayFormat(dateLocale.dateFormat());
 			ui->dateEditBirthDate->setDate(individualMeasurements->BirthDate());
@@ -2707,7 +2707,7 @@ void TMainWindow::RefreshTable(bool freshCall)
 			QString formula;
 			try
 			{
-				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->GetOsSeparator());
+				formula = qApp->TrVars()->FormulaToUser(meash->GetFormula(), qApp->Settings()->getOsSeparator());
 			}
 			catch (qmu::QmuParserError &error)
 			{
@@ -2943,7 +2943,7 @@ bool TMainWindow::EvalFormula(const QString &formula, bool fromUser, VContainer 
 			QString f;
 			if (fromUser)
 			{
-				f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+				f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 			}
 			else
 			{

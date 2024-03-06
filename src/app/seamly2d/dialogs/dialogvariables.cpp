@@ -105,7 +105,7 @@ DialogVariables::DialogVariables(VContainer *data, VPattern *doc, QWidget *paren
     formulaBaseHeight = ui->formula_PlainTextEdit->height();
     ui->formula_PlainTextEdit->installEventFilter(this);
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     qCDebug(vDialog, "Showing variables.");
     showUnits();
@@ -219,7 +219,7 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
@@ -403,7 +403,7 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
             // Replace line return character with spaces for calc if exist
             if (fromUser)
             {
-                f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+                f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             }
             else
             {
@@ -818,7 +818,7 @@ void DialogVariables::saveCustomVariableFormula()
 
     try
     {
-        const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->GetOsSeparator());
+        const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
         doc->SetIncrementFormula(name->text(), formula);
     }
     catch (qmu::QmuParserError &error) // Just in case something bad will happen
@@ -853,7 +853,7 @@ void DialogVariables::Fx()
     EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
     dialog->setWindowTitle(tr("Edit variable"));
     dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
-                                                          qApp->Settings()->GetOsSeparator()));
+                                                          qApp->Settings()->getOsSeparator()));
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     dialog->setPostfix(postfix);//Show unit in dialog label (cm, mm or inch)
 
@@ -908,7 +908,7 @@ bool DialogVariables::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     textEdit->insert(QLocale().decimalPoint());
                 }
@@ -1002,7 +1002,7 @@ void DialogVariables::showCustomVariableDetails()
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {

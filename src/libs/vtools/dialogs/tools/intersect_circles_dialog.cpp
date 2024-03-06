@@ -168,13 +168,13 @@ void IntersectCirclesDialog::SetSecondCircleCenterId(const quint32 &value)
 QString IntersectCirclesDialog::GetFirstCircleRadius() const
 {
     return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditCircle1Radius->toPlainText(),
-                                              qApp->Settings()->GetOsSeparator());
+                                              qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::SetFirstCircleRadius(const QString &value)
 {
-    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->plainTextEditCircle1Radius->setPlainText(formula);
 
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);
@@ -188,13 +188,13 @@ void IntersectCirclesDialog::SetFirstCircleRadius(const QString &value)
 QString IntersectCirclesDialog::GetSecondCircleRadius() const
 {
     return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditCircle2Radius->toPlainText(),
-                                              qApp->Settings()->GetOsSeparator());
+                                              qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCirclesDialog::SetSecondCircleRadius(const QString &value)
 {
-    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->plainTextEditCircle2Radius->setPlainText(formula);
 
     IntersectCirclesVisual *point = qobject_cast<IntersectCirclesVisual *>(vis);

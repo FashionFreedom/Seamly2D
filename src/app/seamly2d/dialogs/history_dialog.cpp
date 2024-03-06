@@ -97,7 +97,7 @@ HistoryDialog::HistoryDialog(VContainer *data, VPattern *doc, QWidget *parent)
 
     ui->find_LineEdit->installEventFilter(this);
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
     fillTable();
     initializeTable();
@@ -704,7 +704,7 @@ bool HistoryDialog::eventFilter(QObject *object, QEvent *event)
             QKeyEvent *keyEvent = static_cast<QKeyEvent *>(event);
             if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     textEdit->insert(QLocale().decimalPoint());
                 }

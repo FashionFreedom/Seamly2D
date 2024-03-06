@@ -103,7 +103,7 @@ public:
     bool LoadPattern(const QString &fileName, const QString &customMeasureFile = QString());
 
 public slots:
-    void ProcessCMD();
+    void processCommandLine();
     void penChanged(Pen pen);
     void basePointChanged();
 

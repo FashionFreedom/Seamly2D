@@ -3903,7 +3903,7 @@ Do you want to download it?</source>
         <translation>Een nieuwe versie %1 is beschikbaar. Wil je het downloaden?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
@@ -4815,7 +4815,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Millimeters</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
         <translation type="unfinished"></translation>
@@ -8602,7 +8602,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Designer Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Info ontwerper</translation>
     </message>
     <message>
         <source>Company / Designer Info</source>
@@ -8662,7 +8662,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>User locale</source>
-        <translation type="unfinished">Lokalisatie gebruiker</translation>
+        <translation>Lokalisatie gebruiker</translation>
+    </message>
+    <message>
+        <source>Startup</source>
+        <translation>Startup</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Welkomstscherm niet weergeven</translation>
     </message>
     <message>
         <source>Point name text:</source>
@@ -9690,19 +9702,19 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Startup</translation>
     </message>
     <message>
         <source>Do not show welcome screen</source>
-        <translation type="unfinished"></translation>
+        <translation>Welkomstscherm niet weergeven</translation>
     </message>
     <message>
         <source>Decimal separator:</source>
-        <translation type="unfinished">Decimaal scheidingsteken:</translation>
+        <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
         <source>User locale</source>
-        <translation type="unfinished">Lokalisatie gebruiker</translation>
+        <translation>Lokalisatie gebruiker</translation>
     </message>
 </context>
 <context>
@@ -9791,12 +9803,81 @@ Press enter to temporarily add it to the list.</source>
         <translation>Decimaal scheidingsteken:</translation>
     </message>
     <message>
+    <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+    <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt.
+Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt.
+Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
+    </message>
+    <message>
         <source>GUI language:</source>
         <translation>GUI taal:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
         <translation>Stelt de taal in die wordt gebruikt voor SeamlyMe.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation>Als deze optie is aangevinkt, wordt het welkomstscherm niet weergegeven.
+Je kunt deze instelling wijzigen in de SeamlyMe-voorkeuren.</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Niet meer weergeven</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Lokalisatie gebruiker</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centimeters</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeters</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Inches</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Welkom</translation>
+    </message>
+    <message>
+        <source>Welcome to Seamly2D</source>
+        <translation>Welkom bij Seamly2D</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Eenheden:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Stelt de standaardeenheden in voor een nieuw meetbestand.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Decimaal scheidingsteken:</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Selecteert welk decimaal scheidingsteken moet worden gebruikt.
+Indien aangevinkt wordt het scheidingsteken voor de locale van de gebruiker gebruikt.
+Als deze optie niet is aangevinkt, wordt de punt gebruikt.</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI taal:</translation>
     </message>
     <message>
         <source>Do not show again</source>
@@ -9819,15 +9900,26 @@ Press enter to temporarily add it to the list.</source>
         <translation>Inches</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Stelt de taal in die wordt gebruikt voor Seamly2D.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Als deze optie is aangevinkt, wordt het welkomstvenster niet weergegeven.
+Je kunt deze instelling wijzigen in de Seamly2D voorkeuren.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Kies de eenheden, het decimaalscheidingsteken, de taal en het selectiegeluid van je voorkeur. (Je kunt deze later wijzigen.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Geluid:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Stelt het klikgeluid van de knooppuntselectie in.</translation>
     </message>
 </context>
 <context>

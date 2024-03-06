@@ -88,7 +88,7 @@ int main(int argc, char *argv[])
     app.InitOptions();
 
     auto settings = qApp->SeamlyMeSettings();
-    app.loadTranslations(settings->GetLocale());
+    app.loadTranslations(settings->getLocale());
 
     // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
     bool showWelcome = !settings->getShowWelcome();

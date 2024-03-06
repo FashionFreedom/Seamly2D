@@ -72,8 +72,8 @@ public:
     VSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
               QObject *parent = nullptr);
 
-    QString  GetLabelLanguage() const;
-    void     SetLabelLanguage(const QString &value);
+    QString  getLabelLanguage() const;
+    void     setLabelLanguage(const QString &value);
 
     static QString getDefaultPatternPath();
     QString getPatternPath() const;
@@ -186,10 +186,6 @@ public:
 
     PageOrientation getTiledPDFOrientation() const;
     void setTiledPDFOrientation(PageOrientation value);
-
-
-signals:
-    void labelLanguageChanged();
 
 private:
     Q_DISABLE_COPY(VSettings)

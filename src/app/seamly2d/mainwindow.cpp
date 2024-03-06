@@ -268,8 +268,6 @@ MainWindow::MainWindow(QWidget *parent)
             }
         }
 
-    connect(qApp->Seamly2DSettings(), &VSettings::labelLanguageChanged, this, &MainWindow::initBasePointComboBox);
-
         // In case we will need it
         // else if (isAncestorOf(old) == true && now == nullptr)
         // focus OUT
@@ -304,6 +302,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(appPreferences_Action, &QAction::triggered, this, &MainWindow::Preferences);
 
     menu->setAsDockMenu();
+
 #endif //defined(Q_OS_MAC)
 }
 
@@ -1771,6 +1770,7 @@ void MainWindow::changeEvent(QEvent *event)
 
         UpdateWindowTitle();
         initPenToolBar();
+        initBasePointComboBox();
         emit pieceScene->LanguageChanged();
     }
     // remember to call base class implementation
@@ -1877,7 +1877,7 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(incr->GetFormula(), qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaToUser(incr->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
@@ -2321,28 +2321,28 @@ void MainWindow::initPointNameToolBar()
     fontSizeComboBox->setEnabled(true);
 
     basePointComboBox = new QComboBox ;
-    initBasePointComboBox();
     ui->pointName_ToolBar->addWidget(basePointComboBox);
-    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
-    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-    basePointComboBox->setCurrentIndex(0);
-    basePointComboBox->setEditable(true);
-    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
-
+    initBasePointComboBox();
     basePointComboBox->setEnabled(true);
+
     connect(basePointComboBox, &QComboBox::currentTextChanged, this, &MainWindow::basePointChanged);
 }
 
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief initBasePointComboBox fills basePointComboBox according to the label language selected.
+ * @brief initBasePointComboBox fills basePointComboBox.
  */
 void MainWindow::initBasePointComboBox()
 {
     basePointComboBox->clear();
     basePointComboBox->addItem(tr("Default"));
-    basePointComboBox->addItems(doc->GetCurrentAlphabet());
+    basePointComboBox->addItems(doc->GetCurrentAlphabet()); // These items are based on the Point name language
+    basePointComboBox->setToolTip(tr("Base name used for new points.\nPress enter to temporarily add it to the list."));
+    basePointComboBox->setSizeAdjustPolicy(QComboBox::AdjustToContents);
+    basePointComboBox->setCurrentIndex(0);
+    basePointComboBox->setEditable(true);
+    basePointComboBox->setInsertPolicy(QComboBox::InsertAtTop);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -2568,7 +2568,8 @@ void MainWindow::basePointChanged()
     {
         basePointComboBox->setStyleSheet("QComboBox {color: black;}");
 
-        if (!text.isEmpty() && text != tr("Default")){
+        if (!text.isEmpty() && text != tr("Default"))
+        {
             basePoint = text;
         }
     }
@@ -6416,10 +6417,10 @@ void MainWindow::Preferences()
         //connect(dialog.data(), &DialogPreferences::updateProperties,
         //        toolProperties, &VToolOptionsPropertyBrowser::refreshOptions);
         connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initPropertyEditor);
+        connect(dialog.data(), &DialogPreferences::updateProperties, this, &MainWindow::initBasePointComboBox);
 
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollBars);
         connect(dialog.data(), &DialogPreferences::updateProperties, ui->view, &VMainGraphicsView::resetScrollAnimations);
-
 
         QGuiApplication::restoreOverrideCursor();
 
@@ -7155,7 +7156,7 @@ bool MainWindow::setHeight(const QString &text)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MainWindow::ProcessCMD()
+void MainWindow::processCommandLine()
 {
     const VCommandLinePtr cmd = qApp->CommandLine();
     auto args = cmd->OptInputFileNames();

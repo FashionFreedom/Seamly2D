@@ -1323,11 +1323,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Unique name</source>
-        <translation>Eindeutiger Name</translation>
+        <translation>Eindeutiger Bezeichnung</translation>
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -1558,7 +1558,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Width:</source>
-        <translation>Breite:</translation>
+        <translation> Breite:</translation>
     </message>
     <message>
         <source>Length:</source>
@@ -1814,7 +1814,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Choose unique name.</source>
-        <translation>Wählen Sie einen eindeutigen namen.</translation>
+        <translation>Wählen Sie einen eindeutigen Bezeichnung.</translation>
     </message>
     <message>
         <source>First point:</source>
@@ -2309,7 +2309,7 @@ p, li { white-space: pre-wrap; }
     <name>DialogPointFromArcAndTangent</name>
     <message>
         <source>Select an arc</source>
-        <translation>Wähle veinen Bogen</translation>
+        <translation>Wähle einen Bogen</translation>
     </message>
     <message>
         <source>Tangent point:</source>
@@ -3058,11 +3058,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>1st axis point:</source>
-        <translation>Erster achsenpunkt:</translation>
+        <translation>Erster Achsenpunkt:</translation>
     </message>
     <message>
         <source>2nd axis point:</source>
-        <translation>Zweiter achsenpunkt:</translation>
+        <translation>Zweiter Achsenpunkt:</translation>
     </message>
     <message>
         <source>Name:</source>
@@ -3365,7 +3365,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source> Control Point Lengths</source>
-        <translation>Kontrollpunktlängen</translation>
+        <translation> Kontrollpunktlängen</translation>
     </message>
     <message>
         <source>Arc Radii</source>
@@ -3898,15 +3898,15 @@ Möchtest Du diesen downloaden?</translation>
         <source>Unable to open file
 %1
 for writing</source>
-        <translation>Datei kann nicht geöffnet werden
-%1
-zum schreiben</translation>
+        <translation>Date %1 kann nicht zum schreiben geöffnet werden</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Exklusiver Zugang zur Datei kann nicht hergestellt werden
+%1
+Möglicherweise ist die Datei schon heruntergeladen worden.</translation>
     </message>
 </context>
 <context>
@@ -3933,8 +3933,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <source>Add a new group to the list</source>
-        <translation>
-eine neue Gruppe der Liste zufügen</translation>
+        <translation>Eine neue Gruppe der Liste zufügen</translation>
     </message>
     <message>
         <source>Delete active group from the list</source>
@@ -4746,9 +4745,9 @@ eine neue Gruppe der Liste zufügen</translation>
 	Two groups: big, small = 1;
 	Descending area = 2</source>
         <translation>
-⇥Drei Gruppen: groß, mittel, klein = 0
-⇥Zwei Gruppen: groß, klein = 1
-⇥Absteigende Fläche = 2</translation>
+	Drei Gruppen: groß, mittel, klein = 0
+	Zwei Gruppen: groß, klein = 1
+	Absteigende Fläche = 2</translation>
     </message>
     <message>
         <source>Layout options</source>
@@ -4816,10 +4815,12 @@ eine neue Gruppe der Liste zufügen</translation>
         <translation>Millimeter</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ränder gehen über den Druck hinaus.
+
+Einstellungen trotzdem anwenden?</translation>
     </message>
 </context>
 <context>
@@ -4929,11 +4930,11 @@ Apply settings anyway?</source>
     </message>
     <message>
         <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Ungültiges Argument für die Basiskörperhöhe. Muss %1cm sein.</translation>
+        <translation>Ungültiges Parameter für die Basiskörperhöhe. Muss %1cm sein.</translation>
     </message>
     <message>
         <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Ungültiges Argument für die Basisgröße. Muss in %1cm sein .</translation>
+        <translation>Ungültiges Parameter für die Basisgröße. Muss in %1cm sein .</translation>
     </message>
     <message>
         <source>Open with the base height. Valid values: %1cm.</source>
@@ -5298,7 +5299,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht speichern</translation>
+        <translation>Nicht Speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -5502,7 +5503,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&amp;Operations</source>
-        <translation>Abläufe</translation>
+        <translation>&amp;Abläufe</translation>
     </message>
     <message>
         <source>Piece</source>
@@ -5834,7 +5835,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>Toggle Control Points and Curve Direction (V, C)</source>
-        <translation>Kontrollpunkte und Kruvenrichtung umschalten (V, C)</translation>
+        <translation>Kontrollpunkte und Kurvenrichtung umschalten (V, C)</translation>
     </message>
     <message>
         <source>Load multisize</source>
@@ -6694,7 +6695,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Midpoint on Line&lt;/b&gt;: Select first point</source>
-        <translation>&lt;b&gt;Werkzeug: Punkt -Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
+        <translation>&lt;b&gt;Werkzeug: Punkt - Mittelpunkt auf der Linie :&lt;/b&gt; Wähle den ersten Punkt</translation>
     </message>
     <message>
         <source>&lt;b&gt;Tool::Point - Length and Angle&lt;/b&gt;: Select point</source>
@@ -6899,11 +6900,12 @@ Sollen die Änderungen gespeichert werden?</translation>
     <message>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
-        <translation type="unfinished"></translation>
+        <translation>Basisname, der für neue Punkte verwendet wird.
+Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</translation>
     </message>
     <message>
         <source>Default</source>
-        <translation type="unfinished">Standard</translation>
+        <translation>Standard</translation>
     </message>
 </context>
 <context>
@@ -7183,7 +7185,7 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>Men &amp; Tailoring</source>
         <comment>Measurement section</comment>
-        <translation>Herren &amp; Maßanfertigung</translation>
+        <translation>Herren &amp; Schneiderei</translation>
     </message>
     <message>
         <source>Historical &amp; Specialty</source>
@@ -7797,7 +7799,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> Width:</source>
-        <translation>Breite:</translation>
+        <translation> Breite:</translation>
     </message>
     <message>
         <source>Reset notch length to default.</source>
@@ -8447,7 +8449,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Default unit:</source>
@@ -8519,7 +8521,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Enable Autosave</source>
-        <translation>Automatisches Speichern aktivieren</translation>
+        <translation>Automatisches Speichern ausschalten</translation>
     </message>
     <message>
         <source> min</source>
@@ -8666,8 +8668,22 @@ Press enter to temporarily add it to the list.</source>
         <translation>Das E-Mail-Format ist nicht gültig.</translation>
     </message>
     <message>
+        <source>Startup</source>
+        <translatorcomment>Startup</translatorcomment>
+        <translation>Startup</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Willkommensbildschirm nicht anzeigen</translation>
+        <translation></translation>
+    </message>
+    <message>
         <source>Point name text:</source>
-        <translation type="unfinished"></translation>
+        <translation>Punktbezeichnung Text:</translation>
     </message>
 </context>
 <context>
@@ -8942,7 +8958,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source> px</source>
-        <translation>Pixel</translation>
+        <translation> px</translation>
     </message>
     <message>
         <source>Duration:</source>
@@ -9105,7 +9121,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>Pattern Piece</source>
-        <translation>&amp;Schnittteil</translation>
+        <translation>Schnittteil</translation>
     </message>
     <message>
         <source>Properties</source>
@@ -9409,12 +9425,12 @@ Press enter to temporarily add it to the list.</source>
     <message>
         <source>too few arguments for function sum.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Argumente für Summenfunktion.</translation>
+        <translation>Zu wenige Parameter für Summenfunktion.</translation>
     </message>
     <message>
         <source>too few arguments for function min.</source>
         <comment>parser error message</comment>
-        <translation>Zu wenige Argumente für Funktion min.</translation>
+        <translation>Zu wenige Parameter für Funktion min.</translation>
     </message>
 </context>
 <context>
@@ -9618,7 +9634,7 @@ Press enter to temporarily add it to the list.</source>
     <name>SavePieceOptions</name>
     <message>
         <source>save detail option</source>
-        <translation>Detailoption speichern</translation>
+        <translation>Detailoption Speichern</translation>
     </message>
 </context>
 <context>
@@ -9643,7 +9659,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Pattern making system</source>
@@ -9793,7 +9809,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <source>GUI language:</source>
-        <translation>GUI-Sprache:</translation>
+        <translation>Sprache der Benutzeroberfläche:</translation>
     </message>
     <message>
         <source>Sets the language used for SeamlyMe.</source>
@@ -9820,15 +9836,95 @@ Press enter to temporarily add it to the list.</source>
         <translation>Zoll</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
+Sie können diese Einstellung in den SeamlyMe-Einstellungen ändern.</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Willkommen</translation>
+    </message>
+    <message>
+        <source>Welcome to Seamly2D</source>
+        <translation>Willkommen bei Seamly2D</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Einheiten:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Legt die Standardeinheiten für eine neue Messdatei fest.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Dezimaltrennzeichen:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>Sprache der Benutzeroberfläche:</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Nicht mehr anzeigen</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Gebietsschema des Benutzers</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Zentimeter</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Millimeter</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Zoll</translation>
+    </message>
+    <message>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Legt die für Seamly2D verwendete Sprache fest.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Bitte wählen Sie Ihre bevorzugten Einheiten, das Dezimaltrennzeichen, die Sprache und den Auswahlton. (Sie können diese Angaben später ändern.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Ton:</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Legt fest, welches Dezimaltrennzeichen verwendet werden soll.
+Wenn das Kontrollkästchen aktiviert ist, wird das Trennzeichen für das Gebietsschema des Benutzers verwendet.
+Wenn es nicht markiert ist, wird der Punkt verwendet.</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Legt den Klickton für die Knotenauswahl fest.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Wenn diese Option aktiviert ist, wird das Willkommensfenster nicht angezeigt.
+Sie können diese Einstellung in den Seamly2D-Voreinstellungen ändern.</translation>
     </message>
 </context>
 <context>
@@ -10074,7 +10170,7 @@ You can change this setting in the SeamlyMe preferences.</source>
     </message>
     <message>
         <source>Use Tool Color</source>
-        <translation>Benutzen Sie das Farb Werkzeug</translation>
+        <translation>Benutzen Sie das Farbwerkzeug</translation>
     </message>
     <message>
         <source>Wireframe</source>
@@ -10901,7 +10997,7 @@ You can change this setting in the SeamlyMe preferences.</source>
     </message>
     <message>
         <source>Open individual ...</source>
-        <translation>Individuelle ...</translation>
+        <translation>Individuelle öffnen...</translation>
     </message>
     <message>
         <source>Save</source>
@@ -11154,7 +11250,7 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <source>Don&apos;t Save</source>
-        <translation>Nicht speichern</translation>
+        <translation>Nicht Speichern</translation>
     </message>
     <message>
         <source>Locking file</source>
@@ -11651,7 +11747,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Do you really want to delete?</source>
-        <translation>Möchten sie wirklich löschen?</translation>
+        <translation>Möchtest Du wirklich löschen?</translation>
     </message>
     <message>
         <source>Edit wrong formula</source>
@@ -11683,7 +11779,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Light Salmon</source>
-        <translation>Hell Lachsrosa</translation>
+        <translation>Helles Lachsrosa</translation>
     </message>
     <message>
         <source>Goldenrod</source>
@@ -11865,7 +11961,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Dark Khaki</source>
-        <translation>Dunkelkhaki</translation>
+        <translation>Dunkles Khaki</translation>
     </message>
     <message>
         <source>Tan</source>
@@ -11980,7 +12076,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unsupported layout units.</source>
-        <translation>Nicht unterstützte Layout-Größe.</translation>
+        <translation>Nicht unterstützte Layouteinheiten.</translation>
     </message>
     <message>
         <source>Export options can be used with single input file only.</source>
@@ -12155,19 +12251,19 @@ wie gewohnt in SeamlyME laden können.
     <name>VCommonSettings</name>
     <message>
         <source>measurements</source>
-        <translation>maße</translation>
+        <translation>Maße</translation>
     </message>
     <message>
         <source>individual</source>
-        <translation>individuell</translation>
+        <translation>Individuell</translation>
     </message>
     <message>
         <source>multisize</source>
-        <translation>mehrgröße</translation>
+        <translation>Mehrgröße</translation>
     </message>
     <message>
         <source>templates</source>
-        <translation>vorlagen</translation>
+        <translation>Vorlagen</translation>
     </message>
     <message>
         <source>label templates</source>
@@ -12237,12 +12333,12 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>Can&apos;t open file %1:
 %2.</source>
-        <translation>Konnte Datei %1 nicht öffnen: %2.</translation>
+        <translation>Konnte Datei nicht öffnen %1: %2.</translation>
     </message>
     <message>
         <source>Can&apos;t open schema file %1:
 %2.</source>
-        <translation>Konnte Schemadatei %1 nicht öffnen:
+        <translation>Konnte Schemadatei nicht öffnen %1:
 %2.</translation>
     </message>
     <message>
@@ -12255,7 +12351,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Couldn&apos;t get node</source>
-        <translation>Konnte Knoten nicht erhalten</translation>
+        <translation>Konnte&apos;t Knoten nicht erhalten</translation>
     </message>
     <message>
         <source>This id is not unique.</source>
@@ -12502,7 +12598,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown tools type &apos;%1&apos;.</source>
-        <translation>Unbekannter Werkzeug Typ &apos;%1&apos;.</translation>
+        <translation>Unbekannter Werkzeug Typen &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error not unique id.</source>
@@ -12534,7 +12630,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Unknown operation type &apos;%1&apos;.</source>
-        <translation>Unbekantte Betriebsart &apos;%1&apos;.</translation>
+        <translation>Unbekannte Betriebsart &apos;%1&apos;.</translation>
     </message>
     <message>
         <source>Error creating or updating operation of moving</source>
@@ -12661,19 +12757,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>Radius</translation>
+        <translation>     Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Abschlusswinkel</translation>
+        <translation>  Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>Etikett</translation>
+        <translation>      Etikett</translation>
     </message>
 </context>
 <context>
@@ -12684,23 +12780,23 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>     Radius</source>
-        <translation>Radius</translation>
+        <translation>     Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Abschlusswinkel</translation>
+        <translation>  Abschlusswinkel</translation>
     </message>
     <message>
         <source>      Name</source>
-        <translation>Bezeichnung</translation>
+        <translation>      Bezeichnung</translation>
     </message>
     <message>
         <source>      Tool</source>
-        <translation>Werkzeug</translation>
+        <translation>      Werkzeug</translation>
     </message>
     <message>
         <source>Arc - Radius and Length</source>
@@ -12722,7 +12818,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>Intersection Point of Curve &amp; Axis</source>
-        <translation>Schnittpunkt von Kurve und Achse</translation>
+        <translation>Schnittpunkt von Kurve &amp; Achse</translation>
     </message>
 </context>
 <context>
@@ -12797,19 +12893,19 @@ wie gewohnt in SeamlyME laden können.
     </message>
     <message>
         <source>     Length</source>
-        <translation>Länge</translation>
+        <translation>     Länge</translation>
     </message>
     <message>
         <source>    Radius</source>
-        <translation>Radius</translation>
+        <translation>    Radius</translation>
     </message>
     <message>
         <source>  End angle</source>
-        <translation>Endwinkel</translation>
+        <translation>  Endwinkel</translation>
     </message>
     <message>
         <source>      Label</source>
-        <translation>Etikett</translation>
+        <translation>      Etikett</translation>
     </message>
 </context>
 <context>
@@ -13375,7 +13471,7 @@ wie gewohnt in SeamlyME laden können.
     <name>VToolRotation</name>
     <message>
         <source>  Origin point</source>
-        <translation>Ausgangspunkt</translation>
+        <translation>  Ausgangspunkt</translation>
     </message>
     <message>
         <source>Rotation angle</source>
@@ -13862,7 +13958,7 @@ wie gewohnt in SeamlyME laden können.
     <message>
         <source>European Cut</source>
         <comment>Book name</comment>
-        <translation>Europäischer Schnitt</translation>
+        <translation>European Cut</translation>
     </message>
     <message>
         <source>McCunn</source>

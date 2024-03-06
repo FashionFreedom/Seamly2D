@@ -106,7 +106,7 @@ void VisToolEndLine::RefreshGeometry()
                                 "Hold <b>SHIFT</b> to constrain angle, Press <b>ENTER</b> to finish tool creation")
             .arg(this->line().angle())
             .arg(qApp->TrVars()->FormulaToUser(QString::number(qApp->fromPixel(this->line().length())),
-                                               qApp->Settings()->GetOsSeparator()))
+                                               qApp->Settings()->getOsSeparator()))
             .arg(prefix);
 }
 

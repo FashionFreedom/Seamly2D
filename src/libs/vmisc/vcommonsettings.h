@@ -110,11 +110,11 @@ public:
     bool                 getShowWelcome() const;
     void                 setShowWelcome(const bool &value);
 
-    bool                 GetOsSeparator() const;
-    void                 SetOsSeparator(const bool &value);
+    bool                 getOsSeparator() const;
+    void                 setOsSeparator(const bool &value);
 
     bool                 GetAutosaveState() const;
-    void                 SetAutosaveState(const bool &value);
+    void                 setAutosaveState(const bool &value);
 
     int                  getAutosaveInterval() const;
     void                 setAutosaveInterval(const int &value);
@@ -131,8 +131,8 @@ public:
     bool                 GetSendReportState() const;
     void                 SetSendReportState(const bool &value);
 
-    QString              GetLocale() const;
-    void                 SetLocale(const QString &value);
+    QString              getLocale() const;
+    void                 setLocale(const QString &value);
 
     QString              GetPMSystemCode() const;
     void                 SetPMSystemCode(const QString &value);
@@ -291,7 +291,7 @@ public:
     void                 setWebsite(const QString &value);
 
     int                  GetUndoCount() const;
-    void                 SetUndoCount(const int &value);
+    void                 setUndoCount(const int &value);
 
     QString              getSound() const;
     QString              getSelectionSound() const;

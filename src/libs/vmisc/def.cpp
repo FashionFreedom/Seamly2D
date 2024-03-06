@@ -819,7 +819,7 @@ void InitLanguages(QComboBox *combobox)
     }
 
     // set default translators and language checked
-    qint32 index = combobox->findData(qApp->Settings()->GetLocale());
+    qint32 index = combobox->findData(qApp->Settings()->getLocale());
     if (index != -1)
     {
         combobox->setCurrentIndex(index);

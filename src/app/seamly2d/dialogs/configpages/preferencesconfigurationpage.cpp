@@ -200,6 +200,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
         m_defaultExportFormatChanged = true;
     });
 
+    //-------------------- Startup
+    ui->showWelcome_CheckBox->setChecked(qApp->Seamly2DSettings()->getShowWelcome());
+
     // Language
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -209,7 +212,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
 
     // Decimal separator setup
     ui->osOptionCheck->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->GetOsSeparator());
+    ui->osOptionCheck->setChecked(qApp->Seamly2DSettings()->getOsSeparator());
 
     // Unit setup
     InitUnits();
@@ -219,7 +222,7 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     });
     SetLabelComboBox(VApplication::LabelLanguages());
 
-    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->GetLabelLanguage());
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->getLabelLanguage());
     if (index == -1)
     {
         index = ui->labelCombo->findData("en");
@@ -270,7 +273,7 @@ void PreferencesConfigurationPage::Apply()
     /* Maximum number of commands in undo stack may only be set when the undo stack is empty, since setting it on a
      * non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack
      * prints a warning and does nothing.*/
-    settings->SetUndoCount(ui->undoCount_SpinBox->value());
+    settings->setUndoCount(ui->undoCount_SpinBox->value());
     if (m_selectionSoundChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->selectionSound_ComboBox->currentText());
@@ -280,7 +283,7 @@ void PreferencesConfigurationPage::Apply()
     settings->setConfirmItemDelete(ui->confirmItemDelete_CheckBox->isChecked());
     settings->setConfirmFormatRewriting(ui->confirmFormatRewriting_CheckBox->isChecked());
 
-    settings->SetAutosaveState(ui->autoSave_CheckBox->isChecked());
+    settings->setAutosaveState(ui->autoSave_CheckBox->isChecked());
     settings->setAutosaveInterval(ui->autoInterval_Spinbox->value());
 
     QTimer *autoSaveTimer = qApp->getAutoSaveTimer();
@@ -297,13 +300,13 @@ void PreferencesConfigurationPage::Apply()
         m_defaultExportFormatChanged = false;
     }
 
-    settings->SetOsSeparator(ui->osOptionCheck->isChecked());
-    //settings->SetSendReportState(ui->sendReportCheck->isChecked());
+    settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
+    settings->setOsSeparator(ui->osOptionCheck->isChecked());
 
     if (m_langChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->SetLocale(locale);
+        settings->setLocale(locale);
         m_langChanged = false;
 
         qApp->loadTranslations(locale);
@@ -320,7 +323,7 @@ void PreferencesConfigurationPage::Apply()
     if (m_labelLangChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
-        settings->SetLabelLanguage(locale);
+        settings->setLabelLanguage(locale);
         m_labelLangChanged = false;
     }
     if (m_moveSuffixChanged)

@@ -3942,10 +3942,12 @@ Do you want to download it?</source>
 ¿Quiere descargarla?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede obtener acceso exclusivo al archivo
+%1
+Posiblemente el archivo ya está siendo descargado.</translation>
     </message>
 </context>
 <context>
@@ -4854,10 +4856,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Ninguno</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Los márgenes van más allá de la impresión.
+
+¿Aplicar ajustes de todos modos?</translation>
     </message>
 </context>
 <context>
@@ -8721,6 +8725,19 @@ Press enter to temporarily add it to the list.</source>
         <translation>El formato del correo electrónico no es válido.</translation>
     </message>
     <message>
+        <source>Startup</source>
+        <translation>Puesta en marcha</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>No mostrar la pantalla de bienvenida</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Point name text:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9877,15 +9894,95 @@ actualización:</translation>
         <translation>Pulgadas</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
+Si no se selecciona, se utiliza el punto.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
+Puede cambiar esta configuración en las preferencias de SeamlyMe.</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Bienvenido</translation>
+    </message>
+    <message>
+        <source>Welcome to Seamly2D</source>
+        <translation>Bienvenido a Seamly2D</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Unidades:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Establece las unidades por defecto para un nuevo archivo de medición.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Separador decimal:</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>GUI Idioma:</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>No volver a mostrar</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Localización del usuario</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Centímetros</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation></translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Pulgadas</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Selecciona el carácter separador decimal a utilizar.
+Si está marcada, se utiliza el separador de la configuración regional del usuario.
+Si no se selecciona, se utiliza el punto.</translation>
+    </message>
+    <message>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Establece el idioma utilizado para Seamly2D.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Si esta opción está seleccionada, no se mostrará la ventana de bienvenida.
+Puede cambiar esta configuración en las preferencias de Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Elija las unidades, el separador decimal, el idioma y el sonido de selección que prefiera. (Puede cambiarlos más adelante.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Sonido:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Establece el sonido del clic de selección del nodo.</translation>
     </message>
 </context>
 <context>

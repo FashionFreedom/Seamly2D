@@ -3927,10 +3927,12 @@ Do you want to download it?</source>
 Хотите скачать его?</translation>
     </message>
     <message>
-        <source>Unable to get exclusive access to file 
+        <source>Unable to get exclusive access to file
 %1
 Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
+        <translation>Невозможно получить эксклюзивный доступ к файлу
+%1
+Возможно, файл уже загружается.</translation>
     </message>
 </context>
 <context>
@@ -4840,10 +4842,12 @@ Possibly the file is already being downloaded.</source>
         <translation>Миллиметры</translation>
     </message>
     <message>
-        <source>Margins go beyond printing. 
+        <source>Margins go beyond printing.
 
 Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Поля выходят за рамки печати.
+
+Применять настройки в любом случае?</translation>
     </message>
 </context>
 <context>
@@ -8691,6 +8695,18 @@ Press enter to temporarily add it to the list.</source>
         <translation>Формат электронной почты не соответствует действительности.</translation>
     </message>
     <message>
+        <source>Startup</source>
+        <translation>Стартап</translation>
+    </message>
+    <message>
+        <source>Welcome</source>
+        <translation>Добро пожаловать</translation>
+    </message>
+    <message>
+        <source>Do not show welcome screen</source>
+        <translation>Не показывать экран приветствия</translation>
+    </message>
+    <message>
         <source>Point name text:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -9846,15 +9862,95 @@ Press enter to temporarily add it to the list.</source>
         <translation>Дюймы</translation>
     </message>
     <message>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
 When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выбирает, какой десятичный разделитель использовать.
+Если флажок установлен, используется разделитель для локали пользователя.
+Если флажок снят, используется точка.</translation>
     </message>
     <message>
-        <source>When checked the Welcome window will not be displayed. 
+        <source>When checked the Welcome window will not be displayed.
 You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
+        <translation>Если флажок установлен, окно приветствия не будет отображаться.
+Эту настройку можно изменить в настройках SeamlyMe.</translation>
+    </message>
+</context>
+<context>
+    <name>SeamlyWelcomeDialog</name>
+    <message>
+        <source>Welcome</source>
+        <translation>Добро пожаловать</translation>
+    </message>
+    <message>
+        <source>Welcome to Seamly2D</source>
+        <translation>Добро пожаловать в Seamly2D</translation>
+    </message>
+    <message>
+        <source>Units:</source>
+        <translation>Единицы измерения:</translation>
+    </message>
+    <message>
+        <source>Sets the default units for a new measurement file.</source>
+        <translation>Устанавливает единицы измерения по умолчанию для нового файла измерений.</translation>
+    </message>
+    <message>
+        <source>Decimal separator:</source>
+        <translation>Десятичный Разделитель:</translation>
+    </message>
+    <message>
+        <source>Selects what decimal separator char to use.
+When checked the separator for the user&apos;s locale is used.
+When unchecked the period is used.</source>
+        <translation>Выбирает, какой десятичный разделитель использовать.
+Если флажок установлен, используется разделитель для локали пользователя.
+Если флажок снят, используется точка.</translation>
+    </message>
+    <message>
+        <source>GUI language:</source>
+        <translation>Язык интерфейса:</translation>
+    </message>
+    <message>
+        <source>Do not show again</source>
+        <translation>Больше не показывать</translation>
+    </message>
+    <message>
+        <source>User locale</source>
+        <translation>Пользовательская локаль</translation>
+    </message>
+    <message>
+        <source>Centimeters</source>
+        <translation>Сантиметры</translation>
+    </message>
+    <message>
+        <source>Millimeters</source>
+        <translation>Миллиметры</translation>
+    </message>
+    <message>
+        <source>Inches</source>
+        <translation>Дюймы</translation>
+    </message>
+    <message>
+        <source>Sets the language used for Seamly2D.</source>
+        <translation>Устанавливает язык, используемый для Seamly2D.</translation>
+    </message>
+    <message>
+        <source>When checked the Welcome window will not be displayed.
+You can change this setting in the Seamly2D preferences.</source>
+        <translation>Если флажок установлен, окно приветствия не будет отображаться.
+Эту настройку можно изменить в настройках Seamly2D.</translation>
+    </message>
+    <message>
+        <source>Please choose your preferred units, decimal separator, language, and selection sound. (You can change these later.)</source>
+        <translation>Выберите желаемые единицы измерения, десятичный разделитель, язык и звук выбора. (Вы можете изменить их позже.)</translation>
+    </message>
+    <message>
+        <source>Sound:</source>
+        <translation>Звук:</translation>
+    </message>
+    <message>
+        <source>Sets the node selection click  sound.</source>
+        <translation>Устанавливает звук щелчка при выборе узла.</translation>
     </message>
 </context>
 <context>

@@ -474,12 +474,12 @@ void VToolEllipticalArc::SetVisualization()
 
         const VTranslateVars *trVars = qApp->TrVars();
         visual->setObject1Id(elArc->GetCenter().id());
-        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->GetOsSeparator()));
-        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->GetOsSeparator()));
-        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->GetOsSeparator()));
-        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->GetOsSeparator()));
+        visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->getOsSeparator()));
+        visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->getOsSeparator()));
+        visual->setF1(trVars->FormulaToUser(elArc->GetFormulaF1(), qApp->Settings()->getOsSeparator()));
+        visual->setF2(trVars->FormulaToUser(elArc->GetFormulaF2(), qApp->Settings()->getOsSeparator()));
         visual->setRotationAngle(trVars->FormulaToUser(elArc->GetFormulaRotationAngle(),
-                                                       qApp->Settings()->GetOsSeparator()));
+                                                       qApp->Settings()->getOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(elArc->GetPenStyle()));
         visual->setLineWeight(elArc->getLineWeight());
         visual->RefreshGeometry();

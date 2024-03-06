@@ -116,7 +116,7 @@ void VAbstractMainWindow::ToolBarStyle(QToolBar *bar)
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractMainWindow::WindowsLocale()
 {
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
