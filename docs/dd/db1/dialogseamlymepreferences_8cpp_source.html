@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('dd/db1/dialogseamlymepreferences_8cpp_
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//Limit dialog height to 80% of screen size</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    setMaximumHeight(qRound(QGuiApplication::primaryScreen()-&gt;availableGeometry().height() * .8));</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QPushButton *ok_Button = <a class="code" href="../../d5/d8a/classDialogSeamlyMePreferences.html#a2b4dbc62852b18f4ca2406f62ac548a6">ui</a>-&gt;buttonBox-&gt;button(QDialogButtonBox::Ok);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(ok_Button != <span class="keyword">nullptr</span>)</div>
@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('dd/db1/dialogseamlymepreferences_8cpp_
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="../../d5/d8a/classDialogSeamlyMePreferences.html#aef07b99a1fe2abbc555d9b6079f5ca3d">m_configurationPage</a>-&gt;<a class="code" href="../../df/de0/classSeamlyMePreferencesConfigurationPage.html#a9765a46b9f29db1f44fba8c9025c05ba">Apply</a>();</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="../../d5/d8a/classDialogSeamlyMePreferences.html#a2a5bca6450d1d500627e5ede49a4f4f3">m_pathPage</a>-&gt;<a class="code" href="../../d7/d92/classSeamlyMePreferencesPathPage.html#af4e210f5a4b69ff29aaa8ad0fbf448d9">Apply</a>();</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;SeamlyMeSettings()-&gt;GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;SeamlyMeSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    emit <a class="code" href="../../d5/d8a/classDialogSeamlyMePreferences.html#a2631d3e66baae37ac38e14f558754f97">updateProperties</a>();</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    setResult(QDialog::Accepted);</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>

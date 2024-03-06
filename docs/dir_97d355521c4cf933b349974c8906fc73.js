@@ -70,5 +70,9 @@ var dir_97d355521c4cf933b349974c8906fc73 =
     [ "show_info_dialog.cpp", "d2/df4/show__info__dialog_8cpp.html", null ],
     [ "show_info_dialog.h", "dd/de2/show__info__dialog_8h.html", [
       [ "ShowInfoDialog", "da/d5b/classShowInfoDialog.html", "da/d5b/classShowInfoDialog" ]
+    ] ],
+    [ "welcome_dialog.cpp", "df/d69/welcome__dialog_8cpp.html", null ],
+    [ "welcome_dialog.h", "d3/de1/welcome__dialog_8h.html", [
+      [ "SeamlyWelcomeDialog", "d4/d8f/classSeamlyWelcomeDialog.html", "d4/d8f/classSeamlyWelcomeDialog" ]
     ] ]
 ];

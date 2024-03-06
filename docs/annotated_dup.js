@@ -233,6 +233,7 @@ var annotated_dup =
     [ "SeamlyMePreferencesConfigurationPage", "df/de0/classSeamlyMePreferencesConfigurationPage.html", "df/de0/classSeamlyMePreferencesConfigurationPage" ],
     [ "SeamlyMePreferencesPathPage", "d7/d92/classSeamlyMePreferencesPathPage.html", "d7/d92/classSeamlyMePreferencesPathPage" ],
     [ "SeamlyMeWelcomeDialog", "d5/d64/classSeamlyMeWelcomeDialog.html", "d5/d64/classSeamlyMeWelcomeDialog" ],
+    [ "SeamlyWelcomeDialog", "d4/d8f/classSeamlyWelcomeDialog.html", "d4/d8f/classSeamlyWelcomeDialog" ],
     [ "SetPieceColor", "dd/d52/classSetPieceColor.html", "dd/d52/classSetPieceColor" ],
     [ "ShortcutsDialog", "de/d8e/classShortcutsDialog.html", "de/d8e/classShortcutsDialog" ],
     [ "ShowDoublePointName", "d2/dbe/classShowDoublePointName.html", "d2/dbe/classShowDoublePointName" ],

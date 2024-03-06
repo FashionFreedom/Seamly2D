@@ -295,7 +295,7 @@ $(document).ready(function(){initNavTree('d5/d74/vabstractapplication_8h_source.
 <div class="line"><a name="l00196"></a><span class="lineno"><a class="line" href="../../db/dda/classVAbstractApplication.html#a63c2326cbf6b742e49a9005a60d29206">  196</a></span>&#160;<span class="keyword">inline</span> QString <a class="code" href="../../db/dda/classVAbstractApplication.html#a63c2326cbf6b742e49a9005a60d29206">VAbstractApplication::LocaleToString</a>(<span class="keyword">const</span> T &amp;value)</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;{</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    QLocale loc;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="../../d5/d74/vabstractapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator() ? loc = QLocale() : loc = QLocale::c();</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <a class="code" href="../../d5/d74/vabstractapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator() ? loc = QLocale() : loc = QLocale::c();</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">return</span> loc.toString(value);</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>

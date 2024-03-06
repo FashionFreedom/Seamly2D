@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('d8/d70/vtextmanager_8cpp_source.html',
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;QString, QString&gt;</a> placeholders;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Pattern tags</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QLocale locale(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetLocale());</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    QLocale locale(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getLocale());</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">const</span> QString date = locale.toString(QDate::currentDate(), doc-&gt;<a class="code" href="../../d8/dba/classVAbstractPattern.html#a3ba9b824db220be8d90387aa0db9f753">GetLabelDateFormat</a>());</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    placeholders.insert(<a class="code" href="../../d6/d0b/def_8cpp.html#ac52a3218c508f115a16c9bec3c3595c6">pl_date</a>, date);</div>

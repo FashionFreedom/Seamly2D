@@ -120,6 +120,7 @@ var hierarchy =
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],
       [ "NewMeasurementsDialog", "dc/da3/classNewMeasurementsDialog.html", null ],
       [ "SeamlyMeWelcomeDialog", "d5/d64/classSeamlyMeWelcomeDialog.html", null ],
+      [ "SeamlyWelcomeDialog", "d4/d8f/classSeamlyWelcomeDialog.html", null ],
       [ "ShortcutsDialog", "de/d8e/classShortcutsDialog.html", null ],
       [ "ShowInfoDialog", "da/d5b/classShowInfoDialog.html", null ],
       [ "Utils::CheckableMessageBox", "dd/dc4/classUtils_1_1CheckableMessageBox.html", null ]

@@ -551,7 +551,7 @@ $(document).ready(function(){initNavTree('d1/db3/dialogtool_8cpp_source.html','.
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            }</div>
 <div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> ((keyEvent-&gt;key() == Qt::Key_Period) &amp;&amp; (keyEvent-&gt;modifiers() &amp; Qt::KeypadModifier))</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            {</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator())</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator())</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                {</div>
 <div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;                    plainTextEdit-&gt;insertPlainText(QLocale().decimalPoint());</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;                }</div>
@@ -924,7 +924,7 @@ $(document).ready(function(){initNavTree('d1/db3/dialogtool_8cpp_source.html','.
 <div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;            QString formula = text;</div>
 <div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;            formula.replace(<span class="stringliteral">&quot;\n&quot;</span>, <span class="stringliteral">&quot; &quot;</span>);</div>
 <div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            <span class="comment">// Translate to internal look.</span></div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            formula = <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;FormulaFromUser(formula, <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;GetOsSeparator());</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            formula = <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;FormulaFromUser(formula, <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator());</div>
 <div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;            QScopedPointer&lt;Calculator&gt; cal(<span class="keyword">new</span> <a class="code" href="../../d8/dbe/classCalculator.html">Calculator</a>());</div>
 <div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;            result = cal-&gt;EvalFormula(<a class="code" href="../../d2/d7b/classDialogTool.html#a9967c0ad705d6aaed0ad5ce9bca17fa3">data</a>-&gt;<a class="code" href="../../d2/d83/classVContainer.html#a85bd18752992d6a481ae95a553d64562">DataVariables</a>(), formula);</div>
 <div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>

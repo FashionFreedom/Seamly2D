@@ -179,7 +179,7 @@ $(document).ready(function(){initNavTree('dd/d64/dialogaboutapp_8cpp_source.html
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//Limit dialog height to 80% of screen size</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    setMaximumHeight(qRound(QGuiApplication::primaryScreen()-&gt;availableGeometry().height() * .8));</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    QString revision = BUILD_REVISION;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span> (revision == QString(<span class="stringliteral">&quot;unknown&quot;</span>))</div>
