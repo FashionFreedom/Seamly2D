@@ -51,7 +51,7 @@ VCommandLine::VCommandLine() : parser(), optionsUsed(), optionsIndex(), isGuiEna
     parser.addVersionOption();
     parser.addPositionalArgument("filename", translate("VCommandLine", "Pattern file."));
 
-    InitOptions(optionsUsed, optionsIndex);
+    initOptions(optionsUsed, optionsIndex);
 
     VCommandLineOptions::const_iterator i = optionsUsed.constBegin();
     while (i != optionsUsed.constEnd())
@@ -74,7 +74,7 @@ qreal VCommandLine::Pg2Px(const QString& src, const LayoutSettingsDialog& conver
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommandLine::InitOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
+void VCommandLine::initOptions(VCommandLineOptions &options, QMap<QString, int> &optionsIndex)
 {
     int index = 0;
     //keep in mind order here - that is how user will see it, so group-up for usability

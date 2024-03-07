@@ -51,7 +51,7 @@
  *************************************************************************/
 
 #include "mainwindowsnogui.h"
-#include "core/vapplication.h"
+#include "core/application_2d.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vobj/vobjpaintdevice.h"
 #include "../vdxf/vdxfpaintdevice.h"
@@ -116,7 +116,7 @@ MainWindowsNoGUI::MainWindowsNoGUI(QWidget *parent)
       pieceList(),
       currentScene(nullptr),
       tempSceneLayout(nullptr),
-      pattern(new VContainer(qApp->TrVars(), qApp->patternUnitP())),
+      pattern(new VContainer(qApp->translateVariables(), qApp->patternUnitP())),
       doc(nullptr),
       papers(),
       shadows(),
@@ -181,7 +181,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
 {
     lGenerator.setPieces(pieceList);
     DialogLayoutProgress progress(pieceList.count(), this);
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         connect(&lGenerator, &VLayoutGenerator::Start,     &progress,   &DialogLayoutProgress::Start);
         connect(&lGenerator, &VLayoutGenerator::Arranged,  &progress,   &DialogLayoutProgress::Arranged);
@@ -211,7 +211,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
             isAutoCrop = lGenerator.GetAutoCrop();
             isUnitePages = lGenerator.IsUnitePages();
             isLayoutStale = false;
-            if (VApplication::IsGUIMode())
+            if (Application2D::isGUIMode())
             {
                 QApplication::alert(this);
             }
@@ -219,7 +219,7 @@ bool MainWindowsNoGUI::LayoutSettings(VLayoutGenerator& lGenerator)
         case LayoutErrors::ProcessStoped:
         case LayoutErrors::PrepareLayoutError:
         case LayoutErrors::EmptyPaperError:
-            if (VApplication::IsGUIMode())
+            if (Application2D::isGUIMode())
             {
                 QApplication::alert(this);
             }

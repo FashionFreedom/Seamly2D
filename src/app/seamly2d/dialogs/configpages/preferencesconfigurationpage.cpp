@@ -55,7 +55,7 @@
 
 #include "preferencesconfigurationpage.h"
 #include "ui_preferencesconfigurationpage.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vwidgets/export_format_combobox.h"
 
@@ -220,9 +220,9 @@ PreferencesConfigurationPage::PreferencesConfigurationPage(QWidget *parent)
     {
         m_unitChanged = true;
     });
-    SetLabelComboBox(VApplication::LabelLanguages());
+    setPointNameComboBox(Application2D::pointNameLanguages());
 
-    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->getLabelLanguage());
+    index = ui->labelCombo->findData(qApp->Seamly2DSettings()->getPointNameLanguage());
     if (index == -1)
     {
         index = ui->labelCombo->findData("en");
@@ -323,7 +323,7 @@ void PreferencesConfigurationPage::Apply()
     if (m_labelLangChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->labelCombo->currentData());
-        settings->setLabelLanguage(locale);
+        settings->setPointNameLanguage(locale);
         m_labelLangChanged = false;
     }
     if (m_moveSuffixChanged)
@@ -364,7 +364,7 @@ void PreferencesConfigurationPage::changeEvent(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void PreferencesConfigurationPage::SetLabelComboBox(const QStringList &list)
+void PreferencesConfigurationPage::setPointNameComboBox(const QStringList &list)
 {
     for (int i = 0; i < list.size(); ++i)
     {

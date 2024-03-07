@@ -70,7 +70,7 @@ Q_DECLARE_METATYPE(QMarginsF)
 
 namespace
 {
-const QString settingConfigurationLabelLanguage = QStringLiteral("configuration/label_language");
+const QString settingConfigurationPointLanguage = QStringLiteral("configuration/label_language");
 
 const QString settingPathsPattern = QStringLiteral("paths/pattern");
 const QString settingPathsLayout  = QStringLiteral("paths/layout");
@@ -119,15 +119,15 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization, co
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::getLabelLanguage() const
+QString VSettings::getPointNameLanguage() const
 {
-    return value(settingConfigurationLabelLanguage, QLocale().bcp47Name()).toString();
+    return value(settingConfigurationPointLanguage, QLocale().bcp47Name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::setLabelLanguage(const QString &value)
+void VSettings::setPointNameLanguage(const QString &value)
 {
-    setValue(settingConfigurationLabelLanguage, value);
+    setValue(settingConfigurationPointLanguage, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

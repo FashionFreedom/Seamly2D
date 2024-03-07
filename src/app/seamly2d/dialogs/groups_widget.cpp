@@ -52,7 +52,7 @@
 
 #include "groups_widget.h"
 #include "ui_groups_widget.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vtools/tools/vabstracttool.h"
 #include "../vtools/dialogs/tools/dialogtool.h"
 #include "../vtools/dialogs/tools/editgroup_dialog.h"
@@ -334,7 +334,7 @@ void GroupsWidget::unlockAllGroups()
 
 void GroupsWidget::addGroupToList()
 {
-    QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->TrVars(),
+    QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->translateVariables(),
                                                                   qApp->patternUnitP()), NULL_ID, this));
     SCASSERT(dialog != nullptr)
 
@@ -425,7 +425,7 @@ void GroupsWidget::editGroup()
     {
         qCDebug(WidgetGroups, "Row = %d", row);
 
-        QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->TrVars(),
+        QScopedPointer<EditGroupDialog> dialog(new EditGroupDialog(new VContainer(qApp->translateVariables(),
                                                                    qApp->patternUnitP()), NULL_ID, this));
         dialog->setName(oldGroupName);
         dialog->setColor(m_doc->getGroupColor(groupId));

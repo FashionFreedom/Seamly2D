@@ -56,7 +56,7 @@
  */
 
 #include "mainwindow.h"
-#include "core/vapplication.h"
+#include "core/application_2d.h"
 #include "dialogs/welcome_dialog.h"
 #include "../vpatterndb/vpiecenode.h"
 
@@ -93,8 +93,8 @@ int main(int argc, char *argv[])
     initHighDpiScaling(argc, argv);
 #endif //Q_OS_MAC
 
-    VApplication app(argc, argv);
-    app.InitOptions();
+    Application2D app(argc, argv);
+    app.initOptions();
 
     auto settings = qApp->Seamly2DSettings();
     // its named showWelcome, but true means "do not show welcome again" and thus we invert it here
@@ -116,7 +116,7 @@ int main(int argc, char *argv[])
 
     int msec = 0;
     //Before we load pattern show window.
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         window.show();
         msec = 15; // set delay for correct the first fitbest zoom

@@ -67,7 +67,7 @@
 
 #include "../xml/vpattern.h"
 #include "../vpatterndb/vcontainer.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
 
 // calc how many combinations we have

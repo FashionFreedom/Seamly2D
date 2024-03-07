@@ -65,7 +65,7 @@
 #include <QtDebug>
 
 #include "../options.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../fervor/fvupdater.h"
 
 //---------------------------------------------------------------------------------------------------------------------

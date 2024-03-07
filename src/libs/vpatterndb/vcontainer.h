@@ -223,7 +223,7 @@ public:
     static QStringList AllUniqueNames();
 
     const Unit *GetPatternUnit() const;
-    const VTranslateVars *GetTrVars() const;
+    const VTranslateVars *getTranslateVariables() const;
 
 private:
     /**

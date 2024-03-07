@@ -75,7 +75,7 @@
 #include "../vgeometry/vsplinepath.h"
 #include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vcubicbezierpath.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vpatterndb/vpiecenode.h"
 #include "../vpatterndb/calculator.h"
 #include "../vpatterndb/floatItemData/vpiecelabeldata.h"
@@ -548,7 +548,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")), //-V807
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -559,7 +559,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error can't convert value.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -570,7 +570,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error empty parameter.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -581,7 +581,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error wrong id.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -592,7 +592,7 @@ void VPattern::LiteParseTree(const Document &parse)
         qCCritical(vXML, "%s\n\n%s\n\n%s", qUtf8Printable(tr("Error parsing file.")),
                    qUtf8Printable(error.ErrorMessage()), qUtf8Printable(error.DetailedInformation()));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -602,7 +602,7 @@ void VPattern::LiteParseTree(const Document &parse)
     {
         qCCritical(vXML, "%s", qUtf8Printable(tr("Error parsing file (std::bad_alloc).")));
         emit setGuiEnabled(false);
-        if (not VApplication::IsGUIMode())
+        if (not Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -1205,10 +1205,10 @@ void VPattern::parseCurrentDraftBlock()
  */
 QStringList VPattern::GetCurrentAlphabet() const
 {
-    const QStringList list = VApplication::LabelLanguages();
+    const QStringList list = Application2D::pointNameLanguages();
     const QString def = QStringLiteral("A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z");
     QStringList alphabet;
-    switch (list.indexOf(qApp->Seamly2DSettings()->getLabelLanguage()))
+    switch (list.indexOf(qApp->Seamly2DSettings()->getPointNameLanguage()))
     {
     case 0: // de
     {

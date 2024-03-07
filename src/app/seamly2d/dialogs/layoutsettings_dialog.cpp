@@ -46,7 +46,7 @@
 
 #include "layoutsettings_dialog.h"
 #include "ui_layoutsettings_dialog.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../vmisc/vsettings.h"
 #include "../vmisc/vmath.h"

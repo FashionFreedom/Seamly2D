@@ -58,7 +58,7 @@
 
 #include "../dialogdatetimeformats.h"
 #include "../ifc/xml/vabstractpattern.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 
 #include <QComboBox>
 #include <QDate>

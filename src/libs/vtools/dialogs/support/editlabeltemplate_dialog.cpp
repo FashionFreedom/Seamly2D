@@ -481,7 +481,7 @@ void EditLabelTemplateDialog::InitPlaceholdersMenu()
     {
         auto value = i.value();
         QAction *action = m_placeholdersMenu->addAction(value.first);
-        action->setData(per + qApp->TrVars()->PlaceholderToUser(i.key()) + per);
+        action->setData(per + qApp->translateVariables()->PlaceholderToUser(i.key()) + per);
         connect(action, &QAction::triggered, this, &EditLabelTemplateDialog::InsertPlaceholder);
         ++i;
     }
@@ -572,7 +572,7 @@ QVector<VLabelTemplateLine> EditLabelTemplateDialog::GetTemplate() const
         if (lineItem)
         {
             VLabelTemplateLine line;
-            line.line = qApp->TrVars()->PlaceholderFromUserText(lineItem->text());
+            line.line = qApp->translateVariables()->PlaceholderFromUserText(lineItem->text());
             line.alignment = lineItem->textAlignment();
             line.fontSizeIncrement = lineItem->data(Qt::UserRole).toInt();
 
@@ -597,7 +597,7 @@ void EditLabelTemplateDialog::SetTemplate(const QVector<VLabelTemplateLine> &lin
 
     for (int i=0; i<lines.size(); ++i)
     {
-        QListWidgetItem *item = new QListWidgetItem(qApp->TrVars()->PlaceholderToUserText(lines.at(i).line));
+        QListWidgetItem *item = new QListWidgetItem(qApp->translateVariables()->PlaceholderToUserText(lines.at(i).line));
         item->setTextAlignment(lines.at(i).alignment);
         item->setData(Qt::UserRole, lines.at(i).fontSizeIncrement);
 

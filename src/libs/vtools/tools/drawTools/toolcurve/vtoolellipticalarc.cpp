@@ -472,7 +472,7 @@ void VToolEllipticalArc::SetVisualization()
         VisToolEllipticalArc *visual = qobject_cast<VisToolEllipticalArc *>(vis);
         SCASSERT(visual != nullptr)
 
-        const VTranslateVars *trVars = qApp->TrVars();
+        const VTranslateVars *trVars = qApp->translateVariables();
         visual->setObject1Id(elArc->GetCenter().id());
         visual->setRadius1(trVars->FormulaToUser(elArc->GetFormulaRadius1(), qApp->Settings()->getOsSeparator()));
         visual->setRadius2(trVars->FormulaToUser(elArc->GetFormulaRadius2(), qApp->Settings()->getOsSeparator()));

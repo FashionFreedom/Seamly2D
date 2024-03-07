@@ -196,7 +196,7 @@ qreal Visualization::FindVal(const QString &expression,
             // Replace line return with spaces for calc if exist
             QString formula = expression;
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             val = cal->EvalFormula(vars, formula);
 
