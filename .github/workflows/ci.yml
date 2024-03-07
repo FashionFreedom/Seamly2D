@@ -45,7 +45,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: install appimage dependencies
         run: |
@@ -78,7 +78,7 @@ jobs:
           cp -r /usr/share/X11/xkb/* AppDir/usr/share/X11/xkb
           linuxdeploy-x86_64.AppImage --appdir AppDir --desktop-file=dist/seamly2d.desktop --plugin qt --output appimage
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
           path: Seamly2D-x86_64.AppImage
@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -120,7 +120,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: xcode version
         # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
@@ -170,7 +170,7 @@ jobs:
           fi
           make -j$(sysctl -n hw.logicalcpu)
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-macos.zip
           path: out/Seamly2D-macos.zip
@@ -184,7 +184,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
 
@@ -238,7 +238,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-windows.zip Seamly2D-installer.exe
           copy Seamly2D-windows.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-windows.zip
           path: Seamly2D-windows.zip
@@ -252,7 +252,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -309,7 +309,7 @@ jobs:
           C:\"Program Files"\7-Zip\7z.exe a Seamly2D-win32.zip Seamly2D-installer.exe
           copy Seamly2D-win32.zip ..\Seamly2D\
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: Seamly2D-win32.zip
           path: Seamly2D-win32.zip
@@ -366,4 +366,3 @@ jobs:
           config_file: Doxyfile
           # target_folder must match pages config in https://github.com/FashionFreedom/Seamly2D/settings/pages
           target_folder: docs/
-
