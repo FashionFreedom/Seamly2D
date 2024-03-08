@@ -45,7 +45,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: install appimage dependencies
         run: |
@@ -90,7 +90,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: jurplel/install-qt-action@v3
         with:
@@ -120,7 +120,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: xcode version
         # Qt 5.15.2 currently fails with qglobal.h:45:12: fatal error: 'type_traits' file not found
@@ -184,7 +184,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
 
@@ -252,7 +252,7 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -323,16 +323,16 @@ jobs:
       VERSION_NUMBER: ${{ needs.version.outputs.version_number }}
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-x86_64.AppImage
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-macos.zip
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-windows.zip
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: Seamly2D-win32.zip
       - uses: softprops/action-gh-release@v1
