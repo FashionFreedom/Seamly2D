@@ -65,15 +65,16 @@
 #include "global.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vmisc/vabstractapplication.h"
+#include "../ifc/xml/vabstractpattern.h"
 
 template <class T> class QSharedPointer;
 
 //---------------------------------------------------------------------------------------------------------------------
 VSimpleCurve::VSimpleCurve(quint32 id, const QSharedPointer<VAbstractCurve> &curve, QObject *parent)
-    : VAbstractSimple(id, parent),
-      VCurvePathItem(),
-      m_curve(curve),
-      m_isHovered(false)
+    : VAbstractSimple(id, parent)
+    , VCurvePathItem()
+    , m_curve(curve)
+    , m_isHovered(false)
 {
     this->setBrush(QBrush(Qt::NoBrush));
     this->setAcceptHoverEvents(true);
@@ -89,11 +90,11 @@ void VSimpleCurve::RefreshGeometry(const QSharedPointer<VAbstractCurve> &curve)
     {
         m_isHovered ? SetDirectionArrows(m_curve->DirectionArrows()) : SetDirectionArrows(QVector<DirectionArrow>());
         setPath(m_curve->GetPath());
-        SetPoints(m_curve->GetPoints());
+        SetPoints(m_curve->getPoints());
     }
     else
     {
-        qWarning() << tr("VSimpleCurve::RefreshGeometry: pointer to curve is null.");
+        qWarning() << "VSimpleCurve::RefreshGeometry: pointer to curve is null.";
     }
 }
 
@@ -180,7 +181,7 @@ QVariant VSimpleCurve::itemChange(QGraphicsItem::GraphicsItemChange change, cons
 //---------------------------------------------------------------------------------------------------------------------
 void VSimpleCurve::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 {
-    emit showContextMenu(event);
+    emit showContextMenu(event, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -207,9 +208,11 @@ void VSimpleCurve::ScalePenWidth()
     }
     else
     {
-        width = widthHairLine;
+        width = ToPixel(qApp->getCurrentDocument()->useGroupLineWeight(id, m_curve->getLineWeight()).toDouble(), Unit::Mm);
     }
 
     width = scaleWidth(width, sceneScale(scene()));
-    setPen(QPen(correctColor(this, m_curve->GetColor()), width, lineTypeToPenStyle(m_curve->GetPenStyle())));
+    setPen(QPen(correctColor(this, qApp->getCurrentDocument()->useGroupColor(id, m_curve->getLineColor())),
+                width,
+                lineTypeToPenStyle(qApp->getCurrentDocument()->useGroupLineType(id, m_curve->GetPenStyle()))));
 }

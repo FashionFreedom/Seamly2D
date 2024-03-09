@@ -29,12 +29,10 @@
 #include <QStyleOptionViewItem>
 #include <QStyledItemDelegate>
 
-#include "vpropertyexplorer_global.h"
-
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyDelegate : public QStyledItemDelegate
+class VPropertyDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:

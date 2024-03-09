@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file  dialogpatternproperties.cpp
+**  @author Douglas S Caskey
+**  @date   3 Sep, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogpatternproperties.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,39 +33,42 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "dialogpatternproperties.h"
 #include "ui_dialogpatternproperties.h"
+
 #include <QBuffer>
-#include <QPushButton>
-#include <QFileDialog>
-#include <QMenu>
 #include <QDate>
+#include <QFileDialog>
+#include <QGuiApplication>
+#include <QMenu>
 #include <QMessageBox>
+#include <QPushButton>
+#include <QScreen>
 
 #include "../xml/vpattern.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../core/vapplication.h"
-#include "../vtools/dialogs/support/dialogeditlabel.h"
+#include "../vtools/dialogs/support/editlabeltemplate_dialog.h"
 
 // calc how many combinations we have
 static const int heightsCount = (static_cast<int>(GHeights::H200) -
@@ -70,36 +77,40 @@ static const int sizesCount = (static_cast<int>(GSizes::S72) - (static_cast<int>
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pattern, QWidget *parent)
-    : QDialog(parent),
-      ui(new Ui::DialogPatternProperties),
-      doc(doc),
-      pattern(pattern),
-      heightsChecked(heightsCount),
-      sizesChecked(sizesCount),
-      heights (QMap<GHeights, bool>()),
-      sizes(QMap<GSizes, bool>()),
-      data(QMap<QCheckBox *, int>()),
-      descriptionChanged(false),
-      gradationChanged(false),
-      defaultChanged(false),
-      securityChanged(false),
-      labelDataChanged(false),
-      askSaveLabelData(false),
-      templateDataChanged(false),
-      deleteAction(nullptr),
-      changeImageAction(nullptr),
-      saveImageAction(nullptr),
-      showImageAction(nullptr),
-      templateLines()
+    : QDialog(parent)
+    , ui(new Ui::DialogPatternProperties)
+    , doc(doc)
+    , pattern(pattern)
+    , heightsChecked(heightsCount)
+    , sizesChecked(sizesCount)
+    , heights (QMap<GHeights, bool>())
+    , sizes(QMap<GSizes, bool>())
+    , data(QMap<QCheckBox *, int>())
+    , descriptionChanged(false)
+    , gradationChanged(false)
+    , defaultChanged(false)
+    , securityChanged(false)
+    , labelDataChanged(false)
+    , askSaveLabelData(false)
+    , templateDataChanged(false)
+    , deleteAction(nullptr)
+    , changeImageAction(nullptr)
+    , saveImageAction(nullptr)
+    , showImageAction(nullptr)
+    , templateLines()
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
 
     SCASSERT(doc != nullptr)
 
     VSettings *settings = qApp->Seamly2DSettings();
-    settings->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    settings->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 
-    if (qApp->GetPPath().isEmpty())
+    if (qApp->getFilePath().isEmpty())
     {
         ui->lineEditPathToFile->setText(tr("<Empty>"));
         ui->lineEditPathToFile->setToolTip(tr("File was not saved yet."));
@@ -107,15 +118,15 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     }
     else
     {
-        ui->lineEditPathToFile->setText(QDir::toNativeSeparators(qApp->GetPPath()));
-        ui->lineEditPathToFile->setToolTip(QDir::toNativeSeparators(qApp->GetPPath()));
+        ui->lineEditPathToFile->setText(QDir::toNativeSeparators(qApp->getFilePath()));
+        ui->lineEditPathToFile->setToolTip(QDir::toNativeSeparators(qApp->getFilePath()));
         ui->pushButtonShowInExplorer->setEnabled(true);
     }
     ui->lineEditPathToFile->setCursorPosition(0);
 
     connect(ui->pushButtonShowInExplorer, &QPushButton::clicked, this, [this]()
     {
-        ShowInGraphicalShell(qApp->GetPPath());
+        ShowInGraphicalShell(qApp->getFilePath());
     });
 #if defined(Q_OS_MAC)
     ui->pushButtonShowInExplorer->setText(tr("Show in Finder"));
@@ -178,7 +189,7 @@ DialogPatternProperties::DialogPatternProperties(VPattern *doc,  VContainer *pat
     connect(ui->comboBoxSize, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged),
             this, DefValueChanged);
 
-    const bool readOnly = doc->IsReadOnly();
+    const bool readOnly = doc->isReadOnly();
     ui->checkBoxPatternReadOnly->setChecked(readOnly);
     if (not readOnly)
     {
@@ -632,7 +643,7 @@ void DialogPatternProperties::SaveTemplateData()
 {
     if (templateDataChanged)
     {
-        doc->SetPatternLabelTemplate(templateLines);
+        doc->setPatternLabelTemplate(templateLines);
         templateDataChanged = false;
         emit doc->patternChanged(false);
         emit doc->UpdatePatternLabel();
@@ -913,9 +924,9 @@ void DialogPatternProperties::EditLabel()
         }
     }
 
-    DialogEditLabel editor(doc);
+    EditLabelTemplateDialog editor(doc);
 
-    templateDataChanged ? editor.SetTemplate(templateLines) : editor.SetTemplate(doc->GetPatternLabelTemplate());
+    templateDataChanged ? editor.SetTemplate(templateLines) : editor.SetTemplate(doc->getPatternLabelTemplate());
 
     if (QDialog::Accepted == editor.exec())
     {

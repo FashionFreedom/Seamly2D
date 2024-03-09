@@ -66,7 +66,7 @@
 #include "../../visualization/visualization.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vtranslatevars.h"
@@ -79,27 +79,48 @@
  * @param parent parent widget
  */
 DialogBisector::DialogBisector(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogBisector), formula(QString()), formulaBaseHeight(0)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogBisector)
+    , formula(QString())
+    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/bisector.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
-    FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
     FillComboBoxPoints(ui->comboBoxThirdPoint);
-    FillComboBoxLineColors(ui->comboBoxLineColor);
+
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogBisector::FXLength);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogBisector::NamePointChanged);
@@ -110,6 +131,10 @@ DialogBisector::DialogBisector(const VContainer *data, const quint32 &toolId, QW
     connect(ui->comboBoxThirdPoint,   &QComboBox::currentTextChanged, this, &DialogBisector::PointNameChanged);
 
     vis = new VisToolBisector(data);
+
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -146,7 +171,7 @@ void DialogBisector::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogBisector::FXLength()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -250,13 +275,63 @@ void DialogBisector::SetPointName(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief getLineType return type of line
+ * @return type
+ */
+QString DialogBisector::getLineType() const
+{
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogBisector::SetTypeLine(const QString &value)
+void DialogBisector::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogBisector::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogBisector::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineColor get the color of line
+ * @param value type
+ */
+QString DialogBisector::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/* @brief setLineColor set color of the line
+ * @param value type
+ */
+void DialogBisector::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -266,7 +341,7 @@ void DialogBisector::SetTypeLine(const QString &value)
  */
 void DialogBisector::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -324,18 +399,6 @@ void DialogBisector::SetThirdPointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogBisector::GetLineColor() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogBisector::SetLineColor(const QString &value)
-{
-    ChangeCurrentData(ui->comboBoxLineColor, value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
 void DialogBisector::SaveData()
 {
     pointName = ui->lineEditNamePoint->text();
@@ -350,7 +413,8 @@ void DialogBisector::SaveData()
     line->setObject2Id(GetSecondPointId());
     line->setObject3Id(GetThirdPointId());
     line->setLength(formula);
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -363,22 +427,12 @@ void DialogBisector::closeEvent(QCloseEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetTypeLine return type of line
- * @return type
- */
-QString DialogBisector::GetTypeLine() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
  * @brief GetFormula return string of formula
  * @return formula
  */
 QString DialogBisector::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

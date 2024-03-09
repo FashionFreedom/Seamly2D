@@ -106,6 +106,43 @@ void VAbstractPiece::SetName(const QString &value)
     d->m_name = value;
 }
 
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPiece::getColor() const
+{
+    return d->m_color;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setColor(const QString &value)
+{
+    d->m_color = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPiece::getFill() const
+{
+    return d->m_fill;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setFill(const QString &value)
+{
+    d->m_fill = value;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VAbstractPiece::getLock() const
+{
+    return d->m_pieceLock;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPiece::setLock(bool value)
+{
+    d->m_pieceLock = value;
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 bool VAbstractPiece::IsForbidFlipping() const
 {
@@ -171,14 +208,14 @@ QVector<QPointF> VAbstractPiece::Equidistant(const QVector<VSAPoint> &points, qr
 {
     if (width < 0)
     {
-        qDebug()<<"Width < 0.";
+        qDebug() << "Width < 0.";
         return QVector<QPointF>();
     }
 
     QVector<VSAPoint> p = CorrectEquidistantPoints(points);
     if ( p.size() < 3 )
     {
-        qDebug()<<"Not enough points for building the equidistant.";
+        qDebug() << "Not enough points for building the equidistant.";
         return QVector<QPointF>();
     }
 
@@ -216,7 +253,7 @@ QVector<QPointF> VAbstractPiece::Equidistant(const QVector<VSAPoint> &points, qr
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-qreal VAbstractPiece::SumTrapezoids(const QVector<QPointF> &points)
+qreal VAbstractPiece::sumTrapezoids(const QVector<QPointF> &points)
 {
     // Calculation a polygon area through the sum of the areas of trapezoids
     qreal s, res = 0;
@@ -251,6 +288,24 @@ qreal VAbstractPiece::SumTrapezoids(const QVector<QPointF> &points)
     return res;
 }
 
+/*
+ * @brief Checks for direction of a vector of points.
+ * @param points QVector of QPointF.
+ * @return true for clockwise direction.
+ * return false for counterclock-wise direction.
+ */
+bool VAbstractPiece::isClockwise(const QVector<QPointF> &points)
+{
+    if(points.count() < 3)
+    {
+        return false;
+    }
+    else if (sumTrapezoids(points) < 0)
+    {
+        return true;
+    }
+    return false;
+}
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief CheckLoops seek and delete loops in equidistant.
@@ -418,7 +473,7 @@ qreal VAbstractPiece::MaxLocalSA(const VSAPoint &p, qreal width)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief EkvPoint return seam allowance points in place of intersection of two edges. Last points of two edges 
+ * @brief EkvPoint return seam allowance points in place of intersection of two edges. Last points of two edges
  * should be equal.
  * @param width global seam allowance width.
  * @return seam allowance points.
@@ -434,7 +489,7 @@ QVector<QPointF> VAbstractPiece::EkvPoint(const VSAPoint &p1Line1, const VSAPoin
     QVector<QPointF> points;
     if (p2Line1 != p2Line2)
     {
-        qDebug()<<"Last points of two lines must be equal.";
+        qDebug() << "Last points of two lines must be equal.";
         return QVector<QPointF>(); // Wrong edges
     }
 
@@ -571,7 +626,7 @@ QVector<QPointF> VAbstractPiece::AngleByLength(const QPointF &p2, const QPointF 
         QLineF::IntersectType type = QLineF(sp1, sp2).intersects(cutLine, &px);
         if (type == QLineF::NoIntersection)
         {
-            qDebug()<<"Couldn't find intersection with cut line.";
+            qDebug() << "Couldn't find intersection with cut line.";
         }
         points.append(px);
 
@@ -579,7 +634,7 @@ QVector<QPointF> VAbstractPiece::AngleByLength(const QPointF &p2, const QPointF 
         type = QLineF(sp2, sp3).intersects(cutLine, &px);
         if (type == QLineF::NoIntersection)
         {
-            qDebug()<<"Couldn't find intersection with cut line.";
+            qDebug() << "Couldn't find intersection with cut line.";
         }
         points.append(px);
     }
@@ -884,12 +939,12 @@ bool VAbstractPiece::CheckIntersection(const QVector<QPointF> &points, int i, in
     QVector<QPointF> sub1 = SubPath(points, iNext, j);
     sub1.append(crossPoint);
     sub1 = CheckLoops(CorrectEquidistantPoints(sub1, false));
-    const qreal sub1Sum = SumTrapezoids(sub1);
+    const qreal sub1Sum = sumTrapezoids(sub1);
 
     QVector<QPointF> sub2 = SubPath(points, jNext, i);
     sub2.append(crossPoint);
     sub2 = CheckLoops(CorrectEquidistantPoints(sub2, false));
-    const qreal sub2Sum = SumTrapezoids(sub2);
+    const qreal sub2Sum = sumTrapezoids(sub2);
 
     if (sub1Sum < 0 && sub2Sum < 0)
     {

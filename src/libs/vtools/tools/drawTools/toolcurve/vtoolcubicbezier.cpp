@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolcubicbezier.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolcubicbezier.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   10 3, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -99,8 +99,9 @@ void VToolCubicBezier::setDialog()
     SCASSERT(dialogTool != nullptr)
     const auto spl = VAbstractTool::data.GeometricObject<VCubicBezier>(m_id);
     dialogTool->SetSpline(*spl);
-    dialogTool->SetColor(spl->GetColor());
-    dialogTool->SetPenStyle(spl->GetPenStyle());
+    dialogTool->setLineColor(spl->getLineColor());
+    dialogTool->setPenStyle(spl->GetPenStyle());
+    dialogTool->setLineWeight(spl->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -112,8 +113,9 @@ VToolCubicBezier *VToolCubicBezier::Create(QSharedPointer<DialogTool> dialog, VM
     SCASSERT(not dialogTool.isNull())
 
     VCubicBezier *spline = new VCubicBezier(dialogTool->GetSpline());
-    spline->SetColor(dialogTool->GetColor());
-    spline->SetPenStyle(dialogTool->GetPenStyle());
+    spline->setLineColor(dialogTool->getLineColor());
+    spline->SetPenStyle(dialogTool->getPenStyle());
+    spline->setLineWeight(dialogTool->getLineWeight());
 
     auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
 
@@ -220,9 +222,9 @@ void VToolCubicBezier::showContextMenu(QGraphicsSceneContextMenuEvent *event, qu
     {
         ContextMenu<DialogCubicBezier>(event);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -247,8 +249,9 @@ void VToolCubicBezier::SaveDialog(QDomElement &domElement)
     const VCubicBezier spl = dialogTool->GetSpline();
 
     SetSplineAttributes(domElement, spl);
-    doc->SetAttribute(domElement, AttrColor, dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -275,6 +278,7 @@ void VToolCubicBezier::SetVisualization()
         visual->setObject3Id(spl->GetP3().id());
         visual->setObject4Id(spl->GetP4().id());
         visual->setLineStyle(lineTypeToPenStyle(spl->GetPenStyle()));
+        visual->setLineWeight(spl->getLineWeight());
         visual->SetMode(Mode::Show);
         visual->RefreshGeometry();
     }

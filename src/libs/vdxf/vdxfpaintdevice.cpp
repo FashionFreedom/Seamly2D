@@ -113,14 +113,14 @@ DRW::Version VDxfPaintDevice::GetVersion() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VDxfPaintDevice::SetVersion(DRW::Version version)
+void VDxfPaintDevice::setVersion(DRW::Version version)
 {
     if (engine->isActive())
     {
-        qWarning("VDxfPaintDevice::SetVersion(), cannot set version while Dxf is being generated");
+        qWarning("VDxfPaintDevice::setVersion(), cannot set version while Dxf is being generated");
         return;
     }
-    engine->SetVersion(version);
+    engine->setVersion(version);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

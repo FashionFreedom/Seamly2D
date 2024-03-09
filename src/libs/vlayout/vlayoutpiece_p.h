@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutdetail_p.h
+ **  @author Douglas S Caskey
+ **  @date   Dec 27, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vlayoutdetail_p.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -82,29 +83,29 @@ public:
           transform(),
           layoutWidth(0),
           mirror(false),
-          detailLabel(),
+          pieceLabel(),
           patternInfo(),
           grainlinePoints(),
-          m_tmDetail(),
+          m_tmPiece(),
           m_tmPattern()
     {}
 
-    VLayoutPieceData(const VLayoutPieceData &detail)
-        : QSharedData(detail),
-          contour(detail.contour),
-          seamAllowance(detail.seamAllowance),
-          layoutAllowance(detail.layoutAllowance),
-          notches(detail.notches),
-          m_internalPaths(detail.m_internalPaths),
-          m_cutoutPaths(detail.m_cutoutPaths),
-          transform(detail.transform),
-          layoutWidth(detail.layoutWidth),
-          mirror(detail.mirror),
-          detailLabel(detail.detailLabel),
-          patternInfo(detail.patternInfo),
-          grainlinePoints(detail.grainlinePoints),
-          m_tmDetail(detail.m_tmDetail),
-          m_tmPattern(detail.m_tmPattern)
+    VLayoutPieceData(const VLayoutPieceData &piece)
+        : QSharedData(piece),
+          contour(piece.contour),
+          seamAllowance(piece.seamAllowance),
+          layoutAllowance(piece.layoutAllowance),
+          notches(piece.notches),
+          m_internalPaths(piece.m_internalPaths),
+          m_cutoutPaths(piece.m_cutoutPaths),
+          transform(piece.transform),
+          layoutWidth(piece.layoutWidth),
+          mirror(piece.mirror),
+          pieceLabel(piece.pieceLabel),
+          patternInfo(piece.patternInfo),
+          grainlinePoints(piece.grainlinePoints),
+          m_tmPiece(piece.m_tmPiece),
+          m_tmPattern(piece.m_tmPattern)
     {}
 
     ~VLayoutPieceData() {}
@@ -118,10 +119,10 @@ public:
     QTransform                 transform;          //! @brief transform transformation transform
     qreal                      layoutWidth;        //! @brief layoutWidth value layout allowance width in pixels.
     bool                       mirror;
-    QVector<QPointF>           detailLabel;        //! @brief detailLabel detail label rectangle
+    QVector<QPointF>           pieceLabel;         //! @brief pieceLabel piece label rectangle
     QVector<QPointF>           patternInfo;        //! @brief patternInfo pattern info rectangle
     QVector<QPointF>           grainlinePoints;    //! @brief grainlineInfo line
-    VTextManager               m_tmDetail;         //! @brief m_tmDetail text manager for laying out detail info
+    VTextManager               m_tmPiece;          //! @brief m_tmPiece text manager for laying out piece info
     VTextManager               m_tmPattern;        //! @brief m_tmPattern text manager for laying out pattern info */
 
 private:

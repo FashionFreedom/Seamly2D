@@ -35,7 +35,6 @@
 #include <string>
 #include <QLocale>
 
-#include "qmuparser_global.h"
 #include "qmuparserbytecode.h"
 #include "qmuparsercallback.h"
 #include "qmuparserdef.h"
@@ -63,7 +62,7 @@ namespace qmu
  * Complementary to a set of internally implemented functions the parser is able to handle
  * user defined functions and variables.
  */
-class QMUPARSERSHARED_EXPORT QmuParserBase
+class QmuParserBase
 {
     friend class QmuParserTokenReader;
 public:

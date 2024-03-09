@@ -31,13 +31,12 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
 //! The VBoolProperty can take two states: True or False.
-class VPROPERTYEXPLORERSHARED_EXPORT VBoolProperty : public VProperty
+class VBoolProperty : public VProperty
 {
     Q_OBJECT
 public:

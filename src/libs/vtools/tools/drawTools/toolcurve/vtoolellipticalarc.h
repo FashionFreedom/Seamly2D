@@ -1,3 +1,20 @@
+/******************************************************************************
+ *   @file   vtoolellipticalarc.h
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *****************************************************************************/
 /************************************************************************
  **
  **  @file   vtoolellipticalarc.h
@@ -55,8 +72,8 @@ public:
                                       VAbstractPattern *doc, VContainer *data);
     static VToolEllipticalArc *Create(const quint32 _id, const quint32 &center, QString &radius1, QString &radius2,
                                       QString &f1, QString &f2, QString &rotationAngle, const QString &color,
-                                      const QString &penStyle, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                      VContainer *data,
+                                      const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
+                                      VAbstractPattern *doc, VContainer *data,
                             const Document &parse, const Source &typeCreation);
     static const QString ToolType;
     virtual int          type() const Q_DECL_OVERRIDE {return Type;}

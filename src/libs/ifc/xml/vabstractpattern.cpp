@@ -1,5 +1,30 @@
+/***************************************************************************
+ **  @file   vabstractpattern.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
 /************************************************************************
- **  @file   def.h
+ **
+ **  @file   vabstractpattern.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 6, 2015
  **
@@ -12,19 +37,23 @@
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -48,6 +77,7 @@
 #include <QDomNodeList>
 #include <QLatin1String>
 #include <QList>
+#include <QMessageBox>
 #include <QMessageLogger>
 #include <QSet>
 #include <QStaticStringData>
@@ -60,15 +90,15 @@ class QDomElement;
 const QString VAbstractPattern::TagPattern              = QStringLiteral("pattern");
 const QString VAbstractPattern::TagCalculation          = QStringLiteral("calculation");
 const QString VAbstractPattern::TagModeling             = QStringLiteral("modeling");
-const QString VAbstractPattern::TagDetails              = QStringLiteral("details");
-const QString VAbstractPattern::TagDetail               = QStringLiteral("detail");
+const QString VAbstractPattern::TagPieces               = QStringLiteral("pieces");
+const QString VAbstractPattern::TagPiece                = QStringLiteral("piece");
 const QString VAbstractPattern::TagDescription          = QStringLiteral("description");
 const QString VAbstractPattern::TagNotes                = QStringLiteral("notes");
 const QString VAbstractPattern::TagImage                = QStringLiteral("image");
 const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
 const QString VAbstractPattern::TagIncrements           = QStringLiteral("increments");
 const QString VAbstractPattern::TagIncrement            = QStringLiteral("increment");
-const QString VAbstractPattern::TagDraw                 = QStringLiteral("draw");
+const QString VAbstractPattern::TagDraftBlock           = QStringLiteral("draftBlock");
 const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
 const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
 const QString VAbstractPattern::TagGroupItem            = QStringLiteral("item");
@@ -92,6 +122,7 @@ const QString VAbstractPattern::TagGrainline            = QStringLiteral("grainl
 const QString VAbstractPattern::TagPath                 = QStringLiteral("path");
 const QString VAbstractPattern::TagNodes                = QStringLiteral("nodes");
 const QString VAbstractPattern::TagNode                 = QStringLiteral("node");
+const QString VAbstractPattern::TagLine                 = QStringLiteral("line");
 
 const QString VAbstractPattern::TagDraftImages          = QStringLiteral("draftImages");
 const QString VAbstractPattern::AttrId                  = QStringLiteral("id");
@@ -110,6 +141,8 @@ const QString VAbstractPattern::AttrOrder               = QStringLiteral("order"
 
 const QString VAbstractPattern::AttrName                = QStringLiteral("name");
 const QString VAbstractPattern::AttrVisible             = QStringLiteral("visible");
+const QString VAbstractPattern::AttrGroupLocked         = QStringLiteral("locked");
+const QString VAbstractPattern::AttrGroupColor          = QStringLiteral("groupColor");
 const QString VAbstractPattern::AttrObject              = QStringLiteral("object");
 const QString VAbstractPattern::AttrTool                = QStringLiteral("tool");
 const QString VAbstractPattern::AttrType                = QStringLiteral("type");
@@ -228,9 +261,9 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
     {
         formula.expression = VDomDocument::GetParametrString(element, attribute);
     }
-    catch (VExceptionEmptyParameter &e)
+    catch (VExceptionEmptyParameter &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;
     }
 
@@ -244,14 +277,18 @@ void ReadExpressionAttribute(QVector<VFormulaField> &expressions, const QDomElem
 //---------------------------------------------------------------------------------------------------------------------
 VAbstractPattern::VAbstractPattern(QObject *parent)
     : QObject(parent)
-    ,  VDomDocument()
-    ,  activeDraftBlock(QString())
-    ,  lastSavedExportFormat(QString())
-    ,  cursor(0)
-    ,  toolsOnRemove(QVector<VDataTool*>())
-    ,  history(QVector<VToolRecord>())
-    ,  patternPieces(QStringList())
-     , modified(false)
+    , VDomDocument()
+    , activeDraftBlock(QString())
+    , m_DefaultLineColor(qApp->Settings()->getDefaultLineColor())
+    , m_DefaultLineWeight(qApp->Settings()->getDefaultLineWeight())
+    , m_DefaultLineType(qApp->Settings()->getDefaultLineType())
+    , defaultBasePoint(QString())
+    , lastSavedExportFormat(QString())
+    , cursor(0)
+    , toolsOnRemove(QVector<VDataTool*>())
+    , history(QVector<VToolRecord>())
+    , patternPieces(QStringList())
+    , modified(false)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -308,27 +345,27 @@ QStringList VAbstractPattern::ListMeasurements() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief changeActiveDraftBlock set new active pattern piece name.
+ * @brief changeActiveDraftBlock set new active draft block name.
  * @param name new name.
  * @param parse parser file mode.
  */
 void VAbstractPattern::changeActiveDraftBlock(const QString &name, const Document &parse)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
-    if (CheckExistNamePP(name))
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
+    if (draftBlockNameExists(name))
     {
         this->activeDraftBlock = name;
         if (parse == Document::FullParse)
         {
-            emit ChangedActivPP(name);
+            emit activeDraftBlockChanged(name);
         }
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief getActiveDraftBlockName return current pattern piece name.
- * @return pattern piece name.
+ * @brief getActiveDraftBlockName return current draft block name.
+ * @return draft block name.
  */
 QString VAbstractPattern::getActiveDraftBlockName() const
 {
@@ -337,15 +374,15 @@ QString VAbstractPattern::getActiveDraftBlockName() const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetActivDrawElement return draw tag for current pattern peace.
- * @param element draw tag.
+ * @brief getActiveDraftElement return draftBlock element for current draft block.
+ * @param element draftBlock element.
  * @return true if found.
  */
-bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
+bool VAbstractPattern::getActiveDraftElement(QDomElement &element) const
 {
     if (activeDraftBlock.isEmpty() == false)
     {
-        const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+        const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
         if (elements.size() == 0)
         {
             return false;
@@ -369,14 +406,14 @@ bool VAbstractPattern::GetActivDrawElement(QDomElement &element) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief CheckNameDraw check if exist pattern peace with this name.
- * @param name pattern peace name.
+ * @brief draftBlockNameExists check if draft block with this name exists.
+ * @param name draft block name.
  * @return true if exist.
  */
-bool VAbstractPattern::CheckExistNamePP(const QString &name) const
+bool VAbstractPattern::draftBlockNameExists(const QString &name) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draw is empty");
-    const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
     if (elements.size() == 0)
     {
         return false;
@@ -397,18 +434,18 @@ bool VAbstractPattern::CheckExistNamePP(const QString &name) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetActivNodeElement find element in current pattern piece by name.
+ * @brief getActiveNodeElement find element in current draft block by name.
  * @param name name tag.
  * @param element element.
  * @return true if found.
  */
-bool VAbstractPattern::GetActivNodeElement(const QString &name, QDomElement &element) const
+bool VAbstractPattern::getActiveNodeElement(const QString &name, QDomElement &element) const
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draw is empty");
-    QDomElement drawElement;
-    if (GetActivDrawElement(drawElement))
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "draft block name is empty");
+    QDomElement draftBlockElement;
+    if (getActiveDraftElement(draftBlockElement))
     {
-        const QDomNodeList listElement = drawElement.elementsByTagName(name);
+        const QDomNodeList listElement = draftBlockElement.elementsByTagName(name);
         if (listElement.size() != 1)
         {
             return false;
@@ -427,7 +464,7 @@ bool VAbstractPattern::GetActivNodeElement(const QString &name, QDomElement &ele
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::ParseGroups(const QDomElement &domElement)
+void VAbstractPattern::parseGroups(const QDomElement &domElement)
 {
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
@@ -446,7 +483,7 @@ void VAbstractPattern::ParseGroups(const QDomElement &domElement)
                 {
                     VContainer::UpdateId(GetParametrUInt(domElement, AttrId, NULL_ID_STR));
 
-                    const QPair<bool, QMap<quint32, quint32> > groupData = ParseItemElement(domElement);
+                    const QPair<bool, QMap<quint32, quint32> > groupData = parseItemElement(domElement);
                     const QMap<quint32, quint32> group = groupData.second;
                     auto i = group.constBegin();
                     while (i != group.constEnd())
@@ -479,7 +516,7 @@ void VAbstractPattern::ParseGroups(const QDomElement &domElement)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VAbstractPattern::CountPP() const
+int VAbstractPattern::draftBlockCount() const
 {
     const QDomElement rootElement = this->documentElement();
     if (rootElement.isNull())
@@ -487,15 +524,15 @@ int VAbstractPattern::CountPP() const
         return 0;
     }
 
-    return rootElement.elementsByTagName( TagDraw ).count();
+    return rootElement.elementsByTagName(TagDraftBlock).count();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::GetPPElement(const QString &name)
+QDomElement VAbstractPattern::getDraftBlockElement(const QString &name)
 {
     if (name.isEmpty() == false)
     {
-        const QDomNodeList elements = this->documentElement().elementsByTagName( TagDraw );
+        const QDomNodeList elements = this->documentElement().elementsByTagName(TagDraftBlock);
         if (elements.size() == 0)
         {
             return QDomElement();
@@ -517,29 +554,29 @@ QDomElement VAbstractPattern::GetPPElement(const QString &name)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangeNamePP change pattern piece name.
- * @param oldName old pattern piece name.
- * @param newName new pattern piece name.
+ * @brief renameDraftBlock change draft block name.
+ * @param oldName old draft block name.
+ * @param newName new draft block name.
  * @return true if success.
  */
-bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newName)
+bool VAbstractPattern::renameDraftBlock(const QString &oldName, const QString &newName)
 {
-    Q_ASSERT_X(not newName.isEmpty(), Q_FUNC_INFO, "new name pattern piece is empty");
-    Q_ASSERT_X(not oldName.isEmpty(), Q_FUNC_INFO, "old name pattern piece is empty");
+    Q_ASSERT_X(!newName.isEmpty(), Q_FUNC_INFO, "new name draft block is empty");
+    Q_ASSERT_X(!oldName.isEmpty(), Q_FUNC_INFO, "old name draft block is empty");
 
-    if (CheckExistNamePP(oldName) == false)
+    if (draftBlockNameExists(oldName) == false)
     {
-        qDebug()<<"Do not exist pattern piece with name"<<oldName;
+        qDebug() << "Draft block does not exist with name" << oldName;
         return false;
     }
 
-    if (CheckExistNamePP(newName))
+    if (draftBlockNameExists(newName))
     {
-        qDebug()<<"Already exist pattern piece with name"<<newName;
+        qDebug() << "Draft block already exists with name" << newName;
         return false;
     }
 
-    QDomElement ppElement = GetPPElement(oldName);
+    QDomElement ppElement = getDraftBlockElement(oldName);
     if (ppElement.isElement())
     {
         if (activeDraftBlock == oldName)
@@ -548,35 +585,35 @@ bool VAbstractPattern::ChangeNamePP(const QString &oldName, const QString &newNa
         }
         ppElement.setAttribute(AttrName, newName);
         emit patternChanged(false);//For situation when we change name directly, without undocommands.
-        emit ChangedNameDraw(oldName, newName);
+        emit draftBlockNameChanged(oldName, newName);
         return true;
     }
     else
     {
-        qDebug()<<"Can't find pattern piece node with name"<<oldName<<Q_FUNC_INFO;
+        qDebug() << "Can't find draft block node with name" << oldName << Q_FUNC_INFO;
         return false;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief appendPP add new pattern piece.
+ * @brief appendDraftBlock add new draft block.
  *
- * Method check if not exist pattern piece with the same name and change name active pattern piece name, send signal
- * about change pattern piece. Doen't add pattern piece to file structure. This task make SPoint tool.
- * @param name pattern peace name.
+ * Method check if not exist draft block with the same name and change name active draft block name, send signal
+ * about change draft block. Doen't add draft block to file structure. This task make SPoint tool.
+ * @param name draft block name.
  * @return true if success.
  */
-bool VAbstractPattern::appendPP(const QString &name)
+bool VAbstractPattern::appendDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
     if (name.isEmpty())
     {
         return false;
     }
-    if (CheckExistNamePP(name) == false)
+    if (draftBlockNameExists(name) == false)
     {
-        SetActivPP(name);
+        setActiveDraftBlock(name);
         return true;
     }
     return false;
@@ -596,6 +633,39 @@ void VAbstractPattern::setCursor(const quint32 &value)
         cursor = value;
         emit ChangedCursor(cursor);
     }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultPen(Pen pen)
+{
+  m_DefaultLineColor  = pen.color;
+  m_DefaultLineWeight = pen.lineWeight;
+  m_DefaultLineType   = pen.lineType;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setDefaultBasePoint(QString basePoint)
+{
+    defaultBasePoint = basePoint;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineColor() const
+{
+  return m_DefaultLineColor;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VAbstractPattern::getDefaultLineWeight() const
+{
+  return m_DefaultLineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VAbstractPattern::getDefaultLineType() const
+{
+  return m_DefaultLineType;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -690,7 +760,7 @@ QVector<quint32> VAbstractPattern::ParsePieceInternalPaths(const QDomElement &do
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<quint32> VAbstractPattern::ParsePiecePins(const QDomElement &domElement)
+QVector<quint32> VAbstractPattern::ParsePieceAnchors(const QDomElement &domElement)
 {
     QVector<quint32> records;
     const QDomNodeList nodeList = domElement.childNodes();
@@ -731,8 +801,10 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
                                                           trueStr);
     const bool showSecond = VDomDocument::getParameterBool(domElement, VAbstractPattern::AttrNodeShowSecondNotch,
                                                           trueStr);
-    const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength, ".25");
-    const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth, ".25");
+    const qreal  notchLength = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchLength,
+                                                               QString::number(qApp->Settings()->getDefaultNotchLength()));
+    const qreal   notchWidth = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchWidth,
+                                                               QString::number(qApp->Settings()->getDefaultNotchWidth()));
     const qreal   notchAngle = VDomDocument::GetParametrDouble(domElement, VAbstractPattern::AttrNodeNotchAngle, ".00");
     const quint32 notchCount = VDomDocument::GetParametrUInt(domElement,   VAbstractPattern::AttrNodeNotchCount, "1");
 
@@ -768,15 +840,15 @@ VPieceNode VAbstractPattern::ParseSANode(const QDomElement &domElement)
             throw e;
     }
     VPieceNode node(id, tool, reverse);
-    node.SetFormulaSABefore(saBefore);
-    node.SetFormulaSAAfter(saAfter);
+    node.setBeforeSAFormula(saBefore);
+    node.setAfterSAFormula(saAfter);
     node.SetAngleType(angle);
     node.SetExcluded(excluded);
     node.setNotch(notch);
     node.setNotchType(notchType);
     node.setNotchSubType(notchSubType);
     node.setShowNotch(showNotch);
-    node.setShowSecondNotch(showSecond);
+    node.setShowSeamlineNotch(showSecond);
     node.setNotchLength(notchLength);
     node.setNotchWidth(notchWidth);
     node.setNotchAngle(notchAngle);
@@ -802,19 +874,35 @@ QVector<VToolRecord> *VAbstractPattern::getHistory()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VToolRecord> VAbstractPattern::getLocalHistory() const
+QVector<VToolRecord> VAbstractPattern::getBlockHistory() const
 {
-    QVector<VToolRecord> historyPP;
+    QVector<VToolRecord> draftBlockHistory;
     for (qint32 i = 0; i< history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
-        if (tool.getNameDraw() != getActiveDraftBlockName())
+        if (tool.getDraftBlockName() != getActiveDraftBlockName())
         {
             continue;
         }
-        historyPP.append(tool);
+        draftBlockHistory.append(tool);
     }
-    return historyPP;
+    return draftBlockHistory;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QMap<quint32, Tool> VAbstractPattern::getGroupObjHistory() const
+{
+    QMap<quint32, Tool> draftBlockHistory;
+    for (qint32 i = 0; i< history.size(); ++i)
+    {
+        const VToolRecord tool = history.at(i);
+        if (tool.getDraftBlockName() != getActiveDraftBlockName())
+        {
+            continue;
+        }
+        draftBlockHistory.insert(tool.getId(), tool.getTypeTool());
+    }
+    return draftBlockHistory;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -833,7 +921,7 @@ void VAbstractPattern::SetMPath(const QString &path)
     }
     else
     {
-        qDebug()<<"Can't save path to measurements"<<Q_FUNC_INFO;
+        qWarning() << "Can't save path to measurements" << Q_FUNC_INFO;
     }
 }
 
@@ -842,7 +930,7 @@ quint32 VAbstractPattern::SiblingNodeId(const quint32 &nodeId) const
 {
     quint32 siblingId = NULL_ID;
 
-    const QVector<VToolRecord> history = getLocalHistory();
+    const QVector<VToolRecord> history = getBlockHistory();
     for (qint32 i = 0; i < history.size(); ++i)
     {
         const VToolRecord tool = history.at(i);
@@ -860,7 +948,7 @@ quint32 VAbstractPattern::SiblingNodeId(const quint32 &nodeId) const
                     switch ( tool.getTypeTool() )
                     {
                         case Tool::Piece:
-                        case Tool::UnionDetails:
+                        case Tool::Union:
                         case Tool::NodeArc:
                         case Tool::NodeElArc:
                         case Tool::NodePoint:
@@ -991,7 +1079,7 @@ void VAbstractPattern::SetGradationHeights(const QMap<GHeights, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1185,7 +1273,7 @@ void VAbstractPattern::SetGradationSizes(const QMap<GSizes, bool> &options)
     QDomNodeList tags = elementsByTagName(TagGradation);
     if (tags.isEmpty())
     {
-        qDebug()<<"Can't save tag "<<TagGradation<<Q_FUNC_INFO;
+        qWarning() << "Can't save tag " << TagGradation << Q_FUNC_INFO;
         return;
     }
 
@@ -1327,7 +1415,7 @@ QString VAbstractPattern::GetCompanyName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetCompanyName(const QString& qsName)
+void VAbstractPattern::SetCompanyName(const QString &qsName)
 {
     CheckTagExists(TagCompanyName);
     setTagText(TagCompanyName, qsName);
@@ -1343,7 +1431,7 @@ QString VAbstractPattern::GetPatternNumber() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetPatternNumber(const QString& qsNum)
+void VAbstractPattern::SetPatternNumber(const QString &qsNum)
 {
     CheckTagExists(TagPatternNum);
     setTagText(TagPatternNum, qsNum);
@@ -1359,7 +1447,7 @@ QString VAbstractPattern::GetCustomerName() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetCustomerName(const QString& qsName)
+void VAbstractPattern::SetCustomerName(const QString &qsName)
 {
     CheckTagExists(TagCustomerName);
     setTagText(TagCustomerName, qsName);
@@ -1419,7 +1507,7 @@ void VAbstractPattern::SetLabelTimeFormat(const QString &format)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetPatternLabelTemplate(const QVector<VLabelTemplateLine> &lines)
+void VAbstractPattern::setPatternLabelTemplate(const QVector<VLabelTemplateLine> &lines)
 {
     QDomElement tag = CheckTagExists(TagPatternLabel);
     RemoveAllChildren(tag);
@@ -1431,7 +1519,7 @@ void VAbstractPattern::SetPatternLabelTemplate(const QVector<VLabelTemplateLine>
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VLabelTemplateLine> VAbstractPattern::GetPatternLabelTemplate() const
+QVector<VLabelTemplateLine> VAbstractPattern::getPatternLabelTemplate() const
 {
     if (patternLabelLines.isEmpty())
     {
@@ -1516,10 +1604,60 @@ QString VAbstractPattern::GetVersion() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetVersion()
+void VAbstractPattern::setVersion()
 {
     setTagText(TagVersion, VPatternConverter::PatternMaxVerStr);
     emit patternChanged(false);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getOpItems get vector of operation tool obects.
+ * @param toolId operation tool id.
+ * @param itemType  type of item - either source or destination.
+ * @return vector of item element object ids.
+ */
+QVector<quint32> VAbstractPattern::getOpItems(const quint32 &toolId, const QString &itemType)
+{
+    QVector<quint32> items;
+    quint32 objId;
+    const QDomElement domElement = elementById(toolId);
+    const QDomNodeList nodeList = domElement.childNodes();
+    for (qint32 i = 0; i < nodeList.size(); ++i)
+    {
+        const QDomElement dataElement = nodeList.at(i).toElement();
+        if (!dataElement.isNull() && dataElement.tagName() == itemType)
+        {
+            const QDomNodeList srcList = dataElement.childNodes();
+            for (qint32 j = 0; j < srcList.size(); ++j)
+            {
+                const QDomElement element = srcList.at(j).toElement();
+                if (!element.isNull())
+                {
+                    objId = VDomDocument::GetParametrUInt(element, AttrIdObject, NULL_ID_STR);
+                    items.append(objId);
+                }
+            }
+        }
+    }
+
+    return items;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QVector<quint32> VAbstractPattern::getDartItems(const quint32 &toolId)
+{
+    QVector<quint32> items;
+    quint32 objId;
+    const QDomElement domElement = elementById(toolId);
+
+    objId = VDomDocument::GetParametrUInt(domElement, AttrPoint1, NULL_ID_STR);
+    items.append(objId);
+
+    objId = VDomDocument::GetParametrUInt(domElement, AttrPoint2, NULL_ID_STR);
+    items.append(objId);
+
+    return items;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1544,15 +1682,15 @@ void VAbstractPattern::ClearScene()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::CheckInLayoutList()
+void VAbstractPattern::updatePieceList(quint32 id)
 {
-    emit UpdateInLayoutList();
+    emit UpdateInLayoutList(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SelectedDetail(quint32 id)
+void VAbstractPattern::selectedPiece(quint32 id)
 {
-    emit ShowDetail(id);
+    emit showPiece(id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1582,14 +1720,14 @@ VPiecePath VAbstractPattern::ParsePathNodes(const QDomElement &domElement)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetActivPP set current pattern piece.
- * @param name pattern peace name.
+ * @brief setActiveDraftBlock set current draft block.
+ * @param name draft block name.
  */
-void VAbstractPattern::SetActivPP(const QString &name)
+void VAbstractPattern::setActiveDraftBlock(const QString &name)
 {
-    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name pattern piece is empty");
+    Q_ASSERT_X(not name.isEmpty(), Q_FUNC_INFO, "name draft block is empty");
     this->activeDraftBlock = name;
-    emit ChangedActivPP(name);
+    emit activeDraftBlockChanged(name);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1667,20 +1805,20 @@ void VAbstractPattern::InsertTag(const QStringList &tags, const QDomElement &ele
             break;
         }
     }
-    SetVersion();
+    setVersion();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VAbstractPattern::GetIndexActivPP() const
+int VAbstractPattern::getActiveDraftBlockIndex() const
 {
-    const QDomNodeList drawList = elementsByTagName(TagDraw);
+    const QDomNodeList blockList = elementsByTagName(TagDraftBlock);
 
     int index = 0;
-    if (not drawList.isEmpty())
+    if (not blockList.isEmpty())
     {
-        for (int i = 0; i < drawList.size(); ++i)
+        for (int i = 0; i < blockList.size(); ++i)
         {
-            QDomElement node = drawList.at(i).toElement();
+            QDomElement node = blockList.at(i).toElement();
             if (node.attribute(AttrName) == activeDraftBlock)
             {
                 index = i;
@@ -1705,9 +1843,9 @@ QStringList VAbstractPattern::ListIncrements() const
         {
             increments.append(GetParametrString(dom, IncrementName));
         }
-        catch (VExceptionEmptyParameter &e)
+        catch (VExceptionEmptyParameter &error)
         {
-            Q_UNUSED(e)
+            Q_UNUSED(error)
         }
     }
 
@@ -1947,7 +2085,7 @@ QVector<VFormulaField> VAbstractPattern::ListPieceExpressions() const
     Q_STATIC_ASSERT(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53);
 
     QVector<VFormulaField> expressions;
-    const QDomNodeList list = elementsByTagName(TagDetail);
+    const QDomNodeList list = elementsByTagName(TagPiece);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
@@ -2016,7 +2154,7 @@ bool VAbstractPattern::IsFunction(const QString &token) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QPair<bool, QMap<quint32, quint32> > VAbstractPattern::ParseItemElement(const QDomElement &domElement)
+QPair<bool, QMap<quint32, quint32> > VAbstractPattern::parseItemElement(const QDomElement &domElement)
 {
     Q_ASSERT_X(not domElement.isNull(), Q_FUNC_INFO, "domElement is null");
 
@@ -2045,16 +2183,16 @@ QPair<bool, QMap<quint32, quint32> > VAbstractPattern::ParseItemElement(const QD
 
         return group;
     }
-    catch (const VExceptionBadId &e)
+    catch (const VExceptionBadId &error)
     {
         VExceptionObjectError excep(tr("Error creating or updating group"), domElement);
-        excep.AddMoreInformation(e.ErrorMessage());
+        excep.AddMoreInformation(error.ErrorMessage());
         throw excep;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-/**
+/*
  * @brief IsModified state of the document for cases that do not cover QUndoStack.
  * @return true if the document was modified without using QUndoStack.
  */
@@ -2070,37 +2208,17 @@ void VAbstractPattern::SetModified(bool modified)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::GetDraw(const QString &name) const
+QDomElement VAbstractPattern::createGroups()
 {
-    const QDomNodeList draws = documentElement().elementsByTagName(TagDraw);
-    for (int i=0; i < draws.size(); ++i)
+    QDomElement draftBlock;
+    if (getActiveDraftElement(draftBlock))
     {
-        QDomElement draw = draws.at(i).toElement();
-        if (draw.isNull())
-        {
-            continue;
-        }
-
-        if (draw.attribute(AttrName) == name)
-        {
-            return draw;
-        }
-    }
-    return QDomElement();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::CreateGroups()
-{
-    QDomElement draw;
-    if (GetActivDrawElement(draw))
-    {
-        QDomElement groups = draw.firstChildElement(TagGroups);
+        QDomElement groups = draftBlock.firstChildElement(TagGroups);
 
         if (groups.isNull())
         {
             groups = createElement(TagGroups);
-            draw.appendChild(groups);
+            draftBlock.appendChild(groups);
         }
 
         return groups;
@@ -2109,36 +2227,82 @@ QDomElement VAbstractPattern::CreateGroups()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VAbstractPattern::CreateGroup(quint32 id, const QString &name, const QMap<quint32, quint32> &groupData)
+QDomElement VAbstractPattern::createGroup(quint32 groupId, const QString &name, const QString &color, const QString &type,
+                                          const QString &weight, const QMap<quint32, quint32> &groupData)
 {
-    if (id == NULL_ID || groupData.isEmpty())
+    if (groupId == NULL_ID)
     {
         return QDomElement();
     }
 
+    //Create new empty group
     QDomElement group = createElement(TagGroup);
-    SetAttribute(group, AttrId, id);
+    SetAttribute(group, AttrId, groupId);
     SetAttribute(group, AttrName, name);
     SetAttribute(group, AttrVisible, true);
+    SetAttribute(group, AttrGroupLocked, false);
+    SetAttribute(group, AttrGroupColor, color);
+    SetAttribute(group, AttrLineType, type);
+    SetAttribute(group, AttrLineWeight, weight);
 
-    auto i = groupData.constBegin();
-    while (i != groupData.constEnd())
+    //Add objects to group
+    if (!groupData.isEmpty())
     {
-        QDomElement item = createElement(TagGroupItem);
-        item.setAttribute(AttrObject, i.key());
-        item.setAttribute(AttrTool, i.value());
-        group.appendChild(item);
-        ++i;
+        auto i = groupData.constBegin();
+        while (i != groupData.constEnd())
+        {
+            QDomElement item = createElement(TagGroupItem);
+            item.setAttribute(AttrObject, i.key());
+            item.setAttribute(AttrTool, i.value());
+            group.appendChild(item);
+            ++i;
+        }
+        return group;
+    }
+    else
+    {
+    return group;
+    }
+}
+
+QDomElement VAbstractPattern::addGroupItems(const QString &name, const QMap<quint32, quint32> &groupData)
+{
+    quint32 groupId = getGroupIdByName(name);
+    const bool locked = getGroupLock(groupId);
+    if (locked)
+    {
+      return QDomElement();
     }
 
+    QDomElement group = getGroupByName(name);
+
+    if (! getParameterBool(group, AttrGroupLocked, trueStr))
+    {
+        if (!groupData.isEmpty())
+        {
+            auto i = groupData.constBegin();
+            while (i != groupData.constEnd())
+            {
+                QDomElement item = createElement(TagGroupItem);
+                item.setAttribute(AttrObject, i.key());
+                item.setAttribute(AttrTool, i.value());
+                group.appendChild(item);
+                ++i;
+            }
+            modified = true;
+            emit patternChanged(false);
+
+            emit updateGroups();
+        }
+    }
     return group;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VAbstractPattern::GetGroupName(quint32 id)
+QString VAbstractPattern::getGroupName(quint32 id)
 {
     QString name = tr("New group");
-    QDomElement groups = CreateGroups();
+    QDomElement groups = createGroups();
     if (not groups.isNull())
     {
         QDomElement group = elementById(id, TagGroup);
@@ -2167,9 +2331,9 @@ QString VAbstractPattern::GetGroupName(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetGroupName(quint32 id, const QString &name)
+void VAbstractPattern::setGroupName(quint32 id, const QString &name)
 {
-    QDomElement groups = CreateGroups();
+    QDomElement groups = createGroups();
     if (not groups.isNull())
     {
         QDomElement group = elementById(id, TagGroup);
@@ -2197,13 +2361,14 @@ void VAbstractPattern::SetGroupName(quint32 id, const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QMap<quint32, QPair<QString, bool> > VAbstractPattern::GetGroups()
+QMap<quint32, GroupAttributes> VAbstractPattern::getGroups()
 {
-    QMap<quint32, QPair<QString, bool> > data;
+    GroupAttributes groupData;
+    QMap<quint32, GroupAttributes> data;
 
     try
     {
-        QDomElement groups = CreateGroups();
+        QDomElement groups = createGroups();
         if (not groups.isNull())
         {
             QDomNode domNode = groups.firstChild();
@@ -2217,10 +2382,167 @@ QMap<quint32, QPair<QString, bool> > VAbstractPattern::GetGroups()
                         if (group.tagName() == TagGroup)
                         {
                             const quint32 id = GetParametrUInt(group, AttrId, "0");
+                            const QString name = GetParametrString(group, AttrName, tr("New group 2"));
                             const bool visible = getParameterBool(group, AttrVisible, trueStr);
-                            const QString name = GetParametrString(group, AttrName, tr("New group"));
+                            const bool locked = getParameterBool(group, AttrGroupLocked, trueStr);
+                            const QString color = GetParametrString(group, AttrGroupColor, ColorBlack);
+                            const QString linetype = GetParametrString(group, AttrLineType, LineTypeSolidLine);
+                            const QString lineweight = GetParametrString(group, AttrLineWeight, "0.35");
 
-                            data.insert(id, qMakePair(name, visible));
+                            groupData.name = name;
+                            groupData.visible = visible;
+                            groupData.locked = locked;
+                            groupData.color = color;
+                            groupData.linetype = linetype;
+                            groupData.lineweight = lineweight;
+                            data.insert(id, groupData);
+                        }
+                    }
+                }
+                domNode = domNode.nextSibling();
+            }
+            emit patternHasGroups(true);
+        }
+        else
+        {
+            emit patternHasGroups(false);
+            qDebug("Can't get tag Groups.");
+        }
+    }
+    catch (const VExceptionConversionError &)
+    {
+        return QMap<quint32, GroupAttributes>();
+    }
+
+    return data;
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets List of Groups for the current Draft Block
+ *
+ * @return  AttrName - Group Name.
+ * @throw   VExceptionConversionError if group error.
+ */
+
+QStringList VAbstractPattern::groupListByName()
+{
+    QStringList groupList;
+    try
+    {
+        QDomElement groups = createGroups();
+        if (not groups.isNull())
+        {
+            QDomNode domNode = groups.firstChild();
+            if (domNode.isNull() == false)
+            {
+                while (domNode.isNull() == false)
+                {
+                    if (domNode.isElement())
+                    {
+                        const QDomElement group = domNode.toElement();
+                        if (group.isNull() == false)
+                        {
+                            if (group.tagName() == TagGroup)
+                            {
+
+                                groupList <<  GetParametrString(group, AttrName);
+                            }
+                        }
+                    }
+                    domNode = domNode.nextSibling();
+                }
+                emit patternHasGroups(true);
+            }
+            else
+            {
+                emit patternHasGroups(false);
+                qDebug("Can't get tag Groups.");
+            }
+        }
+
+    }
+    catch (const VExceptionConversionError &)
+    {
+        return groupList;
+    }
+
+    return groupList;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets Dom Element for a given group name.
+ *
+ * @return  group - group Dom Element.
+ */
+QDomElement VAbstractPattern::getGroupByName(const QString &name)
+{
+
+    QDomElement groups = createGroups();
+    if (not groups.isNull())
+    {
+        QDomNode domNode = groups.firstChild();
+        if (domNode.isNull() == false)
+        {
+            while (domNode.isNull() == false)
+            {
+                if (domNode.isElement())
+                {
+                    const QDomElement group = domNode.toElement();
+                    if (group.isNull() == false)
+                    {
+                        if (group.tagName() == TagGroup)
+                        {
+                            const QString groupName = GetParametrString(group, AttrName);
+                            if (groupName == name)
+                            {
+                                return group;
+                            }
+                        }
+                    }
+                }
+                domNode = domNode.nextSibling();
+            }
+            emit patternHasGroups(true);
+        }
+        else
+        {
+            emit patternHasGroups(false);
+            qDebug("Can't get tag Groups.");
+        }
+    }
+    return groups;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets groupId for a given group name.
+ *
+ * @return  groupId - group Id.
+ */
+quint32 VAbstractPattern::getGroupIdByName(const QString &name)
+{
+
+    QDomElement groups = createGroups();
+    if (not groups.isNull())
+    {
+        QDomNode domNode = groups.firstChild();
+        if (domNode.isNull() == false)
+        {
+            while (domNode.isNull() == false)
+            {
+                if (domNode.isElement())
+                {
+                    const QDomElement group = domNode.toElement();
+                    if (group.isNull() == false)
+                    {
+                        if (group.tagName() == TagGroup)
+                        {
+                            const QString groupName = GetParametrString(group, AttrName);
+                            if (groupName == name)
+                            {
+                                const quint32 groupId = GetParametrUInt(group, AttrId, "0");
+                                return groupId;
+                            }
                         }
                     }
                 }
@@ -2232,16 +2554,302 @@ QMap<quint32, QPair<QString, bool> > VAbstractPattern::GetGroups()
             qDebug("Can't get tag Groups.");
         }
     }
-    catch (const VExceptionConversionError &)
+    return quint32();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Returns the groups that contain or do not contain the item identified by the toolid and the objectid
+ * @param toolId
+ * @param objectId
+ * @param containsItem |true if the groups contain the given item, false if they don't contain the item
+ * @return
+ */
+QMap<quint32, QString> VAbstractPattern::getGroupsContainingItem(quint32 toolId, quint32 objectId, bool containsItem)
+{
+    QMap<quint32, QString> data;
+
+    if(objectId == 0)
     {
-        return QMap<quint32, QPair<QString, bool> >();
+        objectId = toolId;
+    }
+
+    QDomElement groups = createGroups();
+    if (not groups.isNull())
+    {
+        QDomNode domNode = groups.firstChild();
+        while (domNode.isNull() == false) // iterate through the groups
+        {
+            if (domNode.isElement())
+            {
+                const QDomElement group = domNode.toElement();
+                if (group.isNull() == false)
+                {
+                    if (group.tagName() == TagGroup)
+                    {
+                        bool groupHasItem = hasGroupItem(group, toolId, objectId);
+                        if((containsItem && groupHasItem) || (not containsItem && not groupHasItem))
+                        {
+                            const quint32 groupId = GetParametrUInt(group, AttrId, "0");
+                            const QString name = GetParametrString(group, AttrName, tr("New group"));
+                            data.insert(groupId, name);
+                        }
+                    }
+                }
+            }
+            domNode = domNode.nextSibling();
+        }
+    }
+    else
+    {
+        qDebug("Can't get tag Groups.");
     }
 
     return data;
 }
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Checks if the given group has the item with the given toolId and objectId
+ * @param groupDomElement
+ * @param toolId
+ * @param objectId
+ * @return
+ */
+bool VAbstractPattern::hasGroupItem(const QDomElement &groupDomElement, quint32 toolId, quint32 objectId)
+{
+    bool result = false;
+
+    QDomNode itemNode = groupDomElement.firstChild();
+    while (itemNode.isNull() == false) // iterate through the items of the group
+    {
+        if (itemNode.isElement())
+        {
+            const QDomElement item = itemNode.toElement();
+            if (item.isNull() == false)
+            {
+                quint32 toolIdIterate= GetParametrUInt(item, AttrTool, "0");
+                quint32 objectIdIterate= GetParametrUInt(item, AttrObject, "0");
+
+                if(toolIdIterate == toolId && objectIdIterate == objectId)
+                {
+                    result = true;
+                    break;
+                }
+            }
+        }
+        itemNode = itemNode.nextSibling();
+    }
+    return result;
+}
+
+/**
+ * @brief Deletes an item from the group containing the toolId
+ * @param toolId
+ */
+void VAbstractPattern::deleteToolFromGroup(quint32 toolId)
+{
+    QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
+    QStringList list = QStringList(groupsContainingItem.values());
+    QString  listGroupName = list.value(0);
+    quint32 groupId = groupsContainingItem.key(listGroupName);
+
+    const bool locked = getGroupLock(groupId);
+    if (locked)
+    {
+      return;
+    }
+
+    QDomElement group = removeGroupItem(toolId, 0, groupId);
+}
+
+/**
+ * @brief Adds an item to the given group with the given toolId and objectId
+ * @param toolId
+ */
+void VAbstractPattern::addToolToGroup(quint32 toolId, quint32 objectId, const QString &groupName)
+{
+    quint32 groupId = getGroupIdByName(groupName);
+    const bool locked = getGroupLock(groupId);
+    if (locked)
+    {
+        return;
+    }
+
+    //Delete tool if contained in an existing group
+    QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, objectId, true);
+    QStringList list = QStringList(groupsContainingItem.values());
+    QString  listGroupName = list.value(0);
+    groupId = groupsContainingItem.key(listGroupName);
+
+    QDomElement group = removeGroupItem(toolId, objectId, groupId);
+
+    //Add to new Group.
+    QMap<quint32,QString> groupsNotContainingItem = getGroupsContainingItem(toolId, objectId, false);
+    list = QStringList(groupsNotContainingItem.values());
+
+    for(int i=0; i<list.count(); ++i)
+    {
+        const QString  listGroupName = list.value(i);
+        if (groupName == listGroupName)
+        {
+            const quint32 groupId = groupsNotContainingItem.key(list[i]);
+            QDomElement group = addGroupItem(toolId, objectId, groupId);
+            modified = true;
+            emit patternChanged(false);
+            emit updateGroups();
+            QDomElement groups = createGroups();
+            if (not groups.isNull())
+            {
+                parseGroups(groups);
+            }
+            break;
+        }
+    }
+
+}
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VAbstractPattern::GetGroupVisivility(quint32 id)
+/**
+ * @brief Adds an item to the given group with the given toolId and objectId
+ * @param toolId
+ * @param objectId
+ * @param groupId
+ */
+QDomElement VAbstractPattern::addGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
+{
+
+    const bool locked = getGroupLock(groupId);
+    if (locked)
+    {
+      return QDomElement();
+    }
+
+    QDomElement group = elementById(groupId, TagGroup);
+
+    if (!group.isNull())
+    {
+        if(objectId == 0)
+        {
+            objectId = toolId;
+        }
+
+        QDomElement item = createElement(TagGroupItem);
+        item.setAttribute(AttrTool, toolId);
+        item.setAttribute(AttrObject, objectId);
+        group.appendChild(item);
+
+        modified = true;
+        emit patternChanged(false);
+
+        emit updateGroups();
+
+        QDomElement groups = createGroups();
+        if (not groups.isNull())
+        {
+            parseGroups(groups);
+        }
+
+        return item;
+    }
+    else
+    {
+        qDebug() << "The group of id " << groupId << " doesn't exist";
+    }
+
+    return QDomElement();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Removes the item of given toolId and objectId from the group of given groupId
+ * @param toolId
+ * @param objectId
+ * @param groupId
+ */
+QDomElement VAbstractPattern::removeGroupItem(quint32 toolId, quint32 objectId, quint32 groupId)
+{
+    QDomElement group = elementById(groupId, TagGroup);
+
+    const bool locked = getGroupLock(groupId);
+    if (locked)
+    {
+      return QDomElement();
+    }
+
+    if (!group.isNull())
+    {
+        if(objectId == 0)
+        {
+            objectId = toolId;
+        }
+
+        QDomNode itemNode = group.firstChild();
+        while (itemNode.isNull() == false) // iterate through the items of the group
+        {
+            if (itemNode.isElement())
+            {
+                const QDomElement item = itemNode.toElement();
+                if (item.isNull() == false)
+                {
+                    quint32 toolIdIterate= GetParametrUInt(item, AttrTool, "0");
+                    quint32 objectIdIterate= GetParametrUInt(item, AttrObject, "0");
+
+                    if(toolIdIterate == toolId && objectIdIterate == objectId)
+                    {
+                        group.removeChild(itemNode);
+
+                        // to signalised that the pattern was changed and need to be saved
+                        modified = true;
+                        emit patternChanged(false);
+
+                        // to update the group table of the gui
+                        emit updateGroups();
+
+                        // parse the groups to update the drawing, in case the item was removed from an invisible group
+                        QDomElement groups = createGroups();
+                        if (not groups.isNull())
+                        {
+                            parseGroups(groups);
+                        }
+
+                        return item;
+                    }
+                }
+            }
+            itemNode = itemNode.nextSibling();
+        }
+    }
+    else
+    {
+        qDebug() << "The group of id " << groupId << " doesn't exist";
+    }
+
+    return QDomElement();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief Returns true if the given group is empty
+ * @param id
+ * @return
+ */
+bool VAbstractPattern::isGroupEmpty(quint32 id)
+{
+    QDomElement group = elementById(id, TagGroup);
+
+    if (group.isNull() == false)
+    {
+        return not group.hasChildNodes();
+    }
+    else
+    {
+        qDebug() << "The group of id " << id << " doesn't exist";
+        return true;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VAbstractPattern::getGroupVisibility(quint32 id)
 {
     QDomElement group = elementById(id, TagGroup);
     if (group.isElement())
@@ -2256,7 +2864,7 @@ bool VAbstractPattern::GetGroupVisivility(quint32 id)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractPattern::SetGroupVisivility(quint32 id, bool visible)
+void VAbstractPattern::setGroupVisibility(quint32 id, bool visible)
 {
     QDomElement group = elementById(id, TagGroup);
     if (group.isElement())
@@ -2265,14 +2873,258 @@ void VAbstractPattern::SetGroupVisivility(quint32 id, bool visible)
         modified = true;
         emit patternChanged(false);
 
-        QDomElement groups = CreateGroups();
+        QDomElement groups = createGroups();
         if (not groups.isNull())
         {
-            ParseGroups(groups);
+            parseGroups(groups);
         }
     }
     else
     {
         qDebug("Can't get group by id = %u.", id);
+    }
+}
+
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets whether a Group is locked or not
+ * @param  id - Tool Id.
+ * @return AttrGroupLocked - True if locked False if unlocked.
+ * @return True if can't find group by id.
+*/
+
+bool VAbstractPattern::getGroupLock(quint32 id)
+{
+    QDomElement group = elementById(id, TagGroup);
+    if (group.isElement())
+    {
+        return getParameterBool(group, AttrGroupLocked, trueStr);
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+        return true;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setGroupLock(quint32 id, bool locked)
+{
+    QDomElement group = elementById(id, TagGroup);
+    if (group.isElement())
+    {
+        SetAttribute(group, AttrGroupLocked, locked);
+        modified = true;
+        emit patternChanged(false);
+        //qDebug("VAbstractPattern::setGroupLock - Group %u is locked.", id);
+
+        QDomElement groups = createGroups();
+        if (not groups.isNull())
+        {
+            parseGroups(groups);
+        }
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets the Group color
+ * @param  id - Tool Id.
+ * @return AttrGroupColor - Color of the group.
+ * @return color  - group color.
+*/
+
+QString VAbstractPattern::getGroupColor(quint32 id)
+{
+    QDomElement group = elementById(id, TagGroup);
+    QString color;
+    if (group.isElement())
+    {
+
+        color = GetParametrString(group, AttrGroupColor, ColorBlack);
+        return color;
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+        return ColorBlack;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setGroupColor(quint32 id, QString color)
+{
+    QDomElement group = elementById(id, TagGroup);
+    if (group.isElement())
+    {
+        SetAttribute(group, AttrGroupColor, color);
+        modified = true;
+        emit patternChanged(false);
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets the Group Line Type
+ * @param  id - Tool Id.
+ * @return AttrLineType - Line type of the group.
+ * @return type  - group line type.
+*/
+
+QString VAbstractPattern::getGroupLineType(quint32 id)
+{
+    QDomElement group = elementById(id, TagGroup);
+    QString type;
+    if (group.isElement())
+    {
+
+        type = GetParametrString(group, AttrLineType, LineTypeSolidLine);
+        return type;
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+        return LineTypeSolidLine;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setGroupLineType(quint32 id, QString type)
+{
+    QDomElement group = elementById(id, TagGroup);
+    if (group.isElement())
+    {
+        SetAttribute(group, AttrLineType, type);
+        modified = true;
+        emit patternChanged(false);
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets the Group Line Weight
+ * @param  id - Tool Id.
+ * @return AttrLineWeight - Linw weight of the group.
+ * @return weight  - group line weight.
+*/
+
+QString VAbstractPattern::getGroupLineWeight(quint32 id)
+{
+    QDomElement group = elementById(id, TagGroup);
+    QString weight;
+    if (group.isElement())
+    {
+
+        weight = GetParametrString(group, AttrLineWeight, "0.35");
+        return weight;
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+        return ColorBlack;
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractPattern::setGroupLineWeight(quint32 id, QString weight)
+{
+    QDomElement group = elementById(id, TagGroup);
+    if (group.isElement())
+    {
+        SetAttribute(group, AttrLineWeight, weight);
+        modified = true;
+        emit patternChanged(false);
+    }
+    else
+    {
+        qDebug("Can't get group by id = %u.", id);
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------
+ * @brief  Gets whether a group name already exists
+ * @param  groupName - group name.
+ * @return exists - True id name exists False if it does not.
+*/
+bool VAbstractPattern::groupNameExists(const QString &groupName)
+{
+    QStringList groupList = groupListByName();
+    bool exists = groupList.contains(groupName, Qt::CaseInsensitive);
+    return exists;
+}
+
+QString VAbstractPattern::useGroupColor(quint32 toolId, QString color)
+{
+    QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
+    QStringList list = QStringList(groupsContainingItem.values());
+    QString  groupName = list.value(0);
+
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group Name = %s",qUtf8Printable(groupName));
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Tool ID = %d",toolId);
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Tool Color = %s",qUtf8Printable(color));
+    quint32 objectId = toolId;
+    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group has item = %d",groupHasItem);
+    if ((color == ColorByGroup) && groupHasItem)
+    {
+        QString groupColor = getGroupColor(getGroupIdByName(groupName));
+        //qCDebug(vbstractPattern,"VAbstractPattern::useGroupColor - Group Color = %s",qUtf8Printable(groupColor));
+        return groupColor;
+    }
+    else
+    {
+        return color;
+    }
+}
+
+QString VAbstractPattern::useGroupLineType(quint32 toolId, QString type)
+{
+    QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
+    QStringList list = QStringList(groupsContainingItem.values());
+    QString  groupName = list.value(0);
+
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group Name = %s",qUtf8Printable(groupName));
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Tool ID = %d",toolId);
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Tool Color = %s",qUtf8Printable(type));
+    quint32 objectId = toolId;
+    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group has item = %d",groupHasItem);
+    if ((type == LineTypeByGroup) && groupHasItem)
+    {
+        QString groupLineType = getGroupLineType(getGroupIdByName(groupName));
+        //qCDebug(vbstractPattern,"VAbstractPattern::useGroupLineType - Group Linetpe = %s",qUtf8Printable(groupLineType));
+        return groupLineType;
+    }
+    else
+    {
+        return type;
+    }
+}
+
+QString VAbstractPattern::useGroupLineWeight(quint32 toolId, QString weight)
+{
+    QMap<quint32,QString> groupsContainingItem = getGroupsContainingItem(toolId, 0, true);
+    QStringList list = QStringList(groupsContainingItem.values());
+    QString  groupName = list.value(0);
+
+    quint32 objectId = toolId;
+    bool groupHasItem = hasGroupItem(getGroupByName(groupName), toolId, objectId);
+    if ((weight == LineWeightByGroup) && groupHasItem)
+    {
+        QString groupLineWeight = getGroupLineWeight(getGroupIdByName(groupName));
+        return groupLineWeight;
+    }
+    else
+    {
+        return weight;
     }
 }

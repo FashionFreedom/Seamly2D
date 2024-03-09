@@ -2,7 +2,11 @@
 # This need for corect working file translations.pro
 
 HEADERS += \
+    $$PWD/support/edit_formula_dialog.h \
+    $$PWD/support/editlabeltemplate_dialog.h \
     $$PWD/tooldialogs.h \
+    $$PWD/tools/addtogroup_dialog.h \
+    $$PWD/tools/anchorpoint_dialog.h \
     $$PWD/tools/dialogalongline.h \
     $$PWD/tools/dialogarc.h \
     $$PWD/tools/dialogarcwithlength.h \
@@ -19,7 +23,6 @@ HEADERS += \
     $$PWD/tools/dialognormal.h \
     $$PWD/tools/dialogpointfromarcandtangent.h \
     $$PWD/tools/dialogpointofcontact.h \
-    $$PWD/tools/dialogpointofintersection.h \
     $$PWD/tools/dialogpointofintersectionarcs.h \
     $$PWD/tools/dialogshoulderpoint.h \
     $$PWD/tools/dialogsinglepoint.h \
@@ -27,28 +30,30 @@ HEADERS += \
     $$PWD/tools/dialogsplinepath.h \
     $$PWD/tools/dialogtool.h \
     $$PWD/tools/dialogtriangle.h \
-    $$PWD/tools/dialoguniondetails.h \
-    $$PWD/support/dialogeditwrongformula.h \
     $$PWD/support/dialogundo.h \
     $$PWD/tools/dialogtruedarts.h \
     $$PWD/tools/dialogpointofintersectioncurves.h \
     $$PWD/tools/dialogcubicbezier.h \
     $$PWD/tools/dialogcubicbezierpath.h \
-    $$PWD/tools/dialoggroup.h \
     $$PWD/tools/dialogrotation.h \
     $$PWD/tools/dialogmirrorbyline.h \
     $$PWD/tools/dialogmirrorbyaxis.h \
     $$PWD/tools/dialogmove.h \
     $$PWD/tools/dialogellipticalarc.h \
+    $$PWD/tools/editgroup_dialog.h \
+    $$PWD/tools/insert_nodes_dialog.h \
     $$PWD/tools/intersect_circles_dialog.h \
     $$PWD/tools/intersect_circletangent_dialog.h \
-    $$PWD/tools/piece/dialogseamallowance.h \
     $$PWD/tools/piece/dialoginternalpath.h \
-    $$PWD/tools/dialogpin.h \
-    $$PWD/tools/dialoginsertnode.h \
-    $$PWD/support/dialogeditlabel.h
+    $$PWD/tools/piece/pattern_piece_dialog.h \
+    $$PWD/tools/point_intersectxy_dialog.h \
+    $$PWD/tools/union_dialog.h
 
 SOURCES += \
+    $$PWD/support/edit_formula_dialog.cpp \
+    $$PWD/support/editlabeltemplate_dialog.cpp \
+    $$PWD/tools/addtogroup_dialog.cpp \
+    $$PWD/tools/anchorpoint_dialog.cpp \
     $$PWD/tools/dialogalongline.cpp \
     $$PWD/tools/dialogarc.cpp \
     $$PWD/tools/dialogarcwithlength.cpp \
@@ -65,7 +70,6 @@ SOURCES += \
     $$PWD/tools/dialognormal.cpp \
     $$PWD/tools/dialogpointfromarcandtangent.cpp \
     $$PWD/tools/dialogpointofcontact.cpp \
-    $$PWD/tools/dialogpointofintersection.cpp \
     $$PWD/tools/dialogpointofintersectionarcs.cpp \
     $$PWD/tools/dialogshoulderpoint.cpp \
     $$PWD/tools/dialogsinglepoint.cpp \
@@ -73,28 +77,30 @@ SOURCES += \
     $$PWD/tools/dialogsplinepath.cpp \
     $$PWD/tools/dialogtool.cpp \
     $$PWD/tools/dialogtriangle.cpp \
-    $$PWD/tools/dialoguniondetails.cpp \
-    $$PWD/support/dialogeditwrongformula.cpp \
     $$PWD/support/dialogundo.cpp \
     $$PWD/tools/dialogtruedarts.cpp \
     $$PWD/tools/dialogpointofintersectioncurves.cpp \
     $$PWD/tools/dialogcubicbezier.cpp \
     $$PWD/tools/dialogcubicbezierpath.cpp \
-    $$PWD/tools/dialoggroup.cpp \
     $$PWD/tools/dialogrotation.cpp \
     $$PWD/tools/dialogmirrorbyline.cpp \
     $$PWD/tools/dialogmirrorbyaxis.cpp \
     $$PWD/tools/dialogmove.cpp \
     $$PWD/tools/dialogellipticalarc.cpp \
+    $$PWD/tools/editgroup_dialog.cpp \
+    $$PWD/tools/insert_nodes_dialog.cpp \
     $$PWD/tools/intersect_circles_dialog.cpp \
     $$PWD/tools/intersect_circletangent_dialog.cpp \
-    $$PWD/tools/piece/dialogseamallowance.cpp \
-    $$PWD/tools/dialogpin.cpp \
-    $$PWD/tools/dialoginsertnode.cpp \
-    $$PWD/support/dialogeditlabel.cpp \
-    $$PWD/tools/piece/dialoginternalpath.cpp
+    $$PWD/tools/piece/dialoginternalpath.cpp \
+    $$PWD/tools/piece/pattern_piece_dialog.cpp \
+    $$PWD/tools/point_intersectxy_dialog.cpp \
+    $$PWD/tools/union_dialog.cpp
 
 FORMS += \
+    $$PWD/support/edit_formula_dialog.ui \
+    $$PWD/support/editlabeltemplate_dialog.ui \
+    $$PWD/tools/addtogroup_dialog.ui \
+    $$PWD/tools/anchorpoint_dialog.ui \
     $$PWD/tools/dialogalongline.ui \
     $$PWD/tools/dialogarc.ui \
     $$PWD/tools/dialogarcwithlength.ui \
@@ -111,35 +117,27 @@ FORMS += \
     $$PWD/tools/dialognormal.ui \
     $$PWD/tools/dialogpointfromarcandtangent.ui \
     $$PWD/tools/dialogpointofcontact.ui \
-    $$PWD/tools/dialogpointofintersection.ui \
     $$PWD/tools/dialogpointofintersectionarcs.ui \
     $$PWD/tools/dialogshoulderpoint.ui \
     $$PWD/tools/dialogsinglepoint.ui \
     $$PWD/tools/dialogspline.ui \
     $$PWD/tools/dialogsplinepath.ui \
     $$PWD/tools/dialogtriangle.ui \
-    $$PWD/tools/dialoguniondetails.ui \
-    $$PWD/support/dialogeditwrongformula.ui \
     $$PWD/support/dialogundo.ui \
     $$PWD/tools/dialogtruedarts.ui \
     $$PWD/tools/dialogpointofintersectioncurves.ui \
     $$PWD/tools/dialogcubicbezier.ui \
     $$PWD/tools/dialogcubicbezierpath.ui \
-    $$PWD/tools/dialoggroup.ui \
     $$PWD/tools/dialogrotation.ui \
     $$PWD/tools/dialogmirrorbyline.ui \
     $$PWD/tools/dialogmirrorbyaxis.ui \
     $$PWD/tools/dialogmove.ui \
     $$PWD/tools/dialogellipticalarc.ui \
+    $$PWD/tools/editgroup_dialog.ui \
+    $$PWD/tools/insert_nodes_dialog.ui \
     $$PWD/tools/intersect_circles_dialog.ui \
     $$PWD/tools/intersect_circletangent_dialog.ui \
-    $$PWD/tools/piece/dialogseamallowance.ui \
     $$PWD/tools/piece/dialoginternalpath.ui \
-    $$PWD/tools/dialogpin.ui \
-    $$PWD/tools/piece/tabs/tabnotches.ui \
-    $$PWD/tools/piece/tabs/tabpaths.ui \
-    $$PWD/tools/piece/tabs/tablabels.ui \
-    $$PWD/tools/piece/tabs/tabgrainline.ui \
-    $$PWD/tools/piece/tabs/tabpins.ui \
-    $$PWD/tools/dialoginsertnode.ui \
-    $$PWD/support/dialogeditlabel.ui
+    $$PWD/tools/piece/pattern_piece_dialog.ui \
+    $$PWD/tools/point_intersectxy_dialog.ui \
+    $$PWD/tools/union_dialog.ui

@@ -16,19 +16,6 @@ include(../../../common.pri)
 # Can configure it not to do that with 'no_testcase_installs'
 CONFIG += testcase no_testcase_installs
 
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Use out-of-source builds (shadow builds)
-CONFIG -= app_bundle debug_and_release debug_and_release_target
-
-TEMPLATE = app
-
 # directory for executable file
 DESTDIR = bin
 
@@ -90,31 +77,7 @@ HEADERS += \
     tst_vtranslatevars.h \
     tst_vabstractpiece.h
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
-
-CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        # do nothing
-    } else {
-        # Turn on debug symbols in release mode on Unix systems.
-        # On Mac OS X temporarily disabled. Need find way how to strip binary file.
-        !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
-    }
-}
 
 #VTools static library (depend on VWidgets, VMisc, VPatternDB)
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vtools/$${DESTDIR}/ -lvtools
@@ -198,18 +161,19 @@ win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vlayout/$${DESTDIR}/vla
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vlayout/$${DESTDIR}/libvlayout.a
 
 # QMuParser library
-win32:CONFIG(release, debug|release): LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser2
-else:win32:CONFIG(debug, debug|release): LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser2
-else:unix: LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser
+unix|win32: LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser
 
 INCLUDEPATH += $${PWD}/../../libs/qmuparser
 DEPENDPATH += $${PWD}/../../libs/qmuparser
 
-# Only for adding path to LD_LIBRARY_PATH
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/qmuparser.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/libqmuparser.a
+
 # VPropertyExplorer library
-win32:CONFIG(release, debug|release): LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
-else:win32:CONFIG(debug, debug|release): LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
-else:unix: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
+unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
 
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
+
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a

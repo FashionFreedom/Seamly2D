@@ -1,79 +1,97 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   vtooloptionspropertybrowser.cpp
+**  @author Douglas S Caskey
+**  @date   17 Sep, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtooloptionspropertybrowser.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   22 8, 2014
+ **  @date   28 8, 2014
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
 #include "vtooloptionspropertybrowser.h"
-#include "../vtools/tools/drawTools/drawtools.h"
+
+#include "vformulaproperty.h"
 #include "../core/vapplication.h"
+#include "../ifc/ifcdef.h"
+#include "../vgeometry/vcubicbezier.h"
+#include "../vgeometry/vcubicbezierpath.h"
+#include "../vmisc/def.h"
+#include "../vmisc/vabstractapplication.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vformula.h"
+#include "../vpropertyexplorer/vproperties.h"
+#include "../vtools/tools/drawTools/drawtools.h"
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vwidgets/vgraphicssimpletextitem.h"
 #include "../vwidgets/vcontrolpointspline.h"
 #include "../vwidgets/vsimplepoint.h"
 #include "../vwidgets/vsimplecurve.h"
-#include "../vpropertyexplorer/vproperties.h"
-#include "vformulaproperty.h"
-#include "../vpatterndb/vformula.h"
+#include "../vwidgets/vcurvepathitem.h"
 
 #include <QDockWidget>
+//#include <QEvent>
 #include <QHBoxLayout>
 #include <QDebug>
 #include <QRegularExpression>
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(QDockWidget *parent)
-    :QObject(parent), PropertyModel(nullptr), formView(nullptr), currentItem(nullptr),
-      propertyToId(QMap<VPE::VProperty *, QString>()),
-      idToProperty(QMap<QString, VPE::VProperty *>())
+VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(const VContainer *data, QDockWidget *parent)
+    : QObject(parent)
+    , m_data(data)
+    , propertyModel(nullptr)
+    , formView(nullptr)
+    , currentItem(nullptr)
+    , propertyToId(QMap<VPE::VProperty *, QString>())
+    , idToProperty(QMap<QString, VPE::VProperty *>())
+    , m_centerPointStr(tr("Center point"))
 {
-    PropertyModel = new VPE::VPropertyModel(this);
-    formView = new VPE::VPropertyFormView(PropertyModel, parent);
+    propertyModel = new VPE::VPropertyModel(this);
+    formView = new VPE::VPropertyFormView(propertyModel, parent);
     formView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
     QScrollArea *scroll = new QScrollArea(parent);
@@ -82,135 +100,135 @@ VToolOptionsPropertyBrowser::VToolOptionsPropertyBrowser(QDockWidget *parent)
 
     parent->setWidget(scroll);
 
-    connect(PropertyModel, &VPE::VPropertyModel::onDataChangedByEditor, this,
+    connect(propertyModel, &VPE::VPropertyModel::onDataChangedByEditor, this,
             &VToolOptionsPropertyBrowser::userChangedData);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ClearPropertyBrowser()
+void VToolOptionsPropertyBrowser::clearPropertyBrowser()
 {
-    PropertyModel->clear();
+    propertyModel->clear();
     propertyToId.clear();
     idToProperty.clear();
     currentItem = nullptr;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showItemOptions(QGraphicsItem *item)
 {
-    // This check helps to find missed tools in the switch
+    // This check helps to find missing tools in the switch
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
 
     switch (item->type())
     {
         case VToolBasePoint::Type:
-            ShowOptionsToolSinglePoint(item);
+            showOptionsToolSinglePoint(item);
             break;
         case VToolEndLine::Type:
-            ShowOptionsToolEndLine(item);
+            showOptionsToolEndLine(item);
             break;
         case VToolAlongLine::Type:
-            ShowOptionsToolAlongLine(item);
+            showOptionsToolAlongLine(item);
             break;
         case VToolArc::Type:
-            ShowOptionsToolArc(item);
+            showOptionsToolArc(item);
             break;
         case VToolArcWithLength::Type:
-            ShowOptionsToolArcWithLength(item);
+            showOptionsToolArcWithLength(item);
             break;
         case VToolBisector::Type:
-            ShowOptionsToolBisector(item);
+            showOptionsToolBisector(item);
             break;
         case VToolCutArc::Type:
-            ShowOptionsToolCutArc(item);
+            showOptionsToolCutArc(item);
             break;
         case VToolCutSpline::Type:
-            ShowOptionsToolCutSpline(item);
+            showOptionsToolCutSpline(item);
             break;
         case VToolCutSplinePath::Type:
-            ShowOptionsToolCutSplinePath(item);
+            showOptionsToolCutSplinePath(item);
             break;
         case VToolHeight::Type:
-            ShowOptionsToolHeight(item);
+            showOptionsToolHeight(item);
             break;
         case VToolLine::Type:
-            ShowOptionsToolLine(item);
+            showOptionsToolLine(item);
             break;
         case VToolLineIntersect::Type:
-            ShowOptionsToolLineIntersect(item);
+            showOptionsToolLineIntersect(item);
             break;
         case VToolNormal::Type:
-            ShowOptionsToolNormal(item);
+            showOptionsToolNormal(item);
             break;
         case VToolPointOfContact::Type:
-            ShowOptionsToolPointOfContact(item);
+            showOptionsToolPointOfContact(item);
             break;
-        case VToolPointOfIntersection::Type:
-            ShowOptionsToolPointOfIntersection(item);
+        case PointIntersectXYTool::Type:
+            showOptionsToolPointOfIntersection(item);
             break;
         case VToolPointOfIntersectionArcs::Type:
-            ShowOptionsToolPointOfIntersectionArcs(item);
+            showOptionsToolPointOfIntersectionArcs(item);
             break;
         case IntersectCirclesTool::Type:
-            ShowOptionsToolPointOfIntersectionCircles(item);
+            showOptionsToolPointOfIntersectionCircles(item);
             break;
         case VToolPointOfIntersectionCurves::Type:
-            ShowOptionsToolPointOfIntersectionCurves(item);
+            showOptionsToolPointOfIntersectionCurves(item);
             break;
         case VToolShoulderPoint::Type:
-            ShowOptionsToolShoulderPoint(item);
+            showOptionsToolShoulderPoint(item);
             break;
         case VToolSpline::Type:
-            ShowOptionsToolSpline(item);
+            showOptionsToolSpline(item);
             break;
         case VToolCubicBezier::Type:
-            ShowOptionsToolCubicBezier(item);
+            showOptionsToolCubicBezier(item);
             break;
         case VToolSplinePath::Type:
-            ShowOptionsToolSplinePath(item);
+            showOptionsToolSplinePath(item);
             break;
         case VToolCubicBezierPath::Type:
-            ShowOptionsToolCubicBezierPath(item);
+            showOptionsToolCubicBezierPath(item);
             break;
         case VToolTriangle::Type:
-            ShowOptionsToolTriangle(item);
+            showOptionsToolTriangle(item);
             break;
         case VGraphicsSimpleTextItem::Type:
         case VControlPointSpline::Type:
         case VSimplePoint::Type:
         case VSimpleCurve::Type:
             currentItem = item->parentItem();
-            ShowItemOptions(currentItem);
+            showItemOptions(currentItem);
             break;
         case VToolLineIntersectAxis::Type:
-            ShowOptionsToolLineIntersectAxis(item);
+            showOptionsToolLineIntersectAxis(item);
             break;
         case VToolCurveIntersectAxis::Type:
-            ShowOptionsToolCurveIntersectAxis(item);
+            showOptionsToolCurveIntersectAxis(item);
             break;
         case IntersectCircleTangentTool::Type:
-            ShowOptionsToolPointFromCircleAndTangent(item);
+            showOptionsToolPointFromCircleAndTangent(item);
             break;
         case VToolPointFromArcAndTangent::Type:
-            ShowOptionsToolPointFromArcAndTangent(item);
+            showOptionsToolPointFromArcAndTangent(item);
             break;
         case VToolTrueDarts::Type:
-            ShowOptionsToolTrueDarts(item);
+            showOptionsToolTrueDarts(item);
             break;
         case VToolRotation::Type:
-            ShowOptionsToolRotation(item);
+            showOptionsToolRotation(item);
             break;
         case VToolMirrorByLine::Type:
-            ShowOptionsToolMirrorByLine(item);
+            showOptionsToolMirrorByLine(item);
             break;
         case VToolMirrorByAxis::Type:
-            ShowOptionsToolMirrorByAxis(item);
+            showOptionsToolMirrorByAxis(item);
             break;
         case VToolMove::Type:
-            ShowOptionsToolMove(item);
+            showOptionsToolMove(item);
             break;
         case VToolEllipticalArc::Type:
-            ShowOptionsToolEllipticalArc(item);
+            showOptionsToolEllipticalArc(item);
             break;
         default:
             break;
@@ -218,123 +236,123 @@ void VToolOptionsPropertyBrowser::ShowItemOptions(QGraphicsItem *item)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptions()
+void VToolOptionsPropertyBrowser::updateOptions()
 {
     if (currentItem == nullptr)
     {
         return;
     }
 
-    // This check helps to find missed tools in the switch
+    // This check helps to find missing tools in the switch
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
         case VToolBasePoint::Type:
-            UpdateOptionsToolSinglePoint();
+            updateOptionsToolSinglePoint();
             break;
         case VToolEndLine::Type:
-            UpdateOptionsToolEndLine();
+            updateOptionsToolEndLine();
             break;
         case VToolAlongLine::Type:
-            UpdateOptionsToolAlongLine();
+            updateOptionsToolAlongLine();
             break;
         case VToolArc::Type:
-            UpdateOptionsToolArc();
+            updateOptionsToolArc();
             break;
         case VToolArcWithLength::Type:
-            UpdateOptionsToolArcWithLength();
+            updateOptionsToolArcWithLength();
             break;
         case VToolBisector::Type:
-            UpdateOptionsToolBisector();
+            updateOptionsToolBisector();
             break;
         case VToolCutArc::Type:
-            UpdateOptionsToolCutArc();
+            updateOptionsToolCutArc();
             break;
         case VToolCutSpline::Type:
-            UpdateOptionsToolCutSpline();
+            updateOptionsToolCutSpline();
             break;
         case VToolCutSplinePath::Type:
-            UpdateOptionsToolCutSplinePath();
+            updateOptionsToolCutSplinePath();
             break;
         case VToolHeight::Type:
-            UpdateOptionsToolHeight();
+            updateOptionsToolHeight();
             break;
         case VToolLine::Type:
-            UpdateOptionsToolLine();
+            updateOptionsToolLine();
             break;
         case VToolLineIntersect::Type:
-            UpdateOptionsToolLineIntersect();
+            updateOptionsToolLineIntersect();
             break;
         case VToolNormal::Type:
-            UpdateOptionsToolNormal();
+            updateOptionsToolNormal();
             break;
         case VToolPointOfContact::Type:
-            UpdateOptionsToolPointOfContact();
+            updateOptionsToolPointOfContact();
             break;
-        case VToolPointOfIntersection::Type:
-            UpdateOptionsToolPointOfIntersection();
+        case PointIntersectXYTool::Type:
+            updateOptionsToolPointOfIntersection();
             break;
         case VToolPointOfIntersectionArcs::Type:
-            UpdateOptionsToolPointOfIntersectionArcs();
+            updateOptionsToolPointOfIntersectionArcs();
             break;
         case IntersectCirclesTool::Type:
-            UpdateOptionsToolPointOfIntersectionCircles();
+            updateOptionsToolPointOfIntersectionCircles();
             break;
         case VToolPointOfIntersectionCurves::Type:
-            UpdateOptionsToolPointOfIntersectionCurves();
+            updateOptionsToolPointOfIntersectionCurves();
             break;
         case VToolShoulderPoint::Type:
-            UpdateOptionsToolShoulderPoint();
+            updateOptionsToolShoulderPoint();
             break;
         case VToolSpline::Type:
-            UpdateOptionsToolSpline();
+            updateOptionsToolSpline();
             break;
         case VToolCubicBezier::Type:
-            UpdateOptionsToolCubicBezier();
+            updateOptionsToolCubicBezier();
             break;
         case VToolSplinePath::Type:
-            UpdateOptionsToolSplinePath();
+            updateOptionsToolSplinePath();
             break;
         case VToolCubicBezierPath::Type:
-            UpdateOptionsToolCubicBezierPath();
+            updateOptionsToolCubicBezierPath();
             break;
         case VToolTriangle::Type:
-            UpdateOptionsToolTriangle();
+            updateOptionsToolTriangle();
             break;
         case VGraphicsSimpleTextItem::Type:
         case VControlPointSpline::Type:
-            ShowItemOptions(currentItem->parentItem());
+            showItemOptions(currentItem->parentItem());
             break;
         case VToolLineIntersectAxis::Type:
-            UpdateOptionsToolLineIntersectAxis();
+            updateOptionsToolLineIntersectAxis();
             break;
         case VToolCurveIntersectAxis::Type:
-            UpdateOptionsToolCurveIntersectAxis();
+            updateOptionsToolCurveIntersectAxis();
             break;
         case IntersectCircleTangentTool::Type:
-            UpdateOptionsToolPointFromCircleAndTangent();
+            updateOptionsToolPointFromCircleAndTangent();
             break;
         case VToolPointFromArcAndTangent::Type:
-            UpdateOptionsToolPointFromArcAndTangent();
+            updateOptionsToolPointFromArcAndTangent();
             break;
         case VToolTrueDarts::Type:
-            UpdateOptionsToolTrueDarts();
+            updateOptionsToolTrueDarts();
             break;
         case VToolRotation::Type:
-            UpdateOptionsToolRotation();
+            updateOptionsToolRotation();
             break;
         case VToolMirrorByLine::Type:
-            UpdateOptionsToolMirrorByLine();
+            updateOptionsToolMirrorByLine();
             break;
         case VToolMirrorByAxis::Type:
-            UpdateOptionsToolMirrorByAxis();
+            updateOptionsToolMirrorByAxis();
             break;
         case VToolMove::Type:
-            UpdateOptionsToolMove();
+            updateOptionsToolMove();
             break;
         case VToolEllipticalArc::Type:
-            UpdateOptionsToolEllipticalArc();
+            updateOptionsToolEllipticalArc();
             break;
         default:
             break;
@@ -342,11 +360,11 @@ void VToolOptionsPropertyBrowser::UpdateOptions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::RefreshOptions()
+void VToolOptionsPropertyBrowser::refreshOptions()
 {
     QGraphicsItem *item = currentItem;
-    itemClicked(nullptr);//close options
-    itemClicked(item);//reopen options
+    itemClicked(nullptr); //close options
+    itemClicked(item);    //reopen options
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -370,112 +388,112 @@ void VToolOptionsPropertyBrowser::userChangedData(VPE::VProperty *property)
         return;
     }
 
-    // This check helps to find missed tools in the switch
+    // This check helps to find missing tools in the switch
     Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in switch.");
 
     switch (currentItem->type())
     {
         case VToolBasePoint::Type:
-            ChangeDataToolSinglePoint(prop);
+            changeDataToolSinglePoint(prop);
             break;
         case VToolEndLine::Type:
-            ChangeDataToolEndLine(prop);
+            changeDataToolEndLine(prop);
             break;
         case VToolAlongLine::Type:
-            ChangeDataToolAlongLine(prop);
+            changeDataToolAlongLine(prop);
             break;
         case VToolArc::Type:
-            ChangeDataToolArc(prop);
+            changeDataToolArc(prop);
             break;
         case VToolArcWithLength::Type:
-            ChangeDataToolArcWithLength(prop);
+            changeDataToolArcWithLength(prop);
             break;
         case VToolBisector::Type:
-            ChangeDataToolBisector(prop);
+            changeDataToolBisector(prop);
             break;
         case VToolCutArc::Type:
-            ChangeDataToolCutArc(prop);
+            changeDataToolCutArc(prop);
             break;
         case VToolCutSpline::Type:
-            ChangeDataToolCutSpline(prop);
+            changeDataToolCutSpline(prop);
             break;
         case VToolCutSplinePath::Type:
-            ChangeDataToolCutSplinePath(prop);
+            changeDataToolCutSplinePath(prop);
             break;
         case VToolHeight::Type:
-            ChangeDataToolHeight(prop);
+            changeDataToolHeight(prop);
             break;
         case VToolLine::Type:
-            ChangeDataToolLine(prop);
+            changeDataToolLine(prop);
             break;
         case VToolLineIntersect::Type:
-            ChangeDataToolLineIntersect(prop);
+            changeDataToolLineIntersect(prop);
             break;
         case VToolNormal::Type:
-            ChangeDataToolNormal(prop);
+            changeDataToolNormal(prop);
             break;
         case VToolPointOfContact::Type:
-            ChangeDataToolPointOfContact(prop);
+            changeDataToolPointOfContact(prop);
             break;
-        case VToolPointOfIntersection::Type:
-            ChangeDataToolPointOfIntersection(prop);
+        case PointIntersectXYTool::Type:
+            changeDataToolPointOfIntersection(prop);
             break;
         case VToolPointOfIntersectionArcs::Type:
-            ChangeDataToolPointOfIntersectionArcs(prop);
+            changeDataToolPointOfIntersectionArcs(prop);
             break;
         case IntersectCirclesTool::Type:
-            ChangeDataToolPointOfIntersectionCircles(prop);
+            changeDataToolPointOfIntersectionCircles(prop);
             break;
         case VToolPointOfIntersectionCurves::Type:
-            ChangeDataToolPointOfIntersectionCurves(prop);
+            changeDataToolPointOfIntersectionCurves(prop);
             break;
         case VToolShoulderPoint::Type:
-            ChangeDataToolShoulderPoint(prop);
+            changeDataToolShoulderPoint(prop);
             break;
         case VToolSpline::Type:
-            ChangeDataToolSpline(prop);
+            changeDataToolSpline(prop);
             break;
         case VToolCubicBezier::Type:
-            ChangeDataToolCubicBezier(prop);
+            changeDataToolCubicBezier(prop);
             break;
         case VToolSplinePath::Type:
-            ChangeDataToolSplinePath(prop);
+            changeDataToolSplinePath(prop);
             break;
         case VToolCubicBezierPath::Type:
-            ChangeDataToolCubicBezierPath(prop);
+            changeDataToolCubicBezierPath(prop);
             break;
         case VToolTriangle::Type:
-            ChangeDataToolTriangle(prop);
+            changeDataToolTriangle(prop);
             break;
         case VToolLineIntersectAxis::Type:
-            ChangeDataToolLineIntersectAxis(prop);
+            changeDataToolLineIntersectAxis(prop);
             break;
         case VToolCurveIntersectAxis::Type:
-            ChangeDataToolCurveIntersectAxis(prop);
+            changeDataToolCurveIntersectAxis(prop);
             break;
         case IntersectCircleTangentTool::Type:
-            ChangeDataToolPointFromCircleAndTangent(prop);
+            changeDataToolPointFromCircleAndTangent(prop);
             break;
         case VToolPointFromArcAndTangent::Type:
-            ChangeDataToolPointFromArcAndTangent(prop);
+            changeDataToolPointFromArcAndTangent(prop);
             break;
         case VToolTrueDarts::Type:
-            ChangeDataToolTrueDarts(prop);
+            changeDataToolTrueDarts(prop);
             break;
         case VToolRotation::Type:
-            ChangeDataToolRotation(prop);
+            changeDataToolRotation(prop);
             break;
         case VToolMirrorByLine::Type:
-            ChangeDataToolMirrorByLine(prop);
+            changeDataToolMirrorByLine(prop);
             break;
         case VToolMirrorByAxis::Type:
-            ChangeDataToolMirrorByAxis(prop);
+            changeDataToolMirrorByAxis(prop);
             break;
         case VToolMove::Type:
-            ChangeDataToolMove(prop);
+            changeDataToolMove(prop);
             break;
         case VToolEllipticalArc::Type:
-            ChangeDataToolEllipticalArc(prop);
+            changeDataToolEllipticalArc(prop);
             break;
         default:
             break;
@@ -496,14 +514,13 @@ void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
 
     if (currentItem == item && item != nullptr)
     {
-        UpdateOptions();
+        updateOptions();
         return;
     }
 
-    PropertyModel->clear();
+    propertyModel->clear();
     propertyToId.clear();
     idToProperty.clear();
-
 
     if (currentItem != nullptr)
     {
@@ -521,164 +538,370 @@ void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
         return;
     }
 
-    ShowItemOptions(currentItem);
+    showItemOptions(currentItem);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::AddPropertyFormula(const QString &propertyName, const VFormula &formula,
+void VToolOptionsPropertyBrowser::addPropertyFormula(const QString &propertyName, const VFormula &formula,
                                                      const QString &attrName)
 {
-    VFormulaProperty* itemLength = new VFormulaProperty(propertyName);
+    VFormulaProperty *itemLength = new VFormulaProperty(propertyName);
     itemLength->SetFormula(formula);
-    AddProperty(itemLength, attrName);
+    addProperty(itemLength, attrName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyObjectName(Tool *i, const QString &propertyName, bool readOnly)
+void VToolOptionsPropertyBrowser::addPropertyObjectName(Tool *tool, const QString &propertyName, bool readOnly)
 {
-    auto itemName = new VPE::VStringProperty(propertyName);
-    itemName->setClearButtonEnable(true);
-    itemName->setValue(qApp->TrVars()->VarToUser(i->name()));
+    VPE::VStringProperty *itemName = new VPE::VStringProperty(propertyName);
+    readOnly == true ? itemName->setClearButtonEnable(false) : itemName->setClearButtonEnable(true);
+    itemName->setValue(qApp->TrVars()->VarToUser(tool->name()));
     itemName->setReadOnly(readOnly);
-    AddProperty(itemName, AttrName);
+    addProperty(itemName, AttrName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyPointName1(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyPointName1(Tool *tool, const QString &propertyName)
 {
     VPE::VStringProperty *itemName = new VPE::VStringProperty(propertyName);
     itemName->setClearButtonEnable(true);
-    itemName->setValue(i->nameP1());
-    AddProperty(itemName, AttrName1);
+    itemName->setValue(tool->nameP1());
+    addProperty(itemName, AttrName1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyPointName2(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyPointName2(Tool *tool, const QString &propertyName)
 {
     VPE::VStringProperty *itemName = new VPE::VStringProperty(propertyName);
     itemName->setClearButtonEnable(true);
-    itemName->setValue(i->nameP2());
-    AddProperty(itemName, AttrName2);
+    itemName->setValue(tool->nameP2());
+    addProperty(itemName, AttrName2);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyOperationSuffix(Tool *i, const QString &propertyName, bool readOnly)
+void VToolOptionsPropertyBrowser::addPropertyOperationSuffix(Tool *tool, const QString &propertyName, bool readOnly)
 {
-    auto itemSuffix = new VPE::VStringProperty(propertyName);
+    VPE::VStringProperty *itemSuffix = new VPE::VStringProperty(propertyName);
     itemSuffix->setClearButtonEnable(true);
-    itemSuffix->setValue(i->Suffix());
+    itemSuffix->setValue(tool->Suffix());
     itemSuffix->setReadOnly(readOnly);
-    AddProperty(itemSuffix, AttrSuffix);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::AddPropertyParentPointName(const QString &pointName, const QString &propertyName,
-                                                             const QString &propertyAttribure)
-{
-    auto itemParentPoint = new VPE::VLabelProperty(propertyName);
-    itemParentPoint->setValue(pointName);
-    AddProperty(itemParentPoint, propertyAttribure);
+    addProperty(itemSuffix, AttrSuffix);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyCrossPoint(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyLineName(Tool *tool, const QString &propertyName, bool readOnly)
+{
+    auto lineName = new VPE::VStringProperty(propertyName);
+    lineName->setValue(tr("Line_") + tool->FirstPointName() + "_" + tool->SecondPointName());
+    lineName->setReadOnly(readOnly);
+    addProperty(lineName, AttrObjName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::addPropertyCurveName(Tool *tool, const QString &propertyName, const QString &prefix,
+                                                       const QString &firstPoint, const QString &secondPoint,
+                                                       bool readOnly)
+{
+    Q_UNUSED(tool)
+
+    auto arcName = new VPE::VStringProperty(propertyName);
+    arcName->setValue(prefix + firstPoint + "_" + secondPoint);
+    arcName->setReadOnly(readOnly);
+    addProperty(arcName, AttrObjName);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyParentPointName(const QString &pointName, const QString &propertyName,
+                                                             const QString &propertyAttribute)
+{
+    auto *itemParentPoint = new VPE::VLabelProperty(propertyName);
+    itemParentPoint->setValue(pointName);
+    addProperty(itemParentPoint, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::addPropertyLabel(const QString &propertyName, const QString &propertyAttribute)
+{
+    auto label = new VPE::VLabelProperty("<b>"+propertyName+"</b>");
+    label->setValue("");
+    label->setPropertyType(VPE::Property::Label);
+    addProperty(label, propertyAttribute);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::addPropertyCrossPoint(Tool *tool, const QString &propertyName)
 {
     VPE::VEnumProperty* itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("First point") << tr("Second point"));
-    itemProperty->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
-    AddProperty(itemProperty, AttrCrossPoint);
+    itemProperty->setLiterals(QStringList() <<  tr("First point") << tr("Second point"));
+    itemProperty->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
+    addProperty(itemProperty, AttrCrossPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyVCrossPoint(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyVCrossPoint(Tool *tool, const QString &propertyName)
 {
-    auto itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Highest point") << tr("Lowest point"));
-    itemProperty->setValue(static_cast<int>(i->GetVCrossPoint())-1);
-    AddProperty(itemProperty, AttrVCrossPoint);
+    auto *itemProperty = new VPE::VEnumProperty(propertyName);
+    itemProperty->setLiterals(QStringList() <<  tr("Highest point") << tr("Lowest point"));
+    itemProperty->setValue(static_cast<int>(tool->GetVCrossPoint())-1);
+    addProperty(itemProperty, AttrVCrossPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyHCrossPoint(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyHCrossPoint(Tool *tool, const QString &propertyName)
 {
-    auto itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Leftmost point") << tr("Rightmost point"));
-    itemProperty->setValue(static_cast<int>(i->GetHCrossPoint())-1);
-    AddProperty(itemProperty, AttrHCrossPoint);
+    auto *itemProperty = new VPE::VEnumProperty(propertyName);
+    itemProperty->setLiterals(QStringList() <<  tr("Leftmost point") << tr("Rightmost point"));
+    itemProperty->setValue(static_cast<int>(tool->GetHCrossPoint())-1);
+    addProperty(itemProperty, AttrHCrossPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyAxisType(Tool *i, const QString &propertyName)
+void VToolOptionsPropertyBrowser::addPropertyAxisType(Tool *tool, const QString &propertyName)
 {
-    auto itemProperty = new VPE::VEnumProperty(propertyName);
-    itemProperty->setLiterals(QStringList()<< tr("Vertical axis") << tr("Horizontal axis"));
-    itemProperty->setValue(static_cast<int>(i->getAxisType())-1);
-    AddProperty(itemProperty, AttrAxisType);
+    auto *itemProperty = new VPE::VEnumProperty(propertyName);
+    itemProperty->setLiterals(QStringList() <<  tr("Vertical axis") << tr("Horizontal axis"));
+    itemProperty->setValue(static_cast<int>(tool->getAxisType())-1);
+    addProperty(itemProperty, AttrAxisType);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyLineType(Tool *i, const QString &propertyName,
-                                                      const QMap<QString, QIcon> &styles)
+void VToolOptionsPropertyBrowser::addPropertyLineType(Tool *tool, const QString &propertyName)
 {
-    VPE::VLineTypeProperty *lineTypeProperty = new VPE::VLineTypeProperty(propertyName);
-    lineTypeProperty->setStyles(styles);
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(styles, i->getLineType());
+    VPE::LineTypeProperty *lineTypeProperty = new VPE::LineTypeProperty(propertyName);
+
+    QMap<QString, QString> lineTypes = lineTypeList();
+    if (tool->type() == VToolLine::Type)
+    {
+        lineTypes.remove(LineTypeNone);
+    }
+    lineTypeProperty->setLineTypes(lineTypes);
+
+    const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypes, tool->getLineType());
     if (index == -1)
     {
-        qWarning()<<"Can't find line style" << i->getLineType()<<"in list";
+        qWarning() << "Can't find line type" << tool->getLineType() << "in list";
     }
     lineTypeProperty->setValue(index);
-    AddProperty(lineTypeProperty, AttrLineType);
+    addProperty(lineTypeProperty, AttrLineType);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyCurvePenStyle(Tool *i, const QString &propertyName,
-                                                           const QMap<QString, QIcon> &styles)
+void VToolOptionsPropertyBrowser::addPropertyCurveLineType(Tool *tool, const QString &propertyName)
 {
-    VPE::VLineTypeProperty *penStyleProperty = new VPE::VLineTypeProperty(propertyName);
-    penStyleProperty->setStyles(styles);
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(styles, i->GetPenStyle());
+    VPE::LineTypeProperty *penStyleProperty = new VPE::LineTypeProperty(propertyName);
+    penStyleProperty->setLineTypes(curveLineTypeList());
+    const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
     if (index == -1)
     {
-        qWarning()<<"Can't find pen style" << i->getLineType()<<"in list";
+        qWarning() << "Can't find line type" << tool->getLineType() <<  "in list";
     }
     penStyleProperty->setValue(index);
-    AddProperty(penStyleProperty, AttrPenStyle);
+    addProperty(penStyleProperty, AttrPenStyle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::AddPropertyLineColor(Tool *i, const QString &propertyName,
-                                                       const QMap<QString, QString> &colors, const QString &id)
+void VToolOptionsPropertyBrowser::addPropertyLineWeight(Tool *tool, const QString &propertyName)
 {
-    VPE::VLineColorProperty *lineColorProperty = new VPE::VLineColorProperty(propertyName);
-    lineColorProperty->setColors(colors);
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(colors, i->GetLineColor());
+    VPE::LineWeightProperty *lineWeightProperty = new VPE::LineWeightProperty(propertyName);
+    lineWeightProperty->setLineWeights(lineWeightList());
+    const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
     if (index == -1)
     {
-        qWarning()<<"Can't find line style" << i->GetLineColor()<<"in list";
+        qWarning() << "Can't find line weight" << tool->getLineWeight() <<  "in list";
+    }
+    lineWeightProperty->setValue(index);
+    addProperty(lineWeightProperty, AttrLineWeight);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::addPropertyLineColor(Tool *tool, const QString &propertyName, const QString &id)
+{
+    VPE::VLineColorProperty *lineColorProperty = new VPE::VLineColorProperty(propertyName);
+    lineColorProperty->setColors(VAbstractTool::ColorsList());
+    const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+    if (index == -1)
+    {
+        qWarning() << "Can't find line color" << tool->getLineColor() <<  "in list";
     }
     lineColorProperty->setValue(index);
-    AddProperty(lineColorProperty, id);
+    addProperty(lineColorProperty, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetPointName(const QString &name)
+void VToolOptionsPropertyBrowser::addObjectProperty(Tool *tool, const QString &pointName,
+                                                   const QString &propertyName, const QString &id, GOType objType)
 {
-    if (Tool *i = qgraphicsitem_cast<Tool *>(currentItem))
+    QMap<QString, quint32> list = getObjectList(tool, objType);
+    VPE::VObjectProperty *pointsProperty = new VPE::VObjectProperty(propertyName);
+    pointsProperty->setObjectsList(list);
+    const qint32 index = VPE::VObjectProperty::indexOfObject(list, pointName);
+    if (index == -1)
     {
-        if (name == i->name())
+        qWarning() << "Can't find point" << pointName << "in list";
+    }
+    pointsProperty->setValue(index);
+    addProperty(pointsProperty, id);
+}
+
+template<class Tool>
+QMap<QString, quint32> VToolOptionsPropertyBrowser::getObjectList(Tool *tool, GOType objType)
+{
+    quint32 toolId = tool->getId();
+    QHash<quint32, QSharedPointer<VGObject>> objects;
+
+    QVector<VToolRecord> history = qApp->getCurrentDocument()->getBlockHistory();
+    for (qint32 i = 0; i < history.size(); ++i)
+    {
+        const VToolRecord record = history.at(i);
+        quint32 recId = record.getId();
+        if (recId != toolId)
+        {
+            switch (static_cast<int>(record.getTypeTool()))
+            {
+                case 42:    //Tool::True Darts
+                {
+                    QVector<quint32> list = qApp->getCurrentDocument()->getDartItems(recId);
+                    for (qint32 j = 0; j < list.size(); ++j)
+                    {
+                        quint32 id = list.at(j);
+                            VToolRecord newRecord = VToolRecord(id, record.getTypeTool(),
+                                                        qApp->getCurrentDocument()->getActiveDraftBlockName());
+
+                        const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                        if (objs->contains(id)) //Avoid badId Get GObject only if not a line tool which is not an object
+                        {
+                            QSharedPointer<VGObject> obj = m_data->GetGObject(id);
+                            objects.insert(id, obj);
+                        }
+                    }
+                    break;
+                }
+
+                case 45:    //Tool::Rotation
+                case 46:    //Tool::MirrorByLine
+                case 47:    //Tool::MirrorByAxis
+                case 48:    //Tool::Move
+                {
+                    QVector<quint32> list = qApp->getCurrentDocument()->getOpItems(recId, QStringLiteral("destination"));
+                    for (qint32 j = 0; j < list.size(); ++j)
+                    {
+                        quint32 id = list.at(j);
+                            VToolRecord newRecord = VToolRecord(id, record.getTypeTool(),
+                                                        qApp->getCurrentDocument()->getActiveDraftBlockName());
+
+                        const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                        if (objs->contains(id)) //Avoid badId Get GObject only if not a line tool which is not an object
+                        {
+                            QSharedPointer<VGObject> obj = m_data->GetGObject(id);
+                            objects.insert(id, obj);
+                        }
+                    }
+                    break;
+                }
+                default:
+                {
+                    const QHash<quint32, QSharedPointer<VGObject> > *objs = m_data->DataGObjects();
+                    if (objs->contains(recId)) //Avoid badId Get GObject only if not a line tool which is not an object
+                    {
+                        QSharedPointer<VGObject> obj = m_data->GetGObject(recId);
+                        objects.insert(recId, obj);
+                    }
+                    break;
+                }
+            }
+        }
+        else
+        {
+            goto endLoop; //Copied objects upto selected tool - exit switch and for loops
+        }
+    }
+
+endLoop:
+    QMap<QString, quint32> map;
+    QHash<quint32, QSharedPointer<VGObject> >::const_iterator i;
+    for (i = objects.constBegin(); i != objects.constEnd(); ++i)
+    {
+        QSharedPointer<VGObject> obj = i.value();
+        if (obj->getMode() == Draw::Calculation)
+        {
+            switch (objType)
+            {
+                case GOType::Point:
+                case GOType::Arc:
+                case GOType::Spline:
+                case GOType::CubicBezier:
+                case GOType::SplinePath:
+                case GOType::CubicBezierPath:
+                    if (obj->getType() == objType)
+                    {
+                        map.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::Curve:
+                    if (obj->getType() == GOType::Spline || obj->getType() == GOType::CubicBezier)
+                    {
+                        map.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::Path:
+                    if (obj->getType() == GOType::SplinePath || obj->getType() == GOType::CubicBezierPath)
+                    {
+                        map.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::AllCurves:
+                    if ((obj->getType() == GOType::Spline ||
+                         obj->getType() == GOType::SplinePath ||
+                         obj->getType() == GOType::CubicBezier ||
+                         obj->getType() == GOType::CubicBezierPath ||
+                         obj->getType() == GOType::Arc ||
+                         obj->getType() == GOType::EllipticalArc) &&
+                         obj->getMode() == Draw::Calculation)
+                    {
+                        map.insert(obj->name(), i.key());
+                    }
+                    break;
+
+                case GOType::EllipticalArc:
+                case GOType::Unknown:
+                default:
+                    break;
+            }
+        }
+    }
+
+    if (tool->type() == VToolMove::Type)
+    {
+        map.insert(m_centerPointStr, NULL_ID);
+    }
+    return map;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+template<class Tool>
+void VToolOptionsPropertyBrowser::setPointName(const QString &name)
+{
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
+    {
+        if (name == tool->name())
         {
             return;
         }
@@ -686,26 +909,26 @@ void VToolOptionsPropertyBrowser::SetPointName(const QString &name)
         QRegularExpression rx(NameRegExp());
         if (name.isEmpty() || VContainer::IsUnique(name) == false || rx.match(name).hasMatch() == false)
         {
-            idToProperty[AttrName]->setValue(i->name());
+            idToProperty[AttrName]->setValue(tool->name());
         }
         else
         {
-            i->setName(name);
+            tool->setName(name);
         }
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetPointName1(const QString &name)
+void VToolOptionsPropertyBrowser::setPointName1(const QString &name)
 {
-    if (Tool *i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        if (name == i->nameP1())
+        if (name == tool->nameP1())
         {
             return;
         }
@@ -713,26 +936,26 @@ void VToolOptionsPropertyBrowser::SetPointName1(const QString &name)
         QRegularExpression rx(NameRegExp());
         if (name.isEmpty() || VContainer::IsUnique(name) == false || rx.match(name).hasMatch() == false)
         {
-            idToProperty[AttrName1]->setValue(i->nameP1());
+            idToProperty[AttrName1]->setValue(tool->nameP1());
         }
         else
         {
-            i->setNameP1(name);
+            tool->setNameP1(name);
         }
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetPointName2(const QString &name)
+void VToolOptionsPropertyBrowser::setPointName2(const QString &name)
 {
-    if (Tool *i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        if (name == i->nameP2())
+        if (name == tool->nameP2())
         {
             return;
         }
@@ -740,22 +963,22 @@ void VToolOptionsPropertyBrowser::SetPointName2(const QString &name)
         QRegularExpression rx(NameRegExp());
         if (name.isEmpty() || VContainer::IsUnique(name) == false || rx.match(name).hasMatch() == false)
         {
-            idToProperty[AttrName2]->setValue(i->nameP2());
+            idToProperty[AttrName2]->setValue(tool->nameP2());
         }
         else
         {
-            i->setNameP2(name);
+            tool->setNameP2(name);
         }
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetOperationSuffix(const QString &suffix)
+void VToolOptionsPropertyBrowser::setOperationSuffix(const QString &suffix)
 {
     if (Tool *item = qgraphicsitem_cast<Tool *>(currentItem))
     {
@@ -786,13 +1009,13 @@ void VToolOptionsPropertyBrowser::SetOperationSuffix(const QString &suffix)
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Type>
-Type VToolOptionsPropertyBrowser::GetCrossPoint(const QVariant &value)
+Type VToolOptionsPropertyBrowser::getCrossPoint(const QVariant &value)
 {
     bool ok = false;
     const int val = value.toInt(&ok);
@@ -816,43 +1039,43 @@ Type VToolOptionsPropertyBrowser::GetCrossPoint(const QVariant &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetCrossCirclesPoint(const QVariant &value)
+void VToolOptionsPropertyBrowser::setCirclesCrossPoint(const QVariant &value)
 {
-    if (Tool *i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        i->SetCrossCirclesPoint(GetCrossPoint<CrossCirclesPoint>(value));
+        tool->setCirclesCrossPoint(getCrossPoint<CrossCirclesPoint>(value));
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetVCrossCurvesPoint(const QVariant &value)
+void VToolOptionsPropertyBrowser::setCurveVCrossPoint(const QVariant &value)
 {
-    if (auto i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        i->SetVCrossPoint(GetCrossPoint<VCrossCurvesPoint>(value));
+        tool->SetVCrossPoint(getCrossPoint<VCrossCurvesPoint>(value));
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template<class Tool>
-void VToolOptionsPropertyBrowser::SetHCrossCurvesPoint(const QVariant &value)
+void VToolOptionsPropertyBrowser::setCurveHCrossPoint(const QVariant &value)
 {
-    if (auto i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        i->SetHCrossPoint(GetCrossPoint<HCrossCurvesPoint>(value));
+        tool->SetHCrossPoint(getCrossPoint<HCrossCurvesPoint>(value));
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
@@ -860,1011 +1083,1211 @@ void VToolOptionsPropertyBrowser::SetHCrossCurvesPoint(const QVariant &value)
 template<class Tool>
 void VToolOptionsPropertyBrowser::setAxisType(const QVariant &value)
 {
-    if (auto i = qgraphicsitem_cast<Tool *>(currentItem))
+    if (Tool *tool = qgraphicsitem_cast<Tool *>(currentItem))
     {
-        i->setAxisType(GetCrossPoint<AxisType>(value));
+        tool->setAxisType(getCrossPoint<AxisType>(value));
     }
     else
     {
-        qWarning()<<"Can't cast item";
+        qWarning() << "Can't cast item";
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::AddProperty(VPE::VProperty *property, const QString &id)
+void VToolOptionsPropertyBrowser::addProperty(VPE::VProperty *property, const QString &id)
 {
     propertyToId[property] = id;
     idToProperty[id] = property;
-    PropertyModel->addProperty(property, id);
+    propertyModel->addProperty(property, id);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolSinglePoint(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolSinglePoint(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolBasePoint *i = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolBasePoint>(value.toString());
+            setPointName<VToolBasePoint>(value.toString());
             break;
-        case 1: // QLatin1String("position")
-            i->SetBasePointPos(value.toPointF());
+        case 1: // QLatin1String("Coordinates")
+            tool->SetBasePointPos(value.toPointF());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolEndLine(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolEndLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolEndLine *i = qgraphicsitem_cast<VToolEndLine *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolEndLine *tool = qgraphicsitem_cast<VToolEndLine *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolEndLine>(value.toString());
+            setPointName<VToolEndLine>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
         case 5: // AttrAngle
-            i->SetFormulaAngle(value.value<VFormula>());
+            tool->SetFormulaAngle(value.value<VFormula>());
             break;
-        case 2: // AttrBasePoint (read only)
+        case 2: // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolAlongLine(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolAlongLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolAlongLine *i = qgraphicsitem_cast<VToolAlongLine *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolAlongLine *tool = qgraphicsitem_cast<VToolAlongLine *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolAlongLine>(value.toString());
+            setPointName<VToolAlongLine>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
-        case 2: // AttrBasePoint (read only)
-        case 7: // AttrSecondPoint (read only)
+        case 2: // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 7: // AttrSecondPoint
+            tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolArc(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolArc(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolArc *i = qgraphicsitem_cast<VToolArc *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolArc *tool = qgraphicsitem_cast<VToolArc *>(currentItem);
+    SCASSERT(tool != nullptr)
+
+    switch (propertiesList().indexOf(id))
     {
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
+            break;
         case 8: // AttrRadius
-            i->SetFormulaRadius(value.value<VFormula>());
+            tool->SetFormulaRadius(value.value<VFormula>());
             break;
         case 9: // AttrAngle1
-            i->SetFormulaF1(value.value<VFormula>());
+            tool->SetFormulaF1(value.value<VFormula>());
             break;
         case 10: // AttrAngle2
-            i->SetFormulaF2(value.value<VFormula>());
+            tool->SetFormulaF2(value.value<VFormula>());
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
-        case 11: // AttrCenter (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 11: // AttrCenter
+            tool->setCenter(value.toInt());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolArcWithLength(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolArcWithLength(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolArcWithLength *i = qgraphicsitem_cast<VToolArcWithLength *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolArcWithLength *tool = qgraphicsitem_cast<VToolArcWithLength *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
+            break;
         case 8: // AttrRadius
-            i->SetFormulaRadius(value.value<VFormula>());
+            tool->SetFormulaRadius(value.value<VFormula>());
             break;
         case 9: // AttrAngle1
-            i->SetFormulaF1(value.value<VFormula>());
+            tool->SetFormulaF1(value.value<VFormula>());
             break;
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
-        case 11: // AttrCenter (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 11: // AttrCenter
+            tool->setCenter(value.toInt());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolBisector(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolBisector(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolBisector *i = qgraphicsitem_cast<VToolBisector *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolBisector *tool = qgraphicsitem_cast<VToolBisector *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolBisector>(value.toString());
+            setPointName<VToolBisector>(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
             break;
-        case 6:  // AttrFirstPoint (read only)
-        case 2:  // AttrBasePoint (read only)
-        case 12: // AttrThirdPoint (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 6:  // AttrFirstPoint
+            tool->SetFirstPointId(value.toInt());
+            break;
+        case 2:  // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 12: // AttrThirdPoint
+            tool->SetThirdPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolTrueDarts(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolTrueDarts(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolTrueDarts *tool = qgraphicsitem_cast<VToolTrueDarts *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 32: // AttrName1
-            SetPointName1<VToolTrueDarts>(value.toString());
+            setPointName1<VToolTrueDarts>(value.toString());
             break;
         case 33: // AttrName2
-            SetPointName2<VToolTrueDarts>(value.toString());
+            setPointName2<VToolTrueDarts>(value.toString());
             break;
-        case 6:  // AttrFirstPoint (read only)
-        case 7:  // AttrSecondPoint (read only)
-        case 43: // AttrDartP1 (read only)
-        case 44: // AttrDartP2 (read only)
-        case 45: // AttrDartP3 (read only)
+        case 6:  // AttrFirstPoint
+            tool->SetBaseLineP1Id(value.toInt());
+            break;
+        case 7: // AttrSecondPoint
+            tool->SetBaseLineP2Id(value.toInt());
+            break;
+        case 43: // AttrDartP1
+            tool->SetDartP1Id(value.toInt());
+            break;
+        case 44: // AttrDartP2
+            tool->SetDartP2Id(value.toInt());
+            break;
+        case 45: // AttrDartP3
+            tool->SetDartP3Id(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCutArc(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCutArc(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolCutArc *i = qgraphicsitem_cast<VToolCutArc *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolCutArc *tool = qgraphicsitem_cast<VToolCutArc *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolCutArc>(value.toString());
+            setPointName<VToolCutArc>(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormula(value.value<VFormula>());
+            tool->SetFormula(value.value<VFormula>());
             break;
-        case 13: // AttrArc (read only)
+        case 13: // AttrArc
+            tool->setCurveCutId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCutSpline(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCutSpline(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolCutSpline *i = qgraphicsitem_cast<VToolCutSpline *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolCutSpline *tool = qgraphicsitem_cast<VToolCutSpline *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolCutSpline>(value.toString());
+            setPointName<VToolCutSpline>(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormula(value.value<VFormula>());
+            tool->SetFormula(value.value<VFormula>());
             break;
-        case 46: // AttrCurve (read only)
+        case 46: // AttrCurve
+            tool->setCurveCutId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCutSplinePath(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCutSplinePath(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolCutSplinePath *i = qgraphicsitem_cast<VToolCutSplinePath *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolCutSplinePath *tool = qgraphicsitem_cast<VToolCutSplinePath *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolCutSplinePath>(value.toString());
+            setPointName<VToolCutSplinePath>(value.toString());
             break;
         case 4: // AttrLength
-            i->SetFormula(value.value<VFormula>());
+            tool->SetFormula(value.value<VFormula>());
             break;
-        case 46: // AttrCurve (read only)
+        case 46: // AttrCurve
+            tool->setCurveCutId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolHeight(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolHeight(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolHeight *i = qgraphicsitem_cast<VToolHeight *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolHeight *tool = qgraphicsitem_cast<VToolHeight *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolHeight>(value.toString());
+            setPointName<VToolHeight>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
             break;
-        case 2:  // AttrBasePoint (read only)
-        case 16: // AttrP1Line (read only)
-        case 17: // AttrP2Line (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 2:  // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 16: // AttrP1Line
+            tool->SetP1LineId(value.toInt());
+            break;
+        case 17: // AttrP2Line
+            tool->SetP2LineId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolLine(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolLine *i = qgraphicsitem_cast<VToolLine *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolLine *tool = qgraphicsitem_cast<VToolLine *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
             break;
-        case 6: // AttrFirstPoint (read only)
-        case 7: // AttrSecondPoint (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 6: // AttrFirstPoint
+            tool->SetFirstPoint(value.toInt());
+            break;
+        case 7: // AttrSecondPoint
+            tool->SetSecondPoint(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolLineIntersect(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolLineIntersect(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolLineIntersect *tool = qgraphicsitem_cast<VToolLineIntersect *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolLineIntersect>(value.toString());
+            setPointName<VToolLineIntersect>(value.toString());
             break;
-        case 18: // AttrP1Line1 (read only)
-        case 19: // AttrP2Line1 (read only)
-        case 20: // AttrP1Line2 (read only)
-        case 21: // AttrP2Line2 (read only)
+        case 18: // AttrP1Line1
+            tool->SetP1Line1(value.toInt());
+            break;
+        case 19: // AttrP2Line1
+            tool->SetP2Line1(value.toInt());
+            break;
+        case 20: // AttrP1Line2
+            tool->SetP1Line2(value.toInt());
+            break;
+        case 21: // AttrP2Line2
+            tool->SetP2Line2(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolNormal(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolNormal(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolNormal *i = qgraphicsitem_cast<VToolNormal *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolNormal *tool = qgraphicsitem_cast<VToolNormal *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
         case 0: // AttrName
-            SetPointName<VToolNormal>(value.toString());
+            setPointName<VToolNormal>(value.toString());
             break;
         case 5: // AttrAngle
-            i->SetAngle(value.toDouble());
+            tool->SetAngle(value.toDouble());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
             break;
-        case 2: // AttrBasePoint (read only)
-        case 7: // AttrSecondPoint (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 2: // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 7: // AttrSecondPoint
+            tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointOfContact(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointOfContact(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolPointOfContact *i = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 8: // AttrRadius
-            i->setArcRadius(value.value<VFormula>());
+            tool->setArcRadius(value.value<VFormula>());
             break;
         case 0: // AttrName
-            SetPointName<VToolPointOfContact>(value.toString());
+            setPointName<VToolPointOfContact>(value.toString());
             break;
-        case 11: // AttrCenter (read only)
-        case 6:  // AttrFirstPoint (read only)
-        case 7:  // AttrSecondPoint (read only)
+        case 11: // AttrCenter
+            tool->setCenter(value.toInt());
+            break;
+        case 6:  // AttrFirstPoint
+            tool->SetFirstPointId(value.toInt());
+            break;
+        case 7:  // AttrSecondPoint
+            tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersection(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersection(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    PointIntersectXYTool *tool = qgraphicsitem_cast<PointIntersectXYTool *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointOfIntersection>(value.toString());
+            setPointName<PointIntersectXYTool>(value.toString());
             break;
-        case 6:  // AttrFirstPoint (read only)
-        case 7:  // AttrSecondPoint (read only)
+        case 6:  // AttrFirstPoint
+            tool->setFirstPointId(value.toInt());
+            break;
+        case 7:  // AttrSecondPoint
+            tool->setSecondPointId(value.toInt());
+            break;
+        case 3: // AttrLineType
+            tool->setLineType(value.toString());
+            break;
+        case 26: // AttrLineColor
+            tool->setLineColor(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersectionArcs(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionArcs(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolPointOfIntersectionArcs *tool = qgraphicsitem_cast<VToolPointOfIntersectionArcs *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointOfIntersectionArcs>(value.toString());
+            setPointName<VToolPointOfIntersectionArcs>(value.toString());
             break;
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<VToolPointOfIntersectionArcs>(value);
+            setCirclesCrossPoint<VToolPointOfIntersectionArcs>(value);
             break;
         }
-        case 47: // AttrFirstArc (read only)
-        case 48: // AttrSecondArc (read only)
+        case 47: // AttrFirstArc
+            tool->SetFirstArcId(value.toInt());
+            break;
+        case 48: // AttrSecondArc
+            tool->SetSecondArcId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersectionCircles(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionCircles(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    IntersectCirclesTool *tool = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<IntersectCirclesTool>(value.toString());
+            setPointName<IntersectCirclesTool>(value.toString());
             break;
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<IntersectCirclesTool>(value);
+            setCirclesCrossPoint<IntersectCirclesTool>(value);
             break;
         }
         case 29: // AttrC1Radius
-            i->SetFirstCircleRadius(value.value<VFormula>());
+            tool->SetFirstCircleRadius(value.value<VFormula>());
             break;
         case 30: // AttrC2Radius
-            i->SetSecondCircleRadius(value.value<VFormula>());
+            tool->SetSecondCircleRadius(value.value<VFormula>());
             break;
-        case 49: // AttrC1Center (read only)
-        case 50: // AttrC2Center (read only)
+        case 49: // AttrC1Center
+            tool->SetFirstCircleCenterId(value.toInt());
+            break;
+        case 50: // AttrC2Center
+            tool->SetSecondCircleCenterId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointOfIntersectionCurves(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointOfIntersectionCurves(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolPointOfIntersectionCurves *tool = qgraphicsitem_cast<VToolPointOfIntersectionCurves *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointOfIntersectionCurves>(value.toString());
+            setPointName<VToolPointOfIntersectionCurves>(value.toString());
             break;
         case 34: // AttrVCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetVCrossCurvesPoint<VToolPointOfIntersectionCurves>(value);
+            setCurveVCrossPoint<VToolPointOfIntersectionCurves>(value);
             break;
         }
         case 35: // AttrHCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetHCrossCurvesPoint<VToolPointOfIntersectionCurves>(value);
+            setCurveHCrossPoint<VToolPointOfIntersectionCurves>(value);
             break;
         }
-        case 51: // AttrCurve1 (read only)
-        case 52: // AttrCurve2 (read only)
+        case 51: // AttrCurve1
+            tool->SetFirstCurveId(value.toInt());
+            break;
+        case 52: // AttrCurve2
+            tool->SetSecondCurveId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointFromCircleAndTangent(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointFromCircleAndTangent(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    IntersectCircleTangentTool *tool = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<IntersectCircleTangentTool>(value.toString());
+            setPointName<IntersectCircleTangentTool>(value.toString());
             break;
         case 31: // AttrCRadius
-            i->SetCircleRadius(value.value<VFormula>());
+            tool->SetCircleRadius(value.value<VFormula>());
             break;
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<IntersectCircleTangentTool>(value);
+            setCirclesCrossPoint<IntersectCircleTangentTool>(value);
             break;
         }
-        case 53: // AttrCCenter (read only)
-        case 54: // AttrTangent (read only)
+        case 53: // AttrCCenter
+            tool->SetCircleCenterId(value.toInt());
+            break;
+        case 54: // AttrTangent
+            tool->SetTangentPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolPointFromArcAndTangent(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolPointFromArcAndTangent(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolPointFromArcAndTangent *tool = qgraphicsitem_cast<VToolPointFromArcAndTangent *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolPointFromArcAndTangent>(value.toString());
+            setPointName<VToolPointFromArcAndTangent>(value.toString());
             break;
         case 28: // AttrCrossPoint
         {
             const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::EditRole);
-            SetCrossCirclesPoint<VToolPointFromArcAndTangent>(value);
+            setCirclesCrossPoint<VToolPointFromArcAndTangent>(value);
             break;
         }
-        case 54: // AttrTangent (read only)
-        case 13: // AttrArc (read only)
+        case 54: // AttrTangent
+            tool->SetTangentPointId(value.toInt());
             break;
+        case 13: // AttrArc
+            tool->SetArcId(value.toInt());
+            break;;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolShoulderPoint(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolShoulderPoint(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolShoulderPoint *i = qgraphicsitem_cast<VToolShoulderPoint *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolShoulderPoint *tool = qgraphicsitem_cast<VToolShoulderPoint *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
             break;
         case 0: // AttrName
-            SetPointName<VToolShoulderPoint>(value.toString());
+            setPointName<VToolShoulderPoint>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
             break;
-        case 6:  // AttrFirstPoint (read only)
-        case 2:  // AttrBasePoint (read only)
-        case 12: // AttrThirdPoint (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 6:  // AttrFirstPoint
+            tool->SetP2Line(value.toInt());
+            break;
+        case 2:  // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 12: // AttrThirdPoint
+            tool->setPShoulder(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolSpline(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolSpline(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    auto i = qgraphicsitem_cast<VToolSpline *>(currentItem);
-    SCASSERT(i != nullptr)
+    VToolSpline *tool = qgraphicsitem_cast<VToolSpline *>(currentItem);
+    SCASSERT(tool != nullptr)
 
-    VSpline spl = i->getSpline();
+    auto spl = tool->getSpline();
+    VPointF point;
+
     const VFormula f = value.value<VFormula>();
 
-    switch (PropertiesList().indexOf(id))
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
             Q_UNREACHABLE();//The attribute is read only
+            break;
+        case 6:  // AttrFirstPoint
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spl.SetP1(point);
+            tool->setSpline(spl);
+            break;
+        case 7:  // AttrSecondPoint
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spl.SetP4(point);
+            tool->setSpline(spl);
             break;
         case 9: // AttrAngle1
             if (not f.error())
             {
                 spl.SetStartAngle(f.getDoubleValue(), f.GetFormula(FormulaType::FromUser));
-                i->setSpline(spl);
+                tool->setSpline(spl);
             }
             break;
         case 10: // AttrAngle2
             if (not f.error())
             {
                 spl.SetEndAngle(f.getDoubleValue(), f.GetFormula(FormulaType::FromUser));
-                i->setSpline(spl);
+                tool->setSpline(spl);
             }
             break;
         case 36: // AttrLength1
             if (not f.error() && f.getDoubleValue() >= 0)
             {
                 spl.SetC1Length(qApp->toPixel(f.getDoubleValue()), f.GetFormula(FormulaType::FromUser));
-                i->setSpline(spl);
+                tool->setSpline(spl);
             }
             break;
         case 37: // AttrLength2
             if (not f.error() && f.getDoubleValue() >= 0)
             {
                 spl.SetC2Length(qApp->toPixel(f.getDoubleValue()), f.GetFormula(FormulaType::FromUser));
-                i->setSpline(spl);
+                tool->setSpline(spl);
             }
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCubicBezier(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCubicBezier(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     const QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    auto i = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
-    SCASSERT(i != nullptr)
+    VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
+    SCASSERT(tool != nullptr)
 
-    switch (PropertiesList().indexOf(id))
+    auto spline = tool->getSpline();
+    VPointF point;
+
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
             Q_UNREACHABLE();//The attribute is read only
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
             break;
-        case 55: // AttrPoint1 (read only)
-        case 56: // AttrPoint2 (read only)
-        case 57: // AttrPoint3 (read only)
-        case 58: // AttrPoint4 (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 55: // AttrPoint1
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP1(point);
+            tool->setSpline(spline);
+            break;
+        case 56: // AttrPoint2
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP2(point);
+            tool->setSpline(spline);
+            break;
+        case 57: // AttrPoint3
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP3(point);
+            tool->setSpline(spline);
+            break;
+        case 58: // AttrPoint4
+            point = *m_data->GeometricObject<VPointF>(value.toInt());
+            spline.SetP4(point);
+            tool->setSpline(spline);
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolSplinePath(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolSplinePath(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolSplinePath *i = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolSplinePath *tool = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
             Q_UNREACHABLE();//The attribute is read only
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCubicBezierPath(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCubicBezierPath(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolCubicBezierPath *i = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolCubicBezierPath *tool = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
             Q_UNREACHABLE();//The attribute is read only
             break;
-        case 27: // AttrTypeColor
-            i->SetLineColor(value.toString());
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolTriangle(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolTriangle(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolTriangle *tool = qgraphicsitem_cast<VToolTriangle *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolTriangle>(value.toString());
+            setPointName<VToolTriangle>(value.toString());
             break;
-        case 23: // AttrAxisP1 (read only)
-        case 24: // AttrAxisP2 (read only)
-        case 6:  // AttrFirstPoint (read only)
-        case 7:  // AttrSecondPoint (read only)
+        case 23: // AttrAxisP1
+            tool->SetAxisP1Id(value.toInt());
+            break;
+        case 24: // AttrAxisP2
+            tool->SetAxisP2Id(value.toInt());
+            break;
+        case 6:  // AttrFirstPoint
+            tool->SetFirstPointId(value.toInt());
+            break;
+        case 7:  // AttrSecondPoint
+            tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolLineIntersectAxis(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolLineIntersectAxis(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolLineIntersectAxis *i = qgraphicsitem_cast<VToolLineIntersectAxis *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolLineIntersectAxis *tool = qgraphicsitem_cast<VToolLineIntersectAxis *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolLineIntersectAxis>(value.toString());
+            setPointName<VToolLineIntersectAxis>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         case 5: // AttrAngle
-            i->SetFormulaAngle(value.value<VFormula>());
+            tool->SetFormulaAngle(value.value<VFormula>());
             break;
-        case 2: // AttrBasePoint (read only)
-        case 6: // AttrFirstPoint (read only)
-        case 7: // AttrSecondPoint (read only)
+        case 2: // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 6:  // AttrFirstPoint
+            tool->SetFirstPointId(value.toInt());
+            break;
+        case 7:  // AttrSecondPoint
+            tool->SetSecondPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolCurveIntersectAxis(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolCurveIntersectAxis(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolCurveIntersectAxis *i = qgraphicsitem_cast<VToolCurveIntersectAxis *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolCurveIntersectAxis *tool = qgraphicsitem_cast<VToolCurveIntersectAxis *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 0: // AttrName
-            SetPointName<VToolCurveIntersectAxis>(value.toString());
+            setPointName<VToolCurveIntersectAxis>(value.toString());
             break;
         case 3: // AttrLineType
-            i->SetTypeLine(value.toString());
+            tool->setLineType(value.toString());
             break;
         case 26: // AttrLineColor
-            i->SetLineColor(value.toString());
+            tool->setLineColor(value.toString());
+            break;
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
             break;
         case 5: // AttrAngle
-            i->SetFormulaAngle(value.value<VFormula>());
+            tool->SetFormulaAngle(value.value<VFormula>());
             break;
-        case 2:  // AttrBasePoint (read only)
-        case 46: // AttrCurve (read only)
+        case 2:  // AttrBasePoint
+            tool->SetBasePointId(value.toInt());
+            break;
+        case 46: // AttrCurve
+            tool->setCurveId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolRotation(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolRotation(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolRotation *i = qgraphicsitem_cast<VToolRotation *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolRotation *tool = qgraphicsitem_cast<VToolRotation *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolRotation>(value.toString());
+            setOperationSuffix<VToolRotation>(value.toString());
             break;
         case 5: // AttrAngle
-            i->SetFormulaAngle(value.value<VFormula>());
+            tool->SetFormulaAngle(value.value<VFormula>());
             break;
-        case 11: // AttrCenter (read only)
+        case 11: // AttrCenter
+            tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolMove(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolMove(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolMove *i = qgraphicsitem_cast<VToolMove *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolMove *tool = qgraphicsitem_cast<VToolMove *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 42: // AttrRotationAngle
-            i->setFormulaRotation(value.value<VFormula>());
+            tool->setFormulaRotation(value.value<VFormula>());
             break;
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolMove>(value.toString());
+            setOperationSuffix<VToolMove>(value.toString());
             break;
         case 5: // AttrAngle
-            i->SetFormulaAngle(value.value<VFormula>());
+            tool->SetFormulaAngle(value.value<VFormula>());
             break;
         case 4: // AttrLength
-            i->SetFormulaLength(value.value<VFormula>());
+            tool->SetFormulaLength(value.value<VFormula>());
+            break;
+        case 11: // AttrCenter
+            tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolMirrorByLine(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolMirrorByLine(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolMirrorByLine *tool = qgraphicsitem_cast<VToolMirrorByLine *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolMirrorByLine>(value.toString());
+            setOperationSuffix<VToolMirrorByLine>(value.toString());
             break;
-        case 6: // AttrFirstPoint
-        case 7: // AttrSecondPoint
+        case 16:  // AttrP1Line
+            tool->setFirstLinePointId(value.toInt());
+            break;
+        case 17:  // AttrP2Line
+            tool->setSecondLinePointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolMirrorByAxis(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolMirrorByAxis(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    switch (PropertiesList().indexOf(id))
+    VToolMirrorByAxis *tool = qgraphicsitem_cast<VToolMirrorByAxis *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
         case 39: // AttrAxisType
         {
@@ -1873,1392 +2296,1784 @@ void VToolOptionsPropertyBrowser::ChangeDataToolMirrorByAxis(VPE::VProperty *pro
             break;
         }
         case 38: // AttrSuffix
-            SetOperationSuffix<VToolMirrorByAxis>(value.toString());
+            setOperationSuffix<VToolMirrorByAxis>(value.toString());
             break;
-        case 11: // AttrCenter (read only)
+        case 11: // AttrCenter
+            tool->setOriginPointId(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ChangeDataToolEllipticalArc(VPE::VProperty *property)
+void VToolOptionsPropertyBrowser::changeDataToolEllipticalArc(VPE::VProperty *property)
 {
     SCASSERT(property != nullptr)
 
     QVariant value = property->data(VPE::VProperty::DPC_Data, Qt::DisplayRole);
     const QString id = propertyToId[property];
 
-    VToolEllipticalArc *i = qgraphicsitem_cast<VToolEllipticalArc *>(currentItem);
-    SCASSERT(i != nullptr)
-    switch (PropertiesList().indexOf(id))
+    VToolEllipticalArc *tool = qgraphicsitem_cast<VToolEllipticalArc *>(currentItem);
+    SCASSERT(tool != nullptr)
+    switch (propertiesList().indexOf(id))
     {
-        case 40://AttrRadius1
-            i->SetFormulaRadius1(value.value<VFormula>());
+        case 0: // AttrName
+            Q_UNREACHABLE();//The attribute is read only
             break;
-        case 41://AttrRadius2
-            i->SetFormulaRadius2(value.value<VFormula>());
+        case 40: // AttrRadius1
+            tool->SetFormulaRadius1(value.value<VFormula>());
             break;
-        case 9://AttrAngle1
-            i->SetFormulaF1(value.value<VFormula>());
+        case 41: // AttrRadius2
+            tool->SetFormulaRadius2(value.value<VFormula>());
             break;
-        case 10://AttrAngle2
-            i->SetFormulaF2(value.value<VFormula>());
+        case 9: // AttrAngle1
+            tool->SetFormulaF1(value.value<VFormula>());
             break;
-        case 42://AttrRotationAngle
-            i->SetFormulaRotationAngle(value.value<VFormula>());
+        case 10: // AttrAngle2
+            tool->SetFormulaF2(value.value<VFormula>());
             break;
-        case 27://AttrColor
-            i->SetLineColor(value.toString());
+        case 42: // AttrRotationAngle
+            tool->SetFormulaRotationAngle(value.value<VFormula>());
+            break;
+        case 27: // AttrColor
+            tool->setLineColor(value.toString());
             break;
         case 59: // AttrPenStyle
-            i->SetPenStyle(value.toString());
+            tool->SetPenStyle(value.toString());
             break;
-        case 11: // AttrCenter (read only)
+        case 60: // AttrLineWeight
+            tool->setLineWeight(value.toString());
+            break;
+        case 11: // AttrCenter
+            tool->setCenter(value.toInt());
             break;
         default:
-            qWarning()<<"Unknown property type. id = "<<id;
+            qWarning() << "Unknown property type. id = "<<id;
             break;
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolSinglePoint(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolSinglePoint(QGraphicsItem *item)
 {
-    VToolBasePoint *i = qgraphicsitem_cast<VToolBasePoint *>(item);
-    i->ShowVisualization(true);
+    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("Base point"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
 
-    VPE::VPointFProperty* itemPosition = new VPE::VPointFProperty(tr("Position:"));
-    itemPosition->setValue(i->GetBasePointPos());
-    AddProperty(itemPosition, QLatin1String("position"));
+    VPE::VPointFProperty* itemCoordinates = new VPE::VPointFProperty(tr("Coordinates"));
+    itemCoordinates->setValue(tool->GetBasePointPos());
+    addProperty(itemCoordinates, QLatin1String("Coordinates"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolEndLine(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolEndLine(QGraphicsItem *item)
 {
-    VToolEndLine *i = qgraphicsitem_cast<VToolEndLine *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point at distance and angle"));
+    VToolEndLine *tool = qgraphicsitem_cast<VToolEndLine *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Length and Angle"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+    addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolAlongLine(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolAlongLine(QGraphicsItem *item)
 {
-    VToolAlongLine *i = qgraphicsitem_cast<VToolAlongLine *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point at distance along line"));
+    VToolAlongLine *tool = qgraphicsitem_cast<VToolAlongLine *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Line"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolArc(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolArc(QGraphicsItem *item)
 {
-    VToolArc *i = qgraphicsitem_cast<VToolArc *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Arc"));
+    VToolArc *tool = qgraphicsitem_cast<VToolArc *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Arc - Radius and Angles"));
 
-    AddPropertyParentPointName(i->CenterPointName(), tr("Center point:"), AttrCenter);
-    AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
-    AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
-    AddPropertyFormula(tr("Second angle:"), i->GetFormulaF2(), AttrAngle2);
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("Arc_"), tool->CenterPointName(), QString().setNum(tool->getId()), true);
+    addObjectProperty(tool, tool->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Radius:"), tool->GetFormulaRadius(), AttrRadius);
+    addPropertyFormula(tr("First angle:"), tool->GetFormulaF1(), AttrAngle1);
+    addPropertyFormula(tr("Second angle:"), tool->GetFormulaF2(), AttrAngle2);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolArcWithLength(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolArcWithLength(QGraphicsItem *item)
 {
-    VToolArcWithLength *i = qgraphicsitem_cast<VToolArcWithLength *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Arc with given length"));
+    VToolArcWithLength *tool = qgraphicsitem_cast<VToolArcWithLength *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Arc - Radius and Length"));
 
-    AddPropertyParentPointName(i->CenterPointName(), tr("Center point:"), AttrCenter);
-    AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius(), AttrRadius);
-    AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("Arc_"), tool->CenterPointName(), QString().setNum(tool->getId()), true);
+    addObjectProperty(tool, tool->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Radius:"), tool->GetFormulaRadius(), AttrRadius);
+    addPropertyFormula(tr("First angle:"), tool->GetFormulaF1(), AttrAngle1);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolBisector(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolBisector(QGraphicsItem *item)
 {
-    VToolBisector *i = qgraphicsitem_cast<VToolBisector *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point along bisector"));
+    VToolBisector *tool = qgraphicsitem_cast<VToolBisector *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Bisector"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->BasePointName(), tr("Second point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->BasePointName(), tr("Second point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->ThirdPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolTrueDarts(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolTrueDarts(QGraphicsItem *item)
 {
-    VToolTrueDarts *i = qgraphicsitem_cast<VToolTrueDarts *>(item);
-    i->ShowVisualization(true);
+    VToolTrueDarts *tool = qgraphicsitem_cast<VToolTrueDarts *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("True darts"));
 
-    AddPropertyPointName1(i, tr("Point 1 label:"));
-    AddPropertyPointName2(i, tr("Point 2 label:"));
-    AddPropertyParentPointName(i->BaseLineP1Name(), tr("First base point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->BaseLineP2Name(), tr("Second base point:"), AttrSecondPoint);
-    AddPropertyParentPointName(i->DartP1Name(), tr("First dart point:"), AttrDartP1);
-    AddPropertyParentPointName(i->DartP2Name(), tr("First dart point:"), AttrDartP2);
-    AddPropertyParentPointName(i->DartP3Name(), tr("First dart point:"), AttrDartP3);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyPointName1(tool, tr("Point 1 label:"));
+    addPropertyPointName2(tool, tr("Point 2 label:"));
+    addObjectProperty(tool, tool->BaseLineP1Name(), tr("First base point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->BaseLineP2Name(), tr("Second base point:"), AttrSecondPoint, GOType::Point);
+    addObjectProperty(tool, tool->DartP1Name(), tr("First dart point:"), AttrDartP1, GOType::Point);
+    addObjectProperty(tool, tool->DartP2Name(), tr("Second dart point:"), AttrDartP2, GOType::Point);
+    addObjectProperty(tool, tool->DartP3Name(), tr("Third dart point:"), AttrDartP3, GOType::Point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCutArc(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCutArc(QGraphicsItem *item)
 {
-    VToolCutArc *i = qgraphicsitem_cast<VToolCutArc *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Cut arc tool"));
+    VToolCutArc *tool = qgraphicsitem_cast<VToolCutArc *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Arc"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->CurveName(), tr("Arc:"), AttrArc);
-    AddPropertyFormula(tr("Length:"), i->GetFormula(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->CurveName(), tr("Arc:"), AttrArc, GOType::Arc);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCutSpline(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCutSpline(QGraphicsItem *item)
 {
-    VToolCutSpline *i = qgraphicsitem_cast<VToolCutSpline *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool for segmenting a curve"));
+    VToolCutSpline *tool = qgraphicsitem_cast<VToolCutSpline *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Curve"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->CurveName(), tr("Curve:"), AttrCurve);
-    AddPropertyFormula(tr("Length:"), i->GetFormula(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Curve);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCutSplinePath(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCutSplinePath(QGraphicsItem *item)
 {
-    VToolCutSplinePath *i = qgraphicsitem_cast<VToolCutSplinePath *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool segment a pathed curve"));
+    VToolCutSplinePath *tool = qgraphicsitem_cast<VToolCutSplinePath *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Spline"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->CurveName(), tr("Curve:"), AttrCurve);
-    AddPropertyFormula(tr("Length:"), i->GetFormula(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::Path);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormula(), AttrLength);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolHeight(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolHeight(QGraphicsItem *item)
 {
-    VToolHeight *i = qgraphicsitem_cast<VToolHeight *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Perpendicular point along line"));
+    VToolHeight *tool = qgraphicsitem_cast<VToolHeight *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Line and Perpendicular"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("Base point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->FirstLinePointName(), tr("First line point:"), AttrP1Line);
-    AddPropertyParentPointName(i->SecondLinePointName(), tr("Second line point:"), AttrP2Line);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("Base point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->FirstLinePointName(), tr("First line point:"), AttrP1Line, GOType::Point);
+    addObjectProperty(tool, tool->SecondLinePointName(), tr("Second line point:"), AttrP2Line, GOType::Point);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolLine(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolLine(QGraphicsItem *item)
 {
-    VToolLine *i = qgraphicsitem_cast<VToolLine *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Line between points"));
+    VToolLine *tool = qgraphicsitem_cast<VToolLine *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Line"));
 
-    AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    QMap<QString, QIcon> styles = LineStylesPics();
-    styles.remove(LineTypeNone);
-    AddPropertyLineType(i, tr("Linetype:"), styles);
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyLineName(tool, AttrObjName, true);
+    addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolLineIntersect(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolLineIntersect(QGraphicsItem *item)
 {
-    VToolLineIntersect *i = qgraphicsitem_cast<VToolLineIntersect *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point at line intersection"));
+    VToolLineIntersect *tool = qgraphicsitem_cast<VToolLineIntersect *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Lines"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->Line1P1Name(), tr("First line (first point):"), AttrP1Line1);
-    AddPropertyParentPointName(i->Line1P2Name(), tr("First line (second point):"), AttrP2Line1);
-    AddPropertyParentPointName(i->Line2P1Name(), tr("Second line (first point):"), AttrP1Line2);
-    AddPropertyParentPointName(i->Line2P2Name(), tr("Second line (second point):"), AttrP2Line2);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addPropertyLabel(tr("First line"), AttrName);
+    addObjectProperty(tool, tool->Line1P1Name(), tr("First point:"), AttrP1Line1, GOType::Point);
+    addObjectProperty(tool, tool->Line1P2Name(), tr("Second point:"), AttrP2Line1, GOType::Point);
+    addPropertyLabel(tr("Second line"), AttrName);
+    addObjectProperty(tool, tool->Line2P1Name(), tr("First point:"), AttrP1Line2, GOType::Point);
+    addObjectProperty(tool, tool->Line2P2Name(), tr("Second point:"), AttrP2Line2, GOType::Point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolNormal(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolNormal(QGraphicsItem *item)
 {
-    VToolNormal *i = qgraphicsitem_cast<VToolNormal *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point along perpendicular"));
+    VToolNormal *tool = qgraphicsitem_cast<VToolNormal *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - On Perpendicular"));
 
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
 
-    VPE::VDoubleProperty* itemAngle = new VPE::VDoubleProperty(tr("Additional angle degrees:"));
-    itemAngle->setValue(i->GetAngle());
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+    addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    VPE::DoubleSpinboxProperty* itemAngle = new VPE::DoubleSpinboxProperty(tr("Rotation:"));
+    itemAngle->setValue(tool->GetAngle());
     itemAngle->setSetting("Min", -360);
     itemAngle->setSetting("Max", 360);
     itemAngle->setSetting("Precision", 3);
-    AddProperty(itemAngle, AttrAngle);
+    addProperty(itemAngle, AttrAngle);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfContact(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointOfContact(QGraphicsItem *item)
 {
-    VToolPointOfContact *i = qgraphicsitem_cast<VToolPointOfContact *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point at intersection of arc and line"));
+    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Arc and Line"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->ArcCenterPointName(), tr("Center of arc:"), AttrCenter);
-    AddPropertyParentPointName(i->FirstPointName(), tr("Top of the line:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("End of the line:"), AttrSecondPoint);
-    AddPropertyFormula(tr("Radius:"), i->getArcRadius(), AttrRadius);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->ArcCenterPointName(), tr("Center of arc:"), AttrCenter, GOType::Point);
+    addObjectProperty(tool, tool->FirstPointName(), tr("1st line point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("2nd line point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Radius:"), tool->getArcRadius(), AttrRadius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersection(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersection(QGraphicsItem *item)
 {
-    VToolPointOfIntersection *i = qgraphicsitem_cast<VToolPointOfIntersection *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from x & y of two other points"));
+    PointIntersectXYTool *tool = qgraphicsitem_cast<PointIntersectXYTool *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect XY"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstPointName(), tr("X: vertical point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Y: horizontal point:"), AttrSecondPoint);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->firstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->secondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionArcs(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionArcs(QGraphicsItem *item)
 {
-    VToolPointOfIntersectionArcs *i = qgraphicsitem_cast<VToolPointOfIntersectionArcs *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from intersection two arcs"));
+    VToolPointOfIntersectionArcs *tool = qgraphicsitem_cast<VToolPointOfIntersectionArcs *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Arcs"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstArcName(), tr("First arc:"), AttrFirstArc);
-    AddPropertyParentPointName(i->SecondArcName(), tr("Second arc:"), AttrSecondArc);
-    AddPropertyCrossPoint(i, tr("Take:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->FirstArcName(), tr("First arc:"), AttrFirstArc, GOType::Arc);
+    addObjectProperty(tool, tool->SecondArcName(), tr("Second arc:"), AttrSecondArc, GOType::Arc);
+    addPropertyCrossPoint(tool, tr("Take:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionCircles(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCircles(QGraphicsItem *item)
 {
-    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from intersection two circles"));
+    IntersectCirclesTool *tool = qgraphicsitem_cast<IntersectCirclesTool *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Circles"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstCircleCenterPointName(), tr("Center of the first circle:"), AttrC1Center);
-    AddPropertyParentPointName(i->SecondCircleCenterPointName(), tr("Center of the second circle:"), AttrC2Center);
-    AddPropertyFormula(tr("First circle radius:"), i->GetFirstCircleRadius(), AttrC1Radius);
-    AddPropertyFormula(tr("Second circle radius:"), i->GetSecondCircleRadius(), AttrC2Radius);
-    AddPropertyCrossPoint(i, tr("Take:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addPropertyCrossPoint(tool, tr("Take:"));
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyLabel(tr("First circle:"), AttrName);
+    addObjectProperty(tool, tool->FirstCircleCenterPointName(), tr("Center:"), AttrC1Center, GOType::Point);
+    addPropertyFormula(tr("Radius:"), tool->GetFirstCircleRadius(), AttrC1Radius);
+
+    addPropertyLabel(tr("Second circle:"), AttrName);
+    addObjectProperty(tool, tool->SecondCircleCenterPointName(), tr("Center:"), AttrC2Center, GOType::Point);
+    addPropertyFormula(tr("Radius:"), tool->GetSecondCircleRadius(), AttrC2Radius);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointOfIntersectionCurves(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointOfIntersectionCurves(QGraphicsItem *item)
 {
-    auto i = qgraphicsitem_cast<VToolPointOfIntersectionCurves *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from intersection two curves"));
+    VToolPointOfIntersectionCurves *tool = qgraphicsitem_cast<VToolPointOfIntersectionCurves *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Curves"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->FirstCurveName(), tr("First curve:"), AttrCurve1);
-    AddPropertyParentPointName(i->SecondCurveName(), tr("Second curve:"), AttrCurve2);
-    AddPropertyVCrossPoint(i, tr("Vertical correction:"));
-    AddPropertyHCrossPoint(i, tr("Horizontal correction:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->FirstCurveName(), tr("First curve:"), AttrCurve1, GOType::AllCurves);
+    addObjectProperty(tool, tool->SecondCurveName(), tr("Second curve:"), AttrCurve2, GOType::AllCurves);
+    addPropertyVCrossPoint(tool, tr("Vertical take:"));
+    addPropertyHCrossPoint(tool, tr("Horizontal take:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointFromCircleAndTangent(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointFromCircleAndTangent(QGraphicsItem *item)
 {
-    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from circle and tangent"));
+    IntersectCircleTangentTool *tool = qgraphicsitem_cast<IntersectCircleTangentTool *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Circle and Tangent"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->CircleCenterPointName(), tr("Center of the circle:"), AttrCCenter);
-    AddPropertyParentPointName(i->TangentPointName(), tr("Tangent point:"), AttrTangent);
-    AddPropertyFormula(tr("Circle radius:"), i->GetCircleRadius(), AttrCRadius);
-    AddPropertyCrossPoint(i, tr("Take:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->CircleCenterPointName(), tr("Center point:"), AttrCCenter, GOType::Point);
+    addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Circle radius:"), tool->GetCircleRadius(), AttrCRadius);
+    addPropertyCrossPoint(tool, tr("Take:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolPointFromArcAndTangent(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolPointFromArcAndTangent(QGraphicsItem *item)
 {
-    VToolPointFromArcAndTangent *i = qgraphicsitem_cast<VToolPointFromArcAndTangent *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool to make point from arc and tangent"));
+    VToolPointFromArcAndTangent *tool = qgraphicsitem_cast<VToolPointFromArcAndTangent *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Arc and Tangent"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->TangentPointName(), tr("Tangent point:"), AttrTangent);
-    AddPropertyParentPointName(i->ArcName(), tr("Arc:"), AttrArc);
-    AddPropertyCrossPoint(i, tr("Take:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->TangentPointName(), tr("Tangent point:"), AttrTangent, GOType::Point);
+    addObjectProperty(tool, tool->ArcName(), tr("Arc:"), AttrArc, GOType::Arc);
+    addPropertyCrossPoint(tool, tr("Take:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolShoulderPoint(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolShoulderPoint(QGraphicsItem *item)
 {
-    VToolShoulderPoint *i = qgraphicsitem_cast<VToolShoulderPoint *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Special point on shoulder"));
+    VToolShoulderPoint *tool = qgraphicsitem_cast<VToolShoulderPoint *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Length to Line"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("First point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
-    AddPropertyParentPointName(i->ShoulderPointName(), tr("Third point:"), AttrThirdPoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("First point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+    addObjectProperty(tool, tool->ShoulderPointName(), tr("Third point:"), AttrThirdPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolSpline(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolSpline(QGraphicsItem *item)
 {
-    auto i = qgraphicsitem_cast<VToolSpline *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Curve tool"));
+    VToolSpline *tool = qgraphicsitem_cast<VToolSpline *>(item);
+    tool->ShowVisualization(true);
+    const auto spl = tool->getSpline();
 
-    const auto spl = i->getSpline();
+    formView->setTitle(tr("Curve - Interactive"));
 
-    AddPropertyObjectName(i, tr("Name:"), true);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
 
-    VFormula angle1(spl.GetStartAngleFormula(), i->getData());
+    addObjectProperty(tool, spl.GetP1().name(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, spl.GetP4().name(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    VFormula angle1(spl.GetStartAngleFormula(), tool->getData());
     angle1.setCheckZero(false);
-    angle1.setToolId(i->getId());
+    angle1.setToolId(tool->getId());
     angle1.setPostfix(degreeSymbol);
-    AddPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
+    addPropertyFormula(tr("C1: angle:"), angle1, AttrAngle1);
 
-    VFormula length1(spl.GetC1LengthFormula(), i->getData());
+    VFormula length1(spl.GetC1LengthFormula(), tool->getData());
     length1.setCheckZero(false);
-    length1.setToolId(i->getId());
+    length1.setToolId(tool->getId());
     length1.setPostfix(UnitsToStr(qApp->patternUnit()));
-    AddPropertyFormula(tr("C1: length:"), length1, AttrLength1);
+    addPropertyFormula(tr("C1: length:"), length1, AttrLength1);
 
-    VFormula angle2(spl.GetEndAngleFormula(), i->getData());
+    VFormula angle2(spl.GetEndAngleFormula(), tool->getData());
     angle2.setCheckZero(false);
-    angle2.setToolId(i->getId());
+    angle2.setToolId(tool->getId());
     angle2.setPostfix(degreeSymbol);
-    AddPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
+    addPropertyFormula(tr("C2: angle:"), angle2, AttrAngle2);
 
-    VFormula length2(spl.GetC2LengthFormula(), i->getData());
+    VFormula length2(spl.GetC2LengthFormula(), tool->getData());
     length2.setCheckZero(false);
-    length2.setToolId(i->getId());
+    length2.setToolId(tool->getId());
     length2.setPostfix(UnitsToStr(qApp->patternUnit()));
-    AddPropertyFormula(tr("C2: length:"), length2, AttrLength2);
+    addPropertyFormula(tr("C2: length:"), length2, AttrLength2);
 
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezier(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCubicBezier(QGraphicsItem *item)
 {
-    auto i = qgraphicsitem_cast<VToolCubicBezier *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Cubic bezier curve"));
+    VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(item);
+    tool->ShowVisualization(true);
+    const auto spl = tool->getSpline();
 
-    AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrPoint1);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrPoint2);
-    AddPropertyParentPointName(i->ThirdPointName(), tr("Third point:"), AttrPoint3);
-    AddPropertyParentPointName(i->ForthPointName(), tr("Fourth point:"), AttrPoint4);
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    formView->setTitle(tr("Curve - Fixed"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("Spl_"), spl.GetP1().name(), spl.GetP4().name(), true);
+    addObjectProperty(tool, spl.GetP1().name(), tr("First point:"),  AttrPoint1, GOType::Point);
+    addObjectProperty(tool, spl.GetP2().name(), tr("Second point:"), AttrPoint2, GOType::Point);
+    addObjectProperty(tool, spl.GetP3().name(), tr("Third point:"),  AttrPoint3, GOType::Point);
+    addObjectProperty(tool, spl.GetP4().name(), tr("Fourth point:"), AttrPoint4, GOType::Point);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolSplinePath(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolSplinePath(QGraphicsItem *item)
 {
-    VToolSplinePath *i = qgraphicsitem_cast<VToolSplinePath *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool for path curve"));
+    VToolSplinePath *tool = qgraphicsitem_cast<VToolSplinePath *>(item);
+    tool->ShowVisualization(true);
 
-    AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    const auto spl = tool->getSplinePath();
+
+    formView->setTitle(tr("Spline - Interactive"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCubicBezierPath(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCubicBezierPath(QGraphicsItem *item)
 {
-    VToolCubicBezierPath *i = qgraphicsitem_cast<VToolCubicBezierPath *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool cubic bezier curve"));
+    VToolCubicBezierPath *tool = qgraphicsitem_cast<VToolCubicBezierPath *>(item);
+    tool->ShowVisualization(true);
+    const auto spl = tool->getSplinePath();
 
-    AddPropertyObjectName(i, tr("Name:"), true);
-    AddPropertyCurvePenStyle(i, tr("Linetype:"), CurvePenStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    formView->setTitle(tr("Spline - Fixed"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("SplPath_"), spl.FirstPoint().name(), spl.LastPoint().name(), true);
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolTriangle(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolTriangle(QGraphicsItem *item)
 {
-    VToolTriangle *i = qgraphicsitem_cast<VToolTriangle *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Tool triangle"));
+    VToolTriangle *tool = qgraphicsitem_cast<VToolTriangle *>(item);
+    tool->ShowVisualization(true);
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->AxisP1Name(), tr("First point of axis:"), AttrAxisP1);
-    AddPropertyParentPointName(i->AxisP2Name(), tr("Second point of axis:"), AttrAxisP2);
-    AddPropertyParentPointName(i->FirstPointName(), tr("First point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondPointName(), tr("Second point:"), AttrSecondPoint);
+    formView->setTitle(tr("Point - Intersect Axis and Triangle"));
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->AxisP1Name(), tr("1st axis point:"), AttrAxisP1, GOType::Point);
+    addObjectProperty(tool, tool->AxisP2Name(), tr("2nd axis point:"), AttrAxisP2, GOType::Point);
+    addObjectProperty(tool, tool->FirstPointName(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondPointName(), tr("Second point:"), AttrSecondPoint, GOType::Point);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolLineIntersectAxis(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolLineIntersectAxis(QGraphicsItem *item)
 {
-    VToolLineIntersectAxis *i = qgraphicsitem_cast<VToolLineIntersectAxis *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point intersection line and axis"));
+    VToolLineIntersectAxis *tool = qgraphicsitem_cast<VToolLineIntersectAxis *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Line and Axis"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->FirstLinePoint(), tr("First line point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->SecondLinePoint(), tr("Second line point:"), AttrSecondPoint);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
+    addObjectProperty(tool, tool->FirstLinePoint(), tr("First point:"), AttrFirstPoint, GOType::Point);
+    addObjectProperty(tool, tool->SecondLinePoint(), tr("Second point:"), AttrSecondPoint, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolCurveIntersectAxis(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolCurveIntersectAxis(QGraphicsItem *item)
 {
-    VToolCurveIntersectAxis *i = qgraphicsitem_cast<VToolCurveIntersectAxis *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Point intersection curve and axis"));
+    VToolCurveIntersectAxis *tool = qgraphicsitem_cast<VToolCurveIntersectAxis *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Point - Intersect Curve and Axis"));
 
-    AddPropertyObjectName(i, tr("Point label:"));
-    AddPropertyParentPointName(i->BasePointName(), tr("Axis point:"), AttrBasePoint);
-    AddPropertyParentPointName(i->CurveName(), tr("Curve:"), AttrCurve);
-    AddPropertyLineType(i, tr("Linetype:"), LineStylesPics());
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrLineColor);
-    AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyObjectName(tool, tr("Name:"));
+    addObjectProperty(tool, tool->BasePointName(), tr("Axis point:"), AttrBasePoint, GOType::Point);
+
+    addObjectProperty(tool, tool->CurveName(), tr("Curve:"), AttrCurve, GOType::AllCurves);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrLineColor);
+    addPropertyLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolRotation(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolRotation(QGraphicsItem *item)
 {
-    VToolRotation *i = qgraphicsitem_cast<VToolRotation *>(item);
-    i->ShowVisualization(true);
+    VToolRotation *tool = qgraphicsitem_cast<VToolRotation *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("Rotation"));
 
-    AddPropertyParentPointName(i->getOriginPointName(), tr("Rotation point:"), AttrCenter);
-    AddPropertyOperationSuffix(i, tr("Suffix:"));
-    AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addObjectProperty(tool, tool->getOriginPointName(), tr("Rotation point:"), AttrCenter, GOType::Point);
+    addPropertyOperationSuffix(tool, tr("Suffix:"));
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolMove(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolMove(QGraphicsItem *item)
 {
-    VToolMove *i = qgraphicsitem_cast<VToolMove *>(item);
-    i->ShowVisualization(true);
+    VToolMove *tool = qgraphicsitem_cast<VToolMove *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("Move"));
 
-    AddPropertyOperationSuffix(i, tr("Suffix:"));
-    AddPropertyParentPointName(i->getOriginPointName(), tr("Rotation origin point:"), AttrCenter);
-    AddPropertyFormula(tr("Angle:"), i->GetFormulaAngle(), AttrAngle);
-    AddPropertyFormula(tr("Length:"), i->GetFormulaLength(), AttrLength);
-    AddPropertyFormula(tr("Rotation angle:"), i->getFormulaRotation(), AttrRotationAngle);    
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyOperationSuffix(tool, tr("Suffix:"));
+    QString originPointName = tool->getOriginPointName();
+    addObjectProperty(tool, originPointName, tr("Origin point:"), AttrCenter, GOType::Point);
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Angle:"), tool->GetFormulaAngle(), AttrAngle);
+    addPropertyFormula(tr("Length:"), tool->GetFormulaLength(), AttrLength);
+    addPropertyFormula(tr("Rotation angle:"), tool->getFormulaRotation(), AttrRotationAngle);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolMirrorByLine(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolMirrorByLine(QGraphicsItem *item)
 {
-    VToolMirrorByLine *i = qgraphicsitem_cast<VToolMirrorByLine *>(item);
-    i->ShowVisualization(true);
+    VToolMirrorByLine *tool = qgraphicsitem_cast<VToolMirrorByLine *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("Mirror by Line"));
 
-    AddPropertyParentPointName(i->firstLinePointName(), tr("First line point:"), AttrFirstPoint);
-    AddPropertyParentPointName(i->secondLinePointName(), tr("Second line point:"), AttrSecondPoint);
-    AddPropertyOperationSuffix(i, tr("Suffix:"));
+    addPropertyLabel(tr("Selection"), AttrName);
+
+    addObjectProperty(tool, tool->firstLinePointName(), tr("First line point:"), AttrP1Line, GOType::Point);
+    addObjectProperty(tool, tool->secondLinePointName(), tr("Second line point:"), AttrP2Line, GOType::Point);
+
+    addPropertyOperationSuffix(tool, tr("Suffix:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolMirrorByAxis(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolMirrorByAxis(QGraphicsItem *item)
 {
-    VToolMirrorByAxis *i = qgraphicsitem_cast<VToolMirrorByAxis *>(item);
-    i->ShowVisualization(true);
+    VToolMirrorByAxis *tool = qgraphicsitem_cast<VToolMirrorByAxis *>(item);
+    tool->ShowVisualization(true);
     formView->setTitle(tr("Mirror by Axis"));
 
-    AddPropertyParentPointName(i->getOriginPointName(), tr("Axis point:"), AttrCenter);
-    AddPropertyAxisType(i, tr("Axis type:"));
-    AddPropertyOperationSuffix(i, tr("Suffix:"));
-
+    addPropertyLabel(tr("Selection"), AttrName);
+    addObjectProperty(tool, tool->getOriginPointName(), tr("Axis point:"), AttrCenter, GOType::Point);
+    addPropertyAxisType(tool, tr("Axis type:"));
+    addPropertyOperationSuffix(tool, tr("Suffix:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::ShowOptionsToolEllipticalArc(QGraphicsItem *item)
+void VToolOptionsPropertyBrowser::showOptionsToolEllipticalArc(QGraphicsItem *item)
 {
-    VToolEllipticalArc *i = qgraphicsitem_cast<VToolEllipticalArc *>(item);
-    i->ShowVisualization(true);
-    formView->setTitle(tr("Elliptical arc"));
+    VToolEllipticalArc *tool = qgraphicsitem_cast<VToolEllipticalArc *>(item);
+    tool->ShowVisualization(true);
+    formView->setTitle(tr("Arc - Elliptical"));
 
-    AddPropertyParentPointName(i->CenterPointName(), tr("Center point:"), AttrCenter);
-    AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius1(), AttrRadius1);
-    AddPropertyFormula(tr("Radius:"), i->GetFormulaRadius2(), AttrRadius2);
-    AddPropertyFormula(tr("First angle:"), i->GetFormulaF1(), AttrAngle1);
-    AddPropertyFormula(tr("Second angle:"), i->GetFormulaF2(), AttrAngle2);
-    AddPropertyFormula(tr("Rotation angle:"), i->GetFormulaRotationAngle(), AttrRotationAngle);
-    AddPropertyLineColor(i, tr("Color:"), VAbstractTool::ColorsList(), AttrColor);
+    addPropertyLabel(tr("Selection"), AttrName);
+    addPropertyCurveName(tool, tr("Name:"), tr("Arc_"), tool->CenterPointName(), QString().setNum(tool->getId()), true);
+    addObjectProperty(tool, tool->CenterPointName(), tr("Center point:"), AttrCenter, GOType::Point);
+
+    addPropertyLabel(tr("Geometry"), AttrName);
+    addPropertyFormula(tr("Radius:"), tool->GetFormulaRadius1(), AttrRadius1);
+    addPropertyFormula(tr("Radius:"), tool->GetFormulaRadius2(), AttrRadius2);
+    addPropertyFormula(tr("First angle:"), tool->GetFormulaF1(), AttrAngle1);
+    addPropertyFormula(tr("Second angle:"), tool->GetFormulaF2(), AttrAngle2);
+    addPropertyFormula(tr("Rotation angle:"), tool->GetFormulaRotationAngle(), AttrRotationAngle);
+
+    addPropertyLabel(tr("Attributes"), AttrName);
+    addPropertyLineColor(tool, tr("Color:"), AttrColor);
+    addPropertyCurveLineType(tool, tr("Linetype:"));
+    addPropertyLineWeight(tool, tr("Lineweight:"));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolSinglePoint()
+void VToolOptionsPropertyBrowser::updateOptionsToolSinglePoint()
 {
-    VToolBasePoint *i = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[QLatin1String("position")]->setValue(i->GetBasePointPos());
+    VToolBasePoint *tool = qgraphicsitem_cast<VToolBasePoint *>(currentItem);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[QLatin1String("Coordinates")]->setValue(tool->GetBasePointPos());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolEndLine()
+void VToolOptionsPropertyBrowser::updateOptionsToolEndLine()
 {
-    VToolEndLine *i = qgraphicsitem_cast<VToolEndLine *>(currentItem);
-    idToProperty[AttrName]->setValue(i->name());
+    VToolEndLine *tool = qgraphicsitem_cast<VToolEndLine *>(currentItem);
+    idToProperty[AttrName]->setValue(tool->name());
 
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
     }
 
     {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
     }
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormulaLength());
+    valueFormula.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueFormula);
 
     QVariant valueAngle;
-    valueAngle.setValue(i->GetFormulaAngle());
+    valueAngle.setValue(tool->GetFormulaAngle());
     idToProperty[AttrAngle]->setValue(valueAngle);
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolAlongLine()
+void VToolOptionsPropertyBrowser::updateOptionsToolAlongLine()
 {
-    VToolAlongLine *i = qgraphicsitem_cast<VToolAlongLine *>(currentItem);
-    idToProperty[AttrName]->setValue(i->name());
+    VToolAlongLine *tool = qgraphicsitem_cast<VToolAlongLine *>(currentItem);
+    idToProperty[AttrName]->setValue(tool->name());
 
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
     }
 
     {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
     }
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormulaLength());
+    valueFormula.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueFormula);
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolArc()
+void VToolOptionsPropertyBrowser::updateOptionsToolArc()
 {
-    VToolArc *i = qgraphicsitem_cast<VToolArc *>(currentItem);
+    VToolArc *tool = qgraphicsitem_cast<VToolArc *>(currentItem);
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + tool->CenterPointName() + "_" + QString().setNum(tool->getId()));
 
     QVariant valueRadius;
-    valueRadius.setValue(i->GetFormulaRadius());
+    valueRadius.setValue(tool->GetFormulaRadius());
     idToProperty[AttrRadius]->setValue(valueRadius);
 
     QVariant valueFirstAngle;
-    valueFirstAngle.setValue(i->GetFormulaF1());
+    valueFirstAngle.setValue(tool->GetFormulaF1());
     idToProperty[AttrAngle1]->setValue(valueFirstAngle);
 
     QVariant valueSecondAngle;
-    valueSecondAngle.setValue(i->GetFormulaF2());
+    valueSecondAngle.setValue(tool->GetFormulaF2());
     idToProperty[AttrAngle2]->setValue(valueSecondAngle);
 
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->CenterPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
     {
-        const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-        idToProperty[AttrColor]->setValue(index);
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
     }
-
-    QVariant valueCenterPoint;
-    valueCenterPoint.setValue(i->CenterPointName());
-    idToProperty[AttrCenter]->setValue(valueCenterPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolArcWithLength()
+void VToolOptionsPropertyBrowser::updateOptionsToolArcWithLength()
 {
-    VToolArcWithLength *i = qgraphicsitem_cast<VToolArcWithLength *>(currentItem);
+    VToolArcWithLength *tool = qgraphicsitem_cast<VToolArcWithLength *>(currentItem);
+
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + tool->CenterPointName() + "_" + QString().setNum(tool->getId()));
 
     QVariant valueRadius;
-    valueRadius.setValue(i->GetFormulaRadius());
+    valueRadius.setValue(tool->GetFormulaRadius());
     idToProperty[AttrRadius]->setValue(valueRadius);
 
     QVariant valueFirstAngle;
-    valueFirstAngle.setValue(i->GetFormulaF1());
+    valueFirstAngle.setValue(tool->GetFormulaF1());
     idToProperty[AttrAngle1]->setValue(valueFirstAngle);
 
     QVariant valueLength;
-    valueLength.setValue(i->GetFormulaLength());
+    valueLength.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueLength);
 
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->CenterPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
     {
-        const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-        idToProperty[AttrColor]->setValue(index);
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
     }
-
-    QVariant valueCenterPoint;
-    valueCenterPoint.setValue(i->CenterPointName());
-    idToProperty[AttrCenter]->setValue(valueCenterPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolBisector()
+void VToolOptionsPropertyBrowser::updateOptionsToolBisector()
 {
-    VToolBisector *i = qgraphicsitem_cast<VToolBisector *>(currentItem);
+    VToolBisector *tool = qgraphicsitem_cast<VToolBisector *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormulaLength());
+    valueFormula.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueFormula);
 
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
     }
 
     {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
     }
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueThirdPoint;
-    valueThirdPoint.setValue(i->ThirdPointName());
-    idToProperty[AttrThirdPoint]->setValue(valueThirdPoint);
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstPointName());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ThirdPointName());
+        idToProperty[AttrThirdPoint]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolTrueDarts()
+void VToolOptionsPropertyBrowser::updateOptionsToolTrueDarts()
 {
-    VToolTrueDarts *i = qgraphicsitem_cast<VToolTrueDarts *>(currentItem);
+    VToolTrueDarts *tool = qgraphicsitem_cast<VToolTrueDarts *>(currentItem);
 
-    idToProperty[AttrName1]->setValue(i->nameP1());
-    idToProperty[AttrName2]->setValue(i->nameP2());
+    idToProperty[AttrName1]->setValue(tool->nameP1());
+    idToProperty[AttrName2]->setValue(tool->nameP2());
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->BaseLineP1Name());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BaseLineP1Name());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BaseLineP2Name());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->BaseLineP2Name());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->DartP1Name());
+        idToProperty[AttrDartP1]->setValue(index);
+    }
 
-    QVariant valueDrartFirstPoint;
-    valueDrartFirstPoint.setValue(i->DartP1Name());
-    idToProperty[AttrDartP1]->setValue(valueDrartFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->DartP2Name());
+        idToProperty[AttrDartP2]->setValue(index);
+    }
 
-    QVariant valueDartSecondPoint;
-    valueDartSecondPoint.setValue(i->DartP2Name());
-    idToProperty[AttrDartP2]->setValue(valueDartSecondPoint);
-
-    QVariant valueDartThirdPoint;
-    valueDartThirdPoint.setValue(i->DartP3Name());
-    idToProperty[AttrDartP3]->setValue(valueDartThirdPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->DartP3Name());
+        idToProperty[AttrDartP3]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCutArc()
+void VToolOptionsPropertyBrowser::updateOptionsToolCutArc()
 {
-    VToolCutArc *i = qgraphicsitem_cast<VToolCutArc *>(currentItem);
+    VToolCutArc *tool = qgraphicsitem_cast<VToolCutArc *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                               tool->CurveName());
+        idToProperty[AttrArc]->setValue(index);
+    }
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormula());
+    valueFormula.setValue(tool->GetFormula());
+    idToProperty[AttrLength]->setValue(valueFormula);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolCutSpline()
+{
+    VToolCutSpline *tool = qgraphicsitem_cast<VToolCutSpline *>(currentItem);
+
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Spline),
+                                                                               tool->CurveName());
+        idToProperty[AttrCurve]->setValue(index);
+    }
+
+    QVariant valueFormula;
+    valueFormula.setValue(tool->GetFormula());
+    idToProperty[AttrLength]->setValue(valueFormula);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolCutSplinePath()
+{
+    VToolCutSplinePath *tool = qgraphicsitem_cast<VToolCutSplinePath *>(currentItem);
+
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::SplinePath),
+                                                                               tool->CurveName());
+        idToProperty[AttrCurve]->setValue(index);
+    }
+
+    QVariant valueFormula;
+    valueFormula.setValue(tool->GetFormula());
+    idToProperty[AttrLength]->setValue(valueFormula);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolHeight()
+{
+    VToolHeight *tool = qgraphicsitem_cast<VToolHeight *>(currentItem);
+
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstLinePointName());
+        idToProperty[AttrP1Line]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondLinePointName());
+        idToProperty[AttrP2Line]->setValue(index);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolLine()
+{
+    VToolLine *tool = qgraphicsitem_cast<VToolLine *>(currentItem);
+
+    idToProperty[AttrObjName]->setValue(tr("Line_") + tool->FirstPointName() + "_" + tool->SecondPointName());
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstPointName());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolLineIntersect()
+{
+    VToolLineIntersect *tool = qgraphicsitem_cast<VToolLineIntersect *>(currentItem);
+
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->Line1P1Name());
+        idToProperty[AttrP1Line1]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->Line1P2Name());
+        idToProperty[AttrP2Line1]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->Line2P1Name());
+        idToProperty[AttrP1Line2]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->Line2P2Name());
+        idToProperty[AttrP2Line2]->setValue(index);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolNormal()
+{
+    VToolNormal *tool = qgraphicsitem_cast<VToolNormal *>(currentItem);
+
+    QVariant valueFormula;
+    valueFormula.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueFormula);
 
-    QVariant valueArc;
-    valueArc.setValue(i->CurveName());
-    idToProperty[AttrArc]->setValue(valueArc);
+    idToProperty[AttrName]->setValue(tool->name());
+
+    idToProperty[AttrAngle]->setValue( tool->GetAngle());
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCutSpline()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointOfContact()
 {
-    VToolCutSpline *i = qgraphicsitem_cast<VToolCutSpline *>(currentItem);
-
-    idToProperty[AttrName]->setValue(i->name());
+    VToolPointOfContact *tool = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormula());
-    idToProperty[AttrLength]->setValue(valueFormula);
-
-    QVariant valueCurve;
-    valueCurve.setValue(i->CurveName());
-    idToProperty[AttrCurve]->setValue(valueCurve);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCutSplinePath()
-{
-    VToolCutSplinePath *i = qgraphicsitem_cast<VToolCutSplinePath *>(currentItem);
-
-    idToProperty[AttrName]->setValue(i->name());
-
-    QVariant valueFormula;
-    valueFormula.setValue(i->GetFormula());
-    idToProperty[AttrLength]->setValue(valueFormula);
-
-    QVariant valueCurve;
-    valueCurve.setValue(i->CurveName());
-    idToProperty[AttrCurve]->setValue(valueCurve);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolHeight()
-{
-    VToolHeight *i = qgraphicsitem_cast<VToolHeight *>(currentItem);
-
-    idToProperty[AttrName]->setValue(i->name());
-
-    {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
-    }
-
-    {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
-    }
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueFirstLinePoint;
-    valueFirstLinePoint.setValue(i->FirstLinePointName());
-    idToProperty[AttrP1Line]->setValue(valueFirstLinePoint);
-
-    QVariant valueSecondLinePoint;
-    valueSecondLinePoint.setValue(i->SecondLinePointName());
-    idToProperty[AttrP2Line]->setValue(valueSecondLinePoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolLine()
-{
-    VToolLine *i = qgraphicsitem_cast<VToolLine *>(currentItem);
-
-    {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
-    }
-
-    {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
-    }
-
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
-
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolLineIntersect()
-{
-    VToolLineIntersect *i = qgraphicsitem_cast<VToolLineIntersect *>(currentItem);
-
-    idToProperty[AttrName]->setValue(i->name());
-
-    QVariant valueLine1P1;
-    valueLine1P1.setValue(i->Line1P1Name());
-    idToProperty[AttrP1Line1]->setValue(valueLine1P1);
-
-    QVariant valueLine1P2;
-    valueLine1P2.setValue(i->Line1P2Name());
-    idToProperty[AttrP2Line1]->setValue(valueLine1P2);
-
-    QVariant valueLine2P1;
-    valueLine2P1.setValue(i->Line2P1Name());
-    idToProperty[AttrP1Line2]->setValue(valueLine2P1);
-
-    QVariant valueLine2P2;
-    valueLine2P2.setValue(i->Line2P2Name());
-    idToProperty[AttrP2Line2]->setValue(valueLine2P2);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolNormal()
-{
-    VToolNormal *i = qgraphicsitem_cast<VToolNormal *>(currentItem);
-
-    QVariant valueFormula;
-    valueFormula.setValue(i->GetFormulaLength());
-    idToProperty[AttrLength]->setValue(valueFormula);
-
-    idToProperty[AttrName]->setValue(i->name());
-
-    idToProperty[AttrAngle]->setValue( i->GetAngle());
-
-    {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
-    }
-
-    {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
-    }
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfContact()
-{
-    VToolPointOfContact *i = qgraphicsitem_cast<VToolPointOfContact *>(currentItem);
-
-    QVariant valueFormula;
-    valueFormula.setValue(i->getArcRadius());
+    valueFormula.setValue(tool->getArcRadius());
     idToProperty[AttrRadius]->setValue(valueFormula);
 
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
 
-    QVariant valueCenterPoint;
-    valueCenterPoint.setValue(i->ArcCenterPointName());
-    idToProperty[AttrCenter]->setValue(valueCenterPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ArcCenterPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstPointName());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersection()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointOfIntersection()
 {
-    VToolPointOfIntersection *i = qgraphicsitem_cast<VToolPointOfIntersection *>(currentItem);
+    PointIntersectXYTool *tool = qgraphicsitem_cast<PointIntersectXYTool *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->firstPointName());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->secondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionArcs()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointOfIntersectionArcs()
 {
-    VToolPointOfIntersectionArcs *i = qgraphicsitem_cast<VToolPointOfIntersectionArcs *>(currentItem);
+    VToolPointOfIntersectionArcs *tool = qgraphicsitem_cast<VToolPointOfIntersectionArcs *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
 
-    QVariant valueFirstArc;
-    valueFirstArc.setValue(i->FirstArcName());
-    idToProperty[AttrFirstArc]->setValue(valueFirstArc);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                               tool->FirstArcName());
+        idToProperty[AttrFirstArc]->setValue(index);
+    }
 
-    QVariant valueSecondArc;
-    valueSecondArc.setValue(i->SecondArcName());
-    idToProperty[AttrSecondArc]->setValue(valueSecondArc);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                               tool->SecondArcName());
+        idToProperty[AttrSecondArc]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionCircles()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointOfIntersectionCircles()
 {
-    IntersectCirclesTool *i = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
+    IntersectCirclesTool *tool = qgraphicsitem_cast<IntersectCirclesTool *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
 
     QVariant c1Radius;
-    c1Radius.setValue(i->GetFirstCircleRadius());
+    c1Radius.setValue(tool->GetFirstCircleRadius());
     idToProperty[AttrC1Radius]->setValue(c1Radius);
 
     QVariant c2Radius;
-    c2Radius.setValue(i->GetSecondCircleRadius());
+    c2Radius.setValue(tool->GetSecondCircleRadius());
     idToProperty[AttrC2Radius]->setValue(c2Radius);
 
-    QVariant valueC1Center;
-    valueC1Center.setValue(i->FirstCircleCenterPointName());
-    idToProperty[AttrC1Center]->setValue(valueC1Center);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstCircleCenterPointName());
+        idToProperty[AttrC1Center]->setValue(index);
+    }
 
-    QVariant valueC2Center;
-    valueC2Center.setValue(i->SecondCircleCenterPointName());
-    idToProperty[AttrC2Center]->setValue(valueC2Center);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondCircleCenterPointName());
+        idToProperty[AttrC2Center]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointOfIntersectionCurves()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointOfIntersectionCurves()
 {
-    auto i = qgraphicsitem_cast<VToolPointOfIntersectionCurves *>(currentItem);
+    VToolPointOfIntersectionCurves *tool = qgraphicsitem_cast<VToolPointOfIntersectionCurves *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[AttrVCrossPoint]->setValue(static_cast<int>(i->GetVCrossPoint())-1);
-    idToProperty[AttrHCrossPoint]->setValue(static_cast<int>(i->GetHCrossPoint())-1);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[AttrVCrossPoint]->setValue(static_cast<int>(tool->GetVCrossPoint())-1);
+    idToProperty[AttrHCrossPoint]->setValue(static_cast<int>(tool->GetHCrossPoint())-1);
 
-    QVariant valueCurve1;
-    valueCurve1.setValue(i->FirstCurveName());
-    idToProperty[AttrCurve1]->setValue(valueCurve1);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstCurveName());
+        idToProperty[AttrCurve1]->setValue(index);
+    }
 
-    QVariant valueCurve2;
-    valueCurve2.setValue(i->SecondCurveName());
-    idToProperty[AttrCurve2]->setValue(valueCurve2);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondCurveName());
+        idToProperty[AttrCurve2]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointFromCircleAndTangent()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointFromCircleAndTangent()
 {
-    IntersectCircleTangentTool *i = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
+    IntersectCircleTangentTool *tool = qgraphicsitem_cast<IntersectCircleTangentTool *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
 
     QVariant cRadius;
-    cRadius.setValue(i->GetCircleRadius());
+    cRadius.setValue(tool->GetCircleRadius());
     idToProperty[AttrCRadius]->setValue(cRadius);
 
-    QVariant valueCenterPoint;
-    valueCenterPoint.setValue(i->CircleCenterPointName());
-    idToProperty[AttrCCenter]->setValue(valueCenterPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->CircleCenterPointName());
+        idToProperty[AttrCCenter]->setValue(index);
+    }
 
-    QVariant valueTangentPoint;
-    valueTangentPoint.setValue(i->TangentPointName());
-    idToProperty[AttrTangent]->setValue(valueTangentPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->TangentPointName());
+        idToProperty[AttrTangent]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolPointFromArcAndTangent()
+void VToolOptionsPropertyBrowser::updateOptionsToolPointFromArcAndTangent()
 {
-    VToolPointFromArcAndTangent *i = qgraphicsitem_cast<VToolPointFromArcAndTangent *>(currentItem);
+    VToolPointFromArcAndTangent *tool = qgraphicsitem_cast<VToolPointFromArcAndTangent *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(i->GetCrossCirclesPoint())-1);
+    idToProperty[AttrName]->setValue(tool->name());
+    idToProperty[AttrCrossPoint]->setValue(static_cast<int>(tool->GetCrossCirclesPoint())-1);
 
-    QVariant valueTangentPoint;
-    valueTangentPoint.setValue(i->TangentPointName());
-    idToProperty[AttrTangent]->setValue(valueTangentPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->TangentPointName());
+        idToProperty[AttrTangent]->setValue(index);
+    }
 
-    QVariant valueArc;
-    valueArc.setValue(i->ArcName());
-    idToProperty[AttrArc]->setValue(valueArc);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Arc),
+                                                                               tool->ArcName());
+        idToProperty[AttrArc]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolShoulderPoint()
+void VToolOptionsPropertyBrowser::updateOptionsToolShoulderPoint()
 {
-    VToolShoulderPoint *i = qgraphicsitem_cast<VToolShoulderPoint *>(currentItem);
+    VToolShoulderPoint *tool = qgraphicsitem_cast<VToolShoulderPoint *>(currentItem);
 
     QVariant valueFormula;
-    valueFormula.setValue(i->GetFormulaLength());
+    valueFormula.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueFormula);
 
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
 
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
     }
 
     {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
     }
 
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
 
-    QVariant valueThirdPoint;
-    valueThirdPoint.setValue(i->ShoulderPointName());
-    idToProperty[AttrThirdPoint]->setValue(valueThirdPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->ShoulderPointName());
+        idToProperty[AttrThirdPoint]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolSpline()
+void VToolOptionsPropertyBrowser::updateOptionsToolSpline()
 {
-    auto i = qgraphicsitem_cast<VToolSpline *>(currentItem);
-    const VSpline spl = i->getSpline();
+    VToolSpline *tool = qgraphicsitem_cast<VToolSpline *>(currentItem);
+    const VSpline spl = tool->getSpline();
+    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP1().name());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
 
-    VFormula angle1F(spl.GetStartAngleFormula(), i->getData());
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP4().name());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
+
+    VFormula angle1F(spl.GetStartAngleFormula(), tool->getData());
     angle1F.setCheckZero(false);
-    angle1F.setToolId(i->getId());
+    angle1F.setToolId(tool->getId());
     angle1F.setPostfix(degreeSymbol);
     QVariant angle1;
     angle1.setValue(angle1F);
     idToProperty[AttrAngle1]->setValue(angle1);
 
-    VFormula length1F(spl.GetC1LengthFormula(), i->getData());
+    VFormula length1F(spl.GetC1LengthFormula(), tool->getData());
     length1F.setCheckZero(false);
-    length1F.setToolId(i->getId());
+    length1F.setToolId(tool->getId());
     length1F.setPostfix(UnitsToStr(qApp->patternUnit()));
     QVariant length1;
     length1.setValue(length1F);
     idToProperty[AttrLength1]->setValue(length1);
 
-    VFormula angle2F(spl.GetEndAngleFormula(), i->getData());
+    VFormula angle2F(spl.GetEndAngleFormula(), tool->getData());
     angle2F.setCheckZero(false);
-    angle2F.setToolId(i->getId());
+    angle2F.setToolId(tool->getId());
     angle2F.setPostfix(degreeSymbol);
     QVariant angle2;
     angle2.setValue(angle2F);
     idToProperty[AttrAngle2]->setValue(angle2);
 
-    VFormula length2F(spl.GetC2LengthFormula(), i->getData());
+    VFormula length2F(spl.GetC2LengthFormula(), tool->getData());
     length2F.setCheckZero(false);
-    length2F.setToolId(i->getId());
+    length2F.setToolId(tool->getId());
     length2F.setPostfix(UnitsToStr(qApp->patternUnit()));
     QVariant length2;
     length2.setValue(length2F);
     idToProperty[AttrLength2]->setValue(length2);
 
+
+
+    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
+                                                                            tool->getLineColor()));
+
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(),
-                                                                            i->GetLineColor()));
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCubicBezier()
+void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezier()
 {
-    auto i = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
+    VToolCubicBezier *tool = qgraphicsitem_cast<VToolCubicBezier *>(currentItem);
+    const auto spl = tool->getSpline();
+    idToProperty[AttrObjName]->setValue(tr("Spl_") + spl.GetP1().name() + "_" + spl.GetP4().name());
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
+                                                                            tool->getLineColor()));
 
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(),
-                                                                       i->GetLineColor()));
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrPoint1]->setValue(valueFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP1().name());
+        idToProperty[AttrPoint1]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrPoint2]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP2().name());
+        idToProperty[AttrPoint2]->setValue(index);
+    }
 
-    QVariant valueThirdPoint;
-    valueThirdPoint.setValue(i->ThirdPointName());
-    idToProperty[AttrPoint3]->setValue(valueThirdPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP3().name());
+        idToProperty[AttrPoint3]->setValue(index);
+    }
 
-    QVariant valueForthPoint;
-    valueForthPoint.setValue(i->ForthPointName());
-    idToProperty[AttrPoint4]->setValue(valueForthPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               spl.GetP4().name());
+        idToProperty[AttrPoint4]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolSplinePath()
+void VToolOptionsPropertyBrowser::updateOptionsToolSplinePath()
 {
-    auto i = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
+    VToolSplinePath *tool = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+
+    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
+                                                                            tool->getLineColor()));
 
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(),
-                                                                            i->GetLineColor()));
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCubicBezierPath()
+void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierPath()
 {
-    auto i = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
+    VToolCubicBezierPath *tool = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(i->name()));
+    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+
+    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
+                                                                            tool->getLineColor()));
 
     {
-        const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(CurvePenStylesPics(), i->GetPenStyle());
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
         idToProperty[AttrPenStyle]->setValue(index);
     }
 
-    idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(),
-                                                                            i->GetLineColor()));
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolTriangle()
+void VToolOptionsPropertyBrowser::updateOptionsToolTriangle()
 {
-    VToolTriangle *i = qgraphicsitem_cast<VToolTriangle *>(currentItem);
+    VToolTriangle *tool = qgraphicsitem_cast<VToolTriangle *>(currentItem);
 
-    idToProperty[AttrName]->setValue(i->name());
-
-    QVariant valueAxisP1;
-    valueAxisP1.setValue(i->AxisP1Name());
-    idToProperty[AttrAxisP1]->setValue(valueAxisP1);
-
-    QVariant valueAxisP2;
-    valueAxisP2.setValue(i->AxisP2Name());
-    idToProperty[AttrAxisP2]->setValue(valueAxisP2);
-
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstPointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
-
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondPointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolLineIntersectAxis()
-{
-    VToolLineIntersectAxis *i = qgraphicsitem_cast<VToolLineIntersectAxis *>(currentItem);
-    idToProperty[AttrName]->setValue(i->name());
+    idToProperty[AttrName]->setValue(tool->name());
 
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->AxisP1Name());
+        idToProperty[AttrAxisP1]->setValue(index);
     }
 
     {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->AxisP2Name());
+        idToProperty[AttrAxisP2]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstPointName());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondPointName());
+        idToProperty[AttrSecondPoint]->setValue(index);
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolLineIntersectAxis()
+{
+    VToolLineIntersectAxis *tool = qgraphicsitem_cast<VToolLineIntersectAxis *>(currentItem);
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->FirstLinePoint());
+        idToProperty[AttrFirstPoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->SecondLinePoint());
+        idToProperty[AttrSecondPoint]->setValue(index);
     }
 
     QVariant valueAngle;
-    valueAngle.setValue(i->GetFormulaAngle());
+    valueAngle.setValue(tool->GetFormulaAngle());
+    idToProperty[AttrAngle]->setValue(valueAngle);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolCurveIntersectAxis()
+{
+    VToolCurveIntersectAxis *tool = qgraphicsitem_cast<VToolCurveIntersectAxis *>(currentItem);
+    idToProperty[AttrName]->setValue(tool->name());
+
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrLineColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(lineTypeList(), tool->getLineType());
+        idToProperty[AttrLineType]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->BasePointName());
+        idToProperty[AttrBasePoint]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::AllCurves),
+                                                                               tool->CurveName());
+        idToProperty[AttrCurve]->setValue(index);
+    }
+
+    QVariant valueAngle;
+    valueAngle.setValue(tool->GetFormulaAngle());
+    idToProperty[AttrAngle]->setValue(valueAngle);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolOptionsPropertyBrowser::updateOptionsToolRotation()
+{
+    VToolRotation *tool = qgraphicsitem_cast<VToolRotation *>(currentItem);
+    idToProperty[AttrSuffix]->setValue(tool->Suffix());
+
+    QVariant valueAngle;
+    valueAngle.setValue(tool->GetFormulaAngle());
     idToProperty[AttrAngle]->setValue(valueAngle);
 
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->FirstLinePoint());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
-
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->SecondLinePoint());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolCurveIntersectAxis()
-{
-    VToolCurveIntersectAxis *i = qgraphicsitem_cast<VToolCurveIntersectAxis *>(currentItem);
-    idToProperty[AttrName]->setValue(i->name());
-
     {
-    const qint32 index = VPE::VLineTypeProperty::IndexOfStyle(LineStylesPics(), i->getLineType());
-    idToProperty[AttrLineType]->setValue(index);
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->getOriginPointName());
+        idToProperty[AttrCenter]->setValue(index);
     }
-
-    {
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrLineColor]->setValue(index);
-    }
-
-    QVariant valueAngle;
-    valueAngle.setValue(i->GetFormulaAngle());
-    idToProperty[AttrAngle]->setValue(valueAngle);
-
-    QVariant valueBasePoint;
-    valueBasePoint.setValue(i->BasePointName());
-    idToProperty[AttrBasePoint]->setValue(valueBasePoint);
-
-    QVariant valueCurve;
-    valueCurve.setValue(i->CurveName());
-    idToProperty[AttrCurve]->setValue(valueCurve);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolRotation()
+void VToolOptionsPropertyBrowser::updateOptionsToolMove()
 {
-    VToolRotation *i = qgraphicsitem_cast<VToolRotation *>(currentItem);
-    idToProperty[AttrSuffix]->setValue(i->Suffix());
+    VToolMove *tool = qgraphicsitem_cast<VToolMove *>(currentItem);
+    idToProperty[AttrSuffix]->setValue(tool->Suffix());
 
     QVariant valueAngle;
-    valueAngle.setValue(i->GetFormulaAngle());
-    idToProperty[AttrAngle]->setValue(valueAngle);
-
-    QVariant valueOriginPoint;
-    valueOriginPoint.setValue(i->getOriginPointName());
-    idToProperty[AttrCenter]->setValue(valueOriginPoint);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolMove()
-{
-    VToolMove *i = qgraphicsitem_cast<VToolMove *>(currentItem);
-    idToProperty[AttrSuffix]->setValue(i->Suffix());
-
-    QVariant valueAngle;
-    valueAngle.setValue(i->GetFormulaAngle());
+    valueAngle.setValue(tool->GetFormulaAngle());
     idToProperty[AttrAngle]->setValue(valueAngle);
 
     QVariant valueLength;
-    valueLength.setValue(i->GetFormulaLength());
+    valueLength.setValue(tool->GetFormulaLength());
     idToProperty[AttrLength]->setValue(valueLength);
 
     QVariant valueRotation;
-    valueRotation.setValue(i->getFormulaRotation());
+    valueRotation.setValue(tool->getFormulaRotation());
     idToProperty[AttrRotationAngle]->setValue(valueRotation);
 
-    QVariant valueRotationOriginPoint;
-    valueRotationOriginPoint.setValue(i->getOriginPointName());
-    idToProperty[AttrCenter]->setValue(valueRotationOriginPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->getOriginPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolMirrorByLine()
+void VToolOptionsPropertyBrowser::updateOptionsToolMirrorByLine()
 {
-    VToolMirrorByLine *i = qgraphicsitem_cast<VToolMirrorByLine *>(currentItem);
-    idToProperty[AttrSuffix]->setValue(i->Suffix());
+    VToolMirrorByLine *tool = qgraphicsitem_cast<VToolMirrorByLine *>(currentItem);
+    idToProperty[AttrSuffix]->setValue(tool->Suffix());
 
-    QVariant valueFirstPoint;
-    valueFirstPoint.setValue(i->firstLinePointName());
-    idToProperty[AttrFirstPoint]->setValue(valueFirstPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->firstLinePointName());
+        idToProperty[AttrP1Line]->setValue(index);
+    }
 
-    QVariant valueSecondPoint;
-    valueSecondPoint.setValue(i->secondLinePointName());
-    idToProperty[AttrSecondPoint]->setValue(valueSecondPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->secondLinePointName());
+        idToProperty[AttrP2Line]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolMirrorByAxis()
+void VToolOptionsPropertyBrowser::updateOptionsToolMirrorByAxis()
 {
-    VToolMirrorByAxis *i = qgraphicsitem_cast<VToolMirrorByAxis *>(currentItem);
-    idToProperty[AttrAxisType]->setValue(static_cast<int>(i->getAxisType())-1);
-    idToProperty[AttrSuffix]->setValue(i->Suffix());
+    VToolMirrorByAxis *tool = qgraphicsitem_cast<VToolMirrorByAxis *>(currentItem);
+    idToProperty[AttrAxisType]->setValue(static_cast<int>(tool->getAxisType())-1);
+    idToProperty[AttrSuffix]->setValue(tool->Suffix());
 
-    QVariant valueOriginPoint;
-    valueOriginPoint.setValue(i->getOriginPointName());
-    idToProperty[AttrCenter]->setValue(valueOriginPoint);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->getOriginPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolOptionsPropertyBrowser::UpdateOptionsToolEllipticalArc()
+void VToolOptionsPropertyBrowser::updateOptionsToolEllipticalArc()
 {
-    VToolEllipticalArc *i = qgraphicsitem_cast<VToolEllipticalArc *>(currentItem);
+    VToolEllipticalArc *tool = qgraphicsitem_cast<VToolEllipticalArc *>(currentItem);
+
+    idToProperty[AttrObjName]->setValue(tr("Arc_") + tool->CenterPointName() + "_" + QString().setNum(tool->getId()));
 
     QVariant valueFormulaRadius1;
-    valueFormulaRadius1.setValue(i->GetFormulaRadius1());
+    valueFormulaRadius1.setValue(tool->GetFormulaRadius1());
     idToProperty[AttrRadius1]->setValue(valueFormulaRadius1);
 
     QVariant valueFormulaRadius2;
-    valueFormulaRadius2.setValue(i->GetFormulaRadius2());
+    valueFormulaRadius2.setValue(tool->GetFormulaRadius2());
     idToProperty[AttrRadius2]->setValue(valueFormulaRadius2);
 
     QVariant valueFormulaF1;
-    valueFormulaF1.setValue(i->GetFormulaF1());
+    valueFormulaF1.setValue(tool->GetFormulaF1());
     idToProperty[AttrAngle1]->setValue(valueFormulaF1);
 
     QVariant valueFormulaF2;
-    valueFormulaF2.setValue(i->GetFormulaF2());
+    valueFormulaF2.setValue(tool->GetFormulaF2());
     idToProperty[AttrAngle2]->setValue(valueFormulaF2);
 
     QVariant valueFormulaRotationAngle;
-    valueFormulaRotationAngle.setValue(i->GetFormulaRotationAngle());
+    valueFormulaRotationAngle.setValue(tool->GetFormulaRotationAngle());
     idToProperty[AttrRotationAngle]->setValue(valueFormulaRotationAngle);
 
-    const qint32 index = VPE::VLineColorProperty::IndexOfColor(VAbstractTool::ColorsList(), i->GetLineColor());
-    idToProperty[AttrColor]->setValue(index);
+    {
+        const qint32 index = VPE::VObjectProperty::indexOfObject(getObjectList(tool, GOType::Point),
+                                                                               tool->CenterPointName());
+        idToProperty[AttrCenter]->setValue(index);
+    }
 
-    QVariant valueCenterPoint;
-    valueCenterPoint.setValue(i->CenterPointName());
-    idToProperty[AttrCenter]->setValue(valueCenterPoint);
+    {
+        const qint32 index = VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(), tool->getLineColor());
+        idToProperty[AttrColor]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineTypeProperty::indexOfLineType(curveLineTypeList(), tool->GetPenStyle());
+        idToProperty[AttrPenStyle]->setValue(index);
+    }
+
+    {
+        const qint32 index = VPE::LineWeightProperty::indexOfLineWeight(lineWeightList(), tool->getLineWeight());
+        idToProperty[AttrLineWeight]->setValue(index);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VToolOptionsPropertyBrowser::PropertiesList() const
+QStringList VToolOptionsPropertyBrowser::propertiesList() const
 {
     static QStringList attr = QStringList() << AttrName                           /* 0 */
-                                            << QLatin1String("position")          /* 1 */
+                                            << QLatin1String("Coordinates")       /* 1 */
                                             << AttrBasePoint                      /* 2 */
                                             << AttrLineType                       /* 3 */
                                             << AttrLength                         /* 4 */
@@ -3316,6 +4131,8 @@ QStringList VToolOptionsPropertyBrowser::PropertiesList() const
                                             << AttrPoint2                         /* 56 */
                                             << AttrPoint3                         /* 57 */
                                             << AttrPoint4                         /* 58 */
-                                            << AttrPenStyle;                      /* 59 */
+                                            << AttrPenStyle                       /* 59 */
+                                            << AttrLineWeight                     /* 60 */
+                                            << AttrObjName;                      /* 61 */
     return attr;
 }

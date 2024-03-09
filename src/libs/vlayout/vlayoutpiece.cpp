@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vlayoutpiece.cpp
+ **  @author Douglas S Caskey
+ **  @date  17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vlayoutdetail.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -118,24 +119,24 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         Calculator cal1;
         rotationAngle = cal1.EvalFormula(pattern->DataVariables(), labelData.GetRotation());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
-    const quint32 topLeftPin = labelData.TopLeftPin();
-    const quint32 bottomRightPin = labelData.BottomRightPin();
+    const quint32 topLeftAnchorPoint = labelData.topLeftAnchorPoint();
+    const quint32 bottomRightAnchorPoint = labelData.bottomRightAnchorPoint();
 
-    if (topLeftPin != NULL_ID && bottomRightPin != NULL_ID)
+    if (topLeftAnchorPoint != NULL_ID && bottomRightAnchorPoint != NULL_ID)
     {
         try
         {
-            const auto topLeftPinPoint = pattern->GeometricObject<VPointF>(topLeftPin);
-            const auto bottomRightPinPoint = pattern->GeometricObject<VPointF>(bottomRightPin);
+            const auto topLeftAnchorPointPoint = pattern->GeometricObject<VPointF>(topLeftAnchorPoint);
+            const auto bottomRightAnchorPointPoint = pattern->GeometricObject<VPointF>(bottomRightAnchorPoint);
 
-            const QRectF labelRect = QRectF(static_cast<QPointF>(*topLeftPinPoint),
-                                            static_cast<QPointF>(*bottomRightPinPoint));
+            const QRectF labelRect = QRectF(static_cast<QPointF>(*topLeftAnchorPointPoint),
+                                            static_cast<QPointF>(*bottomRightAnchorPointPoint));
             labelWidth = qAbs(labelRect.width());
             labelHeight = qAbs(labelRect.height());
 
@@ -157,23 +158,23 @@ bool FindLabelGeometry(const VPatternLabelData &labelData, const VContainer *pat
         Calculator cal2;
         labelHeight = cal2.EvalFormula(pattern->DataVariables(), labelData.GetLabelHeight());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
-    const quint32 centerPin = labelData.CenterPin();
-    if (centerPin != NULL_ID)
+    const quint32 centerAnchor = labelData.centerAnchorPoint();
+    if (centerAnchor != NULL_ID)
     {
         try
         {
-            const auto centerPinPoint = pattern->GeometricObject<VPointF>(centerPin);
+            const auto centerAnchorPoint = pattern->GeometricObject<VPointF>(centerAnchor);
 
             const qreal lWidth = ToPixel(labelWidth, *pattern->GetPatternUnit());
             const qreal lHeight = ToPixel(labelHeight, *pattern->GetPatternUnit());
 
-            pos = static_cast<QPointF>(*centerPinPoint) - QRectF(0, 0, lWidth, lHeight).center();
+            pos = static_cast<QPointF>(*centerAnchorPoint) - QRectF(0, 0, lWidth, lHeight).center();
         }
         catch(const VExceptionBadId &)
         {
@@ -194,17 +195,17 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
 {
     SCASSERT(pattern != nullptr)
 
-    const quint32 topPin = data.TopPin();
-    const quint32 bottomPin = data.BottomPin();
+    const quint32 topAnchorPoint = data.topAnchorPoint();
+    const quint32 bottomAnchorPoint = data.bottomAnchorPoint();
 
-    if (topPin != NULL_ID && bottomPin != NULL_ID)
+    if (topAnchorPoint != NULL_ID && bottomAnchorPoint != NULL_ID)
     {
         try
         {
-            const auto topPinPoint = pattern->GeometricObject<VPointF>(topPin);
-            const auto bottomPinPoint = pattern->GeometricObject<VPointF>(bottomPin);
+            const auto topAnchor_Point = pattern->GeometricObject<VPointF>(topAnchorPoint);
+            const auto bottomAnchor_Point = pattern->GeometricObject<VPointF>(bottomAnchorPoint);
 
-            QLineF grainline(static_cast<QPointF>(*bottomPinPoint), static_cast<QPointF>(*topPinPoint));
+            QLineF grainline(static_cast<QPointF>(*bottomAnchor_Point), static_cast<QPointF>(*topAnchor_Point));
             length = grainline.length();
             rotationAngle = grainline.angle();
 
@@ -234,21 +235,21 @@ bool FindGrainlineGeometry(const VGrainlineData& data, const VContainer *pattern
         length = cal2.EvalFormula(pattern->DataVariables(), data.GetLength());
         length = ToPixel(length, *pattern->GetPatternUnit());
     }
-    catch(qmu::QmuParserError &e)
+    catch(qmu::QmuParserError &error)
     {
-        Q_UNUSED(e);
+        Q_UNUSED(error);
         return false;
     }
 
-    const quint32 centerPin = data.CenterPin();
-    if (centerPin != NULL_ID)
+    const quint32 centerAnchor = data.centerAnchorPoint();
+    if (centerAnchor != NULL_ID)
     {
         try
         {
-            const auto centerPinPoint = pattern->GeometricObject<VPointF>(centerPin);
+            const auto centerAnchorPoint = pattern->GeometricObject<VPointF>(centerAnchor);
 
-            QLineF grainline(centerPinPoint->x(), centerPinPoint->y(),
-                             centerPinPoint->x() + length / 2.0, centerPinPoint->y());
+            QLineF grainline(centerAnchorPoint->x(), centerAnchorPoint->y(),
+                             centerAnchorPoint->x() + length / 2.0, centerAnchorPoint->y());
 
             grainline.setAngle(qRadiansToDegrees(rotationAngle));
             grainline = QLineF(grainline.p2(), grainline.p1());
@@ -344,7 +345,7 @@ QVector<VSAPoint> PrepareAllowance(const QVector<QPointF> &points)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VLayoutDetail::RotatePoint rotates a point around the center for given angle
+ * @brief VLayoutPiece::RotatePoint rotates a point around the center for given angle
  * @param ptCenter center around which the point is rotated
  * @param pt point, which is rotated around the center
  * @param rotationAngle angle of rotation
@@ -378,11 +379,11 @@ QStringList PieceLabelText(const QVector<QPointF> &labelShape, const VTextManage
 //---------------------------------------------------------------------------------------------------------------------
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&detail) Q_DECL_NOTHROW { Swap(detail); return *this; }
+VLayoutPiece &VLayoutPiece::operator=(VLayoutPiece &&piece) Q_DECL_NOTHROW { Swap(piece); return *this; }
 #endif
 
-void VLayoutPiece::Swap(VLayoutPiece &detail) Q_DECL_NOTHROW
-{ VAbstractPiece::Swap(detail); std::swap(d, detail.d); }
+void VLayoutPiece::Swap(VLayoutPiece &piece) Q_DECL_NOTHROW
+{ VAbstractPiece::Swap(piece); std::swap(d, piece.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece::VLayoutPiece()
@@ -391,20 +392,20 @@ VLayoutPiece::VLayoutPiece()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiece::VLayoutPiece(const VLayoutPiece &detail)
-    : VAbstractPiece(detail),
-      d(detail.d)
+VLayoutPiece::VLayoutPiece(const VLayoutPiece &piece)
+    : VAbstractPiece(piece),
+      d(piece.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VLayoutPiece &VLayoutPiece::operator=(const VLayoutPiece &detail)
+VLayoutPiece &VLayoutPiece::operator=(const VLayoutPiece &piece)
 {
-    if ( &detail == this )
+    if ( &piece == this )
     {
         return *this;
     }
-    VAbstractPiece::operator=(detail);
-    d = detail.d;
+    VAbstractPiece::operator=(piece);
+    d = piece.d;
     return *this;
 }
 
@@ -415,22 +416,22 @@ VLayoutPiece::~VLayoutPiece()
 //---------------------------------------------------------------------------------------------------------------------
 VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern)
 {
-    VLayoutPiece det;
+    VLayoutPiece layoutPiece;
 
-    det.SetMx(piece.GetMx());
-    det.SetMy(piece.GetMy());
+    layoutPiece.SetMx(piece.GetMx());
+    layoutPiece.SetMy(piece.GetMy());
 
-    det.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
-    det.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
+    layoutPiece.SetCountourPoints(piece.MainPathPoints(pattern), piece.isHideSeamLine());
+    layoutPiece.setSeamAllowancePoints(piece.SeamAllowancePoints(pattern), piece.IsSeamAllowance(),
                                piece.IsSeamAllowanceBuiltIn());
-    det.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
-    det.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
-    det.setNotches(piece.createNotchLines(pattern));
+    layoutPiece.setInternalPaths(ConvertInternalPaths(piece, pattern, false));
+    layoutPiece.setCutoutPaths(ConvertInternalPaths(piece, pattern, true));
+    layoutPiece.setNotches(piece.createNotchLines(pattern));
 
-    det.SetName(piece.GetName());
+    layoutPiece.SetName(piece.GetName());
 
     // Very important to set main path first!
-    if (det.createMainPath().isEmpty())
+    if (layoutPiece.createMainPath().isEmpty() && layoutPiece.createAllowancePath().isEmpty())
     {
         throw VException (tr("Piece %1 doesn't have shape.").arg(piece.GetName()));
     }
@@ -438,26 +439,26 @@ VLayoutPiece VLayoutPiece::Create(const VPiece &piece, const VContainer *pattern
     const VPieceLabelData& pieceLabelData = piece.GetPatternPieceData();
     if (pieceLabelData.IsVisible() == true)
     {
-        det.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.SetPieceText(piece.GetName(), pieceLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VPatternLabelData& patternLabelData = piece.GetPatternInfo();
     if (patternLabelData.IsVisible() == true)
     {
         VAbstractPattern* pDoc = qApp->getCurrentDocument();
-        det.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
+        layoutPiece.SetPatternInfo(pDoc, patternLabelData, qApp->Settings()->getLabelFont(), pattern);
     }
 
     const VGrainlineData& grainlineGeom = piece.GetGrainlineGeometry();
     if (grainlineGeom.IsVisible() == true)
     {
-        det.setGrainline(grainlineGeom, pattern);
+        layoutPiece.setGrainline(grainlineGeom, pattern);
     }
 
-    det.SetSAWidth(qApp->toPixel(piece.GetSAWidth()));
-    det.SetForbidFlipping(piece.IsForbidFlipping());
+    layoutPiece.SetSAWidth(qApp->toPixel(piece.GetSAWidth()));
+    layoutPiece.SetForbidFlipping(piece.IsForbidFlipping());
 
-    return det;
+    return layoutPiece;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -495,7 +496,7 @@ void VLayoutPiece::setSeamAllowancePoints(const QVector<QPointF> &points, bool s
         }
         else if (not IsSeamAllowanceBuiltIn())
         {
-            qWarning()<<"Seam allowance is empty.";
+            qWarning() << "Seam allowance is empty.";
             SetSeamAllowance(false);
         }
     }
@@ -510,9 +511,9 @@ QVector<QPointF> VLayoutPiece::getLayoutAllowancePoints() const
 //---------------------------------------------------------------------------------------------------------------------
 QPointF VLayoutPiece::GetPieceTextPosition() const
 {
-    if (d->detailLabel.count() > 2)
+    if (d->pieceLabel.count() > 2)
     {
-        return d->transform.map(d->detailLabel.first());
+        return d->transform.map(d->pieceLabel.first());
     }
     else
     {
@@ -523,7 +524,7 @@ QPointF VLayoutPiece::GetPieceTextPosition() const
 //---------------------------------------------------------------------------------------------------------------------
 QStringList VLayoutPiece::GetPieceText() const
 {
-    return PieceLabelText(d->detailLabel, d->m_tmDetail);
+    return PieceLabelText(d->pieceLabel, d->m_tmPiece);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -557,15 +558,15 @@ void VLayoutPiece::SetPieceText(const QString& qsName, const VPieceLabelData& da
     }
 
     QScopedPointer<QGraphicsItem> item(getMainPathItem());
-    d->detailLabel = CorrectPosition(item->boundingRect(), v);
+    d->pieceLabel = CorrectPosition(item->boundingRect(), v);
 
     // generate text
-    d->m_tmDetail.setFont(font);
-    d->m_tmDetail.SetFontSize(data.getFontSize());
-    d->m_tmDetail.Update(qsName, data);
+    d->m_tmPiece.setFont(font);
+    d->m_tmPiece.SetFontSize(data.getFontSize());
+    d->m_tmPiece.Update(qsName, data);
     // this will generate the lines of text
-    d->m_tmDetail.SetFontSize(data.getFontSize());
-    d->m_tmDetail.FitFontSize(labelWidth, labelHeight);
+    d->m_tmPiece.SetFontSize(data.getFontSize());
+    d->m_tmPiece.FitFontSize(labelWidth, labelHeight);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -762,9 +763,9 @@ void VLayoutPiece::Mirror(const QLineF &edge)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPiece::DetailEdgesCount() const
+int VLayoutPiece::pieceEdgesCount() const
 {
-    return DetailPath().count();
+    return piecePath().count();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -774,9 +775,9 @@ int VLayoutPiece::LayoutEdgesCount() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QLineF VLayoutPiece::DetailEdge(int i) const
+QLineF VLayoutPiece::pieceEdge(int i) const
 {
-    return Edge(DetailPath(), i);
+    return Edge(piecePath(), i);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -786,9 +787,9 @@ QLineF VLayoutPiece::LayoutEdge(int i) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VLayoutPiece::DetailEdgeByPoint(const QPointF &p1) const
+int VLayoutPiece::pieceEdgeByPoint(const QPointF &p1) const
 {
-    return EdgeByPoint(DetailPath(), p1);
+    return EdgeByPoint(piecePath(), p1);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -798,7 +799,7 @@ int VLayoutPiece::LayoutEdgeByPoint(const QPointF &p1) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QRectF VLayoutPiece::DetailBoundingRect() const
+QRectF VLayoutPiece::pieceBoundingRect() const
 {
     QVector<QPointF> points;
     if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
@@ -857,7 +858,7 @@ qint64 VLayoutPiece::Square() const
         return 0;
     }
 
-    const qreal res = SumTrapezoids(d->layoutAllowance);
+    const qreal res = sumTrapezoids(d->layoutAllowance);
 
     const qint64 sq = qFloor(qAbs(res/2.0));
     return sq;
@@ -1100,7 +1101,7 @@ QGraphicsItem *VLayoutPiece::GetItem(bool textAsPaths) const
         createCutoutPathItem(i, item);
     }
 
-    createLabelItem(item, d->detailLabel, d->m_tmDetail, textAsPaths);
+    createLabelItem(item, d->pieceLabel, d->m_tmPiece, textAsPaths);
     createLabelItem(item, d->patternInfo, d->m_tmPattern, textAsPaths);
     createGrainlineItem(item, textAsPaths);
 
@@ -1229,7 +1230,7 @@ void VLayoutPiece::createGrainlineItem(QGraphicsItem *parent, bool textAsPaths) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<QPointF> VLayoutPiece::DetailPath() const
+QVector<QPointF> VLayoutPiece::piecePath() const
 {
     if (IsSeamAllowance() && not IsSeamAllowanceBuiltIn())
     {

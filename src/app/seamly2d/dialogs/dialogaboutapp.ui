@@ -88,7 +88,6 @@
          <property name="font">
           <font>
            <pointsize>15</pointsize>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
@@ -104,12 +103,17 @@
         <widget class="QLabel" name="labelBuildRevision">
          <property name="font">
           <font>
-           <weight>75</weight>
            <bold>true</bold>
           </font>
          </property>
+         <property name="accessibleName">
+          <string/>
+         </property>
+         <property name="accessibleDescription">
+          <string/>
+         </property>
          <property name="text">
-          <string>Build revision:</string>
+          <string notr="true">Build revision:</string>
          </property>
         </widget>
        </item>
@@ -216,29 +220,60 @@
           <bool>true</bool>
          </property>
          <property name="plainText">
-          <string notr="true">Roman Telezhinskyi
-Susan Spencer
-Steve Conklin
-Timo Virtaneva
-luzpazB
-Christine Neupert
-Sabine Schmaltz
-grumpi
-Lindsay Williams
-Patrick Proy
-Mischa Krempel
-Matt Daw
-Peter Gsellmann
-Robert Martin
-Michaela Orth
-Rina Rivera
-Fritz Rometsch
-Felix Ulber
-Alex Zaharov
-Valentina Zhuravska
-Bettina Gatzlaff
-Ronan Le Tiec
-Douglas Caskey</string>
+          <string notr="true">Contributors
+Alphabetical order:
+  Aleenejejw
+  Subhash Abhijith
+  Sergey Alyoshin
+  AstHrO
+  Vincent Bermel
+  Johannes Brakensiek
+  Douglas Caskey
+  Steve Conklin
+  Ian Cunningham
+  Grace de Man
+  Frukto
+  Bettina Gatzlaff
+  Marius Ghita
+  Peter Gsellmann
+  Raina Gufstafson
+  Mohammed Ibrahim
+  Jackstr
+  Keepy38
+  Martijn Kleptog
+  Mischa Linus Krempel
+  Bojan Kverh
+  Ronan LeTiec
+  Kim March-Force
+  Dan McMahill
+  Benjamin Nauk
+  Christine Neupert
+  Mo Odling
+  Oni303
+  Harshil Patel
+  Pneumarian
+  Roman Postanciuk
+  Patrick Proy
+  QtGirl
+  SS-Adam
+  Fabrice Salvaire
+  Sabine Schmaltz
+  Alexsey Schmuley
+  Christoph Settgast
+  Evgeniy Strelnikov
+  Abhijith Subhash
+  U38cg
+  Felix Ulber
+  Ths80
+  Timo Virtaneva
+  Lindsay Williams
+  Araceli Yanez
+  Alex Zaharov
+  Valentina Zhuravska
+  Bernd Zeimetz
+  Alex Lopez Zubieta
+  Aleksey Zaharov
+          </string>
          </property>
         </widget>
        </item>

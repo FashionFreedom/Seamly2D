@@ -75,7 +75,7 @@
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
 #include "../qmuparser/qmudef.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
@@ -107,7 +107,7 @@ DialogRotation::DialogRotation(const VContainer *data, const quint32 &toolId, QW
     angleTimer = new QTimer(this);
     connect(angleTimer, &QTimer::timeout, this, &DialogRotation::evaluateAngle);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->rotation_ComboBox);
 
@@ -146,13 +146,13 @@ void DialogRotation::setOriginPointId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogRotation::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::SetAngle(const QString &value)
 {
-    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->plainTextEditFormula->setPlainText(angleFormula);
 
     VisToolRotation *operation = qobject_cast<VisToolRotation *>(vis);
@@ -350,7 +350,7 @@ void DialogRotation::angleChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::editAngleFormula()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);
@@ -404,10 +404,10 @@ void DialogRotation::suffixChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(angleFlag && flagName && flagError);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(bOk->isEnabled());
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(angleFlag && flagName && flagError);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(ok_Button->isEnabled());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

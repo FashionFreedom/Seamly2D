@@ -64,64 +64,67 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
-class VPROPERTYEXPLORERSHARED_EXPORT VLineColorProperty : public VProperty
+class VLineColorProperty : public VProperty
 {
     Q_OBJECT
 public:
     //! Constructor
-    explicit VLineColorProperty(const QString& name);
+    explicit               VLineColorProperty(const QString &name);
 
     //! Destructor
-    virtual ~VLineColorProperty() Q_DECL_OVERRIDE {}
+    virtual               ~VLineColorProperty() Q_DECL_OVERRIDE {}
 
     //! Get the data how it should be displayed
-    virtual QVariant data (int column = DPC_Name, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
+    virtual QVariant       data (int column = DPC_Name, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
     //! Returns an editor widget, or NULL if it doesn't supply one
     //! \param parent The widget to which the editor will be added as a child
     //! \options Render options
     //! \delegate A pointer to the QAbstractItemDelegate requesting the editor. This can be used to connect signals and
     //! slots.
-    virtual QWidget *createEditor(QWidget* parent, const QStyleOptionViewItem& options,
-                                  const QAbstractItemDelegate* delegate) Q_DECL_OVERRIDE;
+    virtual QWidget       *createEditor(QWidget *parent, const QStyleOptionViewItem &options,
+                                  const QAbstractItemDelegate *delegate) Q_DECL_OVERRIDE;
 
     //! Gets the data from the widget
-    virtual QVariant getEditorData(const QWidget* editor) const Q_DECL_OVERRIDE;
+    virtual QVariant       getEditorData(const QWidget *editor) const Q_DECL_OVERRIDE;
 
     //! Sets the colors
-    virtual void setColors(const QMap<QString, QString> &colors);
+    virtual void           setColors(const QMap<QString, QString> &colors);
 
     //! Get the settings. This function has to be implemented in a subclass in order to have an effect
     virtual QMap<QString, QString> getColors() const;
 
     //! Sets the value of the property
-    virtual void setValue(const QVariant& value) Q_DECL_OVERRIDE;
+    virtual void           setValue(const QVariant &value) Q_DECL_OVERRIDE;
 
     //! Returns a string containing the type of the property
-    virtual QString type() const Q_DECL_OVERRIDE;
+    virtual QString        type() const Q_DECL_OVERRIDE;
+
 
     //! Clones this property
     //! \param include_children Indicates whether to also clone the children
     //! \param container If a property is being passed here, no new VProperty is being created but instead it is tried
     //! to fill all the data into container. This can also be used when subclassing this function.
     //! \return Returns the newly created property (or container, if it was not NULL)
-    Q_REQUIRED_RESULT virtual VProperty* clone(bool include_children = true,
-                                               VProperty* container = nullptr) const Q_DECL_OVERRIDE;
+    Q_REQUIRED_RESULT virtual VProperty *clone(bool include_children = true,
+                                               VProperty *container = nullptr) const Q_DECL_OVERRIDE;
 
-    static int IndexOfColor(const QMap<QString, QString> &colors, const QString &color);
+    static int             indexOfColor(const QMap<QString, QString> &colors, const QString &color);
 
 public slots:
-    void currentIndexChanged(int index);
+    void                   currentIndexChanged(int index);
 
 protected:
     //! The list of possible options to choose from
     QMap<QString, QString> colors;
-    QVector<QString> indexList;
+    QVector<QString>       indexList;
+    int                    m_iconWidth;
+    int                    m_iconHeight;
+
     // No use of d-pointer in this case, because it is unlikely this will change. If it does, we can still add other
     //members by reimplementing the VPropertyPrivate class without touching this header file.
 private:

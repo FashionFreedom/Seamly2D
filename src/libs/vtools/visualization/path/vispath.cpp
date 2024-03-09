@@ -1,37 +1,17 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
+/**************************************************************************
  **
  **  @file   vispath.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
  **
+ **  @author Douglas S Caskey
+ **  @date   7.23.2022
+ **
  **  @brief
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -51,37 +31,38 @@
 
 #include "vispath.h"
 
-#include <QPen>
-
+#include "../visualization.h"
 #include "../ifc/ifcdef.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
-#include "../visualization.h"
 #include "../vwidgets/vsimplepoint.h"
+
+#include <QPen>
 
 //---------------------------------------------------------------------------------------------------------------------
 VisPath::VisPath(const VContainer *data, QGraphicsItem *parent)
-    : Visualization(data),
-      VCurvePathItem(parent)
+    : Visualization(data)
+    , VCurvePathItem(parent)
 {
     this->setZValue(1);// Show on top real tool
-    InitPen();
+    initPen();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VisPath::InitPen()
+void VisPath::initPen()
 {
     QPen visPen = pen();
     visPen.setColor(mainColor);
     visPen.setStyle(lineStyle);
+    visPen.setWidthF(lineWeight);
 
-    setPen(visPen);
+    this->setPen(visPen);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VisPath::AddOnScene()
 {
-    AddItem(this);
+    addItem(this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

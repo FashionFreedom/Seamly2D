@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -108,6 +108,8 @@
     <addaction name="patternPreferences_Action"/>
     <addaction name="separator"/>
     <addaction name="labelTemplateEditor_Action"/>
+    <addaction name="separator"/>
+    <addaction name="documentInfo_Action"/>
     <addaction name="separator"/>
     <addaction name="exit_Action"/>
    </widget>
@@ -154,7 +156,7 @@
      <addaction name="decreaseSize_Action"/>
      <addaction name="useToolColor_Action"/>
     </widget>
-    <addaction name="draftMode_Action"/>
+    <addaction name="showDraftMode"/>
     <addaction name="pieceMode_Action"/>
     <addaction name="layoutMode_Action"/>
     <addaction name="separator"/>
@@ -166,6 +168,7 @@
     <addaction name="zoomToSelected_Action"/>
     <addaction name="zoomToArea_Action"/>
     <addaction name="zoomPan_Action"/>
+    <addaction name="zoomToPoint_Action"/>
     <addaction name="separator"/>
     <addaction name="pointNames_Menu"/>
     <addaction name="toggleWireframe_Action"/>
@@ -190,7 +193,7 @@
       <string>&amp;Operations</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/operations_toolbox.png</normaloff>:/toolicon/32x32/operations_toolbox.png</iconset>
      </property>
      <addaction name="group_Action"/>
@@ -207,27 +210,27 @@
       <string>Point</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/points_toolbox.png</normaloff>:/toolicon/32x32/points_toolbox.png</iconset>
      </property>
      <addaction name="pointAtDistanceAngle_Action"/>
      <addaction name="pointAlongLine_Action"/>
+     <addaction name="midpoint_Action"/>
      <addaction name="pointAlongPerpendicular_Action"/>
      <addaction name="bisector_Action"/>
      <addaction name="pointOnShoulder_Action"/>
      <addaction name="pointOfContact_Action"/>
      <addaction name="triangle_Action"/>
-     <addaction name="pointOfIntersection_Action"/>
+     <addaction name="pointIntersectXY_Action"/>
      <addaction name="perpendicularPoint_Action"/>
      <addaction name="pointIntersectAxis_Action"/>
-     <addaction name="midpoint_Action"/>
     </widget>
     <widget class="QMenu" name="details_Menu">
      <property name="title">
       <string>Details</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/details_toolbox.png</normaloff>:/toolicon/32x32/details_toolbox.png</iconset>
      </property>
      <addaction name="union_Action"/>
@@ -238,7 +241,7 @@
       <string>Line</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/lines_toolbox.png</normaloff>:/toolicon/32x32/lines_toolbox.png</iconset>
      </property>
      <addaction name="lineTool_Action"/>
@@ -249,7 +252,7 @@
       <string>Curve</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/spline_toolboxs.png</normaloff>:/toolicon/32x32/spline_toolboxs.png</iconset>
      </property>
      <addaction name="curve_Action"/>
@@ -266,7 +269,7 @@
       <string>Arc</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/arcs_toolbox.png</normaloff>:/toolicon/32x32/arcs_toolbox.png</iconset>
      </property>
      <addaction name="arcTool_Action"/>
@@ -279,18 +282,18 @@
      <addaction name="arcWithLength_Action"/>
      <addaction name="ellipticalArc_Action"/>
     </widget>
-    <widget class="QMenu" name="addDetails_Menu">
+    <widget class="QMenu" name="piece_Menu">
      <property name="title">
       <string>Piece</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/patternpiece_toolbox.png</normaloff>:/toolicon/32x32/patternpiece_toolbox.png</iconset>
      </property>
      <addaction name="addPiece_Action"/>
      <addaction name="anchorPoint_Action"/>
      <addaction name="internalPath_Action"/>
-     <addaction name="insertNode_Action"/>
+     <addaction name="insertNodes_Action"/>
     </widget>
     <widget class="QMenu" name="layouts_Menu">
      <property name="enabled">
@@ -300,7 +303,7 @@
       <string>Layout</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="share/resources/toolicon.qrc">
        <normaloff>:/toolicon/32x32/layout_toolbox.png</normaloff>:/toolicon/32x32/layout_toolbox.png</iconset>
      </property>
      <addaction name="newPrintLayout_Action"/>
@@ -314,7 +317,7 @@
     <addaction name="curves_Menu"/>
     <addaction name="arcs_Menu"/>
     <addaction name="operations_Menu"/>
-    <addaction name="addDetails_Menu"/>
+    <addaction name="piece_Menu"/>
     <addaction name="details_Menu"/>
     <addaction name="layouts_Menu"/>
     <addaction name="separator"/>
@@ -380,7 +383,7 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="draftMode_Action"/>
+   <addaction name="showDraftMode"/>
    <addaction name="pieceMode_Action"/>
    <addaction name="layoutMode_Action"/>
   </widget>
@@ -406,25 +409,6 @@
     <bool>false</bool>
    </attribute>
    <addaction name="newDraft_Action"/>
-  </widget>
-  <widget class="QToolBar" name="status_ToolBar">
-   <property name="font">
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
-   <property name="windowTitle">
-    <string>Status Toolbar</string>
-   </property>
-   <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextUnderIcon</enum>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
   </widget>
   <widget class="QToolBar" name="edit_Toolbar">
    <property name="enabled">
@@ -456,7 +440,7 @@
     </size>
    </property>
    <property name="windowTitle">
-    <string>Property Ediitor</string>
+    <string>Property Editor</string>
    </property>
    <attribute name="dockWidgetArea">
     <number>2</number>
@@ -469,9 +453,6 @@
      <width>220</width>
      <height>113</height>
     </size>
-   </property>
-   <property name="features">
-    <set>QDockWidget::DockWidgetClosable</set>
    </property>
    <property name="allowedAreas">
     <set>Qt::RightDockWidgetArea</set>
@@ -558,7 +539,7 @@
    <property name="minimumSize">
     <size>
      <width>220</width>
-     <height>38</height>
+     <height>40</height>
     </size>
    </property>
    <property name="toolTip">
@@ -593,10 +574,11 @@
    <addaction name="zoomOut_Action"/>
    <addaction name="zoom100Percent_Action"/>
    <addaction name="zoomToFit_Action"/>
-   <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToPrevious_Action"/>
+   <addaction name="zoomToSelected_Action"/>
    <addaction name="zoomToArea_Action"/>
    <addaction name="zoomPan_Action"/>
+   <addaction name="zoomToPoint_Action"/>
   </widget>
   <widget class="QToolBar" name="tools_ToolBox_ToolBar">
    <property name="contextMenuPolicy">
@@ -633,15 +615,15 @@
    </attribute>
    <addaction name="pointAtDistanceAngle_Action"/>
    <addaction name="pointAlongLine_Action"/>
+   <addaction name="midpoint_Action"/>
    <addaction name="pointAlongPerpendicular_Action"/>
    <addaction name="bisector_Action"/>
    <addaction name="pointOnShoulder_Action"/>
    <addaction name="pointOfContact_Action"/>
    <addaction name="triangle_Action"/>
-   <addaction name="pointOfIntersection_Action"/>
+   <addaction name="pointIntersectXY_Action"/>
    <addaction name="perpendicularPoint_Action"/>
    <addaction name="pointIntersectAxis_Action"/>
-   <addaction name="midpoint_Action"/>
   </widget>
   <widget class="QToolBar" name="lines_ToolBar">
    <property name="windowTitle">
@@ -697,7 +679,7 @@
   </widget>
   <widget class="QToolBar" name="operations_ToolBar">
    <property name="enabled">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="windowTitle">
     <string>Operations ToolBar</string>
@@ -715,13 +697,14 @@
    <addaction name="move_Action"/>
    <addaction name="trueDarts_Action"/>
    <addaction name="exportDraftBlocks_Action"/>
+   <addaction name="importImage_Action"/>
   </widget>
   <widget class="QToolBar" name="pieces_ToolBar">
    <property name="enabled">
     <bool>true</bool>
    </property>
    <property name="windowTitle">
-    <string>Details ToolBar</string>
+    <string>Piece ToolBar</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -731,12 +714,12 @@
    </attribute>
    <addaction name="addPiece_Action"/>
    <addaction name="anchorPoint_Action"/>
-   <addaction name="insertNode_Action"/>
+   <addaction name="insertNodes_Action"/>
    <addaction name="internalPath_Action"/>
   </widget>
   <widget class="QToolBar" name="details_ToolBar">
    <property name="windowTitle">
-    <string>Pieces ToolBar</string>
+    <string>Details ToolBar</string>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -782,7 +765,7 @@
    <property name="minimumSize">
     <size>
      <width>140</width>
-     <height>522</height>
+     <height>524</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -914,7 +897,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>5</number>
+            <number>4</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -924,8 +907,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>124</width>
-              <height>293</height>
+              <width>118</width>
+              <height>288</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -950,7 +933,7 @@
              <string>Tools for creating points.</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/points_toolbox.png</normaloff>:/toolicon/32x32/points_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -984,13 +967,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Bisector (PB)</string>
+                <string>Point - On Bisector (O, B)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/bisector.png</normaloff>:/toolicon/32x32/bisector.png</iconset>
                </property>
                <property name="iconSize">
@@ -1010,13 +993,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point on Shoulder (PS)</string>
+                <string>Point - Length to Line (P, S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/shoulder.png</normaloff>:/toolicon/32x32/shoulder.png</iconset>
                </property>
                <property name="iconSize">
@@ -1036,13 +1019,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Arc (PC)</string>
+                <string>Point - Intersect Arc and Line (A, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/point_of_contact.png</normaloff>:/toolicon/32x32/point_of_contact.png</iconset>
                </property>
                <property name="iconSize">
@@ -1062,13 +1045,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Triangle (PT)</string>
+                <string>Point - Intersect Axis and Triangle (X, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/triangle.png</normaloff>:/toolicon/32x32/triangle.png</iconset>
                </property>
                <property name="iconSize">
@@ -1083,19 +1066,19 @@
               </widget>
              </item>
              <item row="9" column="1">
-              <widget class="QToolButton" name="pointOfIntersection_ToolButton">
+              <widget class="QToolButton" name="pointIntersectXY_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point XY from 2 Points (XY)</string>
+                <string>Point - Intersect XY (X, Y)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/toolicon/32x32/point_of_intersection.png</normaloff>:/toolicon/32x32/point_of_intersection.png</iconset>
+                <iconset resource="share/resources/toolicon.qrc">
+                 <normaloff>:/toolicon/32x32/point_intersectxy_icon.png</normaloff>:/toolicon/32x32/point_intersectxy_icon.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1114,13 +1097,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Perpendicular (PL)</string>
+                <string>Point - Intersect Line and Perpendicular (L, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/height.png</normaloff>:/toolicon/32x32/height.png</iconset>
                </property>
                <property name="iconSize">
@@ -1140,13 +1123,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Line and Axis (IX)</string>
+                <string>Point - Intersect Line and Axis (L, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/line_intersect_axis.png</normaloff>:/toolicon/32x32/line_intersect_axis.png</iconset>
                </property>
                <property name="iconSize">
@@ -1166,13 +1149,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point on Perpendicular (PP)</string>
+                <string>Point - On Perpendicular (O, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/normal.png</normaloff>:/toolicon/32x32/normal.png</iconset>
                </property>
                <property name="iconSize">
@@ -1192,13 +1175,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point at Distance and Angle (DA)</string>
+                <string>Point - Length and Angle (L, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/segment.png</normaloff>:/toolicon/32x32/segment.png</iconset>
                </property>
                <property name="iconSize">
@@ -1218,13 +1201,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point at Distance along Line (PA)</string>
+                <string>Point - On Line (O, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/along_line.png</normaloff>:/toolicon/32x32/along_line.png</iconset>
                </property>
                <property name="iconSize">
@@ -1244,13 +1227,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Midpoint between 2 Points (MP)</string>
+                <string>Point - Midpoint on Line (Shift+O, Shift+L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/midpoint.png</normaloff>:/toolicon/32x32/midpoint.png</iconset>
                </property>
                <property name="iconSize">
@@ -1285,7 +1268,7 @@
              <string>Tools for creating lines.</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/lines_toolbox.png</normaloff>:/toolicon/32x32/lines_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -1322,7 +1305,7 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/line.png</normaloff>:/toolicon/32x32/line.png</iconset>
                </property>
                <property name="iconSize">
@@ -1342,13 +1325,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of 2 Lines (IL)</string>
+                <string>Point - Intersect Lines (I, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/intersect.png</normaloff>:/toolicon/32x32/intersect.png</iconset>
                </property>
                <property name="iconSize">
@@ -1389,7 +1372,7 @@
              <string>Tools for creating curves.</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/spline_toolboxs.png</normaloff>:/toolicon/32x32/spline_toolboxs.png</iconset>
             </attribute>
             <attribute name="label">
@@ -1420,13 +1403,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Curve (Alt+C)</string>
+                <string>Curve - Interactive (Alt+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/spline.png</normaloff>:/toolicon/32x32/spline.png</iconset>
                </property>
                <property name="iconSize">
@@ -1446,13 +1429,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Spline (Alt+S)</string>
+                <string>Spline - Interactive (Alt+S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/splinePath.png</normaloff>:/toolicon/32x32/splinePath.png</iconset>
                </property>
                <property name="iconSize">
@@ -1472,13 +1455,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Curve with Control Points (CP)</string>
+                <string>Curve - Fixed (Alt+Shift+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/cubic_bezier.png</normaloff>:/toolicon/32x32/cubic_bezier.png</iconset>
                </property>
                <property name="iconSize">
@@ -1498,40 +1481,14 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Spline with Control Points (SP)</string>
+                <string>Spline - Fixed (Alt+Shift+S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/cubic_bezier_path.png</normaloff>:/toolicon/32x32/cubic_bezier_path.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>32</width>
-                 <height>32</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="6" column="0">
-              <widget class="QToolButton" name="pointAlongCurve_ToolButton">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="toolTip">
-                <string>Point along Curve (AC)</string>
-               </property>
-               <property name="text">
-                <string notr="true">...</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1550,13 +1507,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Spline (AS)</string>
+                <string>Point - On Spline (O, S)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/splinePath_cut_point.png</normaloff>:/toolicon/32x32/splinePath_cut_point.png</iconset>
                </property>
                <property name="iconSize">
@@ -1576,13 +1533,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Curves (CC)</string>
+                <string>Point - Intersect Curves (I, C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/intersection_curves.png</normaloff>:/toolicon/32x32/intersection_curves.png</iconset>
                </property>
                <property name="iconSize">
@@ -1602,14 +1559,40 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Curve and Axis (CA)</string>
+                <string>Point - Intersect Curve and Axis (C, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/curve_intersect_axis.png</normaloff>:/toolicon/32x32/curve_intersect_axis.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QToolButton" name="pointAlongCurve_ToolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Point - On Curve (O, C)</string>
+               </property>
+               <property name="text">
+                <string notr="true">...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="share/resources/toolicon.qrc">
+                 <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -1643,7 +1626,7 @@
              <string>Tools for creating arcs.</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/arcs_toolbox.png</normaloff>:/toolicon/32x32/arcs_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -1674,13 +1657,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Arc (Alt+A)</string>
+                <string>Arc - Radius and Angles (Alt+A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/arc.png</normaloff>:/toolicon/32x32/arc.png</iconset>
                </property>
                <property name="iconSize">
@@ -1700,13 +1683,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Point along Arc (AA)</string>
+                <string>Point - On Arc (O, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/arc_cut.png</normaloff>:/toolicon/32x32/arc_cut.png</iconset>
                </property>
                <property name="iconSize">
@@ -1726,13 +1709,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Arc and Axis (AX)</string>
+                <string>Point - Intersect Arc and Axis (A, X)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/arc_intersect_axis.png</normaloff>:/toolicon/32x32/arc_intersect_axis.png</iconset>
                </property>
                <property name="iconSize">
@@ -1752,13 +1735,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Arcs (IA)</string>
+                <string>Point - Intersect Arcs (I, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</iconset>
                </property>
                <property name="iconSize">
@@ -1778,13 +1761,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Circles (IC)</string>
+                <string>Point - Intersect Circles (Shift+I, Shift+C)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/point_of_intersection_circles.png</normaloff>:/toolicon/32x32/point_of_intersection_circles.png</iconset>
                </property>
                <property name="iconSize">
@@ -1804,13 +1787,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Intersection Point of Circle and Tangent (CT)</string>
+                <string>Point - Intersect Circle and Tangent (C, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</iconset>
                </property>
                <property name="iconSize">
@@ -1830,13 +1813,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Tangency Point of Arc and Tangent (AT)</string>
+                <string>Point - Intersect Arc and Tangent (A, T)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</iconset>
                </property>
                <property name="iconSize">
@@ -1856,13 +1839,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Arc with Length (AL)</string>
+                <string>Arc - Radius and Length (Alt+Shift+A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/arc_with_length.png</normaloff>:/toolicon/32x32/arc_with_length.png</iconset>
                </property>
                <property name="iconSize">
@@ -1882,13 +1865,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Elliptical Arc (E,A)</string>
+                <string>Arc - Elliptical (Alt+E)</string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/el_arc.png</normaloff>:/toolicon/32x32/el_arc.png</iconset>
                </property>
                <property name="iconSize">
@@ -1910,14 +1893,14 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>293</height>
+              <height>287</height>
              </rect>
             </property>
             <property name="toolTip">
              <string>Tools for performing operations on objects</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/operations_toolbox.png</normaloff>:/toolicon/32x32/operations_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -1948,13 +1931,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Create New Group (G)</string>
+                <string>Add Objects to Group (G)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/group.png</normaloff>:/toolicon/32x32/group.png</iconset>
                </property>
                <property name="iconSize">
@@ -1980,7 +1963,7 @@
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/rotation.png</normaloff>:/toolicon/32x32/rotation.png</iconset>
                </property>
                <property name="iconSize">
@@ -2000,13 +1983,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Mirror Objects by Line (ML)</string>
+                <string>Mirror Objects by Line (M, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/mirror_by_line.png</normaloff>:/toolicon/32x32/mirror_by_line.png</iconset>
                </property>
                <property name="iconSize">
@@ -2026,13 +2009,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Mirror Objects by Axis (MA)</string>
+                <string>Mirror Objects by Axis (M, A)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/mirror_by_axis.png</normaloff>:/toolicon/32x32/mirror_by_axis.png</iconset>
                </property>
                <property name="iconSize">
@@ -2052,13 +2035,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Move Objects (MM)</string>
+                <string>Move Objects (Alt+M)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/move.png</normaloff>:/toolicon/32x32/move.png</iconset>
                </property>
                <property name="iconSize">
@@ -2078,13 +2061,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>True Darts (TD)</string>
+                <string>True Darts (T, D)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/true_darts.png</normaloff>:/toolicon/32x32/true_darts.png</iconset>
                </property>
                <property name="iconSize">
@@ -2107,10 +2090,10 @@
                 <string>Export Draft Blocks (E, D)</string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
                </property>
                <property name="iconSize">
@@ -2124,6 +2107,26 @@
                </property>
               </widget>
              </item>
+             <item row="3" column="1">
+              <widget class="QToolButton" name="importImage_ToolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                 <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+              </widget>
+             </item>
             </layout>
            </widget>
            <widget class="QWidget" name="piece_Page">
@@ -2132,7 +2135,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>138</height>
+              <height>96</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -2145,7 +2148,7 @@
              <string>Tools for adding pattern pieces.</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/patternpiece_toolbox.png</normaloff>:/toolicon/32x32/patternpiece_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -2176,14 +2179,14 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add New Pattern Piece (NP)</string>
+                <string>Add New Pattern Piece (N, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/toolicon/32x32/new_detail.png</normaloff>:/toolicon/32x32/new_detail.png</iconset>
+                <iconset resource="share/resources/toolicon.qrc">
+                 <normaloff>:/toolicon/32x32/new_piece.png</normaloff>:/toolicon/32x32/new_piece.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2202,13 +2205,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add Anchor Point (AP)</string>
+                <string>Add Anchor Point (A, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/anchor_point.png</normaloff>:/toolicon/32x32/anchor_point.png</iconset>
                </property>
                <property name="iconSize">
@@ -2223,19 +2226,19 @@
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QToolButton" name="insertNode_ToolButton">
+              <widget class="QToolButton" name="insertNodes_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Insert Node (IN)</string>
+                <string>Insert Nodes (I, N)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>:/toolicon/32x32/insert_node.png</normaloff>:/toolicon/32x32/insert_node.png</iconset>
+                <iconset resource="share/resources/toolicon.qrc">
+                 <normaloff>:/toolicon/32x32/insert_nodes_icon.png</normaloff>:/toolicon/32x32/insert_nodes_icon.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2254,40 +2257,14 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Add Internal Path (IP)</string>
+                <string>Add Internal Path (I, P)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/path.png</normaloff>:/toolicon/32x32/path.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>32</width>
-                 <height>32</height>
-                </size>
-               </property>
-               <property name="checkable">
-                <bool>true</bool>
-               </property>
-              </widget>
-             </item>
-             <item row="2" column="0">
-              <widget class="QToolButton" name="importImage_ToolButton">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="toolTip">
-                <string>Import Image</string>
-               </property>
-               <property name="text">
-                <string notr="true">...</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -2355,14 +2332,14 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>83</height>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
              <string>Tools for adding details to pattern pieces</string>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/details_toolbox.png</normaloff>:/toolicon/32x32/details_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -2390,7 +2367,7 @@
               <string notr="true">...</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="share/resources/toolicon.qrc">
                <normaloff>:/toolicon/32x32/union.png</normaloff>:/toolicon/32x32/union.png</iconset>
              </property>
              <property name="iconSize">
@@ -2416,13 +2393,13 @@
               </rect>
              </property>
              <property name="toolTip">
-              <string>Export Pieces (EP)</string>
+              <string>Export Pieces (E, P)</string>
              </property>
              <property name="text">
               <string notr="true">...</string>
              </property>
              <property name="icon">
-              <iconset>
+              <iconset resource="share/resources/toolicon.qrc">
                <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
              </property>
              <property name="iconSize">
@@ -2489,11 +2466,11 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>83</height>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
-             <iconset>
+             <iconset resource="share/resources/toolicon.qrc">
               <normaloff>:/toolicon/32x32/layout_toolbox.png</normaloff>:/toolicon/32x32/layout_toolbox.png</iconset>
             </attribute>
             <attribute name="label">
@@ -2527,13 +2504,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>New Print Layout (NL)</string>
+                <string>New Print Layout (N, L)</string>
                </property>
                <property name="text">
                 <string>Settings</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/layout_settings.png</normaloff>:/toolicon/32x32/layout_settings.png</iconset>
                </property>
                <property name="iconSize">
@@ -2553,13 +2530,13 @@
                 <bool>false</bool>
                </property>
                <property name="toolTip">
-                <string>Export Layout (EL)</string>
+                <string>Export Layout (E, L)</string>
                </property>
                <property name="text">
                 <string notr="true">...</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
                </property>
                <property name="iconSize">
@@ -2641,8 +2618,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
-     <normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</normaloff>:/icons/win.icon.theme/32x32/actions/document-open.png</iconset>
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/seamly2d_file.png</normaloff>:/icon/32x32/seamly2d_file.png</iconset>
    </property>
    <property name="text">
     <string>Open</string>
@@ -2705,7 +2682,7 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="draftMode_Action">
+  <action name="showDraftMode">
    <property name="checkable">
     <bool>true</bool>
    </property>
@@ -2771,7 +2748,7 @@
      <normaloff>:/icon/32x32/arrow_cursor.png</normaloff>:/icon/32x32/arrow_cursor.png</iconset>
    </property>
    <property name="text">
-    <string>Pointer</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Pointer tools</string>
@@ -2891,37 +2868,19 @@
     <enum>QAction::NoRole</enum>
    </property>
   </action>
-  <action name="ellipses_Action">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="icon">
-    <iconset>
-     <normaloff>:/toolicon/32x32/ellipses_toolbox.png</normaloff>:/toolicon/32x32/ellipses_toolbox.png</iconset>
-   </property>
-   <property name="text">
-    <string>ellipses_Action</string>
-   </property>
-   <property name="toolTip">
-    <string>Ellipse Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, E</string>
-   </property>
-  </action>
   <action name="group_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/group.png</normaloff>:/toolicon/32x32/group.png</iconset>
    </property>
    <property name="text">
-    <string>Create New Group</string>
+    <string>Add Objects to Group</string>
    </property>
    <property name="toolTip">
-    <string>Create a New Group (G)</string>
+    <string>Add Objects to Group (G)</string>
    </property>
    <property name="shortcut">
     <string>G</string>
@@ -2932,7 +2891,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/rotation.png</normaloff>:/toolicon/32x32/rotation.png</iconset>
    </property>
    <property name="text">
@@ -2953,14 +2912,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/mirror_by_line.png</normaloff>:/toolicon/32x32/mirror_by_line.png</iconset>
    </property>
    <property name="text">
     <string>Mirror by Line</string>
    </property>
    <property name="toolTip">
-    <string>Mirror Objects by Line (ML)</string>
+    <string>Mirror Objects by Line (M, L)</string>
    </property>
    <property name="shortcut">
     <string>M, L</string>
@@ -2971,14 +2930,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/mirror_by_axis.png</normaloff>:/toolicon/32x32/mirror_by_axis.png</iconset>
    </property>
    <property name="text">
     <string>Mirror by Axis</string>
    </property>
    <property name="toolTip">
-    <string>Mirror Objects by Axis (MA)</string>
+    <string>Mirror Objects by Axis (M, A)</string>
    </property>
    <property name="shortcut">
     <string>M, A</string>
@@ -2989,17 +2948,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/move.png</normaloff>:/toolicon/32x32/move.png</iconset>
    </property>
    <property name="text">
     <string>Move</string>
    </property>
    <property name="toolTip">
-    <string>Move Objects (MM)</string>
+    <string>Move Objects (Alt+M)</string>
    </property>
    <property name="shortcut">
-    <string>M, M</string>
+    <string>Alt+M</string>
    </property>
   </action>
   <action name="trueDarts_Action">
@@ -3007,14 +2966,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/true_darts.png</normaloff>:/toolicon/32x32/true_darts.png</iconset>
    </property>
    <property name="text">
     <string>True Darts</string>
    </property>
    <property name="toolTip">
-    <string>True Darts (TD)</string>
+    <string>True Darts (T, D)</string>
    </property>
    <property name="shortcut">
     <string>T, D</string>
@@ -3025,17 +2984,20 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/el_arc.png</normaloff>:/toolicon/32x32/el_arc.png</iconset>
    </property>
    <property name="text">
-    <string>Elliptical Arc</string>
+    <string>Elliptical</string>
+   </property>
+   <property name="iconText">
+    <string>Arc -Elliptical</string>
    </property>
    <property name="toolTip">
-    <string>Elliptical Arc (EA)</string>
+    <string>Arc - Elliptical (Alt+E)</string>
    </property>
    <property name="shortcut">
-    <string>E, A</string>
+    <string>Alt+E</string>
    </property>
   </action>
   <action name="midpoint_Action">
@@ -3043,17 +3005,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/midpoint.png</normaloff>:/toolicon/32x32/midpoint.png</iconset>
    </property>
    <property name="text">
-    <string>Midpoint</string>
+    <string>Midpoint on Line</string>
    </property>
    <property name="toolTip">
-    <string>Midpoint between 2 Points (MP)</string>
+    <string>Point - Midpoint on Line (Shift+O, Shift+L)</string>
    </property>
    <property name="shortcut">
-    <string>M, P</string>
+    <string>Shift+O, Shift+L</string>
    </property>
   </action>
   <action name="pointAlongLine_Action">
@@ -3061,17 +3023,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/along_line.png</normaloff>:/toolicon/32x32/along_line.png</iconset>
    </property>
    <property name="text">
-    <string>Point at Distance along Line</string>
+    <string>On Line</string>
    </property>
    <property name="toolTip">
-    <string>Point at Distance along Line (PA)</string>
+    <string>Point - On Line (O, L)</string>
    </property>
    <property name="shortcut">
-    <string>P, A</string>
+    <string>O, L</string>
    </property>
   </action>
   <action name="pointAtDistanceAngle_Action">
@@ -3079,20 +3041,20 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/segment.png</normaloff>:/toolicon/32x32/segment.png</iconset>
    </property>
    <property name="text">
-    <string>Point at Distance and Angle</string>
+    <string>Length and Angle</string>
    </property>
    <property name="iconText">
-    <string>Point at Distance and Angle</string>
+    <string>Length and Angle</string>
    </property>
    <property name="toolTip">
-    <string>Point at Distance and Angle (DA)</string>
+    <string>Point - Length and Angle (L, A)</string>
    </property>
    <property name="shortcut">
-    <string>D, A</string>
+    <string>L, A</string>
    </property>
   </action>
   <action name="pointAlongPerpendicular_Action">
@@ -3100,17 +3062,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/normal.png</normaloff>:/toolicon/32x32/normal.png</iconset>
    </property>
    <property name="text">
-    <string>Point on Perpendicular</string>
+    <string>On Perpendicular</string>
    </property>
    <property name="toolTip">
-    <string>Point on Perpendicular (PP)</string>
+    <string>Point - On Perpendicular (O, P)</string>
    </property>
    <property name="shortcut">
-    <string>P, P</string>
+    <string>O, P</string>
    </property>
   </action>
   <action name="bisector_Action">
@@ -3118,17 +3080,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/bisector.png</normaloff>:/toolicon/32x32/bisector.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Bisector</string>
+    <string>On Bisector</string>
    </property>
    <property name="toolTip">
-    <string>Point along Bisector (PB)</string>
+    <string>Point - On Bisector (O, B)</string>
    </property>
    <property name="shortcut">
-    <string>P, B</string>
+    <string>O, B</string>
    </property>
   </action>
   <action name="pointOnShoulder_Action">
@@ -3136,14 +3098,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/shoulder.png</normaloff>:/toolicon/32x32/shoulder.png</iconset>
    </property>
    <property name="text">
-    <string>Point on Shoulder</string>
+    <string>Length to Line</string>
    </property>
    <property name="toolTip">
-    <string>Point on Shoulder (PS)</string>
+    <string>Point - Length to Line (P, S)</string>
    </property>
    <property name="shortcut">
     <string>P, S</string>
@@ -3154,17 +3116,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/point_of_contact.png</normaloff>:/toolicon/32x32/point_of_contact.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Arc</string>
+    <string>Intersect  Arc and Line</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Arc (PC)</string>
+    <string>Point - Intersect Arc and Line (A, L)</string>
    </property>
    <property name="shortcut">
-    <string>P, C</string>
+    <string>A, L</string>
    </property>
   </action>
   <action name="triangle_Action">
@@ -3172,32 +3134,32 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/triangle.png</normaloff>:/toolicon/32x32/triangle.png</iconset>
    </property>
    <property name="text">
-    <string>Triangle</string>
+    <string>Intersect Axis and Triangle</string>
    </property>
    <property name="toolTip">
-    <string>Triangle (PT)</string>
+    <string>Point - Intersect Axis and Triangle (X, T)</string>
    </property>
    <property name="shortcut">
-    <string>P, T</string>
+    <string>X, T</string>
    </property>
   </action>
-  <action name="pointOfIntersection_Action">
+  <action name="pointIntersectXY_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/toolicon/32x32/point_of_intersection.png</normaloff>:/toolicon/32x32/point_of_intersection.png</iconset>
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/point_intersectxy_icon.png</normaloff>:/toolicon/32x32/point_intersectxy_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point XY from 2 Points</string>
+    <string>Intersect XY</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point XY from 2 Points (XY)</string>
+    <string>Point - Intersect XY (X, Y)</string>
    </property>
    <property name="shortcut">
     <string>X, Y</string>
@@ -3208,17 +3170,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/height.png</normaloff>:/toolicon/32x32/height.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Perpendicular</string>
+    <string>Intersect Line and Perpendicular</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Perpendicular (PL)</string>
+    <string>Point - Intersect Line and Perpendicular (L, P)</string>
    </property>
    <property name="shortcut">
-    <string>P, L</string>
+    <string>L, P</string>
    </property>
   </action>
   <action name="pointIntersectAxis_Action">
@@ -3226,17 +3188,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/line_intersect_axis.png</normaloff>:/toolicon/32x32/line_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Line and Axis</string>
+    <string>Intersect Line and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Line and Axis (IX)</string>
+    <string>Point - Intersect Line and Axis (L, X)</string>
    </property>
    <property name="shortcut">
-    <string>I, X</string>
+    <string>L, X</string>
    </property>
   </action>
   <action name="lineIntersect_Action">
@@ -3244,14 +3206,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/intersect.png</normaloff>:/toolicon/32x32/intersect.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of 2  Lines</string>
+    <string>Intersect Lines</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of 2 Lines (IL)</string>
+    <string>Point - Intersect Lines (I, L)</string>
    </property>
    <property name="shortcut">
     <string>I, L</string>
@@ -3262,14 +3224,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/spline.png</normaloff>:/toolicon/32x32/spline.png</iconset>
    </property>
    <property name="text">
-    <string>Curve</string>
+    <string>Curve - Interactive</string>
    </property>
    <property name="toolTip">
-    <string>Curve (Alt+C)</string>
+    <string>Curve - Interactive (Alt+C)</string>
    </property>
    <property name="shortcut">
     <string>Alt+C</string>
@@ -3280,17 +3242,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/spline_cut_point.png</normaloff>:/toolicon/32x32/spline_cut_point.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Curve</string>
+    <string>Point on Curve</string>
    </property>
    <property name="toolTip">
-    <string>Point along Curve (AC)</string>
+    <string>Point on Curve (A, C)</string>
    </property>
    <property name="shortcut">
-    <string>A, C</string>
+    <string>O, C</string>
    </property>
   </action>
   <action name="curveWithCPs_Action">
@@ -3298,17 +3260,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/cubic_bezier.png</normaloff>:/toolicon/32x32/cubic_bezier.png</iconset>
    </property>
    <property name="text">
-    <string>Curve with Control Points</string>
+    <string>Curve - Fixed</string>
    </property>
    <property name="toolTip">
-    <string>Curve with Control Points (CP)</string>
+    <string>Curve - Fixed (Alt+Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>C, P</string>
+    <string>Alt+Shift+C</string>
    </property>
   </action>
   <action name="spline_Action">
@@ -3316,14 +3278,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/splinePath.png</normaloff>:/toolicon/32x32/splinePath.png</iconset>
    </property>
    <property name="text">
-    <string>Spline</string>
+    <string>Spline - Interactive</string>
    </property>
    <property name="toolTip">
-    <string>Spline (Alt+S)</string>
+    <string>Spline - Interactive (Alt+S)</string>
    </property>
    <property name="shortcut">
     <string>Alt+S</string>
@@ -3334,17 +3296,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/splinePath_cut_point.png</normaloff>:/toolicon/32x32/splinePath_cut_point.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Spline</string>
+    <string>Point on Spline</string>
    </property>
    <property name="toolTip">
-    <string>Point along Spline (AS)</string>
+    <string>Point on Spline (O, S)</string>
    </property>
    <property name="shortcut">
-    <string>A, S</string>
+    <string>O, S</string>
    </property>
   </action>
   <action name="splineWithCPs_Action">
@@ -3352,17 +3314,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/cubic_bezier_path.png</normaloff>:/toolicon/32x32/cubic_bezier_path.png</iconset>
    </property>
    <property name="text">
-    <string>Spline with Control Points</string>
+    <string>Spline - Fixed</string>
    </property>
    <property name="toolTip">
-    <string>Spline with Control Points (SP)</string>
+    <string>Spline - Fixed (Alt+Shift+S)</string>
    </property>
    <property name="shortcut">
-    <string>S, P</string>
+    <string>Alt+Shift+S</string>
    </property>
   </action>
   <action name="curveIntersectCurve_Action">
@@ -3370,20 +3332,20 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/intersection_curves.png</normaloff>:/toolicon/32x32/intersection_curves.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Curves</string>
+    <string>Intersect Curves</string>
    </property>
    <property name="iconText">
-    <string>Intersection Point of Curves</string>
+    <string>Intersect Curves</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Curves (CC)</string>
+    <string>Point - Intersect Curves (I, C)</string>
    </property>
    <property name="shortcut">
-    <string>C, C</string>
+    <string>I, C</string>
    </property>
   </action>
   <action name="splineIntersectAxis_Action">
@@ -3391,20 +3353,20 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/curve_intersect_axis.png</normaloff>:/toolicon/32x32/curve_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Curve and Axis</string>
+    <string>Intersect Curve and Axis</string>
    </property>
    <property name="iconText">
-    <string>Intersection Point of Curve and Axis</string>
+    <string>Intersect Curve and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Curve and Axis (CA)</string>
+    <string>Point - Intersect Curve and Axis (C, X)</string>
    </property>
    <property name="shortcut">
-    <string>C, A</string>
+    <string>C, X</string>
    </property>
   </action>
   <action name="arcTool_Action">
@@ -3412,14 +3374,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/arc.png</normaloff>:/toolicon/32x32/arc.png</iconset>
    </property>
    <property name="text">
-    <string>Arc</string>
+    <string>Radius and Angles</string>
+   </property>
+   <property name="iconText">
+    <string>Arc - Radius and Angles</string>
    </property>
    <property name="toolTip">
-    <string>Arc (Alt+A)</string>
+    <string>Arc - Radius and Angles (Alt+A)</string>
    </property>
    <property name="shortcut">
     <string>Alt+A</string>
@@ -3430,17 +3395,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/arc_cut.png</normaloff>:/toolicon/32x32/arc_cut.png</iconset>
    </property>
    <property name="text">
-    <string>Point along Arc</string>
+    <string>Point on Arc</string>
    </property>
    <property name="toolTip">
-    <string>Point along Arc (AA)</string>
+    <string>Point on Arc (O, A)</string>
    </property>
    <property name="shortcut">
-    <string>A, A</string>
+    <string>O, A</string>
    </property>
   </action>
   <action name="arcIntersectAxis_Action">
@@ -3448,14 +3413,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/arc_intersect_axis.png</normaloff>:/toolicon/32x32/arc_intersect_axis.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Arc and Axis</string>
+    <string>Intersect Arc and Axis</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Arc and Axis (AX)</string>
+    <string>Intersect Arc and Axis (A, X)</string>
    </property>
    <property name="shortcut">
     <string>A, X</string>
@@ -3466,14 +3431,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</normaloff>:/toolicon/32x32/point_of_intersection_arcs.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Arcs</string>
+    <string>Intersect Arcs</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Arcs (IA)</string>
+    <string>Intersect Arcs (I, A)</string>
    </property>
    <property name="shortcut">
     <string>I, A</string>
@@ -3484,17 +3449,17 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/point_of_intersection_circles.png</normaloff>:/toolicon/32x32/point_of_intersection_circles.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Circles</string>
+    <string>Intersect Circles</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Circles (IC)</string>
+    <string>Intersect Circles (Shift+I, Shift+C)</string>
    </property>
    <property name="shortcut">
-    <string>I, C</string>
+    <string>Shift+I, Shift+C</string>
    </property>
   </action>
   <action name="circleTangent_Action">
@@ -3502,14 +3467,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</normaloff>:/toolicon/32x32/point_from_circle_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Intersection Point of Circle and Tangent</string>
+    <string>Intersect Circle and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Intersection Point of Circle and Tangent (CT)</string>
+    <string>Intersect Circle and Tangent (C, T)</string>
    </property>
    <property name="shortcut">
     <string>C, T</string>
@@ -3520,14 +3485,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</normaloff>:/toolicon/32x32/point_from_arc_and_tangent.png</iconset>
    </property>
    <property name="text">
-    <string>Tangency Point of Arc and Tangent</string>
+    <string>Intersect Arc and Tangent</string>
    </property>
    <property name="toolTip">
-    <string>Tangency Point of Arc and Tangent (AT)</string>
+    <string>Intersect Arc and Tangent (A, T)</string>
    </property>
    <property name="shortcut">
     <string>A, T</string>
@@ -3538,17 +3503,20 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/arc_with_length.png</normaloff>:/toolicon/32x32/arc_with_length.png</iconset>
    </property>
    <property name="text">
-    <string>Arc with Length</string>
+    <string>Radius and Length</string>
+   </property>
+   <property name="iconText">
+    <string>Arc - Radius and Length</string>
    </property>
    <property name="toolTip">
-    <string>Arc with Length (AL)</string>
+    <string>Arc - Radius and Length (Alt+Shift+A)</string>
    </property>
    <property name="shortcut">
-    <string>A, L</string>
+    <string>Alt+Shift+A</string>
    </property>
   </action>
   <action name="aboutQt_Action">
@@ -3656,7 +3624,7 @@
     <string>Out</string>
    </property>
    <property name="toolTip">
-    <string>Zoom Out (CTRL+-)</string>
+    <string>Zoom Out (Ctrl+-)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+-</string>
@@ -3701,7 +3669,7 @@
     <string>Fit</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Fit All(CTRL+=)</string>
+    <string>Zoom to Fit All(Ctrl+=)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+=</string>
@@ -3779,10 +3747,10 @@
     <string>Last tool</string>
    </property>
    <property name="toolTip">
-    <string>Activate last used tool (L)</string>
+    <string>Activate last used tool (Ctrl+Shift+L)</string>
    </property>
    <property name="shortcut">
-    <string notr="true">L</string>
+    <string notr="true">Ctrl+Shift+L</string>
    </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
@@ -3889,14 +3857,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export As...</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (EL)</string>
+    <string>Export Layout (E, L)</string>
    </property>
    <property name="shortcut">
     <string notr="true"/>
@@ -3905,6 +3873,10 @@
   <action name="loadIndividual_Action">
    <property name="enabled">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/individual_size_file.png</normaloff>:/icon/32x32/individual_size_file.png</iconset>
    </property>
    <property name="text">
     <string>Load Individual</string>
@@ -3922,6 +3894,10 @@
   <action name="loadMultisize_Action">
    <property name="enabled">
     <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/multisize_size_file.png</normaloff>:/icon/32x32/multisize_size_file.png</iconset>
    </property>
    <property name="text">
     <string>Load Multisize</string>
@@ -4024,6 +4000,9 @@
    <property name="text">
     <string>Export Variables to CSV</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
    <property name="menuRole">
     <enum>QAction::NoRole</enum>
    </property>
@@ -4043,7 +4022,7 @@
     <string>Selected</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to Selected (CTRL+M)</string>
+    <string>Zoom to Selected (Ctrl+Right)</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+Right</string>
@@ -4090,7 +4069,7 @@
     <string>Area</string>
    </property>
    <property name="toolTip">
-    <string>Zoom to selected Area (CTRL+Right)</string>
+    <string>Zoom to selected Area (Ctrl+A)</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+A</string>
@@ -4111,7 +4090,7 @@
     <string>Pan</string>
    </property>
    <property name="toolTip">
-    <string>Pan Work Area (Z,P)</string>
+    <string>Pan Work Area (Z, P)</string>
    </property>
    <property name="shortcut">
     <string>Z, P</string>
@@ -4143,17 +4122,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/points_toolbox.png</normaloff>:/toolicon/32x32/points_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>points_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Point Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, P</string>
    </property>
   </action>
   <action name="lines_Action">
@@ -4161,17 +4137,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/lines_toolbox.png</normaloff>:/toolicon/32x32/lines_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>line_Actions</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Line Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, L</string>
    </property>
   </action>
   <action name="lineTool_Action">
@@ -4179,7 +4152,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/line.png</normaloff>:/toolicon/32x32/line.png</iconset>
    </property>
    <property name="text">
@@ -4193,12 +4166,15 @@
    </property>
   </action>
   <action name="curves_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/spline_toolboxs.png</normaloff>:/toolicon/32x32/spline_toolboxs.png</iconset>
    </property>
    <property name="text">
-    <string>Curve</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Curve Tools</string>
@@ -4209,17 +4185,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/arcs_toolbox.png</normaloff>:/toolicon/32x32/arcs_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>arcTool_Actions</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Arc Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, A</string>
    </property>
   </action>
   <action name="modifications_Action">
@@ -4227,17 +4200,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/operations_toolbox.png</normaloff>:/toolicon/32x32/operations_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>modifications_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Operations Tools</string>
-   </property>
-   <property name="shortcut">
-    <string>W, O</string>
    </property>
   </action>
   <action name="layout_Action">
@@ -4245,11 +4215,11 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/layout_toolbox.png</normaloff>:/toolicon/32x32/layout_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>Layout</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Layout Tools</string>
@@ -4260,11 +4230,11 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/patternpiece_toolbox.png</normaloff>:/toolicon/32x32/patternpiece_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>Details</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Piece tools</string>
@@ -4275,14 +4245,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/toolicon/32x32/new_detail@2x.png</normaloff>:/toolicon/32x32/new_detail@2x.png</iconset>
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/new_piece@2x.png</normaloff>:/toolicon/32x32/new_piece@2x.png</iconset>
    </property>
    <property name="text">
     <string>New Pattern Piece</string>
    </property>
    <property name="toolTip">
-    <string>Add New Pattern Piece (NP)</string>
+    <string>Add New Pattern Piece (N, P)</string>
    </property>
    <property name="shortcut">
     <string>N, P</string>
@@ -4293,14 +4263,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/layout_settings.png</normaloff>:/toolicon/32x32/layout_settings.png</iconset>
    </property>
    <property name="text">
     <string>New Print Layout</string>
    </property>
    <property name="toolTip">
-    <string>Create New Print Layout (NL)</string>
+    <string>Create New Print Layout (N, L)</string>
    </property>
    <property name="shortcut">
     <string>N, L</string>
@@ -4311,14 +4281,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Layout</string>
    </property>
    <property name="toolTip">
-    <string>Export Layout (EL)</string>
+    <string>Export Layout (E, L)</string>
    </property>
    <property name="shortcut">
     <string>E, L</string>
@@ -4329,14 +4299,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/anchor_point.png</normaloff>:/toolicon/32x32/anchor_point.png</iconset>
    </property>
    <property name="text">
     <string>Anchor Point</string>
    </property>
    <property name="toolTip">
-    <string>Add Anchor Point (AP)</string>
+    <string>Add Anchor Point (A, P)</string>
    </property>
    <property name="shortcut">
     <string>A, P</string>
@@ -4347,32 +4317,32 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/path.png</normaloff>:/toolicon/32x32/path.png</iconset>
    </property>
    <property name="text">
     <string>Internal Path</string>
    </property>
    <property name="toolTip">
-    <string>Add Internal Path (IP)</string>
+    <string>Add Internal Path (I, P)</string>
    </property>
    <property name="shortcut">
     <string>I, P</string>
    </property>
   </action>
-  <action name="insertNode_Action">
+  <action name="insertNodes_Action">
    <property name="enabled">
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
-     <normaloff>:/toolicon/32x32/insert_node.png</normaloff>:/toolicon/32x32/insert_node.png</iconset>
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/insert_nodes_icon.png</normaloff>:/toolicon/32x32/insert_nodes_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Insert Node</string>
+    <string>Insert Nodes</string>
    </property>
    <property name="toolTip">
-    <string>Insert Node (IN)</string>
+    <string>Insert Nodes (I, N)</string>
    </property>
    <property name="shortcut">
     <string>I, N</string>
@@ -4380,7 +4350,7 @@
   </action>
   <action name="union_Action">
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/union.png</normaloff>:/toolicon/32x32/union.png</iconset>
    </property>
    <property name="text">
@@ -4398,14 +4368,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Pieces</string>
    </property>
    <property name="toolTip">
-    <string>Export Pieces (EP)</string>
+    <string>Export Pieces (E, P)</string>
    </property>
    <property name="shortcut">
     <string>E, P</string>
@@ -4416,11 +4386,11 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/details_toolbox.png</normaloff>:/toolicon/32x32/details_toolbox.png</iconset>
    </property>
    <property name="text">
-    <string>details_Action</string>
+    <string/>
    </property>
    <property name="toolTip">
     <string>Detail tools</string>
@@ -4626,14 +4596,14 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="share/resources/toolicon.qrc">
      <normaloff>:/toolicon/32x32/export.png</normaloff>:/toolicon/32x32/export.png</iconset>
    </property>
    <property name="text">
     <string>Export Draft Blocks</string>
    </property>
    <property name="toolTip">
-    <string>Export Draft Blocks (ED)</string>
+    <string>Export Draft Blocks (E, D)</string>
    </property>
    <property name="shortcut">
     <string>E, D</string>
@@ -4644,10 +4614,9 @@
     <string>Export</string>
    </property>
   </action>
-
   <action name="importImage_Action">
-    <property name="icon">
-     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
      <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
    </property>
    <property name="text">
@@ -4657,7 +4626,7 @@
   <action name="deleteImage_Action">
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-    <normaloff>:/icon/32x32/trashcan.png</normaloff>:/icon/32x32/trashcan.png</iconset>
+     <normaloff>:/icon/32x32/trashcan.png</normaloff>:/icon/32x32/trashcan.png</iconset>
    </property>
    <property name="text">
     <string>Delete</string>
@@ -4693,13 +4662,49 @@
    </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/32x32/seaml_allowance@2x.png</normaloff>:/icon/32x32/seaml_allowance@2x.png</iconset>
+     <normaloff>:/icon/32x32/seam_allowance@2x.png</normaloff>:/icon/32x32/seam_allowance@2x.png</iconset>
    </property>
    <property name="text">
     <string>Seam Allowance</string>
    </property>
    <property name="shortcut">
     <string>V, S</string>
+   </property>
+  </action>
+  <action name="documentInfo_Action">
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/16x16/show_info16_icon.png</normaloff>:/icon/16x16/show_info16_icon.png</iconset>
+   </property>
+   <property name="text">
+    <string>Document Info...</string>
+   </property>
+   <property name="iconText">
+    <string>Document Info</string>
+   </property>
+   <property name="toolTip">
+    <string>Display document Info</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="zoomToPoint_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
+     <normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</normaloff>:/icons/win.icon.theme/24x24/actions/zoom_to_point.png</iconset>
+   </property>
+   <property name="text">
+    <string>Point</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom to point (Ctrl + Alt + P)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+P</string>
    </property>
   </action>
  </widget>

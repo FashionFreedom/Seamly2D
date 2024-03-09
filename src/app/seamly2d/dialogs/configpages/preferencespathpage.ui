@@ -12,14 +12,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>100</width>
+    <height>100</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>485</width>
-    <height>570</height>
+    <width>16777215</width>
+    <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -30,7 +30,6 @@
     <widget class="QGroupBox" name="groupBox">
      <property name="font">
       <font>
-       <family>MS Shell Dlg 2 UI</family>
        <pointsize>9</pointsize>
       </font>
      </property>
@@ -52,6 +51,9 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
         <attribute name="horizontalHeaderStretchLastSection">
          <bool>true</bool>
         </attribute>
@@ -88,7 +90,6 @@
        </property>
        <property name="font">
         <font>
-         <family>MS Shell Dlg 2 UI</family>
          <pointsize>9</pointsize>
         </font>
        </property>
@@ -123,7 +124,6 @@
        </property>
        <property name="font">
         <font>
-         <family>MS Shell Dlg 2 UI</family>
          <pointsize>9</pointsize>
         </font>
        </property>

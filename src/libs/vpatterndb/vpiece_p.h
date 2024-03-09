@@ -71,40 +71,43 @@ class VPieceData : public QSharedData
 {
 public:
     explicit VPieceData(PiecePathType type)
-        : m_path(type),
-          m_inLayout(true),
-          m_united(false),
-          m_customSARecords(),
-          m_internalPaths(),
-          m_pins(),
-          m_ppData(),
-          m_piPatternInfo(),
-          m_glGrainline(),
-          m_formulaWidth("0")
+        : m_path(type)
+        , m_inLayout(true)
+        , m_isLocked(false)
+        , m_united(false)
+        , m_customSARecords()
+        , m_internalPaths()
+        , m_anchors()
+        , m_ppData()
+        , m_piPatternInfo()
+        , m_glGrainline()
+        , m_formulaWidth('0')
     {}
 
-    VPieceData(const VPieceData &detail)
-        : QSharedData(detail),
-          m_path(detail.m_path),
-          m_inLayout(detail.m_inLayout),
-          m_united(detail.m_united),
-          m_customSARecords(detail.m_customSARecords),
-          m_internalPaths(detail.m_internalPaths),
-          m_pins(detail.m_pins),
-          m_ppData(detail.m_ppData),
-          m_piPatternInfo(detail.m_piPatternInfo),
-          m_glGrainline(detail.m_glGrainline),
-          m_formulaWidth(detail.m_formulaWidth)
+    VPieceData(const VPieceData &piece)
+        : QSharedData(piece)
+        , m_path(piece.m_path)
+        , m_inLayout(piece.m_inLayout)
+        , m_isLocked(piece.m_isLocked)
+        , m_united(piece.m_united)
+        , m_customSARecords(piece.m_customSARecords)
+        , m_internalPaths(piece.m_internalPaths)
+        , m_anchors(piece.m_anchors)
+        , m_ppData(piece.m_ppData)
+        , m_piPatternInfo(piece.m_piPatternInfo)
+        , m_glGrainline(piece.m_glGrainline)
+        , m_formulaWidth(piece.m_formulaWidth)
     {}
 
     ~VPieceData();
 
-    VPiecePath              m_path;          //! @brief nodes list detail nodes.
+    VPiecePath              m_path;          //! @brief nodes list piece nodes.
     bool                    m_inLayout;
+    bool                    m_isLocked;
     bool                    m_united;
     QVector<CustomSARecord> m_customSARecords;
     QVector<quint32>        m_internalPaths;
-    QVector<quint32>        m_pins;
+    QVector<quint32>        m_anchors;
     VPieceLabelData         m_ppData;        //! @brief Pattern piece data
     VPatternLabelData       m_piPatternInfo; //! @brief Pattern info coordinates
     VGrainlineData          m_glGrainline;   //! @brief m_glGrainline grainline geometry object

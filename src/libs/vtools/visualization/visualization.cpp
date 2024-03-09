@@ -1,25 +1,45 @@
-/**************************************************************************
+/***************************************************************************
+ **  @file   visualization.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/************************************************************************
  **  @file   visualization.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
  **
- **  @author Douglas S. Caskey
- **  @date   7.16.2022
- **
+ **  @brief
  **  @copyright
- **  Copyright (C) 2013-2022 Seamly2D project.
- **  This source code is part of the Seamly2D project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published
- **  by the Free Software Foundation, either version 3 of the License,
- **  or (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -36,8 +56,8 @@
 #include "../tools/drawTools/vdrawtool.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/calculator.h"
-#include "../vpatterndb/vtranslatevars.h"
 #include "../vpatterndb/vcontainer.h"
+#include "../vpatterndb/vtranslatevars.h"
 #include "../vwidgets/scalesceneitems.h"
 #include "../vwidgets/vcurvepathitem.h"
 #include "../vwidgets/vmaingraphicsscene.h"
@@ -70,6 +90,7 @@ Visualization::Visualization(const VContainer *data)
     , mainColor(Qt::red)
     , supportColor(QColor(qApp->Settings()->getPrimarySupportColor()))
     , lineStyle(Qt::SolidLine)
+    , lineWeight(0.35)
     , object1Id(NULL_ID)
     , toolTip(QString())
     , mode(Mode::Creation)
@@ -85,7 +106,14 @@ void Visualization::setObject1Id(const quint32 &value)
 void Visualization::setLineStyle(const Qt::PenStyle &value)
 {
     lineStyle = value;
-    InitPen();
+    initPen();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void Visualization::setLineWeight(const QString &value)
+{
+    lineWeight = ToPixel(value.toDouble(), Unit::Mm);
+    initPen();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -113,23 +141,23 @@ void Visualization::VisualMode(const quint32 &pointId)
 void Visualization::setMainColor(const QColor &value)
 {
     mainColor = value;
-    InitPen();
+    initPen();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VContainer *Visualization::GetData() const
+const VContainer *Visualization::getData() const
 {
     return data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::SetData(const VContainer *data)
+void Visualization::setData(const VContainer *data)
 {
     this->data = data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::MousePos(const QPointF &scenePos)
+void Visualization::mousePos(const QPointF &scenePos)
 {
     this->scenePos = scenePos;
     RefreshGeometry();
@@ -142,7 +170,7 @@ void Visualization::MousePos(const QPointF &scenePos)
 //---------------------------------------------------------------------------------------------------------------------
 VScaledEllipse *Visualization::InitPoint(const QColor &color, QGraphicsItem *parent, qreal z) const
 {
-    return InitPointItem(color, parent, z);
+    return initPointItem(color, parent, z);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -168,7 +196,7 @@ qreal Visualization::FindVal(const QString &expression,
             // Replace line return with spaces for calc if exist
             QString formula = expression;
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             val = cal->EvalFormula(vars, formula);
 
@@ -177,14 +205,14 @@ qreal Visualization::FindVal(const QString &expression,
                 val = 0;
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             val = 0;
             qDebug() << "\nMath parser error:\n"
-                     << "--------------------------------------\n"
-                     << "Message:     " << e.GetMsg()  << "\n"
-                     << "Expression:  " << e.GetExpr() << "\n"
-                     << "--------------------------------------";
+                       << "--------------------------------------\n"
+                       << "Message:     " << error.GetMsg()  << "\n"
+                       << "Expression:  " << error.GetExpr() << "\n"
+                       << "--------------------------------------";
         }
     }
     return val;
@@ -206,13 +234,15 @@ void Visualization::DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, c
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color, Qt::PenStyle style)
+void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
+                             const qreal &lineWeight, Qt::PenStyle style)
 {
     SCASSERT (lineItem != nullptr)
 
     QPen visPen = lineItem->pen();
     visPen.setColor(color);
     visPen.setStyle(style);
+    visPen.setWidthF(lineWeight);
 
     lineItem->setPen(visPen);
     lineItem->setLine(line);
@@ -221,21 +251,22 @@ void Visualization::DrawLine(VScaledLine *lineItem, const QLineF &line, const QC
 
 //---------------------------------------------------------------------------------------------------------------------
 void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
-                             Qt::PenStyle style, Qt::PenCapStyle cap)
+                             Qt::PenStyle style, const qreal &lineWeight, Qt::PenCapStyle cap)
 {
-    DrawPath(pathItem, path, QVector<DirectionArrow>(), color, style, cap);
+    DrawPath(pathItem, path, QVector<DirectionArrow>(), color, style, lineWeight, cap);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void Visualization::DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
                              const QVector<DirectionArrow> &directionArrows, const QColor &color, Qt::PenStyle style,
-                             Qt::PenCapStyle cap)
+                             const qreal &lineWeight, Qt::PenCapStyle cap)
 {
     SCASSERT (pathItem != nullptr)
 
     QPen visPen = pathItem->pen();
     visPen.setColor(color);
     visPen.setStyle(style);
+    visPen.setWidthF(lineWeight);
     visPen.setCapStyle(cap);
 
     pathItem->setPen(visPen);
@@ -318,7 +349,7 @@ VScaledEllipse *Visualization::GetPointItem(QVector<VScaledEllipse *> &points, q
     }
     else
     {
-        auto point = InitPointItem(color, parent);
+        auto point = initPointItem(color, parent);
         points.append(point);
         return point;
     }
@@ -326,7 +357,7 @@ VScaledEllipse *Visualization::GetPointItem(QVector<VScaledEllipse *> &points, q
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VScaledEllipse *Visualization::InitPointItem(const QColor &color, QGraphicsItem *parent, qreal z)
+VScaledEllipse *Visualization::initPointItem(const QColor &color, QGraphicsItem *parent, qreal z)
 {
     VScaledEllipse *point = new VScaledEllipse(parent);
     point->setZValue(1);

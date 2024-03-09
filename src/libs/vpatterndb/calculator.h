@@ -68,7 +68,7 @@
  * Main purpose make easy evaluate value of formula and get tokens.
  * Note. If created to many parser for different purpes in the same time parser can work wrong.
  * Example:
- * DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data);
+ * EditFormulaDialog *dialog = new EditFormulaDialog(data);
  * dialog->SetFormula(formula);
  * if (dialog->exec() == QDialog::Accepted)
  * {

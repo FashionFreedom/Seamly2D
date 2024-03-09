@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   ifcdef.h
+**  @author Douglas S Caskey
+**  @date   30 Apr, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   ifcdef.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -105,6 +109,8 @@ extern const QString AttrDartP3;
 extern const QString AttrX;
 extern const QString AttrY;
 extern const QString AttrLineType;
+extern const QString AttrLineWeight;
+extern const QString AttrObjName;
 extern const QString AttrCut;
 extern const QString AttrLength;
 extern const QString AttrBasePoint;
@@ -163,6 +169,7 @@ extern const QString AttrArc;
 extern const QString AttrSuffix;
 extern const QString AttrIdObject;
 extern const QString AttrInLayout;
+extern const QString AttrPieceLocked;
 extern const QString AttrClosed;
 extern const QString AttrShowPointName;
 extern const QString AttrShowPointName1;
@@ -176,12 +183,16 @@ extern const QString LineTypeDotLine;
 extern const QString LineTypeDashDotLine;
 extern const QString LineTypeDashDotDotLine;
 
-QStringList          StylesList();
-Qt::PenStyle         lineTypeToPenStyle(const QString &lineType);
-QString              PenStyleToLineStyle(Qt::PenStyle penStyle);
-QMap<QString, QIcon> LineStylesPics();
-QMap<QString, QIcon> CurvePenStylesPics();
+QStringList            LineTypes();
+Qt::PenStyle           lineTypeToPenStyle(const QString &lineType);
+QString                PenStyleToLineType(Qt::PenStyle penStyle);
+QMap<QString, QString> lineTypeList();
+QMap<QString, QString> curveLineTypeList();
 
+QMap<QString, QString> lineWeightList();
+
+extern const QString LineWeightByGroup;
+extern const QString LineTypeByGroup;
 extern const QString ColorByGroup;
 extern const QString ColorNone;
 extern const QString ColorBlack;
@@ -205,6 +216,22 @@ extern const QString ColorGray;
 extern const QString ColorDarkGray;
 extern const QString ColorLightGray;
 extern const QString ColorWhite;
+
+extern const QString FillNone;
+extern const QString FillSolid;
+extern const QString FillDense1;
+extern const QString FillDense2;
+extern const QString FillDense3;
+extern const QString FillDense4;
+extern const QString FillDense5;
+extern const QString FillDense6;
+extern const QString FillDense7;
+extern const QString FillHorizLines;
+extern const QString FillVertLines;
+extern const QString FillCross;
+extern const QString FillBackwardDiagonal;
+extern const QString FillForwardDiagonal;
+extern const QString FilldDiagonalCross;
 
 // variables name
 // Hacks for avoiding the linker error "undefined reference to"

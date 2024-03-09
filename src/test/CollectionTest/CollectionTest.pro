@@ -13,23 +13,13 @@ TARGET = CollectionTest
 # File with common stuff for whole project
 include(../../../common.pri)
 
-TEMPLATE = app
-
 # CONFIG += testcase adds a  'make check' which is great. But by default it also
 # adds a 'make install' that installs the test cases, which we do not want.
 # Can configure it not to do that with 'no_testcase_installs'
 CONFIG += testcase no_testcase_installs
 
-# Since Q5.4 available support C++14
-greaterThan(QT_MAJOR_VERSION, 4):greaterThan(QT_MINOR_VERSION, 3) {
-    CONFIG += c++14
-} else {
-    # We use C++11 standard
-    CONFIG += c++11
-}
-
-# Use out-of-source builds (shadow builds)
-CONFIG -= app_bundle debug_and_release debug_and_release_target
+# disable app bundle to have stable cross-platform relative paths to seamly2d qm files
+CONFIG -= app_bundle
 
 # directory for executable file
 DESTDIR = bin
@@ -54,31 +44,7 @@ HEADERS += \
     tst_seamlymecommandline.h \
     tst_seamly2dcommandline.h
 
-# Set using ccache. Function enable_ccache() defined in common.pri.
-$$enable_ccache()
-
 include(warnings.pri)
-
-CONFIG(release, debug|release){
-    # Release mode
-    !*msvc*:CONFIG += silent
-    DEFINES += V_NO_ASSERT
-    !unix:*g++*{
-        QMAKE_CXXFLAGS += -fno-omit-frame-pointer # Need for exchndl.dll
-    }
-
-    noDebugSymbols{ # For enable run qmake with CONFIG+=noDebugSymbols
-        # do nothing
-    } else {
-        # Turn on debug symbols in release mode on Unix systems.
-        # On Mac OS X temporarily disabled. Need find way how to strip binary file.
-        !macx:!*msvc*{
-            QMAKE_CXXFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_CFLAGS_RELEASE += -g -gdwarf-3
-            QMAKE_LFLAGS_RELEASE =
-        }
-    }
-}
 
 #VTools static library (depend on VWidgets, VMisc, VPatternDB)
 unix|win32: LIBS += -L$$OUT_PWD/../../libs/vtools/$${DESTDIR}/ -lvtools
@@ -162,99 +128,102 @@ win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vlayout/$${DESTDIR}/vla
 else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vlayout/$${DESTDIR}/libvlayout.a
 
 # QMuParser library
-win32:CONFIG(release, debug|release): LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser2
-else:win32:CONFIG(debug, debug|release): LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser2
-else:unix: LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser
+unix|win32: LIBS += -L$${OUT_PWD}/../../libs/qmuparser/$${DESTDIR} -lqmuparser
 
 INCLUDEPATH += $${PWD}/../../libs/qmuparser
 DEPENDPATH += $${PWD}/../../libs/qmuparser
 
-# Only for adding path to LD_LIBRARY_PATH
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/qmuparser.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/qmuparser/$${DESTDIR}/libqmuparser.a
+
 # VPropertyExplorer library
-win32:CONFIG(release, debug|release): LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
-else:win32:CONFIG(debug, debug|release): LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
-else:unix: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
+unix|win32: LIBS += -L$${OUT_PWD}/../../libs/vpropertyexplorer/$${DESTDIR} -lvpropertyexplorer
 
 INCLUDEPATH += $${PWD}/../../libs/vpropertyexplorer
 DEPENDPATH += $${PWD}/../../libs/vpropertyexplorer
 
-SEAMLYME_TEST_FILES += \
-    tst_seamlyme/keiko.vit \
-    tst_seamlyme/empty.vit \
-    tst_seamlyme/all_measurements_v0.3.0.vit \
-    tst_seamlyme/all_measurements_v0.4.0.vst \
-    tst_seamlyme/GOST_man_ru_v0.3.0.vst \
-    tst_seamlyme/all_measurements_v0.3.3.vit \
-    tst_seamlyme/all_measurements_v0.4.2.vst \
-    tst_seamlyme/GOST_man_ru_v0.4.2.vst \
-    tst_seamlyme/broken1.vit \
-    tst_seamlyme/broken2.vit \
-    tst_seamlyme/broken3.vit \
-    tst_seamlyme/broken4.vit \
-    tst_seamlyme/text.vit \
-    tst_seamlyme/text.vst
+win32:!win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/vpropertyexplorer.lib
+else:unix|win32-g++: PRE_TARGETDEPS += $$OUT_PWD/../../libs/vpropertyexplorer/$${DESTDIR}/libvpropertyexplorer.a
 
-seamly2d_TEST_FILES += \
-    tst_seamly2d/empty.val \
-    tst_seamly2d/issue_372.val \
-    tst_seamly2d/wrong_obj_type.val \
-    tst_seamly2d/text.val \
-    tst_seamly2d/glimited_no_m.val \
-    tst_seamly2d/glimited_vit.val \
-    tst_seamly2d/glimited.vit \
-    tst_seamly2d/glimited_vst.val \
-    tst_seamly2d/glimited.vst \
-    tst_seamly2d/issue_256.val \
-    tst_seamly2d/issue_256_wrong_path.val \
-    tst_seamly2d/issue_256_correct.vit \
-    tst_seamly2d/issue_256_wrong.vit \
-    tst_seamly2d/issue_256_correct.vst \
-    tst_seamly2d/issue_256_wrong.vst \
-    tst_seamly2d/wrong_formula.val
+SEAMLYME_TEST_FILES += \
+    share/all_measurements/all_measurements_v0.3.0.smis \
+    share/all_measurements/all_measurements_v0.4.0.smms \
+    share/all_measurements/all_measurements_v0.3.3.smis \
+    share/all_measurements/all_measurements_v0.4.2.smms \
+    share/broken/broken1.smis \
+    share/broken/broken2.smis \
+    share/broken/broken3.smis \
+    share/broken/broken4.smis \
+    share/keiko_skirt/keiko.smis \
+    share/text/text.smis \
+    share/text/text.smms \
+    tst_seamlyme/GOST_man_ru_v0.3.0.smms \
+    tst_seamlyme/GOST_man_ru_v0.4.2.smms \
+    tst_seamlyme/empty.smis
+
+SEAMLY2D_TEST_FILES += \
+    share/text/text.sm2d \
+    share/glimited/glimited_no_m.sm2d \
+    share/glimited/glimited_vit.sm2d \
+    share/glimited/glimited.smis \
+    share/glimited/glimited_vst.sm2d \
+    share/glimited/glimited.smms \
+    share/issue_256/issue_256.sm2d \
+    share/issue_256/issue_256_wrong_path.sm2d \
+    share/issue_256/issue_256_correct.smis \
+    share/issue_256/issue_256_wrong.smis \
+    share/issue_256/issue_256_correct.smms \
+    share/issue_256/issue_256_wrong.smms \
+    tst_seamly2d/empty.sm2d \
+    tst_seamly2d/issue_372.sm2d \
+    tst_seamly2d/wrong_obj_type.sm2d \
+    tst_seamly2d/wrong_formula.sm2d
 
 COLLECTION_FILES += \
-    $${PWD}/../../app/share/tables/multisize/GOST_man_ru.vst \
-    $${PWD}/../../app/share/collection/bra.val \
-    $${PWD}/../../app/share/collection/bra.vit \
-    $${PWD}/../../app/share/collection/jacket1_52-176.val \
-    $${PWD}/../../app/share/collection/jacket2_40-146.val \
-    $${PWD}/../../app/share/collection/jacket3_40-146.val \
-    $${PWD}/../../app/share/collection/jacket4_40-146.val \
-    $${PWD}/../../app/share/collection/jacket5_30-110.val \
-    $${PWD}/../../app/share/collection/jacket6_30-110.val \
-    $${PWD}/../../app/share/collection/pants1_52-176.val \
-    $${PWD}/../../app/share/collection/pants2_40-146.val \
-    $${PWD}/../../app/share/collection/pants7.val \
-    $${PWD}/../../app/share/collection/TShirt_test.val \
-    $${PWD}/../../app/share/collection/TestDart.val \
-    $${PWD}/../../app/share/collection/patron_blusa.val \
-    $${PWD}/../../app/share/collection/blusa.vit \
-    $${PWD}/../../app/share/collection/PajamaTopWrap2.val \
-    $${PWD}/../../app/share/collection/Susan.vit \
-    $${PWD}/../../app/share/collection/Moulage_0.5_armhole_neckline.val \
-    $${PWD}/../../app/share/collection/0.7_Armhole_adjustment_0.10.val \
-    $${PWD}/../../app/share/collection/my_calculated_measurements_for_val.vit \
-    $${PWD}/../../app/share/collection/Keiko_skirt.val \
-    $${PWD}/../../app/share/collection/keiko.vit \
-    $${PWD}/../../app/share/collection/medidas_eli2015.vit \
-    $${PWD}/../../app/share/collection/pantalon_base_Eli.val \
-    $${PWD}/../../app/share/collection/Razmernye_priznaki_dlya_zhenskogo_zhaketa.vit \
-    $${PWD}/../../app/share/collection/IMK_Zhaketa_poluprilegayuschego_silueta.val \
-    $${PWD}/../../app/share/collection/Lara_Jil.vit \
-    $${PWD}/../../app/share/collection/modell_2.val \
-    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.val \
-    $${PWD}/../../app/share/collection/MaleShirt/MaleShirt.vit \
-    $${PWD}/../../app/share/collection/Trousers/Trousers.val \
-    $${PWD}/../../app/share/collection/Trousers/trousers.vit \
-    $${PWD}/../../app/share/collection/Steampunk_trousers.val \
-    $${PWD}/../../app/share/collection/Steampunk_trousers.vit \
-    $${PWD}/../../app/share/collection/Basic_block_women-2016.val \
-    $${PWD}/../../app/share/collection/Gent_Jacket_with_tummy.val
+    share/suit/jacket1_52-176.sm2d \
+    share/suit/jacket2_40-146.sm2d \
+    share/suit/jacket3_40-146.sm2d \
+    share/suit/jacket4_40-146.sm2d \
+    share/suit/jacket5_30-110.sm2d \
+    share/suit/jacket6_30-110.sm2d \
+    share/suit/pants1_52-176.sm2d \
+    share/suit/pants2_40-146.sm2d \
+    share/bra/bra.sm2d \
+    share/bra/bra.smis \
+    share/suit/pants7.sm2d \
+    share/patron_blusa/patron_blusa.sm2d \
+    share/patron_blusa/blusa.smis \
+    share/susan/pajama_top_wrap2.sm2d \
+    share/susan/mens_shirt_block.sm2d \
+    share/susan/test_puzzle.sm2d \
+    share/susan/susan.smis \
+    share/keiko_skirt/keiko_skirt.sm2d \
+    share/keiko_skirt/keiko.smis \
+    share/maleshirt/male_shirt.sm2d \
+    share/maleshirt/male_shirt.smis \
+    share/trousers/trousers.sm2d \
+    share/trousers/trousers.smis \
+    share/steampunk_trousers/steampunk_trousers.sm2d \
+    share/steampunk_trousers/steampunk_trousers.smis \
+    share/imk_zhaketa/razmernye_priznaki_dlya_zhenskogo_zhaketa.smis \
+    share/imk_zhaketa/imk_zhaketa_poluprilegayuschego_silueta.sm2d \
+    share/modell/lara_jil.smis \
+    share/modell/modell_2.sm2d \
+    share/tshirt_test.sm2d \
+    share/test_dart.sm2d \
+    share/pantaloon/medidas_eli2015.smis \
+    share/pantaloon/pantalon_base_Eli.sm2d \
+    share/basic_block_women-2016.sm2d \
+    share/gent_jacket_with_tummy.sm2d \
+    share/moulage/moulage_05_armhole_neckline.sm2d \
+    share/moulage/07_armhole_adjustment_010.sm2d \
+    share/moulage/my_calculated_measurements.smis \
+    tst_seamlyme/gost_man_ru.smms
 
 # Compilation will fail without this files after we added them to this section.
 OTHER_FILES += \
     $$SEAMLYME_TEST_FILES \
-    $$seamly2d_TEST_FILES \
+    $$SEAMLY2D_TEST_FILES \
     $$COLLECTION_FILES
 
 for(DIR, SEAMLYME_TEST_FILES) {
@@ -265,7 +234,7 @@ for(DIR, SEAMLYME_TEST_FILES) {
 
 copyToDestdir($$seamlyme_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamlyme))
 
-for(DIR, seamly2d_TEST_FILES) {
+for(DIR, SEAMLY2D_TEST_FILES) {
      #add these absolute paths to a variable which
      #ends up as 'mkcommands = path1 path2 path3 ...'
      seamly2d_path += $${PWD}/$$DIR
@@ -276,7 +245,7 @@ copyToDestdir($$seamly2d_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamly2d))
 for(DIR, COLLECTION_FILES) {
      #add these absolute paths to a variable which
      #ends up as 'mkcommands = path1 path2 path3 ...'
-     collection_path += $$DIR
+     collection_path += $${PWD}/$$DIR
 }
 
 copyToDestdir($$collection_path, $$shell_path($${OUT_PWD}/$$DESTDIR/tst_seamly2d_collection))

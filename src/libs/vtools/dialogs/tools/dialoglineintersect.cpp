@@ -80,14 +80,18 @@
  * @param parent parent widget
  */
 DialogLineIntersect::DialogLineIntersect(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogLineIntersect), flagPoint(true)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogLineIntersect)
+    , flagPoint(true)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/intersect.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     number = 0;
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
@@ -279,8 +283,8 @@ void DialogLineIntersect::ShowVisualization()
  */
 void DialogLineIntersect::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName && flagPoint);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName && flagPoint);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

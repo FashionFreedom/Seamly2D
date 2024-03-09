@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolendline.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolendline.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -85,18 +85,21 @@ const QString VToolEndLine::ToolType = QStringLiteral("endLine");
  * @param doc dom document container.
  * @param data container with variables.
  * @param id object id in container.
- * @param typeLine line type.
+ * @param lineType line type.
+ * @param lineWeight line weight.
+ * @param lineColor line color.
  * @param formulaLength string with formula length of line.
  * @param formulaAngle formula angle of line.
  * @param basePointId id first point of line.
  * @param typeCreation way we create this tool.
  * @param parent parent object.
  */
-VToolEndLine::VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint32 &id,  const QString &typeLine,
+VToolEndLine::VToolEndLine(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+                           const QString &lineType, const QString &lineWeight,
                            const QString &lineColor, const QString &formulaLength, const QString &formulaAngle,
                            const quint32 &basePointId, const Source &typeCreation, QGraphicsItem *parent)
-    :VToolLinePoint(doc, data, id, typeLine, lineColor, formulaLength, basePointId, 0, parent),
-      formulaAngle(formulaAngle)
+    : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, formulaLength, basePointId, 0, parent)
+    , formulaAngle(formulaAngle)
 {
     ToolCreation(typeCreation);
 }
@@ -112,8 +115,9 @@ void VToolEndLine::setDialog()
     QSharedPointer<DialogEndLine> dialogTool = m_dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
-    dialogTool->SetTypeLine(m_lineType);
-    dialogTool->SetLineColor(lineColor);
+    dialogTool->setLineColor(lineColor);
+    dialogTool->setLineType(m_lineType);
+    dialogTool->setLineWeight(m_lineWeight);
     dialogTool->SetFormula(formulaLength);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->SetBasePointId(basePointId);
@@ -135,14 +139,15 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogEndLine> dialogTool = dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
-    const QString pointName = dialogTool->getPointName();
-    const QString typeLine = dialogTool->GetTypeLine();
-    const QString lineColor = dialogTool->GetLineColor();
-    QString formulaLength = dialogTool->GetFormula();
-    QString formulaAngle = dialogTool->GetAngle();
+    const QString pointName   = dialogTool->getPointName();
+    const QString lineColor   = dialogTool->getLineColor();
+    const QString lineType    = dialogTool->getLineType();
+    const QString lineWeight  = dialogTool->getLineWeight();
+    QString formulaLength     = dialogTool->GetFormula();
+    QString formulaAngle      = dialogTool->GetAngle();
     const quint32 basePointId = dialogTool->GetBasePointId();
 
-    VToolEndLine *point = Create(0, pointName, typeLine, lineColor, formulaLength, formulaAngle,
+    VToolEndLine *point = Create(0, pointName, lineType, lineWeight, lineColor, formulaLength, formulaAngle,
                                  basePointId, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -156,7 +161,8 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
  * @brief Create help create tool.
  * @param _id tool id, 0 if tool doesn't exist yet.
  * @param pointName point name.
- * @param typeLine line type.
+ * @param lineType line type.
+ * @param lineWeight line weight.
  * @param lineColor line color.
  * @param formulaLength string with formula length of line.
  * @param formulaAngle formula angle of line.
@@ -171,7 +177,8 @@ VToolEndLine* VToolEndLine::Create(QSharedPointer<DialogTool> dialog, VMainGraph
  * @param typeCreation way we create this tool.
  * @return the created tool
  */
-VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName, const QString &typeLine,
+VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName,
+                                   const QString &lineType, const QString &lineWeight,
                                    const QString &lineColor, QString &formulaLength, QString &formulaAngle,
                                    quint32 basePointId, qreal mx, qreal my, bool showPointName,
                                    VMainGraphicsScene *scene, VAbstractPattern *doc, VContainer *data,
@@ -205,7 +212,7 @@ VToolEndLine* VToolEndLine::Create(const quint32 _id, const QString &pointName, 
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::EndLine, doc);
-        VToolEndLine *point = new VToolEndLine(doc, data, id, typeLine, lineColor, formulaLength, formulaAngle,
+        VToolEndLine *point = new VToolEndLine(doc, data, id, lineType, lineWeight, lineColor, formulaLength, formulaAngle,
                                                basePointId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -227,9 +234,9 @@ void VToolEndLine::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint3
     {
         ContextMenu<DialogEndLine>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -243,11 +250,12 @@ void VToolEndLine::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogEndLine> dialogTool = m_dialog.objectCast<DialogEndLine>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
-    doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
-    doc->SetAttribute(domElement, AttrLength, dialogTool->GetFormula());
-    doc->SetAttribute(domElement, AttrAngle, dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrName,       dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrLength,     dialogTool->GetFormula());
+    doc->SetAttribute(domElement, AttrAngle,      dialogTool->GetAngle());
     doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
 }
 
@@ -265,11 +273,12 @@ void VToolEndLine::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolEndLine::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
+    m_lineType    = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
+    m_lineWeight  = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    lineColor     = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
     formulaLength = doc->GetParametrString(domElement, AttrLength, "");
-    basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
-    formulaAngle = doc->GetParametrString(domElement, AttrAngle, "");
+    basePointId   = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
+    formulaAngle  = doc->GetParametrString(domElement, AttrAngle, "");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -281,9 +290,10 @@ void VToolEndLine::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(basePointId);
-        visual->setLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
-        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
+        visual->setLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
+        visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();
     }
 }

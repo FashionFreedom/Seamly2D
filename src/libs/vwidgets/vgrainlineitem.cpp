@@ -134,15 +134,15 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
 
     if (m_eMode != mNormal)
     {
-        painter->setPen(QPen(color, 2, Qt::DashLine));
+        painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
         painter->setBrush(Qt::NoBrush);
         // bounding polygon
         painter->drawPolygon(m_polyBound);
-        painter->setPen(QPen(color, 3));
 
         if (m_eMode != mRotate)
         {
-            painter->setBrush(color);
+            painter->setPen(QPen(Qt::black, 3));
+            painter->setBrush(Qt::black);
             UpdatePolyResize();
             painter->drawPolygon(m_polyResize);
         }
@@ -150,7 +150,7 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
         painter->setBrush(Qt::NoBrush);
         if (m_eMode == mResize)
         {
-            painter->setPen(color);
+            painter->setPen(Qt::black);
             painter->drawLine(m_polyBound.at(0), m_polyBound.at(2));
             painter->drawLine(m_polyBound.at(1), m_polyBound.at(3));
         }
@@ -159,7 +159,7 @@ void VGrainlineItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *op
         {
             QPointF ptC = (m_polyBound.at(0) + m_polyBound.at(2))/2;
             qreal dRad = m_dScale * ROTATE_CIRC_R;
-            painter->setBrush(color);
+            painter->setBrush(Qt::black);
             painter->drawEllipse(ptC, dRad, dRad);
 
             painter->setBrush(Qt::NoBrush);
@@ -276,7 +276,8 @@ bool VGrainlineItem::isContained(const QPointF& pt, qreal dRot, qreal &dX, qreal
  */
 void VGrainlineItem::mousePressEvent(QGraphicsSceneMouseEvent* pME)
 {
-    if (pME->button() == Qt::LeftButton && pME->type() != QEvent::GraphicsSceneMouseDoubleClick)
+    if (pME->button() == Qt::LeftButton && pME->type() != QEvent::GraphicsSceneMouseDoubleClick
+        && (flags() & QGraphicsItem::ItemIsMovable))
     {
         if (m_moveType == NotMovable)
         {
@@ -463,7 +464,7 @@ void VGrainlineItem::mouseReleaseEvent(QGraphicsSceneMouseEvent* pME)
 {
     if (pME->button() == Qt::LeftButton)
     {
-        if (m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize)
+        if ((m_eMode == mMove || m_eMode == mRotate || m_eMode == mResize) && (flags() & QGraphicsItem::ItemIsMovable))
         {
             SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
         }

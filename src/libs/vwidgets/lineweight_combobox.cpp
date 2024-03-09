@@ -21,20 +21,20 @@
   **
   *****************************************************************************/
 
+#include "lineweight_combobox.h"
+
 #include <QAbstractItemView>
 #include <QPen>
 #include <Qt>
 #include <QPainter>
 #include <QPixmap>
 
-#include "lineweight_combobox.h"
-
 /**
  * Constructor with name.
  */
 LineWeightComboBox::LineWeightComboBox(QWidget *parent, const char *name)
 		: QComboBox(parent)
-      	, m_currentWeight(0.18)
+      	, m_currentWeight(0.35)
 		, m_iconWidth(40)
 		, m_iconHeight(12)
 {
@@ -48,7 +48,7 @@ LineWeightComboBox::LineWeightComboBox(QWidget *parent, const char *name)
  */
 LineWeightComboBox::LineWeightComboBox(int width, int height, QWidget *parent, const char *name)
 		: QComboBox(parent)
-		, m_currentWeight(0.18)
+		, m_currentWeight(0.35)
 		, m_iconWidth(width)
 		, m_iconHeight(height)
 {

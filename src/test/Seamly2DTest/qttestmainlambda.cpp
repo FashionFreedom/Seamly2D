@@ -95,7 +95,7 @@ public:
 TestVApplication::TestVApplication(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
 {
-    setApplicationName(VER_INTERNALNAME_STR);
+    setApplicationName(VER_INTERNALNAME_2D_STR);
     setOrganizationName(VER_COMPANYNAME_STR);
     OpenSettings();
 }
@@ -149,7 +149,7 @@ int main(int argc, char** argv)
     ASSERT_TEST(new TST_VArc());
     ASSERT_TEST(new TST_VEllipticalArc());
     ASSERT_TEST(new TST_QmuTokenParser());
-    ASSERT_TEST(new TST_VMeasurements());
+    ASSERT_TEST(new TST_Measurements());
     ASSERT_TEST(new TST_VLockGuard());
     ASSERT_TEST(new TST_Misc());
     ASSERT_TEST(new TST_VCommandLine());

@@ -39,7 +39,7 @@
       </size>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="path_Tab">
       <attribute name="title">
@@ -120,7 +120,7 @@
           </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QComboBox" name="penType_ComboBox">
+          <widget class="LineTypeComboBox" name="penType_ComboBox">
            <property name="minimumSize">
             <size>
              <width>150</width>
@@ -129,7 +129,7 @@
            </property>
            <property name="iconSize">
             <size>
-             <width>80</width>
+             <width>40</width>
              <height>14</height>
             </size>
            </property>
@@ -178,10 +178,10 @@
             <string>Move row to top of list</string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-top.png</iconset>
            </property>
           </widget>
@@ -192,10 +192,10 @@
             <string>Move row up one row</string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-up.png</iconset>
            </property>
           </widget>
@@ -206,10 +206,10 @@
             <string>Move row down one row</string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-down.png</iconset>
            </property>
           </widget>
@@ -220,10 +220,10 @@
             <string>Move row to bottom of list</string>
            </property>
            <property name="text">
-            <string>...</string>
+            <string notr="true">...</string>
            </property>
            <property name="icon">
-            <iconset resource="../../../../vmisc/share/resources/icon.qrc">
+            <iconset resource="../../../../vmisc/share/resources/theme.qrc">
              <normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</normaloff>:/icons/win.icon.theme/16x16/actions/go-bottom.png</iconset>
            </property>
           </widget>
@@ -414,7 +414,7 @@
            </property>
            <property name="minimumSize">
             <size>
-             <width>87</width>
+             <width>40</width>
              <height>0</height>
             </size>
            </property>
@@ -650,7 +650,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>87</width>
+                <width>40</width>
                 <height>0</height>
                </size>
               </property>
@@ -849,7 +849,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>87</width>
+                <width>40</width>
                 <height>0</height>
                </size>
               </property>
@@ -1221,7 +1221,7 @@
            <rect>
             <x>55</x>
             <y>106</y>
-            <width>100</width>
+            <width>80</width>
             <height>20</height>
            </rect>
           </property>
@@ -1233,7 +1233,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>100</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -1365,7 +1365,7 @@
            <rect>
             <x>55</x>
             <y>78</y>
-            <width>100</width>
+            <width>80</width>
             <height>20</height>
            </rect>
           </property>
@@ -1377,7 +1377,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>100</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -1405,7 +1405,7 @@
            <rect>
             <x>182</x>
             <y>177</y>
-            <width>100</width>
+            <width>80</width>
             <height>20</height>
            </rect>
           </property>
@@ -1417,7 +1417,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>100</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -1431,7 +1431,7 @@
            <number>3</number>
           </property>
          </widget>
-         <widget class="QCheckBox" name="showSecondNotch_CheckBox">
+         <widget class="QCheckBox" name="showSeamlineNotch_CheckBox">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -1561,7 +1561,7 @@
            <rect>
             <x>55</x>
             <y>51</y>
-            <width>100</width>
+            <width>80</width>
             <height>20</height>
            </rect>
           </property>
@@ -1573,7 +1573,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>100</width>
+            <width>80</width>
             <height>0</height>
            </size>
           </property>
@@ -1661,6 +1661,13 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>LineTypeComboBox</class>
+   <extends>QComboBox</extends>
+   <header>linetype_combobox.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../../../../vmisc/share/resources/theme.qrc"/>
   <include location="../../../../vmisc/share/resources/icon.qrc"/>
@@ -1700,7 +1707,7 @@
   </connection>
  </connections>
  <buttongroups>
-  <buttongroup name="notchSubType_ButtonGroup"/>
   <buttongroup name="notchType_ButtonGroup"/>
+  <buttongroup name="notchSubType_ButtonGroup"/>
  </buttongroups>
 </ui>

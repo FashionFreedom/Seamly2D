@@ -72,16 +72,19 @@
  * @param parent parent widget
  */
 DialogTriangle::DialogTriangle(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogTriangle)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogTriangle)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/triangle.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxAxisP1);

@@ -72,7 +72,7 @@ class VAbstractNode : public VAbstractTool
     Q_OBJECT
 public:
     VAbstractNode(VAbstractPattern *doc, VContainer *data, const quint32 &id, const quint32 &idNode,
-                  const QString &drawName = QString(), const quint32 &idTool = 0, QObject *parent = nullptr);
+                  const QString &blockName = QString(), const quint32 &idTool = 0, QObject *parent = nullptr);
     virtual      ~VAbstractNode() Q_DECL_EQ_DEFAULT;
     static const QString AttrIdTool;
     virtual void ShowVisualization(bool show) Q_DECL_OVERRIDE;
@@ -96,7 +96,7 @@ protected:
     /** @brief idTool id tool. */
     quint32       idTool;
 
-    QString       m_drawName;
+    QString       m_blockName;
 
     bool          m_exluded;
 

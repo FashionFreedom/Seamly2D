@@ -119,28 +119,28 @@ VSettings::VSettings(Format format, Scope scope, const QString &organization, co
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetLabelLanguage() const
+QString VSettings::getLabelLanguage() const
 {
     return value(settingConfigurationLabelLanguage, QLocale().bcp47Name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetLabelLanguage(const QString &value)
+void VSettings::setLabelLanguage(const QString &value)
 {
     setValue(settingConfigurationLabelLanguage, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetDefPathPattern()
+QString VSettings::getDefaultPatternPath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("patterns");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetPathPattern() const
+QString VSettings::getPatternPath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
-    return settings.value(settingPathsPattern, GetDefPathPattern()).toString();
+    return settings.value(settingPathsPattern, getDefaultPatternPath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -152,16 +152,16 @@ void VSettings::SetPathPattern(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetDefPathLayout()
+QString VSettings::getDefaultLayoutPath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("layouts");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VSettings::GetPathLayout() const
+QString VSettings::getLayoutPath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), this->applicationName());
-    return settings.value(settingPathsLayout, GetDefPathLayout()).toString();
+    return settings.value(settingPathsLayout, getDefaultLayoutPath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -630,7 +630,7 @@ bool VSettings::GetDefTextAsPaths()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetTextAsPaths(bool value)
+void VSettings::setTextAsPaths(bool value)
 {
     setValue(settingTextAsPaths, value);
 }
@@ -659,12 +659,12 @@ QMarginsF VSettings::GetTiledPDFMargins(const Unit &unit) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSettings::SetTiledPDFMargins sets the setting tiled pdf margins to the given value.
+ * @brief VSettings::setTiledPDFMargins sets the setting tiled pdf margins to the given value.
  * @param value the margins to save
  * @param unit the unit in which are the value. Necessary because we save the values
  * internaly as mm so there is conversion beeing made.
  */
-void VSettings::SetTiledPDFMargins(const QMarginsF &value, const Unit &unit)
+void VSettings::setTiledPDFMargins(const QMarginsF &value, const Unit &unit)
 {
     QMarginsF margins = UnitConvertor(value, unit, Unit::Mm);
 
@@ -674,11 +674,11 @@ void VSettings::SetTiledPDFMargins(const QMarginsF &value, const Unit &unit)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSettings::GetTiledPDFPaperHeight returns the paper height of tiled pdf in the desired unit.
+ * @brief VSettings::getTiledPDFPaperHeight returns the paper height of tiled pdf in the desired unit.
  * @param unit the unit to return the value to (internally it's saved as mm)
  * @return
  */
-qreal VSettings::GetTiledPDFPaperHeight(const Unit &unit) const
+qreal VSettings::getTiledPDFPaperHeight(const Unit &unit) const
 {
     const qreal def = 297 /*A4*/;
     bool ok = false;
@@ -695,22 +695,22 @@ qreal VSettings::GetTiledPDFPaperHeight(const Unit &unit) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSettings::SetTiledPDFPaperHeight sets the tiled pdf paper height
+ * @brief VSettings::setTiledPDFPaperHeight sets the tiled pdf paper height
  * @param value in Mm
  * @param unit unit of the given value
  */
-void VSettings::SetTiledPDFPaperHeight(qreal value, const Unit &unit)
+void VSettings::setTiledPDFPaperHeight(qreal value, const Unit &unit)
 {
     setValue(settingTiledPDFPaperHeight, UnitConvertor(value, unit, Unit::Mm));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSettings::GetTiledPDFPaperWidth returns the paper height of tiled pdf in the desired unit.
+ * @brief VSettings::getTiledPDFPaperWidth returns the paper height of tiled pdf in the desired unit.
  * @param unit the unit to return the value to (internally it's saved as mm)
  * @return
  */
-qreal VSettings::GetTiledPDFPaperWidth(const Unit &unit) const
+qreal VSettings::getTiledPDFPaperWidth(const Unit &unit) const
 {
 
     const qreal def = 210 /*A4*/;
@@ -729,17 +729,17 @@ qreal VSettings::GetTiledPDFPaperWidth(const Unit &unit) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VSettings::SetTiledPDFPaperWidth sets the tiled pdf paper width
+ * @brief VSettings::setTiledPDFPaperWidth sets the tiled pdf paper width
  * @param unit unit of the given value
  * @param value in Mm
  */
-void VSettings::SetTiledPDFPaperWidth(qreal value, const Unit &unit)
+void VSettings::setTiledPDFPaperWidth(qreal value, const Unit &unit)
 {
     setValue(settingTiledPDFPaperWidth, UnitConvertor(value,unit, Unit::Mm));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-PageOrientation VSettings::GetTiledPDFOrientation() const
+PageOrientation VSettings::getTiledPDFOrientation() const
 {
     bool defaultValue = static_cast<bool>(PageOrientation::Portrait);
 
@@ -749,7 +749,7 @@ PageOrientation VSettings::GetTiledPDFOrientation() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VSettings::SetTiledPDFOrientation(PageOrientation value)
+void VSettings::setTiledPDFOrientation(PageOrientation value)
 {
     bool orientation = static_cast<bool> (value);
 

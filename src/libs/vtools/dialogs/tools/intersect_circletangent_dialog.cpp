@@ -33,7 +33,7 @@
 #include "ui_intersect_circletangent_dialog.h"
 
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vpatterndb/vtranslatevars.h"
@@ -80,7 +80,7 @@ IntersectCircleTangentDialog::IntersectCircleTangentDialog(const VContainer *dat
     timerCircleRadius = new QTimer(this);
     connect(timerCircleRadius, &QTimer::timeout, this, &IntersectCircleTangentDialog::EvalCircleRadius);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxPoints(ui->comboBoxCircleCenter);
@@ -138,13 +138,13 @@ void IntersectCircleTangentDialog::SetCircleCenterId(const quint32 &value)
 QString IntersectCircleTangentDialog::GetCircleRadius() const
 {
     return qApp->TrVars()->TryFormulaFromUser(ui->plainTextEditRadius->toPlainText(),
-                                              qApp->Settings()->GetOsSeparator());
+                                              qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::SetCircleRadius(const QString &value)
 {
-    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    const QString formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -182,7 +182,7 @@ CrossCirclesPoint IntersectCircleTangentDialog::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IntersectCircleTangentDialog::SetCrossCirclesPoint(const CrossCirclesPoint &p)
+void IntersectCircleTangentDialog::setCirclesCrossPoint(const CrossCirclesPoint &p)
 {
     const qint32 index = ui->comboBoxResult->findData(static_cast<int>(p));
     if (index != -1)
@@ -272,7 +272,7 @@ void IntersectCircleTangentDialog::CircleRadiusChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::FXCircleRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(GetCircleRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -336,11 +336,11 @@ void IntersectCircleTangentDialog::closeEvent(QCloseEvent *event)
 //---------------------------------------------------------------------------------------------------------------------
 void IntersectCircleTangentDialog::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula && flagName && flagError && flagCircleRadius);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }

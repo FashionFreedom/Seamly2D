@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vcommonsettings.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vcommonsettings.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -54,15 +55,16 @@
 #include <QApplication>
 #include <QDate>
 #include <QDir>
+#include <QFont>
 #include <QLocale>
 #include <QMessageLogger>
+#include <QSound>
 #include <QStaticStringData>
 #include <QStringData>
 #include <QStringDataPtr>
 #include <QVariant>
 #include <QtDebug>
 #include <QTextCodec>
-#include <QFont>
 
 #include "../ifc/ifcdef.h"
 #include "../vmisc/def.h"
@@ -71,16 +73,31 @@
 
 namespace
 {
-const QString settingIndividualMeasurementsPath          = QStringLiteral("paths/individual_measurements");
-const QString settingMultisizeMeasurementsPath           = QStringLiteral("paths/standard_measurements");
-const QString settingTemplatesPath                       = QStringLiteral("paths/templates");
-const QString settingLabelTemplatesPath                  = QStringLiteral("paths/labels");
 const QString settingImagesPath                          = QStringLiteral("paths/images");
+const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_size_measurements");
+const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/multi_size_measurements");
+const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
+const QString settingPathsBodyScans                      = QStringLiteral("paths/bodyscans");
+const QString settingPathsLabelTemplate                  = QStringLiteral("paths/labels");
 
+const QString settingConfigurationCompanyName            = QStringLiteral("graphicsview/companyName");
+const QString settingConfigurationContact                = QStringLiteral("graphicsview/contact");
+const QString settingConfigurationAddress                = QStringLiteral("graphicsview/address");
+const QString settingConfigurationCity                   = QStringLiteral("graphicsview/city");
+const QString settingConfigurationState                  = QStringLiteral("graphicsview/state");
+const QString settingConfigurationZipcode                = QStringLiteral("graphicsview/zipcode");
+const QString settingConfigurationCountry                = QStringLiteral("graphicsview/country");
+const QString settingConfigurationTelephone              = QStringLiteral("graphicsview/telephone");
+const QString settingConfigurationFax                    = QStringLiteral("graphicsview/fax");
+const QString settingConfigurationEmail                  = QStringLiteral("graphicsview/email");
+const QString settingConfigurationWebsite                = QStringLiteral("graphicsview/website");
+
+const QString settingConfigurationShowWelcome            = QStringLiteral("configuration/showWelcome");
 const QString settingConfigurationOsSeparator            = QStringLiteral("configuration/osSeparator");
 const QString settingConfigurationAutosaveState          = QStringLiteral("configuration/autosave/state");
 const QString settingConfigurationAutosaveTime           = QStringLiteral("configuration/autosave/time");
 
+const QString settingConfigurationUseModeType            = QStringLiteral("configuration/autosave/useModeType");
 const QString settingConfigurationUseLastExportFormat    = QStringLiteral("configuration/autosave/useLastExportFormat");
 const QString settingConfigurationExportFormat           = QStringLiteral("configuration/autosave/exportFormat");
 
@@ -115,18 +132,20 @@ const QString settingGraphicsViewPixelDelta              = QStringLiteral("graph
 const QString settingGraphicsViewAngleDelta              = QStringLiteral("graphicsview/angleDelta");
 const QString settingGraphicsViewZoomModKey              = QStringLiteral("graphicsview/zoomModKey");
 const QString settingGraphicsViewZoomDoubleClick         = QStringLiteral("graphicsview/zoomDoubleClick");
+const QString settingGraphicsViewPanActiveSpaceKey       = QStringLiteral("graphicsview/panActiveSpaceKey");
 const QString settingGraphicsViewZoomSpeedFactor         = QStringLiteral("graphicsview/zoomSpeedFactor");
 const QString settingGraphicsViewExportQuality           = QStringLiteral("graphicsview/exportQuality");
-
 const QString settingGraphicsViewZoomRBPositiveColor     = QStringLiteral("graphicsview/zoomRBPositiveColor");
 const QString settingGraphicsViewZoomRBNegativeColor     = QStringLiteral("graphicsview/zoomRBNegativeColor");
 const QString settingGraphicsViewPointNameColor          = QStringLiteral("graphicsview/pointNameColor");
 const QString settingGraphicsViewPointNameHoverColor     = QStringLiteral("graphicsview/pointNameHoverColor");
 const QString settingGraphicsViewAxisOrginColor          = QStringLiteral("graphicsview/axisOrginColor");
+const QString settingGraphicsViewDefaultLineColor        = QStringLiteral("graphicsview/defaultLineColor");
+const QString settingGraphicsViewDefaultLineWeight       = QStringLiteral("graphicsview/defaultLineWeight");
+const QString settingGraphicsViewDefaultLineType         = QStringLiteral("graphicsview/defaultLineType");
 const QString settingGraphicsViewPrimaryColor            = QStringLiteral("graphicsview/primarySupportColor");
 const QString settingGraphicsViewSecondaryColor          = QStringLiteral("graphicsview/secondarySupportColor");
 const QString settingGraphicsViewTertiaryColor           = QStringLiteral("graphicsview/tertiarySupportColor");
-
 
 const QString settingGraphicsViewConstrainValue          = QStringLiteral("graphicsview/constrainValue");
 const QString settingGraphicsViewConstrainModKey         = QStringLiteral("graphicsview/constrainModKey");
@@ -141,6 +160,7 @@ const QString settingGraphicsViewShowAnchorPoints        = QStringLiteral("graph
 const QString settingGraphicsUseToolColor                = QStringLiteral("graphicsview/useToolColor");
 
 const QString settingPatternUndo                         = QStringLiteral("pattern/undo");
+const QString settingSelectionSound                      = QStringLiteral("pattern/selectionSound");
 const QString settingPatternForbidFlipping               = QStringLiteral("pattern/forbidFlipping");
 const QString settingPatternHideSeamLine                 = QStringLiteral("pattern/hideMainPath");
 
@@ -148,7 +168,8 @@ const QString settingDefaultNotchLength                  = QStringLiteral("patte
 const QString settingDefaultNotchWidth                   = QStringLiteral("pattern/defaultNotchWidth");
 const QString settingDefaultNotchType                    = QStringLiteral("pattern/defaultNotchType");
 const QString settingDefaultNotchColor                   = QStringLiteral("pattern/defaultNotchColor");
-const QString settingDoubleNotch                         = QStringLiteral("pattern/doubleNotch");
+const QString settingSeamlineNotch                       = QStringLiteral("pattern/doubleNotch");
+const QString settingSeamAllowanceNotch                  = QStringLiteral("pattern/showSeamAllowanceNotch");
 
 const QString settingPatternDefaultSeamAllowance         = QStringLiteral("pattern/defaultSeamAllowance");
 const QString settingDefaultSeamColor                    = QStringLiteral("pattern/defaultSeamColor");
@@ -165,12 +186,21 @@ const QString settingDefaultCutoutLinetype               = QStringLiteral("patte
 const QString settingDefaultCutoutLineweight             = QStringLiteral("pattern/defaultCutoutLineweight");
 
 const QString settingShowSeamAllowances                  = QStringLiteral("pattern/showShowSeamAllowances");
+const QString settingDefaultSeamAllowanceVisibilty       = QStringLiteral("pattern/defaultSeamAllowanceVisibilty");
 const QString settingShowGrainlines                      = QStringLiteral("pattern/showGrainlines");
+const QString settingDefaultGrainlineVisibilty           = QStringLiteral("pattern/defaultGrainlineVisibilty");
+const QString settingDefaultGrainlineLength              = QStringLiteral("pattern/defaultGrainlineLength");
 const QString settingDefaultGrainlineColor               = QStringLiteral("pattern/defaultGrainlineColor");
 const QString settingDefaultGrainlineLineweight          = QStringLiteral("pattern/defaultGrainlineLineweight");
 
 const QString settingShowLabels                          = QStringLiteral("pattern/showLabels");
+const QString settingShowPatternLabels                   = QStringLiteral("pattern/showPatternLabels");
+const QString settingShowPieceLabels                     = QStringLiteral("pattern/showPieceLabels");
+const QString settingDefaultLabelWidth                   = QStringLiteral("pattern/defaultLabelWidth");
+const QString settingDefaultLabelHeight                  = QStringLiteral("pattern/defaultLabelHeight");
 const QString settingDefaultLabelColor                   = QStringLiteral("pattern/defaultLabelColor");
+const QString settingDefaultPatternTemplate              = QStringLiteral("pattern/defaultPatternTemplate");
+const QString settingDefaultPieceTemplate                = QStringLiteral("pattern/defaultPieceTemplate");
 
 const QString settingPatternLabelFont                    = QStringLiteral("pattern/labelFont");
 const QString settingPatternGuiFont                      = QStringLiteral("pattern/guiFont");
@@ -367,94 +397,115 @@ QString VCommonSettings::StandardTemplatesPath()
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::PrepareStandardTemplates(const QString & currentPath)
 {
-    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), GetDefPathTemplate());
+    return PrepareStandardFiles(currentPath, StandardTemplatesPath(), getDefaultTemplatePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::PrepareMultisizeTables(const QString &currentPath)
+QString VCommonSettings::prepareMultisizeTables(const QString &currentPath)
 {
-    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), GetDefPathMultisizeMeasurements());
+    return PrepareStandardFiles(currentPath, MultisizeTablesPath(), getDefaultMultisizePath());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathIndividualMeasurements()
+QString VCommonSettings::getDefaultIndividualSizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("individual");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathIndividualMeasurements() const
+QString VCommonSettings::getIndividualSizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingIndividualMeasurementsPath, GetDefPathIndividualMeasurements()).toString();
+    return settings.value(settingPathsIndividualMeasurements, getDefaultIndividualSizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathIndividualMeasurements(const QString &value)
+void VCommonSettings::setIndividualSizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingIndividualMeasurementsPath, value);
+    settings.setValue(settingPathsIndividualMeasurements, value);
     settings.sync();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathMultisizeMeasurements()
+QString VCommonSettings::getDefaultMultisizePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("measurements") + QLatin1String("/") + tr("multisize");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathMultisizeMeasurements() const
+QString VCommonSettings::getMultisizePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingMultisizeMeasurementsPath, GetDefPathMultisizeMeasurements()).toString();
+    return settings.value(settingPathsMultisizeMeasurements, getDefaultMultisizePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathMultisizeMeasurements(const QString &value)
+void VCommonSettings::setMultisizePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingMultisizeMeasurementsPath, value);
+    settings.setValue(settingPathsMultisizeMeasurements, value);
     settings.sync();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathTemplate()
+QString VCommonSettings::getDefaultTemplatePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("templates");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathTemplate() const
+QString VCommonSettings::getTemplatePath() const
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    return settings.value(settingTemplatesPath, GetDefPathTemplate()).toString();
+    return settings.value(settingPathsTemplates, getDefaultTemplatePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathTemplate(const QString &value)
+void VCommonSettings::setTemplatePath(const QString &value)
 {
     QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
-    settings.setValue(settingTemplatesPath, value);
+    settings.setValue(settingPathsTemplates, value);
     settings.sync();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetDefPathLabelTemplate()
+QString VCommonSettings::getDefaultBodyScansPath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("bodyscans");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getBodyScansPath() const
+{
+    QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
+    return settings.value(settingPathsBodyScans, getDefaultBodyScansPath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setBodyScansPath(const QString &value)
+{
+    QSettings settings(this->format(), this->scope(), this->organizationName(), commonIniFilename);
+    settings.setValue(settingPathsBodyScans, value);
+    settings.sync();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLabelTemplatePath()
 {
     return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetPathLabelTemplate() const
+QString VCommonSettings::getLabelTemplatePath() const
 {
-    return value(settingLabelTemplatesPath, GetDefPathLabelTemplate()).toString();
+    return value(settingPathsLabelTemplate, getDefaultLabelTemplatePath()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetPathLabelTemplate(const QString &value)
+void VCommonSettings::SetPathLabelTemplate(const QString &text)
 {
-    setValue(settingLabelTemplatesPath, value);
+    setValue(settingPathsLabelTemplate, text);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -470,19 +521,55 @@ QString VCommonSettings::getImageFilePath() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setImageFilePath(const QString &value)
+void VCommonSettings::setImageFilePath(const QString &text)
 {
-    setValue(settingImagesPath, value);
+    setValue(settingImagesPath, text);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::GetOsSeparator() const
+QString VCommonSettings::getDefaultPatternTemplate() const
+{
+    return value(settingDefaultPatternTemplate, getLabelTemplatePath() + "default_pattern_label.xml").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultPatternTemplate(const QString &text)
+{
+    setValue(settingDefaultPatternTemplate, text);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultPieceTemplate() const
+{
+    return value(settingDefaultPieceTemplate, getLabelTemplatePath() + "default_piece_label.xml").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultPieceTemplate(const QString &value)
+{
+    setValue(settingDefaultPieceTemplate, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getShowWelcome() const
+{
+    return value(settingConfigurationShowWelcome, 1).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowWelcome(const bool &value)
+{
+    setValue(settingConfigurationShowWelcome, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getOsSeparator() const
 {
     return value(settingConfigurationOsSeparator, 1).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetOsSeparator(const bool &value)
+void VCommonSettings::setOsSeparator(const bool &value)
 {
     setValue(settingConfigurationOsSeparator, value);
 }
@@ -494,7 +581,7 @@ bool VCommonSettings::GetAutosaveState() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetAutosaveState(const bool &value)
+void VCommonSettings::setAutosaveState(const bool &value)
 {
     setValue(settingConfigurationAutosaveState, value);
 }
@@ -506,8 +593,8 @@ int VCommonSettings::getAutosaveInterval() const
     int val = value(settingConfigurationAutosaveTime, 1).toInt(&ok);
     if (ok == false)
     {
-        qDebug()<<"Could not convert value"<<value(settingConfigurationAutosaveTime, 1)
-               <<"to int. Return default value for autosave time"<<1<<"minutes.";
+        qDebug() << "Could not convert value"<<value(settingConfigurationAutosaveTime, 1)
+                   << "to int. Return default value for autosave time" << 1 << "minutes.";
         val = 1;
     }
     return val;
@@ -517,6 +604,18 @@ int VCommonSettings::getAutosaveInterval() const
 void VCommonSettings::setAutosaveInterval(const int &value)
 {
     setValue(settingConfigurationAutosaveTime, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::useModeType() const
+{
+    return value(settingConfigurationUseModeType, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setUseModeType(const bool &value)
+{
+    setValue(settingConfigurationUseModeType, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -556,13 +655,13 @@ void VCommonSettings::SetSendReportState(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VCommonSettings::GetLocale() const
+QString VCommonSettings::getLocale() const
 {
     return value(settingConfigurationLocale, QLocale().name()).toString();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetLocale(const QString &value)
+void VCommonSettings::setLocale(const QString &value)
 {
     setValue(settingConfigurationLocale, value);
 }
@@ -849,7 +948,7 @@ void VCommonSettings::setScrollSpeedFactor(const int &factor)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::getZoomModKey() const
 {
-    return value(settingGraphicsViewZoomModKey, 1).toBool();
+    return value(settingGraphicsViewZoomModKey, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -861,13 +960,25 @@ void VCommonSettings::setZoomModKey(const bool &value)
 //---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::isZoomDoubleClick() const
 {
-    return value(settingGraphicsViewZoomDoubleClick, 1).toBool();
+    return value(settingGraphicsViewZoomDoubleClick, true).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VCommonSettings::setZoomDoubleClick(const bool &value)
 {
     setValue(settingGraphicsViewZoomDoubleClick, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::isPanActiveSpaceKey() const
+{
+    return value(settingGraphicsViewPanActiveSpaceKey, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setPanActiveSpaceKey(const bool &value)
+{
+    setValue(settingGraphicsViewPanActiveSpaceKey, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -955,6 +1066,42 @@ void VCommonSettings::setAxisOrginColor(const QString &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLineColor() const
+{
+    return value(settingGraphicsViewDefaultLineColor, "black").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineColor(const QString &value)
+{
+    setValue(settingGraphicsViewDefaultLineColor, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultLineWeight() const
+{
+    return value(settingGraphicsViewDefaultLineWeight, 1.20).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineWeight(const qreal &value)
+{
+    setValue(settingGraphicsViewDefaultLineWeight, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultLineType() const
+{
+    return value(settingGraphicsViewDefaultLineType, "solidLine").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLineType(const QString &value)
+{
+    setValue(settingGraphicsViewDefaultLineType, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getPrimarySupportColor() const
 {
     return value(settingGraphicsViewPrimaryColor, "Magenta").toString();
@@ -1015,23 +1162,152 @@ void VCommonSettings::setConstrainModKey(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getCompanyName() const
+{
+    return value(settingConfigurationCompanyName, "").toString();
+}
+
+void VCommonSettings::setCompanyName(const QString &value)
+{
+    setValue(settingConfigurationCompanyName, value);
+}
+
+QString VCommonSettings::getContact() const
+{
+    return value(settingConfigurationContact, "").toString();
+}
+
+void VCommonSettings::setContact(const QString &value)
+{
+    setValue(settingConfigurationContact, value);
+}
+
+QString VCommonSettings::getAddress() const
+{
+    return value(settingConfigurationAddress, "").toString();
+}
+
+void VCommonSettings::setAddress(const QString &value)
+{
+    setValue(settingConfigurationAddress, value);
+}
+
+QString VCommonSettings::getCity() const
+{
+    return value(settingConfigurationCity, "").toString();
+}
+
+void VCommonSettings::setCity(const QString &value)
+{
+    setValue(settingConfigurationCity, value);
+}
+
+QString VCommonSettings::getState() const
+{
+    return value(settingConfigurationState, "").toString();
+}
+
+void VCommonSettings::setState(const QString &value)
+{
+    setValue(settingConfigurationState, value);
+}
+
+QString VCommonSettings::getZipcode() const
+{
+    return value(settingConfigurationZipcode, "").toString();
+}
+
+void VCommonSettings::setZipcode(const QString &value)
+{
+    setValue(settingConfigurationZipcode, value);
+}
+
+QString VCommonSettings::getCountry() const
+{
+    return value(settingConfigurationCountry, "").toString();
+}
+
+void VCommonSettings::setCountry(const QString &value)
+{
+    setValue(settingConfigurationCountry, value);
+}
+
+QString VCommonSettings::getTelephone() const
+{
+    return value(settingConfigurationTelephone, "").toString();
+}
+
+void VCommonSettings::setTelephone(const QString &value)
+{
+    setValue(settingConfigurationTelephone, value);
+}
+
+QString VCommonSettings::getFax() const
+{
+    return value(settingConfigurationFax, "").toString();
+}
+
+void VCommonSettings::setFax(const QString &value)
+{
+    setValue(settingConfigurationFax, value);
+}
+
+QString VCommonSettings::getEmail() const
+{
+    return value(settingConfigurationEmail, "").toString();
+}
+
+void VCommonSettings::setEmail(const QString &value)
+{
+    setValue(settingConfigurationEmail, value);
+}
+
+QString VCommonSettings::getWebsite() const
+{
+    return value(settingConfigurationWebsite, "").toString();
+}
+
+void VCommonSettings::setWebsite(const QString &value)
+{
+    setValue(settingConfigurationWebsite, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 int VCommonSettings::GetUndoCount() const
 {
     bool ok = false;
     int val = value(settingPatternUndo, 0).toInt(&ok);
     if (ok == false)
     {
-        qDebug()<<"Could not convert value"<<value(settingPatternUndo, 0)
-               <<"to int. Return default value for undo counts 0 (no limit).";
+        qDebug() << "Could not convert value"<<value(settingPatternUndo, 0)
+                   << "to int. Return default value for undo counts 0 (no limit).";
         val = 0;
     }
     return val;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetUndoCount(const int &value)
+void VCommonSettings::setUndoCount(const int &value)
 {
     setValue(settingPatternUndo, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getSound() const
+{
+    return value(settingSelectionSound, "silent").toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getSelectionSound() const
+{
+    return QStringLiteral("qrc:/sounds/") + value(settingSelectionSound, "silent").toString() + QStringLiteral(".wav");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setSelectionSound(const QString &value)
+{
+    setValue(settingSelectionSound, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1118,13 +1394,13 @@ void VCommonSettings::setPreferenceDialogSize(const QSize& sz)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QSize VCommonSettings::GetToolSeamAllowanceDialogSize() const
+QSize VCommonSettings::getPatternPieceDialogSize() const
 {
     return value(settingToolSeamAllowanceDialogSize, QSize(0, 0)).toSize();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::SetToolSeamAllowanceDialogSize(const QSize &sz)
+void VCommonSettings::setPatternPieceDialogSize(const QSize &sz)
 {
     setValue(settingToolSeamAllowanceDialogSize, sz);
 }
@@ -1208,17 +1484,28 @@ void VCommonSettings::setHideSeamLine(bool value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VCommonSettings::showSecondNotch() const
+bool VCommonSettings::showSeamlineNotch() const
 {
-    return value(settingDoubleNotch, false).toBool();
+    return value(settingSeamlineNotch, false).toBool();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VCommonSettings::setShowSecondNotch(bool value)
+void VCommonSettings::setShowSeamlineNotch(bool value)
 {
-    setValue(settingDoubleNotch, value);
+    setValue(settingSeamlineNotch, value);
 }
 
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showSeamAllowanceNotch() const
+{
+    return value(settingSeamAllowanceNotch, false).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowSeamAllowanceNotch(bool value)
+{
+    setValue(settingSeamAllowanceNotch, value);
+}
 
 //---------------------------------------------------------------------------------------------------------------------
 qreal VCommonSettings::getDefaultNotchLength() const
@@ -1388,9 +1675,8 @@ double VCommonSettings::GetDefaultSeamAllowance()
     double val = value(settingPatternDefaultSeamAllowance, -1).toDouble(&ok);
     if (ok == false)
     {
-        qDebug()<< "Could not convert value"<<value(settingPatternDefaultSeamAllowance, 0)
-                << "to real. Return default value for default seam allowance is "
-                << defaultValue << ".";
+        qDebug() <<  "Could not convert value"<<value(settingPatternDefaultSeamAllowance, 0)
+                   << "to real. Return default value for default seam allowance is " << defaultValue << ".";
         val = defaultValue;
     }
 
@@ -1563,6 +1849,18 @@ void VCommonSettings::setShowSeamAllowances(const bool &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getDefaultSeamAllowanceVisibilty() const
+{
+    return value(settingDefaultSeamAllowanceVisibilty, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultSeamAllowanceVisibilty(const bool &value)
+{
+    setValue(settingDefaultSeamAllowanceVisibilty, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 bool VCommonSettings::showGrainlines() const
 {
     return value(settingShowGrainlines, true).toBool();
@@ -1572,6 +1870,30 @@ bool VCommonSettings::showGrainlines() const
 void VCommonSettings::setShowGrainlines(const bool &value)
 {
     setValue(settingShowGrainlines, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::getDefaultGrainlineVisibilty() const
+{
+    return value(settingDefaultGrainlineVisibilty, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineVisibilty(const bool &value)
+{
+    setValue(settingDefaultGrainlineVisibilty, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultGrainlineLength() const
+{
+   return value(settingDefaultGrainlineLength, 2).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultGrainlineLength(const qreal &value)
+{
+    setValue(settingDefaultGrainlineLength, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1608,6 +1930,54 @@ bool VCommonSettings::showLabels() const
 void VCommonSettings::setShowLabels(const bool &value)
 {
     setValue(settingShowLabels, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showPatternLabels() const
+{
+    return value(settingShowPatternLabels, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowPatternLabels(const bool &value)
+{
+    setValue(settingShowPatternLabels, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+bool VCommonSettings::showPieceLabels() const
+{
+    return value(settingShowPieceLabels, true).toBool();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setShowPieceLabels(const bool &value)
+{
+    setValue(settingShowPieceLabels, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultLabelWidth() const
+{
+   return value(settingDefaultLabelWidth, 3).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLabelWidth(const qreal &value)
+{
+    setValue(settingDefaultLabelWidth, value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+qreal VCommonSettings::getDefaultLabelHeight() const
+{
+   return value(settingDefaultLabelHeight, 2).toReal();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setDefaultLabelHeight(const qreal &value)
+{
+    setValue(settingDefaultLabelHeight, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

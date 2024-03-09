@@ -67,7 +67,7 @@
 #include "../../visualization/line/vistoolpointofcontact.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialogpointofcontact.h"
@@ -79,19 +79,24 @@
  * @param parent parent widget
  */
 DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogPointOfContact), radius(QString()), formulaBaseHeight(0)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogPointOfContact)
+    , radius(QString())
+    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/point_of_contact.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
@@ -150,7 +155,7 @@ void DialogPointOfContact::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogPointOfContact::FXRadius()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit radius"));
     dialog->SetFormula(getRadius());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -308,7 +313,7 @@ void DialogPointOfContact::setCenter(const quint32 &value)
  */
 void DialogPointOfContact::setRadius(const QString &value)
 {
-    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius.length() > 80)
     {
@@ -341,7 +346,7 @@ void DialogPointOfContact::SetPointName(const QString &value)
  */
 QString DialogPointOfContact::getRadius() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   vtoolpointofintersectionarcs.cpp
+**  @author Douglas S Caskey
+**  @date   17 Sep, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vtoolpointofintersectionarcs.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +33,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -51,28 +55,29 @@
 
 #include "vtoolpointofintersectionarcs.h"
 
-#include <QLineF>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../dialogs/tools/dialogpointofintersectionarcs.h"
-#include "../../../../visualization/line/vistoolpointofintersectionarcs.h"
-#include "../ifc/exception/vexception.h"
+#include "vtoolsinglepoint.h"
 #include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexception.h"
 #include "../vgeometry/varc.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../visualization/visualization.h"
-#include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../vabstracttool.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../dialogs/tools/dialogpointofintersectionarcs.h"
+#include "../../../../visualization/visualization.h"
+#include "../../../../visualization/line/vistoolpointofintersectionarcs.h"
+
+#include <QLineF>
+#include <QMessageBox>
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
@@ -138,6 +143,23 @@ VToolPointOfIntersectionArcs *VToolPointOfIntersectionArcs::Create(const quint32
     const QSharedPointer<VArc> secondArc = data->GeometricObject<VArc>(secondArcId);
 
     const QPointF point = FindPoint(firstArc.data(), secondArc.data(), pType);
+
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of Arcs</big></b><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Point Intersect Arcs"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/point_of_intersection_arcs.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
     if (typeCreation == Source::FromGui)
     {
@@ -304,12 +326,12 @@ CrossCirclesPoint VToolPointOfIntersectionArcs::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolPointOfIntersectionArcs::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void VToolPointOfIntersectionArcs::setCirclesCrossPoint(const CrossCirclesPoint &value)
 {
-    crossPoint = value;
+        crossPoint = value;
 
-    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
-    SaveOption(obj);
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+        SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -335,9 +357,9 @@ void VToolPointOfIntersectionArcs::showContextMenu(QGraphicsSceneContextMenuEven
     {
         ContextMenu<DialogPointOfIntersectionArcs>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

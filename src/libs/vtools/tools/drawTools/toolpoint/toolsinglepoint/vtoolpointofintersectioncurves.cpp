@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolpointofintersectioncurves.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolpointofintersectioncurves.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   22 1, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -51,28 +51,29 @@
 
 #include "vtoolpointofintersectioncurves.h"
 
-#include <QLineF>
-#include <QSharedPointer>
-#include <QStaticStringData>
-#include <QStringData>
-#include <QStringDataPtr>
-#include <new>
-
-#include "../../../../dialogs/tools/dialogpointofintersectioncurves.h"
-#include "../../../../dialogs/tools/dialogtool.h"
-#include "../../../../visualization/path/../visualization.h"
-#include "../../../../visualization/path/vistoolpointofintersectioncurves.h"
-#include "../ifc/exception/vexception.h"
+#include "vtoolsinglepoint.h"
 #include "../ifc/ifcdef.h"
+#include "../ifc/exception/vexception.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vgeometry/vgobject.h"
 #include "../vgeometry/vpointf.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vpatterndb/vcontainer.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../../../vabstracttool.h"
 #include "../../vdrawtool.h"
-#include "vtoolsinglepoint.h"
+#include "../../../vabstracttool.h"
+#include "../../../../dialogs/tools/dialogtool.h"
+#include "../../../../dialogs/tools/dialogpointofintersectioncurves.h"
+#include "../../../../visualization/visualization.h"
+#include "../../../../visualization/path/vistoolpointofintersectioncurves.h"
+
+#include <QLineF>
+#include <QMessageBox>
+#include <QSharedPointer>
+#include <QStaticStringData>
+#include <QStringData>
+#include <QStringDataPtr>
+#include <new>
 
 template <class T> class QSharedPointer;
 
@@ -145,8 +146,24 @@ VToolPointOfIntersectionCurves *VToolPointOfIntersectionCurves::Create(const qui
     auto curve1 = data->GeometricObject<VAbstractCurve>(firstCurveId);
     auto curve2 = data->GeometricObject<VAbstractCurve>(secondCurveId);
 
-    const QPointF point = VToolPointOfIntersectionCurves::FindPoint(curve1->GetPoints(), curve2->GetPoints(),
+    const QPointF point = VToolPointOfIntersectionCurves::FindPoint(curve1->getPoints(), curve2->getPoints(),
                                                                     vCrossPoint, hCrossPoint);
+
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of Curves</big></b><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Point Intersect Curves"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/intersection_curves.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
     quint32 id = _id;
 
     VPointF *p = new VPointF(point, pointName, mx, my);
@@ -402,9 +419,9 @@ void VToolPointOfIntersectionCurves::showContextMenu(QGraphicsSceneContextMenuEv
     {
         ContextMenu<DialogPointOfIntersectionCurves>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

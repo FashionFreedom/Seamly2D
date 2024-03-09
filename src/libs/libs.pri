@@ -31,7 +31,7 @@ INCLUDEPATH += $${PWD}/vlayout
 #QMuParser library
 INCLUDEPATH += $${PWD}/qmuparser
 
-#VPropertyExplorer library
+#VPropertyExplorer static library
 INCLUDEPATH += $${PWD}/vpropertyexplorer
 
 #VTest static library

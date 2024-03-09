@@ -45,13 +45,13 @@ CalculatorDialog::CalculatorDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::CalculatorDialog)
     , isInitialized(false)
+    , calc(new CalculatorUtil(this))
 {
 
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     setWindowIcon(QIcon("://icon/32x32/calculator.png"));
 
-    CalculatorUtil* calc = new CalculatorUtil(this);
     ui->calculatorLayout->addWidget(calc);
 }
 
@@ -76,14 +76,4 @@ void CalculatorDialog::showEvent(QShowEvent *event)
     }
 
     isInitialized = true;//first show windows are held
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void CalculatorDialog::setFontPointSize(QWidget *w, int pointSize)
-{
-    SCASSERT(w != nullptr)
-
-    QFont font = w->font();
-    font.setPointSize(pointSize);
-    w->setFont(font);
 }

@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolcurveintersectaxis.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolcurveintersectaxis.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   21 10, 2014
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -95,11 +95,12 @@ const QString VToolCurveIntersectAxis::ToolType = QStringLiteral("curveIntersect
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCurveIntersectAxis::VToolCurveIntersectAxis(VAbstractPattern *doc, VContainer *data, const quint32 &id,
-                                                 const QString &lineType, const QString &lineColor,
+                                                 const QString &lineType, const QString &lineWeight,
+                                                 const QString &lineColor,
                                                  const QString &formulaAngle, const quint32 &basePointId,
                                                  const quint32 &curveId, const Source &typeCreation,
                                                  QGraphicsItem *parent)
-    : VToolLinePoint(doc, data, id, lineType, lineColor, QString(), basePointId, 0, parent)
+    : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, QString(), basePointId, 0, parent)
     , formulaAngle(formulaAngle)
     , curveId(curveId)
 {
@@ -114,8 +115,9 @@ void VToolCurveIntersectAxis::setDialog()
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> intersectPoint = VAbstractTool::data.GeometricObject<VPointF>(m_id);
-    dialogTool->SetTypeLine(m_lineType);
-    dialogTool->SetLineColor(lineColor);
+    dialogTool->setLineType(m_lineType);
+    dialogTool->setLineWeight(m_lineWeight);
+    dialogTool->setLineColor(lineColor);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->SetBasePointId(basePointId);
     dialogTool->setCurveId(curveId);
@@ -131,13 +133,14 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(QSharedPointer<DialogTo
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
     const QString pointName    = dialogTool->getPointName();
-    const QString lineType     = dialogTool->GetTypeLine();
-    const QString lineColor    = dialogTool->GetLineColor();
+    const QString lineType     = dialogTool->getLineType();
+    const QString lineWeight   = dialogTool->getLineWeight();
+    const QString lineColor    = dialogTool->getLineColor();
           QString formulaAngle = dialogTool->GetAngle();
     const quint32 basePointId  = dialogTool->GetBasePointId();
     const quint32 curveId      = dialogTool->getCurveId();
 
-    VToolCurveIntersectAxis *point = Create(0, pointName, lineType, lineColor, formulaAngle, basePointId,
+    VToolCurveIntersectAxis *point = Create(0, pointName, lineType, lineWeight, lineColor, formulaAngle, basePointId,
                                             curveId, 5, 10, true, scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -148,7 +151,8 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(QSharedPointer<DialogTo
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, const QString &pointName,
-                                                         const QString &lineType, const QString &lineColor,
+                                                         const QString &lineType, const QString &lineWeight,
+                                                         const QString &lineColor,
                                                          QString &formulaAngle, quint32 basePointId,
                                                          quint32 curveId, qreal mx, qreal my, bool showPointName,
                                                          VMainGraphicsScene *scene, VAbstractPattern *doc,
@@ -211,8 +215,8 @@ VToolCurveIntersectAxis *VToolCurveIntersectAxis::Create(const quint32 _id, cons
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::CurveIntersectAxis, doc);
-        VToolCurveIntersectAxis *point = new VToolCurveIntersectAxis(doc, data, id, lineType, lineColor, formulaAngle,
-                                                                     basePointId, curveId, typeCreation);
+        VToolCurveIntersectAxis *point = new VToolCurveIntersectAxis(doc, data, id, lineType, lineWeight, lineColor,
+                                                                     formulaAngle, basePointId, curveId, typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
         VAbstractPattern::AddTool(id, point);
@@ -325,9 +329,9 @@ void VToolCurveIntersectAxis::showContextMenu(QGraphicsSceneContextMenuEvent *ev
     {
         ContextMenu<DialogCurveIntersectAxis>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -338,12 +342,13 @@ void VToolCurveIntersectAxis::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogCurveIntersectAxis> dialogTool = m_dialog.objectCast<DialogCurveIntersectAxis>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrName,      dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrLineType,  dialogTool->GetTypeLine());
-    doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
-    doc->SetAttribute(domElement, AttrAngle,     dialogTool->GetAngle());
-    doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
-    doc->SetAttribute(domElement, AttrCurve,     QString().setNum(dialogTool->getCurveId()));
+    doc->SetAttribute(domElement, AttrName,       dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrAngle,      dialogTool->GetAngle());
+    doc->SetAttribute(domElement, AttrBasePoint,  QString().setNum(dialogTool->GetBasePointId()));
+    doc->SetAttribute(domElement, AttrCurve,      QString().setNum(dialogTool->getCurveId()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -351,19 +356,20 @@ void VToolCurveIntersectAxis::SaveOptions(QDomElement &tag, QSharedPointer<VGObj
 {
     VToolLinePoint::SaveOptions(tag, obj);
 
-    doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrAngle, formulaAngle);
+    doc->SetAttribute(tag, AttrType,      ToolType);
+    doc->SetAttribute(tag, AttrAngle,     formulaAngle);
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
-    doc->SetAttribute(tag, AttrCurve, curveId);
+    doc->SetAttribute(tag, AttrCurve,     curveId);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolCurveIntersectAxis::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
-    curveId = doc->GetParametrUInt(domElement, AttrCurve, NULL_ID_STR);
+    m_lineType   = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
+    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight,  "0.35");
+    lineColor    = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
+    basePointId  = doc->GetParametrUInt(domElement,   AttrBasePoint, NULL_ID_STR);
+    curveId      = doc->GetParametrUInt(domElement,   AttrCurve, NULL_ID_STR);
     formulaAngle = doc->GetParametrString(domElement, AttrAngle, "");
 }
 
@@ -377,8 +383,9 @@ void VToolCurveIntersectAxis::SetVisualization()
 
         visual->setObject1Id(curveId);
         visual->setAxisPointId(basePointId);
-        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
+        visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();
     }
 }
@@ -529,6 +536,10 @@ void VToolCurveIntersectAxis::InitSegments(const GOType &curveType, qreal segLen
         }
         case GOType::Point:
         case GOType::Unknown:
+        case GOType::Curve:
+        case GOType::Path:
+        case GOType::AllCurves:
+        default:
             Q_UNREACHABLE();
             break;
     }

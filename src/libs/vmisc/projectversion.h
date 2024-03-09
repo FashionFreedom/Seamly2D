@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -57,35 +57,31 @@ class QString;
 extern const int MAJOR_VERSION;
 extern const int MINOR_VERSION;
 extern const int DEBUG_VERSION;
+extern const int SUPER_MINOR__VERSION;
 
 extern const QString APP_VERSION_STR;
 
 /*
    APP_VERSION is (major << 16) + (minor << 8) + patch.
 */
-#define APP_VERSION 0x000600
+#define APP_VERSION ((MAJOR_VERSION << 16) + (MINOR_VERSION << 8) + DEBUG_VERSION)
 
-// Change version number in projectversion.cpp too.
-// Synchronize seamly2d.nsi
-
-#define VER_FILEVERSION             0,6,0,1
-#define VER_FILEVERSION_STR         "0.6.0.1\0"
+// Start: Do not edit here, use scripts/version.sh to update
+#define VER_FILEVERSION 0,6,0,1
+#define VER_FILEVERSION_STR "0.6.0.1"
+// End: Do not edit here
 
 #define V_PRERELEASE // Mark prerelease builds
 
 #define VER_PRODUCTVERSION          VER_FILEVERSION
 #define VER_PRODUCTVERSION_STR      VER_FILEVERSION_STR
 
+#define VER_INTERNALNAME_2D_STR     "Seamly2D"
 #define VER_COMPANYNAME_STR         "Seamly2DTeam"
-//#define VER_FILEDESCRIPTION_STR   "Patternmaking program." // Defined in program
-#define VER_INTERNALNAME_STR        "Seamly2D"
-#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2017 Seamly2D Team"
+#define VER_LEGALCOPYRIGHT_STR      "Copyright © 2014-2022 Seamly2D Team"
 #define VER_LEGALTRADEMARKS1_STR    "All Rights Reserved"
 #define VER_LEGALTRADEMARKS2_STR    VER_LEGALTRADEMARKS1_STR
-//#define VER_ORIGINALFILENAME_STR  "seamly2d.exe" // Defined in program
-//#define VER_PRODUCTNAME_STR       "Seamly2D" // Defined in program
-
-#define VER_COMPANYDOMAIN_STR       "https://seamly.net"
+#define VER_COMPANYDOMAIN_STR       "https://seamly.io"
 
 QString compilerString();
 QString buildCompatibilityString();

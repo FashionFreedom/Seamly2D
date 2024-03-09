@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vcontainer.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vcontainer.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,10 +30,10 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -74,7 +75,7 @@
 #include "variables/vincrement.h"
 #include "variables/vlineangle.h"
 #include "variables/vlinelength.h"
-#include "variables/vmeasurement.h"
+#include "variables/measurement_variable.h"
 #include "variables/vvariable.h"
 #include "vtranslatevars.h"
 
@@ -221,10 +222,10 @@ quint32 VContainer::AddGObject(VGObject *obj)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-quint32 VContainer::AddPiece(const VPiece &detail)
+quint32 VContainer::AddPiece(const VPiece &piece)
 {
     const quint32 id = getNextId();
-    d->pieces->insert(id, detail);
+    d->pieces->insert(id, piece);
     return id;
 }
 
@@ -254,7 +255,7 @@ quint32 VContainer::getNextId()
     //But for now better to keep it as it is now.
     if (_id == UINT_MAX)
     {
-        qCritical()<<(tr("Number of free id exhausted."));
+        qCritical() << (tr("Number of free id exhausted."));
     }
     _id++;
     return _id;
@@ -506,10 +507,10 @@ quint32 VContainer::AddObject(QHash<key, val> &obj, val value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VContainer::UpdatePiece(quint32 id, const VPiece &detail)
+void VContainer::UpdatePiece(quint32 id, const VPiece &piece)
 {
     Q_ASSERT_X(id != NULL_ID, Q_FUNC_INFO, "id == 0"); //-V654 //-V712
-    d->pieces->insert(id, detail);
+    d->pieces->insert(id, piece);
     UpdateId(id);
 }
 
@@ -533,9 +534,9 @@ void VContainer::removeCustomVariable(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VMeasurement> > VContainer::DataMeasurements() const
+const QMap<QString, QSharedPointer<MeasurementVariable> > VContainer::DataMeasurements() const
 {
-    return DataVar<VMeasurement>(VarType::Measurement);
+    return DataVar<MeasurementVariable>(VarType::Measurement);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -650,7 +651,7 @@ void VContainer::ClearUniqueIncrementNames()
  * @brief SetSize set value of size
  * @param size value of size
  */
-void VContainer::SetSize(qreal size)
+void VContainer::setSize(qreal size)
 {
     _size = size;
 }
@@ -660,7 +661,7 @@ void VContainer::SetSize(qreal size)
  * @brief SetGrowth set value of growth
  * @param height value of height
  */
-void VContainer::SetHeight(qreal height)
+void VContainer::setHeight(qreal height)
 {
     _height = height;
 }

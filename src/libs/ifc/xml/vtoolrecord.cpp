@@ -81,11 +81,11 @@ VToolRecord &VToolRecord::operator=(const VToolRecord &record)
 
     this->id = record.getId();
     this->typeTool = record.getTypeTool();
-    this->nameDraw = record.getNameDraw();
+    this->nameDraw = record.getDraftBlockName();
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 VToolRecord::VToolRecord(const VToolRecord &record)
-    :id(record.getId()), typeTool(record.getTypeTool()), nameDraw(record.getNameDraw())
+    :id(record.getId()), typeTool(record.getTypeTool()), nameDraw(record.getDraftBlockName())
 {}

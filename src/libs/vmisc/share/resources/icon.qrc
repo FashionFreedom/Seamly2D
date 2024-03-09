@@ -57,10 +57,6 @@
         <file>icon/16x16/closed_eye@2x.png</file>
         <file>icon/16x16/open_eye.png</file>
         <file>icon/16x16/open_eye@2x.png</file>
-        <file>icon/16x16/allow_detail.png</file>
-        <file>icon/16x16/allow_detail@2x.png</file>
-        <file>icon/16x16/forbid_detail.png</file>
-        <file>icon/16x16/forbid_detail@2x.png</file>
         <file>icon/16x16/toolsectionelarc.png</file>
         <file>icon/16x16/toolsectionelarc@2x.png</file>
         <file>icon/32x32/grainline.png</file>
@@ -69,8 +65,6 @@
         <file>icon/32x32/labels@2x.png</file>
         <file>icon/32x32/paths.png</file>
         <file>icon/32x32/paths@2x.png</file>
-        <file>icon/32x32/pins.png</file>
-        <file>icon/32x32/pins@2x.png</file>
         <file>icon/32x32/notches.png</file>
         <file>icon/32x32/notches@2x.png</file>
         <file>icon/path_config.png</file>
@@ -87,7 +81,7 @@
         <file>icon/graphics_view_config.png</file>
         <file>icon/32x32/anchor_point.png</file>
         <file>icon/16x16/toolsectionpatternpiece.png</file>
-        <file>icon/32x32/list-edit_32.png</file>
+        <file>icon/32x32/edit.png</file>
         <file>icon/32x32/filter.png</file>
         <file>icon/32x32/clear.png</file>
         <file>icon/32x32/decrease_size.png</file>
@@ -106,7 +100,6 @@
         <file>icon/32x32/wireframe@2x.png</file>
         <file>icon/32x32/find.png</file>
         <file>icon/32x32/calculator.png</file>
-        <file>icon/32x32/add_image.png</file>
         <file>icon/32x32/alignment.png</file>
         <file>icon/32x32/lock_hover.png</file>
         <file>icon/32x32/lock_off.png</file>
@@ -126,7 +119,7 @@
         <file>icon/32x32/pattern_label.png</file>
         <file>icon/32x32/piece_label.png</file>
         <file>icon/32x32/seam_allowance.png</file>
-        <file>icon/32x32/seaml_allowance@2x.png</file>
+        <file>icon/32x32/seam_allowance@2x.png</file>
         <file>icon/32x32/anchor_point@2x.png</file>
         <file>icon/2d_shortcuts.png</file>
         <file>icon/logos/seamly_logo_32.png</file>
@@ -140,5 +133,37 @@
         <file>icon/32x32/pdf_icon.png</file>
         <file>icon/32x32/2d_key_icon.png</file>
         <file>icon/32x32/me_key_icon.png</file>
+        <file>icon/show_info_icon.png</file>
+        <file>icon/16x16/show_info16_icon.png</file>
+        <file>icon/BuiltWithQt.png</file>
+        <file>icon/24x24/reverse.png</file>
+        <file>icon/160x64/anchor_point.png</file>
+        <file>icon/160x64/grainlines.png</file>
+        <file>icon/160x64/labels.png</file>
+        <file>icon/160x64/notches.png</file>
+        <file>icon/160x64/paths.png</file>
+        <file>icon/160x64/properties.png</file>
+        <file>icon/160x64/seam_allowance.png</file>
+        <file>icon/32x32/color_picker.png</file>
+        <file>icon/32x32/lock_off.png</file>
+        <file>icon/32x32/lock_on.png</file>
+        <file>icon/32x32/checkmark.png</file>
+        <file>icon/32x32/checkmark@2x.png</file>
+        <file>icon/64x64/rotation.png</file>
+        <file>icon/32x32/add.png</file>
+        <file>icon/32x32/remove.png</file>
+        <file>icon/32x32/individual_size_file.png</file>
+        <file>icon/32x32/multisize_size_file.png</file>
+        <file>icon/32x32/seamly2d_file.png</file>
+        <file>icon/32x32/template_size_file.png</file>
+        <file>icon/24x24/insert_fx.png</file>
+        <file>icon/32x32/insert_fx.png</file>
+        <file>icon/32x32/body_scan.png</file>
+        <file>icon/32x32/body_scan@2x.png</file>
+        <file>icon/body_scan.png</file>
+        <file>icon/32x32/invert_selection.png</file>
+        <file>icon/logos/seamly2d_vertical.png</file>
+        <file>icon/32x32/add_image.png</file>
+        <file>icon/32x32/add_image@2x.png</file>
     </qresource>
 </RCC>

@@ -64,16 +64,19 @@
 //---------------------------------------------------------------------------------------------------------------------
 DialogPointFromArcAndTangent::DialogPointFromArcAndTangent(const VContainer *data, const quint32 &toolId,
                                                            QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogPointFromArcAndTangent)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogPointFromArcAndTangent)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/point_from_arc_and_tangent.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxTangentPoint);
@@ -137,7 +140,7 @@ CrossCirclesPoint DialogPointFromArcAndTangent::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogPointFromArcAndTangent::SetCrossCirclesPoint(const CrossCirclesPoint &p)
+void DialogPointFromArcAndTangent::setCirclesCrossPoint(const CrossCirclesPoint &p)
 {
     const qint32 index = ui->comboBoxResult->findData(static_cast<int>(p));
     if (index != -1)

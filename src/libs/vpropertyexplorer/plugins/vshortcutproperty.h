@@ -31,13 +31,12 @@
 #include <QtGlobal>
 
 #include "../vproperty.h"
-#include "../vpropertyexplorer_global.h"
 
 namespace VPE
 {
 
 //! This property can be used to handle key shortcuts
-class VPROPERTYEXPLORERSHARED_EXPORT VShortcutProperty : public VProperty
+class VShortcutProperty : public VProperty
 {
     Q_OBJECT
 public:

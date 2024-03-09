@@ -1,30 +1,26 @@
-/************************************************************************
- **
- **  @file   PreferencesGraphicsViewPage.cpp
- **  @author DS Caskey
- **  @date   10.17.2020
- **
- **  @brief
- **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  All Rights Reserved.
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- *************************************************************************/
+ /***************************************************************************
+  **  @file   PreferencesGraphicsViewPage.cpp
+  **  @author Douglas S Caskey
+  **  @date   26 Oct, 2023
+  **
+  **  @copyright
+  **  Copyright (C) 2017 - 2023 Seamly, LLC
+  **  https://github.com/fashionfreedom/seamly2d
+  **
+  **  @brief
+  **  Seamly2D is free software: you can redistribute it and/or modify
+  **  it under the terms of the GNU General Public License as published by
+  **  the Free Software Foundation, either version 3 of the License, or
+  **  (at your option) any later version.
+  **
+  **  Seamly2D is distributed in the hope that it will be useful,
+  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  **  GNU General Public License for more details.
+  **
+  **  You should have received a copy of the GNU General Public License
+  **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+  **************************************************************************/
 
 #include "preferencesgraphicsviewpage.h"
 #include "ui_preferencesgraphicsviewpage.h"
@@ -195,7 +191,7 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
     ui->zoomSpeedFactor_Slider->setValue(qApp->Seamly2DSettings()->getZoomSpeedFactor());
 
     // Export Quality
-    ui->exportQuality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
+    ui->quality_Slider->setValue(qApp->Seamly2DSettings()->getExportQuality());
 
 // Behavior preferences
     // Constrain Angle Value & Modifier Key
@@ -204,6 +200,9 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 
     // Zoom double mouse click to selected IsTestModeEnabled
     ui->zoomDoubleClick_CheckBox->setChecked(qApp->Seamly2DSettings()->isZoomDoubleClick());
+
+    // Pan Zoom while Space Key pressed
+    ui->panActiveSpacePressed_CheckBox->setChecked(qApp->Seamly2DSettings()->isPanActiveSpaceKey());
 
 // Font preferences
     // Pattern piece labels font
@@ -267,6 +266,16 @@ PreferencesGraphicsViewPage::PreferencesGraphicsViewPage (QWidget *parent)
 PreferencesGraphicsViewPage::~PreferencesGraphicsViewPage ()
 {
     delete ui;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void PreferencesGraphicsViewPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+    }
+    QWidget::changeEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -356,7 +365,7 @@ void PreferencesGraphicsViewPage::Apply()
     settings->setZoomSpeedFactor(ui->zoomSpeedFactor_Slider->value());
 
     // Export Quality
-    settings->setExportQuality(ui->exportQuality_Slider->value());
+    settings->setExportQuality(ui->quality_Slider->value());
 
     // Behavior preferences
     // Constrain Angle Value & Modifier Key
@@ -365,6 +374,9 @@ void PreferencesGraphicsViewPage::Apply()
 
     // Zoom double mouse click to selected IsTestModeEnabled
     settings->setZoomDoubleClick(ui->zoomDoubleClick_CheckBox->isChecked());
+
+    // Pan Zoom while Space key pressed
+    settings->setPanActiveSpaceKey(ui->panActiveSpacePressed_CheckBox->isChecked());
 
     //Fonts
     settings->setLabelFont(ui->labelFont_ComboBox->currentFont());

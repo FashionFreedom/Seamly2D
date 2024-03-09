@@ -1,23 +1,17 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   dialogtool.cpp
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   November 15, 2013
- **
- **  @author Douglas S. Caskey
- **  @date   7.17.2022
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
  **  @copyright
- **  Copyright (C) 2013-2022 Seamly2D project.
- **  This source code is part of the Seamly2D project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
  **
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
- **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published
- **  by the Free Software Foundation, either version 3 of the License,
- **  or (at your option) any later version.
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
  **
  **  Seamly2D is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -25,7 +19,33 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/**************************************************************************
+ **
+ **  @file   dialogtool.cpp
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   November 15, 2013
+ **
+ **  @copyright
+ **  Copyright (C) 2013 Valentina project.
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published
+ **  by the Free Software Foundation, either version 3 of the License,
+ **  or (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -110,7 +130,7 @@ quint32 RowId(QListWidget *listWidget, int i)
  * @param data container with data
  * @param parent parent widget
  */
-DialogTool::DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent)
+DialogTool:: DialogTool(const VContainer *data, const quint32 &toolId, QWidget *parent)
     : QDialog(parent),
       data(data),
       isInitialized(false),
@@ -118,8 +138,8 @@ DialogTool::DialogTool(const VContainer *data, const quint32 &toolId, QWidget *p
       flagFormula(true),
       flagError(true),
       timerFormula(nullptr),
-      bOk(nullptr),
-      bApply(nullptr),
+      ok_Button(nullptr),
+      apply_Button(nullptr),
       spinBoxAngle(nullptr),
       plainTextEditFormula(nullptr),
       labelResultCalculation(nullptr),
@@ -402,7 +422,9 @@ void DialogTool::ChangeCurrentData(QComboBox *box, const QVariant &value) const
     const qint32 index = box->findData(value);
     if (index != -1)
     {
+        box->blockSignals(true);
         box->setCurrentIndex(index);
+        box->blockSignals(false);
     }
 }
 
@@ -430,7 +452,7 @@ bool DialogTool::eventFilter(QObject *object, QEvent *event)
             }
             else if ((keyEvent->key() == Qt::Key_Period) && (keyEvent->modifiers() & Qt::KeypadModifier))
             {
-                if (qApp->Settings()->GetOsSeparator())
+                if (qApp->Settings()->getOsSeparator())
                 {
                     plainTextEdit->insertPlainText(QLocale().decimalPoint());
                 }
@@ -527,7 +549,7 @@ int DialogTool::FindNotExcludedNodeUp(QListWidget *listWidget, int candidate)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::FirstPointEqualLast(QListWidget *listWidget)
+bool DialogTool::isFirstPointSameAsLast(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     if (listWidget->count() > 1)
@@ -540,7 +562,7 @@ bool DialogTool::FirstPointEqualLast(QListWidget *listWidget)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::DoublePoints(QListWidget *listWidget)
+bool DialogTool::doublePointsExist(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     for (int i=0, sz = listWidget->count()-1; i<sz; ++i)
@@ -558,7 +580,7 @@ bool DialogTool::DoublePoints(QListWidget *listWidget)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool DialogTool::EachPointLabelIsUnique(QListWidget *listWidget)
+bool DialogTool::isEachPointNameUnique(QListWidget *listWidget)
 {
     SCASSERT(listWidget != nullptr);
     QSet<quint32> pointLabels;
@@ -617,11 +639,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 
         if (node.GetReverse())
         {
-            info.icon = "://icon/24x24/counter_clockwise.png";
-        }
-        else
-        {
-            info.icon = "://icon/24x24/clockwise.png";
+            info.icon = "://icon/24x24/reverse.png";
         }
     }
     else if (showNotch && node.isNotch())
@@ -658,7 +676,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
+void DialogTool::newNodeItem(QListWidget *listWidget, const VPieceNode &node, bool nodeExcluded, bool isDuplicate)
 {
     SCASSERT(listWidget != nullptr);
     SCASSERT(node.GetId() > NULL_ID);
@@ -673,28 +691,21 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
             info = getNodeInfo(node, true);
             break;
         default:
-            qDebug()<<"Got wrong tools. Ignore.";
+            qWarning() << "Got wrong tools. Ignore.";
             return;
     }
 
-    bool canAddNewPoint = false;
+    bool newNodeAllowed = false;
 
-    if(listWidget->count() == 0)
+    if(listWidget->count() == 0 || isDuplicate || RowId(listWidget, listWidget->count()-1) != node.GetId())
     {
-        canAddNewPoint = true;
-    }
-    else
-    {
-        if(RowId(listWidget, listWidget->count()-1) != node.GetId())
-        {
-            canAddNewPoint = true;
-        }
+        newNodeAllowed = true;
     }
 
-    if(canAddNewPoint)
+    if(newNodeAllowed)
     {
         QListWidgetItem *item = new QListWidgetItem(info.name);
-        item->setFont(NodeFont(node.isExcluded()));
+        item->setFont(NodeFont(nodeExcluded ? node.isExcluded() : false));
         item->setData(Qt::UserRole, QVariant::fromValue(node));
         item->setIcon(QIcon(info.icon));
         listWidget->addItem(item);
@@ -703,7 +714,7 @@ void DialogTool::NewNodeItem(QListWidget *listWidget, const VPieceNode &node)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void DialogTool::InitNodeAngles(QComboBox *box)
+void DialogTool::initializeNodeAngles(QComboBox *box)
 {
     SCASSERT(box != nullptr);
     box->clear();
@@ -814,7 +825,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             QString formula = text;
             formula.replace("\n", " ");
             // Translate to internal look.
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 
@@ -847,23 +858,23 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
                     label->setText(qApp->LocaleToString(result) + " " +postfix);
                     flag = true;
                     ChangeColor(labelEditFormula, okColor);
-                    label->setToolTip(tr("Value"));
+                    label->setToolTip(tr("Result Value"));
                     emit ToolTip("");
                 }
             }
         }
-        catch (qmu::QmuParserError &e)
+        catch (qmu::QmuParserError &error)
         {
             label->setText(tr("Error") + " (" + postfix + ")");
             flag = false;
             ChangeColor(labelEditFormula, Qt::red);
-            emit ToolTip(tr("Parser error: %1").arg(e.GetMsg()));
-            label->setToolTip(tr("Parser error: %1").arg(e.GetMsg()));
+            emit ToolTip(tr("Parser error: %1").arg(error.GetMsg()));
+            label->setToolTip(tr("Parser error: %1").arg(error.GetMsg()));
             qDebug() << "\nMath parser error:\n"
-                     << "--------------------------------------\n"
-                     << "Message:     " << e.GetMsg()  << "\n"
-                     << "Expression:  " << e.GetExpr() << "\n"
-                     << "--------------------------------------";
+                       << "--------------------------------------\n"
+                       << "Message:     " << error.GetMsg()  << "\n"
+                       << "Expression:  " << error.GetExpr() << "\n"
+                       << "--------------------------------------";
         }
     }
     CheckState(); // Disable Ok and Apply buttons if something wrong.
@@ -972,7 +983,7 @@ bool DialogTool::SetObject(const quint32 &id, QComboBox *box, const QString &too
     }
     else
     {
-        qWarning()<<"Can't find object by id"<<id;
+        qWarning() << "Can't find object by id"<<id;
     }
     return false;
 }
@@ -1063,12 +1074,12 @@ bool DialogTool::IsSpline(const QSharedPointer<VGObject> &obj) const
  */
 void DialogTool::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagFormula && flagName && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagFormula && flagName && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 
@@ -1163,7 +1174,7 @@ void DialogTool::FormulaChanged()
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -1172,7 +1183,7 @@ void DialogTool::FormulaChangedPlainText() //-V524
     QPlainTextEdit* edit = qobject_cast<QPlainTextEdit*>(sender());
     if (edit)
     {
-        ValFormulaChanged(flagFormula, edit, timerFormula);
+        ValFormulaChanged(flagFormula, edit, timerFormula, UnitsToStr(qApp->patternUnit()));
     }
 }
 
@@ -1264,7 +1275,7 @@ void DialogTool::EvalFormula()
 {
     SCASSERT(plainTextEditFormula != nullptr)
     SCASSERT(labelResultCalculation != nullptr)
-    const QString postfix = UnitsToStr(qApp->patternUnit());//Show unit in dialog lable (cm, mm or inch)
+    const QString postfix = UnitsToStr(qApp->patternUnit(), true);//Show unit in dialog lable (cm, mm or inch)
     Eval(plainTextEditFormula->toPlainText(), flagFormula, labelResultCalculation, postfix, false);
 }
 
@@ -1371,7 +1382,7 @@ void DialogTool::SetAssociatedTool(VAbstractTool *tool)
         data = tool->getData();
         if (not vis.isNull())
         {
-            vis->SetData(data);
+            vis->setData(data);
         }
     }
     else

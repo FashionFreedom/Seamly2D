@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vexception.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vexception.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -64,7 +64,9 @@
  * @param error string with error
  */
 VException::VException(const QString &error)
-    :QException(), error(error), moreInfo(QString())
+    : QException()
+    , error(error)
+    , moreInfo(QString())
 {
     Q_ASSERT_X(not error.isEmpty(), Q_FUNC_INFO, "Error message is empty");
 }
@@ -74,18 +76,18 @@ VException::VException(const QString &error)
  * @brief VException copy constructor
  * @param e exception
  */
-VException::VException(const VException &e):error(e.WhatUtf8()), moreInfo(e.MoreInformation())
+VException::VException(const VException &error):error(error.WhatUtf8()), moreInfo(error.MoreInformation())
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VException &VException::operator=(const VException &e)
+VException &VException::operator=(const VException &error)
 {
-    if ( &e == this )
+    if (&error == this)
     {
         return *this;
     }
-    this->error = e.WhatUtf8();
-    this->moreInfo = e.MoreInformation();
+    this->error = error.WhatUtf8();
+    this->moreInfo = error.MoreInformation();
     return *this;
 }
 
@@ -165,24 +167,24 @@ const char* VException::what() const V_NOEXCEPT_EXPR (true)
 
 //-----------------------------------------VExceptionToolWasDeleted----------------------------------------------------
 VExceptionToolWasDeleted::VExceptionToolWasDeleted(const QString &error)
-    :VException(error)
+    : VException(error)
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VExceptionToolWasDeleted::VExceptionToolWasDeleted(const VExceptionToolWasDeleted &e)
-    :VException(e)
+VExceptionToolWasDeleted::VExceptionToolWasDeleted(const VExceptionToolWasDeleted &error)
+    : VException(error)
 {
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VExceptionToolWasDeleted &VExceptionToolWasDeleted::operator=(const VExceptionToolWasDeleted &e)
+VExceptionToolWasDeleted &VExceptionToolWasDeleted::operator=(const VExceptionToolWasDeleted &error)
 {
-    if ( &e == this )
+    if (&error == this)
     {
         return *this;
     }
-    VException::operator=(e);
+    VException::operator = (error);
     return *this;
 }
 

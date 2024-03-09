@@ -85,7 +85,7 @@ public:
     void           SetTangentPointId(const quint32 &value);
 
     CrossCirclesPoint GetCrossCirclesPoint() const;
-    void              SetCrossCirclesPoint(const CrossCirclesPoint &p);
+    void              setCirclesCrossPoint(const CrossCirclesPoint &p);
 
 public slots:
     virtual void   ChosenObject(quint32 id, const SceneObject &type) Q_DECL_OVERRIDE;

@@ -90,7 +90,7 @@ void TST_QmuParserErrorMsg::initTestCase()
     const QStringList fileNames = dir.entryList(QStringList("seamly2d_*.qm"));
     QVERIFY2(locales.size() == fileNames.size(), "Unexpected count of files.");
 
-    if (LoadTranslation(m_locale) != NoError)
+    if (loadTranslations(m_locale) != NoError)
     {
         const QString message = QString("Couldn't load variables. Locale = %1").arg(m_locale);
         QSKIP(qUtf8Printable(message));
@@ -170,7 +170,7 @@ void TST_QmuParserErrorMsg::AddCase(int code, bool tok, bool pos)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int TST_QmuParserErrorMsg::LoadTranslation(const QString &checkedLocale)
+int TST_QmuParserErrorMsg::loadTranslations(const QString &checkedLocale)
 {
     const QString path = TranslationsPath();
     const QString file = QString("seamly2d_%1.qm").arg(checkedLocale);

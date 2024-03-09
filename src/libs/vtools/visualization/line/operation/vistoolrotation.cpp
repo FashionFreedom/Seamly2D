@@ -135,12 +135,12 @@ void VisToolRotation::RefreshGeometry()
             tempAngle = angle;
         }
 
-        DrawLine(this, rLine, supportColor2, Qt::DashLine);
+        DrawLine(this, rLine, supportColor2, lineWeight, Qt::DashLine);
         DrawLine(xAxis, QLineF(static_cast<QPointF>(*origin), Ray(static_cast<QPointF>(*origin), 0)), supportColor2,
-                 Qt::DashLine);
+                 lineWeight, Qt::DashLine);
 
         VArc arc(*origin, defPointRadiusPixel*2, 0, tempAngle);
-        DrawPath(angleArc, arc.GetPath(), supportColor2, Qt::SolidLine, Qt::RoundCap);
+        DrawPath(angleArc, arc.GetPath(), supportColor2, Qt::SolidLine, lineWeight,  Qt::RoundCap);
 
         Visualization::toolTip = tr("Rotating angle = %1°, Hold <b>SHIFT</b> to constrain angle, "
                                     "<b>Mouse click</b> - finish creation").arg(tempAngle);
@@ -207,6 +207,10 @@ void VisToolRotation::RefreshGeometry()
                 break;
             }
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+            default:
                 break;
         }
     }
@@ -239,14 +243,16 @@ int VisToolRotation::AddCurve(qreal angle, const QPointF &origin, quint32 id, in
 
     ++i;
     VCurvePathItem *path = GetCurve(static_cast<quint32>(i), supportColor2);
-    DrawPath(path, curve->GetPath(), curve->DirectionArrows(), supportColor2, Qt::SolidLine, Qt::RoundCap);
+    DrawPath(path, curve->GetPath(), curve->DirectionArrows(), supportColor2, Qt::SolidLine,
+             lineWeight,  Qt::RoundCap);
 
     ++i;
     path = GetCurve(static_cast<quint32>(i), supportColor);
     if (object1Id != NULL_ID)
     {
         const Item rotated = curve->Rotate(origin, angle);
-        DrawPath(path, rotated.GetPath(), rotated.DirectionArrows(), supportColor, Qt::SolidLine, Qt::RoundCap);
+        DrawPath(path, rotated.GetPath(), rotated.DirectionArrows(), supportColor, Qt::SolidLine,
+                lineWeight,  Qt::RoundCap);
     }
 
     return i;

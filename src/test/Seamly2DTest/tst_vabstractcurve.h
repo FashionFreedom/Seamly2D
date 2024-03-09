@@ -61,8 +61,8 @@ public:
     explicit TST_VAbstractCurve(QObject *parent = nullptr);
 
 private slots:
-    void IsPointOnCurve_data() const;
-    void IsPointOnCurve() const;
+    void isPointOnCurve_data() const;
+    void isPointOnCurve() const;
 };
 
 #endif // TST_VABSTRACTCURVE_H

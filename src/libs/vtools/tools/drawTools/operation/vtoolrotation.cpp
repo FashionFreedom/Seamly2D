@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolrotation.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolrotation.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   12 4, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -103,13 +103,13 @@ template <class T> class QSharedPointer;
 const QString VToolRotation::ToolType = QStringLiteral("rotation");
 
 //---------------------------------------------------------------------------------------------------------------------
-VToolRotation::VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 origPointId,
+VToolRotation::VToolRotation(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 originPointId,
                              const QString &angle, const QString &suffix, const QVector<SourceItem> &source,
                              const QVector<DestinationItem> &destination, const Source &typeCreation,
                              QGraphicsItem *parent)
-    : VAbstractOperation(doc, data, id, suffix, source, destination, parent),
-      origPointId(origPointId),
-      formulaAngle(angle)
+    : VAbstractOperation(doc, data, id, suffix, source, destination, parent)
+    , m_originPointId(originPointId)
+    , formulaAngle(angle)
 {
     InitOperatedObjects();
     ToolCreation(typeCreation);
@@ -121,7 +121,7 @@ void VToolRotation::setDialog()
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogRotation> dialogTool = m_dialog.objectCast<DialogRotation>();
     SCASSERT(not dialogTool.isNull())
-    dialogTool->setOriginPointId(origPointId);
+    dialogTool->setOriginPointId(m_originPointId);
     dialogTool->SetAngle(formulaAngle);
     dialogTool->setSuffix(suffix);
 }
@@ -206,6 +206,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                                           data));
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -252,6 +256,9 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
                     break;
             }
 QT_WARNING_POP
@@ -283,7 +290,25 @@ QT_WARNING_POP
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolRotation::getOriginPointName() const
 {
-    return VAbstractTool::data.GetGObject(origPointId)->name();
+    return VAbstractTool::data.GetGObject(m_originPointId)->name();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolRotation::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolRotation::setOriginPointId(const quint32 &value)
+{
+    if (value != NULL_ID)
+    {
+        m_originPointId = value;
+
+        QSharedPointer<VGObject> obj = VAbstractTool::data.GetFakeGObject(m_id);
+        SaveOption(obj);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -323,8 +348,8 @@ void VToolRotation::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObjects(sourceToObjects(source));
-        visual->SetOriginPointId(origPointId);
-        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
+        visual->SetOriginPointId(m_originPointId);
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
         visual->RefreshGeometry();
     }
 }
@@ -344,7 +369,7 @@ void VToolRotation::SaveDialog(QDomElement &domElement)
 //---------------------------------------------------------------------------------------------------------------------
 void VToolRotation::ReadToolAttributes(const QDomElement &domElement)
 {
-    origPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
+    m_originPointId = doc->GetParametrUInt(domElement, AttrCenter, NULL_ID_STR);
     formulaAngle = doc->GetParametrString(domElement, AttrAngle, "0");
     suffix = doc->GetParametrString(domElement, AttrSuffix);
 }
@@ -355,7 +380,7 @@ void VToolRotation::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
     VDrawTool::SaveOptions(tag, obj);
 
     doc->SetAttribute(tag, AttrType, ToolType);
-    doc->SetAttribute(tag, AttrCenter, QString().setNum(origPointId));
+    doc->SetAttribute(tag, AttrCenter, QString().setNum(m_originPointId));
     doc->SetAttribute(tag, AttrAngle, formulaAngle);
     doc->SetAttribute(tag, AttrSuffix, suffix);
 
@@ -381,9 +406,9 @@ void VToolRotation::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint
     {
         ContextMenu<DialogRotation>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

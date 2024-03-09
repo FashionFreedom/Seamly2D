@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vabstractspline.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vabstractspline.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   4 3, 2014
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2014 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -93,7 +93,7 @@ VAbstractSpline::VAbstractSpline(VAbstractPattern *doc, VContainer *data, quint3
 QPainterPath VAbstractSpline::shape() const
 {
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    const QVector<QPointF> points = curve->GetPoints();
+    const QVector<QPointF> points = curve->getPoints();
 
     QPainterPath path;
     for (qint32 i = 0; i < points.count()-1; ++i)
@@ -115,10 +115,15 @@ QPainterPath VAbstractSpline::shape() const
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractSpline::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
+    //const qreal width = scaleWidth(m_isHovered ? widthMainLine : widthHairLine, sceneScale(scene()));
+
 
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    setPen(QPen(correctColor(this, curve->GetColor()), width, lineTypeToPenStyle(curve->GetPenStyle()), Qt::RoundCap));
+    const qreal weight = ToPixel(doc->useGroupLineWeight(m_id, curve->getLineWeight()).toDouble(), Unit::Mm);
+    const qreal width  = scaleWidth(m_isHovered ? weight + 4 : weight, sceneScale(scene()));
+
+    setPen(QPen(correctColor(this, doc->useGroupColor(m_id, curve->getLineColor())), width,
+           lineTypeToPenStyle(doc->useGroupLineType(m_id, curve->GetPenStyle())), Qt::RoundCap));
 
     refreshCtrlPoints();
 
@@ -279,9 +284,9 @@ void VAbstractSpline::keyReleaseEvent(QKeyEvent *event)
             {
                 deleteTool();
             }
-            catch(const VExceptionToolWasDeleted &e)
+            catch(const VExceptionToolWasDeleted &error)
             {
-                Q_UNUSED(e)
+                Q_UNUSED(error)
                 return;//Leave this method immediately!!!
             }
             break;
@@ -332,8 +337,9 @@ void VAbstractSpline::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &ob
     VDrawTool::SaveOptions(tag, obj);
 
     const QSharedPointer<VAbstractCurve> curve = qSharedPointerCast<VAbstractCurve>(obj);
-    doc->SetAttribute(tag, AttrColor, curve->GetColor());
-    doc->SetAttribute(tag, AttrPenStyle, curve->GetPenStyle());
+    doc->SetAttribute(tag, AttrColor,      curve->getLineColor());
+    doc->SetAttribute(tag, AttrPenStyle,   curve->GetPenStyle());
+    doc->SetAttribute(tag, AttrLineWeight, curve->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -433,17 +439,17 @@ void VAbstractSpline::ShowHandles(bool show)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VAbstractSpline::GetLineColor() const
+QString VAbstractSpline::getLineColor() const
 {
     const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    return curve->GetColor();
+    return curve->getLineColor();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractSpline::SetLineColor(const QString &value)
+void VAbstractSpline::setLineColor(const QString &value)
 {
     QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
-    curve->SetColor(value);
+    curve->setLineColor(value);
     QSharedPointer<VGObject> obj = qSharedPointerCast<VGObject>(curve);
     SaveOption(obj);
 }
@@ -460,6 +466,30 @@ void VAbstractSpline::SetPenStyle(const QString &value)
 {
     QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
     curve->SetPenStyle(value);
+    QSharedPointer<VGObject> obj = qSharedPointerCast<VGObject>(curve);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return line weight of the spline
+ * @return line weight
+ */
+QString VAbstractSpline::getLineWeight() const
+{
+    const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
+    return curve->getLineWeight();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set line weight of the spline
+ * @param value line weight
+ */
+void VAbstractSpline::setLineWeight(const QString &value)
+{
+    const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(m_id);
+    curve->setLineWeight(value);
     QSharedPointer<VGObject> obj = qSharedPointerCast<VGObject>(curve);
     SaveOption(obj);
 }

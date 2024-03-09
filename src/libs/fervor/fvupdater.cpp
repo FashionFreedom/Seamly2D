@@ -1,3 +1,27 @@
+/***************************************************************************
+ **  @file   fvupdater.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
 /***************************************************************************************************
  **  @file   fvupdater.cpp
  **
@@ -52,12 +76,12 @@
 #include <QProcess>
 #include <QtConcurrent/QtConcurrent>
 #include "../ifc/exception/vexception.h"
-#include "../ifc/xml/vabstractconverter.h"
+#include "../ifc/xml/abstract_converter.h"
 #include "../vmisc/projectversion.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 
-const QString defaultFeedURL = QStringLiteral("https://api.github.com/repos/FashionFreedom/Seamly2D/releases");
+const QString defaultFeedURL = QStringLiteral("https://api.github.com/repos/FashionFreedom/Seamly2D/releases/latest");
 
 QPointer<FvUpdater> FvUpdater::m_Instance;
 
@@ -217,7 +241,7 @@ void FvUpdater::startDownloadFile(QUrl url, QString name) {
 		// That way we use less RAM than when reading it at the finished()
 		// signal of the QNetworkReply
 		downloadedFile->write(m_reply->readAll());
-		int progress = downloadedFile->size() * 100.0 / m_fileSize;
+		int progress = int(downloadedFile->size() * 100 / m_fileSize);
 		setProgress(progress);
 	});
 
@@ -335,27 +359,18 @@ void FvUpdater::httpFeedDownloadFinished() {
 		return;
 	} else {
 		auto jsonDoc = QJsonDocument::fromJson(m_reply->readAll());
-		qDebug() << jsonDoc.isArray();
-		qDebug() << jsonDoc.isObject();
-		auto jsonRespArray = jsonDoc.array();
-		auto jsonRespObj = jsonDoc.object();
-		for (const auto &jsonResp : jsonRespArray) {
-			auto tag = jsonResp.toObject()["tag_name"].toString();
+        qDebug() << "Response is a JSON object:" << jsonDoc.isObject();
+        if (jsonDoc.isObject()) {
+            auto tag = jsonDoc.object()["tag_name"].toString();
+            qDebug() << "Found the following tag" << tag;
 
-			QRegularExpression regexp{"v\\d+\\.\\d+\\.\\d+\\.\\d+"};
-			// QRegularExpression regexp{"weekly"};
-			auto matcher = regexp.match(tag);
-			qDebug() << matcher.captured();
-
-			if (matcher.hasMatch()) {
-				if (!releaseIsNewer(matcher.captured())) {
-					showInformationDialog(tr("No new releases available."));
-					return;
-				}
-				if (showConfirmationDialog(tr("A new release %1 is available.\nDo you want to download it?").arg(matcher.captured()), true))
-					getPLatformSpecificInstaller(jsonResp.toObject()["assets"].toArray());
-				return;
-			}
+            if (!releaseIsNewer(tag)) {
+                showInformationDialog(tr("No new releases available."));
+                return;
+            }
+            if (showConfirmationDialog(tr("A new release %1 is available.\nDo you want to download it?").arg(tag), true))
+                getPLatformSpecificInstaller(jsonDoc.object()["assets"].toArray());
+            return;
 		}
 	}
 
@@ -367,22 +382,25 @@ void FvUpdater::httpFeedDownloadFinished() {
 }
 
 void FvUpdater::getPLatformSpecificInstaller(QJsonArray assets) {
-	qDebug() << QCoreApplication::applicationVersion();
+	qDebug() << "current application version" << QCoreApplication::applicationVersion();
 
 #ifdef Q_OS_LINUX // Defined on Linux.
 	auto searchPattern = "AppImage";
 #else
-#ifdef Q_OS_MAC // Defined on MAC OS (synonym for Darwin).
-	auto searchPattern = "dmg";
-#else
-	auto searchPattern = ".exe";
-#endif
+	#ifdef Q_OS_MACOS // Defined on macOS
+		auto searchPattern = "macos";
+	#else
+		#ifdef Q_OS_WIN64 // Defined on Windows 64-bit only.
+			auto searchPattern = "windows";
+		#else // Only windows 32-bit left
+			auto searchPattern = "win32";
+		#endif
+	#endif
 #endif
 
-	for (const auto &asset : assets) {
-		// qDebug() << asset;
+	for (const QJsonValueRef asset : assets) {
 		auto name = asset.toObject()["name"].toString();
-		qDebug() << name;
+		qDebug() << "Checking" << searchPattern << "against" << name;
 		if (name.contains(searchPattern,
 						  Qt::CaseInsensitive)) {
 			QUrl downloadableUrl =

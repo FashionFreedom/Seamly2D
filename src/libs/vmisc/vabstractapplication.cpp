@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vabstractapplication.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vabstractapplication.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,17 +30,17 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -81,6 +82,7 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
       currentScene(nullptr),
       sceneView(nullptr),
       doc(nullptr),
+      data(nullptr),
       openingPattern(false)
 {
     QString rules;
@@ -95,7 +97,7 @@ VAbstractApplication::VAbstractApplication(int &argc, char **argv)
 #endif //defined(V_NO_ASSERT)
 
     // cppcheck-suppress reademptycontainer
-    if (not rules.isEmpty())
+    if (!rules.isEmpty())
     {
         QLoggingCategory::setFilterRules(rules);
     }
@@ -117,53 +119,14 @@ VAbstractApplication::~VAbstractApplication()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief translationsPath return path to the root directory that contain QM files.
- * @param locale used only in Mac OS. If empty return path to the root directory. If not - return path to locale
- * subdirectory inside an app bundle.
- * @return path to a directory that contain QM files.
+ * @brief translationsPath return path to the root directory that contains QM files.
+ * @param locale historic, not used
+ * @return path to a directory that contains QM files, default from CONFIG+=embed_translations as set in translations.pri
  */
 QString VAbstractApplication::translationsPath(const QString &locale) const
 {
-    const QString trPath = QStringLiteral("/translations");
-#ifdef Q_OS_WIN
     Q_UNUSED(locale)
-    return QCoreApplication::applicationDirPath() + trPath;
-#elif defined(Q_OS_MAC)
-    QString mainPath;
-    if (locale.isEmpty())
-    {
-        mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath;
-    }
-    else
-    {
-        mainPath = QCoreApplication::applicationDirPath() + QLatin1String("/../Resources") + trPath + QLatin1String("/")
-                + locale + QLatin1String(".lproj");
-    }
-    QDir dirBundle(mainPath);
-    if (dirBundle.exists())
-    {
-        return dirBundle.absolutePath();
-    }
-    else
-    {
-        QDir appDir = QDir(qApp->applicationDirPath());
-        appDir.cdUp();
-        appDir.cdUp();
-        appDir.cdUp();
-        QDir dir(appDir.absolutePath() + trPath);
-        if (dir.exists())
-        {
-            return dir.absolutePath();
-        }
-        else
-        {
-            return QStringLiteral("/usr/share/seamly2d/translations");
-        }
-    }
-#else // Unix
-    Q_UNUSED(locale)
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../share") + trPath;
-#endif
+    return QStringLiteral(":/i18n/");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -189,6 +152,19 @@ VAbstractPattern *VAbstractApplication::getCurrentDocument() const
 {
     SCASSERT(doc != nullptr)
     return doc;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VAbstractApplication::setCurrentData(VContainer *data)
+{
+    this->data = data;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+VContainer *VAbstractApplication::getCurrentData() const
+{
+    SCASSERT(data != nullptr)
+    return data;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -289,49 +265,40 @@ double VAbstractApplication::fromPixel(double pix) const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VAbstractApplication::LoadTranslation(const QString &locale)
+void VAbstractApplication::loadTranslations(const QString &locale)
 {
     if (locale.isEmpty())
     {
-        qDebug()<<"Locale is empty.";
+        qInfo() << "Locale is empty.";
         return;
     }
-    qDebug()<<"Checked locale:"<<locale;
+    qInfo() << "Checked locale:" << locale;
 
     ClearTranslation();
 
-    qtTranslator = new QTranslator(this);
+    qtTranslator     = new QTranslator(this);
+    qtxmlTranslator  = new QTranslator(this);
+    qtBaseTranslator = new QTranslator(this);
+    appTranslator    = new QTranslator(this);
+    pmsTranslator    = new QTranslator(this);
+
 #if defined(Q_OS_WIN) || defined(Q_OS_MAC)
     qtTranslator->load("qt_" + locale, translationsPath(locale));
-#else
-    qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-#endif
-    installTranslator(qtTranslator);
-
-    qtxmlTranslator = new QTranslator(this);
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
     qtxmlTranslator->load("qtxmlpatterns_" + locale, translationsPath(locale));
-#else
-    qtxmlTranslator->load("qtxmlpatterns_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
-#endif
-    installTranslator(qtxmlTranslator);
-
-    qtBaseTranslator = new QTranslator(this);
-#if defined(Q_OS_WIN) || defined(Q_OS_MAC)
     qtBaseTranslator->load("qtbase_" + locale, translationsPath(locale));
 #else
+    qtTranslator->load("qt_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+    qtxmlTranslator->load("qtxmlpatterns_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
     qtBaseTranslator->load("qtbase_" + locale, QLibraryInfo::location(QLibraryInfo::TranslationsPath));
 #endif
-    installTranslator(qtBaseTranslator);
 
-    appTranslator = new QTranslator(this);
     appTranslator->load("seamly2d_" + locale, translationsPath(locale));
+    pmsTranslator->load("measurements_" + locale, translationsPath(locale));
+
+    installTranslator(qtTranslator);
+    installTranslator(qtxmlTranslator);
+    installTranslator(qtBaseTranslator);
     installTranslator(appTranslator);
-
-    const QString system = Settings()->GetPMSystemCode();
-
-    pmsTranslator = new QTranslator(this);
-    pmsTranslator->load("measurements_" + system + "_" + locale, translationsPath(locale));
     installTranslator(pmsTranslator);
 
     InitTrVars();//Very important do it after load QM files.
@@ -340,31 +307,31 @@ void VAbstractApplication::LoadTranslation(const QString &locale)
 //---------------------------------------------------------------------------------------------------------------------
 void VAbstractApplication::ClearTranslation()
 {
-    if (not qtTranslator.isNull())
+    if (!qtTranslator.isNull())
     {
         removeTranslator(qtTranslator);
         delete qtTranslator;
     }
 
-    if (not qtxmlTranslator.isNull())
+    if (!qtxmlTranslator.isNull())
     {
         removeTranslator(qtxmlTranslator);
         delete qtxmlTranslator;
     }
 
-    if (not qtBaseTranslator.isNull())
+    if (!qtBaseTranslator.isNull())
     {
         removeTranslator(qtBaseTranslator);
         delete qtBaseTranslator;
     }
 
-    if (not appTranslator.isNull())
+    if (!appTranslator.isNull())
     {
         removeTranslator(appTranslator);
         delete appTranslator;
     }
 
-    if (not pmsTranslator.isNull())
+    if (!pmsTranslator.isNull())
     {
         removeTranslator(pmsTranslator);
         delete pmsTranslator;

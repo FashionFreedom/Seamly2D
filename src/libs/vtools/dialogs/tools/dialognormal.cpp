@@ -68,7 +68,7 @@
 #include "../../visualization/visualization.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialognormal.h"
@@ -80,28 +80,47 @@
  * @param parent parent widget
  */
 DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogNormal), formula(QString()), angle(0), formulaBaseHeight(0)
+    : DialogTool(data, toolId, parent), ui(new Ui::DialogNormal)
+    , formula(QString())
+    , angle(0)
+    , formulaBaseHeight(0)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/normal.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
     ui->plainTextEditFormula->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxFirstPoint);
     FillComboBoxPoints(ui->comboBoxSecondPoint);
-    FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
-    FillComboBoxLineColors(ui->comboBoxLineColor);
 
-    InitArrow(ui);
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->toolButtonExprLength, &QPushButton::clicked,          this, &DialogNormal::FXLength);
     connect(ui->lineEditNamePoint,    &QLineEdit::textChanged,        this, &DialogNormal::NamePointChanged);
@@ -111,6 +130,10 @@ DialogNormal::DialogNormal(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->comboBoxSecondPoint,  &QComboBox::currentTextChanged, this, &DialogNormal::PointNameChanged);
 
     vis = new VisToolNormal(data);
+
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -141,7 +164,7 @@ void DialogNormal::PointNameChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogNormal::FXLength()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -229,7 +252,8 @@ void DialogNormal::SaveData()
     line->setObject2Id(GetSecondPointId());
     line->setLength(formula);
     line->SetAngle(angle);
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -252,18 +276,6 @@ void DialogNormal::SetSecondPointId(const quint32 &value)
     VisToolNormal *line = qobject_cast<VisToolNormal *>(vis);
     SCASSERT(line != nullptr)
     line->setObject2Id(value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogNormal::GetLineColor() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogNormal::SetLineColor(const QString &value)
-{
-    ChangeCurrentData(ui->comboBoxLineColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -302,7 +314,7 @@ void DialogNormal::SetAngle(const qreal &value)
  */
 void DialogNormal::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -319,13 +331,56 @@ void DialogNormal::SetFormula(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief getLineType return type of line
+ * @return type
+ */
+QString DialogNormal::getLineType() const
+{
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogNormal::SetTypeLine(const QString &value)
+void DialogNormal::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogNormal::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogNormal::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogNormal::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogNormal::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -341,22 +396,12 @@ void DialogNormal::SetPointName(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetTypeLine return type of line
- * @return type
- */
-QString DialogNormal::GetTypeLine() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
  * @brief GetFormula return string of formula
  * @return formula
  */
 QString DialogNormal::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

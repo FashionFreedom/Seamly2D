@@ -9,19 +9,19 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.6</string>
+	<string>${MACOSX_DEPLOYMENT_TARGET}</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2013-2017, Seamly2D project</string>
+	<string>© 2013-2023, Seamly2D project</string>
 	<key>CFBundleSignature</key>
 	<string>@TYPEINFO@</string>
 	<key>CFBundleExecutable</key>
 	<string>@EXECUTABLE@</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.seamly2dproject.@EXECUTABLE@</string>
-	<key>CFBundleShortVersionString</key>
-	<string>0.6.0</string>
-	<key>CFBundleVersion</key>
-	<string>0.6.0.1</string>
+	<!-- Start: Do not edit here, use scripts/version.sh to update -->
+	<key>CFBundleShortVersionString</key><string>0.6.0</string>
+	<key>CFBundleVersion</key><string>0.6.0</string>
+	<!-- End: Do not edit here -->
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleDocumentTypes</key>
@@ -30,10 +30,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>pattern.icns</string>
+			<string>2d_file.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.seamly2dproject.val</string>
+				<string>org.seamly2dproject.sm2d</string>
 			</array>
 			<key>CFBundleTypeName</key>
 			<string>Seamly2D pattern file</string>
@@ -44,13 +44,13 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>i-measurements.icns</string>
+			<string>individual_size_file.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.seamly2dproject.vit</string>
+				<string>org.seamly2dproject.smis</string>
 			</array>
 			<key>CFBundleTypeName</key>
-			<string>Seamly2D individual measurements</string>
+			<string>SeamlyMe individual measurements</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 		</dict>
@@ -58,13 +58,13 @@
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>CFBundleTypeIconFile</key>
-			<string>s-measurements.icns</string>
+			<string>multi_size_file.icns</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>org.seamly2dproject.vst</string>
+				<string>org.seamly2dproject.smms</string>
 			</array>
 			<key>CFBundleTypeName</key>
-                        <string>Seamly2D multisize measurements</string>
+                        <string>SeamlyMe multisize measurements</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 		</dict>
@@ -82,12 +82,12 @@
 			<key>UTTypeIconFile</key>
 			<string>pattern</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.seamly2dproject.val</string>
+			<string>org.seamly2dproject.sm2d</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>val</string>
+					<string>sm2d</string>
 				</array>
 				<key>public.mime-type</key>
             	<string>text/xml</string>
@@ -100,16 +100,16 @@
 				<string>public.xml</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Seamly2D individual measurements</string>
+			<string>SeamlyMe individual measurements</string>
 			<key>UTTypeIconFile</key>
-			<string>i-measurements.icns</string>
+			<string>individual_size_file.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.seamly2dproject.vit</string>
+			<string>org.seamly2dproject.smis</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>vit</string>
+					<string>smin</string>
 				</array>
 				<key>public.mime-type</key>
             	<string>text/xml</string>
@@ -122,21 +122,21 @@
 				<string>public.xml</string>
 			</array>
 			<key>UTTypeDescription</key>
-                        <string>Seamly2D multisize measurements</string>
+                        <string>SeamlyMe multisize measurements</string>
 			<key>UTTypeIconFile</key>
-			<string>s-measurements.icns</string>
+			<string>multi_size_file.icns</string>
 			<key>UTTypeIdentifier</key>
-			<string>org.seamly2dproject.vst</string>
+			<string>org.seamly2dproject.smms</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>vst</string>
+					<string>smms</string>
 				</array>
 				<key>public.mime-type</key>
             	<string>text/xml</string>
 			</dict>
 		</dict>
 	</array>
-</dict>	
+</dict>
 </plist>

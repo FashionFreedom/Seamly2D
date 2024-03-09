@@ -165,7 +165,7 @@ public:
     static void        UpdateId(quint32 newId);
 
     quint32            AddGObject(VGObject *obj);
-    quint32            AddPiece(const VPiece &detail);
+    quint32            AddPiece(const VPiece &piece);
     quint32            AddPiecePath(const VPiecePath &path);
     void               AddLine(const quint32 &firstPointId, const quint32 &secondPointId);
     void               AddArc(const QSharedPointer<VAbstractCurve> &arc, const quint32 &id,
@@ -186,7 +186,7 @@ public:
     template <class T>
     void               UpdateGObject(quint32 id, const QSharedPointer<T> &obj);
 
-    void               UpdatePiece(quint32 id, const VPiece &detail);
+    void               UpdatePiece(quint32 id, const VPiece &piece);
     void               UpdatePiecePath(quint32 id, const VPiecePath &path);
 
     void               Clear();
@@ -197,8 +197,8 @@ public:
     static void        ClearUniqueNames();
     static void        ClearUniqueIncrementNames();
 
-    static void        SetSize(qreal size);
-    static void        SetHeight(qreal height);
+    static void        setSize(qreal size);
+    static void        setHeight(qreal height);
     static qreal       size();
     static qreal      *rsize();
     static qreal       height();
@@ -210,7 +210,7 @@ public:
     const QHash<quint32, VPiece>                            *DataPieces() const;
     const QHash<QString, QSharedPointer<VInternalVariable>> *DataVariables() const;
 
-    const QMap<QString, QSharedPointer<VMeasurement> >  DataMeasurements() const;
+    const QMap<QString, QSharedPointer<MeasurementVariable> >  DataMeasurements() const;
     const QMap<QString, QSharedPointer<VIncrement> >    variablesData() const;
     const QMap<QString, QSharedPointer<VLengthLine> >   lineLengthsData() const;
     const QMap<QString, QSharedPointer<VCurveLength> >  curveLengthsData() const;

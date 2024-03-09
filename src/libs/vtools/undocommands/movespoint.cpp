@@ -149,7 +149,7 @@ void MoveSPoint::Do(double x, double y)
         doc->SetAttribute(domElement, AttrX, QString().setNum(qApp->fromPixel(x)));
         doc->SetAttribute(domElement, AttrY, QString().setNum(qApp->fromPixel(y)));
 
-        emit NeedLiteParsing(Document::LitePPParse);
+        emit NeedLiteParsing(Document::LiteBlockParse);
     }
     else
     {

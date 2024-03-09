@@ -1,25 +1,45 @@
-/**************************************************************************
- **
+/***************************************************************************
  **  @file   intersect_circles_tool.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
+ **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
+ **  Seamly2D is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Seamly2D is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
+
+/************************************************************************
+ **  @file   vtoolpointofintersectioncircles.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   29 5, 2015
  **
- **  @author Douglas S. Caskey
- **  @date   7.16.2022
- **
+ **  @brief
  **  @copyright
- **  Copyright (C) 2013-2022 Seamly2D project.
- **  This source code is part of the Seamly2D project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published
- **  by the Free Software Foundation, either version 3 of the License,
- **  or (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -48,6 +68,7 @@
 #include "../../../../visualization/visualization.h"
 #include "../../../../visualization/line/intersect_circles_visual.h"
 
+#include <QMessageBox>
 #include <QSharedPointer>
 #include <QStaticStringData>
 #include <QStringData>
@@ -89,7 +110,7 @@ void IntersectCirclesTool::setDialog()
     dialogTool->SetSecondCircleCenterId(secondCircleCenterId);
     dialogTool->SetFirstCircleRadius(firstCircleRadius);
     dialogTool->SetSecondCircleRadius(secondCircleRadius);
-    dialogTool->SetCrossCirclesPoint(crossPoint);
+    dialogTool->setCirclesCrossPoint(crossPoint);
     dialogTool->SetPointName(p->name());
 }
 
@@ -140,6 +161,22 @@ IntersectCirclesTool *IntersectCirclesTool::Create(const quint32 _id, const QStr
 
     const QPointF point = FindPoint(static_cast<QPointF>(c1Point), static_cast<QPointF>(c2Point), calcC1Radius,
                                     calcC2Radius, crossPoint);
+    if (point == QPointF())
+    {
+        const QString msg = tr("<b><big>Can't find intersection point %1 of Circles</big></b><br>"
+                               "Using origin point as a place holder until pattern is corrected.")
+                               .arg(pointName);
+
+        QMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Point Intersect Circles"));
+        msgBox.setWindowFlags(msgBox.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+        msgBox.setWindowIcon(QIcon(":/toolicon/32x32/point_of_intersection_circles.png"));
+        msgBox.setIcon(QMessageBox::Warning);
+        msgBox.setText(msg);
+        msgBox.setStandardButtons(QMessageBox::Ok);
+        msgBox.exec();
+    }
+
     quint32 id = _id;
 
     VPointF *p = new VPointF(point, pointName, mx, my);
@@ -306,7 +343,7 @@ CrossCirclesPoint IntersectCirclesTool::GetCrossCirclesPoint() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void IntersectCirclesTool::SetCrossCirclesPoint(const CrossCirclesPoint &value)
+void IntersectCirclesTool::setCirclesCrossPoint(const CrossCirclesPoint &value)
 {
     crossPoint = value;
 
@@ -337,9 +374,9 @@ void IntersectCirclesTool::showContextMenu(QGraphicsSceneContextMenuEvent *event
     {
         ContextMenu<IntersectCirclesDialog>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

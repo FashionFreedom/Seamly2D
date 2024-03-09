@@ -5,8 +5,12 @@ HEADERS += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.h \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.h \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.h \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.h \
+    $$PWD/nodeDetails/anchorpoint_tool.h \
+    $$PWD/pattern_piece_tool.h \
     $$PWD/vdatatool.h \
     $$PWD/vabstracttool.h \
     $$PWD/tools.h \
@@ -15,7 +19,6 @@ HEADERS += \
     $$PWD/drawTools/toolcurve/vtoolspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.h \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofintersection.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.h \
@@ -37,7 +40,7 @@ HEADERS += \
     $$PWD/nodeDetails/nodedetails.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.h \
-    $$PWD/vtooluniondetails.h \
+    $$PWD/union_tool.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.h \
     $$PWD/drawTools/toolcurve/vabstractspline.h \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.h \
@@ -57,17 +60,20 @@ HEADERS += \
     $$PWD/drawTools/operation/vtoolmove.h \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.h \
     $$PWD/nodeDetails/vnodeellipticalarc.h \
-    $$PWD/vtoolseamallowance.h \
     $$PWD/nodeDetails/vtoolinternalpath.h \
-    $$PWD/nodeDetails/vtoolpin.h \
     $$PWD/vinteractivetool.h
 
 SOURCES += \
     $$PWD/drawTools/operation/mirror/vabstractmirror.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyaxis.cpp \
     $$PWD/drawTools/operation/mirror/vtoolmirrorbyline.cpp \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/point_intersectxy_tool.cpp \
+    $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/doubleline_point_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circles_tool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/intersect_circletangent_tool.cpp \
+    $$PWD/nodeDetails/anchorpoint_tool.cpp \
+    $$PWD/pattern_piece_tool.cpp \
+    $$PWD/union_tool.cpp \
     $$PWD/vdatatool.cpp \
     $$PWD/vabstracttool.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtooltriangle.cpp \
@@ -75,7 +81,6 @@ SOURCES += \
     $$PWD/drawTools/toolcurve/vtoolspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolbasepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolshoulderpoint.cpp \
-    $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofintersection.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolpointofcontact.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/vtoolsinglepoint.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toollinepoint/vtoolnormal.cpp \
@@ -95,7 +100,6 @@ SOURCES += \
     $$PWD/nodeDetails/vabstractnode.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutsplinepath.cpp \
-    $$PWD/vtooluniondetails.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcutarc.cpp \
     $$PWD/drawTools/toolcurve/vabstractspline.cpp \
     $$PWD/drawTools/toolpoint/toolsinglepoint/toolcut/vtoolcut.cpp \
@@ -115,7 +119,5 @@ SOURCES += \
     $$PWD/drawTools/operation/vtoolmove.cpp \
     $$PWD/drawTools/toolcurve/vtoolellipticalarc.cpp \
     $$PWD/nodeDetails/vnodeellipticalarc.cpp \
-    $$PWD/vtoolseamallowance.cpp \
-    $$PWD/nodeDetails/vtoolpin.cpp \
     $$PWD/vinteractivetool.cpp \
     $$PWD/nodeDetails/vtoolinternalpath.cpp

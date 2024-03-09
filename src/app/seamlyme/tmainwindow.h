@@ -1,37 +1,13 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
-
- ************************************************************************
- **
- **  @file   tmainwindow.h
- **  @author Roman Telezhynskyi <dismine(at)gmail.com>
- **  @date   10 7, 2015
+/******************************************************************************
+ *   @file   tmainwindow.h
+ **  @author Douglas S Caskey
+ **  @date   25 Jan, 2024
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2015 Seamly2D project
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2024 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -49,6 +25,34 @@
  **
  *************************************************************************/
 
+ /************************************************************************
+ **
+ **  @file   tmainwindow.h
+ **  @author Roman Telezhynskyi <dismine(at)gmail.com>
+ **  @date   10 7, 2015
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Valentina project, a pattern making
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
+ **
+ **  Valentina is free software: you can redistribute it and/or modify
+ **  it under the terms of the GNU General Public License as published by
+ **  the Free Software Foundation, either version 3 of the License, or
+ **  (at your option) any later version.
+ **
+ **  Valentina is distributed in the hope that it will be useful,
+ **  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ **  GNU General Public License for more details.
+ **
+ **  You should have received a copy of the GNU General Public License
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
+ **
+ *************************************************************************/
+
 #ifndef TMAINWINDOW_H
 #define TMAINWINDOW_H
 
@@ -56,7 +60,6 @@
 
 #include "../vmisc/def.h"
 #include "../vmisc/vlockguard.h"
-#include "../vformat/vmeasurements.h"
 #include "../vmisc/vtablesearch.h"
 #include "../vwidgets/vabstractmainwindow.h"
 #include "dialogs/me_shortcuts_dialog.h"
@@ -68,6 +71,8 @@ namespace Ui
 
 class QLabel;
 class MeShortcutsDialog;
+class MeasurementDoc;
+class VContainer;
 
 class TMainWindow : public VAbstractMainWindow
 {
@@ -90,13 +95,15 @@ public:
 public slots:
     virtual void        ShowToolTip(const QString &toolTip) Q_DECL_OVERRIDE;
     virtual void        zoomToSelected() Q_DECL_OVERRIDE;
+    virtual void        updateGroups() Q_DECL_OVERRIDE;
 
 protected:
     virtual void        closeEvent(QCloseEvent *event) Q_DECL_OVERRIDE;
     virtual void        changeEvent(QEvent* event) Q_DECL_OVERRIDE;
     virtual void        showEvent(QShowEvent *event) Q_DECL_OVERRIDE;
     virtual bool        eventFilter(QObject *object, QEvent *event) Q_DECL_OVERRIDE;
-    virtual void        ExportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    virtual void        exportToCSVData(const QString &fileName, const DialogExportToCSV &dialog) Q_DECL_FINAL;
+    void                handleExportToCSV();
 
 private slots:
     void                FileNew();
@@ -104,8 +111,13 @@ private slots:
     void                OpenMultisize();
     void                OpenTemplate();
     void                CreateFromExisting();
+    //void                handleBodyScanner1();
+    void                handleBodyScanner2();
     void                Preferences();
     void                ToolBarStyles();
+
+    void                print();
+    void                printPages(QPrinter *printer);
 
     bool                FileSave();
     bool                FileSaveAs();
@@ -141,8 +153,6 @@ private slots:
 
     void                ShowMData();
 
-    void                DeployFormula();
-
     void                SaveMName(const QString &text);
     void                SaveMValue();
     void                SaveMBaseValue(double value);
@@ -156,7 +166,7 @@ private slots:
 private:
     Q_DISABLE_COPY(TMainWindow)
     Ui::TMainWindow    *ui;
-    VMeasurements      *individualMeasurements;
+    MeasurementDoc     *individualMeasurements;
     VContainer         *data;
     Unit                mUnit;
     Unit                pUnit;
@@ -167,7 +177,7 @@ private:
     QComboBox          *gradationHeights;
     QComboBox          *gradationSizes;
     QComboBox          *comboBoxUnits;
-    int                 formulaBaseHeight;
+
     std::shared_ptr<VLockGuard<char>> lock;
     QSharedPointer<VTableSearch>      search;
     QLabel             *labelGradationHeights;
@@ -176,7 +186,7 @@ private:
     QAction            *actionDockDiagram;
     bool                dockDiagramVisible;
     bool                isInitialized;
-    bool                mIsReadOnly;
+    bool                m_isReadOnly;
     enum { MaxRecentFiles = 5 };
     QAction            *recentFileActs[MaxRecentFiles];
     QAction            *separatorAct;
@@ -184,7 +194,7 @@ private:
 
     void                SetupMenu();
     void                InitWindow();
-    void                InitTable();
+    void                initializeTable();
     void                SetDecimals();
     void                InitUnits();
     void                InitComboBoxUnits();
@@ -215,6 +225,7 @@ private:
     QString             ClearCustomName(const QString &name) const;
 
     bool                EvalFormula(const QString &formula, bool fromUser, VContainer *data, QLabel *label);
+    QString             getMeasurementNumber(const QString &name);
     void                ShowMDiagram(const QString &name);
 
     void                Open(const QString &pathTo, const QString &filter);
@@ -239,6 +250,7 @@ private:
 
     template <class T>
     void                HackWidget(T **widget);
+    void                copyToClipboard();
 };
 
 #endif // TMAINWINDOW_H

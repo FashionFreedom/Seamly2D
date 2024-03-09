@@ -27,8 +27,6 @@
 #include <QString>
 #include <QtGlobal>
 
-#include "vpropertyexplorer_global.h"
-
 namespace VPE
 {
 
@@ -36,7 +34,7 @@ class VAbstractPropertyFactory;
 class VProperty;
 class VPropertyFactoryManagerPrivate;
 
-class VPROPERTYEXPLORERSHARED_EXPORT VPropertyFactoryManager : public QObject
+class VPropertyFactoryManager : public QObject
 {
     Q_OBJECT
 public:

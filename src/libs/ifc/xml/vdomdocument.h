@@ -133,9 +133,9 @@ public:
                                      const QString &defValue = QString());
     static QString GetParametrEmptyString(const QDomElement& domElement, const QString &name);
     static qreal   GetParametrDouble(const QDomElement& domElement, const QString &name, const QString &defValue);
-    static quint32 GetParametrId(const QDomElement& domElement);
+    static quint32 getParameterId(const QDomElement& domElement);
 
-    Unit           MUnit() const;
+    Unit           measurementUnits() const;
 
     static void    ValidateXML(const QString &schema, const QString &fileName);
     virtual void   setXMLContent(const QString &fileName);

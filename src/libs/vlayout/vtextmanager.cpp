@@ -66,7 +66,7 @@ QMap<QString, QString> PreparePlaceholders(const VAbstractPattern *doc)
     QMap<QString, QString> placeholders;
 
     // Pattern tags
-    QLocale locale(qApp->Settings()->GetLocale());
+    QLocale locale(qApp->Settings()->getLocale());
 
     const QString date = locale.toString(QDate::currentDate(), doc->GetLabelDateFormat());
     placeholders.insert(pl_date, date);
@@ -79,7 +79,7 @@ QMap<QString, QString> PreparePlaceholders(const VAbstractPattern *doc)
     placeholders.insert(pl_author, doc->GetCompanyName());
     placeholders.insert(pl_customer, doc->GetCustomerName());
     placeholders.insert(pl_pExt, QString("val"));
-    placeholders.insert(pl_pFileName, QFileInfo(qApp->GetPPath()).baseName());
+    placeholders.insert(pl_pFileName, QFileInfo(qApp->getFilePath()).baseName());
     placeholders.insert(pl_mFileName, QFileInfo(doc->MPath()).baseName());
 
     QString curSize;
@@ -364,7 +364,7 @@ void VTextManager::Update(VAbstractPattern *pDoc)
 
     if (m_patternLabelLines.isEmpty() || pDoc->GetPatternWasChanged())
     {
-        QVector<VLabelTemplateLine> lines = pDoc->GetPatternLabelTemplate();
+        QVector<VLabelTemplateLine> lines = pDoc->getPatternLabelTemplate();
         if (lines.isEmpty() && m_patternLabelLines.isEmpty())
         {
             return; // Nothing to parse

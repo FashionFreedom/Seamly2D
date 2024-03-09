@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolheight.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolheight.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -81,18 +81,23 @@ const QString VToolHeight::ToolType = QStringLiteral("height");
  * @param doc dom document container.
  * @param data container with variables.
  * @param id object id in container.
- * @param typeLine line type.
+ * @param lineType line type.
+ * @param lineWeight line weight.
+ * @param lineColor line color.
  * @param basePointId id base point of projection.
  * @param p1LineId id first point of line.
  * @param p2LineId id second point of line.
  * @param typeCreation way we create this tool.
  * @param parent parent object.
  */
-VToolHeight::VToolHeight(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
-                         const QString &lineColor, const quint32 &basePointId, const quint32 &p1LineId,
-                         const quint32 &p2LineId, const Source &typeCreation, QGraphicsItem * parent)
-    :VToolLinePoint(doc, data, id, typeLine, lineColor, QString(), basePointId, 0, parent), p1LineId(p1LineId),
-      p2LineId(p2LineId)
+VToolHeight::VToolHeight(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &lineType,
+                         const QString &lineWeight, const QString &lineColor, const quint32 &basePointId,
+                         const quint32 &p1LineId, const quint32 &p2LineId,
+                         const Source &typeCreation, QGraphicsItem * parent)
+    : VToolLinePoint(doc, data, id, lineType, lineWeight, lineColor, QString()
+    , basePointId, 0, parent)
+    , p1LineId(p1LineId)
+    , p2LineId(p2LineId)
 {
     ToolCreation(typeCreation);
 }
@@ -107,8 +112,9 @@ void VToolHeight::setDialog()
     QSharedPointer<DialogHeight> dialogTool = m_dialog.objectCast<DialogHeight>();
     SCASSERT(not dialogTool.isNull())
     const QSharedPointer<VPointF> p = VAbstractTool::data.GeometricObject<VPointF>(m_id);
-    dialogTool->SetTypeLine(m_lineType);
-    dialogTool->SetLineColor(lineColor);
+    dialogTool->setLineType(m_lineType);
+    dialogTool->setLineWeight(m_lineWeight);
+    dialogTool->setLineColor(lineColor);
     dialogTool->SetBasePointId(basePointId);
     dialogTool->SetP1LineId(p1LineId);
     dialogTool->SetP2LineId(p2LineId);
@@ -130,14 +136,15 @@ VToolHeight* VToolHeight::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     SCASSERT(not dialog.isNull())
     QSharedPointer<DialogHeight> dialogTool = dialog.objectCast<DialogHeight>();
     SCASSERT(not dialogTool.isNull())
-    const QString pointName = dialogTool->getPointName();
-    const QString typeLine = dialogTool->GetTypeLine();
-    const QString lineColor = dialogTool->GetLineColor();
+    const QString pointName   = dialogTool->getPointName();
+    const QString lineType    = dialogTool->getLineType();
+    const QString lineWeight  = dialogTool->getLineWeight();
+    const QString lineColor   = dialogTool->getLineColor();
     const quint32 basePointId = dialogTool->GetBasePointId();
-    const quint32 p1LineId = dialogTool->GetP1LineId();
-    const quint32 p2LineId = dialogTool->GetP2LineId();
+    const quint32 p1LineId    = dialogTool->GetP1LineId();
+    const quint32 p2LineId    = dialogTool->GetP2LineId();
 
-    VToolHeight *point = Create(0, pointName, typeLine, lineColor, basePointId, p1LineId, p2LineId, 5, 10, true,
+    VToolHeight *point = Create(0, pointName, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId, 5, 10, true,
                                 scene, doc, data, Document::FullParse, Source::FromGui);
     if (point != nullptr)
     {
@@ -151,7 +158,9 @@ VToolHeight* VToolHeight::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
  * @brief Create help create tool
  * @param _id tool id, 0 if tool doesn't exist yet.
  * @param pointName point name.
- * @param typeLine line type.
+ * @param lineType line type.
+ * @param lineWeight line weight.
+ * @param lineColor line color.
  * @param basePointId id base point of projection.
  * @param p1LineId id first point of line.
  * @param p2LineId id second point of line.
@@ -165,9 +174,10 @@ VToolHeight* VToolHeight::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
  * @param typeCreation way we create this tool.
  * @return the created tool
  */
-VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, const QString &typeLine,
-                                 const QString &lineColor, quint32 basePointId, quint32 p1LineId,
-                                 quint32 p2LineId, qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
+VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, const QString &lineType,
+                                 const QString &lineWeight, const QString &lineColor, quint32 basePointId,
+                                 quint32 p1LineId, quint32 p2LineId,
+                                 qreal mx, qreal my, bool showPointName, VMainGraphicsScene *scene,
                                  VAbstractPattern *doc, VContainer *data, const Document &parse,
                                  const Source &typeCreation)
 {
@@ -203,7 +213,7 @@ VToolHeight* VToolHeight::Create(const quint32 _id, const QString &pointName, co
     if (parse == Document::FullParse)
     {
         VDrawTool::AddRecord(id, Tool::Height, doc);
-        VToolHeight *point = new VToolHeight(doc, data, id, typeLine, lineColor, basePointId, p1LineId, p2LineId,
+        VToolHeight *point = new VToolHeight(doc, data, id, lineType, lineWeight, lineColor, basePointId, p1LineId, p2LineId,
                                              typeCreation);
         scene->addItem(point);
         InitToolConnections(scene, point);
@@ -251,9 +261,9 @@ void VToolHeight::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
     {
         ContextMenu<DialogHeight>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -267,12 +277,13 @@ void VToolHeight::SaveDialog(QDomElement &domElement)
     SCASSERT(not m_dialog.isNull())
     QSharedPointer<DialogHeight> dialogTool = m_dialog.objectCast<DialogHeight>();
     SCASSERT(not dialogTool.isNull())
-    doc->SetAttribute(domElement, AttrName, dialogTool->getPointName());
-    doc->SetAttribute(domElement, AttrLineType, dialogTool->GetTypeLine());
-    doc->SetAttribute(domElement, AttrLineColor, dialogTool->GetLineColor());
-    doc->SetAttribute(domElement, AttrBasePoint, QString().setNum(dialogTool->GetBasePointId()));
-    doc->SetAttribute(domElement, AttrP1Line, QString().setNum(dialogTool->GetP1LineId()));
-    doc->SetAttribute(domElement, AttrP2Line, QString().setNum(dialogTool->GetP2LineId()));
+    doc->SetAttribute(domElement, AttrName,       dialogTool->getPointName());
+    doc->SetAttribute(domElement, AttrLineType,   dialogTool->getLineType());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
+    doc->SetAttribute(domElement, AttrLineColor,  dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrBasePoint,  QString().setNum(dialogTool->GetBasePointId()));
+    doc->SetAttribute(domElement, AttrP1Line,     QString().setNum(dialogTool->GetP1LineId()));
+    doc->SetAttribute(domElement, AttrP2Line,     QString().setNum(dialogTool->GetP2LineId()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -280,20 +291,21 @@ void VToolHeight::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj)
 {
     VToolLinePoint::SaveOptions(tag, obj);
 
-    doc->SetAttribute(tag, AttrType, ToolType);
+    doc->SetAttribute(tag, AttrType,      ToolType);
     doc->SetAttribute(tag, AttrBasePoint, basePointId);
-    doc->SetAttribute(tag, AttrP1Line, p1LineId);
-    doc->SetAttribute(tag, AttrP2Line, p2LineId);
+    doc->SetAttribute(tag, AttrP1Line,    p1LineId);
+    doc->SetAttribute(tag, AttrP2Line,    p2LineId);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolHeight::ReadToolAttributes(const QDomElement &domElement)
 {
-    m_lineType = doc->GetParametrString(domElement, AttrLineType, LineTypeSolidLine);
-    lineColor = doc->GetParametrString(domElement, AttrLineColor, ColorBlack);
-    basePointId = doc->GetParametrUInt(domElement, AttrBasePoint, NULL_ID_STR);
-    p1LineId = doc->GetParametrUInt(domElement, AttrP1Line, NULL_ID_STR);
-    p2LineId = doc->GetParametrUInt(domElement, AttrP2Line, NULL_ID_STR);
+    m_lineType   = doc->GetParametrString(domElement, AttrLineType,   LineTypeSolidLine);
+    m_lineWeight = doc->GetParametrString(domElement, AttrLineWeight, "0.35");
+    lineColor    = doc->GetParametrString(domElement, AttrLineColor,  ColorBlack);
+    basePointId  = doc->GetParametrUInt(domElement,   AttrBasePoint,  NULL_ID_STR);
+    p1LineId     = doc->GetParametrUInt(domElement,   AttrP1Line,     NULL_ID_STR);
+    p2LineId     = doc->GetParametrUInt(domElement,   AttrP2Line,     NULL_ID_STR);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -308,6 +320,7 @@ void VToolHeight::SetVisualization()
         visual->setLineP1Id(p1LineId);
         visual->setLineP2Id(p2LineId);
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
+        visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();
     }
 }

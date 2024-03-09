@@ -281,7 +281,7 @@ void TST_VEllipticalArc::TestGetPoints1()
     const VPointF center;
     VEllipticalArc arc(center, radius1, radius2, startAngle, endAngle, rotationAngle);
 
-    QVector<QPointF> points = arc.GetPoints();
+    QVector<QPointF> points = arc.getPoints();
     if (qFuzzyIsNull(rotationAngle))
     { // equation of ellipse will be different when rotation angle isn't 0 so we can't use this test in this case
         const qreal eps = 0.05;
@@ -310,7 +310,7 @@ void TST_VEllipticalArc::TestGetPoints2()
 
     const VPointF center;
     VEllipticalArc arc(center, radius1, radius2, startAngle, endAngle, rotationAngle);
-    QVector<QPointF> points = arc.GetPoints();
+    QVector<QPointF> points = arc.getPoints();
 
     const qreal c = qSqrt(qAbs(radius2*radius2 - radius1*radius1));
     // distance from the center to the focus
@@ -381,13 +381,13 @@ void TST_VEllipticalArc::TestGetPoints3()
 
     const VPointF center;
     VEllipticalArc arc(center, radius1, radius2, startAngle, endAngle, rotationAngle);
-    QVector<QPointF> points = arc.GetPoints();
+    QVector<QPointF> points = arc.getPoints();
 
     if (VFuzzyComparePossibleNulls(arc.AngleArc(), 360.0))
     {// calculated full ellipse square
         const qreal ellipseSquare = M_PI * radius1 * radius2;
         const qreal epsSquare = ellipseSquare * 1.7 / 100; // computing error 0.5 % from origin squere
-        const qreal arcSquare = qAbs(VAbstractPiece::SumTrapezoids(points)/2.0);
+        const qreal arcSquare = qAbs(VAbstractPiece::sumTrapezoids(points)/2.0);
         const qreal diffSquare = qAbs(ellipseSquare - arcSquare);
         const QString errorMsg1 = QString("Broken the second rule. Interpolation has too big computing error. "
                                           "Difference ='%1' bigger than eps = '%2'.").arg(diffSquare).arg(epsSquare);

@@ -4,9 +4,10 @@
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   15 8, 2014
  **
- **  @author Douglas S. Caskey
- **  @date   7.16.2022
+ **  @author Douglas S Caskey
+ **  @date   7.23.2022
  **
+ **  @brief
  **  @copyright
  **  Copyright (C) 2013-2022 Seamly2D project.
  **  This source code is part of the Seamly2D project, a pattern making
@@ -32,6 +33,7 @@
 #ifndef VISUALIZATION_H
 #define VISUALIZATION_H
 
+#include "variables/vinternalvariable.h"
 #include "../vgeometry/vabstractcurve.h"
 #include "../vmisc/def.h"
 #include "../vmisc/logging.h"
@@ -53,7 +55,7 @@ class VScaledLine;
 class ArrowedLineItem;
 class VContainer;
 //class VInternalVariable;
-#include "variables/vinternalvariable.h"
+
 enum class Mode : char {Creation, Show};
 
 class Visualization : public QObject
@@ -67,12 +69,13 @@ public:
 
     void                   setObject1Id(const quint32 &value);
     void                   setLineStyle(const Qt::PenStyle &value);
+    void                   setLineWeight(const QString &value);
     void                   setScenePos(const QPointF &value);
     virtual void           VisualMode(const quint32 &pointId);
     void                   setMainColor(const QColor &value);
 
-    const VContainer      *GetData() const;
-    void                   SetData(const VContainer *data);
+    const VContainer      *getData() const;
+    void                   setData(const VContainer *data);
 
     Mode                   GetMode() const;
     void                   SetMode(const Mode &value);
@@ -88,7 +91,7 @@ signals:
     void                   ToolTip(const QString &toolTip);
 
 public slots:
-    void                   MousePos(const QPointF &scenePos);
+    void                   mousePos(const QPointF &scenePos);
 
 protected:
     const VContainer      *data;
@@ -96,30 +99,33 @@ protected:
     QColor                 mainColor;
     QColor                 supportColor;
     Qt::PenStyle           lineStyle;
+    qreal                  lineWeight;
     quint32                object1Id;
     QString                toolTip;
     Mode                   mode;
 
-    virtual void           InitPen()=0;
+    virtual void           initPen()=0;
     virtual void           AddOnScene()=0;
 
     VScaledEllipse        *InitPoint(const QColor &color, QGraphicsItem *parent, qreal z = 0) const;
     void                   DrawPoint(QGraphicsEllipseItem *point, const QPointF &pos, const QColor &color,
                                      Qt::PenStyle style = Qt::SolidLine);
     virtual void           DrawLine(VScaledLine *lineItem, const QLineF &line, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine);
+                                    const qreal &lineWeight, Qt::PenStyle style = Qt::SolidLine);
     void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+                                    Qt::PenStyle style = Qt::SolidLine, const qreal &weight = 0.35,
+                                    Qt::PenCapStyle cap = Qt::SquareCap);
     void                   DrawPath(VCurvePathItem *pathItem, const QPainterPath &path,
                                     const QVector<DirectionArrow> &directionArrows, const QColor &color,
-                                    Qt::PenStyle style = Qt::SolidLine, Qt::PenCapStyle cap = Qt::SquareCap);
+                                    Qt::PenStyle style = Qt::SolidLine, const qreal &weight = 0.35,
+                                    Qt::PenCapStyle cap = Qt::SquareCap);
 
     void                   drawArrowedLine(ArrowedLineItem *item, const QLineF &line, const QColor &color,
                                            Qt::PenStyle style = Qt::SolidLine);
     void                   drawArrow(const QLineF &axis, QPainterPath &path, const qreal &arrow_size);
 
     template <typename Item>
-    void                   AddItem(Item *item);
+    void                   addItem(Item *item);
 
     template <class Item>
     Item                  *InitItem(const QColor &color, QGraphicsItem *parent);
@@ -129,19 +135,19 @@ protected:
 private:
                            Q_DISABLE_COPY(Visualization)
 
-    static VScaledEllipse *InitPointItem(const QColor &color, QGraphicsItem *parent, qreal z = 0);
+    static VScaledEllipse *initPointItem(const QColor &color, QGraphicsItem *parent, qreal z = 0);
 };
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename Item>
-inline void Visualization::AddItem(Item *item)
+inline void Visualization::addItem(Item *item)
 {
     SCASSERT(item != nullptr)
     VMainGraphicsScene *scene = qobject_cast<VMainGraphicsScene *>(qApp->getCurrentScene());
     SCASSERT(scene != nullptr)
 
     scene->addItem(item);
-    connect(scene, &VMainGraphicsScene::mouseMove, item, &Visualization::MousePos);
+    connect(scene, &VMainGraphicsScene::mouseMove, item, &Visualization::mousePos);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -150,10 +156,10 @@ inline Item *Visualization::InitItem(const QColor &color, QGraphicsItem *parent)
 {
     Item *item = new Item(parent);
 
-    QPen visPen = item->pen();
-    visPen.setColor(color);
+    QPen pen = item->pen();
+    pen.setColor(color);
 
-    item->setPen(visPen);
+    item->setPen(pen);
     item->setZValue(1);
     item->setFlags(QGraphicsItem::ItemStacksBehindParent);
     item->setVisible(false);

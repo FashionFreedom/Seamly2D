@@ -2,14 +2,14 @@
  **
  **  @file   me_shortcuts_dialog.h
  **  @author DSCaskey <dscaskey@gmail.com>
- **  @date   5 14, 2022
+ **  @date   21 Oct, 2023
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
- **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  All Rights Reserved.
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2022-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
@@ -29,16 +29,20 @@
 #include "me_shortcuts_dialog.h"
 #include "ui_me_shortcuts_dialog.h"
 
-#include <QtWidgets>
-#include <QFont>
-#include <QShowEvent>
-#include <QClipboard>
 #include <QApplication>
+#include <QClipboard>
+#include <QFileDialog>
+#include <QFont>
+#include <QGuiApplication>
 #include <QTextDocument>
+#include <QPageLayout>
 #include <QPrinter>
 #include <QPrintPreviewDialog>
 #include <QPrintDialog>
-#include <QFileDialog>
+#include <QScreen>
+#include <QShowEvent>
+#include <QString>
+#include <QtWidgets>
 
 #include "../mapplication.h"
 
@@ -50,6 +54,42 @@ MeShortcutsDialog::MeShortcutsDialog(QWidget *parent)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    //Limit dialog height to 80% of screen size
+    setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));
+
+    const QString html = QString("<table style=font-size:11pt; font-weight:600>"
+                                    "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                    "<tr><td width = 50%>%22        </td><td>%23</td></tr>"
+                                    "<tr><td width = 50%>%24        </td><td>%25<br></td></tr>"
+                                    "<tr><td width = 50%><b>%2</b></td><td></td></tr>"
+                                    "<tr><td width = 50%>%3        </td><td>%4</td></tr>"
+                                    "<tr><td width = 50%>%5        </td><td>%6</td></tr>"
+                                    "<tr><td width = 50%>%7        </td><td>%8</td></tr>"
+                                    "<tr><td width = 50%>%9        </td><td>%10</td></tr>"
+                                    "<tr><td width = 50%>%11       </td><td>%12</td></tr>"
+                                    "<tr><td width = 50%>%13       </td><td>%14</td></tr>"
+                                    "<tr><td width = 50%>%15       </td><td>%16</td></tr>"
+                                    "<tr><td width = 50%>%17	   </td><td>%18<br></td></tr>"
+                                    "<tr><td width = 50%><b>%19</b></td><td></td></tr>"
+                                    "<tr><td width = 50%>%20       </td><td>%21</td></tr>"
+                                "</table>")
+                                .arg(tr("Keyboard Shortcuts"))
+                                .arg(tr("File"))
+                                .arg(tr("New")).arg(tr("Ctrl+N"))
+                                .arg(tr("Open Individual")).arg(tr("Ctrl+O"))
+                                .arg(tr("Open Multisize")).arg(tr("Ctrl+Shift+O"))
+                                .arg(tr("Print")).arg(tr("Ctrl+P"))
+                                .arg(tr("Save")).arg(tr("Ctrl+S"))
+                                .arg(tr("Save as")).arg(tr("Ctrl+Shift+S"))
+                                .arg(tr("Export to CSV")).arg(tr("Ctrl+E"))
+                                .arg(tr("Exit")).arg(tr("Ctrl+Q"))
+                                .arg(tr("Help"))
+                                .arg(tr("Keyboard Shortcuts")).arg(tr("K"))
+                                .arg(tr("Find previous")).arg(tr("Ctrl+Shift+G"))
+                                .arg(tr("Find next")).arg(tr("Ctrl+G"));
+
+    ui->shortcuts_TextBrowser->setHtml(html);
 
     connect(ui->clipboard_ToolButton, &QToolButton::clicked, this, &MeShortcutsDialog::copyToClipboard);
     connect(ui->printer_ToolButton,   &QToolButton::clicked, this, &MeShortcutsDialog::sendToPrinter);
@@ -83,16 +123,6 @@ void MeShortcutsDialog::showEvent(QShowEvent *event)
     isInitialized = true;//first show windows are held
 }
 
-//---------------------------------------------------------------------------------------------------------------------
-void MeShortcutsDialog::setFontPointSize(QWidget *w, int pointSize)
-{
-    SCASSERT(w != nullptr)
-
-    QFont font = w->font();
-    font.setPointSize(pointSize);
-    w->setFont(font);
-}
-
 void MeShortcutsDialog::copyToClipboard()
 {
     //QClipboard *clipboard = QApplication::clipboard();
@@ -124,11 +154,11 @@ void MeShortcutsDialog::exportPdf()
     }
     QPrinter printer(QPrinter::PrinterResolution);
     printer.setOutputFormat(QPrinter::PdfFormat);
-    printer.setPaperSize(QPrinter::A4);
+    printer.setPageSize(printer.pageLayout().pageSize());
     printer.setOutputFileName(filename);
 
     QTextDocument textDocument;
     textDocument.setHtml(ui->shortcuts_TextBrowser->toHtml());
-    textDocument.setPageSize(printer.pageRect().size());
+    textDocument.setPageSize(printer.pageLayout().paintRectPixels(printer.resolution()).size());
     textDocument.print(&printer);
 }

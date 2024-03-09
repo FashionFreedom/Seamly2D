@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolmove.cpp
+ **  @author Douglas S Caskey
+ **  @date   18 Nov, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
- **  @file
+/************************************************************************
+ **  @file   vtoolmove.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   1 10, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -112,7 +112,7 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
         qCDebug(vTool, "Object:  %d", item.id);
         const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
-        Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+        Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
         switch(static_cast<GOType>(object->getType()))
         {
@@ -125,9 +125,13 @@ QPointF findRotationOrigin(const QVector<SourceItem> objects, const VContainer *
             case GOType::SplinePath:
             case GOType::CubicBezier:
             case GOType::CubicBezierPath:
-                originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->GetPoints());
+                originObjects.append(data->GeometricObject<VAbstractCurve>(item.id)->getPoints());
                 break;
             case GOType::Unknown:
+            case GOType::Curve:
+            case GOType::Path:
+            case GOType::AllCurves:
+                default:
                 Q_UNREACHABLE();
                 break;
         }
@@ -242,7 +246,7 @@ VToolMove *VToolMove::Create(quint32 _id, QString &formulaAngle, QString &formul
             const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
             // This check helps to find missed objects in the switch
-            Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+            Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
@@ -294,6 +298,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                                          data));
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -310,7 +318,7 @@ QT_WARNING_POP
             const QSharedPointer<VGObject> object = data->GetGObject(item.id);
 
             // This check helps to find missed objects in the switch
-            Q_STATIC_ASSERT_X(static_cast<int>(GOType::Unknown) == 7, "Not all objects were handled.");
+            Q_STATIC_ASSERT_X(static_cast<int>(GOType::AllCurves) == 10, "Not all objects were handled.");
 
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_GCC("-Wswitch-default")
@@ -347,6 +355,10 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
                                                               rotationOrigin, suffix, data, dest.at(i).id);
                     break;
                 case GOType::Unknown:
+                case GOType::Curve:
+                case GOType::Path:
+                case GOType::AllCurves:
+                default:
                     break;
             }
 QT_WARNING_POP
@@ -454,14 +466,29 @@ void VToolMove::setFormulaRotation(const VFormula &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VToolMove::getOriginPointName() const
 {
-    try
-    {
-        return VAbstractTool::data.GetGObject(m_originPointId)->name();
-    }
-    catch (const VExceptionBadId &)
+    if (m_originPointId == NULL_ID)
     {
         return tr("Center point");
     }
+    else
+    {
+        return VAbstractTool::data.GetGObject(m_originPointId)->name();
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+quint32 VToolMove::getOriginPointId() const
+{
+    return m_originPointId;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VToolMove::setOriginPointId(const quint32 &value)
+{
+    m_originPointId = value;
+
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetFakeGObject(m_id);
+    SaveOption(obj);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -479,9 +506,9 @@ void VToolMove::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObjects(sourceToObjects(source));
-        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->GetOsSeparator()));
-        visual->SetLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->GetOsSeparator()));
-        visual->setRotation(qApp->TrVars()->FormulaToUser(formulaRotation, qApp->Settings()->GetOsSeparator()));
+        visual->SetAngle(qApp->TrVars()->FormulaToUser(formulaAngle, qApp->Settings()->getOsSeparator()));
+        visual->SetLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
+        visual->setRotation(qApp->TrVars()->FormulaToUser(formulaRotation, qApp->Settings()->getOsSeparator()));
         visual->setOriginPointId(m_originPointId);
         visual->RefreshGeometry();
     }
@@ -558,9 +585,9 @@ void VToolMove::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32 i
     {
         ContextMenu<DialogMove>(event, id);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }

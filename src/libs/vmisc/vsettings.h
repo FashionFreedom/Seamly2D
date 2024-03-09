@@ -72,15 +72,15 @@ public:
     VSettings(Format format, Scope scope, const QString &organization, const QString &application = QString(),
               QObject *parent = nullptr);
 
-    QString  GetLabelLanguage() const;
-    void     SetLabelLanguage(const QString &value);
+    QString  getLabelLanguage() const;
+    void     setLabelLanguage(const QString &value);
 
-    static QString GetDefPathPattern();
-    QString GetPathPattern() const;
+    static QString getDefaultPatternPath();
+    QString getPatternPath() const;
     void SetPathPattern(const QString &value);
 
-    static QString GetDefPathLayout();
-    QString GetPathLayout() const;
+    static QString getDefaultLayoutPath();
+    QString getLayoutPath() const;
     void SetPathLayout(const QString &value);
 
     bool GetGraphicalOutput() const;
@@ -172,20 +172,20 @@ public:
 
     bool GetTextAsPaths() const;
     static bool GetDefTextAsPaths();
-    void SetTextAsPaths(bool value);
+    void setTextAsPaths(bool value);
 
     // settings for the tiled PDFs
     QMarginsF GetTiledPDFMargins(const Unit &unit) const;
-    void SetTiledPDFMargins(const QMarginsF &value, const Unit &unit);
+    void setTiledPDFMargins(const QMarginsF &value, const Unit &unit);
 
-    qreal GetTiledPDFPaperHeight(const Unit &unit) const;
-    void SetTiledPDFPaperHeight(qreal value, const Unit &unit);
+    qreal getTiledPDFPaperHeight(const Unit &unit) const;
+    void setTiledPDFPaperHeight(qreal value, const Unit &unit);
 
-    qreal GetTiledPDFPaperWidth(const Unit &unit) const;
-    void SetTiledPDFPaperWidth(qreal value, const Unit &unit);
+    qreal getTiledPDFPaperWidth(const Unit &unit) const;
+    void setTiledPDFPaperWidth(qreal value, const Unit &unit);
 
-    PageOrientation GetTiledPDFOrientation() const;
-    void SetTiledPDFOrientation(PageOrientation value);
+    PageOrientation getTiledPDFOrientation() const;
+    void setTiledPDFOrientation(PageOrientation value);
 
 private:
     Q_DISABLE_COPY(VSettings)

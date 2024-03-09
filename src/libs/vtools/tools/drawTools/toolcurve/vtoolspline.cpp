@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vtoolspline.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vtoolspline.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013-2015 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -156,8 +156,9 @@ void VToolSpline::setDialog()
     SCASSERT(not dialogTool.isNull())
     const auto spl = VAbstractTool::data.GeometricObject<VSpline>(m_id);
     dialogTool->SetSpline(*spl);
-    dialogTool->SetColor(spl->GetColor());
-    dialogTool->SetPenStyle(spl->GetPenStyle());
+    dialogTool->setLineColor(spl->getLineColor());
+    dialogTool->setLineWeight(spl->getLineWeight());
+    dialogTool->setPenStyle(spl->GetPenStyle());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -177,8 +178,9 @@ VToolSpline* VToolSpline::Create(QSharedPointer<DialogTool> dialog, VMainGraphic
     SCASSERT(not dialogTool.isNull())
 
     VSpline *spline = new VSpline(dialogTool->GetSpline());
-    spline->SetColor(dialogTool->GetColor());
-    spline->SetPenStyle(dialogTool->GetPenStyle());
+    spline->setLineColor(dialogTool->getLineColor());
+    spline->SetPenStyle(dialogTool->getPenStyle());
+    spline->setLineWeight(dialogTool->getLineWeight());
 
     auto spl = Create(0, spline, scene, doc, data, Document::FullParse, Source::FromGui);
 
@@ -238,8 +240,9 @@ VToolSpline* VToolSpline::Create(const quint32 _id, VSpline *spline, VMainGraphi
 //---------------------------------------------------------------------------------------------------------------------
 VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 point4, QString &a1, QString &a2,
                                  QString &l1, QString &l2, quint32 duplicate, const QString &color,
-                                 const QString &penStyle, VMainGraphicsScene *scene, VAbstractPattern *doc,
-                                 VContainer *data, const Document &parse, const Source &typeCreation)
+                                 const QString &penStyle, const QString &lineWeight, VMainGraphicsScene *scene,
+                                 VAbstractPattern *doc, VContainer *data, const Document &parse,
+                                 const Source &typeCreation)
 {
     const qreal calcAngle1 = CheckFormula(_id, a1, data);
     const qreal calcAngle2 = CheckFormula(_id, a2, data);
@@ -256,8 +259,9 @@ VToolSpline *VToolSpline::Create(const quint32 _id, quint32 point1, quint32 poin
         spline->SetDuplicate(duplicate);
     }
 
-    spline->SetColor(color);
+    spline->setLineColor(color);
     spline->SetPenStyle(penStyle);
+    spline->setLineWeight(lineWeight);
 
     return VToolSpline::Create(_id, spline, scene, doc, data, parse, typeCreation);
 }
@@ -322,9 +326,9 @@ void VToolSpline::showContextMenu(QGraphicsSceneContextMenuEvent *event, quint32
     {
         ContextMenu<DialogSpline>(event);
     }
-    catch(const VExceptionToolWasDeleted &e)
+    catch(const VExceptionToolWasDeleted &error)
     {
-        Q_UNUSED(e)
+        Q_UNUSED(error)
         return;//Leave this method immediately!!!
     }
 }
@@ -362,8 +366,9 @@ void VToolSpline::SaveDialog(QDomElement &domElement)
     controlPoints[1]->blockSignals(false);
 
     SetSplineAttributes(domElement, spl);
-    doc->SetAttribute(domElement, AttrColor,   dialogTool->GetColor());
-    doc->SetAttribute(domElement, AttrPenStyle, dialogTool->GetPenStyle());
+    doc->SetAttribute(domElement, AttrColor,      dialogTool->getLineColor());
+    doc->SetAttribute(domElement, AttrPenStyle,   dialogTool->getPenStyle());
+    doc->SetAttribute(domElement, AttrLineWeight, dialogTool->getLineWeight());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

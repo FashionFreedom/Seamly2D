@@ -94,7 +94,7 @@ DialogMirrorByLine::DialogMirrorByLine(const VContainer *data, const quint32 &to
 
     ui->suffix_LineEdit->setText(qApp->getCurrentDocument()->GenerateSuffix(qApp->Settings()->getMirrorByLineSuffix()));
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
 
     FillComboBoxPoints(ui->firstLinePoint_ComboBox);
     FillComboBoxPoints(ui->secondLinePoint_ComboBox);
@@ -348,10 +348,10 @@ void DialogMirrorByLine::suffixChanged()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMirrorByLine::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagError && flagName);
-    SCASSERT(bApply != nullptr)
-    bApply->setEnabled(bOk->isEnabled());
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagError && flagName);
+    SCASSERT(apply_Button != nullptr)
+    apply_Button->setEnabled(ok_Button->isEnabled());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

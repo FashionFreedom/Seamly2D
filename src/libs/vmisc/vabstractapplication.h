@@ -64,6 +64,7 @@
 #include <QtGlobal>
 
 #include "../vmisc/def.h"
+#include "../vpatterndb/vcontainer.h"
 #include "../vpatterndb/vtranslatevars.h"
 #include "def.h"
 #include "vcommonsettings.h"
@@ -73,6 +74,7 @@
 class QUndoStack;
 class VAbstractApplication;// use in define
 class VAbstractPattern;
+class VContainer;
 class VMainGraphicsView;
 
 #if defined(qApp)
@@ -91,7 +93,7 @@ public:
 
     QString          translationsPath(const QString &locale = QString()) const;
 
-    void             LoadTranslation(const QString &locale);
+    void             loadTranslations(const QString &locale);
 
     Unit             patternUnit() const;
     const Unit      *patternUnitP() const;
@@ -118,6 +120,9 @@ public:
     void             setCurrentDocument(VAbstractPattern *doc);
     VAbstractPattern *getCurrentDocument()const;
 
+    void             setCurrentData(VContainer *data);
+    VContainer      *getCurrentData()const;
+
     bool             getOpeningPattern() const;
     void             setOpeningPattern();
 
@@ -128,8 +133,8 @@ public:
 
     virtual bool     IsAppInGUIMode()const =0;
 
-    QString         GetPPath() const;
-    void            SetPPath(const QString &value);
+    QString         getFilePath() const;
+    void            setFilePath(const QString &value);
 
 protected:
     QUndoStack         *undoStack;
@@ -163,6 +168,7 @@ private:
     VMainGraphicsView  *sceneView;
 
     VAbstractPattern   *doc;
+    VContainer         *data;
 
     /**
      * @brief openingPattern true when we opening pattern. If something will be wrong in formula this help understand if
@@ -174,13 +180,13 @@ private:
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline QString VAbstractApplication::GetPPath() const
+inline QString VAbstractApplication::getFilePath() const
 {
     return patternFilePath;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-inline void VAbstractApplication::SetPPath(const QString &value)
+inline void VAbstractApplication::setFilePath(const QString &value)
 {
     patternFilePath = value;
 }
@@ -190,7 +196,7 @@ template <typename T>
 inline QString VAbstractApplication::LocaleToString(const T &value)
 {
     QLocale loc;
-    qApp->Settings()->GetOsSeparator() ? loc = QLocale() : loc = QLocale::c();
+    qApp->Settings()->getOsSeparator() ? loc = QLocale() : loc = QLocale::c();
     return loc.toString(value);
 }
 

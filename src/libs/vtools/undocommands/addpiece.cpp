@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   addpiece.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+ /************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -31,21 +32,21 @@
  **  @copyright
  **  This source code is part of the Valentine project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
+ **  GNU General Public License for more pieces.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -54,14 +55,14 @@
 #include "../vpatterndb/vpiecepath.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-AddPiece::AddPiece(const QDomElement &xml, VAbstractPattern *doc, const VPiece &detail, const QString &drawName,
+AddPiece::AddPiece(const QDomElement &xml, VAbstractPattern *doc, const VPiece &piece, const QString &blockName,
                    QUndoCommand *parent)
-    : VUndoCommand(xml, doc, parent),
-      m_detail(detail),
-      m_drawName(drawName)
+    : VUndoCommand(xml, doc, parent)
+    , m_piece(piece)
+    , m_blockName(blockName)
 {
-    setText(tr("add detail"));
-    nodeId = doc->GetParametrId(xml);
+    setText(tr("add piece"));
+    nodeId = doc->getParameterId(xml);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -73,22 +74,22 @@ void AddPiece::undo()
 {
     qCDebug(vUndo, "Undo.");
 
-    QDomElement details = GetDetailsSection();
-    if (not details.isNull())
+    QDomElement pieces = getPiecesElement();
+    if (not pieces.isNull())
     {
-        QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagDetail);
+        QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
         if (domElement.isElement())
         {
-            if (details.removeChild(domElement).isNull())
+            if (pieces.removeChild(domElement).isNull())
             {
                 qCDebug(vUndo, "Can't delete node");
                 return;
             }
 
-            DecrementReferences(m_detail.GetPath().GetNodes());
-            DecrementReferences(m_detail.GetCustomSARecords());
-            DecrementReferences(m_detail.GetInternalPaths());
-            DecrementReferences(m_detail.GetPins());
+            DecrementReferences(m_piece.GetPath().GetNodes());
+            DecrementReferences(m_piece.GetCustomSARecords());
+            DecrementReferences(m_piece.GetInternalPaths());
+            DecrementReferences(m_piece.getAnchors());
         }
         else
         {
@@ -98,7 +99,7 @@ void AddPiece::undo()
     }
     else
     {
-        qCDebug(vUndo, "Can't find tag %s.", qUtf8Printable(VAbstractPattern::TagDetails));
+        qCDebug(vUndo, "Can't find tag %s.", qUtf8Printable(VAbstractPattern::TagPieces));
         return;
     }
     emit NeedFullParsing();
@@ -109,30 +110,30 @@ void AddPiece::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    QDomElement details = GetDetailsSection();
-    if (not details.isNull())
+    QDomElement pieces = getPiecesElement();
+    if (not pieces.isNull())
     {
-        details.appendChild(xml);
+        pieces.appendChild(xml);
     }
     else
     {
-        qCDebug(vUndo, "Can't find tag %s.", qUtf8Printable(VAbstractPattern::TagDetails));
+        qCDebug(vUndo, "Can't find tag %s.", qUtf8Printable(VAbstractPattern::TagPieces));
         return;
     }
     RedoFullParsing();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement AddPiece::GetDetailsSection() const
+QDomElement AddPiece::getPiecesElement() const
 {
-    QDomElement details;
-    if (m_drawName.isEmpty())
+    QDomElement pieces;
+    if (m_blockName.isEmpty())
     {
-        doc->GetActivNodeElement(VAbstractPattern::TagDetails, details);
+        doc->getActiveNodeElement(VAbstractPattern::TagPieces, pieces);
     }
     else
     {
-        details = doc->GetDraw(m_drawName).firstChildElement(VAbstractPattern::TagDetails);
+        pieces = doc->getDraftBlockElement(m_blockName).firstChildElement(VAbstractPattern::TagPieces);
     }
-    return details;
+    return pieces;
 }

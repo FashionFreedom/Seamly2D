@@ -10,7 +10,7 @@
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2022 Seamly2D project
+ **  Copyright (C) 2013 - 2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -32,6 +32,7 @@
 #define DEF_H
 
 #include <qcompilerdetection.h>
+#include <QFileDialog>
 #include <QLineF>
 #include <QString>
 #include <QStringList>
@@ -72,6 +73,25 @@ enum class Position : char
     BottomLeft,
     Left,
     Center
+};
+
+enum class PaperSizeFormat : char { A0 = 0,
+                                    A1,
+                                    A2,
+                                    A3,
+                                    A4,
+                                    Letter,
+                                    Legal,
+                                    Tabloid,
+                                    AnsiC,
+                                    AnsiD,
+                                    AnsiE,
+                                    Roll24in,     // Be careful when changing order roll type
+                                    Roll30in,     // Used also for showing icon
+                                    Roll36in,
+                                    Roll42in,
+                                    Roll44in,
+                                    Custom
 };
 
 enum class LayoutExportFormat : char
@@ -118,7 +138,7 @@ enum class LayoutExportFormat : char
 };
 
 enum class NodeDetail : char { Contour, Modeling };
-enum class SceneObject : char { Point, Line, Spline, Arc, ElArc, SplinePath, Detail, Unknown };
+enum class SceneObject : char { Point, Line, Spline, Arc, ElArc, SplinePath, Piece, Unknown };
 enum class MeasurementsType : char { Multisize, Individual , Unknown};
 enum class Unit : char { Mm = 0, Cm, Inch, Px, LAST_UNIT_DO_NOT_USE};
 enum class Source : char { FromGui, FromFile, FromTool };
@@ -268,7 +288,7 @@ enum class Tool : ToolVisHolderType
     PointFromCircleAndTangent,
     PointFromArcAndTangent,
     TrueDarts,
-    UnionDetails,
+    Union,
     Group,
     Rotation,
     MirrorByLine,
@@ -276,8 +296,8 @@ enum class Tool : ToolVisHolderType
     Move,
     Midpoint,
     EllipticalArc,
-    Pin,
-    InsertNode,
+    AnchorPoint,
+    InsertNodes,
     LAST_ONE_DO_NOT_USE //add new stuffs above this, this constant must be last and never used
 };
 
@@ -327,8 +347,8 @@ enum class Vis : ToolVisHolderType
     ToolEllipticalArc,
     ToolPiece,
     ToolInternalPath,
-    ToolPin,
-    PiecePins,
+    ToolAnchorPoint,
+    PieceAnchors,
     NoBrush,
     CurvePathItem,
     GrainlineItem,
@@ -421,7 +441,7 @@ enum class GSizes : unsigned char { ALL,
 
 extern const QString LONG_OPTION_NO_HDPI_SCALING;
 bool IsOptionSet(int argc, char *argv[], const char *option);
-void InitHighDpiScaling(int argc, char *argv[]);
+void initHighDpiScaling(int argc, char *argv[]);
 
 // functions
 extern const QString degTorad_F;
@@ -516,6 +536,13 @@ extern const QString unitCM;
 extern const QString unitINCH;
 extern const QString unitPX;
 
+extern const QString valExt;
+extern const QString vitExt;
+extern const QString vstExt;
+extern const QString sm2dExt;
+extern const QString smisExt;
+extern const QString smmsExt;
+
 void SetItemOverrideCursor(QGraphicsItem *item, const QString & pixmapPath, int hotX = -1, int hotY = -1);
 
 extern const qreal PrintDPI;
@@ -529,9 +556,13 @@ Q_REQUIRED_RESULT QMarginsF UnitConvertor(const QMarginsF &margins, const Unit &
 void InitLanguages(QComboBox *combobox);
 Q_REQUIRED_RESULT QStringList SupportedLocales();
 
-Q_REQUIRED_RESULT QString StrippedName(const QString &fullFileName);
+QString makeHeaderName(const QString &name);
+Q_REQUIRED_RESULT QString strippedName(const QString &fullFileName);
 Q_REQUIRED_RESULT QString RelativeMPath(const QString &patternPath, const QString &absoluteMPath);
 Q_REQUIRED_RESULT QString AbsoluteMPath(const QString &patternPath, const QString &relativeMPath);
+Q_REQUIRED_RESULT QString fileDialog(QWidget *parent, const QString &title,  const QString &dir,
+                                     const QString &filter, QString *selectedFilter, QFileDialog::Options options,
+                                     QFileDialog::FileMode mode,  QFileDialog::AcceptMode accept);
 
 Q_REQUIRED_RESULT QSharedPointer<QPrinter> PreparePrinter(const QPrinterInfo &info,
                                                           QPrinter::PrinterMode mode = QPrinter::ScreenResolution);
@@ -713,4 +744,6 @@ inline QList<T> convertToList(const C<T> &set)
 {
     return QList<T>(set.begin(), set.end());
 }
+
+
 #endif // DEF_H

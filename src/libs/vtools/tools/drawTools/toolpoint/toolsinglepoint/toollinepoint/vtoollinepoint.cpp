@@ -81,14 +81,15 @@ template <class T> class QSharedPointer;
  * @param doc dom document container.
  * @param data container with variables.
  * @param id object id in container.
- * @param typeLine line type.
+ * @param lineType line type.
  * @param lineColor line color.
  * @param formula string with length formula.
  * @param basePointId id base line point.
  * @param angle line angle.
  * @param parent parent object.
  */
-VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const quint32 &id, const QString &typeLine,
+VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const quint32 &id,
+                               const QString &lineType, const QString &lineWeight,
                                const QString &lineColor, const QString &formula, const quint32 &basePointId,
                                const qreal &angle, QGraphicsItem *parent)
     : VToolSinglePoint(doc, data, id, QColor(lineColor), parent)
@@ -98,7 +99,8 @@ VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const qu
     , mainLine(nullptr)
     , lineColor(lineColor)
 {
-    this->m_lineType = typeLine;
+    this->m_lineType   = lineType;
+    this->m_lineWeight = lineWeight;
 
     setPointColor(lineColor);
 
@@ -106,7 +108,7 @@ VToolLinePoint::VToolLinePoint(VAbstractPattern *doc, VContainer *data, const qu
     QPointF point1 = static_cast<QPointF>(*data->GeometricObject<VPointF>(basePointId));
     QPointF point2 = static_cast<QPointF>(*data->GeometricObject<VPointF>(id));
     mainLine = new VScaledLine(QLineF(point1 - point2, QPointF()), this);
-    mainLine->setBasicWidth(widthHairLine);
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
 }
 
@@ -119,11 +121,12 @@ VToolLinePoint::~VToolLinePoint()
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QPen mPen = mainLine->pen();
-    mPen.setColor(correctColor(this, lineColor));
-    mPen.setStyle(lineTypeToPenStyle(m_lineType));
+    QPen pen = mainLine->pen();
+    pen.setColor(correctColor(this, doc->useGroupColor(m_id, lineColor)));
+    pen.setStyle(lineTypeToPenStyle(doc->useGroupLineType(m_id, m_lineType)));
+    pen.setWidthF(ToPixel(doc->useGroupLineWeight(m_id, m_lineWeight).toDouble(), Unit::Mm));
 
-    mainLine->setPen(mPen);
+    mainLine->setPen(pen);
 
     VToolSinglePoint::paint(painter, option, widget);
 }
@@ -138,6 +141,8 @@ void VToolLinePoint::RefreshGeometry()
     VToolSinglePoint::refreshPointGeometry(*VDrawTool::data.GeometricObject<VPointF>(m_id));
     QPointF point = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(m_id));
     QPointF basePoint = static_cast<QPointF>(*VDrawTool::data.GeometricObject<VPointF>(basePointId));
+
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     mainLine->setLine(QLineF(basePoint - point, QPointF()));
 }
 
@@ -156,21 +161,22 @@ void VToolLinePoint::SaveOptions(QDomElement &tag, QSharedPointer<VGObject> &obj
 {
     VToolSinglePoint::SaveOptions(tag, obj);
 
-    doc->SetAttribute(tag, AttrLineType, m_lineType);
-    doc->SetAttribute(tag, AttrLineColor, lineColor);
+    doc->SetAttribute(tag, AttrLineType,   m_lineType);
+    doc->SetAttribute(tag, AttrLineWeight, m_lineWeight);
+    doc->SetAttribute(tag, AttrLineColor,  lineColor);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setBasicWidth(widthMainLine);
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble() + 1, Unit::Mm));
     VToolSinglePoint::hoverEnterEvent(event);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void VToolLinePoint::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
-    mainLine->setBasicWidth(widthHairLine);
+    mainLine->setBasicWidth(ToPixel(m_lineWeight.toDouble(), Unit::Mm));
     VToolSinglePoint::hoverLeaveEvent(event);
 }
 
@@ -231,13 +237,13 @@ void VToolLinePoint::SetAngle(const qreal &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VToolLinePoint::GetLineColor() const
+QString VToolLinePoint::getLineColor() const
 {
     return lineColor;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VToolLinePoint::SetLineColor(const QString &value)
+void VToolLinePoint::setLineColor(const QString &value)
 {
     lineColor = value;
 

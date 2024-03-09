@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -81,22 +81,40 @@
  * @param parent parent widget
  */
 DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogHeight)
+    : DialogTool(data, toolId, parent), ui(new Ui::DialogHeight)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/height.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxBasePoint);
     FillComboBoxPoints(ui->comboBoxP1Line);
     FillComboBoxPoints(ui->comboBoxP2Line);
-    FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
-    FillComboBoxLineColors(ui->comboBoxLineColor);
+
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->lineEditNamePoint, &QLineEdit::textChanged,        this, &DialogHeight::NamePointChanged);
     connect(ui->comboBoxBasePoint, &QComboBox::currentTextChanged, this, &DialogHeight::PointNameChanged);
@@ -104,6 +122,9 @@ DialogHeight::DialogHeight(const VContainer *data, const quint32 &toolId, QWidge
     connect(ui->comboBoxP2Line,    &QComboBox::currentTextChanged, this, &DialogHeight::PointNameChanged);
 
     vis = new VisToolHeight(data);
+    // Call after initialization vis!!!!
+    setLineType(LineTypeDashLine);
+    setLineWeight("0.35");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -125,13 +146,56 @@ void DialogHeight::SetPointName(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief getLineType return type of line
+ * @return type
+ */
+QString DialogHeight::getLineType() const
+{
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogHeight::SetTypeLine(const QString &value)
+void DialogHeight::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogHeight::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogHeight::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogHeight::getLineColor() const
+{
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void DialogHeight::setLineColor(const QString &value)
+{
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -174,18 +238,6 @@ void DialogHeight::SetP2LineId(const quint32 &value)
     VisToolHeight *line = qobject_cast<VisToolHeight *>(vis);
     SCASSERT(line != nullptr)
     line->setLineP2Id(value);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString DialogHeight::GetLineColor() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void DialogHeight::SetLineColor(const QString &value)
-{
-    ChangeCurrentData(ui->comboBoxLineColor, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -260,7 +312,8 @@ void DialogHeight::SaveData()
     line->setObject1Id(GetBasePointId());
     line->setLineP1Id(GetP1LineId());
     line->setLineP2Id(GetP2LineId());
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -269,16 +322,16 @@ void DialogHeight::PointNameChanged()
 {
     QSet<quint32> set;
     const quint32 basePointId = getCurrentObjectId(ui->comboBoxBasePoint);
-    const quint32 p1LineId = getCurrentObjectId(ui->comboBoxP1Line);
-    const quint32 p2LineId = getCurrentObjectId(ui->comboBoxP2Line);
+    const quint32 p1LineId    = getCurrentObjectId(ui->comboBoxP1Line);
+    const quint32 p2LineId    = getCurrentObjectId(ui->comboBoxP2Line);
 
     set.insert(basePointId);
     set.insert(p1LineId);
     set.insert(p2LineId);
 
     const QPointF basePoint = static_cast<QPointF>(*data->GeometricObject<VPointF>(basePointId));
-    const QPointF p1Line = static_cast<QPointF>(*data->GeometricObject<VPointF>(p1LineId));
-    const QPointF p2Line = static_cast<QPointF>(*data->GeometricObject<VPointF>(p2LineId));
+    const QPointF p1Line    = static_cast<QPointF>(*data->GeometricObject<VPointF>(p1LineId));
+    const QPointF p2Line    = static_cast<QPointF>(*data->GeometricObject<VPointF>(p2LineId));
 
     QColor color = okColor;
     if (set.size() != 3 || VGObject::ClosestPoint(QLineF(p1Line, p2Line), basePoint) == QPointF())
@@ -301,16 +354,6 @@ void DialogHeight::PointNameChanged()
 void DialogHeight::ShowVisualization()
 {
     AddVisualization<VisLine>();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-/**
- * @brief GetTypeLine return type of line
- * @return type
- */
-QString DialogHeight::GetTypeLine() const
-{
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------

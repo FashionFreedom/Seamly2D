@@ -53,7 +53,7 @@
 #define VARIABLES_H
 
 #include "variables/vinternalvariable.h"
-#include "variables/vmeasurement.h"
+#include "variables/measurement_variable.h"
 #include "variables/vincrement.h"
 #include "variables/vcurvelength.h"
 #include "variables/vlinelength.h"

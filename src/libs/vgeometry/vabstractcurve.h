@@ -1,27 +1,22 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+/******************************************************************************
+ *   @file   vabstractcurve.h
+ **  @author Douglas S Caskey
+ **  @date   21 Mar, 2023
+ **
+ **  @brief
+ **  @copyright
+ **  This source code is part of the Seamly2D project, a pattern making
+ **  program to create and model patterns of clothing.
+ **  Copyright (C) 2017-2023 Seamly2D project
+ **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
  **  You should have received a copy of the GNU General Public License
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
- **************************************************************************
+ *****************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vabstractcurve.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -78,14 +73,14 @@ public:
     explicit VAbstractCurve(const VAbstractCurve &curve);
     virtual ~VAbstractCurve() Q_DECL_OVERRIDE;
 
-    VAbstractCurve& operator= (const VAbstractCurve &curve);
+    VAbstractCurve &operator = (const VAbstractCurve &curve);
 #ifdef Q_COMPILER_RVALUE_REFS
-	VAbstractCurve &operator=(VAbstractCurve &&curve) Q_DECL_NOTHROW;
+	VAbstractCurve &operator = (VAbstractCurve &&curve) Q_DECL_NOTHROW;
 #endif
 
-	void Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
+	void                     Swap(VAbstractCurve &curve) Q_DECL_NOTHROW;
 
-    virtual QVector<QPointF> GetPoints() const =0;
+    virtual QVector<QPointF> getPoints() const =0;
     static QVector<QPointF>  GetSegmentPoints(const QVector<QPointF> &points, const QPointF &begin, const QPointF &end,
                                               bool reverse = false);
     QVector<QPointF>         GetSegmentPoints(const QPointF &begin, const QPointF &end, bool reverse = false) const;
@@ -96,8 +91,8 @@ public:
     virtual QVector<QPointF> IntersectLine(const QLineF &line) const;
     virtual bool             IsIntersectLine(const QLineF &line) const;
 
-    static bool              IsPointOnCurve(const QVector<QPointF> &points, const QPointF &p);
-    bool                     IsPointOnCurve(const QPointF &p) const;
+    static bool              isPointOnCurve(const QVector<QPointF> &points, const QPointF &p);
+    bool                     isPointOnCurve(const QPointF &p) const;
 
     virtual qreal            GetStartAngle () const=0;
     virtual qreal            GetEndAngle () const=0;
@@ -105,13 +100,19 @@ public:
     quint32                  GetDuplicate() const;
     void                     SetDuplicate(quint32 number);
 
-    QString                  GetColor() const;
-    void                     SetColor(const QString &color);
+    QString                  getLineColor() const;
+    void                     setLineColor(const QString &color);
 
     QString                  GetPenStyle() const;
     void                     SetPenStyle(const QString &penStyle);
 
+    QString                  getLineWeight() const;
+    void                     setLineWeight(const QString &lineWeight);
+
     static qreal             PathLength(const QVector<QPointF> &path);
+
+    QPointF                  getFirstPoint();
+    QPointF                  getLastPoint();
 
     static QVector<QPointF>  CurveIntersectLine(const QVector<QPointF> &points, const QLineF &line);
 
@@ -119,9 +120,11 @@ public:
     virtual QVector<DirectionArrow> DirectionArrows() const;
     static QPainterPath      ShowDirection(const QVector<DirectionArrow> &arrows, qreal width);
 
-    static const qreal lengthCurveDirectionArrow;
+    static const qreal       lengthCurveDirectionArrow;
+
 protected:
     virtual void             CreateName() =0;
+
 private:
     QSharedDataPointer<VAbstractCurveData> d;
 

@@ -2,7 +2,7 @@
  *                                                                         *
  *   Copyright (C) 2017  Seamly, LLC                                       *
  *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
+ *   https://github.com/fashionfreedom/seamly2d                            *
  *                                                                         *
  ***************************************************************************
  **
@@ -73,7 +73,7 @@
 #include "../../visualization/visualization.h"
 #include "../ifc/xml/vabstractpattern.h"
 #include "../ifc/xml/vdomdocument.h"
-#include "../support/dialogeditwrongformula.h"
+#include "../support/edit_formula_dialog.h"
 #include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "ui_dialogendline.h"
@@ -94,10 +94,12 @@ DialogEndLine::DialogEndLine(const VContainer *data, const quint32 &toolId, QWid
       m_firstRelease(false)
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/segment.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
-    InitFormulaUI(ui);
+    initializeFormulaUi(ui);
     ui->lineEditNamePoint->setText(qApp->getCurrentDocument()->GenerateLabel(LabelType::NewLabel));
     labelEditNamePoint = ui->labelEditNamePoint;
     this->formulaBaseHeight = ui->plainTextEditFormula->height();
@@ -106,13 +108,29 @@ DialogEndLine::DialogEndLine(const VContainer *data, const quint32 &toolId, QWid
     ui->plainTextEditFormula->installEventFilter(this);
     ui->plainTextEditAngle->installEventFilter(this);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     flagFormula = false;
     DialogTool::CheckState();
 
     FillComboBoxPoints(ui->comboBoxBasePoint);
-    FillComboBoxTypeLine(ui->comboBoxLineType, LineStylesPics());
-    FillComboBoxLineColors(ui->comboBoxLineColor);
+
+    int index = ui->lineColor_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineColor());
+    if (index != -1)
+    {
+        ui->lineColor_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineWeight_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineWeight());
+    if (index != -1)
+    {
+        ui->lineWeight_ComboBox->setCurrentIndex(index);
+    }
+
+    index = ui->lineType_ComboBox->findData(qApp->getCurrentDocument()->getDefaultLineType());
+    if (index != -1)
+    {
+        ui->lineType_ComboBox->setCurrentIndex(index);
+    }
 
     connect(ui->toolButtonExprLength, &QPushButton::clicked, this, &DialogEndLine::FXLength);
     connect(ui->toolButtonExprAngle, &QPushButton::clicked, this, &DialogEndLine::FXAngle);
@@ -170,7 +188,7 @@ void DialogEndLine::DeployAngleTextEdit()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::FXAngle()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit angle"));
     dialog->SetFormula(GetAngle());
     dialog->setPostfix(degreeSymbol);
@@ -184,7 +202,7 @@ void DialogEndLine::FXAngle()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogEndLine::FXLength()
 {
-    DialogEditWrongFormula *dialog = new DialogEditWrongFormula(data, toolId, this);
+    EditFormulaDialog *dialog = new EditFormulaDialog(data, toolId, this);
     dialog->setWindowTitle(tr("Edit length"));
     dialog->SetFormula(GetFormula());
     dialog->setPostfix(UnitsToStr(qApp->patternUnit(), true));
@@ -232,13 +250,34 @@ void DialogEndLine::SetPointName(const QString &value)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief SetTypeLine set type of line
+ * @brief setLineType set type of line
  * @param value type
  */
-void DialogEndLine::SetTypeLine(const QString &value)
+void DialogEndLine::setLineType(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineType, value);
+    ChangeCurrentData(ui->lineType_ComboBox, value);
     vis->setLineStyle(lineTypeToPenStyle(value));
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief getLineWeight return weight of the lines
+ * @return type
+ */
+QString DialogEndLine::getLineWeight() const
+{
+        return GetComboBoxCurrentData(ui->lineWeight_ComboBox, "0.35");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief setLineWeight set weight of the lines
+ * @param value type
+ */
+void DialogEndLine::setLineWeight(const QString &value)
+{
+    ChangeCurrentData(ui->lineWeight_ComboBox, value);
+    vis->setLineWeight(value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -248,7 +287,7 @@ void DialogEndLine::SetTypeLine(const QString &value)
  */
 void DialogEndLine::SetFormula(const QString &value)
 {
-    formulaLength = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formulaLength = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed. TODO : see if I can get the max number of caracters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formulaLength.length() > 80)
@@ -271,7 +310,7 @@ void DialogEndLine::SetFormula(const QString &value)
  */
 void DialogEndLine::SetAngle(const QString &value)
 {
-    formulaAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->GetOsSeparator());
+    formulaAngle = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed. TODO : see if I can get the max number of caracters in one line
     // of this PlainTextEdit to change 80 to this value
     if (formulaAngle.length() > 80)
@@ -302,15 +341,24 @@ void DialogEndLine::SetBasePointId(const quint32 &value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString DialogEndLine::GetLineColor() const
+/**
+ * @brief getLineColor get the color of line
+ * @param value type
+ */
+//---------------------------------------------------------------------------------------------------------------------
+QString DialogEndLine::getLineColor() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineColor, ColorBlack);
+    return GetComboBoxCurrentData(ui->lineColor_ComboBox, ColorBlack);
 }
 
+/**
+ * @brief setLineColor set color of the line
+ * @param value type
+ */
 //---------------------------------------------------------------------------------------------------------------------
-void DialogEndLine::SetLineColor(const QString &value)
+void DialogEndLine::setLineColor(const QString &value)
 {
-    ChangeCurrentData(ui->comboBoxLineColor, value);
+    ChangeCurrentData(ui->lineColor_ComboBox, value);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -380,7 +428,8 @@ void DialogEndLine::SaveData()
     line->setObject1Id(GetBasePointId());
     line->setLength(formulaLength);
     line->SetAngle(formulaAngle);
-    line->setLineStyle(lineTypeToPenStyle(GetTypeLine()));
+    line->setLineStyle(lineTypeToPenStyle(getLineType()));
+    line->setLineWeight(getLineWeight());
     line->RefreshGeometry();
 }
 
@@ -400,12 +449,12 @@ DialogEndLine::~DialogEndLine()
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief GetTypeLine return type of line
+ * @brief getLineType return type of line
  * @return type
  */
-QString DialogEndLine::GetTypeLine() const
+QString DialogEndLine::getLineType() const
 {
-    return GetComboBoxCurrentData(ui->comboBoxLineType, LineTypeSolidLine);
+    return GetComboBoxCurrentData(ui->lineType_ComboBox, LineTypeSolidLine);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -415,7 +464,7 @@ QString DialogEndLine::GetTypeLine() const
  */
 QString DialogEndLine::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formulaLength, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(formulaLength, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -425,7 +474,7 @@ QString DialogEndLine::GetFormula() const
  */
 QString DialogEndLine::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formulaAngle, qApp->Settings()->GetOsSeparator());
+    return qApp->TrVars()->TryFormulaFromUser(formulaAngle, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

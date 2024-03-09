@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   vpiece.h
+ **  @author Douglas S Caskey
+ **  @date   Jan 3, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,35 +19,34 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. if not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
- **  @file
+ **  @file   vpiece.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   3 11, 2016
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -115,14 +116,17 @@ public:
     QPainterPath             getNotchesPath(const VContainer *data,
                                            const QVector<QPointF> &seamAllowance = QVector<QPointF>()) const;
 
-    bool                     IsInLayout() const;
+    bool                     isInLayout() const;
     void                     SetInLayout(bool inLayout);
+
+    bool                     isLocked() const;
+    void                     setIsLocked(bool isLocked);
 
     bool                     IsUnited() const;
     void                     SetUnited(bool united);
 
-    QString                  GetFormulaSAWidth() const;
-    void                     SetFormulaSAWidth(const QString &formula, qreal value);
+    QString                  getSeamAllowanceWidthFormula() const;
+    void                     setSeamAllowanceWidthFormula(const QString &formula, qreal value);
 
     QVector<quint32>         GetInternalPaths() const;
     QVector<quint32>        &GetInternalPaths();
@@ -132,14 +136,14 @@ public:
     QVector<CustomSARecord>  &GetCustomSARecords();
     void                     SetCustomSARecords(const QVector<CustomSARecord> &records);
 
-    QVector<quint32>         GetPins() const;
-    QVector<quint32>        &GetPins();
-    void                     SetPins(const QVector<quint32> &pins);
+    QVector<quint32>         getAnchors() const;
+    QVector<quint32>        &getAnchors();
+    void                     setAnchors(const QVector<quint32> &anchors);
 
-    QVector<quint32>         MissingNodes(const VPiece &det) const;
-    QVector<quint32>         MissingCSAPath(const VPiece &det) const;
-    QVector<quint32>         MissingInternalPaths(const VPiece &det) const;
-    QVector<quint32>         MissingPins(const VPiece &det) const;
+    QVector<quint32>         MissingNodes(const VPiece &piece) const;
+    QVector<quint32>         MissingCSAPath(const VPiece &piece) const;
+    QVector<quint32>         MissingInternalPaths(const VPiece &piece) const;
+    QVector<quint32>         missingAnchors(const VPiece &piece) const;
 
     void                     SetPatternPieceData(const VPieceLabelData &data);
     VPieceLabelData&         GetPatternPieceData();

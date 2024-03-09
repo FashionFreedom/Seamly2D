@@ -6,13 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>270</width>
     <height>290</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>260</width>
+    <width>270</width>
     <height>290</height>
    </size>
   </property>
@@ -35,8 +35,14 @@
      <property name="minimumSize">
       <size>
        <width>240</width>
-       <height>50</height>
+       <height>0</height>
       </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="title">
       <string>Selection</string>
@@ -44,25 +50,31 @@
      <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QFormLayout" name="formLayout">
-        <property name="topMargin">
-         <number>2</number>
+        <property name="labelAlignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
         </property>
-        <property name="bottomMargin">
-         <number>2</number>
+        <property name="topMargin">
+         <number>6</number>
         </property>
         <item row="0" column="0">
          <widget class="QLabel" name="originPoint_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>55</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="text">
            <string>Rotation pt:</string>
@@ -76,9 +88,15 @@
          <widget class="QComboBox" name="rotation_ComboBox">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>80</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
          </widget>
         </item>
@@ -86,15 +104,21 @@
          <widget class="QLabel" name="suffix_Label">
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
-            <width>55</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="text">
            <string>Suffix:</string>
@@ -108,9 +132,15 @@
          <widget class="QLineEdit" name="suffix_LineEdit">
           <property name="minimumSize">
            <size>
-            <width>0</width>
+            <width>80</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
          </widget>
         </item>
@@ -133,6 +163,12 @@
        <height>0</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="title">
       <string>Geometry</string>
      </property>
@@ -149,7 +185,7 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>65</width>
+            <width>90</width>
             <height>0</height>
            </size>
           </property>
@@ -196,6 +232,12 @@
             </disabled>
            </palette>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="text">
            <string>Angle:</string>
           </property>
@@ -214,9 +256,15 @@
           </property>
           <property name="minimumSize">
            <size>
-            <width>87</width>
+            <width>85</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
           </property>
           <property name="toolTip">
            <string>Value</string>
@@ -283,8 +331,15 @@
             <height>60</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>9</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
           <property name="toolTip">
-           <string>Calculation</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
+&lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o'clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="tabChangesFocus">
            <bool>true</bool>

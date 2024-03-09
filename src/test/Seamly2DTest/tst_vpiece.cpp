@@ -125,8 +125,8 @@ void TST_VPiece::ClearLoop()
     detail.GetPath().Append(VPieceNode(309, Tool::NodePoint));
     detail.GetPath().Append(VPieceNode(310, Tool::NodePoint));
     // Closed
-    detail.GetPath()[0].SetFormulaSABefore("0");
-    detail.GetPath()[detail.GetPath().CountNodes()-1].SetFormulaSAAfter("0");
+    detail.GetPath()[0].setBeforeSAFormula("0");
+    detail.GetPath()[detail.GetPath().CountNodes()-1].setAfterSAFormula("0");
 
     const QVector<QPointF> pointsEkv = detail.SeamAllowancePoints(data.data());
 

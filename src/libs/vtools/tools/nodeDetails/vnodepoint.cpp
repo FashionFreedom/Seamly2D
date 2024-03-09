@@ -84,7 +84,7 @@
 #include "../vwidgets/vmaingraphicsview.h"
 #include "../vabstracttool.h"
 #include "../vdatatool.h"
-#include "../vtoolseamallowance.h"
+#include "../pattern_piece_tool.h"
 #include "vabstractnode.h"
 
 const QString VNodePoint::ToolType = QStringLiteral("modeling");
@@ -102,8 +102,8 @@ const QString VNodePoint::ToolType = QStringLiteral("modeling");
  * @param parent parent object.
  */
 VNodePoint::VNodePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idPoint, const Source &typeCreation,
-                       const QString &drawName, const quint32 &idTool, QObject *qoParent, QGraphicsItem *parent)
-    : VAbstractNode(doc, data, id, idPoint, drawName, idTool, qoParent)
+                       const QString &blockName, const quint32 &idTool, QObject *qoParent, QGraphicsItem *parent)
+    : VAbstractNode(doc, data, id, idPoint, blockName, idTool, qoParent)
     , VScenePoint(QColor(qApp->Settings()->getPointNameColor()), parent)
 {
     m_pointName->setShowParentTooltip(false);
@@ -133,14 +133,14 @@ VNodePoint::VNodePoint(VAbstractPattern *doc, VContainer *data, quint32 id, quin
  */
 void VNodePoint::Create(VAbstractPattern *doc, VContainer *data, VMainGraphicsScene *scene,
                         quint32 id, quint32 idPoint, const Document &parse,
-                        const Source &typeCreation, const QString &drawName, const quint32 &idTool)
+                        const Source &typeCreation, const QString &blockName, const quint32 &idTool)
 {
     if (parse == Document::FullParse)
     {
         VAbstractTool::AddRecord(id, Tool::NodePoint, doc);
         //TODO Need create garbage collector and remove all nodes that we don't use.
         //Better check garbage before each saving file. Check only modeling tags.
-        VNodePoint *point = new VNodePoint(doc, data, id, idPoint, typeCreation, drawName, idTool, doc);
+        VNodePoint *point = new VNodePoint(doc, data, id, idPoint, typeCreation, blockName, idTool, doc);
 
         connect(scene, &VMainGraphicsScene::EnableToolMove,           point, &VNodePoint::EnableToolMove);
         connect(scene, &VMainGraphicsScene::EnablePointItemHover,     point, &VNodePoint::AllowHover);
@@ -326,7 +326,7 @@ void VNodePoint::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         return;
     }
-    if (qgraphicsitem_cast<VToolSeamAllowance *>(parentItem()))
+    if (qgraphicsitem_cast<PatternPieceTool *>(parentItem()))
     {
         QMenu menu;
 

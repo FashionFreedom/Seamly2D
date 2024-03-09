@@ -75,7 +75,7 @@ public:
     // cppcheck-suppress unusedFunction
     virtual bool mergeWith(const QUndoCommand *command) Q_DECL_OVERRIDE;
     virtual int  id() const Q_DECL_OVERRIDE;
-    quint32      getDetId() const;
+    quint32      getPieceId() const;
     double       getNewX() const;
     double       getNewY() const;
 private:
@@ -91,7 +91,7 @@ private:
 };
 
 //---------------------------------------------------------------------------------------------------------------------
-inline quint32 MovePiece::getDetId() const
+inline quint32 MovePiece::getPieceId() const
 {
     return nodeId;
 }

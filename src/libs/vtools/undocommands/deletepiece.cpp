@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
+ **  @file   deletepiece.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+ /************************************************************************
  **
  **  @file
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2016 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2016 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -65,33 +66,33 @@
 #include "../vpatterndb/vpiecepath.h"
 
 //---------------------------------------------------------------------------------------------------------------------
-DeletePiece::DeletePiece(VAbstractPattern *doc, quint32 id, const VPiece &detail, QUndoCommand *parent)
-    : VUndoCommand(QDomElement(), doc, parent),
-      m_parentNode(),
-      m_siblingId(NULL_ID),
-      m_detail(detail)
+DeletePiece::DeletePiece(VAbstractPattern *doc, quint32 id, const VPiece &piece, QUndoCommand *parent)
+    : VUndoCommand(QDomElement(), doc, parent)
+    , m_parentNode()
+    , m_siblingId(NULL_ID)
+    , m_piece (piece)
 {
     setText(tr("delete tool"));
     nodeId = id;
-    QDomElement domElement = doc->elementById(id, VAbstractPattern::TagDetail);
+    QDomElement domElement = doc->elementById(id, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
         xml = domElement.cloneNode().toElement();
         m_parentNode = domElement.parentNode();
-        QDomNode previousDetail = domElement.previousSibling();
-        if (previousDetail.isNull())
+        QDomNode previousPiece = domElement.previousSibling();
+        if (previousPiece.isNull())
         {
             m_siblingId = NULL_ID;
         }
         else
         {
-            // Better save id of previous detail instead of reference to node.
-            m_siblingId = doc->GetParametrUInt(previousDetail.toElement(), VAbstractPattern::AttrId, NULL_ID_STR);
+            // Better save id of previous piece instead of reference to node.
+            m_siblingId = doc->GetParametrUInt(previousPiece.toElement(), VAbstractPattern::AttrId, NULL_ID_STR);
         }
     }
     else
     {
-        qCDebug(vUndo, "Can't get detail by id = %u.", nodeId);
+        qCDebug(vUndo, "Can't get piece by id = %u.", nodeId);
         return;
     }
 }
@@ -114,26 +115,26 @@ void DeletePiece::redo()
 {
     qCDebug(vUndo, "Redo.");
 
-    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagDetail);
+    QDomElement domElement = doc->elementById(nodeId, VAbstractPattern::TagPiece);
     if (domElement.isElement())
     {
         m_parentNode.removeChild(domElement);
 
-        // UnionDetails delete two old details and create one new.
-        // So when UnionDetail delete detail we can't use FullParsing. So we hide detail on scene directly.
-        VToolSeamAllowance *toolDet = qobject_cast<VToolSeamAllowance*>(VAbstractPattern::getTool(nodeId));
-        SCASSERT(toolDet != nullptr);
-        toolDet->hide();
+        // Union delete two old pieces and create one new.
+        // So when UnionDetail delete piece we can't use FullParsing. So we hide piece on scene directly.
+        PatternPieceTool *tool = qobject_cast<PatternPieceTool*>(VAbstractPattern::getTool(nodeId));
+        SCASSERT(tool != nullptr);
+        tool->hide();
 
-        DecrementReferences(m_detail.GetPath().GetNodes());
-        DecrementReferences(m_detail.GetCustomSARecords());
-        DecrementReferences(m_detail.GetInternalPaths());
-        DecrementReferences(m_detail.GetPins());
-        emit NeedFullParsing(); // Doesn't work when UnionDetail delete detail.
+        DecrementReferences(m_piece.GetPath().GetNodes());
+        DecrementReferences(m_piece.GetCustomSARecords());
+        DecrementReferences(m_piece.GetInternalPaths());
+        DecrementReferences(m_piece.getAnchors());
+        emit NeedFullParsing(); // Doesn't work when UnionDetail delete piece.
     }
     else
     {
-        qCDebug(vUndo, "Can't get detail by id = %u.", nodeId);
+        qCDebug(vUndo, "Can't get piece by id = %u.", nodeId);
         return;
     }
 }

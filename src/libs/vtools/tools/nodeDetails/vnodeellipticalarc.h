@@ -68,7 +68,7 @@ class VNodeEllipticalArc :public VAbstractNode
     Q_OBJECT
 public:
     static void  Create(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idArc, const Document &parse,
-                        const Source &typeCreation, const QString &drawName = QString(),
+                        const Source &typeCreation, const QString &blockName = QString(),
                         const quint32 &idTool = NULL_ID);
 
     static const QString ToolType;
@@ -85,7 +85,7 @@ private:
     Q_DISABLE_COPY(VNodeEllipticalArc)
 
     VNodeEllipticalArc(VAbstractPattern *doc, VContainer *data, quint32 id, quint32 idArc, const Source &typeCreation,
-                       const QString &drawName = QString(), const quint32 &idTool = 0, QObject *qoParent = nullptr);
+                       const QString &blockName = QString(), const quint32 &idTool = 0, QObject *qoParent = nullptr);
 };
 
 #endif // VNODEELLIPTICALARC_H

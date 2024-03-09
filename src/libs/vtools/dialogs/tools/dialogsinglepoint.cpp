@@ -66,16 +66,19 @@
  * @param parent parent widget
  */
 DialogSinglePoint::DialogSinglePoint(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogSinglePoint), point(QPointF())
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogSinglePoint), point(QPointF())
 {
     ui->setupUi(this);
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    setWindowIcon(QIcon(":/toolicon/32x32/point_basepoint_icon.png"));
 
     ui->lineEditName->setClearButtonEnabled(true);
 
     ui->doubleSpinBoxX->setRange(0, qApp->fromPixel(SceneSize));
     ui->doubleSpinBoxY->setRange(0, qApp->fromPixel(SceneSize));
     labelEditNamePoint = ui->labelEditName;
-    InitOkCancel(ui);
+    initializeOkCancel(ui);
 
     flagName = true;
     DialogTool::CheckState();

@@ -114,29 +114,33 @@ void AbstractTest::Comparison(const QPointF &result, const QPointF &expected, qr
 //---------------------------------------------------------------------------------------------------------------------
 QString AbstractTest::Seamly2DPath() const
 {
-    const QString path = QStringLiteral("/../../../app/seamly2d/bin/seamly2d");
-#ifdef Q_OS_WIN
-    return QCoreApplication::applicationDirPath() + path + QLatin1String(".exe");
+    const QString path = QStringLiteral("/../../../app/seamly2d/bin/");
+#if defined(Q_OS_WIN)
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamly2d.exe");
+#elif defined(Q_OS_MACOS)
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("Seamly2D.app/Contents/MacOS/seamly2d");
 #else
-    return QCoreApplication::applicationDirPath() + path;
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamly2d");
 #endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString AbstractTest::SeamlyMePath() const
 {
-    const QString path = QStringLiteral("/../../../app/seamlyme/bin/seamlyme");
-#ifdef Q_OS_WIN
-    return QCoreApplication::applicationDirPath() + path + QLatin1String(".exe");
+    const QString path = QStringLiteral("/../../../app/seamlyme/bin/");
+#if defined(Q_OS_WIN)
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme.exe");
+#elif defined(Q_OS_MACOS)
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme.app/Contents/MacOS/seamlyme");
 #else
-    return QCoreApplication::applicationDirPath() + path;
+    return QCoreApplication::applicationDirPath() + path + QLatin1String("seamlyme");
 #endif
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 QString AbstractTest::TranslationsPath() const
 {
-    return QCoreApplication::applicationDirPath() + QStringLiteral("/../../../app/seamly2d/bin/translations");
+    return QCoreApplication::applicationDirPath() + QStringLiteral("/../../../app/seamly2d/.qm");
 }
 
 //---------------------------------------------------------------------------------------------------------------------

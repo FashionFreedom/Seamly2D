@@ -64,11 +64,10 @@ VFormulaProperty::VFormulaProperty(const QString &name)
 {
     d_ptr->type = VPE::Property::Complex;
 
-    VPE::VStringProperty* tmpFormula = new VPE::VStringProperty(tr("Formula:"));
+    VPE::PlainTextProperty *tmpFormula = new VPE::PlainTextProperty(tr("Formula:"));
     addChild(tmpFormula);
-    tmpFormula->setClearButtonEnable(true);
     tmpFormula->setUpdateBehaviour(true, false);
-    tmpFormula->setOsSeparator(qApp->Settings()->GetOsSeparator());
+    tmpFormula->setOsSeparator(qApp->Settings()->getOsSeparator());
     setValue(0);
 }
 
@@ -108,10 +107,11 @@ QWidget* VFormulaProperty::createEditor(QWidget* parent, const QStyleOptionViewI
     Q_UNUSED(delegate)
 
     VFormula formula = VProperty::d_ptr->VariantValue.value<VFormula>();
-    VFormulaPropertyEditor* tmpEditor = new VFormulaPropertyEditor(parent);
-    tmpEditor->setLocale(parent->locale());
-    tmpEditor->SetFormula(formula);
-    VProperty::d_ptr->editor = tmpEditor;
+    VFormulaPropertyEditor* formulaEditor = new VFormulaPropertyEditor(parent);
+    formulaEditor->setLocale(parent->locale());
+    formulaEditor->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+    formulaEditor->SetFormula(formula);
+    VProperty::d_ptr->editor = formulaEditor;
     return VProperty::d_ptr->editor;
 }
 
@@ -119,11 +119,11 @@ QWidget* VFormulaProperty::createEditor(QWidget* parent, const QStyleOptionViewI
 //! Sets the property's data to the editor (returns false, if the standard delegate should do that)
 bool VFormulaProperty::setEditorData(QWidget* editor)
 {
-    VFormulaPropertyEditor* tmpWidget = qobject_cast<VFormulaPropertyEditor*>(editor);
-    if (tmpWidget)
+    VFormulaPropertyEditor* formulaEditor = qobject_cast<VFormulaPropertyEditor*>(editor);
+    if (formulaEditor)
     {
         VFormula formula = VProperty::d_ptr->VariantValue.value<VFormula>();
-        tmpWidget->SetFormula(formula);
+        formulaEditor->SetFormula(formula);
     }
     else
         return false;
@@ -135,11 +135,11 @@ bool VFormulaProperty::setEditorData(QWidget* editor)
 //! Gets the data from the widget
 QVariant VFormulaProperty::getEditorData(const QWidget *editor) const
 {
-    const VFormulaPropertyEditor* tmpWidget = qobject_cast<const VFormulaPropertyEditor*>(editor);
-    if (tmpWidget)
+    const VFormulaPropertyEditor* formulaEditor = qobject_cast<const VFormulaPropertyEditor*>(editor);
+    if (formulaEditor)
     {
         QVariant value;
-        value.setValue(tmpWidget->GetFormula());
+        value.setValue(formulaEditor->GetFormula());
         return value;
     }
 
@@ -220,7 +220,7 @@ void VFormulaProperty::SetFormula(const VFormula &formula)
     }
 }
 
-void VFormulaProperty::ValueChildChanged(const QVariant &value, int typeForParent)
+void VFormulaProperty::childValueChanged(const QVariant &value, int typeForParent)
 {
     Q_UNUSED(typeForParent)
     VFormula newFormula = GetFormula();

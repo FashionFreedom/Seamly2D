@@ -104,6 +104,12 @@ GraphicsViewZoom::GraphicsViewZoom(QGraphicsView* view)
     , m_numScheduledVerticalScrollings(0)
     , horizontalScrollAnim(new QTimeLine(300, this))
     , m_numScheduledHorizontalScrollings(0)
+    , pan(nullptr)
+    , pinch(nullptr)
+    , horizontalOffset(0.0)
+    , verticalOffset(0.0)
+    , scaleFactor(0.0)
+    , currentScaleFactor(0.0)
 {
     m_view->viewport()->installEventFilter(this);
 
@@ -405,7 +411,7 @@ bool GraphicsViewZoom::startVerticalScrollings(QWheelEvent *wheel_event)
         m_numScheduledVerticalScrollings = numSteps;
     }
 
-    m_numScheduledVerticalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10.0;
+    m_numScheduledVerticalScrollings *= qint32(qApp->Settings()->getScrollSpeedFactor()/10.0);
 
     if (verticalScrollAnim->state() != QTimeLine::Running)
     {
@@ -442,7 +448,7 @@ bool GraphicsViewZoom::startHorizontalScrollings(QWheelEvent *wheel_event)
         m_numScheduledHorizontalScrollings = numSteps;
     }
 
-    m_numScheduledHorizontalScrollings *= qreal(qApp->Settings()->getScrollSpeedFactor())/10.0;
+    m_numScheduledHorizontalScrollings *= qint32(qApp->Settings()->getScrollSpeedFactor()/10.0);
 
     if (horizontalScrollAnim->state() != QTimeLine::Running)
     {
@@ -466,8 +472,16 @@ VMainGraphicsView::VMainGraphicsView(QWidget *parent)
     , showScrollBars()
     , isallowRubberBand(true)
     , isZoomToAreaActive(false)
+    , isRubberBandActive(false)
+    , isRubberBandColorSet(false)
     , isZoomPanActive(false)
-    , m_ptStartPos()
+    , isPanDragActive(false)
+    , rubberBand(nullptr)
+    , rubberBandRect(nullptr)
+    , startPoint(QPoint())
+    , endPoint(QPoint())
+    , m_ptStartPos(QPoint())
+    , cursorPos(QPoint())
 {
     initScrollBars();
 

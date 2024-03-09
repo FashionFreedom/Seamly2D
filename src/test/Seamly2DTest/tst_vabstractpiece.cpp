@@ -1867,11 +1867,11 @@ QVector<QPointF> TST_VAbstractPiece::OutputPointsCase3() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void TST_VAbstractPiece::SumTrapezoids() const
+void TST_VAbstractPiece::sumTrapezoids() const
 {
-    // Case3 checks that the method 'SumTrapezoids' returns negative value for three clockwise allocated points
-    // Case4 checks that the method 'SumTrapezoids' returns positive value for three counterclock-wise allocated points
-    // Case5 checks that the method 'SumTrapezoids' returns 0 for one point
+    // Case3 checks that the method 'sumTrapezoids' returns negative value for three clockwise allocated points
+    // Case4 checks that the method 'sumTrapezoids' returns positive value for three counterclock-wise allocated points
+    // Case5 checks that the method 'sumTrapezoids' returns 0 for one point
     Case3();
     Case4();
     Case5();
@@ -1967,7 +1967,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
 
     path.removeLast();
     res.removeLast();
- 
+
     QTest::newRow("One loop, the first loop, unclosed a path (six unique points)") << path << res;
 
     path.clear();
@@ -2057,7 +2057,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
     res << QPointF(-22.11646613738226, 2680.44094488189);
     res << QPointF(100.96979100571033, 1797.6153764073072);
 
-    // See the file "collection/bugs/Issue_#493.val"
+    // See the file "collection/bugs/Issue_#493.sm2d"
     QTest::newRow("Test case issue #493") << path << res;
 
     path.clear();
@@ -2106,7 +2106,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
     res << QPointF(-545.9786893428341, -3568.830152982464);
     res << QPointF(-685.2149804319953, -3568.7982439212556);
 
-    // See the file "collection/bugs/Issue_#515.val"
+    // See the file "collection/bugs/Issue_#515.sm2d"
     // Check a seam allowance path.
     // The curve that causes the issue is the first in the list.
     QTest::newRow("Test case issue #515. Big loop in seam allowance path.") << path << res;
@@ -2152,7 +2152,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
     res << QPointF(-464.5941701318652, -4186.745679830414);
     res << QPointF(-454.0214632588362, -4226.117872983938);
 
-    // See the file "collection/bugs/Issue_#515.val"
+    // See the file "collection/bugs/Issue_#515.sm2d"
     // Check a seam allowance path.
     // The curve that causes the issue is the last in the list.
     QTest::newRow("Test case issue #515. Small loop in seam allowance path.") << path << res;
@@ -2180,7 +2180,7 @@ void TST_VAbstractPiece::PathRemoveLoop_data() const
     res << QPointF(1229.6503937007876, -1990.077167189857);
     res << QPointF(1229.6503937007876, 937.6667716535435);
 
-    // See the file "collection/bugs/Issue_#603.val"
+    // See the file "collection/bugs/Issue_#603.sm2d"
     // Point H1 is first in the list
     QTest::newRow("Test issue 603.") << path << res;
 }
@@ -2281,7 +2281,7 @@ void TST_VAbstractPiece::PathLoopsCase_data() const
     res << QPointF(802.0871811023624, 1653.9337322834645);
     res << QPointF(61.86670866141733, 1653.9337322834645);
 
-    // See file "collection/bugs/Issue_#609_case1.val"
+    // See file "collection/bugs/Issue_#609_case1.sm2d"
     // Clear a main path. Bound intersection. External loop. Outside a loop. Start point Ф1.
     QTest::newRow("Issue 609. Case1a") << path << res;
 
@@ -2326,7 +2326,7 @@ void TST_VAbstractPiece::PathLoopsCase_data() const
     res << QPointF(-641.7062267185897, -2051.118466118487);
     res << QPointF(-365.68188649000314, -2143.126579528016);
 
-    // See file "collection/bugs/Issue_#609_case2.val"
+    // See file "collection/bugs/Issue_#609_case2.sm2d"
     // Clear an equdistant. Bound intersection. Internal loop. Outside a loop. Start point А2.
     QTest::newRow("Issue 609. Case2b") << path << res;
 
@@ -2414,7 +2414,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant_data() const
     QTest::addColumn<qreal>("width");
     QTest::addColumn<QVector<QPointF>>("ekvOrig");
 
-    // For more details see the file "collection/bugs/GAVAUDAN Laure - corsage - figure 4.val".
+    // For more details see the file "collection/bugs/GAVAUDAN Laure - corsage - figure 4.sm2d".
     // We will test only one detail. The second require too accurate data that we cannot get from debuger.
     // The test check an open equdistant of correct detail.
     QVector<VSAPoint> points;// Input points.
@@ -2526,7 +2526,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant_data() const
     ekvOrig.append(QPointF(-138.65807550610091, 710.4843173601864));
     ekvOrig.append(QPointF(100.10981413873267, -234.02583351343978));
 
-    // See the file "collection/bugs/Issue_#604.val" (since 0.5.0)
+    // See the file "collection/bugs/Issue_#604.sm2d" (since 0.5.0)
     QTest::newRow("Issue #604.") << points << 11.338582677165354 << ekvOrig;
 
     points.clear();
@@ -2626,7 +2626,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant_data() const
     ekvOrig.append(QPointF(11601.563396526772, -15.78142884742432));
     ekvOrig.append(QPointF(11561.414612602906, -14.624946442565701));
 
-    // See the file "collection/bugs/Issue_#627.val"
+    // See the file "collection/bugs/Issue_#627.sm2d"
     QTest::newRow("Issue #627.") << points << 56.692913385826778 << ekvOrig;
 
     points.clear();
@@ -2686,7 +2686,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant_data() const
     ekvOrig.append(QPointF(-3963.5989171180895, 1302.9008086818892));
     ekvOrig.append(QPointF(-3101.671677349305, 2354.311657146295));
 
-    // See the file "collection/bugs/Issue_#687.val"
+    // See the file "collection/bugs/Issue_#687.sm2d"
     QTest::newRow("Issue #687.") << points << 37.795275590551185 << ekvOrig;
 }
 
@@ -2706,7 +2706,7 @@ void TST_VAbstractPiece::BrokenDetailEquidistant() const
 //---------------------------------------------------------------------------------------------------------------------
 void TST_VAbstractPiece::CorrectEquidistantPoints_data() const
 {
-    // See file zigzag.val
+    // See file zigzag.sm2d
     QTest::addColumn<QVector<QPointF>>("points");
     QTest::addColumn<QVector<QPointF>>("expect");
     QTest::addColumn<bool>("removeFirstAndLast");
@@ -2776,7 +2776,7 @@ void TST_VAbstractPiece::CorrectEquidistantPoints_data() const
     expect.append(VSAPoint(1360.549818901188, -161.20243176452524));
     expect.append(VSAPoint(1337.599051333226, -201.88618662356873));
 
-    // See the file "collection/bugs/Issue_#686.val"
+    // See the file "collection/bugs/Issue_#686.sm2d"
     QTest::newRow("Issue #686.") << points << expect << true;
 }
 
@@ -2955,7 +2955,7 @@ void TST_VAbstractPiece::TestCorrectEquidistantPoints_data()
     expect << QPointF(2855.928400378448, 1592.3456114466708);
     expect << QPointF(2868.5464960059594, 1703.7728336081707);
 
-    // See the file "collection/bugs/Issue_#642.val"
+    // See the file "collection/bugs/Issue_#642.sm2d"
     QTest::newRow("Test case issue #642") << before << expect;
 }
 
@@ -3098,7 +3098,7 @@ void TST_VAbstractPiece::PossibleInfiniteClearLoops_data() const
     expect << QPointF(-670.6449010946802, 2024.3149606299214);
     expect << QPointF(-670.6449010946802, 2024.3149606299214);
 
-    // See the file "collection/bugs/possible_inf_loop.val"
+    // See the file "collection/bugs/possible_inf_loop.sm2d"
     QTest::newRow("Possible infinite loop") << path << expect;
 }
 
@@ -3118,7 +3118,7 @@ void TST_VAbstractPiece::Case3() const
 {
     const QVector<QPointF> points = InputPointsCase3a(); // Input points.
 
-    const qreal result = VAbstractPiece::SumTrapezoids(points);
+    const qreal result = VAbstractPiece::sumTrapezoids(points);
     QVERIFY(result < 0);
 }
 
@@ -3127,7 +3127,7 @@ void TST_VAbstractPiece::Case4() const
 {
     const QVector<QPointF> points = InputPointsCase4a(); // Input points.
 
-    const qreal result = VAbstractPiece::SumTrapezoids(points);
+    const qreal result = VAbstractPiece::sumTrapezoids(points);
     QVERIFY(result > 0);
 }
 
@@ -3136,7 +3136,7 @@ void TST_VAbstractPiece::Case5() const
 {
     const QVector<QPointF> points = InputPointsCase5a(); // Input points.
 
-    const qreal result = VAbstractPiece::SumTrapezoids(points);
+    const qreal result = VAbstractPiece::sumTrapezoids(points);
     QVERIFY(qFuzzyIsNull(result));
 }
 

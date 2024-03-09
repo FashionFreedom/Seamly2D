@@ -74,8 +74,14 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, QWidget *parent)
-    :DialogTool(data, toolId, parent), ui(new Ui::DialogTrueDarts), d1PointName(), d2PointName(), ch1(NULL_ID),
-      ch2(NULL_ID), flagName1(true), flagName2(true)
+    : DialogTool(data, toolId, parent)
+    , ui(new Ui::DialogTrueDarts)
+    , d1PointName()
+    , d2PointName()
+    , ch1(NULL_ID)
+    , ch2(NULL_ID)
+    , flagName1(true)
+    , flagName2(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
@@ -89,7 +95,7 @@ DialogTrueDarts::DialogTrueDarts(const VContainer *data, const quint32 &toolId, 
     ui->lineEditFirstNewDartPoint->setText(name1);
     ui->lineEditSecondNewDartPoint->setText(name2);
 
-    InitOkCancelApply(ui);
+    initializeOkCancelApply(ui);
     CheckState();
 
     FillComboBoxs(ch1, ch2);
@@ -394,12 +400,12 @@ void DialogTrueDarts::SaveData()
 //---------------------------------------------------------------------------------------------------------------------
 void DialogTrueDarts::CheckState()
 {
-    SCASSERT(bOk != nullptr)
-    bOk->setEnabled(flagName1 && flagName2 && flagError);
+    SCASSERT(ok_Button != nullptr)
+    ok_Button->setEnabled(flagName1 && flagName2 && flagError);
     // In case dialog hasn't apply button
-    if ( bApply != nullptr)
+    if (apply_Button != nullptr)
     {
-        bApply->setEnabled(bOk->isEnabled());
+        apply_Button->setEnabled(ok_Button->isEnabled());
     }
 }
 

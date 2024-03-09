@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   vdrawtool.cpp
+ **  @author Douglas S Caskey
+ **  @date   17 Sep, 2023
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2023 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,29 +19,27 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
- **
+/************************************************************************
  **  @file   vdrawtool.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   November 15, 2013
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
@@ -48,8 +48,18 @@
  **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
-
+ 
 #include "vdrawtool.h"
+
+#include "../vabstracttool.h"
+#include "../ifc/ifcdef.h"
+#include "../ifc/xml/vdomdocument.h"
+#include "../ifc/xml/vabstractpattern.h"
+#include "../qmuparser/qmuparsererror.h"
+#include "../vmisc/logging.h"
+#include "../vpatterndb/vcontainer.h"
+#include "../../undocommands/addtocalc.h"
+#include "../../undocommands/savetooloptions.h"
 
 #include <QDialog>
 #include <QDomNode>
@@ -59,16 +69,6 @@
 #include <QUndoStack>
 #include <Qt>
 #include <QtDebug>
-
-#include "../ifc/ifcdef.h"
-#include "../ifc/xml/vdomdocument.h"
-#include "../ifc/xml/vabstractpattern.h"
-#include "../../undocommands/addtocalc.h"
-#include "../../undocommands/savetooloptions.h"
-#include "../qmuparser/qmuparsererror.h"
-#include "../vpatterndb/vcontainer.h"
-#include "../vmisc/logging.h"
-#include "../vabstracttool.h"
 
 template <class T> class QSharedPointer;
 
@@ -80,12 +80,13 @@ template <class T> class QSharedPointer;
  * @param id object id in container.
  */
 VDrawTool::VDrawTool(VAbstractPattern *doc, VContainer *data, quint32 id, QObject *parent)
-    : VInteractiveTool(doc, data, id, parent),
-      nameActivDraw(doc->getActiveDraftBlockName()),
-      m_lineType(LineTypeSolidLine)
+    : VInteractiveTool(doc, data, id, parent)
+    , activeBlockName(doc->getActiveDraftBlockName())
+    , m_lineType(LineTypeSolidLine)
+    , m_lineWeight("0.35")
 {
-    connect(this->doc, &VAbstractPattern::ChangedActivPP, this, &VDrawTool::ChangedActivDraw);
-    connect(this->doc, &VAbstractPattern::ChangedNameDraw, this, &VDrawTool::ChangedNameDraw);
+    connect(this->doc, &VAbstractPattern::activeDraftBlockChanged, this, &VDrawTool::activeBlockChanged);
+    connect(this->doc, &VAbstractPattern::draftBlockNameChanged, this, &VDrawTool::blockNameChanged);
     connect(this->doc, &VAbstractPattern::ShowTool, this, &VDrawTool::ShowTool);
 }
 
@@ -103,25 +104,25 @@ void VDrawTool::ShowTool(quint32 id, bool enable)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangedActivDraw disable or enable context menu after change active pattern peace.
- * @param newName new name active pattern peace.
+ * @brief activeBlockChanged disable or enable context menu after change active draft block.
+ * @param newName new name active draft block.
  */
-void VDrawTool::ChangedActivDraw(const QString &newName)
+void VDrawTool::activeBlockChanged(const QString &newName)
 {
-    Disable(!(nameActivDraw == newName), newName);
+    Disable(!(activeBlockName == newName), newName);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ChangedNameDraw save new name active pattern peace.
+ * @brief blockNameChanged save new name active draft block.
  * @param oldName old name.
- * @param newName new name active pattern peace. new name.
+ * @param newName new name active draft block. new name.
  */
-void VDrawTool::ChangedNameDraw(const QString &oldName, const QString &newName)
+void VDrawTool::blockNameChanged(const QString &oldName, const QString &newName)
 {
-    if (nameActivDraw == oldName)
+    if (activeBlockName == oldName)
     {
-        nameActivDraw = newName;
+        activeBlockName = newName;
     }
 }
 
@@ -141,7 +142,7 @@ void VDrawTool::SaveDialogChange()
     }
     else
     {
-        qCDebug(vTool, "Can't find tool with id = %u", m_id);
+        qCWarning(vTool, "Can't find tool with id = %u", m_id);
     }
 }
 
@@ -174,7 +175,7 @@ void VDrawTool::SaveOption(QSharedPointer<VGObject> &obj)
     }
     else
     {
-        qCDebug(vTool, "Can't find tool with id = %u", m_id);
+        qCWarning(vTool, "Can't find tool with id = %u", m_id);
     }
 }
 
@@ -201,7 +202,7 @@ bool VDrawTool::CorrectDisable(bool disable, const QString &draftBlockName) cons
     }
     else
     {
-        return !(nameActivDraw == draftBlockName);
+        return !(activeBlockName == draftBlockName);
     }
 }
 
@@ -215,7 +216,7 @@ void VDrawTool::ReadAttributes()
     }
     else
     {
-        qCDebug(vTool, "Can't find tool with id = %u", m_id);
+        qCWarning(vTool, "Can't find tool with id = %u", m_id);
     }
 }
 
@@ -269,9 +270,24 @@ QString VDrawTool::getLineType() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VDrawTool::SetTypeLine(const QString &value)
+void VDrawTool::setLineType(const QString &value)
 {
     m_lineType = value;
+
+    QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
+    SaveOption(obj);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VDrawTool::getLineWeight() const
+{
+    return m_lineWeight;
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VDrawTool::setLineWeight(const QString &value)
+{
+    m_lineWeight = value;
 
     QSharedPointer<VGObject> obj = VAbstractTool::data.GetGObject(m_id);
     SaveOption(obj);

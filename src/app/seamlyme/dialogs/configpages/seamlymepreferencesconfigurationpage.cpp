@@ -1,27 +1,31 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+/******************************************************************************
+*   @file   seamlymepreferencesconfigurationpage.cpp
+**  @author Douglas S Caskey
+**  @date   26 Oct, 2023
+**
+**  @brief
+**  @copyright
+**  This source code is part of the Seamly2D project, a pattern making
+**  program to create and model patterns of clothing.
+**  Copyright (C) 2017-2023 Seamly2D project
+**  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+**
+**  Seamly2D is free software: you can redistribute it and/or modify
+**  it under the terms of the GNU General Public License as published by
+**  the Free Software Foundation, either version 3 of the License, or
+**  (at your option) any later version.
+**
+**  Seamly2D is distributed in the hope that it will be useful,
+**  but WITHOUT ANY WARRANTY; without even the implied warranty of
+**  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+**  GNU General Public License for more details.
+**
+**  You should have received a copy of the GNU General Public License
+**  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+**
+*************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   seamlymepreferencesconfigurationpage.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +33,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2017 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2017 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -53,18 +57,21 @@
 #include "ui_seamlymepreferencesconfigurationpage.h"
 #include "../../mapplication.h"
 #include "../vmisc/vseamlymesettings.h"
-#include "../vpatterndb/variables/vmeasurement.h"
+#include "../vpatterndb/variables/measurement_variable.h"
 #include "../vpatterndb/pmsystems.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidget *parent)
-    : QWidget(parent),
-      ui(new Ui::SeamlyMePreferencesConfigurationPage),
-      m_langChanged(false),
-      m_systemChanged(false),
-      m_defGradationChanged(false)
+    : QWidget(parent)
+    , ui(new Ui::SeamlyMePreferencesConfigurationPage)
+    , m_langChanged(false)
+    , m_systemChanged(false)
+    , m_defGradationChanged(false)
 {
     ui->setupUi(this);
+
+    //-------------------- Startup
+    ui->showWelcome_CheckBox->setChecked(qApp->SeamlyMeSettings()->getShowWelcome());
 
     InitLanguages(ui->langCombo);
     connect(ui->langCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this, [this]()
@@ -73,8 +80,8 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     });
 
     //-------------------- Decimal separator setup
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
-    ui->osOptionCheck->setChecked(qApp->SeamlyMeSettings()->GetOsSeparator());
+    ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    ui->osOption_CheckBox->setChecked(qApp->SeamlyMeSettings()->getOsSeparator());
 
     //---------------------- Pattern making system
     InitPMSystems(ui->systemCombo);
@@ -109,7 +116,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     ui->toolBarStyle_CheckBox->setChecked(qApp->SeamlyMeSettings()->getToolBarStyle());
 
     //---------------------------Default height and size
-    ui->defHeightCombo->addItems(VMeasurement::WholeListHeights(Unit::Cm));
+    ui->defHeightCombo->addItems(MeasurementVariable::WholeListHeights(Unit::Cm));
     index = ui->defHeightCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefHeight()));
     if (index != -1)
     {
@@ -124,7 +131,7 @@ SeamlyMePreferencesConfigurationPage::SeamlyMePreferencesConfigurationPage(QWidg
     connect(ui->defHeightCombo, static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
             DefGradationChanged);
 
-    ui->defSizeCombo->addItems(VMeasurement::WholeListSizes(Unit::Cm));
+    ui->defSizeCombo->addItems(MeasurementVariable::WholeListSizes(Unit::Cm));
     index = ui->defSizeCombo->findText(QString().setNum(qApp->SeamlyMeSettings()->GetDefSize()));
     if (index != -1)
     {
@@ -141,24 +148,36 @@ SeamlyMePreferencesConfigurationPage::~SeamlyMePreferencesConfigurationPage()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
+void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
+{
+    if (event->type() == QEvent::LanguageChange)
+    {
+        ui->retranslateUi(this);
+        ui->osOption_CheckBox->setText(tr("User locale") + QString(" (%1)").arg(QLocale().decimalPoint()));
+    }
+    QWidget::changeEvent(event);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
 void SeamlyMePreferencesConfigurationPage::Apply()
 {
     VSeamlyMeSettings *settings = qApp->SeamlyMeSettings();
-    settings->SetOsSeparator(ui->osOptionCheck->isChecked());
 
+    settings->setShowWelcome(ui->showWelcome_CheckBox->isChecked());
+    settings->setOsSeparator(ui->osOption_CheckBox->isChecked());
     settings->setToolBarStyle(ui->toolBarStyle_CheckBox->isChecked());
 
     if (m_langChanged || m_systemChanged)
     {
         const QString locale = qvariant_cast<QString>(ui->langCombo->currentData());
-        settings->SetLocale(locale);
+        settings->setLocale(locale);
         m_langChanged = false;
 
         const QString code = qvariant_cast<QString>(ui->systemCombo->currentData());
         settings->SetPMSystemCode(code);
         m_systemChanged = false;
 
-        qApp->LoadTranslation(locale);
+        qApp->loadTranslations(locale);
         qApp->processEvents();// force to call changeEvent
 
         // Part about measurments will not be updated automatically
@@ -172,22 +191,4 @@ void SeamlyMePreferencesConfigurationPage::Apply()
         settings->SetDefSize(ui->defSizeCombo->currentText().toInt());
         m_defGradationChanged = false;
     }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesConfigurationPage::changeEvent(QEvent *event)
-{
-    if (event->type() == QEvent::LanguageChange)
-    {
-        // retranslate designer form (single inheritance approach)
-        RetranslateUi();
-    }
-    // remember to call base class implementation
-    QWidget::changeEvent(event);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void SeamlyMePreferencesConfigurationPage::RetranslateUi()
-{
-    ui->osOptionCheck->setText(tr("With OS options") + QString(" (%1)").arg(QLocale().decimalPoint()));
 }

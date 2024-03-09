@@ -1,11 +1,13 @@
 /***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                            *
- *                                                                         *
- ***************************************************************************
+ **  @file   dialogtool.cpp
+ **  @author Douglas S Caskey
+ **  @date   Dec 11, 2022
  **
+ **  @copyright
+ **  Copyright (C) 2017 - 2022 Seamly, LLC
+ **  https://github.com/fashionfreedom/seamly2d
+ **
+ **  @brief
  **  Seamly2D is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
@@ -17,11 +19,10 @@
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+ **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
+ **************************************************************************/
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   dialogtool.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -29,23 +30,23 @@
  **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Valentina project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
- **  Copyright (C) 2013-2015 Seamly2D project
- **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ **  Copyright (C) 2013 Valentina project
+ **  <https://bitbucket.org/dismine/valentina> All Rights Reserved.
  **
- **  Seamly2D is free software: you can redistribute it and/or modify
+ **  Valentina is free software: you can redistribute it and/or modify
  **  it under the terms of the GNU General Public License as published by
  **  the Free Software Foundation, either version 3 of the License, or
  **  (at your option) any later version.
  **
- **  Seamly2D is distributed in the hope that it will be useful,
+ **  Valentina is distributed in the hope that it will be useful,
  **  but WITHOUT ANY WARRANTY; without even the implied warranty of
  **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  **  GNU General Public License for more details.
  **
  **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
+ **  along with Valentina.  If not, see <http://www.gnu.org/licenses/>.
  **
  *************************************************************************/
 
@@ -84,8 +85,8 @@
 
 struct NodeInfo
 {
-     QString icon;
-     QString name;
+     QString icon{};
+     QString name{};
 };
 
 template <class T> class QSharedPointer;
@@ -194,11 +195,11 @@ protected:
     /** @brief timerFormula timer for check formula */
     QTimer           *timerFormula;
 
-    /** @brief bOk button ok */
-    QPushButton      *bOk;
+    /** @brief ok_Button button ok */
+    QPushButton      *ok_Button;
 
-    /** @brief bApply button apply */
-    QPushButton      *bApply;
+    /** @brief apply_Button button apply */
+    QPushButton      *apply_Button;
 
     /** @brief spinBoxAngle spinbox for angle */
     QDoubleSpinBox   *spinBoxAngle;
@@ -260,7 +261,7 @@ protected:
     qreal            Eval(const QString &text, bool &flag, QLabel *label, const QString &postfix,
                           bool checkZero = true, bool checkLessThanZero = false);
 
-    qreal            normalize(const qreal value, const qreal start, const qreal end) ;                          
+    qreal            normalize(const qreal value, const qreal start, const qreal end) ;
 
     void             setCurrentPointId(QComboBox *box, const quint32 &value,
                                        FillComboBox rule = FillComboBox::NoChildren,
@@ -281,22 +282,19 @@ protected:
     void             DeployFormula(QPlainTextEdit *formula, QPushButton *buttonGrowLength, int formulaBaseHeight);
 
     template <typename T>
-    void             InitArrow(T *ui);
+    void             initializeOkCancelApply(T *ui);
 
     template <typename T>
-    void             InitOkCancelApply(T *ui);
+    void             initializeOkCancel(T *ui);
 
     template <typename T>
-    void             InitOkCancel(T *ui);
-
-    template <typename T>
-    void             InitFormulaUI(T *ui);
+    void             initializeFormulaUi(T *ui);
 
     template <typename T>
     void             AddVisualization();
 
     template <typename T>
-    QVector<T> GetListInternals(const QListWidget *list) const;
+    QVector<T>       GetListInternals(const QListWidget *list) const;
 
     void             ChangeColor(QWidget *widget, const QColor &color);
     virtual void     ShowVisualization() {}
@@ -310,28 +308,30 @@ protected:
 
     static int       FindNotExcludedNodeDown(QListWidget *listWidget, int candidate);
     static int       FindNotExcludedNodeUp(QListWidget *listWidget, int candidate);
-    static bool      FirstPointEqualLast(QListWidget *listWidget);
-    static bool      DoublePoints(QListWidget *listWidget);
-    static bool      EachPointLabelIsUnique(QListWidget *listWidget);
+    static bool      isFirstPointSameAsLast(QListWidget *listWidget);
+    static bool      doublePointsExist(QListWidget *listWidget);
+    static bool      isEachPointNameUnique(QListWidget *listWidget);
     static QString   DialogWarningIcon();
     static QFont     NodeFont(bool nodeExcluded);
 
     NodeInfo         getNodeInfo(const VPieceNode &node, bool showNotch = false) const;
-    void             NewNodeItem(QListWidget *listWidget, const VPieceNode &node);
+    void             newNodeItem(QListWidget *listWidget, const VPieceNode &node,
+                                 bool nodeExcluded = true, bool isDuplicate = false);
 
-    void             InitNodeAngles(QComboBox *box);
+    void             initializeNodeAngles(QComboBox *box);
+
 private:
-    void FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
+    void             FillList(QComboBox *box, const QMap<QString, quint32> &list)const;
 
     template <typename T>
-    void PrepareList(QMap<QString, quint32> &list, quint32 id) const;
+    void             PrepareList(QMap<QString, quint32> &list, quint32 id) const;
 
-    bool IsSpline(const QSharedPointer<VGObject> &obj) const;
-    bool IsSplinePath(const QSharedPointer<VGObject> &obj) const;
+    bool             IsSpline(const QSharedPointer<VGObject> &obj) const;
+    bool             IsSplinePath(const QSharedPointer<VGObject> &obj) const;
 
     template <typename GObject>
-    void FillCombo(QComboBox *box, GOType gType, FillComboBox rule = FillComboBox::Whole,
-                   const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID) const;
+    void             FillCombo(QComboBox *box, GOType gType, FillComboBox rule = FillComboBox::Whole,
+                               const quint32 &ch1 = NULL_ID, const quint32 &ch2 = NULL_ID) const;
 
 
 };
@@ -358,60 +358,44 @@ inline VAbstractTool *DialogTool::GetAssociatedTool()
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
-inline void DialogTool::InitArrow(T *ui)
+/**
+ * @brief initializeOkCancelApply initialize OK / Cancel and Apply buttons
+ * @param ui Dialog container
+ */
+inline void DialogTool::initializeOkCancelApply(T *ui)
 {
-    SCASSERT(ui != nullptr)
-    spinBoxAngle = ui->doubleSpinBoxAngle;
-    connect(ui->toolButtonArrowDown, &QPushButton::clicked, this, &DialogTool::ArrowDown);
-    connect(ui->toolButtonArrowUp, &QPushButton::clicked, this, &DialogTool::ArrowUp);
-    connect(ui->toolButtonArrowLeft, &QPushButton::clicked, this, &DialogTool::ArrowLeft);
-    connect(ui->toolButtonArrowRight, &QPushButton::clicked, this, &DialogTool::ArrowRight);
-    connect(ui->toolButtonArrowLeftUp, &QPushButton::clicked, this, &DialogTool::ArrowLeftUp);
-    connect(ui->toolButtonArrowLeftDown, &QPushButton::clicked, this, &DialogTool::ArrowLeftDown);
-    connect(ui->toolButtonArrowRightUp, &QPushButton::clicked, this, &DialogTool::ArrowRightUp);
-    connect(ui->toolButtonArrowRightDown, &QPushButton::clicked, this, &DialogTool::ArrowRightDown);
+    initializeOkCancel(ui);
+    apply_Button = ui->buttonBox->button(QDialogButtonBox::Apply);
+    SCASSERT(apply_Button != nullptr)
+    connect(apply_Button, &QPushButton::clicked, this, &DialogTool::DialogApply);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
 /**
- * @brief InitOkCancelApply initialise OK / Cancel and Apply buttons
+ * @brief initializeOkCancel initialize OK and Cancel buttons
  * @param ui Dialog container
  */
-inline void DialogTool::InitOkCancelApply(T *ui)
+inline void DialogTool::initializeOkCancel(T *ui)
 {
-    InitOkCancel(ui);
-    bApply = ui->buttonBox->button(QDialogButtonBox::Apply);
-    SCASSERT(bApply != nullptr)
-    connect(bApply, &QPushButton::clicked, this, &DialogTool::DialogApply);
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-template <typename T>
-/**
- * @brief InitOkCancel initialise OK and Cancel buttons
- * @param ui Dialog container
- */
-inline void DialogTool::InitOkCancel(T *ui)
-{
-    bOk = ui->buttonBox->button(QDialogButtonBox::Ok);
-    SCASSERT(bOk != nullptr)
-    connect(bOk, &QPushButton::clicked, this, &DialogTool::DialogAccepted);
+    ok_Button = ui->buttonBox->button(QDialogButtonBox::Ok);
+    SCASSERT(ok_Button != nullptr)
+    connect(ok_Button, &QPushButton::clicked, this, &DialogTool::DialogAccepted);
 
     QPushButton *bCancel = ui->buttonBox->button(QDialogButtonBox::Cancel);
     SCASSERT(bCancel != nullptr)
     connect(bCancel, &QPushButton::clicked, this, &DialogTool::DialogRejected);
 
-    qApp->Settings()->GetOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->Settings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 template <typename T>
 /**
- * @brief InitFormulaUI initialise ui object for formula fild
+ * @brief initializeFormulaUi initialize ui object for the formula field
  * @param ui Dialog container
  */
-inline void DialogTool::InitFormulaUI(T *ui)
+inline void DialogTool::initializeFormulaUi(T *ui)
 {
     labelResultCalculation = ui->labelResultCalculation;
     plainTextEditFormula = ui->plainTextEditFormula;

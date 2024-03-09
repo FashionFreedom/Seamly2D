@@ -81,13 +81,13 @@ public:
     QTransform    transform() const;
     void          setCurrentTransform(const QTransform &transform);
     void          swapTransforms();
-    void          SetDisableTools(bool disable, const QString &draftBlockName);
+    void          setToolsDisabled(bool disable, const QString &draftBlockName);
     QPointF       getScenePos() const;
 
     QRectF        visibleItemsBoundingRect() const;
     void          initializeOrigins();
     void          setOriginsVisible(bool visible);
-    
+
 public slots:
     void          chosenItem(quint32 id, const SceneObject &type);
     void          SelectedItem(bool selected, quint32 object, quint32 tool);
@@ -105,7 +105,7 @@ public slots:
     void          ToggleSplinePathSelection(bool enabled);
     void          ToggleNodeLabelSelection(bool enabled);
     void          ToggleNodePointSelection(bool enabled);
-    void          ToggleDetailSelection(bool enabled);
+    void          togglePieceSelection(bool enabled);
 
     void          ToggleLabelHover(bool enabled);
     void          TogglePointHover(bool enabled);
@@ -116,7 +116,7 @@ public slots:
     void          ToggleSplinePathHover(bool enabled);
     void          ToggleNodeLabelHover(bool enabled);
     void          ToggleNodePointHover(bool enabled);
-    void          ToggleDetailHover(bool enabled);
+    void          togglePieceHover(bool enabled);
 
 protected:
     virtual void  mouseMoveEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
@@ -143,9 +143,10 @@ signals:
     void          SelectedObject(bool selected, quint32 object, quint32 tool);
     void          DisableItem(bool disable, const QString &draftBlockName);
     void          EnableToolMove(bool move);
+    void          pieceLockedChanged(quint32 id, bool lock);
     void          curvePiecesMode(bool mode);
     void          ItemSelection(const SelectionType &type);
-    void          HighlightDetail(quint32 id);
+    void          highlightPiece(quint32 id);
 
     void          enableTextItemSelection(bool enable);
     void          EnablePointItemSelection(bool enable);

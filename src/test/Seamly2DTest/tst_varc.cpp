@@ -197,7 +197,7 @@ void TST_VArc::TestGetPoints()
     const VPointF center;
     VArc arc(center, radius, startAngle, endAngle);
 
-    QVector<QPointF> points = arc.GetPoints();
+    QVector<QPointF> points = arc.getPoints();
 
     {
         const qreal epsRadius = 1.5; // computing error
@@ -226,7 +226,7 @@ void TST_VArc::TestGetPoints()
         }
 
         // calculated square
-        const qreal cSquare = qAbs(VAbstractPiece::SumTrapezoids(points)/2.0);
+        const qreal cSquare = qAbs(VAbstractPiece::sumTrapezoids(points)/2.0);
         const qreal value = qAbs(gSquere - cSquare);
         const QString errorMsg =
                 QString("Broken the second rule. Interpolation has too big computing error. Error ='%1'.").arg(value);

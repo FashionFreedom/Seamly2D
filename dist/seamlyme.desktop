@@ -2,7 +2,7 @@
 Type=Application
 Encoding=UTF-8
 Name=SeamlyMe
-Exec=env GDK_BACKEND=x11 seamlyme %F
+Exec=seamlyme %F
 Version=1.0
 GenericName=Seamly2D's body measurements editor
 Comment=Create and edit body measurements
@@ -10,5 +10,5 @@ Comment[uk]=Створення та редагування розмірів ті
 Comment[ru]=Создание и редактирование размеров тела
 Icon=seamlyme
 Terminal=false
-MimeType=application/x-seamly2d-s-measurements;application/x-seamly2d-i-measurements;
+MimeType=application/x-seamlyme-multi_size_file;application/x-seamlyme-individual_size_file;
 Categories=Qt;Utility;FileTools;Engineering

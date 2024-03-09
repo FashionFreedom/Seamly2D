@@ -105,7 +105,7 @@ public:
     QPointF                      GetP1() const;
     QPointF                      GetP2 () const;
 
-    virtual QVector<QPointF>     GetPoints () const Q_DECL_OVERRIDE;
+    virtual QVector<QPointF>     getPoints() const Q_DECL_OVERRIDE;
     QVector<QLineF>              getSegments() const;
 
     QPointF                      CutArc (qreal length, VArc &segment1, VArc &segment2) const;

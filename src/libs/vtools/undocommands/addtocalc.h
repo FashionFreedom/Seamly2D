@@ -73,7 +73,7 @@ protected:
     virtual void RedoFullParsing() Q_DECL_OVERRIDE;
 private:
     Q_DISABLE_COPY(AddToCalc)
-    const QString     nameActivDraw;
+    const QString     activeBlockName;
     quint32           cursor;
 };
 

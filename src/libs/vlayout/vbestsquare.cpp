@@ -105,7 +105,7 @@ void VBestSquare::NewResult(const VBestSquare &best)
 {
     if (best.ValidResult() && saveLength == best.IsSaveLength())
     {
-        NewResult(best.BestSize(), best.GContourEdge(), best.DetailEdge(), best.Transform(), best.isMirror(), best.Type());
+        NewResult(best.BestSize(), best.GContourEdge(), best.pieceEdge(), best.Transform(), best.isMirror(), best.Type());
     }
 }
 
@@ -122,7 +122,7 @@ int VBestSquare::GContourEdge() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-int VBestSquare::DetailEdge() const
+int VBestSquare::pieceEdge() const
 {
     return resJ;
 }
