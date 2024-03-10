@@ -182,7 +182,7 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    , controlPoints()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    , sceneType(<a class="code" href="../../d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af">SceneObject</a>::<a class="code" href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>)</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    , m_isHovered(false)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    , m_piecesMode(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getShowControlPoints())</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    , m_piecesMode(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getShowControlPoints())</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="../../d3/d64/classVAbstractSpline.html#a8ead801b6285dbbdb80e9f175a7a6e31">InitDefShape</a>();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    setAcceptHoverEvents(<span class="keyword">true</span>);</div>
@@ -300,8 +300,8 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                                    <span class="stringliteral">&quot;&lt;tr&gt; &lt;td&gt;&lt;b&gt;%1:&lt;/b&gt; %2 %3&lt;/td&gt; &lt;/tr&gt;&quot;</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                                    <span class="stringliteral">&quot;&lt;/table&gt;&quot;</span>)</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                                    .arg(tr(<span class="stringliteral">&quot;Length&quot;</span>))</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                    .arg(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(curve-&gt;GetLength()))</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                    .arg(<a class="code" href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a>(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;patternUnit(), <span class="keyword">true</span>))</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                                    .arg(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(curve-&gt;GetLength()))</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                                    .arg(<a class="code" href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a>(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;patternUnit(), <span class="keyword">true</span>))</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                                    .arg(tr(<span class="stringliteral">&quot;Name&quot;</span>))</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                    .arg(curve-&gt;name());</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
@@ -470,7 +470,7 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        QString newAngle1F = QString().setNum(newAngle1);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        qreal newLength1 = line.length();</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        QString newLength1F = QString().setNum(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(newLength1));</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        QString newLength1F = QString().setNum(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(newLength1));</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;        <span class="keywordflow">if</span> (not <a class="code" href="../../d0/d84/classqmu_1_1QmuTokenParser.html#a066ffdd31dd0c0356685f6c4d69bd11a">qmu::QmuTokenParser::IsSingle</a>(spline.<a class="code" href="../../d7/d85/classVSpline.html#a80a38b1a78329c4209a6f62eca5f923e">GetStartAngleFormula</a>()))</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        {</div>
@@ -500,7 +500,7 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        QString newAngle2F = QString().setNum(newAngle2);</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        qreal newLength2 = line.length();</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        QString newLength2F = QString().setNum(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(newLength2));</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;        QString newLength2F = QString().setNum(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;fromPixel(newLength2));</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;        <span class="keywordflow">if</span> (not <a class="code" href="../../d0/d84/classqmu_1_1QmuTokenParser.html#a066ffdd31dd0c0356685f6c4d69bd11a">qmu::QmuTokenParser::IsSingle</a>(spline.<a class="code" href="../../d7/d85/classVSpline.html#a9e2f07b11a0c5a0ff1f476df61f18a4b">GetEndAngleFormula</a>()))</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        {</div>
@@ -605,6 +605,7 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    Q_UNUSED(<span class="keywordtype">object</span>)</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    setVisible(visible);</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassQSharedPointer_html"><div class="ttname"><a href="../../dd/daa/classQSharedPointer.html">QSharedPointer&lt; VAbstractCurve &gt;</a></div></div>
 <div class="ttc" id="aclassQVector_html"><div class="ttname"><a href="../../d5/dc2/classQVector.html">QVector&lt; QPointF &gt;</a></div></div>
 <div class="ttc" id="aclassVAbstractCurve_html"><div class="ttname"><a href="../../dc/d55/classVAbstractCurve.html">VAbstractCurve</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d82/vabstractcurve_8h_source.html#l00068">vabstractcurve.h:69</a></div></div>
@@ -698,7 +699,6 @@ $(document).ready(function(){initNavTree('d1/d05/vabstractspline_8cpp_source.htm
 <div class="ttc" id="aifcdef_8cpp_html_aed7354461477f562d0c10d0fbbd4eab6"><div class="ttname"><a href="../../de/d31/ifcdef_8cpp.html#aed7354461477f562d0c10d0fbbd4eab6">lineTypeToPenStyle</a></div><div class="ttdeci">Qt::PenStyle lineTypeToPenStyle(const QString &amp;lineType)</div><div class="ttdoc">LineStyle return pen style for current line style.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d31/ifcdef_8cpp_source.html#l00183">ifcdef.cpp:183</a></div></div>
 <div class="ttc" id="ameasurements_8h_html_abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="../../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a88183b946cc5f0e8c96b2e66e1c74a7e">GenderType::Unknown</a></div><div class="ttdeci">@ Unknown</div></div>
 <div class="ttc" id="avabstractspline_8h_html"><div class="ttname"><a href="../../d9/dcd/vabstractspline_8h.html">vabstractspline.h</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 <div class="ttc" id="avgeometrydef_8h_html_aea380938ffc14e1e5baefe358e7f1d8f"><div class="ttname"><a href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8f">SplinePointPosition</a></div><div class="ttdeci">SplinePointPosition</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d9d/vgeometrydef_8h_source.html#l00058">vgeometrydef.h:58</a></div></div>
 <div class="ttc" id="avgeometrydef_8h_html_aea380938ffc14e1e5baefe358e7f1d8fa7f96422659759463a6faa5a17b7a5554"><div class="ttname"><a href="../../d5/d9d/vgeometrydef_8h.html#aea380938ffc14e1e5baefe358e7f1d8fa7f96422659759463a6faa5a17b7a5554">SplinePointPosition::FirstPoint</a></div><div class="ttdeci">@ FirstPoint</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('dc/d74/me__welcome__dialog_8cpp_source
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../vpatterndb/variables/measurement_variable.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//#include &quot;../vmisc/vseamlymesettings.h&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../mapplication.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;../application_me.h&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;QShowEvent&gt;</span></div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('dc/d74/me__welcome__dialog_8cpp_source
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    : QDialog(parent)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    , ui(new <a class="code" href="../../db/d3c/namespaceUi.html">Ui</a>::<a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a>)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    , m_langChanged(false)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    , settings(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;SeamlyMeSettings())</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    , settings(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;seamlyMeSettings())</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html#ae77d9f4e3b44b94588999d452f70257a">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    setWindowFlags(windowFlags() &amp; ~Qt::WindowContextHelpButtonHint);</div>
@@ -232,6 +232,7 @@ $(document).ready(function(){initNavTree('dc/d74/me__welcome__dialog_8cpp_source
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="../../d5/d64/classSeamlyMeWelcomeDialog.html#ae77d9f4e3b44b94588999d452f70257a">ui</a>-&gt;units_ComboBox-&gt;setCurrentIndex(index);</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassSeamlyMeWelcomeDialog_html"><div class="ttname"><a href="../../d5/d64/classSeamlyMeWelcomeDialog.html">SeamlyMeWelcomeDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d5b/me__welcome__dialog_8h_source.html#l00038">me_welcome_dialog.h:39</a></div></div>
 <div class="ttc" id="aclassSeamlyMeWelcomeDialog_html_a05d6c8dafd1350fedf7e65d554bf0fdf"><div class="ttname"><a href="../../d5/d64/classSeamlyMeWelcomeDialog.html#a05d6c8dafd1350fedf7e65d554bf0fdf">SeamlyMeWelcomeDialog::m_langChanged</a></div><div class="ttdeci">bool m_langChanged</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d5b/me__welcome__dialog_8h_source.html#l00054">me_welcome_dialog.h:54</a></div></div>
 <div class="ttc" id="aclassSeamlyMeWelcomeDialog_html_a21dabaf639d2a92f4fa1a51e087ccb6d"><div class="ttname"><a href="../../d5/d64/classSeamlyMeWelcomeDialog.html#a21dabaf639d2a92f4fa1a51e087ccb6d">SeamlyMeWelcomeDialog::initUnits</a></div><div class="ttdeci">void initUnits(const MeasurementsType &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d74/me__welcome__dialog_8cpp_source.html#l00123">me_welcome_dialog.cpp:123</a></div></div>
@@ -258,7 +259,6 @@ $(document).ready(function(){initNavTree('dc/d74/me__welcome__dialog_8cpp_source
 <div class="ttc" id="adef_8h_html_a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519"><div class="ttname"><a href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">MeasurementsType::Individual</a></div><div class="ttdeci">@ Individual</div></div>
 <div class="ttc" id="ame__welcome__dialog_8h_html"><div class="ttname"><a href="../../d3/d5b/me__welcome__dialog_8h.html">me_welcome_dialog.h</a></div></div>
 <div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d73/calculator__dialog_8h_source.html#l00037">calculator_dialog.h:38</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

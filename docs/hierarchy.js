@@ -38,9 +38,9 @@ var hierarchy =
     ] ],
     [ "QApplication", null, [
       [ "VAbstractApplication", "db/dda/classVAbstractApplication.html", [
-        [ "MApplication", "da/d04/classMApplication.html", null ],
-        [ "TestVApplication", "d2/df0/classTestVApplication.html", null ],
-        [ "VApplication", "d1/d58/classVApplication.html", null ]
+        [ "Application2D", "da/db1/classApplication2D.html", null ],
+        [ "ApplicationME", "d0/d17/classApplicationME.html", null ],
+        [ "TestApplication2D", "d8/dd6/classTestApplication2D.html", null ]
       ] ]
     ] ],
     [ "QComboBox", null, [

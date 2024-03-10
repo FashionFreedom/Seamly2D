@@ -178,8 +178,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:af746401c6b89282e67236613905a445e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09bd7574fc048bbeae85bb1ab040d086"><td class="memItemLeft" align="right" valign="top">static qreal&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a09bd7574fc048bbeae85bb1ab040d086">Pg2Px</a> (const QString &amp;src, const <a class="el" href="../../db/d32/classLayoutSettingsDialog.html">LayoutSettingsDialog</a> &amp;converter)</td></tr>
 <tr class="separator:a09bd7574fc048bbeae85bb1ab040d086"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34868dd737f107850fab35d0fd0f1d37"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a34868dd737f107850fab35d0fd0f1d37">InitOptions</a> (<a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;options, <a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt; &amp;<a class="el" href="../../dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2">optionsIndex</a>)</td></tr>
-<tr class="separator:a34868dd737f107850fab35d0fd0f1d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1acec99a380eae94189d45132e54fb"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#a8f1acec99a380eae94189d45132e54fb">initOptions</a> (<a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;options, <a class="el" href="../../d0/d4c/classQMap.html">QMap</a>&lt; QString, int &gt; &amp;<a class="el" href="../../dc/d3e/classVCommandLine.html#af81799ac36c307795352e9591799e1a2">optionsIndex</a>)</td></tr>
+<tr class="separator:a8f1acec99a380eae94189d45132e54fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -199,8 +199,8 @@ Static Private Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:aff8e996c237959cef20f5253a1641129"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#aff8e996c237959cef20f5253a1641129">VApplication</a></td></tr>
-<tr class="separator:aff8e996c237959cef20f5253a1641129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf399129df57be33455533399a0107a6"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d3e/classVCommandLine.html#acf399129df57be33455533399a0107a6">Application2D</a></td></tr>
+<tr class="separator:acf399129df57be33455533399a0107a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -260,7 +260,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00047">47</a> of file <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html">vcmdexport.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00077">InitOptions()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00120">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00119">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00118">parser</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>.</p>
+<p class="reference">References <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00077">initOptions()</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00120">optionsIndex</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00119">optionsUsed</a>, <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00118">parser</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00044">translate</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00490">Get()</a>.</p>
 
@@ -337,12 +337,12 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00117">instance</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00047">VCommandLine()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/dd8/vapplication_8cpp_source.html#l00277">VApplication::VApplication()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00277">Application2D::Application2D()</a>.</p>
 
 </div>
 </div>
-<a id="a34868dd737f107850fab35d0fd0f1d37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34868dd737f107850fab35d0fd0f1d37">&#9670;&nbsp;</a></span>InitOptions()</h2>
+<a id="a8f1acec99a380eae94189d45132e54fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1acec99a380eae94189d45132e54fb">&#9670;&nbsp;</a></span>initOptions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +351,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void VCommandLine::InitOptions </td>
+          <td class="memname">void VCommandLine::initOptions </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../dd/d57/vcmdexport_8h.html#ae120138e297c1ee2e21134edd10e53f0">VCommandLineOptions</a> &amp;&#160;</td>
           <td class="paramname"><em>options</em>, </td>
@@ -906,13 +906,13 @@ Friends</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00117">instance</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/dd8/vapplication_8cpp_source.html#l00277">VApplication::VApplication()</a>, and <a class="el" href="../../d3/dd8/vapplication_8cpp_source.html#l00301">VApplication::~VApplication()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00277">Application2D::Application2D()</a>, and <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00301">Application2D::~Application2D()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="aff8e996c237959cef20f5253a1641129"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff8e996c237959cef20f5253a1641129">&#9670;&nbsp;</a></span>VApplication</h2>
+<a id="acf399129df57be33455533399a0107a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf399129df57be33455533399a0107a6">&#9670;&nbsp;</a></span>Application2D</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -921,7 +921,7 @@ Friends</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">friend class <a class="el" href="../../d1/d58/classVApplication.html">VApplication</a></td>
+          <td class="memname">friend class <a class="el" href="../../da/db1/classApplication2D.html">Application2D</a></td>
         </tr>
       </table>
   </td>
@@ -958,7 +958,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00117">117</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d3/dd8/vapplication_8cpp_source.html#l00736">VApplication::CommandLine()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00490">Get()</a>, <a class="el" href="../../d3/dd8/vapplication_8cpp_source.html#l00721">VApplication::IsGUIMode()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00512">Reset()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00730">Application2D::commandLine()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00490">Get()</a>, <a class="el" href="../../df/d3e/application__2d_8cpp_source.html#l00715">Application2D::isGUIMode()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00512">Reset()</a>.</p>
 
 </div>
 </div>
@@ -1010,7 +1010,7 @@ Friends</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../dd/d57/vcmdexport_8h_source.html#l00120">120</a> of file <a class="el" href="../../dd/d57/vcmdexport_8h_source.html">vcmdexport.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00281">DefaultGenerator()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00650">exportOnlyPieces()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00077">InitOptions()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00638">IsBinaryDXF()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00536">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00530">IsNoScalingEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00674">IsSetGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00668">IsSetGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00518">IsTestModeEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00644">isTextAsPaths()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00603">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00615">OptDestinationPath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00627">OptExportType()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00695">OptGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00680">OptGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00577">OptGroup()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00588">OptMeasurePath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00548">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00559">OptRotation()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00047">VCommandLine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00281">DefaultGenerator()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00650">exportOnlyPieces()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00077">initOptions()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00638">IsBinaryDXF()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00536">IsExportEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00530">IsNoScalingEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00674">IsSetGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00668">IsSetGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00518">IsTestModeEnabled()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00644">isTextAsPaths()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00603">OptBaseName()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00615">OptDestinationPath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00627">OptExportType()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00695">OptGradationHeight()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00680">OptGradationSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00577">OptGroup()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00588">OptMeasurePath()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00548">OptPaperSize()</a>, <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00559">OptRotation()</a>, and <a class="el" href="../../df/d9b/vcmdexport_8cpp_source.html#l00047">VCommandLine()</a>.</p>
 
 </div>
 </div>

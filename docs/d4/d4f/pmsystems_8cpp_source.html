@@ -283,14 +283,14 @@ $(document).ready(function(){initNavTree('d4/d4f/pmsystems_8cpp_source.html','..
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;QString, QString&gt;</a> systems;</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; listSystems.size()-1; ++i)</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        systems.insert(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;PMSystemName(listSystems.at(i)) + <span class="stringliteral">&quot; (&quot;</span>+listSystems.at(i)+<span class="stringliteral">&quot;)&quot;</span>, listSystems.at(i));</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        systems.insert(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;translateVariables()-&gt;PMSystemName(listSystems.at(i)) + <span class="stringliteral">&quot; (&quot;</span>+listSystems.at(i)+<span class="stringliteral">&quot;)&quot;</span>, listSystems.at(i));</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">// * The default option (blank field or &#39;None&#39;) should appear at the top of the list.</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// * The list should be sorted alphabetically so users can find their system easily.</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a>(systemCombo != <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    systemCombo-&gt;addItem(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;TrVars()-&gt;PMSystemName(listSystems.at(listSystems.size()-1)),</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    systemCombo-&gt;addItem(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;translateVariables()-&gt;PMSystemName(listSystems.at(listSystems.size()-1)),</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                         listSystems.at(listSystems.size()-1));</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <a class="code" href="../../d0/d4c/classQMap.html">QMap&lt;QString, QString&gt;::const_iterator</a> i = systems.constBegin();</div>
@@ -300,6 +300,7 @@ $(document).ready(function(){initNavTree('d4/d4f/pmsystems_8cpp_source.html','..
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        ++i;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassQMap_html"><div class="ttname"><a href="../../d0/d4c/classQMap.html">QMap&lt; QString, QString &gt;</a></div></div>
 <div class="ttc" id="adef_8h_html_a0f58c1b57bda3c300da3e175201e543c"><div class="ttname"><a href="../../d4/da4/def_8h.html#a0f58c1b57bda3c300da3e175201e543c">SCASSERT</a></div><div class="ttdeci">#define SCASSERT(cond)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00337">def.h:337</a></div></div>
 <div class="ttc" id="apmsystems_8cpp_html_a02aee42b8ce0263671dca2918fc18c63"><div class="ttname"><a href="../../d4/d4f/pmsystems_8cpp.html#a02aee42b8ce0263671dca2918fc18c63">p49_S</a></div><div class="ttdeci">const QString p49_S</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/pmsystems_8cpp_source.html#l00108">pmsystems.cpp:108</a></div></div>
@@ -361,7 +362,6 @@ $(document).ready(function(){initNavTree('d4/d4f/pmsystems_8cpp_source.html','..
 <div class="ttc" id="apmsystems_8cpp_html_af95f3e67a10de94c01c8eb8bb192b370"><div class="ttname"><a href="../../d4/d4f/pmsystems_8cpp.html#af95f3e67a10de94c01c8eb8bb192b370">p6_S</a></div><div class="ttdeci">const QString p6_S</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/pmsystems_8cpp_source.html#l00065">pmsystems.cpp:65</a></div></div>
 <div class="ttc" id="apmsystems_8cpp_html_afe19c1b656fcf2aada805c89c6a4d2ab"><div class="ttname"><a href="../../d4/d4f/pmsystems_8cpp.html#afe19c1b656fcf2aada805c89c6a4d2ab">p41_S</a></div><div class="ttdeci">const QString p41_S</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d4f/pmsystems_8cpp_source.html#l00100">pmsystems.cpp:100</a></div></div>
 <div class="ttc" id="apmsystems_8h_html"><div class="ttname"><a href="../../d0/d32/pmsystems_8h.html">pmsystems.h</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

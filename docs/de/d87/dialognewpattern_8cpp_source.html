@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('de/d87/dialognewpattern_8cpp_source.ht
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d10/dialognewpattern_8h.html">dialognewpattern.h</a>&quot;</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &quot;ui_dialognewpattern.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;../core/vapplication.h&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;../core/application_2d.h&quot;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;../vmisc/vsettings.h&quot;</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;../vpatterndb/vcontainer.h&quot;</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('de/d87/dialognewpattern_8cpp_source.ht
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;lineEditName-&gt;setClearButtonEnabled(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QRect position = this-&gt;frameGeometry();</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    position.moveCenter(QGuiApplication::primaryScreen()-&gt;availableGeometry().center());</div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('de/d87/dialognewpattern_8cpp_source.ht
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;comboBoxUnits-&gt;addItem(tr(<span class="stringliteral">&quot;Inches&quot;</span>), QVariant(<a class="code" href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a>(<a class="code" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956">Unit::Inch</a>)));</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// set default unit</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">const</span> qint32 indexUnit = <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;comboBoxUnits-&gt;findData(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;GetUnit());</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keyword">const</span> qint32 indexUnit = <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;comboBoxUnits-&gt;findData(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;GetUnit());</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordflow">if</span> (indexUnit != -1)</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;comboBoxUnits-&gt;setCurrentIndex(indexUnit);</div>
@@ -255,6 +255,7 @@ $(document).ready(function(){initNavTree('de/d87/dialognewpattern_8cpp_source.ht
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">ui</a>-&gt;lineEditName-&gt;text();</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassDialogNewPattern_html"><div class="ttname"><a href="../../da/da8/classDialogNewPattern.html">DialogNewPattern</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d10/dialognewpattern_8h_source.html#l00066">dialognewpattern.h:67</a></div></div>
 <div class="ttc" id="aclassDialogNewPattern_html_a38b8cdf10fcc6748ebbd49c29a63ff6f"><div class="ttname"><a href="../../da/da8/classDialogNewPattern.html#a38b8cdf10fcc6748ebbd49c29a63ff6f">DialogNewPattern::ui</a></div><div class="ttdeci">Ui::DialogNewPattern * ui</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d10/dialognewpattern_8h_source.html#l00080">dialognewpattern.h:80</a></div></div>
 <div class="ttc" id="aclassDialogNewPattern_html_a4518f82683a26c5555b73ed94aac2d7b"><div class="ttname"><a href="../../da/da8/classDialogNewPattern.html#a4518f82683a26c5555b73ed94aac2d7b">DialogNewPattern::DialogNewPattern</a></div><div class="ttdeci">DialogNewPattern(VContainer *data, const QString &amp;patternPieceName, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d87/dialognewpattern_8cpp_source.html#l00067">dialognewpattern.cpp:67</a></div></div>
@@ -275,7 +276,6 @@ $(document).ready(function(){initNavTree('de/d87/dialognewpattern_8cpp_source.ht
 <div class="ttc" id="adef_8h_html_aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956"><div class="ttname"><a href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889abee12d309ba5730e1e121733b7b67956">Unit::Inch</a></div><div class="ttdeci">@ Inch</div></div>
 <div class="ttc" id="adialognewpattern_8h_html"><div class="ttname"><a href="../../dd/d10/dialognewpattern_8h.html">dialognewpattern.h</a></div></div>
 <div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d73/calculator__dialog_8h_source.html#l00037">calculator_dialog.h:38</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

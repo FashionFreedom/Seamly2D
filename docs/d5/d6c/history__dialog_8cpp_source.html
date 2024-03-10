@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="../../d1/d42/classHistoryDialog.html#a65882bcb15afc5a159ccc21927cf9356">ui</a>-&gt;find_LineEdit-&gt;installEventFilter(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="../../d1/d42/classHistoryDialog.html#ad4f16fecea094cd9b6e3d21e6cc50cdc">fillTable</a>();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="../../d1/d42/classHistoryDialog.html#a8a4f2727bb6c01f8d33629dfa7e5388e">initializeTable</a>();</div>
@@ -803,7 +803,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;            QKeyEvent *keyEvent = <span class="keyword">static_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event);</div>
 <div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;            <span class="keywordflow">if</span> ((keyEvent-&gt;key() == Qt::Key_Period) &amp;&amp; (keyEvent-&gt;modifiers() &amp; Qt::KeypadModifier))</div>
 <div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;            {</div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator())</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;                <span class="keywordflow">if</span> (<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getOsSeparator())</div>
 <div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;                {</div>
 <div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;                    textEdit-&gt;insert(QLocale().decimalPoint());</div>
 <div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;                }</div>
@@ -912,6 +912,7 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    QClipboard *clipboard = QApplication::clipboard();</div>
 <div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    clipboard-&gt;setText(clipboardString);</div>
 <div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassDialogTool_html"><div class="ttname"><a href="../../d2/d7b/classDialogTool.html">DialogTool</a></div><div class="ttdoc">The DialogTool class parent for all dialog of tools.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d30/dialogtool_8h_source.html#l00106">dialogtool.h:107</a></div></div>
 <div class="ttc" id="aclassDialogTool_html_a2393a727a5d951da5daf2a5950b726af"><div class="ttname"><a href="../../d2/d7b/classDialogTool.html#a2393a727a5d951da5daf2a5950b726af">DialogTool::DialogClosed</a></div><div class="ttdeci">void DialogClosed(int result)</div><div class="ttdoc">DialogClosed signal dialog closed.</div></div>
 <div class="ttc" id="aclassDialogTool_html_a36d26ab1674aa213ce63fff219d0820e"><div class="ttname"><a href="../../d2/d7b/classDialogTool.html#a36d26ab1674aa213ce63fff219d0820e">DialogTool::ok_Button</a></div><div class="ttdeci">QPushButton * ok_Button</div><div class="ttdoc">ok_Button button ok</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d30/dialogtool_8h_source.html#l00199">dialogtool.h:199</a></div></div>
@@ -1052,7 +1053,6 @@ $(document).ready(function(){initNavTree('d5/d6c/history__dialog_8cpp_source.htm
 <div class="ttc" id="astructRowData_html_a267a4d5ec4a89547842f4fdcb29d1c25"><div class="ttname"><a href="../../da/d35/structRowData.html#a267a4d5ec4a89547842f4fdcb29d1c25">RowData::name</a></div><div class="ttdeci">QString name</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d44/history__dialog_8h_source.html#l00071">history_dialog.h:71</a></div></div>
 <div class="ttc" id="astructRowData_html_a59506c281b39d7db23800231ed5895ac"><div class="ttname"><a href="../../da/d35/structRowData.html#a59506c281b39d7db23800231ed5895ac">RowData::tool</a></div><div class="ttdeci">QString tool</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d44/history__dialog_8h_source.html#l00072">history_dialog.h:72</a></div></div>
 <div class="ttc" id="astructRowData_html_ad66b8bacd6af38d01128951a98da656a"><div class="ttname"><a href="../../da/d35/structRowData.html#ad66b8bacd6af38d01128951a98da656a">RowData::icon</a></div><div class="ttdeci">QString icon</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d44/history__dialog_8h_source.html#l00070">history_dialog.h:70</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

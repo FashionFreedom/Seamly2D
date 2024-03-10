@@ -77,7 +77,7 @@ var sectionId = 'dynsection-1';
 <polyline fill="none" stroke="black" points="721,-151.5 866,-151.5 "/>
 <text text-anchor="start" x="729" y="-139.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VAbstractApplication()</text>
 <text text-anchor="start" x="729" y="-128.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractApplication()</text>
-<text text-anchor="start" x="729" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TrVars()</text>
+<text text-anchor="start" x="729" y="-117.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ translateVariables()</text>
 <text text-anchor="start" x="729" y="-106.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ translationsPath()</text>
 <text text-anchor="start" x="729" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ loadTranslations()</text>
 <text text-anchor="start" x="729" y="-84.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ patternUnit()</text>
@@ -86,7 +86,7 @@ var sectionId = 'dynsection-1';
 <text text-anchor="start" x="729" y="-51.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ patternType()</text>
 <text text-anchor="start" x="729" y="-40.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setPatternType()</text>
 <text text-anchor="start" x="729" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 21 more...</text>
-<text text-anchor="start" x="729" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># InitTrVars()</text>
+<text text-anchor="start" x="729" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00"># initTranslateVariables()</text>
 <text text-anchor="start" x="729" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ClearTranslation()</text>
 </a>
 </g>

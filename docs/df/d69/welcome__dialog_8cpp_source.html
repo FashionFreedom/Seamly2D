@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('df/d69/welcome__dialog_8cpp_source.htm
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/de1/welcome__dialog_8h.html">welcome_dialog.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;ui_welcome_dialog.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../core/vapplication.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../core/application_2d.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;QShowEvent&gt;</span></div>
@@ -137,7 +137,7 @@ $(document).ready(function(){initNavTree('df/d69/welcome__dialog_8cpp_source.htm
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    , ui(new <a class="code" href="../../db/d3c/namespaceUi.html">Ui</a>::<a class="code" href="../../d4/d8f/classSeamlyWelcomeDialog.html">SeamlyWelcomeDialog</a>)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    , m_langChanged(false)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    , m_selectionSoundChanged(false)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    , settings(<a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings())</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    , settings(<a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings())</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="../../d4/d8f/classSeamlyWelcomeDialog.html#a07466132f533460896bd82a84919ba69">ui</a>-&gt;setupUi(<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    setWindowFlags(windowFlags() &amp; ~Qt::WindowContextHelpButtonHint);</div>
@@ -251,6 +251,7 @@ $(document).ready(function(){initNavTree('df/d69/welcome__dialog_8cpp_source.htm
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <a class="code" href="../../d4/d8f/classSeamlyWelcomeDialog.html#a07466132f533460896bd82a84919ba69">ui</a>-&gt;units_ComboBox-&gt;setCurrentIndex(index);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassSeamlyWelcomeDialog_html"><div class="ttname"><a href="../../d4/d8f/classSeamlyWelcomeDialog.html">SeamlyWelcomeDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de1/welcome__dialog_8h_source.html#l00038">welcome_dialog.h:39</a></div></div>
 <div class="ttc" id="aclassSeamlyWelcomeDialog_html_a07466132f533460896bd82a84919ba69"><div class="ttname"><a href="../../d4/d8f/classSeamlyWelcomeDialog.html#a07466132f533460896bd82a84919ba69">SeamlyWelcomeDialog::ui</a></div><div class="ttdeci">Ui::SeamlyWelcomeDialog * ui</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de1/welcome__dialog_8h_source.html#l00053">welcome_dialog.h:53</a></div></div>
 <div class="ttc" id="aclassSeamlyWelcomeDialog_html_a24c876958d5d802c26a5938a2439b436"><div class="ttname"><a href="../../d4/d8f/classSeamlyWelcomeDialog.html#a24c876958d5d802c26a5938a2439b436">SeamlyWelcomeDialog::m_selectionSoundChanged</a></div><div class="ttdeci">bool m_selectionSoundChanged</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/de1/welcome__dialog_8h_source.html#l00055">welcome_dialog.h:55</a></div></div>
@@ -279,7 +280,6 @@ $(document).ready(function(){initNavTree('df/d69/welcome__dialog_8cpp_source.htm
 <div class="ttc" id="adef_8h_html_a55ff83aa1faba5d2fcc34767a5502386"><div class="ttname"><a href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386">MeasurementsType</a></div><div class="ttdeci">MeasurementsType</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da4/def_8h_source.html#l00124">def.h:124</a></div></div>
 <div class="ttc" id="adef_8h_html_a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519"><div class="ttname"><a href="../../d4/da4/def_8h.html#a55ff83aa1faba5d2fcc34767a5502386a2dd4472245a696bc0b4b944db2a8b519">MeasurementsType::Individual</a></div><div class="ttdeci">@ Individual</div></div>
 <div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d73/calculator__dialog_8h_source.html#l00037">calculator_dialog.h:38</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 <div class="ttc" id="awelcome__dialog_8h_html"><div class="ttname"><a href="../../d3/de1/welcome__dialog_8h.html">welcome_dialog.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

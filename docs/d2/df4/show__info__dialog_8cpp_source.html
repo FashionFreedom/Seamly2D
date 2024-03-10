@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('d2/df4/show__info__dialog_8cpp_source.
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;QTextDocument&gt;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;QtWidgets&gt;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;../core/vapplication.h&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;../core/application_2d.h&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;../xml/vpattern.h&quot;</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//---------------------------------------------------------------------------------------------------------------------</span></div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('d2/df4/show__info__dialog_8cpp_source.
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//Limit dialog height to 80% of screen size</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    setMaximumHeight(qRound(QGuiApplication::primaryScreen()-&gt;availableGeometry().height() * .8));</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Seamly2DSettings()-&gt;getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    QByteArray byteArray;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    byteArray.append(<a class="code" href="../../da/d5b/classShowInfoDialog.html#a66997c5dc28fa1bfe9fcfae314a4f95b">doc</a>-&gt;<a class="code" href="../../d8/dba/classVAbstractPattern.html#aa2bb22d7915e28fda720bd1fe7da4819">GetImage</a>().toUtf8());</div>
@@ -294,6 +294,7 @@ $(document).ready(function(){initNavTree('d2/df4/show__info__dialog_8cpp_source.
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    textDocument.setPageSize(printer.pageLayout().paintRectPixels(printer.resolution()).size());</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    textDocument.print(&amp;printer);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;}</div>
+<div class="ttc" id="aapplication__2d_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d61/application__2d_8h_source.html#l00068">application_2d.h:68</a></div></div>
 <div class="ttc" id="aclassShowInfoDialog_html"><div class="ttname"><a href="../../da/d5b/classShowInfoDialog.html">ShowInfoDialog</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de2/show__info__dialog_8h_source.html#l00042">show_info_dialog.h:43</a></div></div>
 <div class="ttc" id="aclassShowInfoDialog_html_a2637753f995ca3226288251e7f91bd87"><div class="ttname"><a href="../../da/d5b/classShowInfoDialog.html#a2637753f995ca3226288251e7f91bd87">ShowInfoDialog::m_isInitialized</a></div><div class="ttdeci">bool m_isInitialized</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de2/show__info__dialog_8h_source.html#l00056">show_info_dialog.h:56</a></div></div>
 <div class="ttc" id="aclassShowInfoDialog_html_a397af00cdc177bface445f7afbc95160"><div class="ttname"><a href="../../da/d5b/classShowInfoDialog.html#a397af00cdc177bface445f7afbc95160">ShowInfoDialog::ui</a></div><div class="ttdeci">Ui::ShowInfoDialog * ui</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de2/show__info__dialog_8h_source.html#l00054">show_info_dialog.h:54</a></div></div>
@@ -318,7 +319,6 @@ $(document).ready(function(){initNavTree('d2/df4/show__info__dialog_8cpp_source.
 <div class="ttc" id="adef_8cpp_html_aafc4aaa15256940018257a94e1740cd0"><div class="ttname"><a href="../../d6/d0b/def_8cpp.html#aafc4aaa15256940018257a94e1740cd0">UnitsToStr</a></div><div class="ttdeci">QString UnitsToStr(const Unit &amp;unit, const bool translate)</div><div class="ttdoc">UnitsToStr translate unit to string.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d0b/def_8cpp_source.html#l00749">def.cpp:749</a></div></div>
 <div class="ttc" id="anamespaceUi_html"><div class="ttname"><a href="../../db/d3c/namespaceUi.html">Ui</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d73/calculator__dialog_8h_source.html#l00037">calculator_dialog.h:38</a></div></div>
 <div class="ttc" id="ashow__info__dialog_8h_html"><div class="ttname"><a href="../../dd/de2/show__info__dialog_8h.html">show_info_dialog.h</a></div></div>
-<div class="ttc" id="avapplication_8h_html_af3bf03a2bf98820de7ae03bef13c7d07"><div class="ttname"><a href="../../d9/d02/vapplication_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a></div><div class="ttdeci">#define qApp</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d02/vapplication_8h_source.html#l00067">vapplication.h:67</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

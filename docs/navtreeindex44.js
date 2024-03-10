@@ -1,5 +1,6 @@
 var NAVTREEINDEX44 =
 {
+"db/d5e/classVLabelTemplateConverter.html#a33d2b7d93fb5800a1f015c844e76db0d":[1,0,330,9],
 "db/d5e/classVLabelTemplateConverter.html#a45daf66de25620518ea3e7a178f01681":[1,0,330,14],
 "db/d5e/classVLabelTemplateConverter.html#a4cfdb685dc1462cd71d3b6bafea669c9":[1,0,330,13],
 "db/d5e/classVLabelTemplateConverter.html#a56af71fea4b6da43a07f05c5a11da9f6":[1,0,330,11],
@@ -204,11 +205,11 @@ var NAVTREEINDEX44 =
 "db/da6/classVPE_1_1UserChangeEvent.html":[1,0,2,24],
 "db/da6/classVPE_1_1UserChangeEvent.html#a4031a53e1f24c2a30ceb3f09a9cb4e57":[1,0,2,24,1],
 "db/da6/classVPE_1_1UserChangeEvent.html#ad60aebaae1da816317de677be4d72d67":[1,0,2,24,0],
-"db/dac/classExpandingTextEdit.html":[1,0,84],
-"db/dac/classExpandingTextEdit.html#a11625e4cd604cbfa5b27ad451a5bd45e":[1,0,84,3],
-"db/dac/classExpandingTextEdit.html#a3c777152231d9ad204b20d6c25bdac4a":[1,0,84,1],
-"db/dac/classExpandingTextEdit.html#a79dc1d09bcb59db247fe860f87c9d2e7":[1,0,84,2],
-"db/dac/classExpandingTextEdit.html#af0b180130ac4d436bdcf8b15548da060":[1,0,84,0],
+"db/dac/classExpandingTextEdit.html":[1,0,86],
+"db/dac/classExpandingTextEdit.html#a11625e4cd604cbfa5b27ad451a5bd45e":[1,0,86,3],
+"db/dac/classExpandingTextEdit.html#a3c777152231d9ad204b20d6c25bdac4a":[1,0,86,1],
+"db/dac/classExpandingTextEdit.html#a79dc1d09bcb59db247fe860f87c9d2e7":[1,0,86,2],
+"db/dac/classExpandingTextEdit.html#af0b180130ac4d436bdcf8b15548da060":[1,0,86,0],
 "db/dac/vformulapropertyeditor_8cpp.html":[2,0,0,0,0,0,6],
 "db/dac/vformulapropertyeditor_8cpp_source.html":[2,0,0,0,0,0,6],
 "db/db3/vmath_8h.html":[2,0,0,1,7,20],
@@ -228,10 +229,10 @@ var NAVTREEINDEX44 =
 "db/db8/classVPE_1_1VPropertyTreeViewPrivate.html#a7dca3819c39884bd2f73f3eaf73fc83c":[1,0,2,39,0],
 "db/db8/vpatterndb_2calculator_8h.html":[2,0,0,1,9,3],
 "db/db8/vpatterndb_2calculator_8h_source.html":[2,0,0,1,9,3],
-"db/dbb/classTST__VPiece.html":[1,0,205],
-"db/dbb/classTST__VPiece.html#a4eb6cce081132afd4d7bd4e49afdec68":[1,0,205,1],
-"db/dbb/classTST__VPiece.html#a5dca90ba03e6e4501a6b9eb2db0a8eba":[1,0,205,2],
-"db/dbb/classTST__VPiece.html#a73549d6dc8f43b8bcc8f7d97d1ea7f03":[1,0,205,0],
+"db/dbb/classTST__VPiece.html":[1,0,206],
+"db/dbb/classTST__VPiece.html#a4eb6cce081132afd4d7bd4e49afdec68":[1,0,206,1],
+"db/dbb/classTST__VPiece.html#a5dca90ba03e6e4501a6b9eb2db0a8eba":[1,0,206,2],
+"db/dbb/classTST__VPiece.html#a73549d6dc8f43b8bcc8f7d97d1ea7f03":[1,0,206,0],
 "db/dbd/classVCubicBezierPathData.html":[1,0,254],
 "db/dbd/classVCubicBezierPathData.html#a00d6f57a08d176d638f6a30fb03929b7":[1,0,254,1],
 "db/dbd/classVCubicBezierPathData.html#a09670f1cceef3819954b2e4f0919e001":[1,0,254,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX44 =
 "db/dc4/classqmu_1_1QmuParserCallback.html#a11d5cfefbddc551af7e150ba0e48c154":[1,0,0,6,36],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a16d42b342de9f498df43864c978e5e9e":[1,0,0,6,21],
 "db/dc4/classqmu_1_1QmuParserCallback.html#a19f9e66f5f88cb3e4e34d511696746a6":[1,0,0,6,9],
-"db/dc4/classqmu_1_1QmuParserCallback.html#a2a4e49c5aed7b4712060e312ebb56bda":[1,0,0,6,41],
-"db/dc4/classqmu_1_1QmuParserCallback.html#a2c5816a07fa9d1c6544036ab777ce593":[1,0,0,6,10]
+"db/dc4/classqmu_1_1QmuParserCallback.html#a2a4e49c5aed7b4712060e312ebb56bda":[1,0,0,6,41]
 };

@@ -40,7 +40,7 @@ var classVContainer =
     [ "GetPatternUnit", "d2/d83/classVContainer.html#acf4b6cb5a02f7aa204ce5a088f028a39", null ],
     [ "GetPiece", "d2/d83/classVContainer.html#afb5d32209e05cbefb3bb25e595ff9651", null ],
     [ "GetPiecePath", "d2/d83/classVContainer.html#abb4c7c51ea6ffe590934e8d93e14f987", null ],
-    [ "GetTrVars", "d2/d83/classVContainer.html#a1a28f581e994741e019dd8ca50d70b06", null ],
+    [ "getTranslateVariables", "d2/d83/classVContainer.html#a44c5567fc70a0c25a41a4a9d7785aed5", null ],
     [ "GetVariable", "d2/d83/classVContainer.html#acb7eb6721eb6fcd66ddd67a389a6bbbf", null ],
     [ "height", "d2/d83/classVContainer.html#a14373b61f41dd8e9a31f1f54a02b0d3b", null ],
     [ "IsUnique", "d2/d83/classVContainer.html#a64f2ef99d6306c96b350649de15cb8ec", null ],

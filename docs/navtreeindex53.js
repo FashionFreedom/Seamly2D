@@ -1,5 +1,6 @@
 var NAVTREEINDEX53 =
 {
+"dd/db0/namespaceQT__WARNING__POP.html#a8ca9f21c16c63ed731d315af5c94d663":[0,0,20,10],
 "dd/db0/namespaceQT__WARNING__POP.html#a9f7b64e1a31d79685e4b194477e2e2ab":[0,0,20,41],
 "dd/db0/namespaceQT__WARNING__POP.html#aa883943a9bc374c576acee6f64627ce4":[0,0,20,30],
 "dd/db0/namespaceQT__WARNING__POP.html#aacdd97dcd47d330168bd05b0d945561c":[0,0,20,18],
@@ -81,13 +82,13 @@ var NAVTREEINDEX53 =
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#ad24df520afe1ac6e7b270c9471623d5a":[1,0,1,1,9],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#ad5b6b948af48813620a34c67026bd0ab":[1,0,1,1,26],
 "dd/dc4/classUtils_1_1CheckableMessageBox.html#af07a2d0561f13e57a7308a5a63cc813f":[1,0,1,1,15],
-"dd/dc4/classVAbstractBezier.html":[1,0,218],
-"dd/dc4/classVAbstractBezier.html#a6ff25839cdd90bd7823e6c0dae997751":[1,0,218,4],
-"dd/dc4/classVAbstractBezier.html#a75fce9c9e6d26d6d37727dcfd1ce7495":[1,0,218,5],
-"dd/dc4/classVAbstractBezier.html#a882403506b8b351a4210f0b3659b22ee":[1,0,218,2],
-"dd/dc4/classVAbstractBezier.html#a8c3423be80a9c7d7e1b813984912f2cf":[1,0,218,3],
-"dd/dc4/classVAbstractBezier.html#acab599ac20beaa795f305c2b06200295":[1,0,218,0],
-"dd/dc4/classVAbstractBezier.html#aedf4a48ee6e6082ae541b91426b1a17f":[1,0,218,1],
+"dd/dc4/classVAbstractBezier.html":[1,0,219],
+"dd/dc4/classVAbstractBezier.html#a6ff25839cdd90bd7823e6c0dae997751":[1,0,219,4],
+"dd/dc4/classVAbstractBezier.html#a75fce9c9e6d26d6d37727dcfd1ce7495":[1,0,219,5],
+"dd/dc4/classVAbstractBezier.html#a882403506b8b351a4210f0b3659b22ee":[1,0,219,2],
+"dd/dc4/classVAbstractBezier.html#a8c3423be80a9c7d7e1b813984912f2cf":[1,0,219,3],
+"dd/dc4/classVAbstractBezier.html#acab599ac20beaa795f305c2b06200295":[1,0,219,0],
+"dd/dc4/classVAbstractBezier.html#aedf4a48ee6e6082ae541b91426b1a17f":[1,0,219,1],
 "dd/dc5/vistoolcubicbezierpath_8h.html":[2,0,0,1,12,3,1,13],
 "dd/dc5/vistoolcubicbezierpath_8h_source.html":[2,0,0,1,12,3,1,13],
 "dd/dc5/vistoolcutspline_8cpp.html":[2,0,0,1,12,3,1,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX53 =
 "dd/de9/measurements__def_8cpp.html#a63db2cc7cc391e5a6204f970f17d34f6":[2,0,0,1,9,4,180],
 "dd/de9/measurements__def_8cpp.html#a6710f1061067bac578dc37912a58ab45":[2,0,0,1,9,4,112],
 "dd/de9/measurements__def_8cpp.html#a67a40137d0c59605fa89eb93ec01ee09":[2,0,0,1,9,4,30],
-"dd/de9/measurements__def_8cpp.html#a681be8e2a8dbe84ed37f7de7b7af2103":[2,0,0,1,9,4,60],
-"dd/de9/measurements__def_8cpp.html#a6979eaa29f15e8fbf2d9e5cebc7e6e0f":[2,0,0,1,9,4,160]
+"dd/de9/measurements__def_8cpp.html#a681be8e2a8dbe84ed37f7de7b7af2103":[2,0,0,1,9,4,60]
 };
