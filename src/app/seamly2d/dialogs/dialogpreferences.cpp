@@ -55,7 +55,7 @@
 
 #include "dialogpreferences.h"
 #include "ui_dialogpreferences.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "configpages/preferencesconfigurationpage.h"
 #include "configpages/preferencespatternpage.h"
 #include "configpages/preferencespathpage.h"

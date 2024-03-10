@@ -270,7 +270,7 @@ void VToolCutSpline::SetVisualization()
         SCASSERT(visual != nullptr)
 
         visual->setObject1Id(curveCutId);
-        visual->setLength(qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->getOsSeparator()));
+        visual->setLength(qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator()));
 
         const QSharedPointer<VAbstractCurve> curve = VAbstractTool::data.GeometricObject<VAbstractCurve>(curveCutId);
         visual->setLineStyle(lineTypeToPenStyle(curve->GetPenStyle()));
@@ -284,7 +284,7 @@ QString VToolCutSpline::makeToolTip() const
 {
     const auto spl = VAbstractTool::data.GeometricObject<VAbstractCubicBezier>(curveCutId);
 
-    const QString expression = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    const QString expression = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     const qreal length = Visualization::FindVal(expression, VAbstractTool::data.DataVariables());
 
     QPointF spl1p2, spl1p3, spl2p2, spl2p3;

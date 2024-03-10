@@ -52,7 +52,7 @@
 #include "dialoglayoutprogress.h"
 #include "ui_dialoglayoutprogress.h"
 #include "../options.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 
 #include <QMessageBox>
 #include <QPushButton>

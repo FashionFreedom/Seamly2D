@@ -335,7 +335,7 @@ void DialogAlongLine::SetFirstPointId(const quint32 &value)
  */
 void DialogAlongLine::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -422,7 +422,7 @@ void DialogAlongLine::SetPointName(const QString &value)
  */
 QString DialogAlongLine::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

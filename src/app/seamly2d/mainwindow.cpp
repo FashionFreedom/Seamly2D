@@ -62,7 +62,7 @@
 #include "../ifc/exception/vexceptionwrongid.h"
 #include "../ifc/exception/vexceptionundo.h"
 #include "version.h"
-#include "core/vapplication.h"
+#include "core/application_2d.h"
 #include "../vmisc/customevents.h"
 #include "../vmisc/vsettings.h"
 #include "../vmisc/def.h"
@@ -484,7 +484,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
                 qCCritical(vMainWindow, "%s\n\n%s", qUtf8Printable(tr("Wrong units.")),
                           qUtf8Printable(tr("Application doesn't support multisize table with inches.")));
                 measurements->clear();
-                if (!VApplication::IsGUIMode())
+                if (!Application2D::isGUIMode())
                 {
                     qApp->exit(V_EX_DATAERR);
                 }
@@ -498,7 +498,7 @@ QSharedPointer<MeasurementDoc> MainWindow::openMeasurementFile(const QString &fi
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         measurements->clear();
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -536,7 +536,7 @@ bool MainWindow::loadMeasurements(const QString &fileName)
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -581,7 +581,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
     if (qApp->patternType() != measurements->Type())
     {
         qCCritical(vMainWindow, "%s", qUtf8Printable(tr("Measurement files types have not match.")));
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_DATAERR);
         }
@@ -599,7 +599,7 @@ bool MainWindow::updateMeasurements(const QString &fileName, int size, int heigh
         qCCritical(vMainWindow, "%s\n\n%s\n\n%s", qUtf8Printable(tr("File exception.")),
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -634,7 +634,7 @@ void MainWindow::checkRequiredMeasurements(const MeasurementDoc *measurements)
 		QList<QString> list = match.values();
         for (int i = 0; i < list.size(); ++i)
         {
-            list[i] = qApp->TrVars()->MToUser(list.at(i));
+            list[i] = qApp->translateVariables()->MToUser(list.at(i));
         }
 
         VException exception(tr("Measurement file doesn't include all the required measurements."));
@@ -1877,7 +1877,7 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(incr->GetFormula(), qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(incr->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
@@ -2083,7 +2083,7 @@ void MainWindow::ShowMeasurements()
             arguments.append(QLatin1String("--") + LONG_OPTION_NO_HDPI_SCALING);
         }
 
-        const QString seamlyme = qApp->SeamlyMeFilePath();
+        const QString seamlyme = qApp->seamlyMeFilePath();
         const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
         QProcess::startDetached(seamlyme, arguments, workingDirectory);
     }
@@ -4204,7 +4204,7 @@ void MainWindow::fullParseFile()
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4217,7 +4217,7 @@ void MainWindow::fullParseFile()
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4230,7 +4230,7 @@ void MainWindow::fullParseFile()
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4243,7 +4243,7 @@ void MainWindow::fullParseFile()
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4256,7 +4256,7 @@ void MainWindow::fullParseFile()
                                qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4268,7 +4268,7 @@ void MainWindow::fullParseFile()
 
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4336,7 +4336,7 @@ void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4349,7 +4349,7 @@ void MainWindow::changeDraftBlockGlobally(const QString &draftBlock)
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
         setGuiEnabled(false);
 
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -4558,7 +4558,7 @@ void MainWindow::New()
     }
     else
     {
-        OpenNewSeamly2D();
+        startNewSeamly2D();
     }
 }
 
@@ -4943,7 +4943,7 @@ void MainWindow::setCurrentFile(const QString &fileName)
     emit doc->UpdatePatternLabel();
     qApp->getUndoStack()->setClean();
 
-    if (!qApp->getFilePath().isEmpty() && VApplication::IsGUIMode())
+    if (!qApp->getFilePath().isEmpty() && Application2D::isGUIMode())
     {
         qCDebug(vMainWindow, "Updating recent file list.");
         VSettings *settings = qApp->Seamly2DSettings();
@@ -5440,11 +5440,11 @@ void MainWindow::InitDocksContain()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MainWindow::OpenNewSeamly2D(const QString &fileName) const
+bool MainWindow::startNewSeamly2D(const QString &fileName) const
 {
     if (this->isWindowModified() || qApp->getFilePath().isEmpty() == false)
     {
-        VApplication::NewSeamly2D(fileName);
+        Application2D::startNewSeamly2D(fileName);
         return true;
     }
     return false;
@@ -5926,7 +5926,7 @@ void MainWindow::CreateActions()
     //Measurements menu
     connect(ui->openSeamlyMe_Action, &QAction::triggered, this, [this]()
     {
-        const QString seamlyme = qApp->SeamlyMeFilePath();
+        const QString seamlyme = qApp->seamlyMeFilePath();
         const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
         QStringList arguments;
@@ -6150,7 +6150,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
     qCInfo(vMainWindow, "Loading new file %s.", qUtf8Printable(fileName));
 
     //We have unsaved changes or load more then one file per time
-    if (OpenNewSeamly2D(fileName))
+    if (startNewSeamly2D(fileName))
     {
         return false;
     }
@@ -6173,7 +6173,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         if (measurements.Type() == MeasurementsType::Multisize || measurements.Type() == MeasurementsType::Individual)
         {
-            const QString seamlyme = qApp->SeamlyMeFilePath();
+            const QString seamlyme = qApp->seamlyMeFilePath();
             const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
             QStringList arguments = QStringList() << fileName;
@@ -6194,7 +6194,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                    qUtf8Printable(exception.ErrorMessage()), qUtf8Printable(exception.DetailedInformation()));
 
         Clear();
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -6244,7 +6244,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                 Clear();
                 qCCritical(vMainWindow, "%s", qUtf8Printable(tr("The measurements file '%1' could not be found.")
                                                              .arg(path)));
-                if (!VApplication::IsGUIMode())
+                if (!Application2D::isGUIMode())
                 {
                     qApp->exit(V_EX_NOINPUT);
                 }
@@ -6257,7 +6257,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
                                                              .arg(newPath)));
                 qApp->setOpeningPattern();// End opening file
                 Clear();
-                if (!VApplication::IsGUIMode())
+                if (!Application2D::isGUIMode())
                 {
                     qApp->exit(V_EX_NOINPUT);
                 }
@@ -6284,7 +6284,7 @@ bool MainWindow::LoadPattern(const QString &fileName, const QString& customMeasu
 
         qApp->setOpeningPattern();// End opening file
         Clear();
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             qApp->exit(V_EX_NOINPUT);
         }
@@ -6435,7 +6435,7 @@ void MainWindow::Preferences()
 #if defined(Q_OS_MAC)
 void MainWindow::CreateMeasurements()
 {
-    const QString seamlyme = qApp->SeamlyMeFilePath();
+    const QString seamlyme = qApp->seamlyMeFilePath();
     const QString workingDirectory = QFileInfo(seamlyme).absoluteDir().absolutePath();
 
     QStringList arguments;
@@ -6764,7 +6764,7 @@ QString MainWindow::checkPathToMeasurements(const QString &patternPath, const QS
     QFileInfo table(path);
     if (table.exists() == false)
     {
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             return QString();// console mode doesn't support fixing path to a measurement file
         }
@@ -7072,7 +7072,7 @@ void MainWindow::DoExport(const VCommandLinePtr &expParams)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::setSize(const QString &text)
 {
-    if (!VApplication::IsGUIMode())
+    if (!Application2D::isGUIMode())
     {
         if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
@@ -7115,7 +7115,7 @@ bool MainWindow::setSize(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 bool MainWindow::setHeight(const QString &text)
 {
-    if (!VApplication::IsGUIMode())
+    if (!Application2D::isGUIMode())
     {
         if (this->isWindowModified() || not qApp->getFilePath().isEmpty())
         {
@@ -7158,12 +7158,12 @@ bool MainWindow::setHeight(const QString &text)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::processCommandLine()
 {
-    const VCommandLinePtr cmd = qApp->CommandLine();
+    const VCommandLinePtr cmd = qApp->commandLine();
     auto args = cmd->OptInputFileNames();
 
     isNoScaling = cmd->IsNoScalingEnabled();
 
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         ReopenFilesAfterCrash(args);
     }
@@ -7181,7 +7181,7 @@ void MainWindow::processCommandLine()
     {
         const bool loaded = LoadPattern(args.at(static_cast<int>(i)), cmd->OptMeasurePath());
 
-        if (!loaded && not VApplication::IsGUIMode())
+        if (!loaded && not Application2D::isGUIMode())
         {
             return; // process only one input file
         }
@@ -7220,7 +7220,7 @@ void MainWindow::processCommandLine()
         }
     }
 
-    if (!VApplication::IsGUIMode())
+    if (!Application2D::isGUIMode())
     {
         qApp->exit(V_EX_OK);// close program after processing in console mode
     }
@@ -7350,7 +7350,7 @@ void MainWindow::resetPanShortcuts()
 bool MainWindow::IgnoreLocking(int error, const QString &path)
 {
     QMessageBox::StandardButton answer = QMessageBox::Abort;
-    if (VApplication::IsGUIMode())
+    if (Application2D::isGUIMode())
     {
         switch(error)
         {
@@ -7385,7 +7385,7 @@ bool MainWindow::IgnoreLocking(int error, const QString &path)
         qCDebug(vMainWindow, "Failed to lock %s", qUtf8Printable(path));
         qCDebug(vMainWindow, "Error type: %d", error);
         Clear();
-        if (!VApplication::IsGUIMode())
+        if (!Application2D::isGUIMode())
         {
             switch(error)
             {

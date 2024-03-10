@@ -1,26 +1,26 @@
-/***************************************************************************
- **  @file   mapplication.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+//  @file   application_2d.cpp
+//  @author Douglas S Caskey
+//  @date   7 Mar, 2024
+//
+//  @brief
+//  @copyright
+//  This source code is part of the Seamly2D project, a pattern making
+//  program to create and model patterns of clothing.
+//  Copyright (C) 2017-2024 Seamly2D project
+//  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+//
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -50,7 +50,7 @@
  **
  *************************************************************************/
 
-#include "mapplication.h"
+#include "application_me.h"
 #include "version.h"
 #include "tmainwindow.h"
 #include "../ifc/exception/vexceptionobjecterror.h"
@@ -212,7 +212,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
         if (type == QtWarningMsg || type == QtCriticalMsg || type == QtFatalMsg)
         {
-            if (not qApp->IsTestMode())
+            if (!qApp->isTestMode())
             {
                 if (topWinAllowsPop)
                 {
@@ -247,13 +247,13 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-MApplication::MApplication(int &argc, char **argv)
+ApplicationME::ApplicationME(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
-    , mainWindows()
-    , localServer(nullptr)
-    , trVars(nullptr)
-    , dataBase(QPointer<MeasurementDatabaseDialog>())
-    , testMode(false)
+    , m_mainWindows()
+    , m_localServer(nullptr)
+    , m_trVars(nullptr)
+    , m_dataBase(QPointer<MeasurementDatabaseDialog>())
+    , m_testMode(false)
 {
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_ME_STR);
@@ -268,18 +268,18 @@ MApplication::MApplication(int &argc, char **argv)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-MApplication::~MApplication()
+ApplicationME::~ApplicationME()
 {
-    for (int i = 0; i < mainWindows.size(); ++i)
+    for (int i = 0; i < m_mainWindows.size(); ++i)
     {
-        TMainWindow *window = mainWindows.at(i);
+        TMainWindow *window = m_mainWindows.at(i);
         delete window;
     }
 
-    delete trVars;
-    if (not dataBase.isNull())
+    delete m_trVars;
+    if (!m_dataBase.isNull())
     {
-        delete dataBase;
+        delete m_dataBase;
     }
 }
 
@@ -291,7 +291,7 @@ MApplication::~MApplication()
  * @return value that is returned from the receiver's event handler.
  */
 // reimplemented from QApplication so we can throw exceptions in slots
-bool MApplication::notify(QObject *receiver, QEvent *event)
+bool ApplicationME::notify(QObject *receiver, QEvent *event)
 {
     try
     {
@@ -356,50 +356,50 @@ bool MApplication::notify(QObject *receiver, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MApplication::IsTestMode() const
+bool ApplicationME::isTestMode() const
 {
-    return testMode;
+    return m_testMode;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief IsAppInGUIMode little hack that allow to have access to application state from VAbstractApplication class.
+ * @brief isAppInGUIMode little hack that allow to have access to application state from VAbstractApplication class.
  */
-bool MApplication::IsAppInGUIMode() const
+bool ApplicationME::isAppInGUIMode() const
 {
-    return IsTestMode();
+    return isTestMode();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-TMainWindow *MApplication::MainWindow()
+TMainWindow *ApplicationME::mainWindow()
 {
-    Clean();
-    if (mainWindows.isEmpty())
+    clean();
+    if (m_mainWindows.isEmpty())
     {
-        NewMainWindow();
+        newMainWindow();
     }
-    return mainWindows[0];
+    return m_mainWindows[0];
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QList<TMainWindow *> MApplication::MainWindows()
+QList<TMainWindow *> ApplicationME::mainWindows()
 {
-    Clean();
+    clean();
     QList<TMainWindow*> list;
-    for (int i = 0; i < mainWindows.count(); ++i)
+    for (int i = 0; i < m_mainWindows.count(); ++i)
     {
-        list.append(mainWindows.at(i));
+        list.append(m_mainWindows.at(i));
     }
     return list;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::InitOptions()
+void ApplicationME::initOptions()
 {
     qInstallMessageHandler(noisyFailureMsgHandler);
 
-    OpenSettings();
-    VSeamlyMeSettings *settings = SeamlyMeSettings();
+    openSettings();
+    VSeamlyMeSettings *settings = seamlyMeSettings();
     QDir().mkpath(settings->getDefaultTemplatePath());
     QDir().mkpath(settings->getDefaultIndividualSizePath());
     QDir().mkpath(settings->getDefaultMultisizePath());
@@ -426,26 +426,26 @@ void MApplication::InitOptions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *MApplication::TrVars()
+const VTranslateVars *ApplicationME::translateVariables()
 {
-    return trVars;
+    return m_trVars;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::InitTrVars()
+void ApplicationME::initTranslateVariables()
 {
-    if (trVars != nullptr)
+    if (m_trVars != nullptr)
     {
-        trVars->Retranslate();
+        m_trVars->Retranslate();
     }
     else
     {
-        trVars = new VTranslateVars();
+        m_trVars = new VTranslateVars();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool MApplication::event(QEvent *event)
+bool ApplicationME::event(QEvent *event)
 {
     switch(event->type())
     {
@@ -455,9 +455,9 @@ bool MApplication::event(QEvent *event)
         {
             QFileOpenEvent *fileOpenEvent = static_cast<QFileOpenEvent *>(event);
             const QString macFileOpen = fileOpenEvent->file();
-            if(not macFileOpen.isEmpty())
+            if(!macFileOpen.isEmpty())
             {
-                TMainWindow *mw = MainWindow();
+                TMainWindow *mw = mainWindow();
                 if (mw)
                 {
                     mw->LoadFile(macFileOpen);  // open file in existing window
@@ -469,8 +469,8 @@ bool MApplication::event(QEvent *event)
 #if defined(Q_OS_MAC)
         case QEvent::ApplicationActivate:
         {
-            Clean();
-            TMainWindow *mw = MainWindow();
+            clean();
+            TMainWindow *mw = mainWindow();
             if (mw && not mw->isMinimized())
             {
                 mw->show();
@@ -485,48 +485,48 @@ bool MApplication::event(QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::OpenSettings()
+void ApplicationME::openSettings()
 {
     settings = new VSeamlyMeSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
                                  QCoreApplication::applicationName(), this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VSeamlyMeSettings *MApplication::SeamlyMeSettings()
+VSeamlyMeSettings *ApplicationME::seamlyMeSettings()
 {
     SCASSERT(settings != nullptr)
     return qobject_cast<VSeamlyMeSettings *>(settings);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::ShowDataBase()
+void ApplicationME::showDataBase()
 {
-    if (dataBase.isNull())
+    if (m_dataBase.isNull())
     {
-        dataBase = new MeasurementDatabaseDialog();
-        dataBase->setAttribute(Qt::WA_DeleteOnClose, true);
-        dataBase->setModal(false);
-        dataBase->show();
+        m_dataBase = new MeasurementDatabaseDialog();
+        m_dataBase->setAttribute(Qt::WA_DeleteOnClose, true);
+        m_dataBase->setModal(false);
+        m_dataBase->show();
     }
     else
     {
-        dataBase->activateWindow();
+        m_dataBase->activateWindow();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::retranslateGroups()
+void ApplicationME::retranslateGroups()
 {
-    if (not dataBase.isNull())
+    if (!m_dataBase.isNull())
     {
-        dataBase->retranslateGroups();
+        m_dataBase->retranslateGroups();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::RetranslateTables()
+void ApplicationME::retranslateTables()
 {
-    QList<TMainWindow*> list = MainWindows();
+    QList<TMainWindow*> list = mainWindows();
     for (int i=0; i < list.size(); ++i)
     {
         list.at(i)->RetranslateTable();
@@ -534,7 +534,7 @@ void MApplication::RetranslateTables()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::ParseCommandLine(const SocketConnection &connection, const QStringList &arguments)
+void ApplicationME::parseCommandLine(const SocketConnection &connection, const QStringList &arguments)
 {
     QCommandLineParser parser;
     parser.setApplicationDescription(tr("Seamly2D's measurements editor."));
@@ -613,7 +613,7 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
 
     {
     const QString unitValue = parser.value(unitOption);
-    if (not unitValue.isEmpty())
+    if (!unitValue.isEmpty())
     {
 
         const QStringList units = QStringList() << unitMM << unitCM << unitINCH;
@@ -630,9 +630,9 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
     }
     }
 
-    testMode = parser.isSet(testOption);
+    m_testMode = parser.isSet(testOption);
 
-    if (not testMode && connection == SocketConnection::Client)
+    if (!m_testMode && connection == SocketConnection::Client)
     {
         const QString serverName = QCoreApplication::applicationName();
         QLocalSocket socket;
@@ -650,16 +650,16 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
 
         qCDebug(mApp, "Can't establish connection to the server '%s'", qUtf8Printable(serverName));
 
-        localServer = new QLocalServer(this);
-        connect(localServer, &QLocalServer::newConnection, this, &MApplication::NewLocalSocketConnection);
-        if (not localServer->listen(serverName))
+        m_localServer = new QLocalServer(this);
+        connect(m_localServer, &QLocalServer::newConnection, this, &ApplicationME::newLocalSocketConnection);
+        if (!m_localServer->listen(serverName))
         {
             qCWarning(mApp, "Can't begin to listen for incoming connections on name '%s'",
                     qUtf8Printable(serverName));
-            if (localServer->serverError() == QAbstractSocket::AddressInUseError)
+            if (m_localServer->serverError() == QAbstractSocket::AddressInUseError)
             {
                 QLocalServer::removeServer(serverName);
-                if (not localServer->listen(serverName))
+                if (!m_localServer->listen(serverName))
                 {
                     qCWarning(mApp, "%s",
                      qUtf8Printable(tr("Can't begin to listen for incoming connections on name '%1'").arg(serverName)));
@@ -667,13 +667,13 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
             }
         }
 
-        //loadTranslations(SeamlyMeSettings()->getLocale());
+        //loadTranslations(seamlyMeSettings()->getLocale());
     }
 
     const QStringList args = parser.positionalArguments();
     if (args.count() > 0)
     {
-        if (testMode && args.count() > 1)
+        if (m_testMode && args.count() > 1)
         {
             qCCritical(mApp, "%s\n", qPrintable(tr("Test mode doesn't support Opening several files.")));
             parser.showHelp(V_EX_USAGE);
@@ -681,38 +681,38 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
 
         for (int i = 0; i < args.size(); ++i)
         {
-            NewMainWindow();
-            if (not MainWindow()->LoadFile(args.at(i)))
+            newMainWindow();
+            if (!mainWindow()->LoadFile(args.at(i)))
             {
-                if (testMode)
+                if (m_testMode)
                 {
                     return; // process only one input file
                 }
-                delete MainWindow();
+                delete mainWindow();
                 continue;
             }
 
             if (flagSize)
             {
-                MainWindow()->SetBaseMSize(size);
+                mainWindow()->SetBaseMSize(size);
             }
 
             if (flagHeight)
             {
-                MainWindow()->SetBaseMHeight(height);
+                mainWindow()->SetBaseMHeight(height);
             }
 
             if (flagUnit)
             {
-                MainWindow()->SetPUnit(unit);
+                mainWindow()->SetPUnit(unit);
             }
         }
     }
     else
     {
-        if (not testMode)
+        if (!m_testMode)
         {
-            NewMainWindow();
+            newMainWindow();
         }
         else
         {
@@ -721,18 +721,18 @@ void MApplication::ParseCommandLine(const SocketConnection &connection, const QS
         }
     }
 
-    if (testMode)
+    if (m_testMode)
     {
         qApp->exit(V_EX_OK); // close program after processing in console mode
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-TMainWindow *MApplication::NewMainWindow()
+TMainWindow *ApplicationME::newMainWindow()
 {
     TMainWindow *seamlyme = new TMainWindow();
-    mainWindows.prepend(seamlyme);
-    if (not qApp->IsTestMode())
+    m_mainWindows.prepend(seamlyme);
+    if (!qApp->isTestMode())
     {
         seamlyme->show();
     }
@@ -740,40 +740,40 @@ TMainWindow *MApplication::NewMainWindow()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::processCommandLine()
+void ApplicationME::processCommandLine()
 {
-    ParseCommandLine(SocketConnection::Client, arguments());
+    parseCommandLine(SocketConnection::Client, arguments());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::NewLocalSocketConnection()
+void ApplicationME::newLocalSocketConnection()
 {
-    QLocalSocket *socket = localServer->nextPendingConnection();
-    if (not socket)
+    QLocalSocket *socket = m_localServer->nextPendingConnection();
+    if (!socket)
     {
         return;
     }
     socket->waitForReadyRead(1000);
     QTextStream stream(socket);
     const QString arg = stream.readAll();
-    if (not arg.isEmpty())
+    if (!arg.isEmpty())
     {
-        ParseCommandLine(SocketConnection::Server, arg.split(";;"));
+        parseCommandLine(SocketConnection::Server, arg.split(";;"));
     }
     delete socket;
-    MainWindow()->raise();
-    MainWindow()->activateWindow();
+    mainWindow()->raise();
+    mainWindow()->activateWindow();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void MApplication::Clean()
+void ApplicationME::clean()
 {
     // cleanup any deleted main windows first
-    for (int i = mainWindows.count() - 1; i >= 0; --i)
+    for (int i = m_mainWindows.count() - 1; i >= 0; --i)
     {
-        if (mainWindows.at(i).isNull())
+        if (m_mainWindows.at(i).isNull())
         {
-            mainWindows.removeAt(i);
+            m_mainWindows.removeAt(i);
         }
     }
 }

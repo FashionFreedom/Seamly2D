@@ -57,7 +57,7 @@
 #include "ui_preferencespathpage.h"
 #include "../vmisc/vsettings.h"
 #include "../../options.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 
 #include <QDir>
 #include <QFileDialog>

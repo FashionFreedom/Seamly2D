@@ -140,7 +140,7 @@ void DialogCubicBezier::SetSpline(const VCubicBezier &spline)
     setCurrentPointId(ui->comboBoxP3, spl.GetP3().id());
     setCurrentPointId(ui->comboBoxP4, spl.GetP4().id());
 
-    ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spl.name()));
+    ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
 
     auto path = qobject_cast<VisToolCubicBezier *>(vis);
     SCASSERT(path != nullptr)
@@ -273,7 +273,7 @@ void DialogCubicBezier::PointNameChanged()
             getCurrentObjectId(ui->comboBoxP4) == spl.GetP4().id())
         {
             newDuplicate = -1;
-            ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spl.name()));
+            ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spl.name()));
         }
         else
         {
@@ -284,7 +284,7 @@ void DialogCubicBezier::PointNameChanged()
                 newDuplicate = static_cast<qint32>(DNumber(spline.name()));
                 spline.SetDuplicate(static_cast<quint32>(newDuplicate));
             }
-            ui->lineEditSplineName->setText(qApp->TrVars()->VarToUser(spline.name()));
+            ui->lineEditSplineName->setText(qApp->translateVariables()->VarToUser(spline.name()));
         }
     }
     ChangeColor(ui->labelName, color);

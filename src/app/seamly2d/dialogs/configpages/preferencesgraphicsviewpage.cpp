@@ -24,7 +24,7 @@
 
 #include "preferencesgraphicsviewpage.h"
 #include "ui_preferencesgraphicsviewpage.h"
-#include "../../core/vapplication.h"
+#include "../../core/application_2d.h"
 #include "../vpatterndb/pmsystems.h"
 #include "../vmisc/logging.h"
 #include "../vtools/tools/vabstracttool.h"

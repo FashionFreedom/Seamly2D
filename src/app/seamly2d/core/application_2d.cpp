@@ -1,26 +1,26 @@
-/***************************************************************************
- **  @file   vapplication.cpp
- **  @author Douglas S Caskey
- **  @date   17 Sep, 2023
- **
- **  @copyright
- **  Copyright (C) 2017 - 2023 Seamly, LLC
- **  https://github.com/fashionfreedom/seamly2d
- **
- **  @brief
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
- **************************************************************************/
+ //  @file   vapplication.cpp
+ //  @author Douglas S Caskey
+ //  @date   7 Mar, 2024
+ //
+ //  @brief
+ //  @copyright
+ //  This source code is part of the Seamly2D project, a pattern making
+ //  program to create and model patterns of clothing.
+ //  Copyright (C) 2017-2024 Seamly2D project
+ //  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
+ //
+ //  Seamly2D is free software: you can redistribute it and/or modify
+ //  it under the terms of the GNU General Public License as published by
+ //  the Free Software Foundation, either version 3 of the License, or
+ //  (at your option) any later version.
+ //
+ //  Seamly2D is distributed in the hope that it will be useful,
+ //  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ //  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ //  GNU General Public License for more details.
+ //
+ //  You should have received a copy of the GNU General Public License
+ //  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
 
 /************************************************************************
  **
@@ -50,7 +50,7 @@
  **
  *************************************************************************/
 
-#include "vapplication.h"
+#include "application_2d.h"
 
 #include "../mainwindow.h"
 #include "../version.h"
@@ -187,7 +187,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
                 break;
         }
 
-        (*qApp->LogFile())  <<  debugdate  <<  Qt::endl;
+        (*qApp->logFile())  <<  debugdate  <<  Qt::endl;
     }
 
     if (isGuiThread)
@@ -226,7 +226,7 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
         if (type == QtWarningMsg || type == QtCriticalMsg || type == QtFatalMsg)
         {
-            if (VApplication::IsGUIMode())
+            if (Application2D::isGUIMode())
             {
                 if (topWinAllowsPop)
                 {
@@ -263,23 +263,23 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 //---------------------------------------------------------------------------------------------------------------------
 
 #if defined(Q_OS_WIN) && defined(Q_CC_GNU)
-const QString VApplication::GistFileName = QStringLiteral("gist.json");
+const QString Application2D::GistFileName = QStringLiteral("gist.json");
 #endif // defined(Q_OS_WIN) && defined(Q_CC_GNU)
 
 #define DefWidth 1.2//mm
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VApplication constructor.
+ * @brief Application2D constructor.
  * @param argc number arguments.
  * @param argv command line.
  */
-VApplication::VApplication(int &argc, char **argv)
+Application2D::Application2D(int &argc, char **argv)
     : VAbstractApplication(argc, argv)
-    , trVars(nullptr)
-    , autoSaveTimer(nullptr)
-    , lockLog()
-    , out(nullptr)
+    , m_trVars(nullptr)
+    , m_autoSaveTimer(nullptr)
+    , m_lockLog()
+    , m_out(nullptr)
 {
     //setApplicationDisplayName(VER_PRODUCTNAME_STR);
     setApplicationName(VER_INTERNALNAME_STR);
@@ -288,9 +288,9 @@ VApplication::VApplication(int &argc, char **argv)
     // Setting the Application version
     setApplicationVersion(APP_VERSION_STR);
 
-    OpenSettings();
+    openSettings();
 
-    // making sure will create new instance...just in case we will ever do 2 objects of VApplication
+    // making sure will create new instance...just in case we will ever do 2 objects of Application2D
     VCommandLine::Reset();
     loadTranslations(QLocale().name());// By default the console version uses system locale
     VCommandLine::Get(*this);
@@ -298,20 +298,20 @@ VApplication::VApplication(int &argc, char **argv)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VApplication::~VApplication()
+Application2D::~Application2D()
 {
     qCDebug(vApp, "Application closing.");
     qInstallMessageHandler(nullptr); // Restore the message handler
-    delete trVars;
+    delete m_trVars;
     VCommandLine::Reset();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief NewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
+ * @brief startNewSeamly2D start Seamly2D in new process, send path to pattern file in argument.
  * @param fileName path to pattern file.
  */
-void VApplication::NewSeamly2D(const QString &fileName)
+void Application2D::startNewSeamly2D(const QString &fileName)
 {
     qCDebug(vApp, "Open new detached process.");
     if (fileName.isEmpty())
@@ -352,7 +352,7 @@ void VApplication::NewSeamly2D(const QString &fileName)
  * @return value that is returned from the receiver's event handler.
  */
 // reimplemented from QApplication so we can throw exceptions in slots
-bool VApplication::notify(QObject *receiver, QEvent *event)
+bool Application2D::notify(QObject *receiver, QEvent *event)
 {
     try
     {
@@ -418,7 +418,7 @@ bool VApplication::notify(QObject *receiver, QEvent *event)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VApplication::SeamlyMeFilePath() const
+QString Application2D::seamlyMeFilePath() const
 {
     const QString seamlyme = QStringLiteral("seamlyme");
 #ifdef Q_OS_WIN
@@ -471,7 +471,7 @@ QString VApplication::SeamlyMeFilePath() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VApplication::LogDirPath() const
+QString Application2D::logDirPath() const
 {
 #if defined(Q_OS_WIN) || defined(Q_OS_OSX)
     const QString logDirPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QString(),
@@ -485,15 +485,15 @@ QString VApplication::LogDirPath() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VApplication::LogPath() const
+QString Application2D::logPath() const
 {
-    return QString("%1/seamly2d-pid%2.log").arg(LogDirPath()).arg(applicationPid());
+    return QString("%1/seamly2d-pid%2.log").arg(logDirPath()).arg(applicationPid());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VApplication::CreateLogDir() const
+bool Application2D::createLogDir() const
 {
-    QDir logDir(LogDirPath());
+    QDir logDir(logDirPath());
     if (logDir.exists() == false)
     {
         return logDir.mkpath("."); // Create directory for log if need
@@ -502,36 +502,36 @@ bool VApplication::CreateLogDir() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VApplication::BeginLogging()
+void Application2D::beginLogging()
 {
-    VlpCreateLock(lockLog, LogPath(), [this](){return new QFile(LogPath());});
+    VlpCreateLock(m_lockLog, logPath(), [this](){return new QFile(logPath());});
 
-    if (lockLog->IsLocked())
+    if (m_lockLog->IsLocked())
     {
-        if (lockLog->GetProtected()->open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
+        if (m_lockLog->GetProtected()->open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
         {
-            out.reset(new QTextStream(lockLog->GetProtected().get()));
+            m_out.reset(new QTextStream(m_lockLog->GetProtected().get()));
             qInstallMessageHandler(noisyFailureMsgHandler);
-            qCInfo(vApp, "Log file %s was locked.", qUtf8Printable(LogPath()));
+            qCInfo(vApp, "Log file %s was locked.", qUtf8Printable(logPath()));
         }
         else
         {
             qCWarning(vApp, "Error opening log file \'%s\'. All debug output redirected to console.",
-                    qUtf8Printable(LogPath()));
+                    qUtf8Printable(logPath()));
         }
     }
     else
     {
-        qCWarning(vApp, "Failed to lock %s", qUtf8Printable(LogPath()));
+        qCWarning(vApp, "Failed to lock %s", qUtf8Printable(logPath()));
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VApplication::ClearOldLogs() const
+void Application2D::clearOldLogs() const
 {
-    QDir logsDir(LogDirPath());
+    QDir logsDir(logDirPath());
     logsDir.setNameFilters(QStringList("*.log"));
-    logsDir.setCurrent(LogDirPath());
+    logsDir.setCurrent(logDirPath());
 
     const QStringList allFiles = logsDir.entryList(QDir::NoDotAndDotDot | QDir::Files);
     if (allFiles.isEmpty() == false)
@@ -569,16 +569,10 @@ void VApplication::ClearOldLogs() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VApplication::InitOptions()
+void Application2D::initOptions()
 {
-#if defined(Q_OS_WIN) && defined(Q_CC_GNU)
-    // Catch and send report
-    VApplication::DrMingw();
-    this->CollectReports();
-#endif
-
     // Run creation log after sending crash report
-    StartLogging();
+    startLogging();
 
     qInfo() << "Version:" << APP_VERSION_STR;
     qInfo() << "Build revision:" << BUILD_REVISION;
@@ -587,7 +581,7 @@ void VApplication::InitOptions()
     qInfo() << "Command-line arguments:" << arguments();
     qInfo() << "Process ID:" << applicationPid();
 
-    if (VApplication::IsGUIMode())// By default console version uses system locale
+    if (Application2D::isGUIMode())// By default console version uses system locale
     {
         loadTranslations(Seamly2DSettings()->getLocale());
     }
@@ -602,7 +596,7 @@ void VApplication::InitOptions()
         QIcon::setThemeName("win.icon.theme");
     }
 
-    OpenSettings();
+    openSettings();
     VSettings *settings = Seamly2DSettings();
     QDir().mkpath(settings->getDefaultLayoutPath());
     QDir().mkpath(settings->getDefaultPatternPath());
@@ -613,7 +607,7 @@ void VApplication::InitOptions()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VApplication::LabelLanguages()
+QStringList Application2D::pointNameLanguages()
 {
     QStringList list = QStringList()  <<  "de" // German
                                       <<  "en" // English
@@ -627,12 +621,12 @@ QStringList VApplication::LabelLanguages()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VApplication::StartLogging()
+void Application2D::startLogging()
 {
-    if (CreateLogDir())
+    if (createLogDir())
     {
-        BeginLogging();
-        ClearOldLogs();
+        beginLogging();
+        clearOldLogs();
 #if defined(Q_OS_WIN) && defined(Q_CC_GNU)
         ClearOldReports();
 #endif // defined(Q_OS_WIN) && defined(Q_CC_GNU)
@@ -640,28 +634,28 @@ void VApplication::StartLogging()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QTextStream *VApplication::LogFile()
+QTextStream *Application2D::logFile()
 {
-    return out.get();
+    return m_out.get();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *VApplication::TrVars()
+const VTranslateVars *Application2D::translateVariables()
 {
-    return trVars;
+    return m_trVars;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VApplication::InitTrVars()
+void Application2D::initTranslateVariables()
 {
-    if (trVars == nullptr)
+    if (m_trVars == nullptr)
     {
-        trVars = new VTranslateVars();
+        m_trVars = new VTranslateVars();
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VApplication::event(QEvent *event)
+bool Application2D::event(QEvent *event)
 {
     switch(event->type())
     {
@@ -671,7 +665,7 @@ bool VApplication::event(QEvent *event)
         {
             QFileOpenEvent *fileOpenEvent = static_cast<QFileOpenEvent *>(event);
             const QString macFileOpen = fileOpenEvent->file();
-            if(not macFileOpen.isEmpty())
+            if(!macFileOpen.isEmpty())
             {
                 MainWindow *window = qobject_cast<MainWindow*>(mainWindow);
                 if (window)
@@ -700,330 +694,41 @@ bool VApplication::event(QEvent *event)
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief OpenSettings get acsses to application settings.
+ * @brief openSettings get acsses to application settings.
  *
  * Because we can create object in constructor we open file separately.
  */
-void VApplication::OpenSettings()
+void Application2D::openSettings()
 {
     settings = new VSettings(QSettings::IniFormat, QSettings::UserScope, QCoreApplication::organizationName(),
                              QCoreApplication::applicationName(), this);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VSettings *VApplication::Seamly2DSettings()
+VSettings *Application2D::Seamly2DSettings()
 {
     SCASSERT(settings != nullptr)
     return qobject_cast<VSettings *>(settings);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VApplication::IsGUIMode()
+bool Application2D::isGUIMode()
 {
     return (VCommandLine::instance != nullptr) && VCommandLine::instance->IsGuiEnabled();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief IsAppInGUIMode little hack that allow to have access to application state from VAbstractApplication class.
+ * @brief isAppInGUIMode little hack that allow to have access to application state from VAbstractApplication class.
  */
-bool VApplication::IsAppInGUIMode() const
+bool Application2D::isAppInGUIMode() const
 {
-    return IsGUIMode();
+    return isGUIMode();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VCommandLinePtr VApplication::CommandLine() const
+const VCommandLinePtr Application2D::commandLine() const
 {
     return VCommandLine::instance;
 }
 //---------------------------------------------------------------------------------------------------------------------
-
-#if defined(Q_OS_WIN) && defined(Q_CC_GNU)
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::ClearOldReports() const
-{
-    const QString reportsDir = QString("%1/reports").arg(qApp->applicationDirPath());
-    QDir reports(reportsDir);
-    if (reports.exists())
-    {
-        QStringList filters{"*.log", "*.RPT"};
-        QDir logsDir(reportsDir);
-        logsDir.setNameFilters(filters);
-        logsDir.setCurrent(reportsDir);
-
-        const QStringList allFiles = logsDir.entryList(QDir::NoDotAndDotDot | QDir::Files);
-        if (allFiles.isEmpty() == false)
-        {
-            const QDateTime now = QDateTime::currentDateTime();
-            for (int i = 0; i < allFiles.size(); ++i)
-            {
-                QFileInfo info(allFiles.at(i));
-                if (info.birthTime().daysTo(now) > 30)
-                {
-                    QFile(allFiles.at(i)).remove();
-                }
-            }
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::GatherLogs() const
-{
-    QTextStream *out = nullptr;
-    QFile *log = new QFile(QString("%1/seamly2d.log").arg(LogDirPath()));
-    if (log->open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
-    {
-        out = new QTextStream(log);
-
-        QStringList filters{"*.log"};
-        QDir logsDir(LogDirPath());
-        logsDir.setNameFilters(filters);
-        logsDir.setCurrent(LogDirPath());
-
-        const QStringList allFiles = logsDir.entryList(QDir::NoDotAndDotDot | QDir::Files);
-        if (allFiles.isEmpty() == false)
-        {
-            for (int i = 0, sz = allFiles.size(); i < sz; ++i)
-            {
-                auto fn = allFiles.at(i);
-                QFileInfo info(fn);
-                if (info.fileName() == "seamly2d.log")
-                {
-                    continue;
-                }
-
-                VLockGuard<QFile> tmp(info.absoluteFilePath(), [&fn](){return new QFile(fn);});
-
-                if (tmp.IsLocked())
-                {
-                    *out  << "--------------------------"  <<  Qt::endl;
-                    if (tmp.GetProtected()->open(QIODevice::ReadOnly | QIODevice::Text))
-                    {
-                        QTextStream in(tmp.GetProtected().get());
-                        while (!in.atEnd())
-                        {
-                            *out  <<  in.readLine()  <<  Qt::endl;
-                        }
-                        tmp.GetProtected()->close();
-                    }
-                    else
-                    {
-                        *out  <<  "Log file error:" + tmp.GetProtected()->errorString()  <<  Qt::endl;
-                    }
-                }
-                else
-                {
-                    qCWarning(vApp, "Failed to lock %s", qUtf8Printable(info.absoluteFilePath()));
-                }
-            }
-        }
-        else
-        {
-            *out  <<  "Could not find logs.";
-        }
-        log->close();
-    }
-    delete out;
-    delete log;
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-// Catch exception and create report. Use if program build with Mingw compiler.
-// See more about catcher https://github.com/jrfonseca/drmingw/blob/master/README.md
-void VApplication::DrMingw()
-{
-    QFile drmingw("exchndl.dll");
-    if (drmingw.exists())
-    {// If don't want create reports just delete exchndl.dll from installer
-        LoadLibrary(L"exchndl.dll");
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::CollectReports() const
-{
-    // Seek file "binary_name.RPT"
-    const QString reportName = QString("%1/%2.RPT").arg(applicationDirPath())
-                               .arg(QFileInfo(arguments().at(0)).baseName());
-    QFile reportFile(reportName);
-    if (reportFile.exists())
-    { // Hooray we have found crash
-        if (settings == nullptr)
-        {
-            return;// Settings was not opened.
-        }
-
-        if (settings->GetSendReportState())
-        { // Try send report
-            // Remove gist.json file before close app.
-            connect(this, &VApplication::aboutToQuit, this, &VApplication::CleanGist, Qt::UniqueConnection);
-            SendReport(reportName);
-        }
-        else
-        { // Just collect report to /reports directory
-            CollectReport(reportName);
-        }
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::CollectReport(const QString &reportName) const
-{
-    const QString reportsDir = QString("%1/reports").arg(qApp->applicationDirPath());
-    QDir reports(reportsDir);
-    if (reports.exists() == false)
-    {
-        reports.mkpath("."); // Create directory for reports if need
-    }
-
-    const QDateTime now = QDateTime::currentDateTime();
-    const QString timestamp = now.toString(QLatin1String("yyyy.MM.dd-hh_mm_ss"));
-    QString filename = QString("%1/reports/crash-%2.RPT").arg(qApp->applicationDirPath()).arg(timestamp);
-
-    QFile reportFile(reportName);
-    reportFile.copy(filename); // Collect new crash
-    reportFile.remove(); // Clear after yourself
-
-    filename = QString("%1/reports/log-%2.log").arg(qApp->applicationDirPath()).arg(timestamp);
-    GatherLogs();
-    QFile logFile(QString("%1/seamly2d.log").arg(LogDirPath()));
-    logFile.copy(filename); // Collect log
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::CleanGist() const
-{
-    QFile gistFile(GistFileName);
-    if (gistFile.exists())
-    {
-        gistFile.remove();
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-void VApplication::SendReport(const QString &reportName) const
-{
-    QString content;
-    QFile reportFile(reportName);
-    if (reportFile.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        content = ReadFileForSending(reportFile);
-        reportFile.close();
-    }
-    else
-    {
-        content = "RPT file error:" + reportFile.errorString() + "\r\n";
-    }
-
-    // Additional information
-    content.append(QString("-------------------------------")+"\r\n");
-    content.append(QString("Version:%1").arg(APP_VERSION)+"\r\n");
-    content.append(QString("Build revision:%1").arg(BUILD_REVISION)+"\r\n");
-    content.append(QString("Based on Qt %1 (32 bit)").arg(QT_VERSION_STR)+"\r\n");
-    content.append(QString("Built on %1 at %2").arg(__DATE__).arg(__TIME__)+"\r\n");
-    content.append(QString("Web site:https://seamly.io/ ")+"\r\n");
-    content.append("\r\n");
-
-    // Creating json with report
-    // Example:
-    //{
-    //  "description":"Crash report",
-    //  "public":"true",
-    //  "files":{
-    //      "seamly2d.RPT":{
-    //          "content":"Report text here"
-    //      }
-    //  }
-    //}
-
-    // Useful to know when crash was created
-    const QDateTime now = QDateTime::currentDateTime();
-    const QString timestamp = now.toString(QLatin1String("yyyy/MM/dd hh:mm:ss:zzz"));
-    const QString report = QString("Crash report was created %2").arg(timestamp);
-
-    QJsonObject reportObject;
-    reportObject.insert(QStringLiteral("description"), QJsonValue(report));
-    reportObject.insert(QStringLiteral("public"), QJsonValue(QString("true")));
-
-    content.append(QString("\r\n-------------------------------\r\n"));
-    content.append(QString("Log:")+"\r\n");
-
-    GatherLogs();
-    QFile logFile(QString("%1/seamly2d.log").arg(LogDirPath()));
-    if (logFile.open(QIODevice::ReadOnly | QIODevice::Text))
-    {
-        const QString logContent = ReadFileForSending(logFile);
-        if (logContent.isEmpty())
-        {
-            content.append("Log file is empty.");
-        }
-        else
-        {
-            content.append(logContent);
-        }
-        logFile.close();
-    }
-    else
-    {
-        content.append("\r\n Log file error:" + logFile.errorString() + "\r\n");
-    }
-
-    const QString contentSection = QStringLiteral("content");
-    QJsonObject contentObject;
-    contentObject.insert(contentSection, QJsonValue(content));
-
-    const QString filesSection = QStringLiteral("files");
-    QJsonObject fileObject;
-    fileObject.insert(QFileInfo(reportName).fileName(), QJsonValue(contentObject));
-    reportObject.insert(filesSection, QJsonValue(fileObject));
-
-    QFile gistFile(GistFileName);
-    if (!gistFile.open(QIODevice::WriteOnly | QIODevice::Truncate | QIODevice::Text))
-    {
-        qDebug("Couldn't open gist file.");
-        return;
-    }
-
-    // Save data to file
-    QJsonDocument saveRep(reportObject);
-    gistFile.write(saveRep.toJson());
-    gistFile.close();
-
-    const QString curl = QString("%1/curl.exe").arg(qApp->applicationDirPath());
-    QFile curlFile(curl);
-    if (curlFile.exists())
-    {// Trying send report
-        // Change token if need
-        const QStringList token = QStringList() << "eb" << "78" << "63" << "4e" << "de" << "77" << "f7" << "e6" << "01" << "4a" << "c3" << "60"
-                                                << "96" << "b0" << "2d" << "54" << "fb" << "8e" << "af" << "ec";
-
-        const QString arg = QString("curl.exe -k -H \"Authorization: bearer ")+token.join("")+
-                            QString("\" -H \"Accept: application/json\" -H \"Content-type: application/json\" -X POST "
-                                    "--data @gist.json https://api.github.com/gists");
-        QProcess proc;
-        QStringList args;
-        proc.start(arg, args);
-        proc.waitForFinished(10000); // 10 sec
-        reportFile.remove();// Clear after yourself
-    }
-    else
-    {// We can not send than just collect
-        CollectReport(reportName);
-    }
-    curlFile.close();
-}
-
-//---------------------------------------------------------------------------------------------------------------------
-QString VApplication::ReadFileForSending(QFile &file) const
-{
-    QString content;
-    QTextStream in(&file);
-    while (!in.atEnd())
-    {
-        content.append(in.readLine()+"\r\n");// Windows end of line
-    }
-    return content;
-}
-#endif //defined(Q_OS_WIN) && defined(Q_CC_GNU)

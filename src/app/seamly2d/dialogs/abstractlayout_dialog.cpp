@@ -17,7 +17,7 @@
  *****************************************************************************/
  #include "abstractlayout_dialog.h"
 
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vmisc/def.h"
 
 AbstractLayoutDialog::AbstractLayoutDialog(QWidget *parent) : QDialog(parent)

@@ -635,7 +635,7 @@ NodeInfo DialogTool::getNodeInfo(const VPieceNode &node, bool showNotch) const
     if (node.GetTypeTool() != Tool::NodePoint)
     {
         int bias = 0;
-        qApp->TrVars()->VariablesToUser(info.name, 0, obj->name(), bias);
+        qApp->translateVariables()->VariablesToUser(info.name, 0, obj->name(), bias);
 
         if (node.GetReverse())
         {
@@ -825,7 +825,7 @@ qreal DialogTool::Eval(const QString &text, bool &flag, QLabel *label, const QSt
             QString formula = text;
             formula.replace("\n", " ");
             // Translate to internal look.
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             QScopedPointer<Calculator> cal(new Calculator());
             result = cal->EvalFormula(data->DataVariables(), formula);
 
@@ -1051,7 +1051,7 @@ void DialogTool::PrepareList(QMap<QString, quint32> &list, quint32 id) const
 
     QString newName = obj->name();
     int bias = 0;
-    if (qApp->TrVars()->VariablesToUser(newName, 0, obj->name(), bias))
+    if (qApp->translateVariables()->VariablesToUser(newName, 0, obj->name(), bias))
     {
         list[newName] = id;
     }

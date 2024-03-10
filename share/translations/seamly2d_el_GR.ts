@@ -4841,7 +4841,7 @@ Apply settings anyway?</source>
     </message>
 </context>
 <context>
-    <name>MApplication</name>
+    <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
         <translation type="unfinished"></translation>
@@ -11943,7 +11943,7 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VApplication</name>
+    <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
         <translation type="unfinished"></translation>

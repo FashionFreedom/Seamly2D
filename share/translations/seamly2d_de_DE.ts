@@ -4851,7 +4851,7 @@ Einstellungen trotzdem anwenden?</translation>
     </message>
 </context>
 <context>
-    <name>MApplication</name>
+    <name>ApplicationME</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
         <translation>Fehler beim Parsen der Datei. Das Programm wird beendet.</translation>
@@ -11970,7 +11970,7 @@ wie gewohnt in SeamlyME laden können.
     </message>
 </context>
 <context>
-    <name>VApplication</name>
+    <name>Application2D</name>
     <message>
         <source>Error parsing file. Program will be terminated.</source>
         <translation>Fehler beim Verarbeiten der Datei. Das Programm wird geschlossen.</translation>

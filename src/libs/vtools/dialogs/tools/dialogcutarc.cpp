@@ -210,7 +210,7 @@ void DialogCutArc::setArcId(const quint32 &value)
  */
 void DialogCutArc::SetFormula(const QString &value)
 {
-    formula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    formula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (formula.length() > 80)
     {
@@ -243,7 +243,7 @@ void DialogCutArc::SetPointName(const QString &value)
  */
 QString DialogCutArc::GetFormula() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

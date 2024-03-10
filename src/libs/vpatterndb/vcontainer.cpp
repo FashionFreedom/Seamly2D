@@ -602,7 +602,7 @@ const Unit *VContainer::GetPatternUnit() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *VContainer::GetTrVars() const
+const VTranslateVars *VContainer::getTranslateVariables() const
 {
     return d->trVars;
 }

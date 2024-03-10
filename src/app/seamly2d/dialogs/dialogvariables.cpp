@@ -219,7 +219,7 @@ void DialogVariables::fillCustomVariables(bool freshCall)
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
@@ -367,7 +367,7 @@ QString DialogVariables::getCustomVariableName() const
     QString name;
     do
     {
-        name = CustomIncrSign + qApp->TrVars()->InternalVarToUser(variable_) + QString().number(num);
+        name = CustomIncrSign + qApp->translateVariables()->InternalVarToUser(variable_) + QString().number(num);
         num++;
     } while (not data->IsUnique(name));
     return name;
@@ -403,7 +403,7 @@ bool DialogVariables::evalVariableFormula(const QString &formula, bool fromUser,
             // Replace line return character with spaces for calc if exist
             if (fromUser)
             {
-                f = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+                f = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             }
             else
             {
@@ -818,7 +818,7 @@ void DialogVariables::saveCustomVariableFormula()
 
     try
     {
-        const QString formula = qApp->TrVars()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
+        const QString formula = qApp->translateVariables()->FormulaFromUser(text, qApp->Settings()->getOsSeparator());
         doc->SetIncrementFormula(name->text(), formula);
     }
     catch (qmu::QmuParserError &error) // Just in case something bad will happen
@@ -852,7 +852,7 @@ void DialogVariables::Fx()
 
     EditFormulaDialog *dialog = new EditFormulaDialog(variable->GetData(), NULL_ID, this);
     dialog->setWindowTitle(tr("Edit variable"));
-    dialog->SetFormula(qApp->TrVars()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
+    dialog->SetFormula(qApp->translateVariables()->TryFormulaFromUser(ui->formula_PlainTextEdit->toPlainText().replace("\n", " "),
                                                           qApp->Settings()->getOsSeparator()));
     const QString postfix = UnitsToStr(qApp->patternUnit(), true);
     dialog->setPostfix(postfix);//Show unit in dialog label (cm, mm or inch)
@@ -1002,7 +1002,7 @@ void DialogVariables::showCustomVariableDetails()
         QString formula;
         try
         {
-            formula = qApp->TrVars()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
