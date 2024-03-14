@@ -89,7 +89,6 @@ class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
 
-class ImageToolbarWidget;
 class DraftImage;
 class ImageItem;
 
@@ -360,7 +359,7 @@ private:
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    ImageToolbarWidget               *imageToolbarWidget;
+
     QMap<qint32, ImageItem *>         m_ImageMap{};
 
     PenToolBar                       *m_penToolBar; //!< for selecting the current pen
@@ -372,7 +371,6 @@ private:
 
     void                              initializeStatusToolBar();
     void                              initializeModesToolBar();
-    void                              initializeImageToolBar();
     void                              initializeDraftToolBar();
     void                              initializePointNameToolBar();
     void                              initializeToolsToolBar();

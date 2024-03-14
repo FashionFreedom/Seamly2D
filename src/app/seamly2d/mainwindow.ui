@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -451,7 +451,7 @@
    <property name="minimumSize">
     <size>
      <width>220</width>
-     <height>113</height>
+     <height>127</height>
     </size>
    </property>
    <property name="allowedAreas">
@@ -539,7 +539,7 @@
    <property name="minimumSize">
     <size>
      <width>220</width>
-     <height>40</height>
+     <height>46</height>
     </size>
    </property>
    <property name="toolTip">
@@ -765,7 +765,7 @@
    <property name="minimumSize">
     <size>
      <width>140</width>
-     <height>524</height>
+     <height>530</height>
     </size>
    </property>
    <property name="maximumSize">
@@ -1893,7 +1893,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>287</height>
+              <height>257</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2332,7 +2332,7 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>82</height>
+              <height>77</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2466,7 +2466,7 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>82</height>
+              <height>77</height>
              </rect>
             </property>
             <attribute name="icon">
@@ -2581,20 +2581,6 @@
    <addaction name="toggleGrainLines_Action"/>
    <addaction name="toggleLabels_Action"/>
   </widget>
-  <widget class="QToolBar" name="image_ToolBar">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
   <action name="actionNew">
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/theme.qrc">
@@ -2666,8 +2652,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-save-as">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-save-as"/>
    </property>
    <property name="text">
     <string>Save &amp;As...</string>
@@ -3638,8 +3623,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="zoom-original">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="zoom-original"/>
    </property>
    <property name="text">
     <string>Original zoom</string>
@@ -3711,8 +3695,7 @@
   </action>
   <action name="wiki_Action">
    <property name="icon">
-    <iconset theme="help-contents">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="help-contents"/>
    </property>
    <property name="text">
     <string>Wiki</string>
@@ -3785,8 +3768,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print"/>
    </property>
    <property name="text">
     <string>Print</string>
@@ -3803,8 +3785,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print"/>
    </property>
    <property name="text">
     <string>Print tiled PDF</string>
@@ -3821,8 +3802,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print-preview"/>
    </property>
    <property name="text">
     <string>Print preview</string>
@@ -3839,8 +3819,7 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-print-preview">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-print-preview"/>
    </property>
    <property name="text">
     <string>Preview tiled PDF</string>
@@ -4718,8 +4697,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

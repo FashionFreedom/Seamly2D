@@ -79,7 +79,6 @@
 #include "../ifc/xml/individual_size_converter.h"
 #include "../vwidgets/vwidgetpopup.h"
 #include "../vwidgets/vmaingraphicsscene.h"
-#include "../vwidgets/image_toolbar.h"
 #include "../vwidgets/mouse_coordinates.h"
 #include "../vtools/tools/drawTools/drawtools.h"
 #include "../vtools/dialogs/tooldialogs.h"
@@ -193,7 +192,6 @@ MainWindow::MainWindow(QWidget *parent)
     , patternPiecesWidget(nullptr)
     , lock(nullptr)
     , zoomScaleSpinBox(nullptr)
-    , imageToolbarWidget(nullptr)
     , m_penToolBar(nullptr)
     , m_penReset(nullptr)
     , m_zoomToPointComboBox(nullptr)
@@ -233,7 +231,6 @@ MainWindow::MainWindow(QWidget *parent)
     initializeDraftToolBar();
     initializePointNameToolBar();
     initializeModesToolBar();
-    initializeImageToolBar();
     initializeToolButtons();
     showMaximized();
     initPenToolBar();
@@ -1672,18 +1669,13 @@ void  MainWindow::addImage(DraftImage image)
     ImageItem *item = new ImageItem(image);
     m_ImageMap.insert(image.id, item);
     draftScene->addItem(item);
-    imageToolbarWidget->blockSignals(true);
-    imageToolbarWidget->setImage(item->getImage());
     //Need error dialog
-    imageToolbarWidget->blockSignals(false);
 
     connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
 
-    //connect(item, &ImageItem::imageUpdated,  imageToolbarWidget, &ImageToolbarWidget::setImage);
     //connect(item, &ImageItem::deleteImage,   this,               &MainWindow::handleDeleteImage);
     connect(item, &ImageItem::imageSelected, this,               &MainWindow::handleImageSelected);
 
-    connect(imageToolbarWidget, &ImageToolbarWidget::lockClicked, item, &ImageItem::setLock);
 
 }
 
@@ -1722,7 +1714,7 @@ void MainWindow::handleImageSelected(quint32 id)
     ImageItem *item = m_ImageMap.value(id);
     if (item)
     {
-        imageToolbarWidget->setImage(item->getImage());
+        // May be useful in the development of the background-image feature
     }
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -2426,18 +2418,6 @@ void MainWindow::initializeModesToolBar()
     ui->mode_ToolBar->insertWidget(ui->layoutMode_Action, rightGoToStage);
 }
 
-void MainWindow::initializeImageToolBar()
-{
-    imageToolbarWidget = new ImageToolbarWidget(this);
-    ui->image_ToolBar->addWidget(imageToolbarWidget);
-
-    connect(imageToolbarWidget, &ImageToolbarWidget::addClicked,        this, &MainWindow::handleImportImage);
-    //connect(imageToolbarWidget, &ImageToolbarWidget::deleteClicked,     this, &MainWindow::handleDeleteImage);
-    //connect(imageToolbarWidget, &ImageToolbarWidget::lockClicked,       this, &MainWindow::handleLockImage);
-    //connect(imageToolbarWidget, &ImageToolbarWidget::alignClicked,      this, &MainWindow::handleAlignImage);
-    //connect(imageToolbarWidget, &ImageToolbarWidget::imageUpdated,      this, &MainWindow::updateImage);
-    //connect(imageToolbarWidget, &ImageToolbarWidget::lockAspectClicked, this, &MainWindow::handleLockImageAspect);
-}
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -4329,7 +4309,6 @@ void MainWindow::Clear()
     ui->loadMultisize_Action->setEnabled(false);
     ui->unloadMeasurements_Action->setEnabled(false);
     ui->editCurrent_Action->setEnabled(false);
-    ui->image_ToolBar->setEnabled(false);
 
     setToolsEnabled(false);
 
@@ -4655,7 +4634,6 @@ void MainWindow::setWidgetsEnabled(bool enable)
     draftScene->setToolsDisabled(!enable, doc->getActiveDraftBlockName());
     ui->view->setEnabled(enable);
 
-    ui->image_ToolBar->setEnabled(enable && draftStage);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
