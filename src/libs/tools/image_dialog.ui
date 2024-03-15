@@ -46,7 +46,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -59,7 +58,7 @@
         <x>12</x>
         <y>25</y>
         <width>226</width>
-        <height>68</height>
+        <height>92</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -86,7 +85,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -109,7 +107,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -126,7 +123,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -143,7 +139,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -208,7 +203,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -225,7 +219,6 @@
          <property name="font">
           <font>
            <pointsize>9</pointsize>
-           <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
@@ -248,7 +241,6 @@
      </property>
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -275,7 +267,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -297,7 +288,6 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -368,7 +358,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -390,7 +379,6 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -468,7 +456,6 @@
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -490,7 +477,6 @@
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -618,7 +604,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -640,7 +625,6 @@ border: none
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -711,7 +695,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -733,7 +716,6 @@ border: none
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -798,7 +780,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -820,7 +801,6 @@ border: none
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -892,7 +872,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -914,7 +893,6 @@ border: none
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -976,7 +954,6 @@ border: none
     <widget class="QGroupBox" name="attributes_GroupBox">
      <property name="font">
       <font>
-       <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
@@ -997,7 +974,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -1055,7 +1031,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -1121,7 +1096,6 @@ border: none
           <property name="font">
            <font>
             <pointsize>9</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -1143,7 +1117,6 @@ border: none
           </property>
           <property name="font">
            <font>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -1157,7 +1130,7 @@ border: none
            <number>0</number>
           </property>
           <property name="minimum">
-           <double>1.000000000000000</double>
+           <double>5.000000000000000</double>
           </property>
           <property name="value">
            <double>100.000000000000000</double>
@@ -1221,8 +1194,8 @@ border: none
   </layout>
  </widget>
  <resources>
-  <include location="../vmisc/share/resources/icon.qrc"/>
   <include location="../vmisc/share/resources/theme.qrc"/>
+  <include location="../vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections>
   <connection>
