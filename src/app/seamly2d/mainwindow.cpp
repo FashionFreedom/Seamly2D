@@ -1775,9 +1775,9 @@ void MainWindow::updateImage(DraftImage image)
 //---------------------------------------------------------------------------------------------------------------------
 QString MainWindow::getImageFilename()
 {
-    const QString filter = tr("SVG") + QLatin1String(" (*.svg);;") +
-                           tr("PNG") + QLatin1String(" (*.png);;") +
+    const QString filter = tr("PNG") + QLatin1String(" (*.png);;") +
                            tr("JPG") + QLatin1String(" (*.jpg);;") +
+                           tr("SVG") + QLatin1String(" (*.svg);;") +
                            tr("BMP") + QLatin1String(" (*.bmp);;") +
                            tr("TIF") + QLatin1String(" (*.tf)");
 
