@@ -54,13 +54,13 @@ public:
     explicit         ImageItem(DraftImage image, QGraphicsItem *parent = nullptr);
     virtual         ~ImageItem() = default;
 
-    virtual int      type() const Q_DECL_OVERRIDE {return Type;}
+    virtual int      type() const override {return Type;}
     enum             {Type = UserType + static_cast<int>(Vis::BackgroundImageItem)};
 
-    virtual QRectF   boundingRect() const Q_DECL_OVERRIDE;
+    virtual QRectF   boundingRect() const override;
 
     virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
-                           QWidget *widget = nullptr) Q_DECL_OVERRIDE;
+                           QWidget *widget = nullptr) override;
 
     DraftImage       getImage();
     void             setImage(DraftImage image);
@@ -77,13 +77,13 @@ signals:
     void             imageSelected(quint32 id);
 
 protected:
-    virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void     hoverLeaveEvent (QGraphicsSceneHoverEvent *event) Q_DECL_OVERRIDE;
-    virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent *event) Q_DECL_OVERRIDE;
-    virtual void     mousePressEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void     mouseMoveEvent(QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent *event) Q_DECL_OVERRIDE;
-    virtual void     keyReleaseEvent (QKeyEvent *event) Q_DECL_OVERRIDE;
+    virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event) override;
+    virtual void     hoverLeaveEvent (QGraphicsSceneHoverEvent *event) override;
+    virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent *event) override;
+    virtual void     mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void     mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
+    virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent *event) override;
+    virtual void     keyReleaseEvent (QKeyEvent *event) override;
 
 private:
     QPointF            m_offset;
