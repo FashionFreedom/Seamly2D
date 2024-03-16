@@ -85,10 +85,9 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles = new ResizeHandlesItem(this);
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateGeometry);
 
-    updateHandles();
-
     updateImage();
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 QRectF ImageItem::boundingRect() const
@@ -96,12 +95,6 @@ QRectF ImageItem::boundingRect() const
     return m_boundingRect;
 }
 
-void ImageItem::setOffset(const QPointF &offset)
-{
-    prepareGeometryChange();
-    m_offset = offset;
-    update();
-}
 
 void ImageItem::setPixmap(const QPixmap &pixmap)
 {
@@ -153,6 +146,7 @@ void ImageItem::setLock(bool checked)
     m_image.locked = checked;
 }
 
+
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
@@ -175,11 +169,6 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
     //painter->drawPixmap(m_offset, m_image.pixmap);
     painter->drawPixmap(m_image.xPos, m_image.yPos, m_image.width, m_image.height, m_image.pixmap);
-}
-
-void ImageItem::updateHandles()
-{
-
 }
 
 //---------------------------------------------------------------------------------------------------------------------

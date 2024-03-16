@@ -106,11 +106,9 @@ private:
     qreal              m_pixmapHeight;
     bool               m_selectable;
 
-    void               updateHandles();
     void               initializeItem();
     void               updateGeometry(QRectF rect);
     void               setPixmap(const QPixmap &pixmap);
-    void               setOffset(const QPointF &offset);
 };
 
 #endif // IMAGE_ITEM_H
