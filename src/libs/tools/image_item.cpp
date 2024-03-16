@@ -124,14 +124,14 @@ void ImageItem::setImage(DraftImage image)
 
 void  ImageItem::updateImage()
 {
-    setPos(m_image.xPos, m_image.yPos);
+    setPos(m_image.xPos - m_boundingRect.topLeft().x(), m_image.yPos - m_boundingRect.topLeft().y());
 
-    QTransform transform;
-    transform.translate(m_boundingRect.center().x(), m_boundingRect.center().y());
-    transform.scale(m_image.width / m_pixmapWidth, m_image.height / m_pixmapHeight);
-    transform.rotate(m_image.rotation);
-    transform.translate(-m_boundingRect.center().x(), -m_boundingRect.center().y());
-    setTransform(transform);
+    // QTransform transform;
+    // transform.translate(m_boundingRect.center().x(), m_boundingRect.center().y());
+    // transform.scale(m_image.width / m_pixmapWidth, m_image.height / m_pixmapHeight);
+    // transform.rotate(m_image.rotation);
+    // transform.translate(-m_boundingRect.center().x(), -m_boundingRect.center().y());
+    // setTransform(transform);
 
     setVisible(m_image.visible);
     setOpacity(m_image.opacity/100);
@@ -369,8 +369,8 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
         qDebug() << "m_offset" << m_offset;
 
-        m_image.xPos = mapToScene(event->pos() - m_offset).x();
-        m_image.yPos = mapToScene(event->pos() - m_offset).y();
+        m_image.xPos = mapToScene(event->pos() - m_offset).x() + m_boundingRect.topLeft().x();
+        m_image.yPos = mapToScene(event->pos() - m_offset).y() + m_boundingRect.topLeft().y();
 
         updateImage();
     }
@@ -439,6 +439,10 @@ void ImageItem::initializeItem()
 
 void ImageItem::updateFromHandles(QRectF rect)
 {
+    m_image.xPos += rect.topLeft().x() - m_boundingRect.topLeft().x();
+    m_image.yPos += rect.topLeft().y() - m_boundingRect.topLeft().y();
+
     m_boundingRect = rect;
+
     updateImage();
 }
