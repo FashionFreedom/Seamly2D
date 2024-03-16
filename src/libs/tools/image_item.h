@@ -107,7 +107,7 @@ private:
     bool               m_selectable;
 
     void               initializeItem();
-    void               updateGeometry(QRectF rect);
+    void               updateFromHandles(QRectF rect);
     void               setPixmap(const QPixmap &pixmap);
 };
 

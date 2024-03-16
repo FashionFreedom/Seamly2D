@@ -83,7 +83,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     setPixmap(m_image.pixmap);
 
     m_resizeHandles = new ResizeHandlesItem(this);
-    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateGeometry);
+    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
 
     updateImage();
 }
@@ -161,14 +161,12 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
         color.setAlpha(20);
         painter->setPen(QPen(Qt::black, 2, Qt::DashLine));
         painter->setBrush(color);
-        //painter->drawRect(m_boundingRect.adjusted(-2, -2, 2, 2));
         painter->drawRect(m_boundingRect);
         painter->restore();
     }
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
-    //painter->drawPixmap(m_offset, m_image.pixmap);
-    painter->drawPixmap(m_image.xPos, m_image.yPos, m_image.width, m_image.height, m_image.pixmap);
+    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_boundingRect.width(), m_boundingRect.height(), m_image.pixmap);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -346,6 +344,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
             SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
+            m_offset = event->pos();
         }
     }
     if (m_selectionType == SelectionType::ByMouseRelease)
@@ -364,120 +363,14 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (m_isResizing)
-    {
-        /*
-        QPointF ptMouseMoveInItemsCoord = mapFromScene(event->scenePos());
-        switch (m_resizePosition)
-        {
-        case Position::TopLeft:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setTopLeft(ptMouseMoveInItemsCoord);
-                qDebug() << "TOP_LEFT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
+    qDebug() << "Item moved";
+    qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
+    qDebug() << "m_offset" << m_offset;
 
-        case Position::Top:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setTop(ptMouseMoveInItemsCoord.y());
-                qDebug() << "TOP::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
+    m_image.xPos = mapToScene(event->pos() - m_offset).x();
+    m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
-        case Position::TopRight:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setTopRight(ptMouseMoveInItemsCoord);
-                qDebug() << "TOP_RIGHT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::Right:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setRight(ptMouseMoveInItemsCoord.x());
-                qDebug() << "RIGHT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::BottomRight:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setBottomRight(ptMouseMoveInItemsCoord);
-                qDebug() << "BOTTOM_RIGHT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::Bottom:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setBottom(ptMouseMoveInItemsCoord.y());
-                qDebug() << "BOTTOM::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::BottomLeft:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setBottomLeft(ptMouseMoveInItemsCoord);
-                qDebug() << "BOTTOM_LEFT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::Left:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                m_boundingRect.setLeft(ptMouseMoveInItemsCoord.x());
-                qDebug() << "LEFT::transformOriginPoint()" << m_boundingRect.center();
-            }
-            break;
-
-        case Position::Center:
-            if (this->scene()->sceneRect().contains(event->scenePos()))
-            {
-                QLineF line(m_boundingRect.center(), ptMouseMoveInItemsCoord);
-                qreal rotations = line.angle(QLineF(0, 0, 1, 0));
-                if (line.dy() <= 0)
-                {
-                    rotations = 180.0 - rotations;
-                }
-                else
-                {
-                    rotations = rotations - 180.0;
-                }
-                m_angle = rotations;
-                m_boundingRect = m_boundingRect.normalized();
-                setTransformOriginPoint(m_boundingRect.center());
-                setRotation(rotation() + m_angle);
-                qDebug() << "transformOriginPoint()" << transformOriginPoint();
-                qDebug() << "sceneBoundingRect()" << sceneBoundingRect();
-            }
-            break;
-        }
-
-        m_boundingRect = m_boundingRect.normalized();
-        //m_image.pixmap = m_image.pixmap.scaled(static_cast <QSize>(m_boundingRect.size()));
-
-        //m_image.pixmap = m_image.pixmap.scaled(static_cast <int>(m_boundingRect.width()),
-        //                                       static_cast <int>(m_boundingRect.height()));*/
-        qDebug() << "Item resized";
-        qDebug() << "boundingRect()" << m_boundingRect;
-        m_image.xPos = mapToScene(m_boundingRect.topLeft()).x();
-        m_image.yPos = mapToScene(m_boundingRect.topLeft()).y();
-        m_image.width  = m_boundingRect.width();
-        m_image.height = m_boundingRect.height();
-    }
-    else
-    {
-        qDebug() << "Item moved";
-        m_image.xPos = mapToScene(m_boundingRect.topLeft()).x();
-        m_image.yPos = mapToScene(m_boundingRect.topLeft()).y();
-    }
-
-    updateGeometry(m_boundingRect);
-    QGraphicsItem::mouseMoveEvent(event);
+    updateImage();
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -541,13 +434,8 @@ void ImageItem::initializeItem()
     this->setAcceptHoverEvents(true);
 }
 
-void ImageItem::updateGeometry(QRectF rect)
+void ImageItem::updateFromHandles(QRectF rect)
 {
     m_boundingRect = rect;
-    m_image.xPos   = m_boundingRect.topLeft().x();
-    m_image.yPos   = m_boundingRect.topLeft().y();
-    m_image.width  = m_boundingRect.width();
-    m_image.height = m_boundingRect.height();
     updateImage();
-    update();
 }
