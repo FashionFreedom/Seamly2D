@@ -363,14 +363,17 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    qDebug() << "Item moved";
-    qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
-    qDebug() << "m_offset" << m_offset;
+    if (event->buttons() & Qt::LeftButton)
+    {
+        qDebug() << "Item moved";
+        qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
+        qDebug() << "m_offset" << m_offset;
 
-    m_image.xPos = mapToScene(event->pos() - m_offset).x();
-    m_image.yPos = mapToScene(event->pos() - m_offset).y();
+        m_image.xPos = mapToScene(event->pos() - m_offset).x();
+        m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
-    updateImage();
+        updateImage();
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
