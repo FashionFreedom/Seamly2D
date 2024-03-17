@@ -86,6 +86,7 @@ public:
     void               setBottom(qreal y);
     void               setBottomLeft(const QPointF &pos);
     void               setLeft(qreal x);
+    void               setParentRect(const QRectF &rect);
 
 signals:
     void               sizeChanged(QRectF rect);

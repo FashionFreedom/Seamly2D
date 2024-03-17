@@ -35,6 +35,7 @@
 #include <QCursor>
 #include <QGraphicsScene>
 #include <QGuiApplication>
+#include <QDebug>
 
 /**
  * ResizeHandlesItem Constructor.
@@ -71,6 +72,14 @@ QRectF ResizeHandlesItem::boundingRect() const
     //return m_parentRect;
     return QRectF(0, 0, HANDLE_SIZE, HANDLE_SIZE);
 }
+
+//------------------------------------------------------------------------------
+void ResizeHandlesItem::setParentRect(const QRectF & rect)
+{
+    m_parentRect = rect;
+    updateHandlePositions();
+}
+
 
 /**
  * @brief paint handle item painting.

@@ -125,6 +125,7 @@ void ImageItem::setImage(DraftImage image)
 void  ImageItem::updateImage()
 {
     setPos(m_image.xPos - m_boundingRect.topLeft().x(), m_image.yPos - m_boundingRect.topLeft().y());
+    m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
 
     // QTransform transform;
     // transform.translate(m_boundingRect.center().x(), m_boundingRect.center().y());
@@ -166,7 +167,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     }
 
     painter->setRenderHint(QPainter::SmoothPixmapTransform, (m_transformationMode == Qt::SmoothTransformation));
-    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_boundingRect.width(), m_boundingRect.height(), m_image.pixmap);
+    painter->drawPixmap(m_boundingRect.x(), m_boundingRect.y(), m_image.width, m_image.height, m_image.pixmap);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -275,6 +276,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         {
             m_image = dialog->getImage();
             updateImage();
+            m_resizeHandles->setParentRect(m_boundingRect);
             emit imageUpdated(m_image);
         }
     }
@@ -315,6 +317,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     emit showContextMenu(event);
 }
+
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
@@ -439,10 +442,12 @@ void ImageItem::initializeItem()
 
 void ImageItem::updateFromHandles(QRectF rect)
 {
-    m_image.xPos += rect.topLeft().x() - m_boundingRect.topLeft().x();
-    m_image.yPos += rect.topLeft().y() - m_boundingRect.topLeft().y();
+    m_image.xPos = mapToScene(rect.topLeft()).x();
+    m_image.yPos = mapToScene(rect.topLeft()).y();
+    m_image.width = rect.width();
+    m_image.height = rect.height();
 
-    m_boundingRect = rect;
+    m_boundingRect.setTopLeft(rect.topLeft());
 
     updateImage();
 }
