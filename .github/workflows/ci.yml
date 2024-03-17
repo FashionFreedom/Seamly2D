@@ -357,7 +357,7 @@ jobs:
 
     steps:
       - name: Doxygen GitHub Pages Deploy Action
-        uses: DenverCoder1/doxygen-github-pages-action@v1.3.0
+        uses: DenverCoder1/doxygen-github-pages-action@60e8d33d954eafb4d54710db8130fb0ad8f7d157
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
