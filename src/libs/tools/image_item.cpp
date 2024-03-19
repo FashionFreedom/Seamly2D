@@ -195,6 +195,8 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
         setCursor(qApp->getSceneView()->viewport()->cursor());
     }
 
+    m_resizeHandles->show();
+
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -210,6 +212,8 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     {
         setCursor(QCursor());
     }
+
+    m_resizeHandles->hide();
 
     QGraphicsItem::hoverLeaveEvent(event);
 }
