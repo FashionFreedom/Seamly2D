@@ -83,8 +83,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     setPixmap(m_image.pixmap);
 
     m_resizeHandles = new ResizeHandlesItem(this);
-    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
-
+    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);    
     updateImage();
 }
 
@@ -124,15 +123,11 @@ void ImageItem::setImage(DraftImage image)
 
 void  ImageItem::updateImage()
 {
+    setTransformOriginPoint(m_boundingRect.topLeft());
+    setRotation(m_image.rotation);
+
     setPos(m_image.xPos - m_boundingRect.topLeft().x(), m_image.yPos - m_boundingRect.topLeft().y());
     m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
-
-    // QTransform transform;
-    // transform.translate(m_boundingRect.center().x(), m_boundingRect.center().y());
-    // transform.scale(m_image.width / m_pixmapWidth, m_image.height / m_pixmapHeight);
-    // transform.rotate(m_image.rotation);
-    // transform.translate(-m_boundingRect.center().x(), -m_boundingRect.center().y());
-    // setTransform(transform);
 
     setVisible(m_image.visible);
     setOpacity(m_image.opacity/100);
@@ -351,7 +346,7 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
             SetItemOverrideCursor(this, cursorArrowCloseHand, 1, 1);
-            m_offset = event->pos();
+            m_offset = event->pos() - m_boundingRect.topLeft();
         }
     }
     if (m_selectionType == SelectionType::ByMouseRelease)
@@ -376,8 +371,8 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
         qDebug() << "m_offset" << m_offset;
 
-        m_image.xPos = mapToScene(event->pos() - m_offset).x() + m_boundingRect.topLeft().x();
-        m_image.yPos = mapToScene(event->pos() - m_offset).y() + m_boundingRect.topLeft().y();
+        m_image.xPos = mapToScene(event->pos() - m_offset).x();
+        m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
         updateImage();
     }
