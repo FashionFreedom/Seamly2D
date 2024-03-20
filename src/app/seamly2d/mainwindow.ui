@@ -867,7 +867,7 @@
              <x>0</x>
              <y>0</y>
              <width>124</width>
-             <height>461</height>
+             <height>323</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -897,7 +897,7 @@
             <string/>
            </property>
            <property name="currentIndex">
-            <number>4</number>
+            <number>6</number>
            </property>
            <property name="tabSpacing">
             <number>4</number>
@@ -1352,7 +1352,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>124</width>
+              <width>118</width>
               <height>196</height>
              </rect>
             </property>
@@ -1612,7 +1612,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>124</width>
+              <width>103</width>
               <height>226</height>
              </rect>
             </property>
@@ -1891,9 +1891,9 @@
             <property name="geometry">
              <rect>
               <x>0</x>
-              <y>0</y>
-              <width>124</width>
-              <height>257</height>
+              <y>-95</y>
+              <width>103</width>
+              <height>180</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2107,26 +2107,6 @@
                </property>
               </widget>
              </item>
-             <item row="3" column="1">
-              <widget class="QToolButton" name="importImage_ToolButton">
-               <property name="enabled">
-                <bool>false</bool>
-               </property>
-               <property name="text">
-                <string>...</string>
-               </property>
-               <property name="icon">
-                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-                 <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
-               </property>
-               <property name="iconSize">
-                <size>
-                 <width>32</width>
-                 <height>32</height>
-                </size>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
            <widget class="QWidget" name="piece_Page">
@@ -2134,7 +2114,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>124</width>
+              <width>103</width>
               <height>96</height>
              </rect>
             </property>
@@ -2265,6 +2245,49 @@
                <property name="icon">
                 <iconset resource="share/resources/toolicon.qrc">
                  <normaloff>:/toolicon/32x32/path.png</normaloff>:/toolicon/32x32/path.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>32</width>
+                 <height>32</height>
+                </size>
+               </property>
+               <property name="checkable">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="backgroundImage_Page">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="toolTip">
+             <string>Tools for inserting or modifying images. </string>
+            </property>
+            <attribute name="icon">
+             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+              <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+            </attribute>
+            <attribute name="label">
+             <string>Images</string>
+            </attribute>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QToolButton" name="importImage_ToolButton">
+               <property name="enabled">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>...</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+                 <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -4697,8 +4720,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>

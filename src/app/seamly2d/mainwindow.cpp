@@ -1641,7 +1641,7 @@ void MainWindow::ClosedInsertNodesDialog(int result)
 void MainWindow::handleImportImage()
 {
     qCDebug(vMainWindow, "Add Image");
-    ui->draft_ToolBox->setCurrentWidget(ui->piece_Page);
+    ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
     ui->importImage_ToolButton->setChecked(true);
 
     QString filename = getImageFilename();
@@ -1651,6 +1651,7 @@ void MainWindow::handleImportImage()
     QFileInfo f(filename);
     if (filename.isEmpty())
     {
+        ui->importImage_ToolButton->setChecked(false);
         return;
     }
     image.id = VContainer::getNextId();
@@ -1676,6 +1677,7 @@ void  MainWindow::addImage(DraftImage image)
     //connect(item, &ImageItem::deleteImage,   this,               &MainWindow::handleDeleteImage);
     connect(item, &ImageItem::imageSelected, this,               &MainWindow::handleImageSelected);
 
+    ui->importImage_ToolButton->setChecked(false);
 
 }
 
@@ -4923,13 +4925,17 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->move_ToolButton->setEnabled(draftTools);
     ui->trueDarts_ToolButton->setEnabled(draftTools);
     ui->exportDraftBlocks_ToolButton->setEnabled(draftTools);
-    ui->importImage_ToolButton->setEnabled(draftTools);
+
 
     //Piece
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
     ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
     ui->internalPath_ToolButton->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
     ui->insertNodes_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
+
+    //Images
+
+    ui->importImage_ToolButton->setEnabled(draftTools);
 
     //Details
     ui->unitePieces_ToolButton->setEnabled(pieceTools);
