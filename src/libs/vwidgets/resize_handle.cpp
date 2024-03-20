@@ -235,7 +235,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
         switch (m_handlePosition)
         {
             case Position::TopLeft:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal xdiff = m_parent->m_parentRect.left() - pos.x();
                     qreal ydiff = m_parent->m_parentRect.top() - pos.y();
@@ -244,6 +244,11 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setBottom(m_parent->m_parentRect.bottom() + ydiff);
                     m_parent->setRight(m_parent->m_parentRect.right() + xdiff);
                 }
+                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                {
+                    qreal xPos = m_parent->m_parentRect.right() - (m_parent->m_parentRect.bottom() - pos.y())*m_scalingFactor;
+                    m_parent->setTopLeft(QPointF(xPos, pos.y()));
+                }
                 else
                 {
                     m_parent->setTopLeft(pos);
@@ -251,7 +256,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::Top:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal diff = m_parent->m_parentRect.top() - pos.y();
                     m_parent->setTop(pos.y());
@@ -264,7 +269,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::TopRight:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal xdiff = pos.x() - m_parent->m_parentRect.right();
                     qreal ydiff = m_parent->m_parentRect.top() - pos.y();
@@ -273,6 +278,11 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setBottom(m_parent->m_parentRect.bottom() + ydiff);
                     m_parent->setLeft(m_parent->m_parentRect.left() - xdiff);
                 }
+                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                {
+                    qreal xPos = m_parent->m_parentRect.left() + (m_parent->m_parentRect.bottom() - pos.y())*m_scalingFactor;
+                    m_parent->setTopRight(QPointF(xPos, pos.y()));
+                }
                 else
                 {
                     m_parent->setTopRight(pos);
@@ -280,7 +290,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::Right:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal diff = pos.x() - m_parent->m_parentRect.right();
                     m_parent->setRight(pos.x());
@@ -293,7 +303,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::BottomRight:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal xdiff = pos.x() - m_parent->m_parentRect.right();
                     qreal ydiff = pos.y() - m_parent->m_parentRect.bottom();
@@ -302,6 +312,11 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setTop(m_parent->m_parentRect.top() - ydiff);
                     m_parent->setLeft(m_parent->m_parentRect.left() - xdiff);
                 }
+                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                {
+                    qreal xPos = m_parent->m_parentRect.left() + (pos.y() - m_parent->m_parentRect.top())*m_scalingFactor;
+                    m_parent->setBottomRight(QPointF(xPos, pos.y()));
+                }
                 else
                 {
                     m_parent->setBottomRight(pos);
@@ -309,7 +324,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::Bottom:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal diff = pos.y() - m_parent->m_parentRect.bottom();
                     m_parent->setBottom(pos.y());
@@ -322,7 +337,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::BottomLeft:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal xdiff = m_parent->m_parentRect.left() - pos.x();
                     qreal ydiff = pos.y() - m_parent->m_parentRect.bottom();
@@ -331,6 +346,11 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setTop(m_parent->m_parentRect.top() - ydiff);
                     m_parent->setRight(m_parent->m_parentRect.right() + xdiff);
                 }
+                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                {
+                    qreal xPos = m_parent->m_parentRect.right() - (pos.y() - m_parent->m_parentRect.top())*m_scalingFactor;
+                    m_parent->setBottomLeft(QPointF(xPos, pos.y()));
+                }
                 else
                 {
                     m_parent->setBottomLeft(pos);
@@ -338,7 +358,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                 break;
 
             case Position::Left:
-                if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                if (QGuiApplication::keyboardModifiers() & Qt::ControlModifier)
                 {
                     qreal diff = m_parent->m_parentRect.left() - pos.x();
                     m_parent->setLeft(pos.x());
@@ -455,6 +475,7 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
             setCursor(QCursor(m_handleCursors[static_cast<int>(m_handlePosition)]));
+            m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
         }
 
         //emit handleSelected(m_handlePosition, true);

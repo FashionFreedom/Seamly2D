@@ -67,6 +67,7 @@ private:
             Position           m_handlePosition;
             Qt::CursorShape    m_handleCursors[9];
             bool               m_isHovered;
+            qreal              m_scalingFactor;
     };
 
 public:
