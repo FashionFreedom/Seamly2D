@@ -74,6 +74,12 @@ ImageDialog::ImageDialog(DraftImage image)
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
+    ui->visibility_CheckBox->hide();
+    ui->showLabel_Label->hide();
+    ui->originPoint_Label->hide();
+    ui->originPoint_ComboBox->hide();
+    ui->attributes_GroupBox->layout()->update();
+
     if (m_pixmapWidth >= m_pixmapHeight)
     {
         m_maxScale = 16000.0 / m_pixmapWidth;
