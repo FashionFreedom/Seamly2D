@@ -503,7 +503,7 @@
         <item>
          <widget class="QToolButton" name="aspectLocked_ToolButton">
           <property name="toolTip">
-           <string>Formula wizard</string>
+           <string>Lock aspect ratio</string>
           </property>
           <property name="styleSheet">
            <string notr="true">QToolButton{
@@ -536,6 +536,9 @@ border: none
         </item>
         <item>
          <widget class="QToolButton" name="units_ToolButton">
+          <property name="toolTip">
+           <string>Switch between px and pattern units</string>
+          </property>
           <property name="styleSheet">
            <string notr="true">QToolButton{
 border: none
@@ -1197,8 +1200,8 @@ border: none
   </layout>
  </widget>
  <resources>
-  <include location="../vmisc/share/resources/theme.qrc"/>
   <include location="../vmisc/share/resources/icon.qrc"/>
+  <include location="../vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections>
   <connection>
