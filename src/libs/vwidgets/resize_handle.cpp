@@ -81,6 +81,12 @@ void ResizeHandlesItem::setParentRect(const QRectF & rect)
 }
 
 
+//------------------------------------------------------------------------------
+void ResizeHandlesItem::setLockAspectRatio(bool lock)
+{
+    m_lockAspectRatio = lock;
+}
+
 /**
  * @brief paint handle item painting.
  * @param QPainter painter.
@@ -208,8 +214,16 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
-    painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
-    painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
+    if (m_parent->m_lockAspectRatio && (m_handlePosition == Position::Top || m_handlePosition == Position::Bottom || m_handlePosition == Position::Left || m_handlePosition == Position::Right))
+    {
+        painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
+        painter->setBrush(m_isHovered ? QColor(Qt::black) : QColor(Qt::lightGray));
+    }
+    else
+    {
+        painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
+        painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
+    }
     painter->drawRect(boundingRect());
 }
 
@@ -244,7 +258,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setBottom(m_parent->m_parentRect.bottom() + ydiff);
                     m_parent->setRight(m_parent->m_parentRect.right() + xdiff);
                 }
-                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                else if (m_parent->m_lockAspectRatio || QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
                 {
                     qreal xPos = m_parent->m_parentRect.right() - (m_parent->m_parentRect.bottom() - pos.y())*m_scalingFactor;
                     m_parent->setTopLeft(QPointF(xPos, pos.y()));
@@ -278,7 +292,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setBottom(m_parent->m_parentRect.bottom() + ydiff);
                     m_parent->setLeft(m_parent->m_parentRect.left() - xdiff);
                 }
-                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                else if (m_parent->m_lockAspectRatio || QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
                 {
                     qreal xPos = m_parent->m_parentRect.left() + (m_parent->m_parentRect.bottom() - pos.y())*m_scalingFactor;
                     m_parent->setTopRight(QPointF(xPos, pos.y()));
@@ -312,7 +326,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setTop(m_parent->m_parentRect.top() - ydiff);
                     m_parent->setLeft(m_parent->m_parentRect.left() - xdiff);
                 }
-                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                else if (m_parent->m_lockAspectRatio || QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
                 {
                     qreal xPos = m_parent->m_parentRect.left() + (pos.y() - m_parent->m_parentRect.top())*m_scalingFactor;
                     m_parent->setBottomRight(QPointF(xPos, pos.y()));
@@ -346,7 +360,7 @@ QVariant ResizeHandlesItem::HandleItem::itemChange(GraphicsItemChange change, co
                     m_parent->setTop(m_parent->m_parentRect.top() - ydiff);
                     m_parent->setRight(m_parent->m_parentRect.right() + xdiff);
                 }
-                else if (QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
+                else if (m_parent->m_lockAspectRatio || QGuiApplication::keyboardModifiers() & Qt::ShiftModifier)
                 {
                     qreal xPos = m_parent->m_parentRect.right() - (pos.y() - m_parent->m_parentRect.top())*m_scalingFactor;
                     m_parent->setBottomLeft(QPointF(xPos, pos.y()));
@@ -446,7 +460,6 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
 void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
-
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -474,8 +487,15 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
     //{
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
-            setCursor(QCursor(m_handleCursors[static_cast<int>(m_handlePosition)]));
-            m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
+            if (m_parent->m_lockAspectRatio && (m_handlePosition == Position::Top || m_handlePosition == Position::Bottom || m_handlePosition == Position::Left || m_handlePosition == Position::Right))
+            {
+                setCursor(Qt::ForbiddenCursor);
+            }
+            else
+            {
+                setCursor(QCursor(m_handleCursors[static_cast<int>(m_handlePosition)]));
+                m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
+            }
         }
 
         //emit handleSelected(m_handlePosition, true);
@@ -492,6 +512,11 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (m_parent->m_lockAspectRatio && (m_handlePosition == Position::Top || m_handlePosition == Position::Bottom || m_handlePosition == Position::Left || m_handlePosition == Position::Right))
+    {
+        return;
+    }
+
     QGraphicsItem::mouseMoveEvent(event);
 }
 

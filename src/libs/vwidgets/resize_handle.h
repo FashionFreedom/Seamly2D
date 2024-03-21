@@ -88,6 +88,7 @@ public:
     void               setBottomLeft(const QPointF &pos);
     void               setLeft(qreal x);
     void               setParentRect(const QRectF &rect);
+    void               setLockAspectRatio(bool lock);
 
 signals:
     void               sizeChanged(QRectF rect);
@@ -97,6 +98,7 @@ private:
 
     QList<HandleItem*> m_handleItems;
     QRectF             m_parentRect;
+    bool               m_lockAspectRatio;
 };
 
 #endif //RESIZE_HANDLE_H

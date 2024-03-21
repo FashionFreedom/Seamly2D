@@ -83,6 +83,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     setPixmap(m_image.pixmap);
 
     m_resizeHandles = new ResizeHandlesItem(this);
+    m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);    
     updateImage();
 }
@@ -276,6 +277,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
             m_image = dialog->getImage();
             updateImage();
             m_resizeHandles->setParentRect(m_boundingRect);
+            m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
             emit imageUpdated(m_image);
         }
     }
