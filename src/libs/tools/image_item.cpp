@@ -295,6 +295,8 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         if (!m_image.locked)
         {
+            scene()->removeItem(this);
+            delete this;
             //emit deleteImage(m_image.id);
         }
     }
