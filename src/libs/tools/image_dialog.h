@@ -115,6 +115,8 @@ private slots:
     void             opacityChanged(qreal value);
 
     void             updateUnits();
+    void             updateSpinboxesRanges();
+
     void             setSuffix(QString suffix);
     void             setDecimals(int precision);
 
@@ -132,6 +134,7 @@ private:
     qreal            m_pixmapHeight;
     qreal            m_minScale;
     qreal            m_maxScale;
+    qreal            m_minDimension;
     bool             m_flagName;
 };
 

@@ -173,7 +173,7 @@ struct DraftImage
       height(0.0),
       xScale(100.0),
       yScale(100.0),
-      aspectLocked(true),
+      aspectLocked(false),
       units(Unit::Px),
       rotation(0.0),
       visible(true),

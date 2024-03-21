@@ -74,6 +74,8 @@ ImageDialog::ImageDialog(DraftImage image)
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
+    m_minDimension = ui->width_DoubleSpinBox->minimum();
+
     ui->visibility_CheckBox->hide();
     ui->showLabel_Label->hide();
     ui->originPoint_Label->hide();
@@ -83,18 +85,19 @@ ImageDialog::ImageDialog(DraftImage image)
     if (m_pixmapWidth >= m_pixmapHeight)
     {
         m_maxScale = 16000.0 / m_pixmapWidth;
-        m_minScale = 16.0 / m_pixmapHeight;
+        m_minScale = m_minDimension / m_pixmapHeight;
     }
     else
     {
         m_maxScale = 16000.0 / m_pixmapHeight;
-        m_minScale = 16.0 / m_pixmapWidth;
+        m_minScale = m_minDimension / m_pixmapWidth;
     }
     ui->xScale_DoubleSpinBox->setMinimum(m_minScale * 100);
     ui->yScale_DoubleSpinBox->setMinimum(m_minScale * 100);
     ui->xScale_DoubleSpinBox->setMaximum(m_maxScale * 100);
     ui->yScale_DoubleSpinBox->setMaximum(m_maxScale * 100);
 
+    updateSpinboxesRanges();
     updateUnits();
     updateImage();
 
@@ -154,7 +157,6 @@ void ImageDialog::updateImage()
     setXScale(m_image.xScale);
     setYScale(m_image.yScale);
     setAspectLocked(m_image.aspectLocked);
-    ui->units_ToolButton->setChecked(m_image.units == Unit::Px ? true : false);
     setRotation(m_image.rotation);
     setVisibility(m_image.visible);
     setOpacity(m_image.opacity);
@@ -476,7 +478,14 @@ void ImageDialog::alignmentChanged()
 void ImageDialog::xPosChanged(qreal value)
 {
     blockSignals(true);
-    m_image.xPos = value;
+    if (m_image.units == Unit::Px)
+    {
+        m_image.xPos = value;
+    }
+    else
+    {
+        m_image.xPos = qApp->toPixel(value);
+    }
     blockSignals(false);
     emit imageUpdated(m_image);
 }
@@ -485,7 +494,14 @@ void ImageDialog::xPosChanged(qreal value)
 void ImageDialog::yPosChanged(qreal value)
 {
     blockSignals(true);
-    m_image.yPos = value;
+    if (m_image.units == Unit::Px)
+    {
+        m_image.yPos = value;
+    }
+    else
+    {
+        m_image.yPos = qApp->toPixel(value);
+    }
     blockSignals(false);
     emit imageUpdated(m_image);
 }
@@ -585,20 +601,53 @@ void ImageDialog::lockAspectChanged(bool checked)
     emit lockAspectClicked(m_image.aspectLocked);
 }
 
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageDialog::updateSpinboxesRanges()
+{
+    if (m_image.units == Unit::Px)
+    {
+        ui->width_DoubleSpinBox->setMinimum(m_minDimension);
+        ui->height_DoubleSpinBox->setMinimum(m_minDimension);
+    }
+    else
+    {
+        ui->width_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension));
+        ui->height_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension));
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::unitsChanged()
 {
     blockSignals(true);
-    if (ui->units_ToolButton->isChecked())
+    qreal tempHeight = m_image.height;
+    qreal tempWidth = m_image.width;
+    qreal tempXPos = m_image.xPos;
+    qreal tempYPos = m_image.yPos;
+
+    if (m_image.units != Unit::Px)
     {
         m_image.units = Unit::Px;
+        updateSpinboxesRanges();
+        updateUnits();
+
+        ui->width_DoubleSpinBox->setValue(tempWidth);
+        ui->height_DoubleSpinBox->setValue(tempHeight);
+        ui->xPosition_DoubleSpinBox->setValue(tempXPos);
+        ui->yPosition_DoubleSpinBox->setValue(tempYPos);
     }
     else
     {
         m_image.units = qApp->patternUnit();
+        updateSpinboxesRanges();
+        updateUnits();
+
+        ui->width_DoubleSpinBox->setValue(qApp->fromPixel(tempWidth));
+        ui->height_DoubleSpinBox->setValue(qApp->fromPixel(tempHeight));
+        ui->xPosition_DoubleSpinBox->setValue(qApp->fromPixel(tempXPos));
+        ui->yPosition_DoubleSpinBox->setValue(qApp->fromPixel(tempYPos));
     }
-    updateUnits();
-    updateImage();
     blockSignals(false);
     emit imageUpdated(m_image);
 }
