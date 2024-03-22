@@ -877,7 +877,7 @@
              <x>0</x>
              <y>0</y>
              <width>124</width>
-             <height>323</height>
+             <height>526</height>
             </rect>
            </property>
            <property name="sizePolicy">
@@ -917,7 +917,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
+              <width>124</width>
               <height>288</height>
              </rect>
             </property>
@@ -1362,7 +1362,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>118</width>
+              <width>124</width>
               <height>196</height>
              </rect>
             </property>
@@ -1622,7 +1622,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>103</width>
+              <width>124</width>
               <height>226</height>
              </rect>
             </property>
@@ -1902,8 +1902,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>103</width>
-              <height>180</height>
+              <width>124</width>
+              <height>288</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2124,7 +2124,7 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>103</width>
+              <width>124</width>
               <height>96</height>
              </rect>
             </property>
@@ -2299,6 +2299,9 @@
               <widget class="QToolButton" name="importImage_ToolButton">
                <property name="enabled">
                 <bool>false</bool>
+               </property>
+               <property name="toolTip">
+                <string>Import Image (Alt + I)</string>
                </property>
                <property name="text">
                 <string>...</string>
