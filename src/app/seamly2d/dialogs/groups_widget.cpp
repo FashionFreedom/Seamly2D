@@ -863,7 +863,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                 }
 
                 case Tool::PointOfContact:
-                    iconFileName = ":/toolicon/32x32/point_of_contact.png";
+                    iconFileName = ":/toolicon/32x32/point_intersect_arc_line.png";
                     objName = tr("%1 - Point Intersect Arc & Line").arg(getPointName(toolId));
                     break;
 
