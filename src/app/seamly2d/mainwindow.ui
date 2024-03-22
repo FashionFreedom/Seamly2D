@@ -203,7 +203,6 @@
      <addaction name="move_Action"/>
      <addaction name="trueDarts_Action"/>
      <addaction name="exportDraftBlocks_Action"/>
-     <addaction name="importImage_Action"/>
     </widget>
     <widget class="QMenu" name="points_Menu">
      <property name="title">
@@ -309,6 +308,16 @@
      <addaction name="newPrintLayout_Action"/>
      <addaction name="exportLayout_Action"/>
     </widget>
+    <widget class="QMenu" name="images_Menu">
+     <property name="title">
+      <string>Images</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+       <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+     </property>
+     <addaction name="importImage_Action"/>
+    </widget>
     <addaction name="newDraft_Action"/>
     <addaction name="renameDraft_Action"/>
     <addaction name="separator"/>
@@ -318,6 +327,7 @@
     <addaction name="arcs_Menu"/>
     <addaction name="operations_Menu"/>
     <addaction name="piece_Menu"/>
+    <addaction name="images_Menu"/>
     <addaction name="details_Menu"/>
     <addaction name="layouts_Menu"/>
     <addaction name="separator"/>
@@ -602,6 +612,7 @@
    <addaction name="pieces_Action"/>
    <addaction name="details_Action"/>
    <addaction name="layout_Action"/>
+   <addaction name="images_Action"/>
   </widget>
   <widget class="QToolBar" name="points_ToolBar">
    <property name="windowTitle">
@@ -697,7 +708,6 @@
    <addaction name="move_Action"/>
    <addaction name="trueDarts_Action"/>
    <addaction name="exportDraftBlocks_Action"/>
-   <addaction name="importImage_Action"/>
   </widget>
   <widget class="QToolBar" name="pieces_ToolBar">
    <property name="enabled">
@@ -1891,7 +1901,7 @@
             <property name="geometry">
              <rect>
               <x>0</x>
-              <y>-95</y>
+              <y>0</y>
               <width>103</width>
               <height>180</height>
              </rect>
@@ -2260,6 +2270,14 @@
             </layout>
            </widget>
            <widget class="QWidget" name="backgroundImage_Page">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>124</width>
+              <height>60</height>
+             </rect>
+            </property>
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
               <horstretch>0</horstretch>
@@ -4616,7 +4634,10 @@
     <string>Export</string>
    </property>
   </action>
-  <action name="importImage_Action">
+  <action name="images_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
      <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
@@ -4709,6 +4730,24 @@
     <string>Ctrl+Alt+P</string>
    </property>
   </action>
+  <action name="importImage_Action">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
+     <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import Image (Alt +I)</string>
+   </property>
+   <property name="toolTip">
+    <string>Import Image (Alt + I)</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+I</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -4720,8 +4759,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
   <include location="../../libs/vmisc/share/resources/theme.qrc"/>
+  <include location="../../libs/vmisc/share/resources/icon.qrc"/>
  </resources>
  <connections/>
 </ui>

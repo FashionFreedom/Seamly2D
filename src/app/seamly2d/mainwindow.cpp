@@ -855,7 +855,7 @@ void MainWindow::ClosedPiecesDialogWithApply(int result)
         ui->importImage_ToolButton->setEnabled(true);
         ui->anchorPoint_Action->setEnabled(true);
         ui->internalPath_Action->setEnabled(true);
-        ui->importImage_Action->setEnabled(true);
+        ui->images_Action->setEnabled(true);
         ui->anchorPoint_Action->setEnabled(true);
         ui->internalPath_Action->setEnabled(true);
         ui->insertNodes_Action->setEnabled(true);
@@ -3388,6 +3388,29 @@ void MainWindow::handleLayoutMenu()
     }
 }
 
+void MainWindow::handleImagesMenu()
+{
+    qCDebug(vMainWindow, "Images Menu selected. \n");
+
+
+    QMenu menu;
+
+    QAction *action_ImportImage    = menu.addAction(QIcon(":/toolicon/32x32/add_image.png"), tr("Import Image") + "\tAlt+ I");
+
+    QAction *selectedAction = menu.exec(QCursor::pos());
+
+    if(selectedAction == nullptr)
+    {
+        return;
+    }
+    else if (selectedAction == action_ImportImage)
+    {
+        ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
+        ui->importImage_ToolButton->setChecked(true);
+        handleImportImage();
+    }
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief mouseMove save mouse position and show user.
@@ -4926,7 +4949,6 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->trueDarts_ToolButton->setEnabled(draftTools);
     ui->exportDraftBlocks_ToolButton->setEnabled(draftTools);
 
-
     //Piece
     ui->addPatternPiece_ToolButton->setEnabled(draftTools);
     ui->anchorPoint_ToolButton->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
@@ -4934,7 +4956,6 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->insertNodes_ToolButton->setEnabled(draftTools   & (pattern->DataPieces()->size() > 0));
 
     //Images
-
     ui->importImage_ToolButton->setEnabled(draftTools);
 
     //Details
@@ -4954,6 +4975,7 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->pieces_Action->setEnabled(draftTools);
     ui->details_Action->setEnabled(pieceTools);
     ui->layout_Action->setEnabled(layoutTools);
+    ui->images_Action->setEnabled(layoutTools);
 
     //Menu Actions
     //Points
@@ -5007,9 +5029,12 @@ void MainWindow::setToolsEnabled(bool enable)
     ui->addPiece_Action->setEnabled(draftTools);
     ui->anchorPoint_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
     ui->internalPath_Action->setEnabled(draftTools  & (pattern->DataPieces()->size() > 0));
-    ui->importImage_Action->setEnabled(draftTools);
+    ui->images_Action->setEnabled(draftTools);
     ui->internalPath_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
     ui->insertNodes_Action->setEnabled(draftTools & (pattern->DataPieces()->size() > 0));
+
+    // Images
+    ui->importImage_Action->setEnabled(draftTools);
 
     //Details
     ui->union_Action->setEnabled(pieceTools);
@@ -6085,11 +6110,17 @@ void MainWindow::createActions()
         handleInsertNodesTool(true);
     });
 
-    //Image actions
-    connect(ui->importImage_Action, &QAction::triggered, this, &MainWindow::handleImportImage);
+    //Tools-> Images submenu actions
+
+    connect(ui->importImage_Action, &QAction::triggered, this, [this]
+    {
+        ui->draft_ToolBox->setCurrentWidget(ui->backgroundImage_Page);
+        ui->importImage_ToolButton->setChecked(true);
+        handleImportImage();
+    });
     //connect(ui->deleteImage_Action, &QAction::triggered, this, &MainWindow::handleDeleteImage);
-    connect(ui->lockImage_Action, &QAction::triggered, this, &MainWindow::handleLockImage);
-    connect(ui->alignImage_Action, &QAction::triggered, this, &MainWindow::handleAlignImage);
+    //connect(ui->lockImage_Action, &QAction::triggered, this, &MainWindow::handleLockImage);
+    //connect(ui->alignImage_Action, &QAction::triggered, this, &MainWindow::handleAlignImage);
 
     //Tools->Layout submenu actions
     connect(ui->newPrintLayout_Action, &QAction::triggered, this, [this]
@@ -6241,6 +6272,7 @@ void MainWindow::createActions()
     connect(ui->details_Action,       &QAction::triggered, this, &MainWindow::handlePatternPiecesMenu);
     connect(ui->pieces_Action,        &QAction::triggered, this, &MainWindow::handlePieceMenu);
     connect(ui->layout_Action,        &QAction::triggered, this, &MainWindow::handleLayoutMenu);
+    connect(ui->images_Action,        &QAction::triggered, this, &MainWindow::handleImagesMenu);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
