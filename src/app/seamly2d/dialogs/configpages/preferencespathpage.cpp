@@ -274,8 +274,10 @@ void PreferencesPathPage::initializeTable()
     }
 
     {
-        ui->pathTable->setItem(6, 0, new QTableWidgetItem(tr("My Images")));
-        QTableWidgetItem *item = new QTableWidgetItem(settings->getImageFilePath());
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Images"));
+        item->setIcon(QIcon("://icon/32x32/add_image.png"));
+        ui->pathTable->setItem(6, 0, item);
+        item = new QTableWidgetItem(settings->getImageFilePath());
         item->setToolTip(settings->getImageFilePath());
         ui->pathTable->setItem(6, 1, item);
     }
