@@ -271,14 +271,11 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     if (selectedAction == actionProperties)
     {
         ImageDialog *dialog = new ImageDialog(m_image);
+        connect(dialog, &ImageDialog::applyClicked, this, &ImageItem::updateImageAndHandles);
 
         if (dialog->exec() == QDialog::Accepted)
         {
-            m_image = dialog->getImage();
-            updateImage();
-            m_resizeHandles->setParentRect(m_boundingRect);
-            m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
-            emit imageUpdated(m_image);
+            updateImageAndHandles(dialog->getImage());
         }
     }
     else if (selectedAction == actionLock)
@@ -453,4 +450,14 @@ void ImageItem::updateFromHandles(QRectF rect)
     m_boundingRect.setTopLeft(rect.topLeft());
 
     updateImage();
+}
+
+
+void ImageItem::updateImageAndHandles(DraftImage image)
+{
+    m_image = image;
+    updateImage();
+    m_resizeHandles->setParentRect(m_boundingRect);
+    m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
+    emit imageUpdated(m_image);
 }

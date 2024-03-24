@@ -120,11 +120,14 @@ private slots:
     void             setSuffix(QString suffix);
     void             setDecimals(int precision);
 
+    void             dialogApply(QAbstractButton *button);
+
 signals:
     void             lockClicked(bool state);
     //void             alignClicked();
     void             lockAspectClicked(bool state);
     void             imageUpdated(DraftImage image);
+    void             applyClicked(DraftImage image);
 
 private:
     Q_DISABLE_COPY(ImageDialog)

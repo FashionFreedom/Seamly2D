@@ -123,6 +123,7 @@ ImageDialog::ImageDialog(DraftImage image)
     connect(ui->visibility_CheckBox,   &QCheckBox::toggled, this, &ImageDialog::visibilityChanged);
     connect(ui->opacity_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::opacityChanged);
+    connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &ImageDialog::dialogApply);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -734,4 +735,14 @@ void ImageDialog::setDecimals(int precision)
     ui->yPosition_DoubleSpinBox->setDecimals(precision);
     ui->width_DoubleSpinBox->setDecimals(precision);
     ui->height_DoubleSpinBox->setDecimals(precision);
+}
+
+
+void ImageDialog::dialogApply(QAbstractButton *button)
+{
+    if (ui->buttonBox->buttonRole(button) == QDialogButtonBox::ApplyRole)
+    {
+    updateImage();
+    emit applyClicked(m_image);
+    }
 }

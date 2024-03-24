@@ -65,6 +65,7 @@ public:
     DraftImage       getImage();
     void             setImage(DraftImage image);
     void             updateImage();
+    void             updateImageAndHandles(DraftImage image);
 
     void             setLock(bool checked);
 
