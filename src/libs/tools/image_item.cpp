@@ -227,7 +227,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
 
     QMenu menu;
-    QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties") + "\tP");
+    QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
 
     QAction *actionLock = menu.addAction(QIcon("://icon/32x32/lock_on.png"), tr("Lock"));
     actionLock->setCheckable(true);
@@ -263,7 +263,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     actionSeparator->setSeparator(true);
     menu.addAction(actionSeparator);
 
-    QAction *actionDelete = menu.addAction(QIcon("://icon/32x32/trashcan.png"), tr("Delete") + "\tDel");
+    QAction *actionDelete = menu.addAction(QIcon("://icon/32x32/trashcan.png"), tr("Delete"));
     actionDelete->setEnabled(!m_image.locked);
 
     QAction *selectedAction = menu.exec(event->screenPos());

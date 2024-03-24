@@ -35,7 +35,7 @@
      <property name="minimumSize">
       <size>
        <width>240</width>
-       <height>100</height>
+       <height>85</height>
       </size>
      </property>
      <property name="maximumSize">
@@ -57,11 +57,46 @@
        <rect>
         <x>12</x>
         <y>25</y>
-        <width>226</width>
-        <height>92</height>
+        <width>187</width>
+        <height>49</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="id_Label">
+         <property name="minimumSize">
+          <size>
+           <width>70</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Id:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="idText_Label">
+         <property name="font">
+          <font>
+           <pointsize>9</pointsize>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Id</string>
+         </property>
+        </widget>
+       </item>
        <item row="1" column="0">
         <widget class="QLabel" name="name_Label">
          <property name="sizePolicy">
@@ -109,121 +144,6 @@
            <pointsize>9</pointsize>
            <bold>false</bold>
           </font>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QLabel" name="originPoint_Label">
-         <property name="minimumSize">
-          <size>
-           <width>70</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Origin Point:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QComboBox" name="originPoint_ComboBox">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="currentIndex">
-          <number>8</number>
-         </property>
-         <item>
-          <property name="text">
-           <string>Top Left</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Top</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Top Right</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Right</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bottom Right</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bottom</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Bottom Left</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Left</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Center</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <widget class="QLabel" name="id_Label">
-         <property name="minimumSize">
-          <size>
-           <width>70</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Id:</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="idText_Label">
-         <property name="font">
-          <font>
-           <pointsize>9</pointsize>
-           <bold>false</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Id</string>
          </property>
         </widget>
        </item>

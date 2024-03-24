@@ -78,8 +78,6 @@ ImageDialog::ImageDialog(DraftImage image)
 
     ui->visibility_CheckBox->hide();
     ui->showLabel_Label->hide();
-    ui->originPoint_Label->hide();
-    ui->originPoint_ComboBox->hide();
     ui->attributes_GroupBox->layout()->update();
 
     if (m_pixmapWidth >= m_pixmapHeight)
@@ -102,7 +100,6 @@ ImageDialog::ImageDialog(DraftImage image)
     updateImage();
 
     connect(ui->name_LineEdit,        &QLineEdit::textChanged,        this, &ImageDialog::nameChanged);
-    connect(ui->originPoint_ComboBox, &QComboBox::currentTextChanged, this, &ImageDialog::originChanged);
     connect(ui->xPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::xPosChanged);
     connect(ui->yPosition_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
@@ -149,7 +146,6 @@ void ImageDialog::updateImage()
     blockSignals(true);
     ui->idText_Label->setNum(static_cast<double>(m_image.id));
     ui->name_LineEdit->setText(m_image.name);
-    ui->originPoint_ComboBox->setCurrentIndex(static_cast<int>(m_image.origin));
     ui->lockImage_CheckBox->setChecked(m_image.locked);
     setXPos(m_image.xPos);
     setYPos(m_image.yPos);
@@ -189,7 +185,6 @@ void ImageDialog::updateImage()
 void ImageDialog::enableWidgets()
 {
     ui->name_LineEdit->setEnabled(!m_image.locked);
-    ui->originPoint_ComboBox->setEnabled(!m_image.locked);
     ui->lockImage_CheckBox->setEnabled(true);
     ui->xPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->yPosition_DoubleSpinBox->setEnabled(!m_image.locked);
@@ -225,8 +220,7 @@ Position ImageDialog::getOriginPoint() const
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setOriginPoint(const int &index)
 {
-    m_image.origin = static_cast<Position>(index);
-    ui->originPoint_ComboBox->setCurrentIndex(index);
+
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -464,7 +458,6 @@ void ImageDialog::nameChanged(const QString &name)
 void ImageDialog::originChanged(const QString &text)
 {
     blockSignals(true);
-    m_image.origin = static_cast<Position>(ui->originPoint_ComboBox->findText(text));
     blockSignals(false);
     emit imageUpdated(m_image);
 }
