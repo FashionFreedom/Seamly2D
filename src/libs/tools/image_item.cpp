@@ -233,10 +233,10 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     actionLock->setCheckable(true);
     actionLock->setChecked(m_image.locked);
 
-    QAction *actionShow = menu.addAction(QIcon("://icon/32x32/visible_on.png"), tr("Show"));
-    actionShow->setCheckable(true);
-    actionShow->setChecked(m_image.visible);
-    actionShow->setEnabled(!m_image.locked);
+    // QAction *actionShow = menu.addAction(QIcon("://icon/32x32/visible_on.png"), tr("Show"));
+    // actionShow->setCheckable(true);
+    // actionShow->setChecked(m_image.visible);
+    // actionShow->setEnabled(!m_image.locked);
 
     QAction *actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -284,17 +284,15 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
         this->setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
         emit imageUpdated(m_image);
     }
-    else if (selectedAction == actionShow)
-    {
-        //SetVisible(selectedAction->isChecked());
-    }
+    // else if (selectedAction == actionShow)
+    // {
+    //     SetVisible(selectedAction->isChecked());
+    // }
     else if (selectedAction == actionDelete)
     {
         if (!m_image.locked)
         {
-            scene()->removeItem(this);
-            delete this;
-            //emit deleteImage(m_image.id);
+            deleteItem();
         }
     }
 
@@ -397,20 +395,6 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 
     m_mousePressed = false;
     m_isResizing = false;
-    /*if (m_actualRect != m_boundingRect)
-    { // Rotating won't trigger this, only resizing.
-      auto oldScenePos = scenePos();
-      setTransformOriginPoint(m_boundingRect.center());
-      auto newScenePos = scenePos();
-      auto oldPos = pos();
-      setPos(oldPos.x() + (oldScenePos.x() - newScenePos.x()), oldPos.y() + (oldScenePos.y() - newScenePos.y()));
-  }
-
-    m_image.xPos = mapToScene(m_boundingRect.topLeft()).x();
-    m_image.yPos = mapToScene(m_boundingRect.topLeft()).y();
-    m_image.width  = m_boundingRect.width();
-    m_image.height = m_boundingRect.height();
-    updateGeometry(m_boundingRect);*/
 
     QGraphicsItem::mouseReleaseEvent(event);
 }
@@ -423,7 +407,7 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
         case Qt::Key_Delete:
         if (!m_image.locked)
         {
-            //emit deleteImage(m_image.id);
+            //deleteItem();
         }
         default:
             break;
@@ -460,4 +444,11 @@ void ImageItem::updateImageAndHandles(DraftImage image)
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     emit imageUpdated(m_image);
+}
+
+void ImageItem::deleteItem()
+{
+    scene()->removeItem(this);
+    delete this;
+    emit deleteImage(m_image.id);
 }

@@ -66,6 +66,7 @@ public:
     void             setImage(DraftImage image);
     void             updateImage();
     void             updateImageAndHandles(DraftImage image);
+    void             deleteItem();
 
     void             setLock(bool checked);
 
