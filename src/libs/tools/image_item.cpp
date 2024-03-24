@@ -84,7 +84,8 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
 
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
-    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);    
+    connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
+
     updateImage();
 }
 
@@ -133,6 +134,8 @@ void  ImageItem::updateImage()
     setVisible(m_image.visible);
     setOpacity(m_image.opacity/100);
 
+    setLock(m_image.locked);
+
     emit imageUpdated(m_image);
 
     prepareGeometryChange();
@@ -141,6 +144,8 @@ void  ImageItem::updateImage()
 void ImageItem::setLock(bool checked)
 {
     m_image.locked = checked;
+    this->setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
+    emit imageUpdated(m_image);
 }
 
 
@@ -150,7 +155,7 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     Q_UNUSED(option)
     Q_UNUSED(widget)
 
-    if (m_isHovered)
+    if (!m_image.locked && m_isHovered)
     {
         //highlight and draw border
         painter->save();
@@ -191,7 +196,10 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
         setCursor(qApp->getSceneView()->viewport()->cursor());
     }
 
-    m_resizeHandles->show();
+    if (!m_image.locked)
+    {
+        m_resizeHandles->show();
+    }
 
     QGraphicsItem::hoverEnterEvent(event);
 }
@@ -280,9 +288,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     else if (selectedAction == actionLock)
     {
-        m_image.locked = !m_image.locked;
-        this->setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
-        emit imageUpdated(m_image);
+        setLock(!m_image.locked);
     }
     // else if (selectedAction == actionShow)
     // {
@@ -364,12 +370,8 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
-    if (event->buttons() & Qt::LeftButton)
+    if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
     {
-        qDebug() << "Item moved";
-        qDebug() << "mapToScene(event->pos())" << mapToScene(event->pos());
-        qDebug() << "m_offset" << m_offset;
-
         m_image.xPos = mapToScene(event->pos() - m_offset).x();
         m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
