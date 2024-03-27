@@ -434,6 +434,7 @@ private:
     void               WriteSettings();
 
     bool               MaybeSave();
+    void               InfoUnsavedImages(bool * firstImportImage);
     void               UpdateRecentFileActions();
 
     void               createMenus();

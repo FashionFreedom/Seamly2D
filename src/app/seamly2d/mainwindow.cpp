@@ -1664,6 +1664,7 @@ void MainWindow::handleImportImage()
 
 void  MainWindow::addImage(DraftImage image)
 {
+    static bool firstImportImage = false;
     QImageReader imageReader(image.filename);
     image.pixmap = QPixmap::fromImageReader(&imageReader);
 
@@ -1679,6 +1680,11 @@ void  MainWindow::addImage(DraftImage image)
 
     ui->importImage_ToolButton->setChecked(false);
 
+    if(!firstImportImage)
+    {
+       qCDebug(vMainWindow, "Inside first import image");
+       InfoUnsavedImages(&firstImportImage);
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -3395,7 +3401,7 @@ void MainWindow::handleImagesMenu()
 
     QMenu menu;
 
-    QAction *action_ImportImage    = menu.addAction(QIcon(":/toolicon/32x32/add_image.png"), tr("Import Image") + "\tAlt+ I");
+    QAction *action_ImportImage    = menu.addAction(QIcon(":/icon/32x32/add_image.png"), tr("Import Image") + "\tAlt+ I");
 
     QAction *selectedAction = menu.exec(QCursor::pos());
 
@@ -5262,6 +5268,29 @@ bool MainWindow::MaybeSave()
         }
     }
     return true;
+}
+//---------------------------------------------------------------------------------------------------------------------
+/**
+ * @brief InfoUnsavedImages is called when the user imports his first image.
+ */
+void MainWindow::InfoUnsavedImages(bool *firstImportImage)
+{
+    if (guiEnabled)
+    {
+        QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
+                                                                tr("Images will not be saved"),
+                                                                tr("Please note that the images can not be saved in the current version of the software."),
+                                                                QMessageBox::NoButton,
+                                                                this,Qt::Sheet));
+
+        messageBox->setWindowModality(Qt::ApplicationModal);
+        messageBox->setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint
+                                                 & ~Qt::WindowMaximizeButtonHint
+                                                 & ~Qt::WindowMinimizeButtonHint);
+
+        messageBox->exec();
+        *firstImportImage = true;
+    }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
