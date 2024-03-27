@@ -384,6 +384,7 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
         updateImage();
+        scene()->update();
     }
 }
 
@@ -444,6 +445,7 @@ void ImageItem::updateFromHandles(QRectF rect)
     m_boundingRect.setTopLeft(rect.topLeft());
 
     updateImage();
+    scene()->update();
 }
 
 
