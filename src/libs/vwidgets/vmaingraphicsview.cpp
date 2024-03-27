@@ -730,7 +730,7 @@ void VMainGraphicsView::mouseMoveEvent(QMouseEvent *event)
           endPoint = event->pos();
           if (!isRubberBandColorSet)
           {
-              if ( (endPoint.x() < startPoint.x()) | (endPoint.y() < startPoint.y()) )
+              if ( (endPoint.x() < startPoint.x()) || (endPoint.y() < startPoint.y()) )
               {
                 setRubberBandColor(rubberBand, qApp->Settings()->getZoomRBNegativeColor());
               }
