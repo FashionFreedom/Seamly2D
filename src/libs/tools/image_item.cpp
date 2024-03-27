@@ -150,7 +150,7 @@ void ImageItem::setLock(bool checked)
     }
     else
     {
-        setAcceptedMouseButtons(Qt::AllButtons);
+        setAcceptedMouseButtons(Qt::LeftButton | Qt::RightButton);
     }
     setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
     emit imageUpdated(m_image);
