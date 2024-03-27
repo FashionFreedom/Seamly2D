@@ -313,8 +313,8 @@
       <string>Images</string>
      </property>
      <property name="icon">
-      <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-       <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+      <iconset resource="share/resources/toolicon.qrc">
+       <normaloff>:/toolicon/32x32/image_menu_icon.png</normaloff>:/toolicon/32x32/image_menu_icon.png</iconset>
      </property>
      <addaction name="importImage_Action"/>
     </widget>
@@ -2288,10 +2288,13 @@
              <string>Tools for inserting or modifying images. </string>
             </property>
             <attribute name="icon">
-             <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-              <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+             <iconset resource="share/resources/toolicon.qrc">
+              <normaloff>:/toolicon/32x32/image_menu_icon.png</normaloff>:/toolicon/32x32/image_menu_icon.png</iconset>
             </attribute>
             <attribute name="label">
+             <string>Images</string>
+            </attribute>
+            <attribute name="toolTip">
              <string>Images</string>
             </attribute>
             <layout class="QFormLayout" name="formLayout">
@@ -4642,11 +4645,11 @@
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
-     <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
+    <iconset resource="share/resources/toolicon.qrc">
+     <normaloff>:/toolicon/32x32/image_menu_icon.png</normaloff>:/toolicon/32x32/image_menu_icon.png</iconset>
    </property>
    <property name="text">
-    <string>Import</string>
+    <string>Images tools </string>
    </property>
   </action>
   <action name="deleteImage_Action">
@@ -4742,7 +4745,7 @@
      <normaloff>:/icon/32x32/add_image.png</normaloff>:/icon/32x32/add_image.png</iconset>
    </property>
    <property name="text">
-    <string>Import Image (Alt +I)</string>
+    <string>Import Image</string>
    </property>
    <property name="toolTip">
     <string>Import Image (Alt + I)</string>
@@ -4762,8 +4765,8 @@
  </customwidgets>
  <resources>
   <include location="share/resources/toolicon.qrc"/>
-  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
   <include location="../../libs/vmisc/share/resources/icon.qrc"/>
+  <include location="../../libs/vmisc/share/resources/theme.qrc"/>
  </resources>
  <connections/>
 </ui>
