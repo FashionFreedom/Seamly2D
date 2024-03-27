@@ -51,6 +51,7 @@
 #include <Qt>
 #include <QGraphicsItem>
 
+QList<ImageItem *> ImageItem::allImageItems;
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -85,6 +86,16 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
+
+    qreal   minZValue = maxImageZvalue+1;
+    foreach (ImageItem *item, allImageItems)
+    {
+            minZValue = qMin(minZValue, item->m_image.order);
+    }
+    m_image.order = minZValue-1;
+
+    allImageItems.append(this);
+    moveToTop();
 
     updateImage();
 }
@@ -135,6 +146,8 @@ void  ImageItem::updateImage()
     setOpacity(m_image.opacity/100);
 
     setLock(m_image.locked);
+
+    setZValue(m_image.order);
 
     emit imageUpdated(m_image);
 
@@ -270,10 +283,10 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     actionMoveDn->setEnabled(!m_image.locked);
     actionMoveBottom->setEnabled(!m_image.locked);
 
-    actionMoveTop->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_Home));
-    actionMoveUp->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageUp));
-    actionMoveDn->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageDown));
-    actionMoveBottom->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_End));
+    //actionMoveTop->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_Home));
+    //actionMoveUp->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageUp));
+    //actionMoveDn->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_PageDown));
+    //actionMoveBottom->setShortcut(QKeySequence(Qt::ControlModifier + Qt::Key_End));
 
     actionSeparator = new QAction(this);
     actionSeparator->setSeparator(true);
@@ -312,19 +325,19 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     else if (selectedAction == actionMoveTop)
     {
-
+        moveToTop();
     }
     else if (selectedAction == actionMoveUp)
     {
-
+        moveUp();
     }
     else if (selectedAction == actionMoveDn)
     {
-
+        moveDown();
     }
     else if (selectedAction == actionMoveBottom)
     {
-
+        moveToBottom();
     }
 
     emit showContextMenu(event);
@@ -460,7 +473,79 @@ void ImageItem::updateImageAndHandles(DraftImage image)
 
 void ImageItem::deleteItem()
 {
+    moveToBottom(); //so that there is no gap in zValue
+    allImageItems.removeOne(this);
     scene()->removeItem(this);
     delete this;
     emit deleteImage(m_image.id);
+}
+
+void ImageItem::moveToBottom()
+{
+    qreal   minZValue = m_image.order;
+    foreach (ImageItem *item, allImageItems)
+    {
+        if (item != this && item->m_image.order < m_image.order)
+        {
+            minZValue = qMin(minZValue, item->m_image.order);
+            item->m_image.order++;
+            item->updateImage();
+        }
+    }
+    m_image.order = minZValue;
+    updateImage();
+}
+
+
+void ImageItem::moveToTop()
+{
+    foreach (ImageItem *item, allImageItems)
+    {
+        if (item != this && item->m_image.order > m_image.order)
+        {
+            item->m_image.order--;
+            item->updateImage();
+        }
+    }
+    m_image.order = maxImageZvalue;
+    updateImage();
+}
+
+void ImageItem::moveUp()
+{
+    if (m_image.order == maxImageZvalue)
+    {
+        return;
+    }
+
+    foreach (ImageItem *item, allImageItems)
+    {
+        if (item->m_image.order == m_image.order + 1)
+        {
+            item->m_image.order--;
+            item->updateImage();
+        }
+    }
+    m_image.order ++;
+    updateImage();
+}
+
+
+void ImageItem::moveDown()
+{
+    if (m_image.order == maxImageZvalue-allImageItems.size()+1)
+    {
+        return;
+    }
+
+    foreach (ImageItem *item, allImageItems)
+    {
+        if (item->m_image.order == m_image.order - 1)
+        {
+            item->m_image.order++;
+            item->updateImage();
+        }
+    }
+    m_image.order --;
+    updateImage();
 }

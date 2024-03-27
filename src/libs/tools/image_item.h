@@ -57,10 +57,20 @@ public:
     virtual int      type() const override {return Type;}
     enum             {Type = UserType + static_cast<int>(Vis::BackgroundImageItem)};
 
+    static QList<ImageItem *> allImageItems;
+
     virtual QRectF   boundingRect() const override;
 
     virtual void     paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
                            QWidget *widget = nullptr) override;
+
+    static constexpr qreal      maxImageZvalue = -100;
+
+    void             moveToBottom();
+    void             moveToTop();
+    void             moveUp();
+    void             moveDown();
+
 
     DraftImage       getImage();
     void             setImage(DraftImage image);
