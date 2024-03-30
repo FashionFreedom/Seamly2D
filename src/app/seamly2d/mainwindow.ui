@@ -64,7 +64,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="file_Menu">
@@ -918,7 +918,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>288</height>
+              <height>323</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1265,7 +1265,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>58</height>
+              <height>59</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1363,7 +1363,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>196</height>
+              <height>200</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1623,7 +1623,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>226</height>
+              <height>231</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -1903,7 +1903,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>288</height>
+              <height>323</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2125,7 +2125,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>96</height>
+              <height>98</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -2275,7 +2275,7 @@
               <x>0</x>
               <y>0</y>
               <width>124</width>
-              <height>60</height>
+              <height>61</height>
              </rect>
             </property>
             <property name="sizePolicy">
@@ -2307,7 +2307,7 @@
                 <string>Import Image (Alt + I)</string>
                </property>
                <property name="text">
-                <string>...</string>
+                <string notr="true">...</string>
                </property>
                <property name="icon">
                 <iconset resource="../../libs/vmisc/share/resources/icon.qrc">
@@ -2379,7 +2379,7 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>77</height>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2513,7 +2513,7 @@
               <x>0</x>
               <y>0</y>
               <width>120</width>
-              <height>77</height>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
