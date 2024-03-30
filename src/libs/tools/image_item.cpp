@@ -110,6 +110,8 @@ QRectF ImageItem::boundingRect() const
 
 void ImageItem::setPixmap(const QPixmap &pixmap)
 {
+    prepareGeometryChange();
+
     m_image.pixmap = pixmap;
     m_pixmapWidth  = pixmap.width();
     m_pixmapHeight = pixmap.height();
@@ -118,10 +120,10 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
     m_image.xScale = m_image.width / m_pixmapWidth * 100;
     m_image.yScale = m_image.height / m_pixmapHeight * 100;
     m_hasShape     = false;
-    m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_pixmapWidth, m_image.yPos + m_pixmapHeight);
-    m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
 
-    prepareGeometryChange();
+    m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_pixmapWidth, m_image.yPos + m_pixmapHeight);
+
+    m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
 }
 
 DraftImage ImageItem::getImage()
@@ -136,10 +138,13 @@ void ImageItem::setImage(DraftImage image)
 
 void  ImageItem::updateImage()
 {
+    prepareGeometryChange();
+
     setTransformOriginPoint(m_boundingRect.topLeft());
     setRotation(m_image.rotation);
 
     setPos(m_image.xPos - m_boundingRect.topLeft().x(), m_image.yPos - m_boundingRect.topLeft().y());
+
     m_boundingRect.setSize(QSizeF(m_image.width, m_image.height));
 
     setVisible(m_image.visible);
@@ -150,8 +155,6 @@ void  ImageItem::updateImage()
     setZValue(m_image.order);
 
     emit imageUpdated(m_image);
-
-    prepareGeometryChange();
 }
 
 void ImageItem::setLock(bool checked)
@@ -391,6 +394,8 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 
 void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    prepareGeometryChange();
+
     if (flags() & QGraphicsItem::ItemIsMovable && event->buttons() & Qt::LeftButton)
     {
         m_image.xPos = mapToScene(event->pos() - m_offset).x();
@@ -450,6 +455,8 @@ void ImageItem::initializeItem()
 
 void ImageItem::updateFromHandles(QRectF rect)
 {
+    prepareGeometryChange();
+
     m_image.xPos = mapToScene(rect.topLeft()).x();
     m_image.yPos = mapToScene(rect.topLeft()).y();
     m_image.width = rect.width();
