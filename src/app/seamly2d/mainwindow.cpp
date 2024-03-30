@@ -1675,8 +1675,8 @@ void  MainWindow::addImage(DraftImage image)
 
     connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
 
-    //connect(item, &ImageItem::deleteImage,   this,               &MainWindow::handleDeleteImage);
-    connect(item, &ImageItem::imageSelected, this,               &MainWindow::handleImageSelected);
+    connect(item, &ImageItem::deleteImage, this, &MainWindow::handleDeleteImage);
+    connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
 
     ui->importImage_ToolButton->setChecked(false);
 
@@ -1691,27 +1691,36 @@ void  MainWindow::addImage(DraftImage image)
 void MainWindow::handleDeleteImage(quint32 id)
 {
     qCDebug(vMainWindow, "delete Image");
-    Utils::CheckableMessageBox msgBox(qApp->getMainWindow());
-    msgBox.setWindowFlags(Qt::Dialog | Qt::FramelessWindowHint | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
-    //msgBox.setWindowTitle(tr("Confirm deletion"));
-    //msgBox.setWindowIcon(QIcon());
-    msgBox.setText(tr("Are you sure want to delete this image?"));
-    msgBox.setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
-    msgBox.setDefaultButton(QDialogButtonBox::No);
-    msgBox.setIconPixmap(QApplication::style()->standardIcon(QStyle::SP_MessageBoxWarning).pixmap(32, 32));
+    bool deleteConfirmed = true;
 
-    int dialogResult = msgBox.exec();
-
-    if (dialogResult == QDialog::Accepted)
+    if (qApp->Settings()->getConfirmItemDelete())
     {
+        Utils::CheckableMessageBox msgBox(qApp->getMainWindow());
+        msgBox.setWindowTitle(tr("Confirm deletion"));
+        msgBox.setText(tr("Do you really want to delete?"));
+        msgBox.setStandardButtons(QDialogButtonBox::Yes | QDialogButtonBox::No);
+        msgBox.setDefaultButton(QDialogButtonBox::No);
+        msgBox.setIconPixmap(QApplication::style()->standardIcon(QStyle::SP_MessageBoxQuestion).pixmap(32, 32) );
+
+        int dialogResult = msgBox.exec();
+
+        if (dialogResult != QDialog::Accepted)
+        {
+            deleteConfirmed = false;
+        }
+
         qApp->Settings()->setConfirmItemDelete(not msgBox.isChecked());
 
+    }
+
+    if (deleteConfirmed)
+    {
         ImageItem *item = m_ImageMap.value(id);
         if (item)
         {
             m_ImageMap.remove(id);
             draftScene->removeItem(item);
-            delete item;
+            item->deleteLater();
         }
     }
 }

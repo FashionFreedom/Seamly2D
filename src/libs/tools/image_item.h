@@ -52,7 +52,7 @@ class ImageItem : public QObject, public QGraphicsItem
 
 public:
     explicit         ImageItem(DraftImage image, QGraphicsItem *parent = nullptr);
-    virtual         ~ImageItem() = default;
+    ~ImageItem()     override;
 
     virtual int      type() const override {return Type;}
     enum             {Type = UserType + static_cast<int>(Vis::BackgroundImageItem)};
@@ -76,7 +76,6 @@ public:
     void             setImage(DraftImage image);
     void             updateImage();
     void             updateImageAndHandles(DraftImage image);
-    void             deleteItem();
 
     void             setLock(bool checked);
 

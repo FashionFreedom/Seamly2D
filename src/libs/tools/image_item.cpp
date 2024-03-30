@@ -322,7 +322,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     {
         if (!m_image.locked)
         {
-            deleteItem();
+            emit deleteImage(m_image.id);
         }
     }
 
@@ -478,13 +478,10 @@ void ImageItem::updateImageAndHandles(DraftImage image)
     emit imageUpdated(m_image);
 }
 
-void ImageItem::deleteItem()
+ImageItem::~ImageItem()
 {
     moveToBottom(); //so that there is no gap in zValue
     allImageItems.removeOne(this);
-    scene()->removeItem(this);
-    delete this;
-    emit deleteImage(m_image.id);
 }
 
 void ImageItem::moveToBottom()
