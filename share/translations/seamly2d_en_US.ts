@@ -2384,12 +2384,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+417"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+423"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="-209"/>
+        <location line="-215"/>
         <source>First point of line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2419,7 +2419,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Edit angle</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+81"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+87"/>
         <source>Angle:</source>
         <translation type="unfinished">Angle:</translation>
     </message>
@@ -2434,12 +2434,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Value</translation>
     </message>
     <message>
-        <location line="-237"/>
+        <location line="-243"/>
         <source>Axis point:</source>
         <translation type="unfinished">Axis point:</translation>
     </message>
     <message>
-        <location line="+394"/>
+        <location line="+400"/>
         <source>Linetype:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2449,7 +2449,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">Color:</translation>
     </message>
     <message>
-        <location line="-619"/>
+        <location line="-625"/>
         <source>Intersect - Line and Axis</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2484,7 +2484,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+179"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -2500,7 +2500,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-512"/>
+        <location line="-518"/>
         <source>Name:</source>
         <translation type="unfinished">Name:</translation>
     </message>
@@ -7420,7 +7420,12 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+413"/>
+        <location line="+123"/>
+        <source>Point on Curve (O, C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+290"/>
         <source>About Seamly2D</source>
         <translation type="unfinished">About Seamly2D</translation>
     </message>
@@ -7736,12 +7741,7 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Toggle Point Name Text (P)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>V, P</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8458,12 +8458,7 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Point on Curve (A, C)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>O, C</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8662,7 +8657,12 @@ Do you want to save your changes?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+395"/>
+        <location line="+144"/>
+        <source>Toggle Point Name Text (V, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+251"/>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11291,12 +11291,12 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+30"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+19"/>
         <source>Text label appears under the icon (recommended for beginners)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -11351,17 +11351,17 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Layout</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+39"/>
         <source>Graphical output</source>
         <translation type="unfinished">Graphical output</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+32"/>
         <source>Use anti-aliasing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+27"/>
         <source>Fonts</source>
         <translation type="unfinished"></translation>
     </message>
