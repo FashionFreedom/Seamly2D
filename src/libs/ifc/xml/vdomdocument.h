@@ -87,11 +87,11 @@ QT_WARNING_DISABLE_GCC("-Wnon-virtual-dtor")
  * information is stored in XML format. By parsing a VDomDocument, the contained
  * pattern is rendered to a Seamly2D graphics scene (VMainGraphicsScene).
  *
- * A sewing pattern consists of zero or more increments and one
+ * A sewing pattern consists of zero or more custom variables and one
  * or more pattern pieces.
  *
- * An increment is an auxiliary variable that is calculated from regular measurement
- * variables (that belong to the multisize measurements table). Increments are used to
+ * A custom variable is an auxiliary variable that is calculated from regular measurement
+ * variables (that belong to the multisize measurements table). Variables are used to
  * create a graduation schema for the sewing pattern.
  *
  * A pattern piece contains

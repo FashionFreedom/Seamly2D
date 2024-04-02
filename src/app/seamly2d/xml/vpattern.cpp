@@ -214,7 +214,7 @@ void VPattern::Parse(const Document &parse)
                         break;
                     case 1: // TagVariables
                         qCDebug(vXML, "Tag variables.");
-                        ParseIncrementsElement(domElement);
+                        parseVariablesElement(domElement);
                         break;
                     case 2: // TagDescription
                         qCDebug(vXML, "Tag description.");
@@ -438,14 +438,14 @@ bool VPattern::SaveDocument(const QString &fileName, QString &error)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::LiteParseIncrements()
+void VPattern::LiteParseVariables()
 {
     try
     {
         emit setGuiEnabled(true);
 
-        VContainer::ClearUniqueIncrementNames();
-        data->ClearVariables(VarType::Increment);
+        VContainer::clearUniqueVariableNames();
+        data->ClearVariables(VarType::Variable);
 
         const QDomNodeList tags = elementsByTagName(TagVariables);
         if (not tags.isEmpty())
@@ -453,7 +453,7 @@ void VPattern::LiteParseIncrements()
             const QDomNode domElement = tags.at(0);
             if (not domElement.isNull())
             {
-                ParseIncrementsElement(domElement);
+                parseVariablesElement(domElement);
             }
         }
     }
@@ -3109,17 +3109,17 @@ qreal VPattern::EvalFormula(VContainer *data, const QString &formula, bool *ok) 
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::MakeEmptyIncrement(const QString &name)
+QDomElement VPattern::createEmptyVariable(const QString &name)
 {
     QDomElement element = createElement(TagVariable);
-    SetAttribute(element, IncrementName, name);
-    SetAttribute(element, IncrementFormula, QString("0"));
-    SetAttribute(element, IncrementDescription, QString(""));
+    SetAttribute(element, VariableName, name);
+    SetAttribute(element, VariableFormula, QString("0"));
+    SetAttribute(element, VariableDescription, QString(""));
     return element;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QDomElement VPattern::FindIncrement(const QString &name) const
+QDomElement VPattern::findVariable(const QString &name) const
 {
     QDomNodeList list = elementsByTagName(TagVariable);
 
@@ -3128,7 +3128,7 @@ QDomElement VPattern::FindIncrement(const QString &name) const
         const QDomElement domElement = list.at(i).toElement();
         if (domElement.isNull() == false)
         {
-            const QString parameter = domElement.attribute(IncrementName);
+            const QString parameter = domElement.attribute(VariableName);
             if (parameter == name)
             {
                 return domElement;
@@ -3429,10 +3429,10 @@ void VPattern::ParsePathElement(VMainGraphicsScene *scene, QDomElement &domEleme
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief ParseIncrementsElement parse increments tag.
+ * @brief parseVariablesElement parse variables tag.
  * @param node tag in xml tree.
  */
-void VPattern::ParseIncrementsElement(const QDomNode &node)
+void VPattern::parseVariablesElement(const QDomNode &node)
 {
     int index = 0;
     QDomNode domNode = node.firstChild();
@@ -3445,23 +3445,23 @@ void VPattern::ParseIncrementsElement(const QDomNode &node)
             {
                 if (domElement.tagName() == TagVariable)
                 {
-                    const QString name = GetParametrString(domElement, IncrementName, "");
+                    const QString name = GetParametrString(domElement, VariableName, "");
 
                     QString desc;
                     try
                     {
-                        desc = GetParametrString(domElement, IncrementDescription);
+                        desc = GetParametrString(domElement, VariableDescription);
                     }
                     catch (VExceptionEmptyParameter &error)
                     {
                         Q_UNUSED(error)
                     }
 
-                    const QString formula = GetParametrString(domElement, IncrementFormula, "0");
+                    const QString formula = GetParametrString(domElement, VariableFormula, "0");
                     bool ok = false;
                     const qreal value = EvalFormula(data, formula, &ok);
 
-                    data->AddVariable(name, new VIncrement(data, name, static_cast<quint32>(index), value, formula, ok,
+                    data->AddVariable(name, new CustomVariable(data, name, static_cast<quint32>(index), value, formula, ok,
                                                            desc));
                     ++index;
                 }
@@ -3474,7 +3474,7 @@ void VPattern::ParseIncrementsElement(const QDomNode &node)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariable(const QString &name)
 {
-    const QDomElement element = MakeEmptyIncrement(name);
+    const QDomElement element = createEmptyVariable(name);
 
     const QDomNodeList list = elementsByTagName(TagVariables);
     list.at(0).appendChild(element);
@@ -3484,8 +3484,8 @@ void VPattern::addEmptyCustomVariable(const QString &name)
 //---------------------------------------------------------------------------------------------------------------------
 void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &name)
 {
-    const QDomElement element = MakeEmptyIncrement(name);
-    const QDomElement sibling = FindIncrement(after);
+    const QDomElement element = createEmptyVariable(name);
+    const QDomElement sibling = findVariable(after);
 
     const QDomNodeList list = elementsByTagName(TagVariables);
 
@@ -3504,14 +3504,14 @@ void VPattern::addEmptyCustomVariableAfter(const QString &after, const QString &
 void VPattern::removeCustomVariable(const QString &name)
 {
     const QDomNodeList list = elementsByTagName(TagVariables);
-    list.at(0).removeChild(FindIncrement(name));
+    list.at(0).removeChild(findVariable(name));
     emit patternChanged(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::MoveUpIncrement(const QString &name)
+void VPattern::moveVariableUp(const QString &name)
 {
-    const QDomElement node = FindIncrement(name);
+    const QDomElement node = findVariable(name);
     if (not node.isNull())
     {
         const QDomElement prSibling = node.previousSiblingElement(TagVariable);
@@ -3525,9 +3525,9 @@ void VPattern::MoveUpIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::MoveDownIncrement(const QString &name)
+void VPattern::moveVariableDown(const QString &name)
 {
-    const QDomElement node = FindIncrement(name);
+    const QDomElement node = findVariable(name);
     if (not node.isNull())
     {
         const QDomElement nextSibling = node.nextSiblingElement(TagVariable);
@@ -3541,34 +3541,34 @@ void VPattern::MoveDownIncrement(const QString &name)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setIncrementName(const QString &name, const QString &text)
+void VPattern::setVariableName(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementName, text);
+        SetAttribute(node, VariableName, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::SetIncrementFormula(const QString &name, const QString &text)
+void VPattern::setVariableFormula(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementFormula, text);
+        SetAttribute(node, VariableFormula, text);
         emit patternChanged(false);
     }
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VPattern::setIncrementDescription(const QString &name, const QString &text)
+void VPattern::setVariableDescription(const QString &name, const QString &text)
 {
-    QDomElement node = FindIncrement(name);
+    QDomElement node = findVariable(name);
     if (not node.isNull())
     {
-        SetAttribute(node, IncrementDescription, text);
+        SetAttribute(node, VariableDescription, text);
         emit patternChanged(false);
     }
 }
@@ -3950,7 +3950,7 @@ void VPattern::PrepareForParse(const Document &parse)
     else if (parse == Document::LiteParse)
     {
         VContainer::ClearUniqueNames();
-        data->ClearVariables(VarType::Increment);
+        data->ClearVariables(VarType::Variable);
         data->ClearVariables(VarType::LineAngle);
         data->ClearVariables(VarType::LineLength);
         data->ClearVariables(VarType::CurveLength);

@@ -1,27 +1,26 @@
-/***************************************************************************
- *                                                                         *
- *   Copyright (C) 2017  Seamly, LLC                                       *
- *                                                                         *
- *   https://github.com/fashionfreedom/seamly2d                             *
- *                                                                         *
- ***************************************************************************
- **
- **  Seamly2D is free software: you can redistribute it and/or modify
- **  it under the terms of the GNU General Public License as published by
- **  the Free Software Foundation, either version 3 of the License, or
- **  (at your option) any later version.
- **
- **  Seamly2D is distributed in the hope that it will be useful,
- **  but WITHOUT ANY WARRANTY; without even the implied warranty of
- **  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- **  GNU General Public License for more details.
- **
- **  You should have received a copy of the GNU General Public License
- **  along with Seamly2D.  If not, see <http://www.gnu.org/licenses/>.
- **
- **************************************************************************
+//  @file   custom_variable.cpp
+//  @author Douglas S Caskey
+//  @date   2  Apr, 2024
+//
+//  @copyright
+//  Copyright (C) 2017 - 2024 Seamly, LLC
+//  https://github.com/fashionfreedom/seamly2d
+//
+//  @brief
+//  Seamly2D is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  Seamly2D is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with Seamly2D. If not, see <http://www.gnu.org/licenses/>.
 
- ************************************************************************
+/************************************************************************
  **
  **  @file   vincrementtablerow.cpp
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
@@ -49,63 +48,66 @@
  **
  *************************************************************************/
 
-#include "vincrement.h"
+#include "custom_variable.h"
+#include "custom_variable_p.h"
 
 #include "../vmisc/def.h"
 #include "vvariable.h"
-#include "vincrement_p.h"
 
 #ifdef Q_COMPILER_RVALUE_REFS
-VIncrement &VIncrement::operator=(VIncrement &&incr) Q_DECL_NOTHROW { Swap(incr); return *this; }
+CustomVariable &CustomVariable::operator=(CustomVariable &&variable) Q_DECL_NOTHROW { Swap(variable); return *this; }
 #endif
 
-void VIncrement::Swap(VIncrement &incr) Q_DECL_NOTHROW
-{ VVariable::Swap(incr); std::swap(d, incr.d); }
+void CustomVariable::Swap(CustomVariable &variable) Q_DECL_NOTHROW
+{ VVariable::Swap(variable); std::swap(d, variable.d); }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VIncrement create enpty increment
+ * @brief CustomVariable create enpty variable
  */
-VIncrement::VIncrement()
-    :VVariable(), d(new VIncrementData)
+CustomVariable::CustomVariable()
+    : VVariable()
+    , d(new CustomVariableData)
 {
-    SetType(VarType::Increment);
+    SetType(VarType::Variable);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
- * @brief VIncrementTableRow create increment
- * @param name increment's name
+ * @brief CustomVariableTableRow create variable
+ * @param name variable's name
  * @param base value
- * @param description description of increment
+ * @param description description of variable
  */
-VIncrement::VIncrement(VContainer *data, const QString &name, quint32 index, qreal base, const QString &formula,
+CustomVariable::CustomVariable(VContainer *data, const QString &name, quint32 index, qreal base, const QString &formula,
                        bool ok, const QString &description)
-    :VVariable(name, description), d(new VIncrementData(data, index, formula, ok))
+    : VVariable(name, description)
+    , d(new CustomVariableData(data, index, formula, ok))
 {
-    SetType(VarType::Increment);
+    SetType(VarType::Variable);
     VInternalVariable::SetValue(base);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VIncrement::VIncrement(const VIncrement &incr)
-    :VVariable(incr), d(incr.d)
+CustomVariable::CustomVariable(const CustomVariable &variable)
+    : VVariable(variable)
+    , d(variable.d)
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
-VIncrement &VIncrement::operator=(const VIncrement &incr)
+CustomVariable &CustomVariable::operator=(const CustomVariable &variable)
 {
-    if ( &incr == this )
+    if ( &variable == this )
     {
         return *this;
     }
-    VVariable::operator=(incr);
-    d = incr.d;
+    VVariable::operator=(variable);
+    d = variable.d;
     return *this;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VIncrement::~VIncrement()
+CustomVariable::~CustomVariable()
 {}
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -113,25 +115,25 @@ VIncrement::~VIncrement()
  * @brief getIndex return index of row
  * @return index
  */
-quint32 VIncrement::getIndex() const
+quint32 CustomVariable::getIndex() const
 {
     return d->index;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QString VIncrement::GetFormula() const
+QString CustomVariable::GetFormula() const
 {
     return d->formula;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-bool VIncrement::IsFormulaOk() const
+bool CustomVariable::IsFormulaOk() const
 {
     return d->formulaOk;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-VContainer *VIncrement::GetData()
+VContainer *CustomVariable::GetData()
 {
     return &d->data;
 }

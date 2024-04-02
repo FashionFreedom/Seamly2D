@@ -92,7 +92,7 @@
 #include "../vpatterndb/variables/varcradius.h"
 #include "../vpatterndb/variables/vcurveangle.h"
 #include "../vpatterndb/variables/vcurvelength.h"
-#include "../vpatterndb/variables/vincrement.h"
+#include "../vpatterndb/variables/custom_variable.h"
 #include "../vpatterndb/variables/vlineangle.h"
 #include "../vpatterndb/variables/vlinelength.h"
 #include "../vpatterndb/variables/measurement_variable.h"
@@ -212,7 +212,7 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::Measurements:
         {
             const QString name = qApp->translateVariables()->VarFromUser(item->text());
-            const QSharedPointer<MeasurementVariable> measurements = data->GetVariable<MeasurementVariable>(name);
+            const QSharedPointer<MeasurementVariable> measurements = data->getVariable<MeasurementVariable>(name);
             const QString desc = (measurements->getGuiText() == "") ? "" : QString("\nDescription: %1").arg(measurements->getGuiText());
             setDescription(item->text(), *data->DataVariables()->value(name)->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Measurement"), desc);
@@ -220,7 +220,7 @@ void EditFormulaDialog::valueChanged(int row)
         }
         case VariableTab::Custom:
         {
-            const QSharedPointer<VIncrement> variables = data->GetVariable<VIncrement>(item->text());
+            const QSharedPointer<CustomVariable> variables = data->getVariable<CustomVariable>(item->text());
             const QString desc =(variables->GetDescription() == "") ? "" : QString("\nDescription: %1").arg(variables->GetDescription());
             setDescription(item->text(), *data->DataVariables()->value(item->text())->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Custom Variable"), desc);
@@ -229,35 +229,35 @@ void EditFormulaDialog::valueChanged(int row)
         case VariableTab::LineLengths:
             {
                 setDescription(item->text(),
-                        *data->GetVariable<VLengthLine>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                        *data->getVariable<VLengthLine>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                         UnitsToStr(qApp->patternUnit(), true), tr("Line length"), "");
                 break;
             }
         case VariableTab::CurveLengths:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VCurveLength>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Curve length"), "");
             break;
         }
         case VariableTab::LineAngles:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VLineAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Line Angle"), "");
             break;
         }
         case VariableTab::ArcRadii:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VArcRadius>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            UnitsToStr(qApp->patternUnit(), true), tr("Arc radius"), "");
             break;
         }
         case VariableTab::CurveAngles:
         {
             setDescription(item->text(),
-                           *data->GetVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
+                           *data->getVariable<VCurveAngle>(qApp->translateVariables()->VarFromUser(item->text()))->GetValue(),
                            degreeSymbol, tr("Curve angle"), "");
         break;
         }
