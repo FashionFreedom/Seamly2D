@@ -282,8 +282,8 @@ public:
     static const QString TagImage;
     static const QString TagNotes;
     static const QString TagMeasurements;
-    static const QString TagIncrements;
-    static const QString TagIncrement;
+    static const QString TagVariables;
+    static const QString TagVariable;
     static const QString TagDraftBlock;
     static const QString TagGroups;
     static const QString TagGroup;
