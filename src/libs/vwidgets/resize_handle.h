@@ -42,6 +42,8 @@
 class ResizeHandlesItem : public QObject, public QGraphicsItem
 {
     Q_OBJECT
+    Q_INTERFACES(QGraphicsItem)
+
 private:
     class HandleItem : public QGraphicsRectItem
     {

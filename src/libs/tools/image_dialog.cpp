@@ -220,7 +220,7 @@ Position ImageDialog::getOriginPoint() const
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setOriginPoint(const int &index)
 {
-
+    Q_UNUSED(index);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -457,6 +457,7 @@ void ImageDialog::nameChanged(const QString &name)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::originChanged(const QString &text)
 {
+    Q_UNUSED(text);
     blockSignals(true);
     blockSignals(false);
     emit imageUpdated(m_image);
