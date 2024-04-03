@@ -65,7 +65,6 @@ private:
 
             ResizeHandlesItem *m_parent;
             Position           m_handlePosition;
-            Qt::CursorShape    m_handleCursors[9];
             bool               m_isHovered;
             qreal              m_scalingFactor;
     };
@@ -89,6 +88,7 @@ public:
     void               setLeft(qreal x);
     void               setParentRect(const QRectF &rect);
     void               setLockAspectRatio(bool lock);
+    void               setParentRotation(qreal rotation);
 
 signals:
     void               sizeChanged(QRectF rect);
@@ -99,6 +99,7 @@ private:
     QList<HandleItem*> m_handleItems;
     QRectF             m_parentRect;
     bool               m_lockAspectRatio;
+    qreal              m_parentRotation;
 };
 
 #endif //RESIZE_HANDLE_H

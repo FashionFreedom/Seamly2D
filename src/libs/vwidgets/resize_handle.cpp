@@ -87,6 +87,12 @@ void ResizeHandlesItem::setLockAspectRatio(bool lock)
     m_lockAspectRatio = lock;
 }
 
+//------------------------------------------------------------------------------
+void ResizeHandlesItem::setParentRotation(qreal rotation)
+{
+    m_parentRotation = rotation;
+}
+
 /**
  * @brief paint handle item painting.
  * @param QPainter painter.
@@ -173,7 +179,6 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     : QGraphicsRectItem(-HANDLE_SIZE/2, -HANDLE_SIZE/2, HANDLE_SIZE, HANDLE_SIZE, parent)
     , m_parent(parent)
     , m_handlePosition(position)
-    , m_handleCursors()
     , m_isHovered(false)
 {
     this->setBrush(QBrush(Qt::lightGray));
@@ -182,16 +187,6 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     this->setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
 
     setAcceptHoverEvents(true);
-
-    m_handleCursors[0] = Qt::SizeFDiagCursor;   //TopLeft
-    m_handleCursors[1] = Qt::SizeVerCursor;     //Top
-    m_handleCursors[2] = Qt::SizeBDiagCursor;   //TopRight
-    m_handleCursors[3] = Qt::SizeHorCursor;     //Right
-    m_handleCursors[4] = Qt::SizeFDiagCursor;   //BottomRight
-    m_handleCursors[5] = Qt::SizeVerCursor;     //Bottom
-    m_handleCursors[6] = Qt::SizeBDiagCursor;   //Bottomleft
-    m_handleCursors[7] = Qt::SizeHorCursor;     //Left
-    m_handleCursors[8] = Qt::ArrowCursor;       //Center
 }
 
 /**
@@ -505,7 +500,11 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
             }
             else
             {
-                setCursor(QCursor(m_handleCursors[static_cast<int>(m_handlePosition)]));
+                QPixmap pixmap(cursorResizeArrow);
+                QTransform transform;
+                transform.rotate(m_parent->m_parentRotation + (static_cast<int>(m_handlePosition) - 1) * 45);
+                pixmap = pixmap.transformed(transform);
+                setCursor(QCursor(pixmap, 16, 16));
                 m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
             }
         }

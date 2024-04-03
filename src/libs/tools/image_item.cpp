@@ -85,6 +85,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
 
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
+    m_resizeHandles->setParentRotation(m_image.rotation);
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
 
     qreal   minZValue = maxImageZvalue+1;
@@ -475,6 +476,7 @@ void ImageItem::updateImageAndHandles(DraftImage image)
     updateImage();
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
+    m_resizeHandles->setParentRotation(m_image.rotation);
     emit imageUpdated(m_image);
 }
 

@@ -520,6 +520,7 @@ extern const QStringList labelTemplatePlaceholders;
 
 extern const QString cursorArrowOpenHand;
 extern const QString cursorArrowCloseHand;
+extern const QString cursorResizeArrow;
 
 extern const QString degreeSymbol;
 extern const QString trueStr;
