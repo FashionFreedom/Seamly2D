@@ -36,6 +36,7 @@
 #include <QGraphicsScene>
 #include <QGuiApplication>
 #include <QDebug>
+#include <cmath>
 
 /**
  * ResizeHandlesItem Constructor.
@@ -185,6 +186,7 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     this->setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
+    this->setFlag(QGraphicsItem::ItemIgnoresTransformations, true);
 
     setAcceptHoverEvents(true);
 }
@@ -219,7 +221,7 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
         painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
         painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
     }
-    painter->drawRect(boundingRect());
+    painter->drawEllipse(boundingRect());
 }
 
 /**
@@ -467,6 +469,22 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
 void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = true;
+
+    if (m_parent->m_lockAspectRatio && (m_handlePosition == Position::Top || m_handlePosition == Position::Bottom || m_handlePosition == Position::Left || m_handlePosition == Position::Right))
+    {
+        setCursor(Qt::ForbiddenCursor);
+    }
+    else
+    {
+        QPixmap pixmap(cursorResizeArrow);
+        QTransform transform;
+        transform.rotate(m_parent->m_parentRotation + (static_cast<int>(m_handlePosition) - 1) * 45);
+        pixmap = pixmap.transformed(transform);
+        QPointF offset = pixmap.rect().center();
+        setCursor(QCursor(pixmap, offset.x(), offset.y()));
+        m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
+    }
+
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -478,7 +496,7 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
 void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = false;
-
+    setCursor(QCursor(Qt::ArrowCursor));
     QGraphicsItem::hoverLeaveEvent(event);
 }
 
@@ -494,19 +512,6 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
     //{
         if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
         {
-            if (m_parent->m_lockAspectRatio && (m_handlePosition == Position::Top || m_handlePosition == Position::Bottom || m_handlePosition == Position::Left || m_handlePosition == Position::Right))
-            {
-                setCursor(Qt::ForbiddenCursor);
-            }
-            else
-            {
-                QPixmap pixmap(cursorResizeArrow);
-                QTransform transform;
-                transform.rotate(m_parent->m_parentRotation + (static_cast<int>(m_handlePosition) - 1) * 45);
-                pixmap = pixmap.transformed(transform);
-                setCursor(QCursor(pixmap, 16, 16));
-                m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
-            }
         }
 
         //emit handleSelected(m_handlePosition, true);
@@ -542,7 +547,6 @@ void ResizeHandlesItem::HandleItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *
 {
     if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
     {
-        setCursor(QCursor(Qt::ArrowCursor));
     }
     //emit handleSelected(m_handlePosition, false);
 
