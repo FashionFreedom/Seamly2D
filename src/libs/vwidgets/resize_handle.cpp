@@ -495,7 +495,6 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
     return point;
 }
 
-
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief hoverEnterEvent handle hover enter events.
@@ -513,6 +512,10 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
     setCursor(QCursor(pixmap, offset.x(), offset.y()));
     m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
 
+    QString message = tr("Press <b>CTRL</b> to scale around the center,"
+                                 " <b>SHIFT</b> to scale uniformly.");
+    emit m_parent->setStatusMessage(message);
+	
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -524,7 +527,10 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
 void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = false;
+	
     setCursor(QCursor(Qt::ArrowCursor));
+    emit m_parent->setStatusMessage("");
+	
     QGraphicsItem::hoverLeaveEvent(event);
 }
 

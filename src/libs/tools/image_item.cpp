@@ -88,6 +88,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles->setParentRotation(m_image.rotation);
     m_resizeHandles->hide();
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
+    connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage,this,&ImageItem::handleStatusMessage);
 
     qreal   minZValue = maxImageZvalue+1;
     foreach (ImageItem *item, allImageItems)
@@ -563,4 +564,10 @@ void ImageItem::moveDown()
     }
     m_image.order --;
     updateImage();
+}
+
+
+void ImageItem::handleStatusMessage(QString message)
+{
+    emit setStatusMessage(message);
 }

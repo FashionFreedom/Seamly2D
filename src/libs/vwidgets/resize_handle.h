@@ -94,6 +94,7 @@ public:
 
 signals:
     void               sizeChanged(QRectF rect);
+    void               setStatusMessage(QString message);
 
 private:
     void               updateHandlePositions();

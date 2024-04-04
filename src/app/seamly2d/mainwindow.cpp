@@ -1692,6 +1692,7 @@ void  MainWindow::addImage(DraftImage image)
 
     connect(item, &ImageItem::deleteImage, this, &MainWindow::handleDeleteImage);
     connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
+	connect(item, &ImageItem::setStatusMessage, this, &MainWindow::setStatusMessage);
 
     ui->importImage_ToolButton->setChecked(false);
 
@@ -1749,6 +1750,13 @@ void MainWindow::handleImageSelected(quint32 id)
         // May be useful in the development of the background-image feature
     }
 }
+
+//--------------------------------------------------------------------------------------------------------------------
+void MainWindow::setStatusMessage(QString message)
+{
+    helpLabel->setText(message);
+}
+
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleLockImage(bool state)
 {

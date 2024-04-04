@@ -87,6 +87,7 @@ signals:
     void             showContextMenu(QGraphicsSceneContextMenuEvent *event);
     void             deleteImage(quint32 id);
     void             imageSelected(quint32 id);
+    void             setStatusMessage(QString message);
 
 protected:
     virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event) override;
@@ -96,6 +97,9 @@ protected:
     virtual void     mouseMoveEvent(QGraphicsSceneMouseEvent *event) override;
     virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent *event) override;
     virtual void     keyReleaseEvent (QKeyEvent *event) override;
+
+private slots:
+    void             handleStatusMessage(QString message);
 
 private:
     QPointF            m_offset;

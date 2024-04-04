@@ -243,6 +243,7 @@ private slots:
     void handleAlignImage();
     void updateImage(DraftImage image);
     void handleLockImageAspect(bool state);
+    void setStatusMessage(QString message);
     QString  getImageFilename();
 
 
@@ -358,7 +359,6 @@ private:
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
-
 
     QMap<qint32, ImageItem *>         m_ImageMap{};
 
