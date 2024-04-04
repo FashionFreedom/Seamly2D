@@ -225,6 +225,25 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     if (m_selectable && flags() & QGraphicsItem::ItemIsMovable)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
+
+        QString width;
+        QString height;
+        if (m_image.units == Unit::Px)
+        {
+            width = QString(tr("%1")).arg(m_image.width);
+            height = QString(tr("%1")).arg(m_image.height);
+        }
+        else if (m_image.units == Unit::Cm || m_image.units == Unit::Mm || m_image.units == Unit::Inch)
+        {
+            width = QString(tr("%1")).arg(qApp->fromPixel(m_image.width));
+            height = QString(tr("%1")).arg(qApp->fromPixel(m_image.height));
+        }
+        QString message = QString(tr("Background Image: Width = %1 %2, Height = %3 %4; Rotation = %5°."))
+                              .arg(width,UnitsToStr(m_image.units))
+                              .arg(height,UnitsToStr(m_image.units))
+                              .arg(m_image.rotation);
+
+        emit setStatusMessage(message);
     }
     else
     {
@@ -250,6 +269,7 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         setCursor(QCursor());
+        emit setStatusMessage("");
     }
 
     m_resizeHandles->hide();
