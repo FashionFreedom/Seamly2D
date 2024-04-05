@@ -1666,7 +1666,22 @@ void  MainWindow::addImage(DraftImage image)
 {
     static bool firstImportImage = false;
     QImageReader imageReader(image.filename);
+
+    if(!imageReader.canRead())
+    {
+        qCDebug(vMainWindow, "Can't read image");
+        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted..."), QMessageBox::Ok);
+        return;
+    }
+
     image.pixmap = QPixmap::fromImageReader(&imageReader);
+
+    if(image.pixmap.isNull())
+    {
+        qCDebug(vMainWindow, "Can't read image");
+        QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted or empty..."), QMessageBox::Ok);
+        return;
+    }
 
     ImageItem *item = new ImageItem(image);
     m_ImageMap.insert(image.id, item);
