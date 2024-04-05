@@ -695,8 +695,8 @@ void ImageDialog::updateUnits()
             break;
 
         case Unit::Mm:
-            ui->units_ToolButton->setIcon(QIcon("://icon/32x32/units_cm_on.png"));
-            setSuffix("cm");
+            ui->units_ToolButton->setIcon(QIcon("://icon/32x32/units_mm_on.png"));
+            setSuffix("mm");
             setDecimals(2);
             break;
 
