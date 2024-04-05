@@ -86,6 +86,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     m_resizeHandles->setParentRotation(m_image.rotation);
+    m_resizeHandles->hide();
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
 
     qreal   minZValue = maxImageZvalue+1;
@@ -170,6 +171,7 @@ void ImageItem::setLock(bool checked)
         setAcceptedMouseButtons(Qt::LeftButton | Qt::RightButton);
     }
     setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
+    setFlag(QGraphicsItem::ItemIsSelectable, !m_image.locked);
     emit imageUpdated(m_image);
 }
 
@@ -180,9 +182,16 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
     Q_UNUSED(option)
     Q_UNUSED(widget)
 
+    if (isSelected())
+    {
+        painter->save();
+        painter->setPen(QPen(Qt::black, 1, Qt::DashLine));
+        painter->drawRect(m_boundingRect);
+        painter->restore();
+    }
+
     if (!m_image.locked && m_isHovered)
     {
-        //highlight and draw border
         painter->save();
         QColor color = QColor(qApp->Settings()->getTertiarySupportColor());
         color.setAlpha(20);
@@ -435,9 +444,9 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
     switch (event->key())
     {
         case Qt::Key_Delete:
-        if (!m_image.locked)
+        if (!m_image.locked && isSelected())
         {
-            //deleteItem();
+            emit deleteImage(m_image.id);
         }
         default:
             break;
@@ -448,7 +457,7 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
 void ImageItem::initializeItem()
 {
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
-    //this->setFlag(QGraphicsItem::ItemIsSelectable, true);
+    this->setFlag(QGraphicsItem::ItemIsSelectable, true);
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
     this->setAcceptHoverEvents(true);
