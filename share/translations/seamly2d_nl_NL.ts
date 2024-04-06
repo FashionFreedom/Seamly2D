@@ -6315,40 +6315,40 @@ Apply settings anyway?</source>
         <translation>Seamly2D</translation>
     </message>
     <message>
-        <location line="+926"/>
+        <location line="+920"/>
         <source>Tools for creating points.</source>
         <translation>Gereedschap om punten te maken.</translation>
     </message>
     <message>
-        <location line="-734"/>
-        <location line="+741"/>
+        <location line="-728"/>
+        <location line="+735"/>
         <location line="+3"/>
-        <location line="+3777"/>
+        <location line="+3779"/>
         <source>Point</source>
         <translation>Punt</translation>
     </message>
     <message>
-        <location line="-3452"/>
+        <location line="-3454"/>
         <source>Tools for creating lines.</source>
         <translation>Gereedschap om lijnen te maken.</translation>
     </message>
     <message>
-        <location line="-1038"/>
-        <location line="+1045"/>
+        <location line="-1032"/>
+        <location line="+1039"/>
         <location line="+3"/>
-        <location line="+2897"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3068"/>
+        <location line="+2899"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3091"/>
         <source>Line</source>
         <translation>Lijn</translation>
     </message>
     <message>
-        <location line="-2803"/>
+        <location line="-2805"/>
         <source>Tools for creating curves.</source>
         <translation>Gereedschap om krommes te maken.</translation>
     </message>
     <message>
-        <location line="-1131"/>
-        <location line="+1138"/>
+        <location line="-1125"/>
+        <location line="+1132"/>
         <location line="+3"/>
         <source>Curve</source>
         <translation>Kromme</translation>
@@ -6359,14 +6359,14 @@ Apply settings anyway?</source>
         <translation>Gereedschap voor het maken van bogen.</translation>
     </message>
     <message>
-        <location line="-1368"/>
-        <location line="+1375"/>
+        <location line="-1362"/>
+        <location line="+1369"/>
         <location line="+3"/>
         <source>Arc</source>
         <translation>Boog</translation>
     </message>
     <message>
-        <location line="-1574"/>
+        <location line="-1568"/>
         <source>&amp;File</source>
         <translation>&amp;Bestand</translation>
     </message>
@@ -6377,12 +6377,12 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2801"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2824"/>
         <source>Measurements</source>
         <translation>Maten</translation>
     </message>
     <message>
-        <location line="+2508"/>
+        <location line="+2504"/>
         <source>New</source>
         <translation>Nieuw</translation>
     </message>
@@ -6413,7 +6413,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+18"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+4984"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5007"/>
         <source>Save</source>
         <translation>Opslaan</translation>
     </message>
@@ -6438,8 +6438,8 @@ Apply settings anyway?</source>
         <translation>Sla nog niet opgeslagen patroon op</translation>
     </message>
     <message>
-        <location line="-2479"/>
-        <location line="+2164"/>
+        <location line="-2475"/>
+        <location line="+2160"/>
         <source>Details</source>
         <translation>Details</translation>
     </message>
@@ -6449,8 +6449,8 @@ Apply settings anyway?</source>
         <translation>Aanwijzer gereedschap</translation>
     </message>
     <message>
-        <location line="-2644"/>
-        <location line="+2728"/>
+        <location line="-2640"/>
+        <location line="+2724"/>
         <source>History</source>
         <translation>Geschiedenis</translation>
     </message>
@@ -6470,7 +6470,7 @@ Apply settings anyway?</source>
         <translation>E&amp;xit</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4944"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4967"/>
         <source>Preferences</source>
         <translation>Voorkeuren</translation>
     </message>
@@ -6485,7 +6485,7 @@ Apply settings anyway?</source>
         <translation>Toon online help</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5986"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6009"/>
         <source>About Qt</source>
         <translation>Over Qt</translation>
     </message>
@@ -6576,12 +6576,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Dit bestand is al geopend in een ander raamwerk.</translation>
     </message>
     <message>
-        <location line="-7158"/>
+        <location line="-7181"/>
         <source>Wrong units.</source>
         <translation>Verkeerde eenheden.</translation>
     </message>
     <message>
-        <location line="+6065"/>
+        <location line="+6088"/>
         <source>File loaded</source>
         <translation>Bestand geladen</translation>
     </message>
@@ -6596,8 +6596,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Heropen bestanden.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3449"/>
-        <location line="+2222"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3445"/>
+        <location line="+2218"/>
         <location line="+3"/>
         <location line="+364"/>
         <source>Layout</source>
@@ -6609,8 +6609,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location line="-2481"/>
-        <location line="+3745"/>
+        <location line="-2477"/>
+        <location line="+3741"/>
         <source>Print</source>
         <translation>Afdrukken</translation>
     </message>
@@ -6664,24 +6664,24 @@ Wil je de veranderingen opslaan?</translation>
         <translation>U kunt geen lege beelden exporteren.</translation>
     </message>
     <message>
-        <location line="-6785"/>
-        <location line="+6694"/>
+        <location line="-6808"/>
+        <location line="+6717"/>
         <source>Measurement file contains invalid known measurement(s).</source>
         <translation>Maten bestand bevat ongeldige bekende ma(a)t(en).</translation>
     </message>
     <message>
-        <location line="-6711"/>
-        <location line="+6672"/>
+        <location line="-6734"/>
+        <location line="+6695"/>
         <source>Measurement file has unknown format.</source>
         <translation>Maten bestand heeft een onbekende indeling.</translation>
     </message>
     <message>
-        <location line="-6545"/>
+        <location line="-6568"/>
         <source>Measurement files types have not match.</source>
         <translation>Maten bestanden types komen niet overeen.</translation>
     </message>
     <message>
-        <location line="+1740"/>
+        <location line="+1763"/>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Kan maten niet synchroniseren.</translation>
     </message>
@@ -6759,7 +6759,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>kan maten niet ontladen. Sommigen worden gebruikt in het patroon.</translation>
     </message>
     <message>
-        <location line="-1936"/>
+        <location line="-1959"/>
         <source>New pattern</source>
         <translation>Nieuw patroon</translation>
     </message>
@@ -6774,7 +6774,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Creër/verander maten</translation>
     </message>
     <message>
-        <location line="+4948"/>
+        <location line="+4971"/>
         <source>Save...</source>
         <translation>Sla op...</translation>
     </message>
@@ -6816,23 +6816,23 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Onbekende fout gebeurd, bijvoorbeeld een volledige partitie voorkomt het schrijven uit het vergrendelingsbestand.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1958"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1960"/>
         <location line="+3"/>
         <source>Operations</source>
         <translation>Bewerkingen</translation>
     </message>
     <message>
-        <location line="+1814"/>
+        <location line="+1816"/>
         <source>Close pattern</source>
         <translation>Sluit patroon</translation>
     </message>
     <message>
-        <location line="-2895"/>
+        <location line="-2891"/>
         <source>Tool pointer</source>
         <translation>Gereedschap aanwijzer</translation>
     </message>
     <message>
-        <location line="+2837"/>
+        <location line="+2833"/>
         <location line="+3"/>
         <source>Original zoom</source>
         <translation>Originele zoom</translation>
@@ -6853,7 +6853,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Het maten bestand&lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; kon niet gevonden worden. Wil je de bestanden locatie bijwerken?</translation>
     </message>
     <message>
-        <location line="-6760"/>
+        <location line="-6783"/>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
         <translation>Maten zijn gewijzigd. Wil je ze nu synchroniseren?</translation>
     </message>
@@ -6863,7 +6863,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Graderen ondersteunt geen inches</translation>
     </message>
     <message>
-        <location line="+1790"/>
+        <location line="+1813"/>
         <source>Measurements have been synced</source>
         <translation>Maten zijn gesynchroniseerd</translation>
     </message>
@@ -7003,12 +7003,12 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Je kunt Layout mode nog niet gebruiken.</translation>
     </message>
     <message>
-        <location line="-3497"/>
+        <location line="-3520"/>
         <source>Application doesn&apos;t support multisize table with inches.</source>
         <translation>Applicatie ondersteunt niet het meerdere maten tabel met inches.</translation>
     </message>
     <message>
-        <location line="+6860"/>
+        <location line="+6883"/>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
         <translation>Kon de maat niet vaststellen. Heb een bestand nodig met meerdere maten metingen.</translation>
     </message>
@@ -7018,7 +7018,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kon de hoogte niet vaststellen. Heb een bestand nodig met meerdere maten metingen.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3932"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3928"/>
         <source>Preview</source>
         <translation>Voorbeeldweergave</translation>
     </message>
@@ -7049,13 +7049,13 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <location line="+93"/>
-        <location line="+1859"/>
-        <location line="+614"/>
+        <location line="+1853"/>
+        <location line="+616"/>
         <source>Piece</source>
         <translation>Patroondeel</translation>
     </message>
     <message>
-        <location line="-2421"/>
+        <location line="-2417"/>
         <source>Utilities</source>
         <translation>Hulpmiddelen</translation>
     </message>
@@ -7157,36 +7157,36 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Gereedschapskist</translation>
     </message>
     <message>
-        <location line="+518"/>
-        <location line="+2876"/>
+        <location line="+512"/>
+        <location line="+2878"/>
         <source>Line between 2 Points (Alt+L)</source>
         <translation>Lijn tussen 2 Punten (Alt+L)</translation>
     </message>
     <message>
-        <location line="-2278"/>
+        <location line="-2280"/>
         <source>Tools for performing operations on objects</source>
         <translation>Gereedschap om bewerkingen uit te voeren op groepen objecten</translation>
     </message>
     <message>
         <location line="+60"/>
-        <location line="+966"/>
+        <location line="+968"/>
         <source>Rotate Selected Objects (R)</source>
         <translation>Draai geselecteerde objecten (R)</translation>
     </message>
     <message>
-        <location line="-836"/>
-        <location line="+2532"/>
+        <location line="-838"/>
+        <location line="+2534"/>
         <source>Export Draft Blocks (E, D)</source>
         <translation>Exporteer Tekenblok (E,D)</translation>
     </message>
     <message>
-        <location line="-2494"/>
+        <location line="-2496"/>
         <source>Tools for adding pattern pieces.</source>
         <translation>Gereedschap om Patroondelen toe te voegen.</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+248"/>
+        <location line="+250"/>
         <source>Add Details</source>
         <translation>Voeg Details toe</translation>
     </message>
@@ -7880,7 +7880,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2607"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2630"/>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Matenbestand bevat niet alle benodigde maten.</translation>
     </message>
@@ -7915,7 +7915,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Bewerkingen - Echte Figuurnaden:&lt;/b&gt; Kies het eerste punt van de basislijn</translation>
     </message>
     <message>
-        <location line="+410"/>
+        <location line="+433"/>
         <location line="+594"/>
         <source>Draft Block:</source>
         <translation>Tekenblok:</translation>
@@ -8012,7 +8012,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Kan patroondelen niet exporteren.</translation>
     </message>
     <message>
-        <location line="-5231"/>
+        <location line="-5254"/>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Voeg een nieuw Patroondeel toe:&lt;/b&gt; Selecteer een pad van objecten met de klok mee.</translation>
     </message>
@@ -8032,7 +8032,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Voeg kernpunten toe:&lt;/b&gt; Druk &lt;b&gt;%1&lt;/b&gt; voor meervoudige selectie. Druk &lt;b&gt;ENTER&lt;/b&gt; om de selectie te bevestigen</translation>
     </message>
     <message>
-        <location line="+211"/>
+        <location line="+234"/>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
         <translation>&lt;b&gt;Gereedschap::Patroondeel - Vereniging:&lt;/b&gt; Selecteer een patroondeel</translation>
     </message>
@@ -8047,131 +8047,131 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Tekenblok %1</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3738"/>
-        <location line="+2142"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3740"/>
+        <location line="+2144"/>
         <source>Point - On Bisector (O, B)</source>
         <translation>Punt - Op Bisectrice (O, B)</translation>
     </message>
     <message>
-        <location line="-2116"/>
-        <location line="+2134"/>
+        <location line="-2118"/>
+        <location line="+2136"/>
         <source>Point - Length to Line (P, S)</source>
         <translation>Punt - Lengte tot Lijn (P, S)</translation>
     </message>
     <message>
-        <location line="-2108"/>
-        <location line="+2126"/>
+        <location line="-2110"/>
+        <location line="+2128"/>
         <source>Point - Intersect Arc and Line (A, L)</source>
         <translation>Punt - Snijpunt As en Lijn (A, L)</translation>
     </message>
     <message>
-        <location line="-2100"/>
-        <location line="+2118"/>
+        <location line="-2102"/>
+        <location line="+2120"/>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
         <translation>Punt - Snijpunt As en Driehoek (X, T)</translation>
     </message>
     <message>
-        <location line="-2092"/>
-        <location line="+2110"/>
+        <location line="-2094"/>
+        <location line="+2112"/>
         <source>Point - Intersect XY (X, Y)</source>
         <translation>Punt - snijpunt XY (X, Y)</translation>
     </message>
     <message>
-        <location line="-2084"/>
-        <location line="+2102"/>
+        <location line="-2086"/>
+        <location line="+2104"/>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
         <translation>Punt - Snijpunt Lijn en Loodrechte (L, P)</translation>
     </message>
     <message>
-        <location line="-2076"/>
-        <location line="+2094"/>
+        <location line="-2078"/>
+        <location line="+2096"/>
         <source>Point - Intersect Line and Axis (L, X)</source>
         <translation>Punt - Snijpunt Lijn en As (L, X)</translation>
     </message>
     <message>
-        <location line="-2068"/>
-        <location line="+1942"/>
+        <location line="-2070"/>
+        <location line="+1944"/>
         <source>Point - On Perpendicular (O, P)</source>
         <translation>Punt - Op Loodrechte (O, P)</translation>
     </message>
     <message>
-        <location line="-1916"/>
-        <location line="+1898"/>
+        <location line="-1918"/>
+        <location line="+1900"/>
         <source>Point - Length and Angle (L, A)</source>
         <translation>Punt - Lengte en Hoek (L, A)</translation>
     </message>
     <message>
-        <location line="-1872"/>
-        <location line="+1851"/>
+        <location line="-1874"/>
+        <location line="+1853"/>
         <source>Point - On Line (O, L)</source>
         <translation>Punt - Op Lijn (O, L)</translation>
     </message>
     <message>
-        <location line="-1825"/>
-        <location line="+1807"/>
+        <location line="-1827"/>
+        <location line="+1809"/>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
         <translation>Punt - Middelpunt op Lijn (Shift+O, Shift+L)</translation>
     </message>
     <message>
-        <location line="-1709"/>
-        <location line="+1910"/>
+        <location line="-1711"/>
+        <location line="+1912"/>
         <source>Point - Intersect Lines (I, L)</source>
         <translation>Punt - Snijpunt Lijnen (I, L)</translation>
     </message>
     <message>
-        <location line="-1832"/>
-        <location line="+1850"/>
+        <location line="-1834"/>
+        <location line="+1852"/>
         <source>Curve - Interactive (Alt+C)</source>
         <translation>Kromme - Interactief (Alt+C)</translation>
     </message>
     <message>
-        <location line="-1824"/>
-        <location line="+1878"/>
+        <location line="-1826"/>
+        <location line="+1880"/>
         <source>Spline - Interactive (Alt+S)</source>
         <translation>Spline - Interactief (Alt+S)</translation>
     </message>
     <message>
-        <location line="-1852"/>
-        <location line="+1834"/>
+        <location line="-1854"/>
+        <location line="+1836"/>
         <source>Curve - Fixed (Alt+Shift+C)</source>
         <translation>Kromme - Vast (A;lt+Shift+C)</translation>
     </message>
     <message>
-        <location line="-1808"/>
-        <location line="+1862"/>
+        <location line="-1810"/>
+        <location line="+1864"/>
         <source>Spline - Fixed (Alt+Shift+S)</source>
         <translation>Spline - Vast (Alt+Shift+S)</translation>
     </message>
     <message>
-        <location line="-1836"/>
+        <location line="-1838"/>
         <source>Point - On Spline (O, S)</source>
         <translation>Punt - Op Spline (O, S)</translation>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1831"/>
+        <location line="+1833"/>
         <source>Point - Intersect Curves (I, C)</source>
         <translation>Punt - Snijpunte Krommes (I, C)</translation>
     </message>
     <message>
-        <location line="-1805"/>
-        <location line="+1826"/>
+        <location line="-1807"/>
+        <location line="+1828"/>
         <source>Point - Intersect Curve and Axis (C, X)</source>
         <translation>Punt - Snijpunte Kromme en As (C, X)</translation>
     </message>
     <message>
-        <location line="-1800"/>
+        <location line="-1802"/>
         <source>Point - On Curve (O, C)</source>
         <translation>Punt - Op Kromme (O, C)</translation>
     </message>
     <message>
         <location line="+72"/>
-        <location line="+1749"/>
+        <location line="+1751"/>
         <source>Arc - Radius and Angles (Alt+A)</source>
         <translation>Boog - Straal en Hoeken (Alt+A)</translation>
     </message>
     <message>
-        <location line="-1723"/>
+        <location line="-1725"/>
         <source>Point - On Arc (O, A)</source>
         <translation>Punt - Op Boog (O, A)</translation>
     </message>
@@ -8202,61 +8202,61 @@ Wil je de veranderingen opslaan?</translation>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1696"/>
+        <location line="+1698"/>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
         <translation>Boog - Straal en Lengte (Alt+Shift+A)</translation>
     </message>
     <message>
-        <location line="-1670"/>
-        <location line="+1151"/>
+        <location line="-1672"/>
+        <location line="+1153"/>
         <source>Arc - Elliptical (Alt+E)</source>
         <translation>Boog - Ellipsvormig (Alt+E)</translation>
     </message>
     <message>
-        <location line="-1033"/>
-        <location line="+958"/>
+        <location line="-1035"/>
+        <location line="+960"/>
         <source>Mirror Objects by Line (M, L)</source>
         <translation>Spiegel Objecten over LIjn (M, L)</translation>
     </message>
     <message>
-        <location line="-932"/>
-        <location line="+950"/>
+        <location line="-934"/>
+        <location line="+952"/>
         <source>Mirror Objects by Axis (M, A)</source>
         <translation>Spiegel Objecten over As (M, A)</translation>
     </message>
     <message>
-        <location line="-924"/>
-        <location line="+942"/>
+        <location line="-926"/>
+        <location line="+944"/>
         <source>Move Objects (Alt+M)</source>
         <translation>Verplaats Objecten (Alt+M)</translation>
     </message>
     <message>
-        <location line="-916"/>
-        <location line="+934"/>
+        <location line="-918"/>
+        <location line="+936"/>
         <source>True Darts (T, D)</source>
         <translation>Echte Figuurnaden (T, D)</translation>
     </message>
     <message>
-        <location line="-836"/>
-        <location line="+2109"/>
+        <location line="-838"/>
+        <location line="+2111"/>
         <source>Add New Pattern Piece (N, P)</source>
         <translation>Voeg nieuw Patroondeel toe (N, P)</translation>
     </message>
     <message>
-        <location line="-2083"/>
-        <location line="+2137"/>
+        <location line="-2085"/>
+        <location line="+2139"/>
         <source>Add Anchor Point (A, P)</source>
         <translation>Voeg Ankerpunt toe (A, P)</translation>
     </message>
     <message>
-        <location line="-2111"/>
-        <location line="+2147"/>
+        <location line="-2113"/>
+        <location line="+2149"/>
         <source>Insert Nodes (I, N)</source>
         <translation>Voeg kernpunten in (I, N)</translation>
     </message>
     <message>
-        <location line="-2121"/>
-        <location line="+2103"/>
+        <location line="-2123"/>
+        <location line="+2105"/>
         <source>Add Internal Path (I, P)</source>
         <translation>Voeg binnenpad toe (I, P)</translation>
     </message>
@@ -8634,7 +8634,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Ctrl+Alt+P</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2454"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2477"/>
         <source>Please provide additional measurements: %1</source>
         <translation>Voeg extra maten toe: %1</translation>
     </message>
@@ -8789,7 +8789,29 @@ Wil je de veranderingen opslaan?</translation>
         <translation>&lt;b&gt;Gereedschap::Boog - Ellipsvormig:&lt;/b&gt; Kies middelpunt van ellispvormige boog</translation>
     </message>
     <message>
-        <location line="+1457"/>
+        <location line="+277"/>
+        <location line="+9"/>
+        <source>Can&apos;t read image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-9"/>
+        <location line="+9"/>
+        <source>Could not read the image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-9"/>
+        <source>It may be corrupted...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>It may be corrupted or empty...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1194"/>
         <source>Zoom to Point</source>
         <translation>Zoom in op Punt</translation>
     </message>
@@ -8809,8 +8831,8 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Snijpunt Kromme &amp; As</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2792"/>
-        <location line="+971"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2794"/>
+        <location line="+973"/>
         <source>Add Objects to Group (G)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8821,7 +8843,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1813"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1836"/>
         <source>Add Group Objects</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8831,7 +8853,7 @@ Wil je de veranderingen opslaan?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2608"/>
+        <location line="+2631"/>
         <location line="+121"/>
         <source>Can not save file.</source>
         <translation type="unfinished"></translation>
@@ -8873,10 +8895,10 @@ Wil je de veranderingen opslaan?</translation>
         <translation>Werkbalken</translation>
     </message>
     <message>
-        <location line="-4869"/>
+        <location line="-4892"/>
         <location line="+39"/>
         <location line="+63"/>
-        <location line="+5840"/>
+        <location line="+5863"/>
         <location line="+90"/>
         <source>File exception.</source>
         <translation type="unfinished"></translation>
@@ -8907,8 +8929,8 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3717"/>
-        <location line="+1982"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3713"/>
+        <location line="+1976"/>
         <location line="+3"/>
         <source>Images</source>
         <translation type="unfinished">Afbeeldingen</translation>
@@ -8920,7 +8942,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+19"/>
-        <location line="+2444"/>
+        <location line="+2446"/>
         <source>Import Image (Alt + I)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8956,7 +8978,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1714"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1721"/>
         <source>Confirm deletion</source>
         <translation type="unfinished">Bevestig verwijdering</translation>
     </message>
@@ -8966,7 +8988,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Wil je dit echt verwijderen?</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+94"/>
         <source>PNG</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12206,12 +12228,12 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5053"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5076"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Maak een nieuw patroondeel om te gaan werken.</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vmisc/def.cpp" line="+734"/>
+        <location filename="../../src/libs/vmisc/def.cpp" line="+735"/>
         <source>mm</source>
         <translation>mm</translation>
     </message>
@@ -12248,7 +12270,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>voeg kernpunt toe</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1702"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1725"/>
         <source>Changes applied.</source>
         <translation>Wijzigingen zijn toegepast.</translation>
     </message>
@@ -12609,6 +12631,19 @@ Press enter to temporarily add it to the list.</source>
         <location filename="../../src/libs/vtools/undocommands/rename_draftblock.cpp" line="+70"/>
         <source>rename pattern piece</source>
         <translation>hernoem patroondeel</translation>
+    </message>
+</context>
+<context>
+    <name>ResizeHandlesItem</name>
+    <message>
+        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+517"/>
+        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

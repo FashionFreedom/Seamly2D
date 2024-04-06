@@ -6340,40 +6340,40 @@ Apply settings anyway?</source>
         <translation>Seamly2D</translation>
     </message>
     <message>
-        <location line="+926"/>
+        <location line="+920"/>
         <source>Tools for creating points.</source>
         <translation>Инструменты для создания точек.</translation>
     </message>
     <message>
-        <location line="-734"/>
-        <location line="+741"/>
+        <location line="-728"/>
+        <location line="+735"/>
         <location line="+3"/>
-        <location line="+3777"/>
+        <location line="+3779"/>
         <source>Point</source>
         <translation>Точка</translation>
     </message>
     <message>
-        <location line="-3452"/>
+        <location line="-3454"/>
         <source>Tools for creating lines.</source>
         <translation>Инструменты создания линий.</translation>
     </message>
     <message>
-        <location line="-1038"/>
-        <location line="+1045"/>
+        <location line="-1032"/>
+        <location line="+1039"/>
         <location line="+3"/>
-        <location line="+2897"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3068"/>
+        <location line="+2899"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3091"/>
         <source>Line</source>
         <translation>Линия</translation>
     </message>
     <message>
-        <location line="-2803"/>
+        <location line="-2805"/>
         <source>Tools for creating curves.</source>
         <translation>Инструменты создания кривых.</translation>
     </message>
     <message>
-        <location line="-1131"/>
-        <location line="+1138"/>
+        <location line="-1125"/>
+        <location line="+1132"/>
         <location line="+3"/>
         <source>Curve</source>
         <translation>Кривая</translation>
@@ -6384,14 +6384,14 @@ Apply settings anyway?</source>
         <translation>Инструменты создания дуг.</translation>
     </message>
     <message>
-        <location line="-1368"/>
-        <location line="+1375"/>
+        <location line="-1362"/>
+        <location line="+1369"/>
         <location line="+3"/>
         <source>Arc</source>
         <translation>Дуга</translation>
     </message>
     <message>
-        <location line="-1574"/>
+        <location line="-1568"/>
         <source>&amp;File</source>
         <translation>&amp;Файл</translation>
     </message>
@@ -6402,12 +6402,12 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2801"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2824"/>
         <source>Measurements</source>
         <translation>Мерки</translation>
     </message>
     <message>
-        <location line="+2508"/>
+        <location line="+2504"/>
         <source>New</source>
         <translation>Новый</translation>
     </message>
@@ -6438,7 +6438,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+18"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+4984"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5007"/>
         <source>Save</source>
         <translation>Сохранить</translation>
     </message>
@@ -6463,8 +6463,8 @@ Apply settings anyway?</source>
         <translation>Сохранить еще не сохраненную выкройку</translation>
     </message>
     <message>
-        <location line="-2479"/>
-        <location line="+2164"/>
+        <location line="-2475"/>
+        <location line="+2160"/>
         <source>Details</source>
         <translation>Детали</translation>
     </message>
@@ -6474,8 +6474,8 @@ Apply settings anyway?</source>
         <translation>Инструмент указатель</translation>
     </message>
     <message>
-        <location line="-2644"/>
-        <location line="+2728"/>
+        <location line="-2640"/>
+        <location line="+2724"/>
         <source>History</source>
         <translation>История</translation>
     </message>
@@ -6495,7 +6495,7 @@ Apply settings anyway?</source>
         <translation>&amp;Выход</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4944"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4967"/>
         <source>Preferences</source>
         <translation>Свойства</translation>
     </message>
@@ -6510,7 +6510,7 @@ Apply settings anyway?</source>
         <translation>Показать справку</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5986"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6009"/>
         <source>About Qt</source>
         <translation>Про Qt</translation>
     </message>
@@ -6595,12 +6595,12 @@ Do you want to save your changes?</source>
         <translation>Этот файл уже открыт в другом окне.</translation>
     </message>
     <message>
-        <location line="-7158"/>
+        <location line="-7181"/>
         <source>Wrong units.</source>
         <translation>Неправильные единицы измерения.</translation>
     </message>
     <message>
-        <location line="+6065"/>
+        <location line="+6088"/>
         <source>File loaded</source>
         <translation>Файл загружен</translation>
     </message>
@@ -6615,8 +6615,8 @@ Do you want to save your changes?</source>
         <translation>Повторно открыть файлы.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3449"/>
-        <location line="+2222"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3445"/>
+        <location line="+2218"/>
         <location line="+3"/>
         <location line="+364"/>
         <source>Layout</source>
@@ -6628,8 +6628,8 @@ Do you want to save your changes?</source>
         <translation>Настройки</translation>
     </message>
     <message>
-        <location line="-2481"/>
-        <location line="+3745"/>
+        <location line="-2477"/>
+        <location line="+3741"/>
         <source>Print</source>
         <translation>Печать</translation>
     </message>
@@ -6683,24 +6683,24 @@ Do you want to save your changes?</source>
         <translation>Невозможно экспортировать пустую сцену.</translation>
     </message>
     <message>
-        <location line="-6785"/>
-        <location line="+6694"/>
+        <location line="-6808"/>
+        <location line="+6717"/>
         <source>Measurement file contains invalid known measurement(s).</source>
         <translation>Файл мерок содержит неправильные мерки.</translation>
     </message>
     <message>
-        <location line="-6711"/>
-        <location line="+6672"/>
+        <location line="-6734"/>
+        <location line="+6695"/>
         <source>Measurement file has unknown format.</source>
         <translation>Неизвестный формат файла мерок.</translation>
     </message>
     <message>
-        <location line="-6545"/>
+        <location line="-6568"/>
         <source>Measurement files types have not match.</source>
         <translation>Типы файлов мерок не соответствуют.</translation>
     </message>
     <message>
-        <location line="+1740"/>
+        <location line="+1763"/>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Невозможно синхронизировать мерки.</translation>
     </message>
@@ -6778,7 +6778,7 @@ Do you want to save your changes?</source>
         <translation>Невозможно сбросить мерки. Некоторые из них используются в выкройке.</translation>
     </message>
     <message>
-        <location line="-1936"/>
+        <location line="-1959"/>
         <source>New pattern</source>
         <translation>Новая выкройка</translation>
     </message>
@@ -6793,7 +6793,7 @@ Do you want to save your changes?</source>
         <translation>Создать/Изменить мерки</translation>
     </message>
     <message>
-        <location line="+4948"/>
+        <location line="+4971"/>
         <source>Save...</source>
         <translation>Сохранить...</translation>
     </message>
@@ -6835,23 +6835,23 @@ Do you want to save your changes?</source>
         <translation>Произошла неизвестная ошибка, например, полностью заполненный раздел предотвращает запись файла блокировки.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1958"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-1960"/>
         <location line="+3"/>
         <source>Operations</source>
         <translation>Операции</translation>
     </message>
     <message>
-        <location line="+1814"/>
+        <location line="+1816"/>
         <source>Close pattern</source>
         <translation>Закрыть выкройку</translation>
     </message>
     <message>
-        <location line="-2895"/>
+        <location line="-2891"/>
         <source>Tool pointer</source>
         <translation>Инструмент указатель</translation>
     </message>
     <message>
-        <location line="+2837"/>
+        <location line="+2833"/>
         <location line="+3"/>
         <source>Original zoom</source>
         <translation>Начальный масштаб</translation>
@@ -6872,7 +6872,7 @@ Do you want to save your changes?</source>
         <translation>Файл меток &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; не найден. Хотите обновить данные о местоположении файла?</translation>
     </message>
     <message>
-        <location line="-6760"/>
+        <location line="-6783"/>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
         <translation>Мрки были изменены. Хотите обновить мерки сейчас?</translation>
     </message>
@@ -6882,7 +6882,7 @@ Do you want to save your changes?</source>
         <translation>Градация не поддерживает дюймы</translation>
     </message>
     <message>
-        <location line="+1790"/>
+        <location line="+1813"/>
         <source>Measurements have been synced</source>
         <translation>Мерки обновлены</translation>
     </message>
@@ -7022,12 +7022,12 @@ Do you want to save your changes?</source>
         <translation>Сейчас невозможно использовать режим макета.</translation>
     </message>
     <message>
-        <location line="-3497"/>
+        <location line="-3520"/>
         <source>Application doesn&apos;t support multisize table with inches.</source>
         <translation>Программа не поддерживает мультиразмерные таблицы в дюймах.</translation>
     </message>
     <message>
-        <location line="+6860"/>
+        <location line="+6883"/>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
         <translation>Не удалось установить размер. Нужен файл с мультиразмерными измерениями.</translation>
     </message>
@@ -7037,7 +7037,7 @@ Do you want to save your changes?</source>
         <translation>Не удалось установить высоту. Нужен файл с мультиразмерными измерениями.</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3932"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3928"/>
         <source>Preview</source>
         <translation>Предварительный просмотр</translation>
     </message>
@@ -7068,13 +7068,13 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <location line="+93"/>
-        <location line="+1859"/>
-        <location line="+614"/>
+        <location line="+1853"/>
+        <location line="+616"/>
         <source>Piece</source>
         <translation>Деталь</translation>
     </message>
     <message>
-        <location line="-2421"/>
+        <location line="-2417"/>
         <source>Utilities</source>
         <translation>Утилиты</translation>
     </message>
@@ -7176,36 +7176,36 @@ Do you want to save your changes?</source>
         <translation>Коробка инструментов</translation>
     </message>
     <message>
-        <location line="+518"/>
-        <location line="+2876"/>
+        <location line="+512"/>
+        <location line="+2878"/>
         <source>Line between 2 Points (Alt+L)</source>
         <translation>Линия между двумя точками (Alt+L)</translation>
     </message>
     <message>
-        <location line="-2278"/>
+        <location line="-2280"/>
         <source>Tools for performing operations on objects</source>
         <translation>Инструменты для выполнения операций с объектами</translation>
     </message>
     <message>
         <location line="+60"/>
-        <location line="+966"/>
+        <location line="+968"/>
         <source>Rotate Selected Objects (R)</source>
         <translation>Поворот выбранных объектов (R)</translation>
     </message>
     <message>
-        <location line="-836"/>
-        <location line="+2532"/>
+        <location line="-838"/>
+        <location line="+2534"/>
         <source>Export Draft Blocks (E, D)</source>
         <translation>Экспорт блоков чертежа (E, D)</translation>
     </message>
     <message>
-        <location line="-2494"/>
+        <location line="-2496"/>
         <source>Tools for adding pattern pieces.</source>
         <translation>Инструменты для добавления деталей выкройки.</translation>
     </message>
     <message>
         <location line="+10"/>
-        <location line="+248"/>
+        <location line="+250"/>
         <source>Add Details</source>
         <translation>Добавить подробности</translation>
     </message>
@@ -7899,7 +7899,7 @@ Do you want to save your changes?</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2607"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2630"/>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Файл мерок не содержит всех необходимых измерений.</translation>
     </message>
@@ -7934,7 +7934,7 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Операции  – Правильная вытачка:&lt;/b&gt; выберите первую точку линии основы</translation>
     </message>
     <message>
-        <location line="+410"/>
+        <location line="+433"/>
         <location line="+594"/>
         <source>Draft Block:</source>
         <translation>Блок Чертежа:</translation>
@@ -8031,7 +8031,7 @@ Do you want to save your changes?</source>
         <translation>Невозможно экспортировать детали.</translation>
     </message>
     <message>
-        <location line="-5231"/>
+        <location line="-5254"/>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
         <translation>&lt;b&gt;Инструмент::Операции – Добавить новую деталь выкройки:&lt;/b&gt; выберите основной контур из объектов по часовой стрелке.</translation>
     </message>
@@ -8051,7 +8051,7 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Деталь – Вставить узлы:&lt;/b&gt; выберите один или несколько объектов – удержите клавишу &lt;b&gt;%1&lt;/b&gt; при выборе нескольких объектов. Нажмите &lt;b&gt;ENTER&lt;/b&gt; для подтверждения выбора</translation>
     </message>
     <message>
-        <location line="+211"/>
+        <location line="+234"/>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
         <translation>&lt;b&gt;Инструмент:: Объединение Деталей:&lt;/b&gt; Выберите деталь выкройки</translation>
     </message>
@@ -8066,131 +8066,131 @@ Do you want to save your changes?</source>
         <translation>Блок Чертежа %1</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3738"/>
-        <location line="+2142"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3740"/>
+        <location line="+2144"/>
         <source>Point - On Bisector (O, B)</source>
         <translation>Точка - на Биссектрисе (O, B)</translation>
     </message>
     <message>
-        <location line="-2116"/>
-        <location line="+2134"/>
+        <location line="-2118"/>
+        <location line="+2136"/>
         <source>Point - Length to Line (P, S)</source>
         <translation>Точка - в доль линии (P, S)</translation>
     </message>
     <message>
-        <location line="-2108"/>
-        <location line="+2126"/>
+        <location line="-2110"/>
+        <location line="+2128"/>
         <source>Point - Intersect Arc and Line (A, L)</source>
         <translation>Точка — Пересечения Дуги и Линии (A, L)</translation>
     </message>
     <message>
-        <location line="-2100"/>
-        <location line="+2118"/>
+        <location line="-2102"/>
+        <location line="+2120"/>
         <source>Point - Intersect Axis and Triangle (X, T)</source>
         <translation>Точка — Пересечения Оси и Треугольника (X, T)</translation>
     </message>
     <message>
-        <location line="-2092"/>
-        <location line="+2110"/>
+        <location line="-2094"/>
+        <location line="+2112"/>
         <source>Point - Intersect XY (X, Y)</source>
         <translation>Точка на пересечении осей XY (X, Y)</translation>
     </message>
     <message>
-        <location line="-2084"/>
-        <location line="+2102"/>
+        <location line="-2086"/>
+        <location line="+2104"/>
         <source>Point - Intersect Line and Perpendicular (L, P)</source>
         <translation>Точка - Пересечения Линии и Перпендикуляра (L, P)</translation>
     </message>
     <message>
-        <location line="-2076"/>
-        <location line="+2094"/>
+        <location line="-2078"/>
+        <location line="+2096"/>
         <source>Point - Intersect Line and Axis (L, X)</source>
         <translation>Точка - Пересечения Линии и Оси (L, X)</translation>
     </message>
     <message>
-        <location line="-2068"/>
-        <location line="+1942"/>
+        <location line="-2070"/>
+        <location line="+1944"/>
         <source>Point - On Perpendicular (O, P)</source>
         <translation>Точка - на Перпендикуляре (O, P)</translation>
     </message>
     <message>
-        <location line="-1916"/>
-        <location line="+1898"/>
+        <location line="-1918"/>
+        <location line="+1900"/>
         <source>Point - Length and Angle (L, A)</source>
         <translation>Точка - на Расстоянии и под Углом (L, A)</translation>
     </message>
     <message>
-        <location line="-1872"/>
-        <location line="+1851"/>
+        <location line="-1874"/>
+        <location line="+1853"/>
         <source>Point - On Line (O, L)</source>
         <translation>Точка - на Линии  (O, L)</translation>
     </message>
     <message>
-        <location line="-1825"/>
-        <location line="+1807"/>
+        <location line="-1827"/>
+        <location line="+1809"/>
         <source>Point - Midpoint on Line (Shift+O, Shift+L)</source>
         <translation>Точка - по середине Линии (Shift+O, Shift+L)</translation>
     </message>
     <message>
-        <location line="-1709"/>
-        <location line="+1910"/>
+        <location line="-1711"/>
+        <location line="+1912"/>
         <source>Point - Intersect Lines (I, L)</source>
         <translation>Точка - на Пересечении линий (I, L)</translation>
     </message>
     <message>
-        <location line="-1832"/>
-        <location line="+1850"/>
+        <location line="-1834"/>
+        <location line="+1852"/>
         <source>Curve - Interactive (Alt+C)</source>
         <translation>Кривая - Интерактивная (Alt+C)</translation>
     </message>
     <message>
-        <location line="-1824"/>
-        <location line="+1878"/>
+        <location line="-1826"/>
+        <location line="+1880"/>
         <source>Spline - Interactive (Alt+S)</source>
         <translation>Интерактивный сплайн (Alt+S)</translation>
     </message>
     <message>
-        <location line="-1852"/>
-        <location line="+1834"/>
+        <location line="-1854"/>
+        <location line="+1836"/>
         <source>Curve - Fixed (Alt+Shift+C)</source>
         <translation>Кривая - Фиксированная (Alt+Shift+C)</translation>
     </message>
     <message>
-        <location line="-1808"/>
-        <location line="+1862"/>
+        <location line="-1810"/>
+        <location line="+1864"/>
         <source>Spline - Fixed (Alt+Shift+S)</source>
         <translation>Сплайн - Фиксированный (Alt+Shift+S)</translation>
     </message>
     <message>
-        <location line="-1836"/>
+        <location line="-1838"/>
         <source>Point - On Spline (O, S)</source>
         <translation>Точка - на сплайне (O, S)</translation>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1831"/>
+        <location line="+1833"/>
         <source>Point - Intersect Curves (I, C)</source>
         <translation>Точка Пересечения Кривых (I, C)</translation>
     </message>
     <message>
-        <location line="-1805"/>
-        <location line="+1826"/>
+        <location line="-1807"/>
+        <location line="+1828"/>
         <source>Point - Intersect Curve and Axis (C, X)</source>
         <translation>Точка Пересечения Кривой и Оси (C, X)</translation>
     </message>
     <message>
-        <location line="-1800"/>
+        <location line="-1802"/>
         <source>Point - On Curve (O, C)</source>
         <translation>Точка на Кривой (O, C)</translation>
     </message>
     <message>
         <location line="+72"/>
-        <location line="+1749"/>
+        <location line="+1751"/>
         <source>Arc - Radius and Angles (Alt+A)</source>
         <translation>Дуга - радиус и углы (Alt+A)</translation>
     </message>
     <message>
-        <location line="-1723"/>
+        <location line="-1725"/>
         <source>Point - On Arc (O, A)</source>
         <translation>Точка на Дуге (O, A)</translation>
     </message>
@@ -8221,61 +8221,61 @@ Do you want to save your changes?</source>
     </message>
     <message>
         <location line="+26"/>
-        <location line="+1696"/>
+        <location line="+1698"/>
         <source>Arc - Radius and Length (Alt+Shift+A)</source>
         <translation>Дуга - Радиус и Длина (Alt+Shift+A)</translation>
     </message>
     <message>
-        <location line="-1670"/>
-        <location line="+1151"/>
+        <location line="-1672"/>
+        <location line="+1153"/>
         <source>Arc - Elliptical (Alt+E)</source>
         <translation>Эллиптическая Дуга (Alt+E)</translation>
     </message>
     <message>
-        <location line="-1033"/>
-        <location line="+958"/>
+        <location line="-1035"/>
+        <location line="+960"/>
         <source>Mirror Objects by Line (M, L)</source>
         <translation>Отражение по Линии (M, L)</translation>
     </message>
     <message>
-        <location line="-932"/>
-        <location line="+950"/>
+        <location line="-934"/>
+        <location line="+952"/>
         <source>Mirror Objects by Axis (M, A)</source>
         <translation>Отражение по Оси (M, A)</translation>
     </message>
     <message>
-        <location line="-924"/>
-        <location line="+942"/>
+        <location line="-926"/>
+        <location line="+944"/>
         <source>Move Objects (Alt+M)</source>
         <translation>Переместить  Объекты (M, A)</translation>
     </message>
     <message>
-        <location line="-916"/>
-        <location line="+934"/>
+        <location line="-918"/>
+        <location line="+936"/>
         <source>True Darts (T, D)</source>
         <translation>Правильная вытачка (T, D)</translation>
     </message>
     <message>
-        <location line="-836"/>
-        <location line="+2109"/>
+        <location line="-838"/>
+        <location line="+2111"/>
         <source>Add New Pattern Piece (N, P)</source>
         <translation>Добавить новую Деталь выкройки(N, P)</translation>
     </message>
     <message>
-        <location line="-2083"/>
-        <location line="+2137"/>
+        <location line="-2085"/>
+        <location line="+2139"/>
         <source>Add Anchor Point (A, P)</source>
         <translation>Добавить шпильку (A, P)</translation>
     </message>
     <message>
-        <location line="-2111"/>
-        <location line="+2147"/>
+        <location line="-2113"/>
+        <location line="+2149"/>
         <source>Insert Nodes (I, N)</source>
         <translation>Вставить узлы (I, N)</translation>
     </message>
     <message>
-        <location line="-2121"/>
-        <location line="+2103"/>
+        <location line="-2123"/>
+        <location line="+2105"/>
         <source>Add Internal Path (I, P)</source>
         <translation>Добавить Внутренний контур (I, P)</translation>
     </message>
@@ -8653,7 +8653,7 @@ Do you want to save your changes?</source>
         <translation>Ctrl+Alt+P</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2454"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2477"/>
         <source>Please provide additional measurements: %1</source>
         <translation>Укажите дополнительные мерки: %1</translation>
     </message>
@@ -8808,7 +8808,29 @@ Do you want to save your changes?</source>
         <translation>&lt;b&gt;Инструмент::Дуга — Эллиптическая:&lt;/b&gt; Выберите точку центра эллиптической дуги</translation>
     </message>
     <message>
-        <location line="+1457"/>
+        <location line="+277"/>
+        <location line="+9"/>
+        <source>Can&apos;t read image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-9"/>
+        <location line="+9"/>
+        <source>Could not read the image.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-9"/>
+        <source>It may be corrupted...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>It may be corrupted or empty...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1194"/>
         <source>Zoom to Point</source>
         <translation>Зум до точки</translation>
     </message>
@@ -8828,8 +8850,8 @@ Do you want to save your changes?</source>
         <translation>Пересечение кривой и оси</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2792"/>
-        <location line="+971"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2794"/>
+        <location line="+973"/>
         <source>Add Objects to Group (G)</source>
         <translation>Добавить объект в группу (G)</translation>
     </message>
@@ -8840,7 +8862,7 @@ Do you want to save your changes?</source>
         <translation>Добавить объект в группу</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1813"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1836"/>
         <source>Add Group Objects</source>
         <translation>Добавить Группу Объектов</translation>
     </message>
@@ -8850,7 +8872,7 @@ Do you want to save your changes?</source>
         <translation>Группа заблокирована. Разблокируйте, чтобы добавлять объекты</translation>
     </message>
     <message>
-        <location line="+2608"/>
+        <location line="+2631"/>
         <location line="+121"/>
         <source>Can not save file.</source>
         <translation>Не удалось сохранить файл.</translation>
@@ -8892,10 +8914,10 @@ Do you want to save your changes?</source>
         <translation>Коробка инструментов</translation>
     </message>
     <message>
-        <location line="-4869"/>
+        <location line="-4892"/>
         <location line="+39"/>
         <location line="+63"/>
-        <location line="+5840"/>
+        <location line="+5863"/>
         <location line="+90"/>
         <source>File exception.</source>
         <translation>Исключение из файла.</translation>
@@ -8931,8 +8953,8 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">По умолчанию</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3717"/>
-        <location line="+1982"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3713"/>
+        <location line="+1976"/>
         <location line="+3"/>
         <source>Images</source>
         <translation type="unfinished">Изображения</translation>
@@ -8944,7 +8966,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+19"/>
-        <location line="+2444"/>
+        <location line="+2446"/>
         <source>Import Image (Alt + I)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8980,7 +9002,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1714"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1721"/>
         <source>Confirm deletion</source>
         <translation type="unfinished">Подтвердите удаление</translation>
     </message>
@@ -8990,7 +9012,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Вы точно хотите удалить?</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+94"/>
         <source>PNG</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12233,12 +12255,12 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5053"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5076"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Создайте новую выкройку для начала работы.</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vmisc/def.cpp" line="+734"/>
+        <location filename="../../src/libs/vmisc/def.cpp" line="+735"/>
         <source>mm</source>
         <translation>мм</translation>
     </message>
@@ -12275,7 +12297,7 @@ Press enter to temporarily add it to the list.</source>
         <translation>добавить узел</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1702"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1725"/>
         <source>Changes applied.</source>
         <translation>Изменения применены.</translation>
     </message>
@@ -12636,6 +12658,19 @@ Press enter to temporarily add it to the list.</source>
         <location filename="../../src/libs/vtools/undocommands/rename_draftblock.cpp" line="+70"/>
         <source>rename pattern piece</source>
         <translation>переименовать деталь выкройки</translation>
+    </message>
+</context>
+<context>
+    <name>ResizeHandlesItem</name>
+    <message>
+        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+517"/>
+        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center, &lt;b&gt;SHIFT&lt;/b&gt; to scale uniformly.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

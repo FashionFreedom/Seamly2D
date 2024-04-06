@@ -166,6 +166,8 @@ void ImageItem::setLock(bool checked)
     if (m_image.locked)
     {
         setAcceptedMouseButtons(Qt::RightButton);
+        emit setStatusMessage("");
+        m_resizeHandles->hide();
     }
     else
     {
@@ -225,25 +227,6 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     if (m_selectable && flags() & QGraphicsItem::ItemIsMovable)
     {
         SetItemOverrideCursor(this, cursorArrowOpenHand, 1, 1);
-
-        QString width;
-        QString height;
-        if (m_image.units == Unit::Px)
-        {
-            width = QString(tr("%1")).arg(m_image.width);
-            height = QString(tr("%1")).arg(m_image.height);
-        }
-        else if (m_image.units == Unit::Cm || m_image.units == Unit::Mm || m_image.units == Unit::Inch)
-        {
-            width = QString(tr("%1")).arg(qApp->fromPixel(m_image.width));
-            height = QString(tr("%1")).arg(qApp->fromPixel(m_image.height));
-        }
-        QString message = QString(tr("Background Image: Width = %1 %2, Height = %3 %4; Rotation = %5°."))
-                              .arg(width,UnitsToStr(m_image.units))
-                              .arg(height,UnitsToStr(m_image.units))
-                              .arg(m_image.rotation);
-
-        emit setStatusMessage(message);
     }
     else
     {
@@ -253,6 +236,7 @@ void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event)
     if (!m_image.locked)
     {
         m_resizeHandles->show();
+        showImageStatusMessage();
     }
 
     QGraphicsItem::hoverEnterEvent(event);
@@ -269,13 +253,27 @@ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
         setCursor(QCursor());
-        emit setStatusMessage("");
     }
 
-    m_resizeHandles->hide();
+    if(!m_image.locked)
+    {
+        emit setStatusMessage("");
+        m_resizeHandles->hide();
+    }
 
     QGraphicsItem::hoverLeaveEvent(event);
 }
+
+
+void ImageItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event)
+{
+    if (!m_image.locked)
+    {
+        showImageStatusMessage();
+    }
+    QGraphicsItem::hoverMoveEvent(event);
+}
+
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
@@ -432,6 +430,7 @@ void ImageItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
         m_image.xPos = mapToScene(event->pos() - m_offset).x();
         m_image.yPos = mapToScene(event->pos() - m_offset).y();
 
+        showImageStatusMessage();
         updateImage();
         scene()->update();
     }
@@ -584,4 +583,40 @@ void ImageItem::moveDown()
     }
     m_image.order --;
     updateImage();
+}
+
+
+void ImageItem::showImageStatusMessage()
+{
+    QString width;
+    QString height;
+    QString posX;
+    QString posY;
+
+    if (m_image.units == Unit::Px)
+    {
+        width = QString::number(m_image.width);
+        height = QString::number(m_image.height);
+        posX = QString::number(m_image.xPos);
+        posY = QString::number(m_image.yPos);
+    }
+    else
+    {
+        width = QString::number(qApp->fromPixel(m_image.width));
+        height = QString::number(qApp->fromPixel(m_image.height));
+        posX = QString::number(qApp->fromPixel(m_image.xPos));
+        posY = QString::number(qApp->fromPixel(m_image.yPos));
+    }
+
+    QString message = QString(tr("<b>Image (%7)</b>: Size(%2%1, %3%1); Pos(%4%1, %5%1); Rot(%6°)%8"))
+                          .arg(UnitsToStr(m_image.units))
+                          .arg(width)
+                          .arg(height)
+                          .arg(posX)
+                          .arg(posY)
+                          .arg(m_image.rotation)
+                          .arg(m_image.name)
+                          .arg(!m_image.aspectLocked ? "" : tr(" - <b>Aspect ratio locked</b>"));
+
+    emit setStatusMessage(message);
 }

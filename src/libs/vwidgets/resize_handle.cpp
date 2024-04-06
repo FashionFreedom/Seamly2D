@@ -510,10 +510,18 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
     pixmap = pixmap.transformed(transform);
     QPointF offset = pixmap.rect().center();
     setCursor(QCursor(pixmap, offset.x(), offset.y()));
-    m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
-
-    QString message = tr("Press <b>CTRL</b> to scale around the center,"
-                                 " <b>SHIFT</b> to scale uniformly.");
+	
+    QString message;
+    if(m_parent->m_lockAspectRatio)
+    {
+        message = tr("Press <b>CTRL</b> to scale around the center - <b> Aspect ratio locked </b>");
+    }
+    else
+    {
+        message = tr("Press <b>CTRL</b> to scale around the center,"
+                             " <b>SHIFT</b> to scale uniformly.");
+    }
+	
     emit m_parent->setStatusMessage(message);
 	
     QGraphicsItem::hoverEnterEvent(event);
@@ -550,6 +558,8 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
 
         //emit handleSelected(m_handlePosition, true);
     //}
+	
+    m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
 
     QGraphicsItem::mousePressEvent(event);
 }

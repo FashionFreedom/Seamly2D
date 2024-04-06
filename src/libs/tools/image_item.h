@@ -91,6 +91,7 @@ signals:
 
 protected:
     virtual void     hoverEnterEvent (QGraphicsSceneHoverEvent *event) override;
+    virtual void     hoverMoveEvent (QGraphicsSceneHoverEvent *event) override;
     virtual void     hoverLeaveEvent (QGraphicsSceneHoverEvent *event) override;
     virtual void     contextMenuEvent (QGraphicsSceneContextMenuEvent *event) override;
     virtual void     mousePressEvent(QGraphicsSceneMouseEvent *event) override;
@@ -122,6 +123,7 @@ private:
     void               initializeItem();
     void               updateFromHandles(QRectF rect);
     void               setPixmap(const QPixmap &pixmap);
+    void               showImageStatusMessage();
 };
 
 #endif // IMAGE_ITEM_H
