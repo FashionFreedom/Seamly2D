@@ -98,9 +98,6 @@ protected:
     virtual void     mouseReleaseEvent (QGraphicsSceneMouseEvent *event) override;
     virtual void     keyReleaseEvent (QKeyEvent *event) override;
 
-private slots:
-    void             handleStatusMessage(QString message);
-
 private:
     QPointF            m_offset;
     QRectF             m_boundingRect;
