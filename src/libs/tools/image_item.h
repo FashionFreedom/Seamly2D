@@ -81,6 +81,7 @@ public:
     void             setLock(bool checked);
 
     void             enableSelection(bool enable);
+    void             enableHovering(bool enable);
 
 signals:
     void             imageUpdated(DraftImage image);
@@ -110,7 +111,6 @@ private:
     QPolygonF          m_angleHandle;
     qreal              m_angle;
     bool               m_mousePressed;
-    bool               m_isResizing;
     bool               m_isHovered;
     SelectionType      m_selectionType;
     bool               m_transformationMode;

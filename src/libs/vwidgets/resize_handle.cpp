@@ -550,15 +550,6 @@ void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *ev
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    //if (isSelected())
-    //{
-        if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
-        {
-        }
-
-        //emit handleSelected(m_handlePosition, true);
-    //}
-	
     m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
 
     QGraphicsItem::mousePressEvent(event);

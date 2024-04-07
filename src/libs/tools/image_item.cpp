@@ -70,7 +70,6 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     , m_angleHandle()
     , m_angle()
     , m_mousePressed(false)
-    , m_isResizing (false)
     , m_isHovered(false)
     , m_selectionType(SelectionType::ByMouseRelease)
     , m_transformationMode(Qt::SmoothTransformation)
@@ -174,7 +173,8 @@ void ImageItem::setLock(bool checked)
         setAcceptedMouseButtons(Qt::LeftButton | Qt::RightButton);
     }
     setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
-    setFlag(QGraphicsItem::ItemIsSelectable, !m_image.locked);
+    //enableSelection(!m_image.locked);
+    enableHovering(!m_image.locked);
     emit imageUpdated(m_image);
 }
 
@@ -212,8 +212,14 @@ void ImageItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
 void ImageItem::enableSelection(bool enable)
 {
     m_selectable = enable;
-    setFlag(QGraphicsItem::ItemSendsGeometryChanges, m_selectable);
-    setFlag(QGraphicsItem::ItemIsFocusable, m_selectable);
+    setFlag(QGraphicsItem::ItemIsSelectable, enable);
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------
+void ImageItem::enableHovering(bool enable)
+{
+    setAcceptHoverEvents(enable);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -394,10 +400,6 @@ void ImageItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         scene()->clearSelection();
     }
     m_mousePressed = true;
-    if (m_isResizing)
-    {
-      m_actualRect = m_boundingRect;
-    }
 
     if (flags() & QGraphicsItem::ItemIsMovable)
     {
@@ -453,7 +455,6 @@ void ImageItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
     }
 
     m_mousePressed = false;
-    m_isResizing = false;
 
     QGraphicsItem::mouseReleaseEvent(event);
 }
@@ -475,12 +476,13 @@ void ImageItem::keyReleaseEvent(QKeyEvent *event)
 }
 
 void ImageItem::initializeItem()
-{
-    this->setFlag(QGraphicsItem::ItemIsMovable, true);
-    this->setFlag(QGraphicsItem::ItemIsSelectable, true);
-    this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
-    this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
-    this->setAcceptHoverEvents(true);
+{ 
+    setFlag(QGraphicsItem::ItemIsMovable, true);
+    setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
+    setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
+    setFlag(QGraphicsItem::ItemIsSelectable, false);
+    //enableSelection(false);
+    enableHovering(true);
 }
 
 void ImageItem::updateFromHandles(QRectF rect)

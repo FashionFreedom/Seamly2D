@@ -1688,11 +1688,12 @@ void  MainWindow::addImage(DraftImage image)
     draftScene->addItem(item);
     //Need error dialog
 
-    connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
+    //connect(this, &MainWindow::EnableImageSelection, item, &ImageItem::enableSelection);
+    //connect(this, &MainWindow::EnableImageHover, item, &ImageItem::enableHovering);
 
     connect(item, &ImageItem::deleteImage, this, &MainWindow::handleDeleteImage);
-    connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
-	connect(item, &ImageItem::setStatusMessage, this, &MainWindow::setStatusMessage);
+    //connect(item, &ImageItem::imageSelected, this, &MainWindow::handleImageSelected);
+    connect(item, &ImageItem::setStatusMessage, this, &MainWindow::setStatusMessage);
 
     ui->importImage_ToolButton->setChecked(false);
 
