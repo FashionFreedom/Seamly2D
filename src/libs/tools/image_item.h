@@ -53,7 +53,7 @@ class ImageItem : public QObject, public QGraphicsItem
 
 public:
     explicit         ImageItem(DraftImage image, QGraphicsItem *parent = nullptr);
-    ~ImageItem()     override;
+    virtual         ~ImageItem() = default;
 
     virtual int      type() const override {return Type;}
     enum             {Type = UserType + static_cast<int>(Vis::BackgroundImageItem)};
@@ -82,6 +82,8 @@ public:
 
     void             enableSelection(bool enable);
     void             enableHovering(bool enable);
+
+    void             deleteImageItem();
 
 signals:
     void             imageUpdated(DraftImage image);

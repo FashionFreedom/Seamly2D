@@ -515,10 +515,12 @@ void ImageItem::updateImageAndHandles(DraftImage image)
     emit imageUpdated(m_image);
 }
 
-ImageItem::~ImageItem()
+void ImageItem::deleteImageItem()
 {
     moveToBottom(); //so that there is no gap in zValue
     allImageItems.removeOne(this);
+    scene()->removeItem(this);
+    deleteLater();
 }
 
 void ImageItem::moveToBottom()

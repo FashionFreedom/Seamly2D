@@ -1736,8 +1736,7 @@ void MainWindow::handleDeleteImage(quint32 id)
         if (item)
         {
             m_ImageMap.remove(id);
-            draftScene->removeItem(item);
-            item->deleteLater();
+            item->deleteImageItem();
         }
     }
 }
