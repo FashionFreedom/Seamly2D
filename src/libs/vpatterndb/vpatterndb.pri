@@ -2,6 +2,7 @@
 # This need for corect working file translations.pro
 
 SOURCES += \
+    $$PWD/variables/custom_variable.cpp \
     $$PWD/variables/measurement_variable.cpp \
     $$PWD/vcontainer.cpp \
     $$PWD/calculator.cpp \
@@ -11,7 +12,6 @@ SOURCES += \
     $$PWD/variables/vcurveangle.cpp \
     $$PWD/variables/vcurvelength.cpp \
     $$PWD/variables/vcurvevariable.cpp \
-    $$PWD/variables/vincrement.cpp \
     $$PWD/variables/vinternalvariable.cpp \
     $$PWD/variables/vlineangle.cpp \
     $$PWD/variables/vlinelength.cpp \
@@ -31,6 +31,8 @@ SOURCES += \
 *msvc*:SOURCES += $$PWD/stable.cpp
 
 HEADERS += \
+    $$PWD/variables/custom_variable.h \
+    $$PWD/variables/custom_variable_p.h \
     $$PWD/variables/measurement_variable.h \
     $$PWD/variables/measurement_variable_p.h \
     $$PWD/vcontainer.h \
@@ -46,8 +48,6 @@ HEADERS += \
     $$PWD/variables/vcurvelength.h \
     $$PWD/variables/vcurvevariable.h \
     $$PWD/variables/vcurvevariable_p.h \
-    $$PWD/variables/vincrement.h \
-    $$PWD/variables/vincrement_p.h \
     $$PWD/variables/vinternalvariable.h \
     $$PWD/variables/vinternalvariable_p.h \
     $$PWD/variables/vlineangle.h \

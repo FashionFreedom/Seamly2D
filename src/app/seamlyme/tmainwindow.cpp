@@ -1507,7 +1507,7 @@ void TMainWindow::Fx()
 	try
 	{
 	   // Translate to internal look.
-	   meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+	   meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -1746,7 +1746,7 @@ void TMainWindow::ShowNewMData(bool fresh)
 		try
 		{
 			// Translate to internal look.
-			meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+			meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 		}
 
 		catch(const VExceptionBadId &exception)
@@ -1877,7 +1877,7 @@ void TMainWindow::SaveMName(const QString &text)
 	try
 	{
 		// Translate to internal look.
-		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -1957,7 +1957,7 @@ void TMainWindow::SaveMValue()
 	try
 	{
 		// Translate to internal look.
-		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)
@@ -2117,7 +2117,7 @@ void TMainWindow::SaveMFullName()
 	try
 	{
 		// Translate to internal look.
-		meash = data->GetVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
+		meash = data->getVariable<MeasurementVariable>(nameField->data(Qt::UserRole).toString());
 	}
 
 	catch(const VExceptionBadId &exception)

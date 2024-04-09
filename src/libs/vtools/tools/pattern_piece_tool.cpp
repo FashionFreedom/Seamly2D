@@ -148,7 +148,7 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
 {
     if (typeCreation == Source::FromGui || typeCreation == Source::FromTool)
     {
-        data->AddVariable(currentSeamAllowance, new VIncrement(data, currentSeamAllowance, 0, newPiece.GetSAWidth(),
+        data->AddVariable(currentSeamAllowance, new CustomVariable(data, currentSeamAllowance, 0, newPiece.GetSAWidth(),
                                                                width, true, tr("Current seam allowance")));
         id = data->AddPiece(newPiece);
     }
@@ -157,7 +157,7 @@ PatternPieceTool *PatternPieceTool::Create(quint32 id, VPiece newPiece, QString 
         const qreal calcWidth = CheckFormula(id, width, data);
         newPiece.setSeamAllowanceWidthFormula(width, calcWidth);
 
-        data->AddVariable(currentSeamAllowance, new VIncrement(data, currentSeamAllowance, 0, calcWidth,
+        data->AddVariable(currentSeamAllowance, new CustomVariable(data, currentSeamAllowance, 0, calcWidth,
                                                                width, true, tr("Current seam allowance")));
 
         data->UpdatePiece(id, newPiece);

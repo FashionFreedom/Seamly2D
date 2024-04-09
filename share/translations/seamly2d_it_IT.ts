@@ -6931,12 +6931,7 @@ Vuoi salvare i cambiamenti?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-831"/>
-        <source>Contains information about increments and internal variables</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1065"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+234"/>
         <source>Load Individual</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8317,7 +8312,12 @@ Vuoi salvare i cambiamenti?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1330"/>
+        <location line="-1474"/>
+        <source>Contains information about custom and internal variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+144"/>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2540"/>
         <source>Alt+M</source>
         <translation type="unfinished"></translation>

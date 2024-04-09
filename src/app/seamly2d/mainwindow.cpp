@@ -1852,14 +1852,14 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
         csv.setHeaderText(2, tr("Formula"));
     }
 
-    const QMap<QString, QSharedPointer<VIncrement> > increments = pattern->variablesData();
-    QMap<QString, QSharedPointer<VIncrement> >::const_iterator i;
+    const QMap<QString, QSharedPointer<CustomVariable>> customVariables = pattern->variablesData();
+    QMap<QString, QSharedPointer<CustomVariable>>::const_iterator i;
     QMap<quint32, QString> map;
     //Sorting QHash by id
-    for (i = increments.constBegin(); i != increments.constEnd(); ++i)
+    for (i = customVariables.constBegin(); i != customVariables.constEnd(); ++i)
     {
-        QSharedPointer<VIncrement> incr = i.value();
-        map.insert(incr->getIndex(), i.key());
+        QSharedPointer<CustomVariable> variable = i.value();
+        map.insert(variable->getIndex(), i.key());
     }
 
     qint32 currentRow = -1;
@@ -1867,22 +1867,22 @@ void MainWindow::exportToCSVData(const QString &fileName, const DialogExportToCS
     while (iMap.hasNext())
     {
         iMap.next();
-        QSharedPointer<VIncrement> incr = increments.value(iMap.value());
+        QSharedPointer<CustomVariable> variable = customVariables.value(iMap.value());
         currentRow++;
 
         csv.insertRow(currentRow);
-        csv.setText(currentRow, 0, incr->GetName()); // name
-        csv.setText(currentRow, 1, qApp->LocaleToString(*incr->GetValue())); // calculated value
+        csv.setText(currentRow, 0, variable->GetName()); // name
+        csv.setText(currentRow, 1, qApp->LocaleToString(*variable->GetValue())); // calculated value
 
         QString formula;
         try
         {
-            formula = qApp->translateVariables()->FormulaToUser(incr->GetFormula(), qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaToUser(variable->GetFormula(), qApp->Settings()->getOsSeparator());
         }
         catch (qmu::QmuParserError &error)
         {
             Q_UNUSED(error)
-            formula = incr->GetFormula();
+            formula = variable->GetFormula();
         }
 
         csv.setText(currentRow, 2, formula); // formula
