@@ -92,7 +92,7 @@
 <text text-anchor="start" x="263" y="-1204.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagImage</text>
 <text text-anchor="start" x="263" y="-1193.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="263" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
-<text text-anchor="start" x="263" y="-1171.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagIncrements</text>
+<text text-anchor="start" x="263" y="-1171.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
 <text text-anchor="start" x="263" y="-1160.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 128 more...</text>
 <text text-anchor="start" x="263" y="-1149.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeDraftBlock</text>
 <text text-anchor="start" x="263" y="-1138.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
@@ -109,7 +109,7 @@
 <text text-anchor="start" x="263" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
 <text text-anchor="start" x="263" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="263" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
-<text text-anchor="start" x="263" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListIncrementExpressions()</text>
+<text text-anchor="start" x="263" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
 <text text-anchor="start" x="263" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
 <text text-anchor="start" x="263" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
 <text text-anchor="start" x="263" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
@@ -139,7 +139,7 @@
 <text text-anchor="start" x="263" y="-690.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolExists()</text>
 <text text-anchor="start" x="263" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParsePathNodes()</text>
 <text text-anchor="start" x="263" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParseSANode()</text>
-<text text-anchor="start" x="263" y="-657.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListIncrements()</text>
+<text text-anchor="start" x="263" y="-657.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; listVariables()</text>
 <text text-anchor="start" x="263" y="-646.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPointExpressions()</text>
 <text text-anchor="start" x="263" y="-635.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListArcExpressions()</text>
 <text text-anchor="start" x="263" y="-624.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListElArcExpressions()</text>

@@ -95,7 +95,7 @@
 <text text-anchor="start" x="263" y="-1248.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagImage</text>
 <text text-anchor="start" x="263" y="-1237.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="263" y="-1226.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
-<text text-anchor="start" x="263" y="-1215.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagIncrements</text>
+<text text-anchor="start" x="263" y="-1215.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
 <text text-anchor="start" x="263" y="-1204.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 128 more...</text>
 <text text-anchor="start" x="263" y="-1193.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeDraftBlock</text>
 <text text-anchor="start" x="263" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
@@ -112,7 +112,7 @@
 <text text-anchor="start" x="263" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
 <text text-anchor="start" x="263" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="263" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
-<text text-anchor="start" x="263" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListIncrementExpressions()</text>
+<text text-anchor="start" x="263" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
 <text text-anchor="start" x="263" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
 <text text-anchor="start" x="263" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
 <text text-anchor="start" x="263" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
@@ -142,7 +142,7 @@
 <text text-anchor="start" x="263" y="-734.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolExists()</text>
 <text text-anchor="start" x="263" y="-723.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParsePathNodes()</text>
 <text text-anchor="start" x="263" y="-712.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParseSANode()</text>
-<text text-anchor="start" x="263" y="-701.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListIncrements()</text>
+<text text-anchor="start" x="263" y="-701.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; listVariables()</text>
 <text text-anchor="start" x="263" y="-690.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPointExpressions()</text>
 <text text-anchor="start" x="263" y="-679.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListArcExpressions()</text>
 <text text-anchor="start" x="263" y="-668.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListElArcExpressions()</text>

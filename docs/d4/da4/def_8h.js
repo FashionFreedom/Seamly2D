@@ -265,7 +265,7 @@ var def_8h =
     ] ],
     [ "VarType", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178", [
       [ "Measurement", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975", null ],
-      [ "Increment", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a6f15bdfa71aa83b0d197cad75757d580", null ],
+      [ "Variable", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a47c14840d8e15331fa420b9b2f757cd9", null ],
       [ "LineLength", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a759c1b50a557f26c1af2cddc11c366bb", null ],
       [ "CurveLength", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178ab80307c6e28ae1a1a1b50732aa331ef9", null ],
       [ "CurveCLength", "d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a60201241f8a110ff2fb5ee72a507f3c4", null ],

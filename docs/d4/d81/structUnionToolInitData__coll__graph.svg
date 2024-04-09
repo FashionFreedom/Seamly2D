@@ -59,18 +59,18 @@ var sectionId = 'dynsection-0';
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="348,-0.5 348,-123.5 470,-123.5 470,-0.5 348,-0.5"/>
-<text text-anchor="middle" x="409" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnionToolInitData</text>
-<polyline fill="none" stroke="black" points="348,-104.5 470,-104.5 "/>
-<text text-anchor="start" x="356" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece1_Id</text>
-<text text-anchor="start" x="356" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece2_Id</text>
-<text text-anchor="start" x="356" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece1_Index</text>
-<text text-anchor="start" x="356" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece2_Index</text>
-<text text-anchor="start" x="356" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ parse</text>
-<text text-anchor="start" x="356" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ typeCreation</text>
-<text text-anchor="start" x="356" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ retainPieces</text>
-<polyline fill="none" stroke="black" points="348,-19.5 470,-19.5 "/>
-<text text-anchor="start" x="356" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionToolInitData()</text>
+<polygon fill="#bfbfbf" stroke="black" points="349,-0.5 349,-123.5 471,-123.5 471,-0.5 349,-0.5"/>
+<text text-anchor="middle" x="410" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">UnionToolInitData</text>
+<polyline fill="none" stroke="black" points="349,-104.5 471,-104.5 "/>
+<text text-anchor="start" x="357" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece1_Id</text>
+<text text-anchor="start" x="357" y="-81.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece2_Id</text>
+<text text-anchor="start" x="357" y="-70.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece1_Index</text>
+<text text-anchor="start" x="357" y="-59.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ piece2_Index</text>
+<text text-anchor="start" x="357" y="-48.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ parse</text>
+<text text-anchor="start" x="357" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ typeCreation</text>
+<text text-anchor="start" x="357" y="-26.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ retainPieces</text>
+<polyline fill="none" stroke="black" points="349,-19.5 471,-19.5 "/>
+<text text-anchor="start" x="357" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UnionToolInitData()</text>
 </a>
 </g>
 </g>
@@ -121,9 +121,9 @@ var sectionId = 'dynsection-0';
 <!-- Node2&#45;&gt;Node1 -->
 <g id="edge1" class="edge">
 <title>Node2&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M231.42,-374.85C249.41,-307.48 274.84,-233.47 310,-171 318.18,-156.46 328.67,-142.29 339.74,-129.24"/>
-<polygon fill="none" stroke="#404040" points="339.97,-128.97 340.92,-121.82 347.88,-119.95 346.94,-127.1 339.97,-128.97"/>
-<text text-anchor="middle" x="348" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +scene</text>
+<path fill="none" stroke="#404040" d="M236.6,-374.98C255.88,-307.8 282.24,-233.88 317,-171 324.18,-158.01 333.1,-145.19 342.55,-133.15"/>
+<polygon fill="none" stroke="#404040" points="342.66,-133.01 343.33,-125.83 350.22,-123.69 349.55,-130.87 342.66,-133.01"/>
+<text text-anchor="middle" x="354" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +scene</text>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
@@ -168,55 +168,55 @@ var sectionId = 'dynsection-0';
 <g id="node5" class="node">
 <title>Node5</title>
 <g id="a_node5"><a xlink:href="../../d2/d83/classVContainer.html" target="_top" xlink:title="The VContainer class container of all variables.">
-<polygon fill="white" stroke="black" points="319.5,-358.5 319.5,-789.5 498.5,-789.5 498.5,-358.5 319.5,-358.5"/>
-<text text-anchor="middle" x="409" y="-777.5" font-family="Helvetica,sans-Serif" font-size="10.00">VContainer</text>
-<polyline fill="none" stroke="black" points="319.5,-770.5 498.5,-770.5 "/>
-<text text-anchor="start" x="327.5" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
-<text text-anchor="start" x="327.5" y="-747.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _id</text>
-<text text-anchor="start" x="327.5" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _size</text>
-<text text-anchor="start" x="327.5" y="-725.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _height</text>
-<text text-anchor="start" x="327.5" y="-714.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; uniqueNames</text>
-<polyline fill="none" stroke="black" points="319.5,-707.5 498.5,-707.5 "/>
-<text text-anchor="start" x="327.5" y="-695.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VContainer()</text>
-<text text-anchor="start" x="327.5" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VContainer()</text>
-<text text-anchor="start" x="327.5" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VContainer()</text>
-<text text-anchor="start" x="327.5" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
-<text text-anchor="start" x="327.5" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
-<text text-anchor="start" x="327.5" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GeometricObject()</text>
-<text text-anchor="start" x="327.5" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetGObject()</text>
-<text text-anchor="start" x="327.5" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiece()</text>
-<text text-anchor="start" x="327.5" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiecePath()</text>
-<text text-anchor="start" x="327.5" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetVariable()</text>
-<text text-anchor="start" x="327.5" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
-<text text-anchor="start" x="327.5" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFakeGObject()</text>
-<text text-anchor="start" x="327.5" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
-<text text-anchor="start" x="327.5" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getNextId()</text>
-<text text-anchor="start" x="327.5" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateId()</text>
-<text text-anchor="start" x="327.5" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueNames()</text>
-<text text-anchor="start" x="327.5" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueIncrementNames()</text>
-<text text-anchor="start" x="327.5" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSize()</text>
-<text text-anchor="start" x="327.5" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHeight()</text>
-<text text-anchor="start" x="327.5" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
-<text text-anchor="start" x="327.5" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ rsize()</text>
-<text text-anchor="start" x="327.5" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ height()</text>
-<text text-anchor="start" x="327.5" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ rheight()</text>
-<text text-anchor="start" x="327.5" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsUnique()</text>
-<text text-anchor="start" x="327.5" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllUniqueNames()</text>
-<text text-anchor="start" x="327.5" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AddCurve()</text>
-<text text-anchor="start" x="327.5" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; qHash()</text>
-<text text-anchor="start" x="327.5" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetObject()</text>
-<text text-anchor="start" x="327.5" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; UpdateObject()</text>
-<text text-anchor="start" x="327.5" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DataVar()</text>
-<text text-anchor="start" x="327.5" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AddObject()</text>
+<polygon fill="white" stroke="black" points="326,-358.5 326,-789.5 494,-789.5 494,-358.5 326,-358.5"/>
+<text text-anchor="middle" x="410" y="-777.5" font-family="Helvetica,sans-Serif" font-size="10.00">VContainer</text>
+<polyline fill="none" stroke="black" points="326,-770.5 494,-770.5 "/>
+<text text-anchor="start" x="334" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; d</text>
+<text text-anchor="start" x="334" y="-747.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _id</text>
+<text text-anchor="start" x="334" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _size</text>
+<text text-anchor="start" x="334" y="-725.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; _height</text>
+<text text-anchor="start" x="334" y="-714.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; uniqueNames</text>
+<polyline fill="none" stroke="black" points="326,-707.5 494,-707.5 "/>
+<text text-anchor="start" x="334" y="-695.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VContainer()</text>
+<text text-anchor="start" x="334" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ VContainer()</text>
+<text text-anchor="start" x="334" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VContainer()</text>
+<text text-anchor="start" x="334" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ operator=()</text>
+<text text-anchor="start" x="334" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Swap()</text>
+<text text-anchor="start" x="334" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GeometricObject()</text>
+<text text-anchor="start" x="334" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetGObject()</text>
+<text text-anchor="start" x="334" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiece()</text>
+<text text-anchor="start" x="334" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetPiecePath()</text>
+<text text-anchor="start" x="334" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getVariable()</text>
+<text text-anchor="start" x="334" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 34 more...</text>
+<text text-anchor="start" x="334" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GetFakeGObject()</text>
+<text text-anchor="start" x="334" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getId()</text>
+<text text-anchor="start" x="334" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getNextId()</text>
+<text text-anchor="start" x="334" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ UpdateId()</text>
+<text text-anchor="start" x="334" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ClearUniqueNames()</text>
+<text text-anchor="start" x="334" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ clearUniqueVariableNames()</text>
+<text text-anchor="start" x="334" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setSize()</text>
+<text text-anchor="start" x="334" y="-497.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ setHeight()</text>
+<text text-anchor="start" x="334" y="-486.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ size()</text>
+<text text-anchor="start" x="334" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ rsize()</text>
+<text text-anchor="start" x="334" y="-464.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ height()</text>
+<text text-anchor="start" x="334" y="-453.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ rheight()</text>
+<text text-anchor="start" x="334" y="-442.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ IsUnique()</text>
+<text text-anchor="start" x="334" y="-431.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ AllUniqueNames()</text>
+<text text-anchor="start" x="334" y="-420.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AddCurve()</text>
+<text text-anchor="start" x="334" y="-409.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; qHash()</text>
+<text text-anchor="start" x="334" y="-398.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; GetObject()</text>
+<text text-anchor="start" x="334" y="-387.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; UpdateObject()</text>
+<text text-anchor="start" x="334" y="-376.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; DataVar()</text>
+<text text-anchor="start" x="334" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; AddObject()</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node1 -->
 <g id="edge4" class="edge">
 <title>Node5&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M409,-358.19C409,-278.64 409,-193.74 409,-135.51"/>
-<polygon fill="none" stroke="#404040" points="409,-135.5 405,-129.5 409,-123.5 413,-129.5 409,-135.5"/>
-<text text-anchor="middle" x="426" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +data</text>
+<path fill="none" stroke="#404040" d="M410,-358.19C410,-278.64 410,-193.74 410,-135.51"/>
+<polygon fill="none" stroke="#404040" points="410,-135.5 406,-129.5 410,-123.5 414,-129.5 410,-135.5"/>
+<text text-anchor="middle" x="427" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +data</text>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
@@ -234,7 +234,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="553" y="-879.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagImage</text>
 <text text-anchor="start" x="553" y="-868.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagNotes</text>
 <text text-anchor="start" x="553" y="-857.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagMeasurements</text>
-<text text-anchor="start" x="553" y="-846.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagIncrements</text>
+<text text-anchor="start" x="553" y="-846.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ TagVariables</text>
 <text text-anchor="start" x="553" y="-835.5" font-family="Helvetica,sans-Serif" font-size="10.00">and 128 more...</text>
 <text text-anchor="start" x="553" y="-824.5" font-family="Helvetica,sans-Serif" font-size="10.00"># activeDraftBlock</text>
 <text text-anchor="start" x="553" y="-813.5" font-family="Helvetica,sans-Serif" font-size="10.00"># m_DefaultLineColor</text>
@@ -251,7 +251,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="553" y="-695.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~VAbstractPattern()</text>
 <text text-anchor="start" x="553" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListMeasurements()</text>
 <text text-anchor="start" x="553" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListExpressions()</text>
-<text text-anchor="start" x="553" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ListIncrementExpressions()</text>
+<text text-anchor="start" x="553" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ listVariableExpressions()</text>
 <text text-anchor="start" x="553" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ CreateEmptyFile()</text>
 <text text-anchor="start" x="553" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ changeActiveDraftBlock()</text>
 <text text-anchor="start" x="553" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ getActiveDraftBlockName()</text>
@@ -281,7 +281,7 @@ var sectionId = 'dynsection-0';
 <text text-anchor="start" x="553" y="-365.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ToolExists()</text>
 <text text-anchor="start" x="553" y="-354.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParsePathNodes()</text>
 <text text-anchor="start" x="553" y="-343.5" font-family="Helvetica,sans-Serif" font-size="10.00"># ParseSANode()</text>
-<text text-anchor="start" x="553" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListIncrements()</text>
+<text text-anchor="start" x="553" y="-332.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; listVariables()</text>
 <text text-anchor="start" x="553" y="-321.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListPointExpressions()</text>
 <text text-anchor="start" x="553" y="-310.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListArcExpressions()</text>
 <text text-anchor="start" x="553" y="-299.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; ListElArcExpressions()</text>
@@ -302,9 +302,9 @@ var sectionId = 'dynsection-0';
 <!-- Node6&#45;&gt;Node1 -->
 <g id="edge5" class="edge">
 <title>Node6&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M544.97,-250.79C533.75,-223.13 521.14,-196.14 507,-171 499.01,-156.79 488.84,-142.9 478.09,-130.07"/>
-<polygon fill="none" stroke="#404040" points="478.04,-130 471.09,-128.07 470.19,-120.92 477.14,-122.84 478.04,-130"/>
-<text text-anchor="middle" x="509.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +doc</text>
+<path fill="none" stroke="#404040" d="M544.97,-261.46C532.63,-230.14 518.68,-199.44 503,-171 495.84,-158.01 486.92,-145.17 477.48,-133.14"/>
+<polygon fill="none" stroke="#404040" points="477.36,-133 470.48,-130.85 469.81,-123.67 476.69,-125.82 477.36,-133"/>
+<text text-anchor="middle" x="505.5" y="-145" font-family="Helvetica,sans-Serif" font-size="10.00"> +doc</text>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
@@ -322,8 +322,8 @@ var sectionId = 'dynsection-0';
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M312.83,-1217.64C308.17,-1167.22 308.06,-1078.1 355,-1024 401.34,-970.59 457.3,-1027.3 507,-977 521.2,-962.63 533.71,-946.66 544.75,-929.59"/>
-<polygon fill="none" stroke="midnightblue" points="309.36,-1218.2 313.87,-1227.79 316.33,-1217.48 309.36,-1218.2"/>
+<path fill="none" stroke="midnightblue" d="M312.89,-1217.7C308.3,-1167.33 308.26,-1078.28 355,-1024 400.03,-971.7 454.46,-1026.06 503,-977 518.91,-960.92 532.78,-942.83 544.85,-923.47"/>
+<polygon fill="none" stroke="midnightblue" points="309.42,-1218.24 313.92,-1227.83 316.39,-1217.53 309.42,-1218.24"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">

@@ -139,6 +139,8 @@ var vpatternconverter_8cpp =
     [ "strUnit", "d5/d2c/vpatternconverter_8cpp.html#abe03ba42d4bbb35dd5afd32d6e44fff2", null ],
     [ "strUserDefined", "d5/d2c/vpatternconverter_8cpp.html#a6a15c1bb3f0826c58d9e43171aa069e4", null ],
     [ "strV_External", "d5/d2c/vpatternconverter_8cpp.html#aa63d864bf874bac0de0d5d0db36c3b08", null ],
+    [ "strVariable", "d5/d2c/vpatternconverter_8cpp.html#aa70ce02917411d8647041b467f63dccd", null ],
+    [ "strVariables", "d5/d2c/vpatternconverter_8cpp.html#a05b6b59b26b9eb0ee8985fa20bd29c1f", null ],
     [ "strVersion", "d5/d2c/vpatternconverter_8cpp.html#a359583b87d82c44a012f653bd125ffbc", null ],
     [ "strVMark", "d5/d2c/vpatternconverter_8cpp.html#a8ef8dab2559393c0d3216affc8547b87", null ],
     [ "strWidth", "d5/d2c/vpatternconverter_8cpp.html#ad42d215000a3411f72758f13f4f3adf9", null ]

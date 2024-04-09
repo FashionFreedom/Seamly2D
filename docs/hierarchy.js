@@ -521,6 +521,7 @@ var hierarchy =
       ] ]
     ] ],
     [ "QSharedData", null, [
+      [ "CustomVariableData", "dc/d49/classCustomVariableData.html", null ],
       [ "MeasurementVariableData", "d3/d99/classMeasurementVariableData.html", null ],
       [ "VAbstractArcData", "db/dd7/classVAbstractArcData.html", null ],
       [ "VAbstractCurveData", "d5/db0/classVAbstractCurveData.html", null ],
@@ -537,7 +538,6 @@ var hierarchy =
       [ "VFSplinePointData", "dd/dda/classVFSplinePointData.html", null ],
       [ "VGObjectData", "df/dd9/classVGObjectData.html", null ],
       [ "VGrainlineDataPrivate", "d5/de8/classVGrainlineDataPrivate.html", null ],
-      [ "VIncrementData", "d3/d87/classVIncrementData.html", null ],
       [ "VInternalVariableData", "d4/da3/classVInternalVariableData.html", null ],
       [ "VLayoutPaperData", "d2/d52/classVLayoutPaperData.html", null ],
       [ "VLayoutPieceData", "d7/dcf/classVLayoutPieceData.html", null ],
@@ -699,8 +699,8 @@ var hierarchy =
       [ "VLengthLine", "d6/d57/classVLengthLine.html", null ],
       [ "VLineAngle", "d1/d88/classVLineAngle.html", null ],
       [ "VVariable", "da/d49/classVVariable.html", [
-        [ "MeasurementVariable", "d5/d38/classMeasurementVariable.html", null ],
-        [ "VIncrement", "dd/d0c/classVIncrement.html", null ]
+        [ "CustomVariable", "d2/d16/classCustomVariable.html", null ],
+        [ "MeasurementVariable", "d5/d38/classMeasurementVariable.html", null ]
       ] ]
     ] ],
     [ "VLabelTemplateLine", "dc/daa/structVLabelTemplateLine.html", null ],

@@ -135,7 +135,6 @@ var namespaces_dup =
       [ "settingGraphicsViewZoomRBNegativeColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aedefb6549602aaba61af1b775475ff7b", null ],
       [ "settingGraphicsViewZoomRBPositiveColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0dfede5003a30a9408c3063eb66a92b4", null ],
       [ "settingGraphicsViewZoomSpeedFactor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a26cf87afb2f980c1ec7cd2fd63e9f02d", null ],
-      [ "settingIncrementsDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ad87078c497f9ce2af67cf71afa612e72", null ],
       [ "settingLabelDateFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a9960810b30624736af9c63c4ea1bdb78", null ],
       [ "settingLabelTimeFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a400d4d80c42541aab7c2d1572ae4339e", null ],
       [ "settingLabelUserDateFormats", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a55a4ea7793a79bc584e55669b40e6d7c", null ],
@@ -163,7 +162,8 @@ var namespaces_dup =
       [ "settingShowPatternLabels", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a20c760cc67cf66c34b84d18821c46cbe", null ],
       [ "settingShowPieceLabels", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#ae878122ddcaae25fa2369875ccac14b6", null ],
       [ "settingShowSeamAllowances", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aead542985bef57407eb367a8c7c0da1f", null ],
-      [ "settingToolSeamAllowanceDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a91bf7a4d63951d137db9cb09112c61d2", null ]
+      [ "settingToolSeamAllowanceDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a91bf7a4d63951d137db9cb09112c61d2", null ],
+      [ "settingVariablesDialogSize", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a724bd4de8bb4e50cd42068755d13f6fe", null ]
     ] ],
     [ "anonymous_namespace{vdomdocument.cpp}", "d6/db9/namespaceanonymous__namespace_02vdomdocument_8cpp_03.html", [
       [ "SaveNodeCanonically", "d6/db9/namespaceanonymous__namespace_02vdomdocument_8cpp_03.html#a48dca2f0db8a0c3d00d69eff6118f8bf", null ]

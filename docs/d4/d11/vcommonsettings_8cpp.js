@@ -111,7 +111,6 @@ var vcommonsettings_8cpp =
     [ "settingGraphicsViewZoomRBNegativeColor", "d4/d11/vcommonsettings_8cpp.html#aedefb6549602aaba61af1b775475ff7b", null ],
     [ "settingGraphicsViewZoomRBPositiveColor", "d4/d11/vcommonsettings_8cpp.html#a0dfede5003a30a9408c3063eb66a92b4", null ],
     [ "settingGraphicsViewZoomSpeedFactor", "d4/d11/vcommonsettings_8cpp.html#a26cf87afb2f980c1ec7cd2fd63e9f02d", null ],
-    [ "settingIncrementsDialogSize", "d4/d11/vcommonsettings_8cpp.html#ad87078c497f9ce2af67cf71afa612e72", null ],
     [ "settingLabelDateFormat", "d4/d11/vcommonsettings_8cpp.html#a9960810b30624736af9c63c4ea1bdb78", null ],
     [ "settingLabelTimeFormat", "d4/d11/vcommonsettings_8cpp.html#a400d4d80c42541aab7c2d1572ae4339e", null ],
     [ "settingLabelUserDateFormats", "d4/d11/vcommonsettings_8cpp.html#a55a4ea7793a79bc584e55669b40e6d7c", null ],
@@ -139,5 +138,6 @@ var vcommonsettings_8cpp =
     [ "settingShowPatternLabels", "d4/d11/vcommonsettings_8cpp.html#a20c760cc67cf66c34b84d18821c46cbe", null ],
     [ "settingShowPieceLabels", "d4/d11/vcommonsettings_8cpp.html#ae878122ddcaae25fa2369875ccac14b6", null ],
     [ "settingShowSeamAllowances", "d4/d11/vcommonsettings_8cpp.html#aead542985bef57407eb367a8c7c0da1f", null ],
-    [ "settingToolSeamAllowanceDialogSize", "d4/d11/vcommonsettings_8cpp.html#a91bf7a4d63951d137db9cb09112c61d2", null ]
+    [ "settingToolSeamAllowanceDialogSize", "d4/d11/vcommonsettings_8cpp.html#a91bf7a4d63951d137db9cb09112c61d2", null ],
+    [ "settingVariablesDialogSize", "d4/d11/vcommonsettings_8cpp.html#a724bd4de8bb4e50cd42068755d13f6fe", null ]
 ];
