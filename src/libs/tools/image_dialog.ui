@@ -58,7 +58,7 @@
         <x>12</x>
         <y>25</y>
         <width>187</width>
-        <height>49</height>
+        <height>55</height>
        </rect>
       </property>
       <layout class="QFormLayout" name="formLayout">
@@ -912,20 +912,34 @@ border: none
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="lockImage_CheckBox">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+         <widget class="QToolButton" name="lockImage_ToolButton">
+          <property name="font">
+           <font>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="toolTip">
+           <string notr="true"/>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QToolButton:checked {
+    background-color: #f0f0f0;
+}
+QToolButton:!checked {
+    background-color: #f0f0f0;
+}
+</string>
           </property>
           <property name="text">
-           <string/>
+           <string notr="true">...</string>
           </property>
           <property name="icon">
            <iconset resource="../vmisc/share/resources/icon.qrc">
             <normaloff>:/icon/32x32/lock_off.png</normaloff>
             <normalon>:/icon/32x32/lock_on.png</normalon>:/icon/32x32/lock_off.png</iconset>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
           </property>
          </widget>
         </item>

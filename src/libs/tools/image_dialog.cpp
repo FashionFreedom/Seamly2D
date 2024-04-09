@@ -116,7 +116,7 @@ ImageDialog::ImageDialog(DraftImage image)
             this, &ImageDialog::rotationChanged);
     connect(ui->aspectLocked_ToolButton, &QToolButton::clicked, this, &ImageDialog::lockAspectChanged);
     connect(ui->units_ToolButton, &QToolButton::clicked, this, &ImageDialog::unitsChanged);
-    connect(ui->lockImage_CheckBox,    &QCheckBox::toggled, this, &ImageDialog::lockChanged);
+    connect(ui->lockImage_ToolButton,  &QCheckBox::toggled, this, &ImageDialog::lockChanged);
     connect(ui->visibility_CheckBox,   &QCheckBox::toggled, this, &ImageDialog::visibilityChanged);
     connect(ui->opacity_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::opacityChanged);
@@ -146,7 +146,7 @@ void ImageDialog::updateImage()
     blockSignals(true);
     ui->idText_Label->setNum(static_cast<double>(m_image.id));
     ui->name_LineEdit->setText(m_image.name);
-    ui->lockImage_CheckBox->setChecked(m_image.locked);
+    ui->lockImage_ToolButton->setChecked(m_image.locked);
     setXPos(m_image.xPos);
     setYPos(m_image.yPos);
     setWidth(m_image.width);
@@ -185,7 +185,7 @@ void ImageDialog::updateImage()
 void ImageDialog::enableWidgets()
 {
     ui->name_LineEdit->setEnabled(!m_image.locked);
-    ui->lockImage_CheckBox->setEnabled(true);
+    ui->lockImage_ToolButton->setEnabled(true);
     ui->xPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->yPosition_DoubleSpinBox->setEnabled(!m_image.locked);
     ui->width_DoubleSpinBox->setEnabled(!m_image.locked);
@@ -364,10 +364,10 @@ bool ImageDialog::isLocked() const
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setLocked(const bool &checked)
 {
-    ui->lockImage_CheckBox->blockSignals(true);
+    ui->lockImage_ToolButton->blockSignals(true);
     m_image.locked = checked;
-    ui->lockImage_CheckBox->setChecked(checked);
-    ui->lockImage_CheckBox->blockSignals(false);
+    ui->lockImage_ToolButton->setChecked(checked);
+    ui->lockImage_ToolButton->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -588,7 +588,7 @@ void ImageDialog::lockChanged(bool checked)
 {
     blockSignals(true);
     m_image.locked = checked;
-    ui->lockImage_CheckBox->setChecked(m_image.locked);
+    ui->lockImage_ToolButton->setChecked(m_image.locked);
     enableWidgets();
     blockSignals(false);
     emit lockClicked(m_image.locked);

@@ -296,7 +296,13 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     QMenu menu;
     QAction *actionProperties = menu.addAction(QIcon::fromTheme("preferences-other"), tr("Properties"));
 
-    QAction *actionLock = menu.addAction(QIcon("://icon/32x32/lock_on.png"), tr("Lock"));
+    QAction *actionLock = menu.addAction(tr("Lock"));
+    if (m_image.locked){
+        actionLock->setIcon(QIcon("://icon/32x32/lock_on.png"));
+    }
+    else{
+        actionLock->setIcon(QIcon("://icon/32x32/lock_off.png"));
+    }
     actionLock->setCheckable(true);
     actionLock->setChecked(m_image.locked);
 
