@@ -174,7 +174,6 @@ void ImageItem::setLock(bool checked)
     }
     setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
     //enableSelection(!m_image.locked);
-    enableHovering(!m_image.locked);
     emit imageUpdated(m_image);
 }
 
@@ -219,7 +218,6 @@ void ImageItem::enableSelection(bool enable)
 //---------------------------------------------------------------------------------------------------------------------
 void ImageItem::enableHovering(bool enable)
 {
-    setAcceptHoverEvents(enable);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -487,8 +485,8 @@ void ImageItem::initializeItem()
     setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
     setFlag(QGraphicsItem::ItemIsSelectable, false);
+    setAcceptHoverEvents(true);
     //enableSelection(false);
-    enableHovering(true);
 }
 
 void ImageItem::updateFromHandles(QRectF rect)
