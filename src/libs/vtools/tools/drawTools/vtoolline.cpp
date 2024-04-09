@@ -104,7 +104,6 @@ VToolLine::VToolLine(VAbstractPattern *doc, VContainer *data, quint32 id, quint3
     this->m_lineWeight = lineWeight;
     //Line
     RefreshGeometry();
-    this->setFlag(QGraphicsItem::ItemStacksBehindParent, true);
     this->setFlag(QGraphicsItem::ItemIsFocusable, true);// For keyboard input focus
     this->setAcceptHoverEvents(true);
 
