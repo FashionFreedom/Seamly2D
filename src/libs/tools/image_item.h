@@ -116,7 +116,6 @@ private:
     bool               m_isHovered;
     SelectionType      m_selectionType;
     bool               m_transformationMode;
-    bool               m_hasShape;
     DraftImage         m_image;
     qreal              m_pixmapWidth;
     qreal              m_pixmapHeight;

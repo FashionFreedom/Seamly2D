@@ -1654,7 +1654,6 @@ void MainWindow::handleImportImage()
         ui->importImage_ToolButton->setChecked(false);
         return;
     }
-    image.id = VContainer::getNextId();
     image.name = f.baseName();
     image.filename = filename;
     image.units = qApp->patternUnit();
@@ -1666,6 +1665,8 @@ void  MainWindow::addImage(DraftImage image)
 {
     static bool firstImportImage = false;
     QImageReader imageReader(image.filename);
+
+    image.id = VContainer::getNextId();
 
     if(!imageReader.canRead())
     {
@@ -1681,6 +1682,14 @@ void  MainWindow::addImage(DraftImage image)
         qCDebug(vMainWindow, "Can't read image");
         QMessageBox::critical(this, tr("Can't read image"), tr("Could not read the image.") + "\n" + tr("It may be corrupted or empty..."), QMessageBox::Ok);
         return;
+    }
+
+    if (image.width == 0 || image.height == 0)
+    {
+        image.width  = image.pixmap.width();
+        image.height = image.pixmap.height();
+        image.xScale = 100;
+        image.yScale = 100;
     }
 
     ImageItem *item = new ImageItem(image);
@@ -4421,6 +4430,12 @@ void MainWindow::fullParseFile()
 {
     qCDebug(vMainWindow, "Full parsing file");
 
+    QList<DraftImage> allImages;
+    foreach (ImageItem *item, m_ImageMap.values()) {allImages.append(item->getImage());}
+    //we must wait until all the DraftImages are saved before deleting the images
+    //because deleting an image change the z order of the other
+    foreach (ImageItem *item, m_ImageMap.values()) {handleDeleteImage(item->getImage().id);}
+
     toolProperties->clearPropertyBrowser();
     try
     {
@@ -4549,6 +4564,8 @@ void MainWindow::fullParseFile()
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
     VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
+
+    foreach (DraftImage image, allImages) {addImage(image);}
 }
 
 //---------------------------------------------------------------------------------------------------------------------

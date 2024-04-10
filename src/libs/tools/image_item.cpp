@@ -73,14 +73,30 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     , m_isHovered(false)
     , m_selectionType(SelectionType::ByMouseRelease)
     , m_transformationMode(Qt::SmoothTransformation)
-    , m_hasShape(false)
     , m_image(image)
     , m_pixmapWidth()
     , m_pixmapHeight()
     , m_selectable(true)
 {
     initializeItem();
-    setPixmap(m_image.pixmap);
+
+    m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_image.width, m_image.yPos + m_image.height);
+    m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
+
+    allImageItems.append(this);
+
+    if (m_image.order == 0)
+    {
+        qreal   minZValue = maxImageZvalue+1;
+        foreach (ImageItem *item, allImageItems)
+        {
+                minZValue = qMin(minZValue, item->m_image.order);
+        }
+        m_image.order = minZValue-1;
+        moveToTop();
+    }
+
+    updateImage();
 
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
@@ -88,18 +104,6 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles->hide();
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
-
-    qreal   minZValue = maxImageZvalue+1;
-    foreach (ImageItem *item, allImageItems)
-    {
-            minZValue = qMin(minZValue, item->m_image.order);
-    }
-    m_image.order = minZValue-1;
-
-    allImageItems.append(this);
-    moveToTop();
-
-    updateImage();
 }
 
 
@@ -115,13 +119,13 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
     prepareGeometryChange();
 
     m_image.pixmap = pixmap;
+
     m_pixmapWidth  = pixmap.width();
     m_pixmapHeight = pixmap.height();
     m_image.width  = pixmap.width();
     m_image.height = pixmap.height();
     m_image.xScale = m_image.width / m_pixmapWidth * 100;
     m_image.yScale = m_image.height / m_pixmapHeight * 100;
-    m_hasShape     = false;
 
     m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_pixmapWidth, m_image.yPos + m_pixmapHeight);
 
@@ -166,7 +170,7 @@ void ImageItem::setLock(bool checked)
     {
         setAcceptedMouseButtons(Qt::RightButton);
         emit setStatusMessage("");
-        m_resizeHandles->hide();
+        if (m_resizeHandles != nullptr) {m_resizeHandles->hide();}
     }
     else
     {
