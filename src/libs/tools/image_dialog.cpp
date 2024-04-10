@@ -69,6 +69,7 @@ ImageDialog::ImageDialog(DraftImage image)
     , m_pixmapHeight(image.pixmap.height())
     , m_minScale(.03)
     , m_maxScale(1.0)
+    , m_minOpacity(5)
     , m_flagName(true)
 {
     ui->setupUi(this);
@@ -679,7 +680,12 @@ void ImageDialog::visibilityChanged(bool checked)
 void ImageDialog::opacityChanged(qreal opacity)
 {
     blockSignals(true);
-    m_image.opacity = opacity;
+    if (opacity < m_minOpacity){
+        m_image.opacity = m_minOpacity;
+    }
+    else{
+        m_image.opacity = opacity;
+    }
     blockSignals(false);
     emit imageUpdated(m_image);
 }
