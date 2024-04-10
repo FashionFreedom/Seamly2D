@@ -506,6 +506,11 @@ void VToolOptionsPropertyBrowser::itemClicked(QGraphicsItem *item)
 {
     if (item != nullptr)
     {
+        if (item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::BackgroundImage))
+        {
+            return;
+        }
+
         if (item->isEnabled()==false)
         {
             return;
