@@ -740,7 +740,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, const Tool &tooltype)
 {
     // This check helps to find missing tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used in history.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used in history.");
 
     QString iconFileName = "";
     QString objName = tr("Unknown Object");
@@ -762,6 +762,7 @@ void GroupsWidget::addGroupItem(const quint32 &toolId, const quint32 &objId, con
                 case Tool::Cut:
                 case Tool::Midpoint:            // Same as Tool::AlongLine, but tool will never have such type
                 case Tool::ArcIntersectAxis:    // Same as Tool::CurveIntersectAxis, but tool will never have such type
+                case Tool::BackgroundImage:
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE(); //-V501
                     break;

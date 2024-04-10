@@ -56,7 +56,7 @@ public:
     virtual         ~ImageItem() = default;
 
     virtual int      type() const override {return Type;}
-    enum             {Type = UserType + static_cast<int>(Vis::BackgroundImageItem)};
+    enum             {Type = UserType + static_cast<int>(Tool::BackgroundImage)};
 
     static QList<ImageItem *> allImageItems;
 

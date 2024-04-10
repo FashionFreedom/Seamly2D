@@ -2813,21 +2813,29 @@ void MainWindow::zoomScaleChanged(qreal scale)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::zoomToSelected()
 {
+    QGraphicsItem *item = qApp->getCurrentScene()->focusItem();
+    QRectF rect;
+
     if (qApp->getCurrentScene() == draftScene)
     {
-        ui->view->zoomToRect(doc->ActiveDrawBoundingRect());
+        if ((item != nullptr) && (item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::BackgroundImage)))
+        {
+            rect = item->boundingRect();
+            rect.translate(item->scenePos());
+            ui->view->zoomToRect(rect);
+        }
+        else
+        {
+            ui->view->zoomToRect(doc->ActiveDrawBoundingRect());
+        }
     }
     else if (qApp->getCurrentScene() == pieceScene)
     {
-        QGraphicsItem *item = qApp->getCurrentScene()->focusItem();
+        if ((item != nullptr) && (item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::Piece)))
         {
-            if ((item != nullptr) && (item->type() == QGraphicsItem::UserType + static_cast<int>(Tool::Piece)))
-            {
-                QRectF rect;
-                rect = item->boundingRect();
-                rect.translate(item->scenePos());
-                ui->view->zoomToRect(rect);
-            }
+            rect = item->boundingRect();
+            rect.translate(item->scenePos());
+            ui->view->zoomToRect(rect);
         }
     }
 }
@@ -2935,7 +2943,7 @@ void MainWindow::initializeToolButtons()
     connect(ui->arrowPointer_ToolButton, &QToolButton::clicked, this, &MainWindow::handleArrowTool);
 
     // This check helps to find missed tools
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Check if all tools were connected.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Check if all tools were connected.");
 
     connect(ui->pointAtDistanceAngle_ToolButton, &QToolButton::clicked,
             this, &MainWindow::handlePointAtDistanceAngleTool);
@@ -3471,7 +3479,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void MainWindow::CancelTool()
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     qCDebug(vMainWindow, "Canceling tool.");
     dialogTool.clear();
@@ -3511,6 +3519,7 @@ void MainWindow::CancelTool()
         case Tool::NodeElArc:
         case Tool::NodeSpline:
         case Tool::NodeSplinePath:
+        case Tool::BackgroundImage:
             Q_UNREACHABLE(); //-V501
             //Nothing to do here because we can't create this tool from main window.
             break;
@@ -4937,7 +4946,7 @@ void MainWindow::setToolsEnabled(bool enable)
     }
 
     // This check helps to find missed tools
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     //Toolbox Drafting Tools
     //Points
@@ -5447,7 +5456,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 void MainWindow::LastUsedTool()
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were handled.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were handled.");
 
     if (currentTool == lastUsedTool)
     {
@@ -5473,6 +5482,7 @@ void MainWindow::LastUsedTool()
         case Tool::NodeElArc:
         case Tool::NodeSpline:
         case Tool::NodeSplinePath:
+        case Tool::BackgroundImage:
             Q_UNREACHABLE(); //-V501
             //Nothing to do here because we can't create this tool from main window.
             break;
