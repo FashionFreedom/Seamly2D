@@ -4430,12 +4430,6 @@ void MainWindow::fullParseFile()
 {
     qCDebug(vMainWindow, "Full parsing file");
 
-    QList<DraftImage> allImages;
-    foreach (ImageItem *item, doc->getBackgroundImageMap().values()) {allImages.append(item->getImage());}
-    //we must wait until all the DraftImages are saved before deleting the images
-    //because deleting an image change the z order of the other
-    foreach (ImageItem *item, doc->getBackgroundImageMap().values()) {handleDeleteImage(item->getImage().id);}
-
     toolProperties->clearPropertyBrowser();
     try
     {
@@ -4564,8 +4558,6 @@ void MainWindow::fullParseFile()
 
     VMainGraphicsView::NewSceneRect(draftScene, qApp->getSceneView());
     VMainGraphicsView::NewSceneRect(pieceScene, qApp->getSceneView());
-
-    foreach (DraftImage image, allImages) {addImage(image);}
 }
 
 //---------------------------------------------------------------------------------------------------------------------
