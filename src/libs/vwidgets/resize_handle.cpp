@@ -88,6 +88,18 @@ void ResizeHandlesItem::setLockAspectRatio(bool lock)
 }
 
 //------------------------------------------------------------------------------
+void ResizeHandlesItem::parentIsLocked(bool lock)
+{
+    m_parentIsLocked = lock;
+    foreach (HandleItem *handleItem, m_handleItems)
+    {
+        handleItem->setFlag(QGraphicsItem::ItemIgnoresTransformations, !lock);
+        handleItem->setAcceptedMouseButtons(lock ? Qt::NoButton : Qt::AllButtons);
+    }
+}
+
+
+//------------------------------------------------------------------------------
 void ResizeHandlesItem::setParentRotation(qreal rotation)
 {
     m_parentRotation = rotation;
@@ -185,7 +197,7 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
     this->setFlag(QGraphicsItem::ItemSendsGeometryChanges, true);
     this->setFlag(QGraphicsItem::ItemIsFocusable, true); // For keyboard input focus
-    this->setFlag(QGraphicsItem::ItemIgnoresTransformations, true);
+    this->setFlag(QGraphicsItem::ItemIgnoresTransformations, !m_parent->m_parentIsLocked);
 
     setAcceptHoverEvents(true);
 }
@@ -210,9 +222,17 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
     Q_UNUSED(option);
     Q_UNUSED(widget);
 
-    painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
-    painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
-    painter->drawEllipse(boundingRect());
+    if (!m_parent->m_parentIsLocked)
+    {
+        painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
+        painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
+        painter->drawEllipse(boundingRect());
+    }
+    else
+    {
+        QPixmap pixmap("://icon/32x32/lock_on.png");
+        painter->drawPixmap(boundingRect().toRect(), pixmap);
+    }
 }
 
 /**
@@ -504,26 +524,29 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
 {
     m_isHovered = true;
 
-    QPixmap pixmap(cursorResizeArrow);
-    QTransform transform;
-    transform.rotate(m_parent->m_parentRotation + (static_cast<int>(m_handlePosition) - 1) * 45);
-    pixmap = pixmap.transformed(transform);
-    QPointF offset = pixmap.rect().center();
-    setCursor(QCursor(pixmap, offset.x(), offset.y()));
-	
-    QString message;
-    if(m_parent->m_lockAspectRatio)
+    if (!m_parent->m_parentIsLocked)
     {
-        message = tr("Press <b>CTRL</b> to scale around the center - <b> Aspect ratio locked </b>");
+        QPixmap pixmap(cursorResizeArrow);
+        QTransform transform;
+        transform.rotate(m_parent->m_parentRotation + (static_cast<int>(m_handlePosition) - 1) * 45);
+        pixmap = pixmap.transformed(transform);
+        QPointF offset = pixmap.rect().center();
+        setCursor(QCursor(pixmap, offset.x(), offset.y()));
+
+        QString message;
+        if(m_parent->m_lockAspectRatio)
+        {
+            message = tr("Press <b>CTRL</b> to scale around the center - <b> Aspect ratio locked </b>");
+        }
+        else
+        {
+            message = tr("Press <b>CTRL</b> to scale around the center,"
+                                 " <b>SHIFT</b> to scale uniformly.");
+        }
+
+        emit m_parent->setStatusMessage(message);
     }
-    else
-    {
-        message = tr("Press <b>CTRL</b> to scale around the center,"
-                             " <b>SHIFT</b> to scale uniformly.");
-    }
-	
-    emit m_parent->setStatusMessage(message);
-	
+
     QGraphicsItem::hoverEnterEvent(event);
 }
 
@@ -535,10 +558,13 @@ void ResizeHandlesItem::HandleItem::hoverEnterEvent(QGraphicsSceneHoverEvent *ev
 void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event)
 {
     m_isHovered = false;
-	
-    setCursor(QCursor(Qt::ArrowCursor));
-    emit m_parent->setStatusMessage("");
-	
+
+    if (!m_parent->m_parentIsLocked)
+    {
+        setCursor(QCursor(Qt::ArrowCursor));
+        emit m_parent->setStatusMessage("");
+    }
+
     QGraphicsItem::hoverLeaveEvent(event);
 }
 
@@ -550,6 +576,11 @@ void ResizeHandlesItem::HandleItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *ev
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (m_parent->m_parentIsLocked)
+    {
+        return;
+    }
+
     m_scalingFactor = m_parent->m_parentRect.width() / m_parent->m_parentRect.height();
 
     QGraphicsItem::mousePressEvent(event);
@@ -563,6 +594,11 @@ void ResizeHandlesItem::HandleItem::mousePressEvent(QGraphicsSceneMouseEvent *ev
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (m_parent->m_parentIsLocked)
+    {
+        return;
+    }
+
     QGraphicsItem::mouseMoveEvent(event);
 }
 
@@ -575,6 +611,11 @@ void ResizeHandlesItem::HandleItem::mouseMoveEvent(QGraphicsSceneMouseEvent *eve
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
 {
+    if (m_parent->m_parentIsLocked)
+    {
+        return;
+    }
+
     if (event->button() == Qt::LeftButton && event->type() != QEvent::GraphicsSceneMouseDoubleClick)
     {
     }
@@ -591,5 +632,10 @@ void ResizeHandlesItem::HandleItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *
 //---------------------------------------------------------------------------------------------------------------------
 void ResizeHandlesItem::HandleItem::keyReleaseEvent(QKeyEvent *event)
 {
+    if (m_parent->m_parentIsLocked)
+    {
+        return;
+    }
+
     QGraphicsItem::keyReleaseEvent(event);
 }

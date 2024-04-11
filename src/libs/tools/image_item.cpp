@@ -101,7 +101,8 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_resizeHandles = new ResizeHandlesItem(this);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     m_resizeHandles->setParentRotation(m_image.rotation);
-    m_resizeHandles->hide();
+    m_resizeHandles->parentIsLocked(m_image.locked);
+    m_resizeHandles->setVisible(m_image.locked);
     connect(m_resizeHandles, &ResizeHandlesItem::sizeChanged, this, &ImageItem::updateFromHandles);
     connect(m_resizeHandles, &ResizeHandlesItem::setStatusMessage, this, [this](QString message) {emit setStatusMessage(message);});
 }
@@ -170,7 +171,6 @@ void ImageItem::setLock(bool checked)
     {
         setAcceptedMouseButtons(Qt::RightButton);
         emit setStatusMessage("");
-        if (m_resizeHandles != nullptr) {m_resizeHandles->hide();}
     }
     else
     {
@@ -178,7 +178,6 @@ void ImageItem::setLock(bool checked)
     }
     setFlag(QGraphicsItem::ItemIsMovable, !m_image.locked);
     //enableSelection(!m_image.locked);
-    emit imageUpdated(m_image);
 }
 
 
@@ -356,7 +355,8 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
     }
     else if (selectedAction == actionLock)
     {
-        setLock(!m_image.locked);
+        m_image.locked = !m_image.locked;
+        updateImageAndHandles(m_image);
     }
     // else if (selectedAction == actionShow)
     // {
@@ -517,7 +517,8 @@ void ImageItem::updateImageAndHandles(DraftImage image)
     m_resizeHandles->setParentRect(m_boundingRect);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     m_resizeHandles->setParentRotation(m_image.rotation);
-    emit imageUpdated(m_image);
+    m_resizeHandles->parentIsLocked(m_image.locked);
+    m_resizeHandles->setVisible(m_image.locked);
 }
 
 void ImageItem::deleteImageItem()

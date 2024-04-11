@@ -90,6 +90,7 @@ public:
     void               setLeft(qreal x);
     void               setParentRect(const QRectF &rect);
     void               setLockAspectRatio(bool lock);
+    void               parentIsLocked(bool lock);
     void               setParentRotation(qreal rotation);
 
 signals:
@@ -102,6 +103,7 @@ private:
     QList<HandleItem*> m_handleItems;
     QRectF             m_parentRect;
     bool               m_lockAspectRatio;
+    bool               m_parentIsLocked;
     qreal              m_parentRotation;
 };
 
