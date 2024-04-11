@@ -1693,7 +1693,7 @@ void  MainWindow::addImage(DraftImage image)
     }
 
     ImageItem *item = new ImageItem(image);
-    m_ImageMap.insert(image.id, item);
+    doc->addBackgroundImage(image.id, item);
     draftScene->addItem(item);
     //Need error dialog
 
@@ -1741,10 +1741,10 @@ void MainWindow::handleDeleteImage(quint32 id)
 
     if (deleteConfirmed)
     {
-        ImageItem *item = m_ImageMap.value(id);
+        ImageItem *item = doc->getBackgroundImage(id);
         if (item)
         {
-            m_ImageMap.remove(id);
+            doc->removeBackgroundImage(id);
             item->deleteImageItem();
         }
     }
@@ -1753,7 +1753,7 @@ void MainWindow::handleDeleteImage(quint32 id)
 //---------------------------------------------------------------------------------------------------------------------
 void MainWindow::handleImageSelected(quint32 id)
 {
-    ImageItem *item = m_ImageMap.value(id);
+    ImageItem *item = doc->getBackgroundImage(id);
     if (item)
     {
         // May be useful in the development of the background-image feature
@@ -4431,10 +4431,10 @@ void MainWindow::fullParseFile()
     qCDebug(vMainWindow, "Full parsing file");
 
     QList<DraftImage> allImages;
-    foreach (ImageItem *item, m_ImageMap.values()) {allImages.append(item->getImage());}
+    foreach (ImageItem *item, doc->getBackgroundImageMap().values()) {allImages.append(item->getImage());}
     //we must wait until all the DraftImages are saved before deleting the images
     //because deleting an image change the z order of the other
-    foreach (ImageItem *item, m_ImageMap.values()) {handleDeleteImage(item->getImage().id);}
+    foreach (ImageItem *item, doc->getBackgroundImageMap().values()) {handleDeleteImage(item->getImage().id);}
 
     toolProperties->clearPropertyBrowser();
     try

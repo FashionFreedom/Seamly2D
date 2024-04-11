@@ -69,6 +69,7 @@
 #include "vtoolrecord.h"
 #include "../vmisc/def.h"
 #include "../vwidgets/pen_toolbar.h"
+#include "../../tools/image_item.h"
 
 class QDomElement;
 class VPiecePath;
@@ -173,6 +174,11 @@ public:
     quint32                        SiblingNodeId(const quint32 &nodeId) const;
 
     QStringList                    getPatternPieces() const;
+
+    QMap<qint32, ImageItem *>      getBackgroundImageMap();
+    ImageItem *                    getBackgroundImage(qint32 id);
+    void                           addBackgroundImage(qint32 id, ImageItem *item);
+    void                           removeBackgroundImage(qint32 id);
 
     QMap<GHeights, bool>           GetGradationHeights() const;
     void                           SetGradationHeights(const QMap<GHeights, bool> &options);
@@ -508,6 +514,9 @@ protected:
 
     /** @brief patternPieces list of patern pieces names for combobox*/
     QStringList    patternPieces;
+
+    /** @brief m_imageMap stores the image items and their id*/
+    QMap<qint32, ImageItem *>         m_imageMap{};
 
     /** @brief modified keep state of the document for cases that do not cover QUndoStack*/
     mutable bool   modified;

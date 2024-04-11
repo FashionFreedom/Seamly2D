@@ -360,8 +360,6 @@ private:
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
 
-    QMap<qint32, ImageItem *>         m_ImageMap{};
-
     PenToolBar                       *m_penToolBar; //!< for selecting the current pen
     PenToolBar                       *m_penReset;
     QComboBox                        *m_zoomToPointComboBox;

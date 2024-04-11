@@ -3128,3 +3128,27 @@ QString VAbstractPattern::useGroupLineWeight(quint32 toolId, QString weight)
         return weight;
     }
 }
+
+
+QMap<qint32, ImageItem *>   VAbstractPattern::getBackgroundImageMap()
+{
+    return m_imageMap;
+}
+
+
+void    VAbstractPattern::addBackgroundImage(qint32 id, ImageItem *item)
+{
+    m_imageMap.insert(id, item);
+}
+
+
+void    VAbstractPattern::removeBackgroundImage(qint32 id)
+{
+    m_imageMap.remove(id);
+}
+
+
+ImageItem*  VAbstractPattern::getBackgroundImage(qint32 id)
+{
+    return m_imageMap.value(id);
+}
