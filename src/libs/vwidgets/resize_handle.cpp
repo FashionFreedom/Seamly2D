@@ -494,64 +494,53 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
         point.setX(newPos.x());
     }
 
+    bool isMovingTop = m_handlePosition == Position::Top ||
+                      m_handlePosition == Position::TopLeft ||
+                      m_handlePosition == Position::TopRight;
+    bool isMovingBottom = m_handlePosition == Position::Bottom ||
+                         m_handlePosition == Position::BottomLeft ||
+                         m_handlePosition == Position::BottomRight;
+    bool isMovingLeft = m_handlePosition == Position::Left ||
+                       m_handlePosition == Position::TopLeft ||
+                       m_handlePosition == Position::BottomLeft;
+    bool isMovingRight = m_handlePosition == Position::Right ||
+                        m_handlePosition == Position::TopRight ||
+                        m_handlePosition == Position::BottomRight;
+
     //limit minimum dimensions
-    if ((m_handlePosition == Position::Top ||
-         m_handlePosition == Position::TopLeft ||
-         m_handlePosition == Position::TopRight) &&
-         point.y() > m_parent->m_parentRect.bottom() - m_minDimension)
+    if (isMovingTop && point.y() > m_parent->m_parentRect.bottom() - m_minDimension)
     {
         point.setY(m_parent->m_parentRect.bottom() - m_minDimension);
     }
-    else if ((m_handlePosition == Position::Bottom ||
-              m_handlePosition == Position::BottomLeft ||
-              m_handlePosition == Position::BottomRight) &&
-              point.y() < m_parent->m_parentRect.top() + m_minDimension)
+    else if (isMovingBottom && point.y() < m_parent->m_parentRect.top() + m_minDimension)
     {
         point.setY(m_parent->m_parentRect.top() + m_minDimension);
     }
 
-    if ((m_handlePosition == Position::Left ||
-        m_handlePosition == Position::TopLeft ||
-        m_handlePosition == Position::BottomLeft) &&
-        point.x() > m_parent->m_parentRect.right() - m_minDimension)
+    if (isMovingLeft && point.x() > m_parent->m_parentRect.right() - m_minDimension)
     {
         point.setX(m_parent->m_parentRect.right() - m_minDimension);
     }
-    else if ((m_handlePosition == Position::Right ||
-              m_handlePosition == Position::TopRight ||
-              m_handlePosition == Position::BottomRight) &&
-              point.x() < m_parent->m_parentRect.left() + m_minDimension)
+    else if (isMovingRight && point.x() < m_parent->m_parentRect.left() + m_minDimension)
     {
         point.setX(m_parent->m_parentRect.left() + m_minDimension);
     }
 
     //limit maximum dimensions
-    if ((m_handlePosition == Position::Top ||
-         m_handlePosition == Position::TopLeft ||
-         m_handlePosition == Position::TopRight) &&
-        point.y() < m_parent->m_parentRect.bottom() - m_maxDimension)
+    if (isMovingTop && point.y() < m_parent->m_parentRect.bottom() - m_maxDimension)
     {
         point.setY(m_parent->m_parentRect.bottom() - m_maxDimension);
     }
-    else if ((m_handlePosition == Position::Bottom ||
-              m_handlePosition == Position::BottomLeft ||
-              m_handlePosition == Position::BottomRight) &&
-               point.y() > m_parent->m_parentRect.top() + m_maxDimension)
+    else if (isMovingBottom && point.y() > m_parent->m_parentRect.top() + m_maxDimension)
     {
         point.setY(m_parent->m_parentRect.top() + m_maxDimension);
     }
 
-    if ((m_handlePosition == Position::Left ||
-         m_handlePosition == Position::TopLeft ||
-         m_handlePosition == Position::BottomLeft) &&
-        point.x() < m_parent->m_parentRect.right() - m_maxDimension)
+    if (isMovingLeft && point.x() < m_parent->m_parentRect.right() - m_maxDimension)
     {
         point.setX(m_parent->m_parentRect.right() - m_maxDimension);
     }
-    else if ((m_handlePosition == Position::Right ||
-              m_handlePosition == Position::TopRight ||
-              m_handlePosition == Position::BottomRight) &&
-               point.x() > m_parent->m_parentRect.left() + m_maxDimension)
+    else if (isMovingRight && point.x() > m_parent->m_parentRect.left() + m_maxDimension)
     {
         point.setX(m_parent->m_parentRect.left() + m_maxDimension);
     }
