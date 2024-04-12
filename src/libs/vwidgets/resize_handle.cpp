@@ -93,10 +93,13 @@ void ResizeHandlesItem::setLockAspectRatio(bool lock)
 void ResizeHandlesItem::parentIsLocked(bool lock)
 {
     m_parentIsLocked = lock;
+    qreal lock_size = qMax(m_parentRect.width(), m_parentRect.height()) / 30;
+
     foreach (HandleItem *handleItem, m_handleItems)
     {
         handleItem->setFlag(QGraphicsItem::ItemIgnoresTransformations, !lock);
         handleItem->setAcceptedMouseButtons(lock ? Qt::NoButton : Qt::AllButtons);
+        handleItem->setRect(lock ? QRect(-lock_size / 2, -lock_size / 2, lock_size, lock_size) : QRect(-HANDLE_SIZE/2, -HANDLE_SIZE/2, HANDLE_SIZE, HANDLE_SIZE));
     }
 }
 
