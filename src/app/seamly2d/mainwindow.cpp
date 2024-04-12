@@ -5327,7 +5327,10 @@ void MainWindow::InfoUnsavedImages(bool *firstImportImage)
     {
         QScopedPointer<QMessageBox> messageBox(new QMessageBox(QMessageBox::Information,
                                                                 tr("Images will not be saved"),
-                                                                tr("Please note that the images can not be saved in the current version of the software."),
+                                                                tr("Please note that the images can not be saved and that they are not affected "
+                                                                   "by the undo and redo functions in the current version of the software.\n\n"
+                                                                   "You may want to take a screenshot of the image properties dialog before closing the software "
+                                                                   "to be able to recreate identically the image when opening the software again."),
                                                                 QMessageBox::NoButton,
                                                                 this,Qt::Sheet));
 
