@@ -3071,7 +3071,7 @@ void PatternPieceDialog::initializeLabelsTab()
     if (m_pieceLabelLines.isEmpty())
     {
         VLabelTemplate labelTemplate;
-        QString filename = qApp->Settings()->getDefaultPatternTemplate();
+        QString filename = qApp->Settings()->getDefaultPieceTemplate();
         if (QFileInfo(filename).exists())
         {
             labelTemplate.setXMLContent(VLabelTemplateConverter(filename).Convert());
