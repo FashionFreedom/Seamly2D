@@ -104,8 +104,8 @@ private slots:
     void             alignmentChanged();
     void             xPosChanged(qreal value);
     void             yPosChanged(qreal value);
-    void             widthChanged(qreal value);
-    void             heightChanged(qreal value);
+    void             widthChanged(qreal width);
+    void             heightChanged(qreal height);
     void             xScaleChanged(qreal value);
     void             yScaleChanged(qreal value);
     void             lockAspectChanged(bool checked);

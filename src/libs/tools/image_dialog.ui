@@ -605,10 +605,10 @@ QToolButton:!checked {
            <number>0</number>
           </property>
           <property name="minimum">
-           <double>16.000000000000000</double>
+           <double>0.000000000000000</double>
           </property>
           <property name="maximum">
-           <double>16000.000000000000000</double>
+           <double>99999.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -674,10 +674,10 @@ QToolButton:!checked {
            <number>0</number>
           </property>
           <property name="minimum">
-           <double>16.000000000000000</double>
+           <double>0.000000000000000</double>
           </property>
           <property name="maximum">
-           <double>16000.000000000000000</double>
+           <double>99999.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -743,7 +743,7 @@ QToolButton:!checked {
            <number>2</number>
           </property>
           <property name="maximum">
-           <double>100.000000000000000</double>
+           <double>99999.000000000000000</double>
           </property>
          </widget>
         </item>
@@ -807,6 +807,9 @@ QToolButton:!checked {
           </property>
           <property name="decimals">
            <number>0</number>
+          </property>
+          <property name="maximum">
+           <double>99999.000000000000000</double>
           </property>
          </widget>
         </item>

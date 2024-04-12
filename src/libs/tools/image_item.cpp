@@ -78,7 +78,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     , m_pixmapHeight()
     , m_selectable(true)
     , m_minDimension(16)
-    , m_maxDimension(16000)
+    , m_maxDimension(60000)
 {
     initializeItem();
 

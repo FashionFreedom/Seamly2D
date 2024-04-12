@@ -79,7 +79,6 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
     ui->showLabel_Label->hide();
     ui->attributes_GroupBox->layout()->update();
 
-    updateSpinboxesRanges();
     updateUnits();
     updateImage();
 
@@ -258,15 +257,18 @@ qreal ImageDialog::getWidth() const
 void ImageDialog::setWidth(const qreal &value)
 {
     ui->yPosition_DoubleSpinBox->blockSignals(true);
+
     m_image.width = value;
+
     if (m_image.units == Unit::Px)
     {
-        ui->width_DoubleSpinBox->setValue(value);
+        if (ui->width_DoubleSpinBox->value() != value) {ui->width_DoubleSpinBox->setValue(value);};
     }
     else
     {
-        ui->width_DoubleSpinBox->setValue(qApp->fromPixel(value));
+        if (ui->width_DoubleSpinBox->value() != qApp->fromPixel(value)) {ui->width_DoubleSpinBox->setValue(qApp->fromPixel(value));};
     }
+
     ui->yPosition_DoubleSpinBox->blockSignals(false);
 }
 
@@ -280,15 +282,17 @@ qreal ImageDialog::getHeight() const
 void ImageDialog::setHeight(const qreal &value)
 {
     ui->height_DoubleSpinBox->blockSignals(true);
+
     m_image.height = value;
     if (m_image.units == Unit::Px)
     {
-        ui->height_DoubleSpinBox->setValue(value);
+        if (ui->height_DoubleSpinBox->value() != value) {ui->height_DoubleSpinBox->setValue(value);};
     }
     else
     {
-        ui->height_DoubleSpinBox->setValue(qApp->fromPixel(value));
+        if (ui->height_DoubleSpinBox->value() != qApp->fromPixel(value)) {ui->height_DoubleSpinBox->setValue(qApp->fromPixel(value));};
     }
+
     ui->height_DoubleSpinBox->blockSignals(false);
 }
 
@@ -302,7 +306,7 @@ void ImageDialog::setXScale(const qreal &scale)
 {
     ui->xScale_DoubleSpinBox->blockSignals(true);
     m_image.xScale = scale;
-    ui->xScale_DoubleSpinBox->setValue(scale);
+    if (ui->xScale_DoubleSpinBox->value() != scale) {ui->xScale_DoubleSpinBox->setValue(scale);};
     ui->xScale_DoubleSpinBox->blockSignals(false);
 }
 
@@ -317,7 +321,7 @@ void ImageDialog::setYScale(const qreal &scale)
 {
     ui->yScale_DoubleSpinBox->blockSignals(true);
     m_image.yScale = scale;
-    ui->yScale_DoubleSpinBox->setValue(scale);
+    if (ui->yScale_DoubleSpinBox->value() != scale) {ui->yScale_DoubleSpinBox->setValue(scale);};
     ui->yScale_DoubleSpinBox->blockSignals(false);
 }
 
@@ -483,66 +487,120 @@ void ImageDialog::yPosChanged(qreal value)
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void ImageDialog::widthChanged(qreal value)
+void ImageDialog::widthChanged(qreal width)
 {
     blockSignals(true);
     qreal oldWidth = m_image.width;
-    if (m_image.units == Unit::Px)
+    qreal height = m_image.height;
+
+    if (m_image.units != Unit::Px)
     {
-        m_image.width = value;
+        width = qApp->toPixel(width);
     }
-    else
-    {
-        m_image.width = qApp->toPixel(value);
-    }
-    setXScale(m_image.width / m_pixmapWidth * 100);
+
+    width = width < m_minDimension ? m_minDimension : width;
+    width = width > m_maxDimension ? m_maxDimension : width;
+
     if (m_image.aspectLocked)
     {
-        qreal newHeight = m_image.height * m_image.width / oldWidth;
-        setHeight(newHeight);
-        setYScale(newHeight / m_pixmapHeight * 100);
+        height = m_image.height * width / oldWidth;
+
+        if (height > m_maxDimension)
+        {
+            width = m_maxDimension * oldWidth / m_image.height;
+            height = m_maxDimension;
+        }
+        else if (height < m_minDimension)
+        {
+            width = m_minDimension * oldWidth / m_image.height;
+            height = m_minDimension;
+        }
     }
+
+    setWidth(width);
+    setXScale(m_image.width / m_pixmapWidth * 100);
+    setHeight(height);
+    setYScale(m_image.height / m_pixmapHeight * 100);
+
     blockSignals(false);
     emit imageUpdated(m_image);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void ImageDialog::heightChanged(qreal value)
+void ImageDialog::heightChanged(qreal height)
 {
     blockSignals(true);
     qreal oldHeight = m_image.height;
-    if (m_image.units == Unit::Px)
+    qreal width = m_image.width;
+
+    if (m_image.units != Unit::Px)
     {
-        m_image.height = value;
+        height = qApp->toPixel(height);
     }
-    else
-    {
-        m_image.height = qApp->toPixel(value);
-    }
-    setYScale(m_image.height / m_pixmapHeight * 100);
+
+    height = height < m_minDimension ? m_minDimension : height;
+    height = height > m_maxDimension ? m_maxDimension : height;
+
     if (m_image.aspectLocked)
     {
-        qreal newWidth = m_image.width * m_image.height / oldHeight;
-        setWidth(newWidth);
-        setXScale(newWidth / m_pixmapWidth * 100);
+        width = m_image.width * height / oldHeight;
+
+        if (width > m_maxDimension)
+        {
+            height = m_maxDimension * oldHeight / m_image.width;
+            width = m_maxDimension;
+        }
+        else if (width < m_minDimension)
+        {
+            height = m_minDimension * oldHeight / m_image.width;
+            width = m_minDimension;
+        }
     }
+
+    setWidth(width);
+    setXScale(m_image.width / m_pixmapWidth * 100);
+    setHeight(height);
+    setYScale(m_image.height / m_pixmapHeight * 100);
+
     blockSignals(false);
     emit imageUpdated(m_image);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void ImageDialog::xScaleChanged(qreal scale)
+void ImageDialog::xScaleChanged(qreal xScale)
 {
     blockSignals(true);
-    qreal oldXScale = m_image.xScale;
-    m_image.xScale = scale;
-    setWidth(m_pixmapWidth * m_image.xScale / 100);
+    qreal oldYScale = m_image.xScale;
+    qreal yScale = m_image.yScale;
+
+    qreal maxXScale = m_maxDimension / m_pixmapWidth * 100;
+    qreal minXScale = m_minDimension / m_pixmapWidth * 100;
+    qreal maxYScale = m_maxDimension / m_pixmapHeight * 100;
+    qreal minYScale = m_minDimension / m_pixmapHeight * 100;
+
+    xScale = xScale < minXScale ? minXScale : xScale;
+    xScale = xScale > maxXScale ? maxXScale : xScale;
+
     if (m_image.aspectLocked)
     {
-        qreal newYScale = m_image.yScale * m_image.xScale / oldXScale;
-        setYScale(newYScale);
-        setHeight(m_pixmapHeight * newYScale / 100);
+        yScale = m_image.yScale * xScale / oldYScale;
+        if (yScale > maxYScale)
+        {
+            xScale = maxYScale * oldYScale / m_image.yScale;
+            yScale = maxYScale;
+        }
+        else if (yScale < minYScale)
+        {
+            xScale = minYScale * oldYScale / m_image.yScale;
+            yScale = minYScale;
+        }
     }
+
+    setXScale(xScale);
+    setWidth(m_pixmapWidth * m_image.xScale / 100);
+    setYScale(yScale);
+    setHeight(m_pixmapHeight * m_image.yScale / 100);
+
     blockSignals(false);
     emit imageUpdated(m_image);
 }
@@ -551,15 +609,37 @@ void ImageDialog::xScaleChanged(qreal scale)
 void ImageDialog::yScaleChanged(qreal scale)
 {
     blockSignals(true);
-    qreal oldYScale = m_image.yScale;
-    m_image.yScale = scale;
-    setHeight(m_pixmapHeight * m_image.yScale / 100);
+    qreal oldXScale = m_image.yScale;
+    qreal xScale = m_image.xScale;
+
+    qreal maxXScale = m_maxDimension / m_pixmapWidth * 100;
+    qreal minXScale = m_minDimension / m_pixmapWidth * 100;
+    qreal maxYScale = m_maxDimension / m_pixmapHeight * 100;
+    qreal minYScale = m_minDimension / m_pixmapHeight * 100;
+
+    scale = scale < minYScale ? minYScale : scale;
+    scale = scale > maxYScale ? maxYScale : scale;
+
     if (m_image.aspectLocked)
     {
-        qreal newXScale = m_image.xScale * m_image.yScale / oldYScale;
-        setXScale(newXScale);
-        setWidth(m_pixmapWidth * newXScale / 100);
+        xScale = m_image.xScale * scale / oldXScale;
+        if (xScale > maxXScale)
+        {
+            scale = maxXScale * oldXScale / m_image.xScale;
+            xScale = maxXScale;
+        }
+        else if (xScale < minXScale)
+        {
+            scale = minXScale * oldXScale / m_image.xScale;
+            xScale = minXScale;
+        }
     }
+
+    setYScale(scale);
+    setHeight(m_pixmapHeight * m_image.yScale / 100);
+    setXScale(xScale);
+    setWidth(m_pixmapWidth * m_image.xScale / 100);
+
     blockSignals(false);
     emit imageUpdated(m_image);
 }
@@ -632,7 +712,6 @@ void ImageDialog::unitsChanged()
     if (m_image.units != Unit::Px)
     {
         m_image.units = Unit::Px;
-        updateSpinboxesRanges();
         updateUnits();
 
         ui->width_DoubleSpinBox->setValue(tempWidth);
@@ -643,7 +722,6 @@ void ImageDialog::unitsChanged()
     else
     {
         m_image.units = qApp->patternUnit();
-        updateSpinboxesRanges();
         updateUnits();
 
         ui->width_DoubleSpinBox->setValue(qApp->fromPixel(tempWidth));
