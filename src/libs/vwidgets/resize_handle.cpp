@@ -507,42 +507,97 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
                         m_handlePosition == Position::TopRight ||
                         m_handlePosition == Position::BottomRight;
 
-    //limit minimum dimensions
-    if (isMovingTop && point.y() > m_parent->m_parentRect.bottom() - m_minDimension)
+    qreal height;
+    qreal width;
+
+    if (isMovingTop)
     {
-        point.setY(m_parent->m_parentRect.bottom() - m_minDimension);
+        height = m_parent->m_parentRect.bottom() - point.y();
+
+        if (height < m_minDimension)
+        {
+            point.setY(m_parent->m_parentRect.bottom() - m_minDimension);
+        }
+        else if (height > m_maxDimension)
+        {
+            point.setY(m_parent->m_parentRect.bottom() - m_maxDimension);
+        }
+
+        if (m_parent->m_lockAspectRatio && m_scalingFactor < 1 && height * m_scalingFactor < m_minDimension)
+        {
+            point.setY(m_parent->m_parentRect.bottom() - m_minDimension / m_scalingFactor);
+        }
+        else if (m_parent->m_lockAspectRatio && m_scalingFactor > 1 && height * m_scalingFactor > m_maxDimension)
+        {
+            point.setY(m_parent->m_parentRect.bottom() - m_maxDimension / m_scalingFactor);
+        }
     }
-    else if (isMovingBottom && point.y() < m_parent->m_parentRect.top() + m_minDimension)
+    else if (isMovingBottom)
     {
-        point.setY(m_parent->m_parentRect.top() + m_minDimension);
+        height = point.y() - m_parent->m_parentRect.top();
+
+        if (height < m_minDimension)
+        {
+            point.setY(m_parent->m_parentRect.top() + m_minDimension);
+        }
+        else if (height > m_maxDimension)
+        {
+            point.setY(m_parent->m_parentRect.top() + m_maxDimension);
+        }
+
+        if (m_parent->m_lockAspectRatio && m_scalingFactor < 1 && height * m_scalingFactor < m_minDimension)
+        {
+            point.setY(m_parent->m_parentRect.top() + m_minDimension / m_scalingFactor);
+        }
+        else if (m_parent->m_lockAspectRatio && m_scalingFactor > 1 && height * m_scalingFactor > m_maxDimension)
+        {
+            point.setY(m_parent->m_parentRect.top() + m_maxDimension / m_scalingFactor);
+        }
     }
 
-    if (isMovingLeft && point.x() > m_parent->m_parentRect.right() - m_minDimension)
+    if (isMovingLeft)
     {
-        point.setX(m_parent->m_parentRect.right() - m_minDimension);
-    }
-    else if (isMovingRight && point.x() < m_parent->m_parentRect.left() + m_minDimension)
-    {
-        point.setX(m_parent->m_parentRect.left() + m_minDimension);
-    }
+        width = m_parent->m_parentRect.right() - point.x();
 
-    //limit maximum dimensions
-    if (isMovingTop && point.y() < m_parent->m_parentRect.bottom() - m_maxDimension)
-    {
-        point.setY(m_parent->m_parentRect.bottom() - m_maxDimension);
-    }
-    else if (isMovingBottom && point.y() > m_parent->m_parentRect.top() + m_maxDimension)
-    {
-        point.setY(m_parent->m_parentRect.top() + m_maxDimension);
-    }
+        if (width < m_minDimension)
+        {
+            point.setX(m_parent->m_parentRect.right() - m_minDimension);
+        }
+        else if (width > m_maxDimension)
+        {
+            point.setX(m_parent->m_parentRect.right() - m_maxDimension);
+        }
 
-    if (isMovingLeft && point.x() < m_parent->m_parentRect.right() - m_maxDimension)
-    {
-        point.setX(m_parent->m_parentRect.right() - m_maxDimension);
+        if (m_parent->m_lockAspectRatio && m_scalingFactor > 1 && width / m_scalingFactor < m_minDimension)
+        {
+            point.setX(m_parent->m_parentRect.right() - m_minDimension * m_scalingFactor);
+        }
+        else if (m_parent->m_lockAspectRatio && m_scalingFactor < 1 && width / m_scalingFactor > m_maxDimension)
+        {
+            point.setX(m_parent->m_parentRect.right() - m_maxDimension * m_scalingFactor);
+        }
     }
-    else if (isMovingRight && point.x() > m_parent->m_parentRect.left() + m_maxDimension)
+    else if (isMovingRight)
     {
-        point.setX(m_parent->m_parentRect.left() + m_maxDimension);
+        width = point.x() - m_parent->m_parentRect.left();
+
+        if (width < m_minDimension)
+        {
+            point.setX(m_parent->m_parentRect.left() + m_minDimension);
+        }
+        else if (width > m_maxDimension)
+        {
+            point.setX(m_parent->m_parentRect.left() + m_maxDimension);
+        }
+
+        if (m_parent->m_lockAspectRatio && m_scalingFactor > 1 && width / m_scalingFactor < m_minDimension)
+        {
+            point.setX(m_parent->m_parentRect.left() + m_minDimension * m_scalingFactor);
+        }
+        else if (m_parent->m_lockAspectRatio && m_scalingFactor < 1 && width / m_scalingFactor > m_maxDimension)
+        {
+            point.setX(m_parent->m_parentRect.left() + m_maxDimension * m_scalingFactor);
+        }
     }
 
     return point;
