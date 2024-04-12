@@ -5075,7 +5075,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Unbekanntes Objekt</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+26"/>
         <source>%1 - Base point</source>
         <translation>%1 - Startpunkt</translation>
     </message>
@@ -5278,7 +5278,7 @@ Possibly the file is already being downloaded.</source>
         <translation>Gruppenobjekt entfernen</translation>
     </message>
     <message>
-        <location line="-646"/>
+        <location line="-647"/>
         <location line="+134"/>
         <location line="+22"/>
         <source>Group color</source>
@@ -5355,7 +5355,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <location line="+20"/>
-        <location filename="../../src/app/seamly2d/dialogs/history_dialog.cpp" line="+629"/>
+        <location filename="../../src/app/seamly2d/dialogs/history_dialog.cpp" line="+630"/>
         <source>Name</source>
         <translation>Bezeichnung</translation>
     </message>
@@ -6335,7 +6335,7 @@ Apply settings anyway?</source>
         <location line="+1039"/>
         <location line="+3"/>
         <location line="+2899"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3091"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3105"/>
         <source>Line</source>
         <translation>Linie</translation>
     </message>
@@ -6375,7 +6375,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2824"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2838"/>
         <source>Measurements</source>
         <translation>Maße</translation>
     </message>
@@ -6411,7 +6411,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+18"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5007"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5023"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
@@ -6468,7 +6468,7 @@ Apply settings anyway?</source>
         <translation>Be&amp;enden</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4967"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4983"/>
         <source>Preferences</source>
         <translation>Einstellungen</translation>
     </message>
@@ -6483,12 +6483,12 @@ Apply settings anyway?</source>
         <translation>Onlinehilfe anzeigen</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6009"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6029"/>
         <source>About Qt</source>
         <translation>Über Qt</translation>
     </message>
     <message>
-        <location line="-2211"/>
+        <location line="-2216"/>
         <source>Save as</source>
         <translation>Speichern als</translation>
     </message>
@@ -6498,17 +6498,17 @@ Apply settings anyway?</source>
         <translation>Datei konnte nicht gespeichert werden</translation>
     </message>
     <message>
-        <location line="-2018"/>
+        <location line="-2027"/>
         <location line="+46"/>
-        <location line="+2122"/>
-        <location line="+2791"/>
+        <location line="+2131"/>
+        <location line="+2796"/>
         <location line="+20"/>
         <location line="+29"/>
         <source>Open file</source>
         <translation>Datei öffnen</translation>
     </message>
     <message>
-        <location line="-2700"/>
+        <location line="-2704"/>
         <location line="+52"/>
         <source>Error parsing file.</source>
         <translation>Fehler beim Auswerten der Datei.</translation>
@@ -6545,41 +6545,41 @@ Apply settings anyway?</source>
         <translation>Datei gespeichert</translation>
     </message>
     <message>
-        <location line="+2371"/>
+        <location line="+2375"/>
         <source>untitled.sm2d</source>
         <translation>unbenannt.sm2d</translation>
     </message>
     <message>
-        <location line="-2245"/>
+        <location line="-2249"/>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
         <translation>Das Schnittmuster wurde geändert.
 Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
-        <location line="-3304"/>
-        <location line="+3407"/>
+        <location line="-3314"/>
+        <location line="+3420"/>
         <source>&amp;Undo</source>
         <translation>&amp;Rückgängig</translation>
     </message>
     <message>
-        <location line="-3406"/>
-        <location line="+3418"/>
+        <location line="-3419"/>
+        <location line="+3431"/>
         <source>&amp;Redo</source>
         <translation>&amp;Wiederholen</translation>
     </message>
     <message>
-        <location line="+2292"/>
+        <location line="+2293"/>
         <source>This file already opened in another window.</source>
         <translation>Diese Datei ist bereits in einem anderen Fenster geöffnet.</translation>
     </message>
     <message>
-        <location line="-7181"/>
+        <location line="-7201"/>
         <source>Wrong units.</source>
         <translation>Falsche Einheiten.</translation>
     </message>
     <message>
-        <location line="+6088"/>
+        <location line="+6108"/>
         <source>File loaded</source>
         <translation>Datei geladen</translation>
     </message>
@@ -6638,59 +6638,66 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Exportieren als...</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3038"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3043"/>
         <location line="+20"/>
         <location line="+23"/>
-        <location line="+2778"/>
+        <location line="+2783"/>
         <source>Layout mode</source>
         <translation>Layoutmodus</translation>
     </message>
     <message>
-        <location line="-1525"/>
+        <location line="-1529"/>
         <source>Unsaved changes</source>
         <translation>Ungespeicherte Änderungen</translation>
     </message>
     <message>
-        <location line="-3116"/>
+        <location line="-3126"/>
         <location line="+56"/>
         <source>Measurements loaded</source>
         <translation>Maße geladen</translation>
     </message>
     <message>
-        <location line="+5085"/>
+        <location line="+5099"/>
         <source>You can&apos;t export empty scene.</source>
         <translation>Du kannst kein leeres Layout exportieren.</translation>
     </message>
     <message>
-        <location line="-6808"/>
-        <location line="+6717"/>
+        <location line="-6828"/>
+        <location line="+6737"/>
         <source>Measurement file contains invalid known measurement(s).</source>
         <translation>Die Maßdatei enthält ungültige bekannte Maße.</translation>
     </message>
     <message>
-        <location line="-6734"/>
-        <location line="+6695"/>
+        <location line="-6754"/>
+        <location line="+6715"/>
         <source>Measurement file has unknown format.</source>
         <translation>Maßdatei hat ein unbekanntes Format.</translation>
     </message>
     <message>
-        <location line="-6568"/>
+        <location line="-6588"/>
         <source>Measurement files types have not match.</source>
         <translation>Die Maßdatei Arten stimmen nicht überein.</translation>
     </message>
     <message>
-        <location line="+1763"/>
+        <location line="+1769"/>
         <source>Couldn&apos;t sync measurements.</source>
         <translation>Maße konnten nicht synchronisiert werden.</translation>
     </message>
     <message>
-        <location line="+2475"/>
+        <location line="+2485"/>
         <location line="+30"/>
         <source>Couldn&apos;t update measurements.</source>
         <translation>Maße konnten nicht aktualisiert werden.</translation>
     </message>
     <message>
-        <location line="+1663"/>
+        <location line="+455"/>
+        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
+
+You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1212"/>
         <location line="+11"/>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation>Die Maßdatei &apos;%1&apos; konnte nicht gefunden werden.</translation>
@@ -6747,7 +6754,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Druckvorschau gekacheltes Layout</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5205"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5219"/>
         <source>Measurements unloaded</source>
         <translation>Geladene Maße gelöscht</translation>
     </message>
@@ -6757,7 +6764,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße konnten nicht gelöscht werden, einige werden im Schnittteil verwendet.</translation>
     </message>
     <message>
-        <location line="-1959"/>
+        <location line="-1965"/>
         <source>New pattern</source>
         <translation>Neues Schnittmuster</translation>
     </message>
@@ -6772,7 +6779,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße erstellen/bearbeiten</translation>
     </message>
     <message>
-        <location line="+4971"/>
+        <location line="+4987"/>
         <source>Save...</source>
         <translation>Speichern...</translation>
     </message>
@@ -6782,7 +6789,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Nicht Speichern</translation>
     </message>
     <message>
-        <location line="+2361"/>
+        <location line="+2365"/>
         <location line="+6"/>
         <location line="+7"/>
         <source>Locking file</source>
@@ -6836,7 +6843,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Original zoom</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5270"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5284"/>
         <source>Height:</source>
         <translation>Körperhöhe:</translation>
     </message>
@@ -6846,12 +6853,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Größe:</translation>
     </message>
     <message>
-        <location line="+4632"/>
+        <location line="+4646"/>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
         <translation>Die Maßdateien &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; konnten nicht gefunden werden. Möchtest Du den Speicherort aktualisieren?</translation>
     </message>
     <message>
-        <location line="-6783"/>
+        <location line="-6803"/>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
         <translation>Die Maße wurden geändert. Sollen die Maße jetzt synchronisiert werden?</translation>
     </message>
@@ -6861,12 +6868,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Gradierung unterstützt Zoll nicht</translation>
     </message>
     <message>
-        <location line="+1813"/>
+        <location line="+1819"/>
         <source>Measurements have been synced</source>
         <translation>Maße wurden synchronisiert</translation>
     </message>
     <message>
-        <location line="+1874"/>
+        <location line="+1883"/>
         <source>The document has no write permissions.</source>
         <translation>Das Dokument hat keine Schreibberechtigung.</translation>
     </message>
@@ -6886,7 +6893,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Die Datei kann nicht gesichert werden</translation>
     </message>
     <message>
-        <location line="+3304"/>
+        <location line="+3309"/>
         <source>read only</source>
         <translation>Nur lesen</translation>
     </message>
@@ -6951,21 +6958,21 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Maße löschen, wenn sie nicht in einer Schnittmusterdatei benutzt werden</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5451"/>
-        <location line="+4979"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5465"/>
+        <location line="+4993"/>
         <location line="+25"/>
         <source>Individual measurements</source>
         <translation>Individuelle Maße</translation>
     </message>
     <message>
-        <location line="-4951"/>
-        <location line="+4914"/>
+        <location line="-4965"/>
+        <location line="+4928"/>
         <location line="+40"/>
         <source>Multisize measurements</source>
         <translation>Mehrgrößen Maße</translation>
     </message>
     <message>
-        <location line="-3045"/>
+        <location line="-3050"/>
         <location line="+203"/>
         <source>Pattern files</source>
         <translation>Schnittmusterdateien</translation>
@@ -6981,7 +6988,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Forum</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2223"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2232"/>
         <source>Name</source>
         <translation>Bezeichnung</translation>
     </message>
@@ -6996,17 +7003,17 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Formel</translation>
     </message>
     <message>
-        <location line="+1956"/>
+        <location line="+1965"/>
         <source>You can&apos;t use Layout mode yet.</source>
         <translation>Layoutmodus kann noch nicht genutzt werden.</translation>
     </message>
     <message>
-        <location line="-3520"/>
+        <location line="-3535"/>
         <source>Application doesn&apos;t support multisize table with inches.</source>
         <translation>Die Anwendung unterstütz&apos; keine Mehrgrößentabellen in Zoll.</translation>
     </message>
     <message>
-        <location line="+6883"/>
+        <location line="+6903"/>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
         <translation>Größe kann nicht eingestellt werden. Mindestens eine Mehrgrößenmaßdatei ist notwendig.</translation>
     </message>
@@ -7089,8 +7096,8 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <location line="+88"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5450"/>
-        <location line="+1880"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5464"/>
+        <location line="+1889"/>
         <source>Group Manager</source>
         <translation>Gruppen Manager</translation>
     </message>
@@ -7268,7 +7275,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-574"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-575"/>
         <source>Mirror by Line</source>
         <translation>Spiegeln an einer Linie</translation>
     </message>
@@ -7812,7 +7819,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2868"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2874"/>
         <source>Calculator</source>
         <translation>Taschenrechner</translation>
     </message>
@@ -7833,7 +7840,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2998"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3004"/>
         <source>Export Draft Blocks</source>
         <translation>Exportiere Entwurfsblöcke</translation>
     </message>
@@ -7878,7 +7885,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Strg+I</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2630"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2644"/>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation>Maßdatei beinhaltet nicht alle erforderlichen Maße.</translation>
     </message>
@@ -7908,13 +7915,13 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug::Operationenen Abnäher korrigieren:&lt;/b&gt; wähle den ersten Basispunkt</translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+439"/>
         <location line="+594"/>
         <source>Draft Block:</source>
         <translation>Entwurfsblock:</translation>
     </message>
     <message>
-        <location line="+715"/>
+        <location line="+723"/>
         <source>Rotate</source>
         <translation>Drehen</translation>
     </message>
@@ -7944,7 +7951,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schnittteile exportieren</translation>
     </message>
     <message>
-        <location line="+506"/>
+        <location line="+507"/>
         <source>Piece mode</source>
         <translation>Schnittteil Modus</translation>
     </message>
@@ -7954,8 +7961,8 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schnitteilmodus kann noch nicht genutzt werden, Erstelle mindestens ein Schnittteil.</translation>
     </message>
     <message>
-        <location line="-1914"/>
-        <location line="+1954"/>
+        <location line="-1923"/>
+        <location line="+1963"/>
         <source>Pattern Pieces</source>
         <translation>Schnittteile</translation>
     </message>
@@ -7970,7 +7977,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Layoutmodus kann nicht genutzt werden, mindestens ein Schnittteil ins Layout aufnehmen.</translation>
     </message>
     <message>
-        <location line="+2377"/>
+        <location line="+2382"/>
         <source>Name:</source>
         <translation>Bezeichnung:</translation>
     </message>
@@ -8005,7 +8012,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Schnittteile können nicht exportiert werden.</translation>
     </message>
     <message>
-        <location line="-5254"/>
+        <location line="-5274"/>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
         <translation>&lt;b&gt;Werkzeug: Schnittteil - Neues Schnittteil hinzufügen&lt;/b&gt; Hauptpfad der Objekte im Uhrzeigersinn auswählen.</translation>
     </message>
@@ -8025,17 +8032,17 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug::Schnitteil-Knoten einfügen:&lt;/b&gt; wähle ein oder mehrere Objekte aus, Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl,&lt;b&gt;ENTER &gt;um Auswahl zu bestätigen</translation>
     </message>
     <message>
-        <location line="+234"/>
+        <location line="+240"/>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
         <translation>&lt;b&gt;Werkzeug: Details Vereinigung /b&gt; wähle ein Schnittteil</translation>
     </message>
     <message>
-        <location line="+2917"/>
+        <location line="+2927"/>
         <source>Draft block %1</source>
         <translation>Entwurfsblock %1</translation>
     </message>
     <message>
-        <location line="+1113"/>
+        <location line="+1117"/>
         <source>Draft Block %1</source>
         <translation>Entwurfsblock %1</translation>
     </message>
@@ -8273,7 +8280,7 @@ Sollen die Änderungen gespeichert werden?</translation>
     </message>
     <message>
         <location line="-1324"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2599"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2605"/>
         <source>Alt+M</source>
         <translation>Alt+M</translation>
     </message>
@@ -8622,7 +8629,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Strg+Alt+P</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2477"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2491"/>
         <source>Please provide additional measurements: %1</source>
         <translation>Bitte gib zusätzliche Maße an: %1</translation>
     </message>
@@ -8777,7 +8784,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>&lt;b&gt;Werkzeug:l::Bogen - Elliptisch:&lt;/b&gt; Wähle den Mittelpunkt des Ellipsenbogens</translation>
     </message>
     <message>
-        <location line="+277"/>
+        <location line="+278"/>
         <location line="+9"/>
         <source>Can&apos;t read image</source>
         <translation type="unfinished"></translation>
@@ -8799,7 +8806,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1194"/>
+        <location line="+1207"/>
         <source>Zoom to Point</source>
         <translation>Zoom zum Punkt</translation>
     </message>
@@ -8831,7 +8838,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Objekte zur Gruppe hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1836"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1850"/>
         <source>Add Group Objects</source>
         <translation>Gruppen Objekt hinzufügen</translation>
     </message>
@@ -8841,7 +8848,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Gruppe ist gesperrt. Entsperren um Objekte hinzuzufügen</translation>
     </message>
     <message>
-        <location line="+2631"/>
+        <location line="+2646"/>
         <location line="+121"/>
         <source>Can not save file.</source>
         <translation>Datei kann nicht gesichert werden.</translation>
@@ -8863,30 +8870,30 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Strg+E</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2030"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2039"/>
         <source>untitled</source>
         <translation>unbenannt</translation>
     </message>
     <message>
-        <location line="+2066"/>
+        <location line="+2075"/>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation>Sperren fehlgeschlagen. Diese Datei ist bereits in einem anderen Fenster geöffnet. Bei Anwendung von 2 Programmkopien kommt es zu Konflikten.</translation>
     </message>
     <message>
-        <location line="-1440"/>
+        <location line="-1449"/>
         <source>Pen Toolbar</source>
         <translation>Stift-Symbolleiste</translation>
     </message>
     <message>
-        <location line="+2671"/>
+        <location line="+2684"/>
         <source>Toolbars</source>
         <translation>Symbolleisten</translation>
     </message>
     <message>
-        <location line="-4892"/>
+        <location line="-4911"/>
         <location line="+39"/>
         <location line="+63"/>
-        <location line="+5863"/>
+        <location line="+5883"/>
         <location line="+90"/>
         <source>File exception.</source>
         <translation>Dateiausnahme.</translation>
@@ -8900,7 +8907,7 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>Ausnahme exportieren.</translation>
     </message>
     <message>
-        <location line="-3254"/>
+        <location line="-3259"/>
         <source>pattern</source>
         <translation>Schnittmuster</translation>
     </message>
@@ -8910,12 +8917,12 @@ Sollen die Änderungen gespeichert werden?</translation>
         <translation>L, P</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2635"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2650"/>
         <source>&lt;b&gt;Tool::Operations - Rotation:&lt;/b&gt; Select one or more objects - Hold &lt;b&gt;%1&lt;/b&gt; for multiple selection, Press &lt;b&gt;ENTER&lt;/b&gt; to confirm selection</source>
         <translation>&lt;b&gt;Werkzeug::Operationen - Drehung:&lt;/b&gt; Wähle ein oder mehrere Opbjekte aus - Halten &lt;b&gt;%1&lt;/b&gt; für Mehrfachauswahl, mit &lt;b&gt;ENTER&lt;/b&gt; die Auswahl bestätigen</translation>
     </message>
     <message>
-        <location line="+1098"/>
+        <location line="+1104"/>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
         <translation>Basisname, der für neue Punkte verwendet wird.
@@ -8931,6 +8938,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2898"/>
         <location line="+1976"/>
         <location line="+3"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-966"/>
         <source>Images</source>
         <translation type="unfinished">Bilder</translation>
     </message>
@@ -8967,7 +8975,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
     </message>
     <message>
         <location line="+69"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+661"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1635"/>
         <source>Import Image</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8977,7 +8985,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1721"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1727"/>
         <source>Confirm deletion</source>
         <translation type="unfinished">Löschvorgang bestätigen</translation>
     </message>
@@ -8987,43 +8995,13 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation type="unfinished">Möchtest Du wirklich löschen?</translation>
     </message>
     <message>
-        <location line="+94"/>
-        <source>PNG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>JPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>SVG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>BMP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>TIF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+107"/>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3488"/>
+        <location line="+3498"/>
         <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Please note that the images can not be saved in the current version of the software.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12228,7 +12206,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5076"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5091"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Erstelle ein neues Schnittteil, um mit der Arbeit zu beginnen.</translation>
     </message>
@@ -12270,7 +12248,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
         <translation>knoten hinzufügen</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1725"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1731"/>
         <source>Changes applied.</source>
         <translation>Änderungen übernommen.</translation>
     </message>
@@ -12636,7 +12614,7 @@ Drücken Sie die Eingabetaste, um ihn vorübergehend in die Liste aufzunehmen.</
 <context>
     <name>ResizeHandlesItem</name>
     <message>
-        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+517"/>
+        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+630"/>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15047,7 +15025,7 @@ wie gewohnt in SeamlyME laden können.
 <context>
     <name>Tool</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/vtooloptionspropertybrowser.cpp" line="+642"/>
+        <location filename="../../src/app/seamly2d/core/vtooloptionspropertybrowser.cpp" line="+647"/>
         <source>First point</source>
         <translation>Erster Punkt</translation>
     </message>
@@ -16821,7 +16799,7 @@ wie gewohnt in SeamlyME laden können.
 <context>
     <name>VToolLine</name>
     <message>
-        <location filename="../../src/libs/vtools/tools/drawTools/vtoolline.cpp" line="+481"/>
+        <location filename="../../src/libs/vtools/tools/drawTools/vtoolline.cpp" line="+480"/>
         <source>Length</source>
         <translation>Länge</translation>
     </message>
@@ -17644,7 +17622,7 @@ wie gewohnt in SeamlyME laden können.
         <translation>Linie_</translation>
     </message>
     <message>
-        <location line="-3258"/>
+        <location line="-3263"/>
         <source>Center point</source>
         <translation>Mittelpunkt</translation>
     </message>

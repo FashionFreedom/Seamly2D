@@ -5072,7 +5072,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+26"/>
         <source>%1 - Base point</source>
         <translation type="unfinished">%1 - Základní bod</translation>
     </message>
@@ -5275,7 +5275,7 @@ Possibly the file is already being downloaded.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-646"/>
+        <location line="-647"/>
         <location line="+134"/>
         <location line="+22"/>
         <source>Group color</source>
@@ -5352,7 +5352,7 @@ Possibly the file is already being downloaded.</source>
     </message>
     <message>
         <location line="+20"/>
-        <location filename="../../src/app/seamly2d/dialogs/history_dialog.cpp" line="+629"/>
+        <location filename="../../src/app/seamly2d/dialogs/history_dialog.cpp" line="+630"/>
         <source>Name</source>
         <translation type="unfinished">Název</translation>
     </message>
@@ -6329,7 +6329,7 @@ Apply settings anyway?</source>
         <location line="+1039"/>
         <location line="+3"/>
         <location line="+2899"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3091"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+3105"/>
         <source>Line</source>
         <translation>Čára</translation>
     </message>
@@ -6369,7 +6369,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+11"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2824"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2838"/>
         <source>Measurements</source>
         <translation>Míry</translation>
     </message>
@@ -6405,7 +6405,7 @@ Apply settings anyway?</source>
     </message>
     <message>
         <location line="+18"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5007"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+5023"/>
         <source>Save</source>
         <translation>Uložit</translation>
     </message>
@@ -6462,7 +6462,7 @@ Apply settings anyway?</source>
         <translation>&amp;Ukončit</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4967"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-4983"/>
         <source>Preferences</source>
         <translation>Předvolby</translation>
     </message>
@@ -6477,12 +6477,12 @@ Apply settings anyway?</source>
         <translation>Zobrazit nápovědu na internetu</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6009"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+6029"/>
         <source>About Qt</source>
         <translation>O Qt</translation>
     </message>
     <message>
-        <location line="-2211"/>
+        <location line="-2216"/>
         <source>Save as</source>
         <translation>Uložit jako</translation>
     </message>
@@ -6492,17 +6492,17 @@ Apply settings anyway?</source>
         <translation>Nepodařilo se uložit soubor</translation>
     </message>
     <message>
-        <location line="-2018"/>
+        <location line="-2027"/>
         <location line="+46"/>
-        <location line="+2122"/>
-        <location line="+2791"/>
+        <location line="+2131"/>
+        <location line="+2796"/>
         <location line="+20"/>
         <location line="+29"/>
         <source>Open file</source>
         <translation>Otevřít soubor</translation>
     </message>
     <message>
-        <location line="-2700"/>
+        <location line="-2704"/>
         <location line="+52"/>
         <source>Error parsing file.</source>
         <translation>Chyba při zpracování souboru.</translation>
@@ -6539,41 +6539,41 @@ Apply settings anyway?</source>
         <translation>Soubor uložen</translation>
     </message>
     <message>
-        <location line="+2371"/>
+        <location line="+2375"/>
         <source>untitled.sm2d</source>
         <translation>Bez názvu.sm2d</translation>
     </message>
     <message>
-        <location line="-2245"/>
+        <location line="-2249"/>
         <source>The pattern has been modified.
 Do you want to save your changes?</source>
         <translation>Střih byl změněn.
 Chcete uložit své změny?</translation>
     </message>
     <message>
-        <location line="-3304"/>
-        <location line="+3407"/>
+        <location line="-3314"/>
+        <location line="+3420"/>
         <source>&amp;Undo</source>
         <translation>&amp;Zpět</translation>
     </message>
     <message>
-        <location line="-3406"/>
-        <location line="+3418"/>
+        <location line="-3419"/>
+        <location line="+3431"/>
         <source>&amp;Redo</source>
         <translation>&amp;Znovu</translation>
     </message>
     <message>
-        <location line="+2292"/>
+        <location line="+2293"/>
         <source>This file already opened in another window.</source>
         <translation>Tento soubor je již otevřen v jiném okně.</translation>
     </message>
     <message>
-        <location line="-7181"/>
+        <location line="-7201"/>
         <source>Wrong units.</source>
         <translation>Nesprávné jednotky.</translation>
     </message>
     <message>
-        <location line="+6088"/>
+        <location line="+6108"/>
         <source>File loaded</source>
         <translation>Soubor nahrán</translation>
     </message>
@@ -6632,59 +6632,66 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3038"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3043"/>
         <location line="+20"/>
         <location line="+23"/>
-        <location line="+2778"/>
+        <location line="+2783"/>
         <source>Layout mode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1525"/>
+        <location line="-1529"/>
         <source>Unsaved changes</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-3116"/>
+        <location line="-3126"/>
         <location line="+56"/>
         <source>Measurements loaded</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5085"/>
+        <location line="+5099"/>
         <source>You can&apos;t export empty scene.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-6808"/>
-        <location line="+6717"/>
+        <location line="-6828"/>
+        <location line="+6737"/>
         <source>Measurement file contains invalid known measurement(s).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-6734"/>
-        <location line="+6695"/>
+        <location line="-6754"/>
+        <location line="+6715"/>
         <source>Measurement file has unknown format.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-6568"/>
+        <location line="-6588"/>
         <source>Measurement files types have not match.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1763"/>
+        <location line="+1769"/>
         <source>Couldn&apos;t sync measurements.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2475"/>
+        <location line="+2485"/>
         <location line="+30"/>
         <source>Couldn&apos;t update measurements.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1663"/>
+        <location line="+455"/>
+        <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
+
+You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1212"/>
         <location line="+11"/>
         <source>The measurements file &apos;%1&apos; could not be found.</source>
         <translation type="unfinished"></translation>
@@ -6741,7 +6748,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5205"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5219"/>
         <source>Measurements unloaded</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6751,7 +6758,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1959"/>
+        <location line="-1965"/>
         <source>New pattern</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6766,7 +6773,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4971"/>
+        <location line="+4987"/>
         <source>Save...</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6776,7 +6783,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2361"/>
+        <location line="+2365"/>
         <location line="+6"/>
         <location line="+7"/>
         <source>Locking file</source>
@@ -6830,7 +6837,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5270"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5284"/>
         <source>Height:</source>
         <translation type="unfinished">Výška:</translation>
     </message>
@@ -6840,12 +6847,12 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+4632"/>
+        <location line="+4646"/>
         <source>The measurements file &lt;br/&gt;&lt;br/&gt; &lt;b&gt;%1&lt;/b&gt; &lt;br/&gt;&lt;br/&gt; could not be found. Do you want to update the file location?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-6783"/>
+        <location line="-6803"/>
         <source>Measurements were changed. Do you want to sync measurements now?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6855,12 +6862,12 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1813"/>
+        <location line="+1819"/>
         <source>Measurements have been synced</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1874"/>
+        <location line="+1883"/>
         <source>The document has no write permissions.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6880,7 +6887,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3304"/>
+        <location line="+3309"/>
         <source>read only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -6945,21 +6952,21 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5451"/>
-        <location line="+4979"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5465"/>
+        <location line="+4993"/>
         <location line="+25"/>
         <source>Individual measurements</source>
         <translation type="unfinished">Individuální míry</translation>
     </message>
     <message>
-        <location line="-4951"/>
-        <location line="+4914"/>
+        <location line="-4965"/>
+        <location line="+4928"/>
         <location line="+40"/>
         <source>Multisize measurements</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-3045"/>
+        <location line="-3050"/>
         <location line="+203"/>
         <source>Pattern files</source>
         <translation>Soubory se střihy</translation>
@@ -6975,7 +6982,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2223"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2232"/>
         <source>Name</source>
         <translation type="unfinished">Název</translation>
     </message>
@@ -6990,17 +6997,17 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished">Vzorec</translation>
     </message>
     <message>
-        <location line="+1956"/>
+        <location line="+1965"/>
         <source>You can&apos;t use Layout mode yet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-3520"/>
+        <location line="-3535"/>
         <source>Application doesn&apos;t support multisize table with inches.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+6883"/>
+        <location line="+6903"/>
         <source>Couldn&apos;t set size. Need a file with multisize measurements.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7083,8 +7090,8 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <location line="+88"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5450"/>
-        <location line="+1880"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5464"/>
+        <location line="+1889"/>
         <source>Group Manager</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7262,7 +7269,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-574"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-575"/>
         <source>Mirror by Line</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7806,7 +7813,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <location line="+9"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2868"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+2874"/>
         <source>Calculator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7827,7 +7834,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <location line="+12"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2998"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-3004"/>
         <source>Export Draft Blocks</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7872,7 +7879,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2630"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2644"/>
         <source>Measurement file doesn&apos;t include all the required measurements.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7907,13 +7914,13 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+433"/>
+        <location line="+439"/>
         <location line="+594"/>
         <source>Draft Block:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+715"/>
+        <location line="+723"/>
         <source>Rotate</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7943,7 +7950,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+506"/>
+        <location line="+507"/>
         <source>Piece mode</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7953,8 +7960,8 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1914"/>
-        <location line="+1954"/>
+        <location line="-1923"/>
+        <location line="+1963"/>
         <source>Pattern Pieces</source>
         <translation type="unfinished"></translation>
     </message>
@@ -7969,7 +7976,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2377"/>
+        <location line="+2382"/>
         <source>Name:</source>
         <translation type="unfinished">Název:</translation>
     </message>
@@ -8004,7 +8011,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-5254"/>
+        <location line="-5274"/>
         <source>&lt;b&gt;Tool::Piece - Add New Pattern Piece:&lt;/b&gt; Select main path of objects clockwise.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8024,17 +8031,17 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+234"/>
+        <location line="+240"/>
         <source>&lt;b&gt;Tool::Details - Union:&lt;/b&gt; Select pattern piece</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2917"/>
+        <location line="+2927"/>
         <source>Draft block %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1113"/>
+        <location line="+1117"/>
         <source>Draft Block %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8272,7 +8279,7 @@ Chcete uložit své změny?</translation>
     </message>
     <message>
         <location line="-1324"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2599"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2605"/>
         <source>Alt+M</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8626,7 +8633,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2477"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2491"/>
         <source>Please provide additional measurements: %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8781,7 +8788,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+277"/>
+        <location line="+278"/>
         <location line="+9"/>
         <source>Can&apos;t read image</source>
         <translation type="unfinished"></translation>
@@ -8803,7 +8810,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1194"/>
+        <location line="+1207"/>
         <source>Zoom to Point</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8835,7 +8842,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1836"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1850"/>
         <source>Add Group Objects</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8845,7 +8852,7 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2631"/>
+        <location line="+2646"/>
         <location line="+121"/>
         <source>Can not save file.</source>
         <translation type="unfinished"></translation>
@@ -8867,30 +8874,30 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2030"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2039"/>
         <source>untitled</source>
         <translation type="unfinished">bez názvu</translation>
     </message>
     <message>
-        <location line="+2066"/>
+        <location line="+2075"/>
         <source>Failed to lock. This file already opened in another window. Expect collisions when running 2 copies of the program.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-1440"/>
+        <location line="-1449"/>
         <source>Pen Toolbar</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2671"/>
+        <location line="+2684"/>
         <source>Toolbars</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-4892"/>
+        <location line="-4911"/>
         <location line="+39"/>
         <location line="+63"/>
-        <location line="+5863"/>
+        <location line="+5883"/>
         <location line="+90"/>
         <source>File exception.</source>
         <translation type="unfinished"></translation>
@@ -8904,12 +8911,12 @@ Chcete uložit své změny?</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-3254"/>
+        <location line="-3259"/>
         <source>pattern</source>
         <translation>střih</translation>
     </message>
     <message>
-        <location line="-1537"/>
+        <location line="-1546"/>
         <source>Base name used for new points.
 Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
@@ -8924,6 +8931,7 @@ Press enter to temporarily add it to the list.</source>
         <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3713"/>
         <location line="+1976"/>
         <location line="+3"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-966"/>
         <source>Images</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8960,7 +8968,7 @@ Press enter to temporarily add it to the list.</source>
     </message>
     <message>
         <location line="+69"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+661"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1635"/>
         <source>Import Image</source>
         <translation type="unfinished"></translation>
     </message>
@@ -8970,7 +8978,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1721"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1727"/>
         <source>Confirm deletion</source>
         <translation type="unfinished">Potvrdit smazání</translation>
     </message>
@@ -8980,43 +8988,13 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished">Opravdu chcete smazat?</translation>
     </message>
     <message>
-        <location line="+94"/>
-        <source>PNG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>JPG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>SVG</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>BMP</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>TIF</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+11"/>
+        <location line="+107"/>
         <source>Open Image File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3488"/>
+        <location line="+3498"/>
         <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Please note that the images can not be saved in the current version of the software.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -12220,7 +12198,7 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5076"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5091"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Začněte vytvořením nového dílu střihu.</translation>
     </message>
@@ -12262,7 +12240,7 @@ Press enter to temporarily add it to the list.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1725"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1731"/>
         <source>Changes applied.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -12628,7 +12606,7 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>ResizeHandlesItem</name>
     <message>
-        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+517"/>
+        <location filename="../../src/libs/vwidgets/resize_handle.cpp" line="+630"/>
         <source>Press &lt;b&gt;CTRL&lt;/b&gt; to scale around the center - &lt;b&gt; Aspect ratio locked &lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -15033,7 +15011,7 @@ load in SeamlyME as usual.
 <context>
     <name>Tool</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/vtooloptionspropertybrowser.cpp" line="+642"/>
+        <location filename="../../src/app/seamly2d/core/vtooloptionspropertybrowser.cpp" line="+647"/>
         <source>First point</source>
         <translation type="unfinished">První bod</translation>
     </message>
@@ -16805,7 +16783,7 @@ load in SeamlyME as usual.
 <context>
     <name>VToolLine</name>
     <message>
-        <location filename="../../src/libs/vtools/tools/drawTools/vtoolline.cpp" line="+481"/>
+        <location filename="../../src/libs/vtools/tools/drawTools/vtoolline.cpp" line="+480"/>
         <source>Length</source>
         <translation type="unfinished">Délka</translation>
     </message>
@@ -17628,7 +17606,7 @@ load in SeamlyME as usual.
         <translation type="unfinished">Čára_</translation>
     </message>
     <message>
-        <location line="-3258"/>
+        <location line="-3263"/>
         <source>Center point</source>
         <translation>Středový bod</translation>
     </message>
