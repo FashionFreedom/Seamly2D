@@ -50,7 +50,7 @@ class ImageDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit         ImageDialog(DraftImage image);
+    explicit         ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension);
     virtual         ~ImageDialog();
 
     DraftImage       getImage() const;
@@ -135,8 +135,7 @@ private:
     DraftImage       m_image;
     qreal            m_pixmapWidth;
     qreal            m_pixmapHeight;
-    qreal            m_minScale;
-    qreal            m_maxScale;
+    qreal            m_maxDimension;
     qreal            m_minDimension;
     qreal            m_minOpacity;
     bool             m_flagName;

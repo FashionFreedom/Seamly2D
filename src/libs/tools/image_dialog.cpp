@@ -62,39 +62,22 @@
 
 
 //---------------------------------------------------------------------------------------------------------------------
-ImageDialog::ImageDialog(DraftImage image)
+ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimension)
     : ui(new Ui::ImageDialog)
     , m_image(image)
     , m_pixmapWidth(image.pixmap.width())
     , m_pixmapHeight(image.pixmap.height())
-    , m_minScale(.03)
-    , m_maxScale(1.0)
+    , m_maxDimension(maxDimension)
+    , m_minDimension(minDimension)
     , m_minOpacity(5)
     , m_flagName(true)
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    m_minDimension = ui->width_DoubleSpinBox->minimum();
-
     ui->visibility_CheckBox->hide();
     ui->showLabel_Label->hide();
     ui->attributes_GroupBox->layout()->update();
-
-    if (m_pixmapWidth >= m_pixmapHeight)
-    {
-        m_maxScale = 16000.0 / m_pixmapWidth;
-        m_minScale = m_minDimension / m_pixmapHeight;
-    }
-    else
-    {
-        m_maxScale = 16000.0 / m_pixmapHeight;
-        m_minScale = m_minDimension / m_pixmapWidth;
-    }
-    ui->xScale_DoubleSpinBox->setMinimum(m_minScale * 100);
-    ui->yScale_DoubleSpinBox->setMinimum(m_minScale * 100);
-    ui->xScale_DoubleSpinBox->setMaximum(m_maxScale * 100);
-    ui->yScale_DoubleSpinBox->setMaximum(m_maxScale * 100);
 
     updateSpinboxesRanges();
     updateUnits();
@@ -160,9 +143,6 @@ void ImageDialog::updateImage()
     setOpacity(m_image.opacity);
     enableWidgets();
     blockSignals(false);
-
-    qDebug("MinScale = %f", m_minScale);
-    qDebug("MaxScale = %f", m_maxScale);
 
     qDebug("Id = %d", m_image.id);
     qDebug("Name = %s", qUtf8Printable(m_image.name));
@@ -613,11 +593,30 @@ void ImageDialog::updateSpinboxesRanges()
     {
         ui->width_DoubleSpinBox->setMinimum(m_minDimension);
         ui->height_DoubleSpinBox->setMinimum(m_minDimension);
+
+        ui->xScale_DoubleSpinBox->setMinimum(m_minDimension / m_pixmapWidth * 100);
+        ui->yScale_DoubleSpinBox->setMinimum(m_minDimension / m_pixmapHeight * 100);
+
+        ui->width_DoubleSpinBox->setMaximum(m_maxDimension);
+        ui->height_DoubleSpinBox->setMaximum(m_maxDimension);
+
+        ui->xScale_DoubleSpinBox->setMaximum(m_maxDimension / m_pixmapWidth * 100);
+        ui->yScale_DoubleSpinBox->setMaximum(m_maxDimension / m_pixmapHeight * 100);
+
     }
     else
     {
         ui->width_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension));
         ui->height_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension));
+
+        ui->xScale_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension / m_pixmapWidth * 100));
+        ui->yScale_DoubleSpinBox->setMinimum(qApp->fromPixel(m_minDimension / m_pixmapHeight * 100));
+
+        ui->width_DoubleSpinBox->setMaximum(qApp->fromPixel(m_maxDimension));
+        ui->height_DoubleSpinBox->setMaximum(qApp->fromPixel(m_maxDimension));
+
+        ui->xScale_DoubleSpinBox->setMaximum(qApp->fromPixel(m_maxDimension / m_pixmapWidth * 100));
+        ui->yScale_DoubleSpinBox->setMaximum(qApp->fromPixel(m_maxDimension / m_pixmapHeight * 100));
     }
 }
 

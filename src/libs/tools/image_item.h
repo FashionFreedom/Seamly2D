@@ -120,6 +120,8 @@ private:
     qreal              m_pixmapWidth;
     qreal              m_pixmapHeight;
     bool               m_selectable;
+    qreal              m_minDimension;
+    qreal              m_maxDimension;
 
     void               initializeItem();
     void               updateFromHandles(QRectF rect);

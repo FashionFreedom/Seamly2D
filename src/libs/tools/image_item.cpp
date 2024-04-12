@@ -77,6 +77,8 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     , m_pixmapWidth()
     , m_pixmapHeight()
     , m_selectable(true)
+    , m_minDimension(16)
+    , m_maxDimension(16000)
 {
     initializeItem();
 
@@ -98,7 +100,7 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
 
     updateImage();
 
-    m_resizeHandles = new ResizeHandlesItem(this);
+    m_resizeHandles = new ResizeHandlesItem(this, m_minDimension, m_maxDimension);
     m_resizeHandles->setLockAspectRatio(m_image.aspectLocked);
     m_resizeHandles->setParentRotation(m_image.rotation);
     m_resizeHandles->parentIsLocked(m_image.locked);
@@ -345,7 +347,7 @@ void ImageItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
 
     if (selectedAction == actionProperties)
     {
-        ImageDialog *dialog = new ImageDialog(m_image);
+        ImageDialog *dialog = new ImageDialog(m_image, m_minDimension, m_maxDimension);
         connect(dialog, &ImageDialog::applyClicked, this, &ImageItem::updateImageAndHandles);
 
         if (dialog->exec() == QDialog::Accepted)

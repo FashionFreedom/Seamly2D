@@ -40,10 +40,12 @@
 /**
  * ResizeHandlesItem Constructor.
  */
-ResizeHandlesItem::ResizeHandlesItem(QGraphicsItem *parent)
+ResizeHandlesItem::ResizeHandlesItem(QGraphicsItem *parent, qreal minDimension, qreal maxDimension)
     : QGraphicsItem(parent)
     , m_handleItems()
     , m_parentRect()
+    , m_minDimension(minDimension)
+    , m_maxDimension(maxDimension)
 {
     if (parentItem())
     {
@@ -103,6 +105,14 @@ void ResizeHandlesItem::parentIsLocked(bool lock)
 void ResizeHandlesItem::setParentRotation(qreal rotation)
 {
     m_parentRotation = rotation;
+}
+
+
+//------------------------------------------------------------------------------
+void ResizeHandlesItem::setLimitDimensions(qreal min, qreal max)
+{
+    m_minDimension = min;
+    m_maxDimension = max;
 }
 
 /**
@@ -192,6 +202,8 @@ ResizeHandlesItem::HandleItem::HandleItem(Position position, ResizeHandlesItem* 
     , m_parent(parent)
     , m_handlePosition(position)
     , m_isHovered(false)
+    , m_minDimension(parent->m_minDimension)
+    , m_maxDimension(parent->m_maxDimension)
 {
     this->setBrush(QBrush(Qt::lightGray));
     this->setFlag(QGraphicsItem::ItemIsMovable, true);
@@ -482,34 +494,66 @@ QPointF ResizeHandlesItem::HandleItem::limitPosition(const QPointF& newPos)
         point.setX(newPos.x());
     }
 
+    //limit minimum dimensions
     if ((m_handlePosition == Position::Top ||
          m_handlePosition == Position::TopLeft ||
          m_handlePosition == Position::TopRight) &&
-         point.y() > m_parent->m_parentRect.bottom() - HANDLE_SIZE * 2)
+         point.y() > m_parent->m_parentRect.bottom() - m_minDimension)
     {
-        point.setY(m_parent->m_parentRect.bottom() - HANDLE_SIZE * 2);
+        point.setY(m_parent->m_parentRect.bottom() - m_minDimension);
     }
     else if ((m_handlePosition == Position::Bottom ||
               m_handlePosition == Position::BottomLeft ||
               m_handlePosition == Position::BottomRight) &&
-              point.y() < m_parent->m_parentRect.top() + HANDLE_SIZE * 2)
+              point.y() < m_parent->m_parentRect.top() + m_minDimension)
     {
-        point.setY(m_parent->m_parentRect.top() + HANDLE_SIZE * 2);
+        point.setY(m_parent->m_parentRect.top() + m_minDimension);
     }
 
     if ((m_handlePosition == Position::Left ||
         m_handlePosition == Position::TopLeft ||
         m_handlePosition == Position::BottomLeft) &&
-        point.x() > m_parent->m_parentRect.right() - HANDLE_SIZE * 2)
+        point.x() > m_parent->m_parentRect.right() - m_minDimension)
     {
-        point.setX(m_parent->m_parentRect.right() - HANDLE_SIZE * 2);
+        point.setX(m_parent->m_parentRect.right() - m_minDimension);
     }
     else if ((m_handlePosition == Position::Right ||
               m_handlePosition == Position::TopRight ||
               m_handlePosition == Position::BottomRight) &&
-              point.x() < m_parent->m_parentRect.left() + HANDLE_SIZE * 2)
+              point.x() < m_parent->m_parentRect.left() + m_minDimension)
     {
-        point.setX(m_parent->m_parentRect.left() + HANDLE_SIZE * 2);
+        point.setX(m_parent->m_parentRect.left() + m_minDimension);
+    }
+
+    //limit maximum dimensions
+    if ((m_handlePosition == Position::Top ||
+         m_handlePosition == Position::TopLeft ||
+         m_handlePosition == Position::TopRight) &&
+        point.y() < m_parent->m_parentRect.bottom() - m_maxDimension)
+    {
+        point.setY(m_parent->m_parentRect.bottom() - m_maxDimension);
+    }
+    else if ((m_handlePosition == Position::Bottom ||
+              m_handlePosition == Position::BottomLeft ||
+              m_handlePosition == Position::BottomRight) &&
+               point.y() > m_parent->m_parentRect.top() + m_maxDimension)
+    {
+        point.setY(m_parent->m_parentRect.top() + m_maxDimension);
+    }
+
+    if ((m_handlePosition == Position::Left ||
+         m_handlePosition == Position::TopLeft ||
+         m_handlePosition == Position::BottomLeft) &&
+        point.x() < m_parent->m_parentRect.right() - m_maxDimension)
+    {
+        point.setX(m_parent->m_parentRect.right() - m_maxDimension);
+    }
+    else if ((m_handlePosition == Position::Right ||
+              m_handlePosition == Position::TopRight ||
+              m_handlePosition == Position::BottomRight) &&
+               point.x() > m_parent->m_parentRect.left() + m_maxDimension)
+    {
+        point.setX(m_parent->m_parentRect.left() + m_maxDimension);
     }
 
     return point;

@@ -69,10 +69,12 @@ private:
             Position           m_handlePosition;
             bool               m_isHovered;
             qreal              m_scalingFactor;
+            qreal              m_minDimension;
+            qreal              m_maxDimension;
     };
 
 public:
-    explicit           ResizeHandlesItem(QGraphicsItem *parent = nullptr);
+    explicit           ResizeHandlesItem(QGraphicsItem *parent = nullptr, qreal minDimension = 16, qreal maxDimension = 16000);
     virtual           ~ResizeHandlesItem() = default;
 
     virtual int        type() const Q_DECL_OVERRIDE {return Type;}
@@ -92,6 +94,8 @@ public:
     void               setLockAspectRatio(bool lock);
     void               parentIsLocked(bool lock);
     void               setParentRotation(qreal rotation);
+    void               setLimitDimensions(qreal min, qreal max);
+
 
 signals:
     void               sizeChanged(QRectF rect);
@@ -105,6 +109,8 @@ private:
     bool               m_lockAspectRatio;
     bool               m_parentIsLocked;
     qreal              m_parentRotation;
+    qreal              m_minDimension;
+    qreal              m_maxDimension;
 };
 
 #endif //RESIZE_HANDLE_H
