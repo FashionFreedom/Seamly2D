@@ -240,7 +240,7 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
     if (!m_parent->m_parentIsLocked)
     {
         painter->setPen(QPen(Qt::white, 1, Qt::SolidLine));
-        painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::lightGray));
+        painter->setBrush(m_isHovered ? QColor(Qt::red) : QColor(Qt::darkGray));
         painter->drawEllipse(boundingRect());
     }
     else
