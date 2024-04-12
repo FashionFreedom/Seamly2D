@@ -171,8 +171,6 @@ struct DraftImage
       yPos(0.0),
       width(0.0),
       height(0.0),
-      xScale(100.0),
-      yScale(100.0),
       aspectLocked(false),
       units(Unit::Px),
       rotation(0.0),

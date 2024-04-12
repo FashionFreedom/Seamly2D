@@ -123,8 +123,6 @@ void ImageItem::setPixmap(const QPixmap &pixmap)
     m_pixmapHeight = pixmap.height();
     m_image.width  = pixmap.width();
     m_image.height = pixmap.height();
-    m_image.xScale = m_image.width / m_pixmapWidth * 100;
-    m_image.yScale = m_image.height / m_pixmapHeight * 100;
 
     m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_pixmapWidth, m_image.yPos + m_pixmapHeight);
 

@@ -1688,8 +1688,6 @@ void  MainWindow::addImage(DraftImage image)
     {
         image.width  = image.pixmap.width();
         image.height = image.pixmap.height();
-        image.xScale = 100;
-        image.yScale = 100;
     }
 
     ImageItem *item = new ImageItem(doc, image);
@@ -1796,8 +1794,6 @@ void MainWindow::updateImage(DraftImage image)
     qCDebug(vMainWindow, "YPos = %f", image.yPos);
     qCDebug(vMainWindow, "Width = %f", image.width);
     qCDebug(vMainWindow, "Height = %f", image.height);
-    qCDebug(vMainWindow, "XScale = %f", image.xScale);
-    qCDebug(vMainWindow, "YScale = %f", image.yScale);
     qCDebug(vMainWindow, "lock Image Aspect = %s",  image.aspectLocked ? "True" : "False");
     qCDebug(vMainWindow, "Units = %d", static_cast<int>(image.units));
     qCDebug(vMainWindow, "Rotation = %f", image.rotation);

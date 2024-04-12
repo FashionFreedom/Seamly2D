@@ -138,6 +138,8 @@ private:
     qreal            m_maxDimension;
     qreal            m_minDimension;
     qreal            m_minOpacity;
+    qreal            m_xScale;
+    qreal            m_yScale;
     bool             m_flagName;
 };
 

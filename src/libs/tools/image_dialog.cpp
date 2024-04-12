@@ -80,6 +80,10 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
     ui->attributes_GroupBox->layout()->update();
 
     updateUnits();
+
+    setXScale(m_image.width / m_pixmapWidth * 100);
+    setYScale(m_image.height / m_pixmapHeight * 100);
+
     updateImage();
 
     connect(ui->name_LineEdit,        &QLineEdit::textChanged,        this, &ImageDialog::nameChanged);
@@ -134,8 +138,6 @@ void ImageDialog::updateImage()
     setYPos(m_image.yPos);
     setWidth(m_image.width);
     setHeight(m_image.height);
-    setXScale(m_image.xScale);
-    setYScale(m_image.yScale);
     setAspectLocked(m_image.aspectLocked);
     setRotation(m_image.rotation);
     setVisibility(m_image.visible);
@@ -152,8 +154,6 @@ void ImageDialog::updateImage()
     qDebug("YPos = %f", m_image.yPos);
     qDebug("Width = %f", m_image.width);
     qDebug("Height = %f", m_image.height);
-    qDebug("XScale = %f", m_image.xScale);
-    qDebug("YScale = %f", m_image.yScale);
     qDebug("lock Image Aspect = %s",  m_image.aspectLocked ? "True" : "False");
     qDebug("Units = %d", static_cast<int>(m_image.units));
     qDebug("Rotation = %f", m_image.rotation);
@@ -299,13 +299,13 @@ void ImageDialog::setHeight(const qreal &value)
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getXScale() const
 {
-    return m_image.xScale;
+    return m_xScale;
 }
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setXScale(const qreal &scale)
 {
     ui->xScale_DoubleSpinBox->blockSignals(true);
-    m_image.xScale = scale;
+    m_xScale = scale;
     if (ui->xScale_DoubleSpinBox->value() != scale) {ui->xScale_DoubleSpinBox->setValue(scale);};
     ui->xScale_DoubleSpinBox->blockSignals(false);
 }
@@ -313,14 +313,14 @@ void ImageDialog::setXScale(const qreal &scale)
 //---------------------------------------------------------------------------------------------------------------------
 qreal ImageDialog::getYScale() const
 {
-    return m_image.yScale;
+    return m_yScale;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setYScale(const qreal &scale)
 {
     ui->yScale_DoubleSpinBox->blockSignals(true);
-    m_image.yScale = scale;
+    m_yScale = scale;
     if (ui->yScale_DoubleSpinBox->value() != scale) {ui->yScale_DoubleSpinBox->setValue(scale);};
     ui->yScale_DoubleSpinBox->blockSignals(false);
 }
@@ -570,8 +570,8 @@ void ImageDialog::heightChanged(qreal height)
 void ImageDialog::xScaleChanged(qreal xScale)
 {
     blockSignals(true);
-    qreal oldYScale = m_image.xScale;
-    qreal yScale = m_image.yScale;
+    qreal oldYScale = m_xScale;
+    qreal yScale = m_yScale;
 
     qreal maxXScale = m_maxDimension / m_pixmapWidth * 100;
     qreal minXScale = m_minDimension / m_pixmapWidth * 100;
@@ -583,23 +583,23 @@ void ImageDialog::xScaleChanged(qreal xScale)
 
     if (m_image.aspectLocked)
     {
-        yScale = m_image.yScale * xScale / oldYScale;
+        yScale = m_yScale * xScale / oldYScale;
         if (yScale > maxYScale)
         {
-            xScale = maxYScale * oldYScale / m_image.yScale;
+            xScale = maxYScale * oldYScale / m_yScale;
             yScale = maxYScale;
         }
         else if (yScale < minYScale)
         {
-            xScale = minYScale * oldYScale / m_image.yScale;
+            xScale = minYScale * oldYScale / m_yScale;
             yScale = minYScale;
         }
     }
 
     setXScale(xScale);
-    setWidth(m_pixmapWidth * m_image.xScale / 100);
+    setWidth(m_pixmapWidth * m_xScale / 100);
     setYScale(yScale);
-    setHeight(m_pixmapHeight * m_image.yScale / 100);
+    setHeight(m_pixmapHeight * m_yScale / 100);
 
     blockSignals(false);
     emit imageUpdated(m_image);
@@ -609,8 +609,8 @@ void ImageDialog::xScaleChanged(qreal xScale)
 void ImageDialog::yScaleChanged(qreal scale)
 {
     blockSignals(true);
-    qreal oldXScale = m_image.yScale;
-    qreal xScale = m_image.xScale;
+    qreal oldXScale = m_yScale;
+    qreal xScale = m_xScale;
 
     qreal maxXScale = m_maxDimension / m_pixmapWidth * 100;
     qreal minXScale = m_minDimension / m_pixmapWidth * 100;
@@ -622,23 +622,23 @@ void ImageDialog::yScaleChanged(qreal scale)
 
     if (m_image.aspectLocked)
     {
-        xScale = m_image.xScale * scale / oldXScale;
+        xScale = m_xScale * scale / oldXScale;
         if (xScale > maxXScale)
         {
-            scale = maxXScale * oldXScale / m_image.xScale;
+            scale = maxXScale * oldXScale / m_xScale;
             xScale = maxXScale;
         }
         else if (xScale < minXScale)
         {
-            scale = minXScale * oldXScale / m_image.xScale;
+            scale = minXScale * oldXScale / m_xScale;
             xScale = minXScale;
         }
     }
 
     setYScale(scale);
-    setHeight(m_pixmapHeight * m_image.yScale / 100);
+    setHeight(m_pixmapHeight * m_yScale / 100);
     setXScale(xScale);
-    setWidth(m_pixmapWidth * m_image.xScale / 100);
+    setWidth(m_pixmapWidth * m_xScale / 100);
 
     blockSignals(false);
     emit imageUpdated(m_image);
