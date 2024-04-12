@@ -179,6 +179,7 @@ public:
     ImageItem *                    getBackgroundImage(qint32 id);
     void                           addBackgroundImage(qint32 id, ImageItem *item);
     void                           removeBackgroundImage(qint32 id);
+    void                           clearBackgroundImageMap();
 
     QMap<GHeights, bool>           GetGradationHeights() const;
     void                           SetGradationHeights(const QMap<GHeights, bool> &options);

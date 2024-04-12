@@ -1692,7 +1692,7 @@ void  MainWindow::addImage(DraftImage image)
         image.yScale = 100;
     }
 
-    ImageItem *item = new ImageItem(image);
+    ImageItem *item = new ImageItem(doc, image);
     doc->addBackgroundImage(image.id, item);
     draftScene->addItem(item);
     //Need error dialog
@@ -4402,6 +4402,7 @@ void MainWindow::Clear()
 #endif
     CleanLayout();
     pieceList.clear(); // don't move to CleanLayout()
+    doc->clearBackgroundImageMap();
     qApp->getUndoStack()->clear();
     toolProperties->clearPropertyBrowser();
     toolProperties->itemClicked(nullptr);

@@ -31,7 +31,6 @@
 #include "vmaingraphicsscene.h"
 #include "vmaingraphicsview.h"
 #include "global.h"
-#include "../vmisc/vabstractapplication.h"
 #include "../vmisc/vcommonsettings.h"
 #include "../vwidgets/resize_handle.h"
 
@@ -51,15 +50,14 @@
 #include <Qt>
 #include <QGraphicsItem>
 
-QList<ImageItem *> ImageItem::allImageItems;
-
 //---------------------------------------------------------------------------------------------------------------------
 /**
  * @brief ImageItem default constructor.
  * @param parent parent object.
  */
-ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
+ImageItem::ImageItem(VAbstractPattern *doc, DraftImage image, QGraphicsItem *parent)
     : QGraphicsItem(parent)
+    , m_doc(doc)
     , m_offset(QPointF(0.0, 0.0))
     , m_boundingRect(QRectF())
     , m_handleRect(QRectF())
@@ -85,12 +83,10 @@ ImageItem::ImageItem(DraftImage image, QGraphicsItem *parent)
     m_boundingRect = QRectF(m_image.xPos, m_image.yPos, m_image.xPos + m_image.width, m_image.yPos + m_image.height);
     m_handleRect   = m_boundingRect.adjusted(HANDLE_SIZE/2, HANDLE_SIZE/2, -HANDLE_SIZE/2, -HANDLE_SIZE/2);
 
-    allImageItems.append(this);
-
     if (m_image.order == 0)
     {
         qreal   minZValue = maxImageZvalue+1;
-        foreach (ImageItem *item, allImageItems)
+        foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
         {
                 minZValue = qMin(minZValue, item->m_image.order);
         }
@@ -526,7 +522,6 @@ void ImageItem::updateImageAndHandles(DraftImage image)
 void ImageItem::deleteImageItem()
 {
     moveToBottom(); //so that there is no gap in zValue
-    allImageItems.removeOne(this);
     scene()->removeItem(this);
     deleteLater();
 }
@@ -534,7 +529,7 @@ void ImageItem::deleteImageItem()
 void ImageItem::moveToBottom()
 {
     qreal   minZValue = m_image.order;
-    foreach (ImageItem *item, allImageItems)
+    foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item != this && item->m_image.order < m_image.order)
         {
@@ -550,7 +545,7 @@ void ImageItem::moveToBottom()
 
 void ImageItem::moveToTop()
 {
-    foreach (ImageItem *item, allImageItems)
+    foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item != this && item->m_image.order > m_image.order)
         {
@@ -569,7 +564,7 @@ void ImageItem::moveUp()
         return;
     }
 
-    foreach (ImageItem *item, allImageItems)
+    foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item->m_image.order == m_image.order + 1)
         {
@@ -584,12 +579,12 @@ void ImageItem::moveUp()
 
 void ImageItem::moveDown()
 {
-    if (m_image.order == maxImageZvalue-allImageItems.size()+1)
+    if (m_image.order == maxImageZvalue-m_doc->getBackgroundImageMap().values().size()+1)
     {
         return;
     }
 
-    foreach (ImageItem *item, allImageItems)
+    foreach (ImageItem *item, m_doc->getBackgroundImageMap().values())
     {
         if (item->m_image.order == m_image.order - 1)
         {

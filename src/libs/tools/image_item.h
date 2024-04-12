@@ -32,6 +32,7 @@
 
 #include "../vmisc/def.h"
 #include "../vwidgets/resize_handle.h"
+#include "../vmisc/vabstractapplication.h"
 
 #include <QMetaObject>
 #include <QPointF>
@@ -52,13 +53,11 @@ class ImageItem : public QObject, public QGraphicsItem
     Q_INTERFACES(QGraphicsItem)
 
 public:
-    explicit         ImageItem(DraftImage image, QGraphicsItem *parent = nullptr);
+    explicit         ImageItem(VAbstractPattern *doc, DraftImage image, QGraphicsItem *parent = nullptr);
     virtual         ~ImageItem() = default;
 
     virtual int      type() const override {return Type;}
     enum             {Type = UserType + static_cast<int>(Tool::BackgroundImage)};
-
-    static QList<ImageItem *> allImageItems;
 
     virtual QRectF   boundingRect() const override;
 
@@ -103,6 +102,7 @@ protected:
     virtual void     keyReleaseEvent (QKeyEvent *event) override;
 
 private:
+    VAbstractPattern  *m_doc;
     QPointF            m_offset;
     QRectF             m_boundingRect;
     QRectF             m_handleRect;
