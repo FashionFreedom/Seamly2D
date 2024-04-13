@@ -245,7 +245,7 @@ void ResizeHandlesItem::HandleItem::paint(QPainter *painter, const QStyleOptionG
     }
     else
     {
-        QPixmap pixmap("://icon/32x32/lock_on.png");
+        QPixmap pixmap("://icon/32x32/lock_off.png");
         painter->drawPixmap(boundingRect().toRect(), pixmap);
     }
 }
