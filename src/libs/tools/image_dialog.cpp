@@ -75,10 +75,6 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 
-    ui->visibility_CheckBox->hide();
-    ui->showLabel_Label->hide();
-    ui->attributes_GroupBox->layout()->update();
-
     updateUnits();
 
     setXScale(m_image.width / m_pixmapWidth * 100);
@@ -104,7 +100,6 @@ ImageDialog::ImageDialog(DraftImage image, qreal minDimension, qreal maxDimensio
     connect(ui->aspectLocked_ToolButton, &QToolButton::clicked, this, &ImageDialog::lockAspectChanged);
     connect(ui->units_ToolButton, &QToolButton::clicked, this, &ImageDialog::unitsChanged);
     connect(ui->lockImage_ToolButton,  &QCheckBox::toggled, this, &ImageDialog::lockChanged);
-    connect(ui->visibility_CheckBox,   &QCheckBox::toggled, this, &ImageDialog::visibilityChanged);
     connect(ui->opacity_DoubleSpinBox, QOverload<double>::of(&QDoubleSpinBox::valueChanged),
             this, &ImageDialog::opacityChanged);
     connect(ui->buttonBox, &QDialogButtonBox::clicked, this, &ImageDialog::dialogApply);
@@ -175,7 +170,6 @@ void ImageDialog::enableWidgets()
     ui->aspectLocked_ToolButton->setEnabled(!m_image.locked);
     ui->units_ToolButton->setEnabled(!m_image.locked);
     ui->rotation_DoubleSpinBox->setEnabled(!m_image.locked);
-    ui->visibility_CheckBox->setEnabled(!m_image.locked);
     ui->opacity_DoubleSpinBox->setEnabled(!m_image.locked);
 }
 //---------------------------------------------------------------------------------------------------------------------
@@ -379,10 +373,7 @@ bool ImageDialog::isVisible() const
 //---------------------------------------------------------------------------------------------------------------------
 void ImageDialog::setVisibility(const bool &checked)
 {
-    ui->visibility_CheckBox->blockSignals(true);
     m_image.visible = checked;
-    ui->visibility_CheckBox->setChecked(checked);
-    ui->visibility_CheckBox->blockSignals(false);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -747,8 +738,6 @@ void ImageDialog::visibilityChanged(bool checked)
 {
     blockSignals(true);
     m_image.visible = checked;
-    ui->visibility_CheckBox->setChecked(m_image.visible);
-    ui->opacity_DoubleSpinBox->setEnabled(ui->visibility_CheckBox->isChecked());
     blockSignals(false);
     emit imageUpdated(m_image);
 }
