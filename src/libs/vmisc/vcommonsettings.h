@@ -325,8 +325,8 @@ public:
     QSize                GetFormulaWizardDialogSize() const;
     void                 SetFormulaWizardDialogSize(const QSize& sz);
 
-    QSize                GetIncrementsDialogSize() const;
-    void                 SetIncrementsDialogSize(const QSize& sz);
+    QSize                getVariablesDialogSize() const;
+    void                 setVariablesDialogSize(const QSize& sz);
 
     int                  GetLatestSkippedVersion() const;
     void                 SetLatestSkippedVersion(int value);

@@ -105,7 +105,7 @@ QString getFormulaFromUser(QPlainTextEdit *textEdit)
 
     QString formula = textEdit->toPlainText();
     formula.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(formula, qApp->Settings()->getOsSeparator());
 }
 }
 
@@ -294,7 +294,7 @@ void PatternPieceDialog::SetPiece(const VPiece &piece)
     setInLayout(piece.isInLayout());
     setPieceLock(piece.isLocked());
 
-    const QString width = qApp->TrVars()->FormulaToUser(piece.getSeamAllowanceWidthFormula(), qApp->Settings()->getOsSeparator());
+    const QString width = qApp->translateVariables()->FormulaToUser(piece.getSeamAllowanceWidthFormula(), qApp->Settings()->getOsSeparator());
     ui->widthFormula_PlainTextEdit->setPlainText(width);
     m_saWidth = piece.GetSAWidth();
 
@@ -1113,7 +1113,7 @@ void PatternPieceDialog::nodeChanged(int index)
 
             QString w1Formula = node.GetFormulaSABefore();
             enableDefaultButton(ui->beforeDefault_PushButton, w1Formula);
-            w1Formula = qApp->TrVars()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
+            w1Formula = qApp->translateVariables()->FormulaToUser(w1Formula, qApp->Settings()->getOsSeparator());
 
             ui->beforeWidthFormula_PlainTextEdit->setPlainText(w1Formula);
             MoveCursorToEnd(ui->beforeWidthFormula_PlainTextEdit);
@@ -1124,7 +1124,7 @@ void PatternPieceDialog::nodeChanged(int index)
 
             QString w2Formula = node.GetFormulaSAAfter();
             enableDefaultButton(ui->afterDefault_PushButton, w2Formula);
-            w2Formula = qApp->TrVars()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
+            w2Formula = qApp->translateVariables()->FormulaToUser(w2Formula, qApp->Settings()->getOsSeparator());
 
             ui->afterWidthFormula_PlainTextEdit->setPlainText(w2Formula);
             MoveCursorToEnd(ui->afterWidthFormula_PlainTextEdit);
@@ -1340,7 +1340,7 @@ void PatternPieceDialog::nodeAngleChanged(int index)
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableDefaultBeforeButton()
 {
-    const QString allowance = qApp->TrVars()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
+    const QString allowance = qApp->translateVariables()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
     ui->beforeWidthFormula_PlainTextEdit->setPlainText(allowance);
     if (QPushButton *button = qobject_cast<QPushButton*>(sender()))
     {
@@ -1351,7 +1351,7 @@ void PatternPieceDialog::enableDefaultBeforeButton()
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::enableDefaultAfterButton()
 {
-    const QString allowance = qApp->TrVars()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
+    const QString allowance = qApp->translateVariables()->FormulaToUser(currentSeamAllowance, qApp->Settings()->getOsSeparator());
     ui->afterWidthFormula_PlainTextEdit->setPlainText(allowance);
     if (QPushButton *button = qobject_cast<QPushButton*>(sender()))
     {
@@ -1692,7 +1692,7 @@ void PatternPieceDialog::updateGrainlineValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1774,7 +1774,7 @@ void PatternPieceDialog::updatePieceLabelValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1859,7 +1859,7 @@ void PatternPieceDialog::updatePatternLabelValues()
         try
         {
             formula.replace("\n", " ");
-            formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+            formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
             Calculator calculation;
             qreal calculatedValue = calculation.EvalFormula(data->DataVariables(), formula);
             if (qIsInf(calculatedValue) == true || qIsNaN(calculatedValue) == true)
@@ -1983,7 +1983,7 @@ void PatternPieceDialog::editGrainlineFormula()
 
     EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2040,7 +2040,7 @@ void PatternPieceDialog::editPieceLabelFormula()
 
     EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2100,7 +2100,7 @@ void PatternPieceDialog::editPatternLabelFormula()
 
     EditFormulaDialog dialog(data, NULL_ID, this);
     dialog.setWindowTitle(title);
-    dialog.SetFormula(qApp->TrVars()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
+    dialog.SetFormula(qApp->translateVariables()->TryFormulaFromUser(labelFormula->toPlainText(), qApp->Settings()->getOsSeparator()));
     dialog.setCheckZero(checkForZero);
     if (dialog.exec() == QDialog::Accepted)
     {
@@ -2164,7 +2164,7 @@ void PatternPieceDialog::evaluateDefaultWidth()
     if (m_saWidth >= 0)
     {
         VContainer *locData = const_cast<VContainer *> (data);
-        locData->AddVariable(currentSeamAllowance, new VIncrement(locData, currentSeamAllowance, 0, m_saWidth,
+        locData->AddVariable(currentSeamAllowance, new CustomVariable(locData, currentSeamAllowance, 0, m_saWidth,
                                                                   QString().setNum(m_saWidth), true,
                                                                   tr("Current seam allowance")));
 
@@ -3239,13 +3239,13 @@ QString PatternPieceDialog::getSeamAllowanceWidthFormula() const
 {
     QString width = ui->widthFormula_PlainTextEdit->toPlainText();
     width.replace("\n", " ");
-    return qApp->TrVars()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(width, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void PatternPieceDialog::setSeamAllowanceWidthFormula(const QString &formula)
 {
-    const QString width = qApp->TrVars()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
+    const QString width = qApp->translateVariables()->FormulaToUser(formula, qApp->Settings()->getOsSeparator());
     ui->widthFormula_PlainTextEdit->setPlainText(width);
 
     PatternPieceVisual *path = qobject_cast<PatternPieceVisual *>(vis);
@@ -3294,7 +3294,7 @@ void PatternPieceDialog::setGrainlineAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->rotationFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->rotationFormula_LineEdit);
@@ -3308,7 +3308,7 @@ void PatternPieceDialog::setGrainlineLength(QString lengthFormula)
         lengthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(lengthFormula, qApp->Settings()->getOsSeparator());
     ui->lengthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->lengthFormula_LineEdit);
@@ -3322,7 +3322,7 @@ void PatternPieceDialog::setPieceLabelWidth(QString widthFormula)
         widthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelWidthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelWidthFormula_LineEdit);
@@ -3336,7 +3336,7 @@ void PatternPieceDialog::setPieceLabelHeight(QString heightFormula)
         heightFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelHeightFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelHeightFormula_LineEdit);
@@ -3350,7 +3350,7 @@ void PatternPieceDialog::setPieceLabelAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->pieceLabelAngleFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->pieceLabelAngleFormula_LineEdit);
@@ -3364,7 +3364,7 @@ void PatternPieceDialog::setPatternLabelWidth(QString widthFormula)
         widthFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(widthFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelWidthFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelWidthFormula_LineEdit);
@@ -3378,7 +3378,7 @@ void PatternPieceDialog::setPatternLabelHeight(QString heightFormula)
         heightFormula = QString().setNum(UnitConvertor(1, Unit::Cm, *data->GetPatternUnit()));
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(heightFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelHeightFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelHeightFormula_LineEdit);
@@ -3392,7 +3392,7 @@ void PatternPieceDialog::setPatternLabelAngle(QString angleFormula)
         angleFormula = QString("0");
     }
 
-    const QString formula = qApp->TrVars()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
+    const QString formula = qApp->translateVariables()->FormulaToUser(angleFormula, qApp->Settings()->getOsSeparator());
     ui->patternLabelAngleFormula_LineEdit->setPlainText(formula);
 
     MoveCursorToEnd(ui->patternLabelAngleFormula_LineEdit);
@@ -3567,6 +3567,6 @@ qreal PatternPieceDialog::getFormulaValue(QPlainTextEdit *text) const
     Calculator calculation;
     QString formula = text->toPlainText().simplified();
     formula.replace("\n", " ");
-    formula = qApp->TrVars()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
+    formula = qApp->translateVariables()->FormulaFromUser(formula, qApp->Settings()->getOsSeparator());
     return ToPixel(calculation.EvalFormula(data->DataVariables(), formula), *data->GetPatternUnit());
 }

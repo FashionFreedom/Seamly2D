@@ -86,7 +86,7 @@ DialogPointOfContact::DialogPointOfContact(const VContainer *data, const quint32
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
-    setWindowIcon(QIcon(":/toolicon/32x32/point_of_contact.png"));
+    setWindowIcon(QIcon(":/toolicon/32x32/point_intersect_arc_line.png"));
 
     ui->lineEditNamePoint->setClearButtonEnabled(true);
 
@@ -313,7 +313,7 @@ void DialogPointOfContact::setCenter(const quint32 &value)
  */
 void DialogPointOfContact::setRadius(const QString &value)
 {
-    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    radius = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius.length() > 80)
     {
@@ -346,7 +346,7 @@ void DialogPointOfContact::SetPointName(const QString &value)
  */
 QString DialogPointOfContact::getRadius() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------

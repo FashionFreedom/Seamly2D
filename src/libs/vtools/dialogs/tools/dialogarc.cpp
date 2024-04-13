@@ -199,7 +199,7 @@ VArc DialogArc::getArc() const
 void DialogArc::setArc(const VArc &arc)
 {
     m_arc = arc;
-    ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+    ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(m_arc.name()));
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -220,7 +220,7 @@ void DialogArc::setCenter(const quint32 &value)
  */
 void DialogArc::setF2(const QString &value)
 {
-    f2 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    f2 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f2.length() > 80)
     {
@@ -286,7 +286,7 @@ void DialogArc::setLineColor(const QString &value)
  */
 void DialogArc::setF1(const QString &value)
 {
-    f1 = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    f1 = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (f1.length() > 80)
     {
@@ -308,7 +308,7 @@ void DialogArc::setF1(const QString &value)
  */
 void DialogArc::setRadius(const QString &value)
 {
-    radius = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    radius = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     // increase height if needed.
     if (radius.length() > 80)
     {
@@ -468,7 +468,7 @@ void DialogArc::pointNameChanged()
     if (getCurrentObjectId(ui->centerPoint_ComboBox) == m_arc.GetCenter().id())
     {
         newDuplicate = -1;
-        ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(m_arc.name()));
+        ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(m_arc.name()));
     }
     else
     {
@@ -484,11 +484,11 @@ void DialogArc::pointNameChanged()
         }
         if (m_arc.id() == NULL_ID)
         {
-            ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(arc.name() + "_" + QString().setNum(m_Id + 1)));
+            ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(arc.name() + "_" + QString().setNum(m_Id + 1)));
         }
         else
         {
-            ui->name_LineEdit->setText(qApp->TrVars()->VarToUser(arc.name() + "_" + QString().setNum(m_arc.id())));
+            ui->name_LineEdit->setText(qApp->translateVariables()->VarToUser(arc.name() + "_" + QString().setNum(m_arc.id())));
         }
     }
 
@@ -586,7 +586,7 @@ quint32 DialogArc::getCenter() const
  */
 QString DialogArc::getRadius() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(radius, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -596,7 +596,7 @@ QString DialogArc::getRadius() const
  */
 QString DialogArc::getF1() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f1, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(f1, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -606,5 +606,5 @@ QString DialogArc::getF1() const
  */
 QString DialogArc::getF2() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(f2, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(f2, qApp->Settings()->getOsSeparator());
 }

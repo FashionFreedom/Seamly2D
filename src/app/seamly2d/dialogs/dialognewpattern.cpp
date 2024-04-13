@@ -52,7 +52,7 @@
 
 #include "dialognewpattern.h"
 #include "ui_dialognewpattern.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../vmisc/vsettings.h"
 #include "../vpatterndb/vcontainer.h"
 

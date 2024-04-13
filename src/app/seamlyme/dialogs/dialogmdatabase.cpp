@@ -54,7 +54,7 @@
  *************************************************************************/
 #include "dialogmdatabase.h"
 #include "ui_dialogmdatabase.h"
-#include "../mapplication.h"
+#include "../application_me.h"
 #include "../vpatterndb/measurements_def.h"
 
 #include <QGuiApplication>
@@ -195,7 +195,7 @@ void MeasurementDatabaseDialog::retranslateGroups()
 QString MeasurementDatabaseDialog::imageUrl(const QString &number)
 {
     QString imgUrl("<img src=\"wrong.png\" align=\"center\"/>"); // In case of error
-    const QString filePath = QString("://diagrams/%1.svg").arg(MapDiagrams(qApp->TrVars(), number));
+    const QString filePath = QString("://diagrams/%1.svg").arg(MapDiagrams(qApp->translateVariables(), number));
     if (QFileInfo::exists(filePath))
     {
         // Load your SVG
@@ -356,7 +356,7 @@ void MeasurementDatabaseDialog::showDescription(QTreeWidgetItem *item, int colum
     }
 
     const QString name = item->data(0, Qt::UserRole).toString();
-    const VTranslateVars *trv = qApp->TrVars();
+    const VTranslateVars *trv = qApp->translateVariables();
     const QString number = trv->MNumber(name);
 
     const QString text = QString("<p align=\"center\" style=\"font-variant: normal; font-style: normal; font-weight: "
@@ -505,7 +505,7 @@ void MeasurementDatabaseDialog::addMeasurement(QTreeWidgetItem *group, const QSt
         updateChecks(item, 0);
     }
 
-    const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
+    const QString text = qApp->translateVariables()->MNumber(name) + ". " + qApp->translateVariables()->MToUser(name);
     item->setText(0, text);
     item->setToolTip(0, text);
     item->setData(0, Qt::UserRole, name);
@@ -514,13 +514,13 @@ void MeasurementDatabaseDialog::addMeasurement(QTreeWidgetItem *group, const QSt
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::readSettings()
 {
-    restoreGeometry(qApp->SeamlyMeSettings()->getDataBaseGeometry());
+    restoreGeometry(qApp->seamlyMeSettings()->getDataBaseGeometry());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::writeSettings()
 {
-    qApp->SeamlyMeSettings()->setDataBaseGeometry(saveGeometry());
+    qApp->seamlyMeSettings()->setDataBaseGeometry(saveGeometry());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -590,7 +590,7 @@ void MeasurementDatabaseDialog::retranslateGroup(QTreeWidgetItem *group, const Q
 //---------------------------------------------------------------------------------------------------------------------
 void MeasurementDatabaseDialog::retranslateMeasurement(QTreeWidgetItem *group, int index, const QString &name)
 {
-    const QString text = qApp->TrVars()->MNumber(name) + ". " + qApp->TrVars()->MToUser(name);
+    const QString text = qApp->translateVariables()->MNumber(name) + ". " + qApp->translateVariables()->MToUser(name);
 
     QTreeWidgetItem *item = group->child(index);
     item->setText(0, text);

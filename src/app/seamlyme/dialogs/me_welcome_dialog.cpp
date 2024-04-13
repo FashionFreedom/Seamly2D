@@ -27,7 +27,7 @@
 
 #include "../vpatterndb/variables/measurement_variable.h"
 //#include "../vmisc/vseamlymesettings.h"
-#include "../mapplication.h"
+#include "../application_me.h"
 
 #include <QPushButton>
 #include <QShowEvent>
@@ -38,7 +38,7 @@ SeamlyMeWelcomeDialog::SeamlyMeWelcomeDialog(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::SeamlyMeWelcomeDialog)
     , m_langChanged(false)
-    , settings(qApp->SeamlyMeSettings())
+    , settings(qApp->seamlyMeSettings())
 {
     ui->setupUi(this);
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);

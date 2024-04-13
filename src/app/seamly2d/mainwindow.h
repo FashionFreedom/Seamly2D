@@ -454,7 +454,7 @@ private:
 
     void               AddDocks();
     void               initializeDocksContain();
-    bool               OpenNewSeamly2D(const QString &fileName = QString())const;
+    bool               startNewSeamly2D(const QString &fileName = QString())const;
     void               FileClosedCorrect();
     QStringList        GetUnlokedRestoreFileList()const;
 

@@ -378,7 +378,7 @@ void VToolShoulderPoint::SetVisualization()
         visual->setObject1Id(pShoulder);
         visual->setLineP1Id(basePointId);
         visual->setLineP2Id(p2Line);
-        visual->setLength(qApp->TrVars()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
+        visual->setLength(qApp->translateVariables()->FormulaToUser(formulaLength, qApp->Settings()->getOsSeparator()));
         visual->setLineStyle(lineTypeToPenStyle(m_lineType));
         visual->setLineWeight(m_lineWeight);
         visual->RefreshGeometry();

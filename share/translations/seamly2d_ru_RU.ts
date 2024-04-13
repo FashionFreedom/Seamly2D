@@ -78,6 +78,172 @@
     </message>
 </context>
 <context>
+    <name>Application2D</name>
+    <message>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="+363"/>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Ошибка парсинга файла. Программа будет закрыта.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Ошибка, неправильный id. Программа будет закрыта.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Ошибка, невозможно преобразовать значение. Программа будет закрыта.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Ошибка, пустой параметр. Программа будет закрыта.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Ошибка, неправильный id. Программа будет закрыта.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Что-то не так!!!</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Ошибка парсинга: %1. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Программное исключение: %1. Работа программы будет завершена.</translation>
+    </message>
+</context>
+<context>
+    <name>ApplicationME</name>
+    <message>
+        <location filename="../../src/app/seamlyme/application_me.cpp" line="+302"/>
+        <source>Error parsing file. Program will be terminated.</source>
+        <translation>Ошибка в разборе файла. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error bad id. Program will be terminated.</source>
+        <translation>Ошибка идентификатора. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error can&apos;t convert value. Program will be terminated.</source>
+        <translation>Ошибка преобразования значения. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error empty parameter. Program will be terminated.</source>
+        <translation>Ошибка пустого параметра. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error wrong id. Program will be terminated.</source>
+        <translation>Ошибка неправильного идентификатора. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Something&apos;s wrong!!</source>
+        <translation>Что-то не так!</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Parser error: %1. Program will be terminated.</source>
+        <translation>Ошибка разбора: %1. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Exception thrown: %1. Program will be terminated.</source>
+        <translation>Программное исключение: %1. Работа программы будет завершена.</translation>
+    </message>
+    <message>
+        <location line="+188"/>
+        <source>Seamly2D&apos;s measurements editor.</source>
+        <translation>Редактор мерок Seamly2D.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The measurement file.</source>
+        <translation>Файл мерок.</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The base height</source>
+        <translation>Базовая высота</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>The base size</source>
+        <translation>Базовый размер</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Set pattern file unit: cm, mm, inch.</source>
+        <translation>Задать единицы измерения выкройки: см, мм или дюймы.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>The pattern unit</source>
+        <translation>Единицы измерения выкройки</translation>
+    </message>
+    <message>
+        <location line="+69"/>
+        <source>Invalid base size argument. Must be cm, mm or inch.</source>
+        <translation>Ошибка: неверный параметр базового размера, должен быть см, мм или дюймы.</translation>
+    </message>
+    <message>
+        <location line="+38"/>
+        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
+        <translation>Невозможно начать найти входящие соединения с именем &apos;%1&apos;</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Test mode doesn&apos;t support Opening several files.</source>
+        <translation>Режим проверки не поддерживает открытия нескольких файлов.</translation>
+    </message>
+    <message>
+        <location line="+41"/>
+        <source>Please, provide one input file.</source>
+        <translation>Укажите один входной файл.</translation>
+    </message>
+    <message>
+        <location line="-167"/>
+        <source>Open with the base size. Valid values: %1cm.</source>
+        <translation>Открыть с базовым размером. Возможные значения: %1 см.</translation>
+    </message>
+    <message>
+        <location line="+39"/>
+        <source>Invalid base height argument. Must be %1cm.</source>
+        <translation>Неверный параметр базовой высоты. Должен быть %1 см.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Invalid base size argument. Must be %1cm.</source>
+        <translation>Неверный параметр базового размера. Должен быть %1 см.</translation>
+    </message>
+    <message>
+        <location line="-62"/>
+        <source>Open with the base height. Valid values: %1cm.</source>
+        <translation>Открыть с базовой высотой. Возможные значения: %1 см.</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
+        <translation>Используйте для юнит тестирования. Запускает программу и открывает файл без показа окна.</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
+        <translation>Отключить масштабирование с высоким разрешением. Вызовите эту опцию, если есть проблема с масштабированием (по умолчанию масштабирование включено). Или вы можете использовать %1 переменную среды.</translation>
+    </message>
+</context>
+<context>
     <name>CalculatorDialog</name>
     <message>
         <location filename="../../src/app/seamly2d/dialogs/calculator_dialog.ui" line="+35"/>
@@ -2239,12 +2405,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>DialogLineIntersectAxis</name>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+417"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+423"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show full calculation in message box&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Показать полный расчет в окне сообщения&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location line="-209"/>
+        <location line="-215"/>
         <source>First point of line</source>
         <translation>Первая точка линии</translation>
     </message>
@@ -2274,7 +2440,7 @@ p, li { white-space: pre-wrap; }
         <translation>Редактрировать угол</translation>
     </message>
     <message>
-        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+81"/>
+        <location filename="../../src/libs/vtools/dialogs/tools/dialoglineintersectaxis.ui" line="+87"/>
         <source>Angle:</source>
         <translation>Угол:</translation>
     </message>
@@ -2289,12 +2455,12 @@ p, li { white-space: pre-wrap; }
         <translation>Значение</translation>
     </message>
     <message>
-        <location line="-237"/>
+        <location line="-243"/>
         <source>Axis point:</source>
         <translation>Точка оси:</translation>
     </message>
     <message>
-        <location line="+394"/>
+        <location line="+400"/>
         <source>Linetype:</source>
         <translation>Тип линии:</translation>
     </message>
@@ -2304,7 +2470,7 @@ p, li { white-space: pre-wrap; }
         <translation>Цвет:</translation>
     </message>
     <message>
-        <location line="-619"/>
+        <location line="-625"/>
         <source>Intersect - Line and Axis</source>
         <translation>Пересечение — Линии и Оси</translation>
     </message>
@@ -2339,7 +2505,7 @@ p, li { white-space: pre-wrap; }
         <translation>Геометрия</translation>
     </message>
     <message>
-        <location line="+173"/>
+        <location line="+179"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
 &lt;table width = 370&gt;&lt;tr&gt;&lt;td align = left width =300&gt;&lt;b&gt;Angle Calculation&lt;/b&gt;&lt;br&gt;Angles are specified in degrees, i.e. a full circle equals 360 deg. Positive values for an  angle means counter-clockwise while a negative value means the clockwise direction. Zero degrees is at the 3 o&apos;clock position.&lt;/td&gt;&lt;td align = right valign = middle&gt;&lt;img src=&quot;:/icon/64x64/rotation.png&quot;/&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;
@@ -2356,7 +2522,7 @@ p, li { white-space: pre-wrap; }
         <translation>Толщина Линии:</translation>
     </message>
     <message>
-        <location line="-512"/>
+        <location line="-518"/>
         <source>Name:</source>
         <translation>Название:</translation>
     </message>
@@ -4958,7 +5124,14 @@ for writing</source>
 для записи</translation>
     </message>
     <message>
-        <location line="+40"/>
+        <location line="-5"/>
+        <source>Unable to get exclusive access to file 
+%1
+Possibly the file is already being downloaded.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+45"/>
         <source>File download failed: %1.</source>
         <translation>Не удалось загрузить файл: %1.</translation>
     </message>
@@ -4978,13 +5151,6 @@ for writing</source>
 Do you want to download it?</source>
         <translation>Появилось новое обновление %1.
 Хотите скачать его?</translation>
-    </message>
-    <message>
-        <location line="-141"/>
-        <source>Unable to get exclusive access to file 
-%1
-Possibly the file is already being downloaded.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -6008,7 +6174,14 @@ Possibly the file is already being downloaded.</source>
         <translation>По убыванию площади</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/dialogs/layoutsettings_dialog.cpp" line="+732"/>
+        <location filename="../../src/app/seamly2d/dialogs/layoutsettings_dialog.cpp" line="+615"/>
+        <source>Margins go beyond printing. 
+
+Apply settings anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+117"/>
         <location line="+16"/>
         <source>Centimeters</source>
         <translation>Сантиметры</translation>
@@ -6168,13 +6341,6 @@ Possibly the file is already being downloaded.</source>
         <source>Millimeters</source>
         <translation>Миллиметры</translation>
     </message>
-    <message>
-        <location line="-134"/>
-        <source>Margins go beyond printing. 
-
-Apply settings anyway?</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>LineTypeComboBox</name>
@@ -6207,129 +6373,6 @@ Apply settings anyway?</source>
         <location line="+1"/>
         <source>Dash Dot Dot</source>
         <translation>Пунктир Точка Точка</translation>
-    </message>
-</context>
-<context>
-    <name>MApplication</name>
-    <message>
-        <location filename="../../src/app/seamlyme/mapplication.cpp" line="+302"/>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Ошибка в разборе файла. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Ошибка идентификатора. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Ошибка преобразования значения. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Ошибка пустого параметра. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Ошибка неправильного идентификатора. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Что-то не так!</translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Ошибка разбора: %1. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Программное исключение: %1. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+188"/>
-        <source>Seamly2D&apos;s measurements editor.</source>
-        <translation>Редактор мерок Seamly2D.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>The measurement file.</source>
-        <translation>Файл мерок.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>The base height</source>
-        <translation>Базовая высота</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>The base size</source>
-        <translation>Базовый размер</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Set pattern file unit: cm, mm, inch.</source>
-        <translation>Задать единицы измерения выкройки: см, мм или дюймы.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>The pattern unit</source>
-        <translation>Единицы измерения выкройки</translation>
-    </message>
-    <message>
-        <location line="+69"/>
-        <source>Invalid base size argument. Must be cm, mm or inch.</source>
-        <translation>Ошибка: неверный параметр базового размера, должен быть см, мм или дюймы.</translation>
-    </message>
-    <message>
-        <location line="+38"/>
-        <source>Can&apos;t begin to listen for incoming connections on name &apos;%1&apos;</source>
-        <translation>Невозможно начать найти входящие соединения с именем &apos;%1&apos;</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Test mode doesn&apos;t support Opening several files.</source>
-        <translation>Режим проверки не поддерживает открытия нескольких файлов.</translation>
-    </message>
-    <message>
-        <location line="+41"/>
-        <source>Please, provide one input file.</source>
-        <translation>Укажите один входной файл.</translation>
-    </message>
-    <message>
-        <location line="-167"/>
-        <source>Open with the base size. Valid values: %1cm.</source>
-        <translation>Открыть с базовым размером. Возможные значения: %1 см.</translation>
-    </message>
-    <message>
-        <location line="+39"/>
-        <source>Invalid base height argument. Must be %1cm.</source>
-        <translation>Неверный параметр базовой высоты. Должен быть %1 см.</translation>
-    </message>
-    <message>
-        <location line="+17"/>
-        <source>Invalid base size argument. Must be %1cm.</source>
-        <translation>Неверный параметр базового размера. Должен быть %1 см.</translation>
-    </message>
-    <message>
-        <location line="-62"/>
-        <source>Open with the base height. Valid values: %1cm.</source>
-        <translation>Открыть с базовой высотой. Возможные значения: %1 см.</translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Use for unit testing. Run the program and open a file without showing the main window.</source>
-        <translation>Используйте для юнит тестирования. Запускает программу и открывает файл без показа окна.</translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Disable high dpi scaling. Call this option if has problem with scaling (by default scaling enabled). Alternatively you can use the %1 environment variable.</source>
-        <translation>Отключить масштабирование с высоким разрешением. Вызовите эту опцию, если есть проблема с масштабированием (по умолчанию масштабирование включено). Или вы можете использовать %1 переменную среды.</translation>
     </message>
 </context>
 <context>
@@ -6711,7 +6754,12 @@ Do you want to save your changes?</source>
         <translation>Невозможно обновить мерки.</translation>
     </message>
     <message>
-        <location line="+455"/>
+        <location line="+454"/>
+        <source>Images will not be saved</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Please note that the images can not be saved and that they are not affected by the undo and redo functions in the current version of the software.
 
 You may want to take a screenshot of the image properties dialog before closing the software to be able to recreate identically the image when opening the software again.</source>
@@ -6919,12 +6967,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>только для чтения</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-830"/>
-        <source>Contains information about increments and internal variables</source>
-        <translation>Содержит информацию о прибавках и внутренних переменных</translation>
-    </message>
-    <message>
-        <location line="+1059"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+229"/>
         <source>Load Individual</source>
         <translation>Загрузить индивидуальные</translation>
     </message>
@@ -7408,7 +7451,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>A, L</translation>
     </message>
     <message>
-        <location line="+413"/>
+        <location line="+123"/>
+        <source>Point on Curve (O, C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+290"/>
         <source>About Seamly2D</source>
         <translation>О проекте Seamly2D</translation>
     </message>
@@ -7724,12 +7772,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Текст названия точки</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Toggle Point Name Text (P)</source>
-        <translation>Переключить текст названия точки(P)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>V, P</source>
         <translation>V, P</translation>
     </message>
@@ -7977,7 +8020,13 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Экспортировать Деталь выкройки</translation>
     </message>
     <message>
-        <location line="+507"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="+30"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+56"/>
+        <source>Import Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+451"/>
         <source>Piece mode</source>
         <translation>Режим Деталь</translation>
     </message>
@@ -8073,7 +8122,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Блок Чертежа %1</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3740"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3770"/>
         <location line="+2144"/>
         <source>Point - On Bisector (O, B)</source>
         <translation>Точка - на Биссектрисе (O, B)</translation>
@@ -8287,7 +8336,18 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Добавить Внутренний контур (I, P)</translation>
     </message>
     <message>
-        <location line="-1910"/>
+        <location line="-2067"/>
+        <source>Tools for inserting or modifying images. </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <location line="+2446"/>
+        <source>Import Image (Alt + I)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-2308"/>
         <location line="+1961"/>
         <source>Export Pieces (E, P)</source>
         <translation>Экспортировать детали (E, P)</translation>
@@ -8305,7 +8365,12 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Экспортировать Макет (E, L)</translation>
     </message>
     <message>
-        <location line="-1324"/>
+        <location line="-1468"/>
+        <source>Contains information about custom and internal variables</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+144"/>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2605"/>
         <source>Alt+M</source>
         <translation>Alt+M</translation>
@@ -8446,12 +8511,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Точка на кривой</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Point on Curve (A, C)</source>
-        <translation>Точка на Кривой (A, C)</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>O, C</source>
         <translation>O, C</translation>
     </message>
@@ -8650,7 +8710,32 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Создать новый макет печати (N, L)</translation>
     </message>
     <message>
-        <location line="+434"/>
+        <location line="+144"/>
+        <source>Toggle Point Name Text (V, P)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+209"/>
+        <source>Images tools </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Delete</source>
+        <translation type="unfinished">Удалить</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Align</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Lock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+54"/>
         <source>Zoom to point (Ctrl + Alt + P)</source>
         <translation>Приблизить к точке (Ctrl + Alt + P)</translation>
     </message>
@@ -8658,6 +8743,11 @@ You may want to take a screenshot of the image properties dialog before closing 
         <location line="+3"/>
         <source>Ctrl+Alt+P</source>
         <translation>Ctrl+Alt+P</translation>
+    </message>
+    <message>
+        <location line="+18"/>
+        <source>Alt+I</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2491"/>
@@ -8837,7 +8927,30 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+1207"/>
+        <location line="+40"/>
+        <source>Confirm deletion</source>
+        <translation type="unfinished">Подтвердите удаление</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Do you really want to delete?</source>
+        <translation type="unfinished">Вы точно хотите удалить?</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-4437"/>
+        <location line="+1976"/>
+        <location line="+3"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+91"/>
+        <source>Images</source>
+        <translation type="unfinished">Изображения</translation>
+    </message>
+    <message>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+16"/>
+        <source>Open Image File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1059"/>
         <source>Zoom to Point</source>
         <translation>Зум до точки</translation>
     </message>
@@ -8857,7 +8970,7 @@ You may want to take a screenshot of the image properties dialog before closing 
         <translation>Пересечение кривой и оси</translation>
     </message>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-2794"/>
+        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-354"/>
         <location line="+973"/>
         <source>Add Objects to Group (G)</source>
         <translation>Добавить объект в группу (G)</translation>
@@ -8958,76 +9071,6 @@ Press enter to temporarily add it to the list.</source>
         <location line="+232"/>
         <source>Default</source>
         <translation type="unfinished">По умолчанию</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/mainwindow.ui" line="-3713"/>
-        <location line="+1976"/>
-        <location line="+3"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-966"/>
-        <source>Images</source>
-        <translation type="unfinished">Изображения</translation>
-    </message>
-    <message>
-        <location line="-10"/>
-        <source>Tools for inserting or modifying images. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+19"/>
-        <location line="+2446"/>
-        <source>Import Image (Alt + I)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="-99"/>
-        <source>Images tools </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Delete</source>
-        <translation type="unfinished">Удалить</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Align</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Lock</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+69"/>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="+1635"/>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Alt+I</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-1727"/>
-        <source>Confirm deletion</source>
-        <translation type="unfinished">Подтвердите удаление</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Do you really want to delete?</source>
-        <translation type="unfinished">Вы точно хотите удалить?</translation>
-    </message>
-    <message>
-        <location line="+107"/>
-        <source>Open Image File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3498"/>
-        <source>Images will not be saved</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -11378,12 +11421,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Вид</translation>
     </message>
     <message>
-        <location line="+32"/>
+        <location line="+30"/>
         <source>Toolbars</source>
         <translation>Панели инструментов</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+19"/>
         <source>Text label appears under the icon (recommended for beginners)</source>
         <translation>Под значком появляется текстовая подсказка (рекомендуется для новичков)</translation>
     </message>
@@ -11438,17 +11481,17 @@ Press enter to temporarily add it to the list.</source>
         <translation>Макет</translation>
     </message>
     <message>
-        <location line="+37"/>
+        <location line="+39"/>
         <source>Graphical output</source>
         <translation>Графический вывод</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+32"/>
         <source>Use anti-aliasing</source>
         <translation>Использовать сглаживание</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+27"/>
         <source>Fonts</source>
         <translation>Шрифты</translation>
     </message>
@@ -11924,7 +11967,12 @@ Press enter to temporarily add it to the list.</source>
         <translation>Мои мультиразмерные мерки</translation>
     </message>
     <message>
-        <location line="-27"/>
+        <location line="+27"/>
+        <source>My Images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="-54"/>
         <source>My Patterns</source>
         <translation>Мои выкройки</translation>
     </message>
@@ -11942,11 +11990,6 @@ Press enter to temporarily add it to the list.</source>
         <location line="+36"/>
         <source>My Label Templates</source>
         <translation>Мои шаблоны этикеток</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>My Images</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12233,7 +12276,7 @@ Press enter to temporarily add it to the list.</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-5091"/>
+        <location filename="../../src/app/seamly2d/mainwindow.cpp" line="-2543"/>
         <source>Create new pattern piece to start working.</source>
         <translation>Создайте новую выкройку для начала работы.</translation>
     </message>
@@ -12870,7 +12913,14 @@ Press enter to temporarily add it to the list.</source>
         <translation>Десятичный Разделитель:</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+22"/>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+27"/>
         <source>GUI language:</source>
         <translation>Язык интерфейса:</translation>
     </message>
@@ -12880,7 +12930,13 @@ Press enter to temporarily add it to the list.</source>
         <translation>Устанавливает язык, используемый для SeamlyMe.</translation>
     </message>
     <message>
-        <location line="+29"/>
+        <location line="+25"/>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the SeamlyMe preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
     </message>
@@ -12905,19 +12961,6 @@ Press enter to temporarily add it to the list.</source>
         <location line="+1"/>
         <source>Inches</source>
         <translation>Дюймы</translation>
-    </message>
-    <message>
-        <location filename="../../src/app/seamlyme/dialogs/me_welcome_dialog.ui" line="-78"/>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+74"/>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the SeamlyMe preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -12953,7 +12996,13 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Язык интерфейса:</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+190"/>
+        <source>When checked the Welcome window will not be displayed. 
+You can change this setting in the Seamly2D preferences.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+4"/>
         <source>Do not show again</source>
         <translation>Больше не показывать</translation>
     </message>
@@ -12990,7 +13039,14 @@ You can change this setting in the SeamlyMe preferences.</source>
         <translation>Выберите желаемые единицы измерения, десятичный разделитель, язык и звук выбора. (Вы можете изменить их позже.)</translation>
     </message>
     <message>
-        <location line="+159"/>
+        <location line="+91"/>
+        <source>Selects what decimal separator char to use. 
+When checked the separator for the user&apos;s locale is used. 
+When unchecked the period is used.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+68"/>
         <source>Sound:</source>
         <translation>Звук:</translation>
     </message>
@@ -12998,19 +13054,6 @@ You can change this setting in the SeamlyMe preferences.</source>
         <location line="+28"/>
         <source>Sets the node selection click  sound.</source>
         <translation>Устанавливает звук щелчка при выборе узла.</translation>
-    </message>
-    <message>
-        <location line="-96"/>
-        <source>Selects what decimal separator char to use. 
-When checked the separator for the user&apos;s locale is used. 
-When unchecked the period is used.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+217"/>
-        <source>When checked the Welcome window will not be displayed. 
-You can change this setting in the Seamly2D preferences.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -13836,7 +13879,22 @@ You can change this setting in the Seamly2D preferences.</source>
         <translation>E, D</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+6"/>
+        <source>Images</source>
+        <translation type="unfinished">Изображения</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Import Image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Alt + I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+17"/>
         <source>Pattern Piece</source>
         <translation>Деталь Выкройки</translation>
     </message>
@@ -14081,21 +14139,6 @@ You can change this setting in the Seamly2D preferences.</source>
         <location line="-112"/>
         <source>Insert Nodes</source>
         <translation>Вставить узлы</translation>
-    </message>
-    <message>
-        <location line="-22"/>
-        <source>Images</source>
-        <translation type="unfinished">Изображения</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Import Image</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Alt + I</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -15605,49 +15648,6 @@ load in SeamlyME as usual.
     </message>
 </context>
 <context>
-    <name>VApplication</name>
-    <message>
-        <location filename="../../src/app/seamly2d/core/vapplication.cpp" line="+363"/>
-        <source>Error parsing file. Program will be terminated.</source>
-        <translation>Ошибка парсинга файла. Программа будет закрыта.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error bad id. Program will be terminated.</source>
-        <translation>Ошибка, неправильный id. Программа будет закрыта.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error can&apos;t convert value. Program will be terminated.</source>
-        <translation>Ошибка, невозможно преобразовать значение. Программа будет закрыта.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error empty parameter. Program will be terminated.</source>
-        <translation>Ошибка, пустой параметр. Программа будет закрыта.</translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error wrong id. Program will be terminated.</source>
-        <translation>Ошибка, неправильный id. Программа будет закрыта.</translation>
-    </message>
-    <message>
-        <location line="+13"/>
-        <source>Something&apos;s wrong!!</source>
-        <translation>Что-то не так!!!</translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Parser error: %1. Program will be terminated.</source>
-        <translation>Ошибка парсинга: %1. Работа программы будет завершена.</translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Exception thrown: %1. Program will be terminated.</source>
-        <translation>Программное исключение: %1. Работа программы будет завершена.</translation>
-    </message>
-</context>
-<context>
     <name>VCommandLine</name>
     <message>
         <location filename="../../src/app/seamly2d/core/vcmdexport.cpp" line="+96"/>
@@ -15974,7 +15974,12 @@ load in SeamlyME as usual.
         <translation>шаблоны</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+42"/>
+        <source>images</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+18"/>
         <source>label templates</source>
         <translation>Шаблоны метки</translation>
     </message>
@@ -15982,11 +15987,6 @@ load in SeamlyME as usual.
         <location line="-39"/>
         <source>bodyscans</source>
         <translation>бодискан</translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>images</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -19392,7 +19392,7 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>mNoisyHandler</name>
     <message>
-        <location filename="../../src/app/seamlyme/mapplication.cpp" line="-408"/>
+        <location filename="../../src/app/seamlyme/application_me.cpp" line="-408"/>
         <source>DEBUG:</source>
         <translation>ОТЛАДКА:</translation>
     </message>
@@ -19440,7 +19440,7 @@ Usage: fmod(x; y)</comment>
 <context>
     <name>vNoisyHandler</name>
     <message>
-        <location filename="../../src/app/seamly2d/core/vapplication.cpp" line="-252"/>
+        <location filename="../../src/app/seamly2d/core/application_2d.cpp" line="-252"/>
         <source>DEBUG:</source>
         <translation>ОТЛАДКА:</translation>
     </message>

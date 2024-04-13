@@ -160,13 +160,13 @@ DialogMove::~DialogMove()
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetAngle(const QString &value)
 {
-    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    angleFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->angle_PlainTextEdit->setPlainText(angleFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -179,13 +179,13 @@ void DialogMove::SetAngle(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::GetLength() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(lengthFormula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(lengthFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::SetLength(const QString &value)
 {
-    lengthFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    lengthFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->length_PlainTextEdit->setPlainText(lengthFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -198,13 +198,13 @@ void DialogMove::SetLength(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogMove::getRotation() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(rotationFormula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(rotationFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogMove::setRotation(const QString &value)
 {
-    rotationFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    rotationFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->rotation_PlainTextEdit->setPlainText(rotationFormula);
 
     VisToolMove *operation = qobject_cast<VisToolMove *>(vis);
@@ -287,8 +287,8 @@ void DialogMove::ShowDialog(bool click)
 
         if (operation->LengthValue() > 0)
         {
-            angleFormula = qApp->TrVars()->FormulaToUser(operation->Angle(), qApp->Settings()->getOsSeparator());
-            lengthFormula = qApp->TrVars()->FormulaToUser(operation->Length(), qApp->Settings()->getOsSeparator());
+            angleFormula = qApp->translateVariables()->FormulaToUser(operation->Angle(), qApp->Settings()->getOsSeparator());
+            lengthFormula = qApp->translateVariables()->FormulaToUser(operation->Length(), qApp->Settings()->getOsSeparator());
             operation->SetAngle(angleFormula);
             operation->SetLength(lengthFormula);
 

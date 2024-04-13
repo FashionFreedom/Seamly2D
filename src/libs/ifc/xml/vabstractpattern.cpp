@@ -96,8 +96,8 @@ const QString VAbstractPattern::TagDescription          = QStringLiteral("descri
 const QString VAbstractPattern::TagNotes                = QStringLiteral("notes");
 const QString VAbstractPattern::TagImage                = QStringLiteral("image");
 const QString VAbstractPattern::TagMeasurements         = QStringLiteral("measurements");
-const QString VAbstractPattern::TagIncrements           = QStringLiteral("increments");
-const QString VAbstractPattern::TagIncrement            = QStringLiteral("increment");
+const QString VAbstractPattern::TagVariables            = QStringLiteral("variables");
+const QString VAbstractPattern::TagVariable             = QStringLiteral("variable");
 const QString VAbstractPattern::TagDraftBlock           = QStringLiteral("draftBlock");
 const QString VAbstractPattern::TagGroups               = QStringLiteral("groups");
 const QString VAbstractPattern::TagGroup                = QStringLiteral("group");
@@ -238,9 +238,9 @@ const QString VAbstractPattern::AttrDefHeight           = QStringLiteral("defHei
 const QString VAbstractPattern::AttrDefSize             = QStringLiteral("defSize");
 const QString VAbstractPattern::AttrExtension           = QStringLiteral("extension");
 
-const QString VAbstractPattern::IncrementName           = QStringLiteral("name");
-const QString VAbstractPattern::IncrementFormula        = QStringLiteral("formula");
-const QString VAbstractPattern::IncrementDescription    = QStringLiteral("description");
+const QString VAbstractPattern::VariableName           = QStringLiteral("name");
+const QString VAbstractPattern::VariableFormula        = QStringLiteral("formula");
+const QString VAbstractPattern::VariableDescription    = QStringLiteral("description");
 
 const QString VAbstractPattern::NodeArc                 = QStringLiteral("NodeArc");
 const QString VAbstractPattern::NodeElArc               = QStringLiteral("NodeElArc");
@@ -297,10 +297,10 @@ QStringList VAbstractPattern::ListMeasurements() const
     QSet<QString> measurements;
     QSet<QString> others;
 
-    const QStringList increments = ListIncrements();
-    for (int i=0; i < increments.size(); ++i)
+    const QStringList variables = listVariables();
+    for (int i=0; i < variables.size(); ++i)
     {
-        others.insert(increments.at(i));
+        others.insert(variables.at(i));
     }
 
     const QVector<VFormulaField> expressions = ListExpressions();
@@ -1831,17 +1831,17 @@ int VAbstractPattern::getActiveDraftBlockIndex() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QStringList VAbstractPattern::ListIncrements() const
+QStringList VAbstractPattern::listVariables() const
 {
-    QStringList increments;
-    const QDomNodeList list = elementsByTagName(TagIncrement);
+    QStringList variables;
+    const QDomNodeList list = elementsByTagName(TagVariable);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
 
         try
         {
-            increments.append(GetParametrString(dom, IncrementName));
+            variables.append(GetParametrString(dom, VariableName));
         }
         catch (VExceptionEmptyParameter &error)
         {
@@ -1849,7 +1849,7 @@ QStringList VAbstractPattern::ListIncrements() const
         }
     }
 
-    return increments;
+    return variables;
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -1864,7 +1864,7 @@ QVector<VFormulaField> VAbstractPattern::ListExpressions() const
     list << ListArcExpressions();
     list << ListElArcExpressions();
     list << ListSplineExpressions();
-    list << ListIncrementExpressions();
+    list << listVariableExpressions();
     list << ListOperationExpressions();
     list << ListPathExpressions();
     list << ListPieceExpressions();
@@ -1979,15 +1979,15 @@ QVector<VFormulaField> VAbstractPattern::ListPathPointExpressions() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-QVector<VFormulaField> VAbstractPattern::ListIncrementExpressions() const
+QVector<VFormulaField> VAbstractPattern::listVariableExpressions() const
 {
     QVector<VFormulaField> expressions;
-    const QDomNodeList list = elementsByTagName(TagIncrement);
+    const QDomNodeList list = elementsByTagName(TagVariable);
     for (int i=0; i < list.size(); ++i)
     {
         const QDomElement dom = list.at(i).toElement();
 
-        ReadExpressionAttribute(expressions, dom, IncrementFormula);
+        ReadExpressionAttribute(expressions, dom, VariableFormula);
     }
 
     return expressions;

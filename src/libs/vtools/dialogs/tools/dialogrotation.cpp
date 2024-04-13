@@ -146,13 +146,13 @@ void DialogRotation::setOriginPointId(const quint32 &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString DialogRotation::GetAngle() const
 {
-    return qApp->TrVars()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
+    return qApp->translateVariables()->TryFormulaFromUser(angleFormula, qApp->Settings()->getOsSeparator());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
 void DialogRotation::SetAngle(const QString &value)
 {
-    angleFormula = qApp->TrVars()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
+    angleFormula = qApp->translateVariables()->FormulaToUser(value, qApp->Settings()->getOsSeparator());
     ui->plainTextEditFormula->setPlainText(angleFormula);
 
     VisToolRotation *operation = qobject_cast<VisToolRotation *>(vis);

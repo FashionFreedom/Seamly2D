@@ -25,7 +25,7 @@
 #include "welcome_dialog.h"
 #include "ui_welcome_dialog.h"
 
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 
 #include <QPushButton>
 #include <QShowEvent>

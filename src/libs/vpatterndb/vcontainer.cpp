@@ -72,7 +72,7 @@
 #include "variables/vcurveangle.h"
 #include "variables/vcurvelength.h"
 #include "variables/vcurveclength.h"
-#include "variables/vincrement.h"
+#include "variables/custom_variable.h"
 #include "variables/vlineangle.h"
 #include "variables/vlinelength.h"
 #include "variables/measurement_variable.h"
@@ -298,7 +298,7 @@ void VContainer::ClearForFullParse()
 
     d->pieces->clear();
     d->piecePaths->clear();
-    ClearVariables(VarType::Increment);
+    ClearVariables(VarType::Variable);
     ClearVariables(VarType::LineAngle);
     ClearVariables(VarType::LineLength);
     ClearVariables(VarType::CurveLength);
@@ -540,9 +540,9 @@ const QMap<QString, QSharedPointer<MeasurementVariable> > VContainer::DataMeasur
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const QMap<QString, QSharedPointer<VIncrement> > VContainer::variablesData() const
+const QMap<QString, QSharedPointer<CustomVariable> > VContainer::variablesData() const
 {
-    return DataVar<VIncrement>(VarType::Increment);
+    return DataVar<CustomVariable>(VarType::Variable);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -602,7 +602,7 @@ const Unit *VContainer::GetPatternUnit() const
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-const VTranslateVars *VContainer::GetTrVars() const
+const VTranslateVars *VContainer::getTranslateVariables() const
 {
     return d->trVars;
 }
@@ -618,7 +618,7 @@ const QMap<QString, QSharedPointer<T> > VContainer::DataVar(const VarType &type)
     {
         if (i.value()->GetType() == type)
         {
-            QSharedPointer<T> var = GetVariable<T>(i.key());
+            QSharedPointer<T> var = getVariable<T>(i.key());
             map.insert(d->trVars->VarToUser(i.key()), var);
         }
     }
@@ -632,7 +632,7 @@ void VContainer::ClearUniqueNames()
 }
 
 //---------------------------------------------------------------------------------------------------------------------
-void VContainer::ClearUniqueIncrementNames()
+void VContainer::clearUniqueVariableNames()
 {
 	const QList<QString> list = uniqueNames.values();
     ClearUniqueNames();

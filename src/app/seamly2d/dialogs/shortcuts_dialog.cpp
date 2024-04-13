@@ -44,7 +44,7 @@
 #include <QString>
 #include <QtWidgets>
 
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 
 //---------------------------------------------------------------------------------------------------------------------
 ShortcutsDialog::ShortcutsDialog(QWidget *parent)

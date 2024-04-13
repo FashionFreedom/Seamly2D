@@ -55,7 +55,7 @@
 
 #include "dialogseamlymepreferences.h"
 #include "ui_dialogseamlymepreferences.h"
-#include "../mapplication.h"
+#include "../application_me.h"
 #include "configpages/seamlymepreferencesconfigurationpage.h"
 #include "configpages/seamlymepreferencespathpage.h"
 
@@ -156,7 +156,7 @@ void DialogSeamlyMePreferences::Apply()
     m_configurationPage->Apply();
     m_pathPage->Apply();
 
-    qApp->SeamlyMeSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
+    qApp->seamlyMeSettings()->getOsSeparator() ? setLocale(QLocale()) : setLocale(QLocale::c());
     emit updateProperties();
     setResult(QDialog::Accepted);
 }

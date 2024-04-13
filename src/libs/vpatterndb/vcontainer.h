@@ -118,7 +118,7 @@ public:
     QHash<quint32, QSharedPointer<VGObject> > gObjects;
 
     /**
-     * @brief variables container for measurements, increments, lines lengths, lines angles, arcs lengths, curve lengths
+     * @brief variables container for measurements, custom variables, lines lengths, lines angles, arcs lengths, curve lengths
      */
     QHash<QString, QSharedPointer<VInternalVariable>> variables;
 
@@ -159,7 +159,7 @@ public:
     VPiece             GetPiece(quint32 id) const;
     VPiecePath         GetPiecePath(quint32 id) const;
     template <typename T>
-    QSharedPointer<T>  GetVariable(QString name) const;
+    QSharedPointer<T>  getVariable(QString name) const;
     static quint32     getId();
     static quint32     getNextId();
     static void        UpdateId(quint32 newId);
@@ -195,7 +195,7 @@ public:
     void               ClearCalculationGObjects();
     void               ClearVariables(const VarType &type = VarType::Unknown);
     static void        ClearUniqueNames();
-    static void        ClearUniqueIncrementNames();
+    static void        clearUniqueVariableNames();
 
     static void        setSize(qreal size);
     static void        setHeight(qreal height);
@@ -211,7 +211,7 @@ public:
     const QHash<QString, QSharedPointer<VInternalVariable>> *DataVariables() const;
 
     const QMap<QString, QSharedPointer<MeasurementVariable> >  DataMeasurements() const;
-    const QMap<QString, QSharedPointer<VIncrement> >    variablesData() const;
+    const QMap<QString, QSharedPointer<CustomVariable> >    variablesData() const;
     const QMap<QString, QSharedPointer<VLengthLine> >   lineLengthsData() const;
     const QMap<QString, QSharedPointer<VCurveLength> >  curveLengthsData() const;
     const QMap<QString, QSharedPointer<VCurveCLength> > controlPointLengthsData() const;
@@ -223,7 +223,7 @@ public:
     static QStringList AllUniqueNames();
 
     const Unit *GetPatternUnit() const;
-    const VTranslateVars *GetTrVars() const;
+    const VTranslateVars *getTranslateVariables() const;
 
 private:
     /**
@@ -295,12 +295,12 @@ const QSharedPointer<T> VContainer::GeometricObject(const quint32 &id) const
 
 //---------------------------------------------------------------------------------------------------------------------
 /**
-* @brief GetVariable return varible by name
+* @brief getVariable return varible by name
 * @param name variable's name
 * @return variable
 */
 template <typename T>
-QSharedPointer<T> VContainer::GetVariable(QString name) const
+QSharedPointer<T> VContainer::getVariable(QString name) const
 {
     SCASSERT(name.isEmpty()==false)
     if (d->variables.contains(name))

@@ -365,7 +365,7 @@ void VToolArcWithLength::SetVisualization()
         VisToolArcWithLength *visual = qobject_cast<VisToolArcWithLength *>(vis);
         SCASSERT(visual != nullptr)
 
-        const VTranslateVars *trVars = qApp->TrVars();
+        const VTranslateVars *trVars = qApp->translateVariables();
         visual->setObject1Id(arc->GetCenter().id());
         visual->setRadius(trVars->FormulaToUser(arc->GetFormulaRadius(), qApp->Settings()->getOsSeparator()));
         visual->setF1(trVars->FormulaToUser(arc->GetFormulaF1(), qApp->Settings()->getOsSeparator()));

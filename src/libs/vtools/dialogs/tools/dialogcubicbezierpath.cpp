@@ -150,7 +150,7 @@ void DialogCubicBezierPath::SetPath(const VCubicBezierPath &value)
         NewItem(path.at(i));
     }
     ui->listWidget->setFocus(Qt::OtherFocusReason);
-    ui->lineEditSplPathName->setText(qApp->TrVars()->VarToUser(path.name()));
+    ui->lineEditSplPathName->setText(qApp->translateVariables()->VarToUser(path.name()));
 
     auto visPath = qobject_cast<VisToolCubicBezierPath *>(vis);
     SCASSERT(visPath != nullptr)
@@ -323,7 +323,7 @@ void DialogCubicBezierPath::currentPointChanged(int index)
         if (first.id() == path.at(0).id() && last.id() == path.at(path.CountPoints()-1).id())
         {
             newDuplicate = -1;
-            ui->lineEditSplPathName->setText(qApp->TrVars()->VarToUser(path.name()));
+            ui->lineEditSplPathName->setText(qApp->translateVariables()->VarToUser(path.name()));
         }
         else
         {
@@ -335,7 +335,7 @@ void DialogCubicBezierPath::currentPointChanged(int index)
                 newPath.SetDuplicate(static_cast<quint32>(newDuplicate));
             }
 
-            ui->lineEditSplPathName->setText(qApp->TrVars()->VarToUser(newPath.name()));
+            ui->lineEditSplPathName->setText(qApp->translateVariables()->VarToUser(newPath.name()));
         }
     }
     ChangeColor(ui->name_Label, color);

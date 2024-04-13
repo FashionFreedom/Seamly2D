@@ -119,7 +119,7 @@ public:
 
     QStringList                    ListMeasurements() const;
     QVector<VFormulaField>         ListExpressions() const;
-    QVector<VFormulaField>         ListIncrementExpressions() const;
+    QVector<VFormulaField>         listVariableExpressions() const;
 
     virtual void                   CreateEmptyFile()=0;
 
@@ -289,8 +289,8 @@ public:
     static const QString TagImage;
     static const QString TagNotes;
     static const QString TagMeasurements;
-    static const QString TagIncrements;
-    static const QString TagIncrement;
+    static const QString TagVariables;
+    static const QString TagVariable;
     static const QString TagDraftBlock;
     static const QString TagGroups;
     static const QString TagGroup;
@@ -431,9 +431,9 @@ public:
     static const QString AttrDefSize;
     static const QString AttrExtension;
 
-    static const QString IncrementName;
-    static const QString IncrementFormula;
-    static const QString IncrementDescription;
+    static const QString VariableName;
+    static const QString VariableFormula;
+    static const QString VariableDescription;
 
     static const QString NodeArc;
     static const QString NodeElArc;
@@ -547,7 +547,7 @@ protected:
 private:
     Q_DISABLE_COPY(VAbstractPattern)
 
-    QStringList            ListIncrements() const;
+    QStringList            listVariables() const;
     QVector<VFormulaField> ListPointExpressions() const;
     QVector<VFormulaField> ListArcExpressions() const;
     QVector<VFormulaField> ListElArcExpressions() const;

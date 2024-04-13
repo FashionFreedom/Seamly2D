@@ -2842,7 +2842,7 @@
     <string>Variables table</string>
    </property>
    <property name="toolTip">
-    <string>Contains information about increments and internal variables</string>
+    <string>Contains information about custom and internal variables</string>
    </property>
    <property name="shortcut">
     <string notr="true">Ctrl+T</string>
@@ -3145,7 +3145,7 @@
    </property>
    <property name="icon">
     <iconset resource="share/resources/toolicon.qrc">
-     <normaloff>:/toolicon/32x32/point_of_contact.png</normaloff>:/toolicon/32x32/point_of_contact.png</iconset>
+     <normaloff>:/toolicon/32x32/point_intersect_arc_line.png</normaloff>:/toolicon/32x32/point_intersect_arc_line.png</iconset>
    </property>
    <property name="text">
     <string>Intersect  Arc and Line</string>
@@ -3277,7 +3277,7 @@
     <string>Point on Curve</string>
    </property>
    <property name="toolTip">
-    <string>Point on Curve (A, C)</string>
+    <string>Point on Curve (O, C)</string>
    </property>
    <property name="shortcut">
     <string>O, C</string>
@@ -4436,7 +4436,7 @@
     <string>Point Name Text</string>
    </property>
    <property name="toolTip">
-    <string>Toggle Point Name Text (P)</string>
+    <string>Toggle Point Name Text (V, P)</string>
    </property>
    <property name="shortcut">
     <string>V, P</string>

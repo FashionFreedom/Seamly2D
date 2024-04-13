@@ -360,7 +360,7 @@ enum class Vis : ToolVisHolderType
     LAST_ONE_DO_NOT_USE //add new types above this, this constant must be last and never used
 };
 
-enum class VarType : char { Measurement, Increment, LineLength, CurveLength, CurveCLength, LineAngle, CurveAngle,
+enum class VarType : char { Measurement, Variable, LineLength, CurveLength, CurveCLength, LineAngle, CurveAngle,
                             ArcRadius, Unknown };
 
 static const int heightStep = 6;

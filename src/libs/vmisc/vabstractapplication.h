@@ -89,7 +89,7 @@ public:
     VAbstractApplication(int &argc, char ** argv);
     virtual ~VAbstractApplication() Q_DECL_OVERRIDE;
 
-    virtual const VTranslateVars *TrVars()=0;
+    virtual const VTranslateVars *translateVariables()=0;
 
     QString          translationsPath(const QString &locale = QString()) const;
 
@@ -102,7 +102,7 @@ public:
     MeasurementsType patternType() const;
     void             setPatternType(const MeasurementsType &patternType);
 
-    virtual void     OpenSettings()=0;
+    virtual void     openSettings()=0;
     VCommonSettings *Settings();
 
     template <typename T>
@@ -131,7 +131,7 @@ public:
 
     QUndoStack      *getUndoStack() const;
 
-    virtual bool     IsAppInGUIMode()const =0;
+    virtual bool     isAppInGUIMode()const =0;
 
     QString         getFilePath() const;
     void            setFilePath(const QString &value);
@@ -156,7 +156,7 @@ protected:
     QPointer<QTranslator> appTranslator;
     QPointer<QTranslator> pmsTranslator;
 
-    virtual void InitTrVars()=0;
+    virtual void initTranslateVariables()=0;
 
 private:
     Q_DISABLE_COPY(VAbstractApplication)

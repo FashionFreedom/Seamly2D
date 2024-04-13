@@ -89,7 +89,7 @@ private:
     bool m_mirrorByLineSuffixChanged;
     bool m_defaultExportFormatChanged;
 
-    void SetLabelComboBox(const QStringList &list);
+    void setPointNameComboBox(const QStringList &list);
     void InitUnits();
     void adjustTextColor();
 };

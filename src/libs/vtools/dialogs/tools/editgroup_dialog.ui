@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>260</width>
+    <width>350</width>
     <height>201</height>
    </rect>
   </property>
@@ -24,7 +24,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>348</width>
+    <width>16777215</width>
     <height>16777215</height>
    </size>
   </property>
@@ -35,11 +35,11 @@
    <iconset resource="../../../vmisc/share/resources/icon.qrc">
     <normaloff>:/icon/64x64/icon64x64.png</normaloff>:/icon/64x64/icon64x64.png</iconset>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
+  <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <widget class="QGroupBox" name="groupBox">
      <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -52,8 +52,8 @@
      </property>
      <property name="maximumSize">
       <size>
-       <width>240</width>
-       <height>120</height>
+       <width>16777215</width>
+       <height>16777215</height>
       </size>
      </property>
      <property name="title">
@@ -62,7 +62,7 @@
      <property name="checkable">
       <bool>false</bool>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout">
       <item>
        <layout class="QFormLayout" name="formLayout">
         <property name="labelAlignment">
@@ -72,7 +72,7 @@
          <widget class="QLabel" name="groupName_Label">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -87,7 +87,7 @@
         <item row="0" column="1">
          <widget class="QLineEdit" name="groupName_LineEdit">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -100,8 +100,8 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>150</width>
-            <height>20</height>
+            <width>16777215</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="toolTip">
@@ -116,7 +116,7 @@
          <widget class="QLabel" name="groupColor_Label">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -131,7 +131,7 @@
         <item row="1" column="1">
          <widget class="ColorComboBox" name="groupColor_ComboBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -144,7 +144,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>150</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
           </property>
@@ -160,7 +160,7 @@
          <widget class="QLabel" name="groupLineWeight_Label">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -175,7 +175,7 @@
         <item row="2" column="1">
          <widget class="LineWeightComboBox" name="groupLineWeight_ComboBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -188,7 +188,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>150</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
           </property>
@@ -204,7 +204,7 @@
          <widget class="QLabel" name="groupLineType_Label">
           <property name="minimumSize">
            <size>
-            <width>90</width>
+            <width>100</width>
             <height>0</height>
            </size>
           </property>
@@ -219,7 +219,7 @@
         <item row="3" column="1">
          <widget class="LineTypeComboBox" name="groupLineType_ComboBox">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -232,7 +232,7 @@
           </property>
           <property name="maximumSize">
            <size>
-            <width>150</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
           </property>

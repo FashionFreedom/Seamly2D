@@ -56,7 +56,7 @@
 #include "vtooloptionspropertybrowser.h"
 
 #include "vformulaproperty.h"
-#include "../core/vapplication.h"
+#include "../core/application_2d.h"
 #include "../ifc/ifcdef.h"
 #include "../vgeometry/vcubicbezier.h"
 #include "../vgeometry/vcubicbezierpath.h"
@@ -561,7 +561,7 @@ void VToolOptionsPropertyBrowser::addPropertyObjectName(Tool *tool, const QStrin
 {
     VPE::VStringProperty *itemName = new VPE::VStringProperty(propertyName);
     readOnly == true ? itemName->setClearButtonEnable(false) : itemName->setClearButtonEnable(true);
-    itemName->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    itemName->setValue(qApp->translateVariables()->VarToUser(tool->name()));
     itemName->setReadOnly(readOnly);
     addProperty(itemName, AttrName);
 }
@@ -3798,7 +3798,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolSplinePath()
 {
     VToolSplinePath *tool = qgraphicsitem_cast<VToolSplinePath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    idToProperty[AttrName]->setValue(qApp->translateVariables()->VarToUser(tool->name()));
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
@@ -3820,7 +3820,7 @@ void VToolOptionsPropertyBrowser::updateOptionsToolCubicBezierPath()
 {
     VToolCubicBezierPath *tool = qgraphicsitem_cast<VToolCubicBezierPath *>(currentItem);
 
-    idToProperty[AttrName]->setValue(qApp->TrVars()->VarToUser(tool->name()));
+    idToProperty[AttrName]->setValue(qApp->translateVariables()->VarToUser(tool->name()));
 
     idToProperty[AttrColor]->setValue(VPE::VLineColorProperty::indexOfColor(VAbstractTool::ColorsList(),
                                                                             tool->getLineColor()));
