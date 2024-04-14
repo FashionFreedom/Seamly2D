@@ -3170,7 +3170,7 @@ $(document).ready(function(){initNavTree('de/d46/pattern__piece__dialog_8cpp_sou
 <div class="line"><a name="l03071"></a><span class="lineno"> 3071</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d5/d41/classPatternPieceDialog.html#a49909997ce8dbf62cc112df5bcd5f08c">m_pieceLabelLines</a>.isEmpty())</div>
 <div class="line"><a name="l03072"></a><span class="lineno"> 3072</span>&#160;    {</div>
 <div class="line"><a name="l03073"></a><span class="lineno"> 3073</span>&#160;        <a class="code" href="../../d0/df9/classVLabelTemplate.html">VLabelTemplate</a> labelTemplate;</div>
-<div class="line"><a name="l03074"></a><span class="lineno"> 3074</span>&#160;        QString filename = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getDefaultPatternTemplate();</div>
+<div class="line"><a name="l03074"></a><span class="lineno"> 3074</span>&#160;        QString filename = <a class="code" href="../../d7/d61/application__2d_8h.html#af3bf03a2bf98820de7ae03bef13c7d07">qApp</a>-&gt;Settings()-&gt;getDefaultPieceTemplate();</div>
 <div class="line"><a name="l03075"></a><span class="lineno"> 3075</span>&#160;        <span class="keywordflow">if</span> (QFileInfo(filename).exists())</div>
 <div class="line"><a name="l03076"></a><span class="lineno"> 3076</span>&#160;        {</div>
 <div class="line"><a name="l03077"></a><span class="lineno"> 3077</span>&#160;            labelTemplate.<a class="code" href="../../d6/deb/classVDomDocument.html#ad316cde19d3383a783936544c822b750">setXMLContent</a>(<a class="code" href="../../db/d5e/classVLabelTemplateConverter.html">VLabelTemplateConverter</a>(filename).Convert());</div>
