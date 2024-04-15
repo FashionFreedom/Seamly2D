@@ -46,7 +46,7 @@ if (edges && edges.length) {
         </defs>
 
 <script type="text/javascript">
-var viewWidth = 1297;
+var viewWidth = 1298;
 var viewHeight = 184;
 var sectionId = 'dynsection-1';
 </script>
@@ -54,14 +54,14 @@ var sectionId = 'dynsection-1';
 <svg id="graph" class="graph">
 <g id="viewport">
 <title>src/libs/vtools/undocommands/label/moveabstractlabel.h</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-180 1292.5,-180 1292.5,4 -4,4"/>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-180 1293.5,-180 1293.5,4 -4,4"/>
 <!-- Node1 -->
 <g id="node1" class="node">
 <title>Node1</title>
 <g id="a_node1"><a xlink:title=" ">
-<polygon fill="#bfbfbf" stroke="black" points="403.5,-145.5 403.5,-175.5 568.5,-175.5 568.5,-145.5 403.5,-145.5"/>
-<text text-anchor="start" x="411.5" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="486" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveabstractlabel.h</text>
+<polygon fill="#bfbfbf" stroke="black" points="404,-145.5 404,-175.5 569,-175.5 569,-145.5 404,-145.5"/>
+<text text-anchor="start" x="412" y="-163.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="486.5" y="-152.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveabstractlabel.h</text>
 </a>
 </g>
 </g>
@@ -69,198 +69,198 @@ var sectionId = 'dynsection-1';
 <g id="node2" class="node">
 <title>Node2</title>
 <g id="a_node2"><a xlink:href="../../d1/d58/moveabstractlabel_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="45.5,-78.5 45.5,-108.5 210.5,-108.5 210.5,-78.5 45.5,-78.5"/>
-<text text-anchor="start" x="53.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="128" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveabstractlabel.cpp</text>
+<polygon fill="white" stroke="black" points="26,-78.5 26,-108.5 191,-108.5 191,-78.5 26,-78.5"/>
+<text text-anchor="start" x="34" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="108.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveabstractlabel.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node2 -->
 <g id="edge1" class="edge">
 <title>Node1&#45;&gt;Node2</title>
-<path fill="none" stroke="midnightblue" d="M398.7,-143.65C339.62,-132.92 262.29,-118.88 205.41,-108.55"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="398.3,-147.13 408.76,-145.48 399.55,-140.25 398.3,-147.13"/>
+<path fill="none" stroke="midnightblue" d="M394.71,-143.72C332.28,-132.98 250.41,-118.9 190.23,-108.55"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="394.5,-147.23 404.95,-145.48 395.68,-140.33 394.5,-147.23"/>
 </g>
 <!-- Node3 -->
 <g id="node3" class="node">
 <title>Node3</title>
-<g id="a_node3"><a xlink:href="../../d8/d94/movedoublelabel_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="228.5,-78.5 228.5,-108.5 393.5,-108.5 393.5,-78.5 228.5,-78.5"/>
-<text text-anchor="start" x="236.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="311" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movedoublelabel.h</text>
+<g id="a_node3"><a xlink:href="../../dc/d0e/movedoublelabel_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="0,-6 0,-36 165,-36 165,-6 0,-6"/>
+<text text-anchor="start" x="8" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="82.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movedoublelabel.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node3 -->
 <g id="edge2" class="edge">
 <title>Node1&#45;&gt;Node3</title>
-<path fill="none" stroke="midnightblue" d="M438.4,-141.82C410.27,-131.37 375.14,-118.32 348.9,-108.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="437.43,-145.2 448.03,-145.4 439.87,-138.63 437.43,-145.2"/>
+<path fill="none" stroke="midnightblue" d="M393.8,-151.11C345.75,-144.2 287.11,-131.66 238.5,-109 218.43,-99.64 218.27,-89.74 199.5,-78 173.06,-61.46 140.98,-46.42 117.11,-36.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="393.5,-154.6 403.89,-152.5 394.46,-147.66 393.5,-154.6"/>
 </g>
-<!-- Node5 -->
-<g id="node5" class="node">
-<title>Node5</title>
-<g id="a_node5"><a xlink:href="../../dc/d0e/movedoublelabel_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="220.5,-6 220.5,-36 385.5,-36 385.5,-6 220.5,-6"/>
-<text text-anchor="start" x="228.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="303" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movedoublelabel.cpp</text>
+<!-- Node4 -->
+<g id="node4" class="node">
+<title>Node4</title>
+<g id="a_node4"><a xlink:href="../../d8/d94/movedoublelabel_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="248,-78.5 248,-108.5 413,-108.5 413,-78.5 248,-78.5"/>
+<text text-anchor="start" x="256" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="330.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movedoublelabel.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node5 -->
-<g id="edge5" class="edge">
-<title>Node1&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M466.71,-137.95C450.48,-120.54 426.12,-96.06 402,-78 380.03,-61.55 352.73,-46.46 332.37,-36.09"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="464.22,-140.41 473.57,-145.4 469.37,-135.67 464.22,-140.41"/>
+<!-- Node1&#45;&gt;Node4 -->
+<g id="edge3" class="edge">
+<title>Node1&#45;&gt;Node4</title>
+<path fill="none" stroke="midnightblue" d="M443.41,-141.54C418.44,-131.14 387.47,-118.24 364.28,-108.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="442.07,-144.78 452.65,-145.4 444.77,-138.32 442.07,-144.78"/>
 </g>
 <!-- Node6 -->
 <g id="node6" class="node">
 <title>Node6</title>
 <g id="a_node6"><a xlink:href="../../df/db0/movelabel_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="403.5,-6 403.5,-36 568.5,-36 568.5,-6 403.5,-6"/>
-<text text-anchor="start" x="411.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="486" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movelabel.cpp</text>
+<polygon fill="white" stroke="black" points="404,-6 404,-36 569,-36 569,-6 404,-6"/>
+<text text-anchor="start" x="412" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="486.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movelabel.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node6 -->
 <g id="edge6" class="edge">
 <title>Node1&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M486,-135.29C486,-106.61 486,-59.78 486,-36.33"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="482.5,-135.3 486,-145.3 489.5,-135.3 482.5,-135.3"/>
+<path fill="none" stroke="midnightblue" d="M486.5,-135.29C486.5,-106.61 486.5,-59.78 486.5,-36.33"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="483,-135.3 486.5,-145.3 490,-135.3 483,-135.3"/>
 </g>
 <!-- Node7 -->
 <g id="node7" class="node">
 <title>Node7</title>
 <g id="a_node7"><a xlink:href="../../d3/d46/movelabel_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="558.5,-78.5 558.5,-108.5 723.5,-108.5 723.5,-78.5 558.5,-78.5"/>
-<text text-anchor="start" x="566.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="641" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movelabel.h</text>
+<polygon fill="white" stroke="black" points="559,-78.5 559,-108.5 724,-108.5 724,-78.5 559,-78.5"/>
+<text text-anchor="start" x="567" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="641.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/movelabel.h</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
 <g id="edge7" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<path fill="none" stroke="midnightblue" d="M529.15,-141.41C553.89,-131.03 584.5,-118.2 607.43,-108.58"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="527.5,-138.3 519.63,-145.4 530.21,-144.76 527.5,-138.3"/>
+<path fill="none" stroke="midnightblue" d="M529.65,-141.41C554.39,-131.03 585,-118.2 607.93,-108.58"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="528,-138.3 520.13,-145.4 530.71,-144.76 528,-138.3"/>
 </g>
 <!-- Node10 -->
 <g id="node10" class="node">
 <title>Node10</title>
-<g id="a_node10"><a xlink:href="../../da/d5d/moveoperationlabel_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="956.5,-78.5 956.5,-108.5 1121.5,-108.5 1121.5,-78.5 956.5,-78.5"/>
-<text text-anchor="start" x="964.5" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="1039" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveoperationlabel.h</text>
+<g id="a_node10"><a xlink:href="../../db/d5b/moveoperationlabel_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="974,-6 974,-36 1139,-36 1139,-6 974,-6"/>
+<text text-anchor="start" x="982" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="1056.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveoperationlabel.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node10 -->
 <g id="edge11" class="edge">
 <title>Node1&#45;&gt;Node10</title>
-<path fill="none" stroke="midnightblue" d="M578.79,-148.59C684.27,-136.19 854.91,-116.14 956.1,-104.24"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="578.31,-145.13 568.79,-149.77 579.13,-152.08 578.31,-145.13"/>
+<path fill="none" stroke="midnightblue" d="M570.72,-143.51C618.36,-134.14 678.93,-121.68 732.5,-109 830.83,-85.73 944.7,-54.04 1007.88,-36.03"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="569.9,-140.1 560.76,-145.46 571.25,-146.97 569.9,-140.1"/>
 </g>
-<!-- Node12 -->
-<g id="node12" class="node">
-<title>Node12</title>
-<g id="a_node12"><a xlink:href="../../db/d5b/moveoperationlabel_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="1123.5,-6 1123.5,-36 1288.5,-36 1288.5,-6 1123.5,-6"/>
-<text text-anchor="start" x="1131.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
-<text text-anchor="middle" x="1206" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveoperationlabel.cpp</text>
+<!-- Node11 -->
+<g id="node11" class="node">
+<title>Node11</title>
+<g id="a_node11"><a xlink:href="../../da/d5d/moveoperationlabel_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="974,-78.5 974,-108.5 1139,-108.5 1139,-78.5 974,-78.5"/>
+<text text-anchor="start" x="982" y="-96.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/undocommands</text>
+<text text-anchor="middle" x="1056.5" y="-85.5" font-family="Helvetica,sans-Serif" font-size="10.00">/label/moveoperationlabel.h</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node12 -->
-<g id="edge14" class="edge">
-<title>Node1&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M578.77,-156.14C745.5,-149.52 1083,-133.31 1131,-109 1163.02,-92.78 1187.09,-56.36 1198.56,-36.16"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="578.38,-152.65 568.53,-156.54 578.66,-159.64 578.38,-152.65"/>
+<!-- Node1&#45;&gt;Node11 -->
+<g id="edge12" class="edge">
+<title>Node1&#45;&gt;Node11</title>
+<path fill="none" stroke="midnightblue" d="M579.12,-148.94C688.56,-136.46 869,-115.88 973.88,-103.92"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="578.62,-145.47 569.08,-150.08 579.41,-152.43 578.62,-145.47"/>
 </g>
-<!-- Node4 -->
-<g id="node4" class="node">
-<title>Node4</title>
-<g id="a_node4"><a xlink:href="../../de/d21/vtooldoublepoint_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="0,-0.5 0,-41.5 202,-41.5 202,-0.5 0,-0.5"/>
-<text text-anchor="start" x="8" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
-<text text-anchor="middle" x="101" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldoublepoint/vtooldoublepoint.cpp</text>
+<!-- Node4&#45;&gt;Node3 -->
+<g id="edge5" class="edge">
+<title>Node4&#45;&gt;Node3</title>
+<path fill="none" stroke="midnightblue" d="M271.55,-75.74C229.04,-63.66 172.32,-47.53 132.12,-36.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="270.63,-79.12 281.21,-78.49 272.54,-72.39 270.63,-79.12"/>
+</g>
+<!-- Node5 -->
+<g id="node5" class="node">
+<title>Node5</title>
+<g id="a_node5"><a xlink:href="../../de/d21/vtooldoublepoint_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="183.5,-0.5 183.5,-41.5 385.5,-41.5 385.5,-0.5 183.5,-0.5"/>
+<text text-anchor="start" x="191.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="191.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
+<text text-anchor="middle" x="284.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/tooldoublepoint/vtooldoublepoint.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<path fill="none" stroke="midnightblue" d="M259.72,-75.28C229.38,-65.1 190.86,-52.17 159.36,-41.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="258.67,-78.62 269.26,-78.49 260.89,-71.99 258.67,-78.62"/>
-</g>
-<!-- Node3&#45;&gt;Node5 -->
+<!-- Node4&#45;&gt;Node5 -->
 <g id="edge4" class="edge">
-<title>Node3&#45;&gt;Node5</title>
-<path fill="none" stroke="midnightblue" d="M308.25,-68.23C307.04,-57.57 305.66,-45.41 304.62,-36.25"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="304.78,-68.69 309.38,-78.23 311.73,-67.9 304.78,-68.69"/>
+<title>Node4&#45;&gt;Node5</title>
+<path fill="none" stroke="midnightblue" d="M315.62,-69.7C309.71,-60.63 302.97,-50.31 297.28,-41.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="312.8,-71.77 321.19,-78.23 318.66,-67.95 312.8,-71.77"/>
 </g>
 <!-- Node7&#45;&gt;Node6 -->
 <g id="edge10" class="edge">
 <title>Node7&#45;&gt;Node6</title>
-<path fill="none" stroke="midnightblue" d="M600.74,-74.19C574.58,-62.29 541,-47.02 516.94,-36.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="599.45,-77.45 610.01,-78.4 602.35,-71.08 599.45,-77.45"/>
+<path fill="none" stroke="midnightblue" d="M601.24,-74.19C575.08,-62.29 541.5,-47.02 517.44,-36.07"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="599.95,-77.45 610.51,-78.4 602.85,-71.08 599.95,-77.45"/>
 </g>
 <!-- Node8 -->
 <g id="node8" class="node">
 <title>Node8</title>
 <g id="a_node8"><a xlink:href="../../dd/d37/vtoolsinglepoint_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="587,-0.5 587,-41.5 781,-41.5 781,-0.5 587,-0.5"/>
-<text text-anchor="start" x="595" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="595" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
-<text text-anchor="middle" x="684" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/vtoolsinglepoint.cpp</text>
+<polygon fill="white" stroke="black" points="587.5,-0.5 587.5,-41.5 781.5,-41.5 781.5,-0.5 587.5,-0.5"/>
+<text text-anchor="start" x="595.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="595.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/toolpoint</text>
+<text text-anchor="middle" x="684.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/toolsinglepoint/vtoolsinglepoint.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node8 -->
 <g id="edge8" class="edge">
 <title>Node7&#45;&gt;Node8</title>
-<path fill="none" stroke="midnightblue" d="M654.91,-69.7C660.44,-60.63 666.73,-50.31 672.05,-41.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="651.92,-67.87 649.7,-78.23 657.9,-71.52 651.92,-67.87"/>
+<path fill="none" stroke="midnightblue" d="M655.41,-69.7C660.94,-60.63 667.23,-50.31 672.55,-41.59"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="652.42,-67.87 650.2,-78.23 658.4,-71.52 652.42,-67.87"/>
 </g>
 <!-- Node9 -->
 <g id="node9" class="node">
 <title>Node9</title>
 <g id="a_node9"><a xlink:href="../../d4/d7b/vnodepoint_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="799,-6 799,-36 955,-36 955,-6 799,-6"/>
-<text text-anchor="start" x="807" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="middle" x="877" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/nodeDetails/vnodepoint.cpp</text>
+<polygon fill="white" stroke="black" points="799.5,-6 799.5,-36 955.5,-36 955.5,-6 799.5,-6"/>
+<text text-anchor="start" x="807.5" y="-24" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="middle" x="877.5" y="-13" font-family="Helvetica,sans-Serif" font-size="10.00">/nodeDetails/vnodepoint.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node7&#45;&gt;Node9 -->
 <g id="edge9" class="edge">
 <title>Node7&#45;&gt;Node9</title>
-<path fill="none" stroke="midnightblue" d="M697.61,-75.59C738,-63.52 791.69,-47.48 829.78,-36.11"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="696.49,-72.27 687.91,-78.49 698.49,-78.98 696.49,-72.27"/>
+<path fill="none" stroke="midnightblue" d="M698.11,-75.59C738.5,-63.52 792.19,-47.48 830.28,-36.11"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="696.99,-72.27 688.41,-78.49 698.99,-78.98 696.99,-72.27"/>
 </g>
-<!-- Node11 -->
-<g id="node11" class="node">
-<title>Node11</title>
-<g id="a_node11"><a xlink:href="../../d8/de3/vabstractoperation_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="black" points="973,-0.5 973,-41.5 1105,-41.5 1105,-0.5 973,-0.5"/>
-<text text-anchor="start" x="981" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
-<text text-anchor="start" x="981" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/operation</text>
-<text text-anchor="middle" x="1039" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vabstractoperation.cpp</text>
+<!-- Node11&#45;&gt;Node10 -->
+<g id="edge14" class="edge">
+<title>Node11&#45;&gt;Node10</title>
+<path fill="none" stroke="midnightblue" d="M1056.5,-68.23C1056.5,-57.57 1056.5,-45.41 1056.5,-36.25"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1053,-68.23 1056.5,-78.23 1060,-68.23 1053,-68.23"/>
+</g>
+<!-- Node12 -->
+<g id="node12" class="node">
+<title>Node12</title>
+<g id="a_node12"><a xlink:href="../../d8/de3/vabstractoperation_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="black" points="1157.5,-0.5 1157.5,-41.5 1289.5,-41.5 1289.5,-0.5 1157.5,-0.5"/>
+<text text-anchor="start" x="1165.5" y="-29.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/libs/vtools/tools</text>
+<text text-anchor="start" x="1165.5" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/drawTools/operation</text>
+<text text-anchor="middle" x="1223.5" y="-7.5" font-family="Helvetica,sans-Serif" font-size="10.00">/vabstractoperation.cpp</text>
 </a>
 </g>
 </g>
-<!-- Node10&#45;&gt;Node11 -->
-<g id="edge12" class="edge">
-<title>Node10&#45;&gt;Node11</title>
-<path fill="none" stroke="midnightblue" d="M1039,-67.98C1039,-59.35 1039,-49.76 1039,-41.59"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1035.5,-68.23 1039,-78.23 1042.5,-68.23 1035.5,-68.23"/>
-</g>
-<!-- Node10&#45;&gt;Node12 -->
+<!-- Node11&#45;&gt;Node12 -->
 <g id="edge13" class="edge">
-<title>Node10&#45;&gt;Node12</title>
-<path fill="none" stroke="midnightblue" d="M1081.64,-74.5C1109.93,-62.56 1146.51,-47.11 1172.66,-36.07"/>
-<polygon fill="midnightblue" stroke="midnightblue" points="1080.25,-71.29 1072.39,-78.4 1082.97,-77.74 1080.25,-71.29"/>
+<title>Node11&#45;&gt;Node12</title>
+<path fill="none" stroke="midnightblue" d="M1099.38,-74.4C1123.2,-64.34 1152.85,-51.83 1177.2,-41.55"/>
+<polygon fill="midnightblue" stroke="midnightblue" points="1097.75,-71.29 1089.89,-78.4 1100.47,-77.74 1097.75,-71.29"/>
 </g>
 </g>
 </svg>
