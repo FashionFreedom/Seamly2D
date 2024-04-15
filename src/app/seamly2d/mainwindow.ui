@@ -901,7 +901,7 @@
               <string/>
              </property>
              <property name="currentIndex">
-              <number>6</number>
+              <number>0</number>
              </property>
              <property name="tabSpacing">
               <number>4</number>
@@ -909,10 +909,10 @@
              <widget class="QWidget" name="points_Page">
               <property name="geometry">
                <rect>
-                <x>-15</x>
+                <x>0</x>
                 <y>0</y>
                 <width>118</width>
-                <height>288</height>
+                <height>294</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1030,7 +1030,7 @@
                  </property>
                  <property name="icon">
                   <iconset resource="share/resources/toolicon.qrc">
-                   <normaloff>:/toolicon/32x32/point_of_contact.png</normaloff>:/toolicon/32x32/point_of_contact.png</iconset>
+                   <normaloff>:/toolicon/32x32/point_intersect_arc_line.png</normaloff>:/toolicon/32x32/point_intersect_arc_line.png</iconset>
                  </property>
                  <property name="iconSize">
                   <size>
@@ -1259,7 +1259,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>124</width>
-                <height>58</height>
+                <height>59</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1357,7 +1357,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>124</width>
-                <height>196</height>
+                <height>200</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1616,8 +1616,8 @@
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>103</width>
-                <height>226</height>
+                <width>124</width>
+                <height>231</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -1897,7 +1897,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>124</width>
-                <height>180</height>
+                <height>184</height>
                </rect>
               </property>
               <property name="toolTip">
@@ -2119,7 +2119,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>124</width>
-                <height>96</height>
+                <height>98</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2269,7 +2269,7 @@
                 <x>0</x>
                 <y>0</y>
                 <width>124</width>
-                <height>60</height>
+                <height>61</height>
                </rect>
               </property>
               <property name="sizePolicy">
@@ -2374,8 +2374,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>98</width>
-              <height>28</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <property name="toolTip">
@@ -2508,8 +2508,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>101</width>
-              <height>54</height>
+              <width>120</width>
+              <height>82</height>
              </rect>
             </property>
             <attribute name="icon">
