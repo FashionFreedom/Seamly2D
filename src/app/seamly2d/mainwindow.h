@@ -6,8 +6,8 @@
  **  @brief
  **  @copyright
  **  This source code is part of the Seamly2D project, a pattern making
- **  program to create and model patterns of clothing.
- **  Copyright (C) 2017-2023 Seamly2D project
+ **  program, whose allow create and modeling patterns of clothing.
+ **  Copyright (C) 2013-2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
  **
  **  Seamly2D is free software: you can redistribute it and/or modify
@@ -60,6 +60,7 @@
 #include "core/vcmdexport.h"
 #include "../vmisc/vlockguard.h"
 
+#include <QMap>
 #include <QPointer>
 #include <QSharedPointer>
 
@@ -87,6 +88,10 @@ class LayoutToolBox;
 class QToolButton;
 class QDoubleSpinBox;
 class QFontComboBox;
+
+class DraftImage;
+class ImageItem;
+
 class MouseCoordinates;
 class PenToolBar;
 
@@ -133,8 +138,8 @@ signals:
     void EnableSplinePathSelection(bool enable) const;
     void EnableNodeLabelSelection(bool enable) const;
     void EnableNodePointSelection(bool enable) const;
+    void EnableImageSelection(bool enable) const;
     void enablePieceSelection(bool enable) const;
-
     void EnableLabelHover(bool enable) const;
     void EnablePointHover(bool enable) const;
     void EnableLineHover(bool enable) const;
@@ -144,6 +149,7 @@ signals:
     void EnableSplinePathHover(bool enable) const;
     void EnableNodeLabelHover(bool enable) const;
     void EnableNodePointHover(bool enable) const;
+    void EnableImageHover(bool enable) const;
     void enablePieceHover(bool enable) const;
 
     void signalZoomToAreaActive(bool enable) const;
@@ -227,6 +233,19 @@ private slots:
     void handleInternalPathTool(bool checked);
     void handleAnchorPointTool(bool checked);
     void handleInsertNodesTool(bool checked);
+
+    void       handleImportImage();
+    void       addImage(DraftImage image);
+
+    void handleDeleteImage(quint32 id);
+    void handleImageSelected(quint32 id);
+    void handleLockImage(bool state);
+    void handleAlignImage();
+    void updateImage(DraftImage image);
+    void handleLockImageAspect(bool state);
+    void setStatusMessage(QString message);
+    QString  getImageFilename();
+
 
     void handlePatternPieceTool(bool checked);
     void handleUnionTool(bool checked);
@@ -340,6 +359,7 @@ private:
     std::shared_ptr<VLockGuard<char>> lock;
 
     QDoubleSpinBox                   *zoomScaleSpinBox;
+
     PenToolBar                       *m_penToolBar; //!< for selecting the current pen
     PenToolBar                       *m_penReset;
     QComboBox                        *m_zoomToPointComboBox;
@@ -347,18 +367,19 @@ private:
     void                              SetDefaultHeight();
     void                              SetDefaultSize();
 
-    void                              initStatusBar();
-    void                              initModesToolBar();
-    void                              initDraftToolBar();
-    void                              initPointNameToolBar();
-    void                              initBasePointComboBox();
-    void                              initToolsToolBar();
-    void                              initToolBarVisibility();
+    void                              initializeStatusToolBar();
+    void                              initializeModesToolBar();
+    void                              initializeDraftToolBar();
+    void                              initializePointNameToolBar();
+    void                              initializeToolsToolBar();
+    void                              initializeToolBarVisibility();
     void                              initPenToolBar();
-    void                              initPropertyEditor();    
+    void                              initPropertyEditor();
+    void                              initBasePointComboBox();
+
     void                              updateToolBarVisibility();
     void                              setToolBarVisibility(QToolBar *toolbar, bool visible);
-    void                              InitToolButtons();
+    void                              initializeToolButtons();
 
     void                              handlePointsMenu();
     void                              handleLinesMenu();
@@ -411,13 +432,17 @@ private:
     void               WriteSettings();
 
     bool               MaybeSave();
+    void               InfoUnsavedImages(bool * firstImportImage);
     void               UpdateRecentFileActions();
-    void               CreateMenus();
-    void               CreateActions();
-    void               InitAutoSave();
+
+    void               createMenus();
+    void               createActions();
+    void               initializeAutoSave();
+    QString            PatternPieceName(const QString &text);
+    QString            CheckPathToMeasurements(const QString &patternPath, const QString &path);
+    QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     QString            createDraftBlockName(const QString &text);
     QString            checkPathToMeasurements(const QString &patternPath, const QString &path);
-    QComboBox         *SetGradationList(QLabel *label, const QStringList &list);
     void               changeDraftBlock(int index, bool zoomBestFit = true);
     /**
      * @brief EndVisualization try show dialog after and working with tool visualization.
@@ -428,7 +453,7 @@ private:
     void               UpdateSizesList(const QStringList &list);
 
     void               AddDocks();
-    void               InitDocksContain();
+    void               initializeDocksContain();
     bool               startNewSeamly2D(const QString &fileName = QString())const;
     void               FileClosedCorrect();
     QStringList        GetUnlokedRestoreFileList()const;
@@ -436,7 +461,7 @@ private:
     void               addDraftBlock(const QString &blockName);
     QPointF            draftBlockStartPosition() const;
 
-    void               InitScenes();
+    void               initializeScenes();
 
     QSharedPointer<MeasurementDoc> openMeasurementFile(const QString &fileName);
     bool               loadMeasurements(const QString &fileName);

@@ -6,6 +6,7 @@ SOURCES += \
     $$PWD/calculator/calculator.cpp \
     $$PWD/color_combobox.cpp \
     $$PWD/export_format_combobox.cpp \
+    $$PWD/resize_handle.cpp \
     $$PWD/fill_combobox.cpp \
     $$PWD/group_tablewidgetitem.cpp \
     $$PWD/linetype_combobox.cpp \
@@ -41,6 +42,7 @@ HEADERS += \
     $$PWD/calculator/calculator.h \
     $$PWD/color_combobox.h \
     $$PWD/export_format_combobox.h \
+    $$PWD/resize_handle.h \
     $$PWD/fill_combobox.h \
     $$PWD/group_tablewidgetitem.h \
     $$PWD/linetype_combobox.h \

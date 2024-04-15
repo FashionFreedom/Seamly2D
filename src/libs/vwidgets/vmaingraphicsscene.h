@@ -85,7 +85,7 @@ public:
     QPointF       getScenePos() const;
 
     QRectF        visibleItemsBoundingRect() const;
-    void          InitOrigins();
+    void          initializeOrigins();
     void          setOriginsVisible(bool visible);
 
 public slots:

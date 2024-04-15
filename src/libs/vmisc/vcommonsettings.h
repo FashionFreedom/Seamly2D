@@ -101,6 +101,10 @@ public:
     QString              getLabelTemplatePath() const;
     void                 SetPathLabelTemplate(const QString &value);
 
+    static QString       getDefaultImageFilePath();
+    QString              getImageFilePath() const;
+    void                 setImageFilePath(const QString &value);
+
     QString              getDefaultPatternTemplate() const;
     void                 setDefaultPatternTemplate(const QString &text);
 

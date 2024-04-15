@@ -3932,10 +3932,12 @@ void VPattern::PrepareForParse(const Document &parse)
     if (parse == Document::FullParse)
     {
         TestUniqueId();
+        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->removeItem(item);}
         draftScene->clear();
-        draftScene->InitOrigins();
+        foreach (ImageItem *item, getBackgroundImageMap().values()) {draftScene->addItem(item);}
+        draftScene->initializeOrigins();
         pieceScene->clear();
-        pieceScene->InitOrigins();
+        pieceScene->initializeOrigins();
         data->ClearForFullParse();
         activeDraftBlock.clear();
         patternPieces.clear();
@@ -3973,7 +3975,7 @@ QT_WARNING_DISABLE_GCC("-Wswitch-default")
 QRectF VPattern::ActiveDrawBoundingRect() const
 {
     // This check helps to find missed tools in the switch
-    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 53, "Not all tools were used.");
+    Q_STATIC_ASSERT_X(static_cast<int>(Tool::LAST_ONE_DO_NOT_USE) == 54, "Not all tools were used.");
 
     QRectF rect;
 
@@ -3992,6 +3994,7 @@ QRectF VPattern::ActiveDrawBoundingRect() const
                 case Tool::Cut:
                 case Tool::Midpoint:// Same as Tool::AlongLine, but tool will never has such type
                 case Tool::ArcIntersectAxis:// Same as Tool::CurveIntersectAxis, but tool will never has such type
+                case Tool::BackgroundImage:
                 case Tool::LAST_ONE_DO_NOT_USE:
                     Q_UNREACHABLE();
                     break;

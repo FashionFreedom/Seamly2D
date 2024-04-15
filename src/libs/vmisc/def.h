@@ -1,12 +1,14 @@
 /************************************************************************
- **
  **  @file   def.h
  **  @author Roman Telezhynskyi <dismine(at)gmail.com>
  **  @date   11 4, 2015
  **
+ **  @author Douglas S Caskey
+ **  @date   7.31.2022
+ **
  **  @brief
  **  @copyright
- **  This source code is part of the Valentine project, a pattern making
+ **  This source code is part of the Seamly2D project, a pattern making
  **  program, whose allow create and modeling patterns of clothing.
  **  Copyright (C) 2013 - 2022 Seamly2D project
  **  <https://github.com/fashionfreedom/seamly2d> All Rights Reserved.
@@ -37,6 +39,7 @@
 #include <Qt>
 #include <QtGlobal>
 #include <QPrinter>
+#include <QPixmap>
 #include <csignal>
 #ifdef Q_OS_WIN
     #include <windows.h>
@@ -56,6 +59,21 @@ class VTranslateMeasurements;
 class QGraphicsItem;
 
 #define SceneSize 50000
+
+#define HANDLE_SIZE 12
+
+enum class Position : char
+{
+    TopLeft = 0,
+    Top,
+    TopRight,
+    Right,
+    BottomRight,
+    Bottom,
+    BottomLeft,
+    Left,
+    Center
+};
 
 enum class PaperSizeFormat : char { A0 = 0,
                                     A1,
@@ -138,6 +156,52 @@ enum class PieceNodeAngle : unsigned char
     ByFirstEdgeRightAngle,
     BySecondEdgeRightAngle
 };
+
+struct DraftImage
+{
+    DraftImage()
+    : id(0),
+      name(""),
+      filename(""),
+      pixmap(),
+      locked(false),
+      origin(Position::Center),
+      anchor(0),
+      xPos(0.0),
+      yPos(0.0),
+      width(0.0),
+      height(0.0),
+      aspectLocked(false),
+      units(Unit::Px),
+      rotation(0.0),
+      visible(true),
+      opacity(100.0),
+      order(0)
+     {}
+
+    quint32        id;
+    QString        name;
+    QString        filename;
+    QPixmap        pixmap;
+    bool           locked;
+    Position     origin;
+    quint32        anchor;
+    qreal          xPos;
+    qreal          yPos;
+    qreal          width;
+    qreal          height;
+    qreal          xScale;
+    qreal          yScale;
+    bool           aspectLocked;
+    Unit           units;
+    qreal          rotation;
+    bool           visible;
+    qreal          opacity;
+    qreal          order;
+};
+
+Q_DECLARE_METATYPE(DraftImage)
+Q_DECLARE_TYPEINFO(DraftImage, Q_MOVABLE_TYPE);
 
 enum class NotchType : unsigned char
 {
@@ -232,6 +296,7 @@ enum class Tool : ToolVisHolderType
     EllipticalArc,
     AnchorPoint,
     InsertNodes,
+    BackgroundImage,
     LAST_ONE_DO_NOT_USE //add new stuffs above this, this constant must be last and never used
 };
 
@@ -290,6 +355,8 @@ enum class Vis : ToolVisHolderType
     TextGraphicsItem,
     ScenePoint,
     ArrowedLineItem,
+    BackgroundImageItem,
+    ResizeHandlesItem,
     LAST_ONE_DO_NOT_USE //add new types above this, this constant must be last and never used
 };
 
@@ -452,6 +519,7 @@ extern const QStringList labelTemplatePlaceholders;
 
 extern const QString cursorArrowOpenHand;
 extern const QString cursorArrowCloseHand;
+extern const QString cursorResizeArrow;
 
 extern const QString degreeSymbol;
 extern const QString trueStr;

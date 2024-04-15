@@ -260,6 +260,13 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("True Darts")).arg(tr("T, D"))                      //12 & 13
                                  .arg(tr("Export Draft Blocks")).arg(tr("E, D"));            //14 & 15
 
+    const QString images = QString("<table style=font-size:11pt; font-weight:600>"
+                                       "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
+                                       "<tr><td width = 50%>%2       </td><td>%3<br></td></tr>"
+                                       "</table>")
+                                   .arg(tr("Images"))                                      //1
+                                   .arg(tr("Import Image")).arg(tr("Alt + I"));            //2 & 3
+
     const QString pattern = QString("<table style=font-size:11pt; font-weight:600>"
                                     "<tr><td width = 50%><b>%1</b></td><td></td></tr>"
                                     "<tr><td width = 50%>%2       </td><td>%3</td></tr>"
@@ -335,7 +342,7 @@ ShortcutsDialog::ShortcutsDialog(QWidget *parent)
                                  .arg(tr("Keyboard Shortcuts")).arg(tr("K"));                //2 & 3
 
     ui->shortcuts_TextBrowser->setHtml(file + edit + view + measurements + tools + points + line + curves +
-                                       arcs + operations + pattern + details + layout + history + utilities + help);
+                                       arcs + operations + images + pattern + details + layout + history + utilities + help);
 
     //Limit dialog height to 80% of screen size
     setMaximumHeight(qRound(QGuiApplication::primaryScreen()->availableGeometry().height() * .8));

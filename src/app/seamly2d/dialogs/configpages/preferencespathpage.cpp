@@ -102,6 +102,7 @@ void PreferencesPathPage::Apply()
     settings->setMultisizePath(ui->pathTable->item(3, 1)->text());
     settings->SetPathLayout(ui->pathTable->item(4, 1)->text());
     settings->SetPathLabelTemplate(ui->pathTable->item(5, 1)->text());
+    settings->setImageFilePath(ui->pathTable->item(6, 1)->text());
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -132,6 +133,9 @@ void PreferencesPathPage::defaultPath()
             break;
         case 5: // label templates
             path = VSettings::getDefaultLabelTemplatePath();
+            break;
+        case 6: // images
+            path = VSettings::getDefaultImageFilePath();
             break;
         default:
             break;
@@ -170,6 +174,9 @@ void PreferencesPathPage::editPath()
         case 5: // label templates
             path = qApp->Seamly2DSettings()->getLabelTemplatePath();
             break;
+        case 6: // images
+                path = qApp->Seamly2DSettings()->getImageFilePath();
+                break;
         default:
             break;
     }
@@ -207,7 +214,7 @@ void PreferencesPathPage::editPath()
 //---------------------------------------------------------------------------------------------------------------------
 void PreferencesPathPage::initializeTable()
 {
-    ui->pathTable->setRowCount(6);
+    ui->pathTable->setRowCount(7);
     ui->pathTable->setColumnCount(2);
 
     const VSettings *settings = qApp->Seamly2DSettings();
@@ -264,6 +271,15 @@ void PreferencesPathPage::initializeTable()
         item = new QTableWidgetItem(settings->getLabelTemplatePath());
         item->setToolTip(settings->getLabelTemplatePath());
         ui->pathTable->setItem(5, 1, item);
+    }
+
+    {
+        QTableWidgetItem *item = new QTableWidgetItem(tr("My Images"));
+        item->setIcon(QIcon("://icon/32x32/add_image.png"));
+        ui->pathTable->setItem(6, 0, item);
+        item = new QTableWidgetItem(settings->getImageFilePath());
+        item->setToolTip(settings->getImageFilePath());
+        ui->pathTable->setItem(6, 1, item);
     }
 
     ui->pathTable->verticalHeader()->setDefaultSectionSize(20);

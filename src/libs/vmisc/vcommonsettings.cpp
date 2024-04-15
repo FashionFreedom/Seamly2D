@@ -73,6 +73,7 @@
 
 namespace
 {
+const QString settingImagesPath                          = QStringLiteral("paths/images");
 const QString settingPathsIndividualMeasurements         = QStringLiteral("paths/individual_size_measurements");
 const QString settingPathsMultisizeMeasurements          = QStringLiteral("paths/multi_size_measurements");
 const QString settingPathsTemplates                      = QStringLiteral("paths/templates");
@@ -492,7 +493,7 @@ void VCommonSettings::setBodyScansPath(const QString &value)
 //---------------------------------------------------------------------------------------------------------------------
 QString VCommonSettings::getDefaultLabelTemplatePath()
 {
-    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("images");
 }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -505,6 +506,24 @@ QString VCommonSettings::getLabelTemplatePath() const
 void VCommonSettings::SetPathLabelTemplate(const QString &text)
 {
     setValue(settingPathsLabelTemplate, text);
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getDefaultImageFilePath()
+{
+    return QDir::homePath() + QLatin1String("/seamly2d/") + tr("label templates");
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+QString VCommonSettings::getImageFilePath() const
+{
+    return value(settingImagesPath, getDefaultImageFilePath()).toString();
+}
+
+//---------------------------------------------------------------------------------------------------------------------
+void VCommonSettings::setImageFilePath(const QString &text)
+{
+    setValue(settingImagesPath, text);
 }
 
 //---------------------------------------------------------------------------------------------------------------------
