@@ -52,6 +52,11 @@ var dir_fa16871e366acf28eec42e1eb99c66a0 =
     [ "piece_tablewidgetitem.h", "dc/d1b/piece__tablewidgetitem_8h.html", [
       [ "PieceTableWidgetItem", "d7/df0/classPieceTableWidgetItem.html", "d7/df0/classPieceTableWidgetItem" ]
     ] ],
+    [ "resize_handle.cpp", "d1/daa/resize__handle_8cpp.html", "d1/daa/resize__handle_8cpp" ],
+    [ "resize_handle.h", "db/d8d/resize__handle_8h.html", [
+      [ "ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html", "d0/de9/classResizeHandlesItem" ],
+      [ "HandleItem", "d0/dc5/classResizeHandlesItem_1_1HandleItem.html", "d0/dc5/classResizeHandlesItem_1_1HandleItem" ]
+    ] ],
     [ "scalesceneitems.cpp", "d4/d50/scalesceneitems_8cpp.html", null ],
     [ "scalesceneitems.h", "da/daf/scalesceneitems_8h.html", [
       [ "VScaledLine", "dd/da2/classVScaledLine.html", "dd/da2/classVScaledLine" ],

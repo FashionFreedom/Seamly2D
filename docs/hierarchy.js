@@ -6,6 +6,7 @@ var hierarchy =
     [ "delaunay2d_t", "d6/da5/structdelaunay2d__t.html", null ],
     [ "delaunay_s", "de/d32/structdelaunay__s.html", null ],
     [ "DestinationItem", "de/d14/structDestinationItem.html", null ],
+    [ "DraftImage", "d3/df8/structDraftImage.html", null ],
     [ "DRW_Block", null, [
       [ "dx_ifaceBlock", "df/d01/classdx__ifaceBlock.html", null ]
     ] ],
@@ -116,6 +117,7 @@ var hierarchy =
       ] ],
       [ "DialogUndo", "de/d7f/classDialogUndo.html", null ],
       [ "EditLabelTemplateDialog", "d7/df1/classEditLabelTemplateDialog.html", null ],
+      [ "ImageDialog", "d3/db4/classImageDialog.html", null ],
       [ "MeShortcutsDialog", "dd/d67/classMeShortcutsDialog.html", null ],
       [ "MeasurementDatabaseDialog", "d3/d63/classMeasurementDatabaseDialog.html", null ],
       [ "NewMeasurementsDialog", "dc/da3/classNewMeasurementsDialog.html", null ],
@@ -198,6 +200,10 @@ var hierarchy =
           [ "VToolTriangle", "dd/df1/classVToolTriangle.html", null ]
         ] ]
       ] ]
+    ] ],
+    [ "QGraphicsItem", null, [
+      [ "ImageItem", "d6/da8/classImageItem.html", null ],
+      [ "ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html", null ]
     ] ],
     [ "QGraphicsLineItem", null, [
       [ "ArrowedLineItem", "d6/d43/classArrowedLineItem.html", null ],
@@ -284,6 +290,7 @@ var hierarchy =
       [ "VToolInternalPath", "db/d7b/classVToolInternalPath.html", null ]
     ] ],
     [ "QGraphicsRectItem", null, [
+      [ "ResizeHandlesItem::HandleItem", "d0/dc5/classResizeHandlesItem_1_1HandleItem.html", null ],
       [ "SceneRect", "d3/db3/classSceneRect.html", [
         [ "VControlPointSpline", "dd/dcb/classVControlPointSpline.html", null ]
       ] ]
@@ -321,6 +328,7 @@ var hierarchy =
     [ "QList< QSharedPointer< QTableWidget > >", "d1/d4a/classQList.html", null ],
     [ "QList< QStringList >", "d1/d4a/classQList.html", null ],
     [ "QList< QTableWidgetItem * >", "d1/d4a/classQList.html", null ],
+    [ "QList< ResizeHandlesItem::HandleItem * >", "d1/d4a/classQList.html", null ],
     [ "QList< TextLine >", "d1/d4a/classQList.html", null ],
     [ "QList< VPE::VProperty * >", "d1/d4a/classQList.html", null ],
     [ "QList< VPE::VPropertyFormWidgetPrivate::SEditorWidget >", "d1/d4a/classQList.html", null ],
@@ -339,6 +347,7 @@ var hierarchy =
     [ "QMap< int, qmu::QmuTranslation >", "d0/d4c/classQMap.html", null ],
     [ "QMap< int, QString >", "d0/d4c/classQMap.html", null ],
     [ "QMap< QCheckBox *, int >", "d0/d4c/classQMap.html", null ],
+    [ "QMap< qint32, ImageItem * >", "d0/d4c/classQMap.html", null ],
     [ "QMap< QString, int >", "d0/d4c/classQMap.html", null ],
     [ "QMap< QString, qmu::QmuTranslation >", "d0/d4c/classQMap.html", null ],
     [ "QMap< QString, QPair< QString, QString > >", "d0/d4c/classQMap.html", null ],
@@ -382,6 +391,8 @@ var hierarchy =
       ] ],
       [ "FvUpdater", "d5/d23/classFvUpdater.html", null ],
       [ "GraphicsViewZoom", "da/d19/classGraphicsViewZoom.html", null ],
+      [ "ImageItem", "d6/da8/classImageItem.html", null ],
+      [ "ResizeHandlesItem", "d0/de9/classResizeHandlesItem.html", null ],
       [ "TST_FindPoint", "d6/d30/classTST__FindPoint.html", null ],
       [ "TST_Measurements", "da/d3b/classTST__Measurements.html", null ],
       [ "TST_Misc", "d5/d79/classTST__Misc.html", null ],

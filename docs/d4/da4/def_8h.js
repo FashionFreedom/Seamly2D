@@ -1,9 +1,11 @@
 var def_8h =
 [
+    [ "DraftImage", "d3/df8/structDraftImage.html", "d3/df8/structDraftImage" ],
     [ "CustomSARecord", "dc/d74/structCustomSARecord.html", "dc/d74/structCustomSARecord" ],
     [ "QxtPrivate", "db/d14/classQxtPrivate.html", "db/d14/classQxtPrivate" ],
     [ "QxtPrivateInterface", "de/ddc/classQxtPrivateInterface.html", "de/ddc/classQxtPrivateInterface" ],
     [ "__has_cpp_attribute", "d4/da4/def_8h.html#aeed0a618f017e128a5d8654754f792db", null ],
+    [ "HANDLE_SIZE", "d4/da4/def_8h.html#a115eb986866b4424e9143567d902f816", null ],
     [ "QIMAGE_MAX", "d4/da4/def_8h.html#abb52cf8f360453bdd87e44d6dcf17ce9", null ],
     [ "QXT_D", "d4/da4/def_8h.html#ad2abcc48ab132b008a0976cda54786c2", null ],
     [ "QXT_DECLARE_PRIVATE", "d4/da4/def_8h.html#ac5322e633cecd76fb5bf9af96a41c38a", null ],
@@ -181,6 +183,17 @@ var def_8h =
       [ "InternalPath", "d4/da4/def_8h.html#a88e60e344acff17e2af5630c0aa28c2ca2fdb8a5feb2bdffba4f35a5b601670e7", null ],
       [ "Unknown", "d4/da4/def_8h.html#a88e60e344acff17e2af5630c0aa28c2ca88183b946cc5f0e8c96b2e66e1c74a7e", null ]
     ] ],
+    [ "Position", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008", [
+      [ "TopLeft", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008ab32beb056fbfe36afbabc6c88c81ab36", null ],
+      [ "Top", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008aa4ffdcf0dc1f31b9acaf295d75b51d00", null ],
+      [ "TopRight", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a1d85a557894c340c318493f33bfa8efb", null ],
+      [ "Right", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a92b09c7c48c520c3c55e497875da437c", null ],
+      [ "BottomRight", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a9146bfc669fddc88db2c4d89297d0e9a", null ],
+      [ "Bottom", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a2ad9d63b69c4a10a5cc9cad923133bc4", null ],
+      [ "BottomLeft", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a98e5a1c44509157ebcaf46c515c78875", null ],
+      [ "Left", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a945d5e233cf7d6240f6b783b36a374ff", null ],
+      [ "Center", "d4/da4/def_8h.html#ac8554770a804b795ffbfc2b15287a008a4f1f6016fc9f3f2353c0cc7c67b292bd", null ]
+    ] ],
     [ "SceneObject", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2af", [
       [ "Point", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa2a3cd5946cfd317eb99c3d32e35e2d4c", null ],
       [ "Line", "d4/da4/def_8h.html#a74373d9b05edd25d6786a07d0130a2afa4803e6b9e63dabf04de980788d6a13c4", null ],
@@ -254,6 +267,7 @@ var def_8h =
       [ "EllipticalArc", "d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395a9ede004c94369027853b4a491071ef53", null ],
       [ "AnchorPoint", "d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395af74e06a1915cb029355bd2ae65605c06", null ],
       [ "InsertNodes", "d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395aec7a544ff2c982a59c0e0b6d64cba991", null ],
+      [ "BackgroundImage", "d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395a62d5e21ce71a8567d193a0496b75f9e3", null ],
       [ "LAST_ONE_DO_NOT_USE", "d4/da4/def_8h.html#ab8460ab56e3e92e57d3ed3b717492395ae154556eea64f68495301fc09a12122e", null ]
     ] ],
     [ "Unit", "d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889", [
@@ -328,6 +342,8 @@ var def_8h =
       [ "TextGraphicsItem", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582aa3497af332fdd4d0f50eaaff1354f432", null ],
       [ "ScenePoint", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a11392118cd8b68ad9454c047ec4caf35", null ],
       [ "ArrowedLineItem", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a055e03f381e3c702e1df99f27fed2a8b", null ],
+      [ "BackgroundImageItem", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a5e4c52a381051e4be77a647b0ad77068", null ],
+      [ "ResizeHandlesItem", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582a3de4e8ddb0f11db7071012c6998c25e1", null ],
       [ "LAST_ONE_DO_NOT_USE", "d4/da4/def_8h.html#a474a10f771dff4181411f5ff47029582ae154556eea64f68495301fc09a12122e", null ]
     ] ],
     [ "AbsoluteMPath", "d4/da4/def_8h.html#a109bfae79164a25450f13a1145e21246", null ],
@@ -347,6 +363,7 @@ var def_8h =
     [ "notchTypeToString", "d4/da4/def_8h.html#af49aeb9df96488d2b90dece1756b1d2c", null ],
     [ "PreparePrinter", "d4/da4/def_8h.html#a1a3199818364cce4a77b4eef63f528bf", null ],
     [ "Q_DECLARE_TYPEINFO", "d4/da4/def_8h.html#ac2a684cd90d4072b96ca1cf87d980dbf", null ],
+    [ "Q_DECLARE_TYPEINFO", "d4/da4/def_8h.html#ae47b6bd4531cf8d8c6666e9b9d455792", null ],
     [ "RelativeMPath", "d4/da4/def_8h.html#a70500634183359838388ccd270379787", null ],
     [ "SetItemOverrideCursor", "d4/da4/def_8h.html#ac50ba30a64d21ea38312134c435a5a34", null ],
     [ "ShowInGraphicalShell", "d4/da4/def_8h.html#a7b1907f9df8d8f726641e41137e42fe9", null ],
@@ -381,6 +398,7 @@ var def_8h =
     [ "cosh_F", "d4/da4/def_8h.html#ab086d134c6a1009fa00962fa54d9e93e", null ],
     [ "cursorArrowCloseHand", "d4/da4/def_8h.html#a7b39ab83231e23ee686ecabe02567714", null ],
     [ "cursorArrowOpenHand", "d4/da4/def_8h.html#a0f35c65ac737bad188895abceeadcf48", null ],
+    [ "cursorResizeArrow", "d4/da4/def_8h.html#ae4fa6eb3ba78af5a547e5b7d27ec6366", null ],
     [ "degreeSymbol", "d4/da4/def_8h.html#a9d57cde0b2077de64d37157baa0e9d10", null ],
     [ "degTorad_F", "d4/da4/def_8h.html#ad0679d063111d3e8aceaf2a91d243398", null ],
     [ "exp_F", "d4/da4/def_8h.html#ae67530a59f92381ca67213f3c044c1a8", null ],

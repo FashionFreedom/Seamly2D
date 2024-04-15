@@ -44,6 +44,7 @@ var def_8cpp =
     [ "cosh_F", "d6/d0b/def_8cpp.html#ab086d134c6a1009fa00962fa54d9e93e", null ],
     [ "cursorArrowCloseHand", "d6/d0b/def_8cpp.html#a7b39ab83231e23ee686ecabe02567714", null ],
     [ "cursorArrowOpenHand", "d6/d0b/def_8cpp.html#a0f35c65ac737bad188895abceeadcf48", null ],
+    [ "cursorResizeArrow", "d6/d0b/def_8cpp.html#ae4fa6eb3ba78af5a547e5b7d27ec6366", null ],
     [ "degreeSymbol", "d6/d0b/def_8cpp.html#a9d57cde0b2077de64d37157baa0e9d10", null ],
     [ "degTorad_F", "d6/d0b/def_8cpp.html#ad0679d063111d3e8aceaf2a91d243398", null ],
     [ "exp_F", "d6/d0b/def_8cpp.html#ae67530a59f92381ca67213f3c044c1a8", null ],

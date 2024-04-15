@@ -281,6 +281,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ac3baf95e39ed6b69d31c6c2f9d27fba9 inherit pub_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a118c409ed14ceced74760b464cbf3725 inherit pub_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a118c409ed14ceced74760b464cbf3725">SetPathLabelTemplate</a> (const QString &amp;value)</td></tr>
 <tr class="separator:a118c409ed14ceced74760b464cbf3725 inherit pub_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50516c2a7720f04abf077a67eaedbac inherit pub_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#ab50516c2a7720f04abf077a67eaedbac">getImageFilePath</a> () const</td></tr>
+<tr class="separator:ab50516c2a7720f04abf077a67eaedbac inherit pub_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb05b0600f716a0453f5ce86eeafd0b inherit pub_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#aafb05b0600f716a0453f5ce86eeafd0b">setImageFilePath</a> (const QString &amp;value)</td></tr>
+<tr class="separator:aafb05b0600f716a0453f5ce86eeafd0b inherit pub_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b8dd27a5f3792db34a28ce7268d73b4 inherit pub_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a1b8dd27a5f3792db34a28ce7268d73b4">getDefaultPatternTemplate</a> () const</td></tr>
 <tr class="separator:a1b8dd27a5f3792db34a28ce7268d73b4 inherit pub_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5dc26454487a88ee4fe453b2b80176fe inherit pub_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a5dc26454487a88ee4fe453b2b80176fe">setDefaultPatternTemplate</a> (const QString &amp;text)</td></tr>
@@ -854,6 +858,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a2869e9f1e1a86fb74d93d0e75fca8a73 inherit pub_static_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92381c53fcb5b8f4342847f9dae34190 inherit pub_static_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a92381c53fcb5b8f4342847f9dae34190">getDefaultLabelTemplatePath</a> ()</td></tr>
 <tr class="separator:a92381c53fcb5b8f4342847f9dae34190 inherit pub_static_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96028c3822740402f73daa66cebeac89 inherit pub_static_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#a96028c3822740402f73daa66cebeac89">getDefaultImageFilePath</a> ()</td></tr>
+<tr class="separator:a96028c3822740402f73daa66cebeac89 inherit pub_static_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee05809b3918e9f08e151073077baf42 inherit pub_static_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#aee05809b3918e9f08e151073077baf42">PredefinedDateFormats</a> ()</td></tr>
 <tr class="separator:aee05809b3918e9f08e151073077baf42 inherit pub_static_methods_classVCommonSettings"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb3741e5ebf4466715a120f7caeffebf inherit pub_static_methods_classVCommonSettings"><td class="memItemLeft" align="right" valign="top">static QStringList&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0f/classVCommonSettings.html#abb3741e5ebf4466715a120f7caeffebf">PredefinedTimeFormats</a> ()</td></tr>
@@ -943,7 +949,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00155">155</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00108">PreferencesPathPage::defaultPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00161">getLayoutPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00109">PreferencesPathPage::defaultPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00161">getLayoutPath()</a>.</p>
 
 </div>
 </div>
@@ -972,7 +978,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00134">134</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00108">PreferencesPathPage::defaultPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00140">getPatternPath()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00109">PreferencesPathPage::defaultPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00140">getPatternPath()</a>.</p>
 
 </div>
 </div>
@@ -1235,7 +1241,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00396">396</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00380">GetLayoutWidth()</a>, and <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00663">LayoutSettingsDialog::RestoreDefaults()</a>.</p>
 
@@ -1371,7 +1377,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00078">anonymous_namespace{vsettings.cpp}::settingPatternGraphicalOutput</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l04975">MainWindow::ReadSettings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../d8/dd9/mainwindow_8cpp_source.html#l05232">MainWindow::ReadSettings()</a>.</p>
 
 </div>
 </div>
@@ -1461,7 +1467,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00308">308</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00093">anonymous_namespace{vsettings.cpp}::settingLayoutPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00093">anonymous_namespace{vsettings.cpp}::settingLayoutPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00955">LayoutSettingsDialog::ReadSettings()</a>.</p>
 
@@ -1484,7 +1490,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00330">330</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00094">anonymous_namespace{vsettings.cpp}::settingLayoutPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889ad7e2c9feaded425c8f73763ccf7397a2">Px</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00094">anonymous_namespace{vsettings.cpp}::settingLayoutPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../d0/dfa/layoutsettings__dialog_8cpp_source.html#l00955">LayoutSettingsDialog::ReadSettings()</a>.</p>
 
@@ -1509,7 +1515,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00155">getDefaultLayoutPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00076">anonymous_namespace{vsettings.cpp}::settingPathsLayout</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00208">PreferencesPathPage::initializeTable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00215">PreferencesPathPage::initializeTable()</a>.</p>
 
 </div>
 </div>
@@ -1693,7 +1699,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="reference">References <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00134">getDefaultPatternPath()</a>, and <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00075">anonymous_namespace{vsettings.cpp}::settingPathsPattern</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00208">PreferencesPathPage::initializeTable()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="../../dc/d20/preferencespathpage_8cpp_source.html#l00215">PreferencesPathPage::initializeTable()</a>.</p>
 
 </div>
 </div>
@@ -1959,7 +1965,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00646">646</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00107">anonymous_namespace{vsettings.cpp}::settingTiledPDFMargins</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00107">anonymous_namespace{vsettings.cpp}::settingTiledPDFMargins</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00671">ExportLayoutDialog::readSettings()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01365">MainWindowsNoGUI::SetPrinterSettings()</a>.</p>
 
@@ -2015,7 +2021,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00681">681</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00108">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00108">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00671">ExportLayoutDialog::readSettings()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01365">MainWindowsNoGUI::SetPrinterSettings()</a>.</p>
 
@@ -2048,7 +2054,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00713">713</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00109">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00109">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00671">ExportLayoutDialog::readSettings()</a>, and <a class="el" href="../../d8/de8/mainwindowsnogui_8cpp_source.html#l01365">MainWindowsNoGUI::SetPrinterSettings()</a>.</p>
 
@@ -2765,7 +2771,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00667">667</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00107">anonymous_namespace{vsettings.cpp}::settingTiledPDFMargins</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00107">anonymous_namespace{vsettings.cpp}::settingTiledPDFMargins</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00720">ExportLayoutDialog::writeSettings()</a>.</p>
 
@@ -2832,7 +2838,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00702">702</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00108">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00108">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperHeight</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00720">ExportLayoutDialog::writeSettings()</a>.</p>
 
@@ -2875,7 +2881,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00736">736</a> of file <a class="el" href="../../db/d28/vsettings_8cpp_source.html">vsettings.cpp</a>.</p>
 
-<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00109">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00277">UnitConvertor()</a>.</p>
+<p class="reference">References <a class="el" href="../../d4/da4/def_8h.html#aa5a23406ae0e7d969b980e50c4e94889a07f07b623b4a00b57dc150ff2e59cb92">Mm</a>, <a class="el" href="../../db/d28/vsettings_8cpp_source.html#l00109">anonymous_namespace{vsettings.cpp}::settingTiledPDFPaperWidth</a>, and <a class="el" href="../../d6/d0b/def_8cpp_source.html#l00257">UnitConvertor()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="../../dd/d54/export__layout__dialog_8cpp_source.html#l00720">ExportLayoutDialog::writeSettings()</a>.</p>
 

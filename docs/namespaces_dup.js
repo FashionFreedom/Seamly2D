@@ -135,6 +135,7 @@ var namespaces_dup =
       [ "settingGraphicsViewZoomRBNegativeColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#aedefb6549602aaba61af1b775475ff7b", null ],
       [ "settingGraphicsViewZoomRBPositiveColor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a0dfede5003a30a9408c3063eb66a92b4", null ],
       [ "settingGraphicsViewZoomSpeedFactor", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a26cf87afb2f980c1ec7cd2fd63e9f02d", null ],
+      [ "settingImagesPath", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a13498b0f2dc5512d31e522096d1484ad", null ],
       [ "settingLabelDateFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a9960810b30624736af9c63c4ea1bdb78", null ],
       [ "settingLabelTimeFormat", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a400d4d80c42541aab7c2d1572ae4339e", null ],
       [ "settingLabelUserDateFormats", "d5/dc3/namespaceanonymous__namespace_02vcommonsettings_8cpp_03.html#a55a4ea7793a79bc584e55669b40e6d7c", null ],
