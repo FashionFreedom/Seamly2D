@@ -262,10 +262,6 @@ inline void noisyFailureMsgHandler(QtMsgType type, const QMessageLogContext &con
 
 //---------------------------------------------------------------------------------------------------------------------
 
-#if defined(Q_OS_WIN) && defined(Q_CC_GNU)
-const QString Application2D::GistFileName = QStringLiteral("gist.json");
-#endif // defined(Q_OS_WIN) && defined(Q_CC_GNU)
-
 #define DefWidth 1.2//mm
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -627,9 +623,6 @@ void Application2D::startLogging()
     {
         beginLogging();
         clearOldLogs();
-#if defined(Q_OS_WIN) && defined(Q_CC_GNU)
-        ClearOldReports();
-#endif // defined(Q_OS_WIN) && defined(Q_CC_GNU)
     }
 }
 
