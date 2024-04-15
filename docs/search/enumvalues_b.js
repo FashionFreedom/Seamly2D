@@ -2,7 +2,7 @@ var searchData=
 [
   ['male_19393',['Male',['../dc/db7/measurements_8h.html#abb136f27b5f33acb9b852daeb0f04c01a63889cfb9d3cbe05d1bd2be5cc9953fd',1,'measurements.h']]],
   ['mantissa_19394',['Mantissa',['../df/d51/qmudef_8cpp.html#a5d74787dedbc4e11c1ab15bf487e61f8a08a60d7f2229646a3e0950e80bd84aa4',1,'qmudef.cpp']]],
-  ['maxrecentfiles_19395',['MaxRecentFiles',['../d8/d61/classTMainWindow.html#ae8d2b6b8d2c58e95e6cfad2634dd782ea93e479ed8d33820bb57a4cdff04ed8b5',1,'TMainWindow::MaxRecentFiles()'],['../d6/d1a/classMainWindow.html#a0ee5fdf298d8f30b5e29418348ecaacfacffff941ca3da9119f465d531db6dc86',1,'MainWindow::MaxRecentFiles()']]],
+  ['maxrecentfiles_19395',['MaxRecentFiles',['../d8/d61/classTMainWindow.html#a0f3e7779c722d05108da4e56bcd6d478a93e479ed8d33820bb57a4cdff04ed8b5',1,'TMainWindow::MaxRecentFiles()'],['../d6/d1a/classMainWindow.html#a0ee5fdf298d8f30b5e29418348ecaacfacffff941ca3da9119f465d531db6dc86',1,'MainWindow::MaxRecentFiles()']]],
   ['measurement_19396',['Measurement',['../d4/da4/def_8h.html#a76d9a90fa899857cf4616065998e6178a911842b19d8b2f9bbed8cfe909d52975',1,'def.h']]],
   ['measurements_19397',['Measurements',['../d7/d4c/edit__formula__dialog_8h.html#a81e56be3c50376239982abe0269ec928ab44c82b6e10f9887c1e9b19455ec1ed5',1,'edit_formula_dialog.h']]],
   ['metric_19398',['Metric',['../d7/de8/dxfdef_8h.html#a3dd1db4b7a6f61c5d2004d1580acec27a216ab40cda5c7c00ff42a4efb1827d89',1,'dxfdef.h']]],
